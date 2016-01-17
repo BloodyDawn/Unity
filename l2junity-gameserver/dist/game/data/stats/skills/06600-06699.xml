@@ -1334,7 +1334,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1832</value>
@@ -1352,7 +1352,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6619" levels="7" name="Maguen Power Strike">
 		<!-- Moving Spd. Is decreased by 90% for 10 seconds. -->
@@ -1392,7 +1392,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1832</value>
@@ -1410,7 +1410,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6620" levels="7" name="Maguen Plasma">
 		<table name="#mAtk"> 5 10 15 20 25 30 35 </table>
@@ -1433,7 +1433,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">100</value>
@@ -1458,7 +1458,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6621" levels="7" name="Maguen Plasma">
 		<table name="#mAtk"> 15 20 25 30 35 40 45 </table>
@@ -1481,7 +1481,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">200</value>
@@ -1506,7 +1506,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6622" levels="1" name="Stun">
 		<!-- Momentarily causes shock, which stuns the enemy for 20 seconds. In addition, your chance of being critically attacked is increased by 50%. -->
@@ -1528,14 +1528,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2748</power>
 			</effect>
 			<effect name="BlockActions">
 				<mul stat="defCritRate" val="0.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6623" levels="1" name="Fungus Herb">
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1578,11 +1578,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>15</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6626" levels="1" name="Energy of Life's Power">
 		<!-- This skill only has one level, 2. -->
@@ -1597,11 +1597,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>25</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6627" levels="1" name="Energy of Life's Highest Power">
 		<!-- This skill only has one level, 3. -->
@@ -1616,11 +1616,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6628" levels="1" name="Energy of Mana">
 		<castRange>2000</castRange>
@@ -1634,11 +1634,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<power>11</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6629" levels="1" name="Energy of Mana's Power">
 		<!-- This skill only has one level, 2. -->
@@ -1653,11 +1653,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<power>18</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6630" levels="1" name="Energy of Mana's Highest Power">
 		<!-- This skill only has one level, 3. -->
@@ -1672,11 +1672,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6631" levels="1" name="Energy of Power">
 		<abnormalInstant>true</abnormalInstant>
@@ -1697,12 +1697,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6632" levels="1" name="Energy of Magic">
 		<abnormalInstant>true</abnormalInstant>
@@ -1743,12 +1743,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6634" levels="1" name="Energy of Casting Spd.">
 		<abnormalInstant>true</abnormalInstant>
@@ -1789,11 +1789,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6636" levels="1" name="Energy of Speed">
 		<abnormalInstant>true</abnormalInstant>
@@ -1814,12 +1814,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6637" levels="1" name="Energy of HP Drain">
 		<!-- Confirmed CT2.5 -->
@@ -1846,7 +1846,7 @@
 				<player transformationId="103" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -1855,7 +1855,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6638" levels="1" name="Mysterious Aura">
 		<abnormalInstant>true</abnormalInstant>
@@ -1882,7 +1882,7 @@
 				<player transformationId="103" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -1891,7 +1891,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6639" levels="1" name="Energy of Crtical Rate: Damage">
 		<abnormalInstant>true</abnormalInstant>
@@ -1912,12 +1912,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6640" levels="1" name="Vitality Replenishing Aura">
 		<abnormalInstant>true</abnormalInstant>
@@ -1939,11 +1939,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6641" levels="1" name="Holy Ball">
 		<!-- Confirmed CT2.5 -->
@@ -1965,11 +1965,11 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>122</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6642" levels="1" name="Dash">
 		<!-- Confirmed CT2.5 -->
@@ -1992,12 +1992,12 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2319</power>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6643" levels="1" name="Holy Strike">
 		<!-- Confirmed CT2.5 -->
@@ -2016,11 +2016,11 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2319</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6644" levels="1" name="Ice Queen Freya">
 		<!-- Confirmed CT2.5 -->
@@ -2096,11 +2096,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>126</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6650" levels="1" name="Tacrakahn's Alienation">
 		<abnormalLvl>99</abnormalLvl>
@@ -2256,7 +2256,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="#ticks">
 				<power>115</power>
@@ -2265,7 +2265,7 @@
 				<skillId>6302</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6663" levels="1" name="Raid Boss (Lv. 76)">
 		<!-- Confirmed CT2.5 -->
@@ -2313,12 +2313,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>18</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6667" levels="1" name="Feral Wind Walk">
 		<!-- Increases Moving Spd. by 33 for 5 minutes. -->
@@ -2339,12 +2339,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6668" levels="1" name="Feral Death Whisper">
 		<!-- Increases critical attack power by 35% for 5 minutes. -->
@@ -2365,12 +2365,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6669" levels="1" name="Feral Blessed Body">
 		<!-- Increases Max HP by 35% for 5 minutes. -->
@@ -2391,11 +2391,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6670" levels="1" name="Feral Vampiric Rage">
 		<!-- For 5 minutes, 9% of the standard short-range physical damage inflicted on the enemy is converted to HP for you. -->
@@ -2416,12 +2416,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6671" levels="1" name="Feral Berserker Spirit">
 		<!-- Decreases P. Def. by 8%, M. Def. by 16%, Evasion by 4 and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Moving Spd. by 8 for 5 minutes. -->
@@ -2442,7 +2442,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -2475,7 +2475,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6672" levels="1" name="Feral Blessed Shield">
 		<!-- Increases Shield defense rate by 5% for 30 minutes. -->
@@ -2496,12 +2496,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6673" levels="1" name="Presentation - Attain Noblesse">
 		<effectPoint>100</effectPoint>
@@ -2534,7 +2534,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackRange">
 				<amount>50</amount>
 				<mode>DIFF</mode>
@@ -2543,7 +2543,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6675" levels="1" name="Lavasaurus Alpha Attack">
 		<effectPoint>-100</effectPoint>
@@ -2570,11 +2570,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6677" levels="1" name="Hold">
 		<abnormalLvl>1</abnormalLvl>
@@ -2625,11 +2625,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6680" levels="1" name="Faint Plus">
 		<coolTime>500</coolTime>
@@ -2663,12 +2663,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6682" levels="1" name="Elite Maguen Wind Walk">
 		<!-- Moving Spd. increases by 45 for 20 minutes. -->
@@ -2692,12 +2692,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>45</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6683" levels="1" name="Maguen Return">
 		<!-- Confirmed CT2.5 -->
@@ -2719,13 +2719,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>-178244</x>
 				<y>153389</y>
 				<z>2472</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6684" levels="1" name="Maguen Party Return">
 		<!-- Confirmed CT2.5 -->
@@ -2748,13 +2748,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>-178244</x>
 				<y>153389</y>
 				<z>2472</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6685" levels="1" name="Santa Claus's Gift">
 		<!-- Confirmed CT2.5 -->
@@ -2775,12 +2775,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>17003</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6686" levels="1" name="Cancel Holy Protection">
 		<!-- Confirmed CT2.5 -->
@@ -2792,11 +2792,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6687" levels="1" name="Patience">
 		<!-- Confirmed CT2.5 -->
@@ -2814,12 +2814,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6688" levels="1" name="Awful Soup">
 		<!-- Confirmed CT2.5 -->
@@ -2839,7 +2839,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="DamOverTimePercent" ticks="5">
 				<power>0.02</power>
 			</effect>
@@ -2847,7 +2847,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6689" levels="1" name="HP/MP Drain">
 		<coolTime>2000</coolTime>
@@ -3014,7 +3014,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>45257</power>
 			</effect>
@@ -3022,7 +3022,7 @@
 				<skillId>6698</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6698" levels="1" name="Freeze - Eternal Ice">
 		<!-- Confirmed CT2.5 -->
@@ -3046,7 +3046,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="5">
 				<power>115</power>
@@ -3054,7 +3054,7 @@
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>5</power>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6302</skillId>

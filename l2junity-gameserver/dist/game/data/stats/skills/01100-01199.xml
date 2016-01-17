@@ -41,14 +41,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">27</value>
 					<value level="2">40</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1101" levels="2" name="Blaze Quake">
 		<table name="#dot"> 58 79 </table>
@@ -91,14 +91,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">58</value>
 					<value level="2">79</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1102" levels="6" name="Aura Sink">
 		<table name="#mdot"> 8 10 13 16 20 22 </table>
@@ -160,7 +160,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">16</value>
@@ -181,7 +181,7 @@
 					<value level="6">22</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1104" levels="14" name="Seal of Winter">
 		<abnormalLvl>3</abnormalLvl>
@@ -265,14 +265,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1105" levels="18" name="Madness">
 		<castRange>600</castRange>
@@ -366,11 +366,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Confuse" abnormalTime="20">
 				<chance>20</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1107" levels="2" name="Frost Flame">
 		<table name="#dot"> 58 79 </table>
@@ -413,14 +413,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">58</value>
 					<value level="2">79</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1108" levels="4" name="Seal of Flame">
 		<table name="#dot"> 60 73 84 92 </table>
@@ -469,7 +469,7 @@
 			<value level="4">74</value>
 		</magicLvl>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">60</value>
@@ -478,7 +478,7 @@
 					<value level="4">92</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1111" levels="18" name="Summon Kat the Cat">
 		<icon>icon.skill1111</icon>
@@ -617,7 +617,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14111</value>
@@ -681,7 +681,7 @@
 					<value level="18">2</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1126" levels="34" name="Servitor Recharge">
 		<table name="#amount"> 41 44 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 </table>
@@ -839,7 +839,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
 					<value level="1">41</value>
@@ -878,7 +878,7 @@
 					<value level="34">136</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1127" levels="45" name="Servitor Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1081,7 +1081,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">169</value>
@@ -1131,7 +1131,7 @@
 					<value level="45">1092</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1128" levels="18" name="Summon Shadow">
 		<icon>icon.skill1128</icon>
@@ -1271,7 +1271,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14479</value>
@@ -1335,7 +1335,7 @@
 					<value level="18">2</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1129" levels="16" name="Summon Reanimated Man">
 		<table name="#itemConsumeCountOT"> 0 0 1 1 1 2 2 0 0 0 0 0 0 0 0 0 </table>
@@ -1430,7 +1430,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14001</value>
@@ -1471,7 +1471,7 @@
 					<value level="16">0</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1139" levels="2" name="Servitor Magic Shield">
 		<table name="#mDef"> 1.23 1.3 </table>
@@ -1508,7 +1508,7 @@
 			<value level="2">52</value>
 		</magicLvl>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">23</value>
@@ -1516,7 +1516,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1140" levels="3" name="Servitor Physical Shield">
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
@@ -1558,7 +1558,7 @@
 			<value level="3">56</value>
 		</magicLvl>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">8</value>
@@ -1567,7 +1567,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1141" levels="2" name="Servitor Haste">
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
@@ -1604,7 +1604,7 @@
 			<value level="2">52</value>
 		</magicLvl>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -1612,7 +1612,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1144" levels="2" name="Servitor Wind Walk">
 		<table name="#runSpd"> 20 33 </table>
@@ -1649,7 +1649,7 @@
 			<value level="2">48</value>
 		</magicLvl>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -1657,7 +1657,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1145" levels="3" name="Servitor Magic Boost">
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
@@ -1699,7 +1699,7 @@
 			<value level="3">56</value>
 		</magicLvl>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">55</value>
@@ -1708,7 +1708,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1146" levels="3" name="Mighty Servitor">
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
@@ -1750,7 +1750,7 @@
 			<value level="3">56</value>
 		</magicLvl>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">8</value>
@@ -1759,7 +1759,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1147" levels="6" name="Vampiric Touch">
 		<table name="#power"> 18 21 23 26 29 32 </table>
@@ -1807,7 +1807,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">18</value>
@@ -1819,7 +1819,7 @@
 				</power>
 				<percentage>40</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1148" levels="13" name="Death Spike">
 		<table name="#power"> 58 65 72 78 82 85 89 92 96 99 102 105 108 </table>
@@ -1895,7 +1895,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">58</value>
@@ -1914,7 +1914,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1151" levels="16" name="Corpse Life Drain">
 		<table name="#drain"> 260 299 347 384 426 467 509 529 550 571 590 609 628 645 662 678 </table>
@@ -1982,7 +1982,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>CORPSE_MOB</targetType>
-		<for>
+		<effects>
 			<effect name="HpByLevel">
 				<power>
 					<value level="1">260</value>
@@ -2004,7 +2004,7 @@
 				</power>
 			</effect>
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1154" levels="6" name="Summon Corrupted Man">
 		<table name="#itemConsumeCount"> 3 3 3 3 3 3 </table>
@@ -2053,7 +2053,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14038</value>
@@ -2066,7 +2066,7 @@
 				<expMultiplier>0.1</expMultiplier>
 				<lifeTime>3600</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1155" levels="15" name="Corpse Burst">
 		<table name="#power"> 61 65 68 72 75 78 82 85 89 92 96 99 102 105 108 </table>
@@ -2151,7 +2151,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA_CORPSE_MOB</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -2172,7 +2172,7 @@
 				</power>
 			</effect>
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1156" levels="13" name="Forget">
 		<castRange>400</castRange>
@@ -2231,11 +2231,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="DeleteHateOfMe">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1157" levels="5" name="Body To Mind">
 		<table name="#amount"> 22 35 47 53 61 </table>
@@ -2268,7 +2268,7 @@
 			<value level="5">66</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>
 					<value level="1">22</value>
@@ -2278,7 +2278,7 @@
 					<value level="5">61</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1159" levels="22" name="Curse Death Link">
 		<table name="#power"> 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
@@ -2390,7 +2390,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DeathLink">
 				<power>
 					<value level="1">68</value>
@@ -2417,7 +2417,7 @@
 					<value level="22">108</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1160" levels="15" name="Decrease Speed">
 		<table name="#runSpd"> 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
@@ -2522,7 +2522,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2545,7 +2545,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1163" levels="14" name="Curse Discord">
 		<castRange>600</castRange>
@@ -2623,12 +2623,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<!-- FIXME: this shouldbe "Distrust" effect -->
 			<effect name="Confuse" abnormalTime="20">
 				<chance>20</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1164" levels="19" name="Curse: Weakness">
 		<table name="#pAtk"> 0.83 0.8 0.8 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
@@ -2753,7 +2753,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
@@ -2780,7 +2780,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1167" levels="6" name="Poisonous Cloud">
 		<table name="#dot"> 24 32 41 50 58 63 </table>
@@ -2844,7 +2844,7 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">24</value>
@@ -2855,7 +2855,7 @@
 					<value level="6">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1168" levels="7" name="Curse: Poison">
 		<table name="#dot"> 11 24 32 41 50 58 63 </table>
@@ -2922,7 +2922,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">11</value>
@@ -2934,7 +2934,7 @@
 					<value level="7">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1169" levels="14" name="Curse Fear">
 		<abnormalLvl>1</abnormalLvl>
@@ -3020,10 +3020,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1170" levels="13" name="Anchor">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -3105,7 +3105,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>1</abnormalLvl>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -3120,7 +3120,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6091</skillId>
@@ -3226,7 +3226,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">29</value>
@@ -3250,7 +3250,7 @@
 					<value level="19">64</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1172" levels="8" name="Aura Burn">
 		<table name="#power"> 19 21 24 25 28 30 33 36 </table>
@@ -3304,7 +3304,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">19</value>
@@ -3317,7 +3317,7 @@
 					<value level="8">36</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1174" levels="22" name="Frost Wall">
 		<table name="#power"> 48 50 53 55 56 57 59 60 61 62 63 65 66 67 68 69 70 72 73 74 75 76 </table>
@@ -3432,7 +3432,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">48</value>
@@ -3459,7 +3459,7 @@
 					<value level="22">76</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1175" levels="8" name="Aqua Swirl">
 		<table name="#power"> 23 26 29 32 35 38 42 44 </table>
@@ -3515,7 +3515,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">23</value>
@@ -3529,7 +3529,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1176" levels="15" name="Tempest">
 		<table name="#power"> 31 33 34 36 38 39 41 43 45 46 48 50 51 53 54 </table>
@@ -3615,7 +3615,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -3635,7 +3635,7 @@
 					<value level="15">54</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1177" levels="5" name="Wind Strike">
 		<table name="#power"> 12 13 15 18 21 </table>
@@ -3679,7 +3679,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">12</value>
@@ -3689,7 +3689,7 @@
 					<value level="5">21</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1178" levels="8" name="Twister">
 		<table name="#power"> 23 26 29 32 35 38 42 44 </table>
@@ -3745,7 +3745,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">23</value>
@@ -3758,7 +3758,7 @@
 					<value level="8">44</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1181" levels="3" name="Flame Strike">
 		<table name="#power"> 13 16 19 </table>
@@ -3796,7 +3796,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">13</value>
@@ -3804,7 +3804,7 @@
 					<value level="3">19</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1182" levels="3" name="Water Resistance">
 		<table name="#vuln"> 10 15 20 </table>
@@ -3846,11 +3846,11 @@
 			<value level="3">44</value>
 		</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1183" levels="4" name="Freezing Shackle">
 		<table name="#dot"> 102 125 144 157 </table>
@@ -3903,7 +3903,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">102</value>
@@ -3912,7 +3912,7 @@
 					<value level="4">157</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1184" levels="6" name="Ice Bolt">
 		<table name="#power"> 8 9 11 13 14 16 </table>
@@ -3968,7 +3968,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">8</value>
@@ -3985,7 +3985,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1189" levels="3" name="Wind Resistance">
 		<table name="#vuln"> 10 15 20 </table>
@@ -4027,11 +4027,11 @@
 			<value level="3">44</value>
 		</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1191" levels="3" name="Fire Resistance">
 		<table name="#vuln"> 10 15 20 </table>
@@ -4073,10 +4073,10 @@
 			<value level="3">44</value>
 		</magicLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

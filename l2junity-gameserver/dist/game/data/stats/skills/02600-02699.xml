@@ -81,9 +81,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2607" levels="1" name="Pailaka Door Key">
 		<effectPoint>-1</effectPoint>
@@ -102,12 +102,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="22110100,22110101,22110102,22110103,22110104,22110105" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2608" levels="3" name="Blue Crystal of Fantasy">
 		<!-- Lvl 1: Blue Crystal of Fantasy -->
@@ -132,7 +132,7 @@
 		<cond msgId="113" addName="1">
 			<player level="76" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<sp>
 					<value level="1">50000</value>
@@ -140,7 +140,7 @@
 					<value level="3">200000</value>
 				</sp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2609" levels="20" name="Scroll of Escape: Talking Island Village">
 		<!-- Confirmed CT2.5 -->
@@ -185,7 +185,7 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>
 					<value level="1">-84200</value>
@@ -254,7 +254,7 @@
 					<value level="20">342</value>
 				</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2610" levels="1" name="Register Bookmark (Event)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -269,11 +269,11 @@
 		<cond>
 			<player hasFreeTeleportBookmarkSlots="3" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="AddTeleportBookmarkSlot">
 				<amount>3</amount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2611" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -336,12 +336,12 @@
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="32529,300,true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>13854</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2616" levels="1" name="Bond Sealant">
 		<abnormalLvl>1</abnormalLvl>
@@ -436,12 +436,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>32544</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2623" levels="1" name="Alkaline Therapy">
 		<abnormalLvl>1</abnormalLvl>
@@ -517,11 +517,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>50</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2629" levels="1" name="Ancient Treasure Sack">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -569,11 +569,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>111</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2632" levels="1" name="Transformation Scroll: Young Child">
 		<abnormalLvl>1</abnormalLvl>
@@ -594,11 +594,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>112</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2633" levels="1" name="Elmore-Aden's Holy Water">
 		<!-- Confirmed CT2.5 -->
@@ -616,12 +616,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="17240101,17240105,17240109" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2634" levels="1" name="Court Magician's Blessing">
 		<!-- Confirmed CT2.5 -->
@@ -639,12 +639,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="17240103,17240107" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2635" levels="1" name="Blessing of Fire">
 		<abnormalLvl>1</abnormalLvl>
@@ -660,11 +660,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="firePower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2636" levels="1" name="Blessing of Earth">
 		<abnormalLvl>1</abnormalLvl>
@@ -680,11 +680,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2637" levels="1" name="Scroll: Enchant Weapon (Event)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -715,9 +715,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2639" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
@@ -739,9 +739,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2640" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
@@ -763,9 +763,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2641" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
@@ -787,9 +787,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2642" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
@@ -811,9 +811,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2643" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
@@ -835,9 +835,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2644" levels="1" name="5th Anniversary Event Box">
 		<!-- Confirmed CT2.5 -->
@@ -859,9 +859,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2645" levels="1" name="Multi-Colored Honey Rice Cake">
 		<!-- Confirmed CT2.5 -->
@@ -877,11 +877,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2646" levels="1" name="Honey Wheat Cake">
 		<!-- Confirmed CT2.5 -->
@@ -897,11 +897,11 @@
 		<reuseDelay>3600000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2647" levels="1" name="Energy Star Stone">
 		<!-- Confirmed CT2.5 -->
@@ -917,11 +917,11 @@
 		<cond msgId="113" addName="1">
 			<player canRefuelAirship="25" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="RefuelAirship">
 				<value>25</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2648" levels="1" name="High-quality Energy Star Stone">
 		<!-- Confirmed CT2.5 -->
@@ -937,11 +937,11 @@
 		<cond msgId="113" addName="1">
 			<player canRefuelAirship="100" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="RefuelAirship">
 				<value>100</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2649" levels="9" name="Scroll of Escape: Gludin Village">
 		<!-- Confirmed CT2.5 -->
@@ -976,7 +976,7 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>
 					<value level="1">-80831</value>
@@ -1012,7 +1012,7 @@
 					<value level="9">-1319</value>
 				</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2650" levels="1" name="Summon Imperial Phoenix">
 		<!-- Confirmed CT2.5 -->
@@ -1034,12 +1034,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>912</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2651" levels="1" name="Deflect Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1061,12 +1061,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>913</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2652" levels="1" name="Song of Purification">
 		<!-- Confirmed CT2.5 -->
@@ -1088,12 +1088,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>914</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2653" levels="1" name="Dance of Berserker">
 		<!-- Confirmed CT2.5 -->
@@ -1115,12 +1115,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>915</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2654" levels="1" name="Final Secret">
 		<!-- Confirmed CT2.5 -->
@@ -1142,12 +1142,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>917</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2655" levels="1" name="Maximum Force Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1169,12 +1169,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>918</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2656" levels="1" name="Maximum Sonic Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1196,12 +1196,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>919</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2657" levels="1" name="Hide">
 		<!-- Confirmed CT2.5 -->
@@ -1223,12 +1223,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>922</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2658" levels="1" name="Dual Dagger Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -1250,12 +1250,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>923</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2659" levels="1" name="Seven Arrow">
 		<!-- Confirmed CT2.5 -->
@@ -1277,12 +1277,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>924</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2660" levels="1" name="Enlightenment">
 		<!-- Confirmed CT2.5 -->
@@ -1304,12 +1304,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1532</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2661" levels="1" name="Enlightenment">
 		<!-- Confirmed CT2.5 -->
@@ -1331,12 +1331,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1533</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2662" levels="1" name="Chant of Movement">
 		<!-- Confirmed CT2.5 -->
@@ -1358,12 +1358,12 @@
 				<player level="72" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1535</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2663" levels="1" name="Combat of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -1385,12 +1385,12 @@
 				<player level="70" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1536</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2664" levels="1" name="Critical of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -1412,12 +1412,12 @@
 				<player level="74" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1537</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2665" levels="1" name="Condition of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -1439,12 +1439,12 @@
 				<player level="72" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1538</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2666" levels="1" name="Dual Blow">
 		<!-- Confirmed CT2.5 -->
@@ -1466,12 +1466,12 @@
 				<player level="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>928</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2667" levels="1" name="Spirit of the Cat">
 		<!-- Confirmed CT2.5 -->
@@ -1493,12 +1493,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>929</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2668" levels="1" name="Spirit of the Phantom">
 		<!-- Confirmed CT2.5 -->
@@ -1520,12 +1520,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>930</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2669" levels="1" name="Spirit of the Unicorn">
 		<!-- Confirmed CT2.5 -->
@@ -1547,12 +1547,12 @@
 				<player level="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>931</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2670" levels="1" name="Transformation Scroll: Red">
 		<!-- Confirmed CT2.5 -->
@@ -1574,11 +1574,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>121</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2671" levels="1" name="Transformation Scroll: Blue">
 		<!-- Confirmed CT2.5 -->
@@ -1600,11 +1600,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>122</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2672" levels="1" name="Gludio Human Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -1636,11 +1636,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>10</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2673" levels="1" name="Gludio Elf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -1672,11 +1672,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>11</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2674" levels="1" name="Gludio Dark Elf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -1708,11 +1708,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>12</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2675" levels="1" name="Gludio Orc Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -1744,11 +1744,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>13</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2676" levels="1" name="Gludio Dwarf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -1780,11 +1780,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>14</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2677" levels="1" name="Gludio Kamael Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -1816,11 +1816,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>15</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2678" levels="1" name="Gludio Royal Guard Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -1852,11 +1852,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>16</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2679" levels="1" name="Gludio Archer Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -1888,11 +1888,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>17</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2680" levels="1" name="Gludio Wizard Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -1924,11 +1924,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>18</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2681" levels="1" name="Gludio Kamael Guard Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -1960,11 +1960,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>19</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2682" levels="1" name="Gludio Knight of Dawn">
 		<abnormalLvl>1</abnormalLvl>
@@ -1996,11 +1996,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>20</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2683" levels="1" name="Gludio Fortress Commander">
 		<abnormalLvl>1</abnormalLvl>
@@ -2032,11 +2032,11 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>21</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2684" levels="1" name="Dion Human Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2068,11 +2068,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>10</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2685" levels="1" name="Dion Elf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2104,11 +2104,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>11</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2686" levels="1" name="Dion Dark Elf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2140,11 +2140,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>12</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2687" levels="1" name="Dion Orc Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2176,11 +2176,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>13</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2688" levels="1" name="Dion Dwarf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2212,11 +2212,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>14</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2689" levels="1" name="Dion Kamael Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2248,11 +2248,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>15</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2690" levels="1" name="Dion Royal Guard Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -2284,11 +2284,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>16</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2691" levels="1" name="Dion Archer Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -2320,11 +2320,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>17</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2692" levels="1" name="Dion Wizard Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -2356,11 +2356,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>18</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2693" levels="1" name="Dion Kamael Guard Captain">
 		<abnormalLvl>1</abnormalLvl>
@@ -2392,11 +2392,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>19</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2694" levels="1" name="Dion Knight of Dawn">
 		<abnormalLvl>1</abnormalLvl>
@@ -2428,11 +2428,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>20</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2695" levels="1" name="Dion Fortress Commander">
 		<abnormalLvl>1</abnormalLvl>
@@ -2464,11 +2464,11 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>21</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2696" levels="1" name="Giran Human Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2500,11 +2500,11 @@
 				<player siegeSide="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>10</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2697" levels="1" name="Giran Elf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2536,11 +2536,11 @@
 				<player siegeSide="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>11</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2698" levels="1" name="Giran Dark Elf Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2572,11 +2572,11 @@
 				<player siegeSide="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>12</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2699" levels="1" name="Giran Orc Mercenary">
 		<abnormalLvl>1</abnormalLvl>
@@ -2608,10 +2608,10 @@
 				<player siegeSide="83" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>13</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

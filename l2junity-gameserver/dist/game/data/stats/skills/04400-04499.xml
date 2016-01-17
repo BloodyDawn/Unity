@@ -21,7 +21,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -30,7 +30,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4401" levels="3" name="Empower">
 		<!-- Confirmed CT2.5 -->
@@ -53,7 +53,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">55</value>
@@ -62,7 +62,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4402" levels="2" name="Haste">
 		<!-- Confirmed CT2.5 -->
@@ -84,7 +84,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -92,7 +92,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4403" levels="3" name="Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -115,7 +115,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -124,7 +124,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4404" levels="3" name="Focus">
 		<!-- Confirmed CT2.5 -->
@@ -147,11 +147,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4405" levels="3" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -174,7 +174,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">25</value>
@@ -183,7 +183,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4406" levels="3" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -206,7 +206,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">2</value>
@@ -215,7 +215,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4407" levels="2" name="Ordinary Monster">
 		<!-- Confirmed CT2.5 -->
@@ -257,7 +257,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxhp" />
 			</effect>
@@ -286,7 +286,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4409" levels="20" name="MP Increase (1x)">
 		<!-- Confirmed CT2.5 -->
@@ -317,7 +317,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">0</value>
@@ -368,7 +368,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4410" levels="22" name="P. Atk. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -401,7 +401,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">-61</value>
@@ -429,7 +429,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4411" levels="22" name="M. Atk. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -462,7 +462,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">-85</value>
@@ -490,7 +490,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4412" levels="22" name="P. Def. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -523,7 +523,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-61</value>
@@ -551,7 +551,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4413" levels="22" name="M. Def. Modifiers">
 		<!-- Confirmed CT2.5 -->
@@ -584,7 +584,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">-61</value>
@@ -612,7 +612,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4414" levels="3" name="Heavy Armor Type">
 		<!-- Confirmed CT2.5 -->
@@ -627,7 +627,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">15</value>
@@ -644,7 +644,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4415" levels="26" name="Bare Hands">
 		<!-- Confirmed CT2.5 -->
@@ -654,7 +654,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">0</value>
@@ -717,7 +717,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4416" levels="26" name="Undead">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -766,7 +766,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
 				<CONSTRUCT_WEAKNESS>
 					<value level="1">0</value>
@@ -1105,7 +1105,7 @@
 					<value level="26">0</value>
 				</SWORD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4417" levels="38" name="Animals">
 		<!-- Confirmed CT2.5 -->
@@ -1161,7 +1161,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
 				<BOW>
 					<value level="1">0</value>
@@ -1484,7 +1484,7 @@
 					<value level="38">0</value>
 				</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4418" levels="5" name="Fire Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1494,12 +1494,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="firePower" val="10" />
 				<add stat="fireRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4419" levels="5" name="Water Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1509,12 +1509,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterPower" val="10" />
 				<add stat="waterRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4420" levels="5" name="Wind Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1524,12 +1524,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windPower" val="10" />
 				<add stat="windRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4421" levels="5" name="Earth Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1539,12 +1539,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthPower" val="10" />
 				<add stat="earthRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4422" levels="5" name="Dark Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1554,12 +1554,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkPower" val="10" />
 				<add stat="darkRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4423" levels="5" name="Holy Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1569,12 +1569,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="10" />
 				<add stat="holyRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4424" levels="5" name="Fist Weapon Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1584,7 +1584,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DUALFIST>
 					<value level="1">10</value>
@@ -1594,7 +1594,7 @@
 					<value level="5">50</value>
 				</DUALFIST>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4425" levels="5" name="Blunt Weapon Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1604,7 +1604,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>
 					<value level="1">10</value>
@@ -1614,7 +1614,7 @@
 					<value level="5">50</value>
 				</BLUNT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4426" levels="5" name="Dualsword Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1624,7 +1624,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DUAL>
 					<value level="1">10</value>
@@ -1634,7 +1634,7 @@
 					<value level="5">50</value>
 				</DUAL>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4427" levels="5" name="Sword Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1644,7 +1644,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SWORD>
 					<value level="1">10</value>
@@ -1654,7 +1654,7 @@
 					<value level="5">50</value>
 				</SWORD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4428" levels="5" name="Two-handed Weapon Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1672,11 +1672,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4430" levels="5" name="Greater Water Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1686,11 +1686,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4431" levels="5" name="Greater Wind Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1700,11 +1700,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4432" levels="5" name="Greater Earth Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1714,11 +1714,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4433" levels="5" name="Greater Holy Attack Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1728,11 +1728,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4434" levels="5" name="Greater Dark Attack Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1742,11 +1742,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="#vuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4435" levels="5" name="Greater Stun Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1756,7 +1756,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">60</value>
@@ -1766,7 +1766,7 @@
 					<value level="5">100</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4436" levels="5" name="Greater Poison Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1776,7 +1776,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>
 					<value level="1">60</value>
@@ -1786,7 +1786,7 @@
 					<value level="5">100</value>
 				</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4437" levels="5" name="Greater Bleed Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1796,7 +1796,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>
 					<value level="1">60</value>
@@ -1806,7 +1806,7 @@
 					<value level="5">100</value>
 				</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4438" levels="5" name="Greater Sleep Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1816,7 +1816,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>
 					<value level="1">60</value>
@@ -1826,7 +1826,7 @@
 					<value level="5">100</value>
 				</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4439" levels="5" name="Greater Hold Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1836,7 +1836,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">60</value>
@@ -1846,7 +1846,7 @@
 					<value level="5">100</value>
 				</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4440" levels="5" name="Greater Paralysis Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1856,7 +1856,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>
 					<value level="1">60</value>
@@ -1866,7 +1866,7 @@
 					<value level="5">100</value>
 				</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4441" levels="5" name="Greater Mental Attack Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1876,7 +1876,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>
 					<value level="1">60</value>
@@ -1886,7 +1886,7 @@
 					<value level="5">100</value>
 				</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4442" levels="5" name="Greater Fist Weapon Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1896,7 +1896,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DUALFIST>
 					<value level="1">60</value>
@@ -1906,7 +1906,7 @@
 					<value level="5">100</value>
 				</DUALFIST>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4443" levels="5" name="Greater Blunt Weapon Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1916,7 +1916,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>
 					<value level="1">60</value>
@@ -1926,7 +1926,7 @@
 					<value level="5">100</value>
 				</BLUNT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4444" levels="5" name="Higher Resist Bow/Crossbow Weapons">
 		<!-- Confirmed CT2.5 -->
@@ -1936,7 +1936,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>
 					<value level="1">60</value>
@@ -1953,7 +1953,7 @@
 					<value level="5">100</value>
 				</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4445" levels="5" name="Greater Spear Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1963,7 +1963,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POLE>
 					<value level="1">60</value>
@@ -1973,7 +1973,7 @@
 					<value level="5">100</value>
 				</POLE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4446" levels="5" name="Greater Dualsword Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1983,7 +1983,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DUAL>
 					<value level="1">60</value>
@@ -1993,7 +1993,7 @@
 					<value level="5">100</value>
 				</DUAL>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4447" levels="5" name="Greater Sword Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -2003,7 +2003,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SWORD>
 					<value level="1">60</value>
@@ -2013,7 +2013,7 @@
 					<value level="5">100</value>
 				</SWORD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4448" levels="5" name="Higher resist Daggers/Rapier Weapon">
 		<!-- Confirmed CT2.5 -->
@@ -2023,7 +2023,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DAGGER>
 					<value level="1">60</value>
@@ -2047,7 +2047,7 @@
 					<value level="5">100</value>
 				</RAPIER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4449" levels="5" name="Greater Two-handed Weapon Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -2065,7 +2065,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">-11</value>
@@ -2075,7 +2075,7 @@
 					<value level="5">-100</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4451" levels="5" name="Poison Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2085,7 +2085,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>
 					<value level="1">-11</value>
@@ -2095,7 +2095,7 @@
 					<value level="5">-100</value>
 				</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4452" levels="5" name="Bleed Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2105,7 +2105,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>
 					<value level="1">-11</value>
@@ -2115,7 +2115,7 @@
 					<value level="5">-100</value>
 				</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4453" levels="5" name="Sleep Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2125,7 +2125,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>
 					<value level="1">-11</value>
@@ -2135,7 +2135,7 @@
 					<value level="5">-100</value>
 				</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4454" levels="5" name="Hold Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2145,7 +2145,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">-11</value>
@@ -2155,7 +2155,7 @@
 					<value level="5">-100</value>
 				</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4455" levels="5" name="Paralysis Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2165,7 +2165,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>
 					<value level="1">-11</value>
@@ -2175,7 +2175,7 @@
 					<value level="5">-100</value>
 				</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4456" levels="5" name="Mental Attack Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2185,7 +2185,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>
 					<value level="1">-11</value>
@@ -2195,7 +2195,7 @@
 					<value level="5">-100</value>
 				</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4457" levels="5" name="Fist Weapon Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2205,7 +2205,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DUALFIST>
 					<value level="1">-11</value>
@@ -2215,7 +2215,7 @@
 					<value level="5">-100</value>
 				</DUALFIST>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4458" levels="5" name="Spear Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2225,7 +2225,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POLE>
 					<value level="1">-11</value>
@@ -2235,7 +2235,7 @@
 					<value level="5">-100</value>
 				</POLE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4459" levels="5" name="Dualsword Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2245,7 +2245,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DUAL>
 					<value level="1">-11</value>
@@ -2255,7 +2255,7 @@
 					<value level="5">-100</value>
 				</DUAL>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4460" levels="5" name="Sword Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2265,7 +2265,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SWORD>
 					<value level="1">-11</value>
@@ -2275,7 +2275,7 @@
 					<value level="5">-100</value>
 				</SWORD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4461" levels="5" name="Dagger/Rapier Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2285,7 +2285,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DAGGER>
 					<value level="1">-11</value>
@@ -2309,7 +2309,7 @@
 					<value level="5">-100</value>
 				</RAPIER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4462" levels="5" name="Two-handed Weapon Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -2319,7 +2319,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DAGGER>
 					<value level="1">-11</value>
@@ -2343,7 +2343,7 @@
 					<value level="5">-100</value>
 				</RAPIER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4463" levels="3" name="Surrender to Water">
 		<!-- Confirmed CT2.5 -->
@@ -2387,12 +2387,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="fireRes" val="#fire" />
 				<sub stat="waterRes" val="#water" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4464" levels="3" name="Surrender to Wind">
 		<!-- Confirmed CT2.5 -->
@@ -2436,12 +2436,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="earthRes" val="#earth" />
 				<sub stat="windRes" val="#wind" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4465" levels="3" name="Surrender to Earth">
 		<!-- Confirmed CT2.5 -->
@@ -2485,12 +2485,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="windRes" val="#wind" />
 				<sub stat="earthRes" val="#earth" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4466" levels="3" name="Surrender to Dark">
 		<!-- Confirmed CT2.5 -->
@@ -2534,12 +2534,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="holyRes" val="#holy" />
 				<sub stat="darkRes" val="#dark" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4467" levels="3" name="Surrender to Holy">
 		<!-- Confirmed CT2.5 -->
@@ -2583,12 +2583,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="darkRes" val="#dark" />
 				<sub stat="holyRes" val="#holy" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4468" levels="2" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -2613,7 +2613,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -2621,7 +2621,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4469" levels="1" name="Potion Drinking">
 		<!-- Confirmed CT2.5 -->
@@ -2716,7 +2716,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">15</value>
@@ -2751,7 +2751,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4472" levels="12" name="Golem Strike">
 		<!-- Confirmed CT2.5 -->
@@ -2793,7 +2793,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">46</value>
@@ -2810,7 +2810,7 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4473" levels="12" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -2862,7 +2862,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">46</value>
@@ -2880,7 +2880,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4474" levels="5" name="Restore Life">
 		<!-- Confirmed CT2.5 -->
@@ -2899,7 +2899,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>
 					<value level="1">20</value>
@@ -2909,7 +2909,7 @@
 					<value level="5">100</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4475" levels="1" name="Complete Bleed Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -2931,11 +2931,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>100</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4476" levels="5" name="Silent Move">
 		<!-- Confirmed CT2.5 -->
@@ -2981,9 +2981,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4477" levels="12" name="Frost Wall">
 		<!-- Confirmed CT2.5 -->
@@ -3044,7 +3044,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">18</value>
@@ -3061,7 +3061,7 @@
 					<value level="12">129</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4478" levels="1" name="Aqua Splash">
 		<!-- Confirmed CT2.5 -->
@@ -3078,11 +3078,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>183</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4479" levels="1" name="Ice Fairy's Blessing">
 		<!-- Confirmed CT2.5 -->
@@ -3105,11 +3105,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4480" levels="1" name="Curse Gloom">
 		<!-- Confirmed CT2.5 -->
@@ -3131,14 +3131,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4481" levels="1" name="Hex">
 		<!-- Confirmed CT2.5 -->
@@ -3160,14 +3160,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4482" levels="1" name="Silence">
 		<!-- Confirmed CT2.5 -->
@@ -3189,10 +3189,10 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4483" levels="12" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -3269,9 +3269,9 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4484" levels="1" name="Devour Subordinate">
 		<!-- Confirmed CT2.5 -->
@@ -3285,11 +3285,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>50</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4485" levels="1" name="Devour Subordinate">
 		<!-- Confirmed CT2.5 -->
@@ -3380,7 +3380,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalDefence">
@@ -3400,7 +3400,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4487" levels="12" name="Decrease M. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -3478,7 +3478,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalDefence">
@@ -3498,7 +3498,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4488" levels="12" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -3548,9 +3548,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4489" levels="12" name="Death Bomb">
 		<!-- Confirmed CT2.5 -->
@@ -3590,7 +3590,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">52</value>
@@ -3607,7 +3607,7 @@
 					<value level="12">387</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4490" levels="12" name="Holy War">
 		<!-- Confirmed CT2.5 -->
@@ -3668,7 +3668,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">18</value>
@@ -3685,7 +3685,7 @@
 					<value level="12">129</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4491" levels="12" name="Holy Weapon">
 		<!-- Confirmed CT2.5 -->
@@ -3727,7 +3727,7 @@
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -3747,7 +3747,7 @@
 			<effect name="Buff">
 				<add stat="holyPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4492" levels="12" name="Enlarging Head Curse">
 		<!-- Confirmed CT2.5 -->
@@ -3798,7 +3798,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">46</value>
@@ -3815,7 +3815,7 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4493" levels="12" name="Mystic Immunity">
 		<!-- Confirmed CT2.5 -->
@@ -3876,7 +3876,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Decrease Speed -->
 				<attackerType>L2Playable</attackerType>
@@ -3901,7 +3901,7 @@
 					<value level="12">12</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4494" levels="2" name="Raid Boss">
 		<!-- Confirmed CT2.5 -->
@@ -3950,7 +3950,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -3967,7 +3967,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4496" levels="12" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -4030,7 +4030,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">176</value>
@@ -4048,7 +4048,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4497" levels="1" name="Treasure Chest (Lv. 21)">
 		<!-- Confirmed CT2.5 -->

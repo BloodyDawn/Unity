@@ -20,7 +20,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="0.85" />
 			</effect>
@@ -88,7 +88,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3601" levels="10" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -110,7 +110,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">8</value>
@@ -160,7 +160,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3602" levels="10" name="Special Ability: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -182,7 +182,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">6.88</value>
@@ -247,7 +247,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3603" levels="10" name="Demonic Sword Zariche">
 		<table name="#absorbDam"> 22 24 26 29 32 35 38 42 47 50 </table>
@@ -271,7 +271,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
@@ -485,7 +485,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3604" levels="1" name="Frintezza's Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -495,7 +495,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="15" />
 				<mul stat="mReuse" val="0.95" />
@@ -519,7 +519,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3605" levels="1" name="Clan Oath Heavy Armor Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -528,7 +528,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -537,7 +537,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3606" levels="1" name="Clan Oath Light Armor Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -546,7 +546,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -555,7 +555,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3607" levels="1" name="Clan Oath Robe Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -564,7 +564,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -573,7 +573,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3608" levels="3" name="Apella Heavy Armor Set">
 		<!-- Confirmed CT2.5 -->
@@ -586,7 +586,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="reduceExpLostByPvp" val="#expLost" />
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
@@ -620,7 +620,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3609" levels="3" name="Apella Light Armor Set">
 		<!-- Confirmed CT2.5 -->
@@ -633,7 +633,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="reduceExpLostByPvp" val="#expLost" />
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
@@ -667,7 +667,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3610" levels="3" name="Apella Robe Set">
 		<!-- Confirmed CT2.5 -->
@@ -680,7 +680,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="reduceExpLostByPvp" val="#expLost" />
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
@@ -714,7 +714,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3611" levels="1" name="Enchant Heavy Armor (D-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -723,7 +723,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="StatByMoveType">
 				<stat>REGENERATE_MP_RATE</stat>
 				<type>STANDING</type>
@@ -741,7 +741,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3612" levels="1" name="Enchant Light Armor (D-grade)">
 		<icon>icon.skill0233</icon>
@@ -749,7 +749,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>14</amount>
 				<mode>DIFF</mode>
@@ -764,7 +764,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3613" levels="1" name="Enchant Robe (D-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -773,7 +773,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.3" />
 			</effect>
@@ -784,7 +784,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3614" levels="1" name="Enchant Heavy Armor (C-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -793,7 +793,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="2.019">
 					<and>
@@ -811,7 +811,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3615" levels="1" name="Enchant Light Armor (C-grade)">
 		<icon>icon.skill0233</icon>
@@ -819,7 +819,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>20</amount>
 				<mode>DIFF</mode>
@@ -834,7 +834,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3616" levels="1" name="Enchant Robe (C-grade)">
 		<icon>icon.skill0234</icon>
@@ -842,7 +842,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.3" />
 			</effect>
@@ -853,7 +853,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3617" levels="1" name="Enchant Heavy Armor (B-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -862,7 +862,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="2.25">
 					<and>
@@ -880,7 +880,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3618" levels="1" name="Enchant Light Armor (B-grade)">
 		<icon>icon.skill0233</icon>
@@ -888,7 +888,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>24</amount>
 				<mode>DIFF</mode>
@@ -903,7 +903,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3619" levels="1" name="Enchant Robe (B-grade)">
 		<icon>icon.skill0234</icon>
@@ -911,7 +911,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.3" />
 			</effect>
@@ -922,7 +922,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3620" levels="1" name="Enchant Heavy Armor (A-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -931,7 +931,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="2.43">
 					<and>
@@ -949,7 +949,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3621" levels="1" name="Enchant Light Armor (A-grade)">
 		<icon>icon.skill0233</icon>
@@ -957,7 +957,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>27</amount>
 				<mode>DIFF</mode>
@@ -972,7 +972,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3622" levels="1" name="Enchant Robe (A-grade)">
 		<icon>icon.skill0234</icon>
@@ -980,7 +980,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.3" />
 			</effect>
@@ -991,7 +991,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3623" levels="3" name="Enchant Heavy Armor (S-grade)">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -1001,7 +1001,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="2.823">
 					<and>
@@ -1019,7 +1019,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3624" levels="3" name="Enchant Light Armor (S-grade)">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -1028,7 +1028,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
 				<mode>DIFF</mode>
@@ -1043,7 +1043,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3625" levels="3" name="Enchant Robe (S-grade)">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -1052,7 +1052,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.3" />
 			</effect>
@@ -1063,7 +1063,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3626" levels="1" name="Kabokula">
 		<castRange>300</castRange>
@@ -1162,7 +1162,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
@@ -1376,7 +1376,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3630" levels="1" name="Void Burst">
 		<affectLimit>6-12</affectLimit>
@@ -1391,11 +1391,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3631" levels="1" name="Void Flow">
 		<affectLimit>6-12</affectLimit>
@@ -1411,11 +1411,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3632" levels="1" name="Clan Gate">
 		<!-- CT2.5 retail confirmed -->
@@ -1438,14 +1438,14 @@
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SendSystemMessageToClan">
 				<id>1923</id>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3633" levels="2" name="Residential Stun Immunity">
 		<!-- CT2.5 retail confirmed -->
@@ -1461,14 +1461,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">80</value>
 					<value level="2">100</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3634" levels="1" name="Special Ability: Infinity Sword">
 		<!-- Glory Days Confirmed -->
@@ -1477,7 +1477,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P.Atk. +504 on a critical hit -->
 				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
@@ -1510,7 +1510,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3635" levels="1" name="Special Ability: Infinity Shooter">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -1519,7 +1519,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- MP +30% -->
 				<!-- CP +50% -->
@@ -1548,7 +1548,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3636" levels="1" name="Dynasty Platinum Plate">
 		<!-- Confirmed CT2.5 -->
@@ -1557,7 +1557,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
@@ -1576,7 +1576,7 @@
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3637" levels="1" name="Dynasty Platinum Plate">
 		<!-- Confirmed CT2.5 -->
@@ -1585,7 +1585,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
@@ -1602,7 +1602,7 @@
 				<amount>282</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3638" levels="1" name="Dynasty Platinum Plate">
 		<!-- Confirmed CT2.5 -->
@@ -1611,7 +1611,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
@@ -1623,7 +1623,7 @@
 				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3639" levels="1" name="Dynasty Platinum Plate">
 		<!-- Confirmed CT2.5 -->
@@ -1632,7 +1632,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
@@ -1644,7 +1644,7 @@
 				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3640" levels="1" name="Dynasty Jewel Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -1653,7 +1653,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Evasion +5.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
@@ -1672,7 +1672,7 @@
 				<amount>3.24</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3641" levels="1" name="Dynasty Jewel Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -1681,7 +1681,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Accuracy +5.3 -->
 				<!-- Max MP +321 -->
@@ -1706,7 +1706,7 @@
 				<amount>1.066</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3642" levels="1" name="Dynasty Jewel Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -1715,7 +1715,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
@@ -1727,7 +1727,7 @@
 				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3643" levels="1" name="Dynasty Jewel Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -1736,7 +1736,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
@@ -1753,7 +1753,7 @@
 				<amount>282</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3644" levels="1" name="Dynasty Jewel Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -1762,7 +1762,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Atk. Spd. +6.6% -->
 				<!-- P. Atk. +2.66% -->
@@ -1783,7 +1783,7 @@
 				<amount>6.6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3645" levels="1" name="Dynasty Silver Satin Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -1792,7 +1792,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
@@ -1809,7 +1809,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3646" levels="1" name="Dynasty Silver Satin Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -1818,7 +1818,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
@@ -1835,7 +1835,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3647" levels="1" name="Dynasty Silver Satin Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -1844,7 +1844,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
@@ -1869,7 +1869,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3648" levels="1" name="Dynasty Silver Satin Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -1878,7 +1878,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- M. Atk. +6.6% -->
@@ -1898,7 +1898,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3649" levels="1" name="Beleth's Ring">
 		<!-- Confirmed CT2.5 -->
@@ -1908,7 +1908,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="30" />
 				<add stat="maxHp" val="105" />
@@ -1931,7 +1931,7 @@
 				<amount>0.23</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3650" levels="1" name="PvP Weapon - CP Drain">
 		<!-- Confirmed CT2.5 -->
@@ -1939,7 +1939,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - CP Drain -->
 				<attackerType>L2Playable</attackerType>
@@ -1953,7 +1953,7 @@
 				<skillId>5681</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3651" levels="1" name="PvP Weapon - Cancel">
 		<!-- Confirmed CT2.5 -->
@@ -1961,7 +1961,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - Cancel -->
 				<attackerType>L2Playable</attackerType>
@@ -1975,7 +1975,7 @@
 				<skillId>5682</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3652" levels="1" name="PvP Weapon - Ignore Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -1983,7 +1983,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - Ignore Shield Defense -->
 				<attackerType>L2Playable</attackerType>
@@ -1997,7 +1997,7 @@
 				<skillId>5683</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3653" levels="1" name="PvP Weapon - Attack Rate">
 		<!-- Confirmed CT2.5 -->
@@ -2005,7 +2005,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - Attack Chance -->
 				<attackerType>L2Playable</attackerType>
@@ -2019,7 +2019,7 @@
 				<skillId>5684</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3654" levels="1" name="PvP Weapon - Casting">
 		<!-- Confirmed CT2.5 -->
@@ -2027,7 +2027,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Weapon - Casting -->
 				<attackerType>L2Playable</attackerType>
@@ -2039,7 +2039,7 @@
 				<skillId>5685</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3655" levels="1" name="PvP Weapon - Rapid Fire">
 		<!-- Confirmed CT2.5 -->
@@ -2047,7 +2047,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - Rapid Fire -->
 				<attackerType>L2Playable</attackerType>
@@ -2061,7 +2061,7 @@
 				<skillId>5686</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3656" levels="1" name="PvP Weapon - Decrease Range">
 		<!-- Confirmed CT2.5 -->
@@ -2069,7 +2069,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - Decrease Range -->
 				<attackerType>L2Playable</attackerType>
@@ -2083,7 +2083,7 @@
 				<skillId>5687</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3657" levels="1" name="PvP Weapon - Decrease Resist">
 		<!-- Confirmed CT2.5 -->
@@ -2091,7 +2091,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- PvP Weapon - Decrease Resist -->
 				<attackerType>L2Playable</attackerType>
@@ -2105,7 +2105,7 @@
 				<skillId>5688</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3658" levels="1" name="PvP Shield - Reflect Damage">
 		<!-- Confirmed CT2.5 -->
@@ -2113,7 +2113,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Shield - Reflect Damage -->
 				<attackerType>L2Playable</attackerType>
@@ -2125,7 +2125,7 @@
 				<skillId>5689</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3659" levels="1" name="PvP Armor - Damage Down">
 		<!-- Confirmed CT2.5 -->
@@ -2133,7 +2133,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Damage Down -->
 				<attackerType>L2Playable</attackerType>
@@ -2145,7 +2145,7 @@
 				<skillId>5690</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3660" levels="1" name="PvP Armor - Critical Down">
 		<!-- Confirmed CT2.5 -->
@@ -2153,7 +2153,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
 				<attackerType>L2Playable</attackerType>
@@ -2165,7 +2165,7 @@
 				<skillId>5691</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3661" levels="1" name="PvP Armor - Heal">
 		<!-- Confirmed CT2.5 -->
@@ -2173,7 +2173,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Major Heal -->
 				<!-- PvP Armor - Heal -->
@@ -2183,7 +2183,7 @@
 				<chance>5</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3662" levels="1" name="PvP Armor - Speed Down">
 		<!-- Confirmed CT2.5 -->
@@ -2191,7 +2191,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
 				<attackerType>L2Playable</attackerType>
@@ -2203,7 +2203,7 @@
 				<skillId>5693</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3663" levels="1" name="PvP Armor - Mirage">
 		<!-- Confirmed CT2.5 -->
@@ -2211,7 +2211,7 @@
 		<magicLvl>80</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
 				<attackerType>L2Playable</attackerType>
@@ -2223,7 +2223,7 @@
 				<skillId>5694</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3664" levels="1" name="Red Talisman - Max. CP">
 		<!-- Confirmed CT2.5 -->
@@ -2244,12 +2244,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3665" levels="2" name="Red Talisman - CP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -2271,12 +2271,12 @@
 		<basicProperty>NONE</basicProperty>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpRegen">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3666" levels="1" name="Yellow Talisman - Increase Momentum">
 		<!-- Confirmed CT2.5 -->
@@ -2284,7 +2284,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Talisman - Increase Force -->
 				<attackerType>L2Character</attackerType>
@@ -2296,7 +2296,7 @@
 				<skillId>5695</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3667" levels="1" name="Yellow Talisman - Damage Transition">
 		<!-- Confirmed CT2.5 -->
@@ -2305,11 +2305,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="transDam" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3668" levels="1" name="Zubei's Leather Gaiters">
 		<icon>icon.armor_t65_l_i00</icon>
@@ -2317,12 +2317,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>1.47</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3669" levels="1" name="Zubei's Leather Shirt">
 		<!-- Confirmed CT2.5 -->
@@ -2331,12 +2331,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>9.55</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3670" levels="1" name="Zubei's Gauntlet">
 		<!-- Confirmed CT2.5 -->
@@ -2345,12 +2345,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.59</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3671" levels="1" name="Zubei's Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2359,12 +2359,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.59</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3672" levels="1" name="Zubei's Gaiters">
 		<!-- Confirmed CT2.5 -->
@@ -2373,7 +2373,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="123" />
 			</effect>
@@ -2381,7 +2381,7 @@
 				<amount>2.08</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3673" levels="1" name="Zubei's Gauntlet">
 		<!-- Confirmed CT2.5 -->
@@ -2390,7 +2390,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="49" />
 			</effect>
@@ -2398,7 +2398,7 @@
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3674" levels="1" name="Zubei's Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2407,7 +2407,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="49" />
 			</effect>
@@ -2415,7 +2415,7 @@
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3675" levels="1" name="Zubei's Helmet">
 		<!-- Confirmed CT2.5 -->
@@ -2424,7 +2424,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="74" />
 			</effect>
@@ -2432,7 +2432,7 @@
 				<amount>1.25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3676" levels="1" name="Zubei's Breastplate">
 		<!-- Confirmed CT2.5 -->
@@ -2441,7 +2441,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="294" />
 			</effect>
@@ -2449,7 +2449,7 @@
 				<amount>7.24</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3677" levels="1" name="Tunic of Zubei">
 		<!-- Confirmed CT2.5 -->
@@ -2458,12 +2458,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3678" levels="1" name="Stockings of Zubei">
 		<!-- Confirmed CT2.5 -->
@@ -2472,12 +2472,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>2.08</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3679" levels="1" name="Zubei's Gauntlet">
 		<!-- Confirmed CT2.5 -->
@@ -2486,12 +2486,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3680" levels="1" name="Zubei's Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2500,12 +2500,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3681" levels="1" name="Zubei's Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2514,11 +2514,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3682" levels="1" name="Avadon Gloves">
 		<!-- Confirmed CT2.5 -->
@@ -2527,11 +2527,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="49" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3683" levels="1" name="Avadon Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2540,11 +2540,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="49" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3684" levels="1" name="Avadon Circlet">
 		<!-- Confirmed CT2.5 -->
@@ -2553,11 +2553,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="73" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3685" levels="1" name="Avadon Gaiters">
 		<!-- Confirmed CT2.5 -->
@@ -2566,11 +2566,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="122" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3686" levels="1" name="Avadon Breastplate">
 		<!-- Confirmed CT2.5 -->
@@ -2579,11 +2579,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="833" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3687" levels="1" name="Avadon Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2592,11 +2592,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.01" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3688" levels="1" name="Avadon Circlet">
 		<!-- Confirmed CT2.5 -->
@@ -2605,7 +2605,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="1440" />
 			</effect>
@@ -2613,7 +2613,7 @@
 				<amount>1.25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3689" levels="1" name="Avadon Gloves">
 		<!-- Confirmed CT2.5 -->
@@ -2622,7 +2622,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="960" />
 			</effect>
@@ -2630,7 +2630,7 @@
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3690" levels="1" name="Avadon Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -2639,7 +2639,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="11038" />
 			</effect>
@@ -2647,7 +2647,7 @@
 				<amount>17.08</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3691" levels="1" name="Avadon Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2656,7 +2656,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="960" />
 			</effect>
@@ -2664,7 +2664,7 @@
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3692" levels="1" name="Avadon Circlet">
 		<!-- Confirmed CT2.5 -->
@@ -2673,12 +2673,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>1.25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3693" levels="1" name="Avadon Gloves">
 		<!-- Confirmed CT2.5 -->
@@ -2687,12 +2687,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3694" levels="1" name="Avadon Robe">
 		<!-- Confirmed CT2.5 -->
@@ -2701,7 +2701,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>17.08</amount>
 				<mode>PER</mode>
@@ -2710,7 +2710,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3695" levels="1" name="Avadon Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2719,12 +2719,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>0.83</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3696" levels="1" name="Doom Gloves">
 		<!-- Confirmed CT2.5 -->
@@ -2733,7 +2733,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="53" />
 			</effect>
@@ -2741,7 +2741,7 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3697" levels="1" name="Doom Boots">
 		<!-- Confirmed CT2.5 -->
@@ -2750,7 +2750,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="53" />
 			</effect>
@@ -2758,7 +2758,7 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3698" levels="1" name="Doom Plate Armor">
 		<!-- Confirmed CT2.5 -->
@@ -2767,7 +2767,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="1093" />
 			</effect>
@@ -2775,7 +2775,7 @@
 				<amount>383</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3699" levels="1" name="Doom Helmet">
 		<!-- Confirmed CT2.5 -->
@@ -2784,7 +2784,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="80" />
 			</effect>
@@ -2792,6 +2792,6 @@
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

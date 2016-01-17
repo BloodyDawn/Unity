@@ -18,9 +18,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="NoblesseBless" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15101" levels="1" name="Elise' Radiant Heal">
 		<!-- Glory Days confirmed -->
@@ -37,11 +37,11 @@
 		<hitCancelTime>1</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15102" levels="1" name="Elise' Radiant Heal">
 		<!-- Glory Days confirmed -->
@@ -58,11 +58,11 @@
 		<hitCancelTime>1</hitCancelTime>
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15103" levels="1" name="Elise' Radiant Heal">
 		<!-- Glory Days confirmed -->
@@ -79,11 +79,11 @@
 		<hitCancelTime>1</hitCancelTime>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15104" levels="1" name="Dimensional Trap">
 		<!-- Glory Days confirmed -->
@@ -108,12 +108,12 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15105" levels="1" name="Mysterious Shadow">
 		<!-- Glory Days confirmed -->
@@ -135,14 +135,14 @@
 		<reuseDelay>360000</reuseDelay>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>34903</itemConsumeId> <!-- Mysterious Shadow -->
-		<for>
+		<effects>
 			<effect name="Hide">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15106" levels="1" name="Mysterious Power">
 		<!-- AUTO GENERATED SKILL -->
@@ -1086,7 +1086,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
 			</effect>
@@ -1094,7 +1094,7 @@
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15156" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1588,10 +1588,10 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15183" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -1611,10 +1611,10 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15184" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -1634,10 +1634,10 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15185" levels="1" name="Adolph's Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -1665,14 +1665,14 @@
 		<isDebuff>true</isDebuff>
 		<affectRange>150</affectRange>
 		<fanRange>0;0;150;180</fanRange>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9516</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15186" levels="1" name="Adolph's Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -1700,14 +1700,14 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11162</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15187" levels="1" name="Adolph's Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -1735,14 +1735,14 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12809</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15188" levels="1" name="Hayuk's Multiple Arrow">
 		<!-- Glory Days confirmed -->
@@ -1762,11 +1762,11 @@
 		<reuseDelay>7000</reuseDelay>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>23391</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15189" levels="1" name="Hayuk's Multiple Arrow">
 		<!-- Glory Days confirmed -->
@@ -1786,11 +1786,11 @@
 		<reuseDelay>7000</reuseDelay>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>27459</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15190" levels="1" name="Hayuk's Multiple Arrow">
 		<!-- Glory Days confirmed -->
@@ -1810,11 +1810,11 @@
 		<reuseDelay>7000</reuseDelay>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>31527</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15191" levels="1" name="Hayuk's Heavy Arrow Rain">
 		<!-- Glory Days confirmed -->
@@ -1833,11 +1833,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>22526</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15192" levels="1" name="Hayuk's Heavy Arrow Rain">
 		<!-- Glory Days confirmed -->
@@ -1856,11 +1856,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>26448</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15193" levels="1" name="Hayuk's Heavy Arrow Rain">
 		<!-- Glory Days confirmed -->
@@ -1879,11 +1879,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>30371</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15194" levels="1" name="Eliyah's Mass Exile">
 		<!-- Glory Days confirmed -->
@@ -1912,7 +1912,7 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>282</power>
 			</effect>
@@ -1920,7 +1920,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15195" levels="1" name="Eliyah's Mass Exile">
 		<!-- Glory Days confirmed -->
@@ -1949,7 +1949,7 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>296</power>
 			</effect>
@@ -1957,7 +1957,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15196" levels="1" name="Eliyah's Mass Exile">
 		<!-- Glory Days confirmed -->
@@ -1986,7 +1986,7 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>313</power>
 			</effect>
@@ -1994,7 +1994,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="15197" levels="1" name="Guardian Spirit's Wrath">
 		<!-- AUTO GENERATED SKILL -->

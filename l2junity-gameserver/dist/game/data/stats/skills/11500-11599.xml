@@ -20,11 +20,11 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>104</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11501" levels="10" name="Superior Dual Weapon Mastery">
 		<!-- Glory Days confirmed -->
@@ -46,7 +46,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="1.20" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
@@ -103,7 +103,7 @@
 					<item> DUALBLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11502" levels="10" name="Superior Robe Mastery">
 		<!-- Glory Days confirmed -->
@@ -125,7 +125,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="4636">
 					<using kind="MAGIC" />
@@ -154,7 +154,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11503" levels="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
@@ -176,7 +176,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="4636">
 					<using kind="LIGHT" />
@@ -205,7 +205,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11504" levels="10" name="Superior Heavy Armor Mastery">
 		<!-- Glory Days confirmed -->
@@ -227,7 +227,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="4636">
 					<using kind="HEAVY" />
@@ -256,7 +256,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11505" levels="10" name="Superior Anti Magic">
 		<!-- Glory Days confirmed -->
@@ -278,7 +278,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.35" />
 			</effect>
@@ -297,7 +297,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11506" levels="10" name="Superior HP Boost">
 		<!-- Glory Days confirmed -->
@@ -319,12 +319,12 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11507" levels="10" name="Superior MP Boost">
 		<!-- Glory Days confirmed -->
@@ -346,7 +346,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -365,7 +365,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11508" levels="9" name="Assault Rush">
 		<!-- Glory Days confirmed -->
@@ -430,12 +430,12 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnemyCharge" />
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11509" levels="11" name="Crippling Attack">
 		<!-- Glory Days confirmed -->
@@ -505,7 +505,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">14608</value>
@@ -537,7 +537,7 @@
 				<amount>-15</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11510" levels="11" name="Shadow Blade">
 		<!-- Glory Days confirmed -->
@@ -602,7 +602,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">14608</value>
@@ -630,7 +630,7 @@
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11511" levels="11" name="Death Strike">
 		<!-- Glory Days confirmed -->
@@ -689,7 +689,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">21642</value>
@@ -707,7 +707,7 @@
 				<overHit>true</overHit>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11513" levels="11" name="Mass Crippling Attack">
 		<!-- Glory Days confirmed -->
@@ -775,7 +775,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10263</value>
@@ -807,7 +807,7 @@
 				<amount>-15</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11514" levels="11" name="Mass Shadow Blade">
 		<!-- Glory Days confirmed -->
@@ -874,7 +874,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11722</value>
@@ -902,7 +902,7 @@
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11515" levels="5" name="Confusion Bomber">
 		<!-- Glory Days confirmed -->
@@ -947,7 +947,7 @@
 		<abnormalTime>5</abnormalTime>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -962,7 +962,7 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>11516</skillId>
@@ -1021,7 +1021,7 @@
 		<trait>DERANGEMENT</trait>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8805</value>
@@ -1041,7 +1041,7 @@
 					<value level="15">16103</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11517" levels="4" name="Horn Melody">
 		<!-- Glory Days confirmed -->
@@ -1099,7 +1099,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
 				<rate>100</rate>
@@ -1143,7 +1143,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11518" levels="4" name="Drum Melody">
 		<!-- For 30 minutes, party members' Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from critical attacks - 30% and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
@@ -1198,7 +1198,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
 				<mul stat="debuffVuln" val="1.10" />
@@ -1270,7 +1270,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11519" levels="4" name="Pipe Organ Melody">
 		<!-- Glory Days confirmed -->
@@ -1327,7 +1327,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 			</effect>
@@ -1360,7 +1360,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11520" levels="4" name="Guitar Melody">
 		<!-- Glory Days confirmed -->
@@ -1410,7 +1410,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="mCritRate" val="20" />
@@ -1428,7 +1428,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11521" levels="4" name="Harp Melody">
 		<!-- Glory Days confirmed -->
@@ -1481,7 +1481,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
 				<rate>100</rate>
@@ -1529,7 +1529,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11522" levels="4" name="Lute Melody">
 		<!-- Glory Days confirmed -->
@@ -1580,7 +1580,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
 				<rate>100</rate>
@@ -1610,7 +1610,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11523" levels="1" name="Knight's Harmony">
 		<!-- Glory Days confirmed -->
@@ -1634,7 +1634,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="1.50" />
 				<mul stat="rCrit" val="1" />
@@ -1662,7 +1662,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11524" levels="1" name="Warrior's Harmony">
 		<!-- Glory Days confirmed -->
@@ -1686,7 +1686,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 			</effect>
@@ -1721,7 +1721,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11525" levels="1" name="Wizard's Harmony">
 		<!-- Glory Days confirmed -->
@@ -1745,7 +1745,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -1789,7 +1789,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11526" levels="10" name="Superior Sword/Blunt Weapon Mastery">
 		<!-- Glory Days confirmed -->
@@ -1811,7 +1811,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -1851,7 +1851,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11529" levels="1" name="Prevailing Sonata">
 		<!-- Glory Days confirmed -->
@@ -1875,7 +1875,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
@@ -1900,7 +1900,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11530" levels="1" name="Daring Sonata">
 		<!-- Glory Days confirmed -->
@@ -1924,7 +1924,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
 				<rate>100</rate>
@@ -1968,7 +1968,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11532" levels="1" name="Refreshing Sonata">
 		<!-- Glory Days confirmed -->
@@ -1992,7 +1992,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
@@ -2022,7 +2022,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11533" levels="1" name="Blood Requiem">
 		<!-- Updated to IO -->
@@ -2046,7 +2046,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>22</isMagic>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
@@ -2054,7 +2054,7 @@
 				<amount>80</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11534" levels="6" name="Angel's Touch">
 		<!-- Updated to IO -->
@@ -2106,11 +2106,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11536" levels="9" name="Divine Cancel">
 		<!-- Updated to IO -->
@@ -2152,7 +2152,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>
@@ -2168,7 +2168,7 @@
 				</rate>
 				<max>2</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11537" levels="10" name="Transform">
 		<!-- Glory Days confirmed -->
@@ -2233,7 +2233,7 @@
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
@@ -2266,7 +2266,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11538" levels="7" name="Mass Giant Root">
 		<!-- Updated to IO -->
@@ -2313,12 +2313,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11539" levels="11" name="Petrify">
 		<!-- Updated to IO -->
@@ -2370,7 +2370,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>TURN_STONE</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -2378,7 +2378,7 @@
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11540" levels="7" name="Quick Escape">
 		<!-- Glory Days confirmed -->
@@ -2418,7 +2418,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<transformationId>500</transformationId>
 			</effect>
@@ -2461,7 +2461,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11541" levels="1" name="Polymorph">
 		<!-- Glory Days confirmed -->
@@ -2483,7 +2483,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Untargetable" />
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<transformationId>505</transformationId>
@@ -2496,7 +2496,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11543" levels="6" name="Disperse">
 		<!-- Glory Days confirmed -->
@@ -2542,7 +2542,7 @@
 		</magicLvl>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
@@ -2598,7 +2598,7 @@
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
 		<!-- Glory Days confirmed -->
@@ -2620,7 +2620,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -2637,7 +2637,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11545" levels="1" name="Crazy Nocturne">
 		<!-- AUTO GENERATED SKILL -->
@@ -2659,12 +2659,12 @@
 		<abnormalLvl>5</abnormalLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="1.50" />
 				<mul stat="defMCritRate" val="1.50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11546" levels="4" name="Chaos Symphony">
 		<!-- Glory Days confirmed -->
@@ -2696,7 +2696,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">38826</value>
@@ -2729,7 +2729,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11547" levels="10" name="Superior HP Recovery">
 		<!-- Glory Days confirmed -->
@@ -2751,7 +2751,7 @@
 		<icon>icon.skill0212</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -2770,7 +2770,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11548" levels="1" name="Superior Quick Recovery">
 		<!-- Glory Days confirmed -->
@@ -2780,12 +2780,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<mul stat="mReuse" val="0.75" /> <!-- TODO check me seems based on isMagic type -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11549" levels="1" name="Superior Mana Steal">
 		<!-- Glory Days confirmed -->
@@ -2795,7 +2795,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Superior Mana Steal -->
 				<attackerType>L2Character</attackerType>
@@ -2809,7 +2809,7 @@
 				<skillId>11550</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11550" levels="1" name="Superior Mana Steal">
 		<!-- Glory Days confirmed -->
@@ -2821,11 +2821,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>3000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11551" levels="1" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -2835,7 +2835,7 @@
 		<icon>icon.skill10257</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -2846,7 +2846,7 @@
 				<SLEEP>30</SLEEP>
 				<DERANGEMENT>30</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11552" levels="4" name="Superior Divine Lore">
 		<!-- Glory Days confirmed -->
@@ -2857,13 +2857,13 @@
 		<icon>icon.skill11506</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsumes" />
 				<mul stat="MagicalMpConsumeRate" val="#mpConsumes" />
 				<mul stat="DanceMpConsumeRate" val="#mpConsumes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11553" levels="1" name="Superior Focus Mind">
 		<!-- Glory Days confirmed -->
@@ -2873,7 +2873,7 @@
 		<icon>icon.skill11187</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -2881,7 +2881,7 @@
 				<amount>8.4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11554" levels="1" name="Superior Sixth Sense">
 		<!-- Glory Days confirmed -->
@@ -2891,14 +2891,14 @@
 		<icon>icon.skill11504</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="rEvas" val="17">
 					<player hp="30" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11555" levels="1" name="Superior Fast Spell Casting">
 		<!-- Glory Days confirmed -->
@@ -2908,12 +2908,12 @@
 		<icon>icon.skill11788</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11556" levels="1" name="Cancel Transform">
 		<!-- Glory Days confirmed -->
@@ -2926,11 +2926,11 @@
 		<trait>HOLD</trait>
 		<targetType>SELF</targetType>
 		<isMagic>2</isMagic> <!-- Static Skill -->
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11557" levels="1" name="Ultimate Scourge">
 		<!-- Glory Days confirmed -->
@@ -2956,14 +2956,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<trait>BOSS</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="HpRegen">
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11558" levels="1" name="Ultimate Oblivion">
 		<!-- Glory Days confirmed -->
@@ -2984,9 +2984,9 @@
 		<magicLvl>85</magicLvl>
 		<affectLimit>10-10</affectLimit>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11559" levels="1" name="Ultimate Suspension">
 		<!-- Updated to Ertheia -->
@@ -3013,12 +3013,12 @@
 		<trait>BOSS</trait>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pReuse" val="3.00" /> <!-- 200% -->
 				<mul stat="mReuse" val="3.00" /> <!-- 200% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11560" levels="2" name="Celestial Aegis">
 		<!--Updated to Ertheia -->
@@ -3056,12 +3056,12 @@
 		</affectLimit>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelBySlotMyself">
 				<dispel>MAGICAL_STANCE</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11561" levels="7" name="Giant Root">
 		<!-- Updated to Ertheia -->
@@ -3113,12 +3113,12 @@
 			<value level="7">105</value>
 		</magicLvl>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11562" levels="1" name="Devil's Movement">
 		<!-- Updated to Ertheia -->
@@ -3142,7 +3142,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SilentMove" />
 			<effect name="TriggerSkillByMagicType">
 				<!-- Cancel Shadow Move -->
@@ -3178,7 +3178,7 @@
 				<isCritical>false</isCritical>
 				<allowWeapons>SWORD,BLUNT</allowWeapons>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11563" levels="1" name="Quick Return">
 		<!-- Glory Days confirmed -->
@@ -3198,11 +3198,11 @@
 		<cond msgId="113" addName="1">
 			<player canEscape="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11564" levels="4" name="Angel's Resurrection">
 		<!-- Updated to Ertheia -->
@@ -3233,7 +3233,7 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>
 					<value level="1">40</value>
@@ -3242,7 +3242,7 @@
 					<value level="4">70</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11565" levels="1" name="Elemental Resistance">
 		<!-- Glory Days confirmed -->
@@ -3265,7 +3265,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="30" />
 				<add stat="windRes" val="30" />
@@ -3279,7 +3279,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11566" levels="1" name="Holy Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -3302,7 +3302,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="30" />
 				<add stat="darkRes" val="30" />
@@ -3318,7 +3318,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11567" levels="1" name="Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -3340,7 +3340,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="cancelVuln" val="30" />
 				<add stat="debuffVuln" val="20" />
@@ -3357,7 +3357,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11569" levels="1" name="Critical Damage Increase">
 		<!-- Glory Days confirmed -->
@@ -3376,7 +3376,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -3395,7 +3395,7 @@
 					<item>DUALBLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11570" levels="1" name="Healing Melody">
 		<!-- Heals target and the 10 most injured allies around target by up to 35% of their Max HP. The recovery amount decreases starting from the most injured person. -->
@@ -3414,11 +3414,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11571" levels="1" name="Recovery Melody">
 		<!-- Updated to Ertheia -->
@@ -3437,11 +3437,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>1000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11580" levels="7" name="Mass Transform">
 		<!-- AUTO GENERATED SKILL -->
@@ -3481,7 +3481,7 @@
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
@@ -3492,7 +3492,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11581" levels="4" name="Superior Advantage">
 		<!-- Skill Cooldown - 5%, Skill Power + 5%, MP Recovery Rate + 5, and Max HP, MP, and CP + 5%. Skill mastery effect + 10%. -->
@@ -3505,7 +3505,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11841</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
@@ -3543,7 +3543,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11582" levels="4" name="Mass Song of Silence">
 		<!-- Updated to IO -->
@@ -3578,10 +3578,10 @@
 		<effectPoint>-507</effectPoint>
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11583" levels="4" name="Superior Song of Mastery">
 		<!-- Updated to IO -->
@@ -3596,7 +3596,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">5</value>
@@ -3619,7 +3619,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11584" levels="4" name="Mass Medusa's Dance">
 		<!-- Updated to IO -->
@@ -3655,9 +3655,9 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>120000</reuseDelay>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11585" levels="4" name="Superior Dance of Mastery">
 		<!-- Updated to IO -->
@@ -3666,7 +3666,7 @@
 		<icon>icon.skill0141</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -3689,7 +3689,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11586" levels="4" name="Pa'agrio's Bravery">
 		<!-- Updated to IO -->
@@ -3713,7 +3713,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>669</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<power>
 					<value level="1">5</value>
@@ -3731,7 +3731,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11587" levels="4" name="Mass Blockade">
 		<!-- AUTO GENERATED SKILL -->
@@ -3752,9 +3752,9 @@
 		<reuseDelay>120000</reuseDelay>
 		<effectPoint>-673</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackMute" /> <!-- TODO: Only during pvp? -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="11588" levels="4" name="Superior Wizard Mastery">
 		<!-- Updated to IO -->
@@ -3763,7 +3763,7 @@
 		<icon>icon.skill0164</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">10</value>
@@ -3773,7 +3773,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11589" levels="4" name="Horn Frenzy">
 		<!-- Updated to IO -->
@@ -3823,7 +3823,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
 				<rate>100</rate>
@@ -3867,7 +3867,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11590" levels="4" name="Drum Frenzy">
 		<!-- Updated to IO -->
@@ -3914,7 +3914,7 @@
 			<value level="4">712</value>
 		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
 				<mul stat="debuffVuln" val="1.10" />
@@ -3987,7 +3987,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11591" levels="4" name="Pipe Organ Frenzy">
 		<!-- Updated to IO -->
@@ -4036,7 +4036,7 @@
 			<value level="4">712</value>
 		</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 			</effect>
@@ -4069,7 +4069,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11592" levels="4" name="Guitar Frenzy">
 		<!-- Updated to IO -->
@@ -4112,7 +4112,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 				<add stat="mCritRate" val="20" />
@@ -4130,7 +4130,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11593" levels="4" name="Harp Frenzy">
 		<!-- Updated to IO -->
@@ -4176,7 +4176,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
 				<rate>100</rate>
@@ -4224,7 +4224,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11594" levels="4" name="Lute Frenzy">
 		<!-- Updated to IO -->
@@ -4267,7 +4267,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
 				<rate>100</rate>
@@ -4297,7 +4297,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11595" levels="1" name="Knight's Frenzied Harmony">
 		<!-- Updated to IO -->
@@ -4317,7 +4317,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 				<mul stat="sDef" val="1.50" />
@@ -4345,7 +4345,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11596" levels="1" name="Warrior's Frenzied Harmony">
 		<!-- Updated to IO -->
@@ -4366,7 +4366,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 			</effect>
@@ -4401,7 +4401,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11597" levels="1" name="Wizard's Frenzied Harmony">
 		<!-- Updated to IO -->
@@ -4421,7 +4421,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2.00" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -4465,7 +4465,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11598" levels="4" name="Greater Freezing Flame">
 		<!-- Updated to IO -->
@@ -4495,7 +4495,7 @@
 		<isMagic>1</isMagic>
 		<effectPoint>-379</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">326</value>
@@ -4504,7 +4504,7 @@
 					<value level="4">375</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11599" levels="4" name="Combat Cry">
 		<!-- Updated to IO -->
@@ -4515,7 +4515,7 @@
 		<operateType>T</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>1</mpConsume>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>
 					<value level="1">4</value>
@@ -4564,6 +4564,6 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

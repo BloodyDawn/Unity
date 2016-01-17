@@ -16,11 +16,11 @@
 		<cond>
 			<player canUntransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TRANSFORM,-1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6201" levels="1" name="Transformed: Frog">
 		<!-- Confirmed CT2.5 -->
@@ -44,7 +44,7 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
@@ -58,7 +58,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6202" levels="1" name="Transformed: Young Child">
 		<!-- Confirmed CT2.5 -->
@@ -82,7 +82,7 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
@@ -96,7 +96,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6203" levels="1" name="Transformed: Native">
 		<!-- Confirmed CT2.5 -->
@@ -120,7 +120,7 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
@@ -134,7 +134,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6204" levels="1" name="Transformed: Guards of the Dawn">
 		<!-- Confirmed CT2.5 -->
@@ -158,7 +158,7 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<mul stat="weightLimit" val="11" />
 				<add stat="weightPenalty" val="9000" />
@@ -172,7 +172,7 @@
 			<effect name="BlockBuffSlot">
 				<slot>IMPROVE_SPEED_AVOID_UP;SPEED_UP</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6205" levels="19" name="Strider Bite">
 		<!-- Confirmed CT2.5 -->
@@ -260,7 +260,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1649</value>
@@ -308,7 +308,7 @@
 					<value level="19">87</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6206" levels="19" name="Strider Fear">
 		<!-- Confirmed CT2.5 -->
@@ -414,10 +414,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6207" levels="1" name="Strider Dash">
 		<!-- Confirmed CT2.5 -->
@@ -436,12 +436,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>66</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6208" levels="1" name="Blessed Guidance">
 		<!-- Blessed Guidance. For 10 seconds, increases accuracy by 2. -->
@@ -472,7 +472,7 @@
 		<stayAfterDeath>true</stayAfterDeath>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -497,7 +497,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6213" levels="4" name="Armor Grade Penalty">
 		<table name="#amount"> 0.8333 0.6944 0.5787 0.4823 </table>
@@ -513,7 +513,7 @@
 		<stayAfterDeath>true</stayAfterDeath>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">-16.67</value>
@@ -550,7 +550,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6217" levels="1" name="Raid Boss (Lv. 81)">
 		<!-- Confirmed CT2.5 -->
@@ -738,14 +738,14 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6238" levels="1" name="Decrease Speed">
 		<abnormalLvl>4</abnormalLvl>
@@ -766,7 +766,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>2000</hitTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>18162</power>
 			</effect>
@@ -784,7 +784,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6239" levels="1" name="Proof of Time and Space">
 		<!-- Confirmed CT2.5 -->
@@ -805,12 +805,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>15352</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6240" levels="5" name="Heatstroke">
 		<abnormalLvl>
@@ -1019,13 +1019,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>13270</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>7200</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6252" levels="1" name="Sultriness Attack">
 		<effectPoint>-1111</effectPoint>
@@ -1314,11 +1314,11 @@
 		<targetType>AURA</targetType>
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>150000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6269" levels="1" name="Trojan Poison">
 		<abnormalLvl>10</abnormalLvl>
@@ -1425,7 +1425,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>38976</power>
 			</effect>
@@ -1433,7 +1433,7 @@
 				<skillId>6662</skillId>
 				<skillLevel>2</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6275" levels="1" name="Eternal Blizzard">
 		<!-- Confirmed CT2.5 -->
@@ -1454,7 +1454,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>45256</power>
 			</effect>
@@ -1462,7 +1462,7 @@
 				<skillId>6662</skillId>
 				<skillLevel>2</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6276" levels="1" name="Eternal Blizzard">
 		<!-- Confirmed CT2.5 -->
@@ -1517,11 +1517,11 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6279" levels="1" name="Attack Nearby Range">
 		<!-- Confirmed CT2.5 -->
@@ -1539,11 +1539,11 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6280" levels="1" name="Announcement of Death">
 		<!-- Confirmed CT2.5 -->
@@ -1589,11 +1589,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6282" levels="1" name="Reflect Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1613,11 +1613,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>500</hitTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="vengeanceMdam" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6283" levels="1" name="Ice Storm">
 		<!-- Confirmed CT2.5 -->
@@ -1636,11 +1636,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6284" levels="1" name="Freya's Bless">
 		<!-- Confirmed CT2.5 -->
@@ -1660,7 +1660,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -1673,7 +1673,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6285" levels="1" name="Rage of Ice">
 		<!-- Confirmed CT2.5 -->
@@ -1691,12 +1691,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6286" levels="1" name="Divine Protection of Sword">
 		<!-- Confirmed CT2.5 -->
@@ -1719,7 +1719,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1728,7 +1728,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6287" levels="1" name="Divine Protection of Sword">
 		<!-- Confirmed CT2.5 -->
@@ -1746,7 +1746,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<power>100</power>
 			</effect>
@@ -1756,7 +1756,7 @@
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6288" levels="1" name="Jinia's Prayer">
 		<!-- Confirmed CT2.5 -->
@@ -1776,7 +1776,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>300</amount>
 				<mode>PER</mode>
@@ -1785,7 +1785,7 @@
 				<amount>300</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6289" levels="1" name="Kegor's Courage">
 		<!-- Confirmed CT2.5 -->
@@ -1805,7 +1805,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>200</amount>
 				<mode>PER</mode>
@@ -1822,7 +1822,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6290" levels="1" name="Power Strike">
 		<!-- Confirmed CT2.5 -->
@@ -1839,11 +1839,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6291" levels="1" name="Power Strike">
 		<!-- Confirmed CT2.5 -->
@@ -1859,11 +1859,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6292" levels="1" name="Rush">
 		<!-- Confirmed CT2.5 -->
@@ -1886,12 +1886,12 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6293" levels="1" name="Power Strike">
 		<!-- Confirmed CT2.5 -->
@@ -1910,11 +1910,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6294" levels="1" name="Leader's Roar">
 		<!-- Confirmed CT2.5 -->
@@ -1936,12 +1936,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6295" levels="1" name="Point Target">
 		<!-- Confirmed CT2.5 -->
@@ -1978,12 +1978,12 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6297" levels="1" name="Cylinder Throw">
 		<!-- Confirmed CT2.5 -->
@@ -2001,11 +2001,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6298" levels="1" name="Summon Subordinate Knight">
 		<!-- Confirmed CT2.5 -->
@@ -2038,7 +2038,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>1547</power>
 			</effect>
@@ -2046,6 +2046,6 @@
 				<skillId>6662</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -37,7 +37,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11903</value>
@@ -50,7 +50,7 @@
 				</power>
 			</effect>
 			<effect name="Plunder" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10701" levels="4" name="Superior Vitality">
 		<!-- Max HP and CP + 5%. P. Atk. + 5%. Increases damage inflicted on an NPC by 30%. -->
@@ -64,7 +64,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#inc" />
 				<mul stat="pvePhysDmg" val="1.3" />
@@ -89,7 +89,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10702" levels="7" name="Plunder">
 		<!-- Inflicts 13580 damage onto target and steals their item. Requires a dagger or dual dagger. -->
@@ -125,7 +125,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13580</value>
@@ -138,7 +138,7 @@
 				</power>
 			</effect>
 			<effect name="Plunder" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10703" levels="3" name="Armor Breaker">
 		<!-- Updated to IO -->
@@ -163,9 +163,9 @@
 		<reuseDelay>90000</reuseDelay>
 		<effectPoint>-655</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Disarmor" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10704" levels="3" name="Mass Power Bluff">
 		<!-- Reveals the enemy's back and inflicts Stun for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
@@ -191,7 +191,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Bluff">
 				<chance>80</chance>
 			</effect>
@@ -202,7 +202,7 @@
 				<chance>80</chance>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10705" levels="1" name="Shadow Walking">
 		<!-- Updated to IO -->
@@ -211,7 +211,7 @@
 		<operateType>T</operateType>
 		<targetType>SELF</targetType>
 		<mpConsume>64</mpConsume>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="-0.1"> <!-- Decreases frontal critical attack rate by 10% -->
 					<player front="true" />
@@ -235,7 +235,7 @@
 					<player behind="true" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10747" levels="1" name="Rogue - Individual Passive">
 		<!-- Glory Days confirmed -->
@@ -271,7 +271,7 @@
 		<magicLvl>85</magicLvl>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
 			<effect name="BlockActions">
@@ -285,7 +285,7 @@
 			<effect name="Lethal">
 				<halfLethal>15</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10749" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -308,11 +308,11 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10750" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -337,11 +337,11 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10751" levels="10" name="Superior Bow/Crossbow Mastery">
 		<!-- Glory Days confirmed -->
@@ -363,7 +363,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1">
@@ -412,7 +412,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10752" levels="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
@@ -434,7 +434,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="maxHp" val="4783">
@@ -478,7 +478,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10753" levels="1" name="Superior Hawkeye Mastery">
 		<!-- Glory Days confirmed -->
@@ -488,7 +488,7 @@
 		<operateType>P</operateType>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.7">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
@@ -512,7 +512,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10754" levels="10" name="Superior Survival Ability">
 		<!-- Glory Days confirmed -->
@@ -534,7 +534,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<sub stat="damageZoneVuln" val="30" />
@@ -565,7 +565,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10755" levels="10" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -587,7 +587,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="reflectSkillPhysic" val="10" />
@@ -679,7 +679,7 @@
 					<value level="10">40</value>
 				</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10756" levels="10" name="Superior Critical Arrow">
 		<!-- Glory Days confirmed -->
@@ -701,7 +701,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<mul stat="rCrit" val="0.25" />
@@ -722,7 +722,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10757" levels="4" name="Dead Eye Stance">
 		<!-- Can't be Glory Days confirmed, was toggle -->
@@ -753,7 +753,7 @@
 		<effectPoint>687</effectPoint>
 		<toggleGroupId>2</toggleGroupId>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10</value>
@@ -782,7 +782,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10758" levels="4" name="Rapid Fire Stance">
 		<!-- Can't be Glory Days confirmed, was toggle -->
@@ -813,7 +813,7 @@
 		<effectPoint>687</effectPoint>
 		<toggleGroupId>2</toggleGroupId>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="#pReuse">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
@@ -833,7 +833,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10759" levels="4" name="Sniper Stance">
 		<!-- Can't be Glory Days confirmed, was toggle -->
@@ -864,7 +864,7 @@
 		<effectPoint>687</effectPoint>
 		<toggleGroupId>2</toggleGroupId>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10</value>
@@ -893,7 +893,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10760" levels="11" name="Tornado Shot">
 		<!-- Glory Days confirmed -->
@@ -970,7 +970,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">20814</value>
@@ -988,7 +988,7 @@
 				<overHit>true</overHit>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10761" levels="11" name="Bow Strike">
 		<!-- Glory Days confirmed -->
@@ -1056,7 +1056,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2681</value>
@@ -1086,7 +1086,7 @@
 				<SLEEP>100</SLEEP>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10762" levels="11" name="Quick Shot">
 		<!-- Glory Days confirmed -->
@@ -1145,7 +1145,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Disregards 30% of the target's P. Def -->
 				<power>
@@ -1165,7 +1165,7 @@
 				<pDefMod>0.70</pDefMod>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10763" levels="11" name="Pinpoint Shot">
 		<!-- Glory Days confirmed -->
@@ -1224,7 +1224,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">32463</value>
@@ -1246,7 +1246,7 @@
 			<effect name="Lethal">
 				<halfLethal>15</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10764" levels="1" name="Knock Back">
 		<!-- Glory Days confirmed -->
@@ -1267,13 +1267,13 @@
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
 				<distance>100</distance>
 			</effect>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10765" levels="1" name="Knock Back">
 		<!-- Glory Days confirmed -->
@@ -1295,13 +1295,13 @@
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
 				<distance>100</distance>
 			</effect>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10766" levels="1" name="Additional Effect">
 		<!-- Glory Days confirmed -->
@@ -1321,11 +1321,11 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="1.5" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10767" levels="1" name="Half-kill">
 		<!-- Glory Days confirmed -->
@@ -1338,11 +1338,11 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Lethal">
 				<halfLethal>100</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10768" levels="1" name="Blink">
 		<!-- Glory Days confirmed -->
@@ -1361,11 +1361,11 @@
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
 		<!-- TODO cond {op_blink;_back;300} -->
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
@@ -1434,7 +1434,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">24834</value>
@@ -1452,7 +1452,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10770" levels="11" name="Recoil Shot">
 		<!-- Glory Days confirmed -->
@@ -1520,7 +1520,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">25808</value>
@@ -1545,7 +1545,7 @@
 			<effect name="TargetCancel">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10771" levels="11" name="Multiple Arrow">
 		<!-- Glory Days confirmed -->
@@ -1608,7 +1608,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">23391</value>
@@ -1626,7 +1626,7 @@
 				<overHit>true</overHit>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10772" levels="11" name="Heavy Arrow Rain">
 		<!-- Glory Days confirmed -->
@@ -1687,7 +1687,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">22526</value>
@@ -1705,7 +1705,7 @@
 				<overHit>true</overHit>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10773" levels="1" name="Not in Use">
 		<!-- AUTO GENERATED SKILL -->
@@ -1764,7 +1764,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
 				<flyType>WARP_BACK</flyType>
@@ -1777,7 +1777,7 @@
 					<value level="4">450</value>
 				</range>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10775" levels="6" name="Confusion Decoy">
 		<!-- Glory Days confirmed -->
@@ -1806,12 +1806,12 @@
 		<coolTime>500</coolTime>
 		<rideState>NONE</rideState>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>13328</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10776" levels="4" name="Final Ultimate Escape">
 		<!-- Glory Days confirmed -->
@@ -1844,7 +1844,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>900000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="95" />
 			</effect>
@@ -1879,7 +1879,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10777" levels="4" name="Lure Shot">
 		<!-- Glory Days confirmed -->
@@ -1910,13 +1910,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
 			<effect name="AddHate">
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10778" levels="1" name="Diversion">
 		<!-- Glory Days confirmed -->
@@ -1938,9 +1938,9 @@
 		<cond>
 			<target myPartyExceptMe="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TransferHate" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10779" levels="4" name="Quick Fire">
 		<!-- Glory Days confirmed -->
@@ -1975,7 +1975,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">20</value>
@@ -1990,7 +1990,7 @@
 					<item>TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10780" levels="9" name="Slow Shot">
 		<!-- Glory Days confirmed -->
@@ -2050,7 +2050,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">23860</value>
@@ -2071,7 +2071,7 @@
 				<amount>-70</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10781" levels="4" name="Phoenix Arrow">
 		<!-- Glory Days confirmed -->
@@ -2103,7 +2103,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">45215</value>
@@ -2112,7 +2112,7 @@
 					<value level="4">62074</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10782" levels="1" name="Deadly Move 2">
 		<!-- Glory Days confirmed -->
@@ -2137,12 +2137,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>74885</power>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10783" levels="4" name="Mind's Eye">
 		<!-- Glory Days confirmed -->
@@ -2177,7 +2177,7 @@
 		<basicProperty>NONE</basicProperty>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
 			</effect>
@@ -2199,7 +2199,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10784" levels="1" name="Camouflage">
 		<!-- Glory Days confirmed -->
@@ -2223,14 +2223,14 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Hide">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10785" levels="5" name="Flare">
 		<!-- Glory Days confirmed -->
@@ -2267,7 +2267,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Detection" />
 			<effect name="TrapRemove">
 				<power>99</power>
@@ -2284,7 +2284,7 @@
 					<value level="5">HIDE</value>
 				</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10786" levels="6" name="Time Bomb">
 		<!-- Glory Days confirmed -->
@@ -2330,14 +2330,14 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<activateRate>80</activateRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Accuracy">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Time Bomb -->
@@ -2393,7 +2393,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14932</value>
@@ -2407,7 +2407,7 @@
 				</npcId>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10788" levels="1" name="Remote Control">
 		<!-- AUTO GENERATED SKILL -->
@@ -2442,11 +2442,11 @@
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13052,150,false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonTrap">
 				<npcId>13052</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10790" levels="1" name="Explosion Trap">
 		<!-- Glory Days confirmed -->
@@ -2466,11 +2466,11 @@
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13037,150,false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonTrap">
 				<npcId>13037</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10791" levels="4" name="Frost Trap">
 		<!-- Glory Days confirmed -->
@@ -2496,11 +2496,11 @@
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13057,150,false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonTrap">
 				<npcId>13326</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10792" levels="4" name="Gravity Trap">
 		<!-- Glory Days confirmed -->
@@ -2520,11 +2520,11 @@
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13057,150,false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonTrap">
 				<npcId>13327</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10793" levels="1" name="Flash">
 		<!-- AUTO GENERATED SKILL -->
@@ -2586,9 +2586,9 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10795" levels="1" name="Thunder Purity">
 		<!-- Updated to IO -->
@@ -2607,13 +2607,13 @@
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>5</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10796" levels="1" name="Hawk Gust">
 		<!-- Glory Days confirmed -->
@@ -2642,7 +2642,7 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>400</speed>
 				<distance>500</distance>
@@ -2656,7 +2656,7 @@
 				<SLEEP>100</SLEEP>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10797" levels="8" name="Thunder Feather Blast">
 		<!-- Updated to IO -->
@@ -2705,7 +2705,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">5555</value>
@@ -2718,7 +2718,7 @@
 					<value level="8">7389</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10798" levels="8" name="Thunder Sharp Claw">
 		<!-- Updated to IO -->
@@ -2776,7 +2776,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2796</value>
@@ -2801,7 +2801,7 @@
 					<value level="8">78</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10799" levels="10" name="Superior M. Def.">
 		<!-- Glory Days confirmed -->
@@ -2823,7 +2823,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -2846,6 +2846,6 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

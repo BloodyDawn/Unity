@@ -23,7 +23,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>40</castRange>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- NPC Trigger Target Cancel -->
 				<attackerType>L2Character</attackerType>
@@ -37,7 +37,7 @@
 				<skillId>5902</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5901" levels="2" name="Mist of Oblivion">
 		<abnormalLvl>8</abnormalLvl>
@@ -63,7 +63,7 @@
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- NPC Trigger Target Cancel -->
 				<attackerType>L2Character</attackerType>
@@ -77,7 +77,7 @@
 				<skillId>5902</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5902" levels="1" name="Cancel NPC Trigger Target">
 		<!-- Confirmed CT2.5 -->
@@ -89,9 +89,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5903" levels="1" name="Burst of Misplace">
 		<abnormalLvl>1</abnormalLvl>
@@ -118,9 +118,9 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DISARM</trait>
-		<for>
+		<effects>
 			<effect name="Disarm" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5904" levels="3" name="Mist of Souleater">
 		<table name="#power"> 112 117 120 </table>
@@ -156,7 +156,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">112</value>
@@ -165,7 +165,7 @@
 				</power>
 				<percentage>80</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5905" levels="1" name="Confusing Nuph">
 		<abnormalLvl>1</abnormalLvl>
@@ -224,11 +224,11 @@
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5908" levels="2" name="Ritual of Entombment">
 		<abnormalLvl>1</abnormalLvl>
@@ -254,11 +254,11 @@
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5909" levels="1" name="Stronghold Attack">
 		<castRange>40</castRange>
@@ -271,12 +271,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- FIXME: value unconfirmed -->
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5910" levels="1" name="Stronghold Attack">
 		<castRange>300</castRange>
@@ -289,12 +289,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- FIXME: value unconfirmed -->
 				<power>5000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5911" levels="1" name="Pestilence Cleanse">
 		<magicLvl>83</magicLvl>
@@ -325,7 +325,7 @@
 		<magicLvl>83</magicLvl>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Putrefaction Cleanse -->
 				<attackerType>L2Character</attackerType>
@@ -339,7 +339,7 @@
 				<skillId>5914</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5914" levels="1" name="Putrefaction Cleanse">
 		<abnormalLvl>1</abnormalLvl>
@@ -453,7 +453,7 @@
 		</magicLvl>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<ROOT_PHYSICALLY>
 					<value level="1">-10</value>
@@ -468,7 +468,7 @@
 					<value level="10">-99</value>
 				</ROOT_PHYSICALLY>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5919" levels="1" name="Obey">
 		<!-- Confirmed CT2.5 -->
@@ -493,9 +493,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockResurrection" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5920" levels="1" name="Tentacle of Agony">
 		<!-- Confirmed CT2.5 -->
@@ -514,11 +514,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5921" levels="1" name="Inhale">
 		<!-- Confirmed CT2.5 -->
@@ -547,7 +547,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>121</power>
 				<percentage>80</percentage>
@@ -575,7 +575,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5922" levels="1" name="Exhale">
 		<!-- Confirmed CT2.5 -->
@@ -603,7 +603,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
 			</effect>
@@ -625,7 +625,7 @@
 				<amount>-3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5923" levels="1" name="Soul Retain">
 		<!-- Confirmed CT2.5 -->
@@ -644,7 +644,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>3</amount>
 				<mode>PER</mode>
@@ -661,7 +661,7 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5924" levels="1" name="Devour Soul">
 		<effectPoint>-100</effectPoint>
@@ -769,12 +769,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>90</BOW>
 				<CROSSBOW>90</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5931" levels="1" name="Ultimate Shield">
 		<!-- Confirmed CT2.5 -->
@@ -785,9 +785,9 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5932" levels="1" name="Dark Blade">
 		<!-- Confirmed CT2.5 -->
@@ -808,11 +808,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5933" levels="1" name="Dark Blade">
 		<!-- Confirmed CT2.5 -->
@@ -833,11 +833,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5934" levels="1" name="Meet the soul of darkness and fight against it.">
 		<abnormalLvl>1</abnormalLvl>
@@ -875,11 +875,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5936" levels="1" name="Earth Ring">
 		<!-- Confirmed CT2.5 -->
@@ -899,11 +899,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5937" levels="1" name="Self Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -1140,11 +1140,11 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5951" levels="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
@@ -1439,12 +1439,12 @@
 		</hpConsume>
 		<castRange>40</castRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5970" levels="1" name="Seduced Knight's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1563,7 +1563,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1515</value>
@@ -1571,7 +1571,7 @@
 					<value level="3">6059</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5976" levels="3" name="Dark Storm">
 		<table name="#power"> 757 1182 4039 </table>
@@ -1598,7 +1598,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">757</value>
@@ -1606,7 +1606,7 @@
 					<value level="3">4039</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5977" levels="3" name="Dark Strike">
 		<effectPoint>
@@ -1677,7 +1677,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2273</value>
@@ -1685,7 +1685,7 @@
 					<value level="3">6059</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5981" levels="3" name="Lilith's Curse">
 		<abnormalLvl>3</abnormalLvl>
@@ -1734,14 +1734,14 @@
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>8</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5983" levels="1" name="Aura Bird - Owl">
 		<abnormalLvl>1</abnormalLvl>
@@ -1771,14 +1771,14 @@
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<mul stat="reduceExpLostByPvp" val="0.1" />
 				<mul stat="reduceExpLostByMob" val="0.1" />
 				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>9</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5984" levels="1" name="Hand of Death">
 		<abnormalLvl>1</abnormalLvl>
@@ -1864,7 +1864,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
@@ -1898,7 +1898,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5988" levels="1" name="Armor Maintenance">
 		<!-- Confirmed CT2.5 -->
@@ -1918,7 +1918,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1954,7 +1954,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5989" levels="1" name="Invincibility">
 		<abnormalLvl>1</abnormalLvl>
@@ -2071,7 +2071,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>171</power>
 			</effect>
@@ -2088,7 +2088,7 @@
 			</effect>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5994" levels="1" name="Mysterious Effect">
 		<abnormalLvl>1</abnormalLvl>

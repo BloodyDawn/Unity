@@ -320,12 +320,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>6</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>600</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14216" levels="1" name="Energy Seal">
 		<!-- Glory Days confirmed -->
@@ -371,11 +371,11 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14218" levels="1" name="Istina's Mark">
 		<!-- Glory Days confirmed -->
@@ -418,11 +418,11 @@
 		<magicLvl>99</magicLvl>
 		<affectRange>50</affectRange>
 		<hitTime>2000</hitTime>
-		<for>
+		<effects>
 			<effect name="RealDamage">
 				<power>1000000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14220" levels="1" name="Flood">
 		<!-- Glory Days confirmed -->
@@ -443,7 +443,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -460,7 +460,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14221" levels="1" name="Acid Eruption">
 		<!-- Glory Days confirmed -->
@@ -504,14 +504,14 @@
 		<affectRange>250</affectRange>
 		<isMagic>2</isMagic>
 		<hitTime>1000</hitTime>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>-60</power>
 			</effect>
 			<effect name="PhysicalAttack">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14224" levels="1" name="Energy Control Device">
 		<!-- Glory Days confirmed -->
@@ -604,11 +604,11 @@
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>600</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14228" levels="1" name="Energy Regeneration Stage 1">
 		<!-- Glory Days confirmed -->
@@ -694,7 +694,7 @@
 		<affectRange>150</affectRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10373</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -703,7 +703,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14232" levels="1" name="Yoke of Thorns">
 		<!-- Glory Days confirmed -->
@@ -728,14 +728,14 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14233" levels="1" name="Shock Wave">
 		<!-- Glory Days confirmed -->
@@ -752,11 +752,11 @@
 		<effectRange>700</effectRange>
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>-20</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14234" levels="1" name="Mind Contamination">
 		<!-- Glory Days confirmed -->
@@ -779,7 +779,7 @@
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10373</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -793,7 +793,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14235" levels="1" name="Maguen Steal">
 		<!-- Glory Days confirmed -->
@@ -831,7 +831,7 @@
 		<affectRange>200</affectRange>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>63230</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -839,7 +839,7 @@
 			</effect>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14237" levels="1" name="Earth Vibration">
 		<!-- Glory Days confirmed -->
@@ -862,7 +862,7 @@
 		<affectRange>300</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>63230</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -871,7 +871,7 @@
 			<effect name="DamOverTime" ticks="1">
 				<power>338</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14238" levels="1" name="Sound Blade">
 		<!-- Glory Days confirmed -->
@@ -895,7 +895,7 @@
 		<trait>DERANGEMENT</trait>
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>77103</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -903,7 +903,7 @@
 			</effect>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14239" levels="1" name="Sound Prison">
 		<!-- Glory Days confirmed -->
@@ -927,14 +927,14 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>77103</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14240" levels="1" name="Poison Eruption">
 		<!-- Glory Days confirmed -->
@@ -959,7 +959,7 @@
 		<trait>POISON</trait>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>77103</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -968,7 +968,7 @@
 			<effect name="DamOverTime" ticks="1">
 				<power>272</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14241" levels="1" name="Poison Fog">
 		<!-- Glory Days confirmed -->
@@ -994,11 +994,11 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="2">
 				<power>472</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14242" levels="1" name="Wide Area Curse">
 		<!-- AUTO GENERATED SKILL -->
@@ -1532,12 +1532,12 @@
 		<abnormalTime>8</abnormalTime>
 		<trait>HOLD</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14267" levels="2" name="Hole Punch">
 		<!-- AUTO GENERATED SKILL -->

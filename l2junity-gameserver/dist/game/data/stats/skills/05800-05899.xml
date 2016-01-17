@@ -432,7 +432,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">60</value>
@@ -440,7 +440,7 @@
 					<value level="3">61</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5827" levels="6" name="Fireball">
 		<table name="#power"> 55 56 58 59 60 61 </table>
@@ -482,7 +482,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">55</value>
@@ -493,7 +493,7 @@
 					<value level="6">61</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5828" levels="6" name="Unholy Flare">
 		<table name="#power"> 55 56 58 59 60 61 </table>
@@ -540,7 +540,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">55</value>
@@ -551,7 +551,7 @@
 					<value level="6">61</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5829" levels="6" name="Fire Flare">
 		<table name="#power"> 55 56 58 59 60 61 </table>
@@ -598,7 +598,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">55</value>
@@ -609,7 +609,7 @@
 					<value level="6">61</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5830" levels="1" name="Polearm Thrust">
 		<castRange>40</castRange>
@@ -623,11 +623,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4640</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5831" levels="1" name="Polearm Swing">
 		<affectRange>150</affectRange>
@@ -643,14 +643,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4640</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<power>70</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5832" levels="1" name="Aggression Aura">
 		<!-- Confirmed CT2.5 -->
@@ -673,9 +673,9 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5833" levels="1" name="Shield">
 		<abnormalLvl>3</abnormalLvl>
@@ -697,12 +697,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5834" levels="1" name="Magic Barrier">
 		<abnormalLvl>3</abnormalLvl>
@@ -724,12 +724,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5835" levels="1" name="Major Heal">
 		<castRange>600</castRange>
@@ -745,11 +745,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>10</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5836" levels="1" name="Greater Heal">
 		<abnormalLvl>5</abnormalLvl>
@@ -772,14 +772,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>270</power>
 			</effect>
 			<effect name="HealPercent">
 				<power>20</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5837" levels="1" name="Double Throw Javelin">
 		<castRange>900</castRange>
@@ -793,11 +793,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4640</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5838" levels="1" name="Throw Javelin">
 		<castRange>900</castRange>
@@ -811,11 +811,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4640</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5839" levels="1" name="Breath">
 		<!-- Confirmed CT2.5 -->
@@ -836,11 +836,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>183</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5840" levels="1" name="Fire Breath">
 		<!-- Confirmed CT2.5 -->
@@ -863,11 +863,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>244</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5841" levels="1" name="Multi Defense">
 		<!-- Confirmed CT2.5 -->
@@ -890,7 +890,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
 				<mode>PER</mode>
@@ -899,7 +899,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5842" levels="1" name="Spinning Slasher">
 		<!-- Confirmed CT2.5 -->
@@ -917,11 +917,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>17400</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5843" levels="1" name="Fear">
 		<!-- Confirmed CT2.5 -->
@@ -949,10 +949,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>26.72</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5844" levels="1" name="Thunder Storm">
 		<!-- Confirmed CT2.5 -->
@@ -970,11 +970,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>834</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5845" levels="12" name="Trigger Bleed">
 		<table name="#skillLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
@@ -995,7 +995,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<rideState>NONE</rideState>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Bleed -->
 				<attackerType>L2Character</attackerType>
@@ -1022,7 +1022,7 @@
 					<value level="12">12</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5846" levels="12" name="Bleed">
 		<table name="#dot"> 18 25 34 44 54 62 67 67 70 70 71 71 </table>
@@ -1074,7 +1074,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>40</castRange>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">18</value>
@@ -1091,7 +1091,7 @@
 					<value level="12">71</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5847" levels="1" name="Flip Nearby Blocks">
 		<affectLimit>10-10</affectLimit>
@@ -1132,14 +1132,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5850" levels="1" name="Block Trigger Stun">
 		<magicLvl>80</magicLvl>
@@ -1170,12 +1170,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>1000</hitTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5852" levels="1" name="Flip Block">
 		<!-- CT2.5 retail confirmed -->
@@ -1291,11 +1291,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>117</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5857" levels="1" name="Transformation Scroll: Lady Tow">
 		<!-- Confirmed CT2.5 -->
@@ -1317,11 +1317,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>118</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5858" levels="1" name="Transformation Scroll: Angry Tow">
 		<!-- Confirmed CT2.5 -->
@@ -1343,11 +1343,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>119</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5859" levels="1" name="Transformation Scroll: Sleepy Tow">
 		<!-- Confirmed CT2.5 -->
@@ -1369,11 +1369,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>120</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5860" levels="1" name="Wrath of Valakas">
 		<abnormalLvl>1</abnormalLvl>
@@ -1944,7 +1944,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpByLevel">
 				<power>73</power>
 			</effect>
@@ -1954,7 +1954,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5879" levels="1" name="Cruel Expunge">
 		<abnormalLvl>9</abnormalLvl>
@@ -1978,11 +1978,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>145</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5880" levels="2" name="Vicious Mutilation">
 		<abnormalLvl>3</abnormalLvl>
@@ -2053,12 +2053,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>873</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5883" levels="1" name="Meggling Injury">
 		<abnormalLvl>9</abnormalLvl>
@@ -2082,11 +2082,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>145</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5884" levels="2" name="Weakened Sweep">
 		<!-- Confirmed CT2.5 -->
@@ -2116,7 +2116,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DISARM</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2319</value>
@@ -2124,7 +2124,7 @@
 				</power>
 			</effect>
 			<effect name="Disarm" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5885" levels="1" name="Weakened Sweep">
 		<!-- Confirmed CT2.5 -->
@@ -2157,7 +2157,7 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2319</value>
@@ -2165,7 +2165,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5886" levels="1" name="Ground Shaker">
 		<abnormalLvl>3</abnormalLvl>
@@ -2189,7 +2189,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>150</affectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2200,7 +2200,7 @@
 				<amount>-10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5887" levels="1" name="Howl from Beyond">
 		<abnormalLvl>1</abnormalLvl>
@@ -2252,11 +2252,11 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5889" levels="3" name="Tainted Shackle">
 		<abnormalLvl>1</abnormalLvl>
@@ -2349,11 +2349,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Bluff">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5893" levels="1" name="Ritual of Cannibalism">
 		<effectPoint>100</effectPoint>
@@ -2389,7 +2389,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="maxHp" val="0.8" />
 				<mul stat="rCrit" val="0.2" />
@@ -2430,7 +2430,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5895" levels="1" name="Mark of Cowardice">
 		<abnormalLvl>1</abnormalLvl>
@@ -2453,7 +2453,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="maxHp" val="0.8" />
 			</effect>
@@ -2477,7 +2477,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5896" levels="2" name="Soulless">
 		<abnormalLvl>1</abnormalLvl>
@@ -2519,7 +2519,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2538,7 +2538,7 @@
 				<amount>-5</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5898" levels="2" name="Blast of Anchor">
 		<abnormalLvl>1</abnormalLvl>
@@ -2568,7 +2568,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2587,7 +2587,7 @@
 				<amount>-10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5899" levels="2" name="Burst of Pain">
 		<affectLimit>5-15</affectLimit>
@@ -2607,10 +2607,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -114,7 +114,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">6</value>
@@ -148,7 +148,7 @@
 				</power>
 				<debuffModifier>1.1</debuffModifier>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30002" levels="3" name="Storm Sign">
 		<!-- Updated to Ertheia -->
@@ -166,7 +166,7 @@
 		<isMagic>4</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
 			</effect>
@@ -178,7 +178,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30003" levels="20" name="Hydro Flare">
 		<!-- Updated to IO -->
@@ -243,7 +243,7 @@
 				<target active_effect_id_lvl="30002,3" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">110</value>
@@ -272,7 +272,7 @@
 			<effect name="DispelBySlot">
 				<dispel>STORM_SIGN,3</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30004" levels="25" name="Hydro Strike">
 		<!-- Updated to IO -->
@@ -353,7 +353,7 @@
 				<target active_effect_id="30002" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">57</value>
@@ -387,7 +387,7 @@
 				<distance>60</distance>
 				<type>THROW_UP</type>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30005" levels="4" name="Hydro Strike"> <!-- In client is level 4 -->
 		<!-- Updated to Ertheia -->
@@ -398,7 +398,7 @@
 		<isMagic>4</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
 			</effect>
@@ -410,7 +410,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30006" levels="11" name="Storm Rage">
 		<!-- Updated to IO -->
@@ -462,7 +462,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<distance>60</distance>
 				<type>THROW_UP</type>
@@ -483,7 +483,7 @@
 					<value level="11">371</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30007" levels="15" name="Hydro Drain">
 		<!-- Updated to IO -->
@@ -539,7 +539,7 @@
 				<target active_effect_id_lvl="30002,3" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">123</value>
@@ -562,7 +562,7 @@
 			<effect name="DispelBySlot">
 				<dispel>STORM_SIGN,3</dispel>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="HealPercent">
 				<power>10</power>
@@ -669,7 +669,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back, unconfirmed -->
 				<angle>0</angle>
@@ -681,7 +681,7 @@
 				<amount>100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30010" levels="2" name="Windy Refuge">
 		<!-- Updated to IO -->
@@ -704,7 +704,7 @@
 		<removedOnDamage>true</removedOnDamage> <!-- Unconfirmed -->
 		<reuseDelay>180000</reuseDelay>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<!-- Since there is no way to get max debuffs, use 99. -->
 				<slot>debuff</slot>
@@ -720,7 +720,7 @@
 				<!-- Unconfirmed -->
 				<power>10</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30011" levels="15" name="Threatening Wind">
 		<!-- Updated to IO -->
@@ -772,13 +772,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallSkill">
 				<!-- Storm Sign -->
 				<skillId>30002</skillId>
 				<skillLevel>3</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30012" levels="25" name="Air Rush">
 		<!-- Updated to IO -->
@@ -827,7 +827,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnemyCharge">
 				<animationSpeed>333</animationSpeed>
 			</effect>
@@ -864,7 +864,7 @@
 			<effect name="DispelBySlot">
 				<dispel>STORM_SIGN,3</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30013" levels="1" name="Switch Places">
 		<!-- Updated to Ertheia -->
@@ -886,9 +886,9 @@
 				<target playable="true" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlinkSwap" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="30014" levels="15" name="Compelling Wind">
 		<!-- AUTO GENERATED SKILL -->
@@ -958,7 +958,7 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>300000</reuseDelay>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="100" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
@@ -1009,7 +1009,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30017" levels="4" name="Squall">
 		<!-- Updated to IO -->
@@ -1045,7 +1045,7 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defMCritDamage" val="#defCrit" />
 			</effect>
@@ -1086,7 +1086,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30018" levels="1" name="Windy Illusion">
 		<!-- Updated to Ertheia -->
@@ -1104,7 +1104,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Untargetable" />
 			<effect name="DispelByCategory">
 				<!-- Since there is no way to get max debuffs, use 99. -->
@@ -1112,7 +1112,7 @@
 				<rate>100</rate>
 				<max>99</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30019" levels="11" name="Sayha's Word">
 		<!-- Updated to IO -->
@@ -1171,7 +1171,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">533</value>
@@ -1202,7 +1202,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30020" levels="1" name="Sayha's Fury">
 		<!-- Updated to Ertheia -->
@@ -1222,7 +1222,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defMCritDamage" val="0.5" />
 			</effect>
@@ -1242,7 +1242,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30022" levels="2" name="Sayha's Blessing">
 		<!-- Updated to IO -->
@@ -1270,7 +1270,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>
 					<value level="1">30</value>
@@ -1300,7 +1300,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30023" levels="1" name="Decoy Lock">
 		<!-- AUTO GENERATED SKILL -->
@@ -1325,7 +1325,7 @@
 		<castRange>1100</castRange>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">50</value>
@@ -1340,7 +1340,7 @@
 				<amount>-20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30027" levels="1" name="Destructive Bolt">
 		<!-- Updated to Ertheia -->
@@ -1353,7 +1353,7 @@
 		<castRange>1100</castRange>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
 			</effect>
@@ -1362,7 +1362,7 @@
 				<skillId>30005</skillId>
 				<chance>10</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30029" levels="4" name="Divine Storm">
 		<!-- Updated to IO -->
@@ -1390,7 +1390,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">448</value>
@@ -1401,7 +1401,7 @@
 				<debuffModifier>1.1</debuffModifier>
 			</effect>
 			<!-- TODO Lock inside storm for 5sec. -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="30030" levels="1" name="Storm Captivity">
 		<!-- AUTO GENERATED SKILL -->
@@ -1418,11 +1418,11 @@
 		<operateType>P</operateType>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO cap stat="mCritRate" val="550" / -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30040" levels="17" name="Eminent Blunt Weapon Mastery">
 		<!-- Updated to IO -->
@@ -1435,7 +1435,7 @@
 		<icon>icon.skill30023</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="#mCritRate">
 					<using kind="BLUNT" />
@@ -1546,7 +1546,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30041" levels="17" name="Eminent Robe Mastery">
 		<!-- Updated to IO -->
@@ -1560,7 +1560,7 @@
 		<icon>icon.skill30024</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="#magicSuccRes">
 					<using kind="MAGIC" />
@@ -1666,7 +1666,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30042" levels="13" name="Eminent Quick Recovery">
 		<!-- Updated to IO -->
@@ -1679,7 +1679,7 @@
 		<icon>icon.skill10504</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#mReuse" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
@@ -1720,7 +1720,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30043" levels="11" name="Eminent Attribute Resistance">
 		<!-- Updated to IO -->
@@ -1743,7 +1743,7 @@
 			<value level="11">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="#res" />
 				<add stat="waterRes" val="#res" />
@@ -1751,7 +1751,7 @@
 				<add stat="earthRes" val="#res" />
 				<add stat="holyRes" val="#res" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30044" levels="2" name="Eminent Trait Resistance">
 		<!-- Updated to Ertheia -->
@@ -1761,7 +1761,7 @@
 		<icon>icon.skill10005</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
 				<DERANGEMENT>30</DERANGEMENT>
@@ -1774,7 +1774,7 @@
 					<value level="2">30</value>
 				</HATE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30045" levels="3" name="Eminent Ability">
 		<!-- INT + 2. -->
@@ -1787,11 +1787,11 @@
 			<value level="3">85</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="#INT" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

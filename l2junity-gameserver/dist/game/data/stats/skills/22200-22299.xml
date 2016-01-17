@@ -242,7 +242,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<sub stat="debuffVuln" val="10" />
@@ -283,7 +283,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22214" levels="1" name="MP Recovery Potion">
 		<!-- Magic potion that quickly recovers MP by 50% when used. -->
@@ -300,11 +300,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<power>50</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22215" levels="1" name="Vitality Recovering Potion">
 		<!-- "For 30 minute(s), energy is replenished when Exp. is acquired through hunting." -->
@@ -330,11 +330,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22216" levels="1" name="Transformation Scroll: Anakim">
 		<!-- Transformed into Anakim. -->
@@ -361,11 +361,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>306</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22217" levels="1" name="Super Healthy Juice (HP)">
 		<!-- Magic juice that instantly fully recovers HP. -->
@@ -382,11 +382,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22218" levels="1" name="Super Healthy Juice (HP)">
 		<!-- Magic juice that instantly fully recovers HP. -->
@@ -403,11 +403,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22219" levels="1" name="Super Healthy Juice (CP)">
 		<!-- Magic juice that temporarily recovers CP in full. -->
@@ -424,11 +424,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22220" levels="1" name="Super Healthy Juice (CP)">
 		<!-- Magic juice that temporarily recovers CP in full. -->
@@ -445,11 +445,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22221" levels="1" name="Vitality Replenishing Potion">
 		<!-- Vitality is replenished to 100% upon use. -->
@@ -467,11 +467,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22222" levels="1" name="Vitality Replenishing Potion">
 		<!-- Vitality is replenished to 100% upon use. -->
@@ -489,11 +489,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22223" levels="1" name="Vitality Maintaining Potion">
 		<!-- Energy is maintained for 30 minutes. -->
@@ -517,11 +517,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22224" levels="1" name="Vitality Maintaining Potion">
 		<!-- Energy is maintained for 30 minutes. -->
@@ -545,11 +545,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22225" levels="1" name="Gludio Homemade Cookie">
 		<!-- Increases P. Atk. by 10% for 60 minutes. -->
@@ -915,13 +915,13 @@
 		<reuseDelay>10000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>139</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>1200000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22250" levels="1" name="Birthday Cake Vitality Buff">
 		<!-- Confirmed CT2.5 -->
@@ -944,11 +944,11 @@
 		<isMagic>4</isMagic>
 		<castRange>500</castRange>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22251" levels="1" name="Honey Rice Cakes">
 		<!-- none -->
@@ -1304,9 +1304,9 @@
 		<cond msgId="109">
 			<target npcType="L2ChestInstance" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22272" levels="1" name="Beginner Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
@@ -1327,9 +1327,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22273" levels="1" name="Experienced Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
@@ -1350,9 +1350,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22274" levels="1" name="Great Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
@@ -1373,9 +1373,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22275" levels="1" name="Rune Jewelry Box - Crystal">
 		<!-- none -->
@@ -1603,13 +1603,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>183624</x>
 				<y>-114891</y>
 				<z>-3340</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22291" levels="1" name="Jewel of Valakas">
 		<!-- Mysterious jewel that teleports you to Watcher of Valakas Klein in the Hall of Flames. Re-use time is 60 minutes. -->
@@ -1631,13 +1631,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>183624</x>
 				<y>-114891</y>
 				<z>-3340</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22292" levels="1" name="Scroll: Antharas Call">
 		<!-- One-time use scroll that teleports you to the entrance to Antharas's Lair. -->
@@ -1659,13 +1659,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>154596</x>
 				<y>121127</y>
 				<z>-3812</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22293" levels="1" name="Jewel of Antharas">
 		<!-- Mysterious jewel that teleports you to the entrance to Antharas's Lair. Re-use time is 60 minutes. -->
@@ -1687,13 +1687,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>154596</x>
 				<y>121127</y>
 				<z>-3812</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22294" levels="1" name="Totem of Body">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1705,13 +1705,13 @@
 		<hitTime>2000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>143</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>1800000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22295" levels="1" name="Totem of Spirit">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1723,13 +1723,13 @@
 		<hitTime>2000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>144</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>1800000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22296" levels="1" name="Totem of Courage">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1742,13 +1742,13 @@
 		<hitTime>2000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>145</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>1800000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22297" levels="1" name="Totem of Fortitude">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1760,13 +1760,13 @@
 		<hitTime>2000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>146</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>1800000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22298" levels="1" name="Refined Red Dragon Blood">
 		<blockedInOlympiad>false</blockedInOlympiad>
@@ -1783,12 +1783,12 @@
 		<reuseDelay>300000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<!-- TODO: Custom. -->
 				<power>1000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22299" levels="1" name="Refined Blue Dragon Blood">
 		<blockedInOlympiad>false</blockedInOlympiad>
@@ -1805,11 +1805,11 @@
 		<reuseDelay>300000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<!-- TODO: Custom. -->
 				<power>1000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

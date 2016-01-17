@@ -16,11 +16,11 @@
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>47</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5601" levels="12" name="Melee Attack Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -43,7 +43,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>
 					<value level="1">5</value>
@@ -158,7 +158,7 @@
 					<value level="12">100</value>
 				</DUALDAGGER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5602" levels="1" name="Transform Sacrifice">
 		<!-- Confirmed CT2.5 -->
@@ -177,7 +177,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="HealPercent">
@@ -187,7 +187,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5603" levels="1" name="Dagger Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -205,7 +205,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.4" />
 			</effect>
@@ -213,7 +213,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5604" levels="1" name="Sword/Blunt Weapon Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -231,14 +231,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.4" />
 			</effect>
 			<effect name="AttackTrait">
 				<SHOCK>20</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5605" levels="2" name="Power of Apella">
 		<!-- Confirmed CT2.5 -->
@@ -260,7 +260,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="defCritRateAdd" val="30"> <!-- critical damage is decreased by 3 -->
 					<using kind="HEAVY" />
@@ -274,7 +274,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5607" levels="2" name="Power of Apella">
 		<!-- Confirmed CT2.5 -->
@@ -296,7 +296,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
 				<mode>DIFF</mode>
@@ -318,7 +318,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5608" levels="2" name="Power of Apella">
 		<!-- Confirmed CT2.5 -->
@@ -340,7 +340,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Speed is increased by 10 -->
 			</effect>
@@ -362,7 +362,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5609" levels="1" name="Sound 1">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -483,7 +483,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>
 					<value level="1">-5</value>
@@ -598,7 +598,7 @@
 					<value level="12">-100</value>
 				</DUALDAGGER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5621" levels="12" name="Aerial Recharge">
 		<!-- Confirmed CT2.5 -->
@@ -625,7 +625,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>
 					<value level="1">6</value>
@@ -642,7 +642,7 @@
 					<value level="12">39</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5622" levels="7" name="Double Skill Attack">
 		<magicLvl>1</magicLvl>
@@ -730,12 +730,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5628" levels="1" name="Adventurer's Shield">
 		<abnormalLvl>4</abnormalLvl>
@@ -752,12 +752,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5629" levels="1" name="Adventurer's Bless the Body">
 		<abnormalLvl>7</abnormalLvl>
@@ -774,11 +774,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5630" levels="1" name="Adventurer's Vampiric Rage">
 		<abnormalLvl>5</abnormalLvl>
@@ -795,12 +795,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5631" levels="1" name="Adventurer's Regeneration">
 		<abnormalLvl>4</abnormalLvl>
@@ -817,12 +817,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5632" levels="1" name="Adventurer's Haste">
 		<abnormalLvl>3</abnormalLvl>
@@ -839,12 +839,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5633" levels="1" name="Adventurer's Bless the Soul">
 		<abnormalLvl>7</abnormalLvl>
@@ -861,12 +861,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5634" levels="1" name="Adventurer's Acumen">
 		<abnormalLvl>4</abnormalLvl>
@@ -883,12 +883,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5635" levels="1" name="Adventurer's Concentration">
 		<abnormalLvl>2</abnormalLvl>
@@ -905,11 +905,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5636" levels="1" name="Adventurer's Empower">
 		<abnormalLvl>2</abnormalLvl>
@@ -926,12 +926,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5637" levels="1" name="Adventurer's Magic Barrier">
 		<abnormalLvl>4</abnormalLvl>
@@ -948,12 +948,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5638" levels="4" name="Feline Queen - Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -1001,11 +1001,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5639" levels="4" name="Feline Queen - Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -1053,7 +1053,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">20</value>
@@ -1063,7 +1063,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5640" levels="2" name="Feline Queen - Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1101,7 +1101,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -1109,7 +1109,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5641" levels="1" name="not_used">
 		<abnormalLvl>3</abnormalLvl>
@@ -1184,12 +1184,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5644" levels="1" name="not_used">
 		<abnormalLvl>2</abnormalLvl>
@@ -1241,7 +1241,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<castRange>400</castRange>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">30</value>
@@ -1259,7 +1259,7 @@
 					<value level="3">50</value>
 				</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5646" levels="3" name="Seraphim the Unicorn - Wild Magic">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1313,11 +1313,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5647" levels="3" name="Seraphim the Unicorn - Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1367,13 +1367,13 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
 				<mul stat="DanceMpConsumeRate" val="#MpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5648" levels="2" name="Seraphim the Unicorn - Empower">
 		<!-- Confirmed CT2.5 -->
@@ -1411,7 +1411,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">65</value>
@@ -1419,7 +1419,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5649" levels="2" name="not_used">
 		<abnormalLvl>
@@ -1538,7 +1538,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">25</value>
@@ -1547,7 +1547,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5653" levels="2" name="Nightshade - Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1586,11 +1586,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5654" levels="3" name="Nightshade - Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -1634,7 +1634,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -1643,7 +1643,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5655" levels="1" name="Transform Gatekeeper">
 		<abnormalLvl>1</abnormalLvl>
@@ -1667,12 +1667,12 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<sub stat="vitalityConsumeRate" val="10" />
 				<transformationId>319</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5656" levels="85" name="Gatekeeper Aura Flare">
 		<table name="#pvePower"> 60 64 68 73 77 82 87 93 98 104 110 116 112 129 136 142 150 157 165 173 181 189 197 206 215 224 233 243 253 263 273 283 294 305 316 327 338 350 361 373 385 397 410 422 435 447 460 473 486 499 512 525 539 552 565 579 592 605 619 632 645 658 672 685 697 710 723 735 748 760 772 784 795 806 817 830 845 862 884 906 929 952 976 1001 1024 </table>
@@ -3106,7 +3106,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>PARTY_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -3163,7 +3163,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5660" levels="5" name="Battleground Death Syndrome">
 		<!-- Confirmed CT2.5 -->
@@ -3185,7 +3185,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
@@ -3248,7 +3248,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5661" levels="1" name="Match Participation">
 		<abnormalLvl>0</abnormalLvl>
@@ -3287,7 +3287,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<ANCIENTSWORD>
 					<value level="1">10</value>
@@ -3297,7 +3297,7 @@
 					<value level="5">50</value>
 				</ANCIENTSWORD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5664" levels="5" name="Ancient Sword Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -3307,7 +3307,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<ANCIENTSWORD>
 					<value level="1">-11</value>
@@ -3317,7 +3317,7 @@
 					<value level="5">-100</value>
 				</ANCIENTSWORD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5665" levels="1" name="Stun">
 		<!-- Masterwork Sword of Stun (3829) -->
@@ -3341,9 +3341,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5666" levels="1" name="Stun">
 		<!-- Masterwork Rapier of Stun (3834) -->
@@ -3367,9 +3367,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5667" levels="1" name="Stun">
 		<!-- Masterwork Dual-Blade of Stun (3839) -->
@@ -3393,9 +3393,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5668" levels="1" name="Poison">
 		<!-- Masterwork Dagger of Poison (3861) -->
@@ -3420,11 +3420,11 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>63</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5669" levels="1" name="Stun">
 		<!-- Masterwork Pole of Stun (3876) -->
@@ -3448,9 +3448,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5670" levels="1" name="Stun">
 		<!-- Masterwork Fist of Stun (3882) -->
@@ -3474,9 +3474,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5671" levels="1" name="Stun">
 		<!-- Masterwork Blunt of Stun (3885-1) -->
@@ -3500,9 +3500,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5672" levels="1" name="Stun">
 		<!-- Masterwork Blunt of Stun (3885-2) -->
@@ -3526,9 +3526,9 @@
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5673" levels="1" name="Evasion Counter">
 		<abnormalLvl>1</abnormalLvl>
@@ -3552,9 +3552,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5674" levels="1" name="Evasion Chance">
 		<abnormalLvl>1</abnormalLvl>
@@ -3572,12 +3572,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlowRate">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5675" levels="1" name="Evasion Haste">
 		<abnormalLvl>1</abnormalLvl>
@@ -3595,12 +3595,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5676" levels="1" name="Steal Mana">
 		<!-- Confirmed CT2.5 -->
@@ -3612,11 +3612,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>41</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5677" levels="1" name="Steal Mana">
 		<!-- Confirmed CT2.5 -->
@@ -3628,11 +3628,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>51</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5678" levels="1" name="Steal Mana">
 		<!-- Confirmed CT2.5 -->
@@ -3644,11 +3644,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>59</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5679" levels="3" name="Oblivion Trap">
 		<abnormalLvl>1</abnormalLvl>
@@ -3675,7 +3675,7 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Oblivion Trap -->
 				<attackerType>L2Character</attackerType>
@@ -3689,7 +3689,7 @@
 				<skillId>5680</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5680" levels="1" name="Oblivion Trap">
 		<castRange>900</castRange>
@@ -3702,9 +3702,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5681" levels="1" name="PvP Weapon - CP Drain">
 		<!-- Confirmed CT2.5 -->
@@ -3724,11 +3724,11 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5682" levels="1" name="PvP Weapon - Cancel">
 		<!-- Confirmed CT2.5 -->
@@ -3747,13 +3747,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>25</rate>
 				<max>3</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5683" levels="1" name="PvP Weapon - Ignore Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -3776,11 +3776,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="sDef" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5684" levels="1" name="PvP Weapon - Attack Rate">
 		<!-- Confirmed CT2.5 -->
@@ -3799,11 +3799,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5685" levels="1" name="PvP Weapon - Casting">
 		<!-- Confirmed CT2.5 -->
@@ -3825,12 +3825,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5686" levels="1" name="PvP Weapon - Rapid Fire">
 		<!-- Confirmed CT2.5 -->
@@ -3851,12 +3851,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5687" levels="1" name="PvP Weapon - Decrease Range">
 		<!-- Confirmed CT2.5 -->
@@ -3879,7 +3879,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackRange">
@@ -3890,7 +3890,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5688" levels="1" name="PvP Weapon - Decrease Resist">
 		<!-- Confirmed CT2.5 -->
@@ -3913,7 +3913,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="fireRes" val="30" />
 				<sub stat="waterRes" val="30" />
@@ -3922,7 +3922,7 @@
 				<sub stat="holyRes" val="30" />
 				<sub stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5689" levels="1" name="PvP Shield - Reflect Damage">
 		<!-- Confirmed CT2.5 -->
@@ -3943,12 +3943,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5690" levels="1" name="PvP Armor - Damage Down">
 		<!-- Confirmed CT2.5 -->
@@ -3969,7 +3969,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PvpPhysicalAttackDefenceBonus">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -3982,7 +3982,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5691" levels="1" name="PvP Armor - Critical Down">
 		<!-- Confirmed CT2.5 -->
@@ -4003,7 +4003,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.85" />
 			</effect>
@@ -4011,7 +4011,7 @@
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5692" levels="1" name="PvP Armor - Heal">
 		<!-- Confirmed CT2.5 -->
@@ -4027,11 +4027,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5693" levels="1" name="PvP Armor - Speed Down">
 		<!-- Confirmed CT2.5 -->
@@ -4054,7 +4054,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -4069,7 +4069,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5694" levels="1" name="PvP Armor - Mirage">
 		<!-- Confirmed CT2.5 -->
@@ -4088,9 +4088,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5695" levels="1" name="Talisman - Increase Momentum">
 		<!-- Confirmed CT2.5 -->
@@ -4109,11 +4109,11 @@
 				<player Charges="5" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>5</maxCharges>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5696" levels="1" name="Dizziness">
 		<abnormalLvl>9</abnormalLvl>
@@ -4130,7 +4130,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>-20</amount>
 				<mode>PER</mode>
@@ -4139,7 +4139,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5697" levels="4" name="Seal">
 		<!-- Imbue Seed of Destruction end effect. -->
@@ -4166,10 +4166,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5698" levels="37" name="Blessed Blood">
 		<!-- Confirmed CT2.5 -->
@@ -4222,7 +4222,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">217</value>
@@ -4264,7 +4264,7 @@
 					<value level="37">687</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5699" levels="7" name="Decrease P. Def">
 		<!-- Lvl 1 - Kamaloka (Labyrinth of the Abyss) 29 -->
@@ -4287,11 +4287,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-66</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

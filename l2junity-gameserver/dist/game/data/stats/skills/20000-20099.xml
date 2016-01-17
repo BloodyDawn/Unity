@@ -46,13 +46,13 @@
 		<coolTime>167</coolTime>
 		<staticReuse>true</staticReuse>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>3420</power>
 				<overHit>true</overHit>
 				<chance>20</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="20003" levels="1" name="Dragon Slash">
 		<!-- A dragon's powerful slash that attacks an enemy with 3420 Power added to P. Atk. Over-hit is possible. -->
@@ -69,12 +69,12 @@
 		<coolTime>167</coolTime>
 		<staticReuse>true</staticReuse>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3420</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="20004" levels="1" name="Dragon Dash">
 		<!-- Increases Speed by 100% for 5 seconds with a dragon's strength. -->
@@ -92,12 +92,12 @@
 		<icon>icon.skill_transform_buff</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="20005" levels="1" name="Dragon Aura">
 		<!-- Increases Critical Rate by 30% for 20 minutes with a dragon's strength. -->
@@ -118,11 +118,11 @@
 		<isMagic>1</isMagic>
 		<castRange>400</castRange>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="20006" levels="1" name="Soul Roar">
 		<!-- High Five Skill -->
@@ -140,7 +140,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>1</abnormalLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHealPercent">
 				<power>15</power>
 			</effect>
@@ -153,7 +153,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="20007" levels="1" name="Block Invincibility">
 		<!-- Updated to Ertheia -->
@@ -169,7 +169,7 @@
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
 		<canBeDispelled>false</canBeDispelled>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- 1 Bonus HP/MP regen... what a joke :D -->
 			</effect>
@@ -185,7 +185,7 @@
 				<amount>1</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="20008" levels="1" name="Clan Advent (Event)">
 		<!-- AUTO GENERATED SKILL -->

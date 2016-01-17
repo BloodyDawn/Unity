@@ -41,11 +41,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>44</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3006" levels="1" name="Equip Set Items">
 		<icon>icon.skill0042</icon>
@@ -69,7 +69,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">6.88</value>
@@ -81,7 +81,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3008" levels="6" name="Special Ability: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -98,7 +98,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">5.42</value>
@@ -110,7 +110,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3009" levels="8" name="Special Ability: Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -129,7 +129,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">2.95</value>
@@ -143,7 +143,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3010" levels="6" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -160,11 +160,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3011" levels="6" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -181,11 +181,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3012" levels="6" name="Special Ability: Anger">
 		<!-- Confirmed CT2.5 -->
@@ -202,7 +202,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>-15</amount>
 				<mode>PER</mode>
@@ -218,7 +218,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3013" levels="5" name="Special Ability: Health">
 		<!-- Confirmed CT2.5 -->
@@ -235,7 +235,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -280,7 +280,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3014" levels="3" name="Special Ability: Mana Up">
 		<!-- Confirmed CT2.5 -->
@@ -294,7 +294,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -323,7 +323,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3016" levels="6" name="Special Ability: Critical Stun">
 		<!-- Confirmed CT2.5 -->
@@ -358,9 +358,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3018" levels="6" name="Special Ability: Back Blow">
 		<!-- Confirmed CT2.5 -->
@@ -377,13 +377,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit">
 					<player behind="true" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3019" levels="6" name="Special Ability: Back Blow">
 		<!-- Confirmed CT2.5 -->
@@ -400,13 +400,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit">
 					<player behind="true" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3020" levels="6" name="Special Ability: Critical Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -448,7 +448,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">128</value>
@@ -459,7 +459,7 @@
 					<value level="6">256</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3021" levels="6" name="Special Ability: Critical Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -494,7 +494,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">43</value>
@@ -505,7 +505,7 @@
 					<value level="6">88</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3022" levels="6" name="Special Ability: Critical Drain">
 		<!-- Confirmed CT2.5 -->
@@ -537,7 +537,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>3000</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">9.26</value>
@@ -556,7 +556,7 @@
 					<value level="6">35</value>
 				</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3023" levels="6" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
@@ -573,7 +573,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">174.78</value>
@@ -585,7 +585,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3024" levels="6" name="Special Ability: Critical Poison">
 		<!-- Confirmed CT2.5 -->
@@ -639,7 +639,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">191</value>
@@ -650,7 +650,7 @@
 					<value level="6">403</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3025" levels="6" name="Special Ability: Critical Anger">
 		<!-- Confirmed CT2.5 -->
@@ -691,7 +691,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">248.56</value>
@@ -703,7 +703,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3027" levels="7" name="Special Ability: Rsk. Focus">
 		<!-- Confirmed CT2.5 -->
@@ -722,7 +722,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit">
 					<player hp="60" />
@@ -764,7 +764,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3028" levels="6" name="Special Ability: Rsk. Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -781,13 +781,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas">
 					<player hp="60" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3029" levels="6" name="Special Ability: Rsk. Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -804,13 +804,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas">
 					<player hp="60" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3030" levels="6" name="Special Ability: Rsk. Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -827,13 +827,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas">
 					<player hp="60" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3031" levels="6" name="Special Ability: Rsk. Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -850,13 +850,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas">
 					<player hp="60" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3032" levels="6" name="Special Ability: Rsk. Haste">
 		<!-- Confirmed CT2.5 -->
@@ -873,7 +873,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">13</value>
@@ -885,7 +885,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3033" levels="6" name="Special Ability: Rsk. Haste">
 		<!-- Confirmed CT2.5 -->
@@ -902,7 +902,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">13</value>
@@ -914,7 +914,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3034" levels="7" name="Special Ability: Rsk. Haste">
 		<!-- Confirmed CT2.5 -->
@@ -933,7 +933,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">13</value>
@@ -982,7 +982,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3035" levels="6" name="Special Ability: Mighty Mortal">
 		<!-- Confirmed CT2.5 -->
@@ -999,7 +999,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlowRate">
 				<amount>
 					<value level="1">50</value>
@@ -1011,7 +1011,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3036" levels="6" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1028,7 +1028,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">8</value>
@@ -1040,7 +1040,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3037" levels="6" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1057,7 +1057,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">8</value>
@@ -1069,7 +1069,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3038" levels="6" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1086,7 +1086,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">8</value>
@@ -1098,7 +1098,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3039" levels="7" name="Special Ability: Critical Drain">
 		<!-- Confirmed CT2.5 -->
@@ -1130,7 +1130,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">6.85</value>
@@ -1151,7 +1151,7 @@
 					<value level="7">24</value>
 				</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3040" levels="6" name="Special Ability: Critical Poison">
 		<!-- Confirmed CT2.5 -->
@@ -1205,7 +1205,7 @@
 			<value level="6">61</value>
 		</magicLvl>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">168</value>
@@ -1216,7 +1216,7 @@
 					<value level="6">336</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3041" levels="6" name="Special Ability: Critical Poison">
 		<!-- Confirmed CT2.5 -->
@@ -1270,7 +1270,7 @@
 			<value level="6">61</value>
 		</magicLvl>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">317</value>
@@ -1281,7 +1281,7 @@
 					<value level="6">671</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3042" levels="20" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
@@ -1313,7 +1313,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">81.6</value>
@@ -1414,7 +1414,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3043" levels="6" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
@@ -1431,7 +1431,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">106.45</value>
@@ -1443,7 +1443,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3044" levels="20" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1475,7 +1475,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
 			</effect>
@@ -1554,7 +1554,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3045" levels="20" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1586,7 +1586,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">5</value>
@@ -1624,7 +1624,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3046" levels="20" name="Special Ability: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -1656,7 +1656,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">3.9</value>
@@ -1757,7 +1757,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3047" levels="3" name="Special Ability: Acumen">
 		<!-- Confirmed CT2.5 -->
@@ -1771,7 +1771,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -1800,7 +1800,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3048" levels="3" name="Special Ability: Conversion">
 		<!-- Confirmed CT2.5 -->
@@ -1814,7 +1814,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>-40</amount>
 				<mode>PER</mode>
@@ -1847,7 +1847,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3049" levels="2" name="Special Ability: Increase Critical">
 		<!-- Confirmed CT2.5 -->
@@ -1864,11 +1864,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>8.39</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3050" levels="2" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1880,7 +1880,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="61.6" />
 			</effect>
@@ -1896,7 +1896,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3051" levels="2" name="Special Ability: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1908,7 +1908,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="67.3" />
 			</effect>
@@ -1924,7 +1924,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3052" levels="2" name="Special Ability: Critical Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -1947,11 +1947,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>74</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3053" levels="2" name="Special Ability: Critical Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -1974,7 +1974,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>88</power>
 			</effect>
@@ -1982,7 +1982,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3054" levels="2" name="Special Ability: Critical Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -2005,7 +2005,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>256</power>
 			</effect>
@@ -2013,7 +2013,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3055" levels="2" name="Special Ability: Critical Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -2036,7 +2036,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>128</power>
 			</effect>
@@ -2044,7 +2044,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3056" levels="3" name="Special Ability: Rsk. Haste">
 		<!-- Confirmed CT2.5 -->
@@ -2058,7 +2058,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>11</amount>
 				<mode>PER</mode>
@@ -2087,7 +2087,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3057" levels="4" name="Special Ability: Anger">
 		<!-- Confirmed CT2.5 -->
@@ -2102,7 +2102,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>-15</amount>
 				<mode>PER</mode>
@@ -2128,7 +2128,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3058" levels="2" name="Special Ability: Anger">
 		<!-- Confirmed CT2.5 -->
@@ -2141,7 +2141,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>-15</amount>
 				<mode>PER</mode>
@@ -2165,7 +2165,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3059" levels="2" name="Special Ability: Critical Drain">
 		<!-- Confirmed CT2.5 -->
@@ -2182,7 +2182,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">18</value>
@@ -2190,7 +2190,7 @@
 				</power>
 				<percentage>65</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3060" levels="2" name="Special Ability: Critical Drain">
 		<!-- Confirmed CT2.5 -->
@@ -2207,7 +2207,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">10</value>
@@ -2215,7 +2215,7 @@
 				</power>
 				<percentage>35</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3061" levels="3" name="Special Ability: Critical Poison">
 		<!-- Confirmed CT2.5 -->
@@ -2244,7 +2244,7 @@
 			<value level="3">70</value>
 		</magicLvl>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">403</value>
@@ -2252,7 +2252,7 @@
 					<value level="3">439</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3062" levels="2" name="Special Ability: Critical Poison">
 		<!-- Confirmed CT2.5 -->
@@ -2279,11 +2279,11 @@
 			<value level="2">67</value>
 		</magicLvl>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>224</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3063" levels="2" name="Special Ability: Back Blow">
 		<!-- Confirmed CT2.5 -->
@@ -2295,7 +2295,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.37">
 					<player behind="true" />
@@ -2313,7 +2313,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3064" levels="1" name="Special Ability: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -2322,7 +2322,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>3.95</amount>
 				<mode>DIFF</mode>
@@ -2339,7 +2339,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3065" levels="1" name="Special Ability: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -2348,7 +2348,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>5.41</amount>
 				<mode>DIFF</mode>
@@ -2365,7 +2365,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3066" levels="4" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
@@ -2380,7 +2380,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">180.94</value>
@@ -2402,7 +2402,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3067" levels="2" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
@@ -2415,7 +2415,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">297.68</value>
@@ -2435,7 +2435,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3068" levels="3" name="Special Ability: Haste">
 		<!-- Confirmed CT2.5 -->
@@ -2450,7 +2450,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">6</value>
@@ -2483,7 +2483,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3069" levels="1" name="Special Ability: Rsk. Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -2492,13 +2492,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rEvas" val="6.8">
 					<player hp="60" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3070" levels="4" name="Special Ability: Critical Stun">
 		<!-- Confirmed CT2.5 -->
@@ -2529,9 +2529,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3071" levels="2" name="Special Ability: Rsk. Focus">
 		<!-- Confirmed CT2.5 -->
@@ -2541,7 +2541,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="130">
 					<player hp="60" />
@@ -2568,7 +2568,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3072" levels="2" name="Special Ability: Empower">
 		<!-- Confirmed CT2.5 -->
@@ -2581,7 +2581,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">30.76</value>
@@ -2601,7 +2601,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3073" levels="2" name="Special Ability: Magic Power">
 		<!-- Confirmed CT2.5 -->
@@ -2614,7 +2614,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="1.15" />
 			</effect>
@@ -2637,7 +2637,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3074" levels="2" name="Special Ability: Magic Silence">
 		<!-- Confirmed CT2.5 -->
@@ -2664,9 +2664,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3075" levels="2" name="Special Ability: Magic Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -2692,7 +2692,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2707,7 +2707,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6126</skillId>
@@ -2730,7 +2730,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">20.36</value>
@@ -2742,7 +2742,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3077" levels="6" name="Special Ability: Magic Power">
 		<!-- Confirmed CT2.5 -->
@@ -2759,7 +2759,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="1.15" />
 			</effect>
@@ -2774,7 +2774,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3078" levels="6" name="Special Ability: Magic Silence">
 		<!-- Confirmed CT2.5 -->
@@ -2805,9 +2805,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3079" levels="6" name="Special Ability: Magic Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -2837,7 +2837,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2852,7 +2852,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6126</skillId>
@@ -2911,11 +2911,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3081" levels="15" name="Item Skill: Charm">
 		<!-- Confirmed CT2.5 -->
@@ -2953,7 +2953,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<power>
 					<value level="1">-219</value>
@@ -2973,7 +2973,7 @@
 					<value level="15">-390</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3082" levels="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
@@ -3000,7 +3000,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">49</value>
@@ -3015,7 +3015,7 @@
 					<value level="10">88</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3083" levels="15" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -3058,14 +3058,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3084" levels="10" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -3098,14 +3098,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3085" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -3140,9 +3140,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3086" levels="15" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -3187,12 +3187,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3087" levels="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -3227,12 +3227,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3088" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -3266,7 +3266,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -3281,7 +3281,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6126</skillId>
@@ -3323,9 +3323,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3090" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -3360,10 +3360,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3091" levels="15" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -3430,7 +3430,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">41</value>
@@ -3450,7 +3450,7 @@
 					<value level="15">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3092" levels="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -3518,7 +3518,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">44</value>
@@ -3538,7 +3538,7 @@
 					<value level="15">67</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3093" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -3573,9 +3573,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3094" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -3610,10 +3610,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3095" levels="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
@@ -3641,7 +3641,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">49</value>
@@ -3656,7 +3656,7 @@
 					<value level="10">88</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3096" levels="15" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -3700,14 +3700,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3097" levels="10" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -3741,14 +3741,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3098" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -3784,9 +3784,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3099" levels="15" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -3832,11 +3832,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

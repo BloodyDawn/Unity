@@ -20,14 +20,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6401" levels="1" name="Kokracon Wheeling Clow">
 		<affectRange>150</affectRange>
@@ -43,11 +43,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6402" levels="5" name="Torumba Poison Strike">
 		<table name="#dot"> 100 220 440 880 1600 </table>
@@ -79,7 +79,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">100</value>
@@ -89,7 +89,7 @@
 					<value level="5">1600</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6403" levels="1" name="Torumba Numbing Poison">
 		<abnormalLvl>3</abnormalLvl>
@@ -112,7 +112,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
@@ -123,7 +123,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6404" levels="1" name="Torumba Poison Swing">
 		<abnormalLvl>3</abnormalLvl>
@@ -144,7 +144,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
@@ -154,7 +154,7 @@
 				<amount>-70</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6405" levels="1" name="Torumba Roar">
 		<abnormalLvl>1</abnormalLvl>
@@ -178,7 +178,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -193,7 +193,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6406" levels="1" name="Torumba's Plague">
 		<abnormalLvl>99</abnormalLvl>
@@ -212,9 +212,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6407" levels="1" name="Torumba's Constraint">
 		<!-- Confirmed CT2.5 -->
@@ -237,9 +237,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockResurrection" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6408" levels="1" name="Soul Weakness">
 		<abnormalLvl>1</abnormalLvl>
@@ -273,11 +273,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6410" levels="1" name="Reptilikon Rush">
 		<abnormalLvl>1</abnormalLvl>
@@ -304,12 +304,12 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6411" levels="1" name="Reptilikon Summon">
 		<coolTime>500</coolTime>
@@ -333,11 +333,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6413" levels="1" name="Reptilikon Missile">
 		<affectRange>200</affectRange>
@@ -353,11 +353,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6414" levels="1" name="Reptilikon Charge">
 		<abnormalLvl>1</abnormalLvl>
@@ -383,12 +383,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6415" levels="1" name="Reptilikon Scratch">
 		<affectRange>300</affectRange>
@@ -410,11 +410,11 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6416" levels="1" name="Reptilikon Poison Breath">
 		<abnormalLvl>8</abnormalLvl>
@@ -442,11 +442,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>4</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6417" levels="1" name="Reptilikon Poison Shot">
 		<abnormalLvl>8</abnormalLvl>
@@ -473,11 +473,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>4</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6418" levels="1" name="Reptilikon Fury Poison Bomb">
 		<abnormalLvl>8</abnormalLvl>
@@ -504,14 +504,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>69</power>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>4</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6419" levels="1" name="Light of Scout">
 		<castRange>40</castRange>
@@ -524,11 +524,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6420" levels="1" name="Lizard Blow">
 		<castRange>40</castRange>
@@ -541,11 +541,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6421" levels="1" name="Warrior's Rage">
 		<castRange>40</castRange>
@@ -558,11 +558,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6422" levels="1" name="Resistance Explosion">
 		<affectRange>200</affectRange>
@@ -574,11 +574,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6423" levels="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -602,12 +602,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2738</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6424" levels="1" name="Double Shot">
 		<castRange>900</castRange>
@@ -621,11 +621,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6425" levels="1" name="Demotivation Hex">
 		<abnormalLvl>3</abnormalLvl>
@@ -643,12 +643,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6426" levels="1" name="Priest's Ire">
 		<!-- Confirmed CT2.5 -->
@@ -666,11 +666,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6427" levels="1" name="Medicinal Mushroom 1">
 		<!-- Fantasy Mushroom Skill -->
@@ -709,7 +709,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -717,7 +717,7 @@
 			<effect name="HealPercent">
 				<power>90</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6429" levels="1" name="Cozy Mucus">
 		<!-- Rainbow Frog -->
@@ -738,7 +738,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>2000</effectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -751,7 +751,7 @@
 				<amount>400</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6430" levels="1" name="Roar Hip Heal">
 		<!-- Energy Plant Skill -->
@@ -766,11 +766,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>2000</effectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6431" levels="1" name="Feral Might">
 		<!-- P. Atk. increases by 19 % for 5 minutes -->
@@ -791,12 +791,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>19</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6432" levels="1" name="Feral Focus">
 		<!-- Critical attack rate increases by 35 % for 5 minutes -->
@@ -817,11 +817,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6433" levels="1" name="Feral Guidance">
 		<!-- Accuracy increases by 7 for 5 minutes. -->
@@ -842,12 +842,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6434" levels="1" name="Feral Haste">
 		<!-- Atk. Spd. increases by 38 % for 5 minutes. -->
@@ -868,12 +868,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>38</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6435" levels="3" name="Curse of the Plains">
 		<!-- Confirmed CT2.5 -->
@@ -900,7 +900,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTimePercent" ticks="5">
 				<mul stat="rCrit" val="#rCrit">
 					<using kind="BOW,CROSSBOW" />
@@ -923,7 +923,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6436" levels="1" name="Curse of the Dark Abyss">
 		<!-- Confirmed CT2.5 -->
@@ -943,7 +943,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTimePercent" ticks="5">
 				<mul stat="rCrit" val="0.9">
 					<using kind="BOW,CROSSBOW" />
@@ -958,7 +958,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6437" levels="7" name="Freezing Core Area">
 		<table name="#dot"> 30 60 90 150 250 350 500 </table>
@@ -981,7 +981,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">30</value>
@@ -993,7 +993,7 @@
 					<value level="7">500</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6438" levels="1" name="Penalty Area">
 		<abnormalLvl>10</abnormalLvl>
@@ -1031,7 +1031,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>95</BLUNT>
 				<SWORD>50</SWORD>
@@ -1045,7 +1045,7 @@
 				<DUALFIST>95</DUALFIST>
 				<DUALDAGGER>95</DUALDAGGER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6440" levels="1" name="Energy of Strength">
 		<abnormalLvl>1</abnormalLvl>
@@ -1064,7 +1064,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>99</BOW>
 				<BLUNT>-5</BLUNT>
@@ -1078,7 +1078,7 @@
 				<DAGGER>-5</DAGGER>
 				<RAPIER>-5</RAPIER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6441" levels="1" name="Energy of Agility">
 		<abnormalLvl>1</abnormalLvl>
@@ -1097,7 +1097,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>95</BLUNT>
 				<SWORD>50</SWORD>
@@ -1111,7 +1111,7 @@
 				<DUALFIST>95</DUALFIST>
 				<DUALDAGGER>95</DUALDAGGER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6442" levels="1" name="Energy of Wisdom">
 		<abnormalLvl>1</abnormalLvl>
@@ -1130,11 +1130,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pveMagicalDmg" val="2.0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6443" levels="1" name="Energy of Strength">
 		<abnormalLvl>1</abnormalLvl>
@@ -1153,12 +1153,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="2.0" />
 				<mul stat="pvePhysSkillsDmg" val="2.0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6444" levels="1" name="Energy of Agility">
 		<abnormalLvl>1</abnormalLvl>
@@ -1177,12 +1177,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="2.0" />
 				<mul stat="pvePhysSkillsDmg" val="2.0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6445" levels="1" name="Presentation - Freya's Message 1">
 		<!-- Confirmed CT2.5 -->

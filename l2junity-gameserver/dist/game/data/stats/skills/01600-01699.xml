@@ -20,7 +20,7 @@
 		<magicLvl>83</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.5" />
 				<mul stat="mCritRate" val="1.5" />
@@ -41,7 +41,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1601" levels="1" name="Fishing">
 		<!-- AUTO GENERATED SKILL -->
@@ -90,11 +90,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>60580</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1628" levels="1" name="Super Strike">
 		<!-- Glory Days confirmed -->
@@ -110,11 +110,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>277440</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1629" levels="1" name="Might">
 		<!-- Glory Days confirmed -->
@@ -132,12 +132,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1630" levels="1" name="Focus">
 		<!-- Glory Days confirmed -->
@@ -155,7 +155,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 			</effect>
@@ -163,7 +163,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1631" levels="1" name="Absolute Defense">
 		<!-- Glory Days confirmed -->
@@ -181,7 +181,7 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<hitTime>1000</hitTime>
-		<for>
+		<effects>
 			<effect name="BlockMove">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
@@ -193,7 +193,7 @@
 				<amount>5000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1632" levels="1" name="Shield">
 		<!-- Glory Days confirmed -->
@@ -211,7 +211,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -220,7 +220,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1633" levels="1" name="Heal">
 		<!-- Glory Days confirmed -->
@@ -236,11 +236,11 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>1024</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1634" levels="1" name="Spinning Slasher">
 		<!-- Glory Days confirmed -->
@@ -256,11 +256,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>36675</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1635" levels="1" name="Blood Siphon">
 		<!-- Glory Days confirmed -->
@@ -278,12 +278,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>300</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1636" levels="1" name="Petrify">
 		<!-- Glory Days confirmed -->
@@ -303,7 +303,7 @@
 		<trait>TURN_STONE</trait>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -313,7 +313,7 @@
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1637" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -338,11 +338,11 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1638" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -367,11 +367,11 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1639" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -394,11 +394,11 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1640" levels="1" name="Hold">
 		<!-- Glory Days confirmed -->
@@ -423,12 +423,12 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1641" levels="1" name="Hold">
 		<!-- Glory Days confirmed -->
@@ -453,12 +453,12 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1642" levels="1" name="Hold">
 		<!-- Glory Days confirmed -->
@@ -481,12 +481,12 @@
 		<affectRange>1000</affectRange>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1643" levels="1" name="Paralysis">
 		<!-- Glory Days confirmed -->
@@ -511,7 +511,7 @@
 		<abnormalTime>15</abnormalTime>
 		<trait>PARALYZE</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -526,7 +526,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6091</skillId>
@@ -550,12 +550,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1645" levels="1" name="Debuff Invincibility">
 		<!-- Glory Days confirmed -->
@@ -573,11 +573,11 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1646" levels="1" name="Mana Burn">
 		<!-- AUTO GENERATED SKILL -->
@@ -661,12 +661,12 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<hitTime>1000</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>50000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1651" levels="1" name="Melee Weapon Resistance">
 		<!-- Glory Days confirmed -->
@@ -676,7 +676,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>100</BLUNT>
 				<SWORD>100</SWORD>
@@ -687,7 +687,7 @@
 				<DUALFIST>100</DUALFIST>
 				<DUALDAGGER>100</DUALDAGGER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1652" levels="1" name="Strike">
 		<!-- Glory Days confirmed -->
@@ -704,11 +704,11 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1653" levels="1" name="Super Strike">
 		<!-- Glory Days confirmed -->
@@ -725,11 +725,11 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1654" levels="1" name="Long Strike">
 		<!-- Glory Days confirmed -->
@@ -747,11 +747,11 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>49414</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1655" levels="1" name="Long Strike">
 		<!-- Glory Days confirmed -->
@@ -769,11 +769,11 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1656" levels="1" name="Mass Shot">
 		<!-- Glory Days confirmed -->
@@ -793,11 +793,11 @@
 		<affectLimit>5-12</affectLimit>
 		<castRange>2000</castRange>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1657" levels="1" name="Self-destruction">
 		<!-- Glory Days confirmed -->
@@ -816,11 +816,11 @@
 		<affectLimit>5-12</affectLimit>
 		<hitTime>5000</hitTime>
 		<isSuicideAttack>true</isSuicideAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>237492</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1658" levels="1" name="Self-destruction">
 		<!-- Glory Days confirmed -->
@@ -837,11 +837,11 @@
 		<affectLimit>5-12</affectLimit>
 		<hitTime>5000</hitTime>
 		<isSuicideAttack>true</isSuicideAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>500000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1659" levels="1" name="Wild Sweep">
 		<!-- Glory Days confirmed -->
@@ -861,11 +861,11 @@
 		<fanRange>0;0;1000;90</fanRange>
 		<reuseDelay>4000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1660" levels="1" name="Spinning Slasher">
 		<!-- Glory Days confirmed -->
@@ -883,11 +883,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>4000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>100000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1661" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1170,7 +1170,7 @@
 		<trait>PARALYZE</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -1180,7 +1180,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1677" levels="1" name="Spinning Slasher">
 		<!-- AUTO GENERATED SKILL -->

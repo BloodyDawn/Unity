@@ -90,7 +90,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">6</value>
@@ -127,7 +127,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4701" levels="13" name="Cure of Queen">
 		<table name="#power"> 40 45 50 55 60 65 70 75 80 85 90 95 100 </table> <!-- Base Land Rate -->
@@ -184,7 +184,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>ATTACK_TIME_UP;HIT_DOWN;PA_DOWN</dispel>
 				<rate>
@@ -203,7 +203,7 @@
 					<value level="13">100</value>
 				</rate>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4702" levels="13" name="Blessing of Seraphim">
 		<table name="#regMp"> 1.3 1.32 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
@@ -294,7 +294,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>
 					<value level="1">30</value>
@@ -313,7 +313,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4703" levels="13" name="Gift of Seraphim">
 		<table name="#mReuse"> 0.7 0.68 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 </table>
@@ -404,11 +404,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#mReuse" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4704" levels="13" name="Cure of Seraphim">
 		<table name="#power"> 40 45 50 55 60 65 70 75 80 85 90 95 100 </table> <!-- Base Land Rate -->
@@ -465,7 +465,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>SLEEP;ROOT_MAGICALLY;STUN;PARALYZE;SILENCE</dispel>
 				<rate>
@@ -484,7 +484,7 @@
 					<value level="13">100</value>
 				</rate>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4705" levels="13" name="Curse of Shade">
 		<!-- Confirmed CT2.5 -->
@@ -597,7 +597,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="TargetMeProbability">
@@ -639,7 +639,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4706" levels="13" name="Mass Curse of Shade">
 		<!-- Confirmed CT2.5 -->
@@ -753,7 +753,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="TargetMeProbability">
@@ -795,7 +795,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4707" levels="13" name="Shade Sacrifice">
 		<!-- Confirmed CT2.5 -->
@@ -856,7 +856,7 @@
 		<!-- NOTE: skill description mention party members, but is client typo, it could affect any single target -->
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">541</value>
@@ -874,7 +874,7 @@
 					<value level="13">692</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4708" levels="17" name="Cursed Strike">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -956,7 +956,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1046</value>
@@ -979,7 +979,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4709" levels="17" name="Cursed Blow">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1051,7 +1051,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">4181</value>
@@ -1075,7 +1075,7 @@
 				<criticalChance>10</criticalChance>
 				<chance>20</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4710" levels="12" name="Wild Stun">
 		<table name="#power"> 16 35 73 138 238 375 537 619 697 766 821 864 </table>
@@ -1140,7 +1140,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">16</value>
@@ -1158,7 +1158,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4711" levels="12" name="Wild Defense">
 		<abnormalLvl>1</abnormalLvl>
@@ -1229,7 +1229,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="BlockMove">
 			</effect>
 			<effect name="Speed">
@@ -1248,7 +1248,7 @@
 				<amount>-70</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4712" levels="12" name="Bright Burst">
 		<table name="#power"> 6 9 13 17 23 28 34 36 39 41 42 43 </table>
@@ -1305,7 +1305,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">6</value>
@@ -1322,7 +1322,7 @@
 					<value level="12">43</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4713" levels="12" name="Bright Heal">
 		<table name="#amount"> 33 61 98 145 198 251 298 316 330 338 341 342 </table>
@@ -1378,7 +1378,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">33</value>
@@ -1395,7 +1395,7 @@
 					<value level="12">342</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4714" levels="1" name="Twilight Dragon">
 		<!-- This Skill Is Only For Description In The Client -->
@@ -1474,11 +1474,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4718" levels="12" name="Greater Heal Trick">
 		<castRange>600</castRange>
@@ -1533,11 +1533,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4719" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -1579,7 +1579,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">112</value>
@@ -1596,7 +1596,7 @@
 					<value level="12">32796</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4720" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -1638,7 +1638,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">95</value>
@@ -1655,7 +1655,7 @@
 					<value level="12">28860</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4721" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -1697,7 +1697,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">51</value>
@@ -1714,7 +1714,7 @@
 					<value level="12">15349</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4722" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -1756,7 +1756,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">48</value>
@@ -1773,7 +1773,7 @@
 					<value level="12">14430</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4723" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -1815,7 +1815,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">45</value>
@@ -1832,7 +1832,7 @@
 					<value level="12">13512</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4724" levels="12" name="Stun">
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
@@ -1895,7 +1895,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">56</value>
@@ -1913,7 +1913,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4725" levels="12" name="Stun">
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
@@ -1976,7 +1976,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">48</value>
@@ -1994,7 +1994,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4726" levels="12" name="Stun">
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
@@ -2057,7 +2057,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">26</value>
@@ -2075,7 +2075,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4727" levels="12" name="Stun">
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
@@ -2138,7 +2138,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">24</value>
@@ -2156,7 +2156,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4728" levels="12" name="Stun">
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
@@ -2219,7 +2219,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">23</value>
@@ -2237,7 +2237,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4729" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -2279,7 +2279,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">168</value>
@@ -2297,7 +2297,7 @@
 				</power>
 				<chance>115</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4730" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -2339,7 +2339,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">142</value>
@@ -2357,7 +2357,7 @@
 				</power>
 				<chance>115</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4731" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -2399,7 +2399,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">76</value>
@@ -2417,7 +2417,7 @@
 				</power>
 				<chance>115</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4732" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -2459,7 +2459,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">71</value>
@@ -2477,7 +2477,7 @@
 				</power>
 				<chance>115</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4733" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -2519,7 +2519,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">67</value>
@@ -2537,7 +2537,7 @@
 				</power>
 				<chance>115</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4734" levels="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
@@ -2578,7 +2578,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">56</value>
@@ -2595,7 +2595,7 @@
 					<value level="12">16398</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4735" levels="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
@@ -2636,7 +2636,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">48</value>
@@ -2653,7 +2653,7 @@
 					<value level="12">14430</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4736" levels="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
@@ -2694,7 +2694,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">26</value>
@@ -2711,7 +2711,7 @@
 					<value level="12">7675</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4737" levels="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
@@ -2752,7 +2752,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">24</value>
@@ -2769,7 +2769,7 @@
 					<value level="12">7215</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4738" levels="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
@@ -2810,7 +2810,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">23</value>
@@ -2827,7 +2827,7 @@
 					<value level="12">6756</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4739" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -2869,7 +2869,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">112</value>
@@ -2886,7 +2886,7 @@
 					<value level="12">32796</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4740" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -2928,7 +2928,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">95</value>
@@ -2945,7 +2945,7 @@
 					<value level="12">28860</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4741" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -2987,7 +2987,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">51</value>
@@ -3004,7 +3004,7 @@
 					<value level="12">15349</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4742" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -3046,7 +3046,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">48</value>
@@ -3063,7 +3063,7 @@
 					<value level="12">14430</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4743" levels="12" name="Power Strike">
 		<!-- Boss Skill -->
@@ -3105,7 +3105,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">45</value>
@@ -3122,7 +3122,7 @@
 					<value level="12">13512</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4744" levels="12" name="Stun">
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
@@ -3185,7 +3185,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">56</value>
@@ -3203,7 +3203,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4745" levels="12" name="Stun">
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
@@ -3266,7 +3266,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">48</value>
@@ -3284,7 +3284,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4746" levels="12" name="Stun">
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
@@ -3347,7 +3347,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">26</value>
@@ -3365,7 +3365,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4747" levels="12" name="Stun">
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
@@ -3428,7 +3428,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">24</value>
@@ -3446,7 +3446,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4748" levels="12" name="Stun">
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
@@ -3509,7 +3509,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">23</value>
@@ -3527,7 +3527,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4749" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -3569,7 +3569,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">280</value>
@@ -3587,7 +3587,7 @@
 				</power>
 				<chance>67</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4750" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -3629,7 +3629,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">236</value>
@@ -3647,7 +3647,7 @@
 				</power>
 				<chance>67</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4751" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -3689,7 +3689,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">126</value>
@@ -3707,7 +3707,7 @@
 				</power>
 				<chance>67</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4752" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -3749,7 +3749,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">118</value>
@@ -3767,7 +3767,7 @@
 				</power>
 				<chance>67</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4753" levels="12" name="Mortal Blow">
 		<!-- Boss Skill -->
@@ -3809,7 +3809,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">111</value>
@@ -3827,7 +3827,7 @@
 				</power>
 				<chance>67</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4754" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -3868,7 +3868,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">327</value>
@@ -3885,7 +3885,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4755" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -3926,7 +3926,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">275</value>
@@ -3943,7 +3943,7 @@
 					<value level="12">84295</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4756" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -3984,7 +3984,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">147</value>
@@ -4001,7 +4001,7 @@
 					<value level="12">44830</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4757" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4042,7 +4042,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">138</value>
@@ -4059,7 +4059,7 @@
 					<value level="12">42148</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4758" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4100,7 +4100,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">129</value>
@@ -4117,7 +4117,7 @@
 					<value level="12">39466</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4759" levels="12" name="Stun">
 		<table name="#power"> 164 441 1218 3179 8223 16075 24892 29382 33944 38501 43180 47895 </table>
@@ -4179,7 +4179,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">164</value>
@@ -4197,7 +4197,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4760" levels="12" name="Stun">
 		<table name="#power"> 138 372 1029 2687 6943 13568 21015 24795 28785 33149 37783 42148 </table>
@@ -4259,7 +4259,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">138</value>
@@ -4277,7 +4277,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4761" levels="12" name="Stun">
 		<table name="#power"> 74 198 548 1434 3704 7241 11196 13197 15309 17634 20122 22415 </table>
@@ -4339,7 +4339,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">74</value>
@@ -4357,7 +4357,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4762" levels="12" name="Stun">
 		<table name="#power"> 69 186 514 1346 3472 6792 10508 12398 14393 16594 18870 21074 </table>
@@ -4419,7 +4419,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">69</value>
@@ -4437,7 +4437,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4763" levels="12" name="Stun">
 		<table name="#power"> 65 174 481 1253 3240 6344 9819 11599 13476 15516 17661 19733 </table>
@@ -4499,7 +4499,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">65</value>
@@ -4517,7 +4517,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4764" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4558,7 +4558,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">327</value>
@@ -4575,7 +4575,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4765" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4616,7 +4616,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">275</value>
@@ -4633,7 +4633,7 @@
 					<value level="12">84295</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4766" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4674,7 +4674,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">147</value>
@@ -4691,7 +4691,7 @@
 					<value level="12">44830</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4767" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4732,7 +4732,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">138</value>
@@ -4749,7 +4749,7 @@
 					<value level="12">42148</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4768" levels="12" name="Power Shot">
 		<!-- Boss Skill -->
@@ -4790,7 +4790,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">129</value>
@@ -4807,7 +4807,7 @@
 					<value level="12">39466</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4769" levels="12" name="Stun">
 		<table name="#power"> 164 441 1218 3179 8223 16075 24892 29382 33944 38501 43180 47895 </table>
@@ -4869,7 +4869,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">164</value>
@@ -4887,7 +4887,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4770" levels="12" name="Stun">
 		<table name="#power"> 138 372 1029 2687 6943 13568 21015 24795 28785 33149 37783 42148 </table>
@@ -4949,7 +4949,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">138</value>
@@ -4967,7 +4967,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4771" levels="12" name="Stun">
 		<table name="#power"> 74 198 548 1434 3704 7241 11196 13197 15309 17634 20122 22415 </table>
@@ -5029,7 +5029,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">74</value>
@@ -5047,7 +5047,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4772" levels="12" name="Stun">
 		<table name="#power"> 69 186 514 1346 3472 6792 10508 12398 14393 16594 18870 21074 </table>
@@ -5109,7 +5109,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">69</value>
@@ -5127,7 +5127,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4773" levels="12" name="Stun">
 		<table name="#power"> 65 174 481 1253 3240 6344 9819 11599 13476 15516 17661 19733 </table>
@@ -5189,7 +5189,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">65</value>
@@ -5207,7 +5207,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4774" levels="12" name="Spear Attack">
 		<!-- Boss Skill -->
@@ -5248,7 +5248,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -5265,7 +5265,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4775" levels="12" name="Spear Attack">
 		<!-- Boss Skill -->
@@ -5306,7 +5306,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -5323,7 +5323,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4776" levels="12" name="Spear Attack">
 		<!-- Boss Skill -->
@@ -5364,7 +5364,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -5381,7 +5381,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4777" levels="12" name="Spear Attack">
 		<!-- Boss Skill -->
@@ -5422,7 +5422,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -5439,7 +5439,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4778" levels="12" name="Spear Attack">
 		<!-- Boss Skill -->
@@ -5480,7 +5480,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -5497,7 +5497,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4779" levels="12" name="Heal">
 		<!-- Boss Skill -->
@@ -5539,7 +5539,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1640</value>
@@ -5556,7 +5556,7 @@
 					<value level="12">13157</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4780" levels="12" name="Heal">
 		<!-- Boss Skill -->
@@ -5598,7 +5598,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1382</value>
@@ -5615,7 +5615,7 @@
 					<value level="12">11578</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4781" levels="12" name="Heal">
 		<!-- Boss Skill -->
@@ -5657,7 +5657,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">736</value>
@@ -5674,7 +5674,7 @@
 					<value level="12">6158</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4782" levels="12" name="Heal">
 		<!-- Boss Skill -->
@@ -5716,7 +5716,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">691</value>
@@ -5733,7 +5733,7 @@
 					<value level="12">5789</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4783" levels="12" name="Heal">
 		<!-- Boss Skill -->
@@ -5775,7 +5775,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">647</value>
@@ -5792,7 +5792,7 @@
 					<value level="12">5421</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4784" levels="12" name="Chant of Life">
 		<!-- Boss Skill -->
@@ -5853,7 +5853,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">167</value>
@@ -5870,7 +5870,7 @@
 					<value level="12">940</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4785" levels="12" name="Chant of Life">
 		<!-- Boss Skill -->
@@ -5931,7 +5931,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">141</value>
@@ -5948,7 +5948,7 @@
 					<value level="12">827</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4786" levels="12" name="Chant of Life">
 		<!-- Boss Skill -->
@@ -6009,7 +6009,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">75</value>
@@ -6026,7 +6026,7 @@
 					<value level="12">440</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4787" levels="12" name="Chant of Life">
 		<!-- Boss Skill -->
@@ -6087,7 +6087,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">71</value>
@@ -6104,7 +6104,7 @@
 					<value level="12">414</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4788" levels="12" name="Chant of Life">
 		<!-- Boss Skill -->
@@ -6165,7 +6165,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">66</value>
@@ -6182,7 +6182,7 @@
 					<value level="12">388</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4789" levels="10" name="High Lv.">
 		<table name="#mDef"> 1.03 1.06 1.09 1.12 1.15 1.18 1.21 1.24 1.27 1.3 </table>
@@ -6191,7 +6191,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -6222,7 +6222,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4790" levels="1" name="Raid Boss (Lv. 23)">
 		<!-- Confirmed CT2.5 -->

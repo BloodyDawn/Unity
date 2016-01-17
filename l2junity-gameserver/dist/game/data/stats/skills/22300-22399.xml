@@ -16,7 +16,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<castRange>600</castRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!--Increases Speed by 30% -->
 				<mul stat="fall" val="0.7" />
@@ -25,7 +25,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22301" levels="1" name="Party Cake">
 		<!-- none -->
@@ -206,11 +206,11 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22313" levels="1" name="Pa'agrio's Warm Breeze - 4 hour">
 		<!-- "For 4 hours, recovers energy when Exp. is acquired through hunting." -->

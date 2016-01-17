@@ -17,12 +17,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
 				<amount>90</amount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10607" levels="1" name="Maximum Mortality">
 		<!-- For 1 min., Vital Spot Attack Rate + 20%. Requires a dagger or dual dagger. -->
@@ -41,7 +41,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlowRate">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -50,7 +50,7 @@
 					<item>DUALDAGGER</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10608" levels="4" name="Superior Haste">
 		<!-- Physical skill Cooldown - 5%. Spd. + 5. -->
@@ -65,7 +65,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="#pReuse" />
 			</effect>
@@ -78,7 +78,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10609" levels="1" name="Critical Chances">
 		<!-- For 5 min., Critical Damage + 304 and vital spot attack success rate + 15%. Front Critical Damage - 30%, Side Critical Rate + 30% and Critical Damage + 30%. Rear Critical Rate + 50% and Critical Damage + 50%. Requires a dagger or dual dagger. -->
@@ -96,7 +96,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical attack rate by 30% -->
 					<player front="true" />
@@ -136,7 +136,7 @@
 					<item>DUALDAGGER</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10610" levels="1" name="Critical Expansions">
 		<!-- AUTO GENERATED SKILL -->
@@ -162,11 +162,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="vengeancePdam" val="90" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10654" levels="1" name="Maximum Mortality">
 		<!-- For 1 min., Vital Spot Attack Rate + 20%. Requires a dagger or dual dagger. -->
@@ -185,7 +185,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlowRate">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -194,7 +194,7 @@
 					<item>DUALDAGGER</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10655" levels="4" name="Superior Critical Damage">
 		<!-- Critical Damage + 5%, Speed + 2. -->
@@ -209,7 +209,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">2</value>
@@ -228,7 +228,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10656" levels="1" name="Critical Prowess">
 		<!-- For 5 min., Critical Damage + 608 and vital spot attack success rate + 5%. Front Critical Damage - 30%, Side Critical Rate + 30% and Critical Damage + 30%. Rear Critical Rate + 50% and Critical Damage + 50%. Requires a dagger or dual dagger. -->
@@ -246,7 +246,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical attack rate by 30% -->
 					<player front="true" />
@@ -286,6 +286,6 @@
 					<item>DUALDAGGER</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -15,14 +15,14 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="#pveDamage" />
 				<mul stat="pvePhysSkillsDmg" val="#pveDamage" />
 				<mul stat="pveMagicalDmg" val="#pveDamage" />
 				<mul stat="MagicalMpConsumeRate" val="1.30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11747" levels="1" name="Enchanter - Individual Passive">
 		<!-- Glory Days confirmed -->
@@ -52,12 +52,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11749" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -79,11 +79,11 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11750" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -104,11 +104,11 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11751" levels="10" name="Superior Magic Weapon Mastery">
 		<!-- Glory Days confirmed -->
@@ -131,7 +131,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.06" />
 				<add stat="INT" val="2" />
@@ -156,7 +156,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11752" levels="11" name="Sustain">
 		<!-- Glory Days confirmed -->
@@ -230,7 +230,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">172</value>
@@ -262,7 +262,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Sustain -->
@@ -289,7 +289,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">50</value>
@@ -298,7 +298,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11754" levels="5" name="Fairy of Life">
 		<!-- Glory Days confirmed -->
@@ -354,7 +354,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>PARTY_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- On retail activated every ~2 attacks with ~2sec cooldown -->
 				<attackerType>L2Character</attackerType>
@@ -382,7 +382,7 @@
 					<value level="5">5</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11755" levels="11" name="Radiant Heal">
 		<!-- Glory Days confirmed -->
@@ -453,7 +453,7 @@
 			<value level="10">33</value>
 			<value level="11">34</value>
 		</mpInitialConsume>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>
 					<value level="1">1488</value>
@@ -469,7 +469,7 @@
 					<value level="11">1777</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11756" levels="11" name="Panic Heal">
 		<!-- Glory Days confirmed -->
@@ -538,7 +538,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>
 					<value level="1">1488</value>
@@ -554,7 +554,7 @@
 					<value level="11">1777</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11757" levels="11" name="Brilliant Heal">
 		<!-- Glory Days confirmed -->
@@ -610,7 +610,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>
 					<value level="1">1191</value>
@@ -626,7 +626,7 @@
 					<value level="11">1430</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11758" levels="1" name="Celestial Protection">
 		<!-- Updated to Ertheia -->
@@ -652,9 +652,9 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Lingering Protection -->
@@ -686,9 +686,9 @@
 		<magicLvl>87</magicLvl>
 		<affectRange>1000</affectRange>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Lingering Protection -->
@@ -780,7 +780,7 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
 					<value level="1">166</value>
@@ -811,7 +811,7 @@
 					<value level="11">13</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11761" levels="8" name="Brilliant Recharge">
 		<!-- Glory Days confirmed -->
@@ -873,7 +873,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
 					<value level="1">700</value>
@@ -898,7 +898,7 @@
 					<value level="8">11</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11762" levels="1" name="Balance Heal">
 		<!-- Glory Days confirmed -->
@@ -921,12 +921,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>4</abnormalLvl>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="RebalanceHP" />
 			<effect name="HealOverTime" ticks="1">
 				<power>333</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11763" levels="1" name="Radiant Purge">
 		<!-- Glory Days confirmed -->
@@ -946,13 +946,13 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE_FRIENDLY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11764" levels="1" name="Brilliant Purge">
 		<!-- Glory Days confirmed -->
@@ -977,7 +977,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
@@ -986,7 +986,7 @@
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11765" levels="7" name="Crystal Regeneration">
 		<!-- Glory Days confirmed -->
@@ -1041,7 +1041,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
 			<effect name="HealOverTime" ticks="1">
@@ -1066,7 +1066,7 @@
 					<value level="7">145</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11766" levels="11" name="Dark Blast">
 		<!-- Updated to IO -->
@@ -1128,7 +1128,7 @@
 			<skill id="11999" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">153</value>
@@ -1144,7 +1144,7 @@
 					<value level="11">215</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11767" levels="11" name="Mass Dark Veil">
 		<!-- Updated to IO -->
@@ -1203,7 +1203,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">117</value>
@@ -1222,7 +1222,7 @@
 			<effect name="AddHate">
 				<power>1240</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11768" levels="1" name="Rebirth">
 		<!-- Glory Days confirmed -->
@@ -1242,7 +1242,7 @@
 		<effectPoint>1811</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
@@ -1257,7 +1257,7 @@
 				<rate>40</rate>
 				<max>10</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11769" levels="9" name="Dark Backfire">
 		<!-- Glory Days confirmed -->
@@ -1326,7 +1326,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
@@ -1360,7 +1360,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11770" levels="1" name="Dissolve">
 		<!-- Updated to Ertheia -->
@@ -1379,11 +1379,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DeleteHate">
 				<chance>100</chance>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<skillId>11835</skillId>
@@ -1408,12 +1408,12 @@
 		<reuseDelay>600000</reuseDelay>
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>13300</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11772" levels="7" name="Giant's Favor">
 		<!-- Glory Days confirmed -->
@@ -1461,7 +1461,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="#healEffect" />
 			</effect>
@@ -1489,7 +1489,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11773" levels="2" name="Lakcis Disc">
 		<!-- Glory Days confirmed -->
@@ -1509,7 +1509,7 @@
 		</magicLvl>
 		<toggleGroupId>0</toggleGroupId>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MpConsumePerLevel" ticks="3">
 				<power>2</power>
 			</effect>
@@ -1529,7 +1529,7 @@
 					<value level="2">2</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11774" levels="4" name="Summon Tree of Life">
 		<!-- Glory Days confirmed -->
@@ -1577,7 +1577,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14933</value>
@@ -1587,7 +1587,7 @@
 				</npcId>
 				<lifeTime>30</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11775" levels="1" name="Return">
 		<!-- Glory Days confirmed -->
@@ -1610,11 +1610,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="TeleportToSummon">
 				<distance>1000</distance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11776" levels="4" name="Summon Lumi">
 		<!-- Updated to IO -->
@@ -1655,7 +1655,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14925</value>
@@ -1665,7 +1665,7 @@
 				</npcId>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11777" levels="8" name="Mark of Lumi">
 		<!-- Updated to IO -->
@@ -1731,7 +1731,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">113</value>
@@ -1772,7 +1772,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11778" levels="9" name="Fatal Sleep">
 		<!-- Updated to IO -->
@@ -1830,12 +1830,12 @@
 			<value level="9">105</value>
 		</magicLvl>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>11779</skillId>
@@ -1873,7 +1873,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -1915,7 +1915,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11780" levels="9" name="Dark Devour">
 		<!-- Updated to IO -->
@@ -1984,7 +1984,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="HealEffect">
@@ -2001,7 +2001,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11781" levels="6" name="Dark Devour">
 		<!-- Glory Days confirmed -->
@@ -2024,11 +2024,11 @@
 		</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>666</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11782" levels="2" name="Frantic Healing">
 		<!-- Updated to IO -->
@@ -2044,7 +2044,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime">
 				<!-- 200 MP per tick. -->
 				<power>200</power>
@@ -2060,7 +2060,7 @@
 					<item> MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11783" levels="1" name="Reset">
 		<!-- Updated to Ertheia -->
@@ -2078,9 +2078,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<!-- effect name="ResetDebuff" / -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="11784" levels="4" name="Blessed Resurrection">
 		<!-- Glory Days confirmed -->
@@ -2117,7 +2117,7 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>
 					<value level="1">85</value>
@@ -2126,7 +2126,7 @@
 					<value level="4">100</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11785" levels="3" name="Party Resurrection">
 		<!-- Updated to Ertheia -->
@@ -2173,7 +2173,7 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>
 					<value level="1">80</value>
@@ -2181,7 +2181,7 @@
 					<value level="3">100</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11786" levels="1" name="Debuff Immunity">
 		<!-- Updated to Ertheia -->
@@ -2200,11 +2200,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11787" levels="10" name="Superior Armor Mastery">
 		<!-- Glory Days confirmed -->
@@ -2228,7 +2228,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="4299">
 					<using kind="LIGHT, MAGIC" />
@@ -2292,7 +2292,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11788" levels="10" name="Superior Casting Mastery">
 		<!-- Glory Days confirmed -->
@@ -2314,7 +2314,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="mReuse" val="0.75" />
@@ -2339,7 +2339,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11789" levels="10" name="Superior Anti Magic">
 		<!-- Glory Days confirmed -->
@@ -2361,7 +2361,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<mul stat="magicSuccRes" val="1.35" />
@@ -2381,7 +2381,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11790" levels="10" name="Superior Elemental Resistance">
 		<!-- Glory Days confirmed -->
@@ -2403,7 +2403,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<add stat="fireRes" val="#res" />
@@ -2411,7 +2411,7 @@
 				<add stat="waterRes" val="#res" />
 				<add stat="earthRes" val="#res" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11791" levels="1" name="Superior Sigil Mastery">
 		<!-- Glory Days confirmed -->
@@ -2421,7 +2421,7 @@
 		<magicLvl>85</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<add stat="healEffect" val="40">
@@ -2435,7 +2435,7 @@
 					<item>SIGIL</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11792" levels="10" name="Superior Mental Attack Resistance">
 		<!-- Updated to IO -->
@@ -2458,7 +2458,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">20</value>
@@ -2550,7 +2550,7 @@
 				<add stat="reflectSkillPhysic" val="10" />
 				<add stat="reflectSkillMagic" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11793" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
@@ -2579,7 +2579,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">103</value>
@@ -2595,7 +2595,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Sustain -->
@@ -2623,7 +2623,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>87</magicLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">50</value>
@@ -2632,7 +2632,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11795" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
@@ -2665,7 +2665,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">172</value>
@@ -2681,7 +2681,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<skillId>11796</skillId>
@@ -2708,7 +2708,7 @@
 		<magicLvl>89</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">50</value>
@@ -2717,7 +2717,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11797" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
@@ -2750,7 +2750,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">172</value>
@@ -2766,7 +2766,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<skillId>11798</skillId>
@@ -2793,7 +2793,7 @@
 		<magicLvl>91</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">50</value>
@@ -2802,7 +2802,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11799" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
@@ -2835,7 +2835,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">172</value>
@@ -2851,7 +2851,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<skillId>11800</skillId>

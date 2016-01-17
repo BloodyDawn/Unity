@@ -875,14 +875,14 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>1800000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>13354</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>300000</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Sayha's Portal -->
@@ -922,7 +922,7 @@
 		<affectRange>1500</affectRange>
 		<isMagic>2</isMagic>
 		<reuseDelay>60000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
 				<npcId>13354</npcId>
 				<party>
@@ -930,7 +930,7 @@
 					<value level="2">true</value>
 				</party>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9375" levels="1" name="Einhasad's Energy">
 		<!-- AUTO GENERATED SKILL -->

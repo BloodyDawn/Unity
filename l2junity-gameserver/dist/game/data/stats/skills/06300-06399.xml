@@ -17,7 +17,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3194</power>
 			</effect>
@@ -25,7 +25,7 @@
 				<skillId>6662</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6301" levels="2" name="Cold Mana's Fragment">
 		<!-- Confirmed CT2.5 -->
@@ -52,14 +52,14 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>
 					<value level="1">60</value>
 					<value level="2">30</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6302" levels="1" name="Icy Air">
 		<!-- Confirmed CT2.5 -->
@@ -79,7 +79,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -88,7 +88,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6303" levels="1" name="Trial of the Coup">
 		<!-- Confirmed CT2.5 -->
@@ -107,11 +107,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6304" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -140,9 +140,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6305" levels="1" name="Divine Gnosis">
 		<!-- Confirmed CT2.5 -->
@@ -160,11 +160,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6306" levels="1" name="Solina Strike">
 		<!-- Confirmed CT2.5 -->
@@ -194,11 +194,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>139</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6307" levels="1" name="Opus of the Hand">
 		<!-- Confirmed CT2.5 -->
@@ -221,11 +221,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6308" levels="1" name="Opus of the Wave">
 		<!-- Confirmed CT2.5 -->
@@ -248,11 +248,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6309" levels="1" name="Pain of the Ascetic">
 		<!-- Confirmed CT2.5 -->
@@ -275,11 +275,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6310" levels="1" name="Loss of Quest">
 		<!-- Confirmed CT2.5 -->
@@ -299,11 +299,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6311" levels="1" name="Solina Thrust">
 		<!-- Confirmed CT2.5 -->
@@ -322,11 +322,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6312" levels="1" name="Launch Holy Sword Energy">
 		<!-- Confirmed CT2.5 -->
@@ -347,11 +347,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6313" levels="1" name="Solina Bless">
 		<!-- Confirmed CT2.5 -->
@@ -376,12 +376,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6314" levels="1" name="Divine Judgment">
 		<!-- Confirmed CT2.5 -->
@@ -405,11 +405,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>125</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6315" levels="1" name="Divine Blow">
 		<!-- Confirmed CT2.5 -->
@@ -428,11 +428,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6316" levels="1" name="Execution of Authority">
 		<!-- Confirmed CT2.5 -->
@@ -450,11 +450,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>15</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6317" levels="1" name="Divinity Tacit">
 		<!-- Confirmed CT2.5 -->
@@ -476,11 +476,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>128</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6318" levels="1" name="Holy Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -503,12 +503,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6319" levels="1" name="Divine Magic Protection">
 		<!-- Confirmed CT2.5 -->
@@ -531,12 +531,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6320" levels="1" name="Summon Holy Magic Circle">
 		<!-- Confirmed CT2.5 -->
@@ -561,7 +561,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalDefence">
@@ -572,7 +572,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6321" levels="1" name="Divine Flash">
 		<!-- Confirmed CT2.5 -->
@@ -594,11 +594,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6322" levels="1" name="Divine Impact">
 		<!-- Confirmed CT2.5 -->
@@ -620,11 +620,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6323" levels="1" name="Divine Bolt">
 		<!-- Confirmed CT2.5 -->
@@ -641,11 +641,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>85</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6324" levels="1" name="Divine Strike">
 		<!-- Confirmed CT2.5 -->
@@ -665,11 +665,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6325" levels="1" name="Divine Nova">
 		<!-- Confirmed CT2.5 -->
@@ -689,11 +689,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>85</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6326" levels="1" name="Martyr's Happiness">
 		<!-- Confirmed CT2.5 -->
@@ -712,11 +712,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>20531</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6327" levels="1" name="Divinity Worship">
 		<!-- Confirmed CT2.5 -->
@@ -735,11 +735,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11407</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6328" levels="1" name="Fighter Judgement">
 		<!-- Confirmed CT2.5 -->
@@ -762,11 +762,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>205</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6329" levels="1" name="Fighter Blow">
 		<!-- Confirmed CT2.5 -->
@@ -785,11 +785,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6330" levels="1" name="Salmon Porridge Attack">
 		<!-- Confirmed CT2.5 -->
@@ -804,11 +804,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>5</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6331" levels="1" name="Campfire Tired">
 		<!-- Confirmed CT2.5 -->
@@ -828,14 +828,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1206</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6332" levels="1" name="Campfire Full">
 		<!-- Confirmed CT2.5 -->
@@ -855,7 +855,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1206</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -866,7 +866,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6333" levels="1" name="Electric Bolt 1">
 		<!-- Confirmed CT2.5 -->
@@ -894,14 +894,14 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6334" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -928,12 +928,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6335" levels="1" name="Electric Rain 1">
 		<!-- Confirmed CT2.5 -->
@@ -952,11 +952,11 @@
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6336" levels="1" name="Electric Rain 2">
 		<!-- Confirmed CT2.5 -->
@@ -975,11 +975,11 @@
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6337" levels="1" name="Red Slash 1">
 		<!-- Confirmed CT2.5 -->
@@ -996,11 +996,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6338" levels="1" name="Red Slash 2">
 		<!-- Confirmed CT2.5 -->
@@ -1017,11 +1017,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6339" levels="1" name="Divine Hammer Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1050,14 +1050,14 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6340" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -1085,12 +1085,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6341" levels="1" name="Stronghold Water Cannon">
 		<affectRange>200</affectRange>
@@ -1112,11 +1112,11 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>2</abnormalTime>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6342" levels="1" name="Trap Over Steam">
 		<affectRange>400</affectRange>
@@ -1130,11 +1130,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6343" levels="2" name="Maguen Plasma - Power">
 		<!-- Confirmed CT2.5 -->
@@ -1163,7 +1163,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET_PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -1178,7 +1178,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6365" levels="2" name="Maguen Plasma - Speed">
 		<!-- Confirmed CT2.5 -->
@@ -1207,7 +1207,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET_PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">5</value>
@@ -1229,7 +1229,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6366" levels="2" name="Maguen Plasma - Critical">
 		<!-- Confirmed CT2.5 -->
@@ -1259,7 +1259,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET_PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="mCritPower" val="#mCritPower" />
@@ -1271,7 +1271,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6367" levels="3" name="Maguen Plasma - Bistakon">
 		<!-- Confirmed CT2.5 -->
@@ -1302,9 +1302,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>1500</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="6368" levels="3" name="Maguen Plasma - Kokracon">
 		<!-- Confirmed CT2.5 -->
@@ -1335,9 +1335,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>1500</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="6369" levels="3" name="Maguen Plasma - Reptilikon">
 		<!-- Confirmed CT2.5 -->
@@ -1368,9 +1368,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>1500</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="6370" levels="1" name="Thunderbolt">
 		<abnormalLvl>1</abnormalLvl>
@@ -1609,10 +1609,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6381" levels="2" name="Bistakon Soul Beam">
 		<abnormalLvl>
@@ -1641,10 +1641,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6382" levels="1" name="Bistakon Rolling Claw">
 		<abnormalLvl>3</abnormalLvl>
@@ -1670,11 +1670,11 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>93</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6383" levels="1" name="Bistakon Deadly Roar">
 		<abnormalLvl>1</abnormalLvl>
@@ -1699,10 +1699,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6384" levels="2" name="Bistakon Deadly Blow">
 		<table name="#power"> 9125 13688 </table>
@@ -1719,14 +1719,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">9125</value>
 					<value level="2">13688</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6385" levels="1" name="Bistakon Critical Claw">
 		<abnormalLvl>3</abnormalLvl>
@@ -1753,11 +1753,11 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>95</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6386" levels="1" name="Bistakon Earth Rise">
 		<abnormalLvl>1</abnormalLvl>
@@ -1783,12 +1783,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>150</affectRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6387" levels="1" name="Bistakon Earthquake">
 		<affectRange>200</affectRange>
@@ -1805,13 +1805,13 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6388" levels="1" name="Bistakon Jump Blow">
 		<affectRange>200</affectRange>
@@ -1832,11 +1832,11 @@
 		<icon>icon.skill1336</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6389" levels="1" name="Kokracon Sonic Cage">
 		<abnormalLvl>1</abnormalLvl>
@@ -1856,14 +1856,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6390" levels="1" name="Kokracon Sonic Explosion">
 		<abnormalLvl>1</abnormalLvl>
@@ -1885,14 +1885,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6391" levels="1" name="Kokracon Sonic Slash">
 		<abnormalLvl>1</abnormalLvl>
@@ -1917,12 +1917,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6392" levels="1" name="Kokracon Sonic Shot">
 		<!-- Attack Speed is decreased by 50%. -->
@@ -1949,14 +1949,14 @@
 		<effectRange>1500</effectRange>
 		<castRange>1200</castRange>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6393" levels="1" name="Kokracon Sonic Beam">
 		<castRange>900</castRange>
@@ -1979,11 +1979,11 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6394" levels="1" name="Kokracon Sonic Bomb">
 		<affectRange>300</affectRange>
@@ -1997,11 +1997,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6395" levels="1" name="Kokracon Dreadful Clow">
 		<abnormalLvl>3</abnormalLvl>
@@ -2027,11 +2027,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>93</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6396" levels="1" name="Kokracon Panic">
 		<abnormalLvl>1</abnormalLvl>
@@ -2057,10 +2057,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6397" levels="1" name="Kokracon Staggering Blow">
 		<abnormalLvl>1</abnormalLvl>
@@ -2086,12 +2086,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9125</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6398" levels="1" name="Kokracon Sonic Shout">
 		<abnormalLvl>1</abnormalLvl>
@@ -2117,10 +2117,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6399" levels="1" name="Kokracon Dreadful Piercing">
 		<castRange>60</castRange>
@@ -2135,10 +2135,10 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

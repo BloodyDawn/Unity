@@ -33,13 +33,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Eviscerator Force -->
 				<skillId>30603</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30603" levels="1" name="Eviscerator Force">
 		<!-- P. Skill Critical Rate + 1%. -->
@@ -56,11 +56,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO Support for P. Skill Critical Rate -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30604" levels="1" name="Block Eviscerator Force">
 		<!-- AUTO GENERATED SKILL -->
@@ -79,13 +79,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Sayha's Seer Force -->
 				<skillId>30606</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30606" levels="1" name="Sayha's Seer Force">
 		<!-- M. Critical Rate + 1%. -->
@@ -102,11 +102,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.01" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30607" levels="1" name="Block Sayha's Seer Force">
 		<!-- AUTO GENERATED SKILL -->

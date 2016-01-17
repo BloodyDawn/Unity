@@ -53,7 +53,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
 					<value level="1">120</value>
@@ -66,7 +66,7 @@
 					<value level="8">155</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5201" levels="6" name="Pet Concentration">
 		<!-- CT2.5 retail confirmed -->
@@ -124,11 +124,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="#cancel" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5202" levels="12" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -179,9 +179,9 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5203" levels="12" name="Fear">
 		<!-- CT2.5 retail confirmed -->
@@ -232,10 +232,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5204" levels="1" name="Presentation - First Gigantic Pig Combination">
 		<!-- Confirmed CT2.5 -->
@@ -254,11 +254,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5206" levels="1" name="Decrease Speed">
 		<!-- CT2.5 retail confirmed -->
@@ -284,14 +284,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5207" levels="1" name="Decrease Atk. Spd.">
 		<!-- CT2.5 retail confirmed -->
@@ -316,14 +316,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5208" levels="1" name="Wind Walk (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -342,12 +342,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5209" levels="1" name="Shield (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -366,12 +366,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5210" levels="1" name="Blessed Body (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -390,11 +390,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5211" levels="1" name="Vampiric Rage (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -413,12 +413,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5212" levels="1" name="Regeneration (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -437,12 +437,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5213" levels="1" name="Haste (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -461,12 +461,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5214" levels="1" name="Blessed Soul (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -485,12 +485,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5215" levels="1" name="Acumen (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -509,12 +509,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5216" levels="1" name="Concentration (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -533,11 +533,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5217" levels="1" name="Empower (Event)">
 		<!-- CT2.5 retail confirmed -->
@@ -556,12 +556,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5218" levels="1" name="Production: Event Teleport">
 		<!-- Confirmed CT2.5 -->
@@ -600,9 +600,9 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5220" levels="1" name="Giant Mutant Fear">
 		<!-- CT2.5 retail confirmed -->
@@ -628,10 +628,10 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5221" levels="1" name="Baylor - Physical Close Range Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -641,7 +641,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>-70</BLUNT>
 				<SWORD>-70</SWORD>
@@ -651,7 +651,7 @@
 				<POLE>-70</POLE>
 				<DUALFIST>-70</DUALFIST>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5222" levels="1" name="Baylor - Physical Long Range Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -661,11 +661,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>-70</BOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5223" levels="1" name="Baylor - Magic Vulnerability">
 		<!-- Confirmed CT2.5 -->
@@ -675,12 +675,12 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>-70</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5224" levels="1" name="Berserk">
 		<!-- Confirmed CT2.5 -->
@@ -700,7 +700,7 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1062</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -709,7 +709,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5225" levels="1" name="Invincibility">
 		<!-- Confirmed CT2.5 -->
@@ -730,9 +730,9 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1427</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5226" levels="1" name="Imprison">
 		<!-- Confirmed CT2.5 -->
@@ -768,7 +768,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">100756</value>
@@ -777,7 +777,7 @@
 				<criticalChance>20</criticalChance>
 			</effect>
 			<!-- TODO: {i_fly_away;curve;push;200} -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="5228" levels="2" name="Jump Attack">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -797,12 +797,12 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11786</power>
 				<criticalChance>20</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5229" levels="2" name="Strong Punch">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -834,14 +834,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>5000</reuseDelay>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4640</power>
 				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="ThrowUp" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5230" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -865,12 +865,12 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2784</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5231" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -894,12 +894,12 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>5704</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5232" levels="1" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -923,12 +923,12 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11407</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5233" levels="1" name="Weight Spin Attack - Weak">
 		<!-- Confirmed CT2.5 -->
@@ -942,11 +942,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5234" levels="1" name="Weight Spin Attack - Mid">
 		<!-- Confirmed CT2.5 -->
@@ -960,11 +960,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>7685</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5235" levels="1" name="Weight Spin Attack - Strong">
 		<!-- Confirmed CT2.5 -->
@@ -978,11 +978,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5236" levels="1" name="Speed Up">
 		<!-- Confirmed CT2.5 -->
@@ -1000,12 +1000,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5237" levels="1" name="Speed Down">
 		<!-- Confirmed CT2.5 -->
@@ -1023,12 +1023,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5238" levels="1" name="Freezing">
 		<!-- CT2.5 retail confirmed -->
@@ -1059,12 +1059,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>2.5</hitCancelTime>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>298</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5239" levels="5" name="Event Timer">
 		<!-- CT2.5 retail confirmed -->
@@ -1091,9 +1091,9 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5240" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -1118,12 +1118,12 @@
 		<targetType>FRONT_AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6723</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5241" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -1147,12 +1147,12 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11205</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5242" levels="1" name="Sickness">
 		<!-- CT2.5 retail confirmed -->
@@ -1175,9 +1175,9 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5243" levels="1" name="Blind">
 		<!-- CT2.5 retail confirmed -->
@@ -1213,7 +1213,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -1222,7 +1222,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5245" levels="1" name="Magical Up">
 		<abnormalLvl>1</abnormalLvl>
@@ -1238,7 +1238,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -1247,7 +1247,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5246" levels="12" name="Dark Explosion">
 		<!-- CT2.5 retail confirmed -->
@@ -1292,7 +1292,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">21</value>
@@ -1309,7 +1309,7 @@
 					<value level="12">132</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5247" levels="12" name="Seed of Darkness">
 		<!-- CT2.5 retail confirmed -->
@@ -1378,7 +1378,7 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">60</value>
@@ -1395,7 +1395,7 @@
 					<value level="12">360</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>5248</skillId>
@@ -1446,7 +1446,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">81</value>
@@ -1463,7 +1463,7 @@
 					<value level="12">526</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5249" levels="12" name="Dark Circle">
 		<!-- CT2.5 retail confirmed -->
@@ -1521,7 +1521,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">21</value>
@@ -1538,7 +1538,7 @@
 					<value level="12">132</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5250" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -1564,9 +1564,9 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5251" levels="12" name="Poison">
 		<!-- CT2.5 retail confirmed -->
@@ -1632,7 +1632,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">32</value>
@@ -1649,7 +1649,7 @@
 					<value level="12">135</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>5252</skillId>
@@ -1705,9 +1705,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5253" levels="12" name="Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -1775,7 +1775,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">35</value>
@@ -1792,7 +1792,7 @@
 					<value level="12">142</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>5252</skillId>
@@ -1876,7 +1876,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">4</value>
@@ -1893,7 +1893,7 @@
 					<value level="12">23</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>5255</skillId>
@@ -1940,7 +1940,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">26</value>
@@ -1957,7 +1957,7 @@
 					<value level="12">194</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5256" levels="1" name="Announcement of Death">
 		<!-- CT2.5 retail confirmed -->
@@ -1998,14 +1998,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Lethal">
 				<fullLethal>
 					<value level="1">99</value>
 					<value level="2">5</value>
 				</fullLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5258" levels="12" name="Mana Burn">
 		<!-- CT2.5 retail confirmed -->
@@ -2062,7 +2062,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">26</value>
@@ -2079,7 +2079,7 @@
 					<value level="12">194</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5259" levels="12" name="Fear">
 		<!-- CT2.5 retail confirmed -->
@@ -2146,10 +2146,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5260" levels="12" name="Disarm">
 		<!-- CT2.5 retail confirmed -->
@@ -2199,9 +2199,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DISARM</trait>
-		<for>
+		<effects>
 			<effect name="Disarm" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5261" levels="1" name="Zombie">
 		<!-- CT2.5 retail confirmed -->
@@ -2223,11 +2223,11 @@
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>303</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5262" levels="12" name="Rising Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -2272,7 +2272,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -2289,7 +2289,7 @@
 					<value level="12">1728</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5263" levels="12" name="Chain Lightning">
 		<!-- CT2.5 retail confirmed -->
@@ -2347,7 +2347,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">21</value>
@@ -2364,7 +2364,7 @@
 					<value level="12">132</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5264" levels="12" name="Death Mark">
 		<!-- CT2.5 retail confirmed -->
@@ -2428,9 +2428,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5265" levels="12" name="Soul Emission">
 		<!-- CT2.5 retail confirmed -->
@@ -2490,7 +2490,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">21</value>
@@ -2507,7 +2507,7 @@
 					<value level="12">132</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5266" levels="12" name="Magical Backfire">
 		<!-- CT2.5 retail confirmed -->
@@ -2572,13 +2572,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="MagicalMpConsumeRate" val="#val" />
 				<mul stat="PhysicalMpConsumeRate" val="#val" />
 				<mul stat="DanceMpConsumeRate" val="#val" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5267" levels="21" name="Trap Explosion">
 		<!-- Confirmed CT2.5 -->
@@ -2617,7 +2617,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">35</value>
@@ -2643,7 +2643,7 @@
 					<value level="21">123</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5268" levels="17" name="Poison">
 		<!-- Confirmed CT2.5 -->
@@ -2685,7 +2685,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">18</value>
@@ -2707,7 +2707,7 @@
 					<value level="17">57</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5269" levels="17" name="Slow Trap">
 		<!-- Confirmed CT2.5 -->
@@ -2746,7 +2746,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2761,7 +2761,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5270" levels="16" name="Flash Trap">
 		<!-- Confirmed CT2.5 -->
@@ -2801,12 +2801,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<chance>100</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5271" levels="19" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -2870,12 +2870,12 @@
 			<value level="18">HOLD</value>
 			<value level="19">HOLD</value>
 		</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5272" levels="17" name="Decoy Provocation">
 		<!-- Confirmed CT2.5 -->
@@ -2924,11 +2924,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5273" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -2964,7 +2964,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -2978,7 +2978,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5274" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3013,7 +3013,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -3027,7 +3027,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5275" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -3062,7 +3062,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -3076,7 +3076,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5276" levels="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3113,7 +3113,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -3127,7 +3127,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5277" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -3165,7 +3165,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -3179,7 +3179,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5278" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3216,7 +3216,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -3230,7 +3230,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5279" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -3266,11 +3266,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13066</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5280" levels="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3309,7 +3309,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -3323,7 +3323,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5281" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -3362,7 +3362,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -3376,7 +3376,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5282" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3413,7 +3413,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -3427,7 +3427,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5283" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -3463,11 +3463,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13066</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5284" levels="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3506,7 +3506,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -3520,7 +3520,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5285" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -3559,7 +3559,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -3573,7 +3573,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5286" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3610,7 +3610,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -3624,7 +3624,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5287" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -3660,11 +3660,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13066</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5288" levels="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3703,7 +3703,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -3717,7 +3717,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5289" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -3756,7 +3756,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -3770,7 +3770,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5290" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3807,7 +3807,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -3821,7 +3821,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5291" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -3857,11 +3857,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13066</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5292" levels="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -3900,7 +3900,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -3914,7 +3914,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5293" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -3953,7 +3953,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -3967,7 +3967,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5294" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -4004,7 +4004,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -4018,7 +4018,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5295" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -4054,11 +4054,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13066</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5296" levels="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -4097,7 +4097,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -4111,7 +4111,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5297" levels="9" name="Power Strike">
 		<!-- CT2.5 retail confirmed -->
@@ -4149,7 +4149,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -4163,7 +4163,7 @@
 					<value level="9">18909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5298" levels="9" name="Power Shot">
 		<!-- CT2.5 retail confirmed -->
@@ -4200,7 +4200,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34842</value>
@@ -4214,7 +4214,7 @@
 					<value level="9">50423</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5299" levels="9" name="Spinning Slasher">
 		<!-- CT2.5 retail confirmed -->
@@ -4250,10 +4250,10 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13066</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

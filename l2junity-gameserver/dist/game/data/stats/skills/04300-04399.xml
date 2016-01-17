@@ -157,7 +157,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">21</value>
@@ -174,7 +174,7 @@
 					<value level="12">132</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4315" levels="12" name="Hold">
 		<!-- Freya retail confirmed -->
@@ -224,9 +224,9 @@
 		<targetType>AREA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4316" levels="12" name="Drain Energy">
 		<!-- Freya retail confirmed -->
@@ -270,7 +270,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">11</value>
@@ -288,7 +288,7 @@
 				</power>
 				<percentage>40</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4317" levels="5" name="Increase Rage Might">
 		<!-- Freya retail confirmed -->
@@ -312,7 +312,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">15</value>
@@ -323,7 +323,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4318" levels="2" name="Ultimate Buff">
 		<!-- Glory Days confirmed -->
@@ -346,7 +346,7 @@
 			<value level="2">icon.skill0757</value>
 		</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Grow">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -388,7 +388,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4319" levels="1" name="Paralysis">
 		<abnormalLvl>1</abnormalLvl>
@@ -410,9 +410,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4320" levels="12" name="Poison">
 		<!-- Freya retail confirmed -->
@@ -475,7 +475,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">16</value>
@@ -492,7 +492,7 @@
 					<value level="12">68</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4321" levels="1" name="Decrease P. Def">
 		<!-- Freya retail confirmed -->
@@ -513,12 +513,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-66</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4322" levels="1" name="Adventurer's Wind Walk">
 		<!-- Freya retail confirmed -->
@@ -537,12 +537,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4323" levels="1" name="Adventurer's Shield">
 		<!-- Freya retail confirmed -->
@@ -561,12 +561,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4324" levels="1" name="Adventurer's Blessed Body">
 		<!-- Freya retail confirmed -->
@@ -585,12 +585,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4325" levels="1" name="Adventurer's Vampiric Rage">
 		<!-- Freya retail confirmed -->
@@ -609,12 +609,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4326" levels="1" name="Adventurer's Regeneration">
 		<!-- Freya retail confirmed -->
@@ -633,12 +633,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4327" levels="1" name="Adventurer's Haste">
 		<!-- Freya retail confirmed -->
@@ -657,12 +657,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4328" levels="1" name="Adventurer's Blessed Soul">
 		<!-- Freya retail confirmed -->
@@ -681,12 +681,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4329" levels="1" name="Adventurer's Acumen">
 		<!-- Freya retail confirmed -->
@@ -705,12 +705,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4330" levels="1" name="Adventurer's Concentration">
 		<!-- Freya retail confirmed -->
@@ -729,11 +729,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4331" levels="1" name="Adventurer's Empower">
 		<!-- Freya retail confirmed -->
@@ -752,12 +752,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4332" levels="1" name="Mental Aegis">
 		<!-- Freya retail confirmed -->
@@ -766,13 +766,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 				<DERANGEMENT>100</DERANGEMENT>
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4333" levels="5" name="Dark Attack Resistance">
 		<!-- Freya retail confirmed -->
@@ -782,11 +782,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="#darkRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4334" levels="1" name="SSQ Cancel">
 		<!-- Confirmed CT2.5 -->
@@ -799,9 +799,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelAll" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4335" levels="1" name="Holy Attack">
 		<!-- Freya retail confirmed -->
@@ -810,11 +810,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4336" levels="5" name="Dark Attack Vulnerability">
 		<!-- Freya retail confirmed -->
@@ -824,11 +824,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="darkRes" val="#darkRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4337" levels="5" name="Holy Attack Resistance">
 		<!-- Freya retail confirmed -->
@@ -838,11 +838,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="#darkRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4338" levels="1" name="Adventurer's Life Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -856,12 +856,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>3</cubicId>
 				<cubicLvl>20</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4339" levels="1" name="Mimir's Elixir">
 		<!-- Freya retail confirmed -->
@@ -889,14 +889,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Grow">
 			</effect>
 			<effect name="PAtk">
 				<amount>400</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4341" levels="1" name="Ultimate Buff, 3rd">
 		<!-- Freya retail confirmed -->
@@ -913,7 +913,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Grow">
 			</effect>
 			<effect name="MagicalDefence">
@@ -924,7 +924,7 @@
 				<amount>400</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4342" levels="2" name="Clan Hall: Wind Walk">
 		<!-- Freya retail confirmed -->
@@ -950,7 +950,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -958,7 +958,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4343" levels="3" name="Clan Hall: Decrease Weight">
 		<!-- Freya retail confirmed -->
@@ -986,11 +986,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="#Weight" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4344" levels="3" name="Clan Hall: Shield">
 		<!-- Freya retail confirmed -->
@@ -1022,7 +1022,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">8</value>
@@ -1031,7 +1031,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4345" levels="3" name="Clan Hall: Might">
 		<!-- Freya retail confirmed -->
@@ -1059,7 +1059,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">8</value>
@@ -1068,7 +1068,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4346" levels="4" name="Clan Hall: Mental Shield">
 		<!-- Freya retail confirmed -->
@@ -1098,7 +1098,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">50</value>
@@ -1119,7 +1119,7 @@
 					<value level="4">80</value>
 				</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4347" levels="6" name="Clan Hall: Blessed Body">
 		<!-- Freya retail confirmed -->
@@ -1153,11 +1153,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4348" levels="6" name="Clan Hall: Blessed Soul">
 		<!-- Freya retail confirmed -->
@@ -1191,7 +1191,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">10</value>
@@ -1203,7 +1203,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4349" levels="2" name="Clan Hall: Magic Barrier">
 		<!-- Freya retail confirmed -->
@@ -1229,7 +1229,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">23</value>
@@ -1237,7 +1237,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4350" levels="4" name="Clan Hall: Resist Shock">
 		<!-- Freya retail confirmed -->
@@ -1267,7 +1267,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">15</value>
@@ -1276,7 +1276,7 @@
 					<value level="4">40</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4351" levels="6" name="Clan Hall: Concentration">
 		<!-- Freya retail confirmed -->
@@ -1310,11 +1310,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="#cancel" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4352" levels="2" name="Clan Hall: Berserker Spirit">
 		<!-- Freya retail confirmed -->
@@ -1347,7 +1347,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -1404,7 +1404,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4353" levels="6" name="Clan Hall: Bless Shield">
 		<!-- Freya retail confirmed -->
@@ -1438,7 +1438,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">5</value>
@@ -1450,7 +1450,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4354" levels="4" name="Clan Hall: Vampiric Rage">
 		<!-- Freya retail confirmed -->
@@ -1480,7 +1480,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">6</value>
@@ -1490,7 +1490,7 @@
 				</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4355" levels="3" name="Clan Hall: Acumen">
 		<!-- Freya retail confirmed -->
@@ -1518,7 +1518,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -1527,7 +1527,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4356" levels="3" name="Clan Hall: Empower">
 		<!-- Freya retail confirmed -->
@@ -1555,7 +1555,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">55</value>
@@ -1564,7 +1564,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4357" levels="2" name="Clan Hall: Haste">
 		<!-- Freya retail confirmed -->
@@ -1590,7 +1590,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -1598,7 +1598,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4358" levels="3" name="Clan Hall: Guidance">
 		<!-- Freya retail confirmed -->
@@ -1626,7 +1626,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -1635,7 +1635,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4359" levels="3" name="Clan Hall: Focus">
 		<!-- Freya retail confirmed -->
@@ -1663,11 +1663,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4360" levels="3" name="Clan Hall: Death Whisper">
 		<!-- Freya retail confirmed -->
@@ -1695,7 +1695,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">25</value>
@@ -1704,7 +1704,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4361" levels="2" name="Curse of Destruction">
 		<!-- Freya retail confirmed -->
@@ -1730,7 +1730,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="DefenceTrait">
@@ -1751,7 +1751,7 @@
 				<amount>-12</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4362" levels="2" name="Curse of Destruction">
 		<!-- Freya retail confirmed -->
@@ -1777,7 +1777,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="DefenceTrait">
@@ -1798,7 +1798,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4363" levels="1" name="Curse of Destruction">
 		<!-- Freya retail confirmed -->
@@ -1818,14 +1818,14 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Accuracy">
 				<amount>-12</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4364" levels="2" name="Blessing of Revelations">
 		<!-- Freya retail confirmed -->
@@ -1850,7 +1850,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.25" />
 			</effect>
@@ -1870,7 +1870,7 @@
 					<value level="2">25</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4365" levels="2" name="Blessing of Revelations">
 		<!-- Mage -->
@@ -1895,7 +1895,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="25" />
 			</effect>
@@ -1911,7 +1911,7 @@
 					<value level="2">25</value>
 				</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4366" levels="1" name="Blessing of Revelations">
 		<!-- Freya retail confirmed -->
@@ -1931,7 +1931,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.25" />
 			</effect>
@@ -1939,7 +1939,7 @@
 				<POISON>25</POISON>
 				<BLEED>25</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4367" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -1953,11 +1953,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>9.26</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4368" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -1971,7 +1971,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>18.52</power>
 			</effect>
@@ -1979,7 +1979,7 @@
 				<amount>5000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4369" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -1993,7 +1993,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>27.78</power>
 			</effect>
@@ -2001,7 +2001,7 @@
 				<amount>10000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4370" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -2015,7 +2015,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>61.11</power>
 			</effect>
@@ -2023,7 +2023,7 @@
 				<amount>28000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4371" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -2037,7 +2037,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>116.7</power>
 			</effect>
@@ -2045,7 +2045,7 @@
 				<amount>58000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4372" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -2059,7 +2059,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>200</power>
 			</effect>
@@ -2067,7 +2067,7 @@
 				<amount>103000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4373" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -2081,7 +2081,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>205.6</power>
 			</effect>
@@ -2089,7 +2089,7 @@
 				<amount>106000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4374" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -2103,7 +2103,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>288.9</power>
 			</effect>
@@ -2111,7 +2111,7 @@
 				<amount>151000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4375" levels="1" name="Clan Hall Blessing">
 		<!-- Freya retail confirmed -->
@@ -2125,7 +2125,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealOverTime" ticks="5">
 				<power>372.2</power>
 			</effect>
@@ -2133,7 +2133,7 @@
 				<amount>196000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4376" levels="1" name="Strong Resistance to P.Atk.">
 		<!-- Freya retail confirmed -->
@@ -2142,7 +2142,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- pDef +200% -->
 			</effect>
@@ -2150,7 +2150,7 @@
 				<amount>200</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4377" levels="12" name="Wield Temper">
 		<!-- Freya retail confirmed -->
@@ -2193,7 +2193,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">46</value>
@@ -2210,7 +2210,7 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4378" levels="12" name="Damage Shield">
 		<!-- Freya retail confirmed -->
@@ -2256,12 +2256,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4379" levels="5" name="Spear Resistance">
 		<!-- Freya retail confirmed -->
@@ -2271,7 +2271,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POLE>
 					<value level="1">10</value>
@@ -2281,7 +2281,7 @@
 					<value level="5">50</value>
 				</POLE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4380" levels="1" name="Arena CP Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -2295,11 +2295,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>5000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4381" levels="1" name="Week Type">
 		<!-- Freya retail confirmed -->
@@ -2356,7 +2356,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>200</effectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">46</value>
@@ -2373,7 +2373,7 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4383" levels="1" name="Aggression Stone">
 		<!-- Freya retail confirmed -->
@@ -2393,12 +2393,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="TargetMeProbability">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4384" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2417,9 +2417,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4385" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2438,9 +2438,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4386" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2460,9 +2460,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4387" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2481,9 +2481,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4388" levels="5" name="Paralysis Resistance">
 		<!-- Freya retail confirmed -->
@@ -2493,7 +2493,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>
 					<value level="1">10</value>
@@ -2503,7 +2503,7 @@
 					<value level="5">50</value>
 				</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4389" levels="5" name="Mental Attack Resistance">
 		<!-- Freya retail confirmed -->
@@ -2513,7 +2513,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>
 					<value level="1">10</value>
@@ -2523,7 +2523,7 @@
 					<value level="5">50</value>
 				</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4390" levels="2" name="Mystic Immunity">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -2532,12 +2532,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
 				<set stat="debuffImmunity" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4391" levels="2" name="Wind Walk">
 		<!-- Freya retail confirmed -->
@@ -2560,7 +2560,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -2568,7 +2568,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4392" levels="3" name="Shield">
 		<!-- Freya retail confirmed -->
@@ -2592,7 +2592,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">8</value>
@@ -2601,7 +2601,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4393" levels="3" name="Might">
 		<!-- Freya retail confirmed -->
@@ -2625,7 +2625,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">8</value>
@@ -2634,7 +2634,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4394" levels="6" name="Blessed Body">
 		<!-- Freya retail confirmed -->
@@ -2660,7 +2660,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">10</value>
@@ -2672,7 +2672,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4395" levels="6" name="Blessed Soul">
 		<!-- Freya retail confirmed -->
@@ -2698,7 +2698,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">10</value>
@@ -2710,7 +2710,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4396" levels="2" name="Magic Barrier">
 		<!-- Freya retail confirmed -->
@@ -2732,7 +2732,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">23</value>
@@ -2740,7 +2740,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4397" levels="2" name="Berserker Spirit">
 		<!-- Freya retail confirmed -->
@@ -2770,7 +2770,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -2827,7 +2827,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4398" levels="6" name="Blessed Shield">
 		<!-- Freya retail confirmed -->
@@ -2853,7 +2853,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">5</value>
@@ -2865,7 +2865,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4399" levels="4" name="Vampiric Rage">
 		<!-- Freya retail confirmed -->
@@ -2889,7 +2889,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">6</value>
@@ -2899,6 +2899,6 @@
 				</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

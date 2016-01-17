@@ -7,7 +7,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- Def. Power +8.47% -->
 				<!-- Atk. Power +5.57% -->
@@ -40,7 +40,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8401" levels="1" name="Vorpal Leather Armor Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -49,7 +49,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- Atk. Power + 5.57% -->
 				<!-- Def. Power + 5.57% -->
@@ -88,7 +88,7 @@
 				<amount>182</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8402" levels="1" name="Vorpal Robe Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -97,7 +97,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.7% -->
 				<!-- M. Spd. +15% -->
@@ -131,7 +131,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8403" levels="1" name="Elegia Heavy Armor Set">
 		<!-- Confirmed CT2.5 -->
@@ -140,7 +140,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +6.59% -->
 				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
@@ -163,7 +163,7 @@
 				<amount>6.59</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8404" levels="1" name="Elegia Leather Armor Set">
 		<!-- Confirmed CT2.5 -->
@@ -172,7 +172,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- Attack Power +6.59% -->
 				<!-- Atk. Spd. +6% -->
@@ -197,7 +197,7 @@
 				<amount>6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8405" levels="1" name="Elegia Robe Set">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -206,7 +206,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- M. Power +10% -->
 				<!-- M. Spd. +15% -->
@@ -241,7 +241,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8406" levels="1" name="Moirai Heavy Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -250,7 +250,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
 				<attackerType>L2Playable</attackerType>
@@ -296,7 +296,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8407" levels="1" name="Moirai Light Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -305,7 +305,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
 				<attackerType>L2Playable</attackerType>
@@ -355,7 +355,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8408" levels="1" name="Moirai Robe Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -364,7 +364,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
 				<attackerType>L2Playable</attackerType>
@@ -409,7 +409,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8409" levels="1" name="Vorpal Heavy Armor Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -418,7 +418,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
 				<attackerType>L2Playable</attackerType>
@@ -477,7 +477,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8410" levels="1" name="Vorpal Leather Armor Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -486,7 +486,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
 				<attackerType>L2Playable</attackerType>
@@ -551,7 +551,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8411" levels="1" name="Vorpal Robe Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -560,7 +560,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
 				<attackerType>L2Playable</attackerType>
@@ -620,7 +620,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8412" levels="1" name="Elegia Heavy Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -629,7 +629,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
 				<attackerType>L2Playable</attackerType>
@@ -678,7 +678,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8413" levels="1" name="Elegia Leather Armor Set - PvP">
 		<!-- Confirmed CT2.5 -->
@@ -687,7 +687,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
 				<attackerType>L2Playable</attackerType>
@@ -738,7 +738,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8414" levels="1" name="Elegia Robe Set - PvP">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -747,7 +747,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
 				<attackerType>L2Playable</attackerType>
@@ -808,7 +808,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8415" levels="5" name="Ring Ability: Drop Rate Up">
 		<icon>icon.skill3080</icon>
@@ -838,7 +838,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="fireRes" val="3" />
 				<SHOCK>5</SHOCK>
@@ -851,7 +851,7 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8419" levels="1" name="Moirai Breastplate">
 		<!-- Increases P.Atk. by 4.26%, Atk. Spd. by 4%, resistance to shock by 5% and resistance to Fire/Water/Wind/Earth attack by 1. -->
@@ -860,7 +860,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="1" />
 				<add stat="fireRes" val="1" />
@@ -876,7 +876,7 @@
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8420" levels="1" name="Moirai Gaiters">
 		<!-- Increases P.Atk. by 2.08%, Atk. Spd. by 1.67%, resistance to shock by 5% and resistance to Water Attibute by 3. -->
@@ -885,7 +885,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="3" />
 				<SHOCK>5</SHOCK>
@@ -898,7 +898,7 @@
 				<amount>1.67</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8421" levels="1" name="Moirai Gauntlets">
 		<!-- Increases P.Atk. by 0.83%, Atk. Spd. by 0.67%, resistance to shock by 5% and resistance to Wind Attibute by 3. -->
@@ -907,7 +907,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="windRes" val="3" />
 				<SHOCK>5</SHOCK>
@@ -920,7 +920,7 @@
 				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8422" levels="1" name="Moirai Boots">
 		<!-- Increases P.Atk. by 0.83%, Atk. Spd. by 0.67%, resistance to shock by 5% and resistance to Earth Attibute by 3. -->
@@ -929,7 +929,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="earthRes" val="3" />
 				<SHOCK>5</SHOCK>
@@ -942,7 +942,7 @@
 				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8423" levels="1" name="Moirai Shield">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -951,11 +951,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8424" levels="1" name="Moirai Leather Helmet">
 		<!-- Increases P. Atk. by 1.25%, MP recovery rate by 1%, resistance to Hold by 5% and resistance to Fire by 3. -->
@@ -964,7 +964,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="fireRes" val="3" />
 				<HOLD>5</HOLD>
@@ -977,7 +977,7 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8425" levels="1" name="Moirai Leather Breastplate">
 		<!-- Increases P. Atk. by 4.26%, MP recovery rate by 4%, resistance to Hold by 5% and resistance to Water by 3. -->
@@ -986,7 +986,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="3" />
 				<HOLD>5</HOLD>
@@ -999,7 +999,7 @@
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8426" levels="1" name="Moirai Leather Leggings">
 		<!-- Increases P. Atk. by 2.08%, MP recovery rate by 1.67%, resistance to Hold by 5% and resistance to Water by 3. -->
@@ -1008,7 +1008,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="3" />
 				<HOLD>5</HOLD>
@@ -1021,7 +1021,7 @@
 				<amount>1.67</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8427" levels="1" name="Moirai Leather Gloves">
 		<!-- Increases P. Atk. by 0.83%, MP recovery rate by 0.67%, resistance to Hold by 5% and resistance to Wind by 3. -->
@@ -1030,7 +1030,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="windRes" val="3" />
 				<HOLD>5</HOLD>
@@ -1043,7 +1043,7 @@
 				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8428" levels="1" name="Moirai Leather Boots">
 		<!-- Increases P. Atk. by 0.83%, MP recovery rate by 0.67%, resistance to Hold by 5% and resistance to Earth by 3. -->
@@ -1052,7 +1052,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="earthRes" val="3" />
 				<HOLD>5</HOLD>
@@ -1065,7 +1065,7 @@
 				<amount>0.66999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8429" levels="1" name="Moirai Circlet">
 		<!-- Increases M. Atk. by 0.62%, resistance to Paralysis by 5% and resistance to Fire by 5. -->
@@ -1074,7 +1074,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="fireRes" val="5" />
 				<PARALYZE>5</PARALYZE>
@@ -1083,7 +1083,7 @@
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8430" levels="1" name="Moirai Tunic">
 		<!-- Increases M. Atk. by 8.11%, Casting Spd. by 15%, resistance to Paralysis by 5% and resistance to Fire/Water/Wind/Earth by 1. -->
@@ -1092,7 +1092,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<!-- M. Atk. +8.11% -->
 				<!-- Cast. Spd. +15% -->
@@ -1110,7 +1110,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8431" levels="1" name="Moirai Stockings">
 		<!-- Increases M. Atk. by 1.03%, resistance to Paralysis by 5% and resistance to Water by 5. -->
@@ -1119,7 +1119,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="5" />
 				<PARALYZE>5</PARALYZE>
@@ -1128,7 +1128,7 @@
 				<amount>1.03</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8432" levels="1" name="Moirai Gloves">
 		<!-- Increases M. Atk. by 0.41%, resistance to Paralysis by 5% and resistance to Wind by 5. -->
@@ -1137,7 +1137,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="windRes" val="5" />
 				<PARALYZE>5</PARALYZE>
@@ -1146,7 +1146,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8433" levels="1" name="Moirai Shoes">
 		<!-- Increases M. Atk. by 0.41%, resistance to Paralysis by 5% and resistance to Earth by 5. -->
@@ -1155,7 +1155,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="earthRes" val="5" />
 				<PARALYZE>5</PARALYZE>
@@ -1164,7 +1164,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8434" levels="1" name="Moirai Sigil">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -1173,11 +1173,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8435" levels="1" name="Vesper Helmet">
 		<!-- Increases P. Atk./P. Def. by 0.62%, Max HP by 133 and resistance to Sleep/Hold Atk. by 10.5%. -->
@@ -1186,7 +1186,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
@@ -1200,7 +1200,7 @@
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8436" levels="1" name="Vesper Breastplate">
 		<!-- Increases P. Atk./P. Def. by 5.57%, Max HP by 531 and resistance to Sleep/Hold Atk. by 28%. -->
@@ -1209,7 +1209,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="531" />
 				<SLEEP>28</SLEEP>
@@ -1223,7 +1223,7 @@
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8437" levels="1" name="Vesper Gaiters">
 		<!-- Increases P. Atk./P. Def. by 1/03%, Max HP by 55 and resistance to Sleep/Hold Atk. by 18%. -->
@@ -1232,7 +1232,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
@@ -1246,7 +1246,7 @@
 				<amount>1.03</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8438" levels="1" name="Vesper Gauntlets">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold Atk. by 7%. -->
@@ -1255,7 +1255,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
@@ -1269,7 +1269,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8439" levels="1" name="Vesper Boots">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold Atk. by 7%. -->
@@ -1278,7 +1278,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
@@ -1292,7 +1292,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8440" levels="1" name="Vesper Shield">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -1301,11 +1301,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8441" levels="1" name="Vesper Leather Helmet">
 		<!-- Increases P. Atk. by 0.41%, Atk. Spd./MP Recovery Bonus by 0.41% and Max MP by 87. -->
@@ -1314,7 +1314,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.41</amount>
 				<mode>PER</mode>
@@ -1331,7 +1331,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8442" levels="1" name="Vesper Leather Breastplate">
 		<!-- Increases P. Atk. by 5.57%, Atk. Spd./MP Recovery Bonus by 5% and Max MP by 347. -->
@@ -1340,7 +1340,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>5.57</amount>
 				<mode>PER</mode>
@@ -1357,7 +1357,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8443" levels="1" name="Vesper Leather Leggings">
 		<!-- Increases P. Atk. by 0.68%, Atk. Spd./MP Recovery Bonus by 0.68% and Max MP by 145. -->
@@ -1366,7 +1366,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
@@ -1383,7 +1383,7 @@
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8444" levels="1" name="Vesper Leather Gloves">
 		<!-- Increases P. Atk. by 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -1392,7 +1392,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.27</amount>
 				<mode>PER</mode>
@@ -1409,7 +1409,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8445" levels="1" name="Vesper Leather Boots">
 		<!-- Increases P. Atk. by 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -1418,7 +1418,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.27</amount>
 				<mode>PER</mode>
@@ -1435,7 +1435,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8446" levels="1" name="Vesper Circlet">
 		<!-- Increases M. Atk. by 0.41%, MP recovery rate by 0.41%, resistance to Stun by 7.5% and decreases magic cancel rate by 4.5. -->
@@ -1444,7 +1444,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="4.5" />
 				<SHOCK>7.5</SHOCK>
@@ -1457,7 +1457,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8447" levels="1" name="Vesper Tunic">
 		<!-- Increases M. Atk. by 8.47%, Casting Spd. By 15%, MP recovery rate by 5%, resistance to Stun by 20% and decreases magic cancel rate by 12. -->
@@ -1466,7 +1466,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="12" />
 				<SHOCK>20</SHOCK>
@@ -1483,7 +1483,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8448" levels="1" name="Vesper Stockings">
 		<!-- Increases M. Atk. by 0.68%, MP recovery rate by 0.68%, resistance to Stun by 5% and decreases magic cancel rate by 7.5. -->
@@ -1492,7 +1492,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="7.5" />
 				<SHOCK>12.5</SHOCK>
@@ -1505,7 +1505,7 @@
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8449" levels="1" name="Vesper Gloves">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -1514,7 +1514,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
@@ -1527,7 +1527,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8450" levels="1" name="Vesper Shoes">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -1536,7 +1536,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
@@ -1549,7 +1549,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8451" levels="1" name="Vesper Sigil">
 		<!-- Increases resistance to magic damage by 2%. -->
@@ -1558,11 +1558,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.02" /> <!-- resistance to damage magic by 2% -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8452" levels="1" name="Moirai Earring">
 		<!-- Confirmed CT2.5 -->
@@ -1571,11 +1571,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>7.62</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8453" levels="1" name="Moirai Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -1584,11 +1584,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>6</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8454" levels="1" name="Moirai Ring">
 		<!-- Confirmed CT2.5 -->
@@ -1597,12 +1597,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>16</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8455" levels="1" name="Vesper Earring">
 		<!-- Confirmed CT2.5 -->
@@ -1611,12 +1611,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>5</SLEEP>
 				<HOLD>5</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8456" levels="1" name="Vesper Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -1625,12 +1625,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8457" levels="1" name="Vesper Ring">
 		<!-- Confirmed CT2.5 -->
@@ -1639,11 +1639,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>4.76</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8458" levels="1" name="Bracelet Weight Gauge Add">
 		<!-- Confirmed CT2.5 -->
@@ -1652,11 +1652,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="3000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8459" levels="1" name="Freya's Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -1666,7 +1666,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="10" />
 				<mul stat="mReuse" val="0.95" />
@@ -1688,7 +1688,7 @@
 				<amount>0.23</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8460" levels="1" name="Blessed Freya's Necklace">
 		<!-- Confirmed CT2.5 -->
@@ -1698,7 +1698,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="waterRes" val="15" />
 				<mul stat="mReuse" val="0.95" />
@@ -1725,7 +1725,7 @@
 				<amount>0.46</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8461" levels="3" name="Enchant Heavy Armor (S-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1736,7 +1736,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="StatByMoveType">
 				<stat>REGENERATE_MP_RATE</stat>
 				<type>STANDING</type>
@@ -1766,7 +1766,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8462" levels="3" name="Enchant Light Armor (S-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1777,7 +1777,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">39</value>
@@ -1800,7 +1800,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8463" levels="3" name="Enchant Robe (S-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1810,7 +1810,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="#weightLimit" />
 			</effect>
@@ -1821,7 +1821,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8464" levels="1" name="Release Agathion's Seal - Kid Rudolph">
 		<!-- Confirmed CT2.5 -->
@@ -1834,11 +1834,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16073</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8465" levels="1" name="Notifier">
 		<!-- It's time to return Santa Claus's gift that the Agathions gave you. -->
@@ -2009,7 +2009,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
@@ -2023,7 +2023,7 @@
 				<amount>0.62</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8482" levels="1" name="Vesper Noble Gaiters">
 		<!-- Increases P. Atk./P. Def. by 1.03%, Max HP by 55 and resistance to Sleep/Hold by 185%. -->
@@ -2032,7 +2032,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
@@ -2046,7 +2046,7 @@
 				<amount>1.03</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8483" levels="1" name="Vesper Noble Gauntlets">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold by 7%. -->
@@ -2055,7 +2055,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
@@ -2069,7 +2069,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8484" levels="1" name="Vesper Noble Boots">
 		<!-- Increases P. Atk./P. Def. by 0.41%, Max HP by 22 and resistance to Sleep/Hold by 7%. -->
@@ -2078,7 +2078,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
@@ -2092,7 +2092,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8485" levels="1" name="Vesper Noble Leather Helmet">
 		<!-- Increases P.Atk. By 0.41%, Atk. Spd./MP Recovery Bonus by 0.41% and Max MP by 87. -->
@@ -2101,7 +2101,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.41</amount>
 				<mode>PER</mode>
@@ -2118,7 +2118,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8486" levels="1" name="Vesper Noble Leather Leggings">
 		<!-- Increases P.Atk. By 0.68%, Atk. Spd./MP Recovery Bonus by 0.68% and Max MP by 145. -->
@@ -2127,7 +2127,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
@@ -2144,7 +2144,7 @@
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8487" levels="1" name="Vesper Noble Leather Gloves">
 		<!-- Increases P.Atk. By 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -2153,7 +2153,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.27</amount>
 				<mode>PER</mode>
@@ -2170,7 +2170,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8488" levels="1" name="Vesper Noble Leather Boots">
 		<!-- Increases P.Atk. By 0.27%, Atk. Spd./MP Recovery Bonus by 0.27% and Max MP by 58. -->
@@ -2179,7 +2179,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>0.27</amount>
 				<mode>PER</mode>
@@ -2196,7 +2196,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8489" levels="1" name="Vesper Noble Circlet">
 		<!-- Increases M. Atk. by 0.41%, MP recovery rate by 0.41%, resistance to Stun Atk. by 7.5% and decreases magic cancel rate by 4.5. -->
@@ -2205,7 +2205,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="4.5" />
 				<SHOCK>7.5</SHOCK>
@@ -2218,7 +2218,7 @@
 				<amount>0.41</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8490" levels="1" name="Vesper Noble Stockings">
 		<!-- Increases M. Atk. by 0.68%, MP recovery rate by 0.68%, resistance to Stun Atk. by 12.5% and decreases magic cancel rate by 7.5. -->
@@ -2227,7 +2227,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="7.5" />
 				<SHOCK>12.5</SHOCK>
@@ -2240,7 +2240,7 @@
 				<amount>0.67999999999999</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8491" levels="1" name="Vesper Noble Gloves">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -2249,7 +2249,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
@@ -2262,7 +2262,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8492" levels="1" name="Vesper Noble Shoes">
 		<!-- Increases M. Atk. by 0.27%, MP recovery rate by 0.27%, resistance to Stun by 5% and decreases magic cancel rate by 3. -->
@@ -2271,7 +2271,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<sub stat="cancel" val="3" />
 				<SHOCK>5</SHOCK>
@@ -2284,7 +2284,7 @@
 				<amount>0.27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8493" levels="1" name="Equip Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2293,12 +2293,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8494" levels="1" name="Equip Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2307,12 +2307,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8495" levels="1" name="Equip Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2321,12 +2321,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8496" levels="1" name="Equip Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2335,12 +2335,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8497" levels="1" name="Circlet of Ice">
 		<!-- Increases resistance to water-type attacks by 30. -->
@@ -2357,11 +2357,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8499" levels="1" name="Pink Talisman - DEX">
 		<!-- Confirmed CT2.5 -->
@@ -2370,10 +2370,10 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="DEX" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -20,7 +20,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
@@ -35,7 +35,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1501" levels="1" name="Improve Condition">
 		<!-- Confirmed CT2.5 -->
@@ -57,7 +57,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
 			</effect>
@@ -72,7 +72,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1502" levels="1" name="Improve Critical Attack">
 		<!-- Confirmed CT2.5 -->
@@ -94,7 +94,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -108,7 +108,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1503" levels="1" name="Improve Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -130,7 +130,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="1.5" />
 			</effect>
@@ -144,7 +144,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1504" levels="1" name="Improve Movement">
 		<!-- Confirmed CT2.5 -->
@@ -166,7 +166,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
@@ -181,7 +181,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1505" levels="1" name="Sublime Self-Sacrifice">
 		<!-- Confirmed CT2.5 -->
@@ -205,7 +205,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_NOTME</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="CpHeal">
 				<power>9000</power>
@@ -216,7 +216,7 @@
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1506" levels="1" name="Blessing of Eva">
 		<!-- Confirmed CT2.5 -->
@@ -239,7 +239,7 @@
 				<target npcType="Attackable" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>9000</power>
 			</effect>
@@ -254,7 +254,7 @@
 				<rate>40</rate>
 				<max>10</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1507" levels="1" name="Lord of Vampires">
 		<abnormalLvl>5</abnormalLvl>
@@ -275,12 +275,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>80</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1508" levels="1" name="Thorn Root">
 		<!-- Glory Days confirmed -->
@@ -307,7 +307,7 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -318,7 +318,7 @@
 			<effect name="ManaDamOverTime" ticks="1">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1509" levels="9" name="Seal of Limit">
 		<!-- Updated to IO -->
@@ -377,7 +377,7 @@
 		<coolTime>500</coolTime>
 		<castRange>900</castRange>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="LimitHp">
@@ -422,7 +422,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1510" levels="1" name="Soul Cleanse">
 		<!-- Confirmed CT2.5 -->
@@ -443,13 +443,13 @@
 		<cond msgId="113" addName="1">
 			<target race="KAMAEL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>3</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1511" levels="8" name="Curse of Life Flow">
 		<!-- Confirmed CT2.5 -->
@@ -522,7 +522,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Light Flow -->
 				<attackerType>L2Character</attackerType>
@@ -543,7 +543,7 @@
 					<value level="8">8</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1512" levels="1" name="Soul Vortex">
 		<!-- Glory Days confirmed -->
@@ -569,7 +569,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>112</power>
 				<overHit>true</overHit>
@@ -589,7 +589,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1513" levels="1" name="Soul Vortex Extinction">
 		<!-- Glory Days confirmed -->
@@ -611,14 +611,14 @@
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_SOUL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_SOUL,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1514" levels="7" name="Soul Barrier">
 		<!-- Updated to IO -->
@@ -658,7 +658,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>
 					<value level="1">10</value>
@@ -700,7 +700,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1515" levels="1" name="Lightning Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -720,7 +720,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Lightning Barrier -->
 				<attackerType>L2Character</attackerType>
@@ -732,7 +732,7 @@
 				<skillId>5592</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1516" levels="1" name="Soul Strike">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -751,11 +751,11 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>166</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1517" levels="1" name="Chant of Combat">
 		<!-- Confirmed CT2.5 -->
@@ -776,7 +776,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
@@ -791,7 +791,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1518" levels="1" name="Chant of Critical">
 		<!-- Confirmed CT2.5 -->
@@ -812,7 +812,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -826,7 +826,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1519" levels="1" name="Chant of Blood Awakening">
 		<!-- Confirmed CT2.5 -->
@@ -847,7 +847,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
 			</effect>
@@ -862,7 +862,7 @@
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1520" levels="1" name="Inquisitor">
 		<!-- Confirmed CT2.5 -->
@@ -888,11 +888,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>316</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1521" levels="1" name="Inquisitor">
 		<!-- Confirmed CT2.5 -->
@@ -918,11 +918,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>317</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1522" levels="1" name="Inquisitor">
 		<!-- Confirmed CT2.5 -->
@@ -948,11 +948,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>318</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1523" levels="42" name="Divine Punishment">
 		<!-- Confirmed CT2.5 -->
@@ -1232,7 +1232,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">52</value>
@@ -1279,7 +1279,7 @@
 					<value level="42">109</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1524" levels="42" name="Surrender to Holy">
 		<!-- Confirmed CT2.5 -->
@@ -1479,12 +1479,12 @@
 		<attributeType>HOLY</attributeType>
 		<attributeValue>20</attributeValue>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="holyRes" val="25" />
 				<add stat="darkRes" val="12" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1525" levels="42" name="Divine Curse">
 		<!-- Confirmed CT2.5 -->
@@ -1685,7 +1685,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">9</value>
@@ -1736,7 +1736,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1526" levels="3" name="Steal Mana">
 		<!-- Confirmed CT2.5 -->
@@ -1750,7 +1750,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Steal Mana -->
 				<attackerType>L2Character</attackerType>
@@ -1772,7 +1772,7 @@
 				</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1527" levels="3" name="Expert Casting">
 		<!-- Glory Days confirmed -->
@@ -1786,7 +1786,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#mReuse" />
 			</effect>
@@ -1794,7 +1794,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1528" levels="42" name="Divine Flash">
 		<!-- Confirmed CT2.5 -->
@@ -2076,7 +2076,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">29</value>
@@ -2123,7 +2123,7 @@
 					<value level="42">61</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1529" levels="7" name="Soul Web">
 		<!-- Confirmed CT2.5 -->
@@ -2174,14 +2174,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1530" levels="13" name="Death Spike">
 		<table name="#power"> 35 39 43 47 49 51 53 56 58 59 61 63 65 </table>
@@ -2257,7 +2257,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">35</value>
@@ -2276,7 +2276,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1531" levels="7" name="Blessed Blood">
 		<!-- Confirmed CT2.5 -->
@@ -2324,7 +2324,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Bless the Blood -->
 				<attackerType>L2Character</attackerType>
@@ -2344,7 +2344,7 @@
 					<value level="7">7</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1532" levels="1" name="Enlightenment">
 		<abnormalLvl>1</abnormalLvl>
@@ -2363,7 +2363,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.5" />
 				<mul stat="MagicalMpConsumeRate" val="0.1" />
@@ -2376,7 +2376,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1533" levels="1" name="Enlightenment">
 		<abnormalLvl>1</abnormalLvl>
@@ -2395,7 +2395,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.5" />
 				<mul stat="MagicalMpConsumeRate" val="0.1" />
@@ -2412,7 +2412,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1534" levels="1" name="Courage of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -2434,12 +2434,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1535" levels="1" name="Chant of Movement">
 		<!-- Confirmed CT2.5 -->
@@ -2460,7 +2460,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
@@ -2475,7 +2475,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1536" levels="1" name="Combat of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -2497,7 +2497,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
@@ -2512,7 +2512,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1537" levels="1" name="Critical of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -2534,7 +2534,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -2548,7 +2548,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1538" levels="1" name="Condition of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
@@ -2570,7 +2570,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
 			</effect>
@@ -2585,7 +2585,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1539" levels="4" name="Stigma of Shilen">
 		<table name="#traits"> -16 -24 -32 -40 </table>
@@ -2634,7 +2634,7 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<activateRate>80</activateRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SWORD>
 					<value level="1">-16</value>
@@ -2691,7 +2691,7 @@
 					<value level="4">-40</value>
 				</RAPIER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1540" levels="1" name="Turn to Stone">
 		<abnormalLvl>1</abnormalLvl>
@@ -2710,7 +2710,7 @@
 		<targetType>SELF</targetType>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -2721,7 +2721,7 @@
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1541" levels="1" name="Curse of Desparion">
 		<!-- Confirmed CT2.5 -->
@@ -2748,7 +2748,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
@@ -2767,7 +2767,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1542" levels="1" name="Counter Critical">
 		<!-- Confirmed CT2.5 -->
@@ -2790,7 +2790,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
 				<attackerType>L2Character</attackerType>
@@ -2806,7 +2806,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1543" levels="1" name="Great Fury">
 		<!-- Confirmed CT2.5 -->
@@ -2814,7 +2814,7 @@
 		<magicLvl>81</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Burning Chop -->
 				<!-- Great Fury -->
@@ -2824,7 +2824,7 @@
 				<chance>30</chance>
 				<targetType>PARTY</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1544" levels="7" name="Death Beam">
 		<!-- Confirmed CT2.5 -->
@@ -2857,7 +2857,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
 					<value level="1">138</value>
@@ -2869,7 +2869,7 @@
 					<value level="7">146</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1545" levels="1" name="Soul Sucking">
 		<!-- Confirmed CT2.5 -->
@@ -2926,10 +2926,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1547" levels="3" name="Spirit Sharing">
 		<table name="#amount"> 1.03 1.04 1.05 </table>
@@ -2973,7 +2973,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -3017,7 +3017,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1548" levels="3" name="Earth Resistance">
 		<!-- High Five Skill -->
@@ -3056,11 +3056,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="#earthRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1549" levels="1" name="Chant of Elements">
 		<!-- Glory Days confirmed -->
@@ -3081,14 +3081,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="20" />
 				<add stat="waterRes" val="20" />
 				<add stat="windRes" val="20" />
 				<add stat="earthRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1550" levels="1" name="Mass Cure Poison">
 		<!-- Glory Days confirmed -->
@@ -3105,11 +3105,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,10</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1551" levels="1" name="Mass Purify">
 		<!-- Glory Days confirmed -->
@@ -3126,11 +3126,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,10;BLEEDING,10;PARALYZE,1;TURN_STONE,1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1552" levels="1" name="Mass Vitalize">
 		<!-- High Five Skill -->
@@ -3147,14 +3147,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>796</power>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>POISON,10;BLEEDING,10</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1553" levels="1" name="Chain Heal">
 		<!-- High Five Skill -->
@@ -3176,11 +3176,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA_FRIENDLY</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1554" levels="1" name="Aura Blast">
 		<!-- Glory Days confirmed -->
@@ -3271,11 +3271,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="manaShield" val="70" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1557" levels="1" name="Servitor Share">
 		<!-- High Five Skill -->
@@ -3303,7 +3303,7 @@
 		<cond>
 			<player hasSummon="true" />
 		</cond>
-		<for>
+		<effects>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
 			<effect name="ServitorShare">
 				<share stat="pAtk" val="0.5" />
@@ -3316,7 +3316,7 @@
 				<share stat="pAtkSpd" val="0.1" />
 				<share stat="mAtkSpd" val="0.03" />
 			</effect>
-		</for>
+		</effects>
 		<!-- Shouldn't have any self effects -->
 		<selfEffects>
 			<effect name="ServitorShare" /> <!-- This effect is used to cancel pet's effect when player's have been canceled. -->
@@ -3466,7 +3466,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit">
 					<using kind="DAGGER,DUALDAGGER,LIGHT" />
@@ -3485,7 +3485,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1560" levels="1" name="Lucky Blow">
 		<!-- Glory Days confirmed -->
@@ -3508,7 +3508,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>11234</power>
 				<criticalChance>30</criticalChance>
@@ -3520,7 +3520,7 @@
 				<halfLethal>8</halfLethal>
 			</effect>
 			<effect name="Spoil" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1561" levels="5" name="Battle Cry">
 		<!-- Glory Days confirmed -->
@@ -3557,7 +3557,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">15</value>
@@ -3569,7 +3569,7 @@
 				<mode>PER</mode>
 				<heal>true</heal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1562" levels="2" name="Chant of Berserker">
 		<!-- High Five Skill -->
@@ -3613,7 +3613,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -3670,7 +3670,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1563" levels="2" name="Fury of Pa'agrio">
 		<!-- Glory Days confirmed -->
@@ -3708,7 +3708,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<affectLimit>50-50</affectLimit>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -3716,7 +3716,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1564" levels="1" name="Penetrating Attack">
 		<!-- Glory Days confirmed -->
@@ -3725,7 +3725,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Penetration Attack -->
 				<attackerType>L2Character</attackerType>
@@ -3737,7 +3737,7 @@
 				<skillId>6921</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1565" levels="6" name="Mana Pump">
 		<!-- Glory Days confirmed -->
@@ -3754,7 +3754,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">70</value>
@@ -3766,7 +3766,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1566" levels="1" name="Class Change">
 		<!-- Glory Days confirmed -->
@@ -3796,12 +3796,12 @@
 				<player inInstance="false" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ClassChange">
 				<index>0</index>
 			</effect>
 			<effect name="UnsummonAgathion" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1567" levels="1" name="Class Change">
 		<!-- Glory Days confirmed -->
@@ -3831,12 +3831,12 @@
 				<player inInstance="false" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ClassChange">
 				<index>1</index>
 			</effect>
 			<effect name="UnsummonAgathion" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1568" levels="1" name="Class Change">
 		<!-- Glory Days confirmed -->
@@ -3866,12 +3866,12 @@
 				<player inInstance="false" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ClassChange">
 				<index>2</index>
 			</effect>
 			<effect name="UnsummonAgathion" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1569" levels="1" name="Class Change">
 		<!-- Glory Days confirmed -->
@@ -3901,12 +3901,12 @@
 				<player inInstance="false" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ClassChange">
 				<index>3</index>
 			</effect>
 			<effect name="UnsummonAgathion" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1570" levels="1" name="Identity Crisis">
 		<!-- Glory Days confirmed -->
@@ -3928,7 +3928,7 @@
 		<magicLvl>-2</magicLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockSkill">
 				<magicTypes>1;2;3;4;5</magicTypes>
 			</effect>
@@ -3952,7 +3952,7 @@
 				<amount>-70</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1571" levels="1" name="Inventory Increase">
 		<!-- Increases inventory slots by 18. -->
@@ -3961,11 +3961,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="inventoryLimit" val="18" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1572" levels="1" name="Weight Increase">
 		<!-- Increases weight capacity by 10,000. -->
@@ -3974,11 +3974,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightLimit" val="10000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1573" levels="6" name="Sub - P. Atk./M. Atk. Increase">
 		<!-- Increases P. Atk. by 10 and M. Atk. by 20. -->
@@ -3989,7 +3989,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10</value>
@@ -4012,7 +4012,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1574" levels="6" name="Sub - P. Def./M. Def. Increase">
 		<!-- Increases P. Def. by 15 and M. Def. by 15. -->
@@ -4022,7 +4022,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">15</value>
@@ -4045,7 +4045,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1575" levels="3" name="Sub - Atk. Spd./Casting Spd. Increase">
 		<!-- Increases Atk. Spd. and Casting Spd. by 10. -->
@@ -4055,7 +4055,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">10</value>
@@ -4072,7 +4072,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1576" levels="3" name="Sub - Critical Rate Increase">
 		<!-- Increases P./M. Critical Rate by 10. -->
@@ -4082,12 +4082,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#critRate" />
 				<add stat="mCritRate" val="#critRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1577" levels="3" name="Sub - Critical Damage Increase">
 		<!-- P. Critical Damage + 18. M. Critical Damage + 14. -->
@@ -4098,7 +4098,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO : add stat="mCAtkAdd" val="#mCAtkAdd" / -->
 			</effect>
@@ -4110,7 +4110,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1578" levels="3" name="Sub - Physical Attribute Resistance Increase">
 		<!-- Increases resistance to physical attributes by 1. -->
@@ -4120,11 +4120,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="abnormalResPhysical" val="#abnormalResPhysical" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1579" levels="3" name="Sub - Mental Attribute Resistance Increase">
 		<!-- Increases Mental Attack Resistance by 1. -->
@@ -4134,11 +4134,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="abnormalResMagical" val="#abnormalResMagical" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1580" levels="3" name="Sub - Physical Ability Increase">
 		<!-- Max CP + 41, Max HP + 51, and Max MP + 36. -->
@@ -4150,7 +4150,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">51</value>
@@ -4175,7 +4175,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1581" levels="3" name="Sub - MP Consumption/Cooldown Decrease">
 		<!-- Upon skill use, decreases MP Consumption and Cooldown by 1%. -->
@@ -4185,7 +4185,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#power" />
 				<mul stat="pReuse" val="#power" />
@@ -4193,7 +4193,7 @@
 				<mul stat="PhysicalMpConsumeRate" val="#power" />
 				<mul stat="DanceMpConsumeRate" val="#power" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1584" levels="1" name="Equipment Craft">
 		<!-- Glory Days confirmed -->
@@ -4206,9 +4206,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="OpenDwarfRecipeBook" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1585" levels="1" name="Rhythm of Critical Dark">
 		<!-- Glory Days confirmed -->
@@ -4232,7 +4232,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 			</effect>
@@ -4246,7 +4246,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1586" levels="1" name="Rhythm of Critical">
 		<!-- Glory Days confirmed -->
@@ -4267,7 +4267,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 			</effect>
@@ -4281,7 +4281,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1587" levels="1" name="Rhythm of Magic Dark">
 		<!-- Glory Days confirmed -->
@@ -4305,7 +4305,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_WARDING</slot>
 			</effect>
@@ -4320,7 +4320,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1588" levels="1" name="Rhythm of Magic">
 		<!-- Glory Days confirmed -->
@@ -4341,7 +4341,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_WARDING</slot>
 			</effect>
@@ -4356,7 +4356,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1589" levels="1" name="Rhythm of Combat Dark">
 		<!-- Glory Days confirmed -->
@@ -4380,7 +4380,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_EARTH</slot>
 			</effect>
@@ -4395,7 +4395,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1590" levels="1" name="Rhythm of Combat">
 		<!-- Glory Days confirmed -->
@@ -4416,7 +4416,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_EARTH</slot>
 			</effect>
@@ -4431,7 +4431,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1591" levels="1" name="Rhythm of Fighter Dark">
 		<!-- Glory Days confirmed -->
@@ -4455,7 +4455,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VITALITY</slot>
 			</effect>
@@ -4470,7 +4470,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1592" levels="1" name="Rhythm of Fighter">
 		<!-- Glory Days confirmed -->
@@ -4491,7 +4491,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VITALITY</slot>
 			</effect>
@@ -4506,7 +4506,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1593" levels="1" name="Rhythm of Revenge Dark">
 		<!-- Glory Days confirmed -->
@@ -4530,7 +4530,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
 			</effect>
@@ -4545,7 +4545,7 @@
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1594" levels="1" name="Rhythm of Revenge">
 		<!-- Glory Days confirmed -->
@@ -4566,7 +4566,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
 			</effect>
@@ -4581,7 +4581,7 @@
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1595" levels="1" name="Rhythm of Start Dark">
 		<!-- Glory Days confirmed -->
@@ -4605,7 +4605,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="0.8" />
 				<mul stat="pReuse" val="0.8" />
@@ -4620,7 +4620,7 @@
 			<effect name="DispelBySlotProbability">
 				<slot>SONG_OF_RENEWAL</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1596" levels="1" name="Rhythm of Start">
 		<!-- Glory Days confirmed -->
@@ -4641,7 +4641,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>80</magicLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="0.8" />
 				<mul stat="pReuse" val="0.8" />
@@ -4656,7 +4656,7 @@
 			<effect name="DispelBySlotProbability">
 				<slot>SONG_OF_RENEWAL</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1597" levels="1" name="Weight Increase">
 		<!-- Increases weight capacity by 15000. -->
@@ -4665,11 +4665,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="15000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1598" levels="1" name="Rhythm of Magician Dark">
 		<!-- Glory Days confirmed -->
@@ -4693,7 +4693,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="40" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
@@ -4712,7 +4712,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1599" levels="1" name="Rhythm of Magician">
 		<!-- Glory Days confirmed -->
@@ -4733,7 +4733,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>55</magicLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="40" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
@@ -4752,6 +4752,6 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

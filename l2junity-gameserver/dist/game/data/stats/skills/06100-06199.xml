@@ -294,7 +294,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>400</affectRange>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
 				<add stat="rCrit" val="50" />
@@ -324,7 +324,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6121" levels="1" name="Agathion's New Year's Gift 1">
 		<!-- Confirmed CT2.5 -->
@@ -345,12 +345,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>14676</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6122" levels="1" name="Agathion's New Year's Gift 2">
 		<!-- Confirmed CT2.5 -->
@@ -371,12 +371,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>14677</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6123" levels="1" name="Agathion's New Year's Wish">
 		<abnormalLvl>2</abnormalLvl>
@@ -432,9 +432,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6126" levels="1" name="Paralysis">
 		<!-- Confirmed CT2.5 -->
@@ -454,9 +454,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6127" levels="1" name="Anti-limit">
 		<!-- Confirmed CT2.5 -->
@@ -464,11 +464,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>LIMIT</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6128" levels="1" name="Presentation - Cow Rage">
 		<hitTime>3000</hitTime>
@@ -766,7 +766,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -793,7 +793,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6143" levels="1" name="Ancient Beam">
 		<effectPoint>-100</effectPoint>
@@ -868,7 +868,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="vengeancePdam" val="70" />
 				<add stat="reflectSkillPhysic" val="70" />
@@ -877,7 +877,7 @@
 				<amount>70</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6148" levels="1" name="Altar's Curse">
 		<!-- You have been weakened by the Altar's Curse. You probably can't fight in this condition. -->
@@ -903,7 +903,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>1.5</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute">
 			</effect>
 			<effect name="PAtk">
@@ -918,7 +918,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6149" levels="1" name="Kasha's Betrayal">
 		<!-- Kasha's Betrayal. For 15 minutes, decreases P. Atk./P. Def./moving speed by 50%. -->
@@ -940,7 +940,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>2000</affectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
@@ -955,7 +955,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6150" levels="4" name="Kasha's Curse">
 		<!-- Zone Skill -->
@@ -985,7 +985,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>2000</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -997,7 +997,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6151" levels="4" name="Kasha's Curse">
 		<abnormalLvl>3</abnormalLvl>
@@ -1049,7 +1049,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>2000</hitTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
@@ -1061,7 +1061,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6153" levels="4" name="Kasha's Yearning">
 		<abnormalLvl>2</abnormalLvl>
@@ -1115,11 +1115,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<add stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6155" levels="4" name="Kasha's Despair">
 		<abnormalLvl>4</abnormalLvl>
@@ -1255,9 +1255,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="6170" levels="1" name="Shyeed's Fury">
 		<!-- Confirmed CT2.5 -->
@@ -1276,7 +1276,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
 			<effect name="Buff">
 				<mul stat="mCritPower" val="1.05" />
@@ -1297,7 +1297,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6171" levels="1" name="Full Authority">
 		<!-- Confirmed CT2.5 -->
@@ -1316,7 +1316,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
 			<effect name="Buff">
 				<mul stat="mCritPower" val="1.05" />
@@ -1337,7 +1337,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6172" levels="1" name="Presentation - Tyranno">
 		<!-- Confirmed CT2.5 -->
@@ -1357,11 +1357,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2320</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6173" levels="1" name="Presentation - Memorial Service for Repose">
 		<!-- Confirmed CT2.5 -->
@@ -1745,7 +1745,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1832</value>
@@ -1757,6 +1757,6 @@
 					<value level="7">4640</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

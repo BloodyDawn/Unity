@@ -72,11 +72,11 @@
 		<icon>icon.skill11842</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="FocusEnergy">
 				<amount>5</amount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10302" levels="4" name="Triple Sonic Slash">
 		<!-- AUTO GENERATED SKILL -->
@@ -108,7 +108,7 @@
 		<icon>icon.skill0430</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#max" />
 			</effect>
@@ -121,7 +121,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10304" levels="4" name="Superior Dual Sword Mastery">
 		<!-- When a dualsword or dual blunt is equipped, P. Atk. + 2% and additional + 709. -->
@@ -136,7 +136,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -163,7 +163,7 @@
 					<item> DUALBLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10305" levels="4" name="Broad Pull">
 		<!-- Spear Resistance - 10%. Pulls enemies from a large radius nearby. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
@@ -193,7 +193,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<effectPoint>-436</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POLE>
 					<value level="1">-10</value>
@@ -202,7 +202,7 @@
 					<value level="4">-20</value>
 				</POLE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10306" levels="4" name="Superior Polearm Mastery">
 		<!-- When a spear is equipped, P. Atk. + 2% and additional P. Atk. 583. Increases the number of possible targets by 1. -->
@@ -218,7 +218,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -255,7 +255,7 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10307" levels="1" name="Fist of Fury">
 		<!-- AUTO GENERATED SKILL -->
@@ -280,7 +280,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="45">
 					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -322,7 +322,7 @@
 					<item> DUALBLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10309" levels="4" name="Superior Fist Weapon Mastery">
 		<!-- When a fist weapon is equipped, P. Atk. + 2 % and additional + 709. -->
@@ -337,7 +337,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -362,7 +362,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10310" levels="1" name="Primal Rage">
 		<!-- AUTO GENERATED SKILL -->
@@ -381,7 +381,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -394,7 +394,7 @@
 					<item> DUALBLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10311" levels="4" name="Superior Two-handed Weapon Mastery">
 		<!-- When a two-handed sword or two handed blunt is equipped, P. Atk. + 2 % and additional + 709. -->
@@ -409,7 +409,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtkMul">
 					<and>
@@ -424,7 +424,7 @@
 					</and>
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10312" levels="4" name="Crafting Mastery">
 		<!-- AUTO GENERATED SKILL -->
@@ -474,9 +474,9 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10314" levels="4" name="Disarmament">
 		<!-- AUTO GENERATED SKILL -->
@@ -505,7 +505,7 @@
 		</magicLvl>
 		<icon>icon.skill11836</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -526,7 +526,7 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10316" levels="4" name="Bloodthirst">
 		<!-- PvP P. Atk. + 5%. -->
@@ -540,7 +540,7 @@
 		</magicLvl>
 		<icon>icon.skill0193</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>
 					<value level="1">5</value>
@@ -550,7 +550,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10317" levels="4" name="Thunder Slasher">
 		<!-- Swings a spear to inflict 26003 added to P. Atk. on nearby enemies and Stuns them for 5 sec. Requires a spear. Ignores Shield Defense. Over-hit. Critical. -->
@@ -593,7 +593,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">26003</value>
@@ -605,7 +605,7 @@
 				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10318" levels="7" name="Sonic Flash">
 		<!-- Launches a wave of sword energy to inflict 17348 damage added to P. Atk., increasing the damage as Momentum is consumed. Can consume up to 3. Requires a dual sword, sword, or blunt. Over-hit. Critical. -->
@@ -648,7 +648,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<power>
 					<value level="1">17438</value>
@@ -662,7 +662,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10319" levels="3" name="Duelist's Fury">
 		<!-- TODO: AbnormalType -->
@@ -685,7 +685,7 @@
 		<effectPoint>500</effectPoint>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="debuffVuln" val="90" />
 			</effect>
@@ -709,7 +709,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10320" levels="3" name="Faceoff">
 		<!-- Engages target in 1:1 combat. Invincible for 30 seconds, and Duelist's Fury is applied, increasing PvP Damage by 20%, Speed by 66, and Debuff Resistance by 90%. -->
@@ -741,9 +741,9 @@
 				</skillLevel>
 			</effect>
 		</selfEffects>
-		<for>
+		<effects>
 			<effect name="Faceoff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10321" levels="7" name="Thunder Spear">
 		<!-- Attacks near the enemy by throwing a spear with 22536 Power added to P. Atk. Stuns for 9 seconds. Requires a spear. Over-hit. Critical hit. Ignores Shield Defense. Target cancel. -->
@@ -787,7 +787,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">22536</value>
@@ -804,7 +804,7 @@
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10322" levels="1" name="Wolf's Cry">
 		<!-- Shouts loudly to invoke the power of the Wolf. For 5 minutes, P. Def. and M. Def. + 50%, Max HP + 25%, and Spd. + 20. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
@@ -821,7 +821,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.25" />
 			</effect>
@@ -837,7 +837,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10323" levels="1" name="Self Heal (Warrior)">
 		<!-- AUTO GENERATED SKILL -->
@@ -885,14 +885,14 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-828</effectPoint>
 		<reuseDelay>120000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<!-- TODO rate -->
 				<slot>buff</slot>
 				<rate>25</rate>
 				<max>2</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10326" levels="3" name="Bloody Fury">
 		<!-- AUTO GENERATED SKILL -->
@@ -955,7 +955,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="1.1">
 					<using kind="SWORD, BLUNT" />
@@ -985,7 +985,7 @@
 					<item> BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10329" levels="1" name="Superior Blunt Weapon Mastery">
 		<!-- When equipped with a one-handed blunt weapon, P. Atk. + 21% and P. Critical Rate + 60. -->
@@ -993,7 +993,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="60">
 					<using kind="BLUNT" />
@@ -1006,7 +1006,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10330" levels="7" name="Power Hammer Crush">
 		<!-- Attacks target with 18005 Power added to P. Atk. while ignoring 30% of their P. Def. Stuns for 5 sec. Requires a blunt weapon. Over-hit. Critical. -->
@@ -1049,13 +1049,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<pDefMod>0.7</pDefMod>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10331" levels="1" name="Last Man Standing">
 		<!-- AUTO GENERATED SKILL -->
@@ -1099,7 +1099,7 @@
 		<coolTime>200</coolTime>
 		<effectPoint>673</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Winged Spear - Stun -->
 				<attackerType>L2Character</attackerType>
@@ -1137,7 +1137,7 @@
 				<amount>80</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10334" levels="1" name="Furious Slasher">
 		<!-- Increases P. Atk. by 30% for 60 seconds when a two-handed sword/two-handed blunt weapon is equipped. Attack 5 enemies at the same time with a regular attack. Consumes 5 Soulstones. -->
@@ -1155,7 +1155,7 @@
 		<coolTime>200</coolTime>
 		<effectPoint>673</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.3">
 					<and>
@@ -1168,7 +1168,7 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10335" levels="1" name="Furious Fist">
 		<!-- Increases P. Atk. by 30% and P. Critical Damage by 10% for 60 seconds when a fist weapon is equipped. Has 10% chance to decrease Fist Weapon Resistance by 30% when striking. Consumes 5 Soulstones. -->
@@ -1186,7 +1186,7 @@
 		<coolTime>200</coolTime>
 		<effectPoint>673</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Punch Drunk -->
 				<attackerType>L2Character</attackerType>
@@ -1227,7 +1227,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10336" levels="1" name="Infinity Rush">
 		<!-- AUTO GENERATED SKILL -->
@@ -1260,11 +1260,11 @@
 		<isMagic>4</isMagic>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<FIST>-30</FIST>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10339" levels="1" name="Winged Spear - Stun">
 		<!-- Stuns target for 3 seconds. -->
@@ -1287,9 +1287,9 @@
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10340" levels="3" name="Blade Slasher">
 		<table name="#power"> 48641 51282 53878 </table>

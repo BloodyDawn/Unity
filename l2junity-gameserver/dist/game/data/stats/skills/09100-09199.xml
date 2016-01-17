@@ -22,9 +22,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9101" levels="1" name="Icarus Weapon Pack">
 		<!-- Confirmed CT2.5 -->
@@ -48,9 +48,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9102" levels="1" name="Dynasty Weapon Pack">
 		<!-- Confirmed CT2.5 -->
@@ -74,9 +74,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9103" levels="1" name="Vesper Armor Pack">
 		<!-- Confirmed CT2.5 -->
@@ -100,9 +100,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9104" levels="1" name="Moirai Armor Pack">
 		<!-- Confirmed CT2.5 -->
@@ -126,9 +126,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9105" levels="1" name="Dynasty Armor Pack">
 		<!-- Confirmed CT2.5 -->
@@ -152,9 +152,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9106" levels="1" name="Soul Crystal - Step 14 Box">
 		<!-- Confirmed CT2.5 -->
@@ -178,9 +178,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9107" levels="1" name="Soul Crystal - Step 15 Box">
 		<!-- Confirmed CT2.5 -->
@@ -204,9 +204,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9108" levels="1" name="Soul Crystal - Step 16 Box">
 		<!-- Confirmed CT2.5 -->
@@ -230,9 +230,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9109" levels="1" name="Facelifting Potion Pack">
 		<!-- Confirmed CT2.5 -->
@@ -256,9 +256,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9110" levels="1" name="Dye Potion Pack">
 		<!-- Confirmed CT2.5 -->
@@ -282,9 +282,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9111" levels="1" name="Hairstyle Change Potion Pack">
 		<!-- Confirmed CT2.5 -->
@@ -308,9 +308,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9112" levels="1" name="Golden Apigas Box">
 		<!-- Confirmed CT2.5 -->
@@ -334,9 +334,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9113" levels="1" name="Vitality Maintaining Potion">
 		<!-- Maintains the current Vitality for 10 minutes. -->
@@ -373,11 +373,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="GiveRecommendation">
 				<amount>10</amount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9115" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -1238,9 +1238,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9159" levels="1" name="Transformation Scroll: Anakim">
 		<abnormalLvl>1</abnormalLvl>
@@ -1265,11 +1265,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>306</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9160" levels="1" name="Transformation Scroll: Zaken">
 		<abnormalLvl>1</abnormalLvl>
@@ -1294,11 +1294,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>305</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9161" levels="1" name="Vesper's Mighty Power">
 		<!-- Increase Physical Attack by 15%, Magical Attack by 20%, and Moving Speed by 10 for 10 minutes. -->
@@ -1318,7 +1318,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -1331,7 +1331,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9162" levels="1" name="Vesper's Critical Attack Power">
 		<!-- Increase Physical Critical Attack Rate by 15, Magic Critical Attack Rate by 2, and Moving Speed by 10 for 10 minutes. Recovers 5% of the standard short-range physical damage inflicted on the enemy as HP. -->
@@ -1351,7 +1351,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="15" />
 				<add stat="mCritRate" val="2" />
@@ -1364,7 +1364,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9163" levels="1" name="Invincible Vesper">
 		<!-- Increase Max. Attack Speed by 20%, Magic Speed by 20%, and Moving Speed by 20 for 10 minutes. -->
@@ -1384,7 +1384,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
@@ -1397,7 +1397,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9164" levels="1" name="Special Gift of April Fool's Day - Event">
 		<!-- Confirmed CT2.5 -->
@@ -1422,9 +1422,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9165" levels="1" name="Leaf of Appreciation">
 		<!-- For 1 hour, receives help from the Energy of Sprout to increase Max MP by 20%, MP recovery bonus by 20%, HP recovery bonus by 20%, the rate of Prominent Damage occurring through damage magic by 2, the power of critical attacks by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and resistance to de-buffs by 10%. Decreases moving speed by 20% and MP consumption needed for skill use by 5%. -->
@@ -1594,11 +1594,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<sp>500000</sp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9175" levels="1" name="1,000,000 SP scroll">
 		<!-- High Five Skill -->
@@ -1613,11 +1613,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<sp>1000000</sp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9176" levels="1" name="Provided gift of cheers">
 		<!-- none -->
@@ -1657,9 +1657,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="9178" levels="1" name="Theodric's Box">
 		<!-- none -->
@@ -1695,11 +1695,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9180" levels="2" name="10,000,000 SP scroll">
 		<!-- High Five Skill -->
@@ -1717,14 +1717,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<sp>
 					<value level="1">5000000</value>
 					<value level="2">10000000</value>
 				</sp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9181" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->

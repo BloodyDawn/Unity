@@ -12,11 +12,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1501</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21001" levels="1" name="Release Agathion's Seal - Gold Majo">
 		<!-- Confirmed CT2.5 -->
@@ -30,11 +30,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1502</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21002" levels="1" name="Release Agathion's Seal - Black Majo">
 		<!-- Confirmed CT2.5 -->
@@ -48,11 +48,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1503</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21003" levels="1" name="Release Agathion's Seal - Plaipitak">
 		<!-- Confirmed CT2.5 -->
@@ -65,11 +65,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1504</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21004" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -91,12 +91,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21005" levels="1" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -118,12 +118,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>BranchSys.icon.br_Eye_Glasses_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21006" levels="1" name="Large Firecracker's Ability">
 		<!-- Confirmed CT2.5 -->
@@ -170,11 +170,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1505</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21009" levels="1" name="Release Agathion's Seal - Bamboo Panda">
 		<!-- Confirmed CT2.5 -->
@@ -187,11 +187,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1506</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21010" levels="1" name="Release Agathion's Seal - Sexy Panda">
 		<!-- Confirmed CT2.5 -->
@@ -204,11 +204,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1507</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21011" levels="1" name="Maintain Vitality">
 		<!-- Recovers energy when acquiring Exp. for 20 minutes -->
@@ -231,11 +231,11 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21012" levels="1" name="Maintain Vitality">
 		<!-- Recovers energy when acquiring Exp. for 20 minutes -->
@@ -258,11 +258,11 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21013" levels="1" name="Maintain Vitality">
 		<!-- Recovers energy when acquiring Exp. for 20 minutes -->
@@ -285,11 +285,11 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21014" levels="1" name="Scissors">
 		<castRange>400</castRange>
@@ -354,7 +354,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
 			</effect>
@@ -366,7 +366,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21018" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -374,7 +374,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
 			</effect>
@@ -386,7 +386,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21019" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -394,7 +394,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
@@ -406,7 +406,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21020" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -414,7 +414,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
 			</effect>
@@ -426,7 +426,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21021" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -434,7 +434,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
 			</effect>
@@ -446,7 +446,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21022" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -454,7 +454,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
@@ -466,7 +466,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21023" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -474,7 +474,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
@@ -486,7 +486,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21024" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -494,7 +494,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
@@ -506,7 +506,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21025" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -514,7 +514,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.25" />
 			</effect>
@@ -526,7 +526,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21026" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -534,7 +534,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>10</amount>
 				<chance>30</chance>
@@ -547,7 +547,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21027" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -555,7 +555,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.8" />
 				<mul stat="DanceMpConsumeRate" val="0.8" />
@@ -568,7 +568,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21028" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -576,7 +576,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
 			</effect>
@@ -588,7 +588,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21029" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -596,7 +596,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100" />
 			</effect>
@@ -608,7 +608,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21030" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>
@@ -616,7 +616,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>5</amount>
 				<mode>DIFF</mode>
@@ -629,7 +629,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21031" levels="1" name="Release Agathion's Seal - Charming Cupid">
 		<!-- Confirmed CT2.5 -->
@@ -642,11 +642,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1508</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21032" levels="1" name="Release Agathion's Seal - Naughty Cupid">
 		<!-- Confirmed CT2.5 -->
@@ -659,11 +659,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1509</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21033" levels="1" name="Release Agathion's Seal - White Maneki Neko">
 		<!-- Confirmed CT2.5 -->
@@ -676,11 +676,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1510</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21034" levels="1" name="Release Agathion's Seal - Black Maneki Neko">
 		<!-- Confirmed CT2.5 -->
@@ -693,11 +693,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1511</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21035" levels="1" name="Release Agathion's Seal - Brown Maneki Neko">
 		<!-- Confirmed CT2.5 -->
@@ -710,11 +710,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1512</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21036" levels="1" name="Release Agathion's Seal - One-eyed Bat Drove">
 		<!-- Confirmed CT2.5 -->
@@ -727,11 +727,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1513</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21037" levels="1" name="Release Agathion's Seal - Pegasus">
 		<!-- Confirmed CT2.5 -->
@@ -744,11 +744,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1514</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21038" levels="1" name="Release Agathion's Seal - Yellow-robed Tojigong">
 		<!-- Confirmed CT2.5 -->
@@ -761,11 +761,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1515</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21039" levels="1" name="Release Agathion's Seal - Blue-robed Tojigong">
 		<!-- Confirmed CT2.5 -->
@@ -778,11 +778,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1516</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21040" levels="1" name="Release Agathion's Seal - Green-robed Tojigong">
 		<!-- Confirmed CT2.5 -->
@@ -795,11 +795,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1517</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21041" levels="1" name="Release Agathion's Seal - Bugbear">
 		<!-- Confirmed CT2.5 -->
@@ -812,11 +812,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1518</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21042" levels="1" name="Baguette's Blessing">
 		<!-- Confirmed CT2.5 -->
@@ -831,14 +831,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
 				<power>50</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21043" levels="1" name="Release Agathion's Seal - Red Sumo Wrestler">
 		<!-- Confirmed CT2.5 -->
@@ -851,11 +851,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1519</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21044" levels="1" name="Release Agathion's Seal - Blue Sumo Wrestler Agathion">
 		<!-- Confirmed CT2.5 -->
@@ -868,11 +868,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1520</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21045" levels="1" name="Release Agathion's Seal - Great Sumo Match">
 		<!-- Confirmed CT2.5 -->
@@ -885,11 +885,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1521</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21046" levels="1" name="Release Agathion's Seal - Button-eyed Bear Doll">
 		<!-- Confirmed CT2.5 -->
@@ -902,11 +902,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1522</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21047" levels="1" name="Release Agathion's Seal - God of Fortune">
 		<!-- Confirmed CT2.5 -->
@@ -919,11 +919,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1523</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21048" levels="1" name="Release Agathion's Seal - Dryad">
 		<!-- Confirmed CT2.5 -->
@@ -936,11 +936,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1524</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21049" levels="1" name="Release Agathion's Seal - Wonboso">
 		<!-- Confirmed CT2.5 -->
@@ -953,11 +953,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1525</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21050" levels="1" name="Release Agathion's Seal - Daewoonso">
 		<!-- Confirmed CT2.5 -->
@@ -970,11 +970,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1526</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21051" levels="1" name="Ride Steam Beetle">
 		<abnormalLvl>26</abnormalLvl>
@@ -995,11 +995,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>110</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21052" levels="1" name="Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -1020,12 +1020,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>BranchSys.icon.br_people_cap_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21053" levels="1" name="Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -1046,12 +1046,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>BranchSys.icon.br_people_cap_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21054" levels="1" name="Blessed Resurrection">
 		<!-- Confirmed CT2.5 -->
@@ -1071,11 +1071,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21055" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1097,12 +1097,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21056" levels="1" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -1124,12 +1124,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>BranchSys.icon.br_mask_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21057" levels="1" name="Reflect">
 		<!-- Confirmed CT2.5 -->
@@ -1153,12 +1153,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21058" levels="1" name="Mana Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1182,12 +1182,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>3.09</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21059" levels="1" name="Greater Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1211,14 +1211,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>30</power>
 			</effect>
 			<effect name="Heal">
 				<power>444</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21060" levels="1" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -1239,12 +1239,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21061" levels="1" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -1266,12 +1266,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>BranchSys.icon.br_Afro_hair_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21062" levels="1" name="Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1292,11 +1292,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21063" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1318,12 +1318,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21064" levels="1" name="Mana Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1347,12 +1347,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>3.09</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21065" levels="1" name="Reflect">
 		<!-- Confirmed CT2.5 -->
@@ -1376,12 +1376,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21066" levels="1" name="Vitality Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -1405,11 +1405,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21067" levels="1" name="Blessed Escape">
 		<!-- Confirmed CT2.5 -->
@@ -1432,11 +1432,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21068" levels="1" name="Dark Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1460,11 +1460,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21069" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1486,12 +1486,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21070" levels="1" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -1512,12 +1512,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21071" levels="1" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -1539,12 +1539,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>icon.accessory_eye_bandage_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21072" levels="1" name="Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1565,11 +1565,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21073" levels="1" name="Mana Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1593,12 +1593,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>3.09</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21074" levels="1" name="Reflect">
 		<!-- Confirmed CT2.5 -->
@@ -1622,12 +1622,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21075" levels="1" name="Greater Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1651,14 +1651,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>30</power>
 			</effect>
 			<effect name="Heal">
 				<power>444</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21076" levels="1" name="Dark Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -1682,11 +1682,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21077" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1708,12 +1708,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21078" levels="1" name="Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -1734,12 +1734,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21079" levels="1" name="Agility">
 		<!-- Confirmed CT2.5 -->
@@ -1761,12 +1761,12 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<icon>icon.accessory_racoon_ear_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21080" levels="1" name="Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1787,11 +1787,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21081" levels="1" name="Mana Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1815,12 +1815,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>3.09</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21082" levels="1" name="Reflect">
 		<!-- Confirmed CT2.5 -->
@@ -1844,12 +1844,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21083" levels="1" name="Greater Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1873,14 +1873,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>30</power>
 			</effect>
 			<effect name="Heal">
 				<power>444</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21084" levels="1" name="Vitality Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -1904,11 +1904,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21085" levels="1" name="Release Agathion's Seal - Pomona">
 		<!-- Confirmed CT2.5 -->
@@ -1921,11 +1921,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1527</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21086" levels="1" name="Blessing of Love">
 		<!-- Confirmed CT2.5 -->
@@ -1949,9 +1949,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="21087" levels="1" name="Berserker Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -1972,7 +1972,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -2005,7 +2005,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21088" levels="1" name="Summon Friend">
 		<!-- Confirmed CT2.5 -->
@@ -2033,12 +2033,12 @@
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallPc">
 				<itemId>0</itemId>
 				<itemCount>0</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21089" levels="1" name="Dance of Shadows">
 		<!-- Confirmed CT2.5 -->
@@ -2061,14 +2061,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove">
 			</effect>
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21090" levels="1" name="Soul of the Phoenix">
 		<!-- Confirmed CT2.5 -->
@@ -2091,11 +2091,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21091" levels="1" name="Release Agathion's Seal - Weaver">
 		<!-- Confirmed CT2.5 -->
@@ -2108,11 +2108,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1528</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21092" levels="1" name="Theme - Town">
 		<icon>BranchSys.icon.br_headphone_i00</icon>
@@ -2154,11 +2154,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21096" levels="1" name="Refreshing Watermelon's Ability">
 		<!-- Confirmed CT2.5 -->
@@ -2179,7 +2179,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -2187,7 +2187,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21097" levels="1" name="Summon Friend">
 		<!-- Confirmed CT2.5 -->
@@ -2215,12 +2215,12 @@
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallPc">
 				<itemId>0</itemId>
 				<itemCount>0</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21098" levels="1" name="Great Adventurer's Soul Power : Endless">
 		<!-- Confirmed CT2.5 -->
@@ -2241,7 +2241,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -2257,7 +2257,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21099" levels="1" name="Great Warrior's Soul Power: Strength">
 		<!-- Confirmed CT2.5 -->
@@ -2278,7 +2278,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
@@ -2295,6 +2295,6 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

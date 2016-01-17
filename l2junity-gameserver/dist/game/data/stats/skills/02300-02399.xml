@@ -12,11 +12,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ChangeHairStyle">
 				<value>2</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2301" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
@@ -30,11 +30,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ChangeHairStyle">
 				<value>3</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2302" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
@@ -48,11 +48,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ChangeHairStyle">
 				<value>4</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2303" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
@@ -69,11 +69,11 @@
 		<cond msgId="1518">
 			<player sex="1" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="ChangeHairStyle">
 				<value>5</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2304" levels="1" name="Hair Style Change Potion">
 		<!-- Confirmed CT2.5 -->
@@ -90,11 +90,11 @@
 		<cond msgId="1518">
 			<player sex="1" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="ChangeHairStyle">
 				<value>6</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2305" levels="1" name="Primeval Potion">
 		<!-- Confirmed CT2.5 -->
@@ -109,11 +109,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>15</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2306" levels="3" name="Blue Primeval Crystal">
 		<!-- Lvl 1 Name - Blue Primeval Crystal -->
@@ -138,7 +138,7 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="76;85" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="GiveSp">
 				<sp>
 					<value level="1">50000</value>
@@ -146,7 +146,7 @@
 					<value level="3">200000</value>
 				</sp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2307" levels="1" name="Scroll: Cancel Petrification">
 		<!-- Confirmed CT2.5 -->
@@ -160,12 +160,12 @@
 		<cond msgId="1902">
 			<player levelRange="61;85" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>TURN_STONE</dispel>
 				<rate>99</rate>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2308" levels="36" name="Event Item">
 		<!-- Confirmed CT2.5 -->
@@ -220,9 +220,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2309" levels="1" name="Pig Chest">
 		<!-- Confirmed CT2.5 -->
@@ -242,9 +242,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2310" levels="1" name="Scroll: Guidance (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -261,12 +261,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2311" levels="1" name="Scroll: Death Whisper (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -283,12 +283,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2312" levels="1" name="Scroll: Focus (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -305,11 +305,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2313" levels="1" name="Scroll: Acumen (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -326,12 +326,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2314" levels="1" name="Scroll: Haste (Event)">
 		<abnormalLvl>3</abnormalLvl>
@@ -348,12 +348,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2315" levels="1" name="Scroll: Agility (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -370,12 +370,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2316" levels="1" name="Scroll: Empower (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -392,12 +392,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2317" levels="1" name="Scroll: Might (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -414,12 +414,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2318" levels="1" name="Scroll: Wind Walk (Event)">
 		<abnormalLvl>3</abnormalLvl>
@@ -436,12 +436,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2319" levels="1" name="Scroll: Shield (Event)">
 		<abnormalLvl>4</abnormalLvl>
@@ -458,12 +458,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2320" levels="1" name="Blessed Scroll of Escape (Event)">
 		<hitTime>200</hitTime>
@@ -484,11 +484,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2321" levels="1" name="Blessed Scroll of Resurrection (Event)">
 		<castRange>400</castRange>
@@ -507,11 +507,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2322" levels="1" name="Chest Key (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -531,9 +531,9 @@
 		<cond msgId="109">
 			<target npcId="13036" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2323" levels="1" name="Red Sage's Stone">
 		<!-- Confirmed CT2.5 -->
@@ -555,9 +555,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2324" levels="1" name="Blue Sage's Stone">
 		<!-- Confirmed CT2.5 -->
@@ -579,9 +579,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2325" levels="1" name="Orange Sage's Stone">
 		<!-- Confirmed CT2.5 -->
@@ -603,9 +603,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2326" levels="1" name="Black Sage's Stone">
 		<!-- Confirmed CT2.5 -->
@@ -627,9 +627,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2327" levels="1" name="White Sage's Stone">
 		<!-- Confirmed CT2.5 -->
@@ -651,9 +651,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2328" levels="1" name="Green Sage's Stone">
 		<!-- Confirmed CT2.5 -->
@@ -675,9 +675,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2329" levels="4" name="Fire Stone">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -746,11 +746,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2336" levels="1" name="Water Resistance Potion">
 		<abnormalLvl>1</abnormalLvl>
@@ -765,11 +765,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2337" levels="1" name="Wind Resistance Potion">
 		<abnormalLvl>1</abnormalLvl>
@@ -784,11 +784,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2338" levels="1" name="Earth Resistance Potion">
 		<abnormalLvl>1</abnormalLvl>
@@ -803,11 +803,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2339" levels="1" name="Holy Attack Resistance Potion">
 		<abnormalLvl>1</abnormalLvl>
@@ -822,11 +822,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2340" levels="1" name="Dark Attack Resistance Potion">
 		<abnormalLvl>1</abnormalLvl>
@@ -841,11 +841,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2341" levels="1" name="Caravan's Secret Medicine">
 		<abnormalLvl>2</abnormalLvl>
@@ -860,9 +860,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2342" levels="1" name="Ballista Bomb">
 		<castRange>150</castRange>
@@ -899,12 +899,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200002" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2344" levels="1" name="Gate Key: Archives">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -924,12 +924,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200005" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2345" levels="1" name="Gate Key: Observation">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -949,12 +949,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200009" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2346" levels="1" name="Gate Key: Spicula">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -974,12 +974,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200003" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2347" levels="1" name="Enuma Elish Key">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -999,12 +999,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200007" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2348" levels="1" name="Prahnah Key">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -1024,12 +1024,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200008" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2349" levels="1" name="Gate Key: Arviterre">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -1049,12 +1049,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200010" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2350" levels="1" name="Leopold Key">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -1074,12 +1074,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200006" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2351" levels="1" name="Gate Key: Prediction">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -1099,12 +1099,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200011" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2352" levels="1" name="Gate Key: Nornil">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -1124,12 +1124,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="16200012" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2353" levels="1" name="Nornil's Power">
 		<affectRange>600</affectRange>
@@ -1147,9 +1147,9 @@
 				<player insideZoneId="2353" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="DetectHiddenObjects" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2354" levels="1" name="Gate Key: Darkness">
 		<!-- Confirmed CT2.5 -->
@@ -1169,12 +1169,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="20260001" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2355" levels="1" name="Gate Key: Destruction">
 		<!-- Confirmed CT2.5 -->
@@ -1194,12 +1194,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="20260006" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2356" levels="1" name="Gate Key: Blood">
 		<!-- Confirmed CT2.5 -->
@@ -1219,12 +1219,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="20260002" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2357" levels="1" name="Fiery Demon Blood">
 		<!-- Confirmed CT2.5 -->
@@ -1242,9 +1242,9 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2358" levels="1" name="Holy Water">
 		<!-- Confirmed CT2.5 -->
@@ -1303,13 +1303,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Feed">
 				<normal>1100</normal>
 				<ride>1100</ride>
 				<wyvern>0</wyvern>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2362" levels="1" name="Prison Gate Key">
 		<!-- Confirmed CT2.5 -->
@@ -1329,12 +1329,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="24220009,24220011,24220012,24220014,24220015,24220016,24220017,24220019" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2363" levels="1" name="Underground Warehouse Key">
 		<!-- Confirmed CT2.5 -->
@@ -1354,12 +1354,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="24220040" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2364" levels="1" name="Blessed Scroll of Escape: Fortress">
 		<hitTime>200</hitTime>
@@ -1381,11 +1381,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>FORTRESS</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2365" levels="1" name="Scroll of Escape: Fortress">
 		<hitTime>20000</hitTime>
@@ -1405,11 +1405,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>FORTRESS</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2366" levels="1" name="Blue Coral Key">
 		<!-- Confirmed CT2.5 -->
@@ -1429,12 +1429,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="24220020" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2367" levels="1" name="Red Coral Key">
 		<!-- Confirmed CT2.5 -->
@@ -1454,12 +1454,12 @@
 		<cond msgId="113" addName="1">
 			<target npcId="24220022" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 				<isItem>true</isItem>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2368" levels="1" name="Spirit of the Lake">
 		<!-- Confirmed CT2.5 -->
@@ -1479,11 +1479,11 @@
 		<cond msgId="113" addName="1">
 			<target npcId="18482" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2369" levels="1" name="Water Dragon Scale">
 		<castRange>400</castRange>
@@ -1527,11 +1527,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>104</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2371" levels="1" name="Transformation Scroll: Onyx Beast">
 		<!-- Confirmed CT2.5 -->
@@ -1554,11 +1554,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>1</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2372" levels="1" name="Transformation Scroll: Doom Wraith">
 		<!-- Confirmed CT2.5 -->
@@ -1581,11 +1581,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>2</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2373" levels="1" name="Transformation Scroll: Grail Apostle">
 		<!-- Confirmed CT2.5 -->
@@ -1609,11 +1609,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>202</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2374" levels="1" name="Transformation Scroll: Unicorn">
 		<!-- Confirmed CT2.5 -->
@@ -1637,11 +1637,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>205</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2375" levels="1" name="Transformation Scroll: Lilim Knight">
 		<!-- Confirmed CT2.5 -->
@@ -1665,11 +1665,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>208</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2376" levels="1" name="Transformation Scroll: Golem Guardian">
 		<!-- Confirmed CT2.5 -->
@@ -1693,11 +1693,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>211</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2377" levels="1" name="Transformation Scroll: Inferno Drake">
 		<!-- Confirmed CT2.5 -->
@@ -1721,11 +1721,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>214</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2378" levels="1" name="Transformation Scroll: Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
@@ -1749,11 +1749,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>217</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2379" levels="1" name="Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1769,12 +1769,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2380" levels="1" name="Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1790,12 +1790,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2381" levels="1" name="Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -1811,12 +1811,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2382" levels="1" name="Blessed Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1832,12 +1832,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2383" levels="1" name="Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1853,12 +1853,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2384" levels="1" name="Acumen">
 		<!-- Confirmed CT2.5 -->
@@ -1874,12 +1874,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2385" levels="1" name="Empower">
 		<!-- Confirmed CT2.5 -->
@@ -1895,12 +1895,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2386" levels="1" name="Divine Power">
 		<!-- Confirmed CT2.5 -->
@@ -1916,11 +1916,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2387" levels="1" name="Might">
 		<!-- Confirmed CT2.5 -->
@@ -1936,12 +1936,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2388" levels="1" name="Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1957,11 +1957,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2389" levels="1" name="Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -1977,12 +1977,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2390" levels="1" name="Berserker Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -1998,7 +1998,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -2031,7 +2031,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2391" levels="1" name="Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2047,13 +2047,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.96" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2392" levels="1" name="Blessed Scroll of Escape (Battleground)">
 		<!-- Confirmed CT2.5 -->
@@ -2073,11 +2073,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2393" levels="1" name="Blessed Scroll of Resurrection (Battleground)">
 		<!-- Confirmed CT2.5 -->
@@ -2097,11 +2097,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2394" levels="1" name="Transformation Scroll (Battleground)">
 		<!-- Confirmed CT2.5 -->
@@ -2125,11 +2125,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>304</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2395" levels="1" name="Healing Potion (Battleground)">
 		<!-- Confirmed CT2.5 -->
@@ -2147,11 +2147,11 @@
 				<player level="52" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>1900</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2396" levels="1" name="Mental Potion">
 		<!-- Confirmed CT2.5 -->
@@ -2166,13 +2166,13 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>20</HOLD>
 				<DERANGEMENT>20</DERANGEMENT>
 				<SLEEP>20</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2397" levels="1" name="Medusa Potion">
 		<!-- Confirmed CT2.5 -->
@@ -2188,9 +2188,9 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2398" levels="1" name="Quick Haste Potion">
 		<!-- Confirmed CT2.5 -->
@@ -2205,12 +2205,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>66</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2399" levels="1" name="Capture Rope">
 		<!-- Confirmed CT2.5 -->
@@ -2236,11 +2236,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

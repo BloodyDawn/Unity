@@ -329,11 +329,11 @@
 		<effectRange>460</effectRange>
 		<magicLvl>93</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<chance>50</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15219" levels="1" name="Double Strike">
 		<!-- Glory Days confirmed -->
@@ -352,11 +352,11 @@
 		<magicLvl>94</magicLvl>
 		<affectRange>100</affectRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15220" levels="1" name="Explosion">
 		<!-- Glory Days confirmed -->
@@ -381,14 +381,14 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<isSuicideAttack>true</isSuicideAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<power>1000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15221" levels="3" name="Blood Spear">
 		<!-- Glory Days confirmed -->
@@ -412,7 +412,7 @@
 			<value level="3">95</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">1000</value>
@@ -420,7 +420,7 @@
 					<value level="3">2000</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15222" levels="3" name="Home Thrust">
 		<!-- Glory Days confirmed -->
@@ -442,7 +442,7 @@
 			<value level="3">95</value>
 		</magicLvl>
 		<hitTime>2000</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">30000</value>
@@ -450,7 +450,7 @@
 					<value level="3">50000</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15223" levels="1" name="Body Slice">
 		<!-- Glory Days confirmed -->
@@ -468,11 +468,11 @@
 		<magicLvl>94</magicLvl>
 		<fanRange>0;0;100;120</fanRange>
 		<hitTime>2000</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15224" levels="1" name="Bloody Breath">
 		<!-- Glory Days confirmed -->
@@ -498,7 +498,7 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalDefence">
@@ -509,7 +509,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15225" levels="1" name="Sword Wave">
 		<!-- Glory Days confirmed -->
@@ -528,11 +528,11 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15226" levels="1" name="Sword Wave">
 		<!-- Glory Days confirmed -->
@@ -551,7 +551,7 @@
 		<magicLvl>96</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
@@ -559,7 +559,7 @@
 				<power>500</power>
 				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15227" levels="1" name="Added Blow">
 		<!-- Glory Days confirmed -->
@@ -573,11 +573,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>94</magicLvl>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>30000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15228" levels="1" name="Soul Wave">
 		<!-- Glory Days confirmed -->
@@ -594,12 +594,12 @@
 		<magicLvl>94</magicLvl>
 		<fanRange>0;0;150;120</fanRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="MagicalAttackByAbnormalSlot">
 				<abnormalType>PD_DOWN</abnormalType>
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15229" levels="1" name="Soul Wave">
 		<!-- Glory Days confirmed -->
@@ -616,7 +616,7 @@
 		<magicLvl>94</magicLvl>
 		<fanRange>0;0;150;120</fanRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
@@ -624,7 +624,7 @@
 				<power>500</power>
 				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15230" levels="1" name="Added Blow">
 		<!-- Glory Days confirmed -->
@@ -638,12 +638,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>94</magicLvl>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="MagicalAttackByAbnormalSlot">
 				<abnormalType>PD_DOWN</abnormalType>
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15231" levels="1" name="Quick Thrust">
 		<!-- AUTO GENERATED SKILL -->
@@ -684,12 +684,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15233" levels="1" name="Full Swing">
 		<!-- Glory Days confirmed -->
@@ -706,11 +706,11 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15234" levels="1" name="Dark Spheres">
 		<!-- Glory Days confirmed -->
@@ -729,7 +729,7 @@
 		<magicLvl>96</magicLvl>
 		<fanRange>0;0;200;120</fanRange>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>200000</power>
 			</effect>
@@ -737,7 +737,7 @@
 				<power>500</power>
 				<abnormalType>PD_DOWN</abnormalType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15235" levels="1" name="Dark Wind">
 		<!-- Glory Days confirmed -->
@@ -760,7 +760,7 @@
 		<affectRange>250</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>180000</power>
 			</effect>
@@ -773,7 +773,7 @@
 				<speed>400</speed>
 				<knockDown>true</knockDown>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15236" levels="1" name="Dark Thrust">
 		<!-- Glory Days confirmed -->
@@ -790,11 +790,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>96</magicLvl>
 		<hitTime>2000</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>200000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15237" levels="1" name="Dark Buster">
 		<!-- Glory Days confirmed -->
@@ -812,11 +812,11 @@
 		<magicLvl>96</magicLvl>
 		<affectRange>200</affectRange>
 		<hitTime>3000</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>200000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15238" levels="1" name="Dark Breath">
 		<!-- AUTO GENERATED SKILL -->

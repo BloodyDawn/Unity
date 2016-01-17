@@ -8,14 +8,14 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="10" />
 				<add stat="fireRes" val="10" />
 				<add stat="earthRes" val="10" />
 				<add stat="waterRes" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1902" levels="1" name="Mental Fortress">
 		<!-- Glory Days confirmed -->
@@ -25,11 +25,11 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1903" levels="1" name="Fitness">
 		<!-- Glory Days confirmed -->
@@ -39,7 +39,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>1</amount>
 				<mode>PER</mode>
@@ -48,7 +48,7 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1904" levels="2" name="Unbind">
 		<!-- Glory Days confirmed -->
@@ -70,7 +70,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9</dispel>
 			</effect>
@@ -80,7 +80,7 @@
 				<SHOCK>100</SHOCK>
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1905" levels="1" name="Swiftness">
 		<!-- Glory Days confirmed -->
@@ -90,7 +90,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="moveSpeed" val="13">
 					<player incombat="false" />
@@ -104,7 +104,7 @@
 				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1906" levels="1" name="Blessing of Water">
 		<!-- Glory Days confirmed -->
@@ -114,11 +114,11 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1907" levels="2" name="Prevision">
 		<!-- Glory Days confirmed -->
@@ -138,7 +138,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>50</amount>
 				<mode>DIFF</mode>
@@ -165,7 +165,7 @@
 				<amount>90</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1908" levels="1" name="Delicacy">
 		<!-- Glory Days confirmed -->
@@ -175,12 +175,12 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="10" />
 				<add stat="mCritRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1909" levels="1" name="Sharpness">
 		<!-- Glory Days confirmed -->
@@ -190,7 +190,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritPower" val="1.01" />
 			</effect>
@@ -198,7 +198,7 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1910" levels="1" name="Dark Presence">
 		<!-- Glory Days confirmed -->
@@ -208,7 +208,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="1">
 					<game night="true" />
@@ -217,7 +217,7 @@
 					<game night="true" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1911" levels="1" name="Blessing of Wind">
 		<!-- Glory Days confirmed -->
@@ -227,11 +227,11 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1912" levels="2" name="Disparition">
 		<!-- Glory Days confirmed -->
@@ -253,7 +253,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
 				<sub stat="cancelVuln" val="80" />
@@ -264,7 +264,7 @@
 				<max>10</max>
 			</effect>
 			<effect name="Untargetable" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1913" levels="1" name="Life Siphon">
 		<!-- Glory Days confirmed -->
@@ -274,12 +274,12 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>1</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1914" levels="2" name="Savage">
 		<!-- Glory Days confirmed -->
@@ -299,7 +299,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -330,7 +330,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1915" levels="1" name="Blessing of Fire">
 		<!-- Glory Days confirmed -->
@@ -340,11 +340,11 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1916" levels="1" name="Energetic">
 		<!-- Glory Days confirmed -->
@@ -354,7 +354,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>1</amount>
 				<mode>PER</mode>
@@ -367,7 +367,7 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1917" levels="1" name="Undying Will">
 		<!-- Glory Days confirmed -->
@@ -380,7 +380,7 @@
 		<cond addName="1" msgId="113">
 			<player hp="30" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Undying Will -->
 				<attackerType>L2Playable</attackerType>
@@ -391,7 +391,7 @@
 				<skillId>1918</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1918" levels="2" name="Undying Will">
 		<!-- Glory Days confirmed -->
@@ -412,7 +412,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -422,7 +422,7 @@
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1919" levels="1" name="Dexterity">
 		<!-- Glory Days confirmed -->
@@ -432,12 +432,12 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="0.99" />
 				<mul stat="mReuse" val="0.99" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1920" levels="2" name="Endurance">
 		<!-- Glory Days confirmed -->
@@ -459,7 +459,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>92</power>
 			</effect>
@@ -467,7 +467,7 @@
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1921" levels="1" name="Blessing of Earth">
 		<!-- Glory Days confirmed -->
@@ -477,11 +477,11 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1922" levels="2" name="Earth Tremor">
 		<!-- Glory Days confirmed -->
@@ -511,7 +511,7 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<distance>50</distance>
 				<speed>400</speed>
@@ -537,7 +537,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1923" levels="1" name="Battle Instinct">
 		<!-- Glory Days confirmed -->
@@ -547,7 +547,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>1</amount>
 				<mode>PER</mode>
@@ -560,7 +560,7 @@
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1924" levels="1" name="Dark Silence">
 		<!-- Glory Days confirmed -->
@@ -570,11 +570,11 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1925" levels="2" name="Soul Protection">
 		<!-- Glory Days confirmed -->
@@ -597,7 +597,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<activateRate>0</activateRate>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="DebuffBlock">
 				<times>
 					<value level="1">2</value>
@@ -612,7 +612,7 @@
 				<add stat="holyRes" val="#res" />
 				<add stat="darkRes" val="#res" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1926" levels="1" name="Body Reinforcement">
 		<!-- Glory Days confirmed -->
@@ -636,7 +636,7 @@
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
 				<transformationId>506</transformationId>
@@ -644,7 +644,7 @@
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1927" levels="1" name="Sigel Aura">
 		<!-- Glory Days confirmed -->
@@ -657,7 +657,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<toggleGroupId>0</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Sigel Force -->
 				<skillId>1928</skillId>
@@ -671,7 +671,7 @@
 				<minSlot>2</minSlot>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1928" levels="1" name="Sigel Force">
 		<!-- Glory Days confirmed -->
@@ -693,12 +693,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1929" levels="1" name="Tyrr Aura">
 		<!-- Glory Days confirmed -->
@@ -711,13 +711,13 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<toggleGroupId>0</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Tyrr Force -->
 				<skillId>1930</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1930" levels="1" name="Tyrr Force">
 		<!-- Glory Days confirmed -->
@@ -739,11 +739,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.01" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1931" levels="1" name="Othell Aura">
 		<!-- Glory Days confirmed -->
@@ -756,13 +756,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Othell Force -->
 				<skillId>1932</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1932" levels="1" name="Othell Force">
 		<!-- Glory Days confirmed -->
@@ -784,12 +784,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1933" levels="1" name="Yul Aura">
 		<!-- Glory Days confirmed -->
@@ -802,13 +802,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Yul Force -->
 				<skillId>1934</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1934" levels="1" name="Yul Force">
 		<!-- Glory Days confirmed -->
@@ -830,12 +830,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1935" levels="1" name="Feoh Aura">
 		<!-- Glory Days confirmed -->
@@ -848,13 +848,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Feoh Force -->
 				<skillId>1936</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1936" levels="1" name="Feoh Force">
 		<!-- Glory Days confirmed -->
@@ -876,12 +876,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1937" levels="1" name="Wynn Aura">
 		<!-- Glory Days confirmed -->
@@ -894,13 +894,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="5">
 				<!-- Wynn Force -->
 				<skillId>1938</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1938" levels="1" name="Wynn Force">
 		<!-- Glory Days confirmed -->
@@ -922,12 +922,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.97" />
 				<mul stat="MagicalMpConsumeRate" val="0.97" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1939" levels="1" name="Aeore Aura">
 		<!-- Glory Days confirmed -->
@@ -940,13 +940,13 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Aeore Force -->
 				<skillId>1940</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1940" levels="1" name="Aeore Force">
 		<!-- Glory Days confirmed -->
@@ -968,12 +968,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1941" levels="1" name="Physical Nail Attack">
 		<!-- Glory Days confirmed -->
@@ -990,11 +990,11 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>3000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13158</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1942" levels="1" name="Wing Storm">
 		<!-- Glory Days confirmed -->
@@ -1014,11 +1014,11 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>4000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1943" levels="1" name="Wing Rush">
 		<!-- Glory Days confirmed -->
@@ -1042,12 +1042,12 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnemyCharge" />
 			<effect name="PhysicalAttack">
 				<power>5841</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1944" levels="1" name="Death Arrow">
 		<!-- Glory Days confirmed -->
@@ -1067,12 +1067,12 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>182</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1945" levels="1" name="Power Death Beam">
 		<!-- Glory Days confirmed -->
@@ -1095,12 +1095,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>212</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1946" levels="1" name="Block Sigel Force">
 		<!-- Glory Days confirmed -->
@@ -1197,7 +1197,7 @@
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
 				<transformationId>507</transformationId>
@@ -1218,7 +1218,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1955" levels="3" name="Party Solidarity">
 		<!-- Glory Days confirmed -->
@@ -1251,7 +1251,7 @@
 			<value level="3">3</value>
 		</abnormalLvl>
 		<isMagic>3</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#bonus" />
 				<mul stat="pReuse" val="#reuse" />
@@ -1289,7 +1289,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1956" levels="4" name="Sub - P. Atk./M. Atk. Increase">
 		<!-- Glory Days confirmed -->
@@ -1302,7 +1302,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">1</value>
@@ -1321,7 +1321,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1957" levels="4" name="Sub - P. Def./M. Def. Increase">
 		<!-- Glory Days confirmed -->
@@ -1333,7 +1333,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">1</value>
@@ -1352,7 +1352,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1958" levels="4" name="Sub - Atk. Spd./Casting Spd. Increase">
 		<!-- Glory Days confirmed -->
@@ -1364,7 +1364,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">1</value>
@@ -1383,7 +1383,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1959" levels="4" name="Sub - Critical Rate Increase">
 		<!-- Glory Days confirmed -->
@@ -1395,12 +1395,12 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#critRate" />
 				<add stat="mCritRate" val="#critRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1960" levels="4" name="Sub - P. Accuracy/ M. Accuracy Increase">
 		<!-- Glory Days confirmed -->
@@ -1412,7 +1412,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -1431,7 +1431,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1961" levels="4" name="Sub - P. Evasion/ M. Evasion Increase">
 		<!-- Glory Days confirmed -->
@@ -1443,7 +1443,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">2</value>
@@ -1462,7 +1462,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1962" levels="4" name="Dual - P. Atk./M. Atk. Increase">
 		<!-- Glory Days confirmed -->
@@ -1475,7 +1475,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">3</value>
@@ -1494,7 +1494,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1963" levels="4" name="Dual - P. Def./M. Def. Increase">
 		<!-- Glory Days confirmed -->
@@ -1506,7 +1506,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -1525,7 +1525,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1964" levels="4" name="Dual - Atk. Spd./Casting Spd. Increase">
 		<!-- Glory Days confirmed -->
@@ -1537,7 +1537,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">3</value>
@@ -1556,7 +1556,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1965" levels="4" name="Dual - Max HP Increase">
 		<!-- Glory Days confirmed -->
@@ -1573,7 +1573,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">6</value>
@@ -1583,7 +1583,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1966" levels="4" name="Dual - Max MP Increase">
 		<!-- Glory Days confirmed -->
@@ -1600,7 +1600,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">6</value>
@@ -1610,7 +1610,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1967" levels="4" name="Dual - Max CP Increase">
 		<!-- Glory Days confirmed -->
@@ -1627,7 +1627,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>
 					<value level="1">6</value>
@@ -1637,7 +1637,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1968" levels="1" name="Dual - HP Drain">
 		<!-- Glory Days confirmed -->
@@ -1648,12 +1648,12 @@
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1969" levels="1" name="Dual - MP Drain">
 		<!-- Has a chance of recovering your own MP when attacking or using a skill. -->
@@ -1663,7 +1663,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByMagicType">
 				<!-- Dual - MP Drain -->
 				<magicTypes>0;1;2;3;4;22</magicTypes>
@@ -1696,7 +1696,7 @@
 				<minDamage>1</minDamage>
 				<chance>10</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1970" levels="1" name="Dual - Specialized for P. Atk.">
 		<!-- Glory Days confirmed -->
@@ -1707,7 +1707,7 @@
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>9</amount>
 				<mode>PER</mode>
@@ -1720,7 +1720,7 @@
 				<amount>-9</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1971" levels="1" name="Dual - Specialized for M. Atk.">
 		<!-- Glory Days confirmed -->
@@ -1731,7 +1731,7 @@
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>13</amount>
 				<mode>PER</mode>
@@ -1744,7 +1744,7 @@
 				<amount>-9</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1972" levels="1" name="Dual - Physical Trait Increase">
 		<!-- Glory Days confirmed -->
@@ -1755,7 +1755,7 @@
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<SHOCK>20</SHOCK>
 				<KNOCKDOWN>20</KNOCKDOWN>
@@ -1772,7 +1772,7 @@
 				<DISARM>20</DISARM>
 				<PHYSICAL_BLOCKADE>20</PHYSICAL_BLOCKADE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1973" levels="1" name="Dual - Mental Trait Increase">
 		<!-- Glory Days confirmed -->
@@ -1783,7 +1783,7 @@
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<HOLD>20</HOLD>
 				<DERANGEMENT>20</DERANGEMENT>
@@ -1804,7 +1804,7 @@
 				<PARALYZE>20</PARALYZE>
 				<TURN_STONE>20</TURN_STONE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1974" levels="1" name="Dual - Berserker's Rage">
 		<!-- Glory Days confirmed -->
@@ -1815,7 +1815,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<icon>icon.dual_t_atkup</icon>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Dual - Berserker's Rage -->
 				<attackerType>L2Character</attackerType>
@@ -1829,7 +1829,7 @@
 				<skillId>1975</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1975" levels="1" name="Dual - Berserker's Rage">
 		<!-- Glory Days confirmed -->
@@ -1848,12 +1848,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1976" levels="1" name="Dual - Master's Rage">
 		<!-- Glory Days confirmed -->
@@ -1864,7 +1864,7 @@
 		<icon>icon.dual_t_skup</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByMagicType">
 				<!-- Dual - Master's Rage -->
 				<magicTypes>0;1;2;3;4;22</magicTypes>
@@ -1873,7 +1873,7 @@
 				<chance>2</chance>
 				<targetType>SELF</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1977" levels="1" name="Dual - Master's Rage">
 		<!-- Glory Days confirmed -->
@@ -1894,7 +1894,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO mul stat="magicalSkillPower" val="1.27" / -->
 			</effect>
@@ -1902,7 +1902,7 @@
 				<amount>27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1978" levels="1" name="Dual - Light of Protection">
 		<!-- Glory Days confirmed -->
@@ -1913,7 +1913,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<icon>icon.dual_t_dmgdef</icon>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Dual - Light of Protection -->
 				<attackerType>L2Playable</attackerType>
@@ -1925,7 +1925,7 @@
 				<chance>3</chance>
 				<targetType>SELF</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1979" levels="1" name="Dual - Light of Protection">
 		<!-- Glory Days confirmed -->
@@ -1945,7 +1945,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>27</amount>
 				<mode>PER</mode>
@@ -1954,7 +1954,7 @@
 				<amount>27</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1980" levels="1" name="Dual - Light of Blessing">
 		<!-- Glory Days confirmed -->
@@ -1965,7 +1965,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<icon>icon.dual_t_dmgheal</icon>
 		<excludedFromCheck>true</excludedFromCheck>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Dual - Light of Blessing -->
 				<attackerType>L2Playable</attackerType>
@@ -1977,7 +1977,7 @@
 				<chance>20</chance>
 				<targetType>SELF</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1981" levels="1" name="Dual - Light of Blessing">
 		<!-- Restores HP. -->
@@ -1992,11 +1992,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>5000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1982" levels="1" name="Dual - Shackles of the Giants">
 		<!-- Glory Days confirmed -->
@@ -2024,9 +2024,9 @@
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1983" levels="1" name="Dual - Silence of the Giants">
 		<!-- Glory Days confirmed -->
@@ -2054,9 +2054,9 @@
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1984" levels="1" name="Dual - Yoke of the Giants">
 		<!-- Glory Days confirmed -->
@@ -2086,14 +2086,14 @@
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1985" levels="1" name="Dual - Shield of the Giants">
 		<!-- AUTO GENERATED SKILL -->
@@ -2130,7 +2130,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">463</value>
@@ -2140,7 +2140,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1987" levels="1" name="Sigel Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2150,7 +2150,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2169,7 +2169,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1988" levels="1" name="Tyrr Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2179,7 +2179,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2196,7 +2196,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1989" levels="1" name="Yul Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2206,7 +2206,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2225,7 +2225,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1990" levels="1" name="Othell Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2235,7 +2235,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2254,7 +2254,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1991" levels="1" name="Feoh Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2264,7 +2264,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2283,7 +2283,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1992" levels="1" name="Wynn Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2293,7 +2293,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2310,7 +2310,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1993" levels="1" name="Iss Armor Limit">
 		<!-- Glory Days confirmed -->
@@ -2329,7 +2329,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -2346,7 +2346,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1995" levels="1" name="Dual - MP Drain">
 		<!-- Restores MP. -->
@@ -2358,11 +2358,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>6000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>68</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1996" levels="2" name="Hurricane Shackle">
 		<!-- AUTO GENERATED SKILL -->

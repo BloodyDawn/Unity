@@ -58,12 +58,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="#res" />
 				<add stat="darkRes" val="#res" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19004" levels="5" name="Clan De-Buff Control">
 		<!-- AUTO GENERATED SKILL -->
@@ -82,7 +82,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>
 					<value level="1">12</value>
@@ -92,7 +92,7 @@
 					<value level="5">16</value>
 				</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19006" levels="5" name="Clan Mental Control">
 		<!-- Updated to Ertheia -->
@@ -102,7 +102,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>
 					<value level="1">12</value>
@@ -112,7 +112,7 @@
 					<value level="5">16</value>
 				</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19007" levels="1" name="Clan Summon">
 		<!-- AUTO GENERATED SKILL -->
@@ -578,7 +578,7 @@
 		<cond msgId="113">
 			<player chaotic="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>3000</amount>
 				<mode>DIFF</mode>
@@ -595,7 +595,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19033" levels="1" name="Ability of Darkness">
 		<!-- TODO: confirm me -->
@@ -608,7 +608,7 @@
 		<cond msgId="113">
 			<player chaotic="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>3000</amount>
 				<mode>DIFF</mode>
@@ -625,7 +625,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19034" levels="1" name="Imprint of Light">
 		<!-- Engraves the Imprint of Light on the ancient relic that guards the castle. -->
@@ -646,11 +646,11 @@
 		<startEffects>
 			<effect name="TakeCastleStart" />
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="TakeCastle">
 				<side>LIGHT</side>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19035" levels="1" name="Imprint of Darkness">
 		<!-- Engraves the Imprint of Darkness on the ancient relic that guards the castle. -->
@@ -671,11 +671,11 @@
 		<startEffects>
 			<effect name="TakeCastleStart" />
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="TakeCastle">
 				<side>DARK</side>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19036" levels="1" name="Blessing of Light">
 		<!-- TODO: Confir me -->
@@ -694,12 +694,12 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<abnormalTime>3600</abnormalTime>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="bonusExp" val="3" />
 				<add stat="bonusSp" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19037" levels="1" name="Cloak of Radiant Light">
 		<!-- TODO: Confirm me -->
@@ -712,7 +712,7 @@
 		<cond msgId="113">
 			<player chaotic="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="3" />
 				<add stat="DEX" val="3" />
@@ -741,7 +741,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19038" levels="1" name="Cold Cloak of Darkness">
 		<!-- TODO: Confirm me -->
@@ -751,7 +751,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="3" />
 				<add stat="DEX" val="3" />
@@ -780,7 +780,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19039" levels="1" name="Cloak of Light">
 		<!-- TODO: Confirm me -->
@@ -790,7 +790,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="DEX" val="2" />
@@ -819,7 +819,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19040" levels="1" name="Cloak of Darkness">
 		<!-- TODO: Confirm me -->
@@ -829,7 +829,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="DEX" val="2" />
@@ -858,7 +858,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19041" levels="1" name="Escape: Castle">
 		<!-- TODO: Confirm me -->
@@ -880,11 +880,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>CASTLE</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19042" levels="1" name="Blessed Scroll of Escape: Castle">
 		<!-- AUTO GENERATED SKILL -->

@@ -6,44 +6,44 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<DERANGEMENT>6</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3401" levels="1" name="Dynasty Resistance Necklace">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>9</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3402" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>4</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3403" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>6</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3404" levels="1" name="Mysterious Effect">
 		<!-- Confirmed CT2.5 -->
@@ -84,11 +84,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3407" levels="1" name="Stealth Ring">
 		<!-- Confirmed CT2.5 -->
@@ -107,14 +107,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove">
 			</effect>
 			<effect name="Speed">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3408" levels="1" name="Blessed Ring of Escape">
 		<!-- Confirmed CT2.5 -->
@@ -136,11 +136,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3409" levels="1" name="Blessed Ring of Resurrection">
 		<!-- Confirmed CT2.5 -->
@@ -159,11 +159,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3410" levels="1" name="Blue Talisman - Damage Reflect">
 		<abnormalLvl>1</abnormalLvl>
@@ -182,12 +182,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3411" levels="1" name="Special Ability: Focus">
 		<icon>icon.ensoul_big_old</icon>
@@ -195,7 +195,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="109.2" />
 				<mul stat="maxHp" val="1.1" />
@@ -212,7 +212,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3412" levels="1" name="Dynasty Breastplate">
 		<!-- Confirmed CT2.5 -->
@@ -221,7 +221,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Def +4.6% -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
@@ -232,7 +232,7 @@
 				<amount>4.6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3413" levels="1" name="Dynasty Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -241,7 +241,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Evacion +1.72 -->
 				<!-- Accuracy +1.72 -->
@@ -257,7 +257,7 @@
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3414" levels="1" name="Dynasty Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -266,7 +266,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
@@ -278,7 +278,7 @@
 				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3415" levels="1" name="Dynasty Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -287,7 +287,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
@@ -304,7 +304,7 @@
 				<amount>234</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3416" levels="1" name="Dynasty Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -313,7 +313,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +12% -->
 				<!-- Max MP +257 -->
@@ -328,7 +328,7 @@
 				<amount>257</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3417" levels="1" name="Equip Shield">
 		<!-- Confirmed CT2.5 -->
@@ -338,12 +338,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3418" levels="1" name="Active Skill: Transform Pig">
 		<abnormalLvl>1</abnormalLvl>
@@ -362,11 +362,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>104</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3419" levels="1" name="Magic Immunity">
 		<icon>icon.etc_stripe_shirts_s_i05</icon>
@@ -382,7 +382,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- increase Atk. Spd. +5.4% -->
 				<!-- Increase P. Atk. +2.66% -->
@@ -403,7 +403,7 @@
 				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3421" levels="1" name="Ride Wolf">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -438,11 +438,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16031</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3424" levels="1" name="Release Agathion's Seal - Little Devil">
 		<!-- Confirmed CT2.5 -->
@@ -455,11 +455,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16032</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3425" levels="1" name="Release Agathion's Seal - Rudolph">
 		<!-- Confirmed CT2.5 -->
@@ -472,11 +472,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16033</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3426" levels="1" name="Maximum Ability">
 		<!-- Confirmed CT2.5 -->
@@ -484,7 +484,7 @@
 		<magicLvl>1</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Maximum Ability -->
 				<attackerType>L2Character</attackerType>
@@ -498,7 +498,7 @@
 				<skillId>5547</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3427" levels="1" name="Special Ability: Infinity Rapier">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -507,7 +507,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
 				<!-- MP +30% -->
@@ -554,7 +554,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3428" levels="1" name="Blue Talisman - Explosion">
 		<!-- Confirmed CT2.5 -->
@@ -575,7 +575,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -584,7 +584,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3429" levels="1" name="Red Talisman - Life Force">
 		<!-- Confirmed CT2.5 -->
@@ -598,14 +598,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3430" levels="1" name="White Talisman - Darkness">
 		<!-- Confirmed CT2.5 -->
@@ -626,11 +626,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3431" levels="1" name="White Talisman - Storm">
 		<!-- Confirmed CT2.5 -->
@@ -651,11 +651,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3432" levels="1" name="White Talisman - Water">
 		<!-- Confirmed CT2.5 -->
@@ -676,11 +676,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3433" levels="1" name="White Talisman - Fire">
 		<!-- Confirmed CT2.5 -->
@@ -701,11 +701,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3434" levels="1" name="White Talisman - Earth">
 		<!-- Confirmed CT2.5 -->
@@ -726,11 +726,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="earthRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3435" levels="1" name="White Talisman - Light">
 		<!-- Confirmed CT2.5 -->
@@ -751,11 +751,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3436" levels="1" name="Blue Talisman - Self-destruction">
 		<!-- Confirmed CT2.5 -->
@@ -773,11 +773,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3437" levels="1" name="Blue Talisman - Magic Explosion">
 		<!-- Confirmed CT2.5 -->
@@ -798,7 +798,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="4" />
 			</effect>
@@ -806,7 +806,7 @@
 				<amount>55</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3438" levels="1" name="Blue Talisman - Greater Healing">
 		<!-- Confirmed CT2.5 -->
@@ -827,53 +827,53 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="1000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3439" levels="1" name="Silk Shirt">
 		<magicLvl>49</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="118" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3440" levels="1" name="Silk Shirt">
 		<magicLvl>49</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>51</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3441" levels="1" name="Silk Shirt">
 		<magicLvl>49</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>354</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3442" levels="1" name="Silk Shirt">
 		<magicLvl>49</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="59" />
 			</effect>
@@ -881,14 +881,14 @@
 				<amount>26</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3443" levels="1" name="Silk Shirt">
 		<magicLvl>49</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="59" />
 			</effect>
@@ -896,14 +896,14 @@
 				<amount>117</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3444" levels="1" name="Silk Shirt">
 		<magicLvl>49</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>117</amount>
 				<mode>DIFF</mode>
@@ -912,49 +912,49 @@
 				<amount>26</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3445" levels="1" name="Thin Leather Shirt">
 		<magicLvl>58</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="147" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3446" levels="1" name="Thin Leather Shirt">
 		<magicLvl>58</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>72</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3447" levels="1" name="Thin Leather Shirt">
 		<magicLvl>58</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>441</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3448" levels="1" name="Thin Leather Shirt">
 		<magicLvl>58</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="74" />
 			</effect>
@@ -962,14 +962,14 @@
 				<amount>36</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3449" levels="1" name="Thin Leather Shirt">
 		<magicLvl>58</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="74" />
 			</effect>
@@ -977,14 +977,14 @@
 				<amount>222</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3450" levels="1" name="Thin Leather Shirt">
 		<magicLvl>58</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>222</amount>
 				<mode>DIFF</mode>
@@ -993,49 +993,49 @@
 				<amount>36</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3451" levels="1" name="Scale Shirt">
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="172" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3452" levels="1" name="Scale Shirt">
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>85</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3453" levels="1" name="Scale Shirt">
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>516</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3454" levels="1" name="Scale Shirt">
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="86" />
 			</effect>
@@ -1043,14 +1043,14 @@
 				<amount>43</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3455" levels="1" name="Scale Shirt">
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="86" />
 			</effect>
@@ -1058,14 +1058,14 @@
 				<amount>258</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3456" levels="1" name="Scale Shirt">
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>258</amount>
 				<mode>DIFF</mode>
@@ -1074,49 +1074,49 @@
 				<amount>43</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3457" levels="1" name="Mithril Shirt">
 		<magicLvl>75</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="224" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3458" levels="1" name="Mithril Shirt">
 		<magicLvl>75</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>111</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3459" levels="1" name="Mithril Shirt">
 		<magicLvl>75</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>672</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3460" levels="1" name="Mithril Shirt">
 		<magicLvl>75</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="112" />
 			</effect>
@@ -1124,14 +1124,14 @@
 				<amount>56</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3461" levels="1" name="Mithril Shirt">
 		<magicLvl>75</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="112" />
 			</effect>
@@ -1139,14 +1139,14 @@
 				<amount>336</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3462" levels="1" name="Mithril Shirt">
 		<magicLvl>75</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>336</amount>
 				<mode>DIFF</mode>
@@ -1155,49 +1155,49 @@
 				<amount>56</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3463" levels="1" name="Striped Silk Shirt">
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="135" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3464" levels="1" name="Striped Silk Shirt">
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>66</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3465" levels="1" name="Striped Silk Shirt">
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>405</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3466" levels="1" name="Striped Silk Shirt">
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="68" />
 			</effect>
@@ -1205,14 +1205,14 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3467" levels="1" name="Striped Silk Shirt">
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="68" />
 			</effect>
@@ -1220,14 +1220,14 @@
 				<amount>203</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3468" levels="1" name="Striped Silk Shirt">
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>203</amount>
 				<mode>DIFF</mode>
@@ -1236,49 +1236,49 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3469" levels="1" name="Thin Striped Leather Shirt">
 		<magicLvl>61</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="160" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3470" levels="1" name="Thin Striped Leather Shirt">
 		<magicLvl>61</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>78</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3471" levels="1" name="Thin Striped Leather Shirt">
 		<magicLvl>61</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>480</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3472" levels="1" name="Thin Striped Leather Shirt">
 		<magicLvl>61</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="80" />
 			</effect>
@@ -1286,14 +1286,14 @@
 				<amount>39</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3473" levels="1" name="Thin Striped Leather Shirt">
 		<magicLvl>61</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="80" />
 			</effect>
@@ -1301,14 +1301,14 @@
 				<amount>240</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3474" levels="1" name="Thin Striped Leather Shirt">
 		<magicLvl>61</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>240</amount>
 				<mode>DIFF</mode>
@@ -1317,49 +1317,49 @@
 				<amount>39</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3475" levels="1" name="Striped Scale Shirt">
 		<magicLvl>67</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="186" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3476" levels="1" name="Striped Scale Shirt">
 		<magicLvl>67</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>92</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3477" levels="1" name="Striped Scale Shirt">
 		<magicLvl>67</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>564</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3478" levels="1" name="Striped Scale Shirt">
 		<magicLvl>67</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="93" />
 			</effect>
@@ -1367,14 +1367,14 @@
 				<amount>46</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3479" levels="1" name="Striped Scale Shirt">
 		<magicLvl>67</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="93" />
 			</effect>
@@ -1382,14 +1382,14 @@
 				<amount>282</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3480" levels="1" name="Striped Scale Shirt">
 		<magicLvl>67</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>282</amount>
 				<mode>DIFF</mode>
@@ -1398,49 +1398,49 @@
 				<amount>46</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3481" levels="1" name="Striped Mithril Shirt">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="246" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3482" levels="1" name="Striped Mithril Shirt">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>122</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3483" levels="1" name="Striped Mithril Shirt">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>744</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3484" levels="1" name="Striped Mithril Shirt">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="123" />
 			</effect>
@@ -1448,14 +1448,14 @@
 				<amount>61</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3485" levels="1" name="Striped Mithril Shirt">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="123" />
 			</effect>
@@ -1463,14 +1463,14 @@
 				<amount>372</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3486" levels="1" name="Striped Mithril Shirt">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>372</amount>
 				<mode>DIFF</mode>
@@ -1479,7 +1479,7 @@
 				<amount>61</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3487" levels="1" name="Blue Talisman - P. Atk.">
 		<!-- Confirmed CT2.5 -->
@@ -1500,12 +1500,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>9.4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3488" levels="1" name="Blue Talisman - Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -1526,11 +1526,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="sDef" val="63" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3489" levels="1" name="Yellow Talisman - M. Atk.">
 		<!-- Confirmed CT2.5 -->
@@ -1539,12 +1539,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>11.7</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3490" levels="1" name="Yellow Talisman - P. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -1553,12 +1553,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>18.3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3491" levels="1" name="Yellow Talisman - Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -1567,12 +1567,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>1.1</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3492" levels="1" name="Yellow Talisman - Speed">
 		<!-- Confirmed CT2.5 -->
@@ -1581,12 +1581,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3493" levels="1" name="Yellow Talisman - HP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1595,12 +1595,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3494" levels="1" name="Yellow Talisman - CP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1609,12 +1609,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpRegen">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3495" levels="1" name="Yellow Talisman - Healing">
 		<!-- Confirmed CT2.5 -->
@@ -1623,11 +1623,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3496" levels="1" name="Red Talisman - HP/CP Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -1644,14 +1644,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>100</power>
 			</effect>
 			<effect name="CpHeal">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3497" levels="1" name="Yellow Talisman - MP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1660,12 +1660,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3498" levels="1" name="Special Ability: Light">
 		<!-- Confirmed CT2.5 -->
@@ -1674,11 +1674,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3499" levels="1" name="Dispel Transform">
 		<!-- Confirmed CT2.5 -->
@@ -1691,10 +1691,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TRANSFORM,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

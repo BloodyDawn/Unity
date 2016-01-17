@@ -34,11 +34,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3201" levels="3" name="Item Skill: Music Refresh">
 		<!-- Confirmed CT2.5 -->
@@ -74,11 +74,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="dReuse" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3202" levels="3" name="Item Skill: Refresh">
 		<!-- Confirmed CT2.5 -->
@@ -114,13 +114,13 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="0.85" />
 				<mul stat="pReuse" val="0.85" />
 				<mul stat="dReuse" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3203" levels="1" name="Item Skill: Mystery Skill">
 		<!-- Confirmed CT2.5 -->
@@ -177,7 +177,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>
 					<value level="1">10</value>
@@ -186,7 +186,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3205" levels="2" name="Item Skill: Party Recall">
 		<!-- Confirmed CT2.5 -->
@@ -223,11 +223,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3206" levels="10" name="Item Skill: Music">
 		<!-- Confirmed CT2.5 -->
@@ -271,7 +271,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Heal -->
 				<attackerType>L2Character</attackerType>
@@ -294,7 +294,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3208" levels="10" name="Item Skill: Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -315,7 +315,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Blessed Body -->
 				<attackerType>L2Character</attackerType>
@@ -338,7 +338,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3209" levels="10" name="Item Skill: Prayer">
 		<!-- Confirmed CT2.5 -->
@@ -359,7 +359,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Prayer -->
 				<attackerType>L2Character</attackerType>
@@ -382,7 +382,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3210" levels="10" name="Item Skill: Recharge">
 		<!-- Confirmed CT2.5 -->
@@ -403,7 +403,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Recharge -->
 				<attackerType>L2Character</attackerType>
@@ -426,7 +426,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3211" levels="10" name="Item Skill: Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -447,7 +447,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Blessed Soul -->
 				<attackerType>L2Character</attackerType>
@@ -470,7 +470,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3212" levels="15" name="Item Skill: Mana Gain">
 		<!-- Confirmed CT2.5 -->
@@ -496,7 +496,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Mana Gain -->
 				<attackerType>L2Character</attackerType>
@@ -524,7 +524,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3213" levels="10" name="Item Skill: Ritual">
 		<!-- Confirmed CT2.5 -->
@@ -545,7 +545,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Ritual -->
 				<attackerType>L2Character</attackerType>
@@ -568,7 +568,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3214" levels="10" name="Item Skill: Cheer">
 		<!-- Confirmed CT2.5 -->
@@ -589,7 +589,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Cheer -->
 				<attackerType>L2Character</attackerType>
@@ -612,7 +612,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3215" levels="15" name="Item Skill: Might">
 		<!-- Confirmed CT2.5 -->
@@ -638,7 +638,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Might -->
 				<attackerType>L2Character</attackerType>
@@ -666,7 +666,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3216" levels="15" name="Item Skill: Empower">
 		<!-- Confirmed CT2.5 -->
@@ -692,7 +692,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Empower -->
 				<attackerType>L2Character</attackerType>
@@ -720,7 +720,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3217" levels="10" name="Item Skill: Duel Might">
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
@@ -740,7 +740,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Duel Might -->
 				<attackerType>L2Playable</attackerType>
@@ -763,7 +763,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3218" levels="15" name="Item Skill: Shield">
 		<!-- Confirmed CT2.5 -->
@@ -789,7 +789,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Shield -->
 				<attackerType>L2Character</attackerType>
@@ -817,7 +817,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3219" levels="15" name="Item Skill: Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -843,7 +843,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Magic Barrier -->
 				<attackerType>L2Character</attackerType>
@@ -871,7 +871,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3220" levels="10" name="Item Skill: Duel Weakness">
 		<!-- Confirmed CT2.5 -->
@@ -892,7 +892,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Duel Weakness -->
 				<attackerType>L2Character</attackerType>
@@ -915,7 +915,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3221" levels="15" name="Item Skill: Agility">
 		<!-- Confirmed CT2.5 -->
@@ -941,7 +941,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Agility -->
 				<attackerType>L2Character</attackerType>
@@ -969,7 +969,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3222" levels="15" name="Item Skill: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -995,7 +995,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Guidance -->
 				<attackerType>L2Character</attackerType>
@@ -1023,7 +1023,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3223" levels="10" name="Item Skill: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1044,7 +1044,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Focus -->
 				<attackerType>L2Character</attackerType>
@@ -1067,7 +1067,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3224" levels="10" name="Item Skill: Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1088,7 +1088,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Wild Magic -->
 				<attackerType>L2Character</attackerType>
@@ -1111,7 +1111,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3225" levels="15" name="Item Skill: Charm">
 		<!-- Confirmed CT2.5 -->
@@ -1137,7 +1137,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Charm -->
 				<attackerType>L2Character</attackerType>
@@ -1165,7 +1165,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3226" levels="15" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -1191,7 +1191,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Slow -->
 				<attackerType>L2Character</attackerType>
@@ -1219,7 +1219,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3227" levels="15" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -1245,7 +1245,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Winter -->
 				<attackerType>L2Character</attackerType>
@@ -1273,7 +1273,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3228" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -1294,7 +1294,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Stun -->
 				<attackerType>L2Character</attackerType>
@@ -1317,7 +1317,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3229" levels="10" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -1338,7 +1338,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Hold -->
 				<attackerType>L2Character</attackerType>
@@ -1361,7 +1361,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3230" levels="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -1382,7 +1382,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Sleep -->
 				<attackerType>L2Character</attackerType>
@@ -1405,7 +1405,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3231" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -1426,7 +1426,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Paralyze -->
 				<attackerType>L2Character</attackerType>
@@ -1449,7 +1449,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3232" levels="10" name="Item Skill: Medusa">
 		<!-- Confirmed CT2.5 -->
@@ -1470,7 +1470,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Medusa -->
 				<attackerType>L2Character</attackerType>
@@ -1493,7 +1493,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3233" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -1514,7 +1514,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Fear -->
 				<attackerType>L2Character</attackerType>
@@ -1537,7 +1537,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3234" levels="15" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -1563,7 +1563,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Poison -->
 				<attackerType>L2Character</attackerType>
@@ -1591,7 +1591,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3235" levels="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -1617,7 +1617,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Bleed -->
 				<attackerType>L2Character</attackerType>
@@ -1645,7 +1645,7 @@
 					<value level="15">15</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3236" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -1666,7 +1666,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Silence -->
 				<attackerType>L2Character</attackerType>
@@ -1689,7 +1689,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3237" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -1710,7 +1710,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Doom -->
 				<attackerType>L2Character</attackerType>
@@ -1733,7 +1733,7 @@
 					<value level="10">10</value>
 				</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3238" levels="10" name="Item Skill: Prayer">
 		<!-- Confirmed CT2.5 -->
@@ -1753,12 +1753,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3239" levels="15" name="Item Skill: Mana Gain">
 		<!-- Confirmed CT2.5 -->
@@ -1783,12 +1783,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaCharge">
 				<amount>1</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3240" levels="15" name="Item Skill: Might">
 		<!-- Confirmed CT2.5 -->
@@ -1814,7 +1814,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10.26</value>
@@ -1835,7 +1835,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3241" levels="15" name="Item Skill: Empower">
 		<!-- Confirmed CT2.5 -->
@@ -1860,12 +1860,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3243" levels="10" name="Item Skill: Duel Might">
 		<!-- Confirmed CT2.5 -->
@@ -1885,7 +1885,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1894,7 +1894,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3244" levels="15" name="Item Skill: Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1920,7 +1920,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">12.78</value>
@@ -1941,7 +1941,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3245" levels="15" name="Item Skill: Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -1967,7 +1967,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">10.8</value>
@@ -1988,7 +1988,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3246" levels="10" name="Item Skill: Heal Empower">
 		<!-- Confirmed CT2.5 -->
@@ -2009,11 +2009,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="#healEffect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3247" levels="15" name="Item Skill: Agility">
 		<!-- Confirmed CT2.5 -->
@@ -2038,12 +2038,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3248" levels="15" name="Item Skill: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -2068,12 +2068,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3249" levels="10" name="Item Skill: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -2093,11 +2093,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3250" levels="10" name="Item Skill: Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -2117,11 +2117,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="4" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3251" levels="10" name="Item Skill: Weight Limit">
 		<!-- Confirmed CT2.5 -->
@@ -2141,11 +2141,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3252" levels="10" name="Item Skill: Kiss of Eva">
 		<!-- Confirmed CT2.5 -->
@@ -2165,12 +2165,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Breath">
 				<amount>500</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3253" levels="10" name="Item Skill: Acrobatics">
 		<!-- Confirmed CT2.5 -->
@@ -2190,11 +2190,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="fall" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3254" levels="15" name="Item Skill: Iron Body">
 		<!-- Confirmed CT2.5 -->
@@ -2219,11 +2219,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="damageZoneVuln" val="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3255" levels="8" name="Item Skill: Skill Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2242,11 +2242,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3256" levels="8" name="Item Skill: Spell Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2265,11 +2265,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3257" levels="3" name="Item Skill: Music Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2283,11 +2283,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="DanceMpConsumeRate" val="#DanceMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3258" levels="3" name="Item Skill: Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2302,13 +2302,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3259" levels="3" name="Item Skill: Reflect Damage">
 		<!-- Confirmed CT2.5 -->
@@ -2322,7 +2322,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>
 					<value level="1">10</value>
@@ -2331,7 +2331,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3260" levels="1" name="Forgiveness">
 		<!-- Confirmed CT2.5 -->
@@ -2353,11 +2353,11 @@
 		<cond msgId="109">
 			<target npcId="13031,13032,13033,13034,13035,13120,13121,13122,13123,13124" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="StaticDamage">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3261" levels="1" name="Forgiveness">
 		<!-- Confirmed CT2.5 -->
@@ -2397,11 +2397,11 @@
 		<cond msgId="109">
 			<target npcId="13031,13032,13033,13034,13035,13120,13121,13122,13123,13124" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="StaticDamage">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3263" levels="1" name="Blessed Resurrection">
 		<!-- Allows the use of Blessed Resurrection. -->
@@ -2422,11 +2422,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3264" levels="1" name="Blessed Escape">
 		<!-- Allows the use of Blessed Escape. -->
@@ -2450,11 +2450,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3265" levels="1" name="Mysterious Ability">
 		<abnormalLvl>0</abnormalLvl>
@@ -2498,9 +2498,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="UnsummonAgathion" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3268" levels="1" name="Release Agathion's Seal - Castle">
 		<!-- Confirmed CT2.5 -->
@@ -2513,11 +2513,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16028</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3269" levels="1" name="Release Agathion's Seal - Rainbow Clan Hall">
 		<!-- Confirmed CT2.5 -->
@@ -2530,11 +2530,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16027</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3270" levels="1" name="Release Agathion's Seal - Beast Farm">
 		<!-- Confirmed CT2.5 -->
@@ -2547,11 +2547,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16026</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3271" levels="1" name="Blue Talisman - P. Atk.">
 		<!-- Confirmed CT2.5 -->
@@ -2572,12 +2572,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>63</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3272" levels="1" name="Blue Talisman - P. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -2598,12 +2598,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>72</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3273" levels="1" name="Red Talisman - HP/CP Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -2620,14 +2620,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>200</power>
 			</effect>
 			<effect name="CpHeal">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3274" levels="1" name="Blue Talisman - Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -2648,11 +2648,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="sDef" val="220" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3275" levels="1" name="Blue Talisman - Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -2673,12 +2673,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3276" levels="1" name="Blue Talisman - M. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -2699,12 +2699,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3277" levels="1" name="Blue Talisman - M. Critical Rate">
 		<!-- Confirmed CT2.5 -->
@@ -2725,11 +2725,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3278" levels="1" name="Red Talisman - Mental Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -2750,12 +2750,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3279" levels="1" name="Red Talisman - Meditation">
 		<!-- Confirmed CT2.5 -->
@@ -2777,7 +2777,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">
@@ -2787,7 +2787,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3280" levels="1" name="Blue Talisman - Invisibility">
 		<!-- Confirmed CT2.5 -->
@@ -2809,14 +2809,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove">
 			</effect>
 			<effect name="Speed">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3281" levels="1" name="Red Talisman - Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2837,13 +2837,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.96" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3282" levels="1" name="Red Talisman - Maximum Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -2864,13 +2864,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0" />
 				<mul stat="PhysicalMpConsumeRate" val="0" />
 				<mul stat="DanceMpConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3283" levels="1" name="Blue Talisman - Healing">
 		<!-- Confirmed CT2.5 -->
@@ -2891,11 +2891,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3284" levels="1" name="Blue Talisman - Divine Protection">
 		<!-- Confirmed CT2.5 -->
@@ -2916,7 +2916,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>2700</amount>
 				<mode>DIFF</mode>
@@ -2925,7 +2925,7 @@
 				<amount>3600</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3285" levels="1" name="Blue Talisman - Berserker">
 		<!-- Confirmed CT2.5 -->
@@ -2946,7 +2946,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8.7</amount>
 				<mode>DIFF</mode>
@@ -2979,7 +2979,7 @@
 				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3286" levels="1" name="Black Talisman - Mending">
 		<!-- Confirmed CT2.5 -->
@@ -2996,11 +2996,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>BLEEDING,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3287" levels="1" name="Black Talisman - Physical Freedom">
 		<!-- Confirmed CT2.5 -->
@@ -3017,11 +3017,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_PHYSICALLY,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3288" levels="1" name="Black Talisman - Arcane Freedom">
 		<!-- Confirmed CT2.5 -->
@@ -3038,11 +3038,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_MAGICALLY,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3289" levels="1" name="Black Talisman - Escape">
 		<!-- Confirmed CT2.5 -->
@@ -3059,11 +3059,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3290" levels="1" name="Black Talisman - Rescue">
 		<!-- Confirmed CT2.5 -->
@@ -3080,11 +3080,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE_PHYSICAL,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3291" levels="1" name="Black Talisman - Vocalization">
 		<!-- Confirmed CT2.5 -->
@@ -3101,11 +3101,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3292" levels="1" name="Black Talisman - Free Speech">
 		<!-- Confirmed CT2.5 -->
@@ -3122,11 +3122,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE_ALL,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3293" levels="1" name="Yellow Talisman - P. Atk.">
 		<!-- Confirmed CT2.5 -->
@@ -3135,12 +3135,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>20.8</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3294" levels="1" name="Yellow Talisman - M. Atk.">
 		<!-- Confirmed CT2.5 -->
@@ -3149,12 +3149,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>24.3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3295" levels="1" name="Yellow Talisman - P. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -3163,12 +3163,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>32.8</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3296" levels="1" name="Yellow Talisman - M. Def.">
 		<!-- Confirmed CT2.5 -->
@@ -3177,12 +3177,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>26.4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3297" levels="1" name="Yellow Talisman - Accuracy">
 		<!-- Confirmed CT2.5 -->
@@ -3191,12 +3191,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3298" levels="1" name="Yellow Talisman - Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -3205,12 +3205,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3299" levels="1" name="Yellow Talisman - Critical Damage">
 		<!-- Confirmed CT2.5 -->
@@ -3219,11 +3219,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

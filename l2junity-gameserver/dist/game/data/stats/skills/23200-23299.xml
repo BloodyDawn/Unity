@@ -20,12 +20,12 @@
 		<cond msgId="2292">
 			<player agathionId="20991" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>20993</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23201" levels="1" name="Ball Trapping Gnosian Agathion Cute Trick">
 		<hitTime>7000</hitTime>
@@ -759,11 +759,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23215" levels="1" name="Good/Bad of Mind">
 		<!-- Confirmed CT2.5 -->
@@ -777,11 +777,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23216" levels="1" name="Granny Tiger Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -1159,7 +1159,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1364</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
@@ -1173,7 +1173,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23239" levels="1" name="Master's Blessing - Soul of Pa'agrio">
 		<!-- High Five Skill -->
@@ -1194,7 +1194,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1365</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
@@ -1209,7 +1209,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23240" levels="1" name="Master's Blessing - Chant of Magnus">
 		<!-- High Five Skill -->
@@ -1230,7 +1230,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
@@ -1266,7 +1266,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23241" levels="1" name="Master's Blessing - Chant of Blood Awakening">
 		<!-- High Five Skill -->
@@ -1287,7 +1287,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1519</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
 			</effect>
@@ -1302,7 +1302,7 @@
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23242" levels="1" name="Master's Blessing - Spike">
 		<!-- High Five Skill -->
@@ -1324,7 +1324,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
 			</effect>
@@ -1335,7 +1335,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23243" levels="1" name="Master's Blessing - Bowstring">
 		<!-- High Five Skill -->
@@ -1357,7 +1357,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1374,7 +1374,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23244" levels="1" name="Master's Blessing - Hard Tanning">
 		<!-- High Five Skill -->
@@ -1396,7 +1396,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1411,7 +1411,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23245" levels="1" name="Master's Blessing - Embroider">
 		<!-- High Five Skill -->
@@ -1433,7 +1433,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1448,7 +1448,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23246" levels="1" name="Master's Blessing - Counter Critical">
 		<!-- High Five Skill -->
@@ -1469,7 +1469,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
 				<attackerType>L2Character</attackerType>
@@ -1485,7 +1485,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23247" levels="1" name="Master's Blessing - Elemental Protection">
 		<!-- High Five Skill -->
@@ -1506,14 +1506,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="20" />
 				<add stat="fireRes" val="20" />
 				<add stat="windRes" val="20" />
 				<add stat="earthRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23248" levels="1" name="Master's Blessing - Arcane Protection">
 		<!-- High Five Skill -->
@@ -1534,12 +1534,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23249" levels="1" name="Master's Call">
 		<!-- High Five Skill -->
@@ -1557,9 +1557,9 @@
 		<reuseDelay>2000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CallTargetParty" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="23250" levels="1" name="Agathion Cute Trick - Cow">
 		<!-- You can see the summoned spirit's cute tricks. -->
@@ -1615,11 +1615,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23254" levels="1" name="Master's Blessing - Death Whisper">
 		<!-- High Five Skill -->
@@ -1639,12 +1639,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23255" levels="1" name="Master's Blessing - Haste">
 		<!-- High Five Skill -->
@@ -1664,12 +1664,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23256" levels="1" name="Master's Blessing - Guidance">
 		<!-- High Five Skill -->
@@ -1689,12 +1689,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23257" levels="1" name="Master's Blessing - Blessed Body">
 		<!-- High Five Skill -->
@@ -1714,12 +1714,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23258" levels="1" name="Master's Blessing - Blessed Soul">
 		<!-- High Five Skill -->
@@ -1739,12 +1739,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23259" levels="1" name="Master's Blessing - Agility">
 		<!-- High Five Skill -->
@@ -1764,12 +1764,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23260" levels="1" name="Master's Blessing - Acumen">
 		<!-- High Five Skill -->
@@ -1789,12 +1789,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23261" levels="1" name="Master's Blessing - Decrease Weight">
 		<!-- High Five Skill -->
@@ -1814,11 +1814,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23262" levels="1" name="Master's Blessing - Might">
 		<!-- High Five Skill -->
@@ -1838,12 +1838,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23263" levels="1" name="Master's Blessing - Shield">
 		<!-- High Five Skill -->
@@ -1863,12 +1863,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23264" levels="1" name="Master's Blessing - Magic Barrier">
 		<!-- High Five Skill -->
@@ -1888,12 +1888,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23265" levels="1" name="Master's Blessing - Vampiric Rage">
 		<!-- High Five Skill -->
@@ -1913,12 +1913,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23266" levels="1" name="Master's Blessing - Empower">
 		<!-- High Five Skill -->
@@ -1938,12 +1938,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23267" levels="1" name="Master's Blessing - Wind Walk">
 		<!-- High Five Skill -->
@@ -1963,12 +1963,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23268" levels="1" name="Master's Blessing - Berserker Spirit">
 		<!-- High Five Skill -->
@@ -1988,7 +1988,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -2021,7 +2021,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23269" levels="1" name="Master's Blessing - Greater Might">
 		<!-- High Five Skill -->
@@ -2041,12 +2041,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23270" levels="1" name="Master's Blessing - Greater Shield">
 		<!-- High Five Skill -->
@@ -2066,12 +2066,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23271" levels="1" name="Master's Blessing - Wild Magic">
 		<!-- High Five Skill -->
@@ -2091,11 +2091,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23272" levels="1" name="Master's Blessing - Clarity">
 		<!-- High Five Skill -->
@@ -2115,13 +2115,13 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.8" />
 				<mul stat="DanceMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23273" levels="1" name="Master's Blessing - Prophecy of Water">
 		<!-- High Five Skill -->
@@ -2141,7 +2141,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2181,7 +2181,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23274" levels="1" name="Master's Blessing - Prophecy of Fire">
 		<!-- High Five Skill -->
@@ -2201,7 +2201,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2250,7 +2250,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23275" levels="1" name="Master's Blessing - Prophecy of Wind">
 		<!-- High Five Skill -->
@@ -2270,7 +2270,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
@@ -2312,7 +2312,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23276" levels="1" name="Master's Blessing - Chant of Victory">
 		<!-- High Five Skill -->
@@ -2332,7 +2332,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2378,7 +2378,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23277" levels="1" name="Master's Blessing - Improve Combat">
 		<!-- High Five Skill -->
@@ -2400,7 +2400,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1499</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
@@ -2415,7 +2415,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23278" levels="1" name="Master's Blessing - Improve Magic">
 		<!-- High Five Skill -->
@@ -2437,7 +2437,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1500</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
@@ -2452,7 +2452,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23279" levels="1" name="Master's Blessing - Improve Condition">
 		<!-- High Five Skill -->
@@ -2474,7 +2474,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1501</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
 			</effect>
@@ -2489,7 +2489,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23280" levels="1" name="Master's Blessing - Improve Critical">
 		<!-- High Five Skill -->
@@ -2511,7 +2511,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1502</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -2525,7 +2525,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23281" levels="1" name="Master's Blessing - Improve Shield Defense">
 		<!-- High Five Skill -->
@@ -2547,7 +2547,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1503</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="1.5" />
 			</effect>
@@ -2561,7 +2561,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23282" levels="1" name="Master's Blessing - Improve Movement">
 		<!-- High Five Skill -->
@@ -2583,7 +2583,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1504</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
@@ -2598,7 +2598,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23283" levels="1" name="Master's Blessing - Sharpen Edge">
 		<!-- High Five Skill -->
@@ -2619,7 +2619,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
@@ -2639,7 +2639,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23284" levels="1" name="Master's Blessing - Face Harden">
 		<!-- High Five Skill -->
@@ -2660,7 +2660,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2668,7 +2668,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23285" levels="1" name="Master's Blessing - Blessing of Noblesse">
 		<!-- High Five Skill -->
@@ -2689,9 +2689,9 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="NoblesseBless" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="23286" levels="1" name="Master's Blessing - Eye of Pa'agrio">
 		<!-- High Five Skill -->
@@ -2711,7 +2711,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1364</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
@@ -2725,7 +2725,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23287" levels="1" name="Master's Blessing - Soul of Pa'agrio">
 		<!-- High Five Skill -->
@@ -2745,7 +2745,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1365</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
@@ -2760,7 +2760,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23288" levels="1" name="Master's Blessing - Chant of Magnus">
 		<!-- High Five Skill -->
@@ -2780,7 +2780,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
@@ -2816,7 +2816,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23289" levels="1" name="Master's Blessing - Chant of Blood Awakening">
 		<!-- High Five Skill -->
@@ -2836,7 +2836,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1519</icon>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
 			</effect>
@@ -2851,7 +2851,7 @@
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23290" levels="1" name="Master's Blessing - Spike">
 		<!-- High Five Skill -->
@@ -2872,7 +2872,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
 			</effect>
@@ -2883,7 +2883,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23291" levels="1" name="Master's Blessing - Bowstring">
 		<!-- High Five Skill -->
@@ -2904,7 +2904,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -2921,7 +2921,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23292" levels="1" name="Master's Blessing - Hard Tanning">
 		<!-- High Five Skill -->
@@ -2942,7 +2942,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -2957,7 +2957,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23293" levels="1" name="Master's Blessing - Embroider">
 		<!-- High Five Skill -->
@@ -2978,7 +2978,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -2993,7 +2993,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23294" levels="1" name="Master's Blessing - Counter Critical">
 		<!-- High Five Skill -->
@@ -3013,7 +3013,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
 				<attackerType>L2Character</attackerType>
@@ -3029,7 +3029,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23295" levels="1" name="Master's Blessing - Elemental Protection">
 		<!-- High Five Skill -->
@@ -3049,14 +3049,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="20" />
 				<add stat="fireRes" val="20" />
 				<add stat="windRes" val="20" />
 				<add stat="earthRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23296" levels="1" name="Master's Blessing - Arcane Protection">
 		<!-- High Five Skill -->
@@ -3076,12 +3076,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23297" levels="1" name="Santa Claus's Blessing">
 		<!-- "Rudolph's Blessing. For 20 minutes, increases Atk. Spd. by 10%, Casting Spd. by 10%, and Speed by 10. Rudolph consumes 2 fresh herbs." -->
@@ -3122,11 +3122,11 @@
 		<icon>icon.skill0771</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23299" levels="1" name="Arrow Rain">
 		<abnormalLvl>1</abnormalLvl>
@@ -3147,10 +3147,10 @@
 		<icon>icon.skill0772</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

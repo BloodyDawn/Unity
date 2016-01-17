@@ -15,12 +15,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>6645</itemId>
 				<itemCount>500</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2501" levels="1" name="Beast Spiritshot Compressed Pack">
 		<!-- Confirmed CT2.5 -->
@@ -37,12 +37,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>6646</itemId>
 				<itemCount>500</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2502" levels="1" name="Blessed Beast Spiritshot Compressed Pack">
 		<!-- Confirmed CT2.5 -->
@@ -59,12 +59,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>6647</itemId>
 				<itemCount>500</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2504" levels="1" name="Old Agathion">
 		<!-- Confirmed CT2.5 -->
@@ -84,9 +84,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2505" levels="1" name="Chant of Combat">
 		<!-- Confirmed CT2.5 -->
@@ -108,12 +108,12 @@
 				<player level="70" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1517</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2506" levels="1" name="Chant of Critical">
 		<!-- Confirmed CT2.5 -->
@@ -135,12 +135,12 @@
 				<player level="72" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1518</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2507" levels="1" name="Chant of Blood Awakening">
 		<!-- Confirmed CT2.5 -->
@@ -162,12 +162,12 @@
 				<player level="74" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>1519</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2508" levels="1" name="Squash Seed">
 		<!-- Confirmed CT2.5 -->
@@ -183,13 +183,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>12774</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>180000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2509" levels="1" name="Large Squash Seed">
 		<!-- Confirmed CT2.5 -->
@@ -205,13 +205,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>12777</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>180000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2510" levels="1" name="Wondrous Cubic">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
@@ -233,9 +233,9 @@
 				<player weight="90" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2511" levels="1" name="Transformation Scroll: Gatekeeper">
 		<abnormalLvl>1</abnormalLvl>
@@ -256,11 +256,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>107</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2512" levels="1" name="Herb of HP Drain">
 		<!-- Confirmed CT2.5 -->
@@ -282,12 +282,12 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2513" levels="1" name="Mysterious Herb">
 		<!-- Confirmed CT2.5 -->
@@ -315,7 +315,7 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -324,7 +324,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2514" levels="1" name="Herb of Critical Attack - Damage">
 		<!-- Confirmed CT2.5 -->
@@ -346,12 +346,12 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2515" levels="1" name="Lucky Clover (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -462,13 +462,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>-120050</x>
 				<y>44500</y>
 				<z>360</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2526" levels="1" name="Evasion Counter">
 		<!-- Confirmed CT2.5 -->
@@ -490,12 +490,12 @@
 				<player level="74" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>818</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2527" levels="1" name="Evasion Chance">
 		<!-- Confirmed CT2.5 -->
@@ -517,12 +517,12 @@
 				<player level="74" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>819</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2528" levels="1" name="Evasion Haste">
 		<!-- Confirmed CT2.5 -->
@@ -544,12 +544,12 @@
 				<player level="74" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>820</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2529" levels="1" name="Shadow Step">
 		<!-- Confirmed CT2.5 -->
@@ -571,12 +571,12 @@
 				<player level="72" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SetSkill">
 				<skillId>821</skillId>
 				<skillLvl>1</skillLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2530" levels="1" name="Recovery Item (Battleground)">
 		<!-- Confirmed CT2.5 -->
@@ -589,11 +589,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>DEATH_PENALTY,-1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2531" levels="1" name="Adventurer's Scroll of Escape">
 		<hitTime>20000</hitTime>
@@ -613,11 +613,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2532" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -639,9 +639,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2533" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -663,9 +663,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2534" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -687,9 +687,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2535" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -711,9 +711,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2536" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -735,9 +735,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2537" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -759,9 +759,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2538" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -783,9 +783,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2539" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -807,9 +807,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2540" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -831,9 +831,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2541" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -855,9 +855,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2542" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -879,9 +879,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2543" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -903,9 +903,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2544" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -927,9 +927,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2545" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -951,9 +951,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2546" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -975,9 +975,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2547" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -999,9 +999,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2548" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1023,9 +1023,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2549" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1047,9 +1047,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2550" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1071,9 +1071,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2551" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1095,9 +1095,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2552" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1119,9 +1119,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2553" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1143,9 +1143,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2554" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1167,9 +1167,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2555" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1191,9 +1191,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2556" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1215,9 +1215,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2557" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1239,9 +1239,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2558" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1263,9 +1263,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2559" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1287,9 +1287,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2560" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1311,9 +1311,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2561" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1335,9 +1335,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2562" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1359,9 +1359,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2563" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1383,9 +1383,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2564" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1407,9 +1407,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2565" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1431,9 +1431,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2566" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1455,9 +1455,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2567" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1479,9 +1479,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2568" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1503,9 +1503,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2569" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1527,9 +1527,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2570" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1551,9 +1551,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2571" levels="1" name="Pathfinder Supplies">
 		<!-- Confirmed CT2.5 -->
@@ -1575,9 +1575,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2572" levels="1" name="Pathfinder's Reward">
 		<!-- Confirmed CT2.5 -->
@@ -1599,9 +1599,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2573" levels="1" name="Pathfinder's Reward">
 		<!-- Confirmed CT2.5 -->
@@ -1623,9 +1623,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2574" levels="1" name="Pathfinder's Reward">
 		<!-- Confirmed CT2.5 -->
@@ -1647,9 +1647,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2575" levels="1" name="Pathfinder's Reward">
 		<!-- Confirmed CT2.5 -->
@@ -1671,9 +1671,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2576" levels="1" name="Pathfinder's Reward">
 		<!-- Confirmed CT2.5 -->
@@ -1695,9 +1695,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2577" levels="1" name="Instant Defense">
 		<abnormalLvl>1</abnormalLvl>
@@ -1712,9 +1712,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2578" levels="1" name="Cure Poison Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -1725,11 +1725,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2579" levels="1" name="Cure Death Clock">
 		<!-- Confirmed CT2.5 -->
@@ -1740,11 +1740,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>DEATH_CLACK,1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2580" levels="1" name="Vitality Replenishing Herb">
 		<abnormalLvl>1</abnormalLvl>
@@ -1767,11 +1767,11 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2581" levels="1" name="not_used">
 		<effectPoint>1</effectPoint>
@@ -1837,14 +1837,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>
 					<value level="1">10000</value>
 					<value level="2">20000</value>
 				</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2587" levels="1" name="Increase number of teleport slots.">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1859,11 +1859,11 @@
 		<cond>
 			<player hasFreeTeleportBookmarkSlots="3" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="AddTeleportBookmarkSlot">
 				<amount>3</amount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2588" levels="1" name="My Teleport">
 		<hitTime>3000</hitTime>
@@ -1915,11 +1915,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2593" levels="1" name="Bow/Crossbow Attack Resistance Potion">
 		<abnormalLvl>4</abnormalLvl>
@@ -1937,12 +1937,12 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>40</BOW>
 				<CROSSBOW>20</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2594" levels="1" name="Scroll of Escape: Pailaka">
 		<hitTime>20000</hitTime>
@@ -1962,11 +1962,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2595" levels="1" name="Gran Kain's Blessed Scroll of Escape">
 		<hitTime>200</hitTime>
@@ -1987,11 +1987,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2596" levels="1" name="Gran Kain's Blessed Scroll of Resurrection">
 		<castRange>400</castRange>
@@ -2010,11 +2010,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2597" levels="1" name="Gran Kain's Echo Crystal - Theme of Journey">
 		<isMagic>2</isMagic> <!-- Static Skill -->

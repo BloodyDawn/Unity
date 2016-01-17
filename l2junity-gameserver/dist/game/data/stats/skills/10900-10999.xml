@@ -31,7 +31,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#defCritRate">
 					<using kind="BOW, CROSSBOW" />
@@ -63,7 +63,7 @@
 					<item> CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10904" levels="4" name="Superior Skill Mastery">
 		<!-- Skill power + 5%. -->
@@ -77,7 +77,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>
 					<value level="1">5</value>
@@ -87,7 +87,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10905" levels="3" name="Fatal Arrow">
 		<!-- Attacks target with 29176 Power added to P. Atk. Damage increases as your HP decreases. Requires a bow. Over-hit. -->
@@ -113,7 +113,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackHpLink">
 				<power>
 					<value level="1">29176</value>
@@ -122,7 +122,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10950" levels="4" name="Vengeful Sniper">
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, PvP damage + 5%, received magic skill damage during PvP - 5%. -->
@@ -154,7 +154,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -220,7 +220,7 @@
 					<item> CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10951" levels="4" name="Superior Instinct Mastery">
 		<!-- PvP damage + 5%, and P. Atk. + 5% when equipped with a crossbow. -->
@@ -234,7 +234,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -283,7 +283,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10952" levels="1" name="Survival Instinct">
 		<!-- For 60 sec., increases P. Atk. by 40%, P. Def/M. Def. by 20%, and increases Max HP/CP by 20%. Consumes 5 Soulstones. -->
@@ -300,7 +300,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 			</effect>
@@ -320,7 +320,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10953" levels="1" name="Hunting Instinct">
 		<!-- For 60 sec., increases Atk. Spd. by 20%, Skill Power by 20%, P. Skill Critical Rate by 40%, and Skill Critical Damage by 20%. Consumes 5 Soulstones. -->
@@ -337,7 +337,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO P. Skill Critical Rate by 40%, and Skill Critical Damage by 20% -->
 			</effect>
@@ -349,7 +349,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10954" levels="1" name="Counter Instinct">
 		<!-- For 60 sec., increases Skill Power by 40%, P. Skill Critical Rate by 20%, and Skill Critical Damage by 40%. Consumes 5 Soulstones. -->
@@ -366,7 +366,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO P. Skill Critical Rate by 20%, and Skill Critical Damage by 40% -->
 			</effect>
@@ -374,7 +374,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10955" levels="1" name="Bloody Instinct">
 		<!-- For 60 sec., increases PvP Damage by 20%, and Skill Power by 20%. Consumes 5 Soulstones. -->
@@ -391,7 +391,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -408,7 +408,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10956" levels="1" name="Divine Expansion">
 		<!-- Increases the number of buffs an individual can receive by 1. -->
@@ -416,11 +416,11 @@
 		<magicLvl>100</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="EnlargeAbnormalSlot">
 				<slots>1</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10997" levels="1" name="Archer - Individual Passive">
 		<!-- AUTO GENERATED SKILL -->

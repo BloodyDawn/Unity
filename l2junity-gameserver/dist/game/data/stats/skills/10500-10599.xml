@@ -18,11 +18,11 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" /> <!-- Knock Down -->
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>24000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10501" levels="10" name="Superior Dagger Mastery">
 		<!-- Updated to IO -->
@@ -45,7 +45,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
@@ -86,7 +86,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10502" levels="10" name="Superior Dual Dagger Mastery">
 		<!-- Updated to IO -->
@@ -109,7 +109,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -149,7 +149,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10503" levels="10" name="Superior Light Armor Mastery">
 		<!-- Updated to IO -->
@@ -172,7 +172,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="4880">
 					<using kind="LIGHT" />
@@ -220,7 +220,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10504" levels="10" name="Superior Movement">
 		<!-- Updated to IO -->
@@ -243,7 +243,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="regHp" val="6" />
 				<add stat="STR" val="2" />
@@ -267,7 +267,7 @@
 				<amount>12</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10505" levels="10" name="Superior Critical Mastery">
 		<!-- Updated to IO -->
@@ -290,7 +290,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.6" />
 				<mul stat="skillCriticalProbability" val="11" />
@@ -311,7 +311,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10506" levels="1" name="Superior Spirit Mastery">
 		<!-- Updated to IO -->
@@ -322,7 +322,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -333,7 +333,7 @@
 				<SLEEP>30</SLEEP>
 				<POISON>30</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10507" levels="1" name="Death Clock">
 		<!-- Updated to IO -->
@@ -344,7 +344,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Shadow Flash -->
 				<!-- Blind Spot -->
@@ -358,7 +358,7 @@
 				<amount>200</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10508" levels="11" name="Blood Stab">
 		<!-- Updated to IO -->
@@ -438,7 +438,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Backstab">
 				<power>
 					<value level="1">32401</value>
@@ -463,7 +463,7 @@
 			<effect name="DamOverTime" ticks="5">
 				<power>70</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10509" levels="11" name="Heart Breaker">
 		<!-- Updated to IO -->
@@ -532,7 +532,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">21344</value>
@@ -562,7 +562,7 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 		<!-- TODO : Move to effects after A3 skills rework -->
 		<selfEffects>
 			<effect name="Buff">
@@ -630,7 +630,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">22718</value>
@@ -654,7 +654,7 @@
 			<effect name="Lethal">
 				<halfLethal>15</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10511" levels="7" name="Reverse">
 		<!-- Updated to IO -->
@@ -703,7 +703,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">26320</value>
@@ -721,7 +721,7 @@
 			<effect name="Lethal">
 				<halfLethal>15</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10512" levels="11" name="Dagger Explosion">
 		<!-- Updated to IO -->
@@ -783,7 +783,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11903</value>
@@ -801,7 +801,7 @@
 				<overHit>true</overHit>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10513" levels="10" name="Razor Rain">
 		<!-- Updated to IO -->
@@ -864,7 +864,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13649</value>
@@ -884,7 +884,7 @@
 			<effect name="DamOverTime" ticks="5">
 				<power>70</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10514" levels="8" name="Dark Paralysis">
 		<!-- Updated to IO -->
@@ -949,7 +949,7 @@
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -964,7 +964,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>10515</skillId>
@@ -1015,11 +1015,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>2</isMagic>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10516" levels="9" name="Shadow Chase">
 		<!-- Updated to IO -->
@@ -1086,13 +1086,13 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10517" levels="1" name="Shadow Hide">
 		<!-- Updated to IO -->
@@ -1118,7 +1118,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Hide">
 			</effect>
 			<effect name="DispelBySlot">
@@ -1133,7 +1133,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10518" levels="1" name="Assassin's Reflex">
 		<!-- Updated to IO -->
@@ -1154,12 +1154,12 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10520" levels="4" name="Final Ultimate Evasion">
 		<!-- Updated to IO -->
@@ -1204,7 +1204,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="30" />
 			</effect>
@@ -1245,7 +1245,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10522" levels="9" name="Poison Zone">
 		<!-- Updated to IO -->
@@ -1295,7 +1295,7 @@
 			<value level="9">105</value>
 		</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>
 					<value level="1">13310</value>
@@ -1310,7 +1310,7 @@
 				</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10523" levels="9" name="Poisoned">
 		<!-- Updated to IO -->
@@ -1367,7 +1367,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">687</value>
@@ -1401,7 +1401,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10524" levels="3" name="Evasive Counterstrike">
 		<!-- Updated to IO -->
@@ -1440,7 +1440,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>150000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="vengeancePdam" val="#vengeancePdam" />
 			</effect>
@@ -1453,7 +1453,7 @@
 					<value level="3">80</value>
 				</amount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10525" levels="7" name="Shadow Dash">
 		<!-- Updated to IO -->
@@ -1508,7 +1508,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>60000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">66</value>
@@ -1545,7 +1545,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10526" levels="9" name="Mischief">
 		<!-- Updated to IO -->
@@ -1601,7 +1601,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DeleteTopAgro">
 				<chance>100</chance>
 			</effect>
@@ -1611,7 +1611,7 @@
 				<amount>-70</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10527" levels="4" name="Mass Trick">
 		<!-- Updated to IO -->
@@ -1645,13 +1645,13 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DeleteHateOfMe">
 				<chance>80</chance>
 			</effect>
 			<effect name="TargetCancel" />
 			<effect name="DisableTargeting" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10528" levels="1" name="Shadow Fake Death">
 		<!-- Updated to IO -->
@@ -1665,12 +1665,12 @@
 		<mpInitialConsume>1</mpInitialConsume>
 		<rideState>NONE</rideState>
 		<hitTime>800</hitTime>
-		<for>
+		<effects>
 			<effect name="FakeDeath" ticks="5">
 				<power>20</power>
 			</effect>
 			<effect name="Untargetable" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10529" levels="4" name="Shadow Flash">
 		<!-- Updated to IO -->
@@ -1705,7 +1705,7 @@
 		<effectRange>1100</effectRange>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
 			<effect name="BlockActions">
@@ -1722,7 +1722,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10530" levels="1" name="Blind Spot">
 		<!-- Updated to IO -->
@@ -1745,7 +1745,7 @@
 		<rideState>NONE</rideState>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.1" />
 			</effect>
@@ -1761,7 +1761,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10531" levels="2" name="Angel of Death">
 		<!-- Updated to IO -->
@@ -1803,7 +1803,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
@@ -1846,7 +1846,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10532" levels="7" name="Clone Attack">
 		<!-- Updated to IO -->
@@ -1896,7 +1896,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DeleteHateOfMe" />
 			<effect name="SummonHallucination">
 				<npcId>
@@ -1914,7 +1914,7 @@
 			<effect name="TargetCancel" />
 			<!-- TODO Check TeleportToTarget, not in GDL files -->
 			<effect name="TeleportToTarget" />
-		</for>
+		</effects>
 		<!-- TODO Check endEffects, not in GDL files -->
 		<endEffects>
 			<effect name="CallSkill">
@@ -1944,7 +1944,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Block Magic -->
 				<attackerType>L2Playable</attackerType>
@@ -1957,7 +1957,7 @@
 				<skillId>10537</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10535" levels="4" name="Scorpion Poison">
 		<!-- Updated to IO -->
@@ -1976,7 +1976,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Block Magic -->
 				<attackerType>L2Playable</attackerType>
@@ -2011,7 +2011,7 @@
 				<allowWeapons>ALL</allowWeapons>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10537" levels="2" name="Block Magic">
 		<!-- Updated to IO -->
@@ -2045,7 +2045,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Mute" />
@@ -2053,7 +2053,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10538" levels="4" name="Weakness Critical">
 		<!-- Updated to IO -->
@@ -2091,7 +2091,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
@@ -2099,7 +2099,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10539" levels="11" name="Throw Dagger">
 		<!-- Updated to IO -->
@@ -2179,7 +2179,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">7396</value>
@@ -2202,7 +2202,7 @@
 				<amount>-180</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10540" levels="8" name="Throw Sand">
 		<!-- Updated to IO -->
@@ -2258,7 +2258,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="AddHate">
@@ -2277,7 +2277,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10541" levels="9" name="Throw Poison Needle">
 		<!-- Updated to IO -->
@@ -2329,11 +2329,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="SkillTurning">
 				<chance>100</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10542" levels="1" name="Maximum Critical">
 		<!-- Updated to IO -->
@@ -2345,7 +2345,7 @@
 		<operateType>P</operateType>
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3">
 					<and>
@@ -2374,7 +2374,7 @@
 				<amount>609</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10543" levels="1" name="Silent Step">
 		<!-- Updated to IO -->
@@ -2389,7 +2389,7 @@
 		<mpInitialConsume>1</mpInitialConsume>
 		<rideState>NONE</rideState>
 		<hitTime>800</hitTime>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>10</power>
 			</effect>
@@ -2403,7 +2403,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10544" levels="4" name="Cancel target">
 		<!-- Updated to IO -->
@@ -2425,9 +2425,9 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10545" levels="4" name="Crippling Poison">
 		<!-- Updated to IO -->
@@ -2470,7 +2470,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -2485,7 +2485,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Paralyzed -->
@@ -2547,7 +2547,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>600</speed>
 				<distance>50</distance>
@@ -2563,7 +2563,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10547" levels="1" name="Shadow Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -2624,9 +2624,9 @@
 		</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Plunder" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10549" levels="8" name="Kick">
 		<!-- Updated to IO -->
@@ -2690,7 +2690,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<trait>KNOCKDOWN</trait>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>400</speed>
 				<distance>100</distance>
@@ -2705,7 +2705,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10550" levels="7" name="Illusion Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -2755,7 +2755,7 @@
 			<value level="7">105</value>
 		</magicLvl>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">21344</value>
@@ -2774,7 +2774,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10551" levels="7" name="Illusion Trick">
 		<!-- AUTO GENERATED SKILL -->
@@ -2824,9 +2824,9 @@
 			<value level="7">105</value>
 		</magicLvl>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="DisableTargeting" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10552" levels="10" name="Superior Resistance">
 		<!-- Updated to IO -->
@@ -2850,7 +2850,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="waterRes" val="#res" />
@@ -2873,7 +2873,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10553" levels="8" name="Dagger Storm">
 		<!-- Glory Days confirmed -->
@@ -2910,7 +2910,7 @@
 		<effectPoint>-704</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">6871</value>
@@ -2924,7 +2924,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10554" levels="7" name="Power Bluff">
 		<!-- Glory Days confirmed -->
@@ -2961,7 +2961,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Bluff">
 				<chance>80</chance>
 			</effect>
@@ -2972,7 +2972,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>10555</skillId>
@@ -2999,12 +2999,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>2</isMagic>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10556" levels="1" name="Illusion Hide">
 		<!-- Glory Days confirmed -->
@@ -3027,7 +3027,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Hide" />
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -3045,7 +3045,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10557" levels="2" name="Maximize Critical">
 		<!-- For 20 sec., side Critical Rate + 30% and rear Critical Rate + 60%. During a critical attack, 50 % chance of triggering Critical level 2. -->
@@ -3071,7 +3071,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit1">
 					<and>
@@ -3095,7 +3095,7 @@
 				<chance>50</chance>
 				<targetType>SELF</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10558" levels="1" name="Elusive Mirage">
 		<!-- For 30 sec., has a chance of cancelling target of the enemy that attacked you. Requires a dagger or dual dagger. -->
@@ -3114,7 +3114,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Elusive Mirage -->
 				<minDamage>1</minDamage>
@@ -3123,7 +3123,7 @@
 				<chance>80</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10559" levels="1" name="Elusive Mirage">
 		<!-- Cannot target for 2 sec. -->
@@ -3141,13 +3141,13 @@
 		<effectPoint>-564</effectPoint>
 		<isDebuff>true</isDebuff>
 		<isTriggeredSkill>true</isTriggeredSkill>
-		<for>
+		<effects>
 			<effect name="DeleteHateOfMe">
 				<!-- Guessed -->
 				<chance>100</chance>
 			</effect>
 			<effect name="DisableTargeting" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10560" levels="1" name="Maximum Blow">
 		<!-- For 20 sec., Vital Spot Attack Rate + 10%. Requires a dagger or dual dagger. -->
@@ -3165,12 +3165,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlowRate">
 				<amount>-1.1</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10561" levels="4" name="Superior Vitality">
 		<!-- Max HP and CP + 7%. Increases resistance to poison, bleed, and stun + 4. -->
@@ -3185,7 +3185,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#inc" />
 			</effect>
@@ -3218,7 +3218,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10562" levels="1" name="Critical Adventures">
 		<!-- For 5 min., Critical Damage + 304 and vital spot attack success rate + 10%. Front Critical Damage - 30%, Side Critical Rate + 20% and Critical Damage + 20%. Rear Critical Rate + 40% and Critical Damage + 40%. Requires a dagger or dual dagger. -->
@@ -3236,7 +3236,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical attack rate by 30% -->
 					<player front="true" />
@@ -3276,6 +3276,6 @@
 					<item>DUALDAGGER</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

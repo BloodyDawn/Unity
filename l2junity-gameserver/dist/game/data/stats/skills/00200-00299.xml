@@ -55,7 +55,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Blunt Mastery -->
 				<attackerType>L2Character</attackerType>
@@ -169,7 +169,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="208" levels="52" name="Bow Mastery">
 		<table name="#pAtk"> 10.3 11.4 27.6 32.8 35.6 38.6 45.2 48.9 52.7 61.1 65.6 70.4 80.9 86.5 92.4 105.1 111.9 178.8 189.9 201.4 213.5 226 239.1 252.7 266.7 281.3 296.4 311.9 328 344.5 361.6 379.1 397 415.4 434.3 453.5 473.2 493.1 513.5 534.2 555.1 576.3 597.8 619.4 641.2 663.1 685 707.1 729.1 751 772.9 794.6 </table>
@@ -231,7 +231,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10.3</value>
@@ -292,7 +292,7 @@
 					<item>BOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="209" levels="45" name="Dagger Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -349,7 +349,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Dagger Mastery -->
 				<attackerType>L2Character</attackerType>
@@ -463,7 +463,7 @@
 					<item>DUALDAGGER</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="210" levels="45" name="Fist Weapon Mastery">
 		<table name="#pAtk"> 4.5 7.3 8.9 10.7 12.8 15.1 17.7 20.5 23.7 25.4 27.1 29 30.9 32.9 35 37.1 39.4 41.7 44.1 46.6 49.2 51.9 54.6 57.5 60.4 63.3 66.4 69.5 72.7 76 79.3 82.7 86.1 89.6 93.1 96.6 100.2 103.8 107.5 111.1 114.8 118.4 122.1 125.7 129.3 </table>
@@ -518,7 +518,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">4.5</value>
@@ -572,7 +572,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="211" levels="10" name="Boost HP">
 		<table name="#hp"> 60 100 150 200 250 300 350 400 440 480 </table>
@@ -592,7 +592,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">60</value>
@@ -608,7 +608,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="212" levels="8" name="Fast HP Recovery">
 		<table name="#hp"> 1.1 1.6 1.7 2.1 2.6 2.7 3.4 4 </table>
@@ -626,7 +626,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>
 					<value level="1">1.1</value>
@@ -640,7 +640,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="213" levels="8" name="Boost Mana">
 		<table name="#mp"> 30 50 70 100 140 152 180 200 </table>
@@ -658,7 +658,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">30</value>
@@ -672,7 +672,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="214" levels="1" name="Mana Recovery">
 		<icon>icon.skill0214</icon>
@@ -680,7 +680,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -688,7 +688,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="216" levels="45" name="Polearm Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -745,7 +745,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">4.5</value>
@@ -852,7 +852,7 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="217" levels="45" name="Sword/Blunt Weapon Mastery">
 		<table name="#hate"> 20 20 20 20 20 20 20 20 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 </table>
@@ -908,7 +908,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">1.5</value>
@@ -963,7 +963,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="221" levels="1" name="Silent Move">
 		<!-- Confirmed CT2.5 -->
@@ -975,7 +975,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>9</power>
 			</effect>
@@ -985,7 +985,7 @@
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="222" levels="4" name="Fury Fists">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -997,7 +997,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="2">
 				<power>12</power>
 			</effect>
@@ -1005,7 +1005,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="223" levels="49" name="Sting">
 		<table name="#dot"> 25 25 25 25 25 25 34 34 34 34 34 34 34 34 44 44 44 44 44 44 44 44 44 44 54 54 54 54 54 54 54 54 54 54 62 62 62 62 62 62 62 62 62 62 67 67 67 67 67 </table>
@@ -1236,7 +1236,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,DAGGER,DUAL,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">82</value>
@@ -1344,7 +1344,7 @@
 					<value level="49">67</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="225" levels="3" name="Acrobatic Move">
 		<!-- Confirmed CT2.5 -->
@@ -1358,7 +1358,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="StatByMoveType">
 				<stat>EVASION_RATE</stat>
 				<type>RUNNING</type>
@@ -1371,7 +1371,7 @@
 			<effect name="DefenceTrait">
 				<SHOCK>-11</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="226" levels="1" name="Relax">
 		<icon>icon.skill0226</icon>
@@ -1381,7 +1381,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Relax" ticks="3">
 				<power>1</power>
 			</effect>
@@ -1389,7 +1389,7 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="227" levels="50" name="Light Armor Mastery">
 		<table name="#pDef"> 4.2 5.3 6.5 7.7 9 9.9 10.8 12.7 13.7 14.8 16.9 18 19.1 21.5 22.7 24 25.3 26.6 27.9 29.3 30.7 32.1 33.6 35 36.5 38.1 39.6 41.2 42.8 44.5 46.1 47.8 49.5 51.3 53 54.8 56.6 58.4 60.2 62.1 64 65.8 67.7 69.7 71.6 73.5 75.5 77.4 79.4 81.3 </table>
@@ -1450,7 +1450,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">4.2</value>
@@ -1567,7 +1567,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="228" levels="3" name="Fast Spell Casting">
 		<!-- Confirmed CT2.5 -->
@@ -1581,7 +1581,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">5</value>
@@ -1590,7 +1590,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="229" levels="7" name="Fast Mana Recovery">
 		<table name="#regMp"> 1.1 1.5 1.9 2.3 2.7 3.1 3.4 </table>
@@ -1607,7 +1607,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>
 					<value level="1">1.1</value>
@@ -1620,7 +1620,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="230" levels="2" name="Sprint">
 		<table name="#runSpd"> 22 33 </table>
@@ -1655,7 +1655,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">22</value>
@@ -1663,7 +1663,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="231" levels="50" name="Heavy Armor Mastery">
 		<table name="#pDef"> 1.9 3.3 4.8 6.4 8.1 8.9 9.8 11.7 12.7 13.7 15.8 16.9 18 20.4 21.6 22.8 24.1 25.4 26.7 28 29.4 30.8 32.2 33.7 35.2 36.7 38.2 39.8 41.4 43 44.6 46.3 48 49.7 51.4 53.2 55 56.7 58.6 60.4 62.2 64.1 66 67.8 69.7 71.6 73.6 75.5 77.4 79.3 </table>
@@ -1723,7 +1723,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">1.9</value>
@@ -1782,7 +1782,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="232" levels="52" name="Heavy Armor Mastery">
 		<table name="#defCritDamage"> 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 </table>
@@ -1845,7 +1845,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">17.7</value>
@@ -1966,7 +1966,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="233" levels="47" name="Light Armor Mastery">
 		<table name="#defCritRate"> 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.85 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 </table>
@@ -2025,7 +2025,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#defCritRate">
 					<using kind="LIGHT" />
@@ -2141,7 +2141,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="234" levels="41" name="Robe Mastery">
 		<table name="#pDef"> 1.7 2.7 4.3 5.4 7.2 8.5 10.6 12.1 14.5 15.3 16.2 17.9 18.8 19.8 21.7 22.7 23.7 25.8 26.8 27.9 30.1 31.2 32.4 33.5 34.7 35.9 37.1 38.4 39.6 40.8 42.1 43.4 44.7 45.9 47.3 48.6 49.9 51.2 52.5 53.9 55.2 </table>
@@ -2192,7 +2192,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">1.7</value>
@@ -2242,7 +2242,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="235" levels="41" name="Robe Mastery">
 		<table name="#pDef"> 7.2 8.6 11 12.7 15.4 17.4 20.5 22.7 26.3 27.6 28.8 31.5 32.9 34.2 37.1 38.6 40.1 43.2 44.8 46.4 49.8 51.5 53.2 54.9 56.7 58.5 60.3 62.1 64 65.9 67.7 69.7 71.6 73.5 75.5 77.4 79.4 81.4 83.4 85.4 87.4 </table>
@@ -2293,7 +2293,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">7.2</value>
@@ -2343,7 +2343,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="236" levels="41" name="Light Armor Mastery">
 		<table name="#pDef"> 5.4 6.3 7.8 8.8 10.9 12.5 15 16.9 19.8 20.8 21.8 24 25.1 26.3 28.6 29.8 31 33.6 34.9 36.2 38.9 40.3 41.7 43.1 44.6 46 47.5 49 50.5 52.1 53.6 55.2 56.7 58.3 59.9 61.5 63.1 64.7 66.4 68 69.6 </table>
@@ -2394,7 +2394,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">5.4</value>
@@ -2465,7 +2465,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="239" levels="10" name="Expertise D">
 		<icon>
@@ -2508,7 +2508,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">6.7</value>
@@ -2517,7 +2517,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="245" levels="15" name="Wild Sweep">
 		<table name="#power"> 108 117 126 147 159 171 198 213 229 263 281 301 344 367 391 </table>
@@ -2589,7 +2589,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">108</value>
@@ -2610,7 +2610,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="246" levels="1" name="Seal of Ruler">
 		<!-- Confirmed CT2.5 -->
@@ -2630,11 +2630,11 @@
 		<cond>
 			<player canTakeCastle="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TakeCastle">
 				<side>NEUTRAL</side>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="247" levels="1" name="Build Headquarters">
 		<hitTime>4000</hitTime>
@@ -2653,9 +2653,9 @@
 		<cond>
 			<player canCreateBase="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="HeadquarterCreate" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="248" levels="6" name="Crystallize">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -2725,7 +2725,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>45</amount>
 				<mode>PER</mode>
@@ -2844,7 +2844,7 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="250" levels="42" name="Weapon Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -2899,7 +2899,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="absorbDamMana" val="10" />
 			</effect>
@@ -3021,7 +3021,7 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="251" levels="45" name="Robe Mastery">
 		<table name="#pDef"> 11.6 13.4 16.1 18.4 20.9 23.8 26.9 29.1 32.8 35.4 39.6 42.6 47.3 49 50.7 54.2 56.1 57.9 61.8 63.7 65.7 69.9 72 74.2 78.6 80.9 83.2 85.5 87.8 90.2 92.6 95.1 97.6 100.1 102.6 105.1 107.7 110.3 112.9 115.5 118.1 120.8 123.4 126.1 128.8 </table>
@@ -3076,7 +3076,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">11.6</value>
@@ -3130,7 +3130,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="252" levels="45" name="Light Armor Mastery">
 		<table name="#pDef"> 12.6 14.5 17.5 19.3 21.2 23.2 25.5 27 30.1 32.5 36.3 39.1 43.5 45 46.6 49.8 51.5 53.2 56.7 58.5 60.4 64.2 66.1 68.1 72.2 74.2 76.3 78.5 80.6 82.8 85.1 87.3 89.6 91.9 94.2 96.5 98.9 101.2 103.6 106 108.5 110.9 113.3 115.8 118.2 </table>
@@ -3185,7 +3185,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">12.6</value>
@@ -3260,7 +3260,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="253" levels="43" name="Heavy Armor Mastery">
 		<table name="#pDef"> 11.6 13.3 15.2 17.2 19.5 21.1 23.7 25.6 28.7 30.8 34.3 35.5 36.7 39.3 40.6 41.9 44.7 46.1 47.6 50.6 52.1 53.7 56.9 58.6 60.2 61.9 63.6 65.3 67.1 68.9 70.7 72.5 74.3 76.1 78 79.9 81.7 83.6 85.5 87.5 89.4 91.3 93.3 </table>
@@ -3313,7 +3313,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">11.6</value>
@@ -3379,7 +3379,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="254" levels="11" name="Spoil">
 		<!-- Confirmed CT2.5 -->
@@ -3433,9 +3433,9 @@
 		<abnormalType>HOLY_ATTACK</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Spoil" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="255" levels="15" name="Power Smash">
 		<table name="#power"> 90 97 105 123 132 143 165 177 191 219 235 251 287 306 326 </table>
@@ -3504,7 +3504,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">90</value>
@@ -3525,7 +3525,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="256" levels="1" name="Accuracy">
 		<icon>icon.skill0256</icon>
@@ -3535,7 +3535,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<power>0.4</power>
 			</effect>
@@ -3543,7 +3543,7 @@
 				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="257" levels="45" name="Sword/Blunt Weapon Mastery">
 		<table name="#pAtk"> 4.5 7.3 8.9 10.7 12.8 15.1 17.7 20.5 23.7 25.4 27.1 29 30.9 32.9 35 37.1 39.4 41.7 44.1 46.6 49.2 51.9 54.6 57.5 60.4 63.3 66.4 69.5 72.7 76 79.3 82.7 86.1 89.6 93.1 96.6 100.2 103.8 107.5 111.1 114.8 118.4 122.1 125.7 129.3 </table>
@@ -3598,7 +3598,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">4.5</value>
@@ -3653,7 +3653,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="258" levels="33" name="Light Armor Mastery">
 		<table name="#pDef"> 11.1 11.8 12.5 14 14.8 15.6 17.3 18.1 19 20.8 21.7 22.6 24.5 25.5 26.4 27.4 28.4 29.5 30.5 31.6 32.6 33.7 34.8 35.9 37 38.1 39.2 40.3 41.4 42.6 43.7 44.8 46 </table>
@@ -3696,7 +3696,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">11.1</value>
@@ -3759,7 +3759,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="259" levels="33" name="Heavy Armor Mastery">
 		<table name="#pDef"> 14.8 15.6 16.5 18.3 19.2 20.2 22.1 23.1 24.1 26.2 27.3 28.4 30.6 31.8 33 34.1 35.3 36.5 37.8 39 40.3 41.5 42.8 44.1 45.4 46.7 48 49.4 50.7 52 53.4 54.7 56.1 </table>
@@ -3802,7 +3802,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">14.8</value>
@@ -3858,7 +3858,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="260" levels="37" name="Hammer Crush">
 		<table name="#power"> 487 518 550 583 618 655 693 732 773 816 860 905 952 1001 1051 1102 1155 1210 1265 1322 1380 1440 1500 1561 1624 1687 1751 1816 1881 1947 2013 2080 2146 2213 2279 2345 2411 </table>
@@ -4002,7 +4002,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">487</value>
@@ -4048,7 +4048,7 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="261" levels="34" name="Triple Sonic Slash">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -4182,7 +4182,7 @@
 				<player Charges="4" /> <!-- Need to recharge 4th stage of Sword Energy. -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<chargeConsume>4</chargeConsume>
 				<criticalChance>15</criticalChance>
@@ -4225,7 +4225,7 @@
 				</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="262" levels="37" name="Divine Blessing">
 		<table name="#amount"> 236 245 254 262 271 281 290 299 308 318 327 337 346 356 365 375 384 393 403 412 421 430 439 448 457 466 474 482 490 498 506 513 520 527 534 540 546 </table>
@@ -4356,7 +4356,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">236</value>
@@ -4398,7 +4398,7 @@
 					<value level="37">546</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="263" levels="37" name="Deadly Blow">
 		<!-- Confirmed CT2.5 -->
@@ -4534,7 +4534,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">1107</value>
@@ -4581,7 +4581,7 @@
 			<effect name="Lethal">
 				<halfLethal>10</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="264" levels="1" name="Song of Earth">
 		<abnormalLvl>1</abnormalLvl>
@@ -4600,12 +4600,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="265" levels="1" name="Song of Life">
 		<abnormalLvl>1</abnormalLvl>
@@ -4624,12 +4624,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="266" levels="1" name="Song of Water">
 		<abnormalLvl>1</abnormalLvl>
@@ -4648,12 +4648,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="267" levels="1" name="Song of Warding">
 		<abnormalLvl>1</abnormalLvl>
@@ -4672,12 +4672,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="268" levels="1" name="Song of Wind">
 		<abnormalLvl>1</abnormalLvl>
@@ -4696,12 +4696,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="269" levels="1" name="Hunter's Song">
 		<abnormalLvl>1</abnormalLvl>
@@ -4720,11 +4720,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="270" levels="1" name="Song of Invocation">
 		<abnormalLvl>1</abnormalLvl>
@@ -4743,11 +4743,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="271" levels="1" name="Dance of the Warrior">
 		<abnormalLvl>1</abnormalLvl>
@@ -4769,12 +4769,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>12</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="272" levels="1" name="Dance of Inspiration">
 		<abnormalLvl>1</abnormalLvl>
@@ -4796,12 +4796,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="273" levels="1" name="Dance of the Mystic">
 		<abnormalLvl>1</abnormalLvl>
@@ -4823,12 +4823,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="274" levels="1" name="Dance of Fire">
 		<abnormalLvl>1</abnormalLvl>
@@ -4850,12 +4850,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="275" levels="1" name="Dance of Fury">
 		<abnormalLvl>1</abnormalLvl>
@@ -4877,12 +4877,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="276" levels="1" name="Dance of Concentration">
 		<abnormalLvl>1</abnormalLvl>
@@ -4904,7 +4904,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancel" val="40" />
 			</effect>
@@ -4912,7 +4912,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="277" levels="1" name="Dance of Light">
 		<abnormalLvl>1</abnormalLvl>
@@ -4935,11 +4935,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="278" levels="6" name="Summon Viper Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -4985,7 +4985,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>4</cubicId>
 				<cubicLvl>
@@ -4997,7 +4997,7 @@
 					<value level="6">6</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="279" levels="17" name="Lightning Strike">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -5082,7 +5082,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<trait>PARALYZE</trait>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2927</value>
@@ -5118,7 +5118,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6090</skillId>
@@ -5261,7 +5261,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">517</value>
@@ -5306,7 +5306,7 @@
 				<criticalChance>15</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="281" levels="37" name="Soul Breaker">
 		<table name="#power"> 487 518 550 583 618 655 693 732 773 816 860 905 952 1001 1051 1102 1155 1210 1265 1322 1380 1440 1500 1561 1624 1687 1751 1816 1881 1947 2013 2080 2146 2213 2279 2345 2411 </table>
@@ -5586,7 +5586,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">487</value>
@@ -5632,7 +5632,7 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="282" levels="1" name="Puma Spirit Totem">
 		<abnormalLvl>1</abnormalLvl>
@@ -5652,7 +5652,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>6</amount>
 				<mode>DIFF</mode>
@@ -5667,7 +5667,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="283" levels="7" name="Summon Dark Panther">
 		<table name="#itemConsumeCountOT"> 1 1 2 3 4 4 4 </table>
@@ -5723,7 +5723,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14799</value>
@@ -5747,7 +5747,7 @@
 				</consumeItemCount>
 				<expMultiplier>0.85</expMultiplier>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="284" levels="40" name="Hurricane Assault">
 		<table name="#power"> 501 535 570 607 646 729 773 820 868 918 971 1025 1081 1140 1200 1262 1327 1393 1461 1531 1603 1677 1753 1830 1908 1988 2070 2153 2237 2322 2408 2494 2581 2669 2757 2846 2934 3022 3109 3196 </table>
@@ -5894,7 +5894,7 @@
 				<player Charges="2" /> <!-- recharged to its 2nd energy stage -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<chargeConsume>2</chargeConsume>
 				<criticalChance>15</criticalChance>
@@ -5943,7 +5943,7 @@
 				</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="285" levels="27" name="Higher Mana Gain">
 		<table name="#manaCharge"> 22 24 28 29 31 32 38 39 41 42 48 49 50 52 53 59 61 62 64 66 72 73 75 76 78 79 81 </table>
@@ -5980,7 +5980,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaCharge">
 				<amount>
 					<value level="1">22</value>
@@ -6013,7 +6013,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="286" levels="13" name="Provoke">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -6080,7 +6080,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POLE>
 					<value level="1">-10</value>
@@ -6098,7 +6098,7 @@
 					<value level="13">30</value>
 				</POLE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="287" levels="3" name="Lionheart">
 		<table name="#traits"> 40 60 80 </table>
@@ -6132,7 +6132,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">40</value>
@@ -6155,7 +6155,7 @@
 					<value level="3">80</value>
 				</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="288" levels="4" name="Guard Stance">
 		<table name="#pDef"> 121.8 161.1 212.1 256.5 </table>
@@ -6176,7 +6176,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<power>2</power>
 			</effect>
@@ -6193,7 +6193,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="289" levels="15" name="Life Leech">
 		<table name="#power"> 26 29 31 33 36 39 41 43 45 46 48 50 51 53 54 </table>
@@ -6275,7 +6275,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">26</value>
@@ -6296,7 +6296,7 @@
 				</power>
 				<percentage>80</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="290" levels="14" name="Final Frenzy">
 		<table name="#final"> 32.9 39.4 46.6 54.6 63.3 72.7 79.3 86.1 93.1 100.2 107.5 114.8 122.1 129.3 </table>
@@ -6320,7 +6320,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">32.9</value>
@@ -6340,7 +6340,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="291" levels="11" name="Final Fortress">
 		<table name="#final"> 116.875 129 141.625 150.375 159.25 168.375 177.625 187 196.5 206.125 215.75 </table>
@@ -6361,13 +6361,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pDef" val="#final">
 					<player hp="30" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="292" levels="1" name="Bison Spirit Totem">
 		<abnormalLvl>1</abnormalLvl>
@@ -6387,7 +6387,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="100">
 					<player hp="60" />
@@ -6410,7 +6410,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="293" levels="20" name="Two-handed Weapon Mastery">
 		<table name="#Attack"> 4.5 7.3 10.7 15.1 20.5 27.1 32.9 39.4 46.6 54.6 63.3 72.7 79.3 86.1 93.1 100.2 107.5 114.8 122.1 129.3 </table>
@@ -6440,7 +6440,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#Attack">
 					<and>
@@ -6455,7 +6455,7 @@
 					</and>
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="294" levels="1" name="Shadow Sense">
 		<icon>icon.skill0294</icon>
@@ -6463,12 +6463,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>3</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="295" levels="1" name="Iron Body">
 		<!-- Confirmed CT2.5 -->
@@ -6477,11 +6477,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="damageZoneVuln" val="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="296" levels="1" name="Chameleon Rest">
 		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
@@ -6492,11 +6492,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ChameleonRest" ticks="5">
 				<power>2</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="297" levels="2" name="Duelist Spirit">
 		<table name="#pAtkSpd"> 1.08 1.12 </table>
@@ -6527,7 +6527,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">8</value>
@@ -6552,7 +6552,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="298" levels="1" name="Rabbit Spirit Totem">
 		<!-- Confirmed CT2.5 -->
@@ -6573,7 +6573,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -6589,7 +6589,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="299" levels="1" name="Summon Wild Hog Cannon">
 		<hitTime>180000</hitTime>
@@ -6611,13 +6611,13 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>14768</npcId>
 				<lifeTime>1200</lifeTime>
 				<consumeItemId>2132</consumeItemId>
 				<consumeItemCount>20</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -23,7 +23,7 @@
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -38,7 +38,7 @@
 				<CHANGEBODY>100</CHANGEBODY>
 				<SHOCK>100</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
 		<!-- Updated to IO -->
@@ -68,7 +68,7 @@
 			<value level="8">98</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">152</value>
@@ -81,7 +81,7 @@
 					<value level="8">177</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11302" levels="11" name="Servitor Major Heal">
 		<!-- Updated to IO -->
@@ -117,7 +117,7 @@
 		<cond>
 			<player hasSummon="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1637</value>
@@ -133,7 +133,7 @@
 					<value level="11">1960</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11303" levels="1" name="Mass Servitor Magic Barrier">
 		<!-- Updated to IO -->
@@ -158,12 +158,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11304" levels="1" name="Mass Servitor Haste">
 		<!-- Updated to IO -->
@@ -188,12 +188,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11305" levels="1" name="Mass Servitor Shield">
 		<!-- Updated to IO -->
@@ -218,12 +218,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11306" levels="1" name="Mass Servitor Empower">
 		<!-- Updated to IO -->
@@ -248,12 +248,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>79</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11307" levels="1" name="Mass Servitor Might">
 		<!-- Updated to IO -->
@@ -278,12 +278,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>17</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11308" levels="1" name="Mass Servitor Wind Walk">
 		<!-- Updated to IO -->
@@ -308,12 +308,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>34</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11309" levels="1" name="Mass Servitor Blessing">
 		<!-- Updated to IO -->
@@ -335,7 +335,7 @@
 		<affectRange>1000</affectRange>
 		<abnormalTime>3</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
@@ -344,7 +344,7 @@
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11310" levels="2" name="Mass Servitor Blessing">
 		<!-- Updated to IO -->
@@ -371,7 +371,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">4212</value>
@@ -386,7 +386,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11311" levels="3" name="Naviarope Strike">
 		<!-- Updated to IO -->
@@ -411,7 +411,7 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">20633</value>
@@ -419,7 +419,7 @@
 					<value level="3">22799</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11312" levels="3" name="Naviarope Flame">
 		<!-- Updated to IO -->
@@ -444,7 +444,7 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">18758</value>
@@ -452,7 +452,7 @@
 					<value level="3">20727</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11313" levels="3" name="Naviarope Explosion">
 		<!-- Updated to IO -->
@@ -476,7 +476,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>4000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">18758</value>
@@ -484,7 +484,7 @@
 					<value level="3">20727</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11314" levels="3" name="Corpse Blast">
 		<!-- Updated to IO -->
@@ -511,7 +511,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
 				<power>
@@ -520,7 +520,7 @@
 					<value level="3">374</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11315" levels="1" name="Summon Defense">
 		<!-- Updated to IO -->
@@ -531,7 +531,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>50</BOW>
 				<TWOHANDCROSSBOW>50</TWOHANDCROSSBOW>
@@ -541,7 +541,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11316" levels="1" name="Summon Soulshots">
 		<!-- Updated to IO -->
@@ -566,13 +566,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Beast Soulshot -->
 				<itemId>6645</itemId>
 				<itemCount>1900</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11317" levels="8" name="Servitor Group Heal">
 		<!-- Updated to IO -->
@@ -612,7 +612,7 @@
 		</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1191</value>
@@ -625,7 +625,7 @@
 					<value level="8">1256</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11320" levels="8" name="Summon Wynn Kai the Cat">
 		<!-- Updated to IO -->
@@ -654,7 +654,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15066</value>
@@ -669,7 +669,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11321" levels="8" name="Summon Wynn Feline King">
 		<!-- Updated to IO -->
@@ -698,7 +698,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15074</value>
@@ -713,7 +713,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11322" levels="8" name="Summon Wynn Feline Queen">
 		<!-- Updated to IO -->
@@ -742,7 +742,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15082</value>
@@ -757,7 +757,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11323" levels="8" name="Feline Aggression">
 		<!-- Updated to IO -->
@@ -787,10 +787,10 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" /> <!-- Guessed -->
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11324" levels="8" name="Feline Stun">
 		<!-- Updated to IO -->
@@ -821,9 +821,9 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11325" levels="8" name="Feline Bite">
 		<!-- Updated to IO -->
@@ -848,7 +848,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10508</value>
@@ -861,7 +861,7 @@
 					<value level="8">15282</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11326" levels="8" name="Feline Pounce">
 		<!-- Updated to IO -->
@@ -907,7 +907,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8406</value>
@@ -926,7 +926,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11327" levels="8" name="Feline Touch">
 		<!-- Updated to IO -->
@@ -950,7 +950,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10508</value>
@@ -963,7 +963,7 @@
 					<value level="8">15282</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11328" levels="8" name="Feline Power">
 		<!-- Updated to IO -->
@@ -988,7 +988,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11558</value>
@@ -1001,7 +1001,7 @@
 					<value level="8">16810</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11329" levels="8" name="Summon Wynn Merrow">
 		<!-- Updated to IO -->
@@ -1030,7 +1030,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15114</value>
@@ -1045,7 +1045,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11330" levels="8" name="Summon Wynn Magnus">
 		<!-- Updated to IO -->
@@ -1074,7 +1074,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15122</value>
@@ -1089,7 +1089,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11331" levels="8" name="Summon Wynn Seraphim">
 		<!-- Updated to IO -->
@@ -1118,7 +1118,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15130</value>
@@ -1133,7 +1133,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11332" levels="8" name="Unicorn's Aggression">
 		<!-- Updated to IO -->
@@ -1163,10 +1163,10 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" /> <!-- Guessed -->
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11333" levels="8" name="Unicorn's Stun">
 		<!-- Updated to IO -->
@@ -1197,9 +1197,9 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11334" levels="8" name="Unicorn's Bite">
 		<!-- Updated to IO -->
@@ -1224,7 +1224,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10508</value>
@@ -1237,7 +1237,7 @@
 					<value level="8">15282</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11335" levels="8" name="Unicorn's Pounce">
 		<!-- Updated to IO -->
@@ -1283,7 +1283,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8406</value>
@@ -1302,7 +1302,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11336" levels="8" name="Unicorn's Touch">
 		<!-- Updated to IO -->
@@ -1326,7 +1326,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10508</value>
@@ -1339,7 +1339,7 @@
 					<value level="8">15282</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11337" levels="8" name="Unicorn's Power">
 		<!-- Updated to IO -->
@@ -1364,7 +1364,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11558</value>
@@ -1377,7 +1377,7 @@
 					<value level="8">16810</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11338" levels="8" name="Summon Wynn Nightshade">
 		<!-- Updated to IO -->
@@ -1406,7 +1406,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15090</value>
@@ -1421,7 +1421,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11339" levels="8" name="Summon Wynn Spectral Lord">
 		<!-- Updated to IO -->
@@ -1450,7 +1450,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15098</value>
@@ -1465,7 +1465,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11340" levels="8" name="Summon Wynn Soulless">
 		<!-- Updated to IO -->
@@ -1494,7 +1494,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15106</value>
@@ -1509,7 +1509,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11341" levels="8" name="Phantom Aggression">
 		<!-- Updated to IO -->
@@ -1539,10 +1539,10 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" /> <!-- Guessed -->
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11342" levels="8" name="Phantom Stun">
 		<!-- Updated to IO -->
@@ -1573,9 +1573,9 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11343" levels="8" name="Phantom Bite">
 		<!-- Updated to IO -->
@@ -1600,7 +1600,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10508</value>
@@ -1613,7 +1613,7 @@
 					<value level="8">15282</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11344" levels="8" name="Phantom Pounce">
 		<!-- Updated to IO -->
@@ -1659,7 +1659,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8406</value>
@@ -1678,7 +1678,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11345" levels="8" name="Phantom Touch">
 		<!-- Updated to IO -->
@@ -1702,7 +1702,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10508</value>
@@ -1715,7 +1715,7 @@
 					<value level="8">15282</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11346" levels="8" name="Phantom Power">
 		<!-- Updated to IO -->
@@ -1740,7 +1740,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11558</value>
@@ -1753,7 +1753,7 @@
 					<value level="8">16810</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11347" levels="4" name="Greater Servitor Haste">
 		<!-- Updated to IO -->
@@ -1782,7 +1782,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">10</value>
@@ -1792,7 +1792,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11348" levels="4" name="Servitor Death Whisper">
 		<!-- Updated to IO -->
@@ -1821,7 +1821,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">10</value>
@@ -1831,7 +1831,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11349" levels="4" name="Greater Servitor Might">
 		<!-- Updated to IO -->
@@ -1860,7 +1860,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10</value>
@@ -1870,7 +1870,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11350" levels="7" name="Arcane Rage">
 		<!-- Updated to IO -->
@@ -1902,7 +1902,7 @@
 			<value level="7">-715</value>
 		</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">188</value>
@@ -1914,7 +1914,7 @@
 					<value level="7">254</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11351" levels="5" name="Arcane Link">
 		<!-- Updated to IO -->
@@ -1938,7 +1938,7 @@
 		<castRange>900</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -1962,7 +1962,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11352" levels="4" name="Arcane Ability">
 		<!-- Atk. Spd., P. Def. + 3%, and PvP Damage - 3%. -->
@@ -1977,7 +1977,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -2023,7 +2023,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11353" levels="7" name="Elemental Rage">
 		<!-- Updated to IO -->
@@ -2055,7 +2055,7 @@
 			<value level="7">-715</value>
 		</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">188</value>
@@ -2067,7 +2067,7 @@
 					<value level="7">254</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11354" levels="5" name="Elemental Link">
 		<!-- Updated to IO -->
@@ -2091,7 +2091,7 @@
 		<castRange>900</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -2115,7 +2115,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11355" levels="4" name="Elemental Ability">
 		<!-- AUTO GENERATED SKILL -->
@@ -2124,7 +2124,7 @@
 		<icon>icon.skill11277</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">5</value>
@@ -2134,7 +2134,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11356" levels="7" name="Spectral Rage">
 		<!-- Updated to IO -->
@@ -2166,7 +2166,7 @@
 			<value level="7">-715</value>
 		</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">188</value>
@@ -2178,7 +2178,7 @@
 					<value level="7">254</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11357" levels="5" name="Spectral Link">
 		<!-- Updated to IO -->
@@ -2202,7 +2202,7 @@
 		<castRange>900</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -2226,7 +2226,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11358" levels="4" name="Spectral Ability">
 		<!-- AUTO GENERATED SKILL -->
@@ -2235,7 +2235,7 @@
 		<icon>icon.skill11277</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">3</value>
@@ -2272,7 +2272,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11359" levels="3" name="Summon Protection Stone">
 		<!-- Updated to IO -->
@@ -2292,7 +2292,7 @@
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>400000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>
 					<value level="1">13423</value>
@@ -2303,7 +2303,7 @@
 				<despawnDelay>120000</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11360" levels="3" name="Arcane Protection">
 		<!-- Updated to IO -->
@@ -2327,7 +2327,7 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>4000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#stat" />
 				<mul stat="defMCritRate" val="#stat" />
@@ -2366,7 +2366,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11361" levels="3" name="Summon Moving Portal">
 		<!-- Updated to IO -->
@@ -2386,7 +2386,7 @@
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>50000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>
 					<value level="1">13426</value>
@@ -2401,7 +2401,7 @@
 				</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11362" levels="3" name="Summon Moving Portal">
 		<!-- AUTO GENERATED SKILL -->
@@ -2433,11 +2433,11 @@
 		<cond msgId="113" addName="1">
 			<player summonedNpcIdRadius="13426;13427;13428,600,true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TeleportToNpc">
 				<npcId>13426;13427;13428</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11364" levels="3" name="Elemental Dash">
 		<!-- Updated to IO -->
@@ -2452,7 +2452,7 @@
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>4000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">15</value>
@@ -2461,7 +2461,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11365" levels="4" name="Summon Demonic Crucifix">
 		<!-- Updated to IO -->
@@ -2496,7 +2496,7 @@
 		<isMagic>1</isMagic>
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">518</value>
@@ -2519,7 +2519,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11366" levels="3" name="Spectral Curse">
 		<!-- AUTO GENERATED SKILL -->
@@ -2557,7 +2557,7 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>4000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#defCritRate" />
 				<mul stat="defMCritRate" val="#defCritRate" />
@@ -2596,7 +2596,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11368" levels="3" name="Arcane Protection">
 		<!-- Updated to IO -->
@@ -2619,7 +2619,7 @@
 		<castRange>900</castRange>
 		<reuseDelay>4000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#defCritRate" />
 				<mul stat="defMCritRate" val="#defCritRate" />
@@ -2658,7 +2658,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11369" levels="6" name="Summon Commando Cat">
 		<!-- AUTO GENERATED SKILL -->
@@ -2693,7 +2693,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15155</value>
@@ -2706,7 +2706,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11370" levels="6" name="Summon Witch Cat">
 		<!-- AUTO GENERATED SKILL -->
@@ -2741,7 +2741,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15161</value>
@@ -2754,7 +2754,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11371" levels="6" name="Summon Unicorn Lancer">
 		<!-- AUTO GENERATED SKILL -->
@@ -2789,7 +2789,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15167</value>
@@ -2802,7 +2802,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11372" levels="6" name="Summon Unicorn Cherub">
 		<!-- AUTO GENERATED SKILL -->
@@ -2837,7 +2837,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15173</value>
@@ -2850,7 +2850,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11373" levels="6" name="Summon Dark Crusader">
 		<!-- AUTO GENERATED SKILL -->
@@ -2885,7 +2885,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15179</value>
@@ -2898,7 +2898,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11374" levels="6" name="Summon Banshee Queen">
 		<!-- AUTO GENERATED SKILL -->
@@ -2933,7 +2933,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15185</value>
@@ -2946,7 +2946,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11375" levels="3" name="Commando Jumping Attack">
 		<!-- Updated to IO -->
@@ -2982,7 +2982,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">18224</value>
@@ -2996,7 +2996,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11376" levels="3" name="Commando Double Smash">
 		<!-- Updated to IO -->
@@ -3022,7 +3022,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<effectPoint>-709</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">32410</value>
@@ -3036,7 +3036,7 @@
 				<distance>50</distance>
 				<knockDown>true</knockDown>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11377" levels="3" name="Witch Cat Power">
 		<!-- Updated to IO -->
@@ -3060,7 +3060,7 @@
 			<value level="3">-3561</value>
 		</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">31903</value>
@@ -3068,7 +3068,7 @@
 					<value level="3">35175</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11378" levels="3" name="Elemental Slam">
 		<!-- Updated to IO -->
@@ -3100,7 +3100,7 @@
 			<value level="3">-3561</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">30623</value>
@@ -3113,7 +3113,7 @@
 				<speed>400</speed>
 				<distance>100</distance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11379" levels="3" name="Lancer Rush">
 		<!-- Updated to IO -->
@@ -3156,7 +3156,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">16198</value>
@@ -3165,7 +3165,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11380" levels="3" name="Power Stump">
 		<!-- Updated to IO -->
@@ -3196,7 +3196,7 @@
 		</effectPoint>
 		<reuseDelay>7000</reuseDelay>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">22677</value>
@@ -3209,7 +3209,7 @@
 				<speed>400</speed>
 				<distance>100</distance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11381" levels="3" name="Cherub Power">
 		<!-- Updated to IO -->
@@ -3233,7 +3233,7 @@
 			<value level="3">-3561</value>
 		</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">31903</value>
@@ -3241,7 +3241,7 @@
 					<value level="3">35175</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11382" levels="3" name="Multiple Icicles">
 		<!-- Updated to IO -->
@@ -3275,7 +3275,7 @@
 			<value level="3">-3561</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34449</value>
@@ -3289,7 +3289,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11383" levels="3" name="Phantom Sword Attack">
 		<!-- Updated to IO -->
@@ -3309,7 +3309,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-709</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">40502</value>
@@ -3317,7 +3317,7 @@
 					<value level="3">44654</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11384" levels="3" name="Phantom Blow">
 		<!-- Updated to IO -->
@@ -3338,7 +3338,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-709</effectPoint>
 		<reuseDelay>7000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<!-- Guessed -->
 				<chance>30</chance>
@@ -3352,7 +3352,7 @@
 				<!-- Guessed -->
 				<halfLethal>10</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11385" levels="3" name="Phantom Spike">
 		<!-- Updated to IO -->
@@ -3372,7 +3372,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-709</effectPoint>
 		<reuseDelay>7000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<!-- Guessed -->
 				<chance>30</chance>
@@ -3386,7 +3386,7 @@
 				<!-- Guessed -->
 				<halfLethal>10</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11386" levels="3" name="Phantom Crash">
 		<!-- Updated to IO -->
@@ -3405,7 +3405,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-709</effectPoint>
 		<reuseDelay>7000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">45568</value>
@@ -3413,7 +3413,7 @@
 					<value level="3">50240</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11387" levels="1" name="Arcana's Call">
 		<!-- Updated to IO -->
@@ -3434,7 +3434,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Guessed -->
 			</effect>
@@ -3447,7 +3447,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Lord of Arcana -->
@@ -3474,7 +3474,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.30" />
 			</effect>
@@ -3482,7 +3482,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11389" levels="1" name="Elemental's Call">
 		<!-- Updated to IO -->
@@ -3503,7 +3503,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Guessed -->
 				<!-- Guessed -->
@@ -3518,7 +3518,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Lord of Elemental -->
@@ -3545,7 +3545,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -3554,7 +3554,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11391" levels="1" name="Spectral's Call">
 		<!-- Updated to IO -->
@@ -3575,7 +3575,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Guessed -->
 				<!-- Guessed -->
@@ -3588,7 +3588,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Lord of Spectral -->
@@ -3615,7 +3615,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritPower" val="1.30" />
 			</effect>
@@ -3623,6 +3623,6 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

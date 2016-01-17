@@ -37,7 +37,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8711</value>
@@ -51,7 +51,7 @@
 					<value level="9">12606</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5301" levels="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -98,7 +98,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -113,7 +113,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5302" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -170,7 +170,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -197,7 +197,7 @@
 					<value level="9">338</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5303" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -254,7 +254,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -281,7 +281,7 @@
 					<value level="9">168</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5304" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -330,7 +330,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -345,7 +345,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5305" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -391,7 +391,7 @@
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -418,7 +418,7 @@
 					<value level="9">450</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5306" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -465,7 +465,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -480,7 +480,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5307" levels="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -526,7 +526,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -541,7 +541,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5308" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -597,7 +597,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -624,7 +624,7 @@
 					<value level="9">338</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5309" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -680,7 +680,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13066</value>
@@ -707,7 +707,7 @@
 					<value level="9">168</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5310" levels="9" name="Aura Burn">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
@@ -753,7 +753,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">124</value>
@@ -767,7 +767,7 @@
 					<value level="9">138</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5311" levels="9" name="Aura Flare">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 83 </table>
@@ -812,7 +812,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -827,7 +827,7 @@
 					<value level="10">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5312" levels="9" name="Blaze">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
@@ -876,7 +876,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">124</value>
@@ -890,7 +890,7 @@
 					<value level="9">138</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5313" levels="9" name="Flame Strike">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -939,7 +939,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -953,7 +953,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5314" levels="9" name="Blazing Circle">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1001,7 +1001,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2.5</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1015,7 +1015,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5315" levels="9" name="Blazing Circle">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1039,7 +1039,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1053,7 +1053,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5316" levels="9" name="Hydro Blast">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
@@ -1102,7 +1102,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">124</value>
@@ -1116,7 +1116,7 @@
 					<value level="9">138</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5317" levels="9" name="Mass Hydro Blast">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1165,7 +1165,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1179,7 +1179,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5318" levels="9" name="Frost Wall">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1227,7 +1227,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2.5</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1241,7 +1241,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5319" levels="9" name="Hurricane">
 		<effectPoint>-100</effectPoint>
@@ -1509,7 +1509,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">124</value>
@@ -1523,7 +1523,7 @@
 					<value level="9">138</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5329" levels="9" name="Unholy Blast">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1572,7 +1572,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1586,7 +1586,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5330" levels="9" name="Unholy Circle">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1634,7 +1634,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2.5</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1648,7 +1648,7 @@
 					<value level="9">83</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5331" levels="9" name="Drain Energy">
 		<castRange>600</castRange>
@@ -1684,11 +1684,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>250</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5332" levels="9" name="Mana Burn">
 		<table name="#power"> 186 192 196 199 202 205 207 207 207 </table>
@@ -1736,7 +1736,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">186</value>
@@ -1750,7 +1750,7 @@
 					<value level="9">207</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5333" levels="9" name="Poison">
 		<!-- TODO: Need to be Checked in Retail -->
@@ -1811,7 +1811,7 @@
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1826,7 +1826,7 @@
 				</power>
 			</effect>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5334" levels="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -1861,7 +1861,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -1875,7 +1875,7 @@
 					<value level="9">18380</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5335" levels="9" name="Power Shot">
 		<table name="#power"> 34070 47031 48135 48433 48691 48886 49012 49012 49012 </table>
@@ -1909,7 +1909,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34070</value>
@@ -1923,7 +1923,7 @@
 					<value level="9">49012</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5336" levels="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
@@ -1956,11 +1956,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12777</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5337" levels="9" name="Burst Shot">
 		<coolTime>800</coolTime>
@@ -2020,7 +2020,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2034,7 +2034,7 @@
 					<value level="9">18380</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5339" levels="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
@@ -2093,11 +2093,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12777</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5341" levels="9" name="Burst Shot">
 		<coolTime>800</coolTime>
@@ -2159,7 +2159,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2173,7 +2173,7 @@
 					<value level="9">18380</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5343" levels="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
@@ -2281,7 +2281,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2295,7 +2295,7 @@
 					<value level="9">18380</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5347" levels="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
@@ -2403,7 +2403,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2417,7 +2417,7 @@
 					<value level="9">18380</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5351" levels="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
@@ -2475,11 +2475,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12777</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5353" levels="9" name="Burst Shot">
 		<coolTime>800</coolTime>
@@ -2586,11 +2586,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12777</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5357" levels="9" name="Burst Shot">
 		<coolTime>800</coolTime>
@@ -2652,7 +2652,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2666,7 +2666,7 @@
 					<value level="9">18380</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5359" levels="9" name="Power Shot">
 		<table name="#power"> 34070 47031 48135 48433 48691 48886 49012 49012 49012 </table>
@@ -2702,7 +2702,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">34070</value>
@@ -2716,7 +2716,7 @@
 					<value level="9">49012</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5360" levels="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
@@ -2751,11 +2751,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12777</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5361" levels="9" name="Burst Shot">
 		<coolTime>800</coolTime>
@@ -2827,7 +2827,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2842,7 +2842,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5363" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -2899,7 +2899,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -2926,7 +2926,7 @@
 					<value level="9">338</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5364" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -2983,7 +2983,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -3010,7 +3010,7 @@
 					<value level="9">168</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5365" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -3049,10 +3049,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5366" levels="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
@@ -3098,7 +3098,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -3125,7 +3125,7 @@
 					<value level="9">450</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5367" levels="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
@@ -3163,10 +3163,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5368" levels="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -3255,7 +3255,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">12777</value>
@@ -3282,7 +3282,7 @@
 					<value level="9">338</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5370" levels="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
@@ -3370,7 +3370,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">160</value>
@@ -3384,7 +3384,7 @@
 					<value level="9">178</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5372" levels="9" name="Aura Flare">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
@@ -3429,7 +3429,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">96</value>
@@ -3443,7 +3443,7 @@
 					<value level="9">107</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5373" levels="9" name="Blaze">
 		<effectPoint>-100</effectPoint>
@@ -3516,7 +3516,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">96</value>
@@ -3530,7 +3530,7 @@
 					<value level="9">107</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5375" levels="9" name="Blazing Circle">
 		<effectPoint>-100</effectPoint>
@@ -3580,7 +3580,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">96</value>
@@ -3594,7 +3594,7 @@
 					<value level="9">107</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5377" levels="9" name="Hydro Blast">
 		<effectPoint>-100</effectPoint>
@@ -3716,9 +3716,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5381" levels="9" name="Tempest">
 		<effectPoint>-100</effectPoint>
@@ -3791,9 +3791,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2.5</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5383" levels="9" name="Rock Strike">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
@@ -3842,9 +3842,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5384" levels="9" name="Earthquake">
 		<effectPoint>-100</effectPoint>
@@ -4015,9 +4015,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5390" levels="9" name="Unholy Blast">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
@@ -4066,7 +4066,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">96</value>
@@ -4080,7 +4080,7 @@
 					<value level="9">107</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5391" levels="9" name="Unholy Circle">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
@@ -4128,7 +4128,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2.5</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">96</value>
@@ -4142,7 +4142,7 @@
 					<value level="9">107</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5392" levels="9" name="Drain Energy">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
@@ -4190,7 +4190,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">160</value>
@@ -4205,7 +4205,7 @@
 				</power>
 				<percentage>90</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5393" levels="9" name="Mana Burn">
 		<table name="#power"> 240 247 253 256 260 264 267 267 267 </table>
@@ -4253,9 +4253,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5394" levels="9" name="Poison">
 		<!-- TODO: Need to be Checked in Retail -->
@@ -4325,7 +4325,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">96</value>
@@ -4340,7 +4340,7 @@
 				</power>
 			</effect>
 			<effect name="Debuff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5395" levels="3" name="Super Might Haste">
 		<table name="#magicLvl"> 20 40 70 </table>
@@ -4379,7 +4379,7 @@
 			<value level="3">70</value>
 		</magicLvl>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="Grow">
 			</effect>
 			<effect name="PAtk">
@@ -4398,7 +4398,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5396" levels="1" name="Spell Stance">
 		<castRange>400</castRange>
@@ -4450,11 +4450,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>657</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5399" levels="1" name="Heat of Desert">
 		<!-- Confirmed CT2.5 -->
@@ -4482,10 +4482,10 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>75</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

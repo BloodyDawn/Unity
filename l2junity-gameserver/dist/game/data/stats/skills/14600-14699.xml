@@ -321,11 +321,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>100</KNOCKDOWN>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14618" levels="1" name="Knock Back Resistance">
 		<!-- Glory Days confirmed. -->
@@ -334,11 +334,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<KNOCKBACK>100</KNOCKBACK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14619" levels="1" name="Disarm Resistance">
 		<!-- Glory Days confirmed. -->
@@ -347,11 +347,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DISARM>100</DISARM>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14620" levels="4" name="Aerial Yoke Resistance 4">
 		<!-- Glory Days confirmed. -->
@@ -360,11 +360,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<AIRBIND>100</AIRBIND>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14621" levels="1" name="Pulling Resistance">
 		<!-- Glory Days confirmed. -->
@@ -373,11 +373,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PULL>100</PULL>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14622" levels="1" name="Banishment Resistance">
 		<!-- Glory Days confirmed. -->
@@ -386,11 +386,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DEPORT>100</DEPORT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14623" levels="1" name="Mutation Resistance">
 		<!-- Glory Days confirmed. -->
@@ -399,11 +399,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<CHANGEBODY>100</CHANGEBODY>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14624" levels="1" name="Apherus Dark Space">
 		<!-- AUTO GENERATED SKILL -->
@@ -450,11 +450,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>100</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14627" levels="1" name="Foul Secretion">
 		<!-- Glory Days confirmed -->
@@ -477,14 +477,14 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14628" levels="1" name="Gastric Juice Eruption">
 		<!-- Glory Days confirmed -->
@@ -509,7 +509,7 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isSuicideAttack>true</isSuicideAttack>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>100</power>
 			</effect>
@@ -519,7 +519,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14629" levels="1" name="Corpse Grinding">
 		<!-- Glory Days confirmed -->
@@ -545,7 +545,7 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>10000</power>
 			</effect>
@@ -555,7 +555,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14630" levels="1" name="Discard Decayed Branch">
 		<!-- Glory Days confirmed -->
@@ -581,7 +581,7 @@
 		<abnormalTime>1</abnormalTime>
 		<trait>KNOCKDOWN</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4912</power>
 			</effect>
@@ -592,7 +592,7 @@
 			<effect name="TargetCancel">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14631" levels="1" name="Foul Spore">
 		<!-- Glory Days confirmed -->
@@ -615,9 +615,9 @@
 		<abnormalTime>3</abnormalTime>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14632" levels="1" name="Terrifying Sword Dance">
 		<!-- Glory Days confirmed -->
@@ -637,12 +637,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14633" levels="1" name="Severed Ankle">
 		<!-- Glory Days confirmed -->
@@ -666,7 +666,7 @@
 		<abnormalTime>1</abnormalTime>
 		<trait>KNOCKDOWN</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
@@ -684,7 +684,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14634" levels="1" name="Stigma's Despair">
 		<!-- Glory Days confirmed -->
@@ -703,12 +703,12 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14635" levels="1" name="Corpse Explosion">
 		<!-- Glory Days confirmed -->
@@ -727,11 +727,11 @@
 		<attributeValue>20</attributeValue>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>75816</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14636" levels="1" name="Merciless Grip">
 		<!-- Glory Days confirmed -->
@@ -757,7 +757,7 @@
 		<abnormalTime>2</abnormalTime>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<canKill>true</canKill>
 				<power>500</power>
@@ -765,7 +765,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14637" levels="1" name="Driving Fog">
 		<!-- Glory Days confirmed -->
@@ -780,11 +780,11 @@
 		<magicLvl>87</magicLvl>
 		<affectRange>150</affectRange>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>75816</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14638" levels="1" name="Blade Claw">
 		<!-- Glory Days confirmed -->
@@ -807,12 +807,12 @@
 		<abnormalTime>5</abnormalTime>
 		<trait>BLEED</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<canKill>true</canKill>
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14639" levels="1" name="Compound Poison">
 		<!-- Glory Days confirmed -->
@@ -839,7 +839,7 @@
 		<abnormalTime>5</abnormalTime>
 		<trait>POISON</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<canKill>true</canKill>
 				<power>500</power>
@@ -850,7 +850,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14640" levels="1" name="High-speed Movement">
 		<!-- Glory Days confirmed -->
@@ -870,12 +870,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14641" levels="1" name="Earthquake">
 		<!-- Glory Days confirmed -->
@@ -892,11 +892,11 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>150</affectRange>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14642" levels="1" name="Sever">
 		<!-- Glory Days confirmed -->
@@ -919,7 +919,7 @@
 		<abnormalTime>2</abnormalTime>
 		<trait>KNOCKDOWN</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>25000</power>
 			</effect>
@@ -937,7 +937,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14643" levels="1" name="Summon">
 		<!-- Glory Days confirmed -->
@@ -970,11 +970,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>87</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>32000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14645" levels="1" name="Dark Arrow">
 		<!-- Glory Days confirmed -->
@@ -999,7 +999,7 @@
 		<abnormalTime>2</abnormalTime>
 		<trait>KNOCKDOWN</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>25272</power>
 			</effect>
@@ -1010,7 +1010,7 @@
 			<effect name="TargetCancel">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14646" levels="1" name="Polarization">
 		<!-- Glory Days confirmed -->
@@ -1034,14 +1034,14 @@
 		<abnormalTime>20</abnormalTime>
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14647" levels="1" name="Polarization">
 		<!-- Glory Days confirmed -->
@@ -1063,14 +1063,14 @@
 		<abnormalTime>20</abnormalTime>
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14648" levels="1" name="Flood">
 		<!-- Glory Days confirmed -->
@@ -1090,7 +1090,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1123,7 +1123,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14649" levels="1" name="Bounce">
 		<!-- AUTO GENERATED SKILL -->
@@ -1158,11 +1158,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>31593</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14651" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -1186,14 +1186,14 @@
 		<abnormalTime>7</abnormalTime>
 		<trait>SHOCK</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15796</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14652" levels="1" name="Blood Siphon">
 		<!-- Glory Days confirmed -->
@@ -1211,12 +1211,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>300</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14653" levels="1" name="Rigor Mortis">
 		<!-- Glory Days confirmed -->
@@ -1234,12 +1234,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<hitTime>1000</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>50000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14654" levels="1" name="Darkness Drain">
 		<!-- Glory Days confirmed -->
@@ -1255,11 +1255,11 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>1024</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14655" levels="1" name="Barrier of Reflection">
 		<!-- Glory Days confirmed -->
@@ -1277,12 +1277,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14656" levels="1" name="Corpse Lunacy">
 		<!-- Glory Days confirmed -->
@@ -1300,7 +1300,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="2" />
 			</effect>
@@ -1316,7 +1316,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Crazy After-effect -->
@@ -1343,14 +1343,14 @@
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14658" levels="1" name="Spinning Slasher">
 		<!-- Glory Days confirmed -->
@@ -1366,11 +1366,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>36675</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14659" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -1394,11 +1394,11 @@
 		<abnormalTime>7</abnormalTime>
 		<trait>SHOCK</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14660" levels="1" name="Blood Strike">
 		<!-- Glory Days confirmed -->
@@ -1414,11 +1414,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14661" levels="1" name="Darkness Wave">
 		<!-- Glory Days confirmed -->
@@ -1435,11 +1435,11 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>49414</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14662" levels="1" name="Darkness Shiver">
 		<!-- Glory Days confirmed -->
@@ -1456,11 +1456,11 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>49414</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14663" levels="1" name="Guardian's Blow">
 		<!-- Glory Days confirmed -->
@@ -1476,11 +1476,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>45844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14664" levels="1" name="Destruction Blow">
 		<!-- Glory Days confirmed -->
@@ -1496,11 +1496,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14665" levels="1" name="Ferocious Charge">
 		<!-- Glory Days confirmed -->
@@ -1526,12 +1526,12 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14666" levels="1" name="Penetrating Blow">
 		<!-- Glory Days confirmed -->
@@ -1548,11 +1548,11 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14667" levels="1" name="Flames of Judgment">
 		<!-- Glory Days confirmed -->
@@ -1572,12 +1572,12 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>318</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14668" levels="1" name="Firestorm of Judgment">
 		<!-- Glory Days confirmed -->
@@ -1599,11 +1599,11 @@
 		<affectRange>100</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>254</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14669" levels="1" name="Earth Wyrm Feeler Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1710,7 +1710,7 @@
 		<abnormalTime>1</abnormalTime>
 		<trait>PULL</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>600</delay>
@@ -1718,7 +1718,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14675" levels="1" name="Cry of Destiny - Last Judgment">
 		<!-- AUTO GENERATED SKILL -->
@@ -2234,12 +2234,12 @@
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="2">
 				<canKill>true</canKill>
 				<power>85</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14699" levels="1" name="Illusion of Pain">
 		<!-- AUTO GENERATED SKILL -->

@@ -16,7 +16,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="1.10" />
 				<add stat="cancel" val="53" /> <!-- Custom -->
@@ -44,7 +44,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11601" levels="1" name="Frenzied Daring Sonata">
 		<!-- Updated to IO -->
@@ -62,7 +62,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>696</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
 				<rate>100</rate>
@@ -103,7 +103,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11602" levels="1" name="Frenzied Refreshing Sonata">
 		<!-- Updated to IO -->
@@ -121,7 +121,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>696</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="1.10" /> <!-- Custom -->
 				<mul stat="MagicalMpConsumeRate" val="1.10" /> <!-- Custom -->
@@ -152,7 +152,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11603" levels="4" name="Mass Restriction">
 		<!-- Updated to IO -->
@@ -181,7 +181,7 @@
 		<isMagic>1</isMagic>
 		<effectPoint>-679</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="LimitHp">
@@ -211,7 +211,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11604" levels="7" name="Shocking Blow">
 		<!-- Updated to IO -->
@@ -248,12 +248,12 @@
 		<cond msgId="113" addName="1">
 			<target playable="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>INVINCIBILITY_SPECIAL;INVINCIBILITY</dispel>
 				<rate>100</rate>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11605" levels="1" name="Shield Song">
 		<!-- Updated to IO -->
@@ -267,7 +267,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>566</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyRes" val="20" />
 				<add stat="darkRes" val="20" />
@@ -281,7 +281,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11606" levels="1" name="Dance of Might">
 		<!-- Updated to IO -->
@@ -295,7 +295,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>566</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="10" />
 			</effect>
@@ -311,7 +311,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11607" levels="1" name="Prevailing Song">
 		<!-- For 5 minutes, increases party members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases magic skill MP Consumption - 10% and the magic cancel rate. -->
@@ -329,7 +329,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 				<sub stat="cancel" val="53" /> <!-- Guess -->
@@ -357,7 +357,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11608" levels="1" name="Daring Song">
 		<!-- For 5 minutes, increases party members' P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. and Casting Spd. + 8%. Decreases P. Def. - 3%, M. Def. - 11%, and P. Evasion - 4. Chance of applying 8% Vampiric Rage effect. Reflects 10% of incurred damage back to the enemy. -->
@@ -375,7 +375,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>696</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
 				<rate>100</rate>
@@ -420,7 +420,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11609" levels="1" name="Refreshing Song">
 		<!-- For 5 minutes, increases party members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
@@ -438,7 +438,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>696</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
@@ -468,7 +468,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11610" levels="1" name="Prevailing Dance">
 		<!-- For 5 minutes, increases party members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases magic skill MP Consumption - 10% and the magic cancel rate. -->
@@ -486,7 +486,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 				<sub stat="cancel" val="53" /> <!-- Guess -->
@@ -514,7 +514,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11611" levels="1" name="Daring Dance">
 		<!-- For 5 minutes, increases party members' P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. and Casting Spd. + 8%. Decreases P. Def. - 3%, M. Def. - 11%, and P. Evasion - 4. Chance of applying 8% Vampiric Rage effect. Reflects 10% of incurred damage back to the enemy. -->
@@ -532,7 +532,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>696</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
 				<rate>100</rate>
@@ -577,7 +577,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11612" levels="1" name="Refreshing Dance">
 		<!-- For 5 minutes, increases party members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
@@ -595,7 +595,7 @@
 		<magicLvl>85</magicLvl>
 		<effectPoint>696</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
@@ -625,7 +625,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11613" levels="4" name="Song of Protection">
 		<!-- Updated to IO -->
@@ -645,7 +645,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>689</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1000</value>
@@ -662,7 +662,7 @@
 				<amount>5000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11614" levels="4" name="Battle Rhapsody Dance">
 		<!-- Updated to IO -->
@@ -682,7 +682,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">50</value>
@@ -719,7 +719,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11615" levels="1" name="Battle Ditty">
 		<!-- Updated to IO -->
@@ -738,7 +738,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="10" />
 				<add stat="darkPower" val="10" />
@@ -759,7 +759,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11616" levels="1" name="Protective Ditty">
 		<!-- Updated to IO -->
@@ -778,7 +778,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>4</amount>
 				<mode>DIFF</mode>
@@ -799,7 +799,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11617" levels="1" name="Frezied Battle Ditty">
 		<!-- Updated to IO -->
@@ -818,7 +818,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="10" />
 				<add stat="darkPower" val="10" />
@@ -839,7 +839,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11618" levels="1" name="Frenzied Protective Ditty">
 		<!-- Updated to IO -->
@@ -858,7 +858,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>4</amount>
 				<mode>DIFF</mode>
@@ -879,7 +879,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11619" levels="3" name="Soul Ditty">
 		<!-- Updated to IO -->
@@ -896,7 +896,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">3</value>
@@ -961,7 +961,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11620" levels="10" name="Superior Shield Mastery">
 		<!-- Updated to IO -->
@@ -983,7 +983,7 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="#sDef" />
 			</effect>
@@ -991,7 +991,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11621" levels="1" name="Blessing Barrier">
 		<!-- Updated to IO -->
@@ -1000,7 +1000,7 @@
 		<operateType>P</operateType>
 		<magicLvl>99</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Guessed -->
 				<!-- Guessed -->
@@ -1013,7 +1013,7 @@
 				<skillId>11622</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11622" levels="1" name="Blessing Barrier">
 		<!-- Protected by a barrier. It absorbs 20000 damage for 10 seconds. -->
@@ -1026,10 +1026,10 @@
 		<targetType>ONE</targetType>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="AbsorbDamage">
 				<damage>20000</damage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

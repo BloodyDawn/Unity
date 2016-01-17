@@ -653,11 +653,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4800</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23426" levels="1" name="Physical Strike">
 		<!-- Glory Days confirmed -->
@@ -672,11 +672,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>90</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23427" levels="1" name="Physical Strike">
 		<!-- Glory Days confirmed -->
@@ -691,11 +691,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>7300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23428" levels="1" name="(Haste)">
 		<!-- Glory Days confirmed -->
@@ -715,12 +715,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23429" levels="1" name="Magic Strike">
 		<!-- Glory Days confirmed -->
@@ -741,11 +741,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>39</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23430" levels="1" name="Magic Strike">
 		<!-- Glory Days confirmed -->
@@ -766,11 +766,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>44</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23431" levels="1" name="Magic Strike">
 		<!-- Glory Days confirmed -->
@@ -791,11 +791,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>48</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23432" levels="1" name="(Radiant Heal)">
 		<!-- Glory Days confirmed -->
@@ -815,11 +815,11 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23433" levels="1" name="(Radiant Heal)">
 		<!-- Glory Days confirmed -->
@@ -839,11 +839,11 @@
 		<magicLvl>90</magicLvl>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23434" levels="1" name="(Radiant Heal)">
 		<!-- Glory Days confirmed -->
@@ -863,11 +863,11 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23435" levels="1" name="Borna Spirit">
 		<!-- Glory Days confirmed -->
@@ -881,7 +881,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<coolTime>300</coolTime>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.1" />
 			</effect>
@@ -926,7 +926,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23436" levels="3" name="Borna Spike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1148,7 +1148,7 @@
 		<abnormalLvl>13</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2416</power>
 			</effect>
@@ -1158,7 +1158,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23443" levels="1" name="Freya's Authority">
 		<!-- Glory Days confirmed -->
@@ -1176,14 +1176,14 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterRes" val="35" />
 			</effect>
 			<effect name="Buff">
 				<add stat="waterPower" val="35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23444" levels="1" name="Spezion's Authority">
 		<!-- Glory Days confirmed -->
@@ -1201,12 +1201,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23445" levels="1" name="Maliss' Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1313,7 +1313,7 @@
 		<fanRange>0;0;150;120</fanRange>
 		<reuseDelay>7000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10314</value>
@@ -1322,7 +1322,7 @@
 				</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23450" levels="3" name="(Chain Galaxy)">
 		<!-- Glory Days confirmed -->
@@ -1353,7 +1353,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">14300</value>
@@ -1368,7 +1368,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23451" levels="3" name="(Final Ultimate Defense)">
 		<!-- Glory Days confirmed -->
@@ -1397,7 +1397,7 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 				<set stat="damageCap" val="#damageCap" />
@@ -1426,7 +1426,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23452" levels="3" name="(Protection of Faith)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1544,7 +1544,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>17</cubicId>
 				<cubicLvl>
@@ -1568,7 +1568,7 @@
 				<targetType>SELF</targetType>
 				<chance>60</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="23457" levels="3" name="(Sustain)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1682,7 +1682,7 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11159</value>
@@ -1699,7 +1699,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="FocusMomentum">
 				<maxCharges>10</maxCharges>

@@ -21,7 +21,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-3</specialLevel>
 		<targetType>CORPSE_MOB</targetType>
-		<for>
+		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MAtk">
 				<amount>45</amount>
@@ -47,7 +47,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
@@ -79,9 +79,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22102" levels="1" name="Soul Magic Box">
 		<!-- Confirmed CT2.5 -->
@@ -103,12 +103,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>20623</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22103" levels="1" name="Blessed Scroll of Escape (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -131,11 +131,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22104" levels="1" name="Blessed Scroll of Resurrection (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -156,11 +156,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22105" levels="1" name="Summon Scroll: Uldie (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -185,12 +185,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>20</npcId>
 				<randomOffset>40</randomOffset>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22106" levels="1" name="Summon Scroll: Belldandy (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -215,12 +215,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>21</npcId>
 				<randomOffset>40</randomOffset>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22107" levels="1" name="Summon Scroll: Skooldie (Event)">
 		<!-- Confirmed CT2.5 -->
@@ -245,12 +245,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>19</npcId>
 				<randomOffset>40</randomOffset>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22108" levels="1" name="Halloween Toy Box">
 		<!-- Confirmed CT2.5 -->
@@ -271,9 +271,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22109" levels="1" name="Shiny Halloween Toy Box">
 		<!-- Confirmed CT2.5 -->
@@ -294,9 +294,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22110" levels="1" name="Summon Lucky Lamp">
 		<!-- Confirmed CT2.5 -->
@@ -310,12 +310,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>22</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22111" levels="1" name="Summon Environment Lamp">
 		<!-- Confirmed CT2.5 -->
@@ -329,12 +329,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>23</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22112" levels="1" name="Summon Rolling Lamp">
 		<!-- Confirmed CT2.5 -->
@@ -348,12 +348,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>24</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22113" levels="1" name="Summon Comfort Sky Lantern">
 		<!-- Confirmed CT2.5 -->
@@ -367,12 +367,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>25</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22114" levels="1" name="Transformation Scroll Pack">
 		<!-- Confirmed CT2.5 -->
@@ -393,9 +393,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22115" levels="1" name="Santa's Weapon Exchange Ticket Box">
 		<!-- Confirmed CT2.5 -->
@@ -418,9 +418,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22116" levels="1" name="Summon Flame Box">
 		<!-- Confirmed CT2.5 -->
@@ -434,12 +434,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>29</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22117" levels="1" name="Flame Box Firecracker">
 		<icon>icon.skill0788</icon>
@@ -468,7 +468,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>40</amount>
 				<mode>PER</mode>
@@ -481,7 +481,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22119" levels="1" name="Love for All Seasons">
 		<!-- Confirmed CT2.5 -->
@@ -502,7 +502,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
@@ -510,7 +510,7 @@
 				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22120" levels="1" name="Happy New Year">
 		<!-- Confirmed CT2.5 -->
@@ -531,7 +531,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -543,7 +543,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22121" levels="1" name="Female Aniruddha">
 		<!-- Confirmed CT2.5 -->
@@ -564,7 +564,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="sDef" val="15" />
 			</effect>
@@ -576,7 +576,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22122" levels="1" name="Kung Hei Fat Choy">
 		<!-- Confirmed CT2.5 -->
@@ -597,7 +597,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.08" />
 			</effect>
@@ -633,7 +633,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22123" levels="1" name="Chinese Feast">
 		<!-- Confirmed CT2.5 -->
@@ -654,7 +654,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="DanceMpConsumeRate" val="0.8" />
 				<mul stat="MagicalMpConsumeRate" val="0.8" />
@@ -668,7 +668,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22124" levels="1" name="Hwa Gei Bu Gwi">
 		<!-- Confirmed CT2.5 -->
@@ -689,7 +689,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
@@ -697,7 +697,7 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22125" levels="1" name="Fire Stamp">
 		<!-- Confirmed CT2.5 -->
@@ -718,7 +718,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
@@ -731,7 +731,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22126" levels="1" name="Baby Food Skill">
 		<!-- TODO: Implement. -->
@@ -767,13 +767,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>127</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>7200</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22128" levels="3" name="Rudolph's Joy">
 		<!-- Confirmed CT2.5 -->
@@ -800,7 +800,7 @@
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">10</value>
@@ -817,7 +817,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22129" levels="1" name="Red Dimensional Stone">
 		<!-- TODO: Implement. -->
@@ -873,12 +873,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="1" />
 				<add stat="waterRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22132" levels="1" name="Gold Fireworks">
 		<!-- Confirmed CT2.5 -->
@@ -899,12 +899,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="CON" val="1" />
 				<add stat="holyRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22133" levels="1" name="Blue Fireworks">
 		<!-- Confirmed CT2.5 -->
@@ -925,12 +925,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="DEX" val="1" />
 				<add stat="fireRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22134" levels="1" name="Pink Fireworks">
 		<!-- Confirmed CT2.5 -->
@@ -951,12 +951,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="MEN" val="1" />
 				<add stat="earthRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22135" levels="1" name="White Firework">
 		<!-- Confirmed CT2.5 -->
@@ -977,12 +977,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="WIT" val="1" />
 				<add stat="windRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22136" levels="1" name="Silver Fireworks">
 		<!-- Confirmed CT2.5 -->
@@ -1003,12 +1003,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="1" />
 				<add stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22137" levels="1" name="Star Food">
 		<!-- Confirmed CT2.5 -->
@@ -1022,11 +1022,11 @@
 		<reuseDelay>3600000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22138" levels="1" name="Mango Dessert">
 		<!-- Confirmed CT2.5 -->
@@ -1043,11 +1043,11 @@
 		<reuseDelay>3600000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22139" levels="1" name="Branding Wind Walk">
 		<!-- Confirmed CT2.5 -->
@@ -1065,12 +1065,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22140" levels="1" name="Hwa Gei Bu Gwi Haste">
 		<!-- Confirmed CT2.5 -->
@@ -1088,12 +1088,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22141" levels="1" name="Branding Agility">
 		<!-- Confirmed CT2.5 -->
@@ -1111,12 +1111,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22142" levels="1" name="Female Aniruddha's Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1134,12 +1134,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22143" levels="1" name="Happy New Year Death Whisper">
 		<!-- Confirmed CT2.5 -->
@@ -1157,11 +1157,11 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22144" levels="1" name="Happy New Year Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -1179,12 +1179,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22145" levels="1" name="Love for All Seasons Empower">
 		<!-- Confirmed CT2.5 -->
@@ -1202,12 +1202,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22146" levels="1" name="Chinese Feast Greater Acumen">
 		<!-- Confirmed CT2.5 -->
@@ -1225,12 +1225,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22147" levels="1" name="Kung Hei Fat Choy Vampiric Rage">
 		<!-- Confirmed CT2.5 -->
@@ -1248,12 +1248,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22148" levels="1" name="Branding Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -1271,12 +1271,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22149" levels="1" name="Kung Hei Fat Choy Berserker Spirit">
 		<!-- Confirmed CT2.5 -->
@@ -1294,7 +1294,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -1323,7 +1323,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22150" levels="1" name="Female Aniruddha's Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -1341,12 +1341,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22151" levels="1" name="Chinese Feast Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -1364,12 +1364,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22152" levels="1" name="Chinese Feast Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -1387,13 +1387,13 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="DanceMpConsumeRate" val="0.8" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22153" levels="1" name="Love for All Seasons Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1411,11 +1411,11 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22154" levels="1" name="Happy New Year Focus">
 		<!-- Confirmed CT2.5 -->
@@ -1433,11 +1433,11 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22155" levels="1" name="Female Aniruddha's Blessed Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1455,12 +1455,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>15</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22156" levels="1" name="Hwa Gei Bu Gwi Decrease Weight">
 		<!-- Confirmed CT2.5 -->
@@ -1478,11 +1478,11 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22157" levels="1" name="Kung Hei Fat Choy Might">
 		<!-- Confirmed CT2.5 -->
@@ -1500,12 +1500,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22158" levels="10" name="Rose Petal">
 		<!-- Confirmed CT2.5 -->
@@ -1549,7 +1549,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -1558,7 +1558,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22159" levels="1" name="Vesper's Mighty Power">
 		<!-- Increases P. Atk. by 15%, M. Atk. by 20% and Speed by 10 for 10 minutes. -->
@@ -1579,7 +1579,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -1592,7 +1592,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22160" levels="1" name="Vesper's Critical Damage">
 		<!-- Increases Physical critical attack rate by 15, Magical critical attack rate by 2 and Speed by 10 for 10 minutes. 5% of the standard short-range physical damage inflicted on the enemy is recovered as HP. -->
@@ -1613,7 +1613,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="15" />
 				<add stat="mCritRate" val="2" />
@@ -1626,7 +1626,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22161" levels="1" name="Invincible Vesper">
 		<!-- Increases Atk. Spd. by 20%, Casting Spd. by 20% and Speed by 20 for 10 minutes. -->
@@ -1647,7 +1647,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
@@ -1660,7 +1660,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22162" levels="1" name="Mt. Fuji Herb">
 		<!-- Confirmed CT2.5 -->
@@ -1682,11 +1682,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22163" levels="1" name="Hawk Herb">
 		<!-- Confirmed CT2.5 -->
@@ -1706,7 +1706,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.1" />
 			</effect>
@@ -1714,7 +1714,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22164" levels="1" name="Eggplant Herb">
 		<!-- Confirmed CT2.5 -->
@@ -1734,7 +1734,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
@@ -1742,7 +1742,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22165" levels="1" name="Replenish Energy">
 		<!-- 5000 Soul Avatar Energy is replenished. -->
@@ -1789,9 +1789,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22168" levels="1" name="Thirst for Victory Quenching Juice">
 		<!-- Replenishes an Agathion's energy by 2500 -->
@@ -1827,9 +1827,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22170" levels="1" name="Hardin's Protection">
 		<!-- Maximies P. Def. for 10 seconds. -->
@@ -1937,12 +1937,12 @@
 		<cond>
 			<player hp="30" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallSkill">
 				<skillId>23214</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22176" levels="1" name="State of the Mind">
 		<!-- Confirmed CT2.5 -->
@@ -1954,12 +1954,12 @@
 		<cond>
 			<player mp="10" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallSkill">
 				<skillId>23215</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22177" levels="1" name="Warrior's Breath">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1988,14 +1988,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>500</power>
 			</effect>
 			<effect name="ManaHeal">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22179" levels="1" name="Fortuna of Chaos">
 		<!-- Confirmed CT2.5 -->
@@ -2019,9 +2019,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22180" levels="1" name="Wondrous Cubic - 1 time use">
 		<!-- High Five Skill -->
@@ -2043,9 +2043,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="22181" levels="1" name="Refined Cube - 1 time use">
 		<!-- none -->
@@ -2080,11 +2080,11 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22183" levels="1" name="Transformation Scroll: Dragon Master Lee">
 		<!-- High Five Skill -->
@@ -2102,11 +2102,11 @@
 		<icon>icon.skilltransform1</icon>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>20005</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22184" levels="1" name="Transformation Scroll: Dragon Master Karin">
 		<!-- High Five Skill -->
@@ -2124,11 +2124,11 @@
 		<icon>icon.skilltransform1</icon>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>20006</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22185" levels="1" name="Shiny Lighting">
 		<!-- Lighting shines brightly above the character's head. -->
@@ -2215,11 +2215,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>127</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22191" levels="1" name="Transformation Scroll: Onyx Beast">
 		<!-- Transformed into an Onyx Beast. -->

@@ -22,11 +22,11 @@
 				<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>21365.2</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11001" levels="10" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
@@ -47,7 +47,7 @@
 		<icon>icon.skill11251</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
@@ -74,7 +74,7 @@
 				<amount>23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11002" levels="10" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
@@ -95,7 +95,7 @@
 		<icon>icon.skill11252</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="4447">
 					<using kind="MAGIC" />
@@ -126,7 +126,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11003" levels="10" name="Superior Anti Magic">
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
@@ -147,7 +147,7 @@
 		<icon>icon.skill10004</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="magicSuccRes" val="1.35" />
 				<add stat="INT" val="2" />
@@ -167,7 +167,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11004" levels="1" name="Superior Sigil Mastery">
 		<!-- When a Sigil is equipped, increases M. Atk. by 5% and MP Recovery Bonus by 20%. -->
@@ -176,7 +176,7 @@
 		<icon>icon.skill11791</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -191,7 +191,7 @@
 					<item>SIGIL</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11005" levels="1" name="Superior Wizard Mastery">
 		<!-- Glory Days confirmed -->
@@ -201,7 +201,7 @@
 		<icon>icon.skill11253</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
@@ -215,7 +215,7 @@
 				<amount>6</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11006" levels="1" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -225,7 +225,7 @@
 		<icon>icon.skill11006</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 			</effect>
@@ -235,7 +235,7 @@
 				<BLEED>30</BLEED>
 				<DERANGEMENT>30</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11007" levels="1" name="Fire Stance">
 		<!-- Updated to IO -->
@@ -397,7 +397,7 @@
 			<skill requiredId="11009" id="11014" /> <!-- Wind Stance / Elemental Spike (Wind) -->
 			<skill requiredId="11010" id="11015" /> <!-- Earth Stance / Elemental Spike (Earth) -->
 		</attachSkillList>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -414,7 +414,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11012" levels="11" name="Elemental Spike (Fire)">
 		<!-- Updated to IO -->
@@ -473,7 +473,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -490,7 +490,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11013" levels="11" name="Elemental Spike (Water)">
 		<!-- Updated to IO -->
@@ -549,7 +549,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -566,7 +566,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11014" levels="11" name="Elemental Spike (Wind)">
 		<!-- Updated to IO -->
@@ -625,7 +625,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -642,7 +642,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11015" levels="11" name="Elemental Spike (Earth)">
 		<!-- Updated to IO -->
@@ -701,7 +701,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -718,7 +718,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11016" levels="11" name="Elemental Spike (4 Elements)">
 		<!-- Updated to IO -->
@@ -776,7 +776,7 @@
 		<magicCriticalRate>6</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -793,7 +793,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11017" levels="11" name="Elemental Crash">
 		<!-- Updated to IO -->
@@ -860,7 +860,7 @@
 			<skill requiredId="11009" id="11020" /> <!-- Wind Stance / Elemental Crash (Wind) -->
 			<skill requiredId="11010" id="11021" /> <!-- Earth Stance / Elemental Crash (Earth) -->
 		</attachSkillList>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">158</value>
@@ -877,7 +877,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11018" levels="11" name="Elemental Crash (Fire)">
 		<!-- Updated to IO -->
@@ -937,7 +937,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">158</value>
@@ -954,7 +954,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11019" levels="11" name="Elemental Crash (Water)">
 		<!-- Updated to IO -->
@@ -1014,7 +1014,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">158</value>
@@ -1031,7 +1031,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11020" levels="11" name="Elemental Crash (Wind)">
 		<!-- Updated to IO -->
@@ -1091,7 +1091,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">158</value>
@@ -1108,7 +1108,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11021" levels="11" name="Elemental Crash (Earth)">
 		<!-- Updated to IO -->
@@ -1168,7 +1168,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">158</value>
@@ -1185,7 +1185,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11022" levels="11" name="Elemental Crash (4 Elements)">
 		<!-- Updated to IO -->
@@ -1245,7 +1245,7 @@
 		<hitCancelTime>0.8</hitCancelTime>
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">158</value>
@@ -1262,7 +1262,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11023" levels="11" name="Elemental Destruction">
 		<!-- Updated to IO -->
@@ -1329,7 +1329,7 @@
 			<skill requiredId="11009" id="11026" /> <!-- Wind Stance / Elemental Destruction (Wind) -->
 			<skill requiredId="11010" id="11027" /> <!-- Earth Stance / Elemental Destruction (Earth) -->
 		</attachSkillList>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">431</value>
@@ -1346,7 +1346,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11024" levels="11" name="Elemental Destruction (Fire)">
 		<!-- Updated to IO -->
@@ -1405,7 +1405,7 @@
 			<value level="11">-721</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">431</value>
@@ -1422,7 +1422,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11025" levels="11" name="Elemental Destruction (Water)">
 		<!-- Updated to IO -->
@@ -1481,7 +1481,7 @@
 			<value level="11">-721</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">431</value>
@@ -1498,7 +1498,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11026" levels="11" name="Elemental Destruction (Wind)">
 		<!-- Updated to IO -->
@@ -1557,7 +1557,7 @@
 			<value level="11">-721</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">431</value>
@@ -1574,7 +1574,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11027" levels="11" name="Elemental Destruction (Earth)">
 		<!-- Updated to IO -->
@@ -1633,7 +1633,7 @@
 			<value level="11">-721</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">431</value>
@@ -1650,7 +1650,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11028" levels="11" name="Elemental Destruction (4 Elements)">
 		<!-- Updated to IO -->
@@ -1711,7 +1711,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">431</value>
@@ -1728,7 +1728,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11029" levels="5" name="Death Breath">
 		<!-- Updated to IO -->
@@ -1773,7 +1773,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">480</value>
@@ -1783,7 +1783,7 @@
 					<value level="5">537</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11030" levels="4" name="Death Lord">
 		<!-- Updated to IO -->
@@ -1884,7 +1884,7 @@
 			<value level="7">105</value>
 		</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">157</value>
@@ -1902,7 +1902,7 @@
 				<distance>200</distance>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11033" levels="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
@@ -1929,7 +1929,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>114</power>
 				<overHit>true</overHit>
@@ -1944,7 +1944,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
 		<!-- Updated to IO -->
@@ -2003,7 +2003,7 @@
 			<skill requiredId="11009" id="11037" /> <!-- Wind Stance / Elemental Blast (Wind) -->
 			<skill requiredId="11010" id="11038" /> <!-- Earth Stance / Elemental Blast (Earth) -->
 		</attachSkillList>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">210</value>
@@ -2017,7 +2017,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11035" levels="8" name="Elemental Blast (Fire)">
 		<!-- Updated to IO -->
@@ -2069,7 +2069,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">210</value>
@@ -2083,7 +2083,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11036" levels="8" name="Elemental Blast (Water)">
 		<!-- Updated to IO -->
@@ -2135,7 +2135,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">210</value>
@@ -2149,7 +2149,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11037" levels="8" name="Elemental Blast (Wind)">
 		<!-- Updated to IO -->
@@ -2200,7 +2200,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">210</value>
@@ -2214,7 +2214,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11038" levels="8" name="Elemental Blast (Earth)">
 		<!-- Updated to IO -->
@@ -2266,7 +2266,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">210</value>
@@ -2280,7 +2280,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11039" levels="8" name="Elemental Blast (4 Elements)">
 		<!-- Updated to IO -->
@@ -2333,7 +2333,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">210</value>
@@ -2347,7 +2347,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11040" levels="8" name="Elemental Storm">
 		<!-- Updated to IO -->
@@ -2406,7 +2406,7 @@
 			<skill requiredId="11009" id="11043" /> <!-- Wind Stance / Elemental Storm (Wind) -->
 			<skill requiredId="11010" id="11044" /> <!-- Earth Stance / Elemental Storm (Earth) -->
 		</attachSkillList>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">262</value>
@@ -2420,7 +2420,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11041" levels="8" name="Elemental Storm (Fire)">
 		<!-- Updated to IO -->
@@ -2472,7 +2472,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">262</value>
@@ -2486,7 +2486,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11042" levels="8" name="Elemental Storm (Water)">
 		<!-- Updated to IO -->
@@ -2538,7 +2538,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">262</value>
@@ -2552,7 +2552,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11043" levels="8" name="Elemental Storm (Wind)">
 		<!-- Updated to IO -->
@@ -2604,7 +2604,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">262</value>
@@ -2618,7 +2618,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11044" levels="8" name="Elemental Storm (Earth)">
 		<!-- Updated to IO -->
@@ -2670,7 +2670,7 @@
 			<value level="8">-712</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">262</value>
@@ -2684,7 +2684,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
 		<!-- Updated to IO -->
@@ -2737,7 +2737,7 @@
 		<magicCriticalRate>11</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">262</value>
@@ -2751,7 +2751,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11046" levels="2" name="Wizard Spirit">
 		<!-- Updated to IO -->
@@ -2784,7 +2784,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="mCritRate" val="#mCritRate" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
@@ -2818,7 +2818,7 @@
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11047" levels="9" name="Devil's Curse">
 		<!-- Updated to IO -->
@@ -2886,7 +2886,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">157</value>
@@ -2928,7 +2928,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11048" levels="9" name="Mass Devil's Curse">
 		<!-- Updated to IO -->
@@ -2987,7 +2987,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">125</value>
@@ -3030,7 +3030,7 @@
 				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11049" levels="5" name="Ignore Divinity">
 		<!-- Glory Days confirmed -->
@@ -3068,7 +3068,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>60</rate>
@@ -3080,7 +3080,7 @@
 					<value level="5">2</value>
 				</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11050" levels="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
@@ -3134,7 +3134,7 @@
 		<reuseDelayGroup>11050</reuseDelayGroup>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -3148,7 +3148,7 @@
 				<DERANGEMENT>100</DERANGEMENT>
 				<KNOCKBACK>100</KNOCKBACK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11051" levels="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
@@ -3202,7 +3202,7 @@
 		<reuseDelayGroup>11050</reuseDelayGroup>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -3216,7 +3216,7 @@
 				<DERANGEMENT>100</DERANGEMENT>
 				<KNOCKBACK>100</KNOCKBACK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11052" levels="7" name="Mass Hell Binding">
 		<!-- Glory Days confirmed -->
@@ -3336,7 +3336,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -3354,7 +3354,7 @@
 				<SLEEP>100</SLEEP>
 				<AIRBIND>100</AIRBIND>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11055" levels="10" name="Death Fear">
 		<!-- Updated to IO -->
@@ -3416,7 +3416,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
@@ -3447,7 +3447,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11056" levels="11" name="Mass Death Fear">
 		<!-- Updated to IO -->
@@ -3514,7 +3514,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
@@ -3546,7 +3546,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11057" levels="9" name="Magical Evasion">
 		<!-- Updated to IO -->
@@ -3605,7 +3605,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -3621,7 +3621,7 @@
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
@@ -3670,7 +3670,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PULL</trait>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>
 					<value level="1">13323</value>
@@ -3682,7 +3682,7 @@
 				</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11059" levels="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
 		<!-- Glory Days confirmed -->
@@ -3710,14 +3710,14 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11062" levels="4" name="Air Rider">
 		<!-- Updated to IO -->
@@ -3754,7 +3754,7 @@
 		<removedOnDamage>true</removedOnDamage>
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Floating Blow -->
 				<attackerType>L2Playable</attackerType>
@@ -3775,7 +3775,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11063" levels="1" name="Floating Blow">
 		<!-- Glory Days confirmed -->
@@ -3787,11 +3787,11 @@
 		<magicLvl>97</magicLvl>
 		<targetType>SELF</targetType>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP_SPECIAL,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11064" levels="11" name="Ultimate Body To Mind">
 		<!-- Updated to IO -->
@@ -3846,7 +3846,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>
 					<value level="1">400</value>
@@ -3862,7 +3862,7 @@
 					<value level="11">655</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11065" levels="1" name="Arcane Barrier">
 		<!-- Updated to IO -->
@@ -3885,7 +3885,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="manaShield" val="90" />
 			</effect>
@@ -3893,7 +3893,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11066" levels="4" name="Unleash Hell">
 		<!-- Updated to IO -->
@@ -3932,7 +3932,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">620</value>
@@ -3953,7 +3953,7 @@
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11067" levels="4" name="Death Mass Unleash Hell">
 		<!-- Updated to IO -->
@@ -3994,7 +3994,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">620</value>
@@ -4014,7 +4014,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11068" levels="4" name="Double Casting">
 		<!-- Updated to IO -->
@@ -4047,7 +4047,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<!-- TODO please change/remove this shit effect -->
 			<effect name="VisualBuff">
 				<skillId1>11007</skillId1>
@@ -4064,7 +4064,7 @@
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 				<sub stat="cancel" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11072" levels="1" name="Fire - Elemental Spike">
 		<!-- Updated to IO -->
@@ -4075,7 +4075,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Fire) -->
 				<!-- Elemental Spike (Fire) -->
@@ -4086,7 +4086,7 @@
 				<chance>99</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11073" levels="1" name="Water - Elemental Spike">
 		<!-- Updated to IO -->
@@ -4097,7 +4097,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Water) -->
 				<!-- Elemental Spike (Water) -->
@@ -4108,7 +4108,7 @@
 				<chance>99</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11074" levels="1" name="Wind - Elemental Spike">
 		<!-- Updated to IO -->
@@ -4119,7 +4119,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Wind) -->
 				<!-- Decrease Wind Resistance -->
@@ -4130,7 +4130,7 @@
 				<chance>99</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11075" levels="1" name="Earth - Elemental Spike">
 		<!-- Updated to IO -->
@@ -4141,7 +4141,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Earth) -->
 				<!-- Decrease Earth Resistance -->
@@ -4152,7 +4152,7 @@
 				<chance>99</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11076" levels="1" name="Double Casting - Elemental Spike">
 		<!-- Updated to IO -->
@@ -4163,7 +4163,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (4 Elements) -->
 				<!-- Decrease Fire/Water/Wind/Earth Resistance -->
@@ -4174,7 +4174,7 @@
 				<chance>99</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11077" levels="3" name="Decrease Fire Resistance">
 		<!-- Updated to IO -->
@@ -4201,14 +4201,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="fireRes" val="#fireRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11078" levels="3" name="Decrease Water Resistance">
 		<!-- Updated to IO -->
@@ -4235,14 +4235,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="waterRes" val="#waterRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11079" levels="3" name="Decrease Wind Resistance">
 		<!-- Updated to IO -->
@@ -4269,14 +4269,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="windRes" val="#windRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
 		<!-- Updated to IO -->
@@ -4301,14 +4301,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="earthRes" val="#earthRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_HOLY,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
 		<!-- Updated to IO -->
@@ -4333,7 +4333,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="fireRes" val="#allRes" />
 				<sub stat="waterRes" val="#allRes" />
@@ -4343,7 +4343,7 @@
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11082" levels="1" name="Fire - Elemental Crash">
 		<!-- Updated to IO -->
@@ -4354,7 +4354,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Fire) -->
 				<!-- Elemental Crash (Fire) -->
@@ -4365,7 +4365,7 @@
 				<chance>30</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11083" levels="1" name="Water - Elemental Crash">
 		<!-- Updated to IO -->
@@ -4376,7 +4376,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Water) -->
 				<!-- Elemental Crash (Water) -->
@@ -4387,7 +4387,7 @@
 				<chance>99</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11084" levels="1" name="Wind - Elemental Crash">
 		<!-- Updated to IO -->
@@ -4398,7 +4398,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Wind) -->
 				<!-- Elemental Crash (Wind) -->
@@ -4409,7 +4409,7 @@
 				<chance>50</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11085" levels="1" name="Earth - Elemental Crash">
 		<!-- Updated to IO -->
@@ -4420,7 +4420,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Earth) -->
 				<!-- Elemental Crash (Earth) -->
@@ -4431,7 +4431,7 @@
 				<chance>40</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11086" levels="1" name="Double Casting - Elemental Crash">
 		<!-- Updated to IO -->
@@ -4442,7 +4442,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (4 Elements) -->
 				<!-- Elemental Crash (4 Elements) -->
@@ -4453,7 +4453,7 @@
 				<chance>30</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11087" levels="3" name="Elemental Crash (Fire)">
 		<!-- Updated to IO -->
@@ -4479,7 +4479,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Root" />
@@ -4500,7 +4500,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11088" levels="3" name="Elemental Crash (Water)">
 		<!-- Updated to IO -->
@@ -4526,7 +4526,7 @@
 		<magicLvl>85</magicLvl>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -4537,7 +4537,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11089" levels="3" name="Elemental Crash (Wind)">
 		<!-- Updated to IO -->
@@ -4559,12 +4559,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>600</speed>
 				<distance>100</distance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11090" levels="3" name="Elemental Crash (Earth)">
 		<!-- Updated to IO -->
@@ -4590,9 +4590,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11091" levels="3" name="Elemental Crash (4 Elements)">
 		<!-- Updated to IO -->
@@ -4618,9 +4618,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11092" levels="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
@@ -4647,7 +4647,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>139</power>
 				<overHit>true</overHit>
@@ -4662,7 +4662,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
 		<!-- Updated to IO -->
@@ -4685,7 +4685,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="HealOverTime" ticks="1">
 				<power>266</power>
@@ -4702,7 +4702,7 @@
 				<BLEED>100</BLEED>
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11094" levels="9" name="Magical Charge">
 		<!-- Updated to IO -->
@@ -4761,7 +4761,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">133</value>
@@ -4777,7 +4777,7 @@
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Blink">
 				<!-- Teleport to Front -->
@@ -4803,11 +4803,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>87</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="AbnormalTimeChange">
 				<slot>CHANGEBODY;DISARM;PARALYZE;ROOT_MAGICALLY;SILENCE;SLEEP;STUN;TURN_FLEE;TURN_STONE</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11096" levels="1" name="Elemental Destruction: Fire">
 		<!-- Updated to IO -->
@@ -4815,7 +4815,7 @@
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Fire) -->
 				<!-- Elemental Destruction: Fire -->
@@ -4824,7 +4824,7 @@
 				<skillLevel>1</skillLevel>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11097" levels="1" name="Elemental Destruction: Water">
 		<!-- Updated to IO -->
@@ -4832,7 +4832,7 @@
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Water) -->
 				<!-- Elemental Destruction: Water -->
@@ -4841,7 +4841,7 @@
 				<skillLevel>1</skillLevel>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11098" levels="1" name="Elemental Destruction: Wind">
 		<!-- Updated to IO -->
@@ -4849,7 +4849,7 @@
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Wind) -->
 				<!-- Elemental Destruction: Wind -->
@@ -4858,7 +4858,7 @@
 				<skillLevel>1</skillLevel>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11099" levels="1" name="Elemental Destruction: Earth">
 		<!-- Updated to IO -->
@@ -4866,7 +4866,7 @@
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Earth) -->
 				<!-- Elemental Destruction: Earth -->
@@ -4875,6 +4875,6 @@
 				<skillLevel>1</skillLevel>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

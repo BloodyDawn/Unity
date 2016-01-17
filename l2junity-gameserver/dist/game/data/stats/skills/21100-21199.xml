@@ -19,7 +19,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
@@ -35,7 +35,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21101" levels="1" name="Blessed Escape">
 		<!-- Can use the ability of Blessed Return. Reuse Delay 12 hours. -->
@@ -58,11 +58,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21102" levels="1" name="Blessed Resurrection">
 		<!-- Can use the ability of Blessed Resurrection. Reuse Delay 12 hours. -->
@@ -82,11 +82,11 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21103" levels="1" name="Great Adventurer's Soul Power : Endless">
 		<!-- For five minutes, the Great Spirit increases maximum HP by 20%, maximum MP by 20%, moving speed by 20%, and resistance against debuff by 10%. -->
@@ -107,7 +107,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -123,7 +123,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21104" levels="1" name="Appetite for Destruction">
 		<!-- For 30 seconds, awakens destruction instinct and increases P.Atk./Critical rate/Critical damage by 50%. -->
@@ -157,11 +157,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1529</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21106" levels="1" name="Release Agathion's Seal - Lucky Boy">
 		<!-- Confirmed CT2.5 -->
@@ -174,11 +174,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1530</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21107" levels="1" name="Release Agathion's Seal - Dancing Lucky Kid">
 		<!-- Confirmed CT2.5 -->
@@ -191,11 +191,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1531</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21108" levels="1" name="Release Agathion's Seal - Monkey King">
 		<!-- Confirmed CT2.5 -->
@@ -208,11 +208,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1532</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21109" levels="1" name="Release Agathion's Seal - Uthanka">
 		<!-- Confirmed CT2.5 -->
@@ -225,11 +225,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1533</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21110" levels="1" name="Release Agathion's Seal - Bonus B">
 		<!-- Confirmed CT2.5 -->
@@ -242,11 +242,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1534</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21111" levels="1" name="Great Adventurer's Soul Power: Resilience">
 		<!-- Increase max HP 20%, max MP 20%, Spd. 20% with help of a spirit for 5 minutes. Increase resistance by 10% against debuff. Reuse Delay 1 hour. -->
@@ -267,7 +267,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -283,7 +283,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21112" levels="1" name="Great Warrior's Soul Power: Strength">
 		<!-- Increase attack speed by 20%, P. Atk by 10%, P. Def. by 20% with help of a spirit for 5 minutes. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on the enemy. Reuse Delay 1 hour. -->
@@ -304,7 +304,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
@@ -321,7 +321,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21113" levels="1" name="Great Wizard's Soul Power: Acuity">
 		<!-- Increase Casting Speed by 20%, Magic Power by 20%, Magic Def. by 20% with help of a spirit for 5 minutes. Reduce consumed MP for skill usage by 5%. Reuse Delay 1 hour. -->
@@ -342,7 +342,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
@@ -358,7 +358,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21114" levels="1" name="Great Adventurer's Soul Power: Resilience">
 		<!-- Increase max HP 20%, max MP 20%, Spd. 20% with help of a spirit for 5 minutes. Increase resistance by 10% against debuff. Reuse Delay 1 hour. -->
@@ -379,7 +379,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="10" />
 			</effect>
@@ -395,7 +395,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21115" levels="1" name="Great Warrior's Soul Power: Strength">
 		<!-- Increase attack speed by 20%, P. Atk by 10%, P. Def. by 20% with help of a spirit for 5 minutes. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on the enemy. Reuse Delay 1 hour. -->
@@ -416,7 +416,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
@@ -433,7 +433,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21116" levels="1" name="Great Wizard's Soul Power: Acuity">
 		<!-- Increase Casting Speed by 20%, Magic Power by 20%, Magic Def. by 20% with help of a spirit for 5 minutes. Reduce consumed MP for skill usage by 5%. Reuse Delay 1 hour. -->
@@ -454,7 +454,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
@@ -470,7 +470,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21117" levels="1" name="Great Adventurer's Soul Power : Immortality">
 		<!-- Increase max HP 20%, max MP 20%, Spd. 20% with help of a spirit for 5 minutes. Increase HP recovery bonus by 20%, MP recovery bonus by 20%. Reuse Delay 1 hour. -->
@@ -491,7 +491,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -512,7 +512,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21118" levels="1" name="Great Warrior's Soul Power: Destruction">
 		<!-- Increase attack speed by 20%, P. Atk by 10%, P. Def. by 20% with help of a spirit for 5 minutes. Increase power of Critical Attack by 20%, Chance of Critical Attack by 20%. Reuse Delay 1 hour. -->
@@ -533,7 +533,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 			</effect>
@@ -553,7 +553,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21119" levels="1" name="Great Wizard's Soul Power: Brilliance">
 		<!-- Increase Casting Speed by 20%, Magic Power by 20%, Magic Def. by 20% with help of a spirit for 5 minutes. Increase power of Prominent Damage caused with damage magic by 20%, chance of Prominent Damage caused with damage magic by 2. Reuse Delay 1 hour. -->
@@ -574,7 +574,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<mul stat="mCritPower" val="1.2" />
@@ -591,7 +591,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21120" levels="1" name="Jack O'Lantern Card">
 		<!-- Confirmed CT2.5 -->
@@ -644,7 +644,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -664,7 +664,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21123" levels="1" name="Blessing of Skooldy : Protection of Darkness">
 		<!-- Increase max HP by 20%, max MP by 20%, physical Def. by 20%, magic Def. by 20% for 1 hour. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -687,7 +687,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -707,7 +707,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21124" levels="1" name="Blessing of Skooldy : Protection of Darkness">
 		<!-- Increase max HP by 20%, max MP by 20%, physical Def. by 20%, magic Def. by 20% for 1 hour. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -730,7 +730,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -750,7 +750,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21125" levels="1" name="Blessing of Skooldy : Protection of Darkness">
 		<!-- Increase max HP by 20%, max MP by 20%, physical Def. by 20%, magic Def. by 20% for 1 hour. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -773,7 +773,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -793,7 +793,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21126" levels="1" name="Blessing of Skooldy : Protection of Darkness">
 		<!-- Increase max HP by 20%, max MP by 20%, physical Def. by 20%, magic Def. by 20% for 1 hour. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -816,7 +816,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -836,7 +836,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21127" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, attack speed by 20%, attack power by 10% for 1 hour.Increase dark attack resistance by 20. Reuse Delay 2 hours. -->
@@ -859,7 +859,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -879,7 +879,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21128" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, chance of critical by 10%, critical damage by 10% for 1 hour. Increase dark attack resistance by 20. Reuse Delay 2 hours. -->
@@ -902,7 +902,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.1" />
 				<add stat="darkRes" val="20" />
@@ -919,7 +919,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21129" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, speed by 10% for 1 hour. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on the enemy. Increase dark attack resistance by 20. Reuse Delay 2 hours. -->
@@ -942,7 +942,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -962,7 +962,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21130" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, speed by 20% for 1 hour. Reduce consumed MP for skill usage by 5%. Increase dark attack resistance by 20. Reuse Delay 2 hours. -->
@@ -985,7 +985,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -1004,7 +1004,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21131" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, casting speed by 20% for 1 hour. Increases chance of prominent damage by Damage Magic by 2. Increase dark attack resistance by 20. Reuse Delay 2 hours. -->
@@ -1027,7 +1027,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<add stat="darkRes" val="20" />
@@ -1044,7 +1044,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21132" levels="1" name="Shadow Ability">
 		<!-- Decrease own speed by 30% and will not receive monster's preemptive attack for 2 minutes. Reuse Delay 1 hour. -->
@@ -1066,14 +1066,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21133" levels="1" name="Release Agathion's Seal - Zombie">
 		<!-- Confirmed CT2.5 -->
@@ -1086,11 +1086,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1535</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21134" levels="1" name="Release Agathion's Seal - Bluebird">
 		<!-- Confirmed CT2.5 -->
@@ -1103,11 +1103,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1536</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21135" levels="1" name="Release Agathion's Seal - Hatbird">
 		<!-- Confirmed CT2.5 -->
@@ -1120,11 +1120,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1537</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21136" levels="1" name="Authority of Golden Jack O'Lantern Mask">
 		<!-- Increase max HP 40%, max MP 40%, max CP 40%, Physical Def. 30%, Magic Def. 30%, Spd. 30% of party members for 10 minutes. Reuse Delay 1 hour. -->
@@ -1149,7 +1149,7 @@
 		<affectRange>1000</affectRange>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>40</amount>
 				<mode>PER</mode>
@@ -1174,7 +1174,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21137" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, attack speed by 20%, attack power by 10% for 10 minutes.Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -1197,7 +1197,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -1217,7 +1217,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21138" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, chance of critical by 10%, critical damage by 10% for 10 minutes. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -1240,7 +1240,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.1" />
 				<add stat="darkRes" val="20" />
@@ -1257,7 +1257,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21139" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, speed by 10% for 10 minutes. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on the enemy. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -1280,7 +1280,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 			</effect>
@@ -1300,7 +1300,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21140" levels="1" name="Blessing of Halloween">
 		<!-- Increase max HP by 40%, max MP by 40%, speed by 20% for 10 minutes. Reduce consumed MP for skill usage by 5%. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -1323,7 +1323,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
@@ -1342,7 +1342,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21141" levels="1" name="Blessing of Halloween">
 		<!-- For 10 minutes, increases Max HP by 40%, Max MP by 40%, and Casting Spd. by 20%. Increases the rate of causing exceptional magic damage by 2. Increases Resistance to Dark by 20. Reuse delay is 1 hour. -->
@@ -1365,7 +1365,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<add stat="darkRes" val="20" />
@@ -1382,7 +1382,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21142" levels="1" name="Release Agathion's Seal - Guangong">
 		<!-- Confirmed CT2.5 -->
@@ -1395,11 +1395,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1551</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21143" levels="1" name="Release Agathion's Seal - Gwanseum Nyang Nyang">
 		<!-- Confirmed CT2.5 -->
@@ -1412,11 +1412,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1552</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21144" levels="1" name="Release Agathion's Seal - Blue Opera">
 		<!-- Confirmed CT2.5 -->
@@ -1429,11 +1429,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1553</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21145" levels="1" name="Release Agathion's Seal - Blue Opera">
 		<!-- Confirmed CT2.5 -->
@@ -1446,11 +1446,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1560</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21146" levels="1" name="Release Agathion's Seal - Red Opera">
 		<!-- Confirmed CT2.5 -->
@@ -1463,11 +1463,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1554</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21147" levels="1" name="Release Agathion's Seal - Opera">
 		<!-- Confirmed CT2.5 -->
@@ -1480,11 +1480,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1555</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21148" levels="1" name="Release Agathion's Seal - Miss Chipao">
 		<!-- Confirmed CT2.5 -->
@@ -1497,11 +1497,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1556</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21149" levels="1" name="Release Agathion's Seal - Nepal Snow">
 		<!-- Confirmed CT2.5 -->
@@ -1514,11 +1514,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1557</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21150" levels="1" name="Release Agathion's Seal - Round Ball Snow">
 		<!-- Confirmed CT2.5 -->
@@ -1531,11 +1531,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1558</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21151" levels="1" name="Release Agathion's Seal - Ladder Snow">
 		<!-- Confirmed CT2.5 -->
@@ -1548,11 +1548,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1559</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21152" levels="1" name="Chain Fireworks">
 		<icon>BranchSys.icon.br_rocket_cap_i00</icon>
@@ -1585,12 +1585,12 @@
 		<icon>BranchSys.icon.br_party_hat_gold_i00</icon>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21154" levels="1" name="Blessed Soul">
 		<!-- Increases Max MP by 25% for 20 minutes. Reuse Delay 1 hours. -->
@@ -1611,12 +1611,12 @@
 		<icon>BranchSys.icon.br_party_hat_mask_i00</icon>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21155" levels="1" name="Scent of Flavorful Cheese">
 		<!-- For 5 minutes, receives the soul's help to raise Atk. Spd. by 20%, P. Atk. by 10%, and P. Def. by 20%. Increases Critical attack power by 20% and Critical attack rate by 20%. Reuse delay is 1 hour. -->
@@ -1637,7 +1637,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 			</effect>
@@ -1657,7 +1657,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21156" levels="1" name="Scent of Sweet Cheese">
 		<!-- For 5 minutes, receives the soul's help to raise Casting Spd. by 20%, M. Atk. by 20%, and M. Def. by 20%. Raises Prominent Damage power via damage magic by 20% and the chance of Prominent Damage occurring via damage magic by 2. Reuse delay is 1 hour. -->
@@ -1678,7 +1678,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
@@ -1694,7 +1694,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21157" levels="1" name="Release Agathion's Seal - Iken">
 		<!-- Confirmed CT2.5 -->
@@ -1707,11 +1707,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1539</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21158" levels="1" name="Release Agathion's Seal - Lanya">
 		<!-- Confirmed CT2.5 -->
@@ -1724,11 +1724,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1540</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21159" levels="1" name="Release Agathion's Seal - Gnosian">
 		<!-- Confirmed CT2.5 -->
@@ -1741,11 +1741,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1541</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21160" levels="1" name="Release Agathion's Seal - Orodriel">
 		<!-- Confirmed CT2.5 -->
@@ -1758,11 +1758,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1542</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21161" levels="1" name="Release Agathion's Seal - Lakinos">
 		<!-- Confirmed CT2.5 -->
@@ -1775,11 +1775,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1543</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21162" levels="1" name="Release Agathion's Seal - Mortia">
 		<!-- Confirmed CT2.5 -->
@@ -1792,11 +1792,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1544</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21163" levels="1" name="Release Agathion's Seal - Heintz">
 		<!-- Confirmed CT2.5 -->
@@ -1809,11 +1809,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1545</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21164" levels="1" name="Release Agathion's Seal - Meruril">
 		<!-- Confirmed CT2.5 -->
@@ -1826,11 +1826,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1546</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21165" levels="1" name="Release Agathion's Seal - Taman Zu Rapatui">
 		<!-- Confirmed CT2.5 -->
@@ -1843,11 +1843,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1547</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21166" levels="1" name="Release Agathion's Seal - Kaurin">
 		<!-- Confirmed CT2.5 -->
@@ -1860,11 +1860,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1548</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21167" levels="1" name="Release Agathion's Seal - Ahertbein">
 		<!-- Confirmed CT2.5 -->
@@ -1877,11 +1877,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1549</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21168" levels="1" name="Release Agathion's Seal - Naonin">
 		<!-- Confirmed CT2.5 -->
@@ -1894,11 +1894,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1550</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21169" levels="1" name="Transform Kadomas">
 		<abnormalLvl>1</abnormalLvl>
@@ -1920,11 +1920,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>20000</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21170" levels="1" name="Blessed Soul">
 		<!-- Increases Max MP by 25% for 20 minutes. Reuse delay is 1 hours. -->
@@ -1945,12 +1945,12 @@
 		<icon>BranchSys.icon.br_party_mask_purple_i00</icon>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21171" levels="1" name="Ride Jet Bike">
 		<!-- Confirmed CT2.5 -->
@@ -1974,11 +1974,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>20001</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21172" levels="1" name="Enhanced Authority - CON+1 STR+1">
 		<!-- Enhanced authority grants CON+1 / STR+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
@@ -2145,11 +2145,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>40</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21183" levels="1" name="Blessing of Resistance - Paralysis">
 		<!-- TODO: Implement me! -->
@@ -2162,11 +2162,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>40</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21184" levels="1" name="Blessing of Resistance - Sleep">
 		<!-- TODO: Implement me! -->
@@ -2179,11 +2179,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>40</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21185" levels="1" name="Blessing of Resistance - Decrease Speed">
 		<!-- Raises resistance to decreased moving speed by 40%. Continuously consumes energy. -->
@@ -2207,11 +2207,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>40</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21187" levels="1" name="Blessing of Resistance - Stun">
 		<!-- TODO: Implement me! -->
@@ -2224,11 +2224,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>40</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21188" levels="1" name="Recovery Ability: HP">
 		<!-- Increases HP recovery bonus by 20%. Continuously consumes energy. -->
@@ -2284,11 +2284,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1574</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21192" levels="1" name="Silent Move">
 		<abnormalLvl>26</abnormalLvl>
@@ -2310,14 +2310,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove">
 			</effect>
 			<effect name="Speed">
 				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21193" levels="1" name="Power of Guardian Deity">
 		<!-- Increases Critical attack power by 35% for 10 minutes. Cooldown takes 1 hour. -->
@@ -2351,11 +2351,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1575</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21195" levels="1" name="Blessed Child Transformation Skill: Trejuo">
 		<!-- Confirmed CT2.5 -->
@@ -2382,12 +2382,12 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<sub stat="vitalityConsumeRate" val="1" />
 				<transformationId>20002</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21196" levels="1" name="Blessed Child Transformation Skill: Sujin">
 		<!-- Confirmed CT2.5 -->
@@ -2414,12 +2414,12 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<sub stat="vitalityConsumeRate" val="1" />
 				<transformationId>20003</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21197" levels="1" name="Induk's Buff">
 		<!-- Recovers all HP, MP, and CP with the power of virtue. Reuse delay 30 minutes. It can only be used when HP, MP, and CP are all below 30%. When you use the skill, 1 Proof of a Warrior is consumed. -->
@@ -2490,13 +2490,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
 			</effect>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

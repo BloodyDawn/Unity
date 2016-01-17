@@ -81,12 +81,12 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9405" levels="1" name="Wondrous Herb of Magic">
 		<!-- For 1 min. 30 sec., M. Atk. + 400%. -->
@@ -109,12 +109,12 @@
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>400</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9406" levels="1" name="Ingredient and Hardener Pouch (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -597,7 +597,7 @@
 				<player insideZoneId="12017, 12018, 12019" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>27487</npcId>
 			</effect>
@@ -605,7 +605,7 @@
 				<itemId>34888</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9444" levels="1" name="Helping Seed">
 		<!-- Summons the Helping Tree. -->
@@ -636,13 +636,13 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>33696</npcId>
 				<singleInstance>true</singleInstance>
 				<despawnDelay>180000</despawnDelay>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9446" levels="1" name="Scroll of Escape: Hot Springs">
 		<icon>icon.skill0000</icon>
@@ -666,13 +666,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>155908</x>
 				<y>-105696</y>
 				<z>-2744</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9447" levels="1" name="Scroll of Escape: Forge of the Gods">
 		<icon>icon.skill0000</icon>
@@ -696,13 +696,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>176206</x>
 				<y>-116025</y>
 				<z>-3784</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9448" levels="1" name="Scroll of Escape: Isle of Prayer">
 		<icon>icon.skill0000</icon>
@@ -726,13 +726,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>159171</x>
 				<y>169261</y>
 				<z>-3712</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9449" levels="1" name="Scroll of Escape: Aden Battlefield">
 		<icon>icon.skill0000</icon>
@@ -756,13 +756,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>146730</x>
 				<y>14844</y>
 				<z>-1368</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9450" levels="1" name="Scroll of Escape: Rune Battlefield">
 		<icon>icon.skill0000</icon>
@@ -786,13 +786,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>22299</x>
 				<y>-49141</y>
 				<z>-1296</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9451" levels="1" name="Item Skill: Warp">
 		<!-- AUTO GENERATED SKILL -->

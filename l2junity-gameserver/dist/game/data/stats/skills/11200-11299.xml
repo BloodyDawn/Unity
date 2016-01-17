@@ -56,7 +56,7 @@
 		<isMagic>1</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 			</effect>
 			<effect name="HealEffect">
@@ -68,7 +68,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11225" levels="7" name="Physical Soul Barrier">
 		<!-- Updated to IO -->
@@ -94,7 +94,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>204</effectPoint>
 		<reuseDelay>200000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">5000</value>
@@ -107,7 +107,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11226" levels="4" name="Superior Wizardry">
 		<!-- M. Critical Rate + 5% and PvP damage + 5%. -->
@@ -121,7 +121,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="#inc" />
 			</effect>
@@ -134,7 +134,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11241" levels="1" name="Shadow Snare">
 		<!-- Glory Days confirmed -->
@@ -153,12 +153,12 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>13307</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11242" levels="1" name="Shadow Snare Zone">
 		<!-- Glory Days confirmed -->
@@ -181,7 +181,7 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>600</delay>
@@ -189,7 +189,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
 		<!-- Glory Days confirmed -->
@@ -212,7 +212,7 @@
 		<magicLvl>89</magicLvl>
 		<trait>SHOCK</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>55</power>
 				<overHit>true</overHit>
@@ -223,7 +223,7 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -246,12 +246,12 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>320</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11248" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -274,12 +274,12 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>320</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11249" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -302,12 +302,12 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>320</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11250" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -329,12 +329,12 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>320</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11251" levels="10" name="Superior Weapon Mastery">
 		<!-- Updated to IO -->
@@ -358,7 +358,7 @@
 		<icon>icon.skill11251</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="6" />
 				<add stat="INT" val="2" />
@@ -416,7 +416,7 @@
 				<amount>23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11252" levels="10" name="Superior Robe Mastery">
 		<!-- Glory Days confirmed -->
@@ -438,7 +438,7 @@
 		<icon>icon.skill11252</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 			</effect>
@@ -471,7 +471,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11253" levels="10" name="Superior Magic Mastery">
 		<!-- Glory Days confirmed -->
@@ -494,7 +494,7 @@
 		<icon>icon.skill11253</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<mul stat="magicSuccRes" val="1.35" />
@@ -516,7 +516,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11254" levels="4" name="Superior Summon Mastery">
 		<!-- INT + 2. Can summon a servitor within 4 summon points. Use Rage to transfer the effects onto your servitor. -->
@@ -530,7 +530,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<add stat="summonPoints" val="4" />
@@ -562,7 +562,7 @@
 				<skillLevelScaleTo>5</skillLevelScaleTo>
 				<attackSkillId>11356</attackSkillId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11255" levels="1" name="Superior Spirit Mastery">
 		<!-- Glory Days confirmed -->
@@ -572,7 +572,7 @@
 		<icon>icon.skill11255</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 			</effect>
@@ -583,7 +583,7 @@
 				<POISON>30</POISON>
 				<DERANGEMENT>30</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11256" levels="8" name="Summon Cute Bear">
 		<!-- Updated to IO -->
@@ -625,7 +625,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14929</value>
@@ -640,7 +640,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11257" levels="8" name="Summon Saber Tooth Cougar">
 		<!-- Updated to IO -->
@@ -682,7 +682,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14930</value>
@@ -697,7 +697,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11258" levels="8" name="Summon Grim Reaper">
 		<!-- Updated to IO -->
@@ -739,7 +739,7 @@
 				<player hasFreeSummonPoints="2" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14931</value>
@@ -754,7 +754,7 @@
 				<summonPoints>2</summonPoints>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11259" levels="11" name="Mark of Weakness">
 		<!-- Updated to IO -->
@@ -836,7 +836,7 @@
 			<skill id="11499" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
-		<for>
+		<effects>
 			<effect name="MagicalDamOverTime" ticks="1">
 				<power>
 					<value level="1">85</value>
@@ -862,7 +862,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11260" levels="8" name="Mark of Void">
 		<!-- Updated to IO -->
@@ -928,7 +928,7 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalDamOverTime" ticks="1">
 				<power>
 					<value level="1">85</value>
@@ -941,7 +941,7 @@
 					<value level="8">125</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Heal">
 				<power>
@@ -1036,7 +1036,7 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalDamOverTime" ticks="1">
 			</effect>
 			<effect name="HealEffect">
@@ -1053,7 +1053,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11262" levels="9" name="Mark of Trick">
 		<!-- Updated to IO -->
@@ -1121,7 +1121,7 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalDamOverTime" ticks="1">
 				<power>
 					<value level="1">85</value>
@@ -1138,7 +1138,7 @@
 			<effect name="SkillTurningOverTime" ticks="1">
 				<chance>25</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11263" levels="10" name="Invoke">
 		<!-- Updated to IO -->
@@ -1195,7 +1195,7 @@
 		<effectRange>1100</effectRange>
 		<affectLimit>5-12</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">147</value>
@@ -1210,7 +1210,7 @@
 					<value level="10">210</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11264" levels="4" name="Strong Will">
 		<!-- Updated to IO -->
@@ -1245,7 +1245,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>
 					<value level="1">200</value>
@@ -1262,7 +1262,7 @@
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11265" levels="1" name="Summon Team Mate">
 		<!-- Updated to IO -->
@@ -1293,12 +1293,12 @@
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="CallPc">
 				<itemId>8615</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11266" levels="4" name="Summon Death Gate">
 		<!-- Updated to IO -->
@@ -1330,7 +1330,7 @@
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>
 					<value level="1">14927</value>
@@ -1342,7 +1342,7 @@
 				<despawnDelay>30000</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11267" levels="3" name="Spirit of Naviarope">
 		<!-- Updated to IO -->
@@ -1383,7 +1383,7 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<!-- pDef +50% -->
 				<!-- mDef +50% -->
@@ -1406,7 +1406,7 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11268" levels="11" name="Summon Avenging Cubic">
 		<!-- Updated to IO -->
@@ -1447,7 +1447,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>15</cubicId>
 				<cubicLvl>
@@ -1464,7 +1464,7 @@
 					<value level="11">11</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11269" levels="7" name="Mass Servitor Heal">
 		<!-- Updated to IO -->
@@ -1500,7 +1500,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1308</value>
@@ -1512,7 +1512,7 @@
 					<value level="7">1761</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11270" levels="4" name="Ultimate Transfer Pain">
 		<!-- Updated to IO -->
@@ -1532,12 +1532,12 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<add stat="transDam" val="#power" />
 				<power>0.2</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11271" levels="11" name="Mark Retriever">
 		<!-- Updated to IO -->
@@ -1594,7 +1594,7 @@
 			<value level="11">105</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAbnormalDispelAttack">
 				<power>
 					<value level="1">85</value>
@@ -1643,7 +1643,7 @@
 				</power>
 				<abnormalType>MARK_OF_TRICK</abnormalType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11272" levels="1" name="Replace">
 		<!-- Updated to IO -->
@@ -1662,9 +1662,9 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="BlinkSwap" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11273" levels="8" name="Exile">
 		<!-- Updated to IO -->
@@ -1730,7 +1730,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -1747,7 +1747,7 @@
 				</power>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11274" levels="4" name="Summon Barrier">
 		<!-- Updated to IO -->
@@ -1796,7 +1796,7 @@
 		<cond msgId="113" addName="1">
 			<player hasSummon="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Invincible">
 			</effect>
 			<effect name="HpRegen">
@@ -1808,7 +1808,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11275" levels="2" name="Mark Flare">
 		<!-- Glory Days confirmed -->
@@ -1837,14 +1837,14 @@
 			<value level="2">97</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">100</value>
 					<value level="2">150</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11276" levels="6" name="Dimensional Binding">
 		<!-- Glory Days confirmed -->
@@ -1913,7 +1913,7 @@
 		</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -1944,7 +1944,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11278" levels="9" name="Bear Claw">
 		<!-- Updated to IO -->
@@ -2013,7 +2013,7 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">6277</value>
@@ -2029,7 +2029,7 @@
 			</effect>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11279" levels="9" name="Bear Tumbling">
 		<!-- Updated to IO -->
@@ -2097,7 +2097,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">5337</value>
@@ -2114,7 +2114,7 @@
 				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11280" levels="9" name="Cougar Bite">
 		<!-- Updated to IO -->
@@ -2165,7 +2165,7 @@
 			<value level="9">99</value>
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">6300</value>
@@ -2179,7 +2179,7 @@
 					<value level="9">9355</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11281" levels="9" name="Cougar Pounce">
 		<!-- Updated to IO -->
@@ -2241,7 +2241,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="Debuff">
 			</effect>
@@ -2249,7 +2249,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11282" levels="9" name="Reaper Touch">
 		<!-- Updated to IO -->
@@ -2300,7 +2300,7 @@
 			<value level="9">99</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">125</value>
@@ -2315,7 +2315,7 @@
 				</power>
 				<percentage>20</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11283" levels="9" name="Reaper Power">
 		<!-- Updated to IO -->
@@ -2368,7 +2368,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">100</value>
@@ -2382,7 +2382,7 @@
 					<value level="9">120</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11284" levels="4" name="Naviarope Smash">
 		<!-- Glory Days confirmed -->
@@ -2417,7 +2417,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">8690</value>
@@ -2426,7 +2426,7 @@
 					<value level="4">9392</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11285" levels="4" name="Naviarope Power">
 		<!-- Glory Days confirmed -->
@@ -2460,7 +2460,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">7183</value>
@@ -2469,7 +2469,7 @@
 					<value level="4">7757</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11286" levels="1" name="Forced Summon">
 		<!-- AUTO GENERATED SKILL -->
@@ -2509,7 +2509,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<add stat="waterRes" val="#res" />
@@ -2517,7 +2517,7 @@
 				<add stat="windRes" val="#res" />
 				<add stat="earthRes" val="#res" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11288" levels="4" name="Ultimate Servitor Share">
 		<!-- Glory Days confirmed -->
@@ -2553,7 +2553,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
 			<effect name="ServitorShare">
 				<share stat="pAtk" val="#pAtk" />
@@ -2565,7 +2565,7 @@
 				<share stat="rCrit" val="0.30" />
 				<share stat="cAtk" val="0.15" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11289" levels="4" name="Gate Root">
 		<!-- Updated to IO -->
@@ -2592,9 +2592,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11290" levels="1" name="Summon Hodling">
 		<!-- Glory Days confirmed -->
@@ -2613,13 +2613,13 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<!-- Hodling -->
 				<npcId>14928</npcId>
 				<npcCount>3</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11291" levels="4" name="Gate Vortex">
 		<!-- Updated to IO -->
@@ -2640,7 +2640,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">58</value>
@@ -2650,7 +2650,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11292" levels="8" name="Cubic Cleanse">
 		<!-- Updated to IO -->
@@ -2677,7 +2677,7 @@
 			<value level="8">98</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>80</rate>
@@ -2692,7 +2692,7 @@
 					<value level="8">10</value>
 				</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11293" levels="8" name="Cubic Cancellation">
 		<!-- Glory Days confirmed -->
@@ -2718,13 +2718,13 @@
 			<value level="8">98</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>20</rate>
 				<max>1</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11294" levels="11" name="Cubic Root">
 		<!-- Glory Days confirmed -->
@@ -2760,12 +2760,12 @@
 			<value level="11">105</value>
 		</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11295" levels="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
@@ -2787,7 +2787,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 				<add stat="maxHp" val="4151">
@@ -2812,7 +2812,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11296" levels="9" name="Mass Exile">
 		<!-- Updated to IO -->
@@ -2875,7 +2875,7 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -2893,7 +2893,7 @@
 				</power>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="11297" levels="4" name="Blessing of the Giants">
 		<!-- Updated to IO -->
@@ -2933,7 +2933,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>2</isMagic>
 		<reuseDelay>60000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.20" />
 				<mul stat="debuffVuln" val="0.90" />
@@ -2987,7 +2987,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11298" levels="11" name="Mark of Fire">
 		<!-- Updated to IO -->
@@ -3033,7 +3033,7 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">168</value>
@@ -3050,7 +3050,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11299" levels="1" name="Servitor Balance Life">
 		<!-- Glory Days confirmed -->
@@ -3074,8 +3074,8 @@
 			<value level="2">15</value>
 		</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="RebalanceHP" />
-		</for>
+		</effects>
 	</skill>
 </list>

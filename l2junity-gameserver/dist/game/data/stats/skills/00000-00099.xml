@@ -133,7 +133,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">517</value>
@@ -178,7 +178,7 @@
 				<criticalChance>15</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2" levels="19" name="Confusion">
 		<!-- Confirmed CT2.5 -->
@@ -256,11 +256,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="RandomizeHate">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3" levels="9" name="Power Strike">
 		<table name="#power"> 30 32 35 46 51 55 71 78 84 </table>
@@ -311,7 +311,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">30</value>
@@ -326,7 +326,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4" levels="2" name="Dash">
 		<table name="#spd"> 40 66 </table>
@@ -356,7 +356,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">40</value>
@@ -364,7 +364,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5" levels="31" name="Double Sonic Slash">
 		<table name="#power"> 918 971 1025 1081 1140 1200 1262 1327 1393 1461 1531 1603 1677 1753 1830 1908 1988 2070 2153 2237 2322 2408 2494 2581 2669 2757 2846 2934 3022 3109 3196 </table>
@@ -484,7 +484,7 @@
 				<player Charges="3" /> <!-- whose 3rd energy stage has been recharged -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<chargeConsume>3</chargeConsume>
 				<criticalChance>15</criticalChance>
@@ -523,7 +523,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="6" levels="37" name="Sonic Blaster">
 		<table name="#power"> 369 392 417 442 469 496 525 555 586 618 651 686 722 758 796 835 875 916 959 1002 1046 1091 1136 1183 1230 1278 1327 1376 1425 1475 1525 1576 1626 1677 1727 1777 1827 </table>
@@ -659,7 +659,7 @@
 				<player Charges="2" /> <!-- whose 2nd energy stage has been recharged -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<chargeConsume>2</chargeConsume>
 				<criticalChance>15</criticalChance>
@@ -704,7 +704,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7" levels="44" name="Sonic Storm">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -869,7 +869,7 @@
 				<player Charges="2" /> <!-- whose 2nd energy stage has been recharged -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<power>
 					<value level="1">141</value>
@@ -920,7 +920,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8" levels="8" name="Sonic Focus">
 		<!-- Confirmed CT2.5 -->
@@ -952,7 +952,7 @@
 				<player Charges="#maxCharges" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>
 					<value level="1">1</value>
@@ -965,7 +965,7 @@
 					<value level="8">8</value>
 				</maxCharges>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9" levels="34" name="Sonic Buster">
 		<table name="#power"> 111 118 124 132 139 147 155 163 172 181 190 199 209 219 229 240 251 262 273 284 296 308 320 332 344 357 369 382 394 407 420 432 445 457 </table>
@@ -1099,7 +1099,7 @@
 				<player Charges="2" /> <!-- whose 2nd energy stage has been recharged -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<power>
 					<value level="1">111</value>
@@ -1140,7 +1140,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10" levels="8" name="Summon Storm Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -1194,7 +1194,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>1</cubicId>
 				<cubicLvl>
@@ -1208,7 +1208,7 @@
 					<value level="8">8</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11" levels="12" name="Trick">
 		<!-- Confirmed CT2.5 -->
@@ -1265,14 +1265,14 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="DeleteHateOfMe">
 				<chance>80</chance>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="12" levels="14" name="Switch">
 		<!-- Confirmed CT2.5 -->
@@ -1335,14 +1335,14 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="RandomizeHate">
 				<chance>80</chance>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="13" levels="1" name="Summon Siege Golem">
 		<hitTime>180000</hitTime>
@@ -1364,14 +1364,14 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>14737</npcId>
 				<lifeTime>1200</lifeTime>
 				<consumeItemId>2131</consumeItemId>
 				<consumeItemCount>40</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="15" levels="52" name="Charm">
 		<!-- Confirmed CT2.5 -->
@@ -1550,7 +1550,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<power>
 					<value level="1">-132</value>
@@ -1607,7 +1607,7 @@
 					<value level="52">-458</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="16" levels="24" name="Mortal Blow">
 		<table name="#power"> 73 80 88 115 126 137 178 193 210 268 291 314 367 396 427 494 531 571 656 703 752 859 916 977 </table>
@@ -1703,7 +1703,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>
 					<value level="1">73</value>
@@ -1734,7 +1734,7 @@
 				<overHit>true</overHit>
 				<chance>20</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="17" levels="34" name="Force Burst">
 		<table name="#power"> 129 137 145 153 162 171 181 190 200 211 222 233 244 256 268 280 293 305 318 332 345 359 373 387 402 416 431 445 460 475 489 504 519 533 </table>
@@ -1868,7 +1868,7 @@
 				<player Charges="1" /> <!-- whose 1st energy stage has been recharged -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<power>
 					<value level="1">129</value>
@@ -1909,7 +1909,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="18" levels="37" name="Aggression Aura">
 		<!-- Confirmed CT2.5 -->
@@ -2045,10 +2045,10 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="19" levels="37" name="Double Shot">
 		<table name="#power"> 984 1046 1110 1178 1249 1322 1399 1479 1562 1647 1736 1828 1923 2021 2123 2227 2333 2443 2555 2670 2788 2908 3030 3154 3280 3408 3537 3668 3800 3933 4067 4201 4336 4470 4604 4738 4870 </table>
@@ -2182,7 +2182,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">984</value>
@@ -2226,7 +2226,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="21" levels="3" name="Poison Recovery">
 		<table name="#dispelAbnormals"> POISON,3 POISON,7 POISON,9 </table>
@@ -2258,7 +2258,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
 					<value level="1">POISON,3</value>
@@ -2266,7 +2266,7 @@
 					<value level="3">POISON,9</value>
 				</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="22" levels="7" name="Summon Vampiric Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -2316,7 +2316,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>2</cubicId>
 				<cubicLvl>
@@ -2329,7 +2329,7 @@
 					<value level="7">7</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="24" levels="31" name="Burst Shot">
 		<table name="#power"> 350 370 391 412 434 457 481 506 531 557 584 611 639 668 697 727 758 789 820 852 885 917 950 984 1017 1051 1084 1118 1151 1185 1218 </table>
@@ -2447,7 +2447,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">350</value>
@@ -2484,7 +2484,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="25" levels="9" name="Summon Mechanic Golem">
 		<table name="#itemConsumeCountOT"> 4 4 1 2 2 3 3 4 4 </table>
@@ -2546,7 +2546,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14663</value>
@@ -2574,7 +2574,7 @@
 				</consumeItemCount>
 				<expMultiplier>0.85</expMultiplier>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="27" levels="14" name="Unlock">
 		<table name="#chance"> 30 50 75 100 100 100 100 100 100 100 100 100 100 100 </table>
@@ -2652,7 +2652,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>UNLOCKABLE</targetType>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>
 					<value level="1">30</value>
@@ -2672,7 +2672,7 @@
 				</chance>
 			</effect>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="28" levels="49" name="Aggression">
 		<!-- Confirmed CT2.5 -->
@@ -2894,10 +2894,10 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="29" levels="24" name="Iron Punch">
 		<table name="#power"> 34 38 41 54 59 64 83 91 98 125 136 147 171 185 199 231 248 267 307 328 351 401 428 456 </table>
@@ -2993,11 +2993,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30" levels="37" name="Backstab">
 		<!-- Confirmed CT2.5 -->
@@ -3134,7 +3134,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Backstab">
 				<power>
 					<value level="1">1107</value>
@@ -3258,7 +3258,7 @@
 					<value level="37">15</value>
 				</halfLethal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="33" levels="8" name="Summon Phantom Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -3312,7 +3312,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>5</cubicId>
 				<cubicLvl>
@@ -3326,7 +3326,7 @@
 					<value level="8">8</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="34" levels="3" name="Bandage">
 		<table name="#dispelAbnormals"> BLEEDING,3 BLEEDING,7 BLEEDING,9 </table>
@@ -3352,7 +3352,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
 					<value level="1">BLEEDING,3</value>
@@ -3360,7 +3360,7 @@
 					<value level="3">BLEEDING,9</value>
 				</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="35" levels="44" name="Force Storm">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -3526,7 +3526,7 @@
 				<player Charges="1" /> <!-- whose 1st energy stage has been recharged -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<power>
 					<value level="1">141</value>
@@ -3577,7 +3577,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="36" levels="37" name="Spinning Slasher">
 		<table name="#power"> 554 588 625 663 703 744 787 832 879 927 977 1029 1082 1137 1194 1253 1313 1374 1438 1502 1568 1636 1704 1774 1845 1917 1990 2064 2138 2213 2288 2363 2439 2515 2590 2665 2740 </table>
@@ -3711,7 +3711,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">554</value>
@@ -3756,7 +3756,7 @@
 				<criticalChance>15</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="42" levels="1" name="Sweeper">
 		<!-- Confirmed CT2.5 -->
@@ -3775,10 +3775,10 @@
 		<cond>
 			<player canSweep="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Sweeper" />
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="44" levels="3" name="Remedy">
 		<table name="#dispelAbnormals"> BLEEDING,3 BLEEDING,7 BLEEDING,9 </table>
@@ -3810,7 +3810,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
 					<value level="1">BLEEDING,3</value>
@@ -3818,7 +3818,7 @@
 					<value level="3">BLEEDING,9</value>
 				</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="45" levels="9" name="Divine Heal">
 		<table name="#amount"> 143 150 157 172 179 187 203 211 219 </table>
@@ -3874,7 +3874,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">143</value>
@@ -3888,7 +3888,7 @@
 					<value level="9">219</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="46" levels="15" name="Life Scavenge">
 		<table name="#drain"> 105 113 122 131 140 150 159 169 180 190 201 211 222 232 243 </table>
@@ -3953,7 +3953,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>CORPSE_MOB</targetType>
-		<for>
+		<effects>
 			<effect name="HpByLevel">
 				<power>
 					<value level="1">105</value>
@@ -3974,7 +3974,7 @@
 				</power>
 			</effect>
 			<effect name="ConsumeBody" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="48" levels="49" name="Thunder Storm">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -4155,7 +4155,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">421</value>
@@ -4213,7 +4213,7 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="49" levels="26" name="Holy Strike">
 		<table name="#power"> 47 49 51 53 55 57 59 61 63 66 67 68 70 71 72 74 75 77 78 79 80 82 83 84 85 87 </table>
@@ -4344,7 +4344,7 @@
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">47</value>
@@ -4375,7 +4375,7 @@
 					<value level="26">87</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="50" levels="8" name="Focus Force">
 		<!-- Confirmed CT2.5 -->
@@ -4407,7 +4407,7 @@
 				<player Charges="#maxCharges" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>
 					<value level="1">1</value>
@@ -4420,7 +4420,7 @@
 					<value level="8">8</value>
 				</maxCharges>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="51" levels="1" name="Lure">
 		<!-- Confirmed CT2.5 -->
@@ -4436,11 +4436,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="54" levels="49" name="Force Blaster">
 		<table name="#power"> 143 154 166 193 207 222 256 274 293 334 357 380 431 458 486 516 547 579 612 647 683 721 760 800 842 885 929 974 1021 1069 1118 1169 1220 1272 1326 1380 1435 1491 1548 1605 1663 1721 1780 1838 1897 1956 2015 2073 2131 </table>
@@ -4611,7 +4611,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="EnergyAttack">
 				<power>
 					<value level="1">143</value>
@@ -4667,7 +4667,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="56" levels="24" name="Power Shot">
 		<table name="#power"> 65 71 78 102 112 122 158 172 187 239 258 279 326 352 379 440 472 507 584 625 669 763 814 868 </table>
@@ -4762,7 +4762,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">65</value>
@@ -4792,7 +4792,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="58" levels="55" name="Elemental Heal">
 		<table name="#amount"> 71 75 80 95 100 106 118 124 130 143 150 157 172 179 187 203 211 219 236 245 254 262 271 281 290 299 308 318 327 337 346 356 365 375 384 393 403 412 421 430 439 448 457 466 474 482 490 498 506 513 520 527 534 540 546 </table>
@@ -5032,7 +5032,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">71</value>
@@ -5092,7 +5092,7 @@
 					<value level="55">546</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="60" levels="1" name="Fake Death">
 		<icon>icon.skill0060</icon>
@@ -5102,11 +5102,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="FakeDeath" ticks="5">
 				<power>10</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="61" levels="3" name="Cure Bleeding">
 		<table name="#dispelAbnormals"> BLEEDING,3 BLEEDING,7 BLEEDING,9 </table>
@@ -5138,7 +5138,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
 					<value level="1">BLEEDING,3</value>
@@ -5146,7 +5146,7 @@
 					<value level="3">BLEEDING,9</value>
 				</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="65" levels="13" name="Horror">
 		<abnormalLvl>1</abnormalLvl>
@@ -5228,10 +5228,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="67" levels="7" name="Summon Life Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -5281,7 +5281,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>3</cubicId>
 				<cubicLvl>
@@ -5294,7 +5294,7 @@
 					<value level="7">7</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="69" levels="37" name="Sacrifice">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -5429,7 +5429,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">350</value>
@@ -5471,7 +5471,7 @@
 					<value level="37">2644</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="70" levels="53" name="Drain Energy">
 		<table name="#power"> 20 22 24 26 28 29 31 33 34 35 38 39 40 43 44 46 49 50 52 53 55 57 58 60 61 63 65 66 68 70 72 73 75 77 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
@@ -5707,7 +5707,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">20</value>
@@ -5766,7 +5766,7 @@
 				</power>
 				<percentage>20</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="72" levels="3" name="Iron Will">
 		<!-- Confirmed CT2.5 -->
@@ -5808,7 +5808,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">15</value>
@@ -5817,7 +5817,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="75" levels="1" name="Detect Insect Weakness">
 		<abnormalLvl>1</abnormalLvl>
@@ -5834,11 +5834,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<BUG_WEAKNESS>30</BUG_WEAKNESS>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="76" levels="1" name="Bear Spirit Totem">
 		<abnormalLvl>1</abnormalLvl>
@@ -5858,7 +5858,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -5877,7 +5877,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="77" levels="2" name="Attack Aura">
 		<table name="#rate"> 1.08 1.12 </table>
@@ -5912,7 +5912,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">8</value>
@@ -5920,7 +5920,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="78" levels="2" name="War Cry">
 		<table name="#pAtk"> 1.2 1.25 </table>
@@ -5950,7 +5950,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">20</value>
@@ -5958,7 +5958,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="80" levels="1" name="Detect Beast Weakness">
 		<abnormalLvl>1</abnormalLvl>
@@ -5975,11 +5975,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<BEAST_WEAKNESS>30</BEAST_WEAKNESS>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="81" levels="3" name="Punch of Doom">
 		<table name="#power"> 4580 6332 9132 </table>
@@ -6017,7 +6017,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">4580</value>
@@ -6028,7 +6028,7 @@
 				<criticalChance>15</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="82" levels="3" name="Majesty">
 		<!-- Confirmed CT2.5 -->
@@ -6064,7 +6064,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">7</value>
@@ -6081,7 +6081,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="83" levels="1" name="Wolf Spirit Totem">
 		<abnormalLvl>1</abnormalLvl>
@@ -6101,7 +6101,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -6113,7 +6113,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="84" levels="3" name="Poison Blade Dance">
 		<table name="#dot"> 50 58 63 </table>
@@ -6158,7 +6158,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
 			</effect>
@@ -6169,7 +6169,7 @@
 					<value level="3">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="86" levels="3" name="Reflect Damage">
 		<table name="#reflectDam"> 10 15 20 </table>
@@ -6209,7 +6209,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>
 					<value level="1">10</value>
@@ -6218,7 +6218,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="87" levels="1" name="Detect Animal Weakness">
 		<abnormalLvl>1</abnormalLvl>
@@ -6235,11 +6235,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<ANIMAL_WEAKNESS>30</ANIMAL_WEAKNESS>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="88" levels="1" name="Detect Dragon Weakness">
 		<abnormalLvl>1</abnormalLvl>
@@ -6256,11 +6256,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<DRAGON_WEAKNESS>30</DRAGON_WEAKNESS>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="91" levels="2" name="Defense Aura">
 		<table name="#rate"> 1.08 1.12 </table>
@@ -6295,7 +6295,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">8</value>
@@ -6303,7 +6303,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="92" levels="52" name="Shield Stun">
 		<!-- Confirmed CT2.5 -->
@@ -6493,11 +6493,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="94" levels="7" name="Rage">
 		<!-- Confirmed CT2.5 and Updated to IO -->
@@ -6546,7 +6546,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,POLE,FIST,DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#additional">
 					<and>
@@ -6567,7 +6567,7 @@
 					<item>DUALBLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="95" levels="20" name="Cripple">
 		<!-- Confirmed CT2.5 -->
@@ -6679,7 +6679,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -6707,7 +6707,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="96" levels="6" name="Bleed">
 		<table name="#dot"> 25 34 44 54 62 67 </table>
@@ -6765,7 +6765,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">25</value>
@@ -6780,7 +6780,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="97" levels="11" name="Sanctuary">
 		<abnormalLvl>3</abnormalLvl>
@@ -6841,14 +6841,14 @@
 		<cond msgId="144">
 			<target race="UNDEAD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="98" levels="5" name="Sword Symphony">
 		<!-- Glory Days Confirmed -->
@@ -6892,7 +6892,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalAttack">
 				<power>
@@ -6905,7 +6905,7 @@
 				<overHit>true</overHit>
 				<criticalChance>10</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="99" levels="2" name="Rapid Shot">
 		<table name="#rate"> 1.08 1.12 </table>
@@ -6939,7 +6939,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">8</value>
@@ -6950,6 +6950,6 @@
 					<item>BOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

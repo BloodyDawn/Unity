@@ -34,12 +34,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3101" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -74,7 +74,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -89,7 +89,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6126</skillId>
@@ -132,9 +132,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3103" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -170,10 +170,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3104" levels="15" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -241,7 +241,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">41</value>
@@ -261,7 +261,7 @@
 					<value level="15">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3105" levels="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -330,7 +330,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">44</value>
@@ -350,7 +350,7 @@
 					<value level="15">67</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3106" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -386,9 +386,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3107" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -424,10 +424,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3108" levels="15" name="Item Skill: Aggression Up">
 		<!-- Confirmed CT2.5 -->
@@ -464,11 +464,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3109" levels="15" name="Item Skill: Aggression Down">
 		<!-- Confirmed CT2.5 -->
@@ -506,7 +506,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<power>
 					<value level="1">-219</value>
@@ -526,7 +526,7 @@
 					<value level="15">-390</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3110" levels="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
@@ -553,7 +553,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">49</value>
@@ -568,7 +568,7 @@
 					<value level="10">88</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3111" levels="15" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -611,14 +611,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3112" levels="15" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -661,14 +661,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3113" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -703,9 +703,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3114" levels="15" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -750,12 +750,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3115" levels="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -790,12 +790,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3116" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -829,7 +829,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -844,7 +844,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6126</skillId>
@@ -886,9 +886,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3118" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -923,10 +923,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3119" levels="15" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -993,7 +993,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">41</value>
@@ -1013,7 +1013,7 @@
 					<value level="15">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3120" levels="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -1081,7 +1081,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">44</value>
@@ -1101,7 +1101,7 @@
 					<value level="15">67</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3121" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -1136,9 +1136,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3122" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -1173,10 +1173,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3123" levels="10" name="Item Skill: Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1238,7 +1238,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">308</value>
@@ -1253,7 +1253,7 @@
 					<value level="10">552</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3124" levels="10" name="Item Skill: Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -1318,7 +1318,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">30</value>
@@ -1334,7 +1334,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3125" levels="10" name="Item Skill: Battle Roar">
 		<!-- Confirmed CT2.5 -->
@@ -1398,13 +1398,13 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>3</amount>
 				<mode>PER</mode>
 				<heal>true</heal>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3126" levels="10" name="Item Skill: Prayer">
 		<!-- Confirmed CT2.5 -->
@@ -1469,7 +1469,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">4</value>
@@ -1485,7 +1485,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3127" levels="10" name="Item Skill: Recharge">
 		<!-- Confirmed CT2.5 -->
@@ -1548,7 +1548,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
 					<value level="1">41</value>
@@ -1563,7 +1563,7 @@
 					<value level="10">69</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3128" levels="10" name="Item Skill: Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -1628,7 +1628,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">20</value>
@@ -1644,7 +1644,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3129" levels="15" name="Item Skill: Mana Gain">
 		<!-- Confirmed CT2.5 -->
@@ -1734,7 +1734,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaCharge">
 				<amount>
 					<value level="1">25</value>
@@ -1755,7 +1755,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3130" levels="10" name="Item Skill: Ritual">
 		<!-- Confirmed CT2.5 -->
@@ -1816,7 +1816,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>
 					<value level="1">264</value>
@@ -1831,7 +1831,7 @@
 					<value level="10">473</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3131" levels="10" name="Item Skill: Cheer">
 		<!-- Confirmed CT2.5 -->
@@ -1896,7 +1896,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>
 					<value level="1">30</value>
@@ -1912,7 +1912,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3132" levels="15" name="Item Skill: Might">
 		<!-- Confirmed CT2.5 -->
@@ -2002,7 +2002,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">23.64</value>
@@ -2023,7 +2023,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3133" levels="15" name="Item Skill: Empower">
 		<!-- Confirmed CT2.5 -->
@@ -2113,7 +2113,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">15.9</value>
@@ -2134,7 +2134,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3134" levels="10" name="Item Skill: Duel Might">
 		<!-- Confirmed CT2.5 -->
@@ -2198,7 +2198,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -2207,7 +2207,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3135" levels="15" name="Item Skill: Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2297,7 +2297,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">30.2</value>
@@ -2318,7 +2318,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3136" levels="15" name="Item Skill: Magic Barrier">
 		<!-- Confirmed CT2.5 -->
@@ -2408,7 +2408,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">37</value>
@@ -2429,7 +2429,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3137" levels="10" name="Item Skill: Duel Weakness">
 		<!-- Confirmed CT2.5 -->
@@ -2498,7 +2498,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -2509,7 +2509,7 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3138" levels="10" name="Item Skill: Heal Empower">
 		<!-- Confirmed CT2.5 -->
@@ -2574,11 +2574,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="#healEffect" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3139" levels="15" name="Item Skill: Agility">
 		<!-- Confirmed CT2.5 -->
@@ -2663,7 +2663,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">1</value>
@@ -2684,7 +2684,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3140" levels="15" name="Item Skill: Guidance">
 		<!-- Confirmed CT2.5 -->
@@ -2769,7 +2769,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">1</value>
@@ -2790,7 +2790,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3141" levels="10" name="Item Skill: Focus">
 		<!-- Confirmed CT2.5 -->
@@ -2855,11 +2855,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3142" levels="10" name="Item Skill: Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -2924,11 +2924,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3143" levels="10" name="Item Skill: Kiss of Eva">
 		<!-- Confirmed CT2.5 -->
@@ -2992,12 +2992,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Breath">
 				<amount>600</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3144" levels="10" name="Item Skill: Acrobatics">
 		<!-- Confirmed CT2.5 -->
@@ -3061,11 +3061,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="fall" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3145" levels="15" name="Item Skill: Iron Body">
 		<!-- Confirmed CT2.5 -->
@@ -3150,11 +3150,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="damageZoneVuln" val="#damageZoneVuln" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3146" levels="1" name="Item Skill: Recall">
 		<!-- Confirmed CT2.5 -->
@@ -3178,11 +3178,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3147" levels="1" name="Item Skill: Recall">
 		<!-- Confirmed CT2.5 -->
@@ -3206,11 +3206,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3148" levels="10" name="Item Skill: Vampiric Rage">
 		<!-- Confirmed CT2.5 -->
@@ -3275,7 +3275,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">3</value>
@@ -3291,7 +3291,7 @@
 				</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3149" levels="15" name="Item Skill: Aggression">
 		<!-- Confirmed CT2.5 -->
@@ -3357,11 +3357,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3150" levels="15" name="Item Skill: Charm">
 		<!-- Confirmed CT2.5 -->
@@ -3428,7 +3428,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<power>
 					<value level="1">-219</value>
@@ -3448,7 +3448,7 @@
 					<value level="15">-390</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3151" levels="15" name="Item Skill: Peace">
 		<!-- Confirmed CT2.5 -->
@@ -3514,11 +3514,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="DeleteHate">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3152" levels="10" name="Item Skill: Trick">
 		<!-- Confirmed CT2.5 -->
@@ -3557,11 +3557,11 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3153" levels="10" name="Item Skill: Vampiric Touch">
 		<!-- Confirmed CT2.5 -->
@@ -3627,7 +3627,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">49</value>
@@ -3643,7 +3643,7 @@
 				</power>
 				<percentage>40</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3154" levels="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
@@ -3707,7 +3707,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">68</value>
@@ -3722,7 +3722,7 @@
 					<value level="10">120</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3155" levels="10" name="Item Skill: Unlock">
 		<!-- Confirmed CT2.5 -->
@@ -3785,12 +3785,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>UNLOCKABLE</targetType>
-		<for>
+		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
 			</effect>
 			<effect name="OpenChest" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3156" levels="1" name="Item Skill: Firework">
 		<!-- Confirmed CT2.5 -->
@@ -3837,9 +3837,9 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3159" levels="3" name="Item Skill: Stealth">
 		<!-- Confirmed CT2.5 -->
@@ -3874,7 +3874,7 @@
 			<value level="3">75</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SilentMove">
 			</effect>
 			<effect name="PAtk">
@@ -3909,7 +3909,7 @@
 				<amount>-12</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3160" levels="9" name="Item Skill: Resurrection">
 		<!-- Confirmed CT2.5 -->
@@ -3972,7 +3972,7 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>
 					<value level="1">0</value>
@@ -3986,7 +3986,7 @@
 					<value level="9">70</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3161" levels="8" name="Item Skill: Skill Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -4043,11 +4043,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3162" levels="8" name="Item Skill: Spell Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -4104,11 +4104,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3163" levels="3" name="Item Skill: Music Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -4145,11 +4145,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="DanceMpConsumeRate" val="#DanceMpConsumeRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3164" levels="3" name="Item Skill: Clarity">
 		<!-- Confirmed CT2.5 -->
@@ -4187,13 +4187,13 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3165" levels="10" name="Item Skill: Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -4259,7 +4259,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4274,7 +4274,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3167" levels="10" name="Item Skill: Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -4340,7 +4340,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4355,7 +4355,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3168" levels="10" name="Item Skill: Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -4421,7 +4421,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4436,7 +4436,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3169" levels="10" name="Item Skill: Stone">
 		<!-- Confirmed CT2.5 -->
@@ -4502,7 +4502,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4517,7 +4517,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3170" levels="10" name="Item Skill: Solar Flare">
 		<!-- Confirmed CT2.5 -->
@@ -4583,7 +4583,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4598,7 +4598,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3171" levels="10" name="Item Skill: Shadow Flare">
 		<!-- Confirmed CT2.5 -->
@@ -4664,7 +4664,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4679,7 +4679,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3172" levels="10" name="Item Skill: Aura Flare">
 		<!-- Confirmed CT2.5 -->
@@ -4743,7 +4743,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">61</value>
@@ -4758,7 +4758,7 @@
 					<value level="10">110</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3173" levels="10" name="Item Skill: Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -4826,7 +4826,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -4841,7 +4841,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3174" levels="10" name="Item Skill: Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -4909,7 +4909,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -4924,7 +4924,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3175" levels="10" name="Item Skill: Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -4992,7 +4992,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5007,7 +5007,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3176" levels="10" name="Item Skill: Stone">
 		<!-- Confirmed CT2.5 -->
@@ -5075,7 +5075,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5090,7 +5090,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3177" levels="10" name="Item Skill: Solar Flare">
 		<!-- Confirmed CT2.5 -->
@@ -5158,7 +5158,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5173,7 +5173,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3178" levels="10" name="Item Skill: Shadow Flare">
 		<!-- Confirmed CT2.5 -->
@@ -5241,7 +5241,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5256,7 +5256,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3179" levels="10" name="Item Skill: Aura Flare">
 		<!-- Confirmed CT2.5 -->
@@ -5322,7 +5322,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5337,7 +5337,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3180" levels="10" name="Item Skill: Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -5403,7 +5403,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5418,7 +5418,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3181" levels="10" name="Item Skill: Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -5484,7 +5484,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5499,7 +5499,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3182" levels="10" name="Item Skill: Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -5565,7 +5565,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5580,7 +5580,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3183" levels="10" name="Item Skill: Stone">
 		<!-- Confirmed CT2.5 -->
@@ -5646,7 +5646,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5661,7 +5661,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3184" levels="10" name="Item Skill: Solar Flare">
 		<!-- Confirmed CT2.5 -->
@@ -5727,7 +5727,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5742,7 +5742,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3185" levels="10" name="Item Skill: Shadow Flare">
 		<!-- Confirmed CT2.5 -->
@@ -5808,7 +5808,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5823,7 +5823,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3186" levels="10" name="Item Skill: Aura Flare">
 		<!-- Confirmed CT2.5 -->
@@ -5887,7 +5887,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">31</value>
@@ -5902,7 +5902,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3187" levels="15" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
@@ -5992,14 +5992,14 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3188" levels="15" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
@@ -6089,14 +6089,14 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3189" levels="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
@@ -6167,9 +6167,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3190" levels="10" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
@@ -6241,12 +6241,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3191" levels="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -6319,12 +6319,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3192" levels="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -6395,7 +6395,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -6410,7 +6410,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6126</skillId>
@@ -6489,9 +6489,9 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3194" levels="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
@@ -6563,10 +6563,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3195" levels="15" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
@@ -6675,7 +6675,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">41</value>
@@ -6695,7 +6695,7 @@
 					<value level="15">63</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3196" levels="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
@@ -6804,7 +6804,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="3">
 				<power>
 					<value level="1">44</value>
@@ -6824,7 +6824,7 @@
 					<value level="15">67</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3197" levels="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
@@ -6896,9 +6896,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3198" levels="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
@@ -6970,10 +6970,10 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3199" levels="3" name="Item Skill: Skill Refresh">
 		<!-- Confirmed CT2.5 -->
@@ -7009,10 +7009,10 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="0.85" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

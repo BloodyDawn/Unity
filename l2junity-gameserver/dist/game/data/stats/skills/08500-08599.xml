@@ -7,11 +7,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="CON" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8501" levels="1" name="Pink Talisman - INT">
 		<!-- Confirmed CT2.5 -->
@@ -20,11 +20,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8502" levels="1" name="Pink Talisman - WIT">
 		<!-- Confirmed CT2.5 -->
@@ -33,11 +33,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="WIT" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8503" levels="1" name="Pink Talisman - MEN">
 		<!-- Confirmed CT2.5 -->
@@ -46,11 +46,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="MEN" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8504" levels="1" name="Pink Talisman - Stun Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -59,11 +59,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>15</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8505" levels="1" name="Pink Talisman - Sleep Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -72,11 +72,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>15</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8506" levels="1" name="Pink Talisman - Hold Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -85,11 +85,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>15</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8507" levels="1" name="Pink Talisman - Paralysis Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -98,11 +98,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>15</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8508" levels="1" name="Pink Talisman - All STAT">
 		<!-- Confirmed CT2.5 -->
@@ -111,7 +111,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="1" />
 				<add stat="DEX" val="1" />
@@ -120,7 +120,7 @@
 				<add stat="WIT" val="1" />
 				<add stat="MEN" val="1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8509" levels="1" name="Blessed Escape">
 		<!-- Confirmed CT2.5 -->
@@ -144,11 +144,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8510" levels="1" name="Summon Friend">
 		<effectPoint>1000</effectPoint>
@@ -227,11 +227,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1576</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8516" levels="1" name="Release Agathion's Seal - Ball Trapping Orodriel">
 		<!-- High Five Skill -->
@@ -245,11 +245,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1577</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8517" levels="1" name="Release Agathion's Seal - Penalty Kick">
 		<!-- High Five Skill -->
@@ -263,11 +263,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1578</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8518" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
@@ -316,11 +316,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16077</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8522" levels="1" name="Release Seal on Agathion - Nevit's Messenger Kanna">
 		<!-- High Five Skill -->
@@ -333,11 +333,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16078</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8523" levels="1" name="Release Agathion's Seal - Guardian of Dawn Kallesin">
 		<!-- High Five Skill -->
@@ -350,11 +350,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16079</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8524" levels="1" name="Hero's Holy Attack">
 		<!-- Divine attck is increased by 250. -->
@@ -1084,9 +1084,9 @@
 				<player Charges="8" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="FocusMaxMomentum" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8568" levels="1" name="Maximum Sonic Focus">
 		<!-- Glory Days confirmed -->
@@ -1110,9 +1110,9 @@
 				<player Charges="8" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="FocusMaxMomentum" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8569" levels="1" name="Sonic Rage">
 		<!-- Glory Days confirmed -->
@@ -1133,13 +1133,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL, DUALBLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
 				<overHit>true</overHit>
 				<criticalChance>10</criticalChance>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="FocusMomentum">
 				<maxCharges>7</maxCharges>
@@ -1165,13 +1165,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
 				<overHit>true</overHit>
 				<criticalChance>10</criticalChance>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="FocusMomentum">
 				<maxCharges>7</maxCharges>
@@ -1202,13 +1202,13 @@
 				<using slot="lrhand" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6084</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8572" levels="1" name="Armor Crush">
 		<!-- Glory Days confirmed -->
@@ -1240,7 +1240,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
@@ -1260,7 +1260,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8573" levels="1" name="Soul Rage">
 		<!-- Glory Days Confirmed -->
@@ -1277,12 +1277,12 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>78</magicLvl>
 		<hitTime>1500</hitTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<criticalChance>10</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="FocusSouls">
 				<charge>1</charge>
@@ -1309,12 +1309,12 @@
 		<reuseDelay>75000</reuseDelay>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<fanRange>0;0;400;90</fanRange>
-		<for>
+		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>6468</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8575" levels="1" name="Soul Vortex">
 		<!-- Glory Days Confirmed -->
@@ -1340,7 +1340,7 @@
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
-		<for>
+		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>112</power>
 			</effect>
@@ -1361,7 +1361,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8576" levels="1" name="Soul Vortex Extinction">
 		<!-- Glory Days Confirmed -->
@@ -1383,14 +1383,14 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="MULTI_DEBUFF_SOUL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_SOUL,9</dispel>
 			</effect>
 			<effect name="MagicalSoulAttack">
 				<power>195</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8577" levels="1" name="Wild Shot">
 		<!-- Glory Days Confirmed -->
@@ -1415,13 +1415,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>6468</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8578" levels="1" name="Multiple Shot">
 		<!-- Glory Days Confirmed -->
@@ -1446,13 +1446,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW, CROSSBOW" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>16667</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8579" levels="1" name="Fire Vortex">
 		<!-- Glory Days Confirmed -->
@@ -1479,7 +1479,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
 				<overHit>true</overHit>
@@ -1502,7 +1502,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8580" levels="1" name="Fire Vortex Buster">
 		<!-- Glory Days Confirmed -->
@@ -1525,14 +1525,14 @@
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_FIRE" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8581" levels="1" name="Meteor">
 		<!-- Glory Days Confirmed -->
@@ -1557,14 +1557,14 @@
 		<mpPerChanneling>72</mpPerChanneling>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
 			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<power>111</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8582" levels="1" name="Dark Vortex">
 		<!-- Glory Days Confirmed -->
@@ -1591,7 +1591,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>139</power>
 				<percentage>25</percentage>
@@ -1602,7 +1602,7 @@
 			<effect name="Debuff">
 				<sub stat="darkRes" val="30" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8583" levels="1" name="Day of Doom">
 		<!-- Glory Days Confirmed -->
@@ -1622,7 +1622,7 @@
 		<attributeValue>20</attributeValue>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelBySlotMyself">
 				<dispel>MAGICAL_STANCE</dispel>
 			</effect>
@@ -1630,7 +1630,7 @@
 				<npcId>13028</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8584" levels="1" name="Ice Vortex">
 		<!-- Glory Days Confirmed -->
@@ -1657,7 +1657,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
 				<overHit>true</overHit>
@@ -1680,7 +1680,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8585" levels="1" name="Ice Vortex Crusher">
 		<!-- Glory Days Confirmed -->
@@ -1703,14 +1703,14 @@
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_WATER" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_WATER,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8586" levels="1" name="Star Fall">
 		<!-- Glory Days Confirmed -->
@@ -1733,11 +1733,11 @@
 		<mpPerChanneling>72</mpPerChanneling>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8587" levels="1" name="Wind Vortex">
 		<!-- Glory Days Confirmed -->
@@ -1764,7 +1764,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
 				<overHit>true</overHit>
@@ -1785,7 +1785,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8588" levels="1" name="Wind Vortex Slug">
 		<!-- Glory Days Confirmed -->
@@ -1808,14 +1808,14 @@
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_WIND" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_WIND,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8589" levels="1" name="Summon Feline King">
 		<!-- Glory Days Confirmed -->
@@ -1838,7 +1838,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<!-- Spirit Ore -->
 				<npcId>14836</npcId>
@@ -1846,7 +1846,7 @@
 				<consumeItemId>3031</consumeItemId>
 				<consumeItemCount>11</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8590" levels="1" name="Final Servitor">
 		<!-- Glory Days Confirmed -->
@@ -1870,7 +1870,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>20</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
@@ -1916,7 +1916,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8591" levels="1" name="Summon Magnus the Unicorn">
 		<!-- Glory Days Confirmed -->
@@ -1939,14 +1939,14 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>14837</npcId>
 				<lifeTime>3600</lifeTime>
 				<consumeItemId>3031</consumeItemId>
 				<consumeItemCount>11</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8592" levels="1" name="Summon Spectral Lord">
 		<!-- Glory Days Confirmed -->
@@ -1969,14 +1969,14 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>14838</npcId>
 				<lifeTime>3600</lifeTime>
 				<consumeItemId>3031</consumeItemId>
 				<consumeItemCount>11</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8593" levels="1" name="Servitor Barrier">
 		<!-- Glory Days Confirmed -->
@@ -2002,9 +2002,9 @@
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8594" levels="1" name="Cleanse">
 		<!-- Glory Days Confirmed -->
@@ -2024,13 +2024,13 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8595" levels="1" name="Prophecy of Water">
 		<!-- Glory Days Confirmed -->
@@ -2054,7 +2054,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -2094,7 +2094,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8596" levels="1" name="Prophecy of Wind">
 		<!-- Glory Days Confirmed -->
@@ -2118,7 +2118,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
@@ -2160,7 +2160,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8597" levels="1" name="Dance of Siren">
 		<!-- Glory Days Confirmed -->
@@ -2184,11 +2184,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="8598" levels="1" name="Song of Silence">
 		<!-- Glory Days Confirmed -->
@@ -2214,10 +2214,10 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="8599" levels="1" name="Chain Heal">
 		<!-- Glory Days Confirmed -->
@@ -2240,10 +2240,10 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

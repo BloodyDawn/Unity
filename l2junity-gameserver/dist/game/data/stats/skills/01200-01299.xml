@@ -160,12 +160,12 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1204" levels="2" name="Wind Walk">
 		<table name="#runSpd"> 20 33 </table>
@@ -202,7 +202,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -210,7 +210,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1206" levels="19" name="Wind Shackle">
 		<!-- Confirmed CT2.5 -->
@@ -336,7 +336,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -363,7 +363,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1208" levels="17" name="Seal of Binding">
 		<abnormalLvl>1</abnormalLvl>
@@ -461,12 +461,12 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1209" levels="6" name="Seal of Poison">
 		<table name="#dot"> 14 19 24 30 34 37 </table>
@@ -528,7 +528,7 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">14</value>
@@ -539,7 +539,7 @@
 					<value level="6">37</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1210" levels="4" name="Seal of Gloom">
 		<table name="#mdot"> 9 11 14 15 </table>
@@ -591,7 +591,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
 					<value level="1">29</value>
@@ -608,7 +608,7 @@
 					<value level="4">15</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1213" levels="13" name="Seal of Mirage">
 		<affectLimit>10-10</affectLimit>
@@ -683,11 +683,11 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Confuse" abnormalTime="20">
 				<chance>60</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1216" levels="1" name="Self Heal">
 		<!-- Confirmed CT2.5 -->
@@ -703,11 +703,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>42</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1217" levels="33" name="Greater Heal">
 		<!-- Confirmed CT2.5 -->
@@ -902,7 +902,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">14</value>
@@ -977,7 +977,7 @@
 					<value level="33">472</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1218" levels="33" name="Greater Battle Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1132,7 +1132,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">371</value>
@@ -1170,7 +1170,7 @@
 					<value level="33">858</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1219" levels="33" name="Greater Group Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1364,7 +1364,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">11</value>
@@ -1439,7 +1439,7 @@
 					<value level="33">378</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1220" levels="8" name="Blaze">
 		<table name="#power"> 23 26 29 32 35 38 42 44 </table>
@@ -1495,7 +1495,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">23</value>
@@ -1509,7 +1509,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1222" levels="15" name="Curse Chaos">
 		<table name="#accCombat"> 9 12 12 12 12 12 12 12 12 12 12 12 12 12 12 </table>
@@ -1614,7 +1614,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Accuracy">
@@ -1637,7 +1637,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1223" levels="15" name="Surrender to Earth">
 		<!-- Confirmed CT2.5 -->
@@ -1776,12 +1776,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<sub stat="earthRes" val="20" />
 				<add stat="windRes" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1224" levels="17" name="Surrender to Poison">
 		<table name="#trait_poison"> -25 -25 -25 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 </table>
@@ -1933,7 +1933,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>
 					<value level="1">-25</value>
@@ -1955,7 +1955,7 @@
 					<value level="17">-30</value>
 				</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1225" levels="18" name="Summon Mew the Cat">
 		<!-- H5 hitTime -->
@@ -2075,7 +2075,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14159</value>
@@ -2119,7 +2119,7 @@
 					<value level="18">3600</value>
 				</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1226" levels="18" name="Summon Boxer the Unicorn">
 		<!-- H5 hitTime -->
@@ -2260,7 +2260,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14295</value>
@@ -2324,7 +2324,7 @@
 					<value level="18">2</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1227" levels="18" name="Summon Mirage the Unicorn">
 		<!-- H5 hitTime -->
@@ -2444,7 +2444,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14343</value>
@@ -2488,7 +2488,7 @@
 					<value level="18">3600</value>
 				</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1228" levels="18" name="Summon Silhouette">
 		<!-- H5 hitTime -->
@@ -2608,7 +2608,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14527</value>
@@ -2652,7 +2652,7 @@
 					<value level="18">3600</value>
 				</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1229" levels="18" name="Chant of Life">
 		<table name="#hot"> 12 15 18 23 27 31 35 39 43 45 46 58 50 52 53 55 56 58 </table>
@@ -2768,7 +2768,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">12</value>
@@ -2791,7 +2791,7 @@
 					<value level="18">58</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1230" levels="28" name="Prominence">
 		<!-- Confirmed CT2.5 -->
@@ -2930,7 +2930,7 @@
 		<abnormalType>HOLY_ATTACK</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">49</value>
@@ -2964,7 +2964,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1231" levels="28" name="Aura Flare">
 		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 64 66 67 68 70 71 72 74 75 77 78 79 80 82 83 84 85 87 </table>
@@ -3103,7 +3103,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">39</value>
@@ -3140,7 +3140,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 		</selfEffects>
 	</skill>
@@ -3184,7 +3184,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>
 					<value level="1">10</value>
@@ -3193,7 +3193,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1233" levels="4" name="Decay">
 		<table name="#dot"> 102 125 144 157 </table>
@@ -3246,7 +3246,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>
 					<value level="1">102</value>
@@ -3255,7 +3255,7 @@
 					<value level="4">157</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1234" levels="28" name="Vampiric Claw">
 		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
@@ -3392,7 +3392,7 @@
 		<abnormalType>HOLY_ATTACK</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">49</value>
@@ -3426,7 +3426,7 @@
 				</power>
 				<percentage>40</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1235" levels="28" name="Hydro Blast">
 		<!-- Confirmed CT2.5 -->
@@ -3565,7 +3565,7 @@
 		<abnormalType>HOLY_ATTACK</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">49</value>
@@ -3598,7 +3598,7 @@
 					<value level="28">108</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1236" levels="19" name="Frost Bolt">
 		<table name="#power"> 30 31 33 35 37 39 41 43 45 47 49 51 53 56 58 59 61 63 65 </table>
@@ -3706,7 +3706,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">30</value>
@@ -3736,7 +3736,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1237" levels="17" name="Ice Dagger">
 		<table name="#dot"> 44 44 44 44 54 54 54 54 54 62 62 62 62 62 67 67 67 </table>
@@ -3855,7 +3855,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">28</value>
@@ -3899,7 +3899,7 @@
 					<value level="17">67</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1238" levels="3" name="Freezing Skin">
 		<!-- Confirmed CT2.5 -->
@@ -3942,7 +3942,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>
 					<value level="1">10</value>
@@ -3951,7 +3951,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1239" levels="28" name="Hurricane">
 		<!-- Confirmed CT2.5 -->
@@ -4090,7 +4090,7 @@
 		<abnormalType>HOLY_ATTACK</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">49</value>
@@ -4124,7 +4124,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1240" levels="3" name="Guidance">
 		<table name="#accCombat"> 2 3 4 </table>
@@ -4166,7 +4166,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -4175,7 +4175,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1242" levels="3" name="Death Whisper">
 		<table name="#cAtk"> 1.25 1.3 1.35 </table>
@@ -4217,7 +4217,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">25</value>
@@ -4226,7 +4226,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1243" levels="6" name="Blessed Shield">
 		<table name="#rShld"> 1.05 1.1 1.15 1.2 1.25 1.3 </table>
@@ -4283,7 +4283,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">5</value>
@@ -4295,7 +4295,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1244" levels="13" name="Freezing Flame">
 		<!-- Updated to IO -->
@@ -4497,7 +4497,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">52</value>
@@ -4517,7 +4517,7 @@
 				</power>
 				<percentage>80</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1246" levels="12" name="Seal of Silence">
 		<abnormalLvl>1</abnormalLvl>
@@ -4595,9 +4595,9 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1247" levels="14" name="Seal of Scourge">
 		<!-- should stop regen - check if mul regHP by 0 will work -->
@@ -4683,14 +4683,14 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>BOSS</trait>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="HpRegen">
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1248" levels="12" name="Seal of Suspension">
 		<abnormalLvl>1</abnormalLvl>
@@ -4766,12 +4766,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="mReuse" val="3" />
 				<mul stat="pReuse" val="3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1249" levels="3" name="The Vision of Pa'agrio">
 		<table name="#accCombat"> 2 3 4 </table>
@@ -4813,7 +4813,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -4822,7 +4822,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1250" levels="3" name="Under the Protection of Pa'agrio">
 		<table name="#rShld"> 1.3 1.4 1.5 </table>
@@ -4864,7 +4864,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">30</value>
@@ -4873,7 +4873,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1251" levels="2" name="Chant of Fury">
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
@@ -4909,7 +4909,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -4917,7 +4917,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1252" levels="3" name="Chant of Evasion">
 		<table name="#rEvas"> 2 3 4 </table>
@@ -4958,7 +4958,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">2</value>
@@ -4967,7 +4967,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1253" levels="3" name="Chant of Rage">
 		<table name="#cAtk"> 1.25 1.3 1.35 </table>
@@ -5008,7 +5008,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">25</value>
@@ -5017,7 +5017,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1254" levels="6" name="Mass Resurrection">
 		<table name="#power"> 0 20 30 40 50 55 </table>
@@ -5069,7 +5069,7 @@
 		<cond>
 			<player canResurrect="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Resurrection">
 				<power>
 					<value level="1">0</value>
@@ -5080,7 +5080,7 @@
 					<value level="6">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1255" levels="2" name="Party Return">
 		<!-- Confirmed CT2.5 -->
@@ -5117,11 +5117,11 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1256" levels="13" name="The Heart of Pa'agrio">
 		<table name="#amount"> 91 103 115 127 133 138 144 149 154 159 164 168 172 </table>
@@ -5214,7 +5214,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">31</value>
@@ -5249,7 +5249,7 @@
 					<value level="13">172</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1257" levels="3" name="Decrease Weight">
 		<table name="#Weight"> 3000 6000 9000 </table>
@@ -5291,11 +5291,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="#Weight" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1258" levels="4" name="Restore Life">
 		<!-- Confirmed CT2.5 -->
@@ -5339,7 +5339,7 @@
 				<target npcType="Attackable" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>
 					<value level="1">15</value>
@@ -5348,7 +5348,7 @@
 					<value level="4">30</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1259" levels="4" name="Stun Resistance">
 		<table name="#trait_shock"> 15 20 30 40 </table>
@@ -5395,7 +5395,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">15</value>
@@ -5404,7 +5404,7 @@
 					<value level="4">40</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1260" levels="3" name="The Tact of Pa'agrio">
 		<table name="#rEvas"> 2 3 4 </table>
@@ -5446,7 +5446,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">2</value>
@@ -5455,7 +5455,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1261" levels="2" name="The Rage of Pa'agrio">
 		<table name="#mAtk"> 1.1 1.16 </table>
@@ -5499,7 +5499,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -5556,7 +5556,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1262" levels="10" name="Transfer Pain">
 		<table name="#power"> 10 20 30 40 50 52 54 56 58 60 </table>
@@ -5589,12 +5589,12 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<add stat="transDam" val="#power" />
 				<power>0.2</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1263" levels="24" name="Curse Gloom">
 		<!-- Guessed -->
@@ -5724,7 +5724,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">47</value>
@@ -5765,7 +5765,7 @@
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1264" levels="3" name="Solar Spark">
 		<table name="#power"> 39 47 55 </table>
@@ -5801,7 +5801,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">39</value>
@@ -5810,7 +5810,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1265" levels="14" name="Solar Flare">
 		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 </table>
@@ -5890,7 +5890,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">65</value>
@@ -5910,7 +5910,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1266" levels="3" name="Shadow Spark">
 		<table name="#power"> 39 47 55 </table>
@@ -5946,7 +5946,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">39</value>
@@ -5955,7 +5955,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1267" levels="14" name="Shadow Flare">
 		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 </table>
@@ -6035,7 +6035,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">65</value>
@@ -6055,7 +6055,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1268" levels="4" name="Vampiric Rage">
 		<table name="#absorbDam"> 6 7 8 9 </table>
@@ -6102,7 +6102,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">6</value>
@@ -6112,7 +6112,7 @@
 				</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1269" levels="9" name="Curse Disease">
 		<!-- Confirmed CT2.5 -->
@@ -6177,14 +6177,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="HealEffect">
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1271" levels="1" name="Benediction">
 		<!-- Confirmed CT2.5 -->
@@ -6205,11 +6205,11 @@
 		<cond msgId="113" addName="1">
 			<player mp="25" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1272" levels="13" name="Word of Fear">
 		<abnormalLvl>1</abnormalLvl>
@@ -6291,10 +6291,10 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="1273" levels="13" name="Eva's Serenade">
 		<!-- Confirmed CT2.5 -->
@@ -6354,11 +6354,11 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="DeleteHate">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1274" levels="4" name="Energy Bolt">
 		<table name="#power"> 13 16 19 22 </table>
@@ -6396,7 +6396,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">13</value>
@@ -6405,7 +6405,7 @@
 					<value level="4">22</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1275" levels="14" name="Aura Bolt">
 		<table name="#power"> 26 29 33 36 39 41 43 45 46 48 50 51 53 54 </table>
@@ -6483,7 +6483,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">26</value>
@@ -6502,7 +6502,7 @@
 					<value level="14">54</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1276" levels="14" name="Summon Kai the Cat">
 		<table name="#itemConsumeCountOT"> 2 2 2 2 2 2 4 4 4 4 6 6 6 6 </table>
@@ -6588,7 +6588,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14207</value>
@@ -6625,7 +6625,7 @@
 					<value level="14">6</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1277" levels="14" name="Summon Merrow the Unicorn">
 		<table name="#itemConsumeCountOT"> 2 2 2 2 2 2 4 4 4 4 6 6 6 6 </table>
@@ -6710,7 +6710,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14391</value>
@@ -6747,7 +6747,7 @@
 					<value level="14">6</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1278" levels="14" name="Summon Soulless">
 		<table name="#itemConsumeCountOT"> 2 2 2 2 2 2 4 4 4 4 6 6 6 6 </table>
@@ -6832,7 +6832,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14575</value>
@@ -6869,7 +6869,7 @@
 					<value level="14">6</value>
 				</consumeItemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1279" levels="9" name="Summon Binding Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -6927,7 +6927,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>6</cubicId>
 				<cubicLvl>
@@ -6942,7 +6942,7 @@
 					<value level="9">9</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1280" levels="9" name="Summon Aqua Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -7000,7 +7000,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>7</cubicId>
 				<cubicLvl>
@@ -7015,7 +7015,7 @@
 					<value level="9">9</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1281" levels="9" name="Summon Spark Cubic">
 		<!-- Confirmed CT2.5 -->
@@ -7073,7 +7073,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>8</cubicId>
 				<cubicLvl>
@@ -7088,7 +7088,7 @@
 					<value level="9">9</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1282" levels="2" name="Pa'agrian Haste">
 		<table name="#runSpd"> 20 33 </table>
@@ -7125,7 +7125,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -7133,7 +7133,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1283" levels="13" name="Soul Guard">
 		<table name="#def"> 293.3 333.2 375.9 421.4 445.2 469.7 494.9 520.1 546 571.9 598.5 625.8 653.1 </table>
@@ -7173,7 +7173,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>
 					<value level="1">5</value>
@@ -7209,7 +7209,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1284" levels="3" name="Chant of Revenge">
 		<table name="#power"> 10 15 20 </table>
@@ -7250,7 +7250,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>
 					<value level="1">10</value>
@@ -7259,7 +7259,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1285" levels="1" name="Seed of Fire">
 		<abnormalLvl>1</abnormalLvl>
@@ -7279,11 +7279,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="firePower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1286" levels="1" name="Seed of Water">
 		<abnormalLvl>1</abnormalLvl>
@@ -7303,11 +7303,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="waterPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1287" levels="1" name="Seed of Wind">
 		<abnormalLvl>1</abnormalLvl>
@@ -7327,11 +7327,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="windPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1288" levels="1" name="Aura Symphony">
 		<castRange>900</castRange>
@@ -7348,11 +7348,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1289" levels="1" name="Inferno">
 		<abnormalLvl>10</abnormalLvl>
@@ -7377,14 +7377,14 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<power>60</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1290" levels="1" name="Blizzard">
 		<abnormalLvl>3</abnormalLvl>
@@ -7410,7 +7410,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
 			</effect>
@@ -7420,7 +7420,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1291" levels="1" name="Demon Wind">
 		<abnormalLvl>1</abnormalLvl>
@@ -7444,7 +7444,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
 			</effect>
@@ -7454,7 +7454,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1292" levels="1" name="Elemental Assault">
 		<castRange>900</castRange>
@@ -7471,12 +7471,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>200</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1293" levels="1" name="Elemental Symphony">
 		<castRange>900</castRange>
@@ -7493,12 +7493,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>200</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1294" levels="1" name="Elemental Storm">
 		<castRange>900</castRange>
@@ -7515,11 +7515,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1295" levels="9" name="Aqua Splash">
 		<table name="#power"> 41 43 45 46 48 50 51 53 54 </table>
@@ -7581,7 +7581,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">41</value>
@@ -7595,7 +7595,7 @@
 					<value level="9">54</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1296" levels="9" name="Rain of Fire">
 		<table name="#power"> 41 43 45 46 48 50 51 53 54 </table>
@@ -7657,7 +7657,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">41</value>
@@ -7671,7 +7671,7 @@
 					<value level="9">54</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1297" levels="6" name="Clear Mind">
 		<!-- Confirmed CT2.5 -->
@@ -7689,7 +7689,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="StatByMoveType">
 				<stat>REGENERATE_MP_RATE</stat>
 				<type>WALKING</type>
@@ -7714,7 +7714,7 @@
 					<value level="6">4.9</value>
 				</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1298" levels="14" name="Mass Slow">
 		<abnormalLvl>
@@ -7799,14 +7799,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="1299" levels="2" name="Servitor Empowerment">
 		<table name="#mDef"> 1350 2700 </table>
@@ -7844,7 +7844,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SERVITOR</targetType>
-		<for>
+		<effects>
 			<effect name="ImmobilePetBuff">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
@@ -7862,6 +7862,6 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

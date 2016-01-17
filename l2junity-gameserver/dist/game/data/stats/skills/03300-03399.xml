@@ -7,12 +7,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3301" levels="1" name="Yellow Talisman - Atk. Spd.">
 		<!-- Confirmed CT2.5 -->
@@ -21,12 +21,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3302" levels="1" name="Yellow Talisman - Casting Spd.">
 		<!-- Confirmed CT2.5 -->
@@ -35,12 +35,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3303" levels="1" name="White Talisman - Bleed Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -49,11 +49,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>10</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3304" levels="1" name="White Talisman - Sleep Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -62,11 +62,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>10</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3305" levels="1" name="White Talisman - Stun Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -75,11 +75,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>10</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3306" levels="1" name="White Talisman - Bravery">
 		<!-- Confirmed CT2.5 -->
@@ -88,11 +88,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>10</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3307" levels="1" name="White Talisman - Paralysis Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -101,11 +101,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>10</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3308" levels="1" name="White Talisman - Hold Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -114,11 +114,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>10</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3309" levels="1" name="White Talisman - Cancel Resistance">
 		<!-- Confirmed CT2.5 -->
@@ -127,11 +127,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3310" levels="1" name="Yellow Talisman - HP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -140,12 +140,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3311" levels="1" name="Yellow Talisman - CP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -154,12 +154,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpRegen">
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3312" levels="1" name="Yellow Talisman - Healing">
 		<!-- Confirmed CT2.5 -->
@@ -168,11 +168,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="healEffect" val="40" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3313" levels="1" name="Yellow Talisman - Alacrity">
 		<!-- Confirmed CT2.5 -->
@@ -181,7 +181,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>3</amount>
 				<mode>DIFF</mode>
@@ -194,7 +194,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3314" levels="1" name="Grey Talisman - Weight Training">
 		<!-- Confirmed CT2.5 -->
@@ -203,11 +203,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="weightLimit" val="1.1" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3315" levels="1" name="Grey Talisman - Mid-grade Fishing">
 		<!-- TODO: Require Support -->
@@ -224,11 +224,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.97" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3317" levels="1" name="Yellow Talisman - Critical Reduction">
 		<!-- Confirmed CT2.5 -->
@@ -237,12 +237,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3318" levels="1" name="Flag Display">
 		<!-- Flag Skill -->
@@ -265,20 +265,20 @@
 		<startEffects>
 			<effect name="TakeFortStart" />
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="TakeFort" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="3319" levels="1" name="Divine Protection of Ring">
 		<magicLvl>86</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<GUST>100</GUST>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3320" levels="1" name="Yellow Talisman - MP Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -287,12 +287,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3321" levels="1" name="Blue Talisman - Evasion">
 		<!-- Confirmed CT2.5 -->
@@ -313,7 +313,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.95" />
 			</effect>
@@ -321,7 +321,7 @@
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3322" levels="1" name="Iron Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -330,11 +330,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<slots>1</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3323" levels="1" name="Bronze Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -343,11 +343,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<slots>2</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3324" levels="1" name="Steel Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -356,11 +356,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<slots>3</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3325" levels="1" name="Mithril Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -369,11 +369,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<slots>4</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3326" levels="1" name="Jewelry Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -381,11 +381,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<slots>5</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3327" levels="1" name="Oriharukon Bracelet">
 		<!-- Confirmed CT2.5 -->
@@ -393,11 +393,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TalismanSlot">
 				<slots>6</slots>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3328" levels="1" name="Double Stab">
 		<!-- Confirmed CT2.5 -->
@@ -415,11 +415,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3329" levels="1" name="Power Slash">
 		<!-- Confirmed CT2.5 -->
@@ -437,11 +437,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3330" levels="1" name="Air Blade">
 		<!-- Confirmed CT2.5 -->
@@ -461,11 +461,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3331" levels="1" name="Enslave">
 		<!-- Confirmed CT2.5 -->
@@ -489,12 +489,12 @@
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>200</power>
 				<percentage>5</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3332" levels="1" name="Orange Talisman - Hot Springs CP Potion">
 		<!-- Confirmed CT2.5 -->
@@ -518,12 +518,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>10166</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3333" levels="1" name="Orange Talisman - Elixir of Life (A-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -547,12 +547,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>8626</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3334" levels="1" name="Orange Talisman - Elixir of Mind (A-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -576,12 +576,12 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>8632</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3335" levels="1" name="Transform Yeti">
 		<!-- Confirmed CT2.5 -->
@@ -603,11 +603,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>102</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3336" levels="1" name="Transform Buffalo">
 		<!-- Confirmed CT2.5 -->
@@ -629,14 +629,14 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>103</transformationId>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>BIG_HEAD,9</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3337" levels="1" name="Transform Cutie Pig">
 		<!-- Confirmed CT2.5 -->
@@ -659,11 +659,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>104</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3338" levels="1" name="Shield Master">
 		<magicLvl>1</magicLvl>
@@ -732,7 +732,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +5.4% -->
 				<!-- Received Increased Heal +3% -->
@@ -754,7 +754,7 @@
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3349" levels="1" name="Dynasty Breastplate">
 		<!-- Confirmed CT2.5 -->
@@ -763,7 +763,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
@@ -783,7 +783,7 @@
 				<amount>234</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3350" levels="1" name="Dynasty Breastplate">
 		<!-- Confirmed CT2.5 -->
@@ -792,7 +792,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
 				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
@@ -807,7 +807,7 @@
 				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3351" levels="1" name="Dynasty Breastplate">
 		<!-- Confirmed CT2.5 -->
@@ -816,7 +816,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +5.4% -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
@@ -831,7 +831,7 @@
 				<amount>5.4</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3352" levels="1" name="Dynasty Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -840,7 +840,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Evasion +4.3 -->
 				<!-- Atk. Spd. are increased +2.66% -->
@@ -862,7 +862,7 @@
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3353" levels="1" name="Dynasty Leather Armor">
 		<!-- Confirmed CT2.5 -->
@@ -871,7 +871,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Accuracy +4.3 -->
 				<!-- Max MP +321 Effect -->
@@ -896,7 +896,7 @@
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -905,7 +905,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
@@ -922,7 +922,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3355" levels="1" name="Dynasty Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -931,7 +931,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
@@ -948,7 +948,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3356" levels="1" name="Dynasty Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -957,7 +957,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
@@ -982,7 +982,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic">
 		<!-- Confirmed CT2.5 -->
@@ -991,7 +991,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Increase M. Atk +5.4% -->
@@ -1011,7 +1011,7 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3358" levels="1" name="Flag Equip">
 		<!-- Confirmed CT2.5 -->
@@ -1021,7 +1021,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>-80</amount>
 				<mode>PER</mode>
@@ -1042,7 +1042,7 @@
 				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3359" levels="1" name="Transform Native">
 		<!-- Confirmed CT2.5 -->
@@ -1064,11 +1064,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>101</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3360" levels="1" name="Special Ability: Cheap Shot">
 		<!-- Confirmed CT2.5 -->
@@ -1076,12 +1076,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.88" />
 				<mul stat="MagicalMpConsumeRate" val="0.88" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3361" levels="1" name="Release Agathion's Seal - Fortress">
 		<!-- Confirmed CT2.5 -->
@@ -1094,11 +1094,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16029</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3362" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>
@@ -1123,33 +1123,33 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>18</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3366" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>8</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3367" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>12</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3368" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>
@@ -1174,33 +1174,33 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>11</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3372" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>5</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3373" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>8</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3374" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>
@@ -1225,33 +1225,33 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>16</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3378" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>7</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3379" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>11</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3380" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>
@@ -1276,33 +1276,33 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>9</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3384" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>4</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3385" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>6</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3386" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>
@@ -1327,33 +1327,33 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>18</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3390" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>8</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3391" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>12</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3392" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>
@@ -1378,33 +1378,33 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>18</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3396" levels="1" name="Dynasty Resistance Ring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>8</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3397" levels="1" name="Dynasty Resistance Earring">
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>12</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3398" levels="1" name="Stat Enhancing Necklace">
 		<magicLvl>80</magicLvl>

@@ -27,12 +27,12 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelayGroup>10258</reuseDelayGroup>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10499" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -54,10 +54,10 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" /> <!-- Air Bind -->
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

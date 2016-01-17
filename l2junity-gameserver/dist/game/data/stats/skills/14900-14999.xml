@@ -17,11 +17,11 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14901" levels="1" name="Elise' Radiant Heal">
 		<!-- Glory Days confirmed -->
@@ -40,11 +40,11 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14902" levels="1" name="Elise' Summon Tree of Life">
 		<!-- Glory Days confirmed -->
@@ -61,12 +61,12 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>14933</npcId>
 				<lifeTime>30</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14903" levels="1" name="Elise' Summon Tree of Life">
 		<!-- Glory Days confirmed -->
@@ -83,12 +83,12 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>14943</npcId>
 				<lifeTime>30</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14904" levels="1" name="Elise' Summon Tree of Life">
 		<!-- Glory Days confirmed -->
@@ -105,12 +105,12 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>15010</npcId>
 				<lifeTime>30</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14905" levels="1" name="Elise' Radiant Recharge">
 		<!-- Glory Days confirmed -->
@@ -143,14 +143,14 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>166</power>
 			</effect>
 			<effect name="ManaHealOverTime" ticks="1">
 				<power>12</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14906" levels="1" name="Elise' Radiant Recharge">
 		<!-- Glory Days confirmed -->
@@ -183,14 +183,14 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>174</power>
 			</effect>
 			<effect name="ManaHealOverTime" ticks="1">
 				<power>12</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14907" levels="1" name="Elise' Radiant Recharge">
 		<!-- Glory Days confirmed -->
@@ -223,14 +223,14 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>183</power>
 			</effect>
 			<effect name="ManaHealOverTime" ticks="1">
 				<power>13</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14908" levels="1" name="Elise' Crystal Regeneration">
 		<!-- Glory Days confirmed -->
@@ -250,7 +250,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
 			<effect name="HealPercent">
@@ -259,7 +259,7 @@
 			<effect name="ManaHealPercent" ticks="1">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14909" levels="1" name="Elise' Crystal Regeneration">
 		<!-- Glory Days confirmed -->
@@ -279,7 +279,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
 			<effect name="HealPercent">
@@ -288,7 +288,7 @@
 			<effect name="ManaHealPercent" ticks="1">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14910" levels="1" name="Elise' Crystal Regeneration">
 		<!-- Glory Days confirmed -->
@@ -308,7 +308,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
 			<effect name="HealPercent">
@@ -317,7 +317,7 @@
 			<effect name="ManaHealPercent" ticks="1">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14911" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->
@@ -332,11 +332,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14912" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->
@@ -351,11 +351,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>90</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>8190</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14913" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->
@@ -370,11 +370,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9750</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14914" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->
@@ -391,11 +391,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>-391</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14915" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->
@@ -412,11 +412,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>-417</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14916" levels="1" name="Dimensional Blow">
 		<!-- Glory Days confirmed -->
@@ -433,11 +433,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>-454</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14917" levels="1" name="Dimensional Haste">
 		<!-- Glory Days confirmed -->
@@ -457,12 +457,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14918" levels="1" name="Twisted Dimension Magic">
 		<!-- Glory Days confirmed -->
@@ -483,11 +483,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>52</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14919" levels="1" name="Twisted Dimension Magic">
 		<!-- Glory Days confirmed -->
@@ -508,11 +508,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>59</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14920" levels="1" name="Twisted Dimension Magic">
 		<!-- Glory Days confirmed -->
@@ -533,11 +533,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>65</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14921" levels="1" name="Twisted Dimension Magic">
 		<!-- Glory Days confirmed -->
@@ -558,11 +558,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>62</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14922" levels="1" name="Twisted Dimension Magic">
 		<!-- Glory Days confirmed -->
@@ -583,11 +583,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14923" levels="1" name="Twisted Dimension Magic">
 		<!-- Glory Days confirmed -->
@@ -608,11 +608,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>78</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14924" levels="1" name="Dimensional Magic Rift">
 		<!-- Glory Days confirmed -->
@@ -633,11 +633,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>57</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14925" levels="1" name="Dimensional Magic Rift">
 		<!-- Glory Days confirmed -->
@@ -658,11 +658,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>64</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14926" levels="1" name="Dimensional Magic Rift">
 		<!-- Glory Days confirmed -->
@@ -683,11 +683,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14927" levels="1" name="Dimensional Magic Rift">
 		<!-- Glory Days confirmed -->
@@ -708,11 +708,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>64</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14928" levels="1" name="Dimensional Magic Rift">
 		<!-- Glory Days confirmed -->
@@ -733,11 +733,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14929" levels="1" name="Dimensional Magic Rift">
 		<!-- Glory Days confirmed -->
@@ -758,11 +758,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>78</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14930" levels="1" name="Dimensional Sweep">
 		<!-- Glory Days confirmed -->
@@ -777,11 +777,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>5200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14931" levels="1" name="Dimensional Sweep">
 		<!-- Glory Days confirmed -->
@@ -796,11 +796,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6552</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14932" levels="1" name="Dimensional Sweep">
 		<!-- Glory Days confirmed -->
@@ -815,11 +815,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>7800</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14933" levels="1" name="Dimensional Sweep">
 		<!-- Glory Days confirmed -->
@@ -834,11 +834,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6240</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14934" levels="1" name="Dimensional Sweep">
 		<!-- Glory Days confirmed -->
@@ -853,11 +853,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>7862</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14935" levels="1" name="Dimensional Sweep">
 		<!-- Glory Days confirmed -->
@@ -872,11 +872,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9360</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14936" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -902,11 +902,11 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14937" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -932,11 +932,11 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14938" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
@@ -962,11 +962,11 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14939" levels="1" name="Dimensional Shadow Dash">
 		<!-- Glory Days confirmed -->
@@ -985,7 +985,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<reuseDelay>60000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>40</amount>
 				<mode>DIFF</mode>
@@ -998,7 +998,7 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14940" levels="1" name="Rage Grand Blow">
 		<!-- Glory Days confirmed -->
@@ -1013,11 +1013,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14941" levels="1" name="Bloody Grand Blow">
 		<!-- Glory Days confirmed -->
@@ -1032,11 +1032,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>8190</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14942" levels="1" name="Destruction Grand Blow">
 		<!-- Glory Days confirmed -->
@@ -1051,11 +1051,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14943" levels="1" name="Dimensional Wring">
 		<!-- Glory Days confirmed -->
@@ -1070,11 +1070,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>20000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14944" levels="1" name="Dimensional Pierce">
 		<!-- Glory Days confirmed -->
@@ -1101,14 +1101,14 @@
 		<abnormalTime>10</abnormalTime>
 		<trait>BLEED</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>350</power>
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<power>500</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14945" levels="1" name="Dimensional Shock Wave">
 		<!-- Glory Days confirmed -->
@@ -1137,11 +1137,11 @@
 		<fanRange>0;0;80;200</fanRange>
 		<affectRange>80</affectRange>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14946" levels="1" name="Kalios' Rage">
 		<!-- Glory Days confirmed -->
@@ -1162,7 +1162,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
@@ -1209,7 +1209,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14947" levels="1" name="Pelline's Thirst">
 		<!-- Glory Days confirmed -->
@@ -1228,11 +1228,11 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14948" levels="1" name="Zellaka's Roar">
 		<!-- Glory Days confirmed -->
@@ -1257,10 +1257,10 @@
 		<affectRange>400</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14949" levels="1" name="Succubus Blow">
 		<!-- Glory Days confirmed -->
@@ -1275,11 +1275,11 @@
 		<effectRange>200</effectRange>
 		<magicLvl>78</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14950" levels="1" name="Succubus Cut">
 		<!-- Glory Days confirmed -->
@@ -1294,11 +1294,11 @@
 		<effectRange>200</effectRange>
 		<magicLvl>79</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14951" levels="1" name="Succubus Flash">
 		<!-- Glory Days confirmed -->
@@ -1313,11 +1313,11 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>79</magicLvl>
 		<coolTime>300</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14952" levels="1" name="Succubus Magic Blow">
 		<!-- Glory Days confirmed -->
@@ -1335,11 +1335,11 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>29</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14953" levels="1" name="Phantom Blow">
 		<!-- Glory Days confirmed -->
@@ -1356,11 +1356,11 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14954" levels="1" name="Phantom Cut">
 		<!-- Glory Days confirmed -->
@@ -1377,11 +1377,11 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14955" levels="1" name="Phantom Flash">
 		<!-- Glory Days confirmed -->
@@ -1398,11 +1398,11 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>300</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14956" levels="1" name="Phantom Magic Blow">
 		<!-- Glory Days confirmed -->
@@ -1420,11 +1420,11 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>29</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14957" levels="1" name="Phantom Bleed Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1988,11 +1988,11 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>800</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14986" levels="1" name="Drain Status">
 		<!-- Glory Days confirmed -->
@@ -2013,11 +2013,11 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>1050</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14987" levels="1" name="Drain Status">
 		<!-- Glory Days confirmed -->
@@ -2038,11 +2038,11 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>1300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14988" levels="1" name="Prisoner's Yoke">
 		<!-- Glory Days confirmed -->
@@ -2063,12 +2063,12 @@
 		<abnormalTime>1000</abnormalTime>
 		<trait>HOLD</trait>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14989" levels="1" name="Dimension Poison">
 		<!-- Glory Days confirmed -->
@@ -2088,11 +2088,11 @@
 		<abnormalLvl>50</abnormalLvl>
 		<abnormalTime>1000</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>15.5</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14990" levels="1" name="Dimension Poison">
 		<!-- Glory Days confirmed -->
@@ -2112,11 +2112,11 @@
 		<abnormalLvl>50</abnormalLvl>
 		<abnormalTime>1000</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>20</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14991" levels="1" name="Dimension Poison">
 		<!-- Glory Days confirmed -->
@@ -2136,11 +2136,11 @@
 		<abnormalLvl>50</abnormalLvl>
 		<abnormalTime>1000</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>25</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14992" levels="1" name="Healing of Purity">
 		<!-- Glory Days confirmed -->
@@ -2155,11 +2155,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_MAGICALLY,-1;POISON,-1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14993" levels="1" name="Master's Blessing - Prevailing Sonata">
 		<!-- AUTO GENERATED SKILL -->

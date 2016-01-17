@@ -84,11 +84,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>137</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9205" levels="1" name="Sturdy Kukuru">
 		<!-- AUTO GENERATED SKILL -->
@@ -125,12 +125,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>45000</reuseDelay>
 		<withoutAction>true</withoutAction>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>95</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9207" levels="1" name="Lucky Clover (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -189,11 +189,11 @@
 		<cond>
 			<player canUntransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TRANSFORM,-1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9211" levels="1" name="Dismount">
 		<!-- AUTO GENERATED SKILL -->
@@ -396,13 +396,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>-114558</x>
 				<y>253605</y>
 				<z>-1536</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9225" levels="1" name="Specter of Light">
 		<!-- AUTO GENERATED SKILL -->
@@ -451,7 +451,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>17</amount>
 				<mode>PER</mode>
@@ -468,7 +468,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9228" levels="1" name="Mentor's Drum Melody">
 		<!-- Ertheia skill -->
@@ -489,7 +489,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -544,7 +544,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9229" levels="1" name="Mentor's Lute Melody">
 		<!-- Ertheia skill -->
@@ -565,7 +565,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
@@ -584,7 +584,7 @@
 				<amount>31</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9230" levels="1" name="Mentor's Pipe Organ Melody">
 		<!-- Ertheia skill -->
@@ -606,7 +606,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.37" />
 			</effect>
@@ -622,7 +622,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9231" levels="1" name="Mentor's Guitar Melody">
 		<!-- Ertheia skill -->
@@ -643,7 +643,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.32" />
 				<add stat="mCritRate" val="20" />
@@ -658,7 +658,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9232" levels="1" name="Mentor's Harp Melody">
 		<!-- Ertheia skill -->
@@ -679,7 +679,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
@@ -699,7 +699,7 @@
 				<amount>5</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9233" levels="1" name="Mentor's Guidance">
 		<!-- Ertheia skill -->
@@ -721,12 +721,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<isMentoring>true</isMentoring>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="bonusExp" val="1.50" />
 				<mul stat="bonusSp" val="1.50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9234" levels="1" name="Scroll: Enchant Hair Accessory">
 		<!-- AUTO GENERATED SKILL -->
@@ -1018,12 +1018,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="bonusExp" val="1.05" />
 				<mul stat="bonusSp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="9257" levels="1" name="Mentor's Scroll: Enchant Weapon (D-grade)">
 		<!-- AUTO GENERATED SKILL -->

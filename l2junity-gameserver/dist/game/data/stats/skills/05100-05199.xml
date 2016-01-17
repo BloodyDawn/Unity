@@ -67,7 +67,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -76,7 +76,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5105" levels="3" name="Spell Force">
 		<!-- Not Used Anymore -->
@@ -99,7 +99,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">5</value>
@@ -108,7 +108,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5106" levels="4" name="Capture A State">
 		<abnormalLvl>
@@ -130,9 +130,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5107" levels="4" name="Capture B State">
 		<abnormalLvl>
@@ -154,9 +154,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5108" levels="4" name="Capture C State">
 		<abnormalLvl>
@@ -178,9 +178,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5109" levels="1" name="Presentation -  Clan Gate">
 		<!-- Confirmed CT2.5 -->
@@ -221,11 +221,11 @@
 				<player insideZoneId="51101, 51102, 51103, 51104, 51105, 51106, 51108, 51108, 51109" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>68</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5111" levels="1" name="Big Bang">
 		<!-- Confirmed CT2.5 -->
@@ -252,11 +252,11 @@
 				<player insideZoneId="51101, 51102, 51103, 51104, 51105, 51106, 51108, 51108, 51109" />
 			</not>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>68</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5112" levels="12" name="Stun">
 		<!-- Lvl 1-12 - Temporarily Immobilized and in a state of shock. -->
@@ -307,9 +307,9 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5113" levels="12" name="Buff Dispel">
 		<!-- CT2.5 retail confirmed -->
@@ -350,13 +350,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>25</rate>
 				<max>5</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5114" levels="12" name="Hold">
 		<!-- Lvl 1-12 - Temporarily Immobilized. -->
@@ -422,9 +422,9 @@
 		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5115" levels="12" name="Cubic Hate">
 		<!-- Summon Attractive Cubic Skill -->
@@ -463,11 +463,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetMeProbability">
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5116" levels="12" name="Hold">
 		<!-- Summon Attractive Cubic Skill -->
@@ -502,12 +502,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5117" levels="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
@@ -533,12 +533,12 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>829</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5118" levels="1" name="Cancel Sairen Use">
 		<!-- CT2.5 retail confirmed -->
@@ -553,13 +553,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>25</rate>
 				<max>5</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5119" levels="1" name="Bleed">
 		<!-- CT2.5 retail confirmed -->
@@ -579,11 +579,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>2487</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5120" levels="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -609,12 +609,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>100</affectRange>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>703</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5121" levels="1" name="Presentation -  Corpse Revival">
 		<!-- Confirmed CT2.5 -->
@@ -641,12 +641,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5123" levels="1" name="Maximum Defense">
 		<!-- Confirmed CT2.5 -->
@@ -664,7 +664,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 			</effect>
@@ -676,7 +676,7 @@
 				<amount>1000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5124" levels="1" name="Anti-music">
 		<!-- Confirmed CT2.5 -->
@@ -688,12 +688,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_AQUA_GUARD;DANCE_OF_CONCENTRATION;DANCE_OF_CONCENTRATION;DANCE_OF_EARTH_GUARD;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_LIGHT;DANCE_OF_MYSTIC;DANCE_OF_PROTECTION;DANCE_OF_SHADOW;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_FLAME_GUARD;SONG_OF_HUNTER;SONG_OF_INVOCATION;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_STORM_GUARD;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BLADESTORM;DANCE_OF_ALIGNMENT;SONG_OF_ELEMENTAL;SONG_OF_WINDSTORM</dispel>
 				<rate>100</rate>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5125" levels="1" name="Maximum Resist Status">
 		<!-- Confirmed CT2.5 -->
@@ -711,11 +711,11 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="60" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5126" levels="1" name="Maximum Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -733,7 +733,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>40</amount>
 				<mode>PER</mode>
@@ -742,7 +742,7 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5127" levels="1" name="Recover Momentum">
 		<!-- Confirmed CT2.5 -->
@@ -760,7 +760,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>7</maxCharges>
 			</effect>
@@ -768,7 +768,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5128" levels="1" name="Maximize long-range weapon use">
 		<!-- Confirmed CT2.5 -->
@@ -786,7 +786,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -803,7 +803,7 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5129" levels="1" name="Smokescreen">
 		<!-- Confirmed CT2.5 -->
@@ -821,7 +821,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>15</amount>
 				<mode>DIFF</mode>
@@ -830,7 +830,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5130" levels="1" name="Volcano">
 		<affectRange>300</affectRange>
@@ -845,11 +845,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<attributeValue>20</attributeValue>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5131" levels="1" name="Tsunami">
 		<affectRange>300</affectRange>
@@ -864,11 +864,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<attributeValue>20</attributeValue>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5132" levels="1" name="Cyclone">
 		<affectRange>300</affectRange>
@@ -883,11 +883,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<attributeValue>20</attributeValue>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5133" levels="1" name="Gehenna">
 		<affectRange>300</affectRange>
@@ -902,11 +902,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<attributeValue>20</attributeValue>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5134" levels="1" name="Anti-summoning Field">
 		<!-- Glory Days Confirmed -->
@@ -927,7 +927,7 @@
 		<lvlBonusRate>2</lvlBonusRate>
 		<abnormalLvl>1</abnormalLvl>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Unsummon">
 				<chance>80</chance>
 			</effect>
@@ -945,7 +945,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5135" levels="1" name="Slash">
 		<!-- CT2.5 retail confirmed -->
@@ -963,12 +963,12 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>8264</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5136" levels="1" name="Spin Slash">
 		<!-- CT2.5 retail confirmed -->
@@ -984,12 +984,12 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4132</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5137" levels="1" name="Grip of the Cat">
 		<!-- CT2.5 retail confirmed -->
@@ -1016,12 +1016,12 @@
 		<targetType>AURA</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5138" levels="1" name="Whiplash">
 		<!-- CT2.5 retail confirmed -->
@@ -1049,13 +1049,13 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>6198</power>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5139" levels="1" name="Tidal Wave">
 		<!-- CT2.5 retail confirmed -->
@@ -1077,12 +1077,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>228</power>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5140" levels="1" name="Dark Curse">
 		<!-- CT2.5 retail confirmed -->
@@ -1107,7 +1107,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>109</power>
 			</effect>
@@ -1115,7 +1115,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5141" levels="1" name="Dicing Death">
 		<!-- CT2.5 retail confirmed -->
@@ -1133,11 +1133,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>8264</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5142" levels="1" name="Corpse Burst">
 		<!-- CT2.5 retail confirmed -->
@@ -1156,12 +1156,12 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA_CORPSE_MOB</targetType>
-		<for>
+		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
 				<power>228</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5143" levels="1" name="Sailren Use Blow">
 		<!-- Confirmed CT2.5 -->
@@ -1176,12 +1176,12 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="FatalBlow">
 				<power>39544</power>
 				<chance>115</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5144" levels="1" name="Mirage">
 		<!-- Confirmed CT2.5 -->
@@ -1194,9 +1194,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="TargetCancel" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5145" levels="1" name="Day of Doom">
 		<abnormalLvl>1</abnormalLvl>
@@ -1215,7 +1215,7 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<activateRate>100</activateRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="MagicalMpConsumeRate" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="3" />
@@ -1242,7 +1242,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5146" levels="10" name="Heal">
 		<!-- Confirmed CT2.5 -->
@@ -1269,7 +1269,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">308</value>
@@ -1284,7 +1284,7 @@
 					<value level="10">552</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5147" levels="10" name="Blessed Body">
 		<!-- Confirmed CT2.5 -->
@@ -1315,11 +1315,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5148" levels="10" name="Prayer">
 		<!-- Confirmed CT2.5 -->
@@ -1350,7 +1350,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">4</value>
@@ -1366,7 +1366,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5149" levels="10" name="Recharge">
 		<!-- Confirmed CT2.5 -->
@@ -1393,7 +1393,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
 					<value level="1">33</value>
@@ -1408,7 +1408,7 @@
 					<value level="10">55</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5150" levels="10" name="Blessed Soul">
 		<!-- Confirmed CT2.5 -->
@@ -1439,7 +1439,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">16</value>
@@ -1455,7 +1455,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5151" levels="15" name="Mana Gain">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1491,12 +1491,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaCharge">
 				<amount>1</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5152" levels="10" name="Ritual">
 		<!-- Confirmed CT2.5 -->
@@ -1523,7 +1523,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>
 					<value level="1">264</value>
@@ -1538,7 +1538,7 @@
 					<value level="10">473</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5153" levels="10" name="Cheer">
 		<!-- Confirmed CT2.5 -->
@@ -1569,7 +1569,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>
 					<value level="1">24</value>
@@ -1585,7 +1585,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5154" levels="15" name="Might">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1622,7 +1622,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">23.64</value>
@@ -1643,7 +1643,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5156" levels="15" name="Empower">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1680,7 +1680,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">15.9</value>
@@ -1701,7 +1701,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5157" levels="10" name="Duel Might">
 		<!-- Confirmed CT2.5 -->
@@ -1731,7 +1731,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1740,7 +1740,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5158" levels="15" name="Shield">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1777,7 +1777,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">30.2</value>
@@ -1798,7 +1798,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5159" levels="15" name="Magic Barrier">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1835,7 +1835,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">37</value>
@@ -1856,7 +1856,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5160" levels="10" name="Duel Weakness">
 		<!-- Confirmed CT2.5 -->
@@ -1891,7 +1891,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -1902,7 +1902,7 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5161" levels="15" name="Agility">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1939,7 +1939,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">1</value>
@@ -1960,7 +1960,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5162" levels="15" name="Guidance">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -1997,7 +1997,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">1</value>
@@ -2018,7 +2018,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5163" levels="10" name="Focus">
 		<!-- Confirmed CT2.5 -->
@@ -2049,11 +2049,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5164" levels="10" name="Wild Magic">
 		<!-- Confirmed CT2.5 -->
@@ -2084,11 +2084,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="#mCritRate" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5165" levels="15" name="Charm">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -2124,7 +2124,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="AddHate">
 				<power>
 					<value level="1">-219</value>
@@ -2144,7 +2144,7 @@
 					<value level="15">-430</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5166" levels="15" name="Decrease Speed">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -2185,14 +2185,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5167" levels="15" name="Winter">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -2233,14 +2233,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5168" levels="10" name="Stun">
 		<!-- Confirmed CT2.5 -->
@@ -2277,9 +2277,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5169" levels="10" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -2316,12 +2316,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5170" levels="10" name="Sleep">
 		<!-- Confirmed CT2.5 -->
@@ -2358,12 +2358,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5171" levels="10" name="Paralyze">
 		<!-- Confirmed CT2.5 -->
@@ -2400,9 +2400,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5172" levels="10" name="Medusa">
 		<!-- Confirmed CT2.5 -->
@@ -2440,9 +2440,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5173" levels="10" name="Fear">
 		<!-- Confirmed CT2.5 -->
@@ -2479,11 +2479,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<!-- FIXME: We need an instant effect that will work only vs monsters and fear them with 40% chance for 20 seconds here -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="5174" levels="15" name="Poison">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -2544,7 +2544,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">41</value>
@@ -2564,7 +2564,7 @@
 					<value level="15">88</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5175" levels="15" name="Bleed">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
@@ -2626,7 +2626,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">44</value>
@@ -2646,7 +2646,7 @@
 					<value level="15">72</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5176" levels="10" name="Silence">
 		<!-- Confirmed CT2.5 -->
@@ -2683,9 +2683,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5177" levels="10" name="Doom">
 		<!-- Confirmed CT2.5 -->
@@ -2722,10 +2722,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5178" levels="1" name="NPC Burn">
 		<affectRange>200</affectRange>
@@ -2741,11 +2741,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3.5</hitCancelTime>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>116</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5179" levels="1" name="Raid Boss (Lv. 80)">
 		<!-- Confirmed CT2.5 -->
@@ -2789,9 +2789,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ProtectionBlessing" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5183" levels="1" name="Production: Dimensional Stun">
 		<!-- Confirmed CT2.5 -->
@@ -2807,9 +2807,9 @@
 		<isDebuff>true</isDebuff>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="ThrowUp" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5184" levels="1" name="Production: Valakas Dragon Breath">
 		<!-- Confirmed CT2.5 -->
@@ -2841,11 +2841,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>54</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5186" levels="2" name="Pet Haste">
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
@@ -2879,7 +2879,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -2887,7 +2887,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5187" levels="4" name="Pet Vampiric Rage">
 		<table name="#absorbDam"> 6 7 8 9 </table>
@@ -2929,7 +2929,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">6</value>
@@ -2939,7 +2939,7 @@
 				</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5188" levels="3" name="Pet Regeneration">
 		<table name="#rate"> 1.1 1.15 1.2 </table>
@@ -2981,7 +2981,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>
 					<value level="1">10</value>
@@ -2990,7 +2990,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5189" levels="6" name="Pet Blessed Body">
 		<table name="#maxHp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
@@ -3047,11 +3047,11 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="#maxHp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5190" levels="6" name="Pet Blessed Soul">
 		<table name="#maxMp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
@@ -3108,7 +3108,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">10</value>
@@ -3120,7 +3120,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5191" levels="3" name="Pet Guidance">
 		<table name="#accCombat"> 2 3 4 </table>
@@ -3162,7 +3162,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">2</value>
@@ -3171,7 +3171,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5192" levels="2" name="Pet Wind Walk">
 		<table name="#runSpd"> 20 33 </table>
@@ -3208,7 +3208,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
@@ -3216,7 +3216,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5193" levels="3" name="Pet Acumen">
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
@@ -3258,7 +3258,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -3267,7 +3267,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5194" levels="3" name="Pet Empower">
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
@@ -3309,7 +3309,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">55</value>
@@ -3318,7 +3318,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5195" levels="12" name="Pet Greater Heal">
 		<table name="#amount"> 58 92 148 219 299 380 450 477 500 525 542 550 </table>
@@ -3406,7 +3406,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>OWNER_PET</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">58</value>
@@ -3423,7 +3423,7 @@
 					<value level="12">550</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5196" levels="3" name="Pet Wind Shackle">
 		<abnormalLvl>3</abnormalLvl>
@@ -3463,14 +3463,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5197" levels="3" name="Pet Hex">
 		<abnormalLvl>3</abnormalLvl>
@@ -3510,14 +3510,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5198" levels="3" name="Pet Slow">
 		<abnormalLvl>3</abnormalLvl>
@@ -3557,14 +3557,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5199" levels="3" name="Pet Curse Gloom">
 		<abnormalLvl>3</abnormalLvl>
@@ -3604,13 +3604,13 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

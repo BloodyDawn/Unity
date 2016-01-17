@@ -25,7 +25,7 @@
 		<coolTime>1000</coolTime>
 		<effectPoint>702</effectPoint>
 		<reuseDelay>900000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
@@ -38,7 +38,7 @@
 				<amount>8</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19202" levels="1" name="Sentinel's Protection">
 		<!-- TODO abnormalType -->
@@ -56,7 +56,7 @@
 		<coolTime>1000</coolTime>
 		<effectPoint>702</effectPoint>
 		<reuseDelay>900000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
 				<mode>DIFF</mode>
@@ -69,7 +69,7 @@
 				<amount>8</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19203" levels="1" name="Ultimate Bullseye">
 		<!-- Decreases target's Bow/Crossbow Resistance by 60% for 7 seconds. Does not cancel when striking. Consumes 1 Soulstone. -->
@@ -88,12 +88,12 @@
 		<reuseDelay>20000</reuseDelay>
 		<effectPoint>-711</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>-60</BOW>
 				<CROSSBOW>-60</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19204" levels="1" name="Prophecy of Might">
 		<!-- TODO abnormalType -->
@@ -111,7 +111,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>712</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.25" />
 				<mul stat="mCritRate" val="1.25" />
@@ -122,7 +122,7 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19205" levels="1" name="Song of Archery">
 		<!-- Increases Bow/Crossbow Resistance of all party members by 50% for 30 seconds. Consumes 5 Spirit Ores. -->
@@ -140,12 +140,12 @@
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>50</BOW>
 				<CROSSBOW>50</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19206" levels="1" name="Sage's Dance">
 		<!-- Increases M. Def. of all party members by 50% for 30 seconds. Consumes 5 Spirit Ores. -->
@@ -161,12 +161,12 @@
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19207" levels="1" name="Chant of Bison">
 		<!-- TODO abnormalType -->
@@ -184,7 +184,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>712</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -201,7 +201,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19208" levels="1" name="Seal of Restriction">
 		<!-- AUTO GENERATED SKILL -->
@@ -218,12 +218,12 @@
 		<effectPoint>-285</effectPoint>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockBuffSlot">
 				<!-- Guess there is more -->
 				<slot>INVINCIBILITY</slot>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19209" levels="1" name="Divinity of Einhasad">
 		<!-- AUTO GENERATED SKILL -->
@@ -260,12 +260,12 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>15154</npcId>
 				<lifeTime>30</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19211" levels="1" name="Barrer for Test">
 		<!-- AUTO GENERATED SKILL -->
@@ -314,13 +314,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Enhanced Orichalcum Arrow -->
 				<itemId>45578</itemId>
 				<itemCount>250</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19214" levels="1" name="Polishing Bolts: Atk. Spd.">
 		<!-- Updated to IO -->
@@ -340,13 +340,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Enhanced Orichalcum Bolt -->
 				<itemId>45581</itemId>
 				<itemCount>250</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19215" levels="1" name="Polishing Arrows: P. Atk.">
 		<!-- Updated to IO -->
@@ -366,13 +366,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Enhanced Orichalcum Arrow -->
 				<itemId>45579</itemId>
 				<itemCount>250</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19216" levels="1" name="Polishing Bolts: P. Atk.">
 		<!-- Updated to IO -->
@@ -392,13 +392,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Enhanced Orichalcum Bolt -->
 				<itemId>45582</itemId>
 				<itemCount>250</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19217" levels="1" name="Polishing Arrows: Added Blow">
 		<!-- Updated to IO -->
@@ -418,13 +418,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Enhanced Orichalcum Arrow -->
 				<itemId>45580</itemId>
 				<itemCount>250</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19218" levels="1" name="Polishing Bolts: Added Blow">
 		<!-- Updated to IO -->
@@ -444,13 +444,13 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<!-- Enhanced Orichalcum Bolt -->
 				<itemId>45583</itemId>
 				<itemCount>250</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19219" levels="1" name="Blessing of Tree">
 		<!-- Updated to IO -->
@@ -465,7 +465,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<affectRange>200</affectRange>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<!-- Custom, value if Tree of Life level 4 -->
 				<power>3338</power>
@@ -475,7 +475,7 @@
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19220" levels="1" name="Sharing Equipment">
 		<!-- AUTO GENERATED SKILL -->
@@ -582,7 +582,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Hide">
 			</effect>
 			<effect name="Speed">
@@ -592,7 +592,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19228" levels="1" name="Song of Thief">
 		<!-- Updated to IO -->
@@ -612,12 +612,12 @@
 		<effectPoint>687</effectPoint>
 		<abnormalTime>30</abnormalTime>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DAGGER>50</DAGGER>
 				<DUALDAGGER>50</DUALDAGGER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19229" levels="1" name="Fate of the Exalted">
 		<!-- Updated to IO -->
@@ -626,11 +626,11 @@
 		<operateType>P</operateType>
 		<effectPoint>100</effectPoint>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="LUC" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19230" levels="30" name="MP Recovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -658,12 +658,12 @@
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19232" levels="1" name="Crippling Dance">
 		<!-- Updated to IO -->
@@ -682,11 +682,11 @@
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

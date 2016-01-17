@@ -18,9 +18,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26001" levels="1" name="Medium Fortuna Box">
 		<!-- Confirmed CT2.5 -->
@@ -40,9 +40,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26002" levels="1" name="Large Fortuna Box">
 		<!-- Confirmed CT2.5 -->
@@ -62,9 +62,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26003" levels="1" name="Small Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
@@ -84,9 +84,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26004" levels="1" name="Medium Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
@@ -106,9 +106,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26005" levels="1" name="Large Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
@@ -128,9 +128,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26006" levels="1" name="Scroll: Enchant Weapon (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -292,12 +292,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26023" levels="1" name="Greater Wind Walk Potion">
 		<abnormalLvl>2</abnormalLvl>
@@ -315,12 +315,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26024" levels="1" name="Quick Healing Potion">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -331,11 +331,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>435</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26025" levels="1" name="Major Healing Potion">
 		<abnormalLvl>3</abnormalLvl>
@@ -353,11 +353,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<power>50</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26026" levels="1" name="Major Healing Potion">
 		<abnormalLvl>2</abnormalLvl>
@@ -375,11 +375,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="3">
 				<power>24</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26027" levels="6" name="Secret medicine of Will">
 		<!-- Confirmed CT2.5 -->
@@ -404,7 +404,7 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>
 					<value level="1">0</value>
@@ -415,7 +415,7 @@
 					<value level="6">1200</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26028" levels="6" name="Secret medicine of Life">
 		<!-- Confirmed CT2.5 -->
@@ -440,7 +440,7 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">0</value>
@@ -451,7 +451,7 @@
 					<value level="6">2300</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26029" levels="1" name="CP Potion">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -462,11 +462,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>50</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26030" levels="1" name="Mana Potion">
 		<!-- Confirmed CT2.5 -->
@@ -479,11 +479,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>60</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26031" levels="1" name="Scroll: Wind Walk">
 		<abnormalLvl>26</abnormalLvl>
@@ -503,12 +503,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26032" levels="1" name="Scroll: Haste">
 		<abnormalLvl>26</abnormalLvl>
@@ -528,12 +528,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26033" levels="1" name="Scroll: Might">
 		<abnormalLvl>26</abnormalLvl>
@@ -553,12 +553,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26034" levels="1" name="Scroll: Shield">
 		<abnormalLvl>26</abnormalLvl>
@@ -578,12 +578,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26035" levels="1" name="Scroll: Death Whisper">
 		<abnormalLvl>26</abnormalLvl>
@@ -603,12 +603,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26036" levels="1" name="Scroll: Guidance">
 		<abnormalLvl>26</abnormalLvl>
@@ -628,12 +628,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26037" levels="1" name="Scroll: Empower">
 		<abnormalLvl>26</abnormalLvl>
@@ -653,12 +653,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26038" levels="1" name="Scroll: Greater Acumen">
 		<abnormalLvl>26</abnormalLvl>
@@ -678,12 +678,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26039" levels="1" name="Scroll: Vampiric Rage">
 		<abnormalLvl>26</abnormalLvl>
@@ -703,12 +703,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26040" levels="1" name="Scroll: Blessed Body">
 		<abnormalLvl>26</abnormalLvl>
@@ -728,12 +728,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26041" levels="1" name="Scroll: Berserker Spirit">
 		<abnormalLvl>26</abnormalLvl>
@@ -753,7 +753,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -786,7 +786,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26042" levels="1" name="Scroll: Magic Barrier">
 		<abnormalLvl>26</abnormalLvl>
@@ -806,12 +806,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26043" levels="1" name="Scroll: Blessed Soul">
 		<abnormalLvl>26</abnormalLvl>
@@ -831,12 +831,12 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26044" levels="1" name="Scroll: Clarity">
 		<abnormalLvl>26</abnormalLvl>
@@ -856,13 +856,13 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.8" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26045" levels="1" name="Scroll: Wild Magic">
 		<abnormalLvl>26</abnormalLvl>
@@ -882,11 +882,11 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26046" levels="7" name="XP Rune III (Lv. 1-99) 10%">
 		<!-- Confirmed CT2.5 -->
@@ -904,11 +904,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="bonusExp" val="#bonusExp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26047" levels="7" name="SP Rune 10%">
 		<!-- Confirmed CT2.5 -->
@@ -926,11 +926,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="bonusSp" val="#bonusSp" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26048" levels="5" name="Rune of Crystal (Lv. 1)">
 		<!-- Confirmed CT2.5 -->
@@ -946,7 +946,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CrystalGradeModify">
 				<grade>
 					<value level="1">1</value>
@@ -956,7 +956,7 @@
 					<value level="5">5</value>
 				</grade>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26049" levels="1" name="Rune of Feather">
 		<icon>br_cashtex.item.br_cash_rune_of_feather_i00</icon>
@@ -1119,9 +1119,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26066" levels="1" name="Mage's Scroll Bundle">
 		<!-- Confirmed CT2.5 -->
@@ -1142,9 +1142,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="26067" levels="5" name="Bone Quiver">
 		<!-- Confirmed CT2.5 -->
@@ -1162,7 +1162,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">22067</value>
@@ -1173,7 +1173,7 @@
 				</itemId>
 				<itemCount>10000</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26068" levels="10" name="Blessed Spiritshot Pack (D-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -1192,7 +1192,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">22072</value>
@@ -1219,7 +1219,7 @@
 					<value level="10">10000</value>
 				</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26069" levels="10" name="Spiritshot Pack (D-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -1238,7 +1238,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">22077</value>
@@ -1265,7 +1265,7 @@
 					<value level="10">10000</value>
 				</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26070" levels="10" name="Soulshot Pack (D-grade)">
 		<!-- Confirmed CT2.5 -->
@@ -1284,7 +1284,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">22082</value>
@@ -1311,7 +1311,7 @@
 					<value level="10">10000</value>
 				</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26071" levels="17" name="Wrapped Daisy Hairpin">
 		<!-- Confirmed CT2.5 -->
@@ -1329,7 +1329,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">22156</value>
@@ -1352,7 +1352,7 @@
 				</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26072" levels="3" name="Wrapped Pet Coupon - Buffalo">
 		<!-- Confirmed CT2.5 -->
@@ -1370,7 +1370,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">7583</value>
@@ -1379,7 +1379,7 @@
 				</itemId>
 				<itemCount>1</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26073" levels="5" name="Bone Bolt Container">
 		<!-- Confirmed CT2.5 -->
@@ -1397,7 +1397,7 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Restoration">
 				<itemId>
 					<value level="1">22144</value>
@@ -1408,7 +1408,7 @@
 				</itemId>
 				<itemCount>10000</itemCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="26074" levels="1" name="Life Stone Pack">
 		<!-- AUTO GENERATED SKILL -->

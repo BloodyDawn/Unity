@@ -81,7 +81,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
 				<power>
@@ -154,7 +154,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30501" levels="27" name="Backspin Blow">
 		<!-- Updated to IO -->
@@ -231,7 +231,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
 				<power>
@@ -267,7 +267,7 @@
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30502" levels="24" name="Chin Strike">
 		<!-- Updated to IO -->
@@ -343,13 +343,13 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>300</speed>
 				<distance>50</distance>
 				<knockDown>true</knockDown>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30503" levels="11" name="Spinning Kick">
 		<!-- Updated to IO -->
@@ -394,7 +394,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
 				<power>
@@ -414,7 +414,7 @@
 				<criticalChance>15</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30504" levels="16" name="Gravity Hit">
 		<!-- Updated to IO -->
@@ -470,7 +470,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
 				<!-- Ignores 50% of target's P. Def -->
@@ -496,7 +496,7 @@
 				<criticalChance>15</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30505" levels="10" name="Pressure Punch">
 		<!-- Updated to IO -->
@@ -543,7 +543,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
 				<power>
@@ -565,7 +565,7 @@
 				<speed>333</speed>
 				<animationSpeed>333</animationSpeed>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30506" levels="14" name="Distant Kick">
 		<!-- Updated to IO -->
@@ -625,7 +625,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
 				<power>
@@ -651,7 +651,7 @@
 				<distance>100</distance>
 				<animationSpeed>0</animationSpeed>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30507" levels="24" name="Left Sidestep">
 		<!-- Updated to IO -->
@@ -710,13 +710,13 @@
 				<angle>270</angle>
 			</effect>
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<!-- Unconfirmed -->
 				<chance>100</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30508" levels="27" name="Right Sidestep">
 		<!-- Updated to IO -->
@@ -774,7 +774,7 @@
 				<angle>90</angle>
 			</effect>
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<FIST>
 					<value level="1">-10</value>
@@ -810,7 +810,7 @@
 				<!-- Unconfirmed -->
 				<chance>100</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30509" levels="5" name="Back Step">
 		<!-- Updated to IO -->
@@ -847,7 +847,7 @@
 				<selfPos>false</selfPos>
 			</effect>
 		</startEffects>
-		<for>
+		<effects>
 			<effect name="TargetCancel">
 				<!-- Unconfirmed -->
 				<chance>100</chance>
@@ -862,7 +862,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="AttackTrait">
 				<KNOCKDOWN>
@@ -882,7 +882,7 @@
 		<operateType>P</operateType>
 		<magicLvl>97</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
 				<!-- Inside Position -->
 				<!-- Left Sidestep -->
@@ -897,7 +897,7 @@
 				<skillLevel>1</skillLevel>
 				<castSkillId>30508</castSkillId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30511" levels="5" name="Air Light">
 		<!-- Updated to IO -->
@@ -927,7 +927,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>
 					<value level="1">0</value>
@@ -968,7 +968,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30512" levels="3" name="Distortion">
 		<!-- Updated to IO -->
@@ -991,7 +991,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="EffectFlag">
 				<effectFlag>ATTACK_BEHIND</effectFlag>
 			</effect>
@@ -1019,7 +1019,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30514" levels="3" name="Fluid Weave">
 		<!-- Updated to IO -->
@@ -1048,7 +1048,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<!-- TODO: Effect should be only available on skill level 2 or 3. -->
 			<effect name="DebuffBlock">
 				<times>
@@ -1081,7 +1081,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30515" levels="1" name="Spallation">
 		<!-- Updated to Ertheia -->
@@ -1101,12 +1101,12 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<set stat="damagedMaxRange" val="150" />
 				<set stat="debuffedMaxRange" val="150" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30516" levels="1" name="Gravity Barrier">
 		<!-- Updated to IO -->
@@ -1124,14 +1124,14 @@
 		<hitTime>200</hitTime>
 		<effectPoint>379</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>99</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30517" levels="11" name="Heavy Hand">
 		<!-- Updated to IO -->
@@ -1166,7 +1166,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="BlockEscape" />
@@ -1174,7 +1174,7 @@
 				<amount>-100</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30518" levels="11" name="Reverse Weight">
 		<!-- Updated to IO -->
@@ -1213,7 +1213,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack"><!-- TODO: Damage increases twice with each enemy affected. -->
 				<power>
 					<value level="1">19693</value>
@@ -1235,7 +1235,7 @@
 				<distance>50</distance>
 				<knockDown>true</knockDown>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30519" levels="1" name="Warped Space">
 		<!-- AUTO GENERATED SKILL -->
@@ -1277,7 +1277,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="cAtkSkill" val="#cAtkSkill" />
 			</effect>
@@ -1321,7 +1321,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="HealPercent">
 				<power>
@@ -1342,12 +1342,12 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="RegularAttack">
 				<pAtkMod>5</pAtkMod>
 				<overHit>true</overHit>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30522" levels="1" name="Eminent Attack Movement">
 		<!-- Updated to IO -->
@@ -1355,7 +1355,7 @@
 		<icon>icon.skill30522</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Battle Dash -->
 				<minDamage>1</minDamage>
@@ -1364,7 +1364,7 @@
 				<chance>20</chance>
 				<targetType>SELF</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30523" levels="3" name="Battle Dash">
 		<!-- Updated to IO -->
@@ -1379,7 +1379,7 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Battle Dash -->
 				<minDamage>1</minDamage>
@@ -1416,7 +1416,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30524" levels="1" name="Reliable Hit">
 		<!-- AUTO GENERATED SKILL -->
@@ -1436,7 +1436,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Damage Up -->
 				<minDamage>1</minDamage>
@@ -1445,7 +1445,7 @@
 				<chance>13</chance>
 				<targetType>ONE</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30527" levels="1" name="Twisted Space - NPC">
 		<!-- AUTO GENERATED SKILL -->
@@ -1495,7 +1495,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>-379</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<set order="80" stat="moveSpeed" val="1" /> <!-- Set speed to 1 :) -->
 			</effect>
@@ -1507,7 +1507,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30532" levels="3" name="Inside Position">
 		<!-- Updated to IO -->
@@ -1525,7 +1525,7 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
 				<!-- TODO P. Skill Critical Rate and P. Skill Critical Damage -->
@@ -1560,7 +1560,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30540" levels="17" name="Eminent Fist Weapon Mastery">
 		<!-- Updated to IO -->
@@ -1594,7 +1594,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit">
 					<using kind="FIST,DUALFIST" />
@@ -1738,7 +1738,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30541" levels="17" name="Eminent Light Armor Mastery">
 		<!-- Updated to IO -->
@@ -1772,7 +1772,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#crit">
 					<using kind="LIGHT" />
@@ -1906,7 +1906,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30542" levels="13" name="Eminent Stability">
 		<!-- Updated to IO -->
@@ -1935,7 +1935,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">58</value>
@@ -2044,7 +2044,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30543" levels="11" name="Eminent Attribute Resistance">
 		<!-- Updated to IO -->
@@ -2067,7 +2067,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="#attribute" />
 				<add stat="waterRes" val="#attribute" />
@@ -2083,7 +2083,7 @@
 				<add stat="holyPower" val="#attribute" />
 				<add stat="darkPower" val="#attribute" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30544" levels="2" name="Eminent Trait Resistance">
 		<!-- Updated to IO -->
@@ -2097,7 +2097,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">30</value>
@@ -2120,7 +2120,7 @@
 					<value level="2">30</value>
 				</KNOCKDOWN>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30545" levels="3" name="Eminent Ability">
 		<!-- STR + 2. -->
@@ -2133,12 +2133,12 @@
 			<value level="3">85</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="#STR" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30546" levels="11" name="Flying Knee Kick">
 		<!-- AUTO GENERATED SKILL -->
@@ -2179,13 +2179,13 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="100" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="KnockBack">
 				<speed>600</speed>
 				<distance>50</distance>
 				<knockDown>true</knockDown>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="30547" levels="4" name="Stamp Punch">
 		<!-- AUTO GENERATED SKILL -->
@@ -2206,7 +2206,7 @@
 				<target abnormalType="KNOCKDOWN" /> <!-- Fallen Target -->
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Ignores 50% of target's P. Def -->
 				<power>
@@ -2217,6 +2217,6 @@
 				</power>
 				<pDefMod>0.5</pDefMod>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -59,7 +59,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -79,7 +79,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4201" levels="12" name="Sleep">
 		<!-- Freya retail confirmed -->
@@ -142,9 +142,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4202" levels="12" name="Hold">
 		<!-- Freya retail confirmed -->
@@ -206,9 +206,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4203" levels="12" name="Decrease Speed">
 		<!-- Freya retail confirmed -->
@@ -269,7 +269,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -289,7 +289,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4204" levels="12" name="Bleed">
 		<!-- Freya retail confirmed -->
@@ -352,7 +352,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">19</value>
@@ -369,7 +369,7 @@
 					<value level="12">79</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4205" levels="12" name="Paralysis">
 		<!-- Freya retail confirmed -->
@@ -431,9 +431,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4206" levels="12" name="Aura Sink">
 		<!-- Freya retail confirmed -->
@@ -495,7 +495,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
 				<power>
 					<value level="1">2</value>
@@ -512,7 +512,7 @@
 					<value level="12">12</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4207" levels="12" name="Power Shot">
 		<!-- Freya retail confirmed -->
@@ -553,7 +553,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -570,7 +570,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4208" levels="12" name="Stun">
 		<!-- Freya retail confirmed -->
@@ -633,7 +633,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">176</value>
@@ -651,7 +651,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4209" levels="12" name="Heal">
 		<!-- Freya retail confirmed -->
@@ -693,7 +693,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">2516</value>
@@ -710,7 +710,7 @@
 					<value level="12">13157</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4210" levels="12" name="Chant of Life">
 		<!-- Freya retail confirmed -->
@@ -772,7 +772,7 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1229</icon>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HealOverTime" ticks="1">
 				<power>
 					<value level="1">180</value>
@@ -792,7 +792,7 @@
 			<effect name="HealPercent">
 				<power>3</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4211" levels="12" name="Might">
 		<!-- Freya retail confirmed -->
@@ -837,12 +837,12 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1068</icon>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4212" levels="12" name="Shield">
 		<!-- Freya retail confirmed -->
@@ -887,12 +887,12 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1040</icon>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4213" levels="12" name="Haste">
 		<!-- Freya retail confirmed -->
@@ -937,12 +937,12 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1086</icon>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4214" levels="12" name="Reflect Damage">
 		<!-- Freya retail confirmed -->
@@ -987,12 +987,12 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill0086</icon>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4215" levels="1" name="Raid Curse">
 		<!-- Freya retail confirmed -->
@@ -1014,10 +1014,10 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4216" levels="1" name="Scatter Enemy">
 		<!-- Confirmed CT2.5 -->
@@ -1066,7 +1066,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>57</power>
 				<percentage>40</percentage>
@@ -1074,7 +1074,7 @@
 			<effect name="ManaDamOverTime">
 				<power>274</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4219" levels="1" name="Hold">
 		<!-- Confirmed CT2.5 -->
@@ -1098,9 +1098,9 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="Root" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4220" levels="1" name="Dual Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1115,11 +1115,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9390</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4221" levels="1" name="Deadly Dual-Sword Weapon: Range Attack">
 		<!-- Confirmed CT2.5 -->
@@ -1133,11 +1133,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>5164</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4222" levels="1" name="Teleport">
 		<!-- Confirmed CT2.5 -->
@@ -1166,9 +1166,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4224" levels="1" name="Face Chance: Day to Night">
 		<!-- Confirmed CT2.5 -->
@@ -1195,7 +1195,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
 					<value level="1">10</value>
@@ -1205,19 +1205,19 @@
 					<value level="5">50</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4226" levels="1" name="Ban Heal">
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4227" levels="1" name="Zaken Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1233,12 +1233,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>1900</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4228" levels="12" name="Double Dagger Attack">
 		<!-- Freya retail confirmed -->
@@ -1280,7 +1280,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">122</value>
@@ -1297,7 +1297,7 @@
 					<value level="12">6978</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4229" levels="12" name="Double Wind Fist">
 		<!-- Freya retail confirmed -->
@@ -1339,7 +1339,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">122</value>
@@ -1356,7 +1356,7 @@
 					<value level="12">6978</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4230" levels="1" name="Wild Cannon">
 		<!-- Confirmed CT2.5 -->
@@ -1371,11 +1371,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>1330120</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4231" levels="12" name="Spit Attack">
 		<!-- Freya retail confirmed -->
@@ -1420,7 +1420,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">18</value>
@@ -1437,7 +1437,7 @@
 					<value level="12">129</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4232" levels="12" name="Spinning Slasher">
 		<!-- Freya retail confirmed -->
@@ -1481,9 +1481,9 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4233" levels="1" name="Vampiric Attack">
 		<!-- Freya retail confirmed -->
@@ -1493,12 +1493,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>15</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4234" levels="12" name="Spear Attack">
 		<!-- Freya retail confirmed -->
@@ -1539,7 +1539,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">352</value>
@@ -1556,7 +1556,7 @@
 					<value level="12">95790</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4235" levels="1" name="Devastated Return">
 		<!-- Freya retail confirmed -->
@@ -1591,7 +1591,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>51</power>
 			</effect>
@@ -1601,7 +1601,7 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4237" levels="1" name="Decrease Speed">
 		<!-- Freya retail confirmed -->
@@ -1627,7 +1627,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>72</power>
 			</effect>
@@ -1637,7 +1637,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4238" levels="1" name="Increase Cooldown">
 		<!-- Freya retail confirmed -->
@@ -1657,12 +1657,12 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="pReuse" val="3.0" />
 				<mul stat="mReuse" val="3.0" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4239" levels="1" name="Antharas Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -1679,12 +1679,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1044</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>-60</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4240" levels="1" name="Antharas Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -1701,12 +1701,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1044</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4241" levels="1" name="Antharas Recovery">
 		<!-- Confirmed CT2.5 -->
@@ -1723,12 +1723,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1044</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>0</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4242" levels="1" name="Zaken Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -1744,9 +1744,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="4243" levels="1" name="Venomous Poison">
 		<!-- Freya retail confirmed -->
@@ -1767,11 +1767,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>98</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4244" levels="12" name="Wild Sweep">
 		<!-- Freya retail confirmed -->
@@ -1816,7 +1816,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">46</value>
@@ -1833,7 +1833,7 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4245" levels="1" name="Mimic of Wrath">
 		<!-- Freya retail confirmed -->
@@ -1849,7 +1849,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>76</amount>
 				<mode>PER</mode>
@@ -1862,7 +1862,7 @@
 				<amount>42</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4246" levels="1" name="Strong in 'nan' activity magic DOT">
 		<!-- Freya retail confirmed -->
@@ -1870,7 +1870,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>50</BOW>
 				<BLEED>50</BLEED>
@@ -1879,7 +1879,7 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4247" levels="12" name="Wind Strike">
 		<!-- Freya retail confirmed -->
@@ -1924,7 +1924,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">5</value>
@@ -1941,7 +1941,7 @@
 					<value level="12">39</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4248" levels="12" name="Energy Drain">
 		<!-- Freya retail confirmed -->
@@ -1986,7 +1986,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">5</value>
@@ -2004,7 +2004,7 @@
 				</power>
 				<percentage>20</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4249" levels="12" name="Decrease Speed">
 		<!-- Freya retail confirmed -->
@@ -2058,7 +2058,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">4</value>
@@ -2081,7 +2081,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4250" levels="12" name="Twister">
 		<!-- Freya retail confirmed -->
@@ -2126,7 +2126,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">5</value>
@@ -2143,7 +2143,7 @@
 					<value level="12">39</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4251" levels="12" name="Beam Cannon">
 		<!-- Freya retail confirmed -->
@@ -2186,7 +2186,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">5</value>
@@ -2203,7 +2203,7 @@
 					<value level="12">39</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4252" levels="12" name="Flame Strike">
 		<!-- Freya retail confirmed -->
@@ -2249,7 +2249,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">3</value>
@@ -2266,7 +2266,7 @@
 					<value level="12">20</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4253" levels="12" name="Blaze">
 		<!-- Freya retail confirmed -->
@@ -2311,7 +2311,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">3</value>
@@ -2328,7 +2328,7 @@
 					<value level="12">20</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4254" levels="12" name="Prominence">
 		<!-- Freya retail confirmed -->
@@ -2373,7 +2373,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">5</value>
@@ -2390,7 +2390,7 @@
 					<value level="12">39</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4255" levels="12" name="Beam Cannon">
 		<!-- Freya retail confirmed -->
@@ -2433,7 +2433,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">5</value>
@@ -2450,7 +2450,7 @@
 					<value level="12">39</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4256" levels="1" name="100% Stun Resistance.">
 		<!-- Freya retail confirmed -->
@@ -2458,11 +2458,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>100</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4257" levels="12" name="Hydro Blast">
 		<!-- Freya retail confirmed -->
@@ -2508,7 +2508,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3.5</hitCancelTime>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">9</value>
@@ -2525,7 +2525,7 @@
 					<value level="12">65</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4258" levels="1" name="Hinder Strider">
 		<!-- Freya retail confirmed -->
@@ -2548,14 +2548,14 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4259" levels="12" name="Toxic Smoke">
 		<!-- Freya retail confirmed -->
@@ -2637,7 +2637,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<trait>POISON</trait>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>
 					<value level="1">16</value>
@@ -2654,7 +2654,7 @@
 					<value level="12">68</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4260" levels="12" name="Steal Blood">
 		<!-- Freya retail confirmed -->
@@ -2725,7 +2725,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="HpDrain">
 				<power>
 					<value level="1">18</value>
@@ -2743,7 +2743,7 @@
 				</power>
 				<percentage>20</percentage>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4261" levels="12" name="Mega Storm Strike">
 		<!-- Freya retail confirmed -->
@@ -2801,7 +2801,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">18</value>
@@ -2818,7 +2818,7 @@
 					<value level="12">129</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4262" levels="2" name="Holiday Wind Walk">
 		<!-- Freya retail confirmed -->
@@ -2838,12 +2838,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<basicProperty>NONE</basicProperty>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4263" levels="1" name="Holiday Haste">
 		<!-- Freya retail confirmed -->
@@ -2863,12 +2863,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4264" levels="1" name="Holiday Empower">
 		<!-- Freya retail confirmed -->
@@ -2888,12 +2888,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4265" levels="3" name="Holiday Might">
 		<!-- Freya retail confirmed -->
@@ -2918,12 +2918,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4266" levels="3" name="Holiday Shield">
 		<!-- Freya retail confirmed -->
@@ -2948,12 +2948,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4267" levels="1" name="Grade Penalty">
 		<!-- Freya retail confirmed -->
@@ -2998,7 +2998,7 @@
 		<stayAfterDeath>true</stayAfterDeath>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">0</value>
@@ -3026,7 +3026,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4271" levels="50" name="Momentum">
 		<!-- Freya retail confirmed and Updated to Ertheia -->
@@ -3094,12 +3094,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>70</BOW>
 				<CROSSBOW>70</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4273" levels="5" name="Dagger/Rapier Resistance">
 		<!-- Freya retail confirmed -->
@@ -3109,7 +3109,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DAGGER>
 					<value level="1">10</value>
@@ -3133,7 +3133,7 @@
 					<value level="5">50</value>
 				</RAPIER>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4274" levels="5" name="Blunt Weapon Vulnerability">
 		<!-- Freya retail confirmed -->
@@ -3143,7 +3143,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>
 					<value level="1">-11</value>
@@ -3153,7 +3153,7 @@
 					<value level="5">-100</value>
 				</BLUNT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4275" levels="5" name="Holy Attack Vulnerability">
 		<!-- Freya retail confirmed -->
@@ -3171,7 +3171,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BOW>
 					<value level="1">-11</value>
@@ -3188,7 +3188,7 @@
 					<value level="5">-100</value>
 				</CROSSBOW>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4277" levels="5" name="Poison Resistance">
 		<!-- Freya retail confirmed -->
@@ -3198,7 +3198,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<POISON>
 					<value level="1">10</value>
@@ -3208,7 +3208,7 @@
 					<value level="5">50</value>
 				</POISON>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4278" levels="1" name="Dark Attack">
 		<icon>icon.skill4278</icon>
@@ -3216,11 +3216,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkPower" val="20" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4279" levels="5" name="Fire Vulnerability">
 		<!-- Freya retail confirmed -->
@@ -3261,12 +3261,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4284" levels="5" name="Bleed Resistance">
 		<!-- Freya retail confirmed -->
@@ -3276,7 +3276,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>
 					<value level="1">10</value>
@@ -3286,7 +3286,7 @@
 					<value level="5">50</value>
 				</BLEED>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4285" levels="5" name="Sleep Resistance">
 		<!-- Freya retail confirmed -->
@@ -3296,7 +3296,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>
 					<value level="1">10</value>
@@ -3306,7 +3306,7 @@
 					<value level="5">50</value>
 				</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4286" levels="1" name="Greater Sleep Resistance">
 		<!-- Freya retail confirmed -->
@@ -3315,11 +3315,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>95</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4287" levels="5" name="Hold Resistance">
 		<!-- Freya retail confirmed -->
@@ -3329,7 +3329,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">10</value>
@@ -3339,7 +3339,7 @@
 					<value level="5">50</value>
 				</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4288" levels="1" name="Greater Hold Resistance">
 		<!-- Freya retail confirmed -->
@@ -3348,11 +3348,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>95</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4289" levels="1" name="Wyvern Breath">
 		<!-- Freya retail confirmed -->
@@ -3372,11 +3372,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3.6</hitCancelTime>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>379</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="4290" levels="1" name="Race">
 		<!-- Freya retail confirmed -->

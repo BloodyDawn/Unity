@@ -21,12 +21,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>-66</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5701" levels="7" name="Decrease P. Atk">
 		<!-- Lvl 1 - Kamaloka (Labyrinth of the Abyss) 29 -->
@@ -49,12 +49,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>-66</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5702" levels="2" name="Adiantum Round Fighter">
 		<!-- Confirmed CT2.5 -->
@@ -83,11 +83,11 @@
 			<value level="1">AURA</value>
 			<value level="2">ONE</value>
 		</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>69</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5703" levels="2" name="Adiantum Water Strike Deflect">
 		<abnormalLvl>1</abnormalLvl>
@@ -201,11 +201,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>160</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5709" levels="2" name="Whirlpool">
 		<castRange>900</castRange>
@@ -228,11 +228,11 @@
 		<attributeValue>20</attributeValue>
 		<affectRange>200</affectRange>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>220</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5710" levels="2" name="Triple Sword">
 		<affectLimit>5-15</affectLimit>
@@ -253,11 +253,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>320</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5711" levels="1" name="Power of Rage">
 		<abnormalLvl>1</abnormalLvl>
@@ -276,9 +276,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5712" levels="1" name="Energy Ditch">
 		<castRange>1300</castRange>
@@ -297,11 +297,11 @@
 		<mpPerChanneling>15</mpPerChanneling>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>200</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5713" levels="5" name="Energy Ditch">
 		<abnormalLvl>
@@ -361,7 +361,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>213</power>
 			</effect>
@@ -372,7 +372,7 @@
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5716" levels="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -478,7 +478,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1136</value>
@@ -489,7 +489,7 @@
 					<value level="6">2487</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5721" levels="6" name="Blade Strike">
 		<!-- Confirmed CT2.5 -->
@@ -520,7 +520,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2272</value>
@@ -531,7 +531,7 @@
 					<value level="6">4974</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5722" levels="6" name="Hammer Assault">
 		<!-- Confirmed CT2.5 -->
@@ -562,7 +562,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1136</value>
@@ -573,7 +573,7 @@
 					<value level="6">2487</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5723" levels="6" name="Hammer Swing">
 		<!-- Confirmed CT2.5 -->
@@ -605,7 +605,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">625</value>
@@ -616,7 +616,7 @@
 					<value level="6">1368</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5724" levels="6" name="Broom Strike">
 		<!-- Confirmed CT2.5 -->
@@ -647,7 +647,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1250</value>
@@ -658,7 +658,7 @@
 					<value level="6">2736</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5725" levels="6" name="Broom Thrust">
 		<!-- Confirmed CT2.5 -->
@@ -689,7 +689,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2272</value>
@@ -700,7 +700,7 @@
 					<value level="6">4974</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5726" levels="6" name="Scissors Attack">
 		<!-- Confirmed CT2.5 -->
@@ -731,7 +731,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1136</value>
@@ -742,7 +742,7 @@
 					<value level="6">2487</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5727" levels="6" name="Scissors Strike">
 		<!-- Confirmed CT2.5 -->
@@ -773,7 +773,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2329</value>
@@ -784,7 +784,7 @@
 					<value level="6">5099</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5728" levels="6" name="Shovel Attack">
 		<!-- Confirmed CT2.5 -->
@@ -815,7 +815,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">1136</value>
@@ -826,7 +826,7 @@
 					<value level="6">2487</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5729" levels="6" name="Shovel Whirlwind">
 		<!-- Confirmed CT2.5 -->
@@ -856,7 +856,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">568</value>
@@ -867,7 +867,7 @@
 					<value level="6">1244</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5730" levels="6" name="Made Fireball">
 		<!-- Confirmed CT2.5 -->
@@ -909,7 +909,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">90</value>
@@ -920,7 +920,7 @@
 					<value level="6">132</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5731" levels="6" name="Incense of Death">
 		<!-- Confirmed CT2.5 -->
@@ -960,7 +960,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<coolTime>800</coolTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">85</value>
@@ -971,7 +971,7 @@
 					<value level="6">126</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5732" levels="6" name="Flame Strike">
 		<!-- Confirmed CT2.5 -->
@@ -1023,7 +1023,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AREA</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">47</value>
@@ -1034,7 +1034,7 @@
 					<value level="6">70</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5733" levels="6" name="Fear of Steward">
 		<!-- Confirmed CT2.5 -->
@@ -1085,7 +1085,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">43</value>
@@ -1098,7 +1098,7 @@
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5734" levels="6" name="Gust of Wind">
 		<!-- Confirmed CT2.5 -->
@@ -1140,7 +1140,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">85</value>
@@ -1151,7 +1151,7 @@
 					<value level="6">126</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5735" levels="6" name="Curse of Steward">
 		<!-- Confirmed CT2.5 -->
@@ -1210,7 +1210,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SLEEP</trait>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>
 					<value level="1">43</value>
@@ -1225,7 +1225,7 @@
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5736" levels="6" name="Katar Trusting">
 		<!-- Confirmed CT2.5 -->
@@ -1256,7 +1256,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">3408</value>
@@ -1267,7 +1267,7 @@
 					<value level="6">7461</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5737" levels="6" name="Power Stamp">
 		<!-- Confirmed CT2.5 -->
@@ -1297,7 +1297,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">568</value>
@@ -1308,7 +1308,7 @@
 					<value level="6">1244</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5738" levels="6" name="Power Roar">
 		<!-- Confirmed CT2.5 -->
@@ -1338,7 +1338,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">568</value>
@@ -1349,7 +1349,7 @@
 					<value level="6">1244</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5739" levels="1" name="Invincibility">
 		<!-- Confirmed CT2.5 -->
@@ -1369,9 +1369,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5740" levels="1" name="Recovery Pot">
 		<!-- Confirmed CT2.5 -->
@@ -1385,7 +1385,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>5000</power>
 			</effect>
@@ -1395,7 +1395,7 @@
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5741" levels="1" name="Mental Pot">
 		<!-- Confirmed CT2.5 -->
@@ -1409,11 +1409,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="ManaHealPercent">
 				<power>100</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5742" levels="5" name="Recharge">
 		<effectPoint>100</effectPoint>
@@ -1529,7 +1529,7 @@
 				<player active_effect_id="5753" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">183</value>
@@ -1546,7 +1546,7 @@
 					<value level="12">10466</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5746" levels="12" name="Double Attack">
 		<table name="#power"> 75 170 352 663 1137 1774 2515 2887 3234 3536 3772 3964 </table>
@@ -1602,7 +1602,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">75</value>
@@ -1619,7 +1619,7 @@
 					<value level="12">3964</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5747" levels="12" name="Spin Attack">
 		<table name="#power"> 60 136 281 530 910 1420 2012 2310 2588 2829 3018 3172 </table>
@@ -1685,7 +1685,7 @@
 		<targetType>ONE</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">60</value>
@@ -1703,7 +1703,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5748" levels="12" name="Meteor Shower">
 		<affectLimit>5-12</affectLimit>
@@ -2144,9 +2144,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5754" levels="1" name="Presentation - Adiantum Round Fighter">
 		<effectPoint>-100</effectPoint>
@@ -2258,14 +2258,14 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2500</value>
 					<value level="2">2800</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5762" levels="1" name="Blessing of Pathfinder">
 		<abnormalLvl>1</abnormalLvl>
@@ -2332,11 +2332,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4472</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5766" levels="1" name="Naia Sprout">
 		<affectRange>150</affectRange>
@@ -2351,11 +2351,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4472</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5767" levels="1" name="Naia Sprout">
 		<affectRange>150</affectRange>
@@ -2370,11 +2370,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4472</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5768" levels="1" name="Naia Sprout">
 		<affectRange>150</affectRange>
@@ -2389,11 +2389,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>4472</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5769" levels="12" name="not_used">
 		<effectPoint>418</effectPoint>
@@ -2463,9 +2463,9 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="5772" levels="1" name="Surrender to Fire">
 		<abnormalLvl>4</abnormalLvl>
@@ -2516,14 +2516,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VitalityPointUp">
 				<value>
 					<value level="1">10000</value>
 					<value level="2">20000</value>
 				</value>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="5775" levels="1" name="Greater Blessing of Pathfinder">
 		<abnormalLvl>1</abnormalLvl>

@@ -14,9 +14,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10001" levels="10" name="Superior Sword/Blunt Weapon Mastery">
 		<!-- Glory Days confirmed -->
@@ -38,7 +38,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
@@ -73,7 +73,7 @@
 					<item> BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10002" levels="10" name="Superior Heavy Armor Mastery">
 		<!-- Glory Days confirmed -->
@@ -95,7 +95,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="6883">
 					<using kind="HEAVY" />
@@ -138,7 +138,7 @@
 				<amount>-35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10003" levels="10" name="Superior Shield Mastery">
 		<!-- Glory Days confirmed -->
@@ -160,7 +160,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="shieldDefAngle" val="360">
 					<using kind="SHIELD" />
@@ -177,7 +177,7 @@
 					<item>SHIELD</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10004" levels="10" name="Superior M. Def.">
 		<!-- Glory Days confirmed -->
@@ -199,7 +199,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<mul stat="magicSuccRes" val="1.25" />
@@ -219,7 +219,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10005" levels="10" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -241,7 +241,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="reflectSkillPhysic" val="10" />
@@ -333,7 +333,7 @@
 					<value level="10">40</value>
 				</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10006" levels="1" name="Last Patience">
 		<!-- Glory Days confirmed -->
@@ -344,7 +344,7 @@
 		<operateType>P</operateType>
 		<magicLvl>89</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 			</effect>
@@ -358,7 +358,7 @@
 				<skillId>10007</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10007" levels="3" name="Last Patience">
 		<!-- Glory Days confirmed -->
@@ -386,7 +386,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>#magicLvl</magicLvl>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="#power" />
 			</effect>
@@ -398,7 +398,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10008" levels="11" name="Shield Charge">
 		<!-- Glory Days confirmed -->
@@ -484,7 +484,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">13634</value>
@@ -515,7 +515,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10009" levels="11" name="Last Judgment">
 		<!-- Glory Days confirmed -->
@@ -581,7 +581,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">16556</value>
@@ -605,7 +605,7 @@
 				<amount>-70</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10010" levels="11" name="Justice Punishment">
 		<!-- Glory Days confirmed -->
@@ -674,7 +674,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">20451</value>
@@ -705,7 +705,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10011" levels="8" name="Shield Impact">
 		<!-- Glory Days confirmed -->
@@ -766,7 +766,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11253</value>
@@ -783,7 +783,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10012" levels="10" name="Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -852,7 +852,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10174</value>
@@ -871,7 +871,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10013" levels="11" name="Gust Blade">
 		<!-- Glory Days confirmed -->
@@ -936,7 +936,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">10314</value>
@@ -954,7 +954,7 @@
 				<overHit>true</overHit>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10014" levels="11" name="Chain Galaxy">
 		<!-- Glory Days confirmed -->
@@ -1018,7 +1018,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<affectHeight>-100;200</affectHeight>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">14300</value>
@@ -1040,7 +1040,7 @@
 				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10015" levels="9" name="Chain Strike">
 		<!-- Glory Days confirmed -->
@@ -1100,7 +1100,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>600</delay>
@@ -1109,7 +1109,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10016" levels="9" name="Chain Hydra">
 		<!-- Glory Days confirmed -->
@@ -1170,7 +1170,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>650</delay>
@@ -1179,7 +1179,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10017" levels="7" name="Final Ultimate Defense">
 		<!-- Glory Days confirmed -->
@@ -1229,7 +1229,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 				<set stat="damageCap" val="#damageCap" />
@@ -1270,7 +1270,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10018" levels="2" name="Noble Sacrifice">
 		<!-- Glory Days confirmed -->
@@ -1304,11 +1304,11 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>60000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="#transDamToPlayer" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10019" levels="5" name="Protection of Faith">
 		<!-- Glory Days confirmed -->
@@ -1352,7 +1352,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
@@ -1379,7 +1379,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10020" levels="7" name="Focus Shield">
 		<!-- Glory Days confirmed -->
@@ -1403,7 +1403,7 @@
 		<targetType>SELF</targetType>
 		<rideState>NONE</rideState>
 		<mpConsume>50</mpConsume>
-		<for>
+		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<add stat="sDef" val="#sDef" />
 			</effect>
@@ -1431,7 +1431,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10021" levels="7" name="Spike Shield">
 		<!-- Glory Days confirmed -->
@@ -1469,7 +1469,7 @@
 		<cond addName="1" msgId="113">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="reflectSkillMagic" val="50" />
 				<add stat="vengeanceMdam" val="50" />
@@ -1486,7 +1486,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10022" levels="1" name="Ignore Death">
 		<!-- Glory Days confirmed -->
@@ -1508,9 +1508,9 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="IgnoreDeath" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10023" levels="5" name="King of Beasts">
 		<!-- Glory Days confirmed -->
@@ -1592,7 +1592,7 @@
 		<cond msgId="113">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>600</delay>
@@ -1603,7 +1603,7 @@
 			<effect name="Buff">
 				<set stat="damageCap" val="10" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10025" levels="4" name="Knight Frenzy">
 		<!-- Glory Days confirmed -->
@@ -1645,7 +1645,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#cAtkAdd">
 					<using kind="SWORD" />
@@ -1716,7 +1716,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10026" levels="9" name="Superior Aggression">
 		<!-- Glory Days confirmed -->
@@ -1762,11 +1762,11 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
 			<!-- TODO p_berserker -->
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="DispelBySlot">
 				<dispel>ABSORB,9</dispel>
@@ -1827,11 +1827,11 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
 			<!-- TODO p_berserker -->
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="DispelBySlot">
 				<dispel>ABSORB,9</dispel>
@@ -1853,7 +1853,7 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="50" />
 			</effect>
@@ -1878,7 +1878,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10029" levels="1" name="Rage Aura">
 		<!-- Glory Days confirmed -->
@@ -1901,7 +1901,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
@@ -1920,7 +1920,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10030" levels="1" name="Challenge Aura">
 		<!-- Glory Days confirmed -->
@@ -1933,7 +1933,7 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Challenge Aura -->
 				<skillId>10031</skillId>
@@ -1946,7 +1946,7 @@
 				<mul stat="pReuse" val="0.9" />
 				<mul stat="mReuse" val="0.9" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10031" levels="1" name="Challenge Aura">
 		<!-- Glory Days confirmed -->
@@ -1967,7 +1967,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.85" />
@@ -1975,7 +1975,7 @@
 				<mul stat="pReuse" val="0.95" />
 				<mul stat="mReuse" val="0.95" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10032" levels="1" name="Iron Aura">
 		<!-- Glory Days confirmed -->
@@ -1988,7 +1988,7 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Iron Aura -->
 				<skillId>10033</skillId>
@@ -2002,7 +2002,7 @@
 				<amount>-15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10033" levels="1" name="Iron Aura">
 		<!-- Glory Days confirmed -->
@@ -2023,7 +2023,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2032,7 +2032,7 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10034" levels="1" name="Aura Resistance">
 		<!-- Glory Days confirmed -->
@@ -2045,7 +2045,7 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Aura Resistance -->
 				<skillId>10035</skillId>
@@ -2061,7 +2061,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10035" levels="1" name="Aura Resistance">
 		<!-- Glory Days confirmed -->
@@ -2082,7 +2082,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="fireRes" val="20" />
 				<add stat="waterRes" val="20" />
@@ -2093,7 +2093,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10036" levels="1" name="Recovery Aura">
 		<!-- Glory Days confirmed -->
@@ -2106,7 +2106,7 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Recovery Aura -->
 				<skillId>10037</skillId>
@@ -2122,7 +2122,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10037" levels="1" name="Recovery Aura">
 		<!-- Glory Days confirmed -->
@@ -2143,7 +2143,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>20</SHOCK>
 				<KNOCKDOWN>20</KNOCKDOWN>
@@ -2154,7 +2154,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10038" levels="1" name="Spirit Aura">
 		<!-- Glory Days confirmed -->
@@ -2167,7 +2167,7 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
-		<for>
+		<effects>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Spirit Aura -->
 				<skillId>10039</skillId>
@@ -2182,7 +2182,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10039" levels="1" name="Spirit Aura">
 		<!-- Glory Days confirmed -->
@@ -2203,7 +2203,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<AIRBIND>20</AIRBIND>
 				<PARALYZE>20</PARALYZE>
@@ -2213,7 +2213,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10040" levels="6" name="Summon Golden Lion">
 		<!-- Glory Days confirmed -->
@@ -2250,7 +2250,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">14936</value>
@@ -2262,7 +2262,7 @@
 				</npcId>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Price of Summoning -->
@@ -2289,12 +2289,12 @@
 			<value level="4">96</value>
 		</magicLvl>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>16</cubicId>
 				<cubicLvl>1</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10042" levels="3" name="Summon Cubic of Life">
 		<!-- Glory Days confirmed -->
@@ -2313,12 +2313,12 @@
 			<value level="3">96</value>
 		</magicLvl>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>16</cubicId>
 				<cubicLvl>1</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10043" levels="8" name="Summon Knight Cubic">
 		<!-- Glory Days confimed -->
@@ -2353,7 +2353,7 @@
 			<value level="8">98</value>
 		</magicLvl>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonCubic">
 				<cubicId>16</cubicId>
 				<cubicLvl>
@@ -2367,7 +2367,7 @@
 					<value level="8">8</value>
 				</cubicLvl>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10044" levels="10" name="Superior Elemental Mastery">
 		<!-- Glory Days confirmed -->
@@ -2389,7 +2389,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="waterRes" val="#elemRes" />
@@ -2399,7 +2399,7 @@
 				<add stat="holyRes" val="#elemRes" />
 				<add stat="darkRes" val="#elemRes" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10045" levels="3" name="Shield Charge II">
 		<!-- Strikes with the shield. Attacks target with 14179 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
@@ -2448,7 +2448,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">14179</value>
@@ -2475,7 +2475,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
 		<!-- Strikes with the shield. Attacks target with 15269 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
@@ -2524,7 +2524,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">15269</value>
@@ -2551,7 +2551,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
 		<!-- Strikes with the shield. Attacks target with 16359 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
@@ -2600,7 +2600,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">16359</value>
@@ -2627,7 +2627,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
 		<!-- Strikes with the shield. Attacks target with 17449 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
@@ -2676,7 +2676,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">17449</value>
@@ -2703,7 +2703,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
 		<!-- Strikes with the shield. Attacks target with 18539 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
@@ -2752,7 +2752,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">18539</value>
@@ -2779,7 +2779,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
 		<!-- Strikes with the shield. Attacks target with 19629 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
@@ -2828,7 +2828,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">18539</value>
@@ -2855,7 +2855,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
 		<!-- Glory Days confirmed -->
@@ -2899,7 +2899,7 @@
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>DERANGEMENT</trait>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">6459</value>
@@ -2911,7 +2911,7 @@
 				</power>
 			</effect>
 			<effect name="PhysicalMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10052" levels="6" name="Lion Claw">
 		<!-- Glory Days confirmed -->
@@ -2947,7 +2947,7 @@
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>15000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">4536</value>
@@ -2958,7 +2958,7 @@
 					<value level="6">5909</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10053" levels="6" name="Lion Dash">
 		<!-- Glory Days confirmed -->
@@ -3004,7 +3004,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2421</value>
@@ -3018,7 +3018,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10054" levels="6" name="Lion Flame">
 		<!-- Glory Days confirmed -->
@@ -3055,7 +3055,7 @@
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
 					<value level="1">109</value>
@@ -3067,7 +3067,7 @@
 				</power>
 				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10055" levels="1" name="Cubic Attack">
 		<!-- Glory Days confirmed -->
@@ -3088,14 +3088,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="PAtk">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10056" levels="8" name="Cubic Protection">
 		<!-- Glory Days confirmed -->
@@ -3136,7 +3136,7 @@
 			<value level="8">6</value>
 		</abnormalTime>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
@@ -3183,7 +3183,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10057" levels="1" name="Cubic Curse">
 		<!-- Glory Days confirmed -->
@@ -3205,11 +3205,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="5">
 				<power>-41</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10058" levels="1" name="Blessing of Protection">
 		<!-- Glory Days confirmed -->
@@ -3228,7 +3228,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="darkRes" val="20" />
 				<add stat="holyRes" val="20" />
@@ -3241,7 +3241,7 @@
 				<amount>1000</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10059" levels="3" name="Shield Charge VII">
 		<!-- AUTO GENERATED SKILL -->
@@ -3305,10 +3305,10 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<targetType>SELF</targetType> <!-- TODO: Check with our crappy targeting -->
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10061" levels="1" name="Price of Summoning">
 		<!-- Glory Days confirmed -->
@@ -3332,7 +3332,7 @@
 		<magicLvl>99</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 				<mul stat="sDef" val="0.7" />
 				<!-- TODO: {p_hate_attack;{sword;blunt};-60;per} -->
@@ -3341,7 +3341,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10062" levels="4" name="Phoenix Spirit">
 		<!-- P. Def./ M. Def. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
@@ -3356,7 +3356,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -3391,7 +3391,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10063" levels="4" name="Phoenix Spirit">
 		<!-- TODO abnormalType -->
@@ -3419,7 +3419,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">2</value>
@@ -3438,7 +3438,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10064" levels="4" name="Holy Sacrifice">
 		<!-- Consumes your HP to restore target's HP by 1000. Requires a shield. -->
@@ -3461,7 +3461,7 @@
 		<cond addName="1" msgId="113">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">1000</value>
@@ -3470,7 +3470,7 @@
 					<value level="4">2000</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10065" levels="4" name="Fortress Shield">
 		<!-- Shield P. Def. + 5%, Shield Defense + 2%. -->
@@ -3485,7 +3485,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="#sDef" />
 			</effect>
@@ -3498,7 +3498,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10066" levels="4" name="Spirit of Revenge">
 		<!-- P. Atk./ M. Atk. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
@@ -3513,7 +3513,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -3548,7 +3548,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10067" levels="4" name="Spirit of Revenge">
 		<!-- TODO abnormalType -->
@@ -3574,7 +3574,7 @@
 		<targetType>PARTY</targetType>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -3593,7 +3593,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10068" levels="7" name="Summon Blood Panther">
 		<!-- Updated to IO -->
@@ -3621,7 +3621,7 @@
 				<player hasFreeSummonPoints="0" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>
 					<value level="1">15138</value>
@@ -3634,7 +3634,7 @@
 				</npcId>
 				<lifeTime>-1</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10069" levels="4" name="Vampirism">
 		<!-- Has a 30% chance of recovering HP after a successful standard/ skill attack. -->
@@ -3648,7 +3648,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Vampirism -->
 				<attackerType>L2Character</attackerType>
@@ -3666,7 +3666,7 @@
 				<chance>30</chance>
 				<targetType>SELF</targetType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10070" levels="4" name="Vampirism">
 		<!-- HP Recovery -->
@@ -3683,7 +3683,7 @@
 		<mpConsume>1</mpConsume>
 		<effectPoint>100</effectPoint>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>
 					<value level="1">250</value>
@@ -3692,7 +3692,7 @@
 					<value level="4">1000</value>
 				</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10071" levels="4" name="Eva's Presence">
 		<!-- P. Def./ M. Def. + 2%. Has a 30% chance of increasing all party members' P. Def./ M. Def. and heal amount by 1% for 10 sec. when attacked. -->
@@ -3707,7 +3707,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -3742,7 +3742,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10072" levels="4" name="Eva's Presence">
 		<!-- TODO abnormalType -->
@@ -3770,7 +3770,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">2</value>
@@ -3798,7 +3798,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10073" levels="7" name="Summon Buff Cubic">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -3831,11 +3831,11 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10076" levels="4" name="Superior Guard Stance">
 		<!-- Shield Defense + 5%, Shield P. Def. + 2%. -->
@@ -3851,7 +3851,7 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<mpConsume>8</mpConsume>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="#sDef" />
 			</effect>
@@ -3864,7 +3864,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10077" levels="4" name="Shilen's Presence">
 		<!-- P. Atk./ M. Atk. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
@@ -3879,7 +3879,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -3914,7 +3914,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10078" levels="4" name="Shilen's Presence">
 		<!-- TODO abnormalType -->
@@ -3941,7 +3941,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -3960,7 +3960,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10079" levels="7" name="Summon Phantom Cubic">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -4022,7 +4022,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">15574</value>
@@ -4035,7 +4035,7 @@
 			<effect name="DefenceTrait">
 				<PARALYZE>100</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10082" levels="7" name="Strong Cubic Heal">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -4117,7 +4117,7 @@
 		<reuseDelay>42000</reuseDelay>
 		<effectPoint>-2</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">7750</value>
@@ -4130,7 +4130,7 @@
 				</power>
 			</effect>
 			<effect name="PhysicalAttackMute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10088" levels="7" name="Blood Panther Rush">
 		<!-- Updated to IO -->
@@ -4175,7 +4175,7 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">3875</value>
@@ -4188,7 +4188,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10089" levels="4" name="Strong Cubic Mind">
 		<!-- AUTO GENERATED SKILL -->
@@ -4237,13 +4237,13 @@
 			<value level="4">-1270</value>
 		</effectPoint>
 		<trait>HOLD</trait>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10091" levels="1" name="Templar's Will">
 		<!-- AUTO GENERATED SKILL -->
@@ -4332,7 +4332,7 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">11997</value>
@@ -4348,7 +4348,7 @@
 			<effect name="DefenceTrait">
 				<PARALYZE>100</PARALYZE>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10095" levels="1" name="Blood Panther's Death Touch">
 		<!-- Updated to IO -->
@@ -4357,7 +4357,7 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Guessed -->
 				<!-- Death Touch -->
@@ -4376,7 +4376,7 @@
 				<isCritical>true</isCritical>
 				<chance>15</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10096" levels="1" name="Death Touch">
 		<!-- Updated to IO -->
@@ -4398,12 +4398,12 @@
 		<isMagic>4</isMagic>
 		<effectPoint>-671</effectPoint>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10097" levels="6" name="Riot Shield">
 		<!-- Attacks nearby targets with 17927 Power added to P. Atk., and forces them to target you. Requires a shield. Consumes 6 Soulstones. Over-hit. Critical. -->
@@ -4446,10 +4446,10 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="TargetMe" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="10098" levels="4" name="Paladin's Frenzy">
 		<!-- For 1 min., P./M. Def. +50%, Debuff Resistance + 10%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
@@ -4482,7 +4482,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="debuffVuln" val="#debuffVuln" />
 				<add stat="rCrit" val="#rCrit">
@@ -4555,7 +4555,7 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
 		<!-- For 1 min., P. Atk. + 5%, P./M. Def. + 50%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
@@ -4588,7 +4588,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
@@ -4669,6 +4669,6 @@
 					<item>BLUNT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

@@ -266,7 +266,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>50</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<!-- TODO p_abnormal_rate_limit -->
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -285,7 +285,7 @@
 				<CHANGEBODY>100</CHANGEBODY>
 				<KNOCKDOWN>100</KNOCKDOWN>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14825" levels="9" name="Peace Attack">
 		<table name="#power"> 1007 9992 485 1007 1857 3122 5343 8043 9992 </table>
@@ -666,10 +666,10 @@
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14841" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -689,10 +689,10 @@
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14842" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -712,10 +712,10 @@
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14843" levels="1" name="Adolph's Chain Hydra">
 		<!-- Glory Days confirmed -->
@@ -743,7 +743,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>650</delay>
@@ -751,7 +751,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14844" levels="1" name="Adolph's Chain Hydra">
 		<!-- Glory Days confirmed -->
@@ -779,7 +779,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>650</delay>
@@ -787,7 +787,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14845" levels="1" name="Adolph's Chain Hydra">
 		<!-- Glory Days confirmed -->
@@ -815,7 +815,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
 				<delay>650</delay>
@@ -823,7 +823,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14846" levels="1" name="Adolph's Justice Punishment">
 		<!-- Glory Days confirmed -->
@@ -848,7 +848,7 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13673</power>
 				<criticalChance>5</criticalChance>
@@ -866,7 +866,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14847" levels="1" name="Adolph's Justice Punishment">
 		<!-- Glory Days confirmed -->
@@ -891,7 +891,7 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>16034</power>
 				<criticalChance>5</criticalChance>
@@ -909,7 +909,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14848" levels="1" name="Adolph's Justice Punishment">
 		<!-- Glory Days confirmed -->
@@ -934,7 +934,7 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>18395</power>
 				<criticalChance>5</criticalChance>
@@ -952,7 +952,7 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14849" levels="1" name="Adolph's Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -980,14 +980,14 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>9516</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14850" levels="1" name="Adolph's Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -1015,14 +1015,14 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11162</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14851" levels="1" name="Adolph's Shield Wave">
 		<!-- Glory Days confirmed -->
@@ -1050,14 +1050,14 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>12809</power>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14852" levels="1" name="Adolph's Final Ultimate Defense">
 		<!-- Glory Days confirmed -->
@@ -1079,7 +1079,7 @@
 		<reuseDelay>900000</reuseDelay>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 				<set stat="damageCap" val="300" />
@@ -1096,7 +1096,7 @@
 				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14853" levels="1" name="Adolph's Final Ultimate Defense">
 		<!-- Glory Days confirmed -->
@@ -1118,7 +1118,7 @@
 		<reuseDelay>900000</reuseDelay>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 				<set stat="damageCap" val="300" />
@@ -1135,7 +1135,7 @@
 				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14854" levels="1" name="Adolph's Final Ultimate Defense">
 		<!-- Glory Days confirmed -->
@@ -1157,7 +1157,7 @@
 		<reuseDelay>900000</reuseDelay>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="80" />
 				<set stat="damageCap" val="300" />
@@ -1174,7 +1174,7 @@
 				<amount>40</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14855" levels="1" name="Barton's Hurricane Rush">
 		<!-- Glory Days confirmed -->
@@ -1200,12 +1200,12 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<flyType>CHARGE</flyType>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14856" levels="1" name="Barton's Hurricane Rush">
 		<!-- Glory Days confirmed -->
@@ -1231,12 +1231,12 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<flyType>CHARGE</flyType>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14857" levels="1" name="Barton's Hurricane Rush">
 		<!-- Glory Days confirmed -->
@@ -1262,12 +1262,12 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<flyType>CHARGE</flyType>
-		<for>
+		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14858" levels="1" name="Barton's Infinity Strike">
 		<!-- Glory Days confirmed -->
@@ -1285,12 +1285,12 @@
 		<effectRange>200</effectRange>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15303</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14859" levels="1" name="Barton's Infinity Strike">
 		<!-- Glory Days confirmed -->
@@ -1308,12 +1308,12 @@
 		<effectRange>200</effectRange>
 		<magicLvl>90</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>17947</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14860" levels="1" name="Barton's Infinity Strike">
 		<!-- Glory Days confirmed -->
@@ -1331,12 +1331,12 @@
 		<effectRange>200</effectRange>
 		<magicLvl>95</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>20592</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14861" levels="1" name="Barton's Sonic Star">
 		<!-- Glory Days confirmed -->
@@ -1353,12 +1353,12 @@
 		<reuseDelay>600000</reuseDelay>
 		<affectLimit>10-10</affectLimit> <!-- Guessed -->
 		<affectRange>200</affectRange> <!-- Guessed -->
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11557</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14862" levels="1" name="Barton's Sonic Star">
 		<!-- Glory Days confirmed -->
@@ -1375,12 +1375,12 @@
 		<reuseDelay>600000</reuseDelay>
 		<affectLimit>10-10</affectLimit> <!-- Guessed -->
 		<affectRange>200</affectRange> <!-- Guessed -->
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13553</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14863" levels="1" name="Barton's Sonic Star">
 		<!-- Glory Days confirmed -->
@@ -1397,12 +1397,12 @@
 		<reuseDelay>600000</reuseDelay>
 		<affectLimit>10-10</affectLimit> <!-- Guessed -->
 		<affectRange>200</affectRange> <!-- Guessed -->
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15549</power>
 				<criticalChance>5</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14864" levels="1" name="Barton's Power Bomber">
 		<!-- Glory Days confirmed -->
@@ -1430,7 +1430,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11159</power>
 			</effect>
@@ -1449,7 +1449,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14865" levels="1" name="Barton's Power Bomber">
 		<!-- Glory Days confirmed -->
@@ -1477,7 +1477,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13102</power>
 			</effect>
@@ -1496,7 +1496,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14866" levels="1" name="Barton's Power Bomber">
 		<!-- Glory Days confirmed -->
@@ -1524,7 +1524,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15046</power>
 			</effect>
@@ -1543,7 +1543,7 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14867" levels="1" name="Barton's Berserker Rage">
 		<!-- Glory Days confirmed -->
@@ -1562,7 +1562,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<reuseDelay>300000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
@@ -1609,7 +1609,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14868" levels="1" name="Barton's Berserker Rage">
 		<!-- Glory Days confirmed -->
@@ -1629,7 +1629,7 @@
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
@@ -1676,7 +1676,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14869" levels="1" name="Barton's Berserker Rage">
 		<!-- Glory Days confirmed -->
@@ -1696,7 +1696,7 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
@@ -1743,7 +1743,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14870" levels="1" name="Hayuk's Multiple Arrow">
 		<!-- AUTO GENERATED SKILL -->
@@ -1866,7 +1866,7 @@
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>24888</power>
 				<criticalChance>5</criticalChance>
@@ -1878,7 +1878,7 @@
 			<effect name="TargetCancel">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14877" levels="1" name="Hayuk's Recoil Shot">
 		<!-- Glory Days confirmed -->
@@ -1905,7 +1905,7 @@
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>26565</power>
 				<criticalChance>5</criticalChance>
@@ -1917,7 +1917,7 @@
 			<effect name="TargetCancel">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14878" levels="1" name="Hayuk's Recoil Shot">
 		<!-- Glory Days confirmed -->
@@ -1944,7 +1944,7 @@
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>28242</power>
 				<criticalChance>5</criticalChance>
@@ -1956,7 +1956,7 @@
 			<effect name="TargetCancel">
 				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14879" levels="1" name="Hayuk's Pinpoint Shot">
 		<!-- Glory Days confirmed -->
@@ -1973,13 +1973,13 @@
 		<effectRange>1500</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>22198</power>
 				<pDefMod>0.7</pDefMod>
 				<criticalChance>10</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14880" levels="1" name="Hayuk's Pinpoint Shot">
 		<!-- Glory Days confirmed -->
@@ -1996,13 +1996,13 @@
 		<effectRange>1500</effectRange>
 		<magicLvl>90</magicLvl>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>26075</power>
 				<pDefMod>0.7</pDefMod>
 				<criticalChance>10</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14881" levels="1" name="Hayuk's Pinpoint Shot">
 		<!-- Glory Days confirmed -->
@@ -2019,13 +2019,13 @@
 		<effectRange>1500</effectRange>
 		<magicLvl>95</magicLvl>
 		<reuseDelay>10000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>29176</power>
 				<pDefMod>0.7</pDefMod>
 				<criticalChance>10</criticalChance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14882" levels="1" name="Hayuk's Quick Evasion">
 		<!-- Glory Days confirmed -->
@@ -2043,7 +2043,7 @@
 		<effectRange>1000</effectRange>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
 				<flyType>WARP_BACK</flyType>
@@ -2051,7 +2051,7 @@
 				<angle>0</angle>
 				<range>300</range>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14883" levels="1" name="Eliyah's Mass Exile">
 		<!-- Glory Days confirmed -->
@@ -2077,7 +2077,7 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>282</power>
 			</effect>
@@ -2085,7 +2085,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14884" levels="1" name="Eliyah's Mass Exile">
 		<!-- Glory Days confirmed -->
@@ -2111,7 +2111,7 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>296</power>
 			</effect>
@@ -2119,7 +2119,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14885" levels="1" name="Eliyah's Mass Exile">
 		<!-- Glory Days confirmed -->
@@ -2145,7 +2145,7 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
-		<for>
+		<effects>
 			<effect name="DamOverTime" ticks="1">
 				<power>313</power>
 			</effect>
@@ -2153,7 +2153,7 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14886" levels="1" name="Eliyah's Summon Death Gate">
 		<!-- Glory Days confirmed -->
@@ -2169,14 +2169,14 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>14927</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>30000</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14887" levels="1" name="Eliyah's Summon Death Gate">
 		<!-- Glory Days confirmed -->
@@ -2192,14 +2192,14 @@
 		<magicLvl>90</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>14927</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>30000</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14888" levels="1" name="Eliyah's Summon Death Gate">
 		<!-- Glory Days confirmed -->
@@ -2215,14 +2215,14 @@
 		<magicLvl>95</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>14927</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>30000</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14889" levels="1" name="Adolph's Aggression">
 		<!-- Glory Days confirmed -->
@@ -2245,10 +2245,10 @@
 		<abnormalTime>3</abnormalTime>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14890" levels="1" name="Adolph's Aggression">
 		<!-- Glory Days confirmed -->
@@ -2271,10 +2271,10 @@
 		<abnormalTime>3</abnormalTime>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14891" levels="1" name="Adolph's Aggression">
 		<!-- Glory Days confirmed -->
@@ -2297,10 +2297,10 @@
 		<abnormalTime>3</abnormalTime>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14892" levels="1" name="Guardian Spirit's Blow">
 		<!-- Glory Days confirmed -->
@@ -2316,11 +2316,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>36042</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14893" levels="1" name="Guardian Spirit's Blow">
 		<!-- Glory Days confirmed -->
@@ -2336,11 +2336,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>90</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>36042</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14894" levels="1" name="Guardian Spirit's Blow">
 		<!-- Glory Days confirmed -->
@@ -2356,11 +2356,11 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<coolTime>500</coolTime>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>36042</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14895" levels="1" name="Guardian Spirit's Wrath">
 		<!-- Glory Days confirmed -->
@@ -2377,11 +2377,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>11159</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14896" levels="1" name="Guardian Spirit's Wrath">
 		<!-- Glory Days confirmed -->
@@ -2398,11 +2398,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>13102</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14897" levels="1" name="Guardian Spirit's Wrath">
 		<!-- Glory Days confirmed -->
@@ -2419,11 +2419,11 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PhysicalAttack">
 				<power>15046</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14898" levels="1" name="Elise' Progressive Heal">
 		<!-- Glory Days confirmed -->
@@ -2441,11 +2441,11 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HealPercent">
 				<power>40</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14899" levels="1" name="Elise' Radiant Heal">
 		<!-- Glory Days confirmed -->
@@ -2464,10 +2464,10 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

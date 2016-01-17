@@ -43,12 +43,12 @@
 		<coolTime>300</coolTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
-		<for>
+		<effects>
 			<effect name="Invincible" />
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="100" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19103" levels="1" name="Resident Power">
 		<!-- Glory Days confirmed -->
@@ -58,7 +58,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>700</amount>
 				<mode>DIFF</mode>
@@ -75,7 +75,7 @@
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19104" levels="2" name="Resident Power">
 		<!-- Glory Days confirmed -->
@@ -85,7 +85,7 @@
 		<targetType>SELF</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<for>
+		<effects>
 			<effect name="MaxCp">
 				<amount>1000</amount>
 				<mode>DIFF</mode>
@@ -102,7 +102,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19105" levels="1" name="Resident Advantage">
 		<!-- Glory Days confirmed -->
@@ -115,7 +115,7 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="1;84" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>13</amount>
 				<mode>PER</mode>
@@ -128,7 +128,7 @@
 				<amount>13</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19106" levels="2" name="Resident Advantage">
 		<!-- Glory Days confirmed -->
@@ -142,7 +142,7 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="1;84" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -155,7 +155,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19107" levels="1" name="Resident Guidance">
 		<!-- Glory Days confirmed -->
@@ -165,11 +165,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="bonusExp" val="1.03" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19108" levels="2" name="Resident Guidance">
 		<!-- Glory Days confirmed -->
@@ -179,11 +179,11 @@
 		<targetType>SELF</targetType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="bonusExp" val="1.05" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19109" levels="4" name="Siege Golem's Spirit">
 		<!-- AUTO GENERATED SKILL -->
@@ -317,7 +317,7 @@
 		<icon>icon.skill19120</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">2</value>
@@ -327,7 +327,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19121" levels="4" name="Noble Magic Barrier">
 		<!-- M. Def. + 3%. -->
@@ -335,7 +335,7 @@
 		<icon>icon.skill19121</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -345,7 +345,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19122" levels="4" name="Noble Blessed Body">
 		<!-- Max HP + 6%. -->
@@ -353,7 +353,7 @@
 		<icon>icon.skill1045</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">6</value>
@@ -363,7 +363,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19123" levels="4" name="Noble Haste">
 		<!-- Atk. Spd. + 2%. -->
@@ -371,7 +371,7 @@
 		<icon>icon.skill1086</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">2</value>
@@ -381,7 +381,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19124" levels="2" name="Noble Knight Buffs">
 		<!-- Paralysis/Stun success rate and defense rate + 5%. -->
@@ -389,7 +389,7 @@
 		<icon>icon.skill19124</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="AttackTrait">
 				<PARALYZE>
 					<value level="1">5</value>
@@ -410,7 +410,7 @@
 					<value level="2">10</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19125" levels="2" name="Noble Critical Focus">
 		<!-- Physical Skill Critical Rate + 5%. -->
@@ -418,7 +418,7 @@
 		<icon>icon.skill0193</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Implement proper stat! -->
 			</effect>
@@ -429,7 +429,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19126" levels="2" name="Noble Mindset">
 		<!-- MP Recovery Bonus + 4. -->
@@ -437,7 +437,7 @@
 		<icon>icon.skill0229</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MpRegen">
 				<amount>
 					<value level="1">4</value>
@@ -445,7 +445,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19127" levels="2" name="Noble Guidance">
 		<!-- P. Accuracy + 8, M. Accuracy + 8, servitor's P. Accuracy + 15. -->
@@ -453,7 +453,7 @@
 		<icon>icon.skill19127</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Implement servitor's p acc -->
 				<!-- TODO: Implement the hidden skill -->
@@ -472,14 +472,14 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19128" levels="2" name="Noble Sting">
 		<!-- Physical Skill Critical Damage + 5%. -->
 		<icon>icon.skill10655</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Implement proper stat! -->
 			</effect>
@@ -487,7 +487,7 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19129" levels="2" name="Noble Protection">
 		<!-- Critical rate in a normal attack - 2%. -->
@@ -495,11 +495,11 @@
 		<icon>icon.skill19129</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19130" levels="2" name="Noble Attributes">
 		<!-- Attack Attribute + 20. 6 Attributes Resistance + 20. -->
@@ -507,7 +507,7 @@
 		<icon>icon.skill19130</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Handle attack attribute -->
 				<add stat="fireRes" val="#bonus" />
@@ -517,7 +517,7 @@
 				<add stat="holyRes" val="#bonus" />
 				<add stat="darkRes" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19131" levels="2" name="Noble Expertise">
 		<!-- P. Atk. + 3% when a melee two-handed weapon is equipped. Atk. Spd. + 3% when a shield is equipped. -->
@@ -525,7 +525,7 @@
 		<icon>icon.skill19131</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#bonus">
 					<and>
@@ -544,7 +544,7 @@
 					<item>SHIELD</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19132" levels="2" name="Noble Mind">
 		<!-- Physical Skill Cooldown - 3%. -->
@@ -552,18 +552,18 @@
 		<icon>icon.skill19132</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19133" levels="1" name="Noble Heavy Armor Shield">
 		<!-- When equipped with Heavy Armor, P. Def. + 3% and Max MP + 6%. -->
 		<icon>icon.skill19133</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.06">
 					<using kind="HEAVY" />
@@ -576,7 +576,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19134" levels="4" name="Noble Heavy Armor Defense">
 		<!-- When equipped with Heavy Armor, P. Def. + 3%. -->
@@ -584,7 +584,7 @@
 		<icon>icon.skill19134</icon>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -597,7 +597,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19135" levels="4" name="Noble Heavy Armor Attack">
 		<!-- When equipped with Heavy Armor, P. Atk. + 2%. -->
@@ -605,7 +605,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19135</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -618,7 +618,7 @@
 					<item>HEAVY</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19136" levels="3" name="Noble Prayer">
 		<!-- Received heal amount + 3%. -->
@@ -626,7 +626,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1273</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HealEffect">
 				<amount>
 					<value level="1">3</value>
@@ -635,7 +635,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19137" levels="1" name="Noble Guts">
 		<!-- Received damage - 10%. -->
@@ -649,12 +649,12 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19138</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19139" levels="4" name="Noble Might">
 		<!-- P. Atk. + 2%. -->
@@ -662,7 +662,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19139</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -672,7 +672,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19140" levels="2" name="Noble Cost">
 		<!-- Physical Skill MP Consumption - 5%. -->
@@ -680,11 +680,11 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19140</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19141" levels="2" name="Noble Wind Walk">
 		<!-- Speed + 5. -->
@@ -692,7 +692,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1204</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">5</value>
@@ -700,7 +700,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19142" levels="2" name="Noble Warrior Buffs">
 		<!-- Stun/Restrain success rate and defense rate + 5%. -->
@@ -708,7 +708,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19142</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<!-- TODO: Handle Restrain trait -->
 			<effect name="AttackTrait">
 				<SHOCK>
@@ -722,7 +722,7 @@
 					<value level="2">10</value>
 				</SHOCK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19143" levels="2" name="Noble Focus">
 		<!-- P. Critical Rate + 20. -->
@@ -730,11 +730,11 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1077</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19144" levels="2" name="Noble Backfire">
 		<!-- Rear Damage + 3%. -->
@@ -750,7 +750,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill4278</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">3</value>
@@ -758,16 +758,16 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19146" levels="2" name="Noble Protection Magic">
 		<!-- Chance of receiving an M. Critical attack - 2%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19146</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<!-- TODO: Find which skill triggers and under what circumstances -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="19147" levels="2" name="Noble Ambush">
 		<!-- Spd. + 6 when not engaged in battle. -->
@@ -775,20 +775,20 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1905</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="moveSpeed" val="#bonus">
 					<player incombat="false" />
 				</add>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19148" levels="1" name="Noble Light Armor Blessing">
 		<!-- When equipped with Light Armor, Max HP + 6% and Max MP + 6%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19148</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.06">
 					<using kind="LIGHT" />
@@ -801,7 +801,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19149" levels="4" name="Noble Anti Magic">
 		<!-- When equipped with Light Armor, M. Def. + 3%. -->
@@ -809,7 +809,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill0146</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -822,7 +822,7 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19150" levels="4" name="Noble Light Armor Attack">
 		<!-- When equipped with Light Armor, P. Atk. + 2%. -->
@@ -830,7 +830,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19150</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">2</value>
@@ -843,7 +843,7 @@
 					<item>LIGHT</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19151" levels="3" name="Noble Vampiric Rage">
 		<!-- During an attack, there is a chance of restoring 3% of damage as HP. -->
@@ -851,7 +851,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1268</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">3</value>
@@ -860,7 +860,7 @@
 				</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19152" levels="1" name="Noble Endurance">
 		<!-- Damage received while immobile decreases - 21%. -->
@@ -874,13 +874,13 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19153</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="rCrit" val="50" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="skillCriticalProbability" val="1.50" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19154" levels="4" name="Noble Empower">
 		<!-- M. Atk. + 3% and recovery magic Power + 47. -->
@@ -888,7 +888,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1059</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Handle recovery magic power stat -->
 			</effect>
@@ -901,7 +901,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19155" levels="2" name="Noble Acumen">
 		<!-- Casting Spd. + 2%. -->
@@ -909,7 +909,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1085</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">2</value>
@@ -917,7 +917,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19156" levels="2" name="Noble Wizard Buffs">
 		<!-- Restrain/Mind success rate and defense rate + 5%. -->
@@ -925,7 +925,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19156</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<!-- TODO: Handle Restrain trait -->
 			<effect name="AttackTrait">
 				<DERANGEMENT>
@@ -939,7 +939,7 @@
 					<value level="2">10</value>
 				</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19157" levels="2" name="Noble Wild Magic">
 		<!-- M. Critical Rate + 20. -->
@@ -947,11 +947,11 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1303</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19158" levels="2" name="Noble Blessed Soul">
 		<!-- Max MP + 6%. -->
@@ -959,7 +959,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1048</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">6</value>
@@ -967,7 +967,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19159" levels="2" name="Noble Resistance">
 		<!-- Debuff Resistance + 5%. -->
@@ -975,11 +975,11 @@
 		<operateType>P</operateType>
 		<icon>icon.skill11567</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19160" levels="2" name="Noble Magic Death">
 		<!-- M. Critical Damage + 3% and recovery magic Power + 94. -->
@@ -987,12 +987,12 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19160</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mCritPower" val="#bonus" />
 				<!-- TODO: Handle recovery magic power stat -->
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19161" levels="2" name="Noble Protection Armor">
 		<!-- Critical Damage during a normal attack - 2%. -->
@@ -1000,7 +1000,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19161</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>
 					<value level="1">-2</value>
@@ -1008,7 +1008,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19162" levels="2" name="Noble Recovery">
 		<!-- MP Recovery Bonus + 8 while running. -->
@@ -1016,13 +1016,13 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19162</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="regMp" val="#bonus">
 					<player running="true" />
 				</mul>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19163" levels="2" name="Noble Skill Mastery">
 		<!-- Skill Mastery rate + 30%. -->
@@ -1030,18 +1030,18 @@
 		<operateType>P</operateType>
 		<icon>icon.skill0330</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="skillCriticalProbability" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19164" levels="1" name="Noble Robe Shield">
 		<!-- When equipped with a Robe, P. Def. + 3% and Max MP + 6%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19164</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>3</amount>
 				<mode>PER</mode>
@@ -1056,7 +1056,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19165" levels="4" name="Noble Robe Defense">
 		<!-- When equipped with a Robe, P. Def. + 3%. -->
@@ -1064,7 +1064,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19165</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -1077,7 +1077,7 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19166" levels="4" name="Noble Robe Attack">
 		<!-- When equipped with a Robe, M. Atk. + 3% and recovery skill Power + 47. -->
@@ -1085,7 +1085,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19166</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Handle recovery skill power stat -->
 			</effect>
@@ -1101,7 +1101,7 @@
 					<item>MAGIC</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19167" levels="3" name="Noble Heal Boost">
 		<!-- Recovery effects not affected by magic + 3%. -->
@@ -1109,7 +1109,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19167</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="HpRegen">
 				<amount>
 					<value level="1">3</value>
@@ -1118,14 +1118,14 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19168" levels="1" name="Noble Gain">
 		<!-- MP Recovery Bonus + 33 and Max MP + 10%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19168</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1134,14 +1134,14 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19169" levels="1" name="Noble Advance">
 		<!-- MP Recovery Bonus + 33 and magic skill Cooldown - 5%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19169</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="mReuse" val="1.05" />
 			</effect>
@@ -1149,7 +1149,7 @@
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19170" levels="2" name="Noble Blessing">
 		<!-- P. Def. + 3%. -->
@@ -1157,7 +1157,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19120</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -1165,7 +1165,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19171" levels="4" name="Noble Condition">
 		<!-- Max HP + 6%. -->
@@ -1173,7 +1173,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1045</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">6</value>
@@ -1183,7 +1183,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19172" levels="2" name="Noble Eagle Eye">
 		<!-- P. Accuracy + 8, M. Accuracy + 8, servitor's P. Accuracy + 15. -->
@@ -1191,7 +1191,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19127</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Implement servitor's p acc -->
 			</effect>
@@ -1209,7 +1209,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19173" levels="2" name="Noble Emblem">
 		<!-- Attack Attribute + 20. 6 Attributes Resistance + 20. -->
@@ -1217,7 +1217,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19130</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Handle attack attribute -->
 				<add stat="fireRes" val="#bonus" />
@@ -1227,7 +1227,7 @@
 				<add stat="holyRes" val="#bonus" />
 				<add stat="darkRes" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19174" levels="4" name="Noble Earth">
 		<!-- Physical P. Def. + 3%. -->
@@ -1235,7 +1235,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19121</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">3</value>
@@ -1245,7 +1245,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19175" levels="2" name="Noble Life">
 		<!-- Max HP + 6%. -->
@@ -1253,7 +1253,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill1045</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">6</value>
@@ -1261,7 +1261,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19176" levels="2" name="Noble Vision">
 		<!-- P. Accuracy + 8, M. Accuracy + 8, servitor's P. Accuracy + 15. -->
@@ -1269,7 +1269,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19127</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Implement servitor's p acc -->
 			</effect>
@@ -1287,7 +1287,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19177" levels="2" name="Noble Spirit">
 		<!-- Attack Attribute + 20. 6 Attributes Resistance + 20. -->
@@ -1295,7 +1295,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill19130</icon>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<!-- TODO: Handle attack attribute -->
 				<add stat="fireRes" val="#bonus" />
@@ -1305,7 +1305,7 @@
 				<add stat="holyRes" val="#bonus" />
 				<add stat="darkRes" val="#bonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="19178" levels="1" name="Knight Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->

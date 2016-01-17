@@ -19,13 +19,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>100</rate>
 				<max>20</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7002" levels="1" name="Dispel Debuff">
 		<castRange>400</castRange>
@@ -37,13 +37,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>20</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7003" levels="1" name="Dispel All">
 		<!-- Confirmed CT2.5 -->
@@ -56,7 +56,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>100</rate>
@@ -67,7 +67,7 @@
 				<rate>100</rate>
 				<max>20</max>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7004" levels="2" name="Dispel Petrification">
 		<!-- This skill only has one level, 2. -->
@@ -79,11 +79,11 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TURN_STONE,2</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7005" levels="4" name="Greater Chant of Vampire">
 		<!-- This skill only has one level, 4. -->
@@ -106,12 +106,12 @@
 		<basicProperty>NONE</basicProperty>
 		<affectRange>200</affectRange>
 		<targetType>CLAN_MEMBER</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7006" levels="13" name="The Love of Pa'agrio">
 		<!-- TODO: Needs to be done -->
@@ -313,11 +313,11 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>100</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7029" levels="4" name="Super Haste">
 		<!-- GM Skill -->
@@ -340,7 +340,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
@@ -401,7 +401,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7030" levels="1" name="Summon King Bugbear">
 		<hitTime>4000</hitTime>
@@ -418,12 +418,12 @@
 		<cond>
 			<player canSummonPet="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>20150</npcId>
 				<lifeTime>1200</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7031" levels="1" name="Summon Skeleton Royal Guard">
 		<hitTime>4000</hitTime>
@@ -440,12 +440,12 @@
 		<cond>
 			<player canSummonPet="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>20169</npcId>
 				<lifeTime>1200</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7032" levels="1" name="Summon Hunter Gargoyle">
 		<hitTime>4000</hitTime>
@@ -462,12 +462,12 @@
 		<cond>
 			<player canSummonPet="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Summon">
 				<npcId>20241</npcId>
 				<lifeTime>1200</lifeTime>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7033" levels="1" name="not_used">
 		<magicLvl>1</magicLvl>
@@ -536,11 +536,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7042" levels="1" name="Master's Blessing - Death Whisper">
 		<!-- GM Skill -->
@@ -561,12 +561,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7043" levels="1" name="Master's Blessing - Haste">
 		<!-- GM Skill -->
@@ -587,12 +587,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7044" levels="1" name="Master's Blessing - Guidance">
 		<!-- GM Skill -->
@@ -613,12 +613,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7045" levels="1" name="Master's Blessing - Blessed Body">
 		<!-- GM Skill -->
@@ -639,11 +639,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7046" levels="1" name="Master's Blessing - Blessed Soul">
 		<!-- GM Skill -->
@@ -664,12 +664,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7047" levels="1" name="Master's Blessing - Agility">
 		<!-- GM Skill -->
@@ -690,12 +690,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7048" levels="1" name="Master's Blessing - Acumen">
 		<!-- GM Skill -->
@@ -716,12 +716,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7049" levels="1" name="Master's Blessing - Decrease Weight">
 		<!-- GM Skill -->
@@ -742,11 +742,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="weightPenalty" val="9000" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7050" levels="1" name="Master's Blessing - Might">
 		<!-- GM Skill -->
@@ -767,12 +767,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7051" levels="1" name="Master's Blessing - Shield">
 		<!-- GM Skill -->
@@ -793,12 +793,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7052" levels="1" name="Master's Blessing - Magic Barrier">
 		<!-- GM Skill -->
@@ -819,12 +819,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7053" levels="1" name="Master's Blessing - Vampiric Rage">
 		<!-- GM Skill -->
@@ -845,12 +845,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
 				<chance>80</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7054" levels="1" name="Master's Blessing - Empower">
 		<!-- GM Skill -->
@@ -871,12 +871,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7055" levels="1" name="Master's Blessing - Wind Walk">
 		<!-- GM Skill -->
@@ -897,12 +897,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7056" levels="1" name="Master's Blessing - Berserker Spirit">
 		<!-- GM Skill -->
@@ -923,7 +923,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
 				<mode>PER</mode>
@@ -956,7 +956,7 @@
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7057" levels="1" name="Master's Blessing - Greater Might">
 		<!-- GM Skill -->
@@ -977,12 +977,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7058" levels="1" name="Master's Blessing - Greater Shield">
 		<!-- GM Skill -->
@@ -1003,12 +1003,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7059" levels="1" name="Master's Blessing - Wild Magic">
 		<!-- GM Skill -->
@@ -1029,11 +1029,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7060" levels="1" name="Master's Blessing - Clarity">
 		<!-- GM Skill -->
@@ -1054,13 +1054,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.8" />
 				<mul stat="DanceMpConsumeRate" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7061" levels="1" name="Master's Blessing - Prophecy of Water">
 		<!-- GM Skill -->
@@ -1083,7 +1083,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1123,7 +1123,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7062" levels="1" name="Master's Blessing - Prophecy of Fire">
 		<!-- GM Skill -->
@@ -1144,7 +1144,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1193,7 +1193,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7063" levels="1" name="Master's Blessing - Prophecy of Wind">
 		<!-- GM Skill -->
@@ -1214,7 +1214,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
@@ -1253,7 +1253,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7064" levels="1" name="Master's Blessing - Chant of Victory">
 		<!-- GM Skill -->
@@ -1274,7 +1274,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
 				<sub stat="debuffVuln" val="10" />
@@ -1320,7 +1320,7 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7065" levels="1" name="Test - Charge">
 		<coolTime>200</coolTime>
@@ -1444,11 +1444,11 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonTrap">
 				<npcId>30048</npcId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7073" levels="1" name="Test - Find Trap">
 		<hitTime>1000</hitTime>
@@ -1547,9 +1547,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<trait>SHOCK</trait>
-		<for>
+		<effects>
 			<effect name="BlockActions" />
-		</for>
+		</effects>
 		<selfEffects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
@@ -1707,7 +1707,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
@@ -1722,7 +1722,7 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7089" levels="1" name="Master's Blessing - Improve Magic">
 		<!-- Confirmed CT2.5 -->
@@ -1745,7 +1745,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
@@ -1760,7 +1760,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7090" levels="1" name="Master's Blessing - Improve Condition">
 		<!-- Confirmed CT2.5 -->
@@ -1783,7 +1783,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
@@ -1797,7 +1797,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7091" levels="1" name="Master's Blessing - Improve Critical">
 		<!-- Confirmed CT2.5 -->
@@ -1820,7 +1820,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.3" />
 			</effect>
@@ -1834,7 +1834,7 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7092" levels="1" name="Master's Blessing - Improve Shield Defense">
 		<!-- Confirmed CT2.5 -->
@@ -1857,7 +1857,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="sDef" val="1.5" />
 			</effect>
@@ -1871,7 +1871,7 @@
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7093" levels="1" name="Master's Blessing - Improve Movement">
 		<!-- Confirmed CT2.5 -->
@@ -1894,7 +1894,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
@@ -1909,7 +1909,7 @@
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7094" levels="1" name="Master's Blessing - Sharpen Edge">
 		<!-- GM Skill -->
@@ -1931,7 +1931,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2">
 					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
@@ -1951,7 +1951,7 @@
 					<item>DUALFIST</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7095" levels="1" name="Master's Blessing - Face Harden">
 		<!-- GM Skill -->
@@ -1973,7 +1973,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1981,7 +1981,7 @@
 					<item>HEAVY</item>
 				</armorType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7096" levels="1" name="Master's Blessing - Blessing of Noblesse">
 		<!-- GM Skill -->
@@ -2003,9 +2003,9 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<for>
+		<effects>
 			<effect name="NoblesseBless" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="7097" levels="1" name="Cancel Shadow Move">
 		<icon>icon.skill01702</icon>
@@ -2018,11 +2018,11 @@
 		<affectRange>2000</affectRange>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="DispelBySlot">
 				<dispel>DANCE_OF_SHADOW,-1;STEALTH,-1</dispel>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7098" levels="1" name="Clan-exclusive Pet Heal">
 		<!-- Glory Days confirmed -->
@@ -2038,11 +2038,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>3000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="7099" levels="1" name="Clan-exclusive Pet Fear">
 		<!-- Glory Days confirmed -->
@@ -2067,9 +2067,9 @@
 		<trait>DERANGEMENT</trait>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-		</for>
+		</effects>
 	</skill>
 </list>

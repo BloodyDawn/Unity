@@ -19,9 +19,9 @@
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Buff" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2901" levels="1" name="Ancient Herb - Immortal">
 		<abnormalInstant>true</abnormalInstant>
@@ -42,9 +42,9 @@
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Invincible" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2902" levels="1" name="Ancient Herb - Terminator">
 		<abnormalInstant>true</abnormalInstant>
@@ -65,12 +65,12 @@
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>70</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2903" levels="1" name="Ancient Herb - Guide">
 		<abnormalInstant>true</abnormalInstant>
@@ -91,12 +91,12 @@
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>250</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2904" levels="1" name="Guardian Spirit's Divine Protection">
 		<abnormalLvl>1</abnormalLvl>
@@ -155,11 +155,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="61;75" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Heal">
 				<power>1900</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2908" levels="5" name="Battlefield Use Secret Medicine of Mind">
 		<!-- Confirmed CT2.5 -->
@@ -173,11 +173,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="61;75" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="ManaHeal">
 				<power>360</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2909" levels="5" name="Battlefield Use Secret Medicine of Will">
 		<!-- Confirmed CT2.5 -->
@@ -191,11 +191,11 @@
 		<cond msgId="113" addName="1">
 			<player levelRange="61;75" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="CpHeal">
 				<power>360</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2910" levels="1" name="Skull Key of Suffering">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -261,7 +261,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="SummonNpc">
 				<npcId>
 					<value level="1">32702</value>
@@ -270,7 +270,7 @@
 				</npcId>
 				<npcCount>1</npcCount>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2915" levels="1" name="Multi-colored Jewel">
 		<!-- Confirmed CT2.5 -->
@@ -292,13 +292,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="Teleport">
 				<x>89417</x>
 				<y>-44506</y>
 				<z>-2136</z>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2916" levels="1" name="Enriched Pet Food">
 		<!-- Confirmed CT2.5 -->
@@ -310,13 +310,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Feed">
 				<normal>11000</normal>
 				<ride>11000</ride>
 				<wyvern>0</wyvern>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2917" levels="1" name="Large Stakato Cocoon">
 		<!-- Confirmed CT2.5 -->
@@ -338,9 +338,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2918" levels="1" name="Small Stakato Cocoon">
 		<!-- Confirmed CT2.5 -->
@@ -362,9 +362,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2919" levels="1" name="Ancient Parchment">
 		<!-- Confirmed CT2.5 -->
@@ -386,9 +386,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2920" levels="1" name="Titan's Ancient Book">
 		<!-- Confirmed CT2.5 -->
@@ -410,9 +410,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2921" levels="1" name="Gludio Supply Box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -434,9 +434,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2922" levels="1" name="Dion supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -458,9 +458,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2923" levels="1" name="Giran supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -482,9 +482,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2924" levels="1" name="Oren supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -506,9 +506,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2925" levels="1" name="Aden supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -530,9 +530,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2926" levels="1" name="Innadril supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -554,9 +554,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2927" levels="1" name="Goddard Supply Box: magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -578,9 +578,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2928" levels="1" name="Rune supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -602,9 +602,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2929" levels="1" name="Schuttgart supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -626,9 +626,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2930" levels="1" name="Gludio supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -650,9 +650,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2931" levels="1" name="Dion supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -674,9 +674,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2932" levels="1" name="Giran supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -698,9 +698,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2933" levels="1" name="Oren supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -722,9 +722,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2934" levels="1" name="Aden supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -746,9 +746,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2935" levels="1" name="Innadril supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -770,9 +770,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2936" levels="1" name="Goddard Supply Box: magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -794,9 +794,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2937" levels="1" name="Rune supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -818,9 +818,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2938" levels="1" name="Schuttgart supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -842,9 +842,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2939" levels="1" name="Gludio supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -866,9 +866,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2940" levels="1" name="Dion supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -890,9 +890,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2941" levels="1" name="Giran supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -914,9 +914,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2942" levels="1" name="Oren supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -938,9 +938,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2943" levels="1" name="Aden supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -962,9 +962,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2944" levels="1" name="Innadril supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -986,9 +986,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2945" levels="1" name="Goddard Supply Box: belt">
 		<!-- Confirmed CT2.5 -->
@@ -1010,9 +1010,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2946" levels="1" name="Rune supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1034,9 +1034,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2947" levels="1" name="Schuttgart supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1058,9 +1058,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2948" levels="1" name="Gludio Supply Box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1082,9 +1082,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2949" levels="1" name="Dion supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1106,9 +1106,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2950" levels="1" name="Giran supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1130,9 +1130,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2951" levels="1" name="Oren supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1154,9 +1154,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2952" levels="1" name="Aden supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1178,9 +1178,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2953" levels="1" name="Innadril supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1202,9 +1202,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2954" levels="1" name="Goddard Supply Box: magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1226,9 +1226,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2955" levels="1" name="Rune supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1250,9 +1250,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2956" levels="1" name="Schuttgart supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
@@ -1274,9 +1274,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2957" levels="1" name="Gludio supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1298,9 +1298,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2958" levels="1" name="Dion supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1322,9 +1322,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2959" levels="1" name="Giran supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1346,9 +1346,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2960" levels="1" name="Oren supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1370,9 +1370,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2961" levels="1" name="Aden supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1394,9 +1394,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2962" levels="1" name="Innadril supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1418,9 +1418,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2963" levels="1" name="Goddard Supply Box: magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1442,9 +1442,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2964" levels="1" name="Rune supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1466,9 +1466,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2965" levels="1" name="Schuttgart supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
@@ -1490,9 +1490,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2966" levels="1" name="Gludio supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1514,9 +1514,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2967" levels="1" name="Dion supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1538,9 +1538,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2968" levels="1" name="Giran supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1562,9 +1562,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2969" levels="1" name="Oren supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1586,9 +1586,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2970" levels="1" name="Aden supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1610,9 +1610,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2971" levels="1" name="Innadril supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1634,9 +1634,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2972" levels="1" name="Goddard Supply Box: belt">
 		<!-- Confirmed CT2.5 -->
@@ -1658,9 +1658,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2973" levels="1" name="Rune supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1682,9 +1682,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2974" levels="1" name="Schuttgart supply box - belt">
 		<!-- Confirmed CT2.5 -->
@@ -1706,9 +1706,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2975" levels="1" name="Gludio supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1730,9 +1730,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2976" levels="1" name="Dion supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1754,9 +1754,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2977" levels="1" name="Giran supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1778,9 +1778,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2978" levels="1" name="Oren supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1802,9 +1802,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2979" levels="1" name="Aden supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1826,9 +1826,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2980" levels="1" name="Innadril supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1850,9 +1850,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2981" levels="1" name="Goddard Supply Box: magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1874,9 +1874,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2982" levels="1" name="Rune supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1898,9 +1898,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2983" levels="1" name="Schuttgart supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
@@ -1922,9 +1922,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2984" levels="1" name="Gludio supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -1946,9 +1946,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2985" levels="1" name="Dion supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -1970,9 +1970,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2986" levels="1" name="Giran supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -1994,9 +1994,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2987" levels="1" name="Oren supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -2018,9 +2018,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2988" levels="1" name="Aden supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -2042,9 +2042,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2989" levels="1" name="Innadril supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -2066,9 +2066,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2990" levels="1" name="Goddard Supply Box: magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -2090,9 +2090,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2991" levels="1" name="Rune supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -2114,9 +2114,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2992" levels="1" name="Schuttgart supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
@@ -2138,9 +2138,9 @@
 				<player weight="80" />
 			</and>
 		</cond>
-		<for>
+		<effects>
 			<effect name="RestorationRandom" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="2993" levels="1" name="Ancient herb - Deceiver">
 		<abnormalLvl>9</abnormalLvl>
@@ -2179,11 +2179,11 @@
 		<cond>
 			<player canTransform="true" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="Transformation">
 				<transformationId>125</transformationId>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="2995" levels="1" name="Player Commendation - Scroll: Enchant Weapon (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->

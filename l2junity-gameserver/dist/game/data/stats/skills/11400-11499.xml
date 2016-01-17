@@ -8,13 +8,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pvePhysDmg" val="0.8" />
 				<mul stat="pvePhysSkillsDmg" val="0.8" />
 				<mul stat="pveMagicalDmg" val="0.8" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11497" levels="1" name="Summoner - Individual Passive">
 		<!-- Glory Days confirmed -->
@@ -43,7 +43,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelayGroup>11259</reuseDelayGroup>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.1" />
 			</effect>
@@ -59,7 +59,7 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="11499" levels="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
@@ -81,10 +81,10 @@
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
-		<for>
+		<effects>
 			<effect name="MagicalAttack">
 				<power>184</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

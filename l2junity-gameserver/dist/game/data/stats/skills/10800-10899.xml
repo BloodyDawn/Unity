@@ -20,7 +20,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<add stat="fireRes" val="#res" />
@@ -28,7 +28,7 @@
 				<add stat="waterRes" val="#res" />
 				<add stat="earthRes" val="#res" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10801" levels="8" name="Bullseye">
 		<!-- Glory Days confirmed -->
@@ -91,7 +91,7 @@
 			<value level="8">1400</value>
 		</effectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="DefenceTrait">
@@ -139,7 +139,7 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10802" levels="4" name="Mass Bullseye">
 		<!-- Glory Days confirmed -->
@@ -173,7 +173,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="DefenceTrait">
@@ -185,7 +185,7 @@
 				<amount>-25</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Bullseye -->
@@ -211,7 +211,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSaveHp">
 				<power>
 					<value level="1">30000</value>
@@ -221,7 +221,7 @@
 				</power>
 				<saveHp>10</saveHp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10804" levels="4" name="Bullseye">
 		<!-- Glory Days confirmed -->
@@ -235,7 +235,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="PhysicalAttackSaveHp">
 				<power>
 					<value level="1">30000</value>
@@ -245,7 +245,7 @@
 				</power>
 				<saveHp>10</saveHp>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
 		<!-- Glory Days confirmed -->
@@ -285,7 +285,7 @@
 			<value level="4">1300</value>
 		</effectRange>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Front -->
 				<flyType>CHARGE</flyType>
@@ -293,7 +293,7 @@
 				<angle>180</angle>
 				<range />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10806" levels="4" name="Frost Trap">
 		<!-- Glory Days confirmed -->
@@ -317,7 +317,7 @@
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="Debuff">
 			</effect>
 			<effect name="Speed">
@@ -332,7 +332,7 @@
 				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10807" levels="4" name="Gravity Trap">
 		<!-- Glory Days confirmed -->
@@ -358,12 +358,12 @@
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
-		<for>
+		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10808" levels="4" name="Decoy Provocation">
 		<!-- Glory Days confirmed -->
@@ -390,9 +390,9 @@
 		<affectRange>300</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
-		<for>
+		<effects>
 			<effect name="TargetMe" /> <!-- p_berserker ? -->
-		</for>
+		</effects>
 	</skill>
 	<skill id="10809" levels="1" name="Survival Movement">
 		<!-- Glory Days confirmed -->
@@ -413,12 +413,12 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
-		<for>
+		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>15</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10810" levels="4" name="Sniping">
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, Atk. Spd. + 5%, and P. Def./M. Def. + 5%. -->
@@ -450,7 +450,7 @@
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -497,7 +497,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10811" levels="4" name="Superior Hawk Mastery">
 		<!-- P. Atk. + 5% when equipped with a bow or crossbow. -->
@@ -511,7 +511,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -526,7 +526,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10812" levels="3" name="Sneak Shot">
 		<table name="#power"> 29176 30726 32277 </table>
@@ -595,7 +595,7 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<for>
+		<effects>
 			<effect name="Buff">
 				<mul stat="pReuse" val="#pReuse">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
@@ -618,7 +618,7 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10857" levels="4" name="Superior Speed Mastery">
 		<!-- Speed + 10. -->
@@ -632,7 +632,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
-		<for>
+		<effects>
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -642,7 +642,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="10858" levels="3" name="Retreating Shot">
 		<table name="#power"> 29176 30726 32277 </table>
