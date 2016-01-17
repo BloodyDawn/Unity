@@ -752,4 +752,12 @@ public class StatsSet implements IParserAdvUtils
 	{
 		return _set.containsKey(name);
 	}
+
+	@Override
+	public String toString()
+	{
+		return "StatsSet{" +
+			"_set=" + _set +
+			'}';
+	}
 }
