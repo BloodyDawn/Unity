@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class ResistDDMagic extends AbstractStatEffect
 {
-	public ResistDDMagic(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ResistDDMagic(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.MAGIC_SUCCESS_RES);
+		super(params, Stats.MAGIC_SUCCESS_RES);
 	}
 }

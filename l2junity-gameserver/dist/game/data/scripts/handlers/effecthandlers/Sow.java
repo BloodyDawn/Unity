@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -40,7 +39,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class Sow extends AbstractEffect
 {
-	public Sow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Sow(StatsSet params)
 	{
 		super(params);
 	}

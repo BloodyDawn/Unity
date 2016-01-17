@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -40,7 +39,7 @@ public class SummonHallucination extends AbstractEffect
 	private final int _npcId;
 	private final int _npcCount;
 	
-	public SummonHallucination(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SummonHallucination(StatsSet params)
 	{
 		super(params);
 		

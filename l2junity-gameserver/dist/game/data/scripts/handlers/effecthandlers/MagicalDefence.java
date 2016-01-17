@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MagicalDefence extends AbstractStatEffect
 {
-	public MagicalDefence(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MagicalDefence(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.MAGICAL_DEFENCE);
+		super(params, Stats.MAGICAL_DEFENCE);
 	}
 }

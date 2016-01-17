@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -37,7 +36,7 @@ public final class ManaHealPercent extends AbstractEffect
 {
 	private final double _power;
 	
-	public ManaHealPercent(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ManaHealPercent(StatsSet params)
 	{
 		super(params);
 		

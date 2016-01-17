@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
@@ -33,7 +32,7 @@ public class SkillCritical extends AbstractEffect
 {
 	private final BaseStats _stat;
 	
-	public SkillCritical(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SkillCritical(StatsSet params)
 	{
 		super(params);
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.STR);

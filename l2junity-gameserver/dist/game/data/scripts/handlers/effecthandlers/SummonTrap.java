@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -38,7 +37,7 @@ public final class SummonTrap extends AbstractEffect
 	private final int _despawnTime;
 	private final int _npcId;
 	
-	public SummonTrap(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SummonTrap(StatsSet params)
 	{
 		super(params);
 		

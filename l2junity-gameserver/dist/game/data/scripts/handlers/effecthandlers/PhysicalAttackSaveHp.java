@@ -23,7 +23,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -46,7 +45,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 	private final boolean _overHit;
 	private final double _saveHp;
 	
-	public PhysicalAttackSaveHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PhysicalAttackSaveHp(StatsSet params)
 	{
 		super(params);
 		

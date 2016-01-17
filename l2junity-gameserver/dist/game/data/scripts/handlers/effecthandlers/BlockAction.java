@@ -25,7 +25,6 @@ import org.l2junity.gameserver.datatables.BotReportTable;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
@@ -41,7 +40,7 @@ public final class BlockAction extends AbstractEffect
 {
 	private final Set<Integer> _blockedActions = new HashSet<>();
 	
-	public BlockAction(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockAction(StatsSet params)
 	{
 		super(params);
 		

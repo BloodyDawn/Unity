@@ -36,7 +36,7 @@ public class StatBonusSkillCritical extends AbstractEffect
 	private final BaseStats _stat;
 	protected final Condition _armorTypeCondition;
 	
-	public StatBonusSkillCritical(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public StatBonusSkillCritical(StatsSet params)
 	{
 		super(params);
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.DEX);

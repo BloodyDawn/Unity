@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -32,7 +31,7 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public final class Grow extends AbstractEffect
 {
-	public Grow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Grow(StatsSet params)
 	{
 		super(params);
 	}

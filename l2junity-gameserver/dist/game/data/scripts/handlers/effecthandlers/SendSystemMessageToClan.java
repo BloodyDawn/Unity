@@ -22,7 +22,6 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -36,7 +35,7 @@ public class SendSystemMessageToClan extends AbstractEffect
 {
 	private final SystemMessage _message;
 	
-	public SendSystemMessageToClan(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SendSystemMessageToClan(StatsSet params)
 	{
 		super(params);
 		

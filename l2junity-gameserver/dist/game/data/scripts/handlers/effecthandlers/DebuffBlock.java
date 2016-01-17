@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -33,7 +32,7 @@ public final class DebuffBlock extends AbstractEffect
 {
 	private final int _times;
 	
-	public DebuffBlock(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DebuffBlock(StatsSet params)
 	{
 		super(params);
 		_times = params.getInt("times", -1);

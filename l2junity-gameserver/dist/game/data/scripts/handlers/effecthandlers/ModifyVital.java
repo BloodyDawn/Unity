@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -46,7 +45,7 @@ public final class ModifyVital extends AbstractEffect
 	private final int _mp;
 	private final int _cp;
 	
-	public ModifyVital(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ModifyVital(StatsSet params)
 	{
 		super(params);
 		_type = params.getEnum("type", ModifyType.class);

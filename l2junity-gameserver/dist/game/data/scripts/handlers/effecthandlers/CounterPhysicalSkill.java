@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class CounterPhysicalSkill extends AbstractStatAddEffect
 {
-	public CounterPhysicalSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CounterPhysicalSkill(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.VENGEANCE_SKILL_PHYSICAL_DAMAGE);
+		super(params, Stats.VENGEANCE_SKILL_PHYSICAL_DAMAGE);
 	}
 }

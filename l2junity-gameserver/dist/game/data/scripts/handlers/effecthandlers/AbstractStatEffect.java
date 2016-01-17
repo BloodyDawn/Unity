@@ -42,12 +42,12 @@ public abstract class AbstractStatEffect extends AbstractEffect
 	protected final Condition _armorTypeCondition;
 	protected final Condition _weaponTypeCondition;
 	
-	public AbstractStatEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats stat)
+	public AbstractStatEffect(StatsSet params, Stats stat)
 	{
-		this(attachCond, applyCond, set, params, stat, stat);
+		this(params, stat, stat);
 	}
 	
-	public AbstractStatEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
+	public AbstractStatEffect(StatsSet params, Stats mulStat, Stats addStat)
 	{
 		super(params);
 

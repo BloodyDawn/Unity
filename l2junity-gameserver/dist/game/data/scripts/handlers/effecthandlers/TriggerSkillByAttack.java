@@ -25,7 +25,6 @@ import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageDealt;
@@ -56,13 +55,10 @@ public final class TriggerSkillByAttack extends AbstractEffect
 	private final boolean _allowReflect;
 	
 	/**
-	 * @param attachCond
-	 * @param applyCond
-	 * @param set
 	 * @param params
 	 */
 	
-	public TriggerSkillByAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TriggerSkillByAttack(StatsSet params)
 	{
 		super(params);
 		

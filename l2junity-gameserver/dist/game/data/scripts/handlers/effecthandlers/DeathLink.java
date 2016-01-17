@@ -22,7 +22,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -38,7 +37,7 @@ public final class DeathLink extends AbstractEffect
 {
 	private final double _power;
 	
-	public DeathLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DeathLink(StatsSet params)
 	{
 		super(params);
 		

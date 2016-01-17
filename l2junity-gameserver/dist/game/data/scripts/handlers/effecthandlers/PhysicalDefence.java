@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PhysicalDefence extends AbstractConditionalHpEffect
 {
-	public PhysicalDefence(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PhysicalDefence(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.PHYSICAL_DEFENCE);
+		super(params, Stats.PHYSICAL_DEFENCE);
 	}
 }

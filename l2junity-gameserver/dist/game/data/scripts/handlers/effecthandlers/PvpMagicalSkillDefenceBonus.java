@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PvpMagicalSkillDefenceBonus extends AbstractStatEffect
 {
-	public PvpMagicalSkillDefenceBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PvpMagicalSkillDefenceBonus(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.PVP_MAGICAL_SKILL_DEFENCE);
+		super(params, Stats.PVP_MAGICAL_SKILL_DEFENCE);
 	}
 }

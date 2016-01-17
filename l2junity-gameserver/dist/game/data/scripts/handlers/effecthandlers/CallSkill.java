@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -37,7 +36,7 @@ public final class CallSkill extends AbstractEffect
 	private final SkillHolder _skill;
 	private final int _skillLevelScaleTo;
 	
-	public CallSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CallSkill(StatsSet params)
 	{
 		super(params);
 		

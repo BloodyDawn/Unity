@@ -26,7 +26,6 @@ import java.util.Map.Entry;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -43,7 +42,7 @@ public final class DispelBySlot extends AbstractEffect
 	private final String _dispel;
 	private final Map<AbnormalType, Short> _dispelAbnormals;
 	
-	public DispelBySlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DispelBySlot(StatsSet params)
 	{
 		super(params);
 		

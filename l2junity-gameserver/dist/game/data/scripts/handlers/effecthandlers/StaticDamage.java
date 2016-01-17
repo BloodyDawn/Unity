@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -33,7 +32,7 @@ public final class StaticDamage extends AbstractEffect
 {
 	private final int _power;
 	
-	public StaticDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public StaticDamage(StatsSet params)
 	{
 		super(params);
 		

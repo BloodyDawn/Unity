@@ -26,7 +26,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
@@ -52,7 +51,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 	
 	private final Map<WeaponType, Double> _weaponBonus = new HashMap<>();
 	
-	public PhysicalAttackWeaponBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PhysicalAttackWeaponBonus(StatsSet params)
 	{
 		super(params);
 		

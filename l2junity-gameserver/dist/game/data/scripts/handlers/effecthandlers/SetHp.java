@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.enums.StatModifierType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -35,7 +34,7 @@ public final class SetHp extends AbstractEffect
 	private final double _amount;
 	private final StatModifierType _mode;
 	
-	public SetHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SetHp(StatsSet params)
 	{
 		super(params);
 		

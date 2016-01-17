@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class DefenceMagicCriticalRate extends AbstractStatEffect
 {
-	public DefenceMagicCriticalRate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DefenceMagicCriticalRate(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.DEFENCE_MAGIC_CRITICAL_RATE, Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD);
+		super(params, Stats.DEFENCE_MAGIC_CRITICAL_RATE, Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD);
 	}
 }

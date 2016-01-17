@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class VitalityPointsRate extends AbstractStatEffect
 {
-	public VitalityPointsRate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public VitalityPointsRate(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.VITALITY_CONSUME_RATE);
+		super(params, Stats.VITALITY_CONSUME_RATE);
 	}
 }

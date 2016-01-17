@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class LimitMp extends AbstractStatEffect
 {
-	public LimitMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public LimitMp(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.MAX_RECOVERABLE_MP);
+		super(params, Stats.MAX_RECOVERABLE_MP);
 	}
 }

@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -32,9 +31,9 @@ public class MaxHp extends AbstractStatEffect
 {
 	private final boolean _heal;
 	
-	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MaxHp(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.MAX_HP);
+		super(params, Stats.MAX_HP);
 		
 		_heal = params.getBoolean("heal", false);
 	}

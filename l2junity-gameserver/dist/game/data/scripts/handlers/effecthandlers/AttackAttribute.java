@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -34,7 +33,7 @@ public class AttackAttribute extends AbstractEffect
 	private final AttributeType _attribute;
 	private final double _amount;
 	
-	public AttackAttribute(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public AttackAttribute(StatsSet params)
 	{
 		super(params);
 		_amount = params.getDouble("amount", 0);

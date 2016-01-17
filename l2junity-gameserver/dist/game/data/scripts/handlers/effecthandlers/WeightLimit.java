@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class WeightLimit extends AbstractStatEffect
 {
-	public WeightLimit(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public WeightLimit(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.WEIGHT_LIMIT);
+		super(params, Stats.WEIGHT_LIMIT);
 	}
 }

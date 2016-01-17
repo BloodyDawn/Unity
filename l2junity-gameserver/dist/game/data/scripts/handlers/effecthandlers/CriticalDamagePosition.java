@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.Position;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -34,7 +33,7 @@ public class CriticalDamagePosition extends AbstractEffect
 	protected final double _amount;
 	protected final Position _position;
 	
-	public CriticalDamagePosition(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CriticalDamagePosition(StatsSet params)
 	{
 		super(params);
 		_amount = params.getDouble("amount", 0);

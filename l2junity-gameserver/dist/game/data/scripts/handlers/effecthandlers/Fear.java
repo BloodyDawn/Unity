@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -42,7 +41,7 @@ public final class Fear extends AbstractEffect
 {
 	public static final int FEAR_RANGE = 500;
 	
-	public Fear(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Fear(StatsSet params)
 	{
 		super(params);
 	}

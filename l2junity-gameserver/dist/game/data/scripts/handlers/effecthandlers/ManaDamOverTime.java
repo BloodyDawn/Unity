@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -31,7 +30,7 @@ public final class ManaDamOverTime extends AbstractEffect
 {
 	private final double _power;
 	
-	public ManaDamOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ManaDamOverTime(StatsSet params)
 	{
 		super(params);
 		

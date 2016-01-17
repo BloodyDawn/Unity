@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
@@ -31,7 +30,7 @@ public final class ManaHealOverTime extends AbstractEffect
 {
 	private final double _power;
 	
-	public ManaHealOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ManaHealOverTime(StatsSet params)
 	{
 		super(params);
 		

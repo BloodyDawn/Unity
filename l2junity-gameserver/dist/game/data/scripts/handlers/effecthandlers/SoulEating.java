@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayableExpChanged;
@@ -43,7 +42,7 @@ public final class SoulEating extends AbstractEffect
 	private final int _expNeeded;
 	private final int _maxSouls;
 	
-	public SoulEating(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SoulEating(StatsSet params)
 	{
 		super(params);
 		_expNeeded = params.getInt("expNeeded");

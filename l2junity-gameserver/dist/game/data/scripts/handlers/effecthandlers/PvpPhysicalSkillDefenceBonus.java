@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PvpPhysicalSkillDefenceBonus extends AbstractStatEffect
 {
-	public PvpPhysicalSkillDefenceBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PvpPhysicalSkillDefenceBonus(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.PVP_PHYSICAL_SKILL_DEFENCE);
+		super(params, Stats.PVP_PHYSICAL_SKILL_DEFENCE);
 	}
 }

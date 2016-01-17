@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -32,7 +31,7 @@ public class SkillEvasion extends AbstractEffect
 	private final int _magicType;
 	private final double _amount;
 	
-	public SkillEvasion(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
+	public SkillEvasion(StatsSet params, Stats mulStat, Stats addStat)
 	{
 		super(params);
 		_magicType = params.getInt("magicType", 0);

@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.L2EffectPointInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -48,7 +47,7 @@ public final class SummonNpc extends AbstractEffect
 	private final boolean _isSummonSpawn;
 	private final boolean _singleInstance; // Only one instance of this NPC is allowed.
 	
-	public SummonNpc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SummonNpc(StatsSet params)
 	{
 		super(params);
 		

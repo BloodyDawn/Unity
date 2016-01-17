@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.enums.ReduceDropType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -35,7 +34,7 @@ public class ReduceDropPenalty extends AbstractEffect
 	private final double _deathPenalty;
 	private final ReduceDropType _type;
 	
-	public ReduceDropPenalty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ReduceDropPenalty(StatsSet params)
 	{
 		super(params);
 		_exp = params.getDouble("exp", 0);

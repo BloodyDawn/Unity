@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MagicalAbnormalResist extends AbstractStatAddEffect
 {
-	public MagicalAbnormalResist(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MagicalAbnormalResist(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.ABNORMAL_RESIST_MAGICAL);
+		super(params, Stats.ABNORMAL_RESIST_MAGICAL);
 	}
 }

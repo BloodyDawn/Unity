@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MagicAccuracy extends AbstractStatEffect
 {
-	public MagicAccuracy(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MagicAccuracy(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.ACCURACY_MAGIC);
+		super(params, Stats.ACCURACY_MAGIC);
 	}
 }

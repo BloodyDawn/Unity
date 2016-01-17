@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class ShieldDefenceRate extends AbstractStatEffect
 {
-	public ShieldDefenceRate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ShieldDefenceRate(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.SHIELD_DEFENCE_RATE);
+		super(params, Stats.SHIELD_DEFENCE_RATE);
 	}
 }

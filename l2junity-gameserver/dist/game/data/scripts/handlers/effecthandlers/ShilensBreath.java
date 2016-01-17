@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -34,7 +33,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ShilensBreath extends AbstractEffect
 {
-	public ShilensBreath(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ShilensBreath(StatsSet params)
 	{
 		super(params);
 	}

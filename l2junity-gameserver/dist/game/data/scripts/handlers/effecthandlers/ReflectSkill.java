@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -34,7 +33,7 @@ public class ReflectSkill extends AbstractEffect
 	private final Stats _stat;
 	private final double _amount;
 	
-	public ReflectSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats stat)
+	public ReflectSkill(StatsSet params, Stats stat)
 	{
 		super(params);
 		_stat = params.getEnum("type", BasicProperty.class, BasicProperty.PHYSICAL) == BasicProperty.PHYSICAL ? Stats.REFLECT_SKILL_PHYSIC : Stats.REFLECT_SKILL_MAGIC;

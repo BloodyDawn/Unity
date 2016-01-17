@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
@@ -39,7 +38,7 @@ public final class TriggerSkillByKill extends AbstractEffect
 	private final int _chance;
 	private final SkillHolder _skill;
 	
-	public TriggerSkillByKill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TriggerSkillByKill(StatsSet params)
 	{
 		super(params);
 		

@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MpVampiricAttack extends AbstractStatAddEffect
 {
-	public MpVampiricAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MpVampiricAttack(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.ABSORB_MANA_DAMAGE_PERCENT);
+		super(params, Stats.ABSORB_MANA_DAMAGE_PERCENT);
 	}
 }

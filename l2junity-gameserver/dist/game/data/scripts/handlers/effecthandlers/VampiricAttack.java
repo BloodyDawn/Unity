@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -33,7 +32,7 @@ public class VampiricAttack extends AbstractEffect
 	private final int _amount;
 	private final int _sum;
 	
-	public VampiricAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public VampiricAttack(StatsSet params)
 	{
 		super(params);
 		_amount = params.getInt("amount", 0);

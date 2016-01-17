@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -32,9 +31,9 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 {
 	private EffectedConditionHolder _holder;
 	
-	protected AbstractConditionalEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats stat)
+	protected AbstractConditionalEffect(StatsSet params, Stats stat)
 	{
-		super(attachCond, applyCond, set, params, stat);
+		super(params, stat);
 	}
 	
 	@Override

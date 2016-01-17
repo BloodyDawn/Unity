@@ -25,7 +25,6 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -44,12 +43,12 @@ public final class Disarmor extends AbstractEffect
 	private final Map<Integer, Integer> _unequippedItems; // PlayerObjId, ItemObjId
 	private final int _slot;
 	
-	public Disarmor(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Disarmor(StatsSet params)
 	{
 		super(params);
 		_unequippedItems = new ConcurrentHashMap<>();
 		
-		String slot = set.getString("slot", "chest");
+		String slot = params.getString("slot", "chest");
 		_slot = ItemTable._slots.getOrDefault(slot, L2Item.SLOT_NONE);
 		if (_slot == L2Item.SLOT_NONE)
 		{

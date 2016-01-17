@@ -22,7 +22,6 @@ import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -36,7 +35,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class TakeFortStart extends AbstractEffect
 {
-	public TakeFortStart(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TakeFortStart(StatsSet params)
 	{
 		super(params);
 	}

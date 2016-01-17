@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class LimitHp extends AbstractStatEffect
 {
-	public LimitHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public LimitHp(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.MAX_RECOVERABLE_HP);
+		super(params, Stats.MAX_RECOVERABLE_HP);
 	}
 }

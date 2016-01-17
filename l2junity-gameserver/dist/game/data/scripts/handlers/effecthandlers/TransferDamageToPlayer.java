@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -30,9 +29,9 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public final class TransferDamageToPlayer extends AbstractStatAddEffect
 {
-	public TransferDamageToPlayer(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TransferDamageToPlayer(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.TRANSFER_DAMAGE_TO_PLAYER);
+		super(params, Stats.TRANSFER_DAMAGE_TO_PLAYER);
 	}
 	
 	@Override

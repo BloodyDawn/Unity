@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -30,7 +29,7 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
  */
 public class Buff extends AbstractEffect
 {
-	public Buff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Buff(StatsSet params)
 	{
 		super(params);
 	}

@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -30,9 +29,9 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class CriticalRate extends AbstractConditionalHpEffect
 {
 	
-	public CriticalRate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CriticalRate(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.CRITICAL_RATE);
+		super(params, Stats.CRITICAL_RATE);
 	}
 	
 	@Override

@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
@@ -38,7 +37,7 @@ public class AbsorbDamage extends AbstractEffect
 	private final double _damage;
 	private static final Map<Integer, Double> _damageHolder = new ConcurrentHashMap<>();
 	
-	public AbsorbDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public AbsorbDamage(StatsSet params)
 	{
 		super(params);
 		

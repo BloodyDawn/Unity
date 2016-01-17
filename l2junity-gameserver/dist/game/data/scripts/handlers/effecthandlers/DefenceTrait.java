@@ -24,7 +24,6 @@ import java.util.Map.Entry;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.TraitType;
@@ -37,7 +36,7 @@ public final class DefenceTrait extends AbstractEffect
 {
 	private final Map<TraitType, Float> _defenceTraits = new HashMap<>();
 	
-	public DefenceTrait(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DefenceTrait(StatsSet params)
 	{
 		super(params);
 		

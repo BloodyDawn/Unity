@@ -26,7 +26,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -39,7 +38,7 @@ public final class Transformation extends AbstractEffect
 {
 	private final List<Integer> _id;
 	
-	public Transformation(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Transformation(StatsSet params)
 	{
 		super(params);
 		

@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -35,7 +34,7 @@ public final class RefuelAirship extends AbstractEffect
 {
 	private final int _value;
 	
-	public RefuelAirship(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public RefuelAirship(StatsSet params)
 	{
 		super(params);
 		

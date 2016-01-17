@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 
@@ -28,7 +27,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
  */
 public final class Debuff extends AbstractEffect
 {
-	public Debuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Debuff(StatsSet params)
 	{
 		super(params);
 	}

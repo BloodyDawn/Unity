@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -34,7 +33,7 @@ public final class CrystalGradeModify extends AbstractEffect
 {
 	private final int _grade;
 	
-	public CrystalGradeModify(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CrystalGradeModify(StatsSet params)
 	{
 		super(params);
 		

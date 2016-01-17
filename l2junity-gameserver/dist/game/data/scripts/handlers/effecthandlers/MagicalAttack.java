@@ -23,7 +23,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -41,7 +40,7 @@ public final class MagicalAttack extends AbstractEffect
 	private final boolean _overHit;
 	private final double _debuffModifier;
 	
-	public MagicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MagicalAttack(StatsSet params)
 	{
 		super(params);
 		

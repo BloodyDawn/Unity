@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PveRaidPhysicalAttackDefenceBonus extends AbstractStatEffect
 {
-	public PveRaidPhysicalAttackDefenceBonus(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PveRaidPhysicalAttackDefenceBonus(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE);
+		super(params, Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE);
 	}
 }

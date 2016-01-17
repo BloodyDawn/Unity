@@ -26,7 +26,6 @@ import java.util.Set;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.AbnormalType;
@@ -43,7 +42,7 @@ public class AbnormalTimeChange extends AbstractEffect
 	private final int _time;
 	private final int _mode;
 	
-	public AbnormalTimeChange(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public AbnormalTimeChange(StatsSet params)
 	{
 		super(params);
 		

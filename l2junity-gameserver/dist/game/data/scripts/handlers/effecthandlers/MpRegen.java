@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class MpRegen extends AbstractStatEffect
 {
-	public MpRegen(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MpRegen(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.REGENERATE_MP_RATE);
+		super(params, Stats.REGENERATE_MP_RATE);
 	}
 }

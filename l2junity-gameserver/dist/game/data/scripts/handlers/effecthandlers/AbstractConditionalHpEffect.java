@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
@@ -34,9 +33,9 @@ public abstract class AbstractConditionalHpEffect extends AbstractConditionalEff
 {
 	private final int _hpPercent;
 	
-	protected AbstractConditionalHpEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats stat)
+	protected AbstractConditionalHpEffect(StatsSet params, Stats stat)
 	{
-		super(attachCond, applyCond, set, params, stat);
+		super(params, stat);
 		_hpPercent = params.getInt("hpPercent", -1);
 	}
 	

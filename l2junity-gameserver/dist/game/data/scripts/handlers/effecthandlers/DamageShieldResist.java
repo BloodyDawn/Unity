@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -27,8 +26,8 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class DamageShieldResist extends AbstractStatAddEffect
 {
-	public DamageShieldResist(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DamageShieldResist(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params, Stats.REFLECT_DAMAGE_PERCENT_DEFENSE);
+		super(params, Stats.REFLECT_DAMAGE_PERCENT_DEFENSE);
 	}
 }

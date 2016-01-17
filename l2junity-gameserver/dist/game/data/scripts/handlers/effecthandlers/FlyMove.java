@@ -22,7 +22,6 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -50,7 +49,7 @@ public class FlyMove extends AbstractEffect
 	 * @param set
 	 * @param params
 	 */
-	public FlyMove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public FlyMove(StatsSet params)
 	{
 		super(params);
 		

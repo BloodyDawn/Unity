@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -36,7 +35,7 @@ public final class Escape extends AbstractEffect
 {
 	private final TeleportWhereType _escapeType;
 	
-	public Escape(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Escape(StatsSet params)
 	{
 		super(params);
 		

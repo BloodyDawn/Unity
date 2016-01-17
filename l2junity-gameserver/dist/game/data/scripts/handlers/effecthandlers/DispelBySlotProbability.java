@@ -27,7 +27,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -45,7 +44,7 @@ public final class DispelBySlotProbability extends AbstractEffect
 	private final Map<AbnormalType, Short> _dispelAbnormals;
 	private final int _rate;
 	
-	public DispelBySlotProbability(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DispelBySlotProbability(StatsSet params)
 	{
 		super(params);
 		
