@@ -40,7 +40,7 @@ public class Feed extends AbstractEffect
 	
 	public Feed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_normal = params.getInt("normal", 0);
 		_ride = params.getInt("ride", 0);

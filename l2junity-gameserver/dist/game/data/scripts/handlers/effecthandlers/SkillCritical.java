@@ -35,7 +35,7 @@ public class SkillCritical extends AbstractEffect
 	
 	public SkillCritical(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.STR);
 	}
 	

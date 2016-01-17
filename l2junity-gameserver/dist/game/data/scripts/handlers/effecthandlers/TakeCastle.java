@@ -38,7 +38,7 @@ public final class TakeCastle extends AbstractEffect
 	
 	public TakeCastle(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_side = params.getEnum("side", CastleSide.class);
 	}

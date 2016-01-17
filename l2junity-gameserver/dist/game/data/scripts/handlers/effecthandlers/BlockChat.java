@@ -38,7 +38,7 @@ public final class BlockChat extends AbstractEffect
 {
 	public BlockChat(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

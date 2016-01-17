@@ -42,7 +42,7 @@ public final class BlockActions extends AbstractEffect
 	
 	public BlockActions(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		final String[] allowedSkills = params.getString("allowedSkills", "").split(";");
 		_allowedSkills = Arrays.stream(allowedSkills).filter(s -> !s.isEmpty()).map(Integer::parseInt).collect(Collectors.toSet());

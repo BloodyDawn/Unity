@@ -39,7 +39,7 @@ public final class HealPercent extends AbstractEffect
 	
 	public HealPercent(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getInt("power", 0);
 	}

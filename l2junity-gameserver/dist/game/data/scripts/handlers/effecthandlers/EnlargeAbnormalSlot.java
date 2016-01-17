@@ -35,7 +35,7 @@ public final class EnlargeAbnormalSlot extends AbstractEffect
 	
 	public EnlargeAbnormalSlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_slots = params.getInt("slots", 0);
 	}

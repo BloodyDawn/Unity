@@ -34,7 +34,7 @@ public final class DispelAll extends AbstractEffect
 {
 	public DispelAll(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

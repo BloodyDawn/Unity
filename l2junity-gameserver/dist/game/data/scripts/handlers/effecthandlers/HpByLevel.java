@@ -38,7 +38,7 @@ public final class HpByLevel extends AbstractEffect
 	
 	public HpByLevel(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 	}

@@ -30,7 +30,7 @@ public class IgnoreDeath extends AbstractEffect
 {
 	public IgnoreDeath(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

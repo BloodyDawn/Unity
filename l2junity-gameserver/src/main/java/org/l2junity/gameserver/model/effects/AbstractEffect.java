@@ -27,7 +27,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -46,41 +45,28 @@ public abstract class AbstractEffect
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class);
 	
-	// Conditions
-	/** Attach condition. */
-	private final Condition _attachCond;
-	// Apply condition
-	// private final Condition _applyCond; // TODO: Use or cleanup.
 	private List<FuncTemplate> _funcTemplates;
-	/** Effect name. */
-	private final String _name;
-	/** Ticks. */
-	private final int _ticks;
-	
+	private int _ticks;
+
+	protected AbstractEffect()
+	{
+	}
+
 	/**
 	 * Abstract effect constructor.
-	 * @param attachCond the attach condition
-	 * @param applyCond the apply condition
-	 * @param set the attributes
 	 * @param params the parameters
 	 */
-	protected AbstractEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public AbstractEffect(StatsSet params)
 	{
-		_attachCond = attachCond;
-		// _applyCond = applyCond;
-		_name = set.getString("name");
-		_ticks = set.getInt("ticks", 0);
 	}
 	
 	/**
 	 * Creates an effect given the parameters.
-	 * @param attachCond the attach condition
-	 * @param applyCond the apply condition
 	 * @param set the attributes
 	 * @param params the parameters
 	 * @return the new effect
 	 */
-	public static AbstractEffect createEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public static AbstractEffect createEffect(StatsSet set, StatsSet params)
 	{
 		final String name = set.getString("name");
 		final Class<? extends AbstractEffect> handler = EffectHandler.getInstance().getHandler(name);
@@ -93,7 +79,7 @@ public abstract class AbstractEffect
 		final Constructor<?> constructor;
 		try
 		{
-			constructor = handler.getConstructor(Condition.class, Condition.class, StatsSet.class, StatsSet.class);
+			constructor = handler.getConstructor(StatsSet.class);
 		}
 		catch (NoSuchMethodException | SecurityException e)
 		{
@@ -103,25 +89,13 @@ public abstract class AbstractEffect
 		
 		try
 		{
-			return (AbstractEffect) constructor.newInstance(attachCond, applyCond, set, params);
+			return (AbstractEffect) constructor.newInstance(params);
 		}
 		catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
 		{
 			_log.warn(AbstractEffect.class.getSimpleName() + ": Unable to initialize effect handler: " + name + ": " + e.getMessage(), e);
 		}
 		return null;
-	}
-	
-	/**
-	 * Tests the attach condition.
-	 * @param caster the caster
-	 * @param target the target
-	 * @param skill the skill
-	 * @return {@code true} if there isn't a condition to test or it's passed, {@code false} otherwise
-	 */
-	public boolean testConditions(Creature caster, Creature target, Skill skill)
-	{
-		return (_attachCond == null) || _attachCond.test(caster, target, skill);
 	}
 	
 	/**
@@ -136,16 +110,7 @@ public abstract class AbstractEffect
 		}
 		_funcTemplates.add(f);
 	}
-	
-	/**
-	 * Gets the effect name.
-	 * @return the name
-	 */
-	public String getName()
-	{
-		return _name;
-	}
-	
+
 	/**
 	 * Gets the effect ticks
 	 * @return the ticks
@@ -154,7 +119,16 @@ public abstract class AbstractEffect
 	{
 		return _ticks;
 	}
-	
+
+	/**
+	 * Sets the effect ticks
+	 * @param ticks the ticks
+	 */
+	protected void setTicks(int ticks)
+	{
+		_ticks = ticks;
+	}
+
 	public double getTicksMultiplier()
 	{
 		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
@@ -253,13 +227,13 @@ public abstract class AbstractEffect
 	{
 		return EffectFlag.NONE.getMask();
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return "Effect " + _name;
+		return "Effect " + getClass().getSimpleName();
 	}
-	
+
 	public boolean checkCondition(Object obj)
 	{
 		return true;

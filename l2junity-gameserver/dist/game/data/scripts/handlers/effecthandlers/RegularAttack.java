@@ -42,7 +42,7 @@ public final class RegularAttack extends AbstractEffect
 	
 	public RegularAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);

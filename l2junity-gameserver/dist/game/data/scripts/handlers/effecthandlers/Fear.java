@@ -44,7 +44,7 @@ public final class Fear extends AbstractEffect
 	
 	public Fear(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

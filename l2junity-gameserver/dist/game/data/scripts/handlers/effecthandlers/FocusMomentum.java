@@ -41,7 +41,7 @@ public final class FocusMomentum extends AbstractEffect
 	
 	public FocusMomentum(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_amount = params.getInt("amount", 1);
 		_maxCharges = params.getInt("maxCharges", 0);
 	}

@@ -35,7 +35,7 @@ public final class Untargetable extends AbstractEffect
 {
 	public Untargetable(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

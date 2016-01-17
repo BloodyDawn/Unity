@@ -52,7 +52,7 @@ public class FlyMove extends AbstractEffect
 	 */
 	public FlyMove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_flyType = params.getEnum("flyType", FlyType.class, FlyType.DUMMY);
 		_angle = params.getInt("angle", 0);

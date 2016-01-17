@@ -34,7 +34,7 @@ public final class ConsumeBody extends AbstractEffect
 {
 	public ConsumeBody(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

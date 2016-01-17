@@ -38,7 +38,7 @@ public class StatByMoveType extends AbstractEffect
 	
 	public StatByMoveType(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_stat = params.getEnum("stat", Stats.class);
 		_type = params.getEnum("type", MoveType.class);
 		_value = params.getDouble("value");

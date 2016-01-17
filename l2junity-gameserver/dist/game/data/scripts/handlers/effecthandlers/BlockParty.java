@@ -37,7 +37,7 @@ public final class BlockParty extends AbstractEffect
 {
 	public BlockParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

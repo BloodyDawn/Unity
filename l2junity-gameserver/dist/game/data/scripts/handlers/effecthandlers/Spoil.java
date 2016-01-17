@@ -37,7 +37,7 @@ public final class Spoil extends AbstractEffect
 {
 	public Spoil(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

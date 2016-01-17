@@ -57,7 +57,7 @@ public final class PhysicalAttack extends AbstractEffect
 	
 	public PhysicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);

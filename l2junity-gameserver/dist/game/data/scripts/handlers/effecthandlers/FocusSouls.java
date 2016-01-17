@@ -38,7 +38,7 @@ public final class FocusSouls extends AbstractEffect
 	
 	public FocusSouls(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_charge = params.getInt("charge", 0);
 	}

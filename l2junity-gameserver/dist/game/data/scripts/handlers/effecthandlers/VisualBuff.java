@@ -39,7 +39,7 @@ public class VisualBuff extends AbstractEffect
 	
 	public VisualBuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		for (Object param : params.getSet().values())
 		{

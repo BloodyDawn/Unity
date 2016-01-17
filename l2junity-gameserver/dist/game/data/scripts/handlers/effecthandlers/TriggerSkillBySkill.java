@@ -49,7 +49,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 	
 	public TriggerSkillBySkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_castSkillId = params.getInt("castSkillId", 0);
 		_chance = params.getInt("chance", 100);

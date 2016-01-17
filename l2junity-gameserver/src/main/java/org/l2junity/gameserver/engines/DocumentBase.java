@@ -319,7 +319,7 @@ public abstract class DocumentBase
 			set.set("id", ((IIdentifiable) template).getId());
 		}
 		
-		final AbstractEffect effect = AbstractEffect.createEffect(attachCond, applayCond, set, parameters);
+		final AbstractEffect effect = AbstractEffect.createEffect(set, parameters);
 		parseTemplate(n, effect);
 		if (template instanceof L2Item)
 		{

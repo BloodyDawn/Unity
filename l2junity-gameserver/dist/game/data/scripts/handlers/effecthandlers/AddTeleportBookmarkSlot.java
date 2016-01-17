@@ -37,7 +37,7 @@ public final class AddTeleportBookmarkSlot extends AbstractEffect
 	
 	public AddTeleportBookmarkSlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_amount = params.getInt("amount", 0);
 	}

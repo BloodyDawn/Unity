@@ -43,7 +43,7 @@ public class ClassChange extends AbstractEffect
 	
 	public ClassChange(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_index = params.getInt("index", 0);
 	}

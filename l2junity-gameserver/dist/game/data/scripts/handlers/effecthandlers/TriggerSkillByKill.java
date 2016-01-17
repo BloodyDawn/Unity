@@ -41,7 +41,7 @@ public final class TriggerSkillByKill extends AbstractEffect
 	
 	public TriggerSkillByKill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_chance = params.getInt("chance", 100);
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));

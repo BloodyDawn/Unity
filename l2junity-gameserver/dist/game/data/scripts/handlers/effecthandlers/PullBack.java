@@ -43,7 +43,7 @@ public final class PullBack extends AbstractEffect
 	
 	public PullBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", _speed);

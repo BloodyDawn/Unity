@@ -42,7 +42,7 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 	
 	public MagicalAbnormalDispelAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 		_abnormalType = AbnormalType.getAbnormalType(params.getString("abnormalType", null));

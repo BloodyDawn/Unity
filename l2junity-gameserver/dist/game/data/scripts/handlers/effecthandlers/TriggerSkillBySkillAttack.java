@@ -54,7 +54,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 	
 	public TriggerSkillBySkillAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_minAttackerLevel = params.getInt("minAttackerLevel", 1);
 		_maxAttackerLevel = params.getInt("maxAttackerLevel", 127);

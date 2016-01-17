@@ -35,7 +35,7 @@ public final class CallTargetParty extends AbstractEffect
 {
 	public CallTargetParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

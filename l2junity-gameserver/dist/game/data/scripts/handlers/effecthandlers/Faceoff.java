@@ -31,7 +31,7 @@ public class Faceoff extends AbstractEffect
 {
 	public Faceoff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

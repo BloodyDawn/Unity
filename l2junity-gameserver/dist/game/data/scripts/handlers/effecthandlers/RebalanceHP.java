@@ -38,7 +38,7 @@ public final class RebalanceHP extends AbstractEffect
 {
 	public RebalanceHP(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

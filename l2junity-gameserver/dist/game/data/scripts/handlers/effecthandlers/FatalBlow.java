@@ -51,7 +51,7 @@ public final class FatalBlow extends AbstractEffect
 	
 	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);

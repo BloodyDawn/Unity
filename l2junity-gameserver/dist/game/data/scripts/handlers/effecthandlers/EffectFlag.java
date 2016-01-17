@@ -32,7 +32,7 @@ public final class EffectFlag extends AbstractEffect
 	
 	public EffectFlag(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		String flag = params.getString("effectFlag", null);
 		if (flag != null)

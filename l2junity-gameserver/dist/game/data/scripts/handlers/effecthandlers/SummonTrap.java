@@ -40,7 +40,7 @@ public final class SummonTrap extends AbstractEffect
 	
 	public SummonTrap(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_despawnTime = params.getInt("despawnTime", 0);
 		_npcId = params.getInt("npcId", 0);

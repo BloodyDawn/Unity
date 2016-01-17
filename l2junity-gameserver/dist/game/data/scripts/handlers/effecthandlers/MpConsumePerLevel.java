@@ -33,7 +33,7 @@ public final class MpConsumePerLevel extends AbstractEffect
 	
 	public MpConsumePerLevel(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 	}

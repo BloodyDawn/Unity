@@ -31,7 +31,7 @@ public final class SilentMove extends AbstractEffect
 {
 	public SilentMove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

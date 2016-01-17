@@ -40,7 +40,7 @@ public final class Harvesting extends AbstractEffect
 {
 	public Harvesting(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

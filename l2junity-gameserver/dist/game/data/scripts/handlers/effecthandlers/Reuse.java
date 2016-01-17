@@ -35,7 +35,7 @@ public class Reuse extends AbstractEffect
 	
 	public Reuse(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats mulStat, Stats addStat)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_magicType = params.getInt("magicType", 0);
 		_amount = params.getDouble("amount", 0);
 	}

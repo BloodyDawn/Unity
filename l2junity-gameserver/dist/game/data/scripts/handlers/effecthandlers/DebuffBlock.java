@@ -35,7 +35,7 @@ public final class DebuffBlock extends AbstractEffect
 	
 	public DebuffBlock(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_times = params.getInt("times", -1);
 	}
 	

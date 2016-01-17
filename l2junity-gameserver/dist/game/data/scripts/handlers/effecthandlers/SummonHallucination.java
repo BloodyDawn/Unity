@@ -42,7 +42,7 @@ public class SummonHallucination extends AbstractEffect
 	
 	public SummonHallucination(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_despawnDelay = params.getInt("despawnDelay", 20000);
 		_npcId = params.getInt("npcId", 0);

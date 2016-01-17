@@ -36,7 +36,7 @@ public class ReflectSkill extends AbstractEffect
 	
 	public ReflectSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats stat)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_stat = params.getEnum("type", BasicProperty.class, BasicProperty.PHYSICAL) == BasicProperty.PHYSICAL ? Stats.REFLECT_SKILL_PHYSIC : Stats.REFLECT_SKILL_MAGIC;
 		_amount = params.getDouble("amount", 0);
 	}

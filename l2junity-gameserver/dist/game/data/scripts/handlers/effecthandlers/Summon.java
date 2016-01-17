@@ -47,7 +47,7 @@ public final class Summon extends AbstractEffect
 	
 	public Summon(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		if (params.isEmpty())
 		{

@@ -36,7 +36,7 @@ public final class DamOverTime extends AbstractEffect
 	
 	public DamOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_canKill = params.getBoolean("canKill", false);
 		_power = params.getDouble("power", 0);

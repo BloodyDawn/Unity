@@ -35,7 +35,7 @@ public class AbstractStatAddEffect extends AbstractEffect
 	
 	public AbstractStatAddEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params, Stats stat)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_stat = stat;
 		_amount = params.getDouble("amount", 0);
 	}

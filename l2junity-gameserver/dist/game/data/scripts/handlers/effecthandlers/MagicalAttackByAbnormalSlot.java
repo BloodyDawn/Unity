@@ -46,7 +46,7 @@ public final class MagicalAttackByAbnormalSlot extends AbstractEffect
 	
 	public MagicalAttackByAbnormalSlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 		

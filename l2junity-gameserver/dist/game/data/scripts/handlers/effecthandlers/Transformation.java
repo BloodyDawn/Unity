@@ -41,7 +41,7 @@ public final class Transformation extends AbstractEffect
 	
 	public Transformation(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		final String ids = params.getString("transformationId", null);
 		if ((ids != null) && !ids.isEmpty())

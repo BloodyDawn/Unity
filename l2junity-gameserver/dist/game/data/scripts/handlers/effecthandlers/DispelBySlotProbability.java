@@ -47,7 +47,7 @@ public final class DispelBySlotProbability extends AbstractEffect
 	
 	public DispelBySlotProbability(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_dispel = params.getString("dispel", null);
 		_rate = params.getInt("rate", 100);

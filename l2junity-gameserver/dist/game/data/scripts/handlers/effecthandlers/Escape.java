@@ -38,7 +38,7 @@ public final class Escape extends AbstractEffect
 	
 	public Escape(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_escapeType = params.getEnum("escapeType", TeleportWhereType.class, null);
 	}

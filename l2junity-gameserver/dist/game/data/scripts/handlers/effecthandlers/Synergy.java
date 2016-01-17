@@ -46,7 +46,7 @@ public final class Synergy extends AbstractEffect
 	
 	public Synergy(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		String requiredSlots = params.getString("requiredSlots", null);
 		if ((requiredSlots != null) && !requiredSlots.isEmpty())

@@ -37,7 +37,7 @@ public final class AddHate extends AbstractEffect
 	
 	public AddHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 		_affectSummoner = params.getBoolean("affectSummoner", false);

@@ -48,7 +48,7 @@ public final class ModifyVital extends AbstractEffect
 	
 	public ModifyVital(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_type = params.getEnum("type", ModifyType.class);
 		if (!_type.equals(ModifyType.SET))
 		{

@@ -41,7 +41,7 @@ public final class TeleportToTarget extends AbstractEffect
 {
 	public TeleportToTarget(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

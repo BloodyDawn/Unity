@@ -56,7 +56,7 @@ public final class ServitorShare extends AbstractEffect
 	
 	public ServitorShare(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

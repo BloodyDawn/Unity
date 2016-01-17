@@ -35,7 +35,7 @@ public class VampiricAttack extends AbstractEffect
 	
 	public VampiricAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_amount = params.getInt("amount", 0);
 		_sum = _amount * params.getInt("chance", 0);
 	}

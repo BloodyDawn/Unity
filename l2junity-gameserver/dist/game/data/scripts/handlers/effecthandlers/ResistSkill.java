@@ -40,7 +40,7 @@ public final class ResistSkill extends AbstractEffect
 	
 	public ResistSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		for (int i = 1;; i++)
 		{

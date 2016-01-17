@@ -35,7 +35,7 @@ public final class GiveSp extends AbstractEffect
 	
 	public GiveSp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_sp = params.getInt("sp", 0);
 	}

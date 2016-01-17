@@ -41,7 +41,7 @@ public final class Plunder extends AbstractEffect
 {
 	public Plunder(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

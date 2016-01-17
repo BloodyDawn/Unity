@@ -33,7 +33,7 @@ public final class TargetMe extends AbstractEffect
 {
 	public TargetMe(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

@@ -36,7 +36,7 @@ public final class TrapDetect extends AbstractEffect
 	
 	public TrapDetect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		if (params.isEmpty())
 		{

@@ -38,7 +38,7 @@ public class StatBonusSpeed extends AbstractEffect
 	
 	public StatBonusSpeed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.DEX);
 		
 		int armorTypesMask = 0;

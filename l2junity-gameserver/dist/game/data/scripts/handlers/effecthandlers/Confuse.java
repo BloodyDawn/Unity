@@ -44,7 +44,7 @@ public final class Confuse extends AbstractEffect
 	
 	public Confuse(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_chance = params.getInt("chance", 100);
 	}

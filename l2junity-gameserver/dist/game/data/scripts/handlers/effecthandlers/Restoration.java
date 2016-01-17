@@ -38,7 +38,7 @@ public final class Restoration extends AbstractEffect
 	
 	public Restoration(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_itemId = params.getInt("itemId", 0);
 		_itemCount = params.getInt("itemCount", 0);

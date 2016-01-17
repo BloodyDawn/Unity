@@ -36,7 +36,7 @@ public final class ChangeHairColor extends AbstractEffect
 	
 	public ChangeHairColor(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_value = params.getInt("value", 0);
 	}

@@ -40,7 +40,7 @@ public class AbsorbDamage extends AbstractEffect
 	
 	public AbsorbDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_damage = params.getDouble("damage", 0);
 	}

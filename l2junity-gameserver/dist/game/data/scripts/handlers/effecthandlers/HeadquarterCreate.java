@@ -39,7 +39,7 @@ public final class HeadquarterCreate extends AbstractEffect
 	
 	public HeadquarterCreate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_isAdvanced = params.getBoolean("isAdvanced", false);
 	}

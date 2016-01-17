@@ -58,7 +58,7 @@ public final class Blink extends AbstractEffect
 	
 	public Blink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_flyCourse = params.getInt("angle", 0);
 		_flyRadius = params.getInt("range", 0);

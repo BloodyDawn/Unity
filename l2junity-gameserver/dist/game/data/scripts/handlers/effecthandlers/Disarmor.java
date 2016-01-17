@@ -46,7 +46,7 @@ public final class Disarmor extends AbstractEffect
 	
 	public Disarmor(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		_unequippedItems = new ConcurrentHashMap<>();
 		
 		String slot = set.getString("slot", "chest");

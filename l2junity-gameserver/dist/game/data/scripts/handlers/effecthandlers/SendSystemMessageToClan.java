@@ -38,7 +38,7 @@ public class SendSystemMessageToClan extends AbstractEffect
 	
 	public SendSystemMessageToClan(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		int id = params.getInt("id", 0);
 		_message = SystemMessage.getSystemMessage(id);

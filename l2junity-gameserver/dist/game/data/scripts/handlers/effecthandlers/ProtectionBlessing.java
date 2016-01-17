@@ -32,7 +32,7 @@ public final class ProtectionBlessing extends AbstractEffect
 {
 	public ProtectionBlessing(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

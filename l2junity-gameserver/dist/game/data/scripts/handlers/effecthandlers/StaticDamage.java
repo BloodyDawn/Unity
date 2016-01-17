@@ -35,7 +35,7 @@ public final class StaticDamage extends AbstractEffect
 	
 	public StaticDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getInt("power", 0);
 	}

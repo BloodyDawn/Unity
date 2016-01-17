@@ -51,7 +51,7 @@ public final class KnockBack extends AbstractEffect
 	
 	public KnockBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_distance = params.getInt("distance", 50);
 		_speed = params.getInt("speed", 0);

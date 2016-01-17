@@ -48,7 +48,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 	
 	public PhysicalAttackSaveHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);

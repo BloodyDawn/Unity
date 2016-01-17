@@ -37,7 +37,7 @@ public final class OpenCommonRecipeBook extends AbstractEffect
 {
 	public OpenCommonRecipeBook(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

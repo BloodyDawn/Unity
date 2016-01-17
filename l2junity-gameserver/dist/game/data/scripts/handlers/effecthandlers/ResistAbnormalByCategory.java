@@ -38,7 +38,7 @@ public class ResistAbnormalByCategory extends AbstractEffect
 	
 	public ResistAbnormalByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_amount = params.getDouble("amount", 0);
 		_mode = params.getEnum("mode", StatModifierType.class, StatModifierType.DIFF);

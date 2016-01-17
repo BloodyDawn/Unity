@@ -40,7 +40,7 @@ public final class BlockBuffSlot extends AbstractEffect
 	
 	public BlockBuffSlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		String blockBuffSlots = params.getString("slot", null);
 		if ((blockBuffSlots != null) && !blockBuffSlots.isEmpty())

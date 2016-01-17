@@ -45,7 +45,7 @@ public final class RestorationRandom extends AbstractEffect
 {
 	public RestorationRandom(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

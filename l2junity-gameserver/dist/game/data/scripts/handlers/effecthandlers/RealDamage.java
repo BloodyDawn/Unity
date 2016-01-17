@@ -34,7 +34,7 @@ public class RealDamage extends AbstractEffect
 	
 	public RealDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_power = params.getDouble("power", 0);
 	}

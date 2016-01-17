@@ -34,7 +34,7 @@ public final class Mute extends AbstractEffect
 {
 	public Mute(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 	}
 	
 	@Override

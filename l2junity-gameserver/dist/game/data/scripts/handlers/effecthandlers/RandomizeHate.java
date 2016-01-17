@@ -41,7 +41,7 @@ public final class RandomizeHate extends AbstractEffect
 	
 	public RandomizeHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		super(params);
 		
 		_chance = params.getInt("chance", 100);
 	}
