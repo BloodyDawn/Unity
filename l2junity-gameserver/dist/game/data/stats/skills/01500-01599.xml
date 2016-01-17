@@ -21,8 +21,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
 			</effect>
@@ -60,8 +58,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
 			</effect>
@@ -171,8 +167,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
@@ -665,8 +659,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DefenceTrait">
 				<BOW>
 					<value level="1">10</value>
@@ -785,8 +777,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
@@ -858,8 +848,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
 			</effect>
@@ -2447,8 +2435,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="MaxCp">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2475,8 +2461,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
 			</effect>
@@ -2514,8 +2498,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
 			</effect>
@@ -2589,8 +2571,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
 			</effect>
@@ -3634,8 +3614,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -3731,8 +3709,6 @@
 		<affectLimit>50-50</affectLimit>
 		<targetType>PARTY_CLAN</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -3779,8 +3755,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">70</value>
@@ -3955,8 +3929,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isDebuff>true</isDebuff>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockSkill">
 				<magicTypes>1;2;3;4;5</magicTypes>
 			</effect>
@@ -4018,8 +3990,6 @@
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">10</value>
@@ -4053,8 +4023,6 @@
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">15</value>
@@ -4088,8 +4056,6 @@
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">10</value>
@@ -4185,8 +4151,6 @@
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">51</value>
@@ -4342,8 +4306,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_WARDING</slot>
 			</effect>
@@ -4380,8 +4342,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_WARDING</slot>
 			</effect>
@@ -4421,8 +4381,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_EARTH</slot>
 			</effect>
@@ -4459,8 +4417,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_EARTH</slot>
 			</effect>
@@ -4500,8 +4456,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VITALITY</slot>
 			</effect>
@@ -4538,8 +4492,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VITALITY</slot>
 			</effect>
@@ -4579,8 +4531,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
 			</effect>
@@ -4617,8 +4567,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
 			</effect>

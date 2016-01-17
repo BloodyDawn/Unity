@@ -345,8 +345,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="TriggerSkillBySkill">
 				<!-- Shadow Flash -->
 				<!-- Blind Spot -->
@@ -1157,8 +1155,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -1513,8 +1509,6 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>60000</reuseDelay>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="Speed">
 				<amount>
 					<value level="1">66</value>
@@ -3035,8 +3029,6 @@
 		<reuseDelay>1000</reuseDelay>
 		<for>
 			<effect name="Hide" />
-			<effect name="Buff">
-			</effect>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
@@ -3174,8 +3166,6 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="Buff">
-			</effect>
 			<effect name="FatalBlowRate">
 				<amount>-1.1</amount>
 				<mode>DIFF</mode>
