@@ -95,6 +95,7 @@ import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.EffectHandler;
+import org.l2junity.gameserver.handler.SkillConditionHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
@@ -203,6 +204,7 @@ public class GameServer
 		OneDayRewardData.getInstance();
 		
 		printSection("Skills");
+		SkillConditionHandler.getInstance().executeScript();
 		EffectHandler.getInstance().executeScript();
 		EnchantSkillGroupsData.getInstance();
 		SkillTreesData.getInstance();
