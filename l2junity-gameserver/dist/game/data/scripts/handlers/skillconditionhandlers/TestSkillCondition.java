@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class TestSkillCondition implements ISkillCondition
 {
-	public TestSkillCondition(StatsSet statsSet)
+	public TestSkillCondition(StatsSet params)
 	{
 
 	}
