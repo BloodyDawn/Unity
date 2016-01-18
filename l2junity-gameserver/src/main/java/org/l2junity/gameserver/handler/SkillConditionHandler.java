@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.skills.AbstractSkillCondition;
+import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 
 /**
@@ -35,14 +35,14 @@ public final class SkillConditionHandler
 {
 	private static final Path SKILL_CONDITION_HANDLER_FILE = Paths.get(ScriptEngineManager.SCRIPT_FOLDER.toString(), "handlers", "SkillConditionMasterHandler.java");
 
-	private final Map<String, Function<StatsSet, AbstractSkillCondition>> _skillConditionHandlerFactories = new HashMap<>();
+	private final Map<String, Function<StatsSet, ISkillCondition>> _skillConditionHandlerFactories = new HashMap<>();
 
-	public void registerHandler(String name, Function<StatsSet, AbstractSkillCondition> handlerFactory)
+	public void registerHandler(String name, Function<StatsSet, ISkillCondition> handlerFactory)
 	{
 		_skillConditionHandlerFactories.put(name, handlerFactory);
 	}
 
-	public Function<StatsSet, AbstractSkillCondition> getHandlerFactory(String name)
+	public Function<StatsSet, ISkillCondition> getHandlerFactory(String name)
 	{
 		return _skillConditionHandlerFactories.get(name);
 	}

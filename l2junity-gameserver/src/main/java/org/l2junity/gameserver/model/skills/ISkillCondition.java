@@ -18,25 +18,13 @@
  */
 package org.l2junity.gameserver.model.skills;
 
-import java.util.function.Function;
-
-import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 
 /**
  * @author NosBit
  */
-public abstract class AbstractSkillCondition
+public interface ISkillCondition
 {
-	protected AbstractSkillCondition()
-	{
-	}
-
-	public AbstractSkillCondition(StatsSet params)
-	{
-
-	}
-
-	public abstract boolean canUse(Creature caster, Skill skill, WorldObject target);
+	boolean canUse(Creature caster, Skill skill, WorldObject target);
 }

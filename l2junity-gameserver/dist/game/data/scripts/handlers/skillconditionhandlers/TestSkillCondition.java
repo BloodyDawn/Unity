@@ -21,16 +21,17 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.AbstractSkillCondition;
+import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * @author NosBit
  */
-public class TestSkillCondition extends AbstractSkillCondition
+public class TestSkillCondition implements ISkillCondition
 {
-	public TestSkillCondition(StatsSet params)
+	public TestSkillCondition(StatsSet statsSet)
 	{
+
 	}
 
 	@Override
