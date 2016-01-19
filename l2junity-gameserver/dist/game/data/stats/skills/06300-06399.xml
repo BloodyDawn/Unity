@@ -1255,13 +1255,19 @@
 		<targetType>TARGET_PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 				<mul stat="mCritPower" val="#mCritPower" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">5</value>
 					<value level="2">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

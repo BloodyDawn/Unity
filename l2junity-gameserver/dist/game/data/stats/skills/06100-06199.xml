@@ -297,7 +297,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
-				<add stat="rCrit" val="50" />
 				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="PAtk">
@@ -323,6 +322,10 @@
 			<effect name="CriticalDamage">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1111,7 +1114,15 @@
 		<trait>BLEED</trait>
 		<effects>
 			<effect name="Debuff">
-				<add stat="rCrit" val="#rCrit" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">150</value>
+					<value level="2">200</value>
+					<value level="3">520</value>
+					<value level="4">750</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

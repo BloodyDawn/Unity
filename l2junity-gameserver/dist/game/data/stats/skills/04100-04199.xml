@@ -470,7 +470,6 @@
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="rCrit" val="0.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-15</amount>
@@ -506,6 +505,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

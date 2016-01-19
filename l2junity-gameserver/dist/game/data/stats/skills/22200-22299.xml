@@ -244,7 +244,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -285,6 +284,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

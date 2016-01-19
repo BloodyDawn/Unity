@@ -3098,9 +3098,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit">
-					<using kind="SWORD,BLUNT,DUAL" />
-				</add>
 			</effect>
 			<effect name="Accuracy">
 				<amount>
@@ -3122,6 +3119,19 @@
 					<value level="3">30</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUAL</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">50</value>
+					<value level="2">100</value>
+					<value level="3">150</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item>BLUNT</item>
@@ -3788,9 +3798,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockMove">
-				<mul stat="rCrit" val="0.2">
-					<using kind="BOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>199</amount>
@@ -3809,6 +3816,13 @@
 			<effect name="PhysicalAttackRange">
 				<amount>200</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>BOW</item>
 				</weaponType>

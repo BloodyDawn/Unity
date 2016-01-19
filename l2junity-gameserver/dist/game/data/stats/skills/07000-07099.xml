@@ -546,7 +546,10 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.3" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1231,7 +1234,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.2" />
-				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
@@ -1269,6 +1271,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1842,7 +1848,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.3" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
@@ -1852,6 +1857,10 @@
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1956,12 +1965,23 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2">
-					<using kind="SWORD,DUAL,ANCIENTSWORD,RAPIER,DAGGER,DUALDAGGER,POLE,DUALFIST" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DUAL</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>

@@ -2386,7 +2386,6 @@
 		<effects>
 			<effect name="Debuff">
 				<mul stat="maxHp" val="0.8" />
-				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>20</amount>
@@ -2422,6 +2421,10 @@
 			</effect>
 			<effect name="HpRegen">
 				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

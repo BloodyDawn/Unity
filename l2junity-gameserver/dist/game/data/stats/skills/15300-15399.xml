@@ -1843,7 +1843,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="PhysicalMpConsumeRate" val="1.2" />
 				<mul stat="MagicalMpConsumeRate" val="1.1" /> <!-- TODO : This is done per is_magic value, not globally -->
@@ -1857,6 +1856,13 @@
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">32</value>
+					<value level="2">34</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -2005,7 +2011,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -2034,6 +2039,10 @@
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="15381" levels="1" name="Clan Hall - Warrior's Harmony">
@@ -2058,7 +2067,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -2089,6 +2097,10 @@
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

@@ -1353,7 +1353,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="15" />
 				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="VampiricAttack">
@@ -1362,6 +1361,10 @@
 			</effect>
 			<effect name="Speed">
 				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>15</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

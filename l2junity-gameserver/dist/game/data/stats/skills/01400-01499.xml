@@ -597,7 +597,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
 			</effect>
 			<effect name="CpHealPercent">
@@ -646,6 +645,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -3424,7 +3427,6 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -3435,6 +3437,14 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>
 					<value level="1">30</value>
 					<value level="2">40</value>

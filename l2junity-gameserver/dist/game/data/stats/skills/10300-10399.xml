@@ -282,9 +282,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="45">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>45</amount>
@@ -313,6 +310,18 @@
 			<effect name="CriticalDamage">
 				<amount>45</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+					<item> DUAL</item>
+					<item> DUALFIST</item>
+					<item> POLE</item>
+					<item> DUALBLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>45</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item> BLUNT</item>
@@ -998,13 +1007,17 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="60">
-					<using kind="BLUNT" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>21</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>60</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>BLUNT</item>
 				</weaponType>

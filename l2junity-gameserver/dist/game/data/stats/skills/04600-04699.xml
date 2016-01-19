@@ -118,12 +118,19 @@
 		<targetType>CLAN</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
 					<value level="2">23</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
 					<value level="3">30</value>
 				</amount>
 				<mode>PER</mode>
@@ -781,7 +788,14 @@
 		<targetType>CLAN</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2761,7 +2775,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">15</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -5106,7 +5127,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="rCrit" val="-0.23" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-45</amount>
@@ -5130,6 +5150,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -5400,7 +5424,6 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -5417,6 +5440,24 @@
 					<value level="11">25</value>
 					<value level="12">25</value>
 					<value level="13">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">25</value>
+					<value level="2">27</value>
+					<value level="3">30</value>
+					<value level="4">30</value>
+					<value level="5">30</value>
+					<value level="6">30</value>
+					<value level="7">30</value>
+					<value level="8">30</value>
+					<value level="9">30</value>
+					<value level="10">30</value>
+					<value level="11">30</value>
+					<value level="12">30</value>
+					<value level="13">30</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

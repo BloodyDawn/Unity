@@ -202,7 +202,7 @@
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
@@ -237,6 +237,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>24.6</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -791,7 +795,7 @@
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
@@ -826,6 +830,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>24.6</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -991,7 +999,7 @@
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
+				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 			</effect>
@@ -1026,6 +1034,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>29.5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1278,7 +1290,7 @@
 			<effect name="Buff">
 				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
-				<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
+				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
 				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 			</effect>
@@ -1313,6 +1325,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>29.5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1748,7 +1764,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.3" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Critical Hit -->
@@ -1765,6 +1780,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1834,7 +1853,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.3" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2774,7 +2796,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
@@ -2787,6 +2808,14 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">128.7</value>
+					<value level="2">137.1</value>
+					<value level="3">137.1</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2897,7 +2926,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="109.2" />
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
@@ -2910,6 +2938,10 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>109.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2922,7 +2954,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="109.2" />
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
@@ -2935,6 +2966,10 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>109.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2973,7 +3008,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="109.2" />
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
@@ -2986,6 +3020,10 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>109.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

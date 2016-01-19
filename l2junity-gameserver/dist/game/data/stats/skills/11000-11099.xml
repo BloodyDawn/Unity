@@ -2902,7 +2902,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="rCrit" val="-0.1" />
 				<mul stat="mCritRate" val="0.9" />
 			</effect>
 			<effect name="MAtk">
@@ -2926,6 +2925,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3004,7 +3007,6 @@
 				<percentage>25</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="rCrit" val="-0.08" />
 				<mul stat="mCritRate" val="0.92" />
 			</effect>
 			<effect name="MAtk">
@@ -3028,6 +3030,10 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>-8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>

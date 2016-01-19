@@ -4722,7 +4722,10 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -263,7 +263,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritRate" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
@@ -305,6 +304,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -431,7 +434,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.1" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -466,6 +468,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -545,7 +551,6 @@
 		<targetType>SERVITOR</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -592,6 +597,10 @@
 				<amount>-20</amount>
 				<slot>DEBUFF</slot>
 			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="713" levels="1" name="Divine Summoner Servitor Hill">
@@ -637,9 +646,12 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2056,7 +2068,10 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.3" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -3045,9 +3060,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="100">
-					<using kind="SWORD" />
-				</add>
 			</effect>
 			<effect name="Speed">
 				<amount>30</amount>
@@ -3087,6 +3099,13 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-40</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -3233,9 +3252,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="100">
-					<using kind="SWORD" />
-				</add>
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>40</amount>
@@ -3267,6 +3283,13 @@
 			<effect name="HealEffect">
 				<amount>-80</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>

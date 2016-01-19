@@ -197,7 +197,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="109.2" />
 				<mul stat="maxHp" val="1.1" />
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
@@ -211,6 +210,10 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>109.2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -291,7 +294,7 @@
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
@@ -302,6 +305,10 @@
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>24.6</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

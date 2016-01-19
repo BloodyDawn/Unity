@@ -1405,12 +1405,23 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2">
-					<using kind="SWORD,DAGGER,DUALDAGGER,POLE,RAPIER,ANCIENTSWORD,DUAL,DUALFIST" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>RAPIER</item>
+					<item>ANCIENTSWORD</item>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>

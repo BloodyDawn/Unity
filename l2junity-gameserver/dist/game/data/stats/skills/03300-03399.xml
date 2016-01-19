@@ -772,7 +772,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
-				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
@@ -787,6 +787,10 @@
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>24.6</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

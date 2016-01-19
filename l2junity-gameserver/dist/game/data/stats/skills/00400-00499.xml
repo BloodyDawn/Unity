@@ -92,7 +92,6 @@
 				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BLUNT>
@@ -205,6 +204,21 @@
 				</DUALFIST>
 			</effect>
 			<effect name="GetAgro" />
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-30</value>
+					<value level="3">-30</value>
+					<value level="4">-30</value>
+					<value level="5">-30</value>
+					<value level="6">-40</value>
+					<value level="7">-40</value>
+					<value level="8">-40</value>
+					<value level="9">-40</value>
+					<value level="10">-50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="401" levels="10" name="Judgment">
@@ -752,9 +766,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit">
-					<using kind="SWORD" />
-				</add>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -814,6 +825,17 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-40</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">33</value>
+					<value level="2">66</value>
+					<value level="3">100</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -1824,9 +1846,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit">
-					<using kind="SWORD,POLE" />
-				</add>
 				<mul stat="PhysicalMpConsumeRate" val="0.5" />
 			</effect>
 			<effect name="Speed">
@@ -1884,6 +1903,18 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-80</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">33</value>
+					<value level="2">66</value>
+					<value level="3">100</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -2070,9 +2101,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="100">
-					<using kind="DUALFIST" />
-				</add>
 			</effect>
 			<effect name="Accuracy">
 				<amount>6</amount>
@@ -2084,6 +2112,13 @@
 			<effect name="CriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>DUALFIST</item>
 				</weaponType>
@@ -4729,7 +4764,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-5</amount>
@@ -4738,6 +4772,13 @@
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">25</value>
+					<value level="2">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
 					<value level="2">30</value>
 				</amount>
 				<mode>PER</mode>

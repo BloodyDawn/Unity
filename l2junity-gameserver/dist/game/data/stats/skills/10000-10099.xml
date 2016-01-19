@@ -1692,9 +1692,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#cAtkAdd">
-					<using kind="SWORD" />
-				</add>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1759,6 +1756,18 @@
 				<mode>PER</mode>
 				<weaponType>
 					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
 				</weaponType>
 			</effect>
 		</effects>
@@ -1900,7 +1909,6 @@
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="50" />
 			</effect>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Rage Aura -->
@@ -1922,6 +1930,10 @@
 			<effect name="CriticalDamage">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -4544,9 +4556,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit">
-					<using kind="SWORD,BLUNT" />
-				</add>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -4623,6 +4632,19 @@
 				</amount>
 				<slot>DEBUFF</slot>
 			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
@@ -4658,9 +4680,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit">
-					<using kind="SWORD,BLUNT" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -4732,6 +4751,19 @@
 					<value level="4">60</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item>BLUNT</item>

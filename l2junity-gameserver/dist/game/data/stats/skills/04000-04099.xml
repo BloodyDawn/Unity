@@ -3175,7 +3175,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.5" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

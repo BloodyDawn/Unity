@@ -813,7 +813,10 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.35" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -896,9 +899,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="DamOverTimePercent" ticks="5">
-				<mul stat="rCrit" val="#rCrit">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<power>
 					<value level="1">0.005</value>
 					<value level="2">0.01</value>
@@ -910,6 +910,18 @@
 					<value level="1">20</value>
 					<value level="2">30</value>
 					<value level="3">40</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">50</value>
+					<value level="3">75</value>
 				</amount>
 				<mode>PER</mode>
 				<weaponType>
@@ -939,13 +951,18 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="DamOverTimePercent" ticks="5">
-				<mul stat="rCrit" val="0.9">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
 				<power>0.05</power>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>50</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>90</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>BOW</item>

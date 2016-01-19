@@ -180,8 +180,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="10" />
 				<add stat="mCritRate" val="10" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -748,7 +751,10 @@
 		<isMagic>3</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.01" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1260,7 +1266,6 @@
 		<isMagic>3</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#bonus" />
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
 			</effect>
@@ -1293,6 +1298,14 @@
 					<value level="1">-99</value>
 					<value level="2">-98</value>
 					<value level="3">-96</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1404,8 +1417,16 @@
 		<excludedFromCheck>true</excludedFromCheck>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#critRate" />
 				<add stat="mCritRate" val="#critRate" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -544,7 +544,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -559,6 +558,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
@@ -913,7 +916,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.1" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -925,6 +927,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1251,7 +1257,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.1" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
@@ -1263,6 +1268,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1648,7 +1657,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1663,6 +1671,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

@@ -1570,9 +1570,6 @@
 		</cond>
 		<effects>
 			<effect name="BlockMove">
-				<mul stat="rCrit" val="0.2">
-					<using kind="CROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1618,6 +1615,13 @@
 					<value level="8">200</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>CROSSBOW</item>
 				</weaponType>

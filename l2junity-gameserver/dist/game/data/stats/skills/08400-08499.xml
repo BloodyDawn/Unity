@@ -147,7 +147,7 @@
 		<effects>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +6.59% -->
-				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
+				<!-- Critical rate +127.4 -->
 				<!-- Resistance to damage magic +2% -->
 				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -171,6 +171,10 @@
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="CriticalRate">
+				<amount>127.4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8404" levels="1" name="Elegia Leather Armor Set">
@@ -184,7 +188,7 @@
 			<effect name="DefenceTrait">
 				<!-- Attack Power +6.59% -->
 				<!-- Atk. Spd. +6% -->
-				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
+				<!-- Crt. Rate +170.5 -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -204,6 +208,10 @@
 			<effect name="PhysicalAttackSpeed">
 				<amount>6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>170.5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -659,7 +667,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +6.59% -->
-				<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
+				<!-- Critical rate +127.4 -->
 				<!-- Resistance to damage magic +2% -->
 				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -698,6 +706,10 @@
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="CriticalRate">
+				<amount>127.4</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8413" levels="1" name="Elegia Leather Armor Set - PvP">
@@ -722,7 +734,7 @@
 			<effect name="DefenceTrait">
 				<!-- Attack Power +6.59% -->
 				<!-- Atk. Spd. +6% -->
-				<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
+				<!-- Crt. Rate +170.5 -->
 				<!-- Moving Spd. +3% -->
 				<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
@@ -757,6 +769,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>170.5</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

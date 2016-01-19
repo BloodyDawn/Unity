@@ -494,9 +494,6 @@
 		</cond>
 		<effects>
 			<effect name="BlockMove">
-				<mul stat="rCrit" val="0.2">
-					<using kind="BOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -542,6 +539,13 @@
 					<value level="8">200</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>BOW</item>
 				</weaponType>
@@ -2054,7 +2058,7 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="-0.3" /> <!-- Decreases critical attack rate by 30% -->
+				<!-- Decreases critical attack rate by 30% -->
 				<!-- Increases blow land rate by 60% -->
 				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical damage by 30% -->
 					<player front="true" />
@@ -2065,6 +2069,10 @@
 			</effect>
 			<effect name="FatalBlowRate">
 				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

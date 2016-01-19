@@ -1523,7 +1523,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit" />
 				<!-- TODO P. Skill Critical Rate and P. Skill Critical Damage -->
 			</effect>
 			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
@@ -1555,6 +1554,14 @@
 					<value level="3">20</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">40</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1592,9 +1599,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit">
-					<using kind="FIST,DUALFIST" />
-				</add>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1729,6 +1733,32 @@
 					<value level="17">45</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>FIST</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">60</value>
+					<value level="9">60</value>
+					<value level="10">60</value>
+					<value level="11">60</value>
+					<value level="12">60</value>
+					<value level="13">60</value>
+					<value level="14">60</value>
+					<value level="15">60</value>
+					<value level="16">60</value>
+					<value level="17">60</value>
+				</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>FIST</item>
 					<item>DUALFIST</item>

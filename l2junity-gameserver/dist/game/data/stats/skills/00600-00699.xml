@@ -166,7 +166,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="PAtk">
 				<amount>17.3</amount>
@@ -177,6 +176,14 @@
 					<value level="1">0</value>
 					<value level="2">0</value>
 					<value level="3">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">15</value>
+					<value level="3">15</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -576,7 +583,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -586,6 +592,15 @@
 					<value level="4">317</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">25</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1194,7 +1209,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="rCrit" val="30" />
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

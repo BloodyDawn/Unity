@@ -22,7 +22,6 @@
 		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.5" />
 				<mul stat="mCritRate" val="1.5" />
 			</effect>
 			<effect name="PAtk">
@@ -39,6 +38,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -157,9 +160,12 @@
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
