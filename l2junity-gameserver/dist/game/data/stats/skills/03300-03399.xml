@@ -208,7 +208,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="weightLimit" val="1.1" />
+			</effect>
+			<effect name="WeightLimit">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -538,7 +538,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="2" />
 				<sub stat="damageZoneVuln" val="30" />
-				<mul stat="weightLimit" val="1.51" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Survival Movement -->
@@ -564,6 +563,10 @@
 					<value level="10">27</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>51</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
