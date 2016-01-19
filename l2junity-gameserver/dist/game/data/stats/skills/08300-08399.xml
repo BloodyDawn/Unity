@@ -86,7 +86,7 @@
 				<add stat="maxHp" val="540" /> <!-- Max HP +540 -->
 				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 5 -->
-				<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
+				<!-- Resistance to magic damage by 1% -->
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
 			</effect>
@@ -117,6 +117,10 @@
 			</effect>
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -441,8 +445,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="magicSuccRes" val="1.02" />
 				<sub stat="cancel" val="13" />
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -454,8 +461,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="magicSuccRes" val="1.02" />
 				<add stat="darkRes" val="2" />
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2173,7 +2183,7 @@
 			<effect name="DefenceTrait">
 				<!-- Atk Power +4.26% -->
 				<!-- Atk. Spd. +4% -->
-				<mul stat="magicSuccRes" val="1.02" /> <!-- Resistance to Damage Magic +2% -->
+				<!-- Resistance to Damage Magic +2% -->
 				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
 				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 				<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
@@ -2187,6 +2197,10 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

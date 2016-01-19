@@ -1,91 +1,91 @@
 <list>
-    <skill id="12345" name="Shield Charge">
-        <variable name="test">
-            <value level="1">53</value>
-            <value level="2">54</value>
-            <value level="3">56</value>
-            <value level="4">58</value>
-            <value level="5">59</value>
-            <value level="6">61</value>
-            <value level="7">63</value>
-            <value level="8">65</value>
-            <value level="9">67</value>
-            <value level="10">69</value>
-            <value level="11">71</value>
-        </variable>
-        <test>123</test>
-        <test2>{123+4}</test2>
-        <tableTest>@test</tableTest>
-        <icon>
-            <value fromLevel="1" toLevel="2">test</value>
-        </icon>
-        <activateRate>
-            <value fromLevel="1" toLevel="4">80</value>
-            <value fromLevel="1" toLevel="4" fromSubLevel="2001" toSubLevel="2002">{base+index}</value>
-        </activateRate>
-        <effects>
-            <effect name="SomeEffect">
-                <power>
-                    <value level="1">13634</value>
-                    <value level="2">14179</value>
-                    <value level="3">15269</value>
-                    <value level="4">16359</value>
-                    <value level="5">17449</value>
-                    <value level="6">18539</value>
-                    <value level="7">19629</value>
-                    <value level="8">20719</value>
-                    <value level="9">22354</value>
-                    <value level="10">23444</value>
-                    <value level="11">24534</value>
-                    <value fromLevel="7" toLevel="11" fromSubLevel="1001" toSubLevel="1002">{base + index * 2}</value>
-                </power>
-                <levelTest>
-                    <value fromLevel="1" toLevel="3">{index}</value>
-                </levelTest>
-                <subLevelTest>
-                    <value fromLevel="1" toLevel="3" fromSubLevel="2001" toSubLevel="2003">{subIndex}</value>
-                </subLevelTest>
-                <skills>
-                    <item>
-                        <skillId>1</skillId>
-                        <skillLevel>1</skillLevel>
-                    </item>
-                    <item>
-                        <skillId>1</skillId>
-                        <skillLevel>2</skillLevel>
-                    </item>
-                </skills>
-                <itemLoopTest>
-                    <value fromLevel="1" toLevel="10">
-                        <item>
-                            <skill>{index}</skill>
-                        </item>
-                    </value>
-                </itemLoopTest>
-                <customFomatTest>
-                    <skill>5</skill>
-                </customFomatTest>
-                <customFomatLevelTest>
-                    <value fromLevel="1" toLevel="10">
-                        <skill YOUSHALLHAVEATTRIBUTES="{index}">{index}</skill>
-                    </value>
-                </customFomatLevelTest>
-                <levelListTest>
-                    <value level="1">
-                        <item>A</item>
-                        <item>B</item>
-                    </value>
-                    <value level="2">
-                        <item>C</item>
-                        <item>D</item>
-                    </value>
-                </levelListTest>
-                <expListTest>
-                    <item>1</item>
-                    <item>{1+1}</item>
-                </expListTest>
-            </effect>
-            <effect fromSublevel="3001" toSublevel="3030" name="Slow" />
-        </effects>
-    </skill>
+	<skill id="12345" name="Shield Charge">
+		<variable name="test">
+			<value level="1">53</value>
+			<value level="2">54</value>
+			<value level="3">56</value>
+			<value level="4">58</value>
+			<value level="5">59</value>
+			<value level="6">61</value>
+			<value level="7">63</value>
+			<value level="8">65</value>
+			<value level="9">67</value>
+			<value level="10">69</value>
+			<value level="11">71</value>
+		</variable>
+		<test>123</test>
+		<test2>{123+4}</test2>
+		<tableTest>@test</tableTest>
+		<icon>
+			<value fromLevel="1" toLevel="2">test</value>
+		</icon>
+		<activateRate>
+			<value fromLevel="1" toLevel="4">80</value>
+			<value fromLevel="1" toLevel="4" fromSubLevel="2001" toSubLevel="2002">{base+index}</value>
+		</activateRate>
+		<effects>
+			<effect name="SomeEffect">
+				<power>
+					<value level="1">13634</value>
+					<value level="2">14179</value>
+					<value level="3">15269</value>
+					<value level="4">16359</value>
+					<value level="5">17449</value>
+					<value level="6">18539</value>
+					<value level="7">19629</value>
+					<value level="8">20719</value>
+					<value level="9">22354</value>
+					<value level="10">23444</value>
+					<value level="11">24534</value>
+					<value fromLevel="7" toLevel="11" fromSubLevel="1001" toSubLevel="1002">{base + index * 2}</value>
+				</power>
+				<levelTest>
+					<value fromLevel="1" toLevel="3">{index}</value>
+				</levelTest>
+				<subLevelTest>
+					<value fromLevel="1" toLevel="3" fromSubLevel="2001" toSubLevel="2003">{subIndex}</value>
+				</subLevelTest>
+				<skills>
+					<item>
+						<skillId>1</skillId>
+						<skillLevel>1</skillLevel>
+					</item>
+					<item>
+						<skillId>1</skillId>
+						<skillLevel>2</skillLevel>
+					</item>
+				</skills>
+				<itemLoopTest>
+					<value fromLevel="1" toLevel="10">
+						<item>
+							<skill>{index}</skill>
+						</item>
+					</value>
+				</itemLoopTest>
+				<customFomatTest>
+					<skill>5</skill>
+				</customFomatTest>
+				<customFomatLevelTest>
+					<value fromLevel="1" toLevel="10">
+						<skill YOUSHALLHAVEATTRIBUTES="{index}">{index}</skill>
+					</value>
+				</customFomatLevelTest>
+				<levelListTest>
+					<value level="1">
+						<item>A</item>
+						<item>B</item>
+					</value>
+					<value level="2">
+						<item>C</item>
+						<item>D</item>
+					</value>
+				</levelListTest>
+				<expListTest>
+					<item>1</item>
+					<item>{1+1}</item>
+				</expListTest>
+			</effect>
+			<effect fromSublevel="3001" toSublevel="3030" name="Slow" />
+		</effects>
+	</skill>
 </list>

@@ -860,7 +860,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="magicSuccRes" val="2" />
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

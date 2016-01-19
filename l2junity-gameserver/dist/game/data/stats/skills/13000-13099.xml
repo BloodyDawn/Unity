@@ -84,7 +84,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="DEX" val="#base" />
-				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -132,6 +131,15 @@
 					<value level="4">4</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -574,7 +582,6 @@
 			<effect name="Buff">
 				<add stat="STR" val="#base" />
 				<sub stat="CON" val="#base" />
-				<mul stat="magicSuccRes" val="1.02" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -605,6 +612,10 @@
 					<value level="3">4</value>
 					<value level="4">4</value>
 				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -733,7 +744,6 @@
 				<sub stat="STR" val="#base" />
 				<add stat="CON" val="#base" />
 				<add stat="maxHp" val="#maxHp" />
-				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -790,6 +800,15 @@
 					<value level="4">4</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">2</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -959,7 +978,6 @@
 				<sub stat="CON" val="#base1" />
 				<add stat="rCrit" val="#rCrit" />
 				<add stat="maxHp" val="550" />
-				<mul stat="magicSuccRes" val="#magicSuccRes" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -1001,6 +1019,15 @@
 					<value level="2">6.59</value>
 					<value level="3">6.59</value>
 					<value level="4">6.59</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDDMagic">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
