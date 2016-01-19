@@ -1191,7 +1191,7 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
-				<mul stat="debuffVuln" val="1.10" />
+				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Critical Damage Increase -->
@@ -3906,7 +3906,7 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
-				<mul stat="debuffVuln" val="1.10" />
+				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Critical Damage Increase -->

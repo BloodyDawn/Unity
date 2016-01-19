@@ -1116,7 +1116,7 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.2" />
-				<mul stat="debuffVuln" val="0.9" />
+				<sub stat="debuffVuln" val="10" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlotProbability">

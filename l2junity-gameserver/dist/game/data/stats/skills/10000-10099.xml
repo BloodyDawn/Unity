@@ -4445,7 +4445,7 @@
 	<skill id="10098" levels="4" name="Paladin's Frenzy">
 		<!-- For 1 min., P./M. Def. +50%, Debuff Resistance + 10%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
 		<table name="#def"> 1.5 1.7 2 2.2 </table>
-		<table name="#debuffVuln"> 1.1 1.2 1.25 1.3 </table>
+		<table name="#debuffVuln"> 10 20 25 30 </table>
 		<table name="#runSpd"> 10 20 25 30 </table>
 		<table name="#accCombat"> 4 6 8 10 </table>
 		<table name="#pAtkSpd"> 1.1 1.2 1.25 1.3 </table>
@@ -4475,7 +4475,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="debuffVuln" val="#debuffVuln" />
+				<sub stat="debuffVuln" val="#debuffVuln" />
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,BLUNT" />
 				</add>

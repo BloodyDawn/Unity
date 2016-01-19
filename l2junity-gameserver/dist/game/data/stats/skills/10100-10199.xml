@@ -431,7 +431,7 @@
 				<add stat="waterRes" val="50" />
 				<add stat="windRes" val="50" />
 				<add stat="earthRes" val="50" />
-				<mul stat="debuffVuln" val="1.25" />
+				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>25</amount>
@@ -563,7 +563,7 @@
 				<add stat="waterRes" val="40" />
 				<add stat="windRes" val="40" />
 				<add stat="earthRes" val="40" />
-				<mul stat="debuffVuln" val="1.2" />
+				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>20</amount>

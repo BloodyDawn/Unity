@@ -2303,7 +2303,7 @@
 		<!-- Updated to IO -->
 		<!-- For 30 sec., Received P./M. Critical Rate - 5%, Pull Resistance and Knock Back / Knock Down Resistance - 5. Debuff Resistance + 5%, HP/MP Recovery Bonus + 5%. -->
 		<table name="#stat"> 1.05 1.07 1.10 </table>
-		<table name="#debuffVuln"> 0.95 0.93 0.90 </table>
+		<table name="#debuffVuln"> 5 7 10 </table>
 		<table name="#trait"> 5 7 10 </table>
 		<icon>icon.skill11360</icon>
 		<abnormalLvl>
@@ -2325,7 +2325,7 @@
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#stat" />
 				<mul stat="defMCritRate" val="#stat" />
-				<mul stat="debuffVuln" val="#debuffVuln" />
+				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PULL>
@@ -2531,7 +2531,7 @@
 		<!-- For 30 sec., Received P./M. Critical Rate - 7%, Pull Resistance and Knock Back / Knock Down Resistance - 10. Debuff Resistance + 10%, HP/MP Recovery Bonus + 10%. -->
 		<table name="#defCritRate"> 1.07 1.10 1.12 </table>
 		<table name="#regHpMp"> 1.10 1.12 1.15 </table>
-		<table name="#debuffVuln"> 0.90 0.88 0.85 </table>
+		<table name="#debuffVuln"> 10 12 15 </table>
 		<table name="#trait"> 10 12 15 </table>
 		<icon>icon.skill11360</icon>
 		<abnormalLvl>
@@ -2553,7 +2553,7 @@
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#defCritRate" />
 				<mul stat="defMCritRate" val="#defCritRate" />
-				<mul stat="debuffVuln" val="#debuffVuln" />
+				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PULL>
@@ -2595,7 +2595,7 @@
 		<!-- For 30 sec., Debuff Resistance + 15%, Pull Resistance + 15%, Knock Back / Knock Down Resistance + 15%, HP/MP Recovery Bonus + 15%. Received P./M. Critical Rate - 10%. -->
 		<table name="#defCritRate"> 1.10 1.15 1.15 </table>
 		<table name="#regHpMp"> 1.15 1.20 1.20 </table>
-		<table name="#debuffVuln"> 0.85 0.80 0.80 </table>
+		<table name="#debuffVuln"> 15 20 20 </table>
 		<table name="#trait"> 15 20 20 </table>
 		<icon>icon.skill11360</icon>
 		<abnormalLvl>
@@ -2615,7 +2615,7 @@
 			<effect name="Buff">
 				<mul stat="defCritRate" val="#defCritRate" />
 				<mul stat="defMCritRate" val="#defCritRate" />
-				<mul stat="debuffVuln" val="#debuffVuln" />
+				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PULL>
