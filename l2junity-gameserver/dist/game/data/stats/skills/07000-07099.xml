@@ -1086,7 +1086,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -1123,6 +1122,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="7062" levels="1" name="Master's Blessing - Prophecy of Fire">
@@ -1147,7 +1150,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1193,6 +1195,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="7063" levels="1" name="Master's Blessing - Prophecy of Wind">
@@ -1219,7 +1225,6 @@
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
@@ -1253,6 +1258,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="7064" levels="1" name="Master's Blessing - Chant of Victory">
@@ -1277,7 +1286,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -1319,6 +1327,10 @@
 			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

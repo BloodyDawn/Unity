@@ -1227,7 +1227,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -1255,6 +1254,10 @@
 					<value level="4">15</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

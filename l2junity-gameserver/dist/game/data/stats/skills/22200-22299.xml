@@ -245,7 +245,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -282,6 +281,10 @@
 			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

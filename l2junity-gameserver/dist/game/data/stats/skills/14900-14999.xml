@@ -1164,7 +1164,6 @@
 		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1208,6 +1207,10 @@
 			<effect name="CriticalDamage">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-80</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

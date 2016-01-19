@@ -1191,7 +1191,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Critical Damage Increase -->
@@ -1259,6 +1258,10 @@
 			<effect name="DefenceCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -3328,7 +3331,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
 			<effect name="Buff">
-				<add stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>50</HOLD>
@@ -3345,6 +3347,10 @@
 			<effect name="ResistDispelByCategory">
 				<amount>30</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>20</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -3906,7 +3912,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Critical Damage Increase -->
@@ -3975,6 +3980,10 @@
 			<effect name="DefenceCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

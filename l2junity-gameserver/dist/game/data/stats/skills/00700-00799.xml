@@ -127,7 +127,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="PAtk">
@@ -162,6 +161,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="705" levels="1" name="Divine Enchanter Fire Spirit">
@@ -187,7 +190,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -233,6 +235,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="706" levels="1" name="Divine Enchanter Wind Spirit">
@@ -259,7 +265,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritRate" val="1.2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -297,6 +302,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="707" levels="1" name="Divine Enchanter Hero Spirit">
@@ -322,7 +331,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -363,6 +371,10 @@
 			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -534,7 +546,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
-				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -576,6 +587,10 @@
 			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-20</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2308,7 +2323,6 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="Debuff">
-				<add stat="debuffVuln" val="30" />
 			</effect>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -2325,6 +2339,10 @@
 			<effect name="HealEffect">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>30</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -3027,7 +3045,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="40" />
 				<add stat="rCrit" val="100">
 					<using kind="SWORD" />
 				</add>
@@ -3066,6 +3083,10 @@
 			<effect name="ResistDispelByCategory">
 				<amount>-40</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-40</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -3133,7 +3154,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="30" />
 			</effect>
 			<effect name="HealOverTime" ticks="5">
 				<power>50</power>
@@ -3148,6 +3168,10 @@
 			<effect name="ResistDispelByCategory">
 				<amount>-100</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-30</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

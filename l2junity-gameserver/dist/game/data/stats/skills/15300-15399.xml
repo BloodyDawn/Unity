@@ -1678,7 +1678,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Critical Damage Increase -->
@@ -1746,6 +1745,10 @@
 			<effect name="DefenceCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

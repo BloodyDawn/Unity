@@ -716,7 +716,10 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="60" />
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-60</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

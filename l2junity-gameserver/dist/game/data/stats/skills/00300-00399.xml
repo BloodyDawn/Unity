@@ -1479,7 +1479,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="30" />
 			</effect>
 			<effect name="HealOverTime" ticks="5">
 				<power>50</power>
@@ -1494,6 +1493,10 @@
 			<effect name="ResistDispelByCategory">
 				<amount>-100</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-30</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1522,7 +1525,6 @@
 		<trait>DEATH</trait>
 		<effects>
 			<effect name="Debuff">
-				<add stat="debuffVuln" val="30" />
 			</effect>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -1539,6 +1541,10 @@
 			<effect name="HealEffect">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>30</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

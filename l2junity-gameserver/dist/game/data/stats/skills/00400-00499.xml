@@ -752,7 +752,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="40" />
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD" />
 				</add>
@@ -811,6 +810,10 @@
 			<effect name="ResistDispelByCategory">
 				<amount>-40</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-40</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1814,7 +1817,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,POLE" />
 				</add>
@@ -1871,6 +1873,10 @@
 			<effect name="ResistDispelByCategory">
 				<amount>-40</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-80</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

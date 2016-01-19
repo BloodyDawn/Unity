@@ -269,7 +269,6 @@
 			<effect name="Buff">
 				<add stat="holyRes" val="20" />
 				<add stat="darkRes" val="20" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
@@ -278,6 +277,10 @@
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

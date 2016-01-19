@@ -3876,7 +3876,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MAtk">
 				<amount>20</amount>
@@ -3897,6 +3896,10 @@
 			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

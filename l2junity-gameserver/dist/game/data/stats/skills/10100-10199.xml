@@ -431,11 +431,14 @@
 				<add stat="waterRes" val="50" />
 				<add stat="windRes" val="50" />
 				<add stat="earthRes" val="50" />
-				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-20</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -563,11 +566,14 @@
 				<add stat="waterRes" val="40" />
 				<add stat="windRes" val="40" />
 				<add stat="earthRes" val="40" />
-				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-20</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

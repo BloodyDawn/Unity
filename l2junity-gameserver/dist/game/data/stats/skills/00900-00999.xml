@@ -884,7 +884,6 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="30" />
 			</effect>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -894,6 +893,10 @@
 			<effect name="HealEffect">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-30</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

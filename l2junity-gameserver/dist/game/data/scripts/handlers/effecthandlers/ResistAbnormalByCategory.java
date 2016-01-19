@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.enums.DispelSlotType;
-import org.l2junity.gameserver.enums.StatModifierType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -33,27 +32,24 @@ public class ResistAbnormalByCategory extends AbstractEffect
 {
 	private final DispelSlotType _slot;
 	private final double _amount;
-	private final StatModifierType _mode;
 	
 	public ResistAbnormalByCategory(StatsSet params)
 	{
 		super(params);
 		
 		_amount = params.getDouble("amount", 0);
-		_mode = params.getEnum("mode", StatModifierType.class, StatModifierType.DIFF);
 		_slot = params.getEnum("slot", DispelSlotType.class, DispelSlotType.BUFF);
 	}
 	
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		final double amount = _mode == StatModifierType.PER ? (_amount / 100) + 1 : _amount;
 		switch (_slot)
 		{
 			// Only this one is in use it seems
 			case DEBUFF:
 			{
-				effected.getStat().mergeAdd(Stats.DEBUFF_VULN, amount);
+				effected.getStat().mergeAdd(Stats.DEBUFF_VULN, _amount);
 				break;
 			}
 		}

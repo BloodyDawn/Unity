@@ -1567,7 +1567,6 @@
 		<reuseDelay>300000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1612,6 +1611,10 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>80</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="14868" levels="1" name="Barton's Berserker Rage">
@@ -1634,7 +1637,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<add stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1679,6 +1681,10 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>80</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="14869" levels="1" name="Barton's Berserker Rage">
@@ -1701,7 +1707,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<add stat="debuffVuln" val="80" />
 				<add stat="rCrit" val="100">
 					<player hp="60" />
 				</add>
@@ -1745,6 +1750,10 @@
 			<effect name="CriticalDamage">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>80</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

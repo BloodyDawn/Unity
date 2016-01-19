@@ -27,7 +27,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="1" />
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-1</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

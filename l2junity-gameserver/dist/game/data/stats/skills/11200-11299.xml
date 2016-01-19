@@ -2930,7 +2930,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.20" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2980,6 +2979,10 @@
 			<effect name="DefenceCriticalDamage">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

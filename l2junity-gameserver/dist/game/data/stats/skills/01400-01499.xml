@@ -539,7 +539,6 @@
 				<add stat="waterRes" val="10" />
 				<add stat="windRes" val="10" />
 				<add stat="earthRes" val="10" />
-				<sub stat="debuffVuln" val="25" />
 			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -569,6 +568,10 @@
 				<amount>-40</amount>
 				<slot>BUFF</slot>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-25</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="1414" levels="1" name="Victory of Pa'agrio">
@@ -596,7 +599,6 @@
 			<effect name="Buff">
 				<mul stat="rCrit" val="0.2" />
 				<mul stat="mCritPower" val="1.2" />
-				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="CpHealPercent">
 				<power>20</power>
@@ -641,6 +643,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="1415" levels="1" name="Pa'agrio's Emblem">
@@ -664,11 +670,14 @@
 		<targetType>PARTY_CLAN</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="ResistDispelByCategory">
 				<amount>-30</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-20</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

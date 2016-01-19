@@ -505,7 +505,6 @@
 			<effect name="Buff">
 				<add stat="mCritRate" val="20" />
 				<mul stat="rCrit" val="0.2" />
-				<sub stat="debuffVuln" val="10" />
 				<!-- TODO: increases P. Def. upon evading a critical attack ??? -->
 			</effect>
 			<effect name="PAtk">
@@ -543,6 +542,10 @@
 			<effect name="HpRegen">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>

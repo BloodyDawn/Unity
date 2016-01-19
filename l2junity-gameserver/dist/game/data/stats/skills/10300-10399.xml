@@ -687,7 +687,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<sub stat="debuffVuln" val="90" />
 			</effect>
 			<effect name="Speed">
 				<amount>66</amount>
@@ -708,6 +707,10 @@
 					<value level="3">30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-90</amount>
+				<slot>DEBUFF</slot>
 			</effect>
 		</effects>
 	</skill>
