@@ -742,7 +742,7 @@
 			<effect name="Buff">
 				<!-- P. Def. +5.4% -->
 				<!-- Received Increased Heal +3% -->
-				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
+				<!-- Darkness resistance is increased +8 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>13</SHOCK>
@@ -760,6 +760,10 @@
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3349" levels="1" name="Dynasty Breastplate">
@@ -774,7 +778,7 @@
 				<!-- P. Atk +5.4% -->
 				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
@@ -793,6 +797,10 @@
 				<amount>24.6</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3350" levels="1" name="Dynasty Breastplate">
@@ -805,7 +813,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
-				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
+				<!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -816,6 +824,10 @@
 			<effect name="PAtk">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -830,7 +842,7 @@
 			<effect name="Buff">
 				<!-- P. Def. +5.4% -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MaxHp">
@@ -840,6 +852,10 @@
 			<effect name="PhysicalDefence">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -854,7 +870,7 @@
 			<effect name="Buff">
 				<!-- Evasion +4.3 -->
 				<!-- Atk. Spd. are increased +2.66% -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>13</HOLD>
@@ -872,6 +888,10 @@
 				<amount>2.66</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3353" levels="1" name="Dynasty Leather Armor">
@@ -887,7 +907,7 @@
 				<!-- Max MP +321 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
 				<!-- MP recovery are increased +1.72 -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="Accuracy">
@@ -906,6 +926,10 @@
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic">
@@ -921,7 +945,7 @@
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MagicalAttackSpeed">
@@ -931,6 +955,10 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -947,7 +975,7 @@
 				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MagicalAttackSpeed">
@@ -957,6 +985,10 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -973,7 +1005,7 @@
 				<!-- Max MP +321 -->
 				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -992,6 +1024,10 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic">
@@ -1006,7 +1042,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- Increase M. Atk +5.4% -->
 				<!-- Max MP +321 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MAtk">
@@ -1020,6 +1056,10 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

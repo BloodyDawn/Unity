@@ -2109,10 +2109,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="20" />
-				<add stat="waterRes" val="20" />
-				<add stat="windRes" val="20" />
-				<add stat="earthRes" val="20" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Protection Power -->
@@ -2124,6 +2120,22 @@
 				<minDamage>100</minDamage>
 				<skillId>5556</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2136,8 +2148,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="20" />
-				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Protection Power -->
@@ -2149,6 +2159,14 @@
 				<minDamage>100</minDamage>
 				<skillId>5556</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

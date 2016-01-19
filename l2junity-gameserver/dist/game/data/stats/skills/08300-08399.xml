@@ -461,11 +461,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="2" />
 			</effect>
 			<effect name="ResistDDMagic">
 				<amount>2</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>2</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -970,12 +973,30 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="15" />
-				<add stat="waterRes" val="15" />
-				<add stat="windRes" val="15" />
-				<add stat="fireRes" val="15" />
-				<add stat="holyRes" val="15" />
-				<add stat="darkRes" val="15" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1896,7 +1917,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="#earthRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1912,7 +1939,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#waterRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1928,7 +1961,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#fireRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1944,7 +1983,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="#earthRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1960,7 +2005,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="#holyRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1976,7 +2027,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="#holyRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1992,7 +2049,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="#darkRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2008,7 +2071,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#windRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2024,7 +2093,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="#darkRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2040,7 +2115,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#waterRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2056,7 +2137,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="#holyRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2072,7 +2159,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#windRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2088,7 +2181,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="#darkRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2104,7 +2203,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="#earthRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2120,7 +2225,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#waterRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2136,7 +2247,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#fireRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2152,7 +2269,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#fireRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2168,7 +2291,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#windRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">26</value>
+					<value level="2">30</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2184,10 +2313,10 @@
 				<!-- Atk Power +4.26% -->
 				<!-- Atk. Spd. +4% -->
 				<!-- Resistance to Damage Magic +2% -->
-				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
-				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
-				<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
-				<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
+				<!-- resistance to fire attributes +3 -->
+				<!-- resistance to water attributes +3 -->
+				<!-- resistance to wind attributes +3 -->
+				<!-- resistance to earth attributes +3 -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -2203,6 +2332,22 @@
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>EARTH</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8398" levels="1" name="Moirai Light Armor Set">
@@ -2217,10 +2362,10 @@
 				<!-- P. Atk. +4.26% -->
 				<!-- Atk. Spd. +4% -->
 				<!-- Moving Spd. +3% -->
-				<add stat="fireRes" val="3" /> <!-- resistance to fire attributes +3 -->
-				<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
-				<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
-				<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
+				<!-- resistance to fire attributes +3 -->
+				<!-- resistance to water attributes +3 -->
+				<!-- resistance to wind attributes +3 -->
+				<!-- resistance to earth attributes +3 -->
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
@@ -2236,6 +2381,22 @@
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>3</amount>
+				<attribute>EARTH</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8399" levels="1" name="Moirai Robe Set">
@@ -2249,10 +2410,10 @@
 			<effect name="DefenceTrait">
 				<!-- M. Power +8.11% -->
 				<!-- M. Spd. +15% -->
-				<add stat="fireRes" val="5" /> <!-- resistance to fire attributes +5 -->
-				<add stat="waterRes" val="5" /> <!-- resistance to water attributes +5 -->
-				<add stat="windRes" val="5" /> <!-- resistance to wind attributes +5 -->
-				<add stat="earthRes" val="5" /> <!-- resistance to earth attributes +5 -->
+				<!-- resistance to fire attributes +5 -->
+				<!-- resistance to water attributes +5 -->
+				<!-- resistance to wind attributes +5 -->
+				<!-- resistance to earth attributes +5 -->
 				<PARALYZE>50</PARALYZE>
 			</effect>
 			<effect name="EnableCloak" />
@@ -2263,6 +2424,22 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>5</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>5</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>5</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>5</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

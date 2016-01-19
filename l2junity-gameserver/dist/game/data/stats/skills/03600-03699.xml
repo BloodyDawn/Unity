@@ -511,7 +511,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="15" />
 				<mul stat="mReuse" val="0.95" />
 				<mul stat="pReuse" val="0.95" />
 			</effect>
@@ -532,6 +531,10 @@
 			<effect name="DamageShield">
 				<amount>4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1609,7 +1612,7 @@
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Heal Capacity +4% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>15</SHOCK>
@@ -1622,6 +1625,10 @@
 			<effect name="HealEffect">
 				<amount>4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1638,7 +1645,7 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
-				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
+				<!-- Darkness Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -1652,6 +1659,10 @@
 			<effect name="CriticalRate">
 				<amount>29.5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1667,12 +1678,16 @@
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PhysicalDefence">
 				<amount>6.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1687,13 +1702,17 @@
 			<effect name="Buff">
 				<!-- Physical Attack Power +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
-				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 Increase -->
+				<!-- Darkness Resistance +8 Increase -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Active Skills -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>6.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1709,7 +1728,7 @@
 				<!-- Evasion +5.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Atk. Spd. +3.24% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>15</HOLD>
@@ -1722,6 +1741,10 @@
 			<effect name="PhysicalAttackSpeed">
 				<amount>3.24</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1738,7 +1761,7 @@
 				<!-- Max MP +321 -->
 				<!-- Atk. Spd. +3.24% -->
 				<!-- MP Recovery +6.6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="Accuracy">
@@ -1757,6 +1780,10 @@
 				<amount>1.066</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3642" levels="1" name="Dynasty Jewel Leather Armor">
@@ -1770,13 +1797,17 @@
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>6.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1793,7 +1824,7 @@
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
-				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
+				<!-- Darkness Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -1807,6 +1838,10 @@
 			<effect name="CriticalRate">
 				<amount>29.5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1823,7 +1858,7 @@
 				<!-- P. Atk. +2.66% -->
 				<!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -1837,6 +1872,10 @@
 			<effect name="PhysicalAttackSpeed">
 				<amount>6.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1853,7 +1892,7 @@
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MagicalAttackSpeed">
@@ -1863,6 +1902,10 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1879,7 +1922,7 @@
 				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MagicalAttackSpeed">
@@ -1889,6 +1932,10 @@
 			<effect name="MaxMp">
 				<amount>321</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1905,7 +1952,7 @@
 				<!-- Max MP +321 -->
 				<!-- P. Def. +3.3% -->
 				<!-- P. Atk. +3.3% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -1924,6 +1971,10 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3648" levels="1" name="Dynasty Silver Satin Tunic">
@@ -1938,7 +1989,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- M. Atk. +6.6% -->
 				<!-- Max MP +321 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MAtk">
@@ -1953,6 +2004,10 @@
 				<amount>321</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3649" levels="1" name="Beleth's Ring">
@@ -1965,7 +2020,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="30" />
 				<add stat="maxHp" val="105" />
 			</effect>
 			<effect name="AttackTrait">
@@ -1985,6 +2039,10 @@
 			<effect name="MpRegen">
 				<amount>0.23</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

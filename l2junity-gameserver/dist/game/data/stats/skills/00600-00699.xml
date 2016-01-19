@@ -67,8 +67,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="10" />
-				<add stat="windRes" val="10" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -81,8 +87,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="10" />
-				<add stat="earthRes" val="10" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2690,8 +2702,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="holyRes" val="25" />
-				<add stat="darkRes" val="12" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-25</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>12</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

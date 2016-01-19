@@ -3840,7 +3840,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -4019,7 +4026,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -4065,7 +4079,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>

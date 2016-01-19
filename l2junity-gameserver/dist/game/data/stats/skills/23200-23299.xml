@@ -1235,10 +1235,6 @@
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
 				</add>
-				<add stat="fireRes" val="10" />
-				<add stat="waterRes" val="10" />
-				<add stat="windRes" val="10" />
-				<add stat="earthRes" val="10" />
 			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -1271,6 +1267,22 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-25</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1514,10 +1526,22 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="20" />
-				<add stat="fireRes" val="20" />
-				<add stat="windRes" val="20" />
-				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2832,10 +2856,6 @@
 				<add stat="regMp" val="4">
 					<using kind="MAGIC" />
 				</add>
-				<add stat="fireRes" val="10" />
-				<add stat="waterRes" val="10" />
-				<add stat="windRes" val="10" />
-				<add stat="earthRes" val="10" />
 			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -2868,6 +2888,22 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-25</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -3104,10 +3140,22 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="20" />
-				<add stat="fireRes" val="20" />
-				<add stat="windRes" val="20" />
-				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

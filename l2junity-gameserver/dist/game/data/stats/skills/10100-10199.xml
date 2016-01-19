@@ -33,12 +33,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#elemRes" />
-				<add stat="fireRes" val="#elemRes" />
-				<add stat="windRes" val="#elemRes" />
-				<add stat="earthRes" val="#elemRes" />
-				<add stat="holyRes" val="#elemRes" />
-				<add stat="darkRes" val="#elemRes" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -118,6 +112,60 @@
 					<item>SWORD</item>
 					<item>BLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -450,10 +498,6 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<add stat="fireRes" val="50" />
-				<add stat="waterRes" val="50" />
-				<add stat="windRes" val="50" />
-				<add stat="earthRes" val="50" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>25</amount>
@@ -462,6 +506,22 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-20</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -585,10 +645,6 @@
 		<reuseDelay>1000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="40" />
-				<add stat="waterRes" val="40" />
-				<add stat="windRes" val="40" />
-				<add stat="earthRes" val="40" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>20</amount>
@@ -597,6 +653,22 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-20</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>40</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>40</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>40</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>40</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

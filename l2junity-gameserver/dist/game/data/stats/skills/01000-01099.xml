@@ -3119,8 +3119,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="waterRes" val="20" />
-				<add stat="fireRes" val="10" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -3310,8 +3316,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="windRes" val="20" />
-				<add stat="earthRes" val="10" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -3635,8 +3647,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="fireRes" val="20" />
-				<add stat="waterRes" val="10" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>

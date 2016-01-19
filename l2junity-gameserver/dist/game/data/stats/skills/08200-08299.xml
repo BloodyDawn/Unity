@@ -110,7 +110,7 @@
 			<effect name="Buff">
 				<!-- P. Def +4.6% -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
-				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
+				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -140,6 +140,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>6</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8203" levels="1" name="Dynasty Breastplate - PvP">
@@ -165,7 +169,7 @@
 				<!-- P. Def. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<!-- Received Increased Heal +3% -->
-				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
+				<!-- Darkness resistance is increased +8 -->
 				<SHOCK>13</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -189,6 +193,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8204" levels="1" name="Dynasty Breastplate - PvP">
@@ -204,7 +212,7 @@
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -242,6 +250,10 @@
 				<amount>24.6</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8205" levels="1" name="Dynasty Breastplate - PvP">
@@ -255,7 +267,7 @@
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- HP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
+				<!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -286,6 +298,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8206" levels="1" name="Dynasty Breastplate - PvP">
@@ -300,7 +316,7 @@
 				<!-- P. Def. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -330,6 +346,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8207" levels="1" name="Dynasty Leather Armor - PvP">
@@ -344,7 +364,7 @@
 				<!-- Evacion +1.72 -->
 				<!-- Accuracy +1.72 -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
-				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
+				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -378,6 +398,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>6</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8208" levels="1" name="Dynasty Leather Armor - PvP">
@@ -403,7 +427,7 @@
 				<!-- Evasion +4.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 				<HOLD>13</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
@@ -427,6 +451,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8209" levels="1" name="Dynasty Leather Armor - PvP">
@@ -442,7 +470,7 @@
 				<!-- Max MP +321 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
 				<!-- MP recovery are increased +1.72 -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -484,6 +512,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8210" levels="1" name="Dynasty Tunic - PvP">
@@ -497,7 +529,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +12% -->
 				<!-- Max MP +257 -->
-				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
+				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -531,6 +563,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>6</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8211" levels="1" name="Dynasty Tunic - PvP">
@@ -546,7 +582,7 @@
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -579,6 +615,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -595,7 +635,7 @@
 				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -629,6 +669,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8213" levels="1" name="Dynasty Tunic - PvP">
@@ -644,7 +688,7 @@
 				<!-- Max MP +321 -->
 				<!-- P. Def. +2.6% -->
 				<!-- Increase P. Atk. +2.6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -686,6 +730,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8214" levels="1" name="Dynasty Tunic - PvP">
@@ -700,7 +748,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- Increase M. Atk +5.4% -->
 				<!-- Max MP +321 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -738,6 +786,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8215" levels="1" name="Dynasty Leather Armor - PvP">
@@ -751,7 +803,7 @@
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -782,6 +834,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8216" levels="1" name="Dynasty Leather Armor - PvP">
@@ -797,7 +853,7 @@
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -835,6 +891,10 @@
 				<amount>24.6</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8217" levels="1" name="Dynasty Leather Armor - PvP">
@@ -850,7 +910,7 @@
 				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- decrease MP consumption -5% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -884,6 +944,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8218" levels="1" name="Dynasty Leather Armor - PvP">
@@ -899,7 +963,7 @@
 				<!-- Increase P. Atk. +2.66% -->
 				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -937,6 +1001,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8219" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -962,7 +1030,7 @@
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Heal Capacity +4% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -986,6 +1054,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8220" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1001,7 +1073,7 @@
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
-				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
+				<!-- Darkness Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -1039,6 +1111,10 @@
 				<amount>29.5</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8221" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1053,7 +1129,7 @@
 				<!-- P. Def. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Speed Down -->
@@ -1083,6 +1159,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8222" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1096,7 +1176,7 @@
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max. HP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
+				<!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- Decreases MP consumption by 6% for active skills -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1127,6 +1207,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8223" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1152,7 +1236,7 @@
 				<!-- Evasion +5.3 -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 				<!-- Atk. Spd. +3.24% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 				<HOLD>15</HOLD>
 			</effect>
 			<effect name="EnableCloak" />
@@ -1176,6 +1260,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8224" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1191,7 +1279,7 @@
 				<!-- Max MP +321 -->
 				<!-- Atk. Spd. +3.24% -->
 				<!-- MP Recovery +6.6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1233,6 +1321,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8225" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1246,7 +1338,7 @@
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1277,6 +1369,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8226" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1292,7 +1388,7 @@
 				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
-				<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
+				<!-- Darkness Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1330,6 +1426,10 @@
 				<amount>29.5</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8227" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1345,7 +1445,7 @@
 				<!-- P. Atk. +2.66% -->
 				<!-- P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1383,6 +1483,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8228" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1398,7 +1502,7 @@
 				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- Decrease MP consumption -6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Mirage -->
@@ -1432,6 +1536,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8229" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1447,7 +1555,7 @@
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1480,6 +1588,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1496,7 +1608,7 @@
 				<!-- Max MP +321 -->
 				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1530,6 +1642,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8231" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1545,7 +1661,7 @@
 				<!-- Max MP +321 -->
 				<!-- P. Def. +3.3% -->
 				<!-- P. Atk. +3.3% -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1587,6 +1703,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8232" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1601,7 +1721,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- M. Atk. +6.6% -->
 				<!-- Max MP +321 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- PvP Armor - Critical Down -->
@@ -1638,6 +1758,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

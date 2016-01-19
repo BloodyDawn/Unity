@@ -1224,10 +1224,6 @@
 				<mul stat="MagicalMpConsumeRate" val="3" />
 				<mul stat="PhysicalMpConsumeRate" val="3" />
 				<mul stat="DanceMpConsumeRate" val="3" />
-				<sub stat="fireRes" val="50" />
-				<sub stat="windRes" val="50" />
-				<sub stat="waterRes" val="50" />
-				<sub stat="earthRes" val="50" />
 				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
 			</effect>
 			<effect name="PAtk">
@@ -1245,6 +1241,22 @@
 			<effect name="HpRegen">
 				<amount>-90</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

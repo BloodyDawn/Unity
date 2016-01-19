@@ -37,7 +37,7 @@ public class DefenceAttribute extends AbstractEffect
 	{
 		super(params);
 		_amount = params.getDouble("amount", 0);
-		_attribute = params.getEnum("stat", AttributeType.class, AttributeType.FIRE);
+		_attribute = params.getEnum("attribute", AttributeType.class, AttributeType.FIRE);
 	}
 	
 	@Override

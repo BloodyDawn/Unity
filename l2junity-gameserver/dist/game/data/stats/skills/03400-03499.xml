@@ -228,12 +228,16 @@
 			<effect name="Buff">
 				<!-- P. Def +4.6% -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
-				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
+				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PhysicalDefence">
 				<amount>4.6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>6</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -249,7 +253,7 @@
 				<!-- Evacion +1.72 -->
 				<!-- Accuracy +1.72 -->
 				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
-				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
+				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PhysicalEvasion">
@@ -259,6 +263,10 @@
 			<effect name="Accuracy">
 				<amount>1.72</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>6</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -273,13 +281,17 @@
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
 				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
-				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
+				<!-- Dark resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -296,7 +308,7 @@
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -311,6 +323,10 @@
 				<amount>24.6</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3416" levels="1" name="Dynasty Tunic">
@@ -324,7 +340,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +12% -->
 				<!-- Max MP +257 -->
-				<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
+				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="MagicalAttackSpeed">
@@ -334,6 +350,10 @@
 			<effect name="MaxMp">
 				<amount>257</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>6</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -395,7 +415,7 @@
 				<!-- Increase P. Atk. +2.66% -->
 				<!-- Increase P. Def. +2.66% -->
 				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
+				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -409,6 +429,10 @@
 			<effect name="PhysicalAttackSpeed">
 				<amount>5.4</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>8</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -635,7 +659,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -660,7 +687,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -685,7 +715,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -710,7 +743,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -735,7 +771,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -760,7 +799,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>

@@ -267,8 +267,6 @@
 		<reuseDelay>30000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="20" />
-				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
@@ -281,6 +279,14 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

@@ -1484,7 +1484,6 @@
 				<power>12</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="fireRes" val="20" />
 			</effect>
 			<effect name="Speed">
 				<amount>-10</amount>
@@ -1497,6 +1496,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>-10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1596,7 +1599,10 @@
 				<power>12</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="darkRes" val="30" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-30</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1662,7 +1668,6 @@
 				<power>12</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="waterRes" val="20" />
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -1675,6 +1680,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>-10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1766,7 +1775,6 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
-				<sub stat="windRes" val="20" />
 				<power>12</power>
 			</effect>
 			<effect name="Speed">
@@ -1780,6 +1788,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>

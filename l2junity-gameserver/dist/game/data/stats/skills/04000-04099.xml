@@ -180,10 +180,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="windRes" val="15" />
 			</effect>
 			<effect name="DefenceTrait">
 				<BOW>-10</BOW>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-15</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -195,10 +198,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="fireRes" val="15" />
 			</effect>
 			<effect name="DefenceTrait">
 				<POISON>50</POISON>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-15</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -210,8 +216,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="20" />
 				<sub stat="darkPower" val="20" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -223,7 +232,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="fireRes" val="15" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-15</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>

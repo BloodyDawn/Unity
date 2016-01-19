@@ -3207,7 +3207,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="#darkRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">10</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

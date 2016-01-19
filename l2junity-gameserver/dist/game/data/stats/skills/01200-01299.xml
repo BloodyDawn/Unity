@@ -1774,8 +1774,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="earthRes" val="20" />
-				<add stat="windRes" val="10" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>10</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-20</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -5746,16 +5752,184 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="waterRes" val="#vuln" />
-				<sub stat="fireRes" val="#vuln" />
-				<sub stat="windRes" val="#vuln" />
-				<sub stat="earthRes" val="#vuln" />
-				<sub stat="holyRes" val="#vuln" />
-				<sub stat="darkRes" val="#vuln" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>-15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-20</value>
+					<value level="9">-20</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+					<value level="13">-30</value>
+					<value level="14">-40</value>
+					<value level="15">-40</value>
+					<value level="16">-40</value>
+					<value level="17">-40</value>
+					<value level="18">-50</value>
+					<value level="19">-50</value>
+					<value level="20">-50</value>
+					<value level="21">-50</value>
+					<value level="22">-50</value>
+					<value level="23">-50</value>
+					<value level="24">-50</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-20</value>
+					<value level="9">-20</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+					<value level="13">-30</value>
+					<value level="14">-40</value>
+					<value level="15">-40</value>
+					<value level="16">-40</value>
+					<value level="17">-40</value>
+					<value level="18">-50</value>
+					<value level="19">-50</value>
+					<value level="20">-50</value>
+					<value level="21">-50</value>
+					<value level="22">-50</value>
+					<value level="23">-50</value>
+					<value level="24">-50</value>
+				</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-20</value>
+					<value level="9">-20</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+					<value level="13">-30</value>
+					<value level="14">-40</value>
+					<value level="15">-40</value>
+					<value level="16">-40</value>
+					<value level="17">-40</value>
+					<value level="18">-50</value>
+					<value level="19">-50</value>
+					<value level="20">-50</value>
+					<value level="21">-50</value>
+					<value level="22">-50</value>
+					<value level="23">-50</value>
+					<value level="24">-50</value>
+				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-20</value>
+					<value level="9">-20</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+					<value level="13">-30</value>
+					<value level="14">-40</value>
+					<value level="15">-40</value>
+					<value level="16">-40</value>
+					<value level="17">-40</value>
+					<value level="18">-50</value>
+					<value level="19">-50</value>
+					<value level="20">-50</value>
+					<value level="21">-50</value>
+					<value level="22">-50</value>
+					<value level="23">-50</value>
+					<value level="24">-50</value>
+				</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-20</value>
+					<value level="9">-20</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+					<value level="13">-30</value>
+					<value level="14">-40</value>
+					<value level="15">-40</value>
+					<value level="16">-40</value>
+					<value level="17">-40</value>
+					<value level="18">-50</value>
+					<value level="19">-50</value>
+					<value level="20">-50</value>
+					<value level="21">-50</value>
+					<value level="22">-50</value>
+					<value level="23">-50</value>
+					<value level="24">-50</value>
+				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+					<value level="5">-10</value>
+					<value level="6">-20</value>
+					<value level="7">-20</value>
+					<value level="8">-20</value>
+					<value level="9">-20</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+					<value level="13">-30</value>
+					<value level="14">-40</value>
+					<value level="15">-40</value>
+					<value level="16">-40</value>
+					<value level="17">-40</value>
+					<value level="18">-50</value>
+					<value level="19">-50</value>
+					<value level="20">-50</value>
+					<value level="21">-50</value>
+					<value level="22">-50</value>
+					<value level="23">-50</value>
+					<value level="24">-50</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

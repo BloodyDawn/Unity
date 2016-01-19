@@ -1504,7 +1504,16 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="firePower" val="10" />
-				<add stat="fireRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1519,7 +1528,16 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="waterPower" val="10" />
-				<add stat="waterRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1534,7 +1552,16 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="windPower" val="10" />
-				<add stat="windRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1549,7 +1576,16 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="earthPower" val="10" />
-				<add stat="earthRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1564,7 +1600,16 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="darkPower" val="10" />
-				<add stat="darkRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1579,7 +1624,16 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="holyPower" val="10" />
-				<add stat="holyRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1681,7 +1735,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1695,7 +1758,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1709,7 +1781,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1723,7 +1804,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1737,7 +1827,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1751,7 +1850,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">70</value>
+					<value level="3">80</value>
+					<value level="4">90</value>
+					<value level="5">100</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2396,8 +2504,22 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<add stat="fireRes" val="#fire" />
-				<sub stat="waterRes" val="#water" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-25</value>
+					<value level="3">-30</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2445,8 +2567,22 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<add stat="earthRes" val="#earth" />
-				<sub stat="windRes" val="#wind" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-25</value>
+					<value level="3">-30</value>
+				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2494,8 +2630,22 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<add stat="windRes" val="#wind" />
-				<sub stat="earthRes" val="#earth" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-25</value>
+					<value level="3">-30</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2543,8 +2693,22 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<add stat="holyRes" val="#holy" />
-				<sub stat="darkRes" val="#dark" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-25</value>
+					<value level="3">-30</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -2592,8 +2756,22 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<add stat="darkRes" val="#dark" />
-				<sub stat="holyRes" val="#holy" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-25</value>
+					<value level="3">-30</value>
+				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">7</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -3114,7 +3292,10 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>

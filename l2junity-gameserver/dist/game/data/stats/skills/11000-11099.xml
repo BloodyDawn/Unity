@@ -4202,10 +4202,17 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="fireRes" val="#fireRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -4236,10 +4243,17 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="waterRes" val="#waterRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -4270,10 +4284,17 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="windRes" val="#windRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9</dispel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -4302,10 +4323,17 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="earthRes" val="#earthRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_HOLY,9</dispel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -4334,13 +4362,41 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="fireRes" val="#allRes" />
-				<sub stat="waterRes" val="#allRes" />
-				<sub stat="windRes" val="#allRes" />
-				<sub stat="earthRes" val="#allRes" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-50</value>
+					<value level="3">-100</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

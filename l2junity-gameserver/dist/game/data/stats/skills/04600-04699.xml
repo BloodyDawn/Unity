@@ -506,8 +506,40 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<sub stat="fireRes" val="#fireRes" />
-				<add stat="waterRes" val="#waterRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-25</value>
+					<value level="3">-25</value>
+					<value level="4">-30</value>
+					<value level="5">-30</value>
+					<value level="6">-30</value>
+					<value level="7">-30</value>
+					<value level="8">-30</value>
+					<value level="9">-30</value>
+					<value level="10">-30</value>
+					<value level="11">-30</value>
+					<value level="12">-30</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">25</value>
+					<value level="4">30</value>
+					<value level="5">30</value>
+					<value level="6">30</value>
+					<value level="7">30</value>
+					<value level="8">30</value>
+					<value level="9">30</value>
+					<value level="10">30</value>
+					<value level="11">30</value>
+					<value level="12">30</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>

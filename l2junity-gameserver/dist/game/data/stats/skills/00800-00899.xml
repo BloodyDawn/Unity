@@ -62,8 +62,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="5" />
-				<add stat="holyRes" val="5" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>5</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>5</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

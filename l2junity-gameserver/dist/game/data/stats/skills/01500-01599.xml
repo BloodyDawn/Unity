@@ -1488,8 +1488,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="holyRes" val="25" />
-				<add stat="darkRes" val="12" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-25</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>12</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -3069,7 +3075,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthRes" val="#earthRes" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+				</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -3094,10 +3107,22 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="20" />
-				<add stat="waterRes" val="20" />
-				<add stat="windRes" val="20" />
-				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

@@ -1945,10 +1945,22 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="30" />
-				<add stat="waterRes" val="30" />
-				<add stat="earthRes" val="30" />
-				<add stat="windRes" val="30" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1974,8 +1986,14 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="30" />
-				<add stat="holyRes" val="30" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

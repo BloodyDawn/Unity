@@ -625,7 +625,10 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="30" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>30</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -888,8 +891,11 @@
 		<trait>BLEED</trait>
 		<effects>
 			<effect name="DamOverTime" ticks="1">
-				<sub stat="darkRes" val="60" />
 				<power>200</power>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-60</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

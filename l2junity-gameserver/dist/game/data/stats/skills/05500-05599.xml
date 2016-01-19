@@ -252,7 +252,10 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="fireRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -278,7 +281,10 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="waterRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -304,7 +310,10 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="windRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -330,7 +339,10 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="earthRes" val="50" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -556,12 +568,15 @@
 		<effects>
 			<effect name="Debuff">
 				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
-				<sub stat="darkRes" val="50" />
 			</effect>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>100</rate>
 				<max>3</max>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>-50</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -652,7 +667,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkRes" val="50" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>1000</amount>
@@ -661,6 +675,10 @@
 			<effect name="ShieldDefenceRate">
 				<amount>90</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>50</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -775,7 +793,23 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<sub stat="darkRes" val="#vuln" />
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-15</value>
+					<value level="3">-15</value>
+					<value level="4">-25</value>
+					<value level="5">-25</value>
+					<value level="6">-25</value>
+					<value level="7">-30</value>
+					<value level="8">-30</value>
+					<value level="9">-30</value>
+					<value level="10">-50</value>
+					<value level="11">-50</value>
+					<value level="12">-50</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1435,16 +1469,34 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="fireRes" val="20" />
-				<add stat="waterRes" val="20" />
-				<add stat="windRes" val="20" />
-				<add stat="earthRes" val="20" />
-				<add stat="holyRes" val="20" />
-				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>1000</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1627,8 +1679,6 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Spirit of Phoenix -->
-				<add stat="fireRes" val="#elementRes" />
-				<add stat="darkRes" val="#elementRes" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -1657,6 +1707,22 @@
 					<value level="3">30</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">30</value>
+					<value level="3">30</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">30</value>
+					<value level="3">30</value>
+				</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
