@@ -2437,7 +2437,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="vengeancePdam" val="20" />
+			</effect>
+			<effect name="CounterPhysicalSkill">
+				<amount>20</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -2636,7 +2638,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="vengeancePdam" val="90" />
+			</effect>
+			<effect name="CounterPhysicalSkill">
+				<amount>90</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -4272,8 +4276,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<add stat="vengeancePdam" val="3" />
 				<power>0.2</power>
+			</effect>
+			<effect name="CounterPhysicalSkill">
+				<amount>3</amount>
 			</effect>
 		</effects>
 	</skill>

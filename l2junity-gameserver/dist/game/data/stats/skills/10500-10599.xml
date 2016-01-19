@@ -1446,11 +1446,17 @@
 		<reuseDelay>150000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="vengeancePdam" val="#vengeancePdam" />
 			</effect>
 			<!-- TODO : replace me with p_avoid_counter_skill -->
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
+				<amount>
+					<value level="1">70</value>
+					<value level="2">75</value>
+					<value level="3">80</value>
+				</amount>
+			</effect>
+			<effect name="CounterPhysicalSkill">
 				<amount>
 					<value level="1">70</value>
 					<value level="2">75</value>
