@@ -1182,7 +1182,7 @@ public final class Formulas
 		final double elementMod = calcAttributeBonus(attacker, target, skill);
 		final double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
-		final double buffDebuffMod = skill.isDebuff() ? 1 + (target.getStat().getValue(Stats.DEBUFF_VULN, 1) / 100) : 0;
+		final double buffDebuffMod = skill.isDebuff() ? target.getStat().getValue(Stats.RESIST_ABNORMAL_DEBUFF, 1) : 0;
 		final double rate = baseMod * elementMod * traitMod * buffDebuffMod;
 		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist : 0;
 		
@@ -1731,16 +1731,14 @@ public final class Formulas
 			{
 				// Resist Modifier.
 				int cancelMagicLvl = skill.getMagicLevel();
-				final double vuln = target.getStat().getValue(Stats.CANCEL_VULN, 0);
-				double resMod = 1 + (-vuln / 100);
-				double finalRate = rate / resMod;
+				double finalRate = rate * target.getStat().getValue(Stats.RESIST_DISPEL_BUFF, 1);
 				
 				if (activeChar.isDebug())
 				{
 					final StatsSet set = new StatsSet();
 					set.set("baseMod", rate);
 					set.set("magicLevel", cancelMagicLvl);
-					set.set("resMod", resMod);
+					set.set("resMod", target.getStat().getValue(Stats.RESIST_DISPEL_BUFF, 1));
 					set.set("rate", finalRate);
 					Debug.sendSkillDebug(activeChar, target, skill, set);
 				}

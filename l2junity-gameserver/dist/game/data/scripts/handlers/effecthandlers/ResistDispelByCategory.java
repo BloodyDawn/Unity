@@ -49,7 +49,7 @@ public class ResistDispelByCategory extends AbstractEffect
 			// Only this one is in use it seems
 			case BUFF:
 			{
-				effected.getStat().mergeAdd(Stats.CANCEL_VULN, _amount);
+				effected.getStat().mergeMul(Stats.RESIST_DISPEL_BUFF, 1 + (_amount / 100));
 				break;
 			}
 		}

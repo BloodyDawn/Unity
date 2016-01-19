@@ -159,8 +159,8 @@ public enum Stats
 	
 	// VULNERABILITIES
 	DAMAGE_ZONE_VULN("damageZoneVuln"),
-	CANCEL_VULN("cancelVuln"), // Resistance for cancel type skills
-	DEBUFF_VULN("debuffVuln"),
+	RESIST_DISPEL_BUFF("cancelVuln"), // Resistance for cancel type skills
+	RESIST_ABNORMAL_DEBUFF("debuffVuln"),
 	
 	// RESISTANCES
 	FIRE_RES("fireRes", new AttributeFinalizer(AttributeType.FIRE, false)),

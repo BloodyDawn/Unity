@@ -38,7 +38,7 @@ public class ResistAbnormalByCategory extends AbstractEffect
 		super(params);
 		
 		_amount = params.getDouble("amount", 0);
-		_slot = params.getEnum("slot", DispelSlotType.class, DispelSlotType.BUFF);
+		_slot = params.getEnum("slot", DispelSlotType.class, DispelSlotType.DEBUFF);
 	}
 	
 	@Override
@@ -49,7 +49,7 @@ public class ResistAbnormalByCategory extends AbstractEffect
 			// Only this one is in use it seems
 			case DEBUFF:
 			{
-				effected.getStat().mergeAdd(Stats.DEBUFF_VULN, _amount);
+				effected.getStat().mergeMul(Stats.RESIST_ABNORMAL_DEBUFF, 1 + (_amount / 100));
 				break;
 			}
 		}
