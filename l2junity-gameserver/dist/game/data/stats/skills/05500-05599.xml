@@ -112,7 +112,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockMove">
-				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>1350</amount>
@@ -125,6 +124,10 @@
 			<effect name="HpRegen">
 				<amount>80</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -577,7 +580,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="100" />
 				<!-- TODO: Missing support to resist category "multi_buff". -->
 			</effect>
 			<effect name="DefenceTrait">
@@ -586,6 +588,10 @@
 			<effect name="MagicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

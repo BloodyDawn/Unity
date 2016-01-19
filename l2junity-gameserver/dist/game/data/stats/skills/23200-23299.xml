@@ -1240,7 +1240,6 @@
 				<add stat="windRes" val="10" />
 				<add stat="earthRes" val="10" />
 				<sub stat="debuffVuln" val="25" />
-				<sub stat="cancelVuln" val="40" />
 			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -1265,6 +1264,10 @@
 					<item>HEAVY</item>
 					<item>LIGHT</item>
 				</armorType>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-40</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1536,8 +1539,11 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-30</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -2790,7 +2796,6 @@
 				<add stat="windRes" val="10" />
 				<add stat="earthRes" val="10" />
 				<sub stat="debuffVuln" val="25" />
-				<sub stat="cancelVuln" val="40" />
 			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -2815,6 +2820,10 @@
 					<item>HEAVY</item>
 					<item>LIGHT</item>
 				</armorType>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-40</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -3078,8 +3087,11 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-30</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

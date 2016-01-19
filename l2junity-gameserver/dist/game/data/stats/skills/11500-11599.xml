@@ -3328,7 +3328,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
 			<effect name="Buff">
-				<add stat="cancelVuln" val="30" />
 				<add stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -3342,6 +3341,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL</slot>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>30</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

@@ -992,7 +992,6 @@
 				<SLEEP>50</SLEEP>
 			</effect>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1000,6 +999,10 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL</slot>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-30</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

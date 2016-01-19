@@ -256,7 +256,6 @@
 		<effects>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
-				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -264,6 +263,10 @@
 				<max>10</max>
 			</effect>
 			<effect name="Untargetable" />
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="1913" levels="1" name="Life Siphon">
@@ -420,7 +423,10 @@
 				<max>10</max>
 			</effect>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="100" />
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

@@ -46,7 +46,10 @@
 		<effects>
 			<effect name="Invincible" />
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="100" />
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

@@ -756,7 +756,6 @@
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD" />
 				</add>
-				<sub stat="cancelVuln" val="40" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -808,6 +807,10 @@
 			<effect name="HealEffect">
 				<amount>-80</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-40</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
@@ -1812,7 +1815,6 @@
 		<effects>
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="80" />
-				<sub stat="cancelVuln" val="40" />
 				<add stat="rCrit" val="#rCrit">
 					<using kind="SWORD,POLE" />
 				</add>
@@ -1865,6 +1867,10 @@
 			<effect name="HealEffect">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-40</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

@@ -699,7 +699,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="cancelVuln" val="8.33" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>20</PARALYZE>
@@ -715,6 +714,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>8.33</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>

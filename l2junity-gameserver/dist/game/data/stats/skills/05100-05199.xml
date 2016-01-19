@@ -666,7 +666,6 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancelVuln" val="80" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>800</amount>
@@ -675,6 +674,10 @@
 			<effect name="PhysicalDefence">
 				<amount>1000</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
