@@ -90,6 +90,12 @@ public final class RequestExEnchantSkillSafe implements IClientIncomingPacket
 			return;
 		}
 		
+		if (player.isSellingBuffs())
+		{
+			player.sendMessage("You cannot use the skill enchanting function while you selling buffs.");
+			return;
+		}
+		
 		Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLvl);
 		if (skill == null)
 		{
@@ -119,7 +125,7 @@ public final class RequestExEnchantSkillSafe implements IClientIncomingPacket
 		{
 			// No config option for safe enchant book consume
 			ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
-			if (spb == null)// Haven't spellbook
+			if (spb == null) // Haven't spellbook
 			{
 				client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 				return;

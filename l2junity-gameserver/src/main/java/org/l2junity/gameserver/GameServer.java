@@ -120,6 +120,7 @@ import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.SellBuffsManager;
 import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
@@ -288,6 +289,10 @@ public class GameServer
 		CursedWeaponsManager.getInstance();
 		TransformData.getInstance();
 		BotReportTable.getInstance();
+		if (Config.SELLBUFF_ENABLED)
+		{
+			SellBuffsManager.getInstance();
+		}
 		
 		printSection("Scripts");
 		QuestManager.getInstance();

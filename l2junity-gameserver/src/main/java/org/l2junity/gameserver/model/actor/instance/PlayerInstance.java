@@ -214,6 +214,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransf
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
+import org.l2junity.gameserver.model.holders.SellBuffHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -846,6 +847,29 @@ public final class PlayerInstance extends Playable
 	private boolean _hasCharmOfCourage = false;
 	
 	private final Set<Integer> _whisperers = ConcurrentHashMap.newKeySet();
+	
+	// Selling buffs system
+	private boolean _isSellingBuffs = false;
+	private List<SellBuffHolder> _sellingBuffs = null;
+	
+	public boolean isSellingBuffs()
+	{
+		return _isSellingBuffs;
+	}
+	
+	public void setIsSellingBuffs(boolean val)
+	{
+		_isSellingBuffs = val;
+	}
+	
+	public List<SellBuffHolder> getSellingBuffs()
+	{
+		if (_sellingBuffs == null)
+		{
+			_sellingBuffs = new ArrayList<>();
+		}
+		return _sellingBuffs;
+	}
 	
 	/**
 	 * Create a new L2PcInstance and add it in the characters table of the database.<br>
@@ -4624,7 +4648,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean canOpenPrivateStore()
 	{
-		return !isAlikeDead() && !isInOlympiadMode() && !isMounted() && !isInsideZone(ZoneId.NO_STORE) && !isCastingNow();
+		return !isSellingBuffs() && !isAlikeDead() && !isInOlympiadMode() && !isMounted() && !isInsideZone(ZoneId.NO_STORE) && !isCastingNow();
 	}
 	
 	public void tryOpenPrivateBuyStore()
@@ -10039,6 +10063,11 @@ public final class PlayerInstance extends Playable
 			// 1. Call store() before modifying _classIndex to avoid skill effects rollover.
 			// 2. Register the correct _classId against applied 'classIndex'.
 			store(Config.SUBCLASS_STORE_SKILL_COOLTIME);
+			
+			if (_sellingBuffs != null)
+			{
+				_sellingBuffs.clear();
+			}
 			
 			resetTimeStamps();
 			

@@ -105,6 +105,7 @@ public final class Config
 	public static final String EMAIL_CONFIG_FILE = "./config/Email.properties";
 	public static final String CH_SIEGE_FILE = "./config/ConquerableHallSiege.properties";
 	public static final String GEODATA_FILE = "./config/GeoData.properties";
+	public static final String SELLBUFF_FILE = "./config/SellBuff.properties";
 	// --------------------------------------------------
 	// L2J Variable Definitions
 	// --------------------------------------------------
@@ -712,6 +713,16 @@ public final class Config
 	public static String KARMA_NONDROPPABLE_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_PET_ITEMS;
 	public static int[] KARMA_LIST_NONDROPPABLE_ITEMS;
+	
+	// --------------------------------------------------
+	// Sell Buff Settings
+	// --------------------------------------------------
+	public static boolean SELLBUFF_ENABLED;
+	public static int SELLBUFF_MP_MULTIPLER;
+	public static int SELLBUFF_PAYMENT_ID;
+	public static long SELLBUFF_MIN_PRICE;
+	public static long SELLBUFF_MAX_PRICE;
+	public static int SELLBUFF_MAX_BUFFS;
 	
 	// --------------------------------------------------
 	// Rate Settings
@@ -2066,6 +2077,15 @@ public final class Config
 			PVP_PVP_TIME = PVPSettings.getInt("PvPVsPvPTime", 60000);
 			MAX_REPUTATION = PVPSettings.getInt("MaxReputation", 500);
 			REPUTATION_INCREASE = PVPSettings.getInt("ReputationIncrease", 100);
+			
+			// Load Sell Buff L2Properties file (if exists)
+			final PropertiesParser SellBuff = new PropertiesParser(SELLBUFF_FILE);
+			SELLBUFF_ENABLED = SellBuff.getBoolean("SellBuffEnable", false);
+			SELLBUFF_MP_MULTIPLER = SellBuff.getInt("MpCostMultipler", 1);
+			SELLBUFF_PAYMENT_ID = SellBuff.getInt("PaymentID", 57);
+			SELLBUFF_MIN_PRICE = SellBuff.getLong("MinimalPrice", 100000);
+			SELLBUFF_MAX_PRICE = SellBuff.getLong("MaximalPrice", 100000000);
+			SELLBUFF_MAX_BUFFS = SellBuff.getInt("MaxBuffs", 15);
 			
 			// Load Olympiad L2Properties file (if exists)
 			final PropertiesParser Olympiad = new PropertiesParser(OLYMPIAD_CONFIG_FILE);
