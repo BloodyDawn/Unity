@@ -1515,7 +1515,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="reflectSkillMagic" val="50" />
-				<add stat="vengeanceMdam" val="50" />
 			</effect>
 			<effect name="DamageShield">
 				<amount>
@@ -1528,6 +1527,9 @@
 					<value level="7">32</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectMagic">
+				<amount>50</amount>
 			</effect>
 		</effects>
 	</skill>
