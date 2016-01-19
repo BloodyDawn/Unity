@@ -43,12 +43,6 @@ public class FlyMove extends AbstractEffect
 	private final int _delay;
 	private final int _animationSpeed;
 	
-	/**
-	 * @param attachCond
-	 * @param applyCond
-	 * @param set
-	 * @param params
-	 */
 	public FlyMove(StatsSet params)
 	{
 		super(params);

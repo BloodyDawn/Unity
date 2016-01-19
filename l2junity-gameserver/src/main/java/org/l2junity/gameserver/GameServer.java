@@ -104,6 +104,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.instancemanager.ClanHallAuctionManager;
+import org.l2junity.gameserver.instancemanager.CommissionManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
@@ -274,6 +275,7 @@ public class GameServer
 		NpcBufferTable.getInstance();
 		GrandBossManager.getInstance();
 		EventDroplist.getInstance();
+		CommissionManager.getInstance();
 		
 		printSection("Olympiad");
 		Olympiad.getInstance();
