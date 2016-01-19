@@ -2195,7 +2195,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="fall" val="100" />
+			</effect>
+			<effect name="SafeFallHeight">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

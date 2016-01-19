@@ -19,10 +19,13 @@
 		<effects>
 			<effect name="Buff">
 				<!--Increases Speed by 30% -->
-				<mul stat="fall" val="0.7" />
 			</effect>
 			<effect name="Speed">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="SafeFallHeight">
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
