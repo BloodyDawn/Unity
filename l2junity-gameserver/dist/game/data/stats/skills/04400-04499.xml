@@ -1503,7 +1503,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="firePower" val="10" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1513,6 +1512,10 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
 				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
@@ -1527,7 +1530,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="waterPower" val="10" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1537,6 +1539,10 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
+				<attribute>WATER</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
 				<attribute>WATER</attribute>
 			</effect>
 		</effects>
@@ -1551,7 +1557,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windPower" val="10" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1561,6 +1566,10 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
+				<attribute>WIND</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
 				<attribute>WIND</attribute>
 			</effect>
 		</effects>
@@ -1575,7 +1584,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthPower" val="10" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1585,6 +1593,10 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
 				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
@@ -1599,7 +1611,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkPower" val="10" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1609,6 +1620,10 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
+				<attribute>DARK</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
 				<attribute>DARK</attribute>
 			</effect>
 		</effects>
@@ -1623,7 +1638,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyPower" val="10" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1633,6 +1647,10 @@
 					<value level="4">40</value>
 					<value level="5">50</value>
 				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
 				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
@@ -3925,7 +3943,10 @@
 				</power>
 			</effect>
 			<effect name="Buff">
-				<add stat="holyPower" val="20" />
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
 			</effect>
 		</effects>
 	</skill>

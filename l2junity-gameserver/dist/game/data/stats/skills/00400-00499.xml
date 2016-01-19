@@ -2040,13 +2040,20 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="firePower" val="#firePower" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">3</value>
 					<value level="2">5</value>
 					<value level="3">10</value>
+				</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
 				</amount>
 				<attribute>FIRE</attribute>
 			</effect>
@@ -4732,7 +4739,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="darkPower" val="10" />
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

@@ -542,11 +542,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="windPower" val="30" />
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>30</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>

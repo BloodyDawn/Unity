@@ -662,7 +662,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="firePower" val="20" />
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>20</amount>
+				<attribute>FIRE</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -682,7 +685,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="earthPower" val="20" />
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>20</amount>
+				<attribute>EARTH</attribute>
 			</effect>
 		</effects>
 	</skill>

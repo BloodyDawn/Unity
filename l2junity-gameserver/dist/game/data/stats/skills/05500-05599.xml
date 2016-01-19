@@ -1756,7 +1756,6 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Eva's Will -->
-				<add stat="waterPower" val="#waterPower" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -1785,6 +1784,14 @@
 					<value level="3">20</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</amount>
+				<attribute>WATER</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -1818,7 +1825,6 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Pain of Shillien -->
-				<add stat="windPower" val="#windPower" />
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
@@ -1847,6 +1853,14 @@
 			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">20</value>
+					<value level="3">20</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
 		</effects>
 	</skill>

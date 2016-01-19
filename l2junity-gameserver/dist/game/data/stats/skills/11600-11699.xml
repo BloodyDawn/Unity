@@ -750,8 +750,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyPower" val="10" />
-				<add stat="darkPower" val="10" />
 			</effect>
 			<effect name="MpRegen">
 				<amount>10</amount>
@@ -768,6 +766,14 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
@@ -830,8 +836,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<add stat="holyPower" val="10" />
-				<add stat="darkPower" val="10" />
 			</effect>
 			<effect name="MpRegen">
 				<amount>10</amount>
@@ -848,6 +852,14 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>10</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>

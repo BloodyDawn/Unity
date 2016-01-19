@@ -216,11 +216,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="darkPower" val="20" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="AttackAttribute">
+				<amount>-20</amount>
+				<attribute>DARK</attribute>
 			</effect>
 		</effects>
 	</skill>
