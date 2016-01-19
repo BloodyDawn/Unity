@@ -2144,7 +2144,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="1.1" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>87.1</amount>
@@ -2152,6 +2151,10 @@
 				<armorType>
 					<item>HEAVY</item>
 				</armorType>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

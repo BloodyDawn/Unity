@@ -146,7 +146,14 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="#sDef" />
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

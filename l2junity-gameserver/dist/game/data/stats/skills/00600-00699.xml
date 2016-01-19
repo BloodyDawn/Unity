@@ -51,7 +51,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="sDef" val="225" />
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>225</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -190,7 +193,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="#sDef" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -203,6 +205,14 @@
 			<effect name="PhysicalDefence">
 				<amount>27.3</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">6</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

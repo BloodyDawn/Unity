@@ -208,7 +208,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="sDef" val="0.5" />
 				<add stat="accCombat" val="1">
 					<and>
 						<using kind="SWORD" />
@@ -216,6 +215,10 @@
 					</and>
 				</add>
 				<transformationId>312</transformationId>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -244,7 +247,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="sDef" val="0.5" />
 				<mul stat="pAtkSpd" val="1.08">
 					<and>
 						<using kind="SWORD" />
@@ -252,6 +254,10 @@
 					</and>
 				</mul>
 				<transformationId>313</transformationId>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -280,7 +286,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="sDef" val="0.5" />
 				<add stat="accCombat" val="1">
 					<and>
 						<using kind="SWORD" />
@@ -288,6 +293,10 @@
 					</and>
 				</add>
 				<transformationId>314</transformationId>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -316,7 +325,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="sDef" val="0.5" />
 				<transformationId>315</transformationId>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
@@ -325,6 +333,10 @@
 				<weaponType>
 					<item>DUAL</item>
 				</weaponType>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

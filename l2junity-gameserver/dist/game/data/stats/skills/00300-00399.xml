@@ -819,8 +819,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="0.7" />
 				<set stat="shieldDefAngle" val="360" />
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1072,8 +1075,18 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<add stat="sDef" val="#sDef" />
 				<power>0.8</power>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">446</value>
+					<value level="2">469</value>
+					<value level="3">491</value>
+					<value level="4">514</value>
+					<value level="5">537</value>
+					<value level="6">560</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2871,7 +2884,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="#sDef" />
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">24</value>
+					<value level="2">32</value>
+					<value level="3">40</value>
+					<value level="4">48</value>
+					<value level="5">56</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

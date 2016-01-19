@@ -1383,7 +1383,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="sDef" val="0.5" />
 			</effect>
 			<effect name="Mute" />
 			<effect name="PAtk">
@@ -1400,6 +1399,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

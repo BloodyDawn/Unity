@@ -2005,7 +2005,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="1.5" />
 				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -2029,6 +2028,10 @@
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

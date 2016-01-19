@@ -132,7 +132,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="1.5" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9</dispel>
@@ -142,6 +141,10 @@
 			</effect>
 			<effect name="ShieldDefenceRate">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

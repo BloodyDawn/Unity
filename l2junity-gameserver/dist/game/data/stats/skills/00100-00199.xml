@@ -2504,7 +2504,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="sDef" val="#sDef" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2524,6 +2523,15 @@
 					<value level="2">70</value>
 					<value level="3">85</value>
 					<value level="4">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">60</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
