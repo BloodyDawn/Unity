@@ -1325,8 +1325,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>60000</reuseDelay>
 		<effects>
-			<effect name="TransferDamage">
-				<add stat="transDamToPlayer" val="#transDamToPlayer" />
+			<effect name="TransferDamageToPlayer">
+				<amount>
+					<value level="1">60</value>
+					<value level="2">90</value>
+				</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -1375,8 +1378,8 @@
 		<effects>
 			<effect name="Buff">
 			</effect>
-			<effect name="TransferDamage">
-				<add stat="transDamToPlayer" val="90" />
+			<effect name="TransferDamageToPlayer">
+				<amount>90</amount>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1637,8 +1640,8 @@
 				<speed>600</speed>
 				<delay>600</delay>
 			</effect>
-			<effect name="TransferDamage">
-				<add stat="transDamToPlayer" val="90" />
+			<effect name="TransferDamageToPlayer">
+				<amount>90</amount>
 			</effect>
 			<effect name="Buff">
 				<set stat="damageCap" val="10" />
