@@ -240,6 +240,7 @@ public final class IstinaCavern extends AbstractInstance
 				case "ERUPTION_TIMER":
 				{
 					addSkillCastDesire(npc, npc, ISTINA_ERUPTION_SKILL, 23);
+					showOnScreenMsg(instance, NpcStringId.POWERFUL_ACIDIC_ENERGY_IS_ERUPTING_FROM_ISTINA_S_BODY, ExShowScreenMessage.TOP_CENTER, 6000);
 					getTimers().addTimer("ERUPTION_TIMER", 50000 + getRandom(15000), npc, null);
 					break;
 				}
@@ -326,10 +327,25 @@ public final class IstinaCavern extends AbstractInstance
 				}
 				case "AUTHORITY_TIMER":
 				{
-					final SkillHolder authoritySkill = npcParams.getSkillHolder("Istina_Authority_Skill0" + getRandom(1, 3));
+					final int random = getRandom(1, 3);
+					final SkillHolder authoritySkill = npcParams.getSkillHolder("Istina_Authority_Skill0" + random);
 					if (authoritySkill != null)
 					{
 						addSkillCastDesire(npc, npc, authoritySkill, 23);
+						instance.broadcastPacket(new PlaySound(1, "Npcdialog1.istina_voice_01", 0, 0, 0, 0, 0));
+						
+						switch (random)
+						{
+							case 1:
+								showOnScreenMsg(instance, NpcStringId.ISTINA_S_SOUL_STONE_STARTS_POWERFULLY_ILLUMINATING_IN_RED, ExShowScreenMessage.TOP_CENTER, 6000);
+								break;
+							case 2:
+								showOnScreenMsg(instance, NpcStringId.ISTINA_S_SOUL_STONE_STARTS_POWERFULLY_ILLUMINATING_IN_BLUE, ExShowScreenMessage.TOP_CENTER, 6000);
+								break;
+							case 3:
+								showOnScreenMsg(instance, NpcStringId.ISTINA_S_SOUL_STONE_STARTS_POWERFULLY_ILLUMINATING_IN_GREEN, ExShowScreenMessage.TOP_CENTER, 6000);
+								break;
+						}
 					}
 					getTimers().addTimer("AUTHORITY_TIMER", 70000 + getRandom(25000), npc, null);
 					break;
