@@ -532,6 +532,7 @@ public class SkillCaster implements Runnable
 		}
 		catch (Exception e)
 		{
+			stopCasting(false, skill, target, item);
 			_log.warn("Error while casting skill: " + skill + " caster: " + _caster + " target: " + target, e);
 		}
 	}

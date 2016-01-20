@@ -280,7 +280,7 @@ public final class Skill implements IIdentifiable
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
 		_targetType = set.getEnum("targetType", TargetType.class, TargetType.NONE);
-		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.NONE);
+		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.SINGLE);
 		_affectObject = set.getEnum("affectObject", AffectObject.class, AffectObject.ALL);
 		_affectRange = set.getInt("affectRange", 0);
 		
@@ -1144,7 +1144,7 @@ public final class Skill implements IIdentifiable
 		{
 			return null;
 		}
-		
+		activeChar.sendMessage("" + getAffectScope());
 		final IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
 		if (handler != null)
 		{

@@ -96,7 +96,7 @@ public class DeadPartyPledge implements IAffectScopeHandler
 			{
 				if (filter.test(c))
 				{
-					action.accept(playable);
+					action.accept(c);
 				}
 			});
 		}

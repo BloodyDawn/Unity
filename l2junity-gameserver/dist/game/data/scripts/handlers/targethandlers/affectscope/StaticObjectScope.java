@@ -84,7 +84,7 @@ public class StaticObjectScope implements IAffectScopeHandler
 		{
 			if (filter.test(c))
 			{
-				action.accept(target);
+				action.accept(c);
 			}
 		});
 	}

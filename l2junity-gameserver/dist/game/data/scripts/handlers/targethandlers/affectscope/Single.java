@@ -60,6 +60,6 @@ public class Single implements IAffectScopeHandler
 	@Override
 	public Enum<AffectScope> getAffectScopeType()
 	{
-		return AffectScope.RANGE;
+		return AffectScope.SINGLE;
 	}
 }

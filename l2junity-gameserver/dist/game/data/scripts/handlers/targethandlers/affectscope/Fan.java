@@ -43,12 +43,13 @@ public class Fan implements IAffectScopeHandler
 	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		final double headingAngle = Util.convertHeadingToDegree(activeChar.getHeading());
 		final int fanStartAngle = skill.getFanRange()[1];
 		final int fanRadius = skill.getFanRange()[2];
 		final int fanAngle = skill.getFanRange()[3];
-		final int fanHalfAngle = fanAngle / 2; // Half left and half right.
+		final double fanHalfAngle = fanAngle / 2; // Half left and half right.
 		final int affectLimit = skill.getAffectLimit();
-		
+		activeChar.sendMessage("fanStartAngle: " + fanStartAngle + " fanRadius: " + fanRadius + " fanAngle: " + fanAngle + " limit: " + affectLimit);
 		// Target checks.
 		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->
@@ -61,7 +62,7 @@ public class Fan implements IAffectScopeHandler
 			{
 				return false;
 			}
-			if (Math.abs(Util.calculateAngleFrom(c, activeChar) - (activeChar.getHeading() + fanStartAngle)) > fanHalfAngle)
+			if (Math.abs(Util.calculateAngleFrom(activeChar, c) - (headingAngle + fanStartAngle)) > fanHalfAngle)
 			{
 				return false;
 			}
@@ -89,7 +90,7 @@ public class Fan implements IAffectScopeHandler
 		{
 			if (filter.test(c))
 			{
-				action.accept(target);
+				action.accept(c);
 			}
 		});
 	}

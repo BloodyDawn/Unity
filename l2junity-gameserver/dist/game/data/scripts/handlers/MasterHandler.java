@@ -27,6 +27,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ActionHandler;
 import org.l2junity.gameserver.handler.ActionShiftHandler;
 import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.AffectObjectHandler;
+import org.l2junity.gameserver.handler.AffectScopeHandler;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.ChatHandler;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
@@ -298,6 +300,8 @@ public class MasterHandler
 		UserCommandHandler.getInstance(),
 		VoicedCommandHandler.getInstance(),
 		TargetHandler.getInstance(),
+		AffectObjectHandler.getInstance(),
+		AffectScopeHandler.getInstance(),
 	};
 	
 	private static final Class<?>[][] HANDLERS =
@@ -544,6 +548,8 @@ public class MasterHandler
 			Summon.class,
 			Target.class,
 			WyvernTarget.class,
+		},
+		{
 			// Affect Objects
 			All.class,
 			Clan.class,
@@ -556,6 +562,8 @@ public class MasterHandler
 			ObjectDeadNpcBody.class,
 			UndeadRealEnemy.class,
 			WyvernObject.class,
+		},
+		{
 			// Affect Scopes
 			BalakasScope.class,
 			DeadParty.class,
@@ -576,7 +584,7 @@ public class MasterHandler
 			SquarePB.class,
 			StaticObjectScope.class,
 			SummonExceptMaster.class,
-		},
+		}
 	};
 	
 	public static void main(String[] args)

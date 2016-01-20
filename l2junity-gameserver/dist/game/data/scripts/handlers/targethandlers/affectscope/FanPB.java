@@ -43,10 +43,11 @@ public class FanPB implements IAffectScopeHandler
 	public void forEachAffected(Creature activeChar, WorldObject target, Skill skill, Consumer<? super WorldObject> action)
 	{
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		final double headingAngle = Util.convertHeadingToDegree(activeChar.getHeading());
 		final int fanStartAngle = skill.getFanRange()[1];
 		final int fanRadius = skill.getFanRange()[2];
 		final int fanAngle = skill.getFanRange()[3];
-		final int fanHalfAngle = fanAngle / 2; // Half left and half right.
+		final double fanHalfAngle = fanAngle / 2; // Half left and half right.
 		final int affectLimit = skill.getAffectLimit();
 		
 		// Target checks.
@@ -61,7 +62,7 @@ public class FanPB implements IAffectScopeHandler
 			{
 				return false;
 			}
-			if (Math.abs(Util.calculateAngleFrom(c, activeChar) - (activeChar.getHeading() + fanStartAngle)) > fanHalfAngle)
+			if (Math.abs(Util.calculateAngleFrom(activeChar, c) - (headingAngle + fanStartAngle)) > fanHalfAngle)
 			{
 				return false;
 			}
@@ -83,7 +84,7 @@ public class FanPB implements IAffectScopeHandler
 		{
 			if (filter.test(c))
 			{
-				action.accept(target);
+				action.accept(c);
 			}
 		});
 	}

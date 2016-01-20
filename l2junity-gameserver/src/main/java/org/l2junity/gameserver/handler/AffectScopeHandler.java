@@ -48,9 +48,9 @@ public class AffectScopeHandler implements IHandler<IAffectScopeHandler, Enum<Af
 	}
 	
 	@Override
-	public IAffectScopeHandler getHandler(Enum<AffectScope> targetType)
+	public IAffectScopeHandler getHandler(Enum<AffectScope> affectScope)
 	{
-		return _datatable.get(targetType);
+		return _datatable.get(affectScope);
 	}
 	
 	@Override
