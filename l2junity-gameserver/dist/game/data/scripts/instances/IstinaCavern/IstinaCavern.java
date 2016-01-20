@@ -18,6 +18,7 @@
  */
 package instances.IstinaCavern;
 
+import java.util.Comparator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -64,6 +65,7 @@ public final class IstinaCavern extends AbstractInstance
 	// Skills
 	private static final SkillHolder ERUPTION_1 = new SkillHolder(14222, 1);
 	private static final SkillHolder ERUPTION_2 = new SkillHolder(14223, 1);
+	private static final SkillHolder ISTINA_ERUPTION_SKILL = new SkillHolder(14221, 1);
 	// Items
 	private static final int CONTROL_DEVICE = 17608; // Energy Control Device
 	private static final int REWARD_BOX_COMMON = 30371; // Box Containing Magic Power
@@ -228,11 +230,17 @@ public final class IstinaCavern extends AbstractInstance
 						final Creature target = istina.getHateList().stream().sorted((o1, o2) -> (int) o1.calculateDistance(o2, true, false)).findFirst().orElse(null);
 						if (target != null)
 						{
-							addSpawn(INVISIBLE_NPC, new Location(target.getX() + getRandom(-50, 50), target.getY() + getRandom(-50, 50), target.getZ() + 10), false, 0, false, instance.getId());
-							instance.setParameter("ERUPTION_TARGET", target);
+							final Npc eruption = addSpawn(INVISIBLE_NPC, Util.getRandomPosition(target, 50, 50), false, 0, false, instance.getId());
+							eruption.getVariables().set("ERUPTION_TARGET", target);
 						}
 					}
 					getTimers().addTimer("LOW_ERUPTION_TIMER", 15000, npc, null);
+					break;
+				}
+				case "ERUPTION_TIMER":
+				{
+					addSkillCastDesire(npc, npc, ISTINA_ERUPTION_SKILL, 23);
+					getTimers().addTimer("ERUPTION_TIMER", 50000 + getRandom(15000), npc, null);
 					break;
 				}
 				case "BALLISTA_START_TIMER":
@@ -321,7 +329,7 @@ public final class IstinaCavern extends AbstractInstance
 					final SkillHolder authoritySkill = npcParams.getSkillHolder("Istina_Authority_Skill0" + getRandom(1, 3));
 					if (authoritySkill != null)
 					{
-						addSkillCastDesire(npc, npc.getAI().getAttackTarget(), authoritySkill, 23);
+						addSkillCastDesire(npc, npc, authoritySkill, 23);
 					}
 					getTimers().addTimer("AUTHORITY_TIMER", 70000 + getRandom(25000), npc, null);
 					break;
@@ -358,7 +366,7 @@ public final class IstinaCavern extends AbstractInstance
 					
 					if (isExtremeMode(instance) && (getRandom(100) < 30))
 					{
-						addAttackPlayerDesire(addSpawn(EXTREME_MINION, npc, false, 0, false, instance.getId()), instance.getParameters().getObject("ERUPTION_TARGET", PlayerInstance.class), 23);
+						addAttackPlayerDesire(addSpawn(EXTREME_MINION, npc, false, 0, false, instance.getId()), npc.getVariables().getObject("ERUPTION_TARGET", PlayerInstance.class), 23);
 					}
 				}
 			}
@@ -375,6 +383,14 @@ public final class IstinaCavern extends AbstractInstance
 				{
 					npc.setState(1);
 					getTimers().addTimer("REFLECT_CHECK_TIMER", 1000, npc, null);
+				}
+				else if (skillId == ISTINA_ERUPTION_SKILL.getSkillId())
+				{
+					((Attackable) npc).getAggroList().values().stream().sorted(Comparator.comparingInt(AggroInfo::getHate)).map(AggroInfo::getAttacker).limit(5).forEach(character ->
+					{
+						final Npc eruption = addSpawn(INVISIBLE_NPC, Util.getRandomPosition(character, 150, 150), false, 0, false, instance.getId());
+						eruption.getVariables().set("ERUPTION_TARGET", character);
+					});
 				}
 				else if (skillId == npcParams.getSkillHolder("Istina_Authority_Skill01").getSkillId())
 				{
@@ -474,6 +490,7 @@ public final class IstinaCavern extends AbstractInstance
 						if (npc.getCurrentHpPercent() < 55)
 						{
 							npcVars.set("ISTINA_STAGE", 4);
+							getTimers().addTimer("ERUPTION_TIMER", 50000, npc, null);
 							// myself->AddTimerEx(Creation_Timer, (Creation_Timer_Interval * 1000));
 						}
 						break;
@@ -500,10 +517,10 @@ public final class IstinaCavern extends AbstractInstance
 							getTimers().cancelTimer("DEATH_CHECK_TIMER", npc, null);
 							getTimers().cancelTimer("REFLECT_TIMER", npc, null);
 							getTimers().cancelTimer("REFLECT_CHECK_TIMER", npc, null);
-							getTimers().cancelTimer("LOW_ERUPTION_TIMER", npc, null);
 							getTimers().cancelTimer("AUTHORITY_TIMER", npc, null);
+							getTimers().cancelTimer("ERUPTION_TIMER", npc, null);
+							getTimers().cancelTimer("LOW_ERUPTION_TIMER", npc, null);
 							// myself->BlockTimer(Overcrowding_Timer);
-							// myself->BlockTimer(Sub_Creation_TImer);
 							if (isExtremeMode(instance))
 							{
 								// myself->BlockTimer(Seal_Timer);
