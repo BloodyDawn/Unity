@@ -18,11 +18,9 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.awt.Color;
 import java.util.Arrays;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.AdminTeleportType;
 import org.l2junity.gameserver.enums.SayuneType;
@@ -34,7 +32,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRe
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
-import org.l2junity.gameserver.network.client.send.ExServerPrimitive;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
@@ -44,7 +41,6 @@ import org.l2junity.gameserver.network.client.send.sayune.ExFlyMove;
 import org.l2junity.gameserver.network.client.send.sayune.ExFlyMoveBroadcast;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -89,66 +85,6 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 		{
 			return;
 		}
-		
-		ThreadPoolManager.getInstance().scheduleEvent(() ->
-		{
-			if ((activeChar.getTarget() != null) && (activeChar.getTarget() == activeChar))
-			{
-				ExServerPrimitive packet = new ExServerPrimitive("-60,60", activeChar);
-				double worldAngle = 180 + Util.convertHeadingToDegree(activeChar.getHeading());
-				double worldAngleRad = Math.toRadians(worldAngle);
-				double rightAngle = Math.toRadians((-90 + worldAngle));
-				int z = activeChar.getZ() + 10;
-				int width = 80;
-				int length = 250;
-				int radius = (int) Math.sqrt((width * width) + (length * length)) / 2;
-				
-				// int centerX = (int) ((activeChar.getX() + (width * Math.cos(worldAngleRad))) - (length * Math.sin(worldAngleRad)));
-				// int centerY = (int) (activeChar.getY() + (width * Math.sin(worldAngleRad)) + (length * Math.cos(worldAngleRad)));
-				int centerX = (int) (activeChar.getX() + (Math.cos(worldAngleRad) * radius));
-				int centerY = (int) (activeChar.getY() + (Math.sin(worldAngleRad) * radius));
-				int widthOffsetX = (int) ((width / 2) * Math.cos(rightAngle));
-				int widthOffsetY = (int) ((width / 2) * Math.sin(rightAngle));
-				int lengthOffsetX = (int) (length * Math.cos(worldAngleRad));
-				int lengthOffsetY = (int) (length * Math.sin(worldAngleRad));
-				int x1 = activeChar.getX() - widthOffsetX;
-				int y1 = activeChar.getY() - widthOffsetY;
-				int x2 = activeChar.getX() + widthOffsetX;
-				int y2 = activeChar.getY() + widthOffsetY;
-				int x3 = x2 + lengthOffsetX;
-				int y3 = y2 + lengthOffsetY;
-				int x4 = x1 + lengthOffsetX;
-				int y4 = y1 + lengthOffsetY;
-				
-				packet.addLine(Color.green, activeChar, centerX, centerY, z);
-				packet.addLine(Color.yellow, x1, y1, z, x2, y2, z);
-				packet.addLine(Color.yellow, x2, y2, z, x3, y3, z);
-				packet.addLine(Color.yellow, x3, y3, z, x4, y4, z);
-				packet.addLine(Color.yellow, x4, y4, z, x1, y1, z);
-				
-				int rectangleLength = 250;
-				int rectangleWidth = 80;
-				int rectX = activeChar.getX();
-				int rectY = activeChar.getY() - (rectangleWidth / 2);
-				double cos = Math.cos(-worldAngleRad);
-				double sin = Math.sin(-worldAngleRad);
-				for (int x = activeChar.getX() - 1000; x < (activeChar.getX() + 1000); x += 15)
-				{
-					for (int y = activeChar.getY() - 1000; y < (activeChar.getY() + 1000); y += 15)
-					{
-						int xp = x - activeChar.getX();
-						int yp = y - activeChar.getY();
-						int xr = (int) ((activeChar.getX() + (xp * cos)) - (yp * sin));
-						int yr = (int) (activeChar.getY() + (xp * sin) + (yp * cos));
-						if ((xr > rectX) && (xr < (rectX + rectangleLength)) && (yr > rectY) && (yr < (rectY + rectangleWidth)))
-						{
-							packet.addPoint(Color.green, x, y, z);
-						}
-					}
-				}
-				activeChar.sendPacket(packet);
-			}
-		} , 300);
 		
 		if ((Config.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !activeChar.isGM() && (activeChar.getNotMoveUntil() > System.currentTimeMillis()))
 		{

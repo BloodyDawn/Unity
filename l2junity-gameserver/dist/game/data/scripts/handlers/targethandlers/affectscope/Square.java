@@ -98,7 +98,7 @@ public class Square implements IAffectScopeHandler
 		}
 		
 		// Check and add targets.
-		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, radius, c ->
+		World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, radius, c ->
 		{
 			if (filter.test(c))
 			{

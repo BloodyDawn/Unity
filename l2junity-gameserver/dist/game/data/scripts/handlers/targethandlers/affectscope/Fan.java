@@ -49,7 +49,6 @@ public class Fan implements IAffectScopeHandler
 		final int fanAngle = skill.getFanRange()[3];
 		final double fanHalfAngle = fanAngle / 2; // Half left and half right.
 		final int affectLimit = skill.getAffectLimit();
-		activeChar.sendMessage("fanStartAngle: " + fanStartAngle + " fanRadius: " + fanRadius + " fanAngle: " + fanAngle + " limit: " + affectLimit);
 		// Target checks.
 		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->

@@ -44,7 +44,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.tasks.character.FlyToLocationTask;
 import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -67,6 +66,7 @@ import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExRotation;
+import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.MagicSkillCanceld;
 import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -272,12 +272,6 @@ public class SkillCaster implements Runnable
 			_skill.applyEffectScope(EffectScope.START, new BuffInfo(_caster, _target, _skill, false, _item), true, false);
 		}
 		
-		// Before start AI Cast Broadcast Fly Effect is Need
-		if (_skill.getFlyType() != null)
-		{
-			ThreadPoolManager.getInstance().scheduleEffect(new FlyToLocationTask(_caster, _target, _skill), 50);
-		}
-		
 		// Casting action is starting...
 		_caster.stopEffectsOnAction();
 		
@@ -288,6 +282,12 @@ public class SkillCaster implements Runnable
 			if (_caster.isPlayer())
 			{
 				_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
+			}
+			
+			// Broadcast fly animation if needed. Packet order is after setup gauge.
+			if (_skill.getFlyType() != null)
+			{
+				_caster.broadcastPacket(new FlyToLocation(_caster, _target, _skill.getFlyType()));
 			}
 			
 			// Start channeling if skill is channeling.
@@ -301,6 +301,12 @@ public class SkillCaster implements Runnable
 		}
 		else
 		{
+			// Broadcast fly animation if needed.
+			if (_skill.getFlyType() != null)
+			{
+				_caster.broadcastPacket(new FlyToLocation(_caster, _target, _skill.getFlyType()));
+			}
+			
 			// Casting time is instant, execute now.
 			run();
 		}
@@ -322,6 +328,12 @@ public class SkillCaster implements Runnable
 		try
 		{
 			WorldObject[] targets = skill.getTargetsAffected(_caster, target).toArray(new WorldObject[0]);
+			
+			// Finish flying by setting the target location after picking targets.
+			if (skill.getFlyType() != null)
+			{
+				_caster.setXYZ(_target.getX(), _target.getY(), _target.getZ());
+			}
 			
 			// Broadcast MagicSkillLaunched packet.
 			if (!skill.isToggle())
