@@ -26,7 +26,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.l2junity.Config;
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -387,6 +386,7 @@ public class SkillCaster implements Runnable
 				// Check if the toggle skill effects are already in progress on the L2Character
 				if (skill.isToggle() && _caster.isAffectedBySkill(skill.getId()))
 				{
+					stopCasting(true, skill, target, item);
 					return;
 				}
 				
@@ -399,28 +399,20 @@ public class SkillCaster implements Runnable
 					}
 					
 					final Creature creature = (Creature) obj;
-					// Check raid monster attack and check buffing characters who attack raid monsters.
-					Creature targetsAttackTarget = null;
-					Creature targetsCastTarget = null;
-					if (creature.hasAI())
-					{
-						targetsAttackTarget = creature.getAI().getAttackTarget();
-						targetsCastTarget = creature.getAI().getCastTarget();
-					}
 					
-					if (!Config.RAID_DISABLE_CURSE && ((creature.isRaid() && creature.giveRaidCurse() && (_caster.getLevel() > (creature.getLevel() + 8))) || (!skill.isBad() && (targetsAttackTarget != null) && targetsAttackTarget.isRaid() && targetsAttackTarget.giveRaidCurse() && targetsAttackTarget.getAttackByList().contains(creature) && (_caster.getLevel() > (targetsAttackTarget.getLevel() + 8))) || (!skill.isBad() && (targetsCastTarget != null) && targetsCastTarget.isRaid() && targetsCastTarget.giveRaidCurse() && targetsCastTarget.getAttackByList().contains(creature) && (_caster.getLevel() > (targetsCastTarget.getLevel() + 8)))))
+					// Check raid monster/minion attack and check buffing characters who attack raid monsters. Raid is still affected by skills.
+					if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() && (_caster.getLevel() >= (creature.getLevel() + 9)))
 					{
-						final CommonSkill curse = skill.isMagic() ? CommonSkill.RAID_CURSE : CommonSkill.RAID_CURSE2;
-						Skill curseSkill = curse.getSkill();
-						if (curseSkill != null)
+						if (skill.isBad() || ((creature.getTarget() == _caster) && ((Attackable) creature).getAggroList().containsKey(_caster)))
 						{
-							curseSkill.applyEffects(creature, _caster);
+							// Skills such as Summon Battle Scar too can trigger magic silence.
+							final CommonSkill curse = skill.isBad() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
+							Skill curseSkill = curse.getSkill();
+							if (curseSkill != null)
+							{
+								curseSkill.applyEffects(creature, _caster);
+							}
 						}
-						else
-						{
-							_log.warn("Skill ID " + curse.getId() + " level " + curse.getLevel() + " is missing in DP!");
-						}
-						return;
 					}
 					
 					// Static skills not trigger any chance skills
@@ -457,72 +449,40 @@ public class SkillCaster implements Runnable
 				{
 					for (WorldObject obj : targets)
 					{
-						// EVT_ATTACKED and PvPStatus
-						if (obj instanceof Creature)
+						if (!(obj instanceof Creature))
 						{
-							if (skill.getEffectPoint() <= 0)
+							continue;
+						}
+						
+						if (skill.isBad())
+						{
+							if (obj.isPlayable())
 							{
-								if ((obj.isPlayable() || obj.isTrap()) && skill.isBad())
-								{
-									// Casted on target_self but don't harm self
-									if (!obj.equals(_caster))
-									{
-										// Combat-mode check
-										if (obj.isPlayer())
-										{
-											obj.getActingPlayer().getAI().clientStartAutoAttack();
-										}
-										else if (obj.isSummon() && ((Creature) obj).hasAI())
-										{
-											PlayerInstance owner = ((Summon) obj).getOwner();
-											if (owner != null)
-											{
-												owner.getAI().clientStartAutoAttack();
-											}
-										}
-										
-										// attack of the own pet does not flag player
-										// triggering trap not flag trap owner
-										if ((player.getPet() != obj) && !player.hasServitor(obj.getObjectId()) && !_caster.isTrap() && !((skill.getEffectPoint() == 0) && (skill.getAffectRange() > 0)))
-										{
-											player.updatePvPStatus((Creature) obj);
-										}
-									}
-								}
-								else if (obj.isAttackable() && (skill.getEffectPoint() < 0))
-								{
-									// Add hate to the attackable, and put it in the attack list.
-									((Attackable) obj).addDamageHate(_caster, 0, -skill.getEffectPoint());
-									((Creature) obj).addAttackerToAttackByList(_caster);
-								}
+								// Update pvpflag.
+								player.updatePvPStatus((Creature) obj);
 								
-								// notify target AI about the attack
-								if (((Creature) obj).hasAI() && !skill.hasEffectType(L2EffectType.HATE))
+								if (obj.isSummon())
 								{
-									((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, _caster);
+									((Summon) obj).updateAndBroadcastStatus(1);
 								}
 							}
-							else
+							else if (obj.isAttackable())
 							{
-								if (obj.isPlayer())
-								{
-									// Casting non offensive skill on player with pvp flag set or with karma
-									if (!(obj.equals(_caster) || obj.equals(player)) && ((obj.getActingPlayer().getPvpFlag() > 0) || (obj.getActingPlayer().getReputation() < 0)))
-									{
-										player.updatePvPStatus();
-									}
-								}
-								else if (obj.isAttackable())
-								{
-									((Attackable) obj).reduceHate(_caster, skill.getEffectPoint());
-									player.updatePvPStatus();
-								}
+								// Add hate to the attackable, and put it in the attack list.
+								((Attackable) obj).addDamageHate(_caster, 0, -skill.getEffectPoint());
+								((Creature) obj).addAttackerToAttackByList(_caster);
 							}
 							
-							if (obj.isSummon())
+							// notify target AI about the attack
+							if (((Creature) obj).hasAI() && !skill.hasEffectType(L2EffectType.HATE))
 							{
-								((Summon) obj).updateAndBroadcastStatus(1);
+								((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, _caster);
 							}
+						}
+						else if (obj.isAttackable() || (obj.isPlayer() && (obj.getActingPlayer().getPvpFlag() > 0)) || (obj.getActingPlayer().getReputation() < 0))
+						{
+							// Supporting players or monsters result in pvpflag.
+							player.updatePvPStatus();
 						}
 					}
 					
@@ -536,27 +496,7 @@ public class SkillCaster implements Runnable
 						{
 							final Attackable attackable = (Attackable) npcMob;
 							
-							int skillEffectPoint = skill.getEffectPoint();
-							
-							if (player.hasSummon())
-							{
-								if (targets.length == 1)
-								{
-									if (CommonUtil.contains(targets, player.getPet()))
-									{
-										skillEffectPoint = 0;
-									}
-									for (Summon servitor : player.getServitors().values())
-									{
-										if (CommonUtil.contains(targets, servitor))
-										{
-											skillEffectPoint = 0;
-										}
-									}
-								}
-							}
-							
-							if (skillEffectPoint > 0)
+							if (skill.getEffectPoint() > 0)
 							{
 								if (attackable.hasAI() && (attackable.getAI().getIntention() == AI_INTENTION_ATTACK))
 								{
@@ -566,25 +506,13 @@ public class SkillCaster implements Runnable
 										if ((npcTarget == skillTarget) || (npcMob == skillTarget))
 										{
 											Creature originalCaster = _caster.isSummon() ? _caster : player;
-											attackable.addDamageHate(originalCaster, 0, (skillEffectPoint * 150) / (attackable.getLevel() + 7));
+											attackable.addDamageHate(originalCaster, 0, (skill.getEffectPoint() * 150) / (attackable.getLevel() + 7));
 										}
 									}
 								}
 							}
 						}
 					});
-				}
-				// Notify AI
-				if (skill.isBad() && !skill.hasEffectType(L2EffectType.HATE))
-				{
-					for (WorldObject obj : targets)
-					{
-						if ((obj instanceof Creature) && ((Creature) obj).hasAI())
-						{
-							// notify target AI about the attack
-							((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, _caster);
-						}
-					}
 				}
 			}
 			catch (Exception e)

@@ -65,11 +65,11 @@ public class FanPB implements IAffectScopeHandler
 			{
 				return false;
 			}
-			if (!GeoData.getInstance().canSeeTarget(activeChar, c))
+			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
 			{
 				return false;
 			}
-			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+			if (!GeoData.getInstance().canSeeTarget(activeChar, c))
 			{
 				return false;
 			}

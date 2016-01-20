@@ -75,12 +75,11 @@ public class Square implements IAffectScopeHandler
 			int yr = (int) (activeChar.getY() + (xp * sin) + (yp * cos));
 			if ((xr > rectX) && (xr < (rectX + squareLength)) && (yr > rectY) && (yr < (rectY + squareWidth)))
 			{
-				if (!GeoData.getInstance().canSeeTarget(activeChar, c))
+				if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
 				{
 					return false;
 				}
-				
-				if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+				if (!GeoData.getInstance().canSeeTarget(activeChar, c))
 				{
 					return false;
 				}

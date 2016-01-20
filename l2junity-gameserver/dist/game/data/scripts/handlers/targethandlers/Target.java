@@ -22,15 +22,13 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2EventMonsterInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
-import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Any selected target.
+ * Any friendly selected target or enemy if force use. Works on dead targets or doors as well.
  * @author Nik
  */
 public class Target implements ITargetTypeHandler
@@ -44,26 +42,43 @@ public class Target implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		final WorldObject target = activeChar.getTarget();
-		// Check for null target or any other invalid target
-		if ((target != null) && target.isCreature() && !((Creature) target).isDead())
+		if (selectedTarget == null)
 		{
-			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+			return null;
+		}
+		
+		if (!selectedTarget.isCreature())
+		{
+			return null;
+		}
+		
+		final Creature target = (Creature) selectedTarget;
+		
+		// You can always target yourself.
+		if (activeChar == target)
+		{
+			if (sendMessage)
 			{
-				if (sendMessage)
-				{
-					activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
-				}
-				return null;
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			}
 			
-			if ((activeChar.isInsidePeaceZone(activeChar, target)) && !activeChar.getAccessLevel().allowPeaceAttack())
+			return null;
+		}
+		
+		if (!target.isAutoAttackable(activeChar) || forceUse)
+		{
+			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
+			if (dontMove)
 			{
-				if (sendMessage)
+				if (activeChar.calculateDistance(target, false, false) > skill.getCastRange())
 				{
-					activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_A_PEACEFUL_ZONE);
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
+					}
+					
+					return null;
 				}
-				return null;
 			}
 			
 			if ((skill.getFlyType() == FlyType.CHARGE) && !GeoData.getInstance().canMove(activeChar, target))
@@ -75,51 +90,14 @@ public class Target implements ITargetTypeHandler
 				return null;
 			}
 			
-			if (activeChar.isPlayable() && target.isPlayable() && !activeChar.getActingPlayer().checkPvpSkill(target, skill) && !activeChar.getAccessLevel().allowPeaceAttack())
+			// Geodata check when character is within range.
+			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
 			{
 				if (sendMessage)
 				{
-					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+					activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
 				}
 				
-				return null;
-			}
-			
-			if (!target.isAutoAttackable(activeChar))
-			{
-				if (forceUse)
-				{
-					if ((target.getActingPlayer() != null) && (activeChar.getActingPlayer() != null))
-					{
-						if ((activeChar.getActingPlayer().getSiegeState() > 0) && activeChar.isInsideZone(ZoneId.SIEGE) && (target.getActingPlayer().getSiegeState() == activeChar.getActingPlayer().getSiegeState()) && (target.getActingPlayer() != activeChar.getActingPlayer()) && (target.getActingPlayer().getSiegeSide() == activeChar.getActingPlayer().getSiegeSide()))
-						{
-							if (sendMessage)
-							{
-								activeChar.sendPacket(SystemMessageId.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
-							}
-							return null;
-						}
-					}
-					
-					if (!target.canBeAttacked() && !activeChar.getAccessLevel().allowPeaceAttack() && !target.isDoor())
-					{
-						return null;
-					}
-				}
-				else
-				{
-					return null;
-				}
-			}
-			
-			if ((target instanceof L2EventMonsterInstance) && ((L2EventMonsterInstance) target).eventSkillAttackBlocked())
-			{
-				return null;
-			}
-			
-			// Check if the skill is a good magic, target is a monster and if force attack is set, if not then we don't want to cast.
-			if ((skill.getEffectPoint() > 0) && target.isMonster() && !forceUse)
-			{
 				return null;
 			}
 			

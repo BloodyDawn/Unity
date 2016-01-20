@@ -21,13 +21,11 @@ package handlers.targethandlers;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Target member from my party.
+ * Something like target self, but party. Used in aura skills.
  * @author Nik
  */
 public class MyParty implements ITargetTypeHandler
@@ -41,24 +39,16 @@ public class MyParty implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		final WorldObject target = activeChar.getTarget();
-		if ((target != null) && target.isPlayable())
+		if (activeChar.getActingPlayer() == null)
 		{
-			final PlayerInstance targetPlayer = target.getActingPlayer();
-			if (targetPlayer == activeChar)
-			{
-				return target;
-			}
-			if (activeChar.isInParty() && targetPlayer.isInParty() && (activeChar.getParty().getLeaderObjectId() == targetPlayer.getParty().getLeaderObjectId()))
-			{
-				return target;
-			}
+			return null;
 		}
 		
-		if (sendMessage)
+		if (activeChar.getParty() != null)
 		{
-			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+			return activeChar;
 		}
-		return null;
+		
+		return activeChar;
 	}
 }

@@ -23,6 +23,8 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Target yourself.
@@ -39,6 +41,15 @@ public class Self implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
+		if (activeChar.isInsideZone(ZoneId.PEACE) && skill.isBad())
+		{
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
+			}
+			
+			return null;
+		}
 		return activeChar;
 	}
 	

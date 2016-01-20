@@ -5344,6 +5344,11 @@ public final class PlayerInstance extends Playable
 			return;
 		}
 		
+		if (this == player_target)
+		{
+			return;
+		}
+		
 		if ((isInDuel() && (player_target.getDuelId() == getDuelId())))
 		{
 			return;

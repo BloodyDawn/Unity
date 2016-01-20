@@ -1187,10 +1187,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			if (player != null)
 			{
 				AttackStanceTaskManager.getInstance().addAttackStanceTask(player);
-				if ((player.getPet() != target) && !player.hasServitor(target.getObjectId()))
-				{
-					player.updatePvPStatus(target);
-				}
+				player.updatePvPStatus(target);
 			}
 			// Check if hit isn't missed
 			if (!hitted)

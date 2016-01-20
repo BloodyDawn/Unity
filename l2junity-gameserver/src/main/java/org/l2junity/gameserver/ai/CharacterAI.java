@@ -135,10 +135,7 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtAttacked(Creature attacker)
 	{
-		if ((attacker instanceof Attackable) && !attacker.isCoreAIDisabled())
-		{
-			clientStartAutoAttack();
-		}
+		clientStartAutoAttack();
 	}
 	
 	/**

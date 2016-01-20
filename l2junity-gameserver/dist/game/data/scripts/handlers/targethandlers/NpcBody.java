@@ -18,12 +18,11 @@
  */
 package handlers.targethandlers;
 
-import org.l2junity.Config;
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -44,24 +43,62 @@ public class NpcBody implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		final WorldObject target = activeChar.getTarget();
-		if ((target != null) && target.isAttackable())
+		if (selectedTarget == null)
 		{
-			final Attackable targetNpc = (Attackable) target;
-			if (targetNpc.isDead())
-			{
-				if (skill.hasEffectType(L2EffectType.HP_DRAIN) && targetNpc.isOldCorpse(activeChar.getActingPlayer(), Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, sendMessage))
-				{
-					return null;
-				}
-				
-				return target;
-			}
+			return null;
 		}
 		
+		if (!selectedTarget.isCreature())
+		{
+			return null;
+		}
+		
+		if (!selectedTarget.isNpc())
+		{
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+			}
+			
+			return null;
+		}
+		
+		Playable target = (Playable) selectedTarget;
+		
+		if (target.isDead())
+		{
+			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
+			if (dontMove)
+			{
+				if (activeChar.calculateDistance(target, false, false) > skill.getCastRange())
+				{
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
+					}
+					
+					return null;
+				}
+			}
+			
+			// Geodata check when character is within range.
+			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+			{
+				if (sendMessage)
+				{
+					activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+				}
+				
+				return null;
+			}
+			
+			return target;
+		}
+		
+		// If target is not dead or not player/pet it will not even bother to walk within range, unlike Enemy target type.
 		if (sendMessage)
 		{
-			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
 		
 		return null;

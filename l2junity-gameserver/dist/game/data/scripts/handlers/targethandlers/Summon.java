@@ -23,10 +23,9 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Target one of my summons.
+ * Target automatically one of my summons.
  * @author Nik
  */
 public class Summon implements ITargetTypeHandler
@@ -40,22 +39,14 @@ public class Summon implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		final WorldObject target = activeChar.getTarget();
-		if ((target != null) && target.isCreature() && !((Creature) target).isDead() && activeChar.hasSummon())
+		if (activeChar.isPlayer() && activeChar.hasSummon())
 		{
-			if (activeChar.getPet() == target)
+			if (activeChar.getPet() != null)
 			{
-				return target;
+				return activeChar.getPet();
 			}
-			if (activeChar.getServitors().values().stream().anyMatch(s -> s == target))
-			{
-				return target;
-			}
-		}
-		
-		if (sendMessage)
-		{
-			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+			
+			return activeChar.getActingPlayer().getAnyServitor();
 		}
 		
 		return null;

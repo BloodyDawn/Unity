@@ -66,12 +66,12 @@ public class RingRange implements IAffectScopeHandler
 				return false;
 			}
 			
-			if (!GeoData.getInstance().canSeeTarget(target, c))
+			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
 			{
 				return false;
 			}
 			
-			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+			if (!GeoData.getInstance().canSeeTarget(target, c))
 			{
 				return false;
 			}
