@@ -445,22 +445,26 @@ public final class IstinaCavern extends AbstractInstance
 				if (npcVars.getBoolean("COUNTING_ENABLED", false))
 				{
 					final int score = npcVars.getInt("SCORE_VAL", 0);
-					int addScore = damage;
 					
-					if (skill != null)
+					if (getChargedPercent(score, isExtremeMode(instance)) < 100)
 					{
-						if (skill.getEffectPoint() < 0)
+						int addScore = damage;
+						
+						if (skill != null)
 						{
+							if (skill.getEffectPoint() < 0)
+							{
+								addScore *= 1.5;
+							}
 							addScore *= 1.5;
 						}
-						addScore *= 1.5;
+						
+						if (attacker.isInCategory(CategoryType.FIGHTER_GROUP))
+						{
+							addScore *= 2;
+						}
+						npcVars.set("SCORE_VAL", score + addScore);
 					}
-					
-					if (attacker.isInCategory(CategoryType.FIGHTER_GROUP))
-					{
-						addScore *= 2;
-					}
-					npcVars.set("SCORE_VAL", score + addScore);
 				}
 			}
 			else
