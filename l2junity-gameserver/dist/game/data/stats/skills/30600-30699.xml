@@ -104,7 +104,10 @@
 		<isMagic>3</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="1.01" />
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -960,7 +960,6 @@
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="100" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -1008,6 +1007,10 @@
 			<effect name="PhysicalDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1433,9 +1436,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="#mCritRate">
-					<using kind="BLUNT" />
-				</mul>
 				<mul stat="mCritPower" val="#mCritPower">
 					<using kind="BLUNT" />
 				</mul>
@@ -1536,6 +1536,31 @@
 					<value level="15">30</value>
 					<value level="16">30</value>
 					<value level="17">30</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">10</value>
+					<value level="9">10</value>
+					<value level="10">10</value>
+					<value level="11">10</value>
+					<value level="12">10</value>
+					<value level="13">10</value>
+					<value level="14">10</value>
+					<value level="15">10</value>
+					<value level="16">10</value>
+					<value level="17">10</value>
 				</amount>
 				<mode>PER</mode>
 				<weaponType>

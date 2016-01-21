@@ -2376,7 +2376,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="1.5" />
 				<mul stat="MagicalMpConsumeRate" val="0.1" />
 			</effect>
 			<effect name="MAtk">
@@ -2384,6 +2383,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
@@ -2408,7 +2411,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="1.5" />
 				<mul stat="MagicalMpConsumeRate" val="0.1" />
 			</effect>
 			<effect name="MAtk">
@@ -2421,6 +2423,10 @@
 			</effect>
 			<effect name="HealEffect">
 				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -4133,9 +4139,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="#critRate" />
 			</effect>
 			<effect name="CriticalRate">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
 				<amount>
 					<value level="1">10</value>
 					<value level="2">20</value>
@@ -4672,13 +4685,16 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<mul stat="mCritRate" val="2" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<slot>SONG_OF_RENEWAL</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -4708,13 +4724,16 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<mul stat="mCritRate" val="2" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<slot>SONG_OF_RENEWAL</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

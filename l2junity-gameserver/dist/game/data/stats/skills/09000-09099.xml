@@ -1615,7 +1615,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1664,6 +1663,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

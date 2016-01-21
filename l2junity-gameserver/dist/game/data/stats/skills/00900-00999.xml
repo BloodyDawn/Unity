@@ -2772,7 +2772,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="1.05" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="MAtk">
@@ -2780,6 +2779,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>

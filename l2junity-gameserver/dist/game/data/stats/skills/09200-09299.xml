@@ -503,7 +503,6 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<add stat="mCritRate" val="20" />
 				<!-- TODO: increases P. Def. upon evading a critical attack ??? -->
 			</effect>
 			<effect name="PAtk">
@@ -549,6 +548,10 @@
 			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -651,7 +654,6 @@
 		<isMentoring>true</isMentoring>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="20" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="PhysicalMpConsumeRate" val="0.9" />
 				<mul stat="DanceMpConsumeRate" val="0.8" />
@@ -666,6 +668,10 @@
 			<effect name="CriticalRate">
 				<amount>32</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

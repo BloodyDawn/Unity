@@ -2122,7 +2122,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="4" />
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2739,7 +2742,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

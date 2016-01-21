@@ -113,7 +113,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="1.25" />
 				<mul stat="mCritPower" val="1.25" />
 				<mul stat="cAtkSkill" val="1.25" />
 			</effect>
@@ -122,6 +121,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalRate">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>

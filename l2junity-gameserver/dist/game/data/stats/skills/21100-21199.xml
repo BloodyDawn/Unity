@@ -588,7 +588,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
 				<mul stat="mCritPower" val="1.2" />
 			</effect>
 			<effect name="MAtk">
@@ -602,6 +601,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1071,7 +1074,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -1088,6 +1090,10 @@
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1427,7 +1433,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -1444,6 +1449,10 @@
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1746,7 +1755,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="MAtk">
 				<amount>10</amount>
@@ -1759,6 +1767,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>20</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

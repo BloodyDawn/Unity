@@ -2411,9 +2411,9 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="2" />
 			</effect>
-		</effects>
+		<effect name="MagicCriticalRate">
+		<amount>100</amount><mode>PER</mode></effect></effects>
 	</skill>
 	<skill id="366" levels="1" name="Dance of Shadows">
 		<abnormalLvl>1</abnormalLvl>

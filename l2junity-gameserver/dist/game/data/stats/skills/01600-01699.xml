@@ -22,7 +22,6 @@
 		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="1.5" />
 			</effect>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -41,6 +40,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>

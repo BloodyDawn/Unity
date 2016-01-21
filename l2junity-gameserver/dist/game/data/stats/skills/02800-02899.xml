@@ -1417,7 +1417,6 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1467,6 +1466,10 @@
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
 			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2857" levels="1" name="Holiday Event - Enchant Scroll (Wizard)">
@@ -1493,7 +1496,6 @@
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1530,6 +1532,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2321,7 +2327,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="mCritRate" val="2" />
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

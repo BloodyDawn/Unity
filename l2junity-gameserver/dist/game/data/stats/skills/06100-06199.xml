@@ -297,7 +297,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="maxHp" val="1.1" />
-				<add stat="mCritRate" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -325,6 +324,10 @@
 			</effect>
 			<effect name="CriticalRate">
 				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

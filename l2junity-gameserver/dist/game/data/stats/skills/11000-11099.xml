@@ -210,7 +210,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
-				<mul stat="mCritRate" val="1.06" />
 			</effect>
 			<effect name="MAtk">
 				<amount>6</amount>
@@ -224,7 +223,8 @@
 				<amount>2</amount>
 				<stat>INT</stat>
 			</effect>
-		</effects>
+		<effect name="MagicCriticalRate">
+		<amount>6</amount><mode>PER</mode></effect></effects>
 	</skill>
 	<skill id="11006" levels="1" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
@@ -2796,7 +2796,6 @@
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="mCritRate" val="#mCritRate" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -2828,7 +2827,8 @@
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
-		</effects>
+		<effect name="MagicCriticalRate">
+		<amount><value level="1">50</value><value level="2">60</value></amount><mode>PER</mode></effect></effects>
 	</skill>
 	<skill id="11047" levels="9" name="Devil's Curse">
 		<!-- Updated to IO -->
@@ -2911,7 +2911,6 @@
 				</power>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mCritRate" val="0.9" />
 			</effect>
 			<effect name="MAtk">
 				<amount>-30</amount>
@@ -2941,7 +2940,8 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
-		</effects>
+		<effect name="MagicCriticalRate">
+		<amount>-10</amount><mode>PER</mode></effect></effects>
 	</skill>
 	<skill id="11048" levels="9" name="Mass Devil's Curse">
 		<!-- Updated to IO -->
@@ -3016,7 +3016,6 @@
 				<percentage>25</percentage>
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mCritRate" val="0.92" />
 			</effect>
 			<effect name="MAtk">
 				<amount>-30</amount>
@@ -3046,7 +3045,8 @@
 				<amount>-8</amount>
 				<mode>PER</mode>
 			</effect>
-		</effects>
+		<effect name="MagicCriticalRate">
+		<amount>-8</amount><mode>PER</mode></effect></effects>
 	</skill>
 	<skill id="11049" levels="5" name="Ignore Divinity">
 		<!-- Glory Days confirmed -->
