@@ -1442,7 +1442,6 @@
 		<table name="#pAttkMattk"> 1 1 0.75 0.5 0.5 </table>
 		<table name="#pAttkSpdMattkSpd"> 1 1 0.85 0.7 0.7 </table>
 		<table name="#evas"> 0 0 15 30 30 </table>
-		<table name="#speed"> 0 0 40 50 60 </table>
 		<table name="#darkRes"> 5 5 0 0 0 </table>
 		<table name="#maxHpCpMp"> 1 1 0.7 0.5 0.5 </table>
 		<table name="#regHp">1.05 1.1 0 0 0</table>
@@ -1477,9 +1476,6 @@
 		<isMagic>1</isMagic>
 		<irreplacableBuff>true</irreplacableBuff>
 		<effects>
-			<effect name="Debuff">
-				<sub stat="statSpeed" val="#speed" />
-			</effect>
 			<effect name="ShilensBreath" />
 			<effect name="PAtk">
 				<amount>
@@ -1590,6 +1586,16 @@
 					<value level="5">-50</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-40</value>
+					<value level="4">-50</value>
+					<value level="5">-60</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

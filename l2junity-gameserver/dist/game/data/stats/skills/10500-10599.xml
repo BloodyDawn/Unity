@@ -179,14 +179,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<set stat="statSkillCritical" val="2">
-					<using kind="LIGHT" />
-				</set>
-				<set stat="statSpeed" val="2">
-					<using kind="LIGHT" />
-				</set>
-			</effect>
 			<effect name="TriggerSkillByAvoid">
 				<!-- Assassin's Reflex -->
 				<chance>10</chance>
@@ -233,6 +225,18 @@
 			<effect name="MaxHp">
 				<amount>4880</amount>
 				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="StatBonusSkillCritical">
+				<stat>DEX</stat>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="StatBonusSpeed">
+				<stat>DEX</stat>
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>

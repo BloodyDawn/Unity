@@ -458,10 +458,6 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<set stat="statSpeed" val="2" /> <!-- DEX -->
-				<set stat="statSkillCritical" val="2" /> <!-- DEX -->
-			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">1506</value>
@@ -511,6 +507,12 @@
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
+			</effect>
+			<effect name="StatBonusSkillCritical">
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatBonusSpeed">
+				<stat>DEX</stat>
 			</effect>
 		</effects>
 	</skill>
