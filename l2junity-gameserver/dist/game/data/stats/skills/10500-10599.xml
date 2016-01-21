@@ -261,9 +261,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="regHp" val="6" />
-			</effect>
 			<effect name="Speed">
 				<amount>
 					<value level="1">17</value>
@@ -286,6 +283,10 @@
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>STR</stat>
+			</effect>
+			<effect name="HpRegen">
+				<amount>6</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
