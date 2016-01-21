@@ -2233,7 +2233,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="damageZoneVuln" val="40" />
+			</effect>
+			<effect name="AreaDamage">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

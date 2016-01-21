@@ -136,10 +136,13 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="damageZoneVuln" val="80" />
 			</effect>
 			<effect name="HpRegen">
 				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AreaDamage">
+				<amount>7900</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

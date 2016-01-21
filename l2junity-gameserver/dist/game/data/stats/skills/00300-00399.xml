@@ -359,7 +359,10 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<sub stat="damageZoneVuln" val="30" />
+			</effect>
+			<effect name="AreaDamage">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
