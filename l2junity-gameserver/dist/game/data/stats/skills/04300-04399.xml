@@ -1021,7 +1021,13 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="weightPenalty" val="#Weight" />
+			</effect>
+			<effect name="WeightPenalty">
+				<amount>
+					<value level="1">3000</value>
+					<value level="2">6000</value>
+					<value level="3">9000</value>
+				</amount>
 			</effect>
 		</effects>
 	</skill>
