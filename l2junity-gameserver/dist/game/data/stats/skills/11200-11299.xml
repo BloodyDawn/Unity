@@ -1559,8 +1559,15 @@
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<add stat="transDam" val="#power" />
 				<power>0.2</power>
+			</effect>
+			<effect name="TransferDamageToSummon">
+				<amount>
+					<value level="1">70</value>
+					<value level="2">72</value>
+					<value level="3">74</value>
+					<value level="4">75</value>
+				</amount>
 			</effect>
 		</effects>
 	</skill>

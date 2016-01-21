@@ -535,8 +535,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MpConsumePerLevel" ticks="5">
-				<add stat="transDam" val="50" />
 				<power>0.4</power>
+			</effect>
+			<effect name="TransferDamageToSummon">
+				<amount>50</amount>
 			</effect>
 		</effects>
 	</skill>

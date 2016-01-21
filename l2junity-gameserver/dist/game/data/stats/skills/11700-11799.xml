@@ -1492,8 +1492,19 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-		<effect name="HealEffect">
-		<amount><value level="1">1000</value><value level="2">1500</value><value level="3">2000</value><value level="4">2500</value><value level="5">2500</value><value level="6">2500</value><value level="7">2500</value></amount><mode>DIFF</mode></effect></effects>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">1500</value>
+					<value level="3">2000</value>
+					<value level="4">2500</value>
+					<value level="5">2500</value>
+					<value level="6">2500</value>
+					<value level="7">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="11773" levels="2" name="Lakcis Disc">
 		<!-- Glory Days confirmed -->
@@ -2502,8 +2513,14 @@
 				<amount>2</amount>
 				<stat>INT</stat>
 			</effect>
-		<effect name="HealEffect">
-		<amount>40</amount><mode>DIFF</mode><weaponType><item>SIGIL</item></weaponType></effect></effects>
+			<effect name="HealEffect">
+				<amount>40</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="11792" levels="10" name="Superior Mental Attack Resistance">
 		<!-- Updated to IO -->
