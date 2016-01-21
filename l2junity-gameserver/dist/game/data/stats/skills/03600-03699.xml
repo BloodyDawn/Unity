@@ -1607,18 +1607,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- P.Atk. +504 on a critical hit -->
-				<!-- HP +25% -->
-				<!-- CP +50% -->
-				<!-- Critical +7.87 -->
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<!-- PVP Damage Bonus +20% -->
-				<!-- PVP Damage Bonus +20% -->
-				<!-- PVP Damage Bonus +20% -->
-				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
-				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
-			</effect>
 			<effect name="MaxCp">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -1646,6 +1634,15 @@
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>

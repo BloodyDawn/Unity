@@ -2179,18 +2179,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- P.Atk. +504 on a critical hit -->
-				<!-- HP +25% -->
-				<!-- CP +50% -->
-				<!-- Critical +78.7 -->
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
-				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
-			</effect>
 			<effect name="MaxCp">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -2219,6 +2207,15 @@
 				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3583" levels="1" name="Special Ability: Infinity Crusher">
@@ -2229,17 +2226,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- HP +25% -->
-				<!-- CP +50% -->
-				<!-- Atk. Spd. +7% -->
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
-				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
-			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>7</amount>
 				<mode>PER</mode>
@@ -2263,6 +2249,15 @@
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>
@@ -2298,18 +2293,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- HP +25% -->
-				<!-- MP +30% -->
-				<!-- CP +50% -->
-				<!-- Critical +78.7 -->
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
-				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
-			</effect>
 			<effect name="MaxCp">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -2337,6 +2320,15 @@
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>
@@ -2372,18 +2364,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- HP +25% -->
-				<!-- MP +30% -->
-				<!-- CP +50% -->
-				<!-- Evasion +3.15 -->
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
-				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
-			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>3.15</amount>
 				<mode>DIFF</mode>
@@ -2411,6 +2391,15 @@
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>
@@ -2524,19 +2513,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- HP +25% -->
-				<!-- CP +50% -->
-				<!-- Atk. Spd. +7% -->
-				<!-- Accuracy +4.89 -->
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- PVP Damage Bonus +10% -->
-				<!-- NOTE: The skill reflection rate has been increased in H5, values unconfirmed -->
-				<add stat="reflectSkillPhysic" val="20" /> <!-- Reflect Skills 20% of the time -->
-				<add stat="reflectSkillMagic" val="20" /> <!-- Reflect Skills 20% of the time -->
-			</effect>
 			<effect name="Accuracy">
 				<amount>4.89</amount>
 				<mode>DIFF</mode>
@@ -2568,6 +2544,15 @@
 			<effect name="MaxHp">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>

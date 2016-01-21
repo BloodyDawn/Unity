@@ -638,10 +638,6 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="reflectSkillPhysic" val="10" />
-				<add stat="reflectSkillMagic" val="10" />
-			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
 					<value level="1">20</value>
@@ -731,6 +727,15 @@
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>STR</stat>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>

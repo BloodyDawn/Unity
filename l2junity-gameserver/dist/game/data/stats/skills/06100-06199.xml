@@ -876,15 +876,16 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="reflectSkillPhysic" val="70" />
-			</effect>
 			<effect name="DamageShield">
 				<amount>70</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="CounterPhysicalSkill">
 				<amount>70</amount>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>70</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
