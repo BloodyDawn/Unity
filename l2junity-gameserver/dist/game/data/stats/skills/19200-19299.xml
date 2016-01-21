@@ -112,8 +112,9 @@
 		<effectPoint>712</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-			<effect name="Buff">
-				<mul stat="cAtkSkill" val="1.25" />
+			<effect name="SkillCriticalDamage">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>25</amount>

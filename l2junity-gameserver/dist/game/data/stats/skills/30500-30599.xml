@@ -1273,8 +1273,13 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<effects>
-			<effect name="Buff">
-				<mul stat="cAtkSkill" val="#cAtkSkill" />
+			<effect name="SkillCriticalDamage">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>90</KNOCKDOWN>
@@ -1521,8 +1526,13 @@
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
 		<effects>
-			<effect name="Buff">
-				<!-- TODO P. Skill Critical Rate and P. Skill Critical Damage -->
+			<effect name="SkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">25</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
 				<!-- Inside Position -->
