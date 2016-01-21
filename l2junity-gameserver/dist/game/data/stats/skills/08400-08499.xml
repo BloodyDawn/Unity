@@ -321,7 +321,7 @@
 				<!-- Resistance to earth attributes +5 -->
 				<!-- Increases Speed by 7 -->
 				<!-- Increases Max MP by 97 -->
-				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+				<!-- Decreases MP consumption for magic skills by 3% -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="EnableCloak" />
@@ -360,6 +360,11 @@
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1045,7 +1050,7 @@
 				<!-- Resistance to earth attributes +5 -->
 				<!-- Increases Speed by 7 -->
 				<!-- Increases Max MP by 97 -->
-				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+				<!-- Decreases MP consumption for magic skills by 3% -->
 				<!-- During PvP, damage received decreased -->
 				<!-- During PvP, damage received decreased -->
 				<!-- During PvP, damage received decreased -->
@@ -1099,6 +1104,11 @@
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2107,7 +2117,6 @@
 		<effects>
 			<effect name="DefenceTrait">
 				<mul stat="mReuse" val="0.95" />
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<BLEED>25</BLEED>
 				<SHOCK>20</SHOCK>
 				<DERANGEMENT>10</DERANGEMENT>
@@ -2145,6 +2154,11 @@
 			<effect name="HealEffect">
 				<amount>15</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

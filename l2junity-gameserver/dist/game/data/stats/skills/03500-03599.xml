@@ -1225,8 +1225,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="AttackTrait">
 				<BLEED>40</BLEED>
@@ -1249,6 +1247,16 @@
 			<effect name="DefenceAttribute">
 				<amount>15</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2652,7 +2660,7 @@
 				<!-- PVP Damage Bonus +10% -->
 				<!-- PVP Damage Bonus +10% -->
 				<!-- PVP Damage Bonus +10% -->
-				<mul stat="MagicalMpConsumeRate" val="0.96" /> <!-- Magic MP Cost -4% -->
+				<!-- Magic MP Cost -4% -->
 				<!-- Chance of Magic Cancelation -106 -->
 			</effect>
 			<effect name="MAtk">
@@ -2686,6 +2694,11 @@
 			<effect name="ReduceCancel">
 				<amount>-106</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-4</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

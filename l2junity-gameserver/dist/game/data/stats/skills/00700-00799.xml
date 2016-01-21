@@ -126,7 +126,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -167,6 +166,11 @@
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

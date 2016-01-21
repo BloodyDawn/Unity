@@ -205,11 +205,15 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.4" />
 			</effect>
 			<effect name="FatalBlowRate">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-60</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -231,10 +235,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.4" />
 			</effect>
 			<effect name="AttackTrait">
 				<SHOCK>20</SHOCK>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-60</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1398,9 +1406,33 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
-				<mul stat="DanceMpConsumeRate" val="#MpConsumeRate" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-7</value>
+					<value level="3">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-7</value>
+					<value level="3">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>

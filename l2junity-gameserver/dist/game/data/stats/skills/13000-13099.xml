@@ -472,7 +472,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -549,6 +548,16 @@
 					<value level="4">-30</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-3</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1720,7 +1729,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1833,6 +1841,16 @@
 					<value level="4">-2</value>
 				</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-3</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -3005,9 +3023,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#mpConsum" />
-				<mul stat="MagicalMpConsumeRate" val="#mpConsum" />
-				<mul stat="DanceMpConsumeRate" val="#mpConsum" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -3096,6 +3111,36 @@
 					<value level="4">463</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">4</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -3836,7 +3881,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -3931,6 +3975,16 @@
 				<amount>1</amount>
 				<stat>DEX</stat>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13075" levels="4" name="Set Effect - Immortal Light Armor 2 Piece (Enchant Type)">
@@ -3950,8 +4004,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4040,6 +4092,26 @@
 					<value level="4">463</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4190,8 +4262,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4308,6 +4378,26 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-10</value>
+					<value level="3">-10</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13078" levels="4" name="Set Effect - Seraph Light Armor 2 Piece (Assassin Type)">
@@ -4329,7 +4419,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -4437,6 +4526,16 @@
 				<amount>3</amount>
 				<stat>DEX</stat>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13079" levels="4" name="Set Effect - Seraph Light Armor 2 Piece (Enchant Type)">
@@ -4459,8 +4558,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4574,6 +4671,26 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13080" levels="4" name="Set Effect - Eternal Light Armor 2 Piece (Assassin Type)">
@@ -4595,7 +4712,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -4703,6 +4819,16 @@
 				<amount>3</amount>
 				<stat>DEX</stat>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13081" levels="4" name="Set Effect - Eternal Light Armor 2 Piece (Enchant Type)">
@@ -4724,8 +4850,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4833,6 +4957,26 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-4</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13082" levels="4" name="Set Effect - R99 Rare Light Armor 2 Piece (Assassin Type)">
@@ -4853,8 +4997,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -4953,6 +5095,26 @@
 				<amount>4</amount>
 				<stat>DEX</stat>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-4</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13083" levels="4" name="Set Effect - R99 Rare Light Armor 2 Piece (Enchant Type)">
@@ -4974,8 +5136,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -5073,6 +5233,26 @@
 					<value level="4">536</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>

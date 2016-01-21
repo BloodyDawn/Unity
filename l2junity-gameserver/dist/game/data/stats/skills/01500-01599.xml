@@ -2376,7 +2376,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.1" />
 			</effect>
 			<effect name="MAtk">
 				<amount>40</amount>
@@ -2389,6 +2388,11 @@
 			<effect name="MagicCriticalRate">
 				<amount>50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-90</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2411,7 +2415,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.1" />
 			</effect>
 			<effect name="MAtk">
 				<amount>10</amount>
@@ -2428,6 +2431,11 @@
 			<effect name="MagicCriticalRate">
 				<amount>50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-90</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4258,9 +4266,33 @@
 			<effect name="Buff">
 				<mul stat="mReuse" val="#power" />
 				<mul stat="pReuse" val="#power" />
-				<mul stat="MagicalMpConsumeRate" val="#power" />
-				<mul stat="PhysicalMpConsumeRate" val="#power" />
-				<mul stat="DanceMpConsumeRate" val="#power" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+					<value level="3">-3</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+					<value level="3">-3</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+					<value level="3">-3</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4682,9 +4714,6 @@
 			<effect name="Buff">
 				<mul stat="mReuse" val="0.8" />
 				<mul stat="pReuse" val="0.8" />
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<mul stat="DanceMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
@@ -4695,6 +4724,21 @@
 			<effect name="MagicCriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4721,9 +4765,6 @@
 			<effect name="Buff">
 				<mul stat="mReuse" val="0.8" />
 				<mul stat="pReuse" val="0.8" />
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<mul stat="DanceMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
@@ -4734,6 +4775,21 @@
 			<effect name="MagicCriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4776,7 +4832,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_MEDITATION</slot>
@@ -4795,6 +4850,11 @@
 			<effect name="ReduceCancel">
 				<amount>-40</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4819,7 +4879,6 @@
 		<isMagic>3</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_MEDITATION</slot>
@@ -4838,6 +4897,11 @@
 			<effect name="ReduceCancel">
 				<amount>-40</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

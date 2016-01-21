@@ -609,9 +609,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="reduceExpLostByPvp" val="#expLost" />
-				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
-				<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
-				<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Power of Apella -->
@@ -640,6 +637,33 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3609" levels="3" name="Apella Light Armor Set">
@@ -656,9 +680,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="reduceExpLostByPvp" val="#expLost" />
-				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
-				<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
-				<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Power of Apella -->
@@ -687,6 +708,33 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3610" levels="3" name="Apella Robe Set">
@@ -703,9 +751,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="reduceExpLostByPvp" val="#expLost" />
-				<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
-				<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
-				<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Power of Apella -->
@@ -733,6 +778,33 @@
 			<effect name="CpRegen">
 				<amount>40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-5</value>
+					<value level="3">-5</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1692,7 +1764,7 @@
 			<effect name="Buff">
 				<!-- P. Def. +6.6% -->
 				<!-- Max HP +492 -->
-				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
+				<!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -1708,6 +1780,11 @@
 				<amount>492</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>-6</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3639" levels="1" name="Dynasty Platinum Plate">
@@ -1722,7 +1799,7 @@
 				<!-- Physical Attack Power +6.6% -->
 				<!-- Maximum HP +492 effect -->
 				<!-- Darkness Resistance +8 Increase -->
-				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Active Skills -->
+				<!-- MP Consumption -6% Decrease for Active Skills -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -1736,6 +1813,11 @@
 			<effect name="MaxHp">
 				<amount>492</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-6</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1825,7 +1907,7 @@
 				<!-- P. Atk. +6.6% -->
 				<!-- Max HP +492 -->
 				<!-- Dark Resistance +8 -->
-				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
+				<!-- MP Consumption -6% -->
 			</effect>
 			<effect name="EnableCloak" />
 			<effect name="PAtk">
@@ -1839,6 +1921,11 @@
 			<effect name="MaxHp">
 				<amount>492</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-6</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1968,7 +2055,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
 				<!-- Magic Cancel Rate -15 -->
-				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
+				<!-- MP Consumption -6% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -1987,6 +2074,11 @@
 			<effect name="ReduceCancel">
 				<amount>-15</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-6</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

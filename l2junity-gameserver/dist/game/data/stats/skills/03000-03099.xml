@@ -2666,7 +2666,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="1.15" />
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -2686,6 +2685,11 @@
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>15</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2809,7 +2813,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="1.15" />
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -2821,6 +2824,11 @@
 					<value level="6">139.41</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>15</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

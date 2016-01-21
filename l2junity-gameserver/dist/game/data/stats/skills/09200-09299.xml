@@ -657,12 +657,6 @@
 		<isMentoring>true</isMentoring>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="DanceMpConsumeRate" val="0.8" />
-				<mul stat="MagicalMpConsumeRate" val="0.8">
-					<player class_id_restriction="144" />
-				</mul>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -675,6 +669,26 @@
 			<effect name="MagicCriticalRate">
 				<amount>20</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>

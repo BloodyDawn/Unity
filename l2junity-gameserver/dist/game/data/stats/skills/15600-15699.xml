@@ -624,7 +624,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="1.1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
@@ -644,6 +643,11 @@
 			<effect name="MagicCriticalRate">
 				<amount>20</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -848,8 +852,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.85" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="mReuse" val="0.8" />
 				<mul stat="pReuse" val="0.8" />
 				<mul stat="dReuse" val="0.8" />
@@ -893,6 +895,16 @@
 				<amount>100</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="15651" levels="1" name="Prevailing Sonata (Adventurer)">
@@ -911,7 +923,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -939,6 +950,11 @@
 			<effect name="ReduceCancel">
 				<amount>-50</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1018,8 +1034,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
 				<mul stat="mReuse" val="0.95" />
 				<mul stat="pReuse" val="0.95" />
 			</effect>
@@ -1045,6 +1059,16 @@
 			<effect name="HpRegen">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>

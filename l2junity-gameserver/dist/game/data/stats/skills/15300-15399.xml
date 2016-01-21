@@ -1846,8 +1846,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="1.2" />
-				<mul stat="MagicalMpConsumeRate" val="1.1" /> <!-- TODO : This is done per is_magic value, not globally -->
+				<!-- TODO : This is done per is_magic value, not globally -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
@@ -1870,6 +1869,16 @@
 			<effect name="MagicCriticalRate">
 				<amount>20</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2133,8 +2142,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.85" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="mReuse" val="0.8" />
 				<mul stat="pReuse" val="0.8" />
 				<mul stat="dReuse" val="0.8" />
@@ -2177,6 +2184,16 @@
 			<effect name="MagicCriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>

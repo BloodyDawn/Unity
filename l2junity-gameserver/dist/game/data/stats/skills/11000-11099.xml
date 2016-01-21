@@ -213,7 +213,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.94" />
 			</effect>
 			<effect name="MAtk">
 				<amount>6</amount>
@@ -230,6 +229,11 @@
 			<effect name="MagicCriticalRate">
 				<amount>6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-6</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2803,7 +2807,6 @@
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Flame Armor -->
@@ -2840,6 +2843,14 @@
 					<value level="2">60</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-50</value>
+					<value level="2">-60</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4088,11 +4099,20 @@
 			</effect>
 			<effect name="Buff">
 				<mul stat="mReuse" val="#mReuse" />
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<effect name="ReduceCancel">
 				<amount>-100</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-50</value>
+					<value level="2">-60</value>
+					<value level="3">-70</value>
+					<value level="4">-80</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

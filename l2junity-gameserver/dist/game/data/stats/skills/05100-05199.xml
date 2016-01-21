@@ -1221,9 +1221,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="MagicalMpConsumeRate" val="3" />
-				<mul stat="PhysicalMpConsumeRate" val="3" />
-				<mul stat="DanceMpConsumeRate" val="3" />
 				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
 			</effect>
 			<effect name="PAtk">
@@ -1257,6 +1254,21 @@
 			<effect name="DefenceAttribute">
 				<amount>-50</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>

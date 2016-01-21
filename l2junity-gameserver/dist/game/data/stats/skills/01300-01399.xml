@@ -1675,8 +1675,6 @@
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="ManaDamOverTime" ticks="5">
-				<mul stat="MagicalMpConsumeRate" val="1.3" />
-				<mul stat="PhysicalMpConsumeRate" val="1.1" />
 				<power>24</power>
 			</effect>
 			<effect name="ResistDispelByCategory">
@@ -1686,6 +1684,16 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>30</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>30</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2377,9 +2385,6 @@
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<mul stat="DanceMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2420,6 +2425,21 @@
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4353,9 +4373,21 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="MagicalMpConsumeRate" val="3" />
-				<mul stat="PhysicalMpConsumeRate" val="3" />
-				<mul stat="DanceMpConsumeRate" val="3" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -4403,9 +4435,33 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
-				<mul stat="DanceMpConsumeRate" val="#MpConsumeRate" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-4</value>
+					<value level="2">-7</value>
+					<value level="3">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>

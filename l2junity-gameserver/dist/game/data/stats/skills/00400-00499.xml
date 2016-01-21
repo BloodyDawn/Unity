@@ -1653,7 +1653,15 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-20</value>
+					<value level="3">-30</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1846,7 +1854,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.5" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1915,6 +1922,11 @@
 					<item>SWORD</item>
 					<item>POLE</item>
 				</weaponType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-50</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2188,7 +2200,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="DanceMpConsumeRate" val="0.9" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2367,9 +2383,6 @@
 				<mul stat="mAtkSpd" val="1.07">
 					<using kind="MAGIC" />
 				</mul>
-				<mul stat="MagicalMpConsumeRate" val="0.97">
-					<using kind="MAGIC" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>80</amount>
@@ -2392,6 +2405,14 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="436" levels="1" name="Divine Lore">
@@ -2402,7 +2423,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

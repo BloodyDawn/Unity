@@ -814,8 +814,6 @@
 		<isMagic>22</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.80" />
-				<mul stat="MagicalMpConsumeRate" val="0.90" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP,-1;CRITICAL_PROB_UP,-1;CRITICAL_DMG_UP,-1;CHEAP_MAGIC,-1;MAGIC_CRITICAL_UP,-1</dispel>
@@ -834,6 +832,16 @@
 			<effect name="MagicCriticalRate">
 				<amount>20</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1666,7 +1674,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -1676,6 +1683,11 @@
 					<value level="4">20</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

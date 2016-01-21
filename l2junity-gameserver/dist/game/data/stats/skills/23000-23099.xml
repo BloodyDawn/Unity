@@ -385,9 +385,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<mul stat="DanceMpConsumeRate" val="0.95" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -421,6 +418,21 @@
 				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="23018" levels="1" name="Thomas D. Turkey's Mistake">
@@ -443,9 +455,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -478,6 +487,21 @@
 			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1771,9 +1795,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
-				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>60</amount>
@@ -1802,6 +1823,21 @@
 			<effect name="MaxMp">
 				<amount>60</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -1835,9 +1871,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="MagicalMpConsumeRate" val="0.85" />
-				<mul stat="DanceMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -1866,6 +1899,21 @@
 			<effect name="MaxMp">
 				<amount>40</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>

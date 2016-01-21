@@ -411,7 +411,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
@@ -420,6 +419,11 @@
 			<effect name="FatalBlowRate">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -477,7 +481,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>25</amount>
@@ -486,6 +489,11 @@
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -497,7 +505,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="MAtk">
 				<amount>50</amount>
@@ -506,6 +513,11 @@
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -517,7 +529,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>10</amount>
@@ -526,6 +537,11 @@
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -581,8 +597,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.8" />
-				<mul stat="DanceMpConsumeRate" val="0.8" />
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>25</amount>
@@ -591,6 +605,16 @@
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>

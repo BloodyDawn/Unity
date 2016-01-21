@@ -980,9 +980,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="1.1">
-					<using kind="SWORD, BLUNT" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1003,6 +1000,15 @@
 					<value level="3">50</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 				<weaponType>
 					<item>SWORD</item>
 					<item> BLUNT</item>

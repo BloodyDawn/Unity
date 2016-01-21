@@ -1159,8 +1159,6 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="0" />
-				<mul stat="PhysicalMpConsumeRate" val="0" />
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1173,6 +1171,16 @@
 			<effect name="HealEffect">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-100</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-100</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 			</effect>
 		</effects>
 	</skill>

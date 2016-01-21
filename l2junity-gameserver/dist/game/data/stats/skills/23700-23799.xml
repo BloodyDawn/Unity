@@ -902,7 +902,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="vitalityConsumeRate" val="0.97" />
 			</effect>
 			<effect name="ExpModify">
 				<amount>8</amount>
@@ -911,6 +910,11 @@
 			<effect name="SpModify">
 				<amount>8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -926,7 +930,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="vitalityConsumeRate" val="0.97" />
 			</effect>
 			<effect name="ExpModify">
 				<amount>16</amount>
@@ -947,6 +950,11 @@
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>2</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -962,7 +970,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="vitalityConsumeRate" val="0.95" />
 			</effect>
 			<effect name="ExpModify">
 				<amount>24</amount>
@@ -984,6 +991,11 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="23777" levels="1" name="Clan Teamwork - Stage 4">
@@ -998,7 +1010,6 @@
 		<isMagic>4</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="vitalityConsumeRate" val="0.95" />
 			</effect>
 			<effect name="ExpModify">
 				<amount>35</amount>
@@ -1031,6 +1042,11 @@
 			<effect name="PveRaidPhysicalSkillDefenceBonus">
 				<amount>8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

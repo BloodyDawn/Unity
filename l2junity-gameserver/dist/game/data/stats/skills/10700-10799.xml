@@ -521,9 +521,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="PhysicalMpConsumeRate" val="0.7">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="MaxMp">
 				<amount>25</amount>
@@ -537,6 +534,16 @@
 			<effect name="PhysicalAttackRange">
 				<amount>500</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-30</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 				<weaponType>
 					<item>BOW</item>
 					<item> CROSSBOW</item>
