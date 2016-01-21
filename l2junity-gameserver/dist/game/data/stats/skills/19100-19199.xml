@@ -1115,15 +1115,17 @@
 	</skill>
 	<skill id="19162" levels="2" name="Noble Recovery">
 		<!-- MP Recovery Bonus + 8 while running. -->
-		<table name="#bonus"> 1.03 1.05 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19162</icon>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="regMp" val="#bonus">
-					<player running="true" />
-				</mul>
+			<effect name="StatByMoveType">
+				<stat>REGENERATE_MP_RATE</stat>
+				<type>RUNNING</type>
+				<value>
+					<value level="1">8</value>
+					<value level="1">12</value>
+				</value>
 			</effect>
 		</effects>
 	</skill>
