@@ -2465,8 +2465,11 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<sub stat="vitalityConsumeRate" val="1" />
 				<transformationId>20002</transformationId>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2497,8 +2500,11 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<sub stat="vitalityConsumeRate" val="1" />
 				<transformationId>20003</transformationId>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-1</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2576,7 +2582,10 @@
 				<value>20000</value>
 			</effect>
 			<effect name="Buff">
-				<sub stat="vitalityConsumeRate" val="0" />
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-0</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

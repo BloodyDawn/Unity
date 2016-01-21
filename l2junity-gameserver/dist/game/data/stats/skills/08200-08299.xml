@@ -2165,8 +2165,11 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<sub stat="vitalityConsumeRate" val="10" />
 				<transformationId>319</transformationId>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
