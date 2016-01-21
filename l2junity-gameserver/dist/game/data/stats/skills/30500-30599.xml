@@ -1799,9 +1799,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defMCritRate" val="#crit">
-					<using kind="LIGHT" />
-				</mul>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1929,6 +1926,31 @@
 				</armorType>
 			</effect>
 			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+					<value level="4">-20</value>
+					<value level="5">-20</value>
+					<value level="6">-25</value>
+					<value level="7">-25</value>
+					<value level="8">-35</value>
+					<value level="9">-35</value>
+					<value level="10">-35</value>
+					<value level="11">-35</value>
+					<value level="12">-35</value>
+					<value level="13">-35</value>
+					<value level="14">-35</value>
+					<value level="15">-35</value>
+					<value level="16">-35</value>
+					<value level="17">-35</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
 				<amount>
 					<value level="1">0</value>
 					<value level="2">-15</value>

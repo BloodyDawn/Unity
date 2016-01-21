@@ -2727,9 +2727,12 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defMCritRate" val="1.50" />
 			</effect>
 			<effect name="DefenceCriticalRate">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
 				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
