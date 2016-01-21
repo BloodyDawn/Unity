@@ -47,11 +47,11 @@ public abstract class AbstractEffect
 	
 	private List<FuncTemplate> _funcTemplates;
 	private int _ticks;
-
+	
 	protected AbstractEffect()
 	{
 	}
-
+	
 	/**
 	 * Abstract effect constructor.
 	 * @param params the parameters
@@ -110,7 +110,7 @@ public abstract class AbstractEffect
 		}
 		_funcTemplates.add(f);
 	}
-
+	
 	/**
 	 * Gets the effect ticks
 	 * @return the ticks
@@ -119,7 +119,7 @@ public abstract class AbstractEffect
 	{
 		return _ticks;
 	}
-
+	
 	/**
 	 * Sets the effect ticks
 	 * @param ticks the ticks
@@ -128,7 +128,7 @@ public abstract class AbstractEffect
 	{
 		_ticks = ticks;
 	}
-
+	
 	public double getTicksMultiplier()
 	{
 		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
@@ -227,13 +227,13 @@ public abstract class AbstractEffect
 	{
 		return EffectFlag.NONE.getMask();
 	}
-
+	
 	@Override
 	public String toString()
 	{
 		return "Effect " + getClass().getSimpleName();
 	}
-
+	
 	public boolean checkCondition(Object obj)
 	{
 		return true;
@@ -249,10 +249,12 @@ public abstract class AbstractEffect
 	}
 	
 	/**
-	 * @param info
+	 * @param effector
+	 * @param effected
+	 * @param skill
 	 * @return {@code true} if pump can be invoked, {@code false} otherwise
 	 */
-	public boolean canPump(BuffInfo info)
+	public boolean canPump(Creature effector, Creature effected, Skill skill)
 	{
 		return true;
 	}

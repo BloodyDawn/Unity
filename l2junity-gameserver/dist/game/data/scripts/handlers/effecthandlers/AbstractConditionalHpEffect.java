@@ -19,11 +19,13 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -56,18 +58,18 @@ public abstract class AbstractConditionalHpEffect extends AbstractConditionalEff
 	}
 	
 	@Override
-	public boolean canPump(BuffInfo info)
+	public boolean canPump(Creature effector, Creature effected, Skill skill)
 	{
-		return (_hpPercent <= 0) || (info.getEffected().getCurrentHpPercent() <= _hpPercent);
+		return (_hpPercent <= 0) || (effected.getCurrentHpPercent() <= _hpPercent);
 	}
 	
 	private void onHpChange(OnCreatureHpChange event)
 	{
 		final boolean condStatus = event.getCreature().getCurrentHpPercent() <= _hpPercent;
-		final EffectedConditionHolder holder = getHolder();
+		final EffectedConditionHolder holder = getHolder(event.getCreature().getObjectId());
 		if (holder.getLastConditionStatus().compareAndSet(!condStatus, condStatus))
 		{
-			update();
+			update(event.getCreature().getObjectId());
 		}
 	}
 }
