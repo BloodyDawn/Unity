@@ -1890,7 +1890,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
-				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
+				<!-- Heal Capacity +22 -->
 				<!-- Magic Cancel Rate -15 -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -1909,6 +1909,10 @@
 			</effect>
 			<effect name="ReduceCancel">
 				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>22</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

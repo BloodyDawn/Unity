@@ -1395,13 +1395,17 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="30">
-					<using kind="SIGIL" />
-				</add>
 			</effect>
 			<effect name="MpRegen">
 				<amount>17</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>SIGIL</item>
+				</weaponType>
+			</effect>
+			<effect name="HealEffect">
+				<amount>30</amount>
+				<mode>DIFF</mode>
 				<weaponType>
 					<item>SIGIL</item>
 				</weaponType>

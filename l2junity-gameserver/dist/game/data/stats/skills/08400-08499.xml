@@ -2077,7 +2077,6 @@
 			<effect name="DefenceTrait">
 				<mul stat="mReuse" val="0.95" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<add stat="healEffect" val="15" />
 				<BLEED>25</BLEED>
 				<SHOCK>20</SHOCK>
 				<DERANGEMENT>10</DERANGEMENT>
@@ -2111,6 +2110,10 @@
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

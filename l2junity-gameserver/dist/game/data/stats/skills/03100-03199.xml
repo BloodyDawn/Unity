@@ -2566,7 +2566,21 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffect" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">44</value>
+					<value level="2">49</value>
+					<value level="3">53</value>
+					<value level="4">57</value>
+					<value level="5">61</value>
+					<value level="6">64</value>
+					<value level="7">68</value>
+					<value level="8">72</value>
+					<value level="9">75</value>
+					<value level="10">79</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

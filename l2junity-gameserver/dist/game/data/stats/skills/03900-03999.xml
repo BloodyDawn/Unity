@@ -13,7 +13,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffect" />
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">33</value>
+					<value level="2">43</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -70,7 +70,6 @@ public enum Stats
 	REGENERATE_MP_RATE("regMp"),
 	MANA_CHARGE("manaCharge"),
 	HEAL_EFFECT("healEffect"),
-	HEAL_POWER("healPower"),
 	
 	// ATTACK & DEFENCE
 	PHYSICAL_DEFENCE("pDef", new PDefenseFinalizer()),

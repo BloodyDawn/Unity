@@ -28,6 +28,6 @@ public class HealEffect extends AbstractStatEffect
 {
 	public HealEffect(StatsSet params)
 	{
-		super(params, Stats.HEAL_EFFECT, Stats.HEAL_POWER);
+		super(params, Stats.HEAL_EFFECT);
 	}
 }

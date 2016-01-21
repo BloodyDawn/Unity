@@ -3281,7 +3281,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="maxHp" val="521" />
-				<add stat="healEffect" val="#healEffect" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -3370,6 +3369,15 @@
 			<effect name="StatUp">
 				<amount>3</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">108</value>
+					<value level="4">108</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -4087,7 +4095,6 @@
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4185,6 +4192,15 @@
 			<effect name="StatUp">
 				<amount>-1</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">155</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -4340,7 +4356,6 @@
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4435,6 +4450,15 @@
 			<effect name="StatUp">
 				<amount>-2</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">217</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -5063,7 +5087,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -5157,6 +5180,15 @@
 			<effect name="StatUp">
 				<amount>1</amount>
 				<stat>WIT</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">65</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -5305,7 +5337,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -5403,6 +5434,15 @@
 			<effect name="StatUp">
 				<amount>-1</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">85</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -5553,7 +5593,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -5660,6 +5699,15 @@
 					<value level="4">3</value>
 				</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">89</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -5811,7 +5859,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -5917,6 +5964,15 @@
 			<effect name="StatUp">
 				<amount>-1</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">108</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -6064,7 +6120,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="healEffect" val="#healEffectAdd" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -6162,6 +6217,15 @@
 			<effect name="StatUp">
 				<amount>-2</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">111</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
