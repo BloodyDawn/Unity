@@ -1264,9 +1264,6 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.15">
-					<using kind="BOW,POLE,CROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>25</amount>
@@ -1282,6 +1279,15 @@
 					<item>ANCIENTSWORD</item>
 					<item>RAPIER</item>
 					<item>ETC</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>15</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>POLE</item>
+					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
 		</effects>
