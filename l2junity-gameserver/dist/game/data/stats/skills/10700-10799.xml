@@ -365,7 +365,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
@@ -412,6 +411,10 @@
 					<item> TWOHANDCROSSBOW</item>
 				</weaponType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10752" levels="10" name="Superior Light Armor Mastery">
@@ -436,7 +439,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="maxHp" val="4783">
 					<using kind="LIGHT" />
 				</add>
@@ -481,6 +483,10 @@
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -540,7 +546,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<sub stat="damageZoneVuln" val="30" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -572,6 +577,10 @@
 				<amount>51</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10755" levels="10" name="Superior Mental Attack Resistance">
@@ -596,7 +605,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="reflectSkillPhysic" val="10" />
 				<add stat="reflectSkillMagic" val="10" />
 			</effect>
@@ -686,6 +694,10 @@
 					<value level="10">40</value>
 				</POISON>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10756" levels="10" name="Superior Critical Arrow">
@@ -710,7 +722,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<mul stat="skillCriticalProbability" val="11" />
 			</effect>
 			<effect name="CriticalDamage">
@@ -731,6 +742,10 @@
 			<effect name="CriticalRate">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2845,7 +2860,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>25</amount>
@@ -2865,6 +2879,10 @@
 					<value level="10">1583</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>

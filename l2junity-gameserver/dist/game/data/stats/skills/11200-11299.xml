@@ -359,7 +359,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="mCritRate" val="6" />
-				<add stat="INT" val="2" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
 			<effect name="PAtk">
@@ -414,6 +413,10 @@
 				<amount>23</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11252" levels="10" name="Superior Robe Mastery">
@@ -438,7 +441,6 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>4151</amount>
@@ -469,6 +471,10 @@
 					<item>MAGIC</item>
 				</armorType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11253" levels="10" name="Superior Magic Mastery">
@@ -494,7 +500,6 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 				<mul stat="mReuse" val="0.75" />
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 			</effect>
@@ -517,6 +522,10 @@
 				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11254" levels="4" name="Superior Summon Mastery">
@@ -533,7 +542,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 				<add stat="summonPoints" val="4" />
 			</effect>
 			<effect name="CubicMastery">
@@ -563,6 +571,10 @@
 				<skillLevelScaleTo>5</skillLevelScaleTo>
 				<attackSkillId>11356</attackSkillId>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11255" levels="1" name="Superior Spirit Mastery">
@@ -575,7 +587,6 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -583,6 +594,10 @@
 				<BLEED>30</BLEED>
 				<POISON>30</POISON>
 				<DERANGEMENT>30</DERANGEMENT>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2516,7 +2531,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -2577,6 +2591,10 @@
 					<value level="10">40</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2850,7 +2868,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 				<add stat="maxHp" val="4151">
 					<using kind="LIGHT" />
 				</add>
@@ -2872,6 +2889,10 @@
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>

@@ -170,7 +170,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="PAtk">
@@ -222,6 +221,10 @@
 					<item>POLE</item>
 				</weaponType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10252" levels="10" name="Superior Dual Weapon Mastery">
@@ -246,7 +249,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>30</amount>
@@ -290,6 +292,10 @@
 					<item>DUAL</item>
 				</weaponType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10253" levels="10" name="Superior Heavy Armor Mastery">
@@ -314,7 +320,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="maxHp" val="5368">
 					<using kind="HEAVY" />
 				</add>
@@ -336,6 +341,10 @@
 				<armorType>
 					<item>HEAVY</item>
 				</armorType>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -361,9 +370,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2">
-					<using kind="LIGHT" />
-				</add>
 				<add stat="maxHp" val="5368">
 					<using kind="LIGHT" />
 				</add>
@@ -417,6 +423,13 @@
 			<effect name="DefenceCriticalRate">
 				<amount>-35</amount>
 				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
@@ -511,7 +524,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="maxHp" val="#maxHp" />
 				<add stat="regHp" val="6" />
 			</effect>
@@ -549,6 +561,10 @@
 				<amount>12</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10257" levels="1" name="Self Heal (Warrior)">
@@ -561,7 +577,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -569,6 +584,10 @@
 				<POISON>30</POISON>
 				<SLEEP>30</SLEEP>
 				<DERANGEMENT>30</DERANGEMENT>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -1914,7 +1933,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1990,6 +2008,10 @@
 					<value level="10">40</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>

@@ -22,7 +22,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -83,6 +82,10 @@
 					<value level="10">40</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>

@@ -2063,9 +2063,6 @@
 				<mul stat="mReuse" val="0.95" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<add stat="healEffect" val="15" />
-				<add stat="MEN" val="2" />
-				<add stat="CON" val="1" />
-				<sub stat="STR" val="1" />
 				<BLEED>25</BLEED>
 				<SHOCK>20</SHOCK>
 				<DERANGEMENT>10</DERANGEMENT>
@@ -2087,6 +2084,18 @@
 			<effect name="DefenceAttribute">
 				<amount>15</amount>
 				<attribute>WATER</attribute>
+			</effect>
+			<effect name="StatUp">
+				<amount>-1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>MEN</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2729,7 +2738,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2742,7 +2754,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="DEX" val="2" />
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>DEX</stat>
 			</effect>
 		</effects>
 	</skill>

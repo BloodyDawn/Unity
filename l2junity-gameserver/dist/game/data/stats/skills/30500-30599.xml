@@ -2363,8 +2363,15 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="#STR" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">14</value>
+				</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>

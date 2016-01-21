@@ -324,8 +324,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -351,7 +354,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="MaxMp">
 				<amount>
@@ -367,6 +369,10 @@
 					<value level="10">911</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2765,7 +2771,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="HpRegen">
 				<amount>
@@ -2782,6 +2787,10 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="11548" levels="1" name="Superior Quick Recovery">
@@ -2794,8 +2803,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<mul stat="mReuse" val="0.75" /> <!-- TODO check me seems based on isMagic type -->
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2849,7 +2861,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -2857,6 +2868,10 @@
 				<POISON>30</POISON>
 				<SLEEP>30</SLEEP>
 				<DERANGEMENT>30</DERANGEMENT>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2887,11 +2902,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="MpRegen">
 				<amount>8.4</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2905,10 +2923,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="rEvas" val="17">
 					<player hp="30" />
 				</add>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>

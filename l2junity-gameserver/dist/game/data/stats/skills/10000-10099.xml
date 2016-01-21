@@ -40,7 +40,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -73,6 +72,10 @@
 					<item> BLUNT</item>
 				</weaponType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10002" levels="10" name="Superior Heavy Armor Mastery">
@@ -100,7 +103,6 @@
 				<add stat="maxHp" val="6883">
 					<using kind="HEAVY" />
 				</add>
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
@@ -138,6 +140,10 @@
 				<amount>-35</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10003" levels="10" name="Superior Shield Mastery">
@@ -162,7 +168,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefenceRate">
@@ -190,6 +195,10 @@
 					<item>SHIELD</item>
 				</weaponType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10004" levels="10" name="Superior M. Def.">
@@ -214,7 +223,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -234,6 +242,10 @@
 			<effect name="ResistDDMagic">
 				<amount>25</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -259,7 +271,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="reflectSkillPhysic" val="10" />
 				<add stat="reflectSkillMagic" val="10" />
 			</effect>
@@ -349,6 +360,10 @@
 					<value level="10">40</value>
 				</DERANGEMENT>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10006" levels="1" name="Last Patience">
@@ -362,7 +377,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
@@ -373,6 +387,10 @@
 				<minDamage>1</minDamage>
 				<skillId>10007</skillId>
 				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2468,7 +2486,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -2559,6 +2576,10 @@
 					<value level="10">40</value>
 				</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>

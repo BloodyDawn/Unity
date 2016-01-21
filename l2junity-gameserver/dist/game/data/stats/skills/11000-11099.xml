@@ -149,7 +149,6 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -169,6 +168,10 @@
 			<effect name="ResistDDMagic">
 				<amount>35</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -206,7 +209,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
 				<mul stat="mCritRate" val="1.06" />
 			</effect>
@@ -217,6 +219,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>6</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -230,13 +236,16 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
 				<SLEEP>30</SLEEP>
 				<BLEED>30</BLEED>
 				<DERANGEMENT>30</DERANGEMENT>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>

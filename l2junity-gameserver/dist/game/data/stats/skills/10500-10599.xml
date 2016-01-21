@@ -47,7 +47,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="PAtk">
@@ -86,6 +85,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10502" levels="10" name="Superior Dual Dagger Mastery">
@@ -111,7 +114,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -149,6 +151,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10503" levels="10" name="Superior Light Armor Mastery">
@@ -183,7 +189,6 @@
 				<set stat="statSpeed" val="2">
 					<using kind="LIGHT" />
 				</set>
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="TriggerSkillByAvoid">
 				<!-- Assassin's Reflex -->
@@ -224,6 +229,10 @@
 					<item>LIGHT</item>
 				</armorType>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10504" levels="10" name="Superior Movement">
@@ -250,7 +259,6 @@
 		<effects>
 			<effect name="Buff">
 				<add stat="regHp" val="6" />
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -270,6 +278,10 @@
 			<effect name="HpRegen">
 				<amount>12</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -297,7 +309,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="skillCriticalProbability" val="11" />
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -318,6 +329,10 @@
 				<amount>60</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10506" levels="1" name="Superior Spirit Mastery">
@@ -331,7 +346,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -339,6 +353,10 @@
 				<BLEED>30</BLEED>
 				<SLEEP>30</SLEEP>
 				<POISON>30</POISON>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -2871,7 +2889,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="STR" val="2" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2947,6 +2964,10 @@
 					<value level="10">40</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
