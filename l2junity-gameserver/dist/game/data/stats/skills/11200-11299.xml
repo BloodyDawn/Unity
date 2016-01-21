@@ -511,7 +511,6 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mReuse" val="0.75" />
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -538,6 +537,11 @@
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-25</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>

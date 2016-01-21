@@ -514,8 +514,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mReuse" val="0.95" />
-				<mul stat="pReuse" val="0.95" />
 			</effect>
 			<effect name="AttackTrait">
 				<POISON>25</POISON>
@@ -538,6 +536,16 @@
 			<effect name="DefenceAttribute">
 				<amount>15</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

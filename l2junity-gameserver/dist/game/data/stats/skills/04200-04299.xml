@@ -1651,8 +1651,16 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="pReuse" val="3.0" />
-				<mul stat="mReuse" val="3.0" />
+			</effect>
+			<effect name="Reuse">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

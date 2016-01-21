@@ -2015,8 +2015,6 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="pReuse" val="0.9" />
-				<mul stat="mReuse" val="0.9" />
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-25</amount>
@@ -2032,6 +2030,16 @@
 				<amount>-25</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2056,8 +2064,6 @@
 		<reuseDelay>1000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pReuse" val="0.95" />
-				<mul stat="mReuse" val="0.95" />
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-15</amount>
@@ -2073,6 +2079,16 @@
 				<amount>-15</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

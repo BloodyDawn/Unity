@@ -1411,7 +1411,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DamOverTime" ticks="5">
-				<mul stat="mReuse" val="0.9" />
 				<power>50</power>
 			</effect>
 			<effect name="MagicalAttackSpeed">
@@ -1420,6 +1419,11 @@
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
@@ -1892,8 +1896,6 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mReuse" val="0.8" />
-				<mul stat="pReuse" val="0.8" />
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-5</amount>
@@ -1904,6 +1906,16 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2408,8 +2420,6 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pReuse" val="0.9" />
-				<mul stat="dReuse" val="0.9" />
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-20</amount>
@@ -2418,6 +2428,16 @@
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
 			</effect>

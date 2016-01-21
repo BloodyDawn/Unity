@@ -1180,8 +1180,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pReuse" val="0.9" />
-				<mul stat="mReuse" val="0.9" />
 			</effect>
 			<effect name="AttackTrait">
 				<SLEEP>40</SLEEP>
@@ -1212,6 +1210,16 @@
 			<effect name="MaxHp">
 				<amount>445</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

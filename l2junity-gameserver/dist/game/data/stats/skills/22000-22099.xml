@@ -2261,8 +2261,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pReuse" val="0.8" />
-				<mul stat="mReuse" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>10</amount>
@@ -2271,6 +2269,16 @@
 			<effect name="DamageShield">
 				<amount>5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>

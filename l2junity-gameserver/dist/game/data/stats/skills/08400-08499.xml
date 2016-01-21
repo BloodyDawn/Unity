@@ -2081,7 +2081,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<mul stat="mReuse" val="0.95" />
 				<BLEED>20</BLEED>
 				<SHOCK>15</SHOCK>
 				<DERANGEMENT>10</DERANGEMENT>
@@ -2104,6 +2103,11 @@
 				<amount>10</amount>
 				<attribute>WATER</attribute>
 			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8460" levels="1" name="Blessed Freya's Necklace">
@@ -2116,7 +2120,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<mul stat="mReuse" val="0.95" />
 				<BLEED>25</BLEED>
 				<SHOCK>20</SHOCK>
 				<DERANGEMENT>10</DERANGEMENT>
@@ -2156,6 +2159,11 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
 				<amount>-5</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>

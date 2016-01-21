@@ -2401,7 +2401,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mReuse" val="0.75" />
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>23</amount>
@@ -2428,6 +2427,11 @@
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-25</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>

@@ -650,9 +650,6 @@
 		<reuseDelay>30000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pReuse" val="#pReuse">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -676,6 +673,21 @@
 					<value level="4">-15</value>
 				</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-5</value>
+					<value level="3">-7</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
 				<weaponType>
 					<item>BOW</item>
 					<item> CROSSBOW</item>
