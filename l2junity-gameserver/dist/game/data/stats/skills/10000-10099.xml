@@ -162,11 +162,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="shieldDefAngle" val="360">
-					<using kind="SHIELD" />
-				</add>
 				<add stat="STR" val="2" />
 			</effect>
+			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefenceRate">
 				<amount>100</amount>
 				<mode>PER</mode>

@@ -763,9 +763,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<set stat="shieldDefAngle" val="360" />
-			</effect>
+			<effect name="PhysicalShieldAngleAll" />
 		</effects>
 	</skill>
 	<skill id="317" levels="5" name="Focus Attack">
@@ -834,9 +832,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<set stat="shieldDefAngle" val="360" />
-			</effect>
+			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
