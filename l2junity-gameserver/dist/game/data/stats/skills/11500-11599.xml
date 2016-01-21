@@ -48,7 +48,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pvePhysDmg" val="1.20" />
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -102,6 +101,10 @@
 					<item>DUAL</item>
 					<item> DUALBLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

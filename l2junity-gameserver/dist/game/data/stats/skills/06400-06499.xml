@@ -1143,7 +1143,10 @@
 		<trait>POISON</trait>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pveMagicalDmg" val="2.0" />
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1166,8 +1169,14 @@
 		<trait>POISON</trait>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pvePhysDmg" val="2.0" />
-				<mul stat="pvePhysSkillsDmg" val="2.0" />
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1190,8 +1199,14 @@
 		<trait>POISON</trait>
 		<effects>
 			<effect name="Buff">
-				<mul stat="pvePhysDmg" val="2.0" />
-				<mul stat="pvePhysSkillsDmg" val="2.0" />
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
