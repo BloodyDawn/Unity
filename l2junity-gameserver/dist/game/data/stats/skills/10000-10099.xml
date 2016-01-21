@@ -1228,7 +1228,6 @@
 		<!-- For 30 sec., P. Def. + 4000 and M. Def. + 4000. Damage received is capped at 300 and 40% of it is reflected back to the attacker. Additionally, + 80% Buff-canceling Attack Resistance. -->
 		<table name="#def"> 4000 6000 8000 10000 12000 14000 16000 </table>
 		<table name="#reflectDam"> 40 60 80 100 100 100 100 </table>
-		<table name="#damageCap"> 300 200 150 100 100 100 100 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -1272,9 +1271,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="Buff">
-				<set stat="damageCap" val="#damageCap" />
-			</effect>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">4000</value>
@@ -1314,6 +1310,17 @@
 			<effect name="ResistDispelByCategory">
 				<amount>-80</amount>
 				<slot>BUFF</slot>
+			</effect>
+			<effect name="GetDamageLimit">
+				<amount>
+					<value level="1">300</value>
+					<value level="2">200</value>
+					<value level="3">150</value>
+					<value level="4">100</value>
+					<value level="5">100</value>
+					<value level="6">100</value>
+					<value level="7">100</value>
+				</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -1673,8 +1680,8 @@
 			<effect name="TransferDamageToPlayer">
 				<amount>90</amount>
 			</effect>
-			<effect name="Buff">
-				<set stat="damageCap" val="10" />
+			<effect name="GetDamageLimit">
+				<amount>10</amount>
 			</effect>
 		</effects>
 	</skill>
