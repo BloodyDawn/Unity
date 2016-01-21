@@ -381,10 +381,13 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="skillCritical" val="1">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</add>
+			<effect name="SkillCritical">
+				<stat>STR</stat>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+					<item>TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 			<effect name="PAtk">
 				<amount>10</amount>

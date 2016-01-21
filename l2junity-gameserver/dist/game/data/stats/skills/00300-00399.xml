@@ -1280,8 +1280,8 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="skillCritical" val="1" /> <!-- STR -->
+			<effect name="SkillCritical">
+				 <stat>STR</stat>
 			</effect>
 		</effects>
 	</skill>
@@ -1292,8 +1292,8 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="skillCritical" val="4" /> <!-- INT -->
+			<effect name="SkillCritical">
+				 <stat>INT</stat>
 			</effect>
 		</effects>
 	</skill>
