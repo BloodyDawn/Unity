@@ -22,9 +22,6 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="cancelVuln" val="0.2" />
-			</effect>
 			<effect name="PAtk">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -43,6 +40,10 @@
 			</effect>
 			<effect name="MpRegen">
 				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
