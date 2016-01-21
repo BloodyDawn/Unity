@@ -901,7 +901,6 @@
 		<isMagic>22</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1</dispel>
@@ -924,6 +923,10 @@
 			<effect name="MagicalEvasion">
 				<amount>5</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1128,7 +1131,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="mCritRate" val="1.2" />
-				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<dispel>MULTI_BUFF,-1;COUNTER_CRITICAL,-1</dispel>
@@ -1179,6 +1181,10 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

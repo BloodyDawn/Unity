@@ -3320,9 +3320,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="0.95">
-					<using kind="LIGHT" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -3442,6 +3439,13 @@
 				</armorType>
 			</effect>
 			<effect name="DefenceCriticalDamage">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalRate">
 				<amount>-5</amount>
 				<mode>PER</mode>
 				<armorType>

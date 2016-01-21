@@ -232,7 +232,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="0.97" />
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -321,11 +324,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="0.95" />
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

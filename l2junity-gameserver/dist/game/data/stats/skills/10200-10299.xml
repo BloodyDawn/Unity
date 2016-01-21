@@ -367,9 +367,6 @@
 				<add stat="maxHp" val="5368">
 					<using kind="LIGHT" />
 				</add>
-				<mul stat="defCritRate" val="0.65">
-					<using kind="LIGHT" />
-				</mul>
 			</effect>
 			<effect name="Speed">
 				<amount>10</amount>
@@ -412,6 +409,13 @@
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-35</amount>
 				<mode>PER</mode>
 				<armorType>
 					<item>LIGHT</item>

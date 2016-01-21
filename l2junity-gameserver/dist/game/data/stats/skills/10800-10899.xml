@@ -650,9 +650,6 @@
 				<mul stat="pReuse" val="#pReuse">
 					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
-				<mul stat="defCritRate" val="#defCritRate">
-					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
-				</mul>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -660,6 +657,20 @@
 					<value level="2">6</value>
 					<value level="3">7</value>
 					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item> CROSSBOW</item>
+					<item> TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-7</value>
+					<value level="3">-10</value>
+					<value level="4">-15</value>
 				</amount>
 				<mode>PER</mode>
 				<weaponType>

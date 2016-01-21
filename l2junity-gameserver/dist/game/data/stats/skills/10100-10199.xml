@@ -429,7 +429,6 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="0.75" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>25</amount>
@@ -437,6 +436,10 @@
 			</effect>
 			<effect name="HealEffect">
 				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-25</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -573,7 +576,6 @@
 		<reuseDelay>1000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="0.8" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
@@ -581,6 +583,10 @@
 			</effect>
 			<effect name="HealEffect">
 				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -604,7 +610,6 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="defCritRate" val="1.15" />
 			</effect>
 			<effect name="PAtk">
 				<amount>-30</amount>
@@ -624,6 +629,10 @@
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

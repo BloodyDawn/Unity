@@ -440,9 +440,6 @@
 				<add stat="maxHp" val="4783">
 					<using kind="LIGHT" />
 				</add>
-				<mul stat="defCritRate" val="0.65">
-					<using kind="LIGHT" />
-				</mul>
 				<set stat="statSpeed" val="2" /> <!-- DEX -->
 				<set stat="statSkillCritical" val="2" /> <!-- DEX -->
 			</effect>
@@ -474,6 +471,13 @@
 			<effect name="MpRegen">
 				<amount>6</amount>
 				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>-35</amount>
+				<mode>PER</mode>
 				<armorType>
 					<item>LIGHT</item>
 				</armorType>
@@ -1329,7 +1333,10 @@
 		<isDebuff>true</isDebuff>
 		<effects>
 			<effect name="Buff">
-				<mul stat="defCritRate" val="1.5" />
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>50</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

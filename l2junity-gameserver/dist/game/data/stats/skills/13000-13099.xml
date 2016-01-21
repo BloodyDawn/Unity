@@ -2326,7 +2326,6 @@
 			<effect name="Buff">
 				<add stat="CON" val="1" />
 				<add stat="maxHp" val="463" />
-				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2398,6 +2397,15 @@
 					<value level="4">10</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-3.3</value>
+					<value level="3">-3.3</value>
+					<value level="4">-3.3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2509,7 +2517,6 @@
 				<add stat="CON" val="2" />
 				<add stat="STR" val="-1" />
 				<add stat="maxHp" val="487" />
-				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2590,6 +2597,15 @@
 					<value level="4">10</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-3.3</value>
+					<value level="3">-3.3</value>
+					<value level="4">-3.3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2706,7 +2722,6 @@
 				<add stat="CON" val="3" />
 				<add stat="STR" val="-2" />
 				<add stat="maxHp" val="511" />
-				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2787,6 +2802,15 @@
 					<value level="4">15</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-3.3</value>
+					<value level="3">-3.3</value>
+					<value level="4">-3.3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2910,7 +2934,6 @@
 				<add stat="STR" val="-1" />
 				<add stat="maxHp" val="521" />
 				<add stat="healEffect" val="#healEffect" />
-				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2982,6 +3005,15 @@
 					<value level="4">15</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-3.3</value>
+					<value level="3">-3.3</value>
+					<value level="4">-3.3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -3105,7 +3137,6 @@
 				<add stat="CON" val="4" />
 				<add stat="STR" val="-2" />
 				<add stat="maxHp" val="536" />
-				<mul stat="defCritRate" val="#defCritRate" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -3186,6 +3217,15 @@
 					<value level="4">20</value>
 				</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">-3.3</value>
+					<value level="3">-3.3</value>
+					<value level="4">-3.3</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
