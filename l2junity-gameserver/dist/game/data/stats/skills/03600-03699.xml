@@ -1891,7 +1891,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
-				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
+				<!-- Magic Cancel Rate -15 -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -1907,6 +1907,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3646" levels="1" name="Dynasty Silver Satin Tunic">
@@ -1920,7 +1924,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
-				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
+				<!-- Magic Cancel Rate -15 -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -1936,6 +1940,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

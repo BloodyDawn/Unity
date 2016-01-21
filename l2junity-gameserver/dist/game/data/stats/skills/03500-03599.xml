@@ -650,7 +650,7 @@
 				<!-- P. Def. +8% -->
 				<!-- Casting Spd. +15% -->
 				<!-- Speed +7 -->
-				<sub stat="cancel" val="50" /> <!-- Small decrease in chance of spell interruption -->
+				<!-- Small decrease in chance of spell interruption -->
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>50</PARALYZE>
@@ -666,6 +666,10 @@
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1102,7 +1106,7 @@
 			<effect name="Buff">
 				<!-- M. Atk +17% -->
 				<!-- Movement Speed +7 -->
-				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
+				<!-- Casting Cancel Probability -50% -->
 				<!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
 			<effect name="DefenceTrait">
@@ -1118,6 +1122,10 @@
 			</effect>
 			<effect name="WeightPenalty">
 				<amount>5759</amount>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2570,7 +2578,7 @@
 				<!-- PVP Damage Bonus +10% -->
 				<!-- PVP Damage Bonus +10% -->
 				<mul stat="MagicalMpConsumeRate" val="0.96" /> <!-- Magic MP Cost -4% -->
-				<sub stat="cancel" val="106" /> <!-- Chance of Magic Cancelation -106 -->
+				<!-- Chance of Magic Cancelation -106 -->
 			</effect>
 			<effect name="MAtk">
 				<amount>29.67</amount>
@@ -2598,6 +2606,10 @@
 			</effect>
 			<effect name="MagicCriticalRate">
 				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-106</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

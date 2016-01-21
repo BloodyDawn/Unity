@@ -2351,7 +2351,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="53" />
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-53</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

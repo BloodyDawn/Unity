@@ -370,7 +370,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="#cancel" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -429,6 +428,15 @@
 				</amount>
 				<stat>MEN</stat>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>
+					<value level="1">-0</value>
+					<value level="2">-0</value>
+					<value level="3">-0</value>
+					<value level="4">-30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13006" levels="4" name="Vesper Noble Robe Set">
@@ -449,7 +457,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<sub stat="cancel" val="#cancel" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -517,6 +524,15 @@
 					<value level="4">-2</value>
 				</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>
+					<value level="1">-0</value>
+					<value level="2">-30</value>
+					<value level="3">-30</value>
+					<value level="4">-30</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

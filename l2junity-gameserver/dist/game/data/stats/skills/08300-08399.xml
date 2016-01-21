@@ -269,7 +269,7 @@
 				<!-- M. Atk. 8.47% -->
 				<!-- Casting Speed 15% -->
 				<!-- MP Recovery Rate by 5.57% -->
-				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
+				<!-- decreases the damage to be cancelled by magic by 30 -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="MAtk">
@@ -296,6 +296,10 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8306" levels="1" name="Vesper Noble Robe Set - PvP">
@@ -321,7 +325,7 @@
 				<!-- M. Atk. 8.47% -->
 				<!-- Casting Speed 15% -->
 				<!-- MP Recovery Rate by 5.57% -->
-				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
+				<!-- decreases the damage to be cancelled by magic by 30 -->
 				<!-- Increases Speed by 7 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 				<SHOCK>50</SHOCK>
@@ -354,6 +358,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -445,11 +453,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="13" />
 			</effect>
 			<effect name="ResistDDMagic">
 				<amount>2</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-13</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

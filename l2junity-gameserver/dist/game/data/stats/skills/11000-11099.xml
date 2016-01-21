@@ -4085,7 +4085,10 @@
 			<effect name="Buff">
 				<mul stat="mReuse" val="#mReuse" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-				<sub stat="cancel" val="100" />
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

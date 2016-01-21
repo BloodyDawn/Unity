@@ -681,7 +681,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>8.33</PARALYZE>
@@ -693,6 +692,10 @@
 			<effect name="PhysicalDefence">
 				<amount>1.33</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -736,7 +739,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>8.33</PARALYZE>
@@ -749,6 +751,10 @@
 				<amount>1.33</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-8</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3738" levels="1" name="Dark Crystal Helmet">
@@ -760,7 +766,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="13" />
 			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>12.5</PARALYZE>
@@ -772,6 +777,10 @@
 			<effect name="PhysicalDefence">
 				<amount>2</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-13</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1658,7 +1667,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.3</SHOCK>
@@ -1674,6 +1682,10 @@
 			<effect name="WeightPenalty">
 				<amount>960</amount>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-8</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3780" levels="1" name="Major Arcana Robe">
@@ -1685,7 +1697,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="21" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20.83</SHOCK>
@@ -1701,6 +1712,10 @@
 			<effect name="WeightPenalty">
 				<amount>8159</amount>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-21</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3781" levels="1" name="Major Arcana Boots">
@@ -1712,7 +1727,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>8.3</SHOCK>
@@ -1728,6 +1742,10 @@
 			<effect name="WeightPenalty">
 				<amount>960</amount>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-8</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3782" levels="1" name="Major Arcana Circlet">
@@ -1739,7 +1757,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="cancel" val="13" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>12.5</SHOCK>
@@ -1754,6 +1771,10 @@
 			</effect>
 			<effect name="WeightPenalty">
 				<amount>1440</amount>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-13</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

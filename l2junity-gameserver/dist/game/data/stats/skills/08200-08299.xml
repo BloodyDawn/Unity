@@ -74,7 +74,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
+				<!-- Casting Cancel Probability -50% -->
 				<!-- M. Atk +17% -->
 				<!-- Movement Speed +7 -->
 				<!-- Point at which a weight penalty is applied +5759 -->
@@ -102,6 +102,10 @@
 			</effect>
 			<effect name="WeightPenalty">
 				<amount>5759</amount>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -587,7 +591,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
-				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
+				<!-- Decrease magic cancel rate -15% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -626,6 +630,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8212" levels="1" name="Dynasty Tunic - PvP">
@@ -639,7 +647,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
-				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
+				<!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -678,6 +686,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -914,7 +926,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
-				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
+				<!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- decrease MP consumption -5% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -953,6 +965,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1506,7 +1522,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
-				<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
+				<!-- Decrease magic cancel rate -15% -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- Decrease MP consumption -6% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -1546,6 +1562,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8229" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1560,7 +1580,7 @@
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
 				<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
-				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
+				<!-- Magic Cancel Rate -15 -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1599,6 +1619,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8230" levels="1" name="Dynasty Silver Satin Tunic - PvP">
@@ -1612,7 +1636,7 @@
 			<effect name="Buff">
 				<!-- Casting Spd. +15% -->
 				<!-- Max MP +321 -->
-				<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
+				<!-- Magic Cancel Rate -15 -->
 				<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -1651,6 +1675,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-15</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2859,7 +2887,7 @@
 				<!-- M. Atk. 8.47% -->
 				<!-- Casting Speed 15% -->
 				<!-- MP Recovery Rate by 5.57% -->
-				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
+				<!-- decreases the damage to be cancelled by magic by 30 -->
 				<SHOCK>50</SHOCK>
 			</effect>
 			<effect name="MAtk">
@@ -2873,6 +2901,10 @@
 			<effect name="MpRegen">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2888,7 +2920,7 @@
 				<!-- M. Atk. 8.47% -->
 				<!-- Casting Speed 15% -->
 				<!-- MP Recovery Rate by 5.57% -->
-				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
+				<!-- decreases the damage to be cancelled by magic by 30 -->
 				<!-- Increases Speed by 7 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 				<SHOCK>50</SHOCK>
@@ -2909,6 +2941,10 @@
 			<effect name="MpRegen">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-30</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
