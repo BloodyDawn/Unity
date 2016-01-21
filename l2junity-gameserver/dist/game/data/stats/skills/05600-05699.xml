@@ -2114,8 +2114,9 @@
 					<value level="85">1024</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-				<mul stat="pvpMagicalDmg" val="0.5" />
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<model>PER</model>
 			</effect>
 		</pveEffects>
 		<pvpEffects>
@@ -2208,8 +2209,9 @@
 					<value level="85">640</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-				<mul stat="pvpMagicalDmg" val="0.5" />
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<model>PER</model>
 			</effect>
 		</pvpEffects>
 	</skill>
