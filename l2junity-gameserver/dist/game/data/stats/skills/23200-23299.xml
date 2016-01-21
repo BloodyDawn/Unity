@@ -1234,11 +1234,6 @@
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="regMp" val="4">
-					<using kind="MAGIC" />
-				</add>
-			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -1261,6 +1256,13 @@
 				<armorType>
 					<item>HEAVY</item>
 					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
 				</armorType>
 			</effect>
 			<effect name="ResistDispelByCategory">
@@ -2899,11 +2901,6 @@
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="regMp" val="4">
-					<using kind="MAGIC" />
-				</add>
-			</effect>
 			<effect name="MAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -2926,6 +2923,13 @@
 				<armorType>
 					<item>HEAVY</item>
 					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
 				</armorType>
 			</effect>
 			<effect name="ResistDispelByCategory">
@@ -3009,15 +3013,15 @@
 		<isMagic>2</isMagic>
 		<targetType>AURA</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
-			</effect>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
 				<weaponType>
 					<item>BLUNT</item>
 				</weaponType>
+			</effect>
+			<effect name="AttackTrait">
+				<SHOCK>8</SHOCK>
 			</effect>
 		</effects>
 	</skill>
