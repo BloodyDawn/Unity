@@ -1305,8 +1305,8 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="inventoryLimit" val="1" />
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -1318,9 +1318,15 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="PrivateBuyLimit" val="1" />
-				<add stat="PrivateSellLimit" val="1" />
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<type>TRADE_BUY</type>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<type>TRADE_SELL</type>
 			</effect>
 		</effects>
 	</skill>

@@ -37,7 +37,7 @@ public class EnlargeSlot extends AbstractEffect
 	{
 		super(params);
 		_amount = params.getDouble("amount", 0);
-		_type = params.getEnum("stat", StorageType.class, StorageType.INVENTORY_NORMAL);
+		_type = params.getEnum("type", StorageType.class, StorageType.INVENTORY_NORMAL);
 	}
 	
 	@Override

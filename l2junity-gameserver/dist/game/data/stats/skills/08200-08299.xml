@@ -3132,15 +3132,28 @@
 		</effects>
 	</skill>
 	<skill id="8290" levels="12" name="Add Belt Inventory Slot">
-		<table name="#inventoryLimit"> 3 6 9 12 15 18 21 24 27 30 33 36 </table>
 		<icon>icon.skill0332</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="inventoryLimit" val="#inventoryLimit" />
+			<effect name="EnlargeSlot">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">6</value>
+					<value level="3">9</value>
+					<value level="4">12</value>
+					<value level="5">15</value>
+					<value level="6">18</value>
+					<value level="7">21</value>
+					<value level="8">24</value>
+					<value level="9">27</value>
+					<value level="10">30</value>
+					<value level="11">33</value>
+					<value level="12">36</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
