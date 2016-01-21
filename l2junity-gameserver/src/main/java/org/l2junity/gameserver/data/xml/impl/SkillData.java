@@ -10,10 +10,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.w3c.dom.Document;
@@ -28,8 +24,6 @@ import net.objecthunter.exp4j.ExpressionBuilder;
  */
 public class SkillData implements IGameXmlReader
 {
-	private DocumentBuilder documentBuilder;
-	
 	private static final Set<String> BLOCK_ITEM_VALUE_ELEMENTS = new HashSet<>();
 	private static final Set<String> BLOCK_ITEM_ELEMENTS = new HashSet<>();
 	
@@ -42,14 +36,7 @@ public class SkillData implements IGameXmlReader
 	
 	protected SkillData()
 	{
-		try
-		{
-			documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		}
-		catch (ParserConfigurationException e)
-		{
-			e.printStackTrace();
-		}
+	
 	}
 	
 	@Override
