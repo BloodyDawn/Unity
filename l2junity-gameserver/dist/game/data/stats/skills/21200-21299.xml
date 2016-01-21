@@ -941,14 +941,23 @@
 			<player levelRange="1;84" />
 		</cond>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceExpLostByPvp" val="0.5" />
-				<mul stat="reduceExpLostByMob" val="0.5" />
-				<mul stat="reduceExpLostByRaid" val="0.5" />
-			</effect>
 			<effect name="ExpModify">
 				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-50</exp>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-50</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-50</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
 			</effect>
 		</effects>
 	</skill>

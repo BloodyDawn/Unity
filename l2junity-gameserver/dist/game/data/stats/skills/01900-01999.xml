@@ -1302,11 +1302,6 @@
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
-			<effect name="Buff">
-				<mul stat="reduceDeathPenaltyByRaid" val="0.1" />
-				<mul stat="reduceDeathPenaltyByPvp" val="0.1" />
-				<mul stat="reduceDeathPenaltyByMob" val="0.1" />
-			</effect>
 			<effect name="MagicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
@@ -1314,6 +1309,20 @@
 			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-90</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-90</deathPenalty>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-90</deathPenalty>
+				<mode>RAID</mode>
+				<type>PK</type>
 			</effect>
 		</effects>
 	</skill>

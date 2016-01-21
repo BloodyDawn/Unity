@@ -1128,8 +1128,10 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceDeathPenaltyByRaid" val="0" />
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-100</deathPenalty>
+				<mode>PER</mode>
+				<type>RAID</type>
 			</effect>
 		</effects>
 	</skill>

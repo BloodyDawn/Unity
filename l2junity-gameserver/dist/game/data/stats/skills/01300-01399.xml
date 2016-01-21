@@ -769,8 +769,10 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>PARTY</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceDeathPenaltyByRaid" val="0" />
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-100</deathPenalty>
+				<mode>PER</mode>
+				<type>RAID</type>
 			</effect>
 		</effects>
 	</skill>
@@ -3037,7 +3039,7 @@
 					<value level="6">36</value>
 					<value level="7">42</value>
 					<value level="8">48</value>
-				  </amount>
+				</amount>
 				<mode>DIFF</mode>
 				<type>RECIPE_DWARVEN</type>
 			</effect>
@@ -3069,7 +3071,7 @@
 					<value level="6">36</value>
 					<value level="7">42</value>
 					<value level="8">48</value>
-				  </amount>
+				</amount>
 				<mode>DIFF</mode>
 				<type>RECIPE_COMMON</type>
 			</effect>

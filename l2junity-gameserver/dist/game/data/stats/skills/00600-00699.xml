@@ -159,11 +159,16 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceDeathPenaltyByPvp" val="0.7" />
-				<mul stat="reduceExpLostByPvp" val="0.7" />
-				<mul stat="reduceDeathPenaltyByMob" val="0.88" />
-				<mul stat="reduceExpLostByMob" val="0.88" />
+			<effect name="ReduceDropPenalty">
+				<exp>-12</exp>
+				<deathPenalty>-12</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-30</exp>
+				<deathPenalty>-30</deathPenalty>
+				<mode>PER</mode>
+				<type>PK</type>
 			</effect>
 		</effects>
 	</skill>

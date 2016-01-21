@@ -1895,9 +1895,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="reduceExpLostByPvp" val="0.1" />
-				<mul stat="reduceExpLostByMob" val="0.1" />
-				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>260</transformationId>
 			</effect>
 			<effect name="MagicalDefence">
@@ -1907,6 +1904,20 @@
 			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
 			</effect>
 		</effects>
 	</skill>
@@ -1939,9 +1950,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="reduceExpLostByPvp" val="0.1" />
-				<mul stat="reduceExpLostByMob" val="0.1" />
-				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>8</transformationId>
 			</effect>
 			<effect name="MagicalDefence">
@@ -1951,6 +1959,20 @@
 			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
 			</effect>
 		</effects>
 	</skill>
@@ -1983,9 +2005,6 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="reduceExpLostByPvp" val="0.1" />
-				<mul stat="reduceExpLostByMob" val="0.1" />
-				<mul stat="reduceExpLostByRaid" val="0.1" />
 				<transformationId>9</transformationId>
 			</effect>
 			<effect name="MagicalDefence">
@@ -1995,6 +2014,20 @@
 			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
 			</effect>
 		</effects>
 	</skill>

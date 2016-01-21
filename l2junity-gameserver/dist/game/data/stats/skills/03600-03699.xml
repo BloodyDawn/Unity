@@ -608,16 +608,12 @@
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#mpConsumeRate"> 1 0.95 0.95 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
-		<table name="#expLost"> 0.3 0.3 0.6 </table>
 		<icon>icon.armor_t1004_ul_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceExpLostByPvp" val="#expLost" />
-			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Power of Apella -->
 				<attackerType>L2Playable</attackerType>
@@ -672,6 +668,15 @@
 				<mode>PER</mode>
 				<magicType>3</magicType>
 			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>
+					<value level="1">-70</value>
+					<value level="2">-70</value>
+					<value level="3">-40</value>
+				</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3609" levels="3" name="Apella Light Armor Set">
@@ -679,16 +684,12 @@
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#mpConsumeRate"> 1 0.95 0.95 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
-		<table name="#expLost"> 0.3 0.3 0.6 </table>
 		<icon>icon.armor_t1005_ul_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceExpLostByPvp" val="#expLost" />
-			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Power of Apella -->
 				<attackerType>L2Playable</attackerType>
@@ -743,6 +744,15 @@
 				<mode>PER</mode>
 				<magicType>3</magicType>
 			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>
+					<value level="1">-70</value>
+					<value level="2">-70</value>
+					<value level="3">-40</value>
+				</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3610" levels="3" name="Apella Robe Set">
@@ -750,16 +760,12 @@
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#mpConsumeRate"> 1 0.95 0.95 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
-		<table name="#expLost"> 0.3 0.3 0.6 </table>
 		<icon>icon.armor_t1006_ul_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="reduceExpLostByPvp" val="#expLost" />
-			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Power of Apella -->
 				<attackerType>L2Playable</attackerType>
@@ -813,6 +819,15 @@
 				</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>
+					<value level="1">-70</value>
+					<value level="2">-70</value>
+					<value level="3">-40</value>
+				</exp>
+				<mode>PER</mode>
+				<type>PK</type>
 			</effect>
 		</effects>
 	</skill>
