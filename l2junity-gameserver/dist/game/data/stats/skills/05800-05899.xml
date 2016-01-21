@@ -2385,7 +2385,6 @@
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="maxHp" val="0.8" />
 			</effect>
 			<effect name="PAtk">
 				<amount>20</amount>
@@ -2427,6 +2426,10 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5895" levels="1" name="Mark of Cowardice">
@@ -2452,7 +2455,6 @@
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="Debuff">
-				<mul stat="maxHp" val="0.8" />
 			</effect>
 			<effect name="Speed">
 				<amount>25</amount>
@@ -2472,6 +2474,10 @@
 			</effect>
 			<effect name="HpRegen">
 				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>-20</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

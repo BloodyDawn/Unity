@@ -784,7 +784,10 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1014,7 +1017,15 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">25</value>
+					<value level="3">30</value>
+					<value level="4">35</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

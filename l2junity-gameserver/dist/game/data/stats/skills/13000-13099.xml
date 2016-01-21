@@ -33,7 +33,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -80,6 +79,15 @@
 				</amount>
 				<stat>DEX</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">531</value>
+					<value level="3">531</value>
+					<value level="4">531</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13002" levels="4" name="Vesper Noble Heavy Armor Set">
@@ -98,7 +106,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -172,6 +179,15 @@
 					<value level="4">-2</value>
 				</amount>
 				<stat>DEX</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">540</value>
+					<value level="3">540</value>
+					<value level="4">540</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1037,7 +1053,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -1154,6 +1169,15 @@
 				</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">541</value>
+					<value level="3">541</value>
+					<value level="4">541</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13017" levels="4" name="Vorpal Leather Armor Set">
@@ -1174,7 +1198,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1278,6 +1301,15 @@
 					<value level="4">2</value>
 				</amount>
 				<stat>DEX</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">360</value>
+					<value level="3">360</value>
+					<value level="4">360</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1430,7 +1462,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="550" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -1542,6 +1573,10 @@
 					<value level="4">-2</value>
 				</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>550</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2644,7 +2679,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="463" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2730,6 +2764,10 @@
 				<amount>1</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>463</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13065" levels="4" name="Set Effect - Immortal Heavy Armor 2 Piece (Attack Type)">
@@ -2746,7 +2784,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -2823,6 +2860,15 @@
 				<amount>1</amount>
 				<stat>STR</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">463</value>
+					<value level="4">463</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13066" levels="4" name="Set Effect - Twilight Heavy Armor 2 Piece (Defense Type)">
@@ -2840,7 +2886,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="487" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2939,6 +2984,10 @@
 				<amount>2</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>487</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13067" levels="4" name="Set Effect - Twilight Heavy Armor 2 Piece (Attack Type)">
@@ -2956,7 +3005,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 				<mul stat="PhysicalMpConsumeRate" val="#mpConsum" />
 				<mul stat="MagicalMpConsumeRate" val="#mpConsum" />
 				<mul stat="DanceMpConsumeRate" val="#mpConsum" />
@@ -3040,6 +3088,15 @@
 				<amount>-1</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">463</value>
+					<value level="4">463</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13068" levels="4" name="Set Effect - Seraph Heavy Armor 2 Piece (Defense Type)">
@@ -3057,7 +3114,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="511" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -3156,6 +3212,10 @@
 				<amount>3</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>511</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13069" levels="4" name="Set Effect - Seraph Heavy Armor 2 Piece (Attack Type)">
@@ -3173,7 +3233,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -3263,6 +3322,15 @@
 				<amount>-2</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">511</value>
+					<value level="4">511</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13070" levels="4" name="Set Effect - Eternal Heavy Armor 2 Piece (Defense Type)">
@@ -3280,7 +3348,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="521" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -3379,6 +3446,10 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>521</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13071" levels="4" name="Set Effect - Eternal Heavy Armor 2 Piece (Attack Type)">
@@ -3396,7 +3467,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -3486,6 +3556,15 @@
 				<amount>-1</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">521</value>
+					<value level="4">521</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13072" levels="4" name="Set Effect - R99 Rare Heavy Armor 2 Piece (Defense Type)">
@@ -3504,7 +3583,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="536" />
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -3603,6 +3681,10 @@
 				<amount>4</amount>
 				<stat>CON</stat>
 			</effect>
+			<effect name="MaxHp">
+				<amount>536</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="13073" levels="4" name="Set Effect - R99 Rare Heavy Armor 2 Piece (Attack Type)">
@@ -3622,7 +3704,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -3725,6 +3806,15 @@
 			<effect name="StatUp">
 				<amount>-2</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">536</value>
+					<value level="4">536</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -3862,7 +3952,6 @@
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -3942,6 +4031,15 @@
 			<effect name="StatUp">
 				<amount>1</amount>
 				<stat>STR</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">463</value>
+					<value level="4">463</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -4094,7 +4192,6 @@
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4199,6 +4296,15 @@
 					<value level="2">0</value>
 					<value level="3">0</value>
 					<value level="4">155</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">487</value>
+					<value level="4">487</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -4355,7 +4461,6 @@
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4457,6 +4562,15 @@
 					<value level="2">0</value>
 					<value level="3">0</value>
 					<value level="4">217</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">511</value>
+					<value level="4">511</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -4612,7 +4726,6 @@
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
-				<add stat="maxHp" val="#maxHp" />
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -4710,6 +4823,15 @@
 			<effect name="StatUp">
 				<amount>-1</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">521</value>
+					<value level="4">521</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -4852,7 +4974,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
 				<mul stat="MagicalMpConsumeRate" val="#MpConsume" />
 			</effect>
@@ -4943,6 +5064,15 @@
 			<effect name="StatUp">
 				<amount>-2</amount>
 				<stat>CON</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">536</value>
+					<value level="4">536</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

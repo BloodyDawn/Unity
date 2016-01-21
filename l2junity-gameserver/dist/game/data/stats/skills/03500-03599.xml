@@ -9,11 +9,15 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +2.2% -->
-				<add stat="maxHp" val="41" /> <!-- HP +41 -->
+				<!-- HP +41 -->
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>2.2</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>41</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -107,11 +111,15 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +5% -->
-				<add stat="maxHp" val="153" /> <!-- HP +153 -->
+				<!-- HP +153 -->
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>153</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -211,7 +219,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<sub stat="maxHp" val="269.65" /> <!-- HP -269.65 -->
+				<!-- HP -269.65 -->
+			</effect>
+			<effect name="MaxHp">
+				<amount>-269.65</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -255,7 +267,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="269.65" /> <!-- HP +269.65 -->
+				<!-- HP +269.65 -->
+			</effect>
+			<effect name="MaxHp">
+				<amount>269.65</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -289,11 +305,15 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +5.246 -->
-				<add stat="maxHp" val="294.49" /> <!-- HP +294.49 -->
+				<!-- HP +294.49 -->
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.26</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>294.49</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -305,7 +325,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="294.49" /> <!-- HP +294.49 -->
+				<!-- HP +294.49 -->
+			</effect>
+			<effect name="MaxHp">
+				<amount>294.49</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -416,11 +440,15 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="320" /> <!-- HP +320 -->
+				<!-- HP +320 -->
 				<!-- Breath Gauge increased +200 -->
 			</effect>
 			<effect name="Breath">
 				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>320</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
@@ -864,7 +892,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="126.13" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>126.13</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -877,7 +908,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="20" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -890,7 +924,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="198.21" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>198.21</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1040,7 +1077,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P Def. +8% -->
-				<add stat="maxHp" val="445" /> <!-- Maximum HP +445 -->
+				<!-- Maximum HP +445 -->
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
@@ -1049,6 +1086,10 @@
 			<effect name="PhysicalDefence">
 				<amount>8</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>445</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1139,7 +1180,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="445" />
 				<mul stat="pReuse" val="0.9" />
 				<mul stat="mReuse" val="0.9" />
 			</effect>
@@ -1167,6 +1207,10 @@
 			</effect>
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>445</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
@@ -1656,7 +1700,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.15" />
 			</effect>
 			<effect name="MaxCp">
 				<amount>30</amount>
@@ -1676,6 +1719,10 @@
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1971,7 +2018,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- MP +30% -->
 				<!-- CP +50% -->
 				<!-- Shield P.Def. +33% -->
@@ -2009,6 +2056,10 @@
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3579" levels="1" name="Decrease P. Def.">
@@ -2044,7 +2095,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- MP +30% -->
 				<!-- CP +50% -->
 				<!-- Shield Block Rate +39% -->
@@ -2082,6 +2133,10 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3581" levels="1" name="Discord">
@@ -2110,7 +2165,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P.Atk. +504 on a critical hit -->
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- CP +50% -->
 				<!-- Critical +78.7 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
@@ -2144,6 +2199,10 @@
 				<amount>78.7</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3583" levels="1" name="Special Ability: Infinity Crusher">
@@ -2155,7 +2214,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- CP +50% -->
 				<!-- Atk. Spd. +7% -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
@@ -2183,6 +2242,10 @@
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -2220,7 +2283,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- MP +30% -->
 				<!-- CP +50% -->
 				<!-- Critical +78.7 -->
@@ -2254,6 +2317,10 @@
 			<effect name="CriticalRate">
 				<amount>78.7</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2290,7 +2357,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- MP +30% -->
 				<!-- CP +50% -->
 				<!-- Evasion +3.15 -->
@@ -2323,6 +2390,10 @@
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -2438,7 +2509,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
+				<!-- HP +25% -->
 				<!-- CP +50% -->
 				<!-- Atk. Spd. +7% -->
 				<!-- Accuracy +4.89 -->
@@ -2476,6 +2547,10 @@
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
 				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

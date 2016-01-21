@@ -1673,7 +1673,7 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="445" /> <!-- Maximum HP +445 -->
+				<!-- Maximum HP +445 -->
 				<!-- P Def. +8% -->
 				<HOLD>70</HOLD>
 				<SLEEP>70</SLEEP>
@@ -1693,6 +1693,10 @@
 			<effect name="PvpPhysicalSkillDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>445</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

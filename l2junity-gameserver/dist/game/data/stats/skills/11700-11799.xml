@@ -2237,9 +2237,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="4299">
-					<using kind="LIGHT, MAGIC" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>10</amount>
@@ -2302,7 +2299,8 @@
 				<amount>2</amount>
 				<stat>INT</stat>
 			</effect>
-		</effects>
+		<effect name="MaxHp">
+		<amount>4299</amount><mode>DIFF</mode><armorType><item>LIGHT</item><item> MAGIC</item></armorType></effect></effects>
 	</skill>
 	<skill id="11788" levels="10" name="Superior Casting Mastery">
 		<!-- Glory Days confirmed -->

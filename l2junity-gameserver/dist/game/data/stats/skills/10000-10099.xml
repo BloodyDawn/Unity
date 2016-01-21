@@ -100,9 +100,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="6883">
-					<using kind="HEAVY" />
-				</add>
 			</effect>
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
@@ -143,6 +140,13 @@
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>STR</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>6883</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</effects>
 	</skill>

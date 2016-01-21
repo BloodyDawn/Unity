@@ -119,7 +119,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Def +4.6% -->
-				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
+				<!-- MaxHP +418 -->
 				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -154,6 +154,10 @@
 				<amount>6</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>418</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8203" levels="1" name="Dynasty Breastplate - PvP">
@@ -177,7 +181,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Def. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
+				<!-- Max HP +492 effect -->
 				<!-- Received Increased Heal +3% -->
 				<!-- Darkness resistance is increased +8 -->
 				<SHOCK>13</SHOCK>
@@ -207,6 +211,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8204" levels="1" name="Dynasty Breastplate - PvP">
@@ -219,7 +227,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
+				<!-- MaxHP +492 -->
 				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<!-- Dark Resistance +8 -->
@@ -264,6 +272,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8205" levels="1" name="Dynasty Breastplate - PvP">
@@ -276,7 +288,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- HP +492 -->
+				<!-- HP +492 -->
 				<!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
@@ -312,6 +324,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8206" levels="1" name="Dynasty Breastplate - PvP">
@@ -324,7 +340,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
+				<!-- Max HP +492 effect -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 				<!-- Dark resistance +8 -->
 			</effect>
@@ -360,6 +376,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8207" levels="1" name="Dynasty Leather Armor - PvP">
@@ -373,7 +393,7 @@
 			<effect name="Buff">
 				<!-- Evacion +1.72 -->
 				<!-- Accuracy +1.72 -->
-				<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
+				<!-- MaxHP +418 -->
 				<!-- Darkness Resistance +6 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -412,6 +432,10 @@
 				<amount>6</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>418</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8208" levels="1" name="Dynasty Leather Armor - PvP">
@@ -435,7 +459,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- Evasion +4.3 -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
+				<!-- Max HP +492 Effect -->
 				<!-- Atk. Spd. are increased +2.66% -->
 				<!-- Dark resistance +8 -->
 				<HOLD>13</HOLD>
@@ -464,6 +488,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -824,7 +852,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
+				<!-- Max HP +492 Effect -->
 				<!-- Dark resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
@@ -860,6 +888,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8216" levels="1" name="Dynasty Leather Armor - PvP">
@@ -872,7 +904,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
+				<!-- MaxHP +492 -->
 				<!-- Critical Damage Chance +24.6 -->
 				<!-- Critical Damage +234 -->
 				<!-- Dark Resistance +8 -->
@@ -916,6 +948,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -988,7 +1024,7 @@
 				<!-- increase Atk. Spd. +5.4% -->
 				<!-- Increase P. Atk. +2.66% -->
 				<!-- Increase P. Def. +2.66% -->
-				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
+				<!-- MaxHP +492 -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1031,6 +1067,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8219" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1054,7 +1094,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- P. Def. +6.6% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
+				<!-- Max HP +492 -->
 				<!-- Heal Capacity +4% -->
 				<!-- Dark Resistance +8 -->
 				<SHOCK>15</SHOCK>
@@ -1084,6 +1124,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8220" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1096,7 +1140,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
+				<!-- Max HP +492 -->
 				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
 				<!-- Darkness Resistance +8 -->
@@ -1141,6 +1185,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8221" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1153,7 +1201,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Def. +6.6% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
+				<!-- Max HP +492 -->
 				<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 				<!-- Dark Resistance +8 -->
 			</effect>
@@ -1189,6 +1237,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8222" levels="1" name="Dynasty Platinum Plate - PvP">
@@ -1201,7 +1253,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
-				<add stat="maxHp" val="492" /> <!-- Max. HP +492 -->
+				<!-- Max. HP +492 -->
 				<!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- Decreases MP consumption by 6% for active skills -->
 			</effect>
@@ -1237,6 +1289,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8223" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1260,7 +1316,7 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<!-- Evasion +5.3 -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
+				<!-- Max HP +492 -->
 				<!-- Atk. Spd. +3.24% -->
 				<!-- Dark Resistance +8 -->
 				<HOLD>15</HOLD>
@@ -1289,6 +1345,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1363,7 +1423,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- P. Atk. +6.6% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
+				<!-- Max HP +492 -->
 				<!-- Dark Resistance +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			</effect>
@@ -1399,6 +1459,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8226" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1411,7 +1475,7 @@
 		<effects>
 			<effect name="Buff">
 				<!-- Physical Attack Power +6.6% -->
-				<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
+				<!-- Maximum HP +492 effect -->
 				<!-- Critical Rate +29.5 Increase -->
 				<!-- Critical Damage +282 -->
 				<!-- Darkness Resistance +8 -->
@@ -1456,6 +1520,10 @@
 				<amount>8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="8227" levels="1" name="Dynasty Jewel Leather Armor - PvP">
@@ -1470,7 +1538,7 @@
 				<!-- Atk. Spd. +6.6% -->
 				<!-- P. Atk. +2.66% -->
 				<!-- P. Def. +2.66% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
+				<!-- Max HP +492 -->
 				<!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -1512,6 +1580,10 @@
 			<effect name="DefenceAttribute">
 				<amount>8</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>492</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2752,7 +2824,7 @@
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
 				<!-- P. Def. +5.57% -->
-				<add stat="maxHp" val="531" /> <!-- Max HP by 531 -->
+				<!-- Max HP by 531 -->
 				<HOLD>70</HOLD>
 				<SLEEP>70</SLEEP>
 			</effect>
@@ -2763,6 +2835,10 @@
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>531</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2777,7 +2853,7 @@
 			<effect name="DefenceTrait">
 				<!-- P. Atk. +5.57% -->
 				<!-- P. Def. +5.57% -->
-				<add stat="maxHp" val="540" /> <!-- Max HP 540 -->
+				<!-- Max HP 540 -->
 				<!-- Increases Accuracy by 4 -->
 				<!-- Increases Speed by 5 -->
 				<!-- Resistance to magic damage by 1% -->
@@ -2804,6 +2880,10 @@
 			<effect name="ResistDDMagic">
 				<amount>1</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>540</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

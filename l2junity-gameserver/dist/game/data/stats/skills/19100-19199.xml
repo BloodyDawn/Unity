@@ -616,12 +616,16 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.06">
-					<using kind="HEAVY" />
-				</mul>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>3</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>6</amount>
 				<mode>PER</mode>
 				<armorType>
 					<item>HEAVY</item>
@@ -847,11 +851,15 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.06">
-					<using kind="LIGHT" />
-				</mul>
 			</effect>
 			<effect name="MaxMp">
+				<amount>6</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MaxHp">
 				<amount>6</amount>
 				<mode>PER</mode>
 				<armorType>

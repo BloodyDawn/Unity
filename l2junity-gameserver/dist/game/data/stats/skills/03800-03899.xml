@@ -152,7 +152,6 @@
 		<effects>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
-				<add stat="maxHp" val="1023" />
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>7.24</amount>
@@ -161,6 +160,10 @@
 			<effect name="DefenceAttribute">
 				<amount>3.2</amount>
 				<attribute>DARK</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>1023</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -457,7 +460,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">319</value>
+					<value level="2">492</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -549,7 +558,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">319</value>
+					<value level="2">444</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -641,7 +656,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">319</value>
+					<value level="2">444</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -751,7 +772,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="398" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>398</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -842,7 +866,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="398" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>398</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1117,7 +1144,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="82" />
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>0.31</amount>
@@ -1135,6 +1161,10 @@
 				<amount>0.8</amount>
 				<attribute>DARK</attribute>
 			</effect>
+			<effect name="MaxHp">
+				<amount>82</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3867" levels="1" name="Bow of Boost HP">
@@ -1146,7 +1176,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="444" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>444</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1218,7 +1251,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="444" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>444</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1308,7 +1344,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">319</value>
+					<value level="2">492</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1375,7 +1417,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="372" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>372</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1429,7 +1474,14 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">294</value>
+					<value level="2">345</value>
+					<value level="3">511</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1555,7 +1607,13 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">319</value>
+					<value level="2">492</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -312,7 +312,6 @@
 		<reuseDelay>600000</reuseDelay>
 		<effects>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 			</effect>
 			<effect name="PAtk">
 				<amount>40</amount>
@@ -327,6 +326,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

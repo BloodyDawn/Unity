@@ -12,7 +12,7 @@
 				<!-- Def. Power +8.47% -->
 				<!-- Atk. Power +5.57% -->
 				<!-- Resistance to Damage Magic +2% -->
-				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
+				<!-- Max. HP +541 -->
 				<!-- Resistance to fire attributes +5 -->
 				<!-- Resistance to water attributes +5 -->
 				<!-- Resistance to wind attributes +5 -->
@@ -59,6 +59,10 @@
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>541</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -197,7 +201,7 @@
 				<!-- P. Atk. +6.59% -->
 				<!-- Critical rate +127.4 -->
 				<!-- Resistance to damage magic +2% -->
-				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
+				<!-- Max. HP +550 -->
 				<!-- Resistance to fire attributes +5 -->
 				<!-- Resistance to water attributes +5 -->
 				<!-- Resistance to wind attributes +5 -->
@@ -238,6 +242,10 @@
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>550</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -598,7 +606,7 @@
 				<!-- Def. Power +8.47% -->
 				<!-- Atk. Power +5.57% -->
 				<!-- Resistance to Damage Magic +2% -->
-				<add stat="maxHp" val="541" /> <!-- Max. HP +541 -->
+				<!-- Max. HP +541 -->
 				<!-- Resistance to fire attributes +5 -->
 				<!-- Resistance to water attributes +5 -->
 				<!-- Resistance to wind attributes +5 -->
@@ -660,6 +668,10 @@
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>541</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -861,7 +873,7 @@
 				<!-- P. Atk. +6.59% -->
 				<!-- Critical rate +127.4 -->
 				<!-- Resistance to damage magic +2% -->
-				<add stat="maxHp" val="550" /> <!-- Max. HP +550 -->
+				<!-- Max. HP +550 -->
 				<!-- Resistance to fire attributes +5 -->
 				<!-- Resistance to water attributes +5 -->
 				<!-- Resistance to wind attributes +5 -->
@@ -917,6 +929,10 @@
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MaxHp">
+				<amount>550</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1535,7 +1551,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
 			</effect>
@@ -1546,6 +1561,10 @@
 			<effect name="PhysicalDefence">
 				<amount>0.62</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>133</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1558,7 +1577,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="531" />
 				<SLEEP>28</SLEEP>
 				<HOLD>28</HOLD>
 			</effect>
@@ -1569,6 +1587,10 @@
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>531</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1581,7 +1603,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
 				<HOLD>18</HOLD>
 			</effect>
@@ -1592,6 +1613,10 @@
 			<effect name="PhysicalDefence">
 				<amount>1.03</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1604,7 +1629,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
@@ -1615,6 +1639,10 @@
 			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>22</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1627,7 +1655,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
@@ -1638,6 +1665,10 @@
 			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>22</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2408,7 +2439,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="133" />
 				<SLEEP>10.5</SLEEP>
 				<HOLD>10.5</HOLD>
 			</effect>
@@ -2419,6 +2449,10 @@
 			<effect name="PhysicalDefence">
 				<amount>0.62</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>133</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2431,7 +2465,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="55" />
 				<SLEEP>18</SLEEP>
 				<HOLD>18</HOLD>
 			</effect>
@@ -2442,6 +2475,10 @@
 			<effect name="PhysicalDefence">
 				<amount>1.03</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>55</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2454,7 +2491,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
@@ -2465,6 +2501,10 @@
 			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>22</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2477,7 +2517,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
-				<add stat="maxHp" val="22" />
 				<SLEEP>7</SLEEP>
 				<HOLD>7</HOLD>
 			</effect>
@@ -2488,6 +2527,10 @@
 			<effect name="PhysicalDefence">
 				<amount>0.41</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>22</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

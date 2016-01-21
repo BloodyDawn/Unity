@@ -97,9 +97,6 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="Buff">
-				<add stat="maxHp" val="4447">
-					<using kind="MAGIC" />
-				</add>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>10</amount>
@@ -121,6 +118,13 @@
 					<value level="9">2058</value>
 					<value level="10">2136</value>
 				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>MAGIC</item>
+				</armorType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>4447</amount>
 				<mode>DIFF</mode>
 				<armorType>
 					<item>MAGIC</item>
