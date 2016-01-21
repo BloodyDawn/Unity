@@ -937,20 +937,11 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<add stat="pAtk" val="#pAtkDual">
-					<using kind="DUAL,DUALFIST" />
-				</add>
-				<add stat="pAtk" val="#pAtkBow">
-					<using kind="BOW" />
-				</add>
 				<add stat="pAtk" val="#pAtkDSwordBlunt">
 					<and>
 						<using kind="SWORD,BLUNT" />
 						<using slot="lrhand" />
 					</and>
-				</add>
-				<add stat="pAtk" val="#pAtkAncient">
-					<using kind="ANCIENTSWORD" />
 				</add>
 			</effect>
 			<effect name="PAtk">
@@ -1010,6 +1001,49 @@
 				<mode>DIFF</mode>
 				<weaponType>
 					<item>RAPIER</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10.2</value>
+					<value level="2">19.5</value>
+					<value level="3">27.9</value>
+					<value level="4">35.3</value>
+					<value level="5">41.8</value>
+					<value level="6">46.5</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">9.1</value>
+					<value level="2">17.4</value>
+					<value level="3">24.8</value>
+					<value level="4">31.4</value>
+					<value level="5">37.2</value>
+					<value level="6">41.4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">21.7</value>
+					<value level="2">41.4</value>
+					<value level="3">59.2</value>
+					<value level="4">75</value>
+					<value level="5">88.8</value>
+					<value level="6">98.7</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
 				</weaponType>
 			</effect>
 		</effects>
