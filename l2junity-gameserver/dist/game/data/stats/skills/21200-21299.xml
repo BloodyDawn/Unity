@@ -942,10 +942,13 @@
 		</cond>
 		<effects>
 			<effect name="Buff">
-				<mul stat="bonusExp" val="1.1" />
 				<mul stat="reduceExpLostByPvp" val="0.5" />
 				<mul stat="reduceExpLostByMob" val="0.5" />
 				<mul stat="reduceExpLostByRaid" val="0.5" />
+			</effect>
+			<effect name="ExpModify">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

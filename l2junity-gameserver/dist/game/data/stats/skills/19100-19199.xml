@@ -170,7 +170,10 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="bonusExp" val="1.03" />
+			</effect>
+			<effect name="ExpModify">
+				<amount>3</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -184,7 +187,10 @@
 		<magicLvl>1</magicLvl>
 		<effects>
 			<effect name="Buff">
-				<mul stat="bonusExp" val="1.05" />
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
