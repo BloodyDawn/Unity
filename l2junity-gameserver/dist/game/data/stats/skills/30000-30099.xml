@@ -1058,8 +1058,14 @@
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="Buff">
-				<mul stat="defMCritDamage" val="#defCrit" />
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">-15</value>
+					<value level="2">-15</value>
+					<value level="3">-15</value>
+					<value level="4">-20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Unconfirmed -->
@@ -1233,8 +1239,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<effects>
-			<effect name="Buff">
-				<mul stat="defMCritDamage" val="0.5" />
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<!-- Unconfirmed -->
