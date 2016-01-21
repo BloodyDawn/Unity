@@ -2387,11 +2387,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="mAtkSpd" val="1.07">
-					<using kind="MAGIC" />
-				</mul>
-			</effect>
 			<effect name="PhysicalDefence">
 				<amount>80</amount>
 				<mode>DIFF</mode>
@@ -2411,6 +2406,13 @@
 				<mode>PER</mode>
 				<armorType>
 					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>7</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>MAGIC</item>
 				</armorType>
 			</effect>
 			<effect name="MagicMpCost">
