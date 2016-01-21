@@ -607,7 +607,6 @@
 		<targetType>PARTY_CLAN</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritPower" val="1.2" />
 			</effect>
 			<effect name="CpHealPercent">
 				<power>20</power>
@@ -657,6 +656,10 @@
 				<slot>DEBUFF</slot>
 			</effect>
 			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

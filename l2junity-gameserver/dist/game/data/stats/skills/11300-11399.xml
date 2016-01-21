@@ -3675,9 +3675,12 @@
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritPower" val="1.30" />
 			</effect>
 			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>

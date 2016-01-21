@@ -1255,7 +1255,6 @@
 		<targetType>TARGET_PARTY</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritPower" val="#mCritPower" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -1268,6 +1267,13 @@
 				<amount>
 					<value level="1">4</value>
 					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

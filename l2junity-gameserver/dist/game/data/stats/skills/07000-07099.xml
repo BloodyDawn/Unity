@@ -1247,7 +1247,6 @@
 		<targetType>ONE</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritPower" val="1.2" />
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
@@ -1290,6 +1289,10 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>

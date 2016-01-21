@@ -2170,7 +2170,6 @@
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<effects>
 			<effect name="Buff">
-				<mul stat="mCritPower" val="1.2" />
 			</effect>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2213,6 +2212,10 @@
 				<slot>DEBUFF</slot>
 			</effect>
 			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
