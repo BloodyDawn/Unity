@@ -229,28 +229,30 @@
 		<targetType>SELF</targetType>
 		<mpConsume>64</mpConsume>
 		<effects>
-			<effect name="Buff">
-				<mul stat="rCrit" val="-0.1"> <!-- Decreases frontal critical attack rate by 10% -->
-					<player front="true" />
-				</mul>
-				<mul stat="rCrit" val="0.1"> <!-- Increase side critical attack rate by 10% -->
-					<and>
-						<player front="false" />
-						<player behind="false" />
-					</and>
-				</mul>
-				<mul stat="cAtk" val="1.1"> <!-- Increase side critical attack damage by 10% -->
-					<and>
-						<player front="false" />
-						<player behind="false" />
-					</and>
-				</mul>
-				<mul stat="rCrit" val="0.2"> <!-- Increase rear critical attack damage by 20% -->
-					<player behind="true" />
-				</mul>
-				<mul stat="cAtk" val="1.2"> <!-- Increase rear critical attack rate by 20% -->
-					<player behind="true" />
-				</mul>
+			<effect name="CriticalDamagePosition">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<position>SIDE</position>
+			</effect>
+			<effect name="CriticalDamagePosition">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<position>BACK</position>
+			</effect>
+			<effect name="CriticalRatePositionBonus">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<position>FRONT</position>
+			</effect>
+			<effect name="CriticalRatePositionBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<position>SIDE</position>
+			</effect>
+			<effect name="CriticalRatePositionBonus">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<position>BACK</position>
 			</effect>
 		</effects>
 	</skill>

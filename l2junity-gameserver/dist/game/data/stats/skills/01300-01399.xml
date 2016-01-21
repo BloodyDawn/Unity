@@ -2108,14 +2108,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SERVITOR</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="cAtk" val="1.2">
-					<player behind="true" />
-				</mul>
-				<mul stat="rCrit" val="0.2">
-					<player behind="true" />
-				</mul>
-			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
 				<chance>30</chance>
@@ -2135,6 +2127,16 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-10</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRatePositionBonus">
+				<amount>80</amount>
+				<mode>PER</mode>
+				<position>BACK</position>
+			</effect>
+			<effect name="CriticalDamagePosition">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<position>BACK</position>
 			</effect>
 		</effects>
 	</skill>
