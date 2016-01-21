@@ -753,7 +753,6 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Buff">
-				<mul stat="skillCriticalProbability" val="11" />
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -777,6 +776,10 @@
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>STR</stat>
+			</effect>
+			<effect name="SkillCriticalProbability">
+				<amount>1000</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -65,7 +65,7 @@ public abstract class AbstractConditionalHpEffect extends AbstractConditionalEff
 	
 	private void onHpChange(OnCreatureHpChange event)
 	{
-		final boolean condStatus = event.getCreature().getCurrentHpPercent() <= _hpPercent;
+		final boolean condStatus = canPump(null, event.getCreature(), null);
 		final EffectedConditionHolder holder = getHolder(event.getCreature().getObjectId());
 		if (holder.getLastConditionStatus().compareAndSet(!condStatus, condStatus))
 		{
