@@ -2579,10 +2579,8 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
-				<set stat="debuffImmunity" val="1" />
-			</effect>
+			<!-- effect name="BuffBlock" / TODO: Needs Support -->
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="4391" levels="2" name="Wind Walk">

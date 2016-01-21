@@ -983,9 +983,7 @@
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
-			<effect name="Buff">
-				<set stat="debuffImmunity" val="1" />
-			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="11765" levels="7" name="Crystal Regeneration">
@@ -2195,9 +2193,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="Buff">
-				<set stat="debuffImmunity" val="1" />
-			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="11787" levels="10" name="Superior Armor Mastery">

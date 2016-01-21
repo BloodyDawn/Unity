@@ -3172,9 +3172,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<set stat="debuffImmunity" val="1" />
-			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="PAtk">
 				<amount>500</amount>
 				<mode>DIFF</mode>

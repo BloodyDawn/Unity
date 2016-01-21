@@ -278,9 +278,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="Buff">
-				<set stat="debuffImmunity" val="1" />
-			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
