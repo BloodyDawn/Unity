@@ -2435,17 +2435,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<!-- MP +30% -->
-				<!-- CP +50% -->
-				<!-- Atk. Spd. +3% -->
-				<!-- MP regen per tick +0.51 -->
-				<mul stat="rCrit" val="0.22"> <!-- Critical +22% from behind target -->
-					<player behind="true" />
-				</mul>
-				<!-- PVP Damage Bonus +20% -->
-				<!-- PVP Damage Bonus +20% -->
-				<!-- PVP Damage Bonus +20% -->
+			<effect name="CriticalRatePositionBonus">
+				<amount>22</amount>
+				<position>BACK</position>
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>2</amount>

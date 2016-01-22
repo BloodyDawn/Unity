@@ -2543,10 +2543,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="rEvas" val="6.8">
-					<player hp="60" />
-				</add>
+			<effect name="PhysicalEvasion">
+				<amount>6.8</amount>
+				<mode>DIFF</mode>
+				<hpPercent>60</hpPercent>
 			</effect>
 		</effects>
 	</skill>

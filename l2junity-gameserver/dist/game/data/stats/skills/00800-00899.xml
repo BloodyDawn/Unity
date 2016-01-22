@@ -214,17 +214,15 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<add stat="accCombat" val="1">
-					<and>
-						<using kind="SWORD" />
-						<using slot="lrhand" />
-					</and>
-				</add>
 				<transformationId>312</transformationId>
 			</effect>
 			<effect name="ShieldDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="TwoHandedSwordBonus">
+				<accuracyAmount>1</accuracyAmount>
+				<accuracyMode>DIFF</accuracyMode>
 			</effect>
 		</effects>
 	</skill>
@@ -253,17 +251,18 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<mul stat="pAtkSpd" val="1.08">
-					<and>
-						<using kind="SWORD" />
-						<using slot="lrhand" />
-					</and>
-				</mul>
 				<transformationId>313</transformationId>
 			</effect>
 			<effect name="ShieldDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>DUAL</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -292,17 +291,15 @@
 		</cond>
 		<effects>
 			<effect name="Transformation">
-				<add stat="accCombat" val="1">
-					<and>
-						<using kind="SWORD" />
-						<using slot="lrhand" />
-					</and>
-				</add>
 				<transformationId>314</transformationId>
 			</effect>
 			<effect name="ShieldDefence">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="TwoHandedSwordBonus">
+				<accuracyAmount>1</accuracyAmount>
+				<accuracyMode>DIFF</accuracyMode>
 			</effect>
 		</effects>
 	</skill>

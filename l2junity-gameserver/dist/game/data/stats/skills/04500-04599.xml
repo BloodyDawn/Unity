@@ -276,10 +276,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="rCrit" val="1">
-					<player behind="true" />
-				</mul>
+			<effect name="CriticalRatePositionBonus">
+				<amount>100</amount>
+				<position>BACK</position>
 			</effect>
 		</effects>
 	</skill>

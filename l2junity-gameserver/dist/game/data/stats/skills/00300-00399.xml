@@ -792,10 +792,12 @@
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<set stat="atkCountMax" val="1">
-					<using kind="POLE" />
-				</set>
+			<effect name="HitNumber">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 			<effect name="Accuracy">
 				<amount>
