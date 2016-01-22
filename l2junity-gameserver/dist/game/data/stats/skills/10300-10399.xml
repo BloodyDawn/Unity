@@ -427,19 +427,41 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtkMul">
-					<and>
-						<using kind="SWORD,BLUNT" />
-						<using slot="lrhand" />
-					</and>
-				</mul>
-				<add stat="pAtk" val="#pAtkAdd">
-					<and>
-						<using kind="SWORD,BLUNT" />
-						<using slot="lrhand" />
-					</and>
-				</add>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</pAtkAmount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+				</pAtkAmount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>
+					<value level="1">709</value>
+					<value level="2">825</value>
+					<value level="3">982</value>
+					<value level="4">1190</value>
+				</pAtkAmount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>
+					<value level="1">709</value>
+					<value level="2">825</value>
+					<value level="3">982</value>
+					<value level="4">1190</value>
+				</pAtkAmount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1189,13 +1211,13 @@
 		<effectPoint>673</effectPoint>
 		<reuseDelay>300000</reuseDelay>
 		<effects>
-			<effect name="Buff">
-				<mul stat="pAtk" val="1.3">
-					<and>
-						<using kind="SWORD,BLUNT" />
-						<using slot="lrhand" />
-					</and>
-				</mul>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>30</pAtkAmount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>30</pAtkAmount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="HitNumber">
 				<amount>5</amount>

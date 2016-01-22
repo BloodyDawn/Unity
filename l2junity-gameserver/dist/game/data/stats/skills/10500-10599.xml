@@ -47,7 +47,7 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SkillCritical">
-				 <stat>STR</stat>
+				<stat>STR</stat>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -3180,16 +3180,21 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
 		<effects>
-			<effect name="Buff">
-				<mul stat="rCrit" val="#rCrit1">
-					<and>
-						<player front="false" />
-						<player behind="false" />
-					</and>
-				</mul>
-				<mul stat="rCrit" val="#rCrit2">
-					<player behind="true" />
-				</mul>
+			<effect name="CriticalRatePositionBonus">
+				<amount>
+					<value level="1">30</value>
+					<value level="1">40</value>
+				</amount>
+				<mode>PER</mode>
+				<position>SIDE</position>
+			</effect>
+			<effect name="CriticalRatePositionBonus">
+				<amount>
+					<value level="1">60</value>
+					<value level="1">70</value>
+				</amount>
+				<mode>PER</mode>
+				<position>BACK</position>
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Maximize Critical -->
