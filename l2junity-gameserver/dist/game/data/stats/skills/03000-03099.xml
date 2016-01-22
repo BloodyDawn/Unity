@@ -398,6 +398,18 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
+			<effect name="CriticalRatePositionBonus">
+				<amount>
+					<value level="1">71</value>
+					<value level="2">67</value>
+					<value level="3">63</value>
+					<value level="4">60</value>
+					<value level="5">56</value>
+					<value level="6">53</value>
+				</amount>
+				<mode>PER</mode>
+				<position>BACK</position>
+			</effect>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit">
 					<player behind="true" />
@@ -2585,17 +2597,16 @@
 	</skill>
 	<skill id="3071" levels="2" name="Special Ability: Rsk. Focus">
 		<!-- Confirmed CT2.5 -->
-		<table name="#pvpBonus"> 1 1.05 </table>
 		<icon>icon.ensoul_big_old</icon>
 		<magicLvl>64</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="rCrit" val="130">
-					<player hp="60" />
-				</add>
+			<effect name="CriticalRate">
+				<amount>130</amount>
+				<mode>DIFF</mode>
+				<hpPercent>60</hpPercent>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>
