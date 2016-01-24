@@ -1144,7 +1144,9 @@ public final class Skill implements IIdentifiable
 		{
 			return null;
 		}
-		activeChar.sendMessage("" + getAffectScope());
+		activeChar.sendMessage(String.valueOf(getTargetType()));
+		activeChar.sendMessage(String.valueOf(getAffectScope()));
+		activeChar.sendMessage(String.valueOf(getAffectObject()));
 		final IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
 		if (handler != null)
 		{

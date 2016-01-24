@@ -9,7 +9,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PLEDGE" />
 		<set name="mpConsume" val="140" />
 		<set name="mpInitialConsume" val="28" />
 		<set name="hitTime" val="700" />
@@ -44,7 +45,8 @@
 		<set name="abnormalType" val="ENCHANTER_MOD" />
 		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PLEDGE" />
 		<set name="mpConsume" val="140" />
 		<set name="mpInitialConsume" val="28" />
 		<set name="hitTime" val="700" />
@@ -81,7 +83,8 @@
 		<set name="abnormalType" val="SYNERGY_IS" />
 		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PLEDGE" />
 		<set name="mpConsume" val="140" />
 		<set name="mpInitialConsume" val="28" />
 		<set name="hitTime" val="700" />
@@ -122,7 +125,9 @@
 		<set name="affectRange" val="200" /> <!-- Custom -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2110" />
@@ -148,7 +153,9 @@
 		<set name="affectLimit" val="10-10" /> <!-- Custom -->
 		<set name="affectRange" val="200" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -220,7 +227,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11607" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -255,7 +263,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11608" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -293,7 +302,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11609" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -328,7 +338,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11610" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -363,7 +374,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11611" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -401,7 +413,8 @@
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11612" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -485,7 +498,9 @@
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -513,7 +528,9 @@
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -540,7 +557,8 @@
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -568,7 +586,8 @@
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="CLAN_MEMBER" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -594,7 +613,8 @@
 		<set name="abnormalTime" val="1800" /> <!-- Custom -->
 		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
@@ -655,7 +675,8 @@
 		<set name="icon" val="icon.skill11621" />
 		<set name="operateType" val="A2" />
 		<set name="magicLvl" val="99" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="4" />
 		<for>

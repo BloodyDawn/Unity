@@ -26,6 +26,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelayGroup" val="11766" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -38,7 +39,7 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
@@ -50,6 +51,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />

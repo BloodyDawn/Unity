@@ -37,7 +37,7 @@
 		<set name="activateRate" val="100" />
 		<set name="icon" val="icon.skill10801" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -48,6 +48,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="#effectRange" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -75,7 +76,7 @@
 		<set name="affectRange" val="400" />
 		<set name="icon" val="icon.skill10782" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="93" />
 		<set name="castRange" val="1100" />
@@ -87,6 +88,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1400" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -115,6 +118,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttackSaveHp">
@@ -134,6 +138,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttackSaveHp">
@@ -163,6 +168,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="#effectRange" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Blink">
@@ -177,7 +183,7 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<set name="icon" val="icon.skill0516" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="ALL_SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
@@ -192,6 +198,8 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="2" />
 		<for>
 			<effect name="Debuff">
@@ -207,7 +215,7 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<set name="icon" val="icon.skill0518" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
@@ -224,6 +232,8 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="2" />
 		<for>
 			<effect name="Root" />
@@ -238,7 +248,7 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="TARGET_LOCK" />
@@ -252,6 +262,8 @@
 		<set name="abnormalTime" val="10" />
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="TargetMe" /> <!-- p_berserker ? -->
@@ -275,6 +287,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">

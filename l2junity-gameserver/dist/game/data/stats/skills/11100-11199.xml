@@ -101,7 +101,9 @@
 		<set name="earthStanceSkillId" val="11110" />
 		<set name="allStanceSkillId" val="11111" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -142,7 +144,9 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -183,7 +187,9 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -224,7 +230,9 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -265,7 +273,9 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -304,7 +314,9 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="reuseDelayGroup" val="11106" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -344,7 +356,8 @@
 		<set name="earthStanceSkillId" val="11116" />
 		<set name="allStanceSkillId" val="11117" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -377,7 +390,8 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -410,7 +424,8 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" /> <!-- Water -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -443,7 +458,8 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" /> <!-- Wind -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -476,7 +492,8 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" /> <!-- Earth -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -507,7 +524,8 @@
 		<set name="icon" val="icon.skill11865" />
 		<set name="reuseDelayGroup" val="11112" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -543,7 +561,8 @@
 		<set name="earthStanceSkillId" val="11122" />
 		<set name="allStanceSkillId" val="11123" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -576,7 +595,8 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -609,7 +629,8 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -642,7 +663,8 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -675,7 +697,8 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -706,7 +729,8 @@
 		<set name="icon" val="icon.skill11865" />
 		<set name="reuseDelayGroup" val="11118" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -775,7 +799,8 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -803,7 +828,8 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1400" />
@@ -833,7 +859,8 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1400" />
@@ -867,7 +894,8 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -900,7 +928,8 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="HOLD" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -929,7 +958,8 @@
 		<set name="channelingTickInterval" val="1000" />
 		<set name="channelingTickInitialDelay" val="2000" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1400" />
@@ -967,7 +997,7 @@
 				<param minDamage="100" /> <!-- Guessed -->
 				<param chance="50" /> <!-- Guessed -->
 				<param skillId="11133" skillLevel="#triggerLevel" /> <!-- Lightning Shield: Paralyze -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 		</for>
 	</skill>
@@ -983,7 +1013,8 @@
 		<set name="activateRate" val="90" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="PARALYZE" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
@@ -1156,7 +1187,8 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1179,7 +1211,8 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1204,7 +1237,8 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1225,7 +1259,7 @@
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-702" />
 		<set name="basicProperty" val="NONE" />
@@ -1234,6 +1268,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="90" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1257,7 +1293,7 @@
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-707" />
 		<set name="basicProperty" val="NONE" />
@@ -1266,6 +1302,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="95" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1293,7 +1331,8 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1313,7 +1352,8 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1336,7 +1376,8 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="38" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1400" />
@@ -1413,7 +1454,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
@@ -1422,6 +1463,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1444,7 +1487,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
@@ -1453,6 +1496,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1489,7 +1534,8 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1528,7 +1574,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-698" />
@@ -1538,6 +1584,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="89" />
 		<set name="trait" val="AIRBIND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -1571,7 +1618,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-704" />
@@ -1581,6 +1628,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="93" />
 		<set name="trait" val="AIRBIND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -1614,7 +1662,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-708" />
@@ -1624,6 +1672,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="97" />
 		<set name="trait" val="AIRBIND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -1658,7 +1707,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIRBIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-707" />
@@ -1668,6 +1717,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="95" />
 		<set name="trait" val="AIRBIND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -1791,7 +1841,8 @@
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="isDebuff" val="true" />
@@ -1813,7 +1864,8 @@
 		<set name="attributeValue" val="20" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1400" />
@@ -1887,7 +1939,8 @@
 		<set name="abnormalVisualEffect" val="FREEZING2" /> <!-- Guessed -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="isDebuff" val="true" />

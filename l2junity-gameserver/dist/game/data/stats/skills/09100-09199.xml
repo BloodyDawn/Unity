@@ -16,6 +16,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -43,6 +44,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -70,6 +72,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -97,6 +100,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -124,6 +128,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -151,6 +156,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -178,6 +184,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -205,6 +212,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -232,6 +240,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -259,6 +268,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -286,6 +296,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -313,6 +324,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -340,6 +352,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -372,7 +385,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9114" levels="1" name="Nevit's Voice">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -385,6 +399,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="GiveRecommendation">
@@ -410,7 +425,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9116" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -430,7 +446,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9117" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -450,7 +467,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9118" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -470,7 +488,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9119" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -490,7 +509,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9120" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -510,7 +530,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9121" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -530,7 +551,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9122" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -550,7 +572,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9123" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -570,7 +593,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9124" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -590,7 +614,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9125" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -610,7 +635,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9126" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -630,7 +656,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9127" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -650,7 +677,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9128" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -670,7 +698,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9129" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -690,7 +719,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9130" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -710,7 +740,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9131" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -730,7 +761,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9132" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -750,7 +782,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9133" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -770,7 +803,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9134" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -790,7 +824,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9135" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -810,7 +845,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9136" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -830,7 +866,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9137" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -850,7 +887,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9138" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -870,7 +908,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9139" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -890,7 +929,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9140" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -910,7 +950,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9141" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -930,7 +971,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9142" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -950,7 +992,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9143" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -970,7 +1013,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9144" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -990,7 +1034,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9145" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->
@@ -1010,7 +1055,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9146" levels="1" name="Nevit's Hourglass - 1.5 hour">
 		<!-- Increases Nevit's blessing by 1.5 hour. -->
@@ -1030,7 +1076,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9147" levels="1" name="Nevit's Hourglass - 2 hour">
 		<!-- Increases Nevit's blessing by 2 hour. -->
@@ -1050,7 +1097,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9148" levels="1" name="Nevit's Hourglass - 2.5 hour">
 		<!-- Increases Nevit's blessing by 2.5 hour. -->
@@ -1070,7 +1118,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9149" levels="1" name="Nevit's Hourglass - 3 hour">
 		<!-- Increases Nevit's blessing by 3 hour. -->
@@ -1090,7 +1139,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9150" levels="1" name="Freesia Bouquet (Event)">
 		<set name="castRange" val="500" />
@@ -1107,7 +1157,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9151" levels="1" name="Baby's Breath Bouquet - Event">
 		<set name="castRange" val="500" />
@@ -1124,7 +1175,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9152" levels="1" name="Pink Lady (Event)">
 		<set name="castRange" val="500" />
@@ -1141,7 +1193,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9153" levels="1" name="June Bug (Event)">
 		<set name="castRange" val="500" />
@@ -1158,7 +1211,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9154" levels="1" name="Soft Cheesecake (Event)">
 		<set name="castRange" val="500" />
@@ -1175,7 +1229,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9155" levels="1" name="Freshly-Baked Baguette (Event)">
 		<set name="castRange" val="500" />
@@ -1192,7 +1247,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9156" levels="1" name="Sweet Cream Bun (Event)">
 		<set name="castRange" val="500" />
@@ -1209,7 +1265,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9157" levels="1" name="Valentine's Day Candy (Event)">
 		<set name="castRange" val="500" />
@@ -1226,7 +1283,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="700" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="9158" levels="1" name="Freya's Gift">
 		<!-- Confirmed CT2.5 -->
@@ -1245,6 +1303,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -1275,6 +1334,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1304,6 +1364,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1331,6 +1392,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1357,6 +1419,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1386,6 +1449,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1412,6 +1476,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -1440,7 +1505,8 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="reuseDelay" val="10000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9166" levels="1" name="Vitality Recovering Potion">
 		<!-- Recovers energy upon acquiring Exp. points for 30 minutes. -->
@@ -1462,7 +1528,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="hitTime" val="100" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9167" levels="1" name="Nevit's Hourglass - 1 hour(s)">
 		<!-- Increases Nevit's blessing by 1 hour(s). -->
@@ -1479,7 +1546,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9168" levels="1" name="Nevit's Hourglass - 1.5 hour(s)">
 		<!-- Increases Nevit's blessing by 1.5 hour(s). -->
@@ -1496,7 +1564,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9169" levels="1" name="Nevit's Hourglass - 2 hour(s)">
 		<!-- Increases Nevit's blessing by 2 hour(s). -->
@@ -1513,7 +1582,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9170" levels="1" name="Nevit's Hourglass - 2.5 hour(s)">
 		<!-- Increases Nevit's blessing by 2.5 hour(s). -->
@@ -1530,7 +1600,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9171" levels="1" name="Nevit's Hourglass - 3 hour(s)">
 		<!-- Increases Nevit's blessing by 3 hour(s). -->
@@ -1547,7 +1618,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9172" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->
@@ -1564,7 +1636,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9173" levels="1" name="Nevit's Voice">
 		<!-- none -->
@@ -1576,7 +1649,8 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9174" levels="1" name="500,000 SP scroll">
 		<!-- High Five Skill -->
@@ -1590,6 +1664,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="GiveSp">
@@ -1609,6 +1684,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="GiveSp">
@@ -1627,7 +1703,8 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9177" levels="1" name="Olympiad Reward Box">
 		<!-- High Five Skill -->
@@ -1646,6 +1723,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -1668,7 +1746,8 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9179" levels="1" name="Antharas's Blood Crystal">
 		<!-- High Five Skill -->
@@ -1686,7 +1765,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="affectRange" val="6000" />
-		<set name="targetType" val="PC_BODY" />
+		<set name="affectScope" val="DEAD_UNION" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
 		<!-- TODO: revive all dead characters in the Command Channel -->
 		<cond>
 			<player canResurrect="true" />
@@ -1710,6 +1791,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="GiveSp">
@@ -1733,7 +1815,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9182" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->
@@ -1751,7 +1834,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9183" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
 		<!-- "For 4 hours, recovers vitality when Exp. is acquired through hunting." -->
@@ -1771,7 +1855,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_UP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9184" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
 		<!-- "For 4 hours, recovers vitality when Exp. is acquired through hunting." -->
@@ -1791,7 +1876,8 @@
 		<set name="isMagic" val="4" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_UP" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9185" levels="1" name="Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1802,7 +1888,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9186" levels="1" name="Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1813,7 +1900,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9187" levels="1" name="Blessed Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1824,7 +1912,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9188" levels="1" name="Player Commendation - Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1835,7 +1924,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9189" levels="1" name="Player Commendation - Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1846,7 +1936,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9190" levels="1" name="Player Commendation - Blessed Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1857,7 +1948,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9191" levels="1" name="Scroll of Escape: Cruma Tower">
 		<!-- AUTO GENERATED SKILL -->
@@ -1868,6 +1960,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="20000" />
 	</skill>
 	<skill id="9192" levels="1" name="Scroll of Escape: Tower of Insolence">
@@ -1879,6 +1972,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="20000" />
 	</skill>
 	<skill id="9193" levels="1" name="Soulshot (R-grade)">
@@ -1890,6 +1984,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9194" levels="1" name="Spiritshot (R-grade)">
@@ -1901,6 +1996,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9195" levels="1" name="Blessed Spiritshot (R-grade)">
@@ -1912,6 +2008,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9196" levels="1" name="Blessed Scroll: Enchant Armor (R-grade)">
@@ -1923,7 +2020,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ITEM" />
 	</skill>
 	<skill id="9197" levels="1" name="Scroll: 1,000,000 SP">
 		<!-- AUTO GENERATED SKILL -->
@@ -1936,6 +2034,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="9198" levels="1" name="Elixir: Horn Melody">
@@ -1952,6 +2051,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9199" levels="1" name="Elixir: Drum Melody">
@@ -1968,6 +2068,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 </list>

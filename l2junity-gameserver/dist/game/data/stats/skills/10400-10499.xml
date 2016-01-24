@@ -26,6 +26,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelayGroup" val="10258" />
 		<for>
 			<effect name="Buff">
@@ -41,7 +42,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="2000" />
@@ -49,6 +50,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" /> <!-- Air Bind -->

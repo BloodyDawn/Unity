@@ -25,7 +25,7 @@
 				<param minDamage="50" />
 				<param chance="10" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="70" />
@@ -52,7 +52,7 @@
 				<param minDamage="50" />
 				<param chance="10" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="70" />
@@ -92,7 +92,7 @@
 				<param minDamage="50" />
 				<param chance="25" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 		</for>
 	</skill>
@@ -120,7 +120,7 @@
 				<param minDamage="50" />
 				<param chance="25" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="EnableCloak" />
 		</for>
@@ -194,7 +194,7 @@
 				<param isCritical="false" />
 				<param minDamage="1" chance="33" />
 				<param skillId="5994" skillLevel="1" /> <!-- Effect of Doubt -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 				<param allowWeapons="ALL" />
 			</effect>
 		</for>
@@ -217,6 +217,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -245,6 +246,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -306,6 +308,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -471,7 +474,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8324" levels="1" name="Warrior's Shirt">
 		<set name="magicLvl" val="75" />
@@ -496,10 +500,11 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="8326" levels="1" name="Wild Rose Pig Candy">
@@ -519,6 +524,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -536,6 +542,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -554,7 +561,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
 		<set name="hitTime" val="10000" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="OTHERS" />
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
@@ -571,6 +579,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -594,7 +603,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DispelByCategory">
 				<param slot="buff" rate="25" max="5" />
@@ -617,7 +628,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<for>
 			<effect name="StealAbnormal">
 				<param slot="buff" rate="25" max="3" />
@@ -642,6 +654,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -670,6 +683,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -696,6 +710,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -723,7 +738,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1073,7 +1089,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="StaticDamage">
 				<param power="10000" />
@@ -1090,6 +1108,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1106,7 +1125,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8360" levels="1" name="Vitality Maintenance Effect">
 		<!-- Confirmed CT2.5 -->
@@ -1127,6 +1147,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1165,7 +1186,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="8363" levels="1" name="Beast Training - Accompany">
 		<!-- Confirmed CT2.5 -->
@@ -1178,7 +1201,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8364" levels="1" name="Beast Training - Use Special Ability">
 		<!-- Confirmed CT2.5 -->
@@ -1191,7 +1216,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8365" levels="1" name="Dynasty Tunic">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
@@ -1233,7 +1260,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="castRange" val="150" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="8370" levels="1" name="Rotten Pumpkin Card">
 		<set name="effectPoint" val="-100" />
@@ -1247,7 +1275,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="castRange" val="150" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="8371" levels="1" name="Transform Halloween Pumpkin">
 		<set name="abnormalLvl" val="1" />
@@ -1265,7 +1294,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1287,7 +1317,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="4000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8373" levels="1" name="Silent Scream's Mask">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, Critical rate by 5%, and wind tolerance by 5. -->
@@ -1306,7 +1337,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="4000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8374" levels="1" name="Wrathful Spirit's Mask">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, moving speed by 5%, and fire tolerance by 5. -->
@@ -1325,7 +1357,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="4000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8375" levels="1" name="Unrotten Corpse's Mask">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, skill's MP consumption by 5%, and darkness tolerance by 5. -->
@@ -1344,7 +1377,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="4000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8376" levels="1" name="Planet X235 Alien Mask's Effect">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, damage magic's Prominent Damage occurrence by 2, and water tolerance by 5. -->
@@ -1363,7 +1397,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="4000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8377" levels="1" name="Golden Jack O'Lantern Mask's Effect">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 20%, moving speed by 10%, and resistance to debuffs by 10%. -->
@@ -1382,7 +1417,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="4000" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8378" levels="1" name="Beast Training - Release All">
 		<!-- Confirmed CT2.5 -->
@@ -1395,7 +1431,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8379" levels="2" name="Protection Ring - Gludio">
 		<table name="#earthRes"> 12 15 </table>

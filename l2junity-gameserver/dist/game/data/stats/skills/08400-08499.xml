@@ -159,7 +159,7 @@
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
@@ -190,7 +190,7 @@
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="50" />
@@ -251,7 +251,7 @@
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
@@ -287,7 +287,7 @@
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="50" />
@@ -354,7 +354,7 @@
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param BLEED="50" />
@@ -391,7 +391,7 @@
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param PARALYZE="50" />
@@ -1216,6 +1216,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1233,7 +1234,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8466" levels="2" name="Sword of Vampiric Rage">
 		<table name="#magicLvl"> 85 86 </table>

@@ -20,7 +20,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1600" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.25" />
@@ -36,7 +37,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-1" />
@@ -45,13 +46,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="500" />
 		<set name="magicLvl" val="88" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14702" levels="1" name="Invasion of Darkness">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-1" />
@@ -61,6 +63,8 @@
 		<set name="effectRange" val="1000" />
 		<set name="magicLvl" val="88" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="14703" levels="1" name="Cycle of Blood">
@@ -68,7 +72,7 @@
 		<!-- Bleed status. -->
 		<set name="icon" val="icon.skill0096" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="2500" />
@@ -87,13 +91,15 @@
 		<set name="trait" val="BLEED" />
 		<set name="affectRange" val="300" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14704" levels="1" name="Forced Yoke">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill10015" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="58" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
@@ -110,6 +116,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="trait" val="PULL" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14705" levels="1" name="Stun Resistance">
@@ -408,7 +415,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="1" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="HpCpHeal">
 				<param power="1488" />
@@ -420,7 +428,7 @@
 		<!-- Sealed status. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="120000" />
 		<set name="reuseDelay" val="30000" />
@@ -430,6 +438,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="channelingTickInterval" val="2000" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14738" levels="1" name="Olympiad - Horn Melody">
@@ -437,7 +446,7 @@
 		<!-- For 30 minutes, the selected target's P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<set name="icon" val="icon.skill11517" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
@@ -450,6 +459,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14739" levels="1" name="Olympiad - Drum Melody">
@@ -457,7 +467,7 @@
 		<!-- For 30 minutes, the selected target's Max MP + 20%, HP recovery bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack - 30%, and Speed - 15%. Additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage. -->
 		<set name="icon" val="icon.skill11522" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
@@ -470,6 +480,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14740" levels="1" name="Olympiad - Pipe Organ Melody">
@@ -477,7 +488,7 @@
 		<!-- For 30 minutes, the selected target's Max HP + 37%, Max MP + 37%, Max CP + 37%, and HP recovery bonus + 20%. -->
 		<set name="icon" val="icon.skill11519" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
@@ -490,6 +501,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14741" levels="1" name="Olympiad - Guitar Melody">
@@ -497,7 +509,7 @@
 		<!-- For 30 minutes, the selected target's P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20. Decreases MP consumption for physical skills - 20% and magic skills - 10%. Decreases MP consumption for Iss Enchanter's enchant skills - 20%. -->
 		<set name="icon" val="icon.skill11520" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
@@ -510,6 +522,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14742" levels="1" name="Olympiad - Harp Melody">
@@ -517,7 +530,7 @@
 		<!-- For 30 minutes, the selected target's P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34, and received Critical Damage - 30%. -->
 		<set name="icon" val="icon.skill11521" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
@@ -530,6 +543,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14743" levels="1" name="Olympiad - Lute Melody">
@@ -537,7 +551,7 @@
 		<!-- For 30 minutes, the selected target's Atk. Spd. + 34% and Casting Spd. + 31%. Applies Vampiric Rage effect + 9% with a certain probability. -->
 		<set name="icon" val="icon.skill11518" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
@@ -550,6 +564,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14744" levels="1" name="Olympiad - Knight's Harmony">
@@ -557,7 +572,7 @@
 		<!-- For 30 minutes, P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 		<set name="icon" val="icon.skill11523" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
@@ -570,6 +585,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14745" levels="1" name="Olympiad - Warrior's Harmony">
@@ -577,7 +593,7 @@
 		<!-- For 30 minutes, P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, and Speed + 8. -->
 		<set name="icon" val="icon.skill11524" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
@@ -590,6 +606,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14746" levels="1" name="Olympiad - Wizard's Harmony">
@@ -597,7 +614,7 @@
 		<!-- For 30 minutes, M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption for magic skills - 15% and for physical skills - 5%, and Cooldown - 20%. -->
 		<set name="icon" val="icon.skill11525" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
@@ -610,6 +627,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="isMagic" val="22" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14747" levels="1" name="Raid Boss (Lv. 88)">
@@ -795,6 +813,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="99" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
 	<skill id="14767" levels="1" name="Siege Punch">
@@ -812,6 +831,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14768" levels="1" name="Raid Boss (Lv. 85)">
@@ -918,7 +939,7 @@
 		<!-- The GM is always with you. For 1 hour, increases P. Atk. + 23%, P. Def. + 15%, M. Atk. + 91%, and M. Def. + 30%. -->
 		<set name="icon" val="icon.skill11517" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -932,6 +953,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14780" levels="1" name="Master's Blessing - Drum Melody">
@@ -939,7 +961,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Max MP + 20%, HP recovery bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and damage received from a critical attack - 30%. Additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage. -->
 		<set name="icon" val="icon.skill11522" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -953,6 +975,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14781" levels="1" name="Master's Blessing - Pipe Organ Melody">
@@ -960,7 +983,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Max HP + 43%, Max MP + 43%, Max CP + 43%, and HP recovery bonus + 20%. -->
 		<set name="icon" val="icon.skill11519" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -974,6 +997,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14782" levels="1" name="Master's Blessing - Guitar Melody">
@@ -981,7 +1005,7 @@
 		<!-- The GM is always with you. For 1 hour, increases P. Critical Rate + 38%, P. Critical Damage + 35%, and M. Critical Rate + 20. Decreases MP consumption for physical skills - 20% and magic skills - 10%. Decreases MP consumption for Iss Enchanter's enchant skills - 20%. -->
 		<set name="icon" val="icon.skill11520" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -995,6 +1019,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14783" levels="1" name="Master's Blessing - Harp Melody">
@@ -1002,7 +1027,7 @@
 		<!-- The GM is always with you. For 1 hour, increases P. Accuracy + 8, physical and magic evasion + 8, and speed + 37. Decreases received critical damage - 30%. -->
 		<set name="icon" val="icon.skill11521" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1016,6 +1041,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14784" levels="1" name="Master's Blessing - Lute Melody">
@@ -1023,7 +1049,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Atk. Spd. + 37% and Casting Spd. + 34%. Applies Vampiric Rage effect + 9% with a certain probability. -->
 		<set name="icon" val="icon.skill11518" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1037,6 +1063,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14785" levels="1" name="Master's Blessing - Knight's Harmony">
@@ -1044,7 +1071,7 @@
 		<!-- The GM is always with you. For 1 hour, P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, Shield Defense + 50%. -->
 		<set name="icon" val="icon.skill11523" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1058,6 +1085,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14786" levels="1" name="Master's Blessing - Warrior's Harmony">
@@ -1065,7 +1093,7 @@
 		<!-- The GM is always with you. For 1 hour, P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, Speed + 8. -->
 		<set name="icon" val="icon.skill11524" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1079,6 +1107,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14787" levels="1" name="Master's Blessing - Wizard's Harmony">
@@ -1086,7 +1115,7 @@
 		<!-- The GM is always with you. For 1 hour, M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption - 15% for magic skills and - 5% for physical skills , and Cooldown - 20%. -->
 		<set name="icon" val="icon.skill11525" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1100,6 +1129,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14788" levels="1" name="Master's Blessing - Elemental Resistance">
@@ -1107,7 +1137,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Fire/Water/Wind/Earth Resistance by 30. -->
 		<set name="icon" val="icon.skill11565" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1121,6 +1151,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14789" levels="1" name="Master's Blessing - Holy Attack Resistance">
@@ -1128,7 +1159,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Holy/Dark Attack Resistance by 30, and Poison/Bleed Resistance by 50%. -->
 		<set name="icon" val="icon.skill11567" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1142,6 +1173,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14790" levels="1" name="Master's Blessing - Mental Attack Resistance">
@@ -1149,7 +1181,7 @@
 		<!-- The GM is always with you. For 1 hour, increases Hold/Sleep/Mental Attack Resistance by 50, Buff Cancellation Resistance by 30, and Debuff Resistance by 20. -->
 		<set name="icon" val="icon.skill11824" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
@@ -1163,6 +1195,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14791" levels="1" name="Master's Blessing - Horn Melody">
@@ -1183,6 +1216,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="2000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14792" levels="1" name="Master's Blessing - Drum Melody">
@@ -1203,6 +1238,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="2000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14793" levels="1" name="Master's Blessing - Pipe Organ Melody">
@@ -1223,6 +1260,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="2000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14794" levels="1" name="Master's Blessing - Guitar Melody">
@@ -1243,6 +1282,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="2000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14795" levels="1" name="Master's Blessing - Harp Melody">
@@ -1263,6 +1304,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="2000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14796" levels="1" name="Master's Blessing - Lute Melody">
@@ -1283,6 +1326,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="2000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14797" levels="1" name="Master's Blessing - Knight's Harmony">
@@ -1303,6 +1348,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14798" levels="1" name="Master's Blessing - Warrior's Harmony">
@@ -1323,6 +1370,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="14799" levels="1" name="Master's Blessing - Wizard's Harmony">
@@ -1343,6 +1392,8 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 </list>

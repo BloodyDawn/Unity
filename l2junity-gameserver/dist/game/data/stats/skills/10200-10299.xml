@@ -10,7 +10,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="1.3" />
@@ -49,6 +49,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -85,6 +86,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -100,7 +102,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="2000" />
@@ -108,6 +110,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
@@ -126,13 +129,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="800" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
@@ -362,9 +366,10 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
 			<skill id="10500" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -410,7 +415,8 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -447,10 +453,11 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -500,9 +507,10 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -538,7 +546,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="icon" val="icon.skill10265" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -550,6 +558,8 @@
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
@@ -583,7 +593,7 @@
 		<set name="lvlBonusRate" val="30" />
 		<set name="icon" val="icon.skill10266" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -594,6 +604,8 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="rideState" val="NONE" />
 		<cond msgId="113" addName="1">
 			<target playable="true" />
@@ -637,7 +649,7 @@
 		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="DA2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -649,6 +661,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -703,7 +716,7 @@
 		<set name="flyType" val="CHARGE" />
 		<set name="icon" val="icon.skill10269" />
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -716,6 +729,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="800" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -753,6 +768,7 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -779,7 +795,7 @@
 		<set name="affectRange" val="700" />
 		<set name="icon" val="icon.skill10271" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -789,6 +805,8 @@
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="Debuff">
@@ -814,7 +832,7 @@
 		<set name="lvlBonusRate" val="20" />
 		<set name="icon" val="icon.skill10273" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="DISARM" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -824,6 +842,8 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="-707" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Disarm">
@@ -860,6 +880,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="4" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="300000" />
 		<cond addName="1" msgId="113">
 			<player hp="70" />
@@ -899,7 +920,7 @@
 		<table name="#power"> 65085 69414 73352 77290 </table>
 		<set name="icon" val="icon.skill10275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1178" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -913,6 +934,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="4" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond addName="1" msgId="113">
 			<using kind="SWORD, BLUNT, DUALFIST, POLE, DUALBLUNT" />
@@ -937,6 +959,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="FocusMaxMomentum" />
@@ -963,6 +986,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
@@ -983,6 +1007,8 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10279" levels="1" name="Giant Barrier">
@@ -1003,6 +1029,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<player hp="70" />
@@ -1024,7 +1051,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="mpConsume" val="58" />
 		<for>
@@ -1049,7 +1076,7 @@
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill10281" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1061,6 +1088,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="effectRange" val="400" />
 		<set name="isMagic" val="4" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -1086,6 +1115,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="97" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isTriggeredSkill" val="true" />
 		<for>
 			<effect name="FocusMomentum">
@@ -1101,7 +1131,7 @@
 		<table name="#icons"> icon.skill10284 icon.skill10284_2 icon.skill10284_3 </table>
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="400" />
 		<set name="abnormalType" val="WEAPON_MASTER_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
@@ -1111,6 +1141,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">
@@ -1126,6 +1157,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="HealPercent">
@@ -1172,13 +1204,15 @@
 		<set name="operateType" val="A5" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1196,7 +1230,7 @@
 		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill10288" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1207,6 +1241,8 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -1240,6 +1276,7 @@
 		<set name="effectPoint" val="673" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="180000" />
 		<for>
 			<effect name="Buff">
@@ -1265,6 +1302,8 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="150" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry">
@@ -1283,6 +1322,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1307,6 +1347,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1336,6 +1377,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1361,6 +1403,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1386,6 +1429,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1411,6 +1455,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="AttackTrait">
@@ -1436,6 +1481,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="AttackTrait">
@@ -1459,6 +1505,7 @@
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="HealPercent">
@@ -1488,6 +1535,8 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />

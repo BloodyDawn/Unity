@@ -18,6 +18,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -40,6 +41,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -69,6 +71,7 @@
 		<set name="reuseDelay" val="43200000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -97,6 +100,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -128,7 +132,8 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21105" levels="1" name="Release Agathion's Seal - Lucky Girl">
 		<!-- Confirmed CT2.5 -->
@@ -140,6 +145,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -157,6 +163,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -174,6 +181,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -191,6 +199,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -208,6 +217,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -225,6 +235,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -250,6 +261,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -280,6 +292,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -310,6 +323,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -338,6 +352,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -368,6 +383,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -398,6 +414,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -426,6 +443,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -457,6 +475,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -486,6 +505,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -510,7 +530,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="21121" levels="1" name="Rotten Jack O'Lantern Card">
 		<!-- Confirmed CT2.5 -->
@@ -525,7 +546,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="21122" levels="1" name="Blessing of Skooldy : Protection of Darkness">
 		<!-- Increase max HP by 20%, max MP by 20%, physical Def. by 20%, magic Def. by 20% for 1 hour. Increase dark attack resistance by 20. Reuse Delay 1 hour. -->
@@ -547,6 +569,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -580,6 +603,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -613,6 +637,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -646,6 +671,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -679,6 +705,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -712,6 +739,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -745,6 +773,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -778,6 +807,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -813,6 +843,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -848,6 +879,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -880,6 +912,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove">
@@ -897,6 +930,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -914,6 +948,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -931,6 +966,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -952,7 +988,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
@@ -960,6 +996,8 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="affectRange" val="1000" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -994,6 +1032,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1027,6 +1066,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1060,6 +1100,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1095,6 +1136,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1130,6 +1172,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1153,6 +1196,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1170,6 +1214,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1187,6 +1232,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1204,6 +1250,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1221,6 +1268,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1238,6 +1286,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1255,6 +1304,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1272,6 +1322,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1289,6 +1340,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1306,6 +1358,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1323,6 +1376,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21153" levels="1" name="Blessed Body">
@@ -1343,6 +1397,7 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="icon" val="BranchSys.icon.br_party_hat_gold_i00" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="MaxHp">
@@ -1368,6 +1423,7 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="icon" val="BranchSys.icon.br_party_hat_mask_i00" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1393,6 +1449,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1422,6 +1479,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1442,6 +1500,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1459,6 +1518,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1476,6 +1536,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1493,6 +1554,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1510,6 +1572,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1527,6 +1590,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1544,6 +1608,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1561,6 +1626,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1578,6 +1644,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1595,6 +1662,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1612,6 +1680,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1629,6 +1698,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1652,6 +1722,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1680,6 +1751,7 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="icon" val="BranchSys.icon.br_party_mask_purple_i00" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1705,6 +1777,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1735,7 +1808,8 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="4" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21173" levels="1" name="Enhanced Authority - WIT+1 INT+1">
 		<!-- Enhanced authority grants WIT+1 / INT+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
@@ -1757,7 +1831,8 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="4" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21174" levels="1" name="Enhanced Authority - WIT+1 MEN+1">
 		<!-- Enhanced authority grants WIT+1 / MEN+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
@@ -1779,7 +1854,8 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="4" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21175" levels="1" name="Enhanced Authority - CON+1 DEX+1">
 		<!-- Enhanced authority grants CON+1 / DEX+1 for 2 minutes. Consumes 240 energy. Reuse delay 3 minutes. -->
@@ -1801,7 +1877,8 @@
 		<set name="blockActionUseSkill" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="4" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21176" levels="1" name="Divine Protection - Holy">
 		<!-- Increases divinity type P. Atk. and P. Def. by 10 each. Continuously consumes energy. -->
@@ -2006,7 +2083,8 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
 		<set name="hitTime" val="1000" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21191" levels="1" name="Release Agathion's Seal - Phoenix">
 		<!-- Confirmed CT2.5 -->
@@ -2018,6 +2096,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -2044,6 +2123,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove">
@@ -2070,7 +2150,8 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
 		<set name="hitTime" val="4000" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21194" levels="1" name="Release Agathion's Seal - Three-headed Dragon">
 		<!-- Confirmed CT2.5 -->
@@ -2082,6 +2163,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -2110,6 +2192,7 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -2142,6 +2225,7 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="blockActionUseSkill" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -2168,7 +2252,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="hitTime" val="500" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21198" levels="1" name="Silence of Loyalty">
 		<!-- Through the power of loyalty, raises party members' physical P. Def., M. Def. by 30%, physical P. Atk. by 20%, M. Atk. by 45%, and moving speed by 30 for 5 minutes. Reuse delay 30 minutes. Consumes 1 Proof of a Warrior upon skill use. -->
@@ -2186,7 +2271,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
@@ -2197,6 +2282,8 @@
 		<set name="hitTime" val="3000" />
 		<set name="castRange" val="600" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="21199" levels="1" name="Vitality of Courage">
@@ -2221,6 +2308,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="VitalityPointUp">

@@ -43,7 +43,9 @@
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="PARALYZE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2780" />
@@ -101,7 +103,7 @@
 		<!-- Pulls nearby enemies to the center. -->
 		<set name="icon" val="icon.skill1469" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="21" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1000" />
@@ -112,6 +114,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonNpc">
@@ -129,7 +132,7 @@
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill1469" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-709" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -139,6 +142,8 @@
 		<set name="magicLvl" val="97" />
 		<set name="trait" val="SHOCK" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -159,7 +164,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-696" />
 		<set name="basicProperty" val="NONE" />
@@ -169,6 +174,8 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="89" />
 		<set name="trait" val="SHOCK" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -186,7 +193,7 @@
 		<set name="attachToggleGroupId" val="1" />
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3380" />
 		<set name="coolTime" val="500" />
@@ -197,6 +204,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="canDoubleCast" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
@@ -213,7 +221,7 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1830" />
 		<set name="coolTime" val="500" />
@@ -225,6 +233,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="canDoubleCast" val="true" />
 		<set name="attachToggleGroupId" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
@@ -242,7 +251,7 @@
 		<!-- Feoh Storm Screamer Hell Binding (11150) attack -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3700" />
 		<set name="coolTime" val="300" />
@@ -253,6 +262,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="attachToggleGroupId" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
@@ -269,7 +279,7 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3700" />
 		<set name="coolTime" val="300" />
@@ -280,6 +290,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="attachToggleGroupId" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
@@ -431,6 +442,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -461,6 +473,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -491,6 +504,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -520,7 +534,7 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -534,6 +548,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
 			<skill id="11500" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -567,7 +582,7 @@
 		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -581,6 +596,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
@@ -612,7 +628,7 @@
 		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -626,6 +642,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
@@ -648,7 +665,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -662,6 +679,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
@@ -683,7 +701,7 @@
 		<set name="icon" val="icon.skill11263" />
 		<set name="operateType" val="A1" />
 		<set name="affectRange" val="200" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -696,6 +714,8 @@
 		<set name="hitCancelTime" val="3" />
 		<set name="effectRange" val="1100" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -723,6 +743,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ManaHeal">
@@ -743,7 +764,7 @@
 		<set name="icon" val="icon.skill11265" />
 		<set name="effectRange" val="-2" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="OTHERS" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="71" />
 		<set name="castRange" val="-2" />
@@ -753,6 +774,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -792,6 +814,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="SummonNpc">
@@ -825,6 +848,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond>
 			<player canTransform="true" />
@@ -862,6 +886,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonCubic">
@@ -877,7 +902,7 @@
 		<table name="#heal"> 1308 1336 1358 1381 1733 1747 1761 </table>
 		<set name="icon" val="icon.skill11269" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SUMMON" />
+		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -888,6 +913,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
@@ -903,7 +930,7 @@
 		<table name="#power"> 70 72 74 75 </table>
 		<set name="icon" val="icon.skill11270" />
 		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="70" />
 		<set name="rideState" val="NONE" />
@@ -926,7 +953,7 @@
 		<table name="#power"> 204 214 223 233 242 252 262 271 281 290 300 </table> <!-- TODO Taken from Mark of Weakness x2.4 (because level 2 power calculated in retail seems to be 214) -->
 		<set name="icon" val="icon.skill11271" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1760" />
@@ -937,6 +964,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAbnormalDispelAttack">
@@ -958,7 +986,7 @@
 		<!-- Switches locations with target servitor. -->
 		<set name="icon" val="icon.skill11272" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SERVITOR" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="97" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1200" />
@@ -969,6 +997,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="BlinkSwap" />
@@ -991,7 +1020,7 @@
 		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="trait" val="DEPORT" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1005,6 +1034,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="1" />
 		<set name="effectRange" val="1100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions">
@@ -1043,6 +1073,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<player hasSummon="true" />
@@ -1062,7 +1093,7 @@
 		<table name="#power"> 100 150 </table>
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
@@ -1073,6 +1104,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1088,7 +1120,7 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="CA2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="90" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="10000" />
@@ -1105,6 +1137,7 @@
 		<set name="mpPerChanneling" val="15" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -1124,7 +1157,7 @@
 		<set name="abnormalType" val="SUMMON_CONDITION" />
 		<set name="icon" val="icon.skill11277" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA_SUMMON" />
+		<set name="targetType" val="SUMMON" />
 		<set name="castRange" val="400" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -1132,6 +1165,8 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1157,7 +1192,7 @@
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="activateRate" val="100" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="HATE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -1172,6 +1207,7 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1199,7 +1235,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="HOLD" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1660" />
@@ -1210,6 +1246,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1230,7 +1268,7 @@
 		<table name="#power"> 6300 6518 6954 7391 7827 8264 8700 9137 9355 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="50" />
@@ -1241,6 +1279,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="5000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1264,7 +1303,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="660" />
@@ -1277,6 +1316,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1298,7 +1339,7 @@
 		<table name="#power"> 125 127 131 134 138 141 145 149 150 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2560" />
@@ -1309,6 +1350,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HpDrain">
@@ -1328,7 +1370,7 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="2560" />
@@ -1340,6 +1382,8 @@
 		<set name="effectRange" val="1000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1356,7 +1400,7 @@
 		<table name="#power"> 8690 9051 9392 9392 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -1367,6 +1411,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1384,7 +1429,7 @@
 		<set name="icon" val="icon.skill0121" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1760" />
 		<set name="coolTime" val="300" />
@@ -1393,6 +1438,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="15000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1416,6 +1463,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
@@ -1463,6 +1511,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
@@ -1492,7 +1541,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="HOLD" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1500" />
@@ -1502,6 +1551,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="99" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Root" />
@@ -1523,6 +1574,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="99" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonNpc">
@@ -1539,7 +1591,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
@@ -1548,6 +1600,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="99" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1564,7 +1618,7 @@
 		<table name="#max"> 2 3 3 4 4 6 8 10 </table>
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1572,6 +1626,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1586,7 +1641,7 @@
 		<table name="#rate"> 20 21 22 23 24 25 26 30 </table>
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1594,6 +1649,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1613,7 +1669,7 @@
 		<set name="activateRate" val="30" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="trait" val="HOLD" />
 		<set name="castRange" val="600" />
 		<set name="isMagic" val="1" />
@@ -1623,6 +1679,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Root" />
@@ -1671,7 +1728,7 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="trait" val="DEPORT" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -1686,6 +1743,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="BlockActions">
@@ -1722,6 +1781,8 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="Buff">
@@ -1750,7 +1811,7 @@
 		<table name="#power"> 168 170 175 180 185 189 194 199 222 228 234 </table>
 		<set name="icon" val="icon.skill11298" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3360" />
@@ -1762,6 +1823,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttackRange">
@@ -1789,6 +1851,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="RebalanceHP" />

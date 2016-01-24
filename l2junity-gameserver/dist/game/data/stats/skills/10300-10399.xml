@@ -10,7 +10,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10300" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -20,6 +20,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -114,7 +115,9 @@
 		<set name="abnormalType" val="REAL_TARGET" />
 		<set name="icon" val="icon.skill11833" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -288,7 +291,9 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="icon" val="icon.skill10313" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -375,7 +380,9 @@
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10317new" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1390" />
 		<set name="coolTime" val="200" />
@@ -402,7 +409,8 @@
 		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
 		<set name="icon" val="icon.skill10318new" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -458,7 +466,8 @@
 		<set name="abnormalVisualEffect" val="DUELING" />
 		<set name="icon" val="icon.skll10319" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="43" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="300" />
@@ -495,7 +504,9 @@
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skll10321" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2500" />
@@ -568,7 +579,9 @@
 		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="icon" val="icon.skill10325" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -668,7 +681,8 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10330" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
@@ -741,7 +755,7 @@
 				<param isCritical="false" />
 				<param minDamage="1" chance="10" />
 				<param skillId="10339" skillLevel="1" /> <!-- Winged Spear - Stun -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 				<param allowWeapons="POLE" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -749,7 +763,7 @@
 				<param isCritical="true" />
 				<param minDamage="1" chance="10" />
 				<param skillId="10339" skillLevel="1" /> <!-- Winged Spear - Stun -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 				<param allowWeapons="POLE" />
 			</effect>
 		</for>
@@ -812,7 +826,7 @@
 				<param isCritical="false" />
 				<param minDamage="1" chance="10" />
 				<param skillId="10338" skillLevel="1" /> <!-- Punch Drunk -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 				<param allowWeapons="DUALFIST" />
 			</effect>
 			<effect name="TriggerSkillByAttack">
@@ -820,7 +834,7 @@
 				<param isCritical="true" />
 				<param minDamage="1" chance="10" />
 				<param skillId="10338" skillLevel="1" /> <!-- Punch Drunk -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 				<param allowWeapons="DUALFIST" />
 			</effect>
 		</for>
@@ -848,7 +862,8 @@
 		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
 		<set name="icon" val="icon.skill10335" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="100" />

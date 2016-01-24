@@ -14,7 +14,7 @@
 		<!-- Inflicts damage with 33717 Power added to P. Atk. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. Additional damage occurs with Bleed. -->
 		<set name="icon" val="icon.skill19101" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1130" />
 		<set name="coolTime" val="700" />
@@ -23,6 +23,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="99" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="19102" levels="1" name="Chaos Sympathy">
@@ -42,6 +43,7 @@
 		<set name="abnormalTime" val="7" />
 		<set name="coolTime" val="300" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Invincible" />

@@ -20,7 +20,8 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -54,7 +55,8 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -86,7 +88,8 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
@@ -115,7 +118,8 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -145,7 +149,8 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="9000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -178,7 +183,9 @@
 		<set name="operateType" val="A2" />
 		<set name="trait" val="PULL" />
 		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -216,7 +223,9 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="KNOCKBACK" />
 		<cond msgId="113" addName="1">
@@ -245,7 +254,8 @@
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" /> <!-- A1 in client? -->
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="300" />
@@ -281,7 +291,8 @@
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" /> <!-- A1 in client? -->
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="300" />
@@ -319,7 +330,8 @@
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="100" />
@@ -519,7 +531,9 @@
 		<set name="affectRange" val="300" />
 		<set name="effectPoint" val="-379" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
@@ -550,7 +564,9 @@
 		<set name="affectRange" val="300" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-687" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="500" />
@@ -623,7 +639,7 @@
 				<param minDamage="1" />
 				<param chance="100" />
 				<param skillId="30521" skillLevel="1" /> <!-- Damage Up -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 		</for>
 		<endEffects>
@@ -637,7 +653,8 @@
 		<!-- Inflicts normal damage x 5. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
@@ -717,7 +734,7 @@
 				<param minDamage="1" />
 				<param chance="13" />
 				<param skillId="30521" skillLevel="1" /> <!-- Damage Up -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 			</effect>
 		</for>
 	</skill>
@@ -746,7 +763,8 @@
 		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
 		<set name="abnormalVisualEffect" val="GRAVITY_SPACE_3" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
@@ -973,7 +991,8 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA2" />
 		<set name="trait" val="KNOCKDOWN" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="100" />
@@ -999,7 +1018,8 @@
 		<table name="#power"> 91570 95080 98736 102392 </table>
 		<set name="icon" val="icon.skill30547" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="80" />
 		<set name="hitTime" val="500" />

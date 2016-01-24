@@ -10,7 +10,7 @@
 		<set name="effectPoint" val="-692" />
 		<set name="icon" val="icon.skill1042" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="500" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -19,6 +19,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="85" />
 		<set name="trait" val="AIRBIND" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
@@ -44,7 +45,7 @@
 		<set name="affectRange" val="300" />
 		<set name="affectLimit" val="5-12" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="2560" />
 		<set name="coolTime" val="500" />
@@ -53,6 +54,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -68,7 +71,7 @@
 		<table name="#power"> 1637 1645 1658 1671 1685 1698 1713 1727 1928 1944 1960 </table>
 		<set name="icon" val="icon.skill1127" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SERVITOR" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
@@ -79,6 +82,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<player hasSummon="true" />
@@ -111,6 +115,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -140,6 +146,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -169,6 +177,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -198,6 +208,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -227,6 +239,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -256,6 +270,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -282,6 +298,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
 		<set name="abnormalTime" val="3" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -316,6 +334,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -332,7 +352,7 @@
 		<table name="#power"> 20633 21717 22799 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="70" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -343,6 +363,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -358,7 +379,7 @@
 		<table name="#power"> 18758 19743 20727 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="70" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="900" />
@@ -369,6 +390,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1500" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -385,7 +407,7 @@
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
@@ -394,6 +416,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -410,7 +434,7 @@
 		<set name="icon" val="icon.skill_transform_debuff" />
 		<set name="affectRange" val="150" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA_CORPSE_MOB" />
+		<set name="targetType" val="NPC_BODY" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
@@ -422,6 +446,8 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="6-12" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="ConsumeBody" />
@@ -466,6 +492,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="129">
 			<and>
@@ -500,6 +527,8 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="1000" />
+		<set name="affectScope" val="SUMMON_EXCEPT_MASTER" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
@@ -594,7 +623,9 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="AGGRESSION" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
@@ -620,7 +651,9 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
@@ -639,7 +672,8 @@
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -667,7 +701,9 @@
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
@@ -697,7 +733,8 @@
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
@@ -718,7 +755,9 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
@@ -818,7 +857,9 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="AGGRESSION" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
@@ -844,7 +885,9 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
@@ -863,7 +906,8 @@
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -891,7 +935,9 @@
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
@@ -921,7 +967,8 @@
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
@@ -942,7 +989,9 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
@@ -1042,7 +1091,9 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="AGGRESSION" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
@@ -1068,7 +1119,9 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
@@ -1087,7 +1140,8 @@
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -1115,7 +1169,9 @@
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
@@ -1145,7 +1201,8 @@
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
@@ -1166,7 +1223,9 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
@@ -1262,7 +1321,8 @@
 		<table name="#power"> 188 202 215 227 242 248 254 </table>
 		<set name="icon" val="icon.skill11350" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2780" />
@@ -1327,7 +1387,8 @@
 		<table name="#power"> 188 202 215 227 242 248 254 </table>
 		<set name="icon" val="icon.skill11353" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2780" />
@@ -1387,7 +1448,8 @@
 		<table name="#power"> 188 202 215 227 242 248 254 </table>
 		<set name="icon" val="icon.skill11356" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2780" />
@@ -1476,7 +1538,9 @@
 		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1554,7 +1618,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1581,7 +1646,9 @@
 		<set name="itemConsumeCount" val="3" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
@@ -1628,7 +1695,9 @@
 		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1661,7 +1730,9 @@
 		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="4" />
@@ -1853,7 +1924,9 @@
 		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
@@ -1890,7 +1963,8 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="trait" val="KNOCKDOWN" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
@@ -1916,7 +1990,9 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
@@ -1944,7 +2020,9 @@
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1981,7 +2059,9 @@
 		<set name="fanRange" val="0;0;600;60" />
 		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="DA2" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -2016,7 +2096,9 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
@@ -2042,7 +2124,9 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
@@ -2070,7 +2154,9 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2500" />
@@ -2094,7 +2180,8 @@
 		<table name="#power"> 40502 42578 44654 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="50" />
@@ -2115,7 +2202,8 @@
 		<table name="#power"> 45696 47772 49848 </table>
 		<set name="icon" val="icon.skill10511" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="DEATH" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -2141,7 +2229,8 @@
 		<table name="#power"> 51411 53747 56083 </table>
 		<set name="icon" val="icon.skill1171" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="DEATH" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -2166,7 +2255,8 @@
 		<table name="#power"> 45568 47904 50240 </table>
 		<set name="icon" val="icon.skill1171" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />

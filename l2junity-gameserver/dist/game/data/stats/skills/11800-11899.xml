@@ -18,6 +18,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -42,12 +43,13 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="magicLvl" val="95" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -80,6 +82,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -103,13 +106,14 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="magicLvl" val="97" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -140,6 +144,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -163,13 +168,15 @@
 		<table name="#heal"> 3274 3296 3319 3338 </table>
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="200" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HpCpHeal">
@@ -188,13 +195,14 @@
 		<set name="icon" val="icon.skill11807" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealPercent">
@@ -214,7 +222,7 @@
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A5" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -223,6 +231,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -242,7 +252,7 @@
 		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A5" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="MY_PARTY" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="379" />
@@ -250,6 +260,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -272,6 +284,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11811" levels="1" name="Total Resurrection Wish">
@@ -289,6 +302,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff" />
@@ -306,7 +320,7 @@
 		<set name="itemConsumeCount" val="2" />
 		<set name="itemConsumeId" val="8874" /> <!-- Einhasad's Holy Water -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="38" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
@@ -317,6 +331,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<!-- TODO check Zealar implementation of Res special -->
@@ -339,7 +354,7 @@
 		<set name="itemConsumeId" val="8874" /> <!-- Einhasad's Holy Water -->
 		<set name="effectPoint" val="379" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="600000" />
@@ -348,6 +363,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="93" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<!-- TODO check Zealar implementation of Res special -->
@@ -377,7 +394,7 @@
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2780" />
@@ -387,6 +404,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<for>
 			<effect name="MagicalAttack">
@@ -413,13 +431,14 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="targetType" val="TARGET" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -452,6 +471,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -474,7 +494,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3780" />
@@ -482,6 +502,8 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -502,7 +524,7 @@
 		<set name="abnormalType" val="DOT_MP" />
 		<set name="icon" val="icon.skill1100" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="1" />
@@ -513,6 +535,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="100" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -536,7 +559,10 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="targetType" val="PARTY" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -560,7 +586,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -572,6 +598,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="Buff">
@@ -597,7 +624,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -609,6 +636,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="Buff">
@@ -635,7 +663,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -647,6 +675,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="Buff">
@@ -673,7 +702,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -685,6 +714,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="Buff">
@@ -711,7 +741,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="ARMOR_HOLY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -723,6 +753,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="DefenceTrait">
@@ -750,7 +781,7 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalType" val="RESIST_DERANGEMENT" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -762,6 +793,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="DefenceTrait">
@@ -802,7 +834,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="ResurrectionSpecial">
 				<param power="100" />
@@ -823,6 +856,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="4000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="2" />
 		<for>
 			<effect name="Heal">
@@ -848,7 +882,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="AREA_FRIENDLY" />
+		<set name="affectScope" val="RANGE_SORT_BY_HP" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="ENEMY_NOT" />
 		<for>
 			<effect name="HealPercent">
 				<param power="40" />
@@ -864,7 +900,7 @@
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="35" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
@@ -876,6 +912,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="22" />
 		<for>
 			<effect name="Buff">
@@ -912,7 +949,7 @@
 		<set name="effectPoint" val="-655" />
 		<set name="effectRange" val="1100" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -921,6 +958,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Unsummon">
@@ -948,7 +987,7 @@
 		<set name="lvlBonusRate" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="removedOnDamage" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="SLEEP" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -957,6 +996,8 @@
 		<set name="isMagic" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions">
@@ -988,6 +1029,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="canBeDispelled" val="false" />
 		<for>
 			<effect name="Buff">
@@ -1018,6 +1060,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="canBeDispelled" val="false" />
 		<for>
 			<effect name="Buff">
@@ -1041,6 +1084,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1080,7 +1124,8 @@
 		<table name="#mp"> 50 60 70 100 </table>
 		<set name="icon" val="icon.skill11850new" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="PARTY_CLAN" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY_PLEDGE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="hitTime" val="10000" />
@@ -1122,7 +1167,8 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="effectPoint" val="611" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
@@ -1152,7 +1198,8 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="effectPoint" val="1" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<for>
 			<effect name="Buff">
 				<add stat="manaCharge" val="#power" />
@@ -1194,7 +1241,8 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="effectPoint" val="1" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<for>
 			<effect name="Buff">
 				<add stat="manaCharge" val="#power" />
@@ -1303,7 +1351,8 @@
 		<!-- For 30 min., increases party member's Elemental Resistance by 30. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11861" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="mpConsume" val="82" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -1330,7 +1379,8 @@
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="82" />
 		<set name="castRange" val="900" />
@@ -1362,7 +1412,8 @@
 		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="PARTY" />
 		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="82" />
 		<set name="castRange" val="900" />

@@ -54,7 +54,8 @@
 		<table name="#power"> 29176 30726 32277 </table>
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1800" />
@@ -267,6 +268,7 @@
 		<set name="reuseDelayGroup" val="10760" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10999" levels="1" name="Heavy Hit">
@@ -274,7 +276,7 @@
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="2000" />
@@ -284,6 +286,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 </list>

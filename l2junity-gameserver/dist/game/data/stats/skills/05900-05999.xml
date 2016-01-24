@@ -17,11 +17,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="40" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -51,10 +53,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -76,6 +80,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TargetCancel" />
@@ -103,8 +108,10 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="1" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="DISARM" />
 		<for>
 			<effect name="Disarm" />
@@ -131,7 +138,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="HpDrain">
 				<param power="#power" />
@@ -155,10 +164,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5906" levels="1" name="Ritual of Revive">
@@ -170,7 +181,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="castRange" val="600" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="PC_BODY" />
 	</skill>
 	<skill id="5907" levels="2" name="Ritual of Entombment">
 		<table name="#hitTime"> 3000 34404 </table>
@@ -193,7 +205,9 @@
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="600" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="NPC_BODY" />
 		<for>
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
@@ -221,7 +235,9 @@
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="600" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="PC_BODY" />
 		<for>
 			<effect name="DefenceTrait">
 				<param HOLD="100" />
@@ -238,7 +254,8 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="3000" /> <!-- FIXME: value unconfirmed -->
@@ -255,7 +272,8 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="5000" /> <!-- FIXME: value unconfirmed -->
@@ -281,10 +299,11 @@
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5913" levels="1" name="Putrefaction Cleanse">
@@ -297,7 +316,7 @@
 				<param isCritical="false" />
 				<param minDamage="1" chance="100" />
 				<param skillId="5914" skillLevel="1" /> <!-- Putrefaction Cleanse -->
-				<param targetType="ONE" />
+				<param targetType="TARGET" />
 				<param allowWeapons="ALL" />
 			</effect>
 		</for>
@@ -315,12 +334,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="600" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5915" levels="9" name="Mummifying Aura">
@@ -337,7 +357,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5916" levels="9" name="Cruising Aura">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
@@ -353,7 +374,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5917" levels="9" name="Shrouding Aura">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
@@ -369,7 +391,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5918" levels="10" name="Physical Root Vulnerability">
 		<table name="#trait_root_physically"> -10 -20 -30 -40 -50 -60 -70 -80 -90 -99 </table>
@@ -405,7 +428,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-2" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="BlockResurrection" />
 		</for>
@@ -426,7 +450,9 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="BALAKAS_SCOPE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="MagicalAttack">
 				<param power="150" />
@@ -459,7 +485,9 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="HpDrain">
 				<param power="121" />
@@ -500,7 +528,9 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="AREA" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="MagicalAttack">
 				<param power="121" />
@@ -529,6 +559,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -549,7 +580,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
 		<set name="castRange" val="300" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="5925" levels="1" name="Goring Charge">
 		<set name="effectPoint" val="-100" />
@@ -560,7 +592,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
 		<set name="castRange" val="300" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -577,7 +610,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
 		<set name="castRange" val="300" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="5927" levels="4" name="Immortal Frenzy">
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
@@ -592,7 +627,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5928" levels="4" name="Immortal Resilience">
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
@@ -607,7 +643,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5929" levels="1" name="Pairing of the Lost">
 		<set name="abnormalLvl" val="1" />
@@ -621,7 +658,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5930" levels="1" name="Shielding of the Lost">
 		<!-- TODO: Implement me! -->
@@ -636,7 +674,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
 				<param BOW="90" />
@@ -652,7 +691,7 @@
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="Invincible" />
 		</for>
@@ -675,7 +714,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="9279" />
@@ -700,7 +741,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="FRONT_AREA" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="9279" />
@@ -723,7 +766,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5935" levels="1" name="Dark Ring">
 		<!-- Confirmed CT2.5 -->
@@ -742,7 +786,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AREA" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="9279" />
@@ -766,7 +812,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AREA" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="9279" />
@@ -786,7 +834,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="icon" val="icon.skill1540" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5938" levels="5" name="P. Atk. Up">
 		<set name="abnormalLvl" val="1" />
@@ -801,7 +850,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="icon" val="icon.skill1068" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5939" levels="5" name="Defense Ability Up">
 		<set name="abnormalLvl" val="1" />
@@ -816,7 +866,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="icon" val="icon.skill1040" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5940" levels="12" name="Energy of Generation">
 		<table name="#abnormalLvl"> 3 4 5 6 7 8 9 10 11 12 13 14 </table>
@@ -834,7 +885,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5941" levels="1" name="Energy of Erosion">
 		<set name="abnormalLvl" val="4" />
@@ -850,7 +902,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5942" levels="1" name="Energy of Pollution">
 		<set name="abnormalLvl" val="4" />
@@ -866,7 +919,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5943" levels="1" name="Energy of Contamination">
 		<set name="abnormalLvl" val="4" />
@@ -882,7 +936,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5944" levels="1" name="Energy of Oblivion">
 		<set name="abnormalLvl" val="4" />
@@ -898,7 +953,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5945" levels="1" name="Region2 Rotation5">
 		<set name="abnormalLvl" val="3" />
@@ -913,7 +969,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5946" levels="1" name="Large Firecracker">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -925,7 +982,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5947" levels="1" name="Large Firecracker">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -937,7 +995,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5948" levels="1" name="Large Firecracker">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -949,7 +1008,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5949" levels="1" name="Large Firecracker">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -961,7 +1021,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5950" levels="1" name="Birthday Gift">
 		<!-- Confirmed CT2.5 -->
@@ -983,7 +1044,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="irreplacableBuff" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<for>
 			<effect name="Buff">
 				<sub stat="vitalityConsumeRate" val="10" />
@@ -999,7 +1061,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5952" levels="1" name="Agathion's Blessing">
 		<set name="hitTime" val="3000" />
@@ -1010,7 +1073,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5953" levels="1" name="Agathion's Blessing">
 		<set name="hitTime" val="3000" />
@@ -1021,7 +1085,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5954" levels="1" name="Agathion Cute Trick - Tinplate Golem">
 		<set name="hitTime" val="3000" />
@@ -1032,7 +1097,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5955" levels="1" name="Agathion Cute Trick - Joy">
 		<set name="hitTime" val="3000" />
@@ -1043,6 +1109,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16056" />
@@ -1057,6 +1124,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16058" />
@@ -1071,6 +1139,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16057" />
@@ -1085,6 +1154,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16059" />
@@ -1099,6 +1169,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16060" />
@@ -1117,10 +1188,11 @@
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="TARGET" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="5961" levels="1" name="Barrier Thunder Storm">
@@ -1138,12 +1210,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="600" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="5962" levels="1" name="Air Defense Cannon">
@@ -1155,7 +1229,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="castRange" val="600" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="5963" levels="1" name="Emery Conversion">
 		<set name="effectPoint" val="100" />
@@ -1167,7 +1242,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="castRange" val="600" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5964" levels="1" name="Star Shard">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1179,7 +1255,8 @@
 		<set name="effectRange" val="1500" />
 		<set name="reuseDelay" val="700" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5965" levels="1" name="Fireworks">
 		<set name="hitTime" val="500" />
@@ -1192,7 +1269,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5966" levels="1" name="Large Firecracker">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1204,7 +1282,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5967" levels="2" name="Aggression Aura">
 		<set name="abnormalLvl" val="1" />
@@ -1224,7 +1303,9 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="affectRange" val="200" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5968" levels="2" name="Rapid Shot">
 		<table name="#abnormalLvl"> 1 2 </table>
@@ -1243,7 +1324,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5969" levels="2" name="Punch of Doom">
 		<table name="#hpConsume"> 513 526 </table>
@@ -1270,7 +1352,8 @@
 		<set name="isDebuff" val="true" />
 		<set name="hpConsume" val="#hpConsume" />
 		<set name="castRange" val="40" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param ignoreShieldDefence="true" />
@@ -1295,7 +1378,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="100" />
 		<set name="castRange" val="75" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5971" levels="1" name="Seduced Ranger's Help">
 		<set name="abnormalLvl" val="1" />
@@ -1314,7 +1398,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="100" />
 		<set name="castRange" val="75" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5972" levels="1" name="Seduced Wizard's Help">
 		<set name="abnormalLvl" val="1" />
@@ -1333,7 +1418,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="100" />
 		<set name="castRange" val="75" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5973" levels="1" name="Seduced Warrior's Help">
 		<set name="abnormalLvl" val="1" />
@@ -1352,7 +1438,8 @@
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="100" />
 		<set name="castRange" val="75" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5974" levels="1" name="Tiat Transformation">
 		<set name="abnormalLvl" val="1" />
@@ -1368,7 +1455,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5975" levels="3" name="Dark Attack">
 		<table name="#effectPoints"> -484 -572 -653 </table>
@@ -1385,7 +1473,8 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
@@ -1407,7 +1496,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
@@ -1426,7 +1517,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="400" />
 		<set name="castRange" val="40" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="5978" levels="1" name="Devil Strike">
 		<set name="effectPoint" val="-653" />
@@ -1438,7 +1530,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="-2" />
 		<set name="castRange" val="500" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="5979" levels="1" name="Forced Teleport">
 		<set name="hitTime" val="2500" />
@@ -1449,7 +1542,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1200" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5980" levels="3" name="Seal Isolation">
 		<!-- Confirmed CT2.5 -->
@@ -1467,7 +1561,9 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AURA" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
@@ -1488,7 +1584,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 	</skill>
 	<skill id="5982" levels="1" name="Aura Bird - Falcon">
 		<set name="abnormalLvl" val="1" />
@@ -1511,7 +1608,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1548,7 +1646,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="TARGET" />
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1580,7 +1679,8 @@
 		<set name="effectRange" val="2000" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="1500" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="5985" levels="9" name="Decaying Aura">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
@@ -1595,7 +1695,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5986" levels="9" name="Vampiric Aura">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
@@ -1610,7 +1711,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5987" levels="1" name="Weapon Maintenance">
 		<!-- Confirmed CT2.5 -->
@@ -1629,7 +1731,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="PARTY" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05">
@@ -1664,7 +1768,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="PARTY" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
+		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.1">
@@ -1699,7 +1805,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5990" levels="3" name="Lesser Heal">
 		<table name="#magicLvl"> 70 72 74 </table>
@@ -1712,7 +1819,8 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5991" levels="1" name="Presentation - Summon Tiat">
 		<set name="hitTime" val="11760" />
@@ -1722,7 +1830,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5992" levels="12" name="Aggression">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1743,7 +1852,8 @@
 		<set name="effectRange" val="1400" />
 		<set name="isDebuff" val="true" />
 		<set name="castRange" val="900" />
-		<set name="targetType" val="NONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY_ONLY" />
 	</skill>
 	<skill id="5993" levels="1" name="Command of Anchor">
 		<!-- Confirmed CT2.5 -->
@@ -1766,9 +1876,11 @@
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1800,10 +1912,11 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="ENEMY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="5995" levels="1" name="not_used">

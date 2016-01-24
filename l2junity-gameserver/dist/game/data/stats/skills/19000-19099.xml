@@ -5,7 +5,7 @@
 		<!-- Race confirm -->
 		<set name="icon" val="icon.skill0010509" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="720" />
@@ -23,6 +23,7 @@
 		<set name="abnormalTime" val="40" />
 		<set name="trait" val="BLEED" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19002" levels="1" name="Anchor">
@@ -30,7 +31,7 @@
 		<!-- Action prevent item skill confirm -->
 		<set name="icon" val="icon.skill10510" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="3000" />
@@ -47,6 +48,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="40" />
 		<set name="trait" val="PARALYZE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19003" levels="5" name="Clan Resistance Hall">
@@ -107,7 +109,7 @@
 		<!-- Summons a clan member. Consumes 5 Spirit Ores. Consumes 900 Individual Fame. Applies after the viscount stage. -->
 		<set name="icon" val="icon.skill19007" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="OTHERS" />
 		<set name="castRange" val="-2" />
 		<set name="hitTime" val="15000" />
 		<set name="effectPoint" val="467" />
@@ -116,6 +118,7 @@
 		<set name="effectRange" val="-2" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="19008" levels="1" name="Clan Guardian">
@@ -131,6 +134,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19009" levels="1" name="Clan Advent">
@@ -153,6 +157,8 @@
 		<set name="canBeDispelled" val="false" />
 		<set name="affectRange" val="1000" />
 		<set name="affectLimit" val="50-50" />
+		<set name="affectScope" val="PLEDGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="2" />
 	</skill>
 	<skill id="19010" levels="1" name="Clan Copy">
@@ -166,6 +172,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19011" levels="1" name="Clan Legend">
@@ -198,6 +205,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="PLEDGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<skill id="19013" levels="1" name="Clan Un-debuff">
@@ -216,6 +225,8 @@
 		<set name="affectRange" val="1000" />
 		<set name="affectLimit" val="50-50" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="PLEDGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19014" levels="1" name="Clan Defense">
@@ -238,6 +249,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="PLEDGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19015" levels="1" name="Clan Friendly">
@@ -259,6 +272,8 @@
 		<set name="affectRange" val="500" />
 		<set name="affectLimit" val="50-50" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="PLEDGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19016" levels="1" name="Clan Boundary">
@@ -280,6 +295,8 @@
 		<set name="affectRange" val="500" />
 		<set name="affectLimit" val="50-50" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="PLEDGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19017" levels="1" name="Clan Prison">
@@ -305,6 +322,8 @@
 		<set name="affectRange" val="600" />
 		<set name="affectLimit" val="10-10" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19018" levels="1" name="Clan Guardian Recovery">
@@ -321,6 +340,8 @@
 		<set name="canBeDispelled" val="false" />
 		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="19019" levels="1" name="Revolution Blade">
@@ -328,7 +349,7 @@
 		<!-- Inflicts physical damage on target. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill10013" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -338,6 +359,7 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19020" levels="1" name="Revolution Eruption">
@@ -345,7 +367,7 @@
 		<!-- Attacks frontal targets to inflict physical damage. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill10265" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -357,6 +379,8 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="fanRange" val="0;0;150;120" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19021" levels="1" name="Revolution Strike">
@@ -364,7 +388,7 @@
 		<!-- Inflicts powerful physical damage on target. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill10260" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -374,6 +398,7 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19022" levels="1" name="Revolution Shot">
@@ -381,7 +406,7 @@
 		<!-- Attacks distant enemies. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill10762" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -391,6 +416,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19023" levels="1" name="Revolution Multi-Shot">
@@ -398,7 +424,7 @@
 		<!-- Does ranged attacks centered on frontal target. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill10771" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -410,6 +436,8 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="fanRange" val="0;0;900;90" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19024" levels="1" name="Revolution Tornado Shot">
@@ -417,7 +445,7 @@
 		<!-- Inflicts a penetrating attack on enemies at the front. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill10760" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -427,6 +455,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19025" levels="1" name="Revolution Spike">
@@ -434,7 +463,7 @@
 		<!-- Inflicts a magic attack on target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -444,6 +473,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19026" levels="1" name="Revolution Blast">
@@ -451,7 +481,7 @@
 		<!-- Inflicts a magic attack on target and enemies near target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -463,6 +493,8 @@
 		<set name="affectRange" val="100" />
 		<set name="affectLimit" val="5-12" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19027" levels="1" name="Revolution Destruction">
@@ -470,7 +502,7 @@
 		<!-- Inflicts a powerful magic attack on target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -480,6 +512,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19028" levels="2" name="Revolution Spirit">
@@ -501,6 +534,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="300" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19029" levels="1" name="Revolution Self CP Recovery">
@@ -516,6 +550,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19030" levels="1" name="Revolution CP Recovery">
@@ -523,7 +558,7 @@
 		<!-- Increases combat spirit to recover target's CP by 1000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -533,6 +568,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19031" levels="1" name="Revolution Party CP Recovery">
@@ -549,6 +585,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="PARTY" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19032" levels="1" name="Ability of Light">
@@ -603,7 +641,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="HOLY" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="HOLYTHING" />
 		<cond>
 			<player canTakeCastle="true" />
 		</cond>
@@ -628,7 +667,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="targetType" val="HOLY" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="HOLYTHING" />
 		<cond>
 			<player canTakeCastle="true" />
 		</cond>
@@ -657,6 +697,7 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="VP_KEEP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
@@ -775,6 +816,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -802,6 +844,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19074" levels="2" name="Academy Precept">
@@ -812,7 +855,7 @@
 		<table name="#reuseDelays"> 43200000 21600000 </table>
 		<set name="icon" val="icon.skill19008" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="100" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="4000" />
@@ -826,6 +869,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="19075" levels="1" name="Clan Relation">
@@ -845,6 +889,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="19080" levels="1" name="Sigel Ixion">
@@ -864,6 +909,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19081" levels="1" name="Tyrr Ixion">
@@ -883,6 +929,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19082" levels="1" name="Othell Ixion">
@@ -902,6 +949,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19083" levels="1" name="Yul Ixion">
@@ -921,6 +969,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19084" levels="1" name="Feoh Ixion">
@@ -940,6 +989,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19085" levels="1" name="Iss Ixion">
@@ -959,6 +1009,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19086" levels="1" name="Wynn Ixion">
@@ -978,6 +1029,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19087" levels="1" name="Aeore Ixion">
@@ -997,6 +1049,7 @@
 		<set name="abnormalTime" val="3600" />
 		<set name="irreplacableBuff" val="true" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19088" levels="4" name="Summon Siege Golem">
@@ -1012,6 +1065,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="7200000" />
 	</skill>
 	<skill id="19089" levels="4" name="Summon Wild Hog Cannon">
@@ -1027,6 +1081,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="1200000" />
 	</skill>
 	<skill id="19090" levels="4" name="Summon Swoop Cannon">
@@ -1043,6 +1098,7 @@
 		<set name="hitCancelTime" val="7.5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="7200000" />
 	</skill>
 	<skill id="19091" levels="1" name="Increase Item Drop Rate">
@@ -1050,7 +1106,7 @@
 		<!-- Increases Item Drop Rate upon PK. -->
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -1068,6 +1124,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="trait" val="PARALYZE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19092" levels="2" name="Chat Prohibited">
@@ -1084,7 +1141,7 @@
 		<table name="#reuseDelays"> 0 150000 </table>
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="#castRanges" />
 		<set name="hitTime" val="#hitTimes" />
@@ -1104,6 +1161,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="trait" val="PARALYZE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="19093" levels="1" name="Added Blow Quiver">
@@ -1111,7 +1169,7 @@
 		<!-- Chance of inflicting damage again upon shooting. -->
 		<set name="icon" val="icon.skill0256" />
 		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="rideState" val="NONE" />
@@ -1124,7 +1182,7 @@
 		<!-- Great damage occurs if critical occurs while shooting. -->
 		<set name="icon" val="icon.skill0256" />
 		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="rideState" val="NONE" />
@@ -1137,7 +1195,7 @@
 		<!-- Chance of inflicting bleed if critical occurs while shooting. -->
 		<set name="icon" val="icon.skill0256" />
 		<set name="operateType" val="T" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="NONE" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="rideState" val="NONE" />
@@ -1149,20 +1207,21 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="900" />
 	</skill>
 	<skill id="19097" levels="1" name="Critical Target">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
@@ -1170,6 +1229,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="19098" levels="1" name="Bleed Target">
@@ -1177,7 +1237,7 @@
 		<!-- Consumes 100 HP per second for 15 seconds. -->
 		<set name="icon" val="icon.skill0096" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-2" />
@@ -1193,6 +1253,7 @@
 		<set name="abnormalTime" val="20" />
 		<set name="trait" val="BLEED" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19099" levels="1" name="GM's Authority">
@@ -1200,7 +1261,7 @@
 		<!-- Inflicts petrification on target for 60 minutes. -->
 		<set name="icon" val="icon.skill0367" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
 		<set name="abnormalType" val="TURN_STONE" />
@@ -1215,6 +1276,7 @@
 		<set name="trait" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="isMagic" val="2" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

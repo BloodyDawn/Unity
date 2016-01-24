@@ -5,7 +5,7 @@
 		<!-- HP decreases rapidly from flame momentarily. -->
 		<set name="icon" val="icon.skill4683" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="2000" />
@@ -24,6 +24,8 @@
 		<set name="attributeValue" val="180" />
 		<set name="affectHeight" val="100;300" />
 		<set name="fanRange" val="0;0;1700;160" />
+		<set name="affectScope" val="SQUARE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14401" levels="1" name="Valakas Dragon Breath">
@@ -31,7 +33,7 @@
 		<!-- HP decreases rapidly from flame momentarily. -->
 		<set name="icon" val="icon.skill4683" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="2000" />
@@ -50,13 +52,15 @@
 		<set name="attributeValue" val="180" />
 		<set name="affectHeight" val="-100;100" />
 		<set name="fanRange" val="0;0;1200;35" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14402" levels="1" name="Destruction of the Body">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="effectPoint" val="-1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -64,13 +68,15 @@
 		<set name="effectRange" val="2500" />
 		<set name="magicLvl" val="97" />
 		<set name="affectRange" val="700" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="castRange" val="2000" />
 	</skill>
 	<skill id="14403" levels="1" name="Destruction of the Soul">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="effectPoint" val="-1000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -78,6 +84,8 @@
 		<set name="effectRange" val="2500" />
 		<set name="magicLvl" val="97" />
 		<set name="affectRange" val="700" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="castRange" val="2000" />
 	</skill>
 	<skill id="14404" levels="1" name="Valakas Fear">
@@ -104,6 +112,8 @@
 		<set name="affectRange" val="1000" />
 		<set name="affectHeight" val="-100;300" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14405" levels="1" name="Wide-bodied Valakas">
@@ -123,6 +133,7 @@
 		<set name="hitCancelTime" val="1.5" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14406" levels="1" name="Decrease Valakas Defense">
@@ -142,13 +153,14 @@
 		<set name="hitCancelTime" val="1.5" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14407" levels="1" name="Lavasaurus Alpha Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_ONLY" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="1200" />
 		<set name="effectPoint" val="-100" />
@@ -159,13 +171,15 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="180" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14408" levels="1" name="Lavasaurus Alpha Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="1200" />
 		<set name="hitTime" val="2000" />
@@ -175,6 +189,7 @@
 		<set name="magicLvl" val="97" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="180" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14409" levels="1" name="Infection">
@@ -182,7 +197,7 @@
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill1167" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="500" />
@@ -202,6 +217,8 @@
 		<set name="trait" val="POISON" />
 		<set name="affectRange" val="150" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14410" levels="1" name="Dragon's Trace">
@@ -209,7 +226,7 @@
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill1167" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="2000" />
@@ -228,6 +245,7 @@
 		<set name="abnormalTime" val="90" />
 		<set name="trait" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14411" levels="1" name="Energy of Extreme Dragon">
@@ -235,7 +253,7 @@
 		<!-- Dragon Slayer. Increases P. Atk. toward dragons by 300%. -->
 		<set name="icon" val="icon.skill0088" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="500" />
@@ -248,6 +266,7 @@
 		<set name="effectRange" val="2500" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14412" levels="1" name="Incubatioin">
@@ -261,6 +280,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="98" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14413" levels="1" name="Incubatioin">
@@ -274,6 +295,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="98" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="hitTime" val="500" />
 	</skill>
 	<skill id="14414" levels="1" name="Stigma of Judgment">
@@ -281,7 +304,7 @@
 		<!-- Darkness judgment's stigma. -->
 		<set name="icon" val="icon.skill0015" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="SLEEP" />
@@ -294,6 +317,7 @@
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14415" levels="1" name="Stigma of Judgment">
@@ -301,7 +325,7 @@
 		<!-- Purity judgment's stigma. -->
 		<set name="icon" val="icon.skill10777" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="SLEEP" />
@@ -314,6 +338,7 @@
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14416" levels="1" name="Ultimate Judgment">
@@ -332,13 +357,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14417" levels="1" name="Verdict">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="-2" />
@@ -347,6 +373,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
 		<set name="magicLvl" val="98" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="500" />
 	</skill>
 	<skill id="14418" levels="1" name="Trap Setup">
@@ -359,13 +386,14 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="95" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14419" levels="1" name="Vladimir's Darkness Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0476" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="2000" />
@@ -375,13 +403,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="59" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14420" levels="1" name="Follower's Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
@@ -389,6 +418,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="59" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14421" levels="1" name="Lazearth' Attack">
@@ -405,13 +435,15 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14422" levels="1" name="Energy of Death">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill14422" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="10000" />
@@ -426,13 +458,14 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="mpPerChanneling" val="1" />
 		<set name="channelingTickInterval" val="1000" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14423" levels="1" name="Byron's Darkness Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0476" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="2000" />
@@ -442,6 +475,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="65" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14424" levels="1" name="Ken's Mark">
@@ -449,7 +483,7 @@
 		<!-- The reckless Ken is looking at you. -->
 		<set name="icon" val="icon.skill14424" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
@@ -463,13 +497,14 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalVisualEffect" val="REAL_TARGET" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14425" levels="1" name="Ken's Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
@@ -479,6 +514,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="3" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14426" levels="1" name="Ken's Recovery">
@@ -498,13 +534,14 @@
 		<set name="specialLevel" val="-1" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14427" levels="1" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="-2" />
@@ -513,13 +550,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="72" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14428" levels="1" name="Fire Blindly">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0772" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="-2" />
@@ -529,13 +567,15 @@
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="72" />
 		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="14429" levels="1" name="Head Marksman's Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="700" />
 		<set name="effectPoint" val="-2" />
@@ -544,13 +584,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="72" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="14430" levels="1" name="Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1011" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="2000" />
@@ -560,13 +601,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="75" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14431" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-2" />
@@ -575,6 +617,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="75" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14432" levels="1" name="Stun">
@@ -599,6 +642,8 @@
 		<set name="trait" val="SHOCK" />
 		<set name="affectRange" val="300" />
 		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14433" levels="1" name="Digest">
@@ -606,7 +651,7 @@
 		<!-- Bleed status. -->
 		<set name="icon" val="icon.skill0096" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-1" />
@@ -621,6 +666,7 @@
 		<set name="abnormalTime" val="5" />
 		<set name="trait" val="BLEED" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14434" levels="1" name="Feeler Vibration">
@@ -633,6 +679,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="14435" levels="1" name="Feeler Vibration">
@@ -645,6 +692,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="10000" />
 	</skill>
 	<skill id="14436" levels="1" name="Obedience Status">
@@ -652,7 +700,7 @@
 		<!-- Raised into the air and momentarily immobilized. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
@@ -662,6 +710,7 @@
 		<set name="effectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="castRange" val="1000" />
 	</skill>
 	<skill id="14437" levels="1" name="Pledge Guardian's Yoke">
@@ -669,7 +718,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14437" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -683,6 +732,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14438" levels="1" name="Twin Destroyer's Yoke">
@@ -690,7 +740,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14438" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -704,6 +754,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14439" levels="1" name="Vampiric Marauder's Yoke">
@@ -711,7 +762,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14439" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -725,6 +776,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14440" levels="1" name="Ghost Pursuer's Yoke">
@@ -732,7 +784,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14440" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -746,6 +798,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14441" levels="1" name="Forgotten Scholar's Yoke">
@@ -753,7 +806,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14441" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -767,6 +820,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14442" levels="1" name="Battleground Ruler's Yoke">
@@ -774,7 +828,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14442" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -788,6 +842,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14443" levels="1" name="Consciousness Summoner's Yoke">
@@ -795,7 +850,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14443" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -809,6 +864,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14444" levels="1" name="Heavenly Ascetic's Yoke">
@@ -816,7 +872,7 @@
 		<!-- Continuously absorbs the enemy's soul. -->
 		<set name="icon" val="icon.skill14444" />
 		<set name="operateType" val="CA1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="600000" />
 		<set name="effectPoint" val="-676" />
@@ -830,6 +886,7 @@
 		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="channelingTickInterval" val="1000" />
 		<set name="staticReuse" val="true" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14445" levels="8" name="Harnak's Decree">
@@ -848,6 +905,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="1200" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14446" levels="1" name="Sleep">
@@ -868,6 +926,7 @@
 		<set name="abnormalTime" val="7200" />
 		<set name="trait" val="SLEEP" />
 		<set name="abnormalVisualEffect" val="SLEEP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14447" levels="1" name="Chains of Hatred">
@@ -875,7 +934,7 @@
 		<!-- Yoked status. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
@@ -892,6 +951,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14448" levels="1" name="Blink">
@@ -899,7 +959,7 @@
 		<!-- Evasion -->
 		<set name="icon" val="icon.skill10768" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="300" />
 		<set name="coolTime" val="200" />
@@ -909,13 +969,14 @@
 		<set name="effectRange" val="1000" />
 		<set name="magicLvl" val="85" />
 		<set name="trait" val="SHOCK" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14449" levels="1" name="Dedicated Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
@@ -923,13 +984,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14450" levels="1" name="Dedicated Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
@@ -937,13 +999,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14451" levels="1" name="Multi Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0987" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
@@ -954,6 +1017,8 @@
 		<set name="affectLimit" val="8-0-1" />
 		<set name="affectHeight" val="-200;200" />
 		<set name="fanRange" val="0;0;900;60" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14452" levels="1" name="Berserk">
@@ -972,13 +1037,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="30" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14453" levels="1" name="Magic Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
@@ -987,13 +1053,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1000" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14454" levels="1" name="Magic Bombing">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1296" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-2" />
@@ -1006,13 +1073,15 @@
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="100" />
 		<set name="affectLimit" val="5-12" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14455" levels="1" name="Healing">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_NOT" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="2" />
@@ -1021,13 +1090,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14456" levels="1" name="Wide Area Healing">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY_NOT" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="2" />
@@ -1037,6 +1107,8 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="200" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="FRIEND" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14457" levels="1" name="Physical Immunity">
@@ -1055,6 +1127,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14458" levels="1" name="Magical Immunity">
@@ -1073,6 +1146,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14459" levels="1" name="Stun Shot">
@@ -1080,7 +1154,7 @@
 		<!-- Stun status. -->
 		<set name="icon" val="icon.skill0101" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-2" />
@@ -1095,6 +1169,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
 		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14460" levels="1" name="Sleep">
@@ -1102,7 +1177,7 @@
 		<!-- Sleep status. -->
 		<set name="icon" val="icon.skill1069" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
@@ -1118,6 +1193,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="trait" val="SLEEP" />
 		<set name="abnormalVisualEffect" val="SLEEP" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14461" levels="1" name="Fear">
@@ -1125,7 +1201,7 @@
 		<!-- Fear status. -->
 		<set name="icon" val="icon.skill1092" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
@@ -1141,6 +1217,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14462" levels="1" name="Apherus Curse">
@@ -1148,7 +1225,7 @@
 		<!-- Paralysis status. -->
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="2000" />
@@ -1168,6 +1245,8 @@
 		<set name="trait" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
 		<set name="fanRange" val="0;0;400;90" />
+		<set name="affectScope" val="FAN" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14463" levels="1" name="Apherus Curse">
@@ -1192,6 +1271,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="trait" val="BLEED" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14464" levels="1" name="Apherus Space">
@@ -1199,7 +1279,7 @@
 		<!-- Atk. Spd. and HP are decreased. -->
 		<set name="icon" val="icon.skill0048" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="1000" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-2" />
@@ -1212,6 +1292,7 @@
 		<set name="magicLvl" val="95" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14465" levels="1" name="Apherus' Binding">
@@ -1233,6 +1314,8 @@
 		<set name="abnormalTime" val="1" />
 		<set name="affectRange" val="1200" />
 		<set name="fanRange" val="0;0;200;0" />
+		<set name="affectScope" val="RING_RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14466" levels="1" name="Weaken">
@@ -1240,7 +1323,7 @@
 		<!-- Atk. Spd. is decreased. -->
 		<set name="icon" val="icon.skill1160" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="20000" />
@@ -1258,6 +1341,8 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="10" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14467" levels="1" name="Chains of Hatred">
@@ -1265,7 +1350,7 @@
 		<!-- Yoked status. -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-2" />
@@ -1281,6 +1366,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14468" levels="1" name="Axis Collapse">
@@ -1294,6 +1381,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="89" />
 		<set name="affectRange" val="400" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14469" levels="1" name="Aerial Yoke">
@@ -1301,7 +1390,7 @@
 		<!-- The body floats up in the magic by magic. No action is possible. -->
 		<set name="icon" val="icon.skill1072" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
@@ -1317,13 +1406,15 @@
 		<set name="abnormalTime" val="10" />
 		<set name="affectRange" val="300" />
 		<set name="abnormalVisualEffect" val="AIRBIND" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14470" levels="1" name="Short-range Marksmanship">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-2" />
@@ -1331,13 +1422,14 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="89" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="coolTime" val="800" />
 	</skill>
 	<skill id="14471" levels="1" name="Great Magic Bombing">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1296" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-2" />
@@ -1349,6 +1441,8 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14472" levels="1" name="Summon Subordinate">
@@ -1362,13 +1456,14 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="89" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="14473" levels="1" name="Healing">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="2" />
@@ -1377,13 +1472,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="89" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14474" levels="1" name="Octavis Connection">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="2" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
@@ -1397,13 +1493,14 @@
 		<set name="abnormalTime" val="10" />
 		<set name="trait" val="HOLD" />
 		<set name="abnormalVisualEffect" val="ROOT" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14475" levels="1" name="Octavis Connection">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="2" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
@@ -1417,13 +1514,14 @@
 		<set name="abnormalTime" val="10" />
 		<set name="trait" val="HOLD" />
 		<set name="abnormalVisualEffect" val="ROOT" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14476" levels="1" name="Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1011" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="2" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
@@ -1432,13 +1530,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14477" levels="1" name="Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1011" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="TARGET" />
 		<set name="castRange" val="350" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="2" />
@@ -1448,6 +1547,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="800" />
 		<set name="magicLvl" val="97" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14478" levels="1" name="Antharas Berserk">
@@ -1464,6 +1564,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14479" levels="1" name="Antharas Berserk">
@@ -1480,6 +1581,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14480" levels="1" name="Antharas Berserk">
@@ -1496,6 +1598,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14481" levels="1" name="Antharas Berserk">
@@ -1512,6 +1615,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14482" levels="1" name="Antharas Berserk">
@@ -1528,13 +1632,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14483" levels="1" name="Valakas Neutralization">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1235" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-2" />
@@ -1545,13 +1650,14 @@
 		<set name="magicLvl" val="97" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14484" levels="1" name="Aerial Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
@@ -1561,6 +1667,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="85" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="14485" levels="1" name="High-speed Shot">
@@ -1579,6 +1686,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="180" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14486" levels="1" name="High-speed Casting">
@@ -1597,6 +1705,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="180" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14487" levels="1" name="Poison Cloud">
@@ -1619,6 +1728,8 @@
 		<set name="trait" val="POISON" />
 		<set name="affectRange" val="300" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14488" levels="1" name="Hide">
@@ -1638,13 +1749,14 @@
 		<set name="abnormalTime" val="30" />
 		<set name="staticReuse" val="true" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14489" levels="1" name="Recharge">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1147" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
@@ -1656,6 +1768,7 @@
 		<set name="magicLvl" val="90" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14490" levels="1" name="Silence">
@@ -1663,7 +1776,7 @@
 		<!-- Silence status. -->
 		<set name="icon" val="icon.skill1064" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ENEMY" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" />
@@ -1680,6 +1793,8 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="affectRange" val="700" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14491" levels="1" name="Rage">
@@ -1698,6 +1813,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14492" levels="1" name="Frantic">
@@ -1716,6 +1832,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14493" levels="1" name="Rampage">
@@ -1734,6 +1851,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14494" levels="1" name="Tear Gas">
@@ -1755,6 +1873,8 @@
 		<set name="abnormalTime" val="4" />
 		<set name="affectRange" val="400" />
 		<set name="affectLimit" val="10-10" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14495" levels="1" name="Damage Shield">
@@ -1774,6 +1894,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14496" levels="1" name="Darkness Explosion">
@@ -1786,6 +1907,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14497" levels="1" name="Hereditary Suffering">
@@ -1798,6 +1921,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="300" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14498" levels="1" name="Decaying Darkness">
@@ -1810,6 +1935,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="150" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14499" levels="1" name="Decaying Darkness">
@@ -1822,6 +1949,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="affectRange" val="150" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="targetType" val="SELF" />
 	</skill>
 </list>

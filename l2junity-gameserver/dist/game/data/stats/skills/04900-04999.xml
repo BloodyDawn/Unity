@@ -722,7 +722,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="300" />
 		<set name="castRange" val="200" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="4990" levels="1" name="Hot Spring Mineral">
 		<!-- TODO -->
@@ -734,7 +735,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="300" />
 		<set name="castRange" val="200" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="4991" levels="1" name="Hot Spring Brimstone">
 		<!-- TODO -->
@@ -751,7 +753,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="4992" levels="1" name="Stun">
 		<!-- TODO -->
@@ -769,6 +772,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="affectRange" val="200" />
 		<set name="isDebuff" val="true" />
+		<set name="affectScope" val="POINT_BLANK" />
+		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="4993" levels="1" name="Venom Strike">
@@ -784,7 +789,8 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="57742" />
@@ -805,7 +811,9 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AREA" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="28871" />
@@ -824,7 +832,8 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="ONE" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="4996" levels="1" name="Venom Mass Teleport">
 		<!-- Confirmed CT2.5 -->
@@ -839,7 +848,9 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="targetType" val="AREA" />
+		<set name="affectScope" val="RANGE" />
+		<set name="affectObject" val="NOT_FRIEND" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="4997" levels="1" name="Lidia Regeneration">
 		<!-- TODO: Needs to be done -->
@@ -854,6 +865,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectScope" val="SINGLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4998" levels="1" name="Lidia Twister">
@@ -867,7 +879,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1250" />
 		<set name="castRange" val="750" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 	<skill id="4999" levels="1" name="Lidia Vampiric Touch">
 		<!-- TODO: Needs to be done -->
@@ -880,6 +893,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="2000" />
 		<set name="castRange" val="1000" />
-		<set name="targetType" val="SELF" />
+		<set name="affectScope" val="SINGLE" />
+		<set name="targetType" val="ENEMY" />
 	</skill>
 </list>
