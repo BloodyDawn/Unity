@@ -50,6 +50,7 @@ public class DeadPartyPledge implements IAffectScopeHandler
 		{
 			final Playable playable = (Playable) target;
 			final PlayerInstance player = playable.getActingPlayer();
+			final org.l2junity.gameserver.model.Party party = player.getParty();
 			
 			// Create the target filter.
 			final AtomicInteger affected = new AtomicInteger(0);
@@ -60,20 +61,21 @@ public class DeadPartyPledge implements IAffectScopeHandler
 					return false;
 				}
 				
-				PlayerInstance p = plbl.getActingPlayer();
+				final PlayerInstance p = plbl.getActingPlayer();
 				if ((p == null) || !p.isDead())
 				{
 					return false;
 				}
+				
 				if (p != player)
 				{
 					if ((p.getClanId() == 0) || (p.getClanId() != player.getClanId()))
 					{
-						return false;
-					}
-					if (!p.isInParty() || !player.isInParty() || (p.getParty().getLeaderObjectId() != player.getParty().getLeaderObjectId()))
-					{
-						return false;
+						final org.l2junity.gameserver.model.Party targetParty = p.getParty();
+						if ((party == null) || (targetParty == null) || (party.getLeaderObjectId() != targetParty.getLeaderObjectId()))
+						{
+							return false;
+						}
 					}
 				}
 				if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, p))

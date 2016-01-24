@@ -18,21 +18,20 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * @author Nik
@@ -50,19 +49,54 @@ public class DeadParty implements IAffectScopeHandler
 		{
 			final PlayerInstance player = target.getActingPlayer();
 			final org.l2junity.gameserver.model.Party party = player.getParty();
-			final List<PlayerInstance> partyList = ((party != null) ? party.getMembers() : Collections.singletonList(player));
 			
-			//@formatter:off
-			partyList.stream()
-			.flatMap(p -> p.getServitors().values().stream())
-			.flatMap(p -> Arrays.stream(new Creature[]{p.getPet()}))
-			.filter(Objects::nonNull)
-			.filter(c -> c.isDead())
-			.filter(c -> (affectRange <= 0) || Util.checkIfInRange(affectRange, c, (target), true))
-			.filter(c -> (affectObject == null) || affectObject.checkAffectedObject(activeChar, c))
-			.limit(affectLimit > 0 ? affectLimit : Long.MAX_VALUE)
-			.forEach(action);
-			//@formatter:on
+			// Create the target filter.
+			final AtomicInteger affected = new AtomicInteger(0);
+			final Predicate<Playable> filter = plbl ->
+			{
+				if ((affectLimit > 0) && (affected.get() >= affectLimit))
+				{
+					return false;
+				}
+				
+				PlayerInstance p = plbl.getActingPlayer();
+				if ((p == null) || !p.isDead())
+				{
+					return false;
+				}
+				
+				if (p != player)
+				{
+					final org.l2junity.gameserver.model.Party targetParty = p.getParty();
+					if ((party == null) || (targetParty == null) || (party.getLeaderObjectId() != targetParty.getLeaderObjectId()))
+					{
+						return false;
+					}
+				}
+				
+				if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, p))
+				{
+					return false;
+				}
+				
+				affected.incrementAndGet();
+				return true;
+			};
+			
+			// Affect object of origin since its skipped in the forEachVisibleObjectInRange method.
+			if (filter.test((Playable) target))
+			{
+				action.accept(target);
+			}
+			
+			// Check and add targets.
+			World.getInstance().forEachVisibleObjectInRange(target, Playable.class, affectRange, c ->
+			{
+				if (filter.test(c))
+				{
+					action.accept(c);
+				}
+			});
 		}
 	}
 	

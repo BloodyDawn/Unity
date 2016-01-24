@@ -59,7 +59,7 @@ public class DeadPledge implements IAffectScopeHandler
 					return false;
 				}
 				
-				PlayerInstance p = plbl.getActingPlayer();
+				final PlayerInstance p = plbl.getActingPlayer();
 				if ((p == null) || !p.isDead())
 				{
 					return false;
