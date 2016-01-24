@@ -111,7 +111,7 @@ public class Friend implements IAffectObjectHandler
 				}
 				
 				// By default any neutral non-flagged player is considered a friend.
-				return (target.getActingPlayer().getPvpFlag() == 0) || (target.getActingPlayer().getReputation() >= 0);
+				return (target.getActingPlayer().getPvpFlag() == 0) && (target.getActingPlayer().getReputation() >= 0);
 			}
 			
 			// By default any npc that isnt mob is considered friend.

@@ -57,12 +57,7 @@ public class EnemyNot implements ITargetTypeHandler
 		// You can always target yourself.
 		if (activeChar == target)
 		{
-			if (sendMessage)
-			{
-				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
-			}
-			
-			return null;
+			return target;
 		}
 		
 		if (!target.isAutoAttackable(activeChar))
@@ -106,7 +101,7 @@ public class EnemyNot implements ITargetTypeHandler
 		
 		if (sendMessage)
 		{
-			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
 		
 		return null;
