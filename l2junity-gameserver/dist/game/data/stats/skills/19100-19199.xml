@@ -851,10 +851,13 @@
 		<icon>icon.skill1905</icon>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<add stat="moveSpeed" val="#bonus">
-					<player incombat="false" />
-				</add>
+			<effect name="Speed">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">12</value>
+				</amount>
+				<mode>DIFF</mode>
+				<inCombat>false</inCombat>
 			</effect>
 		</effects>
 	</skill>

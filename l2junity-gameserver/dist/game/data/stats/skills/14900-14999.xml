@@ -1163,17 +1163,6 @@
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="Buff">
-				<add stat="rCrit" val="100">
-					<player hp="60" />
-				</add>
-				<add stat="rCrit" val="300">
-					<player hp="30" />
-				</add>
-				<mul stat="pAtk" val="1.1">
-					<player hp="60" />
-				</mul>
-			</effect>
 			<effect name="TriggerSkillByKill">
 				<!-- HP Drain -->
 				<chance>100</chance>
@@ -1183,6 +1172,12 @@
 			<effect name="PAtk">
 				<amount>30</amount>
 				<mode>PER</mode>
+				<hpPercent>60</hpPercent>
+			</effect>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<hpPercent>30</hpPercent>
 			</effect>
 			<effect name="PAtk">
 				<amount>500</amount>
@@ -1211,6 +1206,16 @@
 			<effect name="ResistAbnormalByCategory">
 				<amount>-80</amount>
 				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+				<hpPercent>60</hpPercent>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+				<hpPercent>30</hpPercent>
 			</effect>
 		</effects>
 	</skill>

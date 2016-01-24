@@ -37,7 +37,7 @@ public class CriticalRate extends AbstractConditionalHpEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		if (((_weaponTypeCondition == null) || _weaponTypeCondition.test(effected, effected, skill)) && ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill)))
+		if (_conditions.isEmpty() || _conditions.stream().allMatch(cond -> cond.test(effected, effected, skill)))
 		{
 			switch (_mode)
 			{

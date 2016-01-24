@@ -18,10 +18,14 @@
  */
 package handlers.effecthandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.l2junity.gameserver.enums.StatModifierType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.conditions.ConditionPlayerIsInCombat;
 import org.l2junity.gameserver.model.conditions.ConditionTargetUsesWeaponKind;
 import org.l2junity.gameserver.model.conditions.ConditionUsingItemType;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -39,8 +43,7 @@ public abstract class AbstractStatEffect extends AbstractEffect
 	protected final Stats _mulStat;
 	protected final double _amount;
 	protected final StatModifierType _mode;
-	protected final Condition _armorTypeCondition;
-	protected final Condition _weaponTypeCondition;
+	protected final List<Condition> _conditions = new ArrayList<>();
 	
 	public AbstractStatEffect(StatsSet params, Stats stat)
 	{
@@ -50,7 +53,7 @@ public abstract class AbstractStatEffect extends AbstractEffect
 	public AbstractStatEffect(StatsSet params, Stats mulStat, Stats addStat)
 	{
 		super(params);
-
+		
 		_addStat = addStat;
 		_mulStat = mulStat;
 		_amount = params.getDouble("amount", 0);
@@ -72,12 +75,11 @@ public abstract class AbstractStatEffect extends AbstractEffect
 			}
 			catch (IllegalArgumentException e)
 			{
-				final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain ArmorType enum value but found " + weaponType + " skill:" + params.getInt("id"));
+				final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain WeaponType enum value but found " + weaponType + " skill:" + params.getInt("id"));
 				exception.addSuppressed(e);
 				throw exception;
 			}
 		}
-		_weaponTypeCondition = weaponTypesMask != 0 ? new ConditionTargetUsesWeaponKind(weaponTypesMask) : null;
 		
 		int armorTypesMask = 0;
 		final String[] armorTypes = params.getString("armorType", "ALL").split(";");
@@ -100,13 +102,27 @@ public abstract class AbstractStatEffect extends AbstractEffect
 				throw exception;
 			}
 		}
-		_armorTypeCondition = armorTypesMask != 0 ? new ConditionUsingItemType(armorTypesMask) : null;
+		
+		if (weaponTypesMask != 0)
+		{
+			_conditions.add(new ConditionTargetUsesWeaponKind(weaponTypesMask));
+		}
+		
+		if (armorTypesMask != 0)
+		{
+			_conditions.add(new ConditionUsingItemType(armorTypesMask));
+		}
+		
+		if (params.contains("inCombat"))
+		{
+			_conditions.add(new ConditionPlayerIsInCombat(params.getBoolean("inCombat")));
+		}
 	}
 	
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		if (((_weaponTypeCondition == null) || _weaponTypeCondition.test(effected, effected, skill)) && ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill)))
+		if (_conditions.isEmpty() || _conditions.stream().allMatch(cond -> cond.test(effected, effected, skill)))
 		{
 			switch (_mode)
 			{
