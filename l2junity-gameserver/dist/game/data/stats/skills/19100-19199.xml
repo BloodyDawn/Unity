@@ -577,13 +577,29 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-				<mul stat="pAtk" val="#bonus">
-					<and>
-						<using kind="SWORD,BLUNT,POLE" />
-						<using slot="lrhand" />
-					</and>
-				</mul>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</pAtkAmount>
+				<pAtkmode>PER</pAtkmode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</pAtkAmount>
+				<pAtkmode>PER</pAtkmode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
