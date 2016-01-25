@@ -1496,8 +1496,9 @@
 		<effectPoint>-379</effectPoint>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="Debuff">
-				<set order="80" stat="moveSpeed" val="1" /> <!-- Set speed to 1 :) -->
+			<effect name="Speed">
+				<amount>-100</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-30</amount>
