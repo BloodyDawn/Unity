@@ -275,6 +275,7 @@ public class CharStatus
 		// Get the Max HP of the L2Character
 		int currentHp = (int) getCurrentHp();
 		final double maxHp = getActiveChar().getStat().getMaxHp();
+		final double hpLock = getActiveChar().getStat().getValue(Stats.HP_LOCK);
 		
 		synchronized (this)
 		{
@@ -283,7 +284,6 @@ public class CharStatus
 				return false;
 			}
 			
-			double hpLock = getActiveChar().getStat().getValue(Stats.HP_LOCK, 0);
 			if (hpLock > 0)
 			{
 				if (_currentHp == hpLock)
