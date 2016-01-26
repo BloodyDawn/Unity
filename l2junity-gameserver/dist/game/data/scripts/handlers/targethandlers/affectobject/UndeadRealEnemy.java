@@ -31,17 +31,13 @@ public class UndeadRealEnemy implements IAffectObjectHandler
 	@Override
 	public boolean checkAffectedObject(Creature activeChar, Creature target)
 	{
+		// You are not an enemy of yourself.
 		if (activeChar == target)
 		{
 			return false;
 		}
 		
-		if (!target.isUndead())
-		{
-			return false;
-		}
-		
-		return target.isAutoAttackable(activeChar);
+		return target.isUndead() && target.isAutoAttackable(activeChar);
 	}
 	
 	@Override

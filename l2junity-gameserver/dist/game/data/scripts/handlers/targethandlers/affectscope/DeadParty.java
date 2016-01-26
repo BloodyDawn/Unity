@@ -25,6 +25,7 @@ import java.util.function.Predicate;
 import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -48,7 +49,7 @@ public class DeadParty implements IAffectScopeHandler
 		if (target.isPlayable())
 		{
 			final PlayerInstance player = target.getActingPlayer();
-			final org.l2junity.gameserver.model.Party party = player.getParty();
+			final Party party = player.getParty();
 			
 			// Create the target filter.
 			final AtomicInteger affected = new AtomicInteger(0);
@@ -67,7 +68,7 @@ public class DeadParty implements IAffectScopeHandler
 				
 				if (p != player)
 				{
-					final org.l2junity.gameserver.model.Party targetParty = p.getParty();
+					final Party targetParty = p.getParty();
 					if ((party == null) || (targetParty == null) || (party.getLeaderObjectId() != targetParty.getLeaderObjectId()))
 					{
 						return false;

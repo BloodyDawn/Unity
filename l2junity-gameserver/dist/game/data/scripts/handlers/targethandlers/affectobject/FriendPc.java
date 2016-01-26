@@ -20,6 +20,7 @@ package handlers.targethandlers.affectobject;
 
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
@@ -50,8 +51,8 @@ public class FriendPc implements IAffectObjectHandler
 			}
 			
 			// Party (command channel doesn't make you friends).
-			final org.l2junity.gameserver.model.Party party = player.getParty();
-			final org.l2junity.gameserver.model.Party targetParty = targetPlayer.getParty();
+			final Party party = player.getParty();
+			final Party targetParty = targetPlayer.getParty();
 			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
 			{
 				return true;

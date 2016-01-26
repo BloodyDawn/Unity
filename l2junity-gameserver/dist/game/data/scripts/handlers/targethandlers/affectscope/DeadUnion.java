@@ -26,6 +26,7 @@ import org.l2junity.gameserver.handler.AffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.model.CommandChannel;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -50,7 +51,7 @@ public class DeadUnion implements IAffectScopeHandler
 		if (target.isPlayable())
 		{
 			final PlayerInstance player = target.getActingPlayer();
-			final org.l2junity.gameserver.model.Party party = player.getParty();
+			final Party party = player.getParty();
 			final CommandChannel commandChannel = party != null ? party.getCommandChannel() : null;
 			
 			// Create the target filter.
@@ -70,7 +71,7 @@ public class DeadUnion implements IAffectScopeHandler
 				
 				if (p != player)
 				{
-					final org.l2junity.gameserver.model.Party targetParty = p.getParty();
+					final Party targetParty = p.getParty();
 					if ((party == null) || (targetParty == null))
 					{
 						return false;
