@@ -50,7 +50,9 @@ public class FriendPc implements IAffectObjectHandler
 			}
 			
 			// Party (command channel doesn't make you friends).
-			if (player.isInParty() && targetPlayer.isInParty() && (player.getParty().getLeaderObjectId() == targetPlayer.getParty().getLeaderObjectId()))
+			final org.l2junity.gameserver.model.Party party = player.getParty();
+			final org.l2junity.gameserver.model.Party targetParty = targetPlayer.getParty();
+			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
 			{
 				return true;
 			}
