@@ -57,12 +57,7 @@ public class Target implements ITargetTypeHandler
 		// You can always target yourself.
 		if (activeChar == target)
 		{
-			if (sendMessage)
-			{
-				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
-			}
-			
-			return null;
+			return target;
 		}
 		
 		if (!target.isAutoAttackable(activeChar) || forceUse)
