@@ -4099,14 +4099,14 @@ public final class PlayerInstance extends Playable
 	 * <li>Send the Server->Client packet PartySmallWindowUpdate with current HP, MP and Level to all other L2PcInstance of the Party</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND current HP and MP to all L2PcInstance of the _statusListener</B></FONT>
 	 */
 	@Override
-	public void broadcastStatusUpdate()
+	public void broadcastStatusUpdate(Creature caster)
 	{
-		// TODO We mustn't send these informations to other players
-		// Send the Server->Client packet StatusUpdate with current HP and MP to all L2PcInstance that must be informed of HP/MP updates of this L2PcInstance
-		// super.broadcastStatusUpdate();
+		final StatusUpdate su = new StatusUpdate(this);
+		if (caster != null)
+		{
+			su.addCaster(caster);
+		}
 		
-		// Send the Server->Client packet StatusUpdate with current HP, MP and CP to this L2PcInstance
-		StatusUpdate su = new StatusUpdate(this);
 		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
 		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
 		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
@@ -4161,8 +4161,8 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
 	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B>
 	 * <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li>
-	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
+	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP,
+	 * STR, DEX...</B></FONT>
 	 */
 	public final void broadcastUserInfo()
 	{

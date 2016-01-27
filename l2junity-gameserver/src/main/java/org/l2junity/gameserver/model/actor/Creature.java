@@ -652,6 +652,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return false;
 	}
 	
+	public final void broadcastStatusUpdate()
+	{
+		broadcastStatusUpdate(null);
+	}
+	
 	/**
 	 * Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform.<br>
 	 * <B><U>Actions</U>:</B>
@@ -660,8 +665,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Send the Server->Client packet StatusUpdate with current HP and MP to all L2Character called _statusListener that must be informed of HP/MP updates of this L2Character</li>
 	 * </ul>
 	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND CP information</B></FONT>
+	 * @param caster TODO
 	 */
-	public void broadcastStatusUpdate()
+	public void broadcastStatusUpdate(Creature caster)
 	{
 		if (getStatus().getStatusListener().isEmpty() || !needHpUpdate())
 		{
@@ -669,21 +675,18 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		// Create the Server->Client packet StatusUpdate with current HP
-		StatusUpdate su = new StatusUpdate(this);
+		final StatusUpdate su = new StatusUpdate(this);
+		if (caster != null)
+		{
+			su.addCaster(caster);
+		}
+		
 		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
 		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
 		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
 		su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
 		
-		// Go through the StatusListener
-		// Send the Server->Client packet StatusUpdate with current HP and MP
-		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
-		{
-			if (isVisibleFor(player))
-			{
-				player.sendPacket(su);
-			}
-		});
+		broadcastPacket(su);
 	}
 	
 	/**

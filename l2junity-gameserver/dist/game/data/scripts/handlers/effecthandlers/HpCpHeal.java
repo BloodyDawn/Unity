@@ -31,7 +31,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExMagicAttackInfo;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -123,16 +122,12 @@ public final class HpCpHeal extends AbstractEffect
 			}
 		}
 		
-		final StatusUpdate su = new StatusUpdate(effected);
-		su.addCaster(effector);
-		
 		// Prevents overheal and negative amount
 		final double healAmount = Math.max(Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp()), 0);
 		if (healAmount != 0)
 		{
 			final double newHp = healAmount + effected.getCurrentHp();
 			effected.setCurrentHp(newHp, false);
-			su.addAttribute(StatusUpdate.CUR_HP, (int) newHp);
 		}
 		
 		if (effected.isPlayer())
@@ -152,12 +147,10 @@ public final class HpCpHeal extends AbstractEffect
 			}
 			
 			amount = Math.max(Math.min(amount - healAmount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
-			
 			if (amount != 0)
 			{
 				final double newCp = amount + effected.getCurrentCp();
 				effected.setCurrentCp(newCp, false);
-				su.addAttribute(StatusUpdate.CUR_CP, (int) newCp);
 			}
 			
 			if (effector.isPlayer() && (effector != effected))
@@ -174,6 +167,6 @@ public final class HpCpHeal extends AbstractEffect
 				effected.sendPacket(sm);
 			}
 		}
-		effected.broadcastPacket(su);
+		effected.broadcastStatusUpdate(effector);
 	}
 }
