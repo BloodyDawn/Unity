@@ -5502,6 +5502,20 @@ public final class PlayerInstance extends Playable
 		return getServitors().get(objectId);
 	}
 	
+	public List<Summon> getServitorsAndPets()
+	{
+		final List<Summon> summons = new ArrayList<>();
+		summons.addAll(getServitors().values());
+		
+		final L2PetInstance pet = getPet();
+		if (pet != null)
+		{
+			summons.add(pet);
+		}
+		
+		return summons;
+	}
+	
 	/**
 	 * @return any summoned trap by this player or null.
 	 */

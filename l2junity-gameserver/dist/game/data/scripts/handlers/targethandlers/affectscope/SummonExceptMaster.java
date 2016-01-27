@@ -18,8 +18,6 @@
  */
 package handlers.targethandlers.affectscope;
 
-import java.util.Arrays;
-import java.util.Objects;
 import java.util.function.Consumer;
 
 import org.l2junity.gameserver.handler.AffectObjectHandler;
@@ -48,9 +46,7 @@ public class SummonExceptMaster implements IAffectScopeHandler
 		{
 			final PlayerInstance player = target.getActingPlayer();
 			//@formatter:off
-			player.getServitors().values().stream()
-			.flatMap(p -> Arrays.stream(new Creature[]{p.getPet()}))
-			.filter(Objects::nonNull)
+			player.getServitorsAndPets().stream()
 			.filter(c -> !c.isDead())
 			.filter(c -> affectRange > 0 ? Util.checkIfInRange(affectRange, c, target, true) : true)
 			.filter(c -> (affectObject == null) || affectObject.checkAffectedObject(activeChar, c))
