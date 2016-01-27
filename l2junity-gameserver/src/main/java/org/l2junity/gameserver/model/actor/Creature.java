@@ -4899,7 +4899,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getMagicAccuracy();
 	}
 	
-	public int getMagicEvasionRate(Creature target)
+	public int getMagicEvasionRate()
 	{
 		return getStat().getMagicEvasionRate();
 	}
@@ -4909,17 +4909,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getAttackSpeedMultiplier();
 	}
 	
-	public final double getCriticalDmg(Creature target, double init)
+	public final double getCriticalDmg(int init)
 	{
 		return getStat().getCriticalDmg(init);
 	}
 	
-	public int getCriticalHit(Creature target, Skill skill)
+	public int getCriticalHit()
 	{
 		return getStat().getCriticalHit();
 	}
 	
-	public int getEvasionRate(Creature target)
+	public int getEvasionRate()
 	{
 		return getStat().getEvasionRate();
 	}
@@ -4939,7 +4939,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getMaxRecoverableCp();
 	}
 	
-	public int getMAtk(Creature target, Skill skill)
+	public int getMAtk()
 	{
 		return getStat().getMAtk();
 	}
@@ -4969,22 +4969,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getMaxRecoverableHp();
 	}
 	
-	public final int getMCriticalHit(Creature target, Skill skill)
+	public final int getMCriticalHit()
 	{
 		return getStat().getMCriticalHit();
 	}
 	
-	public int getMDef(Creature target, Skill skill)
+	public int getMDef()
 	{
 		return getStat().getMDef();
 	}
 	
-	public double getMReuseRate(Skill skill)
+	public double getMReuseRate()
 	{
 		return getStat().getMReuseRate();
 	}
 	
-	public int getPAtk(Creature target)
+	public int getPAtk()
 	{
 		return getStat().getPAtk();
 	}
@@ -4994,7 +4994,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getPAtkSpd();
 	}
 	
-	public int getPDef(Creature target)
+	public int getPDef()
 	{
 		return getStat().getPDef();
 	}

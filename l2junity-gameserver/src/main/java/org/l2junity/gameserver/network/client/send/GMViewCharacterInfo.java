@@ -97,21 +97,21 @@ public class GMViewCharacterInfo implements IClientOutgoingPacket
 		packet.writeC(_activeChar.getInventory().canEquipCloak() ? 1 : 0); // CT2.3
 		packet.writeD(0x00);
 		packet.writeH(0x00);
-		packet.writeD(_activeChar.getPAtk(null));
+		packet.writeD(_activeChar.getPAtk());
 		packet.writeD(_activeChar.getPAtkSpd());
-		packet.writeD(_activeChar.getPDef(null));
-		packet.writeD(_activeChar.getEvasionRate(null));
+		packet.writeD(_activeChar.getPDef());
+		packet.writeD(_activeChar.getEvasionRate());
 		packet.writeD(_activeChar.getAccuracy());
-		packet.writeD(_activeChar.getCriticalHit(null, null));
-		packet.writeD(_activeChar.getMAtk(null, null));
+		packet.writeD(_activeChar.getCriticalHit());
+		packet.writeD(_activeChar.getMAtk());
 		
 		packet.writeD(_activeChar.getMAtkSpd());
 		packet.writeD(_activeChar.getPAtkSpd());
 		
-		packet.writeD(_activeChar.getMDef(null, null));
-		packet.writeD(_activeChar.getMagicEvasionRate(null));
+		packet.writeD(_activeChar.getMDef());
+		packet.writeD(_activeChar.getMagicEvasionRate());
 		packet.writeD(_activeChar.getMagicAccuracy());
-		packet.writeD(_activeChar.getMCriticalHit(null, null));
+		packet.writeD(_activeChar.getMCriticalHit());
 		
 		packet.writeD(_activeChar.getPvpFlag()); // 0-non-pvp 1-pvp = violett name
 		packet.writeD(_activeChar.getReputation());

@@ -69,13 +69,13 @@ public class NpcActionShift implements IActionShiftHandler
 			html.replace("%mp%", String.valueOf((int) npc.getCurrentMp()));
 			html.replace("%mpmax%", String.valueOf(npc.getMaxMp()));
 			
-			html.replace("%patk%", String.valueOf(npc.getPAtk(null)));
-			html.replace("%matk%", String.valueOf(npc.getMAtk(null, null)));
-			html.replace("%pdef%", String.valueOf(npc.getPDef(null)));
-			html.replace("%mdef%", String.valueOf(npc.getMDef(null, null)));
+			html.replace("%patk%", String.valueOf(npc.getPAtk()));
+			html.replace("%matk%", String.valueOf(npc.getMAtk()));
+			html.replace("%pdef%", String.valueOf(npc.getPDef()));
+			html.replace("%mdef%", String.valueOf(npc.getMDef()));
 			html.replace("%accu%", String.valueOf(npc.getAccuracy()));
-			html.replace("%evas%", String.valueOf(npc.getEvasionRate(null)));
-			html.replace("%crit%", String.valueOf(npc.getCriticalHit(null, null)));
+			html.replace("%evas%", String.valueOf(npc.getEvasionRate()));
+			html.replace("%crit%", String.valueOf(npc.getCriticalHit()));
 			html.replace("%rspd%", String.valueOf(npc.getRunSpeed()));
 			html.replace("%aspd%", String.valueOf(npc.getPAtkSpd()));
 			html.replace("%cspd%", String.valueOf(npc.getMAtkSpd()));

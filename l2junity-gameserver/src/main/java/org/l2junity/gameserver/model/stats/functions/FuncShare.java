@@ -67,23 +67,23 @@ public class FuncShare extends AbstractFunction
 			}
 			case POWER_ATTACK:
 			{
-				return player.getPAtk(null);
+				return player.getPAtk();
 			}
 			case MAGIC_ATTACK:
 			{
-				return player.getMAtk(null, null);
+				return player.getMAtk();
 			}
 			case POWER_DEFENCE:
 			{
-				return player.getPDef(null);
+				return player.getPDef();
 			}
 			case MAGIC_DEFENCE:
 			{
-				return player.getMDef(null, null);
+				return player.getMDef();
 			}
 			case CRITICAL_RATE:
 			{
-				return player.getCriticalHit(null, null);
+				return player.getCriticalHit();
 			}
 			case POWER_ATTACK_SPEED:
 			{
