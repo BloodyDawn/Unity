@@ -75,7 +75,7 @@ public abstract class AbstractStatEffect extends AbstractEffect
 			}
 			catch (IllegalArgumentException e)
 			{
-				final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain WeaponType enum value but found " + weaponType + " skill:" + params.getInt("id"));
+				final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain WeaponType enum value but found " + weaponType);
 				exception.addSuppressed(e);
 				throw exception;
 			}
@@ -97,7 +97,7 @@ public abstract class AbstractStatEffect extends AbstractEffect
 			}
 			catch (IllegalArgumentException e)
 			{
-				final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType + " skill:" + params.getInt("id"));
+				final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType);
 				exception.addSuppressed(e);
 				throw exception;
 			}

@@ -32,7 +32,7 @@ public class Reuse extends AbstractEffect
 	private final int _magicType;
 	private final double _amount;
 	
-	public Reuse(StatsSet params, Stats mulStat, Stats addStat)
+	public Reuse(StatsSet params)
 	{
 		super(params);
 		_magicType = params.getInt("magicType", 0);
