@@ -215,8 +215,8 @@ public final class Skill implements IIdentifiable
 	
 	public Skill(StatsSet set)
 	{
-		_id = set.getInt("skill_id");
-		_level = set.getInt("level");
+		_id = set.getInt("skill.id");
+		_level = set.getInt("skill.level");
 		_refId = set.getInt("referenceId", 0);
 		_displayId = set.getInt("displayId", _id);
 		_displayLevel = set.getInt("displayLevel", _level);

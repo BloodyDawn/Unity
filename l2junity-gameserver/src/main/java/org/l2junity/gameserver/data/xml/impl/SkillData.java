@@ -1,5 +1,7 @@
 package org.l2junity.gameserver.data.xml.impl;
 
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,16 +9,17 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.skills.EffectScope;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import net.objecthunter.exp4j.ExpressionBuilder;
 
 /**
  * Skill data parser.
@@ -33,10 +36,32 @@ public class SkillData implements IGameXmlReader
 		BLOCK_ITEM_VALUE_ELEMENTS.add("value");
 		BLOCK_ITEM_ELEMENTS.add("item");
 	}
+
+	private class NamedParamInfo
+	{
+		private final String name;
+		private final Integer fromLevel;
+		private final Integer toLevel;
+		private final Integer fromSubLevel;
+		private final Integer toSubLevel;
+		private final Map<Integer, Map<Integer, StatsSet>> info;
+		private final StatsSet generalInfo;
+
+		public NamedParamInfo(String name, Integer fromLevel, Integer toLevel, Integer fromSubLevel, Integer toSubLevel, Map<Integer, Map<Integer, StatsSet>> info, StatsSet generalInfo)
+		{
+			this.name = name;
+			this.fromLevel = fromLevel;
+			this.toLevel = toLevel;
+			this.fromSubLevel = fromSubLevel;
+			this.toSubLevel = toSubLevel;
+			this.info = info;
+			this.generalInfo = generalInfo;
+		}
+	}
 	
 	protected SkillData()
 	{
-	
+		load();
 	}
 	
 	@Override
@@ -48,10 +73,7 @@ public class SkillData implements IGameXmlReader
 	@Override
 	public void load()
 	{
-		parseDatapackFile("l2junity-gameserver/dist/game/data/stats/skills/test.xml");
-		// long t = System.nanoTime();
-		// parseDatapackDirectory("l2junity-gameserver/dist/game/data/stats/skills/", false);
-		// System.out.println(System.nanoTime() - t);
+		parseDatapackDirectory("data/stats/skills/", true);
 	}
 	
 	@Override
@@ -66,13 +88,27 @@ public class SkillData implements IGameXmlReader
 					if ("skill".equalsIgnoreCase(listNode.getNodeName()))
 					{
 						NamedNodeMap attributes = listNode.getAttributes();
-						
+						final Map<Integer, Set<Integer>> levels = new HashMap<>();
 						final Map<Integer, Map<Integer, StatsSet>> skillInfo = new HashMap<>();
 						final StatsSet generalSkillInfo = new StatsSet();
-						
+
+						for (int i = 0; i < attributes.getLength(); i++)
+						{
+							final Node attributeNode = attributes.item(i);
+							final String attributeValue = attributeNode.getNodeValue();
+							if (attributeValue.startsWith("{") && attributeValue.endsWith("}"))
+							{
+								generalSkillInfo.set("skill." + attributeNode.getNodeName(), new ExpressionBuilder(attributeValue).build().evaluate());
+							}
+							else
+							{
+								generalSkillInfo.set("skill." + attributeNode.getNodeName(), attributeValue);
+							}
+						}
+
 						final Map<String, Map<Integer, Map<Integer, Object>>> variableValues = new HashMap<>();
 						final Map<String, Object> variableGeneralValues = new HashMap<>();
-						
+						final Map<EffectScope, List<NamedParamInfo>> effectParamInfo = new HashMap<>();
 						for (Node skillNode = listNode.getFirstChild(); skillNode != null; skillNode = skillNode.getNextSibling())
 						{
 							final String skillNodeName = skillNode.getNodeName();
@@ -85,61 +121,120 @@ public class SkillData implements IGameXmlReader
 									variableGeneralValues.put(name, parseValues(skillNode, variableValues.computeIfAbsent(name, k -> new HashMap<>())));
 									break;
 								}
-								case "effects":
-								case "pveeffects":
-								case "pvpeffects":
-								case "starteffects":
-								case "endeffects":
-								{
-									for (Node effectsNode = skillNode.getFirstChild(); effectsNode != null; effectsNode = effectsNode.getNextSibling())
-									{
-										switch (effectsNode.getNodeName().toLowerCase())
-										{
-											case "effect":
-											{
-												final Map<Integer, Map<Integer, StatsSet>> effectInfo = new HashMap<>();
-												final StatsSet generalEffectInfo = new StatsSet();
-												for (Node effectNode = effectsNode.getFirstChild(); effectNode != null; effectNode = effectNode.getNextSibling())
-												{
-													parseInfo(effectNode, variableValues, variableGeneralValues, effectInfo, generalEffectInfo);
-												}
-												
-												for (Entry<String, Object> stat : generalEffectInfo.getSet().entrySet())
-												{
-													effectInfo.forEach((level, subLevelMap) ->
-													{
-														subLevelMap.forEach((subLevel, statsSet) ->
-														{
-															statsSet.getSet().putIfAbsent(stat.getKey(), stat.getValue());
-														});
-													});
-												}
-												System.out.println(effectInfo.toString().replace(",", "\n"));
-												break;
-											}
-										}
-									}
-									break;
-								}
 								default:
 								{
-									parseInfo(skillNode, variableValues, variableGeneralValues, skillInfo, generalSkillInfo);
+									final EffectScope effectScope = EffectScope.findByXmlNodeName(skillNodeName);
+									if (effectScope != null)
+									{
+										for (Node effectsNode = skillNode.getFirstChild(); effectsNode != null; effectsNode = effectsNode.getNextSibling())
+										{
+											switch (effectsNode.getNodeName().toLowerCase())
+											{
+												case "effect":
+												{
+													attributes = effectsNode.getAttributes();
+													final String name = parseString(attributes, "name");
+													final Integer level = parseInteger(attributes, "level");
+													final Integer fromLevel = parseInteger(attributes, "fromLevel", level);
+													final Integer toLevel = parseInteger(attributes, "toLevel", level);
+													final Integer subLevel = parseInteger(attributes, "subLevel", 0);
+													final Integer fromSubLevel = parseInteger(attributes, "fromSubLevel", subLevel);
+													final Integer toSubLevel = parseInteger(attributes, "toSubLevel", subLevel);
+													final Map<Integer, Map<Integer, StatsSet>> effectInfo = new HashMap<>();
+													final StatsSet generalEffectInfo = new StatsSet();
+													for (Node effectNode = effectsNode.getFirstChild(); effectNode != null; effectNode = effectNode.getNextSibling())
+													{
+														parseInfo(effectNode, variableValues, variableGeneralValues, effectInfo, generalEffectInfo);
+													}
+													effectParamInfo.computeIfAbsent(effectScope, k -> new LinkedList<>()).add(new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, effectInfo, generalEffectInfo));
+													break;
+												}
+											}
+										}
+										break;
+									}
+									else
+									{
+										parseInfo(skillNode, variableValues, variableGeneralValues, skillInfo, generalSkillInfo);
+									}
 									break;
 								}
 							}
 						}
-						
-						for (Entry<String, Object> stat : generalSkillInfo.getSet().entrySet())
+
+						final int skillLevels = generalSkillInfo.getInt("skill.levels", 0);
+						for (int i = 1; i <= skillLevels; i++)
 						{
-							skillInfo.forEach((level, subLevelMap) ->
-							{
-								subLevelMap.forEach((subLevel, statsSet) ->
+							levels.computeIfAbsent(i, k -> new HashSet<>()).add(0);
+						}
+
+						skillInfo.forEach((level, subLevelMap) -> {
+							subLevelMap.forEach((subLevel, statsSet) -> {
+								levels.computeIfAbsent(level, k -> new HashSet<>()).add(subLevel);
+							});
+						});
+
+						effectParamInfo.forEach(((effectScope, namedParamInfos) -> {
+							namedParamInfos.forEach(namedParamInfo -> {
+								namedParamInfo.info.forEach((level, subLevelMap) -> {
+									subLevelMap.forEach((subLevel, statsSet) -> {
+										levels.computeIfAbsent(level, k -> new HashSet<>()).add(subLevel);
+									});
+								});
+
+								if (namedParamInfo.fromLevel != null && namedParamInfo.toLevel != null)
 								{
-									statsSet.getSet().putIfAbsent(stat.getKey(), stat.getValue());
+
+									for (int i = namedParamInfo.fromLevel; i <= namedParamInfo.toLevel; i++)
+									{
+										if (namedParamInfo.fromSubLevel != null && namedParamInfo.toSubLevel != null)
+										{
+											for (int j = namedParamInfo.fromSubLevel; j <= namedParamInfo.toSubLevel; j++)
+											{
+
+												levels.computeIfAbsent(i, k -> new HashSet<>()).add(j);
+											}
+										}
+										else
+										{
+											levels.computeIfAbsent(i, k -> new HashSet<>()).add(0);
+										}
+									}
+								}
+							});
+						}));
+
+						levels.forEach((level, subLevels) -> {
+							subLevels.forEach(subLevel -> {
+								final StatsSet statsSet = Optional.ofNullable(skillInfo.getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
+								generalSkillInfo.getSet().forEach((k, v) -> statsSet.getSet().putIfAbsent(k, v));
+								statsSet.set("skill.level", level);
+								statsSet.set("skill.subLevel", subLevel);
+								final Skill skill = new Skill(statsSet);
+								effectParamInfo.forEach((effectScope, namedParamInfos) -> {
+									namedParamInfos.forEach(namedParamInfo -> {
+										if ((namedParamInfo.fromLevel == null && namedParamInfo.toLevel == null) || (namedParamInfo.fromLevel >= level && namedParamInfo.toLevel <= level))
+										{
+											if ((namedParamInfo.fromSubLevel == null && namedParamInfo.toSubLevel == null) || (namedParamInfo.fromSubLevel >= subLevel && namedParamInfo.toSubLevel <= subLevel))
+											{
+												final StatsSet params = Optional.ofNullable(namedParamInfo.info.getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
+												namedParamInfo.generalInfo.getSet().forEach((k, v) -> params.getSet().putIfAbsent(k, v));
+
+												try
+												{
+													final AbstractEffect effect = AbstractEffect.createEffect(namedParamInfo.name, params);
+													skill.addEffect(effectScope, effect);
+												}
+												catch (Exception e)
+												{
+													LOGGER.warn("Failed loading effect for Skill Id[{}] Level[{}] SubLevel[{}] Effect Scope[{}] Effect Name[{}]", statsSet.getInt("skill.id"), level, subLevel, effectScope, namedParamInfo.name, e);
+												}
+											}
+										}
+									});
 								});
 							});
-						}
-						System.out.println(skillInfo.toString().replace(",", "\n"));
+						});
 					}
 				}
 			}
@@ -178,10 +273,8 @@ public class SkillData implements IGameXmlReader
 			}
 		}
 		
-		values.forEach((level, subLevelMap) ->
-		{
-			subLevelMap.forEach((subLevel, value) ->
-			{
+		values.forEach((level, subLevelMap) -> {
+			subLevelMap.forEach((subLevel, value) -> {
 				info.computeIfAbsent(level, k -> new HashMap<>()).computeIfAbsent(subLevel, k -> new StatsSet()).set(node.getNodeName(), value);
 			});
 		});
@@ -348,8 +441,13 @@ public class SkillData implements IGameXmlReader
 		return parseValue(value, Collections.emptySet());
 	}
 	
-	public static void main(String[] args)
+	public static SkillData getInstance()
 	{
-		new SkillData().load();
+		return SingletonHolder._instance;
+	}
+
+	private static class SingletonHolder
+	{
+		protected static final SkillData _instance = new SkillData();
 	}
 }
