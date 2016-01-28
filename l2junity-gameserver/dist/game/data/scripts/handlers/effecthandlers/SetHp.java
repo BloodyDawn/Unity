@@ -36,8 +36,6 @@ public final class SetHp extends AbstractEffect
 	
 	public SetHp(StatsSet params)
 	{
-		super(params);
-		
 		_amount = params.getDouble("amount", 0);
 		_mode = params.getEnum("mode", StatModifierType.class, StatModifierType.DIFF);
 	}

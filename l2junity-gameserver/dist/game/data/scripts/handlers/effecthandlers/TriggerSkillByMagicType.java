@@ -53,8 +53,6 @@ public final class TriggerSkillByMagicType extends AbstractEffect
 	
 	public TriggerSkillByMagicType(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 		_magicTypes = params.getIntArray("magicTypes", ";");
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));

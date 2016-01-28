@@ -34,7 +34,6 @@ public final class DebuffBlock extends AbstractEffect
 	
 	public DebuffBlock(StatsSet params)
 	{
-		super(params);
 		_times = params.getInt("times", -1);
 	}
 	

@@ -37,7 +37,6 @@ public class StatByMoveType extends AbstractEffect
 	
 	public StatByMoveType(StatsSet params)
 	{
-		super(params);
 		_stat = params.getEnum("stat", Stats.class);
 		_type = params.getEnum("type", MoveType.class);
 		_value = params.getDouble("value");

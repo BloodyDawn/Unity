@@ -44,8 +44,6 @@ public final class TeleportToSummon extends AbstractEffect
 	
 	public TeleportToSummon(StatsSet params)
 	{
-		super(params);
-		
 		_maxDistance = params.getDouble("distance", -1);
 	}
 	

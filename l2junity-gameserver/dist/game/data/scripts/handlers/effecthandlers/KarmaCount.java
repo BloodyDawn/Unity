@@ -36,8 +36,6 @@ public class KarmaCount extends AbstractEffect
 	
 	public KarmaCount(StatsSet params)
 	{
-		super(params);
-		
 		_amount = params.getInt("amount", 0);
 		switch (params.getString("mode", "DIFF"))
 		{

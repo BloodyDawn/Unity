@@ -36,8 +36,6 @@ public class PkCount extends AbstractEffect
 	
 	public PkCount(StatsSet params)
 	{
-		super(params);
-		
 		_amount = params.getInt("amount", 0);
 	}
 	

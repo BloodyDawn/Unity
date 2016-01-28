@@ -38,8 +38,6 @@ public final class HpDrain extends AbstractEffect
 	
 	public HpDrain(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_percentage = params.getDouble("percentage", 0);
 	}

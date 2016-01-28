@@ -46,7 +46,6 @@ public class TwoHandedSwordBonus extends AbstractEffect
 	
 	public TwoHandedSwordBonus(StatsSet params)
 	{
-		super(params);
 		_pAtkAmount = params.getDouble("pAtkAmount", 0);
 		_pAtkmode = params.getEnum("pAtkmode", StatModifierType.class, StatModifierType.DIFF);
 		

@@ -34,6 +34,7 @@ import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.base.PlayerState;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -317,28 +318,11 @@ public abstract class DocumentBase
 		{
 			set.set("id", ((IIdentifiable) template).getId());
 		}
-		
-		final AbstractEffect effect = AbstractEffect.createEffect(null, parameters);
-		parseTemplate(n, effect);
+
+		parseTemplate(n, null);
 		if (template instanceof L2Item)
 		{
 			_log.error("Item " + template + " with effects!!!");
-		}
-		else if (template instanceof Skill)
-		{
-			final Skill skill = (Skill) template;
-			if (effectScope != null)
-			{
-				skill.addEffect(effectScope, effect);
-			}
-			else if (skill.isPassive())
-			{
-				skill.addEffect(EffectScope.PASSIVE, effect);
-			}
-			else
-			{
-				skill.addEffect(EffectScope.GENERAL, effect);
-			}
 		}
 	}
 	

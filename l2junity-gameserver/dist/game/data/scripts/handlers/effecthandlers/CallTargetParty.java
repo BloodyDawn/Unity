@@ -34,7 +34,6 @@ public final class CallTargetParty extends AbstractEffect
 {
 	public CallTargetParty(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

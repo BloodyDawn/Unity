@@ -34,8 +34,6 @@ public final class EnlargeAbnormalSlot extends AbstractEffect
 	
 	public EnlargeAbnormalSlot(StatsSet params)
 	{
-		super(params);
-		
 		_slots = params.getInt("slots", 0);
 	}
 	

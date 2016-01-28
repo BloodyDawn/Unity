@@ -35,8 +35,6 @@ public final class DamOverTimePercent extends AbstractEffect
 	
 	public DamOverTimePercent(StatsSet params)
 	{
-		super(params);
-		
 		_canKill = params.getBoolean("canKill", false);
 		_power = params.getDouble("power", 0);
 	}

@@ -53,8 +53,6 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 	
 	public PhysicalAttackWeaponBonus(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);

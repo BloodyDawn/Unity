@@ -38,8 +38,6 @@ public final class CpHeal extends AbstractEffect
 	
 	public CpHeal(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

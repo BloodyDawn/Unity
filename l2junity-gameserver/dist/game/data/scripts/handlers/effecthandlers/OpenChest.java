@@ -35,7 +35,6 @@ public final class OpenChest extends AbstractEffect
 {
 	public OpenChest(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

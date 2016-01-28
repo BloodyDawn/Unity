@@ -37,8 +37,6 @@ public final class FocusSouls extends AbstractEffect
 	
 	public FocusSouls(StatsSet params)
 	{
-		super(params);
-		
 		_charge = params.getInt("charge", 0);
 	}
 	

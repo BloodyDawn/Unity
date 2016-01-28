@@ -39,8 +39,6 @@ public class AbsorbDamage extends AbstractEffect
 	
 	public AbsorbDamage(StatsSet params)
 	{
-		super(params);
-		
 		_damage = params.getDouble("damage", 0);
 	}
 	

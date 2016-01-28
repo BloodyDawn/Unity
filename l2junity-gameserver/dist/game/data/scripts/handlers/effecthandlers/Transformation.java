@@ -40,8 +40,6 @@ public final class Transformation extends AbstractEffect
 	
 	public Transformation(StatsSet params)
 	{
-		super(params);
-		
 		final String ids = params.getString("transformationId", null);
 		if ((ids != null) && !ids.isEmpty())
 		{

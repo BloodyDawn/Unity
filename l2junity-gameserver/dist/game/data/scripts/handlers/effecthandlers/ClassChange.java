@@ -42,8 +42,6 @@ public class ClassChange extends AbstractEffect
 	
 	public ClassChange(StatsSet params)
 	{
-		super(params);
-		
 		_index = params.getInt("index", 0);
 	}
 	

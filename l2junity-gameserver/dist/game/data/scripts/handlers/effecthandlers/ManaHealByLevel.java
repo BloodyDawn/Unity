@@ -40,8 +40,6 @@ public final class ManaHealByLevel extends AbstractEffect
 	
 	public ManaHealByLevel(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

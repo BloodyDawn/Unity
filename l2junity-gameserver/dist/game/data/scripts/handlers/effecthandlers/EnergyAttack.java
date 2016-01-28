@@ -49,8 +49,6 @@ public final class EnergyAttack extends AbstractEffect
 	
 	public EnergyAttack(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getInt("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);

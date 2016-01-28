@@ -39,8 +39,6 @@ public final class TransferHate extends AbstractEffect
 	
 	public TransferHate(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

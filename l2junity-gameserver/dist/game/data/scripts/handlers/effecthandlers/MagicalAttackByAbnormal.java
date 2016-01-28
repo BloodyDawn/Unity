@@ -39,8 +39,6 @@ public final class MagicalAttackByAbnormal extends AbstractEffect
 	
 	public MagicalAttackByAbnormal(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

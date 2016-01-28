@@ -37,8 +37,6 @@ public class DeleteTopAgro extends AbstractEffect
 	
 	public DeleteTopAgro(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

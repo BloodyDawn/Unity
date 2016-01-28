@@ -31,8 +31,6 @@ public final class EffectFlag extends AbstractEffect
 	
 	public EffectFlag(StatsSet params)
 	{
-		super(params);
-		
 		String flag = params.getString("effectFlag", null);
 		if (flag != null)
 		{

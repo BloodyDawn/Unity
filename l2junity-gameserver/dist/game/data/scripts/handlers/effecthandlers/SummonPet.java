@@ -42,7 +42,6 @@ public final class SummonPet extends AbstractEffect
 {
 	public SummonPet(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

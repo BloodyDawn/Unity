@@ -37,8 +37,6 @@ public final class ChameleonRest extends AbstractEffect
 	
 	public ChameleonRest(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

@@ -29,6 +29,5 @@ public final class ChangeFishingMastery extends AbstractEffect
 {
 	public ChangeFishingMastery(StatsSet params)
 	{
-		super(params);
 	}
 }

@@ -38,8 +38,6 @@ public class VisualBuff extends AbstractEffect
 	
 	public VisualBuff(StatsSet params)
 	{
-		super(params);
-		
 		for (Object param : params.getSet().values())
 		{
 			final int skillId = Integer.parseInt((String) param);

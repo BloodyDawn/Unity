@@ -35,8 +35,6 @@ public final class CpDamPercent extends AbstractEffect
 	
 	public CpDamPercent(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

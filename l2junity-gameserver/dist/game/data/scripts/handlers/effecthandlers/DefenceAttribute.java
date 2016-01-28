@@ -35,7 +35,6 @@ public class DefenceAttribute extends AbstractEffect
 	
 	public DefenceAttribute(StatsSet params)
 	{
-		super(params);
 		_amount = params.getDouble("amount", 0);
 		_attribute = params.getEnum("attribute", AttributeType.class, AttributeType.FIRE);
 	}

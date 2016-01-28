@@ -29,7 +29,6 @@ public final class Debuff extends AbstractEffect
 {
 	public Debuff(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -39,8 +39,6 @@ public final class SummonTrap extends AbstractEffect
 	
 	public SummonTrap(StatsSet params)
 	{
-		super(params);
-		
 		_despawnTime = params.getInt("despawnTime", 0);
 		_npcId = params.getInt("npcId", 0);
 	}

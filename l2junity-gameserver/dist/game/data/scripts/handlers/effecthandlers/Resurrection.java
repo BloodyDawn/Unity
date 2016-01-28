@@ -37,8 +37,6 @@ public final class Resurrection extends AbstractEffect
 	
 	public Resurrection(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getInt("power", 0);
 	}
 	

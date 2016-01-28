@@ -29,7 +29,6 @@ public class IgnoreDeath extends AbstractEffect
 {
 	public IgnoreDeath(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

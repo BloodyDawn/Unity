@@ -45,8 +45,6 @@ public class FlyMove extends AbstractEffect
 	
 	public FlyMove(StatsSet params)
 	{
-		super(params);
-		
 		_flyType = params.getEnum("flyType", FlyType.class, FlyType.DUMMY);
 		_angle = params.getInt("angle", 0);
 		_absoluteAngle = params.getBoolean("absoluteAngle", false);

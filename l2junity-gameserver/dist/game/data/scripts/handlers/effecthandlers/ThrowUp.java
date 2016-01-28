@@ -36,7 +36,6 @@ public final class ThrowUp extends AbstractEffect
 {
 	public ThrowUp(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

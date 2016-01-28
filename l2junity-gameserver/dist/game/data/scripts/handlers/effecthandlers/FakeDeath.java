@@ -36,8 +36,6 @@ public final class FakeDeath extends AbstractEffect
 	
 	public FakeDeath(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

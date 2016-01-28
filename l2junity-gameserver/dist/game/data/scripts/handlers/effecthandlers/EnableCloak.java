@@ -32,7 +32,6 @@ public final class EnableCloak extends AbstractEffect
 {
 	public EnableCloak(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -36,8 +36,6 @@ public final class HealOverTime extends AbstractEffect
 	
 	public HealOverTime(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

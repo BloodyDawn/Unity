@@ -37,8 +37,6 @@ public final class Escape extends AbstractEffect
 	
 	public Escape(StatsSet params)
 	{
-		super(params);
-		
 		_escapeType = params.getEnum("escapeType", TeleportWhereType.class, null);
 	}
 	

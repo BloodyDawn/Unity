@@ -33,7 +33,6 @@ public final class PhysicalMute extends AbstractEffect
 {
 	public PhysicalMute(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

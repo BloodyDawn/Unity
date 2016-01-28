@@ -39,8 +39,6 @@ public final class DeathLink extends AbstractEffect
 	
 	public DeathLink(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

@@ -34,7 +34,6 @@ public class Reuse extends AbstractEffect
 	
 	public Reuse(StatsSet params)
 	{
-		super(params);
 		_magicType = params.getInt("magicType", 0);
 		_amount = params.getDouble("amount", 0);
 	}

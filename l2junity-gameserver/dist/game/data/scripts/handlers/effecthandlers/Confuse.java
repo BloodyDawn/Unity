@@ -43,8 +43,6 @@ public final class Confuse extends AbstractEffect
 	
 	public Confuse(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

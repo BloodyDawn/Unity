@@ -43,8 +43,6 @@ public final class CallPc extends AbstractEffect
 	
 	public CallPc(StatsSet params)
 	{
-		super(params);
-		
 		_itemId = params.getInt("itemId", 0);
 		_itemCount = params.getInt("itemCount", 0);
 	}

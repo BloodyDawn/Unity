@@ -35,7 +35,6 @@ public class StatUp extends AbstractEffect
 	
 	public StatUp(StatsSet params)
 	{
-		super(params);
 		_amount = params.getDouble("amount", 0);
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.STR);
 	}

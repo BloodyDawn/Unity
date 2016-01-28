@@ -30,7 +30,6 @@ public final class SilentMove extends AbstractEffect
 {
 	public SilentMove(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

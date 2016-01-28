@@ -34,7 +34,6 @@ public final class Disarm extends AbstractEffect
 {
 	public Disarm(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -29,7 +29,6 @@ public final class Invincible extends AbstractEffect
 {
 	public Invincible(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

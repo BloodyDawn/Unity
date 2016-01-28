@@ -38,7 +38,6 @@ public class StatBonusSkillCritical extends AbstractEffect
 	
 	public StatBonusSkillCritical(StatsSet params)
 	{
-		super(params);
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.DEX);
 		
 		int armorTypesMask = 0;

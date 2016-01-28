@@ -41,8 +41,6 @@ public class SummonHallucination extends AbstractEffect
 	
 	public SummonHallucination(StatsSet params)
 	{
-		super(params);
-		
 		_despawnDelay = params.getInt("despawnDelay", 20000);
 		_npcId = params.getInt("npcId", 0);
 		_npcCount = params.getInt("npcCount", 1);

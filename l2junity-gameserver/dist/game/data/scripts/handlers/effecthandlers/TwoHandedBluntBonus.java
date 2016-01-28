@@ -46,7 +46,6 @@ public class TwoHandedBluntBonus extends AbstractEffect
 	
 	public TwoHandedBluntBonus(StatsSet params)
 	{
-		super(params);
 		_pAtkAmount = params.getDouble("pAtkAmount", 0);
 		_pAtkmode = params.getEnum("pAtkmode", StatModifierType.class, StatModifierType.DIFF);
 		

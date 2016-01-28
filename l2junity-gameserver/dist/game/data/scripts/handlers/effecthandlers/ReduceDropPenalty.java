@@ -36,7 +36,6 @@ public class ReduceDropPenalty extends AbstractEffect
 	
 	public ReduceDropPenalty(StatsSet params)
 	{
-		super(params);
 		_exp = params.getDouble("exp", 0);
 		_deathPenalty = params.getDouble("deathPenalty", 0);
 		_type = params.getEnum("type", ReduceDropType.class, ReduceDropType.MOB);

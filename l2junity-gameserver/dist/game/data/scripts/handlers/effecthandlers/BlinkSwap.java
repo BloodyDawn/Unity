@@ -39,7 +39,6 @@ public final class BlinkSwap extends AbstractEffect
 {
 	public BlinkSwap(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

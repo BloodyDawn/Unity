@@ -45,8 +45,6 @@ public final class MagicalAttackByAbnormalSlot extends AbstractEffect
 	
 	public MagicalAttackByAbnormalSlot(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		
 		String abnormals = params.getString("abnormalType", null);

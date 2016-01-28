@@ -37,8 +37,6 @@ public final class Restoration extends AbstractEffect
 	
 	public Restoration(StatsSet params)
 	{
-		super(params);
-		
 		_itemId = params.getInt("itemId", 0);
 		_itemCount = params.getInt("itemCount", 0);
 	}

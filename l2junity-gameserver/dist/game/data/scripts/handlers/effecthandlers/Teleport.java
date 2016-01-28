@@ -36,8 +36,6 @@ public final class Teleport extends AbstractEffect
 	
 	public Teleport(StatsSet params)
 	{
-		super(params);
-		
 		_loc = new Location(params.getInt("x", 0), params.getInt("y", 0), params.getInt("z", 0));
 	}
 	

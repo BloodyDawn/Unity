@@ -33,7 +33,6 @@ public final class Mute extends AbstractEffect
 {
 	public Mute(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -36,7 +36,6 @@ public final class Spoil extends AbstractEffect
 {
 	public Spoil(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

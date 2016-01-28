@@ -44,8 +44,6 @@ public final class HpCpHeal extends AbstractEffect
 	
 	public HpCpHeal(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

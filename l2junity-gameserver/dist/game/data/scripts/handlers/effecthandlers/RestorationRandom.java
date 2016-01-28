@@ -44,7 +44,6 @@ public final class RestorationRandom extends AbstractEffect
 {
 	public RestorationRandom(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

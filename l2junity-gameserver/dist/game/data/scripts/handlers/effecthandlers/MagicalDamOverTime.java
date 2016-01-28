@@ -37,8 +37,6 @@ public final class MagicalDamOverTime extends AbstractEffect
 	
 	public MagicalDamOverTime(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_canKill = params.getBoolean("canKill", false);
 	}

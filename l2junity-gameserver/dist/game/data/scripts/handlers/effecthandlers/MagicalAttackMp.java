@@ -40,8 +40,6 @@ public final class MagicalAttackMp extends AbstractEffect
 	
 	public MagicalAttackMp(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

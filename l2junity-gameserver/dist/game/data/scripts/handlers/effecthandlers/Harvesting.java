@@ -39,7 +39,6 @@ public final class Harvesting extends AbstractEffect
 {
 	public Harvesting(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

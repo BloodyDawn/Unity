@@ -39,8 +39,6 @@ public final class MagicalSoulAttack extends AbstractEffect
 	
 	public MagicalSoulAttack(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

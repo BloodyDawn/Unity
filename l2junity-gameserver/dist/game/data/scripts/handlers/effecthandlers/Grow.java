@@ -33,7 +33,6 @@ public final class Grow extends AbstractEffect
 {
 	public Grow(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

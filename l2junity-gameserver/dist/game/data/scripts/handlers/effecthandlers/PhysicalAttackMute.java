@@ -32,7 +32,6 @@ public final class PhysicalAttackMute extends AbstractEffect
 {
 	public PhysicalAttackMute(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

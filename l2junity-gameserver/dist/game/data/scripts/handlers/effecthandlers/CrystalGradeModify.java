@@ -35,8 +35,6 @@ public final class CrystalGradeModify extends AbstractEffect
 	
 	public CrystalGradeModify(StatsSet params)
 	{
-		super(params);
-		
 		_grade = params.getInt("grade", 0);
 	}
 	

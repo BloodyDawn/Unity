@@ -36,8 +36,6 @@ public final class SummonAgathion extends AbstractEffect
 	
 	public SummonAgathion(StatsSet params)
 	{
-		super(params);
-		
 		if (params.isEmpty())
 		{
 			_log.warn(getClass().getSimpleName() + ": must have parameters.");

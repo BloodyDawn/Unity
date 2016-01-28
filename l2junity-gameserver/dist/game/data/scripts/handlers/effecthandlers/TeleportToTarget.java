@@ -40,7 +40,6 @@ public final class TeleportToTarget extends AbstractEffect
 {
 	public TeleportToTarget(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

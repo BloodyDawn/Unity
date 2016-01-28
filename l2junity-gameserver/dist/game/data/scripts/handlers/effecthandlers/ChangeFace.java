@@ -35,8 +35,6 @@ public final class ChangeFace extends AbstractEffect
 	
 	public ChangeFace(StatsSet params)
 	{
-		super(params);
-		
 		_value = params.getInt("value", 0);
 	}
 	

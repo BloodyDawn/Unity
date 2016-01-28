@@ -42,8 +42,6 @@ public final class MagicalAttack extends AbstractEffect
 	
 	public MagicalAttack(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_overHit = params.getBoolean("overHit", false);
 		_debuffModifier = params.getDouble("debuffModifier", 1);

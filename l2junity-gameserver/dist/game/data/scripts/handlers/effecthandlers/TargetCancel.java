@@ -36,8 +36,6 @@ public final class TargetCancel extends AbstractEffect
 	
 	public TargetCancel(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

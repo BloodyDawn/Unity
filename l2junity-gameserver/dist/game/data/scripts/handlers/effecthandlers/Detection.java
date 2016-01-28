@@ -34,7 +34,6 @@ public final class Detection extends AbstractEffect
 {
 	public Detection(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

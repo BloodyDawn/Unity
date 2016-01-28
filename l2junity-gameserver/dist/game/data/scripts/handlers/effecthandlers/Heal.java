@@ -44,8 +44,6 @@ public final class Heal extends AbstractEffect
 	
 	public Heal(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

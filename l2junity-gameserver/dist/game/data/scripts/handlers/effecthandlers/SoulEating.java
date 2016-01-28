@@ -44,7 +44,6 @@ public final class SoulEating extends AbstractEffect
 	
 	public SoulEating(StatsSet params)
 	{
-		super(params);
 		_expNeeded = params.getInt("expNeeded");
 		_maxSouls = params.getInt("maxSouls");
 	}

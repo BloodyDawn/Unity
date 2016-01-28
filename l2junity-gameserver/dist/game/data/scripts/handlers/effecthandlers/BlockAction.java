@@ -42,8 +42,6 @@ public final class BlockAction extends AbstractEffect
 	
 	public BlockAction(StatsSet params)
 	{
-		super(params);
-		
 		final String[] actions = params.getString("blockedActions").split(",");
 		for (String action : actions)
 		{

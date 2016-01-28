@@ -35,8 +35,6 @@ public final class SkillTurningOverTime extends AbstractEffect
 	
 	public SkillTurningOverTime(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 		_staticChance = params.getBoolean("staticChance", false);
 	}

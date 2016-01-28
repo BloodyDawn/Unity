@@ -37,7 +37,6 @@ public final class RebalanceHP extends AbstractEffect
 {
 	public RebalanceHP(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

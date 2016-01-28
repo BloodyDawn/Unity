@@ -35,7 +35,6 @@ public class CriticalRatePositionBonus extends AbstractEffect
 	
 	public CriticalRatePositionBonus(StatsSet params)
 	{
-		super(params);
 		_amount = params.getDouble("amount", 0);
 		_position = params.getEnum("position", Position.class, Position.FRONT);
 	}

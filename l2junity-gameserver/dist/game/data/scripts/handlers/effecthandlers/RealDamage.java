@@ -33,8 +33,6 @@ public class RealDamage extends AbstractEffect
 	
 	public RealDamage(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

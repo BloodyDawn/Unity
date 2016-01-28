@@ -36,8 +36,6 @@ public final class TargetMeProbability extends AbstractEffect
 	
 	public TargetMeProbability(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

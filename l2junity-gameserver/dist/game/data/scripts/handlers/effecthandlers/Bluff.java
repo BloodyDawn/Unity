@@ -37,8 +37,6 @@ public final class Bluff extends AbstractEffect
 	
 	public Bluff(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

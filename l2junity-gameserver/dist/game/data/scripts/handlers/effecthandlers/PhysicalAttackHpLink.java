@@ -43,8 +43,6 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	
 	public PhysicalAttackHpLink(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_overHit = params.getBoolean("overHit", false);

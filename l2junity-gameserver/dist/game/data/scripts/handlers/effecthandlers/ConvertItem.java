@@ -39,7 +39,6 @@ public final class ConvertItem extends AbstractEffect
 {
 	public ConvertItem(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

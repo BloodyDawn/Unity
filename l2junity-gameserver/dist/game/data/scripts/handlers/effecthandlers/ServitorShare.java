@@ -55,7 +55,6 @@ public final class ServitorShare extends AbstractEffect
 	
 	public ServitorShare(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

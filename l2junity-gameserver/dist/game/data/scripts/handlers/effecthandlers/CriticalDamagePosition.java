@@ -35,7 +35,6 @@ public class CriticalDamagePosition extends AbstractEffect
 	
 	public CriticalDamagePosition(StatsSet params)
 	{
-		super(params);
 		_amount = params.getDouble("amount", 0);
 		_position = params.getEnum("position", Position.class, Position.FRONT);
 	}

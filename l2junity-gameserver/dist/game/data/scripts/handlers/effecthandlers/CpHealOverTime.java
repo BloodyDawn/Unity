@@ -32,8 +32,6 @@ public final class CpHealOverTime extends AbstractEffect
 	
 	public CpHealOverTime(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

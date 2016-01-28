@@ -36,7 +36,6 @@ public final class OpenDwarfRecipeBook extends AbstractEffect
 {
 	public OpenDwarfRecipeBook(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

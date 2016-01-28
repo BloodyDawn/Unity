@@ -38,8 +38,6 @@ public final class DefenceTrait extends AbstractEffect
 	
 	public DefenceTrait(StatsSet params)
 	{
-		super(params);
-		
 		if (params.isEmpty())
 		{
 			_log.warn(getClass().getSimpleName() + ": must have parameters.");

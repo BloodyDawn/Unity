@@ -32,7 +32,6 @@ public final class NoblesseBless extends AbstractEffect
 {
 	public NoblesseBless(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

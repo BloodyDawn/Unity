@@ -37,7 +37,6 @@ public final class BlockChat extends AbstractEffect
 {
 	public BlockChat(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

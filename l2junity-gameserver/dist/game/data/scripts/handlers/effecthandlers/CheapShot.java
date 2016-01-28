@@ -29,7 +29,6 @@ public class CheapShot extends AbstractEffect
 {
 	public CheapShot(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

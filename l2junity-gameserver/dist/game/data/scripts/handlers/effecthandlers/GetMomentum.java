@@ -34,7 +34,6 @@ public class GetMomentum extends AbstractEffect
 {
 	public GetMomentum(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

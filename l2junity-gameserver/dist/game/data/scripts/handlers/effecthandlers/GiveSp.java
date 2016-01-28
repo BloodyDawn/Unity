@@ -34,8 +34,6 @@ public final class GiveSp extends AbstractEffect
 	
 	public GiveSp(StatsSet params)
 	{
-		super(params);
-		
 		_sp = params.getInt("sp", 0);
 	}
 	

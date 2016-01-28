@@ -36,8 +36,6 @@ public final class SetSkill extends AbstractEffect
 	
 	public SetSkill(StatsSet params)
 	{
-		super(params);
-		
 		_skillId = params.getInt("skillId", 0);
 		_skillLvl = params.getInt("skillLvl", 1);
 	}

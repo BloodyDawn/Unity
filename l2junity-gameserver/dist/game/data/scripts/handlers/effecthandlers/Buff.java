@@ -31,7 +31,6 @@ public class Buff extends AbstractEffect
 {
 	public Buff(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

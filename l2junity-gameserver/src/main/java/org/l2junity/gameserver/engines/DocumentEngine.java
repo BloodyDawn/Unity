@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.engines;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,6 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.XMLFilter;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.engines.items.DocumentItem;
-import org.l2junity.gameserver.engines.skills.DocumentSkill;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.slf4j.Logger;
@@ -84,9 +84,7 @@ public class DocumentEngine
 			LOGGER.warn("Skill file not found.");
 			return null;
 		}
-		DocumentSkill doc = new DocumentSkill(file);
-		doc.parse();
-		return doc.getSkills();
+		return Collections.emptyList();
 	}
 	
 	public void loadAllSkills(final Map<Integer, Skill> allSkills)

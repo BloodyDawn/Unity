@@ -38,7 +38,6 @@ public final class Sweeper extends AbstractEffect
 {
 	public Sweeper(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

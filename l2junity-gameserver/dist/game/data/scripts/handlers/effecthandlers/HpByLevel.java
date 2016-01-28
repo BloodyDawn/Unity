@@ -37,8 +37,6 @@ public final class HpByLevel extends AbstractEffect
 	
 	public HpByLevel(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

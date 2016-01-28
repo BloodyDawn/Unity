@@ -42,8 +42,6 @@ public final class StealAbnormal extends AbstractEffect
 	
 	public StealAbnormal(StatsSet params)
 	{
-		super(params);
-		
 		_slot = params.getString("slot", null);
 		_rate = params.getInt("rate", 0);
 		_max = params.getInt("max", 0);

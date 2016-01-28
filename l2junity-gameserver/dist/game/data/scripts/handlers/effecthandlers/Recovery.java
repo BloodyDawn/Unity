@@ -32,7 +32,6 @@ public final class Recovery extends AbstractEffect
 {
 	public Recovery(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

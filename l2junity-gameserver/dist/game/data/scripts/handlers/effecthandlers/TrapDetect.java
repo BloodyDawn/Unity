@@ -35,8 +35,6 @@ public final class TrapDetect extends AbstractEffect
 	
 	public TrapDetect(StatsSet params)
 	{
-		super(params);
-		
 		if (params.isEmpty())
 		{
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": effect without power!");

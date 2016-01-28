@@ -39,8 +39,6 @@ public final class GiveRecommendation extends AbstractEffect
 	
 	public GiveRecommendation(StatsSet params)
 	{
-		super(params);
-		
 		_amount = params.getInt("amount", 0);
 		if (_amount == 0)
 		{

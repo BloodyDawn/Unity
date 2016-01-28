@@ -36,8 +36,6 @@ public final class VitalityPointUp extends AbstractEffect
 	
 	public VitalityPointUp(StatsSet params)
 	{
-		super(params);
-		
 		_value = params.getInt("value", 0);
 	}
 	

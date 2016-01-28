@@ -39,8 +39,6 @@ public final class ManaHeal extends AbstractEffect
 	
 	public ManaHeal(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

@@ -40,7 +40,6 @@ public final class Plunder extends AbstractEffect
 {
 	public Plunder(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

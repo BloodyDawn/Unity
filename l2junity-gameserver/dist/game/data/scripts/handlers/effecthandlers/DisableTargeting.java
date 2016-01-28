@@ -33,7 +33,6 @@ public final class DisableTargeting extends AbstractEffect
 {
 	public DisableTargeting(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

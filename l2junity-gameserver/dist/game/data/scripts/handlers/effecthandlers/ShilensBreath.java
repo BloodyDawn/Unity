@@ -35,7 +35,6 @@ public final class ShilensBreath extends AbstractEffect
 {
 	public ShilensBreath(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

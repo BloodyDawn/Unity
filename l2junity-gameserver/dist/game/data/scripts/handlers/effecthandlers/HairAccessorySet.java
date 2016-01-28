@@ -34,7 +34,6 @@ public class HairAccessorySet extends AbstractEffect
 {
 	public HairAccessorySet(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -35,7 +35,6 @@ public final class GetAgro extends AbstractEffect
 {
 	public GetAgro(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

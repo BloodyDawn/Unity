@@ -34,7 +34,6 @@ public class AbstractStatAddEffect extends AbstractEffect
 	
 	public AbstractStatAddEffect(StatsSet params, Stats stat)
 	{
-		super(params);
 		_stat = stat;
 		_amount = params.getDouble("amount", 0);
 	}

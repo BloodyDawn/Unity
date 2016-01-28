@@ -40,8 +40,6 @@ public final class RandomizeHate extends AbstractEffect
 	
 	public RandomizeHate(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

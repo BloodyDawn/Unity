@@ -32,8 +32,6 @@ public final class ManaDamOverTime extends AbstractEffect
 	
 	public ManaDamOverTime(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

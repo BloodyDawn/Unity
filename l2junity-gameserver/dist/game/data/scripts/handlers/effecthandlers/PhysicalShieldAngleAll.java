@@ -29,7 +29,6 @@ public class PhysicalShieldAngleAll extends AbstractEffect
 {
 	public PhysicalShieldAngleAll(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

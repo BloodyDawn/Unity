@@ -30,7 +30,6 @@ public class Faceoff extends AbstractEffect
 {
 	public Faceoff(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

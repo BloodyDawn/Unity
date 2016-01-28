@@ -57,11 +57,8 @@ public final class Blink extends AbstractEffect
 	
 	public Blink(StatsSet params)
 	{
-		super(params);
-		
 		_flyCourse = params.getInt("angle", 0);
 		_flyRadius = params.getInt("range", 0);
-		
 		_flyType = params.getEnum("flyType", FlyType.class, FlyType.DUMMY);
 		_flySpeed = params.getInt("speed", 0);
 		_flyDelay = params.getInt("delay", 0);

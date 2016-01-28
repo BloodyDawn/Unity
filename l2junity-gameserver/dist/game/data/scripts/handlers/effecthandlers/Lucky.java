@@ -30,7 +30,6 @@ public final class Lucky extends AbstractEffect
 {
 	public Lucky(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

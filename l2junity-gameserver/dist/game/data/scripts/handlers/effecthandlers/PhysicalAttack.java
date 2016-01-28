@@ -56,8 +56,6 @@ public final class PhysicalAttack extends AbstractEffect
 	
 	public PhysicalAttack(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);

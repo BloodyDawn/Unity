@@ -37,8 +37,6 @@ public final class BlockSkill extends AbstractEffect
 	
 	public BlockSkill(StatsSet params)
 	{
-		super(params);
-		
 		_magicTypes = params.getIntArray("magicTypes", ";");
 	}
 	

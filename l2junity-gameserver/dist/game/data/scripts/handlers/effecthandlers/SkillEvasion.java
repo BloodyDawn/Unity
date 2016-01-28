@@ -33,7 +33,6 @@ public class SkillEvasion extends AbstractEffect
 	
 	public SkillEvasion(StatsSet params)
 	{
-		super(params);
 		_magicType = params.getInt("magicType", 0);
 		_amount = params.getDouble("amount", 0);
 	}

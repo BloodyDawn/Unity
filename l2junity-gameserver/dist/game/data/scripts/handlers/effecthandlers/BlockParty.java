@@ -36,7 +36,6 @@ public final class BlockParty extends AbstractEffect
 {
 	public BlockParty(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

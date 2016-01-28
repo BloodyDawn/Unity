@@ -32,7 +32,6 @@ public final class TargetMe extends AbstractEffect
 {
 	public TargetMe(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

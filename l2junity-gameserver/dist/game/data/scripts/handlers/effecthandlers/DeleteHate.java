@@ -38,8 +38,6 @@ public final class DeleteHate extends AbstractEffect
 	
 	public DeleteHate(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

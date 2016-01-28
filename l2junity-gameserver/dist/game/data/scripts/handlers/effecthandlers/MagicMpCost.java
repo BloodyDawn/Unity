@@ -34,7 +34,6 @@ public class MagicMpCost extends AbstractEffect
 	
 	public MagicMpCost(StatsSet params)
 	{
-		super(params);
 		_magicType = params.getInt("magicType", 0);
 		_amount = params.getDouble("amount", 0);
 	}

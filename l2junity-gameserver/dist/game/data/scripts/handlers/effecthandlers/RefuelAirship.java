@@ -36,8 +36,6 @@ public final class RefuelAirship extends AbstractEffect
 	
 	public RefuelAirship(StatsSet params)
 	{
-		super(params);
-		
 		_value = params.getInt("value", 0);
 	}
 	

@@ -39,8 +39,6 @@ public final class BlockBuffSlot extends AbstractEffect
 	
 	public BlockBuffSlot(StatsSet params)
 	{
-		super(params);
-		
 		String blockBuffSlots = params.getString("slot", null);
 		if ((blockBuffSlots != null) && !blockBuffSlots.isEmpty())
 		{

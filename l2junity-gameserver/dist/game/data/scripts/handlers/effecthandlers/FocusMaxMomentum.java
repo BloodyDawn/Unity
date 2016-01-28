@@ -37,7 +37,6 @@ public final class FocusMaxMomentum extends AbstractEffect
 {
 	public FocusMaxMomentum(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

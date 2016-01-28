@@ -52,8 +52,6 @@ public abstract class AbstractStatEffect extends AbstractEffect
 	
 	public AbstractStatEffect(StatsSet params, Stats mulStat, Stats addStat)
 	{
-		super(params);
-		
 		_addStat = addStat;
 		_mulStat = mulStat;
 		_amount = params.getDouble("amount", 0);

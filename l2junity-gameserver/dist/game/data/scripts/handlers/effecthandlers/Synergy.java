@@ -45,8 +45,6 @@ public final class Synergy extends AbstractEffect
 	
 	public Synergy(StatsSet params)
 	{
-		super(params);
-		
 		String requiredSlots = params.getString("requiredSlots", null);
 		if ((requiredSlots != null) && !requiredSlots.isEmpty())
 		{

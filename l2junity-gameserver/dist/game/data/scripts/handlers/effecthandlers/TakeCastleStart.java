@@ -36,7 +36,6 @@ public final class TakeCastleStart extends AbstractEffect
 {
 	public TakeCastleStart(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

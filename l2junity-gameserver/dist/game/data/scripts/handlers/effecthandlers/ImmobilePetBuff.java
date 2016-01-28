@@ -32,7 +32,6 @@ public final class ImmobilePetBuff extends AbstractEffect
 {
 	public ImmobilePetBuff(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

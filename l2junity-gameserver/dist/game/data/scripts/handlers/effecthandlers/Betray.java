@@ -35,7 +35,6 @@ public final class Betray extends AbstractEffect
 {
 	public Betray(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

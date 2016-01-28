@@ -44,8 +44,6 @@ public class AbnormalTimeChange extends AbstractEffect
 	
 	public AbnormalTimeChange(StatsSet params)
 	{
-		super(params);
-		
 		String abnormals = params.getString("slot", null);
 		if ((abnormals != null) && !abnormals.isEmpty())
 		{

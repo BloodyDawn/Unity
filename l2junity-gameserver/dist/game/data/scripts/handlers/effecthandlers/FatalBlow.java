@@ -50,8 +50,6 @@ public final class FatalBlow extends AbstractEffect
 	
 	public FatalBlow(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);

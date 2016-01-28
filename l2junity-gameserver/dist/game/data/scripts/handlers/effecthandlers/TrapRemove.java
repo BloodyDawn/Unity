@@ -39,8 +39,6 @@ public final class TrapRemove extends AbstractEffect
 	
 	public TrapRemove(StatsSet params)
 	{
-		super(params);
-		
 		if (params.isEmpty())
 		{
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": effect without power!");

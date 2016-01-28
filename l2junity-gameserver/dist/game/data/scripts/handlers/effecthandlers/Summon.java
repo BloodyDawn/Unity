@@ -46,8 +46,6 @@ public final class Summon extends AbstractEffect
 	
 	public Summon(StatsSet params)
 	{
-		super(params);
-		
 		if (params.isEmpty())
 		{
 			throw new IllegalArgumentException("Summon effect without parameters!");

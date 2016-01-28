@@ -39,8 +39,6 @@ public class Feed extends AbstractEffect
 	
 	public Feed(StatsSet params)
 	{
-		super(params);
-		
 		_normal = params.getInt("normal", 0);
 		_ride = params.getInt("ride", 0);
 		_wyvern = params.getInt("wyvern", 0);

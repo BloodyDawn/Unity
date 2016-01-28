@@ -38,8 +38,6 @@ public final class HeadquarterCreate extends AbstractEffect
 	
 	public HeadquarterCreate(StatsSet params)
 	{
-		super(params);
-		
 		_isAdvanced = params.getBoolean("isAdvanced", false);
 	}
 	

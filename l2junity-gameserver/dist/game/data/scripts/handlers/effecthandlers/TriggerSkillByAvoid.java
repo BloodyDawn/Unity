@@ -49,8 +49,6 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 	
 	public TriggerSkillByAvoid(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);

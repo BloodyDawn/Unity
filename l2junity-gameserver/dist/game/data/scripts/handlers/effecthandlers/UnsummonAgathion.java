@@ -34,7 +34,6 @@ public final class UnsummonAgathion extends AbstractEffect
 {
 	public UnsummonAgathion(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

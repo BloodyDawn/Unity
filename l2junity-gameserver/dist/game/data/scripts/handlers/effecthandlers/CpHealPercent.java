@@ -37,8 +37,6 @@ public final class CpHealPercent extends AbstractEffect
 	
 	public CpHealPercent(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

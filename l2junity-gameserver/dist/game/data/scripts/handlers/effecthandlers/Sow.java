@@ -41,7 +41,6 @@ public final class Sow extends AbstractEffect
 {
 	public Sow(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

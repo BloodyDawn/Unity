@@ -36,8 +36,6 @@ public final class SkillTurning extends AbstractEffect
 	
 	public SkillTurning(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 100);
 		_staticChance = params.getBoolean("staticChance", false);
 	}

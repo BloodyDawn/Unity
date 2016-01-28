@@ -32,7 +32,6 @@ public final class UnsummonServitors extends AbstractEffect
 {
 	public UnsummonServitors(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

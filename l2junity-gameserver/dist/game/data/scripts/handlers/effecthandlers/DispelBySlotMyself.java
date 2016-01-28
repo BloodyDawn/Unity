@@ -42,8 +42,6 @@ public final class DispelBySlotMyself extends AbstractEffect
 	
 	public DispelBySlotMyself(StatsSet params)
 	{
-		super(params);
-		
 		String dispel = params.getString("dispel", null);
 		if ((dispel != null) && !dispel.isEmpty())
 		{

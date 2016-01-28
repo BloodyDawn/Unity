@@ -30,7 +30,6 @@ public final class BlockResurrection extends AbstractEffect
 {
 	public BlockResurrection(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

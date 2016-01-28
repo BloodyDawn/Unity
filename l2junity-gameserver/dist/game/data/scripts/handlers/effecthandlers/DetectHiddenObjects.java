@@ -34,7 +34,6 @@ public final class DetectHiddenObjects extends AbstractEffect
 {
 	public DetectHiddenObjects(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

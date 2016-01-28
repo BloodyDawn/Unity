@@ -18,14 +18,10 @@
  */
 package org.l2junity.gameserver.model.effects;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.handler.EffectHandler;
-import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -47,29 +43,6 @@ public abstract class AbstractEffect
 	
 	private List<FuncTemplate> _funcTemplates;
 	private int _ticks;
-	
-	protected AbstractEffect()
-	{
-	}
-	
-	/**
-	 * Abstract effect constructor.
-	 * @param params the parameters
-	 */
-	public AbstractEffect(StatsSet params)
-	{
-	}
-	
-	/**
-	 * Creates an effect given the parameters.
-	 * @param set the attributes
-	 * @param params the parameters
-	 * @return the new effect
-	 */
-	public static AbstractEffect createEffect(String name, StatsSet params)
-	{
-		return EffectHandler.getInstance().getHandlerFactory(name).apply(params);
-	}
 	
 	/**
 	 * Attaches a function template.

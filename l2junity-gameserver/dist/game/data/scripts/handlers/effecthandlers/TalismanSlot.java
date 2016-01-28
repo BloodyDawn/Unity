@@ -34,8 +34,6 @@ public final class TalismanSlot extends AbstractEffect
 	
 	public TalismanSlot(StatsSet params)
 	{
-		super(params);
-		
 		_slots = params.getInt("slots", 0);
 	}
 	

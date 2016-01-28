@@ -33,7 +33,6 @@ public final class DispelAll extends AbstractEffect
 {
 	public DispelAll(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

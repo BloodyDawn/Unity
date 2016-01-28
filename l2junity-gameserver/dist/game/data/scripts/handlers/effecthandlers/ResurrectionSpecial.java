@@ -43,8 +43,6 @@ public final class ResurrectionSpecial extends AbstractEffect
 	
 	public ResurrectionSpecial(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getInt("power", 0);
 		
 		final String instanceIds = params.getString("instanceId", null);

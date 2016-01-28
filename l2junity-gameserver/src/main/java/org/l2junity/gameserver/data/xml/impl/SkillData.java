@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
+import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.EffectScope;
@@ -222,8 +223,7 @@ public class SkillData implements IGameXmlReader
 
 												try
 												{
-													final AbstractEffect effect = AbstractEffect.createEffect(namedParamInfo.name, params);
-													skill.addEffect(effectScope, effect);
+													skill.addEffect(effectScope, EffectHandler.getInstance().getHandlerFactory(namedParamInfo.name).apply(params));
 												}
 												catch (Exception e)
 												{

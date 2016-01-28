@@ -40,8 +40,6 @@ public final class Unsummon extends AbstractEffect
 	
 	public Unsummon(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", -1);
 	}
 	

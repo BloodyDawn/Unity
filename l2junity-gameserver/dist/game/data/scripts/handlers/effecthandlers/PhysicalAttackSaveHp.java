@@ -47,8 +47,6 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 	
 	public PhysicalAttackSaveHp(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);

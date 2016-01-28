@@ -36,8 +36,6 @@ public final class AddTeleportBookmarkSlot extends AbstractEffect
 	
 	public AddTeleportBookmarkSlot(StatsSet params)
 	{
-		super(params);
-		
 		_amount = params.getInt("amount", 0);
 	}
 	

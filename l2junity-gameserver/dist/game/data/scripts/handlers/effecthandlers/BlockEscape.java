@@ -30,7 +30,6 @@ public class BlockEscape extends AbstractEffect
 {
 	public BlockEscape(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -37,8 +37,6 @@ public final class TakeCastle extends AbstractEffect
 	
 	public TakeCastle(StatsSet params)
 	{
-		super(params);
-		
 		_side = params.getEnum("side", CastleSide.class);
 	}
 	

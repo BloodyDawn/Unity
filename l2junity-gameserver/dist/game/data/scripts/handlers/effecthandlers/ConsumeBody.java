@@ -33,7 +33,6 @@ public final class ConsumeBody extends AbstractEffect
 {
 	public ConsumeBody(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

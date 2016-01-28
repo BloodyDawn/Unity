@@ -34,8 +34,7 @@ public final class StaticDamage extends AbstractEffect
 	
 	public StaticDamage(StatsSet params)
 	{
-		super(params);
-		
+
 		_power = params.getInt("power", 0);
 	}
 	

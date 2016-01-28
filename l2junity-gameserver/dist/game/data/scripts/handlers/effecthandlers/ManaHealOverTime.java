@@ -32,8 +32,6 @@ public final class ManaHealOverTime extends AbstractEffect
 	
 	public ManaHealOverTime(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

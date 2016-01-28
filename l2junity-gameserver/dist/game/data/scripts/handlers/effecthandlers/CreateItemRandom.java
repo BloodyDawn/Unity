@@ -39,7 +39,6 @@ public class CreateItemRandom extends AbstractEffect
 	
 	public CreateItemRandom(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

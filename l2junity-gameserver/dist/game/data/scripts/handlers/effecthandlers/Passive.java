@@ -32,7 +32,6 @@ public final class Passive extends AbstractEffect
 {
 	public Passive(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

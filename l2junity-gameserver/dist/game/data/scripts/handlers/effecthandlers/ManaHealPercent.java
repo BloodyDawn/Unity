@@ -38,8 +38,6 @@ public final class ManaHealPercent extends AbstractEffect
 	
 	public ManaHealPercent(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

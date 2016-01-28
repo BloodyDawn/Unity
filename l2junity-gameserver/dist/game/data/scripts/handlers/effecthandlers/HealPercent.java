@@ -38,8 +38,6 @@ public final class HealPercent extends AbstractEffect
 	
 	public HealPercent(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getInt("power", 0);
 	}
 	

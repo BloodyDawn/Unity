@@ -36,7 +36,6 @@ public final class OpenCommonRecipeBook extends AbstractEffect
 {
 	public OpenCommonRecipeBook(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -34,7 +34,6 @@ public final class Untargetable extends AbstractEffect
 {
 	public Untargetable(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

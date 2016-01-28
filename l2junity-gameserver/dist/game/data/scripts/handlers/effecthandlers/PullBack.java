@@ -42,8 +42,6 @@ public final class PullBack extends AbstractEffect
 	
 	public PullBack(StatsSet params)
 	{
-		super(params);
-		
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", _speed);
 		_animationSpeed = params.getInt("animationSpeed", 0);

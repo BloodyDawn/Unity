@@ -32,7 +32,6 @@ public class BlockTarget extends AbstractEffect
 {
 	public BlockTarget(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

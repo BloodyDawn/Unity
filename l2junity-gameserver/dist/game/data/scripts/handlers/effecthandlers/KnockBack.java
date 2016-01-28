@@ -50,8 +50,6 @@ public final class KnockBack extends AbstractEffect
 	
 	public KnockBack(StatsSet params)
 	{
-		super(params);
-		
 		_distance = params.getInt("distance", 50);
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);

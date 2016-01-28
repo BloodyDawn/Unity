@@ -38,8 +38,6 @@ public final class OpenDoor extends AbstractEffect
 	
 	public OpenDoor(StatsSet params)
 	{
-		super(params);
-		
 		_chance = params.getInt("chance", 0);
 		_isItem = params.getBoolean("isItem", false);
 	}

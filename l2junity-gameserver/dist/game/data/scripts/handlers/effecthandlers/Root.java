@@ -35,7 +35,6 @@ public final class Root extends AbstractEffect
 {
 	public Root(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

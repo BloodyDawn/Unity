@@ -40,8 +40,6 @@ public final class Lethal extends AbstractEffect
 	
 	public Lethal(StatsSet params)
 	{
-		super(params);
-		
 		_fullLethal = params.getDouble("fullLethal", 0);
 		_halfLethal = params.getDouble("halfLethal", 0);
 	}

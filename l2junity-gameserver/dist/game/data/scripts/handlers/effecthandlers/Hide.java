@@ -35,7 +35,6 @@ public final class Hide extends AbstractEffect
 {
 	public Hide(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

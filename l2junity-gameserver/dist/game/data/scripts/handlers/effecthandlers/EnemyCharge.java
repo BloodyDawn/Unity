@@ -39,8 +39,6 @@ public final class EnemyCharge extends AbstractEffect
 	
 	public EnemyCharge(StatsSet params)
 	{
-		super(params);
-		
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);

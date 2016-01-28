@@ -34,7 +34,6 @@ public final class TakeFort extends AbstractEffect
 {
 	public TakeFort(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

@@ -35,8 +35,6 @@ public class ResistDispelByCategory extends AbstractEffect
 	
 	public ResistDispelByCategory(StatsSet params)
 	{
-		super(params);
-		
 		_amount = params.getDouble("amount", 0);
 		_slot = params.getEnum("slot", DispelSlotType.class, DispelSlotType.BUFF);
 	}

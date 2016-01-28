@@ -32,7 +32,6 @@ public final class BlockMove extends Buff
 {
 	public BlockMove(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

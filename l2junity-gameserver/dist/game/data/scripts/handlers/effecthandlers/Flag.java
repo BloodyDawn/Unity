@@ -32,7 +32,6 @@ public final class Flag extends AbstractEffect
 {
 	public Flag(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

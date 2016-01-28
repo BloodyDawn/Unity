@@ -31,7 +31,6 @@ public final class ProtectionBlessing extends AbstractEffect
 {
 	public ProtectionBlessing(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override

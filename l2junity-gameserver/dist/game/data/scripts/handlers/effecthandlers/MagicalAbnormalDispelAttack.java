@@ -41,8 +41,6 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 	
 	public MagicalAbnormalDispelAttack(StatsSet params)
 	{
-		super(params);
-		
 		_power = params.getDouble("power", 0);
 		_abnormalType = AbnormalType.getAbnormalType(params.getString("abnormalType", null));
 	}

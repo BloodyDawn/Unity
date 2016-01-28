@@ -43,8 +43,6 @@ public final class TeleportToNpc extends AbstractEffect
 	
 	public TeleportToNpc(StatsSet params)
 	{
-		super(params);
-		
 		_npcIds = params.getIntArray("npcId", ";");
 		_party = params.getBoolean("party", false);
 	}

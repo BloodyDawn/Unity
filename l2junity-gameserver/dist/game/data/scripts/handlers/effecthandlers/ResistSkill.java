@@ -39,8 +39,6 @@ public final class ResistSkill extends AbstractEffect
 	
 	public ResistSkill(StatsSet params)
 	{
-		super(params);
-		
 		for (int i = 1;; i++)
 		{
 			int skillId = params.getInt("skillId" + i, 0);

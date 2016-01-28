@@ -41,8 +41,6 @@ public final class RegularAttack extends AbstractEffect
 	
 	public RegularAttack(StatsSet params)
 	{
-		super(params);
-		
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);
 	}

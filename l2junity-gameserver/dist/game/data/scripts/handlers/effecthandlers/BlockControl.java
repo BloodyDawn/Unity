@@ -33,7 +33,6 @@ public class BlockControl extends AbstractEffect
 {
 	public BlockControl(StatsSet params)
 	{
-		super(params);
 	}
 	
 	@Override
