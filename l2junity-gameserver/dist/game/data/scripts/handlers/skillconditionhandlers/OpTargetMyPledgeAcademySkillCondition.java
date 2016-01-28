@@ -25,11 +25,11 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author NosBit
+ * @author 
  */
-public class TestSkillCondition implements ISkillCondition
+public class OpTargetMyPledgeAcademySkillCondition implements ISkillCondition
 {
-	public TestSkillCondition(StatsSet params)
+	public OpTargetMyPledgeAcademySkillCondition(StatsSet params)
 	{
 
 	}
