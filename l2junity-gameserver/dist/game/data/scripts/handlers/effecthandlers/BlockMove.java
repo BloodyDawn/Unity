@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -28,7 +29,7 @@ import org.l2junity.gameserver.model.skills.Skill;
  * Immobile Buff effect implementation.
  * @author mkizub
  */
-public final class BlockMove extends Buff
+public final class BlockMove extends AbstractEffect
 {
 	public BlockMove(StatsSet params)
 	{
