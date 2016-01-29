@@ -647,8 +647,9 @@
 			<effect name="PhysicalAttack">
 				<power>4640</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>70</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -773,8 +774,9 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>270</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealPercent">
 				<power>20</power>
@@ -1075,7 +1077,7 @@
 		<castRange>40</castRange>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">18</value>
 					<value level="2">25</value>
@@ -1090,6 +1092,7 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1975,8 +1978,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>145</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2079,8 +2083,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>145</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2384,7 +2389,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -2453,7 +2457,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
-
 			<effect name="Speed">
 				<amount>25</amount>
 				<mode>PER</mode>

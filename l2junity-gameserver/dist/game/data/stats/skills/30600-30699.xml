@@ -34,10 +34,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Eviscerator Force -->
 				<skillId>30603</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -57,7 +58,6 @@
 		<effectPoint>2</effectPoint>
 		<isMagic>3</isMagic>
 		<effects>
-
 		</effects>
 	</skill>
 	<skill id="30604" levels="1" name="Block Eviscerator Force">
@@ -78,10 +78,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Sayha's Seer Force -->
 				<skillId>30606</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -101,7 +102,6 @@
 		<effectPoint>2</effectPoint>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>1</amount>
 				<mode>PER</mode>

@@ -479,7 +479,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">16</value>
 					<value level="2">24</value>
@@ -494,6 +494,7 @@
 					<value level="11">68</value>
 					<value level="12">68</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -733,7 +734,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ReduceCancel">
 				<amount>-18</amount>
 				<mode>DIFF</mode>
@@ -788,7 +788,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">10</value>
@@ -824,7 +823,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>HOLY</attribute>
@@ -840,7 +838,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">-11</value>
@@ -862,7 +859,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">10</value>
@@ -1018,7 +1014,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="WeightPenalty">
 				<amount>
 					<value level="1">3000</value>
@@ -1190,7 +1185,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">10</value>
@@ -1356,7 +1350,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ReduceCancel">
 				<amount>
 					<value level="1">-18</value>
@@ -1718,7 +1711,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">20</value>
@@ -1905,7 +1897,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceTrait">
 				<POISON>25</POISON>
 				<HOLD>
@@ -1952,7 +1943,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceTrait">
 				<HOLD>25</HOLD>
 				<SHOCK>
@@ -1990,7 +1980,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceTrait">
 				<POISON>25</POISON>
 				<BLEED>25</BLEED>
@@ -2014,8 +2003,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>9.26</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2032,8 +2022,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>18.52</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>5000</amount>
@@ -2054,8 +2045,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>27.78</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>10000</amount>
@@ -2076,8 +2068,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>61.11</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>28000</amount>
@@ -2098,8 +2091,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>116.7</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>58000</amount>
@@ -2120,8 +2114,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>200</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>103000</amount>
@@ -2142,8 +2137,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>205.6</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>106000</amount>
@@ -2164,8 +2160,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>288.9</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>151000</amount>
@@ -2186,8 +2183,9 @@
 		<icon>icon.skill11756</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>372.2</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MaxMp">
 				<amount>196000</amount>
@@ -2203,7 +2201,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PhysicalDefence">
 				<amount>200</amount>
 				<mode>PER</mode>

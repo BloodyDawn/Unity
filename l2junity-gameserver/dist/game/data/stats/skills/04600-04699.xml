@@ -117,7 +117,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN</targetType>
 		<effects>
-
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -504,7 +503,6 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">-20</value>
@@ -622,7 +620,7 @@
 					<value level="12">2617</value>
 				</power>
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">16</value>
 					<value level="2">24</value>
@@ -637,6 +635,7 @@
 					<value level="11">68</value>
 					<value level="12">68</value>
 				</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -817,7 +816,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">20</value>
@@ -1109,7 +1107,7 @@
 		<affectRange>200</affectRange>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">18</value>
 					<value level="2">25</value>
@@ -1124,6 +1122,7 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1871,7 +1870,6 @@
 		<icon>icon.skill1085</icon>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">80</value>
@@ -1930,7 +1928,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>
 					<value level="1">55</value>
@@ -2146,7 +2143,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
@@ -2348,7 +2344,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalAttackSpeed">
 				<amount>
 					<value level="1">15</value>
@@ -2408,7 +2403,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>
 					<value level="1">55</value>
@@ -2833,7 +2827,6 @@
 		<icon>icon.skill1077</icon>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">15</value>
@@ -3012,7 +3005,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">16</value>
 					<value level="2">24</value>
@@ -3027,6 +3020,7 @@
 					<value level="11">68</value>
 					<value level="12">68</value>
 				</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -4893,8 +4887,9 @@
 			<effect name="MagicalAttack">
 				<power>648</power>
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>216</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -4930,8 +4925,9 @@
 			<effect name="MagicalAttack">
 				<power>648</power>
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>216</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -5184,7 +5180,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>-45</amount>
 				<mode>PER</mode>
@@ -5480,7 +5475,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">20</value>

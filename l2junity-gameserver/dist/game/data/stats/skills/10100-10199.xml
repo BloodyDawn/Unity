@@ -32,7 +32,6 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -200,7 +199,6 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -421,12 +419,12 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Paladin's Aura -->
 				<skillId>10108</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -452,12 +450,12 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Avenger's Aura -->
 				<skillId>10109</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-
 			<effect name="PAtk">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -491,12 +489,12 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Sentinel's Aura -->
 				<skillId>10110</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-
 			<effect name="MagicalDefence">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -534,10 +532,11 @@
 		<targetType>SELF</targetType>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Templar's Aura -->
 				<skillId>10111</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -570,7 +569,6 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -603,7 +601,6 @@
 		<effectPoint>2</effectPoint>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>-30</amount>
 				<mode>PER</mode>
@@ -646,7 +643,6 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>20</amount>
 				<mode>PER</mode>

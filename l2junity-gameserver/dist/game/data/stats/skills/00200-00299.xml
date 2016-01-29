@@ -884,8 +884,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>9</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="SilentMove">
 			</effect>
@@ -906,8 +907,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="2">
+			<effect name="DamOverTime">
 				<power>12</power>
+				<ticks>2</ticks>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>25</amount>
@@ -1199,7 +1201,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">25</value>
 					<value level="2">25</value>
@@ -1251,6 +1253,7 @@
 					<value level="48">67</value>
 					<value level="49">67</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1290,8 +1293,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Relax" ticks="3">
+			<effect name="Relax">
 				<power>1</power>
+				<ticks>3</ticks>
 			</effect>
 			<effect name="HpRegen">
 				<amount>5</amount>
@@ -1934,7 +1938,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">1.3</value>
@@ -3495,8 +3498,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="MpConsumePerLevel">
 				<power>0.4</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Accuracy">
 				<amount>3</amount>
@@ -4680,7 +4684,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -4705,7 +4708,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>DARK</attribute>
@@ -4868,7 +4870,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -4901,7 +4902,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>HOLY</attribute>
@@ -6082,8 +6082,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="MpConsumePerLevel">
 				<power>2</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -6413,7 +6414,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="AreaDamage">
 				<amount>-40</amount>
 				<mode>DIFF</mode>
@@ -6430,8 +6430,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="ChameleonRest" ticks="5">
+			<effect name="ChameleonRest">
 				<power>2</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

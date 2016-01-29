@@ -9,7 +9,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>10</amount>
 				<attribute>FIRE</attribute>
@@ -37,7 +36,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="ResistAbnormalByCategory">
 				<amount>-1</amount>
 				<slot>DEBUFF</slot>
@@ -128,7 +126,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>WATER</attribute>
@@ -191,7 +188,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>10</amount>
 				<mode>DIFF</mode>
@@ -211,7 +207,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>1</amount>
 				<mode>PER</mode>
@@ -231,7 +226,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="StatUp">
 				<amount>1</amount>
 				<stat>STR</stat>
@@ -251,7 +245,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>WIND</attribute>
@@ -367,7 +360,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>FIRE</attribute>
@@ -447,7 +439,6 @@
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
-
 			<effect name="ResistDispelByCategory">
 				<amount>-100</amount>
 				<slot>BUFF</slot>
@@ -463,7 +454,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="Reuse">
 				<amount>-1</amount>
 				<mode>PER</mode>
@@ -497,8 +487,9 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>92</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="DamageShield">
 				<amount>50</amount>
@@ -514,7 +505,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>EARTH</attribute>
@@ -607,7 +597,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>DARK</attribute>
@@ -642,7 +631,6 @@
 					<value level="2">3</value>
 				</times>
 			</effect>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">0</value>
@@ -731,18 +719,20 @@
 		<isMagic>3</isMagic>
 		<toggleGroupId>0</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Sigel Force -->
 				<skillId>1928</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-			<effect name="Synergy" ticks="15">
+			<effect name="Synergy">
 				<!-- Party Solidarity -->
 				<optionalSlots>SYNERGY_FEOH;SYNERGY_LENKER;SYNERGY_OTHEL;SYNERGY_SEER;SYNERGY_TIR;SYNERGY_WYNN;SYNERGY_YR</optionalSlots>
 				<requiredSlots>SYNERGY_SIGEL;SYNERGY_EOLH</requiredSlots>
 				<partyBuffSkillId>1955</partyBuffSkillId>
 				<minSlot>2</minSlot>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -785,10 +775,11 @@
 		<isMagic>3</isMagic>
 		<toggleGroupId>0</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Tyrr Force -->
 				<skillId>1930</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -813,7 +804,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>1</amount>
 				<mode>PER</mode>
@@ -832,10 +822,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Othell Force -->
 				<skillId>1932</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -878,10 +869,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Yul Force -->
 				<skillId>1934</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -924,10 +916,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Feoh Force -->
 				<skillId>1936</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -970,10 +963,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime">
 				<!-- Wynn Force -->
 				<skillId>1938</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -998,7 +992,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="MagicMpCost">
 				<amount>-3</amount>
 				<mode>PER</mode>
@@ -1023,10 +1016,11 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>3</isMagic>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Aeore Force -->
 				<skillId>1940</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1343,7 +1337,6 @@
 		</abnormalLvl>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>
 					<value level="1">1</value>
@@ -1509,7 +1502,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<excludedFromCheck>true</excludedFromCheck>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">10</value>

@@ -295,7 +295,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">6.45</value>
 					<value level="2">11.1</value>
@@ -310,6 +310,7 @@
 					<value level="11">113.38</value>
 					<value level="12">123.15</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -370,7 +371,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">8</value>
 					<value level="2">21</value>
@@ -385,6 +386,7 @@
 					<value level="11">324</value>
 					<value level="12">354</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -428,7 +430,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">15</value>
 					<value level="2">21</value>
@@ -443,6 +445,7 @@
 					<value level="11">265</value>
 					<value level="12">295</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -468,7 +471,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="ShieldDefence">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -494,7 +496,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalAttackSpeed">
 				<amount>-15</amount>
 				<mode>PER</mode>
@@ -1012,11 +1013,12 @@
 					<value level="2">1084</value>
 				</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">62</value>
 					<value level="2">67</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1230,7 +1232,7 @@
 		</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">218</value>
 					<value level="2">266</value>
@@ -1240,6 +1242,7 @@
 					<value level="6">335</value>
 					<value level="7">335</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2030,8 +2033,9 @@
 			<effect name="PhysicalAttack">
 				<power>2616</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>71</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2086,8 +2090,9 @@
 				<power>2319</power>
 			</effect>
 			<effect name="BlockActions" />
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>52</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

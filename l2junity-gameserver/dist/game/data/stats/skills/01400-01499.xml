@@ -608,7 +608,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
 		<effects>
-
 			<effect name="CpHealPercent">
 				<power>20</power>
 			</effect>
@@ -686,7 +685,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
 		<effects>
-
 			<effect name="ResistDispelByCategory">
 				<amount>-30</amount>
 				<slot>BUFF</slot>
@@ -1199,7 +1197,7 @@
 		<effects>
 			<effect name="BlockActions">
 			</effect>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>
 					<value level="1">27</value>
 					<value level="2">30</value>
@@ -1207,6 +1205,7 @@
 					<value level="4">37</value>
 					<value level="5">42</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-90</amount>
@@ -1535,7 +1534,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">24</value>
 					<value level="2">32</value>
@@ -1548,6 +1547,7 @@
 					<value level="9">63</value>
 					<value level="10">63</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2224,7 +2224,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">15</value>
@@ -2256,7 +2255,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>DARK</attribute>
@@ -2467,7 +2465,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">12</value>
@@ -2772,8 +2769,9 @@
 		<effectRange>1400</effectRange>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>173</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2864,8 +2862,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>173</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2925,7 +2924,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -2963,8 +2961,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>173</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2985,7 +2984,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="HealEffect">
 				<amount>1000</amount>
 				<mode>DIFF</mode>
@@ -3105,7 +3103,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>FIRE</attribute>
@@ -3133,7 +3130,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>WATER</attribute>
@@ -3161,7 +3157,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>WIND</attribute>
@@ -3189,7 +3184,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>EARTH</attribute>
@@ -3228,8 +3222,9 @@
 			<effect name="MagicalAttack">
 				<power>117</power>
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>111</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3263,8 +3258,9 @@
 			<effect name="MagicalAttack">
 				<power>117</power>
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>111</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3503,7 +3499,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>
 					<value level="1">30</value>
@@ -3668,7 +3663,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>
 					<value level="1">75</value>
@@ -3714,8 +3708,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="1">
+			<effect name="ManaHealOverTime">
 				<power>200</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="BlockActions">
 			</effect>
@@ -4159,7 +4154,7 @@
 			</not>
 		</cond>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">15</value>
 					<value level="2">18</value>
@@ -4170,6 +4165,7 @@
 					<value level="7">30</value>
 					<value level="8">32</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -4231,7 +4227,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>5</amount>
 				<attribute>FIRE</attribute>

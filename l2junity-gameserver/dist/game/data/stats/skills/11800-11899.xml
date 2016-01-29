@@ -58,12 +58,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">106</value>
 					<value level="2">142</value>
 					<value level="3">178</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -139,12 +140,13 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">107</value>
 					<value level="2">143</value>
 					<value level="3">179</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -294,11 +296,12 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">200</value>
 					<value level="2">400</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -326,11 +329,12 @@
 		</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">200</value>
 					<value level="2">400</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -545,12 +549,13 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">107</value>
 					<value level="2">143</value>
 					<value level="3">179</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -700,7 +705,6 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="HealEffect">
 				<amount>-300</amount>
 				<mode>DIFF</mode>
@@ -808,7 +812,6 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP,-1;CRITICAL_PROB_UP,-1;CRITICAL_DMG_UP,-1;CHEAP_MAGIC,-1;MAGIC_CRITICAL_UP,-1</dispel>
 			</effect>
@@ -905,7 +908,6 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1</dispel>
 			</effect>
@@ -961,7 +963,6 @@
 				<SHOCK>40</SHOCK>
 				<POISON>50</POISON>
 			</effect>
-
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_ALIGNMENT,-1;ARMOR_UNHOLY,-1;DANCE_OF_LIGHT,-1;SONG_OF_INVOCATION,-1;RESIST_BLEEDING,-1;RESIST_SHOCK,-1</dispel>
 			</effect>
@@ -1006,7 +1007,6 @@
 				<DERANGEMENT>50</DERANGEMENT>
 				<SLEEP>50</SLEEP>
 			</effect>
-
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_PROTECTION,-1;RESIST_DEBUFF_DISPEL,-1</dispel>
 			</effect>
@@ -1131,7 +1131,6 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<effects>
-
 			<effect name="DispelBySlotProbability">
 				<dispel>MULTI_BUFF,-1;COUNTER_CRITICAL,-1</dispel>
 			</effect>
@@ -1330,7 +1329,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<canBeDispelled>false</canBeDispelled>
 		<effects>
-
 			<effect name="Speed">
 				<amount>5</amount>
 				<mode>DIFF</mode>
@@ -1593,7 +1591,6 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="Reuse">
 				<amount>
 					<value level="1">-5</value>
@@ -1669,7 +1666,6 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>
 					<value level="1">10</value>
@@ -1789,7 +1785,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>1</isMagic>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
 				<attribute>FIRE</attribute>

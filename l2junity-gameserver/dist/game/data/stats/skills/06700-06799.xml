@@ -395,7 +395,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -471,7 +470,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ReduceCancel">
 				<amount>-53</amount>
 				<mode>DIFF</mode>
@@ -499,8 +497,9 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>30</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Heal">
 				<power>450</power>
@@ -625,7 +624,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
 				<attribute>DARK</attribute>
@@ -890,8 +888,9 @@
 		<attributeValue>120</attributeValue>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="DefenceAttribute">
 				<amount>-60</amount>
@@ -1154,8 +1153,9 @@
 		<attributeValue>120</attributeValue>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1257,7 +1257,6 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1358,7 +1357,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1635,7 +1633,6 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1786,8 +1783,9 @@
 		<attributeValue>120</attributeValue>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="BlockActions" />
 			<effect name="Speed">

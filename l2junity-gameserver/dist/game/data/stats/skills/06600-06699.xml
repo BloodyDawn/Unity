@@ -1789,7 +1789,6 @@
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -1941,7 +1940,6 @@
 		<hitTime>100</hitTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
@@ -2261,8 +2259,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockActions" />
-			<effect name="DamOverTime" ticks="#ticks">
+			<effect name="DamOverTime">
 				<power>115</power>
+				<ticks>#ticks</ticks>
 			</effect>
 			<effect name="CallSkill">
 				<skillId>6302</skillId>
@@ -2395,7 +2394,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
@@ -2845,8 +2843,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
 		<effects>
-			<effect name="DamOverTimePercent" ticks="5">
+			<effect name="DamOverTimePercent">
 				<power>0.02</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
@@ -3053,11 +3052,13 @@
 		<targetType>AURA</targetType>
 		<effects>
 			<effect name="BlockActions" />
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>115</power>
+				<ticks>5</ticks>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>5</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>

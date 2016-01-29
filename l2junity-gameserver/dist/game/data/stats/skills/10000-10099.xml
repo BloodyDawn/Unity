@@ -99,7 +99,6 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
 			</effect>
@@ -170,7 +169,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefenceRate">
 				<amount>100</amount>
@@ -224,7 +222,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">949</value>
@@ -382,7 +379,6 @@
 		<magicLvl>89</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -425,7 +421,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<effects>
-
 			<effect name="PhysicalSkillPower">
 				<amount>
 					<value level="1">25</value>
@@ -1401,7 +1396,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<effects>
-
 			<effect name="TransferDamageToPlayer">
 				<amount>90</amount>
 			</effect>
@@ -1460,7 +1454,8 @@
 		<rideState>NONE</rideState>
 		<mpConsume>50</mpConsume>
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="MpConsumePerLevel">
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1718,7 +1713,6 @@
 			<using kind="SWORD, BLUNT" />
 		</cond>
 		<effects>
-
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -1934,11 +1928,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Rage Aura -->
 				<skillId>10029</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -2014,12 +2008,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Challenge Aura -->
 				<skillId>10031</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-
 			<effect name="MagicMpCost">
 				<amount>-25</amount>
 				<mode>PER</mode>
@@ -2067,7 +2061,6 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-
 			<effect name="MagicMpCost">
 				<amount>-15</amount>
 				<mode>PER</mode>
@@ -2107,10 +2100,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Iron Aura -->
 				<skillId>10033</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -2164,12 +2158,12 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Aura Resistance -->
 				<skillId>10035</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-
 			<effect name="MagicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -2212,7 +2206,6 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2247,10 +2240,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Recovery Aura -->
 				<skillId>10037</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 			<effect name="DefenceTrait">
 				<KNOCKBACK>25</KNOCKBACK>
@@ -2308,10 +2302,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Spirit Aura -->
 				<skillId>10039</skillId>
 				<skillLevel>1</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>25</DERANGEMENT>
@@ -2530,7 +2525,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">20</value>
@@ -2682,7 +2676,6 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -2764,7 +2757,6 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -2846,7 +2838,6 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -2928,7 +2919,6 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -3010,7 +3000,6 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -3092,7 +3081,6 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -3464,8 +3452,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>-41</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3487,7 +3476,6 @@
 		<rideState>NONE</rideState>
 		<isMagic>4</isMagic>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>1000</amount>
 				<mode>DIFF</mode>
@@ -3762,7 +3750,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">2</value>
@@ -4135,7 +4122,6 @@
 		<targetType>SELF</targetType>
 		<mpConsume>8</mpConsume>
 		<effects>
-
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">5</value>
@@ -4773,7 +4759,6 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -4896,7 +4881,6 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>

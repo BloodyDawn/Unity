@@ -8,7 +8,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>CON</stat>
@@ -23,7 +22,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>INT</stat>
@@ -38,7 +36,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>WIT</stat>
@@ -53,7 +50,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="StatUp">
 				<amount>2</amount>
 				<stat>MEN</stat>
@@ -120,7 +116,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="StatUp">
 				<amount>1</amount>
 				<stat>STR</stat>
@@ -1367,8 +1362,9 @@
 			<effect name="MagicalSoulAttack">
 				<power>112</power>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>-12</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -1505,10 +1501,10 @@
 				<power>140</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>12</power>
+				<ticks>5</ticks>
 			</effect>
-
 			<effect name="Speed">
 				<amount>-10</amount>
 				<mode>PER</mode>
@@ -1584,8 +1580,9 @@
 			<effect name="MagicalAttack">
 				<power>117</power>
 			</effect>
-			<effect name="DamOverTime" ticks="3">
+			<effect name="DamOverTime">
 				<power>111</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1619,10 +1616,10 @@
 				<power>139</power>
 				<percentage>25</percentage>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>12</power>
+				<ticks>5</ticks>
 			</effect>
-
 			<effect name="DefenceAttribute">
 				<amount>-30</amount>
 				<attribute>DARK</attribute>
@@ -1687,10 +1684,10 @@
 				<power>140</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>12</power>
+				<ticks>5</ticks>
 			</effect>
-
 			<effect name="Speed">
 				<amount>-30</amount>
 				<mode>PER</mode>
@@ -1796,8 +1793,9 @@
 				<power>140</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>12</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-10</amount>
@@ -1901,7 +1899,6 @@
 		<itemConsumeCount>20</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -2090,7 +2087,6 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2171,7 +2167,6 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -2245,7 +2240,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>100</amount>
 				<mode>PER</mode>

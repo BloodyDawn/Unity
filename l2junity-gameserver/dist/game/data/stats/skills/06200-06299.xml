@@ -313,7 +313,7 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">65</value>
 					<value level="2">75</value>
@@ -335,6 +335,7 @@
 					<value level="18">85</value>
 					<value level="19">87</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -501,7 +502,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>-10</amount>
 				<mode>PER</mode>
@@ -1645,7 +1645,6 @@
 		<hitTime>500</hitTime>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="ReflectMagic">
 				<amount>20</amount>
 			</effect>

@@ -508,8 +508,9 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isSuicideAttack>true</isSuicideAttack>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>100</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -752,9 +753,10 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<canKill>true</canKill>
 				<power>500</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -802,9 +804,10 @@
 		<trait>BLEED</trait>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<canKill>true</canKill>
 				<power>500</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -834,9 +837,10 @@
 		<trait>POISON</trait>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<canKill>true</canKill>
 				<power>500</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -1289,7 +1293,6 @@
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -2223,9 +2226,10 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="DamOverTime" ticks="2">
+			<effect name="DamOverTime">
 				<canKill>true</canKill>
 				<power>85</power>
+				<ticks>2</ticks>
 			</effect>
 		</effects>
 	</skill>

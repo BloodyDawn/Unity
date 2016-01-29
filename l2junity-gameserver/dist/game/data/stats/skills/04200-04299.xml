@@ -349,7 +349,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">19</value>
 					<value level="2">28</value>
@@ -364,6 +364,7 @@
 					<value level="11">79</value>
 					<value level="12">79</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -492,7 +493,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>
 					<value level="1">2</value>
 					<value level="2">2</value>
@@ -507,6 +508,7 @@
 					<value level="11">12</value>
 					<value level="12">12</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -769,7 +771,7 @@
 		<icon>icon.skill1229</icon>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">180</value>
 					<value level="2">228</value>
@@ -784,6 +786,7 @@
 					<value level="11">951</value>
 					<value level="12">940</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealPercent">
 				<power>3</power>
@@ -1647,7 +1650,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
 		<effects>
-
 			<effect name="Reuse">
 				<amount>200</amount>
 				<mode>PER</mode>
@@ -1761,8 +1763,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>98</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2627,7 +2630,7 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">16</value>
 					<value level="2">24</value>
@@ -2642,6 +2645,7 @@
 					<value level="11">68</value>
 					<value level="12">68</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3206,7 +3210,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>DARK</attribute>

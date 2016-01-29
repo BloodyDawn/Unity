@@ -50,7 +50,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="ShieldDefence">
 				<amount>225</amount>
 				<mode>DIFF</mode>
@@ -65,7 +64,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>10</amount>
 				<attribute>WATER</attribute>
@@ -84,7 +82,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>10</amount>
 				<attribute>FIRE</attribute>
@@ -179,7 +176,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>17.3</amount>
 				<mode>DIFF</mode>
@@ -212,7 +208,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">0</value>
@@ -296,7 +291,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxMp">
 				<amount>
 					<value level="1">0</value>
@@ -348,7 +342,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>
 					<value level="1">7.17</value>
@@ -626,7 +619,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">111</value>
@@ -1312,7 +1304,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>30</amount>
 				<mode>DIFF</mode>
@@ -2564,8 +2555,9 @@
 				<power>1549</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>139</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2792,7 +2784,6 @@
 		<attributeValue>20</attributeValue>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>-25</amount>
 				<attribute>HOLY</attribute>

@@ -19,8 +19,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>27</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Heal">
 				<power>400</power>
@@ -125,7 +126,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -194,7 +194,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -270,7 +269,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -342,7 +340,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -445,7 +442,6 @@
 			<player mp="10" />
 		</cond>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -533,8 +529,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="MpConsumePerLevel">
 				<power>0.4</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="TransferDamageToSummon">
 				<amount>50</amount>
@@ -563,7 +560,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SERVITOR</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -657,7 +653,6 @@
 			<player mp="10" />
 		</cond>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>20</amount>
 				<mode>PER</mode>
@@ -1346,8 +1341,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>351</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -1554,8 +1550,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>52</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2013,8 +2010,9 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>134</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2078,7 +2076,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -2118,7 +2115,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="TriggerSkillByDamage">
 				<!-- Protection Power -->
 				<attackerType>L2Character</attackerType>
@@ -2156,7 +2152,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="TriggerSkillByDamage">
 				<!-- Protection Power -->
 				<attackerType>L2Character</attackerType>
@@ -2363,7 +2358,6 @@
 				<criticalChance>50</criticalChance>
 				<overHit>true</overHit>
 			</effect>
-
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
 				<rate>25</rate>
@@ -2534,7 +2528,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
 				<amount>40</amount>
@@ -2574,7 +2567,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
 				<amount>75</amount>
@@ -2849,8 +2841,9 @@
 				<power>4500</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3083,7 +3076,6 @@
 			<player active_effect_id_lvl="5562,3" />
 		</cond>
 		<effects>
-
 			<effect name="Speed">
 				<amount>30</amount>
 				<mode>DIFF</mode>
@@ -3195,9 +3187,9 @@
 			<player active_effect_id_lvl="5563,3" />
 		</cond>
 		<effects>
-
-			<effect name="HealOverTime" ticks="5">
+			<effect name="HealOverTime">
 				<power>50</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="HealPercent">
 				<power>50</power>
@@ -3273,7 +3265,6 @@
 			<player active_effect_id_lvl="5564,3" />
 		</cond>
 		<effects>
-
 			<effect name="VampiricAttack">
 				<amount>40</amount>
 				<chance>30</chance>
@@ -3653,8 +3644,9 @@
 			<effect name="PhysicalAttack">
 				<power>1689</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>69</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

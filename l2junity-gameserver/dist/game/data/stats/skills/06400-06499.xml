@@ -78,7 +78,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">100</value>
 					<value level="2">220</value>
@@ -86,6 +86,7 @@
 					<value level="4">880</value>
 					<value level="5">1600</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -114,8 +115,9 @@
 			<effect name="PhysicalAttack">
 				<power>13688</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>58</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -437,8 +439,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>FRONT_AREA</targetType>
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>4</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -468,8 +471,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>4</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -499,11 +503,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>AURA</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>69</power>
+				<ticks>5</ticks>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>4</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -812,7 +818,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>35</amount>
 				<mode>PER</mode>
@@ -897,12 +902,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTimePercent" ticks="5">
+			<effect name="DamOverTimePercent">
 				<power>
 					<value level="1">0.005</value>
 					<value level="2">0.01</value>
 					<value level="3">0.02</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>
@@ -949,8 +955,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTimePercent" ticks="5">
+			<effect name="DamOverTimePercent">
 				<power>0.05</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>50</amount>
@@ -992,7 +999,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">30</value>
 					<value level="2">60</value>
@@ -1002,6 +1009,7 @@
 					<value level="6">350</value>
 					<value level="7">500</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1141,7 +1149,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -1166,7 +1173,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>100</amount>
 				<mode>PER</mode>
@@ -1195,7 +1201,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<effects>
-
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>100</amount>
 				<mode>PER</mode>

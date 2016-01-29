@@ -708,13 +708,15 @@
 				<max>99</max>
 			</effect>
 			<effect name="BlockActions" />
-			<effect name="HealOverTime" ticks="5">
+			<effect name="HealOverTime">
 				<!-- Unconfirmed -->
 				<power>60</power>
+				<ticks>5</ticks>
 			</effect>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<!-- Unconfirmed -->
 				<power>10</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -955,7 +957,6 @@
 		<reuseDelay>300000</reuseDelay>
 		<isMagic>1</isMagic>
 		<effects>
-
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>
 					<value level="1">0</value>
@@ -1429,7 +1430,6 @@
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 		</effects>
 	</skill>
 	<skill id="30040" levels="17" name="Eminent Blunt Weapon Mastery">
@@ -1444,7 +1444,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="TriggerSkillBySkillAttack"> <!-- TODO: This should start triggering on skill level 3 -->
 				<!-- Storm Sign -->
 				<!-- Hydro Attack -->
@@ -1612,7 +1611,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">0</value>
@@ -1752,7 +1750,6 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">0</value>
@@ -1851,7 +1848,6 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">10</value>

@@ -96,7 +96,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -151,7 +150,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">862</value>
@@ -210,7 +208,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>6</amount>
 				<mode>PER</mode>
@@ -243,7 +240,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
 		<effects>
-
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
 				<SLEEP>30</SLEEP>
@@ -1793,7 +1789,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">480</value>
 					<value level="2">494</value>
@@ -1801,6 +1797,7 @@
 					<value level="4">523</value>
 					<value level="5">537</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2802,7 +2799,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<effects>
-
 			<effect name="TriggerSkillByDamage">
 				<!-- Flame Armor -->
 				<minAttackerLevel>1</minAttackerLevel>
@@ -2929,7 +2925,6 @@
 					<value level="9">199</value>
 				</power>
 			</effect>
-
 			<effect name="MAtk">
 				<amount>-30</amount>
 				<mode>PER</mode>
@@ -3036,7 +3031,6 @@
 				</power>
 				<percentage>25</percentage>
 			</effect>
-
 			<effect name="MAtk">
 				<amount>-30</amount>
 				<mode>PER</mode>
@@ -3380,8 +3374,9 @@
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="BlockControl" />
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>100</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -3979,8 +3974,9 @@
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-40</amount>
@@ -4038,8 +4034,9 @@
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>160</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -4090,7 +4087,6 @@
 			<effect name="EffectFlag">
 				<effectFlag>DOUBLE_CAST</effectFlag>
 			</effect>
-
 			<effect name="ReduceCancel">
 				<amount>-100</amount>
 				<mode>DIFF</mode>
@@ -4253,7 +4249,6 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
@@ -4293,7 +4288,6 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
@@ -4333,7 +4327,6 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
@@ -4371,7 +4364,6 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_HOLY,9</dispel>
 			</effect>
@@ -4409,7 +4401,6 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
 			</effect>
@@ -4783,11 +4774,13 @@
 		<reuseDelay>300000</reuseDelay>
 		<effects>
 			<effect name="Invincible" />
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>266</power>
+				<ticks>1</ticks>
 			</effect>
-			<effect name="ManaHealOverTime" ticks="1">
+			<effect name="ManaHealOverTime">
 				<power>74</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>POISON,9;BLEEDING,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;STUN,9</dispel>

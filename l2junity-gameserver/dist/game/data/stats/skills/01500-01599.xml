@@ -95,7 +95,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
@@ -133,7 +132,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9</dispel>
 			</effect>
@@ -316,11 +314,13 @@
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 			</effect>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>90</power>
+				<ticks>1</ticks>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="1">
+			<effect name="ManaDamOverTime">
 				<power>30</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -576,8 +576,9 @@
 				<power>112</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>12</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -815,7 +816,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
@@ -1484,7 +1484,6 @@
 		<attributeValue>20</attributeValue>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>-25</amount>
 				<attribute>HOLY</attribute>
@@ -1695,7 +1694,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">9</value>
 					<value level="2">9</value>
@@ -1740,6 +1739,7 @@
 					<value level="41">15</value>
 					<value level="42">15</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>-50</amount>
@@ -2380,7 +2380,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>40</amount>
 				<mode>PER</mode>
@@ -2418,7 +2417,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2563,7 +2561,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_CLAN</targetType>
 		<effects>
-
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
 			</effect>
@@ -3000,7 +2997,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>
 					<value level="1">3</value>
@@ -3089,7 +3085,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">10</value>
@@ -3120,7 +3115,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
 				<attribute>FIRE</attribute>
@@ -3516,7 +3510,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">177</value>
@@ -4031,7 +4024,6 @@
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="WeightLimit">
 				<amount>10000</amount>
 				<mode>DIFF</mode>
@@ -4141,7 +4133,6 @@
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">10</value>
@@ -4270,7 +4261,6 @@
 		<magicLvl>1</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicMpCost">
 				<amount>
 					<value level="1">-1</value>
@@ -4356,7 +4346,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_HUNTER</slot>
 			</effect>
@@ -4393,7 +4382,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_HUNTER</slot>
 			</effect>
@@ -4731,7 +4719,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
 			</effect>
@@ -4789,7 +4776,6 @@
 		<magicLvl>80</magicLvl>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
 			</effect>
@@ -4835,7 +4821,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="WeightPenalty">
 				<amount>15000</amount>
 			</effect>
@@ -4864,7 +4849,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_MEDITATION</slot>
 			</effect>
@@ -4910,7 +4894,6 @@
 		<magicLvl>55</magicLvl>
 		<isMagic>3</isMagic>
 		<effects>
-
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_MEDITATION</slot>
 			</effect>

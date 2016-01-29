@@ -1111,7 +1111,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">7</value>
 					<value level="2">12</value>
@@ -1126,6 +1126,7 @@
 					<value level="11">66</value>
 					<value level="12">67</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2706,7 +2707,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>CLAN</targetType>
 		<effects>
-
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
 				<mode>PER</mode>
@@ -2885,7 +2885,6 @@
 			</effect>
 		</effects>
 		<selfEffects>
-
 		</selfEffects>
 	</skill>
 	<skill id="5085" levels="1" name="Anesthesia">
@@ -2936,9 +2935,10 @@
 		<specialLevel>-1</specialLevel>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<canKill>true</canKill>
 				<power>12</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

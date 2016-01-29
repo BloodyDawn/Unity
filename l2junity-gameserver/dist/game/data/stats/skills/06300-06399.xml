@@ -53,11 +53,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>AURA</targetType>
 		<effects>
-			<effect name="ManaHealOverTime" ticks="5">
+			<effect name="ManaHealOverTime">
 				<power>
 					<value level="1">60</value>
 					<value level="2">30</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -195,8 +196,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>139</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -892,8 +894,9 @@
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1048,8 +1051,9 @@
 			<effect name="PhysicalAttack">
 				<power>4563</power>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>200</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1254,7 +1258,6 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET_PARTY</targetType>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">5</value>
@@ -1666,8 +1669,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>93</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1749,8 +1753,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>95</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2017,8 +2022,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>93</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

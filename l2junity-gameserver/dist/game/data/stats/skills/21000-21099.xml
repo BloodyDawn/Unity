@@ -232,7 +232,6 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
@@ -261,7 +260,6 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
@@ -290,7 +288,6 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
@@ -361,7 +358,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VampiricAttack">
 				<amount>10</amount>
 				<chance>30</chance>
@@ -383,7 +379,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -405,7 +400,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -428,7 +422,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VampiricAttack">
 				<amount>10</amount>
 				<chance>30</chance>
@@ -450,7 +443,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -472,7 +464,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalAttackSpeed">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -495,7 +486,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -518,7 +508,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VampiricAttack">
 				<amount>10</amount>
 				<chance>30</chance>
@@ -541,7 +530,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -584,7 +572,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PhysicalAttackSpeed">
 				<amount>25</amount>
 				<mode>PER</mode>
@@ -612,7 +599,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="VampiricAttack">
 				<amount>10</amount>
 				<chance>30</chance>
@@ -634,7 +620,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -1251,8 +1236,9 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>30</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Heal">
 				<power>444</power>
@@ -1332,7 +1318,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
 				<mode>DIFF</mode>
@@ -1447,7 +1432,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
@@ -1504,7 +1488,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
 				<attribute>DARK</attribute>
@@ -1611,7 +1594,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
 				<mode>DIFF</mode>
@@ -1699,8 +1681,9 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>30</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Heal">
 				<power>444</power>
@@ -1730,7 +1713,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
 				<attribute>DARK</attribute>
@@ -1837,7 +1819,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
 				<mode>DIFF</mode>
@@ -1925,8 +1906,9 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>30</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Heal">
 				<power>444</power>
@@ -1956,7 +1938,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<trait>ETC</trait>
 		<effects>
-
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
 				<mode>DIFF</mode>
@@ -2233,7 +2214,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
@@ -2297,7 +2277,6 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>20</amount>
 				<mode>PER</mode>

@@ -162,7 +162,6 @@
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ReduceCancel">
 				<amount>-53</amount>
 				<mode>DIFF</mode>
@@ -241,7 +240,6 @@
 		<isMagic>2</isMagic>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>30</amount>
 				<mode>PER</mode>
@@ -520,7 +518,6 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PAtk">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -1414,8 +1411,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>100</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1445,8 +1443,9 @@
 		<affectRange>600</affectRange>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>120</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1484,8 +1483,9 @@
 		<icon>icon.skill0129</icon>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>100</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1725,11 +1725,12 @@
 		<affectRange>200</affectRange>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">120</value>
 					<value level="2">140</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1978,7 +1979,6 @@
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceTrait">
 				<PARALYZE>
 					<value level="1">50</value>

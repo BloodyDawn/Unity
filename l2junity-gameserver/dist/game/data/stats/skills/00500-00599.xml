@@ -14,8 +14,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="5">
+			<effect name="MpConsumePerLevel">
 				<power>0.4</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -1088,7 +1089,7 @@
 				<overHit>true</overHit>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">44</value>
 					<value level="2">44</value>
@@ -1125,6 +1126,7 @@
 					<value level="33">67</value>
 					<value level="34">67</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1744,7 +1746,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">76</value>
 					<value level="2">76</value>
@@ -1754,6 +1756,7 @@
 					<value level="6">83</value>
 					<value level="7">83</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -1943,7 +1946,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
 				<attribute>FIRE</attribute>
@@ -1983,7 +1985,6 @@
 			<using kind="DUAL" />
 		</cond>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
 				<attribute>HOLY</attribute>
@@ -2960,8 +2961,9 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>123</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3465,8 +3467,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>58</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3790,13 +3793,14 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">27</value>
 					<value level="2">27</value>
 					<value level="3">31</value>
 					<value level="4">31</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -4017,8 +4021,9 @@
 				</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>123</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -4233,11 +4238,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">88</value>
 					<value level="2">101</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

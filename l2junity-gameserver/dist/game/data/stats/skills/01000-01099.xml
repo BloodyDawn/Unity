@@ -32,7 +32,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="ManaDamOverTime" ticks="5">
+			<effect name="ManaDamOverTime">
 				<power>
 					<value level="1">0</value>
 					<value level="2">0</value>
@@ -50,6 +50,7 @@
 					<value level="14">6</value>
 					<value level="15">7</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -2091,7 +2092,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
 		<effects>
-
 			<effect name="AttackAttribute">
 				<amount>20</amount>
 				<attribute>HOLY</attribute>
@@ -3120,7 +3120,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>10</amount>
 				<attribute>FIRE</attribute>
@@ -3316,7 +3315,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>-20</amount>
 				<attribute>WIND</attribute>
@@ -3421,7 +3419,6 @@
 		</magicLvl>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">20</value>
@@ -3488,7 +3485,6 @@
 		</magicLvl>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ReduceCancel">
 				<amount>
 					<value level="1">-18</value>
@@ -3654,7 +3650,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>-20</amount>
 				<attribute>FIRE</attribute>
@@ -4035,7 +4030,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">11</value>
 					<value level="2">16</value>
@@ -4043,6 +4038,7 @@
 					<value level="4">41</value>
 					<value level="5">50</value>
 				</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

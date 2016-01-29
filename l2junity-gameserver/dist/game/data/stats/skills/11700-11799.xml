@@ -16,7 +16,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>
 					<value level="1">50</value>
@@ -261,7 +260,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">172</value>
 					<value level="2">173</value>
@@ -275,6 +274,7 @@
 					<value level="10">192</value>
 					<value level="11">200</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -826,7 +826,7 @@
 					<value level="11">201</value>
 				</power>
 			</effect>
-			<effect name="ManaHealOverTime" ticks="1">
+			<effect name="ManaHealOverTime">
 				<power>
 					<value level="1">12</value>
 					<value level="2">12</value>
@@ -840,6 +840,7 @@
 					<value level="10">13</value>
 					<value level="11">13</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -916,7 +917,7 @@
 					<value level="8">804</value>
 				</power>
 			</effect>
-			<effect name="ManaHealOverTime" ticks="1">
+			<effect name="ManaHealOverTime">
 				<power>
 					<value level="1">10</value>
 					<value level="2">10</value>
@@ -927,6 +928,7 @@
 					<value level="7">11</value>
 					<value level="8">11</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -953,8 +955,9 @@
 		<targetType>PARTY</targetType>
 		<effects>
 			<effect name="RebalanceHP" />
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>333</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1072,7 +1075,7 @@
 		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">266</value>
 					<value level="2">273</value>
@@ -1082,8 +1085,9 @@
 					<value level="6">410</value>
 					<value level="7">492</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
-			<effect name="ManaHealOverTime" ticks="1">
+			<effect name="ManaHealOverTime">
 				<power>
 					<value level="1">74</value>
 					<value level="2">77</value>
@@ -1093,6 +1097,7 @@
 					<value level="6">121</value>
 					<value level="7">145</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1355,7 +1360,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<effects>
-
 			<effect name="PhysicalAttackSpeed">
 				<amount>
 					<value level="1">-20</value>
@@ -1534,7 +1538,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">1000</value>
@@ -1592,24 +1595,27 @@
 		<toggleGroupId>0</toggleGroupId>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="MpConsumePerLevel" ticks="3">
+			<effect name="MpConsumePerLevel">
 				<power>2</power>
+				<ticks>3</ticks>
 			</effect>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Elegance of Light -->
 				<skillId>11808</skillId>
 				<skillLevel>
 					<value level="1">1</value>
 					<value level="2">2</value>
 				</skillLevel>
+				<ticks>15</ticks>
 			</effect>
-			<effect name="CallSkillOnActionTime" ticks="15">
+			<effect name="CallSkillOnActionTime">
 				<!-- Elegance of Light -->
 				<skillId>11809</skillId>
 				<skillLevel>
 					<value level="1">1</value>
 					<value level="2">2</value>
 				</skillLevel>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1814,7 +1820,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="DamOverTime" ticks="1">
+			<effect name="DamOverTime">
 				<power>
 					<value level="1">113</value>
 					<value level="2">118</value>
@@ -1825,6 +1831,7 @@
 					<value level="7">134</value>
 					<value level="8">134</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2303,7 +2310,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2396,7 +2402,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalAttackSpeed">
 				<amount>23</amount>
 				<mode>PER</mode>
@@ -2453,7 +2458,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">862</value>
@@ -2500,7 +2504,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">20</value>
@@ -2576,7 +2579,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MpRegen">
 				<amount>20</amount>
 				<mode>DIFF</mode>
@@ -2748,12 +2750,13 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">103</value>
 					<value level="2">138</value>
 					<value level="3">174</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -2834,12 +2837,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">172</value>
 					<value level="2">174</value>
 					<value level="3">176</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -2919,12 +2923,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">172</value>
 					<value level="2">174</value>
 					<value level="3">176</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -3004,12 +3009,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<effects>
-			<effect name="HealOverTime" ticks="1">
+			<effect name="HealOverTime">
 				<power>
 					<value level="1">172</value>
 					<value level="2">174</value>
 					<value level="3">176</value>
 				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>

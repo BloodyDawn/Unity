@@ -204,7 +204,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="FatalBlowRate">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -233,7 +232,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="AttackTrait">
 				<SHOCK>20</SHOCK>
 			</effect>
@@ -265,7 +263,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -354,7 +351,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MAtk">
 				<amount>
 					<value level="1">0</value>
@@ -786,7 +782,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
@@ -919,7 +914,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ReduceCancel">
 				<amount>-18</amount>
 				<mode>DIFF</mode>
@@ -1017,7 +1011,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="MaxHp">
 				<amount>
 					<value level="1">20</value>
@@ -1336,7 +1329,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>
 					<value level="1">2</value>
@@ -1396,7 +1388,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="MagicMpCost">
 				<amount>
 					<value level="1">-10</value>
@@ -1638,7 +1629,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="CriticalRate">
 				<amount>
 					<value level="1">25</value>
@@ -3480,8 +3470,9 @@
 		<castRange>40</castRange>
 		<trait>POISON</trait>
 		<effects>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime">
 				<power>63</power>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3836,7 +3827,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="ShieldDefence">
 				<amount>-100</amount>
 				<mode>PER</mode>
@@ -3973,7 +3963,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<effects>
-
 			<effect name="DefenceAttribute">
 				<amount>-30</amount>
 				<attribute>FIRE</attribute>
@@ -4080,7 +4069,6 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="DefenceCriticalDamage">
 				<amount>-15</amount>
 				<mode>PER</mode>

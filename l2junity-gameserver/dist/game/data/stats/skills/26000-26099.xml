@@ -354,8 +354,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="3">
+			<effect name="HealOverTime">
 				<power>50</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -376,8 +377,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="HealOverTime" ticks="3">
+			<effect name="HealOverTime">
 				<power>24</power>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -857,7 +859,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicMpCost">
 				<amount>-10</amount>
 				<mode>PER</mode>
@@ -894,7 +895,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
 				<mode>DIFF</mode>
@@ -918,7 +918,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="ExpModify">
 				<amount>
 					<value level="1">10</value>
@@ -950,7 +949,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-
 			<effect name="SpModify">
 				<amount>
 					<value level="1">10</value>
