@@ -25,18 +25,32 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpCheckClassSkillCondition implements ISkillCondition
 {
+	private final int _classId;
+	private final boolean _verifyTarget;
+	private final boolean _isWithin;
+	
 	public OpCheckClassSkillCondition(StatsSet params)
 	{
-
+		_classId = params.getInt("classId");
+		_verifyTarget = params.getBoolean("verifyTarget");
+		_isWithin = params.getBoolean("isWithin");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if (_verifyTarget)
+		{
+			if ((target == null) || !target.isPlayer())
+			{
+				return false;
+			}
+			return _isWithin == (_classId == target.getActingPlayer().getClassId().getId());
+		}
+		return caster.isPlayer() && (_isWithin == (_classId == caster.getActingPlayer().getClassId().getId()));
 	}
 }

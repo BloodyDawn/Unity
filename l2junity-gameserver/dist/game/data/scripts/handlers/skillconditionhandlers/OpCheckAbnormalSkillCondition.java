@@ -21,22 +21,35 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.skills.AbnormalType;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpCheckAbnormalSkillCondition implements ISkillCondition
 {
+	private final AbnormalType _type;
+	private final int _level;
+	private final boolean _hasAbnormal;
+	
 	public OpCheckAbnormalSkillCondition(StatsSet params)
 	{
-
+		_type = params.getEnum("type", AbnormalType.class);
+		_level = params.getInt("level");
+		_hasAbnormal = params.getBoolean("hasAbnormal");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final BuffInfo info = caster.getEffectList().getBuffInfoByAbnormalType(_type);
+		if (_hasAbnormal)
+		{
+			return (info != null) && (info.getSkill().getAbnormalLvl() == _level);
+		}
+		return (info == null) || (info.getSkill().getAbnormalLvl() != _level);
 	}
 }

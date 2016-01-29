@@ -21,22 +21,27 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpTargetMyPledgeAcademySkillCondition implements ISkillCondition
 {
 	public OpTargetMyPledgeAcademySkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if ((caster.getClan() == null) || (target == null) || !target.isPlayer())
+		{
+			return false;
+		}
+		final PlayerInstance targetPlayer = target.getActingPlayer();
+		return targetPlayer.isAcademyMember() && (targetPlayer.getClan() == caster.getClan());
 	}
 }

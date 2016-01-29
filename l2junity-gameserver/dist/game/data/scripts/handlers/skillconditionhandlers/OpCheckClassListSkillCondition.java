@@ -18,6 +18,9 @@
  */
 package handlers.skillconditionhandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -25,18 +28,36 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpCheckClassListSkillCondition implements ISkillCondition
 {
+	private final List<Integer> _classIds = new ArrayList<>();
+	private final boolean _verifyTarget;
+	private final boolean _isWithin;
+	
 	public OpCheckClassListSkillCondition(StatsSet params)
 	{
-
+		final List<String> classIds = params.getList("classIds", String.class);
+		if (classIds != null)
+		{
+			classIds.stream().map(Integer::valueOf).forEach(_classIds::add);
+		}
+		_verifyTarget = params.getBoolean("verifyTarget");
+		_isWithin = params.getBoolean("isWithin");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if (_verifyTarget)
+		{
+			if ((target == null) || !target.isPlayer())
+			{
+				return false;
+			}
+			return _isWithin == _classIds.stream().anyMatch(classId -> classId == target.getActingPlayer().getClassId().getId());
+		}
+		return caster.isPlayer() && (_isWithin == _classIds.stream().anyMatch(classId -> classId == caster.getActingPlayer().getClassId().getId()));
 	}
 }
