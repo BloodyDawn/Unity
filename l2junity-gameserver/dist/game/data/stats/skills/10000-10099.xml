@@ -99,8 +99,7 @@
 		</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
 			</effect>
@@ -171,8 +170,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefenceRate">
 				<amount>100</amount>
@@ -226,8 +224,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">949</value>
@@ -385,8 +382,7 @@
 		<magicLvl>89</magicLvl>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -430,8 +426,7 @@
 		<magicLvl>#magicLvl</magicLvl>
 		<isMagic>4</isMagic>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="PhysicalSkillPower">
 				<amount>
 					<value level="1">25</value>
@@ -1408,8 +1403,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="TransferDamageToPlayer">
 				<amount>90</amount>
 			</effect>
@@ -1726,8 +1720,7 @@
 			<using kind="SWORD, BLUNT" />
 		</cond>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -1943,8 +1936,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<!-- Rage Aura -->
 				<skillId>10029</skillId>
@@ -2029,8 +2021,7 @@
 				<skillId>10031</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="MagicMpCost">
 				<amount>-25</amount>
 				<mode>PER</mode>
@@ -2078,8 +2069,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="MagicMpCost">
 				<amount>-15</amount>
 				<mode>PER</mode>
@@ -2181,8 +2171,7 @@
 				<skillId>10035</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="MagicalDefence">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -2225,8 +2214,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="MagicalDefence">
 				<amount>10</amount>
 				<mode>PER</mode>
@@ -2544,8 +2532,7 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="DefenceAttribute">
 				<amount>
 					<value level="1">20</value>
@@ -2697,8 +2684,7 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-			</effect>
+
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -2780,8 +2766,7 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-			</effect>
+
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -2863,8 +2848,7 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-			</effect>
+
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -2946,8 +2930,7 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-			</effect>
+
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -3029,8 +3012,7 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-			</effect>
+
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -3112,8 +3094,7 @@
 					<value level="3">0</value>
 				</power>
 			</effect>
-			<effect name="Debuff">
-			</effect>
+
 			<effect name="PhysicalDefence">
 				<amount>
 					<value level="1">-10</value>
@@ -3508,8 +3489,7 @@
 		<rideState>NONE</rideState>
 		<isMagic>4</isMagic>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="MagicalDefence">
 				<amount>1000</amount>
 				<mode>DIFF</mode>
@@ -3786,8 +3766,7 @@
 		<operateType>P</operateType>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">2</value>
@@ -4160,8 +4139,7 @@
 		<targetType>SELF</targetType>
 		<mpConsume>8</mpConsume>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="ShieldDefenceRate">
 				<amount>
 					<value level="1">5</value>
@@ -4799,8 +4777,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="Speed">
 				<amount>
 					<value level="1">10</value>
@@ -4923,8 +4900,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>600000</reuseDelay>
 		<effects>
-			<effect name="Buff">
-			</effect>
+
 			<effect name="PAtk">
 				<amount>
 					<value level="1">5</value>
