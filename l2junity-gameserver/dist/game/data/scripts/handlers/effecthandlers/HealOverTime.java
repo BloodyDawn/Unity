@@ -37,6 +37,7 @@ public final class HealOverTime extends AbstractEffect
 	public HealOverTime(StatsSet params)
 	{
 		_power = params.getDouble("power", 0);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

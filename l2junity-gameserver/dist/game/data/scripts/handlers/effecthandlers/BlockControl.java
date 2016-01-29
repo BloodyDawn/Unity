@@ -22,7 +22,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
  * An effect that blocks the player (NPC?) control. <br>
@@ -45,11 +44,5 @@ public class BlockControl extends AbstractEffect
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.BLOCK_CONTROL;
-	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		return info.getSkill().isPassive() || info.getSkill().isToggle();
 	}
 }

@@ -50,12 +50,6 @@ public final class EnlargeAbnormalSlot extends AbstractEffect
 	}
 	
 	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		return info.getSkill().isPassive();
-	}
-	
-	@Override
 	public void onExit(BuffInfo info)
 	{
 		info.getEffected().getStat().setMaxBuffCount(Math.max(0, info.getEffected().getStat().getMaxBuffCount() - _slots));

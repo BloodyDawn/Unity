@@ -38,6 +38,7 @@ public final class Relax extends AbstractEffect
 	public Relax(StatsSet params)
 	{
 		_power = params.getDouble("power", 0);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

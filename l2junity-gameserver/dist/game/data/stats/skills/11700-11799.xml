@@ -2128,9 +2128,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<effects>
-			<effect name="ManaDamOverTime">
-				<!-- 200 MP per tick. -->
-				<power>200</power>
+			<effect name="MagicMpCost">
+				<amount>30</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>

@@ -38,6 +38,7 @@ public final class ChameleonRest extends AbstractEffect
 	public ChameleonRest(StatsSet params)
 	{
 		_power = params.getDouble("power", 0);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

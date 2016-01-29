@@ -76,6 +76,7 @@ public final class Synergy extends AbstractEffect
 		_partyBuffSkillId = params.getInt("partyBuffSkillId");
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 1);
 		_minSlot = params.getInt("minSlot", 2);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

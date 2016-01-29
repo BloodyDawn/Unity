@@ -37,6 +37,7 @@ public final class CallSkillOnActionTime extends AbstractEffect
 	public CallSkillOnActionTime(StatsSet params)
 	{
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

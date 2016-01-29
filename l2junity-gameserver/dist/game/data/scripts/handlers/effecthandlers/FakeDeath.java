@@ -37,6 +37,7 @@ public final class FakeDeath extends AbstractEffect
 	public FakeDeath(StatsSet params)
 	{
 		_power = params.getDouble("power", 0);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

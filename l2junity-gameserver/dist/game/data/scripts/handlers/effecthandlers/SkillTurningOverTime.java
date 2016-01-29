@@ -37,6 +37,7 @@ public final class SkillTurningOverTime extends AbstractEffect
 	{
 		_chance = params.getInt("chance", 100);
 		_staticChance = params.getBoolean("staticChance", false);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

@@ -37,10 +37,4 @@ public final class Lucky extends AbstractEffect
 	{
 		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		return info.getSkill().isPassive();
-	}
 }

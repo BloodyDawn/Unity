@@ -39,6 +39,7 @@ public final class MagicalDamOverTime extends AbstractEffect
 	{
 		_power = params.getDouble("power", 0);
 		_canKill = params.getBoolean("canKill", false);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

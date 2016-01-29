@@ -33,6 +33,7 @@ public final class ManaDamOverTime extends AbstractEffect
 	public ManaDamOverTime(StatsSet params)
 	{
 		_power = params.getDouble("power", 0);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override
