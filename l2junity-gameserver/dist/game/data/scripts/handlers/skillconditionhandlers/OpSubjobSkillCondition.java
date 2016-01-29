@@ -31,7 +31,6 @@ public class OpSubjobSkillCondition implements ISkillCondition
 {
 	public OpSubjobSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

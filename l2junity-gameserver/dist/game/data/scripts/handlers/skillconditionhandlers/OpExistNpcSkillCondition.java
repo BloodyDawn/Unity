@@ -18,25 +18,36 @@
  */
 package handlers.skillconditionhandlers;
 
+import java.util.List;
+
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpExistNpcSkillCondition implements ISkillCondition
 {
+	private final int _npcId;
+	private final int _range;
+	private final boolean _isAround;
+	
 	public OpExistNpcSkillCondition(StatsSet params)
 	{
-
+		_npcId = params.getInt("npcId");
+		_range = params.getInt("range");
+		_isAround = params.getBoolean("isAround");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final List<Npc> npcs = World.getInstance().getVisibleObjects(caster, Npc.class, _range);
+		return _isAround == npcs.stream().anyMatch(npc -> npc.getId() == _npcId);
 	}
 }

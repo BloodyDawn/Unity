@@ -32,7 +32,6 @@ public class OpSoulMaxSkillCondition implements ISkillCondition
 {
 	public OpSoulMaxSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

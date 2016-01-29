@@ -25,18 +25,28 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpPkcountSkillCondition implements ISkillCondition
 {
+	private final boolean _verifyTarget;
+	
 	public OpPkcountSkillCondition(StatsSet params)
 	{
-
+		_verifyTarget = params.getBoolean("verifyTarget");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if (_verifyTarget)
+		{
+			if ((target == null) || !target.isPlayer())
+			{
+				return false;
+			}
+			return target.getActingPlayer().getPkKills() > 0;
+		}
+		return caster.isPlayer() && (caster.getActingPlayer().getPkKills() > 0);
 	}
 }

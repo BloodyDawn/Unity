@@ -18,25 +18,42 @@
  */
 package handlers.skillconditionhandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpTargetWeaponAttackTypeSkillCondition implements ISkillCondition
 {
+	private final List<WeaponType> _weaponTypes = new ArrayList<>();
+	
 	public OpTargetWeaponAttackTypeSkillCondition(StatsSet params)
 	{
-
+		final List<String> weaponTypes = params.getList("weaponTypes", String.class);
+		if (weaponTypes != null)
+		{
+			weaponTypes.stream().map(WeaponType::valueOf).forEach(_weaponTypes::add);
+		}
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if ((target == null) || !target.isCreature())
+		{
+			return false;
+		}
+		final Creature targetCreature = (Creature) target;
+		final Weapon weapon = targetCreature.getActiveWeaponItem();
+		return _weaponTypes.stream().anyMatch(weaponType -> weaponType == weapon.getItemType());
 	}
 }

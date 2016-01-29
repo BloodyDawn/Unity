@@ -18,6 +18,7 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -25,18 +26,21 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpPledgeSkillCondition implements ISkillCondition
 {
+	private final int _level;
+	
 	public OpPledgeSkillCondition(StatsSet params)
 	{
-
+		_level = params.getInt("level");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final L2Clan clan = caster.getClan();
+		return (clan != null) && (clan.getLevel() >= _level);
 	}
 }

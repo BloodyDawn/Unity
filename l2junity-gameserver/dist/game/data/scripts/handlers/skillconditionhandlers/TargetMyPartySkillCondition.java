@@ -18,6 +18,7 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -25,18 +26,22 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class TargetMyPartySkillCondition implements ISkillCondition
 {
 	public TargetMyPartySkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if ((target == null) || !target.isPlayer())
+		{
+			return false;
+		}
+		final Party party = caster.getParty();
+		return (party != null) && (party == target.getActingPlayer().getParty());
 	}
 }
