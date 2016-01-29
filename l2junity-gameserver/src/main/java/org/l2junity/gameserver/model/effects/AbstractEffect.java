@@ -18,15 +18,11 @@
  */
 package org.l2junity.gameserver.model.effects;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,22 +36,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractEffect
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class);
-	
-	private List<FuncTemplate> _funcTemplates;
+
 	private int _ticks;
-	
-	/**
-	 * Attaches a function template.
-	 * @param f the function
-	 */
-	public void addFunctionTemplate(FuncTemplate f)
-	{
-		if (_funcTemplates == null)
-		{
-			_funcTemplates = new ArrayList<>(1);
-		}
-		_funcTemplates.add(f);
-	}
 	
 	/**
 	 * Gets the effect ticks
@@ -79,12 +61,7 @@ public abstract class AbstractEffect
 	{
 		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
 	}
-	
-	public List<FuncTemplate> getFuncTemplates()
-	{
-		return _funcTemplates;
-	}
-	
+
 	/**
 	 * Calculates whether this effects land or not.<br>
 	 * If it lands will be scheduled and added to the character effect list.<br>
@@ -211,9 +188,6 @@ public abstract class AbstractEffect
 	 */
 	public void pump(Creature effected, Skill skill)
 	{
-		if (_funcTemplates != null)
-		{
-			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> effected.getStat().processStats(effected, func.getFunctionClass(), func.getStat(), func.getValue()));
-		}
+
 	}
 }
