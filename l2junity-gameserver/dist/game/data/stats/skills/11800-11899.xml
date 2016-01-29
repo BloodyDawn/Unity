@@ -367,9 +367,6 @@
 		<activateRate>0</activateRate>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
-		<effects>
-			<effect name="Buff" />
-		</effects>
 	</skill>
 	<skill id="11812" levels="1" name="Mark of Resurrection">
 		<!-- Updated to Ertheia -->
@@ -703,9 +700,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<effects>
-			<effect name="Buff">
-				<!-- -300 HP Healed -->
-			</effect>
+
 			<effect name="HealEffect">
 				<amount>-300</amount>
 				<mode>DIFF</mode>
@@ -1335,9 +1330,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<canBeDispelled>false</canBeDispelled>
 		<effects>
-			<effect name="Buff">
-				<!-- 1 Bonus HP/MP regen... what a joke :D -->
-			</effect>
+
 			<effect name="Speed">
 				<amount>5</amount>
 				<mode>DIFF</mode>
