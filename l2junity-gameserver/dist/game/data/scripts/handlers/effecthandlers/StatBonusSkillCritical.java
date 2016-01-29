@@ -18,6 +18,8 @@
  */
 package handlers.effecthandlers;
 
+import java.util.List;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -41,24 +43,27 @@ public class StatBonusSkillCritical extends AbstractEffect
 		_stat = params.getEnum("stat", BaseStats.class, BaseStats.DEX);
 		
 		int armorTypesMask = 0;
-		final String[] armorTypes = params.getString("armorType", "ALL").split(";");
-		for (String armorType : armorTypes)
+		final List<String> armorTypes = params.getList("armorType", String.class);
+		if (armorTypes != null)
 		{
-			if (armorType.equalsIgnoreCase("ALL"))
+			for (String armorType : armorTypes)
 			{
-				armorTypesMask = 0;
-				break;
-			}
-			
-			try
-			{
-				armorTypesMask |= ArmorType.valueOf(armorType).mask();
-			}
-			catch (IllegalArgumentException e)
-			{
-				final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType + " skill:" + params.getInt("id"));
-				exception.addSuppressed(e);
-				throw exception;
+				if (armorType.equalsIgnoreCase("ALL"))
+				{
+					armorTypesMask = 0;
+					break;
+				}
+				
+				try
+				{
+					armorTypesMask |= ArmorType.valueOf(armorType).mask();
+				}
+				catch (IllegalArgumentException e)
+				{
+					final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType);
+					exception.addSuppressed(e);
+					throw exception;
+				}
 			}
 		}
 		_armorTypeCondition = armorTypesMask != 0 ? new ConditionUsingItemType(armorTypesMask) : null;
