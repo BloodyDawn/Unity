@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.commons.util.CommonUtil;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;

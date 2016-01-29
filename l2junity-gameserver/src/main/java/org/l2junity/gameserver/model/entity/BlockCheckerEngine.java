@@ -28,7 +28,7 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;

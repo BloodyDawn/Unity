@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;

@@ -1,5 +1,7 @@
 package org.l2junity.gameserver.data.xml.impl;
 
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
@@ -10,16 +12,16 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.EffectScope;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import net.objecthunter.exp4j.ExpressionBuilder;
 
 /**
  * Skill data parser.
@@ -29,7 +31,11 @@ public class SkillData implements IGameXmlReader
 {
 	private static final Set<String> BLOCK_ITEM_VALUE_ELEMENTS = new HashSet<>();
 	private static final Set<String> BLOCK_ITEM_ELEMENTS = new HashSet<>();
-	
+
+	private final Map<Integer, Skill> _skills = new HashMap<>();
+	private final Map<Integer, Integer> _skillsMaxLevel = new HashMap<>();
+	private final Set<Integer> _enchantable = new HashSet<>();
+
 	static
 	{
 		BLOCK_ITEM_VALUE_ELEMENTS.add("item");
@@ -63,19 +69,116 @@ public class SkillData implements IGameXmlReader
 	{
 		load();
 	}
-	
+
+	/**
+	 * Provides the skill hash
+	 * @param skill The L2Skill to be hashed
+	 * @return getSkillHashCode(skill.getId(), skill.getLevel())
+	 */
+	public static int getSkillHashCode(Skill skill)
+	{
+		return getSkillHashCode(skill.getId(), skill.getLevel());
+	}
+
+	/**
+	 * Centralized method for easier change of the hashing sys
+	 * @param skillId The Skill Id
+	 * @param skillLevel The Skill Level
+	 * @return The Skill hash number
+	 */
+	public static int getSkillHashCode(int skillId, int skillLevel)
+	{
+		return (skillId * 1021) + skillLevel;
+	}
+
+	public Skill getSkill(int skillId, int level)
+	{
+		final Skill result = _skills.get(getSkillHashCode(skillId, level));
+		if (result != null)
+		{
+			return result;
+		}
+
+		// skill/level not found, fix for transformation scripts
+		final int maxLvl = getMaxLevel(skillId);
+		// requested level too high
+		if ((maxLvl > 0) && (level > maxLvl))
+		{
+			if (Config.DEBUG)
+			{
+				LOGGER.warn("call to unexisting skill level id: {} requested level: {} max level: {}", skillId, level, maxLvl, new Throwable());
+			}
+			return _skills.get(getSkillHashCode(skillId, maxLvl));
+		}
+
+		LOGGER.warn("No skill info found for skill id {} and skill level {}", skillId, level);
+		return null;
+	}
+
+	public int getMaxLevel(int skillId)
+	{
+		final Integer maxLevel = _skillsMaxLevel.get(skillId);
+		return maxLevel != null ? maxLevel : 0;
+	}
+
+	/**
+	 * Verifies if the given skill ID correspond to an enchantable skill.
+	 * @param skillId the skill ID
+	 * @return {@code true} if the skill is enchantable, {@code false} otherwise
+	 */
+	public boolean isEnchantable(int skillId)
+	{
+		return _enchantable.contains(skillId);
+	}
+
+	/**
+	 * @param addNoble
+	 * @param hasCastle
+	 * @return an array with siege skills. If addNoble == true, will add also Advanced headquarters.
+	 */
+	public List<Skill> getSiegeSkills(boolean addNoble, boolean hasCastle)
+	{
+		final List<Skill> temp = new LinkedList<>();
+
+		temp.add(_skills.get(SkillData.getSkillHashCode(CommonSkill.IMPRIT_OF_LIGHT.getId(), 1)));
+		temp.add(_skills.get(SkillData.getSkillHashCode(CommonSkill.IMPRIT_OF_DARKNESS.getId(), 1)));
+
+		temp.add(_skills.get(SkillData.getSkillHashCode(247, 1))); // Build Headquarters
+
+		if (addNoble)
+		{
+			temp.add(_skills.get(SkillData.getSkillHashCode(326, 1))); // Build Advanced Headquarters
+		}
+		if (hasCastle)
+		{
+			temp.add(_skills.get(SkillData.getSkillHashCode(844, 1))); // Outpost Construction
+			temp.add(_skills.get(SkillData.getSkillHashCode(845, 1))); // Outpost Demolition
+		}
+		return temp;
+	}
+
 	@Override
 	public boolean isValidating()
 	{
 		return false;
 	}
-	
+
 	@Override
-	public void load()
+	public synchronized void load()
 	{
+		_skills.clear();
+		_skillsMaxLevel.clear();
+		_enchantable.clear();
 		parseDatapackDirectory("data/stats/skills/", true);
 	}
-	
+
+	public void reload()
+	{
+		load();
+		// Reload Skill Tree as well.
+		SkillTreesData.getInstance().load();
+	}
+
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
@@ -168,22 +271,16 @@ public class SkillData implements IGameXmlReader
 							levels.computeIfAbsent(i, k -> new HashSet<>()).add(0);
 						}
 						
-						skillInfo.forEach((level, subLevelMap) ->
-						{
-							subLevelMap.forEach((subLevel, statsSet) ->
-							{
+						skillInfo.forEach((level, subLevelMap) -> {
+							subLevelMap.forEach((subLevel, statsSet) -> {
 								levels.computeIfAbsent(level, k -> new HashSet<>()).add(subLevel);
 							});
 						});
 						
-						effectParamInfo.forEach(((effectScope, namedParamInfos) ->
-						{
-							namedParamInfos.forEach(namedParamInfo ->
-							{
-								namedParamInfo.info.forEach((level, subLevelMap) ->
-								{
-									subLevelMap.forEach((subLevel, statsSet) ->
-									{
+						effectParamInfo.forEach(((effectScope, namedParamInfos) -> {
+							namedParamInfos.forEach(namedParamInfo -> {
+								namedParamInfo.info.forEach((level, subLevelMap) -> {
+									subLevelMap.forEach((subLevel, statsSet) -> {
 										levels.computeIfAbsent(level, k -> new HashSet<>()).add(subLevel);
 									});
 								});
@@ -210,19 +307,15 @@ public class SkillData implements IGameXmlReader
 							});
 						}));
 						
-						levels.forEach((level, subLevels) ->
-						{
-							subLevels.forEach(subLevel ->
-							{
+						levels.forEach((level, subLevels) -> {
+							subLevels.forEach(subLevel -> {
 								final StatsSet statsSet = Optional.ofNullable(skillInfo.getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
 								generalSkillInfo.getSet().forEach((k, v) -> statsSet.getSet().putIfAbsent(k, v));
 								statsSet.set("skill.level", level);
 								statsSet.set("skill.subLevel", subLevel);
 								final Skill skill = new Skill(statsSet);
-								effectParamInfo.forEach((effectScope, namedParamInfos) ->
-								{
-									namedParamInfos.forEach(namedParamInfo ->
-									{
+								effectParamInfo.forEach((effectScope, namedParamInfos) -> {
+									namedParamInfos.forEach(namedParamInfo -> {
 										if (((namedParamInfo.fromLevel == null) && (namedParamInfo.toLevel == null)) || ((namedParamInfo.fromLevel >= level) && (namedParamInfo.toLevel <= level)))
 										{
 											if (((namedParamInfo.fromSubLevel == null) && (namedParamInfo.toSubLevel == null)) || ((namedParamInfo.fromSubLevel >= subLevel) && (namedParamInfo.toSubLevel <= subLevel)))
@@ -242,6 +335,9 @@ public class SkillData implements IGameXmlReader
 										}
 									});
 								});
+								_skills.put(getSkillHashCode(skill), skill);
+								_skillsMaxLevel.merge(skill.getId(), skill.getLevel(), Integer::max);
+								//TODO: add enchantable
 							});
 						});
 					}
@@ -282,10 +378,8 @@ public class SkillData implements IGameXmlReader
 			}
 		}
 		
-		values.forEach((level, subLevelMap) ->
-		{
-			subLevelMap.forEach((subLevel, value) ->
-			{
+		values.forEach((level, subLevelMap) -> {
+			subLevelMap.forEach((subLevel, value) -> {
 				info.computeIfAbsent(level, k -> new HashMap<>()).computeIfAbsent(subLevel, k -> new StatsSet()).set(node.getNodeName(), value);
 			});
 		});

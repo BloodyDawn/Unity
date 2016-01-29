@@ -38,7 +38,7 @@ import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.sql.impl.CrestTable;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.ClanRewardType;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.instancemanager.CastleManager;

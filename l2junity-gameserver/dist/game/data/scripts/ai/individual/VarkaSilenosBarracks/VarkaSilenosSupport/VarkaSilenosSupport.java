@@ -21,7 +21,7 @@ package ai.individual.VarkaSilenosBarracks.VarkaSilenosSupport;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;

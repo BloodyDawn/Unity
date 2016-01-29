@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.alchemy.AlchemyCraftData;
 import org.l2junity.gameserver.model.holders.ItemHolder;

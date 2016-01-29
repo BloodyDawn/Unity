@@ -21,7 +21,7 @@ package ai.group;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;

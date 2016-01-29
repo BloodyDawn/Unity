@@ -20,8 +20,8 @@ package ai.individual.TalkingIsland.MonkOfChaos;
 
 import java.util.List;
 
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.SubclassType;
 import org.l2junity.gameserver.model.SkillLearn;

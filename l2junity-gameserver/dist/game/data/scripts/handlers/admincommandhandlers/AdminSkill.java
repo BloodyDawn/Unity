@@ -23,8 +23,8 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SkillLearn;

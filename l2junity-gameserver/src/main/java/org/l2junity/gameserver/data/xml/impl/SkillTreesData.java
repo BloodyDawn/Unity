@@ -34,7 +34,6 @@ import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.SubclassType;

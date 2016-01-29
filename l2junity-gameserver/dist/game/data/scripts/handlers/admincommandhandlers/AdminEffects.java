@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;

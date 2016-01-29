@@ -26,7 +26,7 @@ import java.util.Map;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.XMLFilter;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.engines.items.DocumentItem;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;

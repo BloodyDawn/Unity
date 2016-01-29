@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.instance;
 import java.util.concurrent.Future;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PcCondOverride;

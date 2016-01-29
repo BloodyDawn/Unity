@@ -19,7 +19,7 @@
 package handlers.playeractions;
 
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.handler.IPlayerActionHandler;
 import org.l2junity.gameserver.handler.PlayerActionHandler;
 import org.l2junity.gameserver.model.ActionDataHolder;
