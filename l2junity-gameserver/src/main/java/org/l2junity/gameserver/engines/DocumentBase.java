@@ -34,7 +34,6 @@ import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.Race;
-import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.base.PlayerState;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -318,7 +317,7 @@ public abstract class DocumentBase
 		{
 			set.set("id", ((IIdentifiable) template).getId());
 		}
-
+		
 		parseTemplate(n, null);
 		if (template instanceof L2Item)
 		{
