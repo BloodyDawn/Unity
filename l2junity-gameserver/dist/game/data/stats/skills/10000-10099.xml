@@ -76,6 +76,9 @@
 				<amount>2</amount>
 				<stat>STR</stat>
 			</effect>
+			<effect name="AttackTrait">
+				<DERANGEMENT>75</DERANGEMENT>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10002" levels="10" name="Superior Heavy Armor Mastery">
@@ -125,7 +128,6 @@
 			</effect>
 			<effect name="DamageShield">
 				<amount>10</amount>
-				<mode>DIFF</mode>
 			</effect>
 			<effect name="MpRegen">
 				<amount>8.4</amount>
@@ -173,9 +175,6 @@
 			<effect name="ShieldDefenceRate">
 				<amount>100</amount>
 				<mode>PER</mode>
-				<armorTYpe>
-					<item>SHIELD</item>
-				</armorTYpe>
 			</effect>
 			<effect name="ShieldDefence">
 				<amount>
@@ -191,9 +190,6 @@
 					<value level="10">125</value>
 				</amount>
 				<mode>PER</mode>
-				<armorTYpe>
-					<item>SHIELD</item>
-				</armorTYpe>
 			</effect>
 			<effect name="StatUp">
 				<amount>2</amount>
@@ -360,11 +356,9 @@
 			</effect>
 			<effect name="ReflectSkill">
 				<amount>10</amount>
-				<mode>DIFF</mode>
 			</effect>
 			<effect name="ReflectSkill">
 				<amount>10</amount>
-				<mode>DIFF</mode>
 				<type>MAGIC</type>
 			</effect>
 		</effects>
@@ -548,7 +542,7 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="DefenceCriticalDamage">
-				<amount>10</amount>
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -742,7 +736,6 @@
 	<skill id="10011" levels="8" name="Shield Impact">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 11253 Power added to P. Atk. and Stuns for 5 seconds. Can be used while a shield is equipped. -->
-		<table name="#power"> 11253 12603 13953 15303 16653 18453 19353 20253 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -820,7 +813,6 @@
 	<skill id="10012" levels="10" name="Shield Wave">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 10174 Power added to P. Atk. Power added to P. Atk. and Stuns for 9 seconds Power added to P. Atk. Can be used while a shield is equipped. -->
-		<table name="#power"> 10174 10833 11492 12150 12809 13468 14126 14897 15623 16349 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<abnormalLvl>1</abnormalLvl>
@@ -908,7 +900,6 @@
 	<skill id="10013" levels="11" name="Gust Blade">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 10314 Power added to P. Atk. Can be used while a sword or blunt weapon is equipped. Over-hit. Critical. -->
-		<table name="#power"> 10314 11026 11738 12450 13162 13874 14586 15298 18045 19013 19981 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<affectHeight>-100;200</affectHeight>
@@ -991,7 +982,6 @@
 	<skill id="10014" levels="11" name="Chain Galaxy">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 14300 Power added to P. Atk. Healing Power received - 90%. -->
-		<table name="#power"> 14300 14789 15769 16748 17727 18707 19686 20666 23468 24612 25756 </table>
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>HEAL_EFFECT_DOWN</abnormalType>
@@ -1293,7 +1283,6 @@
 					<value level="6">100</value>
 					<value level="7">100</value>
 				</amount>
-				<mode>DIFF</mode>
 			</effect>
 			<effect name="ResistDispelByCategory">
 				<amount>-80</amount>
@@ -1455,6 +1444,7 @@
 		<mpConsume>50</mpConsume>
 		<effects>
 			<effect name="MpConsumePerLevel">
+				<power>1</power>
 				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalDefence">
@@ -1542,15 +1532,9 @@
 					<value level="6">30</value>
 					<value level="7">32</value>
 				</amount>
-				<mode>DIFF</mode>
 			</effect>
 			<effect name="ReflectMagic">
 				<amount>50</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="ReflectMagic">
-				<amount>50</amount>
-				<mode>DIFF</mode>
 				<type>MAGIC</type>
 			</effect>
 		</effects>
@@ -1675,12 +1659,6 @@
 	<skill id="10025" levels="4" name="Knight Frenzy">
 		<!-- Glory Days confirmed -->
 		<!-- For 1 minute, P. Def. and M. Def. + 50%, Speed + 10, Accuracy + 4 and Atk. Spd. + 10% when equipped with a sword or blunt weapon. Additionally, Critical Rate + 30 when equipped with a sword, and Critical Damage + 30% when equipped with a blunt weapon. -->
-		<table name="#accCombat">4 6 8 10</table>
-		<table name="#def"> 1.5 1.7 2 2.2 </table>
-		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
-		<table name="#cAtkAdd"> 30 40 50 60 </table>
-		<table name="#pAtkSpd"> 1.1 1.15 1.2 1.25 </table>
-		<table name="#runSpd"> 10 20 25 30 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>POSSESSION</abnormalType>
@@ -2008,6 +1986,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
+			<!-- TODO: p_hate_attack;{sword;blunt};200;per -->
 			<effect name="CallSkillOnActionTime">
 				<!-- Challenge Aura -->
 				<skillId>10031</skillId>
@@ -2038,6 +2017,11 @@
 				<amount>-10</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2085,6 +2069,11 @@
 				<amount>-5</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -2623,10 +2612,6 @@
 	</skill>
 	<skill id="10045" levels="3" name="Shield Charge II">
 		<!-- Strikes with the shield. Attacks target with 14179 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
-		<table name="#power"> 14179 0 0 </table>
-		<table name="#pDef"> 0.9 0.8 0.7 </table>
-		<table name="#rEvas"> -2 -3 -4 </table>
-		<table name="#defCritRate"> 1.1 1.2 1.3 </table>
 		<icon>icon.skill10045</icon>
 		<operateType>A4</operateType>
 		<targetType>ONE</targetType>
@@ -2669,12 +2654,8 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">14179</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-				</power>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
+				<power>14179</power>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2704,10 +2685,6 @@
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
 		<!-- Strikes with the shield. Attacks target with 15269 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
-		<table name="#power"> 15269 0 0 </table>
-		<table name="#pDef"> 0.9 0.8 0.7 </table>
-		<table name="#rEvas"> -2 -3 -4 </table>
-		<table name="#defCritRate"> 1.1 1.2 1.3 </table>
 		<icon>icon.skill10046</icon>
 		<operateType>A4</operateType>
 		<targetType>ONE</targetType>
@@ -2750,12 +2727,8 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">15269</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-				</power>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
+				<power>15269</power>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2831,12 +2804,8 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">16359</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-				</power>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
+				<power>16359</power>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2912,12 +2881,8 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">17449</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-				</power>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
+				<power>17449</power>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2993,12 +2958,8 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">18539</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-				</power>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
+				<power>18539</power>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -3028,10 +2989,6 @@
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
 		<!-- Strikes with the shield. Attacks target with 19629 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
-		<table name="#power"> 18539 0 0 </table>
-		<table name="#pDef"> 0.9 0.8 0.7 </table>
-		<table name="#rEvas"> -2 -3 -4 </table>
-		<table name="#defCritRate"> 1.1 1.2 1.3 </table>
 		<icon>icon.skill10050</icon>
 		<operateType>A4</operateType>
 		<targetType>ONE</targetType>
@@ -3074,12 +3031,8 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">18539</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-				</power>
+			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
+				<power>19629</power>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -3609,8 +3562,6 @@
 	</skill>
 	<skill id="10062" levels="4" name="Phoenix Spirit">
 		<!-- P. Def./ M. Def. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
-		<table name="#def"> 1.02 1.03 1.04 1.06 </table>
-		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<icon>icon.skill11829</icon>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3624,7 +3575,7 @@
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>99</maxAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
 				<targetType>PARTY</targetType>
 				<minDamage>1</minDamage>
@@ -3660,7 +3611,6 @@
 	<skill id="10063" levels="4" name="Phoenix Spirit">
 		<!-- TODO abnormalType -->
 		<!-- For 10 sec., all party members' P. Def./ M. Def. + 2%. -->
-		<table name="#def"> 1.02 1.03 1.04 1.06 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -3738,8 +3688,6 @@
 	</skill>
 	<skill id="10065" levels="4" name="Fortress Shield">
 		<!-- Shield P. Def. + 5%, Shield Defense + 2%. -->
-		<table name="#sDef"> 1.05 1.07 1.1 1.15 </table>
-		<table name="#rShld"> 1.02 1.03 1.04 1.05 </table>
 		<icon>icon.skill0322</icon>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3772,8 +3720,6 @@
 	</skill>
 	<skill id="10066" levels="4" name="Spirit of Revenge">
 		<!-- P. Atk./ M. Atk. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
-		<table name="#atk"> 1.02 1.03 1.04 1.06 </table>
-		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<icon>icon.skill11830</icon>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3787,7 +3733,7 @@
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>99</maxAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
 				<targetType>PARTY</targetType>
 				<minDamage>1</minDamage>
@@ -3868,11 +3814,18 @@
 	<skill id="10068" levels="7" name="Summon Blood Panther">
 		<!-- Updated to IO -->
 		<!-- Summons a Blood Panther to fight with you. -->
-		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
-		<table name="#npcIds"> 15138 15139 15140 15141 15191 15192 15193 </table>
 		<icon>icon.skill11853</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">90</value>
+			<value level="3">95</value>
+			<value level="4">99</value>
+			<value level="5">101</value>
+			<value level="6">103</value>
+			<value level="7">105</value>
+		</magicLvl>
 		<mpConsume>
 			<value level="1">154</value>
 			<value level="2">156</value>
@@ -3908,7 +3861,6 @@
 	</skill>
 	<skill id="10069" levels="4" name="Vampirism">
 		<!-- Has a 30% chance of recovering HP after a successful standard/ skill attack. -->
-		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<icon>icon.skill10069</icon>
 		<operateType>P</operateType>
 		<magicLvl>
@@ -3923,7 +3875,7 @@
 				<!-- Vampirism -->
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>100</maxAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
 				<skillId>10070</skillId>
 				<skillLevel>
 					<value level="1">1</value>
@@ -3940,7 +3892,6 @@
 	</skill>
 	<skill id="10070" levels="4" name="Vampirism">
 		<!-- HP Recovery -->
-		<table name="#amount"> 250 500 750 1000 </table>
 		<icon>icon.skill10069</icon>
 		<operateType>A1</operateType>
 		<targetType>ONE</targetType>
@@ -3981,7 +3932,7 @@
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>99</maxAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
 				<targetType>PARTY</targetType>
 				<minDamage>1</minDamage>
@@ -4017,8 +3968,6 @@
 	<skill id="10072" levels="4" name="Eva's Presence">
 		<!-- TODO abnormalType -->
 		<!-- For 10 sec., all party members' P. Def./ M. Def. and heal amount by 1%. -->
-		<table name="#def"> 1.02 1.03 1.04 1.06 </table> <!-- Unconfirmed -->
-		<table name="#healEffect"> 1.01 1.02 1.03 1.04 </table> <!-- Unconfirmed -->
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -4109,8 +4058,6 @@
 	</skill>
 	<skill id="10076" levels="4" name="Superior Guard Stance">
 		<!-- Shield Defense + 5%, Shield P. Def. + 2%. -->
-		<table name="#sDef"> 1.02 1.03 1.04 1.05 </table>
-		<table name="#rShld"> 1.05 1.07 1.10 1.15 </table>
 		<icon>icon.skill0288</icon>
 		<operateType>P</operateType>
 		<magicLvl>
@@ -4159,7 +4106,7 @@
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>99</maxAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
 				<targetType>PARTY</targetType>
 				<minDamage>1</minDamage>
@@ -4851,13 +4798,6 @@
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
 		<!-- For 1 min., P. Atk. + 5%, P./M. Def. + 50%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
-		<table name="#def"> 1.5 1.65 1.8 2 </table>
-		<table name="#pAtk"> 1.05 1.07 1.1 1.15 </table>
-		<table name="#runSpd"> 10 20 25 30 </table>
-		<table name="#accCombat"> 4 6 8 10 </table>
-		<table name="#pAtkSpd"> 1.1 1.15 1.2 1.25 </table>
-		<table name="#rCrit"> 30 40 50 60 </table>
-		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
