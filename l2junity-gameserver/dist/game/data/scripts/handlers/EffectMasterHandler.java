@@ -57,7 +57,6 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("BlockSkill", BlockSkill::new);
 		EffectHandler.getInstance().registerHandler("BlockTarget", BlockTarget::new);
 		EffectHandler.getInstance().registerHandler("Bluff", Bluff::new);
-		EffectHandler.getInstance().registerHandler("Buff", Buff::new);
 		EffectHandler.getInstance().registerHandler("CallParty", CallParty::new);
 		EffectHandler.getInstance().registerHandler("CallPc", CallPc::new);
 		EffectHandler.getInstance().registerHandler("CallSkill", CallSkill::new);
@@ -91,7 +90,6 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("DamOverTime", DamOverTime::new);
 		EffectHandler.getInstance().registerHandler("DamOverTimePercent", DamOverTimePercent::new);
 		EffectHandler.getInstance().registerHandler("DeathLink", DeathLink::new);
-		EffectHandler.getInstance().registerHandler("Debuff", Debuff::new);
 		EffectHandler.getInstance().registerHandler("DebuffBlock", DebuffBlock::new);
 		EffectHandler.getInstance().registerHandler("DefenceAttribute", DefenceAttribute::new);
 		EffectHandler.getInstance().registerHandler("DefenceCriticalDamage", DefenceCriticalDamage::new);
