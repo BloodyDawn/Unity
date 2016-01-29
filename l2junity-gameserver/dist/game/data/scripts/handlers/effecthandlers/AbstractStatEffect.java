@@ -58,46 +58,52 @@ public abstract class AbstractStatEffect extends AbstractEffect
 		_mode = params.getEnum("mode", StatModifierType.class, StatModifierType.DIFF);
 		
 		int weaponTypesMask = 0;
-		final String[] weaponTypes = params.getString("weaponType", "ALL").split(";");
-		for (String weaponType : weaponTypes)
+		final List<String> weaponTypes = params.getList("weaponType", String.class);
+		if (weaponTypes != null)
 		{
-			if (weaponType.equalsIgnoreCase("ALL"))
+			for (String weaponType : weaponTypes)
 			{
-				weaponTypesMask = 0;
-				break;
-			}
-			
-			try
-			{
-				weaponTypesMask |= WeaponType.valueOf(weaponType).mask();
-			}
-			catch (IllegalArgumentException e)
-			{
-				final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain WeaponType enum value but found " + weaponType);
-				exception.addSuppressed(e);
-				throw exception;
+				if (weaponType.equalsIgnoreCase("ALL"))
+				{
+					weaponTypesMask = 0;
+					break;
+				}
+				
+				try
+				{
+					weaponTypesMask |= WeaponType.valueOf(weaponType).mask();
+				}
+				catch (IllegalArgumentException e)
+				{
+					final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain WeaponType enum value but found " + weaponType);
+					exception.addSuppressed(e);
+					throw exception;
+				}
 			}
 		}
 		
 		int armorTypesMask = 0;
-		final String[] armorTypes = params.getString("armorType", "ALL").split(";");
-		for (String armorType : armorTypes)
+		final List<String> armorTypes = params.getList("armorType", String.class);
+		if (armorTypes != null)
 		{
-			if (armorType.equalsIgnoreCase("ALL"))
+			for (String armorType : armorTypes)
 			{
-				armorTypesMask = 0;
-				break;
-			}
-			
-			try
-			{
-				armorTypesMask |= ArmorType.valueOf(armorType).mask();
-			}
-			catch (IllegalArgumentException e)
-			{
-				final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType);
-				exception.addSuppressed(e);
-				throw exception;
+				if (armorType.equalsIgnoreCase("ALL"))
+				{
+					armorTypesMask = 0;
+					break;
+				}
+				
+				try
+				{
+					armorTypesMask |= ArmorType.valueOf(armorType).mask();
+				}
+				catch (IllegalArgumentException e)
+				{
+					final IllegalArgumentException exception = new IllegalArgumentException("armorTypes should contain ArmorType enum value but found " + armorType);
+					exception.addSuppressed(e);
+					throw exception;
+				}
 			}
 		}
 		
