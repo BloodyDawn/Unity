@@ -57,6 +57,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("BlockSkill", BlockSkill::new);
 		EffectHandler.getInstance().registerHandler("BlockTarget", BlockTarget::new);
 		EffectHandler.getInstance().registerHandler("Bluff", Bluff::new);
+		EffectHandler.getInstance().registerHandler("Breath", Breath::new);
 		EffectHandler.getInstance().registerHandler("CallParty", CallParty::new);
 		EffectHandler.getInstance().registerHandler("CallPc", CallPc::new);
 		EffectHandler.getInstance().registerHandler("CallSkill", CallSkill::new);
