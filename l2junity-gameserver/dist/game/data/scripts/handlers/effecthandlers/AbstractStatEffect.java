@@ -63,12 +63,6 @@ public abstract class AbstractStatEffect extends AbstractEffect
 		{
 			for (String weaponType : weaponTypes)
 			{
-				if (weaponType.equalsIgnoreCase("ALL"))
-				{
-					weaponTypesMask = 0;
-					break;
-				}
-				
 				try
 				{
 					weaponTypesMask |= WeaponType.valueOf(weaponType).mask();
@@ -88,12 +82,6 @@ public abstract class AbstractStatEffect extends AbstractEffect
 		{
 			for (String armorType : armorTypes)
 			{
-				if (armorType.equalsIgnoreCase("ALL"))
-				{
-					armorTypesMask = 0;
-					break;
-				}
-				
 				try
 				{
 					armorTypesMask |= ArmorType.valueOf(armorType).mask();

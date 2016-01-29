@@ -48,12 +48,6 @@ public class StatBonusSkillCritical extends AbstractEffect
 		{
 			for (String armorType : armorTypes)
 			{
-				if (armorType.equalsIgnoreCase("ALL"))
-				{
-					armorTypesMask = 0;
-					break;
-				}
-				
 				try
 				{
 					armorTypesMask |= ArmorType.valueOf(armorType).mask();
