@@ -18,64 +18,22 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
 public final class StatusUpdate implements IClientOutgoingPacket
 {
-	// TODO: Enum
-	public static final int LEVEL = 0x01;
-	public static final int EXP = 0x02;
-	public static final int STR = 0x03;
-	public static final int DEX = 0x04;
-	public static final int CON = 0x05;
-	public static final int INT = 0x06;
-	public static final int WIT = 0x07;
-	public static final int MEN = 0x08;
-	
-	public static final int CUR_HP = 0x09;
-	public static final int MAX_HP = 0x0A;
-	public static final int CUR_MP = 0x0B;
-	public static final int MAX_MP = 0x0C;
-	
-	public static final int P_ATK = 0x10;
-	public static final int ATK_SPD = 0x11;
-	public static final int P_DEF = 0x12;
-	public static final int EVASION = 0x13;
-	public static final int ACCURACY = 0x14;
-	public static final int CRITICAL = 0x15;
-	public static final int M_ATK = 0x16;
-	public static final int CAST_SPD = 0x17;
-	public static final int M_DEF = 0x18;
-	public static final int PVP_FLAG = 0x19;
-	public static final int REPUTATION = 0x1A;
-	
-	public static final int CUR_CP = 0x21;
-	public static final int MAX_CP = 0x22;
-	
 	private final int _objectId;
 	private int _casterObjectId = 0;
 	private final boolean _isPlayable;
 	private boolean _isVisible = false;
-	private final ArrayList<Attribute> _attributes = new ArrayList<>();
-	
-	static class Attribute
-	{
-		/**
-		 * id values 09 - current health 0a - max health 0b - current mana 0c - max mana
-		 */
-		public int id;
-		public int value;
-		
-		Attribute(int pId, int pValue)
-		{
-			id = pId;
-			value = pValue;
-		}
-	}
+	private final Map<StatusUpdateType, Integer> _updates = new LinkedHashMap<>();
 	
 	/**
 	 * Create {@link StatusUpdate} packet for given {@link WorldObject}.
@@ -87,13 +45,13 @@ public final class StatusUpdate implements IClientOutgoingPacket
 		_isPlayable = object.isPlayable();
 	}
 	
-	public void addAttribute(int id, int level)
+	public void addUpdate(StatusUpdateType type, int level)
 	{
-		_attributes.add(new Attribute(id, level));
+		_updates.put(type, level);
 		
 		if (_isPlayable)
 		{
-			switch (id)
+			switch (type)
 			{
 				case CUR_HP:
 				case CUR_MP:
@@ -110,9 +68,9 @@ public final class StatusUpdate implements IClientOutgoingPacket
 		_casterObjectId = object.getObjectId();
 	}
 	
-	public boolean hasAttributes()
+	public boolean hasUpdates()
 	{
-		return !_attributes.isEmpty();
+		return !_updates.isEmpty();
 	}
 	
 	@Override
@@ -123,11 +81,11 @@ public final class StatusUpdate implements IClientOutgoingPacket
 		packet.writeD(_objectId); // casterId
 		packet.writeD(_isVisible ? _casterObjectId : 0x00);
 		packet.writeC(_isVisible ? 0x01 : 0x00);
-		packet.writeC(_attributes.size());
-		for (Attribute temp : _attributes)
+		packet.writeC(_updates.size());
+		for (Entry<StatusUpdateType, Integer> entry : _updates.entrySet())
 		{
-			packet.writeC(temp.id);
-			packet.writeD(temp.value);
+			packet.writeC(entry.getKey().getClientId());
+			packet.writeD(entry.getValue());
 		}
 		return true;
 	}

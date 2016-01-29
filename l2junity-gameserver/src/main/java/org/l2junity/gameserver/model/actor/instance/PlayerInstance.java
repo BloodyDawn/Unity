@@ -96,6 +96,7 @@ import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.Sex;
 import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
@@ -4107,13 +4108,17 @@ public final class PlayerInstance extends Playable
 			su.addCaster(caster);
 		}
 		
-		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
-		su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
-		su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
-		su.addAttribute(StatusUpdate.CUR_CP, (int) getCurrentCp());
-		broadcastPacket(su);
+		computeStatusUpdate(su, StatusUpdateType.LEVEL);
+		computeStatusUpdate(su, StatusUpdateType.MAX_HP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_HP);
+		computeStatusUpdate(su, StatusUpdateType.MAX_MP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_MP);
+		computeStatusUpdate(su, StatusUpdateType.MAX_CP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_CP);
+		if (su.hasUpdates())
+		{
+			broadcastPacket(su);
+		}
 		
 		final boolean needCpUpdate = needCpUpdate();
 		final boolean needHpUpdate = needHpUpdate();
@@ -4840,8 +4845,8 @@ public final class PlayerInstance extends Playable
 			
 			// Send max/current hp.
 			final StatusUpdate su = new StatusUpdate(target);
-			su.addAttribute(StatusUpdate.MAX_HP, target.getMaxHp());
-			su.addAttribute(StatusUpdate.CUR_HP, (int) target.getCurrentHp());
+			su.addUpdate(StatusUpdateType.MAX_HP, target.getMaxHp());
+			su.addUpdate(StatusUpdateType.CUR_HP, (int) target.getCurrentHp());
 			sendPacket(su);
 			
 			// To others the new target, and not yourself!
@@ -14186,5 +14191,14 @@ public final class PlayerInstance extends Playable
 	public void setTrueHero(boolean val)
 	{
 		_trueHero = val;
+	}
+	
+	@Override
+	protected void initStatusUpdateCache()
+	{
+		super.initStatusUpdateCache();
+		addStatusUpdateValue(StatusUpdateType.LEVEL);
+		addStatusUpdateValue(StatusUpdateType.MAX_CP);
+		addStatusUpdateValue(StatusUpdateType.CUR_CP);
 	}
 }

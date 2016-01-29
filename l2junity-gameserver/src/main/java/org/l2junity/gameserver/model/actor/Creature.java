@@ -60,6 +60,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -276,6 +277,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	private volatile CreatureContainer _seenCreatures;
 	
+	private final Map<StatusUpdateType, Integer> _statusUpdates = new ConcurrentHashMap<>();
+	
 	/**
 	 * Creates a creature.
 	 * @param template the creature template
@@ -347,6 +350,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL));
 		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL_SECOND));
 		_skillCasters.add(new SkillCaster(this, SkillCastingType.SIMULTANEOUS));
+		
+		initStatusUpdateCache();
 	}
 	
 	public final CharEffectList getEffectList()
@@ -669,24 +674,21 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void broadcastStatusUpdate(Creature caster)
 	{
-		if (getStatus().getStatusListener().isEmpty() || !needHpUpdate())
-		{
-			return;
-		}
-		
-		// Create the Server->Client packet StatusUpdate with current HP
 		final StatusUpdate su = new StatusUpdate(this);
 		if (caster != null)
 		{
 			su.addCaster(caster);
 		}
 		
-		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
-		su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
+		computeStatusUpdate(su, StatusUpdateType.MAX_HP);
+		computeStatusUpdate(su, StatusUpdateType.MAX_MP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_HP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_MP);
 		
-		broadcastPacket(su);
+		if (su.hasUpdates())
+		{
+			broadcastPacket(su);
+		}
 	}
 	
 	/**
@@ -2971,7 +2973,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else
 							{
-								su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
+								su.addUpdate(StatusUpdateType.MAX_CP, getMaxCp());
 							}
 							break;
 						}
@@ -2983,7 +2985,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else
 							{
-								su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
+								su.addUpdate(StatusUpdateType.MAX_HP, getMaxHp());
 							}
 							break;
 						}
@@ -2995,7 +2997,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else
 							{
-								su.addAttribute(StatusUpdate.MAX_CP, getMaxMp());
+								su.addUpdate(StatusUpdateType.MAX_CP, getMaxMp());
 							}
 							break;
 						}
@@ -3046,7 +3048,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				else
 				{
-					if (su.hasAttributes())
+					if (su.hasUpdates())
 					{
 						broadcastPacket(su);
 					}
@@ -3077,12 +3079,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						}
 					});
 				}
-				else if (su.hasAttributes())
+				else if (su.hasUpdates())
 				{
 					broadcastPacket(su);
 				}
 			}
-			else if (su.hasAttributes())
+			else if (su.hasUpdates())
 			{
 				broadcastPacket(su);
 			}
@@ -5968,5 +5970,32 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return MoveType.WALKING;
 		}
 		return MoveType.STANDING;
+	}
+	
+	protected final void computeStatusUpdate(StatusUpdate su, StatusUpdateType type)
+	{
+		_statusUpdates.compute(type, (key, oldValue) ->
+		{
+			final int newValue = type.getValue(this);
+			if (oldValue != newValue)
+			{
+				su.addUpdate(type, newValue);
+				return newValue;
+			}
+			return oldValue;
+		});
+	}
+	
+	protected final void addStatusUpdateValue(StatusUpdateType type)
+	{
+		_statusUpdates.put(type, type.getValue(this));
+	}
+	
+	protected void initStatusUpdateCache()
+	{
+		addStatusUpdateValue(StatusUpdateType.MAX_HP);
+		addStatusUpdateValue(StatusUpdateType.MAX_MP);
+		addStatusUpdateValue(StatusUpdateType.CUR_HP);
+		addStatusUpdateValue(StatusUpdateType.CUR_MP);
 	}
 }
