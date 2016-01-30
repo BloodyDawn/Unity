@@ -23,20 +23,21 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.zone.ZoneId;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class NotInUnderwaterSkillCondition implements ISkillCondition
 {
 	public NotInUnderwaterSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return !caster.isInsideZone(ZoneId.WATER);
 	}
 }

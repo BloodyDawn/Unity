@@ -21,22 +21,22 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class PossessHolythingSkillCondition implements ISkillCondition
 {
 	public PossessHolythingSkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return target instanceof L2ArtefactInstance;
 	}
 }

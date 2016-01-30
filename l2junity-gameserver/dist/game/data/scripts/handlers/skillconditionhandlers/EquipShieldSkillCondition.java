@@ -21,22 +21,24 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class EquipShieldSkillCondition implements ISkillCondition
 {
 	public EquipShieldSkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final L2Item shield = caster.getSecondaryWeaponItem();
+		return shield.getItemType() == ArmorType.SHIELD;
 	}
 }

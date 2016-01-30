@@ -25,18 +25,20 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpHaveSummonedNpcSkillCondition implements ISkillCondition
 {
+	private final int _npcId;
+	
 	public OpHaveSummonedNpcSkillCondition(StatsSet params)
 	{
-
+		_npcId = params.getInt("npcId");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return caster.getSummonedNpcs().contains(_npcId);
 	}
 }

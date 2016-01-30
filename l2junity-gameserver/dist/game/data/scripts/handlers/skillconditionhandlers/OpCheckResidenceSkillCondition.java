@@ -25,18 +25,17 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class OpCheckResidenceSkillCondition implements ISkillCondition
 {
 	public OpCheckResidenceSkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return caster.isPlayer() && !caster.getActingPlayer().isCursedWeaponEquipped();
 	}
 }

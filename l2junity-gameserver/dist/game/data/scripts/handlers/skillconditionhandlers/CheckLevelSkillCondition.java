@@ -25,18 +25,22 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class CheckLevelSkillCondition implements ISkillCondition
 {
+	private final int _minLevel;
+	private final int _maxLevel;
+	
 	public CheckLevelSkillCondition(StatsSet params)
 	{
-
+		_minLevel = params.getInt("minLevel");
+		_maxLevel = params.getInt("maxLevel");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return (caster.getLevel() >= _minLevel) && (caster.getLevel() <= _maxLevel);
 	}
 }

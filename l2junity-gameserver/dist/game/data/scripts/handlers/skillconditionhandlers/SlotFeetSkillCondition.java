@@ -25,15 +25,16 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * XXX: This doesn't exists as op_condition but as effect condition
+ * @author
  */
 public class SlotFeetSkillCondition implements ISkillCondition
 {
 	public SlotFeetSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{

@@ -25,18 +25,26 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class RemainHpPerSkillCondition implements ISkillCondition
 {
+	private final int _amount;
+	private final boolean _isMore;
+	
 	public RemainHpPerSkillCondition(StatsSet params)
 	{
-
+		_amount = params.getInt("amount");
+		_isMore = params.getBoolean("isMore");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if (_isMore)
+		{
+			return caster.getCurrentHpPercent() >= _amount;
+		}
+		return caster.getCurrentHpPercent() <= _amount;
 	}
 }

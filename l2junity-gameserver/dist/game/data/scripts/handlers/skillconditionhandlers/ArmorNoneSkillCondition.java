@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
+ * XXX: This doesn't exists as op_condition but as effect condition
  * @author
  */
 public class ArmorNoneSkillCondition implements ISkillCondition
