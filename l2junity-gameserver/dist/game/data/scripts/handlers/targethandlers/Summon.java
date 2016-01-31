@@ -41,14 +41,9 @@ public class Summon implements ITargetTypeHandler
 	{
 		if (activeChar.isPlayer() && activeChar.hasSummon())
 		{
-			if (activeChar.getPet() != null)
-			{
-				return activeChar.getPet();
-			}
-			
 			return activeChar.getActingPlayer().getAnyServitor();
 		}
 		
-		return null;
+		return activeChar.getPet();
 	}
 }
