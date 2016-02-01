@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -16,28 +16,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package handlers.skillconditionhandlers;
-
-import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
-import org.l2junity.gameserver.model.skills.ISkillCondition;
-import org.l2junity.gameserver.model.skills.Skill;
+package org.l2junity.gameserver.enums;
 
 /**
  * @author Sdw
  */
-public class OpUnlockSkillCondition implements ISkillCondition
+public enum SkillConditionPercentType
 {
-	public OpUnlockSkillCondition(StatsSet params)
+	MORE
 	{
-	
-	}
-	
-	@Override
-	public boolean canUse(Creature caster, Skill skill, WorldObject target)
+		@Override
+		public boolean test(int x1, int x2)
+		{
+			return x1 >= x2;
+		}
+	},
+	LESS
 	{
-		return (target != null) && (target.isDoor() || (target instanceof L2ChestInstance));
-	}
+		@Override
+		public boolean test(int x1, int x2)
+		{
+			return x1 <= x2;
+		}
+	};
+	
+	public abstract boolean test(int x1, int x2);
 }

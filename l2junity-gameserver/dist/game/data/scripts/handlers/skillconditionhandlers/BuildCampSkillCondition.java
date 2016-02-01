@@ -18,25 +18,91 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.instancemanager.FortManager;
+import org.l2junity.gameserver.instancemanager.FortSiegeManager;
+import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class BuildCampSkillCondition implements ISkillCondition
 {
 	public BuildCampSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if ((caster == null) || !caster.isPlayer())
+		{
+			return false;
+		}
+		
+		final PlayerInstance player = caster.getActingPlayer();
+		boolean canCreateBase = true;
+		if (player.isAlikeDead() || player.isCursedWeaponEquipped() || (player.getClan() == null))
+		{
+			canCreateBase = false;
+		}
+		
+		final Castle castle = CastleManager.getInstance().getCastle(player);
+		final Fort fort = FortManager.getInstance().getFort(player);
+		final SystemMessage sm;
+		if ((castle == null) && (fort == null))
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			player.sendPacket(sm);
+			canCreateBase = false;
+		}
+		else if (((castle != null) && !castle.getSiege().isInProgress()) || ((fort != null) && !fort.getSiege().isInProgress()))
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			player.sendPacket(sm);
+			canCreateBase = false;
+		}
+		else if (((castle != null) && (castle.getSiege().getAttackerClan(player.getClan()) == null)) || ((fort != null) && (fort.getSiege().getAttackerClan(player.getClan()) == null)))
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			player.sendPacket(sm);
+			canCreateBase = false;
+		}
+		else if (!player.isClanLeader())
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			player.sendPacket(sm);
+			canCreateBase = false;
+		}
+		else if (((castle != null) && (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= SiegeManager.getInstance().getFlagMaxCount())) || ((fort != null) && (fort.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= FortSiegeManager.getInstance().getFlagMaxCount())))
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			player.sendPacket(sm);
+			canCreateBase = false;
+		}
+		else if (!player.isInsideZone(ZoneId.HQ))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_SET_UP_A_BASE_HERE);
+			canCreateBase = false;
+		}
+		
+		return canCreateBase;
 	}
 }

@@ -39,6 +39,6 @@ public class EquipShieldSkillCondition implements ISkillCondition
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
 		final L2Item shield = caster.getSecondaryWeaponItem();
-		return shield.getItemType() == ArmorType.SHIELD;
+		return (shield != null) && (shield.getItemType() == ArmorType.SHIELD);
 	}
 }

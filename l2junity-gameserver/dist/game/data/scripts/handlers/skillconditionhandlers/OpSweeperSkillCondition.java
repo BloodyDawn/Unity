@@ -18,25 +18,62 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class OpSweeperSkillCondition implements ISkillCondition
 {
 	public OpSweeperSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		boolean canSweep = false;
+		final PlayerInstance sweeper = caster.getActingPlayer();
+		if (sweeper != null)
+		{
+			if (skill != null)
+			{
+				final WorldObject[] targets = skill.getTargetList(sweeper);
+				if (targets != null)
+				{
+					Attackable swept;
+					for (WorldObject objTarget : targets)
+					{
+						if (objTarget instanceof Attackable)
+						{
+							swept = (Attackable) objTarget;
+							if (swept.isDead())
+							{
+								if (swept.isSpoiled())
+								{
+									canSweep = swept.checkSpoilOwner(sweeper, true);
+									canSweep &= !swept.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
+									canSweep &= sweeper.getInventory().checkInventorySlotsAndWeight(swept.getSpoilLootItems(), true, true);
+								}
+								else
+								{
+									sweeper.sendPacket(SystemMessageId.SWEEPER_FAILED_TARGET_NOT_SPOILED);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return canSweep;
 	}
 }

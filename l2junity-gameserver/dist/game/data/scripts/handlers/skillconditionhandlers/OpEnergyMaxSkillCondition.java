@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * @author UnAfraid
@@ -40,7 +40,12 @@ public class OpEnergyMaxSkillCondition implements ISkillCondition
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		final int maxCharges = (int) caster.getStat().getValue(Stats.MAX_MOMENTUM);
-		return caster.isPlayer() && ((caster.getActingPlayer().getCharges() + _amount) <= maxCharges);
+		if (caster.getActingPlayer().getCharges() >= _amount)
+		{
+			caster.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
+			return false;
+		}
+		
+		return true;
 	}
 }
