@@ -110,18 +110,8 @@ public class SkillConditionMasterHandler
 		SkillConditionHandler.getInstance().registerHandler("OpUsePraseed", OpUsePraseedSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("CanUseInDragonLair", CanUseInDragonLairSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpTargetWeaponAttackType", OpTargetWeaponAttackTypeSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotRhand", SlotRhandSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotRlhand", SlotRlhandSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpTargetArmorType", OpTargetArmorTypeSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotLhand", SlotLhandSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotChest", SlotChestSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("CanChangeVitalItemCount", CanChangeVitalItemCountSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotLegs", SlotLegsSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotGloves", SlotGlovesSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotFeet", SlotFeetSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("SlotHairall", SlotHairallSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpTargetAllItemType", OpTargetAllItemTypeSkillCondition::new);
-		SkillConditionHandler.getInstance().registerHandler("ArmorNone", ArmorNoneSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("CanMountForEvent", CanMountForEventSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpEquipItem", OpEquipItemSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpInstantzone", OpInstantzoneSkillCondition::new);
