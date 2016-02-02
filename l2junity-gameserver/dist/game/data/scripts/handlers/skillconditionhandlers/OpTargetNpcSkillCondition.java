@@ -25,18 +25,20 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author
+ * @author Sdw
  */
 public class OpTargetNpcSkillCondition implements ISkillCondition
 {
+	private final int _npcId;
+	
 	public OpTargetNpcSkillCondition(StatsSet params)
 	{
-	
+		_npcId = params.getInt("npcId");
 	}
 	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return (target != null) && target.isNpc();
+		return (target != null) && target.isNpc() && (target.getId() == _npcId);
 	}
 }

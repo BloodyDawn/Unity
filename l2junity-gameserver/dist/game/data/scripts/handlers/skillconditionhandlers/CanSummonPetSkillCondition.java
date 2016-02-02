@@ -18,25 +18,52 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class CanSummonPetSkillCondition implements ISkillCondition
 {
 	public CanSummonPetSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final PlayerInstance player = caster.getActingPlayer();
+		if (player == null)
+		{
+			return false;
+		}
+		
+		boolean canSummon = true;
+		
+		if (Config.RESTORE_PET_ON_RECONNECT && CharSummonTable.getInstance().getPets().containsKey(player.getObjectId()))
+		{
+			player.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_MULTIPLE_PETS_AT_THE_SAME_TIME);
+			canSummon = false;
+		}
+		else if (player.hasPet())
+		{
+			player.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_MULTIPLE_PETS_AT_THE_SAME_TIME);
+			canSummon = false;
+		}
+		else if (player.isFlyingMounted() || player.isMounted() || player.inObserverMode() || player.isTeleporting())
+		{
+			canSummon = false;
+		}
+		
+		return canSummon;
 	}
 }

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author
+ * @author Sdw
  */
 public class OpResurrectionSkillCondition implements ISkillCondition
 {

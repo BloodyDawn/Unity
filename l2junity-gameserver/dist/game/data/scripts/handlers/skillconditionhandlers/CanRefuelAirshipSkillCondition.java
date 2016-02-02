@@ -21,22 +21,32 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class CanRefuelAirshipSkillCondition implements ISkillCondition
 {
+	private final int _amount;
+	
 	public CanRefuelAirshipSkillCondition(StatsSet params)
 	{
-
+		_amount = params.getInt("amount");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		boolean canRefuelAirship = true;
+		final PlayerInstance player = caster.getActingPlayer();
+		if ((player == null) || (player.getAirShip() == null) || !(player.getAirShip() instanceof L2ControllableAirShipInstance) || ((player.getAirShip().getFuel() + _amount) > player.getAirShip().getMaxFuel()))
+		{
+			canRefuelAirship = false;
+		}
+		return canRefuelAirship;
 	}
 }
