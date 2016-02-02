@@ -25,15 +25,15 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author
  */
 public class OpTargetArmorTypeSkillCondition implements ISkillCondition
 {
 	public OpTargetArmorTypeSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{

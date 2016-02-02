@@ -25,18 +25,26 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class CannotUseInTransformSkillCondition implements ISkillCondition
 {
+	private final int _transformId;
+	
 	public CannotUseInTransformSkillCondition(StatsSet params)
 	{
-
+		_transformId = params.getInt("transformId", -1);
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		boolean isTransformed = caster.isTransformed();
+		if (isTransformed && (_transformId > 0))
+		{
+			isTransformed = caster.getTransformation().getId() == _transformId;
+		}
+		
+		return !isTransformed;
 	}
 }
