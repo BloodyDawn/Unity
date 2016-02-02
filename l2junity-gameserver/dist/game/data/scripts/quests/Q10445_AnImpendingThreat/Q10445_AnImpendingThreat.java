@@ -79,13 +79,14 @@ public final class Q10445_AnImpendingThreat extends Quest
 			{
 				st.startQuest();
 				giveItems(player, LETTER, 1);
+				htmltext = event;
 				break;
 			}
 			case "33839-03.html":
 			{
 				if (st.isCond(1))
 				{
-					st.isCond(2);
+					st.setCond(2);
 					takeItems(player, LETTER, 1);
 					giveItems(player, BADGE, 1);
 					htmltext = event;
@@ -106,6 +107,7 @@ public final class Q10445_AnImpendingThreat extends Quest
 						addExpAndSp(player, 100_506_183, 241_212);
 					}
 					st.exitQuest(false, true);
+					htmltext = event;
 				}
 				break;
 			}
