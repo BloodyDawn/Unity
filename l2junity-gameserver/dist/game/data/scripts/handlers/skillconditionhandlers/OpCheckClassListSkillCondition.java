@@ -21,6 +21,7 @@ package handlers.skillconditionhandlers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.l2junity.gameserver.enums.SkillConditionAffectType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -33,7 +34,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 public class OpCheckClassListSkillCondition implements ISkillCondition
 {
 	private final List<Integer> _classIds = new ArrayList<>();
-	private final boolean _verifyTarget;
+	private final SkillConditionAffectType _affectType;
 	private final boolean _isWithin;
 	
 	public OpCheckClassListSkillCondition(StatsSet params)
@@ -43,21 +44,28 @@ public class OpCheckClassListSkillCondition implements ISkillCondition
 		{
 			classIds.stream().map(Integer::valueOf).forEach(_classIds::add);
 		}
-		_verifyTarget = params.getBoolean("verifyTarget");
+		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 		_isWithin = params.getBoolean("isWithin");
 	}
 	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		if (_verifyTarget)
+		switch (_affectType)
 		{
-			if ((target == null) || !target.isPlayer())
+			case CASTER:
 			{
-				return false;
+				return caster.isPlayer() && (_isWithin == _classIds.stream().anyMatch(classId -> classId == caster.getActingPlayer().getClassId().getId()));
 			}
-			return _isWithin == _classIds.stream().anyMatch(classId -> classId == target.getActingPlayer().getClassId().getId());
+			case TARGET:
+			{
+				if ((target != null) && !target.isPlayer())
+				{
+					return _isWithin == _classIds.stream().anyMatch(classId -> classId == target.getActingPlayer().getClassId().getId());
+				}
+				break;
+			}
 		}
-		return caster.isPlayer() && (_isWithin == _classIds.stream().anyMatch(classId -> classId == caster.getActingPlayer().getClassId().getId()));
+		return false;
 	}
 }
