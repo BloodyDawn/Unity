@@ -18,6 +18,7 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.enums.SkillConditionAffectType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -31,16 +32,33 @@ public class CheckLevelSkillCondition implements ISkillCondition
 {
 	private final int _minLevel;
 	private final int _maxLevel;
+	private final SkillConditionAffectType _affectType;
 	
 	public CheckLevelSkillCondition(StatsSet params)
 	{
 		_minLevel = params.getInt("minLevel");
 		_maxLevel = params.getInt("maxLevel");
+		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 	}
 	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return (caster.getLevel() >= _minLevel) && (caster.getLevel() <= _maxLevel);
+		switch (_affectType)
+		{
+			case CASTER:
+			{
+				return (caster.getLevel() >= _minLevel) && (caster.getLevel() <= _maxLevel);
+			}
+			case TARGET:
+			{
+				if ((target != null) && !target.isPlayer())
+				{
+					return (target.getActingPlayer().getLevel() >= _minLevel) && (target.getActingPlayer().getLevel() <= _maxLevel);
+				}
+				break;
+			}
+		}
+		return false;
 	}
 }

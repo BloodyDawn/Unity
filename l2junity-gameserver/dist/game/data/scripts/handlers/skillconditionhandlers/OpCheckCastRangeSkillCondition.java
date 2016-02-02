@@ -25,18 +25,20 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class OpCheckCastRangeSkillCondition implements ISkillCondition
 {
+	private final int _distance;
+	
 	public OpCheckCastRangeSkillCondition(StatsSet params)
 	{
-
+		_distance = params.getInt("distance");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return (target != null) && (caster.calculateDistance(target, true, true) >= _distance);
 	}
 }
