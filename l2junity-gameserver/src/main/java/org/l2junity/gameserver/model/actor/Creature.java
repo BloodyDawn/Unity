@@ -1551,7 +1551,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Launch a simple attack against the L2Character targeted
 			if (!obj.isAlikeDead())
 			{
-				if ((obj == getAI().getAttackTarget()) || obj.isAutoAttackable(this))
+				if ((obj == getAI().getTarget()) || obj.isAutoAttackable(this))
 				{
 					list.add(obj);
 					if (list.size() >= attackCountMax)
@@ -3121,7 +3121,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean isInCombat()
 	{
-		return hasAI() && ((getAI().getAttackTarget() != null) || getAI().isAutoAttacking());
+		return hasAI() && getAI().isAutoAttacking();
 	}
 	
 	/**

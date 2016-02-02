@@ -295,7 +295,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			Creature hated;
 			if (_actor.isConfused())
 			{
-				hated = getAttackTarget(); // Force mobs to attack anybody if confused
+				hated = getTarget(); // Force mobs to attack anybody if confused
 			}
 			else
 			{
@@ -365,7 +365,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		Creature attackTarget = getAttackTarget();
+		Creature attackTarget = getTarget();
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((attackTarget == null) || attackTarget.isAlikeDead() || (_attackTimeout < GameTimeController.getInstance().getGameTicks()))
 		{
@@ -378,7 +378,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			
 			// Cancel target and timeout
 			_attackTimeout = Integer.MAX_VALUE;
-			setAttackTarget(null);
+			setTarget(null);
 			
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE, null, null);
@@ -393,7 +393,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	
 	private final void factionNotifyAndSupport()
 	{
-		Creature target = getAttackTarget();
+		Creature target = getTarget();
 		// Call all L2Object of its Faction inside the Faction Range
 		if ((((Npc) _actor).getTemplate().getClans() == null) || (target == null))
 		{
@@ -467,13 +467,13 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			if (npc.getAI() != null) // TODO: possibly check not needed
 			{
 				if (!npc.isDead() && (Math.abs(target.getZ() - npc.getZ()) < 600)
-				// && _actor.getAttackByList().contains(getAttackTarget())
+				// && _actor.getAttackByList().contains(getTarget())
 				&& ((npc.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (npc.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE))
 				// limiting aggro for siege guards
 				&& target.isInsideRadius(npc, 1500, true, false) && GeoData.getInstance().canSeeTarget(npc, target))
 				{
 					// Notify the L2Object AI with EVT_AGGRESSION
-					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getAttackTarget(), 1);
+					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getTarget(), 1);
 					return;
 				}
 				// heal friends
@@ -530,7 +530,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		{
 			sGuard = (L2DefenderInstance) _actor;
 		}
-		Creature attackTarget = getAttackTarget();
+		Creature attackTarget = getTarget();
 		
 		try
 		{

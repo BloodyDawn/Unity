@@ -108,7 +108,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				final SkillHolder hateSkill = instParams.getSkillHolder("adolphHate");
 				if (npc.isInCombat() && (hateSkill != null) && SkillCaster.checkUseConditions(npc, hateSkill.getSkill()))
 				{
-					addSkillCastDesire(npc, npc.getAI().getAttackTarget(), hateSkill, 23);
+					addSkillCastDesire(npc, npc.getAI().getTarget(), hateSkill, 23);
 				}
 				else
 				{
@@ -172,7 +172,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				final SkillHolder shieldSkill = instParams.getSkillHolder("adolphShield");
 				if ((shieldSkill != null) && SkillCaster.checkUseConditions(npc, shieldSkill.getSkill()))
 				{
-					addSkillCastDesire(npc, npc.getAI().getAttackTarget(), shieldSkill, 23);
+					addSkillCastDesire(npc, npc.getAI().getTarget(), shieldSkill, 23);
 				}
 			}
 			else if (random < 666)
@@ -180,7 +180,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				final SkillHolder punishSkill = instParams.getSkillHolder("adolphPunish");
 				if ((punishSkill != null) && SkillCaster.checkUseConditions(npc, punishSkill.getSkill()))
 				{
-					addSkillCastDesire(npc, npc.getAI().getAttackTarget(), punishSkill, 23);
+					addSkillCastDesire(npc, npc.getAI().getTarget(), punishSkill, 23);
 				}
 			}
 			
@@ -191,7 +191,7 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				{
 					npc.setScriptValue(1);
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.IT_S_NOT_OVER);
-					addSkillCastDesire(npc, npc.getAI().getAttackTarget(), ultimateSkill, 23);
+					addSkillCastDesire(npc, npc.getAI().getTarget(), ultimateSkill, 23);
 					getTimers().addTimer("RESTORE_SCRIPTVAL", 10000, n -> npc.setScriptValue(0));
 				}
 			}

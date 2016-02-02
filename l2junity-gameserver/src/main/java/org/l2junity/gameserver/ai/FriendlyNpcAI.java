@@ -82,7 +82,7 @@ public class FriendlyNpcAI extends AttackableAI
 		changeIntention(AI_INTENTION_ATTACK, target);
 		
 		// Set the AI attack target
-		setAttackTarget(target);
+		setTarget(target);
 		
 		stopFollow();
 		
@@ -99,7 +99,7 @@ public class FriendlyNpcAI extends AttackableAI
 			return;
 		}
 		
-		Creature originalAttackTarget = getAttackTarget();
+		Creature originalAttackTarget = getTarget();
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead())
 		{
@@ -230,12 +230,12 @@ public class FriendlyNpcAI extends AttackableAI
 	@Override
 	protected void thinkCast()
 	{
-		if (checkTargetLost(getCastTarget()))
+		if (checkTargetLost(getTarget()))
 		{
-			setCastTarget(null);
+			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(getTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}

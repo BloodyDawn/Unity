@@ -89,9 +89,6 @@ public abstract class AbstractAI implements Ctrl
 	
 	/** Different targets this AI maintains */
 	private WorldObject _target;
-	private Creature _castTarget;
-	protected Creature _attackTarget;
-	protected Creature _followTarget;
 	
 	/** The skill we are currently casting by INTENTION_CAST */
 	Skill _skill;
@@ -127,33 +124,6 @@ public abstract class AbstractAI implements Ctrl
 	public CtrlIntention getIntention()
 	{
 		return _intention;
-	}
-	
-	protected void setCastTarget(Creature target)
-	{
-		_castTarget = target;
-	}
-	
-	/**
-	 * @return the current cast target.
-	 */
-	public Creature getCastTarget()
-	{
-		return _castTarget;
-	}
-	
-	protected void setAttackTarget(Creature target)
-	{
-		_attackTarget = target;
-	}
-	
-	/**
-	 * @return current attack target.
-	 */
-	@Override
-	public Creature getAttackTarget()
-	{
-		return _attackTarget;
 	}
 	
 	/**
@@ -644,8 +614,6 @@ public abstract class AbstractAI implements Ctrl
 		// Init AI
 		_intention = AI_INTENTION_IDLE;
 		_target = null;
-		_castTarget = null;
-		_attackTarget = null;
 		
 		// Cancel the follow task if necessary
 		stopFollow();
@@ -662,10 +630,10 @@ public abstract class AbstractAI implements Ctrl
 		{
 			if (_clientMoving)
 			{
-				if ((_clientMovingToPawnOffset != 0) && (_followTarget != null))
+				if ((_clientMovingToPawnOffset != 0) && (_target != null) && _target.isCreature())
 				{
 					// Send a Server->Client packet MoveToPawn to the actor and all L2PcInstance in its _knownPlayers
-					player.sendPacket(new MoveToPawn(_actor, _followTarget, _clientMovingToPawnOffset));
+					player.sendPacket(new MoveToPawn(_actor, (Creature) _target, _clientMovingToPawnOffset));
 				}
 				else
 				{
@@ -674,6 +642,11 @@ public abstract class AbstractAI implements Ctrl
 				}
 			}
 		}
+	}
+	
+	public boolean isFollowing()
+	{
+		return (getTarget() != null) && (getIntention() == CtrlIntention.AI_INTENTION_FOLLOW);
 	}
 	
 	/**
@@ -698,7 +671,7 @@ public abstract class AbstractAI implements Ctrl
 			_followTask = null;
 		}
 		
-		_followTarget = target;
+		setTarget(target);
 		
 		final int followRange = range == -1 ? Rnd.get(50, 100) : range;
 		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() ->
@@ -710,7 +683,7 @@ public abstract class AbstractAI implements Ctrl
 					return;
 				}
 				
-				final Creature followTarget = _followTarget; // copy to prevent NPE
+				final Creature followTarget = getTarget(); // copy to prevent NPE
 				if (followTarget == null)
 				{
 					if (_actor.isSummon())
@@ -756,17 +729,17 @@ public abstract class AbstractAI implements Ctrl
 			_followTask.cancel(false);
 			_followTask = null;
 		}
-		_followTarget = null;
 	}
 	
-	protected Creature getFollowTarget()
+	public Creature getTarget()
 	{
-		return _followTarget;
-	}
-	
-	protected WorldObject getTarget()
-	{
-		return _target;
+		final WorldObject target = _target;
+		if (target instanceof Creature)
+		{
+			return (Creature) target;
+		}
+		
+		return null;
 	}
 	
 	protected void setTarget(WorldObject target)

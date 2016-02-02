@@ -155,10 +155,6 @@ public class CharacterAI extends AbstractAI
 		// Set the AI Intention to AI_INTENTION_IDLE
 		changeIntention(AI_INTENTION_IDLE);
 		
-		// Init cast and attack target
-		setCastTarget(null);
-		setAttackTarget(null);
-		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 		clientStopMoving(null);
 		
@@ -186,10 +182,6 @@ public class CharacterAI extends AbstractAI
 		{
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			changeIntention(AI_INTENTION_ACTIVE);
-			
-			// Init cast and attack target
-			setCastTarget(null);
-			setAttackTarget(null);
 			
 			// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 			clientStopMoving(null);
@@ -265,10 +257,10 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
 			// Check if the AI already targets the L2Character
-			if (getAttackTarget() != target)
+			if (getTarget() != target)
 			{
 				// Set the AI attack target (change target)
-				setAttackTarget(target);
+				setTarget(target);
 				
 				stopFollow();
 				
@@ -287,7 +279,7 @@ public class CharacterAI extends AbstractAI
 			changeIntention(AI_INTENTION_ATTACK, target);
 			
 			// Set the AI attack target
-			setAttackTarget(target);
+			setTarget(target);
 			
 			stopFollow();
 			
@@ -330,7 +322,7 @@ public class CharacterAI extends AbstractAI
 	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Set the AI cast target
-		setCastTarget((Creature) target);
+		setTarget(target);
 		
 		// Set the AI skill used by INTENTION_CAST
 		_skill = skill;
@@ -770,33 +762,19 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		// Check if the object was targeted to attack
-		if (getAttackTarget() == object)
+		if (getTarget() == object)
 		{
 			// Cancel attack target
-			setAttackTarget(null);
+			setTarget(null);
 			
-			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
-			setIntention(AI_INTENTION_ACTIVE);
-		}
-		
-		// Check if the object was targeted to cast
-		if (getCastTarget() == object)
-		{
-			// Cancel cast target
-			setCastTarget(null);
-			
-			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
-			setIntention(AI_INTENTION_ACTIVE);
-		}
-		
-		// Check if the object was targeted to follow
-		if (getFollowTarget() == object)
-		{
-			// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
-			clientStopMoving(null);
-			
-			// Stop an AI Follow Task
-			stopFollow();
+			if (isFollowing())
+			{
+				// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
+				clientStopMoving(null);
+				
+				// Stop an AI Follow Task
+				stopFollow();
+			}
 			
 			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE);
@@ -807,8 +785,6 @@ public class CharacterAI extends AbstractAI
 		{
 			// Cancel AI target
 			setTarget(null);
-			setAttackTarget(null);
-			setCastTarget(null);
 			
 			// Stop an AI Follow Task
 			stopFollow();
@@ -888,8 +864,6 @@ public class CharacterAI extends AbstractAI
 		// Init AI
 		_intention = AI_INTENTION_IDLE;
 		setTarget(null);
-		setCastTarget(null);
-		setAttackTarget(null);
 	}
 	
 	/**
@@ -948,7 +922,7 @@ public class CharacterAI extends AbstractAI
 			return true;
 		}
 		
-		if (getFollowTarget() != null)
+		if (isFollowing())
 		{
 			stopFollow();
 		}
@@ -994,7 +968,7 @@ public class CharacterAI extends AbstractAI
 		if (!_actor.isInsideRadius(target, offset, false, false))
 		{
 			// Caller should be L2Playable and thinkAttack/thinkCast/thinkInteract/thinkPickUp
-			if (getFollowTarget() != null)
+			if (isFollowing())
 			{
 				
 				// allow larger hit range when the target is moving (check is run only once per second)
@@ -1057,7 +1031,7 @@ public class CharacterAI extends AbstractAI
 			return true;
 		}
 		
-		if (getFollowTarget() != null)
+		if (isFollowing())
 		{
 			stopFollow();
 		}

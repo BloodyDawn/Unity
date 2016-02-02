@@ -91,17 +91,17 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkAttack()
 	{
-		if (checkTargetLostOrDead(getAttackTarget()))
+		if (checkTargetLostOrDead(getTarget()))
 		{
-			setAttackTarget(null);
+			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange()))
+		if (maybeMoveToPawn(getTarget(), _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
 		clientStopMoving(null);
-		_actor.doAttack(getAttackTarget());
+		_actor.doAttack(getTarget());
 	}
 	
 	private void thinkCast()
@@ -112,13 +112,13 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		
-		if (checkTargetLost(getCastTarget()))
+		if (checkTargetLost(getTarget()))
 		{
-			setCastTarget(null);
+			setTarget(null);
 			return;
 		}
 		boolean val = _startFollow;
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(getTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
@@ -309,7 +309,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
-			_lastAttack = getAttackTarget();
+			_lastAttack = getTarget();
 		}
 		else
 		{

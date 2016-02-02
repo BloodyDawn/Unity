@@ -391,12 +391,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	protected void thinkCast()
 	{
-		if (checkTargetLost(getCastTarget()))
+		if (checkTargetLost(getTarget()))
 		{
-			setCastTarget(null);
+			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(getTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
@@ -471,7 +471,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			Creature hated;
 			if (npc.isConfused())
 			{
-				hated = getAttackTarget(); // effect handles selection
+				hated = getTarget(); // effect handles selection
 			}
 			else
 			{
@@ -650,7 +650,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return;
 		}
 		
-		Creature originalAttackTarget = getAttackTarget();
+		Creature originalAttackTarget = getTarget();
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead() || ((_attackTimeout < GameTimeController.getInstance().getGameTicks()) && npc.canStopAttackByTime()))
 		{
@@ -694,10 +694,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, originalAttackTarget, 1);
 								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), originalAttackTarget.getActingPlayer(), originalAttackTarget.isSummon()), called);
 							}
-							else if (called.isAttackable() && (getAttackTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
+							else if (called.isAttackable() && (getTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
 							{
-								((Attackable) called).addDamageHate(getAttackTarget(), 0, npc.getHating(getAttackTarget()));
-								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getAttackTarget());
+								((Attackable) called).addDamageHate(getTarget(), 0, npc.getHating(getTarget()));
+								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getTarget());
 							}
 						}
 					}
@@ -722,7 +722,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return;
 		}
 		
-		setAttackTarget(mostHate);
+		setTarget(mostHate);
 		npc.setTarget(mostHate);
 		
 		final int combinedCollision = collision + mostHate.getTemplate().getCollisionRadius();
@@ -1037,9 +1037,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				targetReconsider();
 			}
-			else if (getAttackTarget() != null)
+			else if (getTarget() != null)
 			{
-				if (getAttackTarget().isMoving())
+				if (getTarget().isMoving())
 				{
 					range -= 100;
 				}
@@ -1047,13 +1047,16 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					range = 5;
 				}
-				moveToPawn(getAttackTarget(), range);
+				moveToPawn(getTarget(), range);
 			}
 			return;
 		}
 		
 		// Attacks target
-		_actor.doAttack(getAttackTarget());
+		if (getTarget() != null)
+		{
+			_actor.doAttack(getTarget());
+		}
 	}
 	
 	private boolean cast(Skill sk)
@@ -1070,14 +1073,14 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return false;
 		}
 		
-		if (getAttackTarget() == null)
+		if (getTarget() == null)
 		{
 			if (caster.getMostHated() != null)
 			{
-				setAttackTarget(caster.getMostHated());
+				setTarget(caster.getMostHated());
 			}
 		}
-		Creature attackTarget = getAttackTarget();
+		Creature attackTarget = getTarget();
 		if (attackTarget == null)
 		{
 			return false;
@@ -1324,7 +1327,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		final Attackable npc = getActiveChar();
 		try
 		{
-			final Creature attackTarget = getAttackTarget();
+			final Creature attackTarget = getTarget();
 			if (attackTarget == null)
 			{
 				return;
@@ -1511,7 +1514,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			
 			// Attacks target
-			_actor.doAttack(getAttackTarget());
+			if (getTarget() != null)
+			{
+				_actor.doAttack(getTarget());
+			}
 		}
 		catch (NullPointerException e)
 		{
@@ -1523,7 +1529,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	public boolean worthCasting(Skill sk, boolean withoutMoving)
 	{
-		WorldObject target = sk.getTarget(_actor, getAttackTarget(), false, withoutMoving, false);
+		WorldObject target = sk.getTarget(_actor, getTarget(), false, withoutMoving, false);
 		
 		if (target != null)
 		{
@@ -1588,13 +1594,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 						actor.getAttackByList().remove(obj);
 						continue;
 					}
-					else if (creature.isDead() || !GeoData.getInstance().canSeeTarget(actor, creature) || (creature == getAttackTarget()))
+					else if (creature.isDead() || !GeoData.getInstance().canSeeTarget(actor, creature) || (creature == getTarget()))
 					{
 						continue;
 					}
 					try
 					{
-						actor.setTarget(getAttackTarget());
+						actor.setTarget(creature);
 						dist = actor.calculateDistance(creature, false, false);
 						dist2 = dist - actor.getTemplate().getCollisionRadius();
 						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + creature.getTemplate().getCollisionRadius();
@@ -1609,7 +1615,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (dist2 <= range)
 					{
-						if (!getAttackTarget().isAffectedBySkill(sk.getId()))
+						if (!creature.isAffectedBySkill(sk.getId()))
 						{
 							return creature;
 						}
@@ -1626,7 +1632,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					try
 					{
-						actor.setTarget(getAttackTarget());
+						actor.setTarget(obj);
 						dist = actor.calculateDistance(obj, false, false);
 						dist2 = dist;
 						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
@@ -1644,7 +1650,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (dist2 <= range)
 						{
-							if (!getAttackTarget().isAffectedBySkill(sk.getId()))
+							if (!obj.isAffectedBySkill(sk.getId()))
 							{
 								return obj;
 							}
@@ -1671,7 +1677,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					
 					try
 					{
-						actor.setTarget(getAttackTarget());
+						actor.setTarget(targets);
 						dist = actor.calculateDistance(targets, false, false);
 						dist2 = dist - actor.getTemplate().getCollisionRadius();
 						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + targets.getTemplate().getCollisionRadius();
@@ -1699,7 +1705,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			double dist = 0;
 			double dist2 = 0;
 			int range = 0;
-			range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
+			range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getTarget().getTemplate().getCollisionRadius();
 			for (Creature obj : World.getInstance().getVisibleObjects(actor, Creature.class, range))
 			{
 				if (obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
@@ -1708,7 +1714,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				try
 				{
-					actor.setTarget(getAttackTarget());
+					actor.setTarget(obj);
 					dist = actor.calculateDistance(obj, false, false);
 					dist2 = dist - actor.getTemplate().getCollisionRadius();
 					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
@@ -1727,7 +1733,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					
 					if (dist2 <= range)
 					{
-						if (getAttackTarget().getEffectList().getFirstEffect(L2EffectType.BUFF) != null)
+						if (obj.getEffectList().getFirstEffect(L2EffectType.BUFF) != null)
 						{
 							return obj;
 						}
@@ -1754,10 +1760,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				try
 				{
-					actor.setTarget(getAttackTarget());
+					actor.setTarget(obj);
 					dist = actor.calculateDistance(obj, false, false);
 					dist2 = dist - actor.getTemplate().getCollisionRadius();
-					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
+					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
 					// if(obj.isMoving())
 					// dist2 = dist2 - 40;
 				}
@@ -1778,10 +1784,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				try
 				{
-					actor.setTarget(getAttackTarget());
+					actor.setTarget(target);
 					dist = actor.calculateDistance(target, false, false);
 					dist2 = dist;
-					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
+					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getTarget().getTemplate().getCollisionRadius();
 					// if(obj.isMoving())
 					// dist2 = dist2 - 40;
 				}
@@ -1865,7 +1871,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						actor.addDamageHate(obj, 0, 2000);
 					}
 					actor.setTarget(obj);
-					setAttackTarget(obj);
+					setTarget(obj);
 					return;
 				}
 			}
@@ -1874,7 +1880,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			World.getInstance().forEachVisibleObject(actor, Creature.class, obj ->
 			{
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor) || (obj == getAttackTarget()))
+				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor) || (obj == getTarget()))
 				{
 					return;
 				}
@@ -1889,7 +1895,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						actor.addDamageHate(obj, 0, 2000);
 					}
 					actor.setTarget(obj);
-					setAttackTarget(obj);
+					setTarget(obj);
 					
 				}
 				else if (obj.isAttackable())
@@ -1910,7 +1916,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							actor.addDamageHate(obj, 0, 2000);
 						}
 						actor.setTarget(obj);
-						setAttackTarget(obj);
+						setTarget(obj);
 					}
 				}
 				else if (obj.isSummon())
@@ -1924,7 +1930,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						actor.addDamageHate(obj, 0, 2000);
 					}
 					actor.setTarget(obj);
-					setAttackTarget(obj);
+					setTarget(obj);
 				}
 			});
 		}
@@ -1947,14 +1953,14 @@ public class AttackableAI extends CharacterAI implements Runnable
 					continue;
 				}
 				
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj == getAttackTarget()) || (obj == actor))
+				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj == getTarget()) || (obj == actor))
 				{
 					continue;
 				}
 				
 				try
 				{
-					actor.setTarget(getAttackTarget());
+					actor.setTarget(getTarget());
 				}
 				catch (NullPointerException e)
 				{
@@ -1969,7 +1975,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					actor.addDamageHate(obj, 0, 2000);
 				}
 				actor.setTarget(obj);
-				setAttackTarget(obj);
+				setTarget(obj);
 				return;
 			}
 		}
@@ -1993,7 +1999,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						actor.addDamageHate(obj, 0, 2000);
 					}
 					actor.setTarget(obj);
-					setAttackTarget(obj);
+					setTarget(obj);
 				}
 				else if (obj.isAttackable())
 				{
@@ -2013,7 +2019,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							actor.addDamageHate(obj, 0, 2000);
 						}
 						actor.setTarget(obj);
-						setAttackTarget(obj);
+						setTarget(obj);
 					}
 				}
 				else if (obj.isSummon())
@@ -2027,7 +2033,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						actor.addDamageHate(obj, 0, 2000);
 					}
 					actor.setTarget(obj);
-					setAttackTarget(obj);
+					setTarget(obj);
 				}
 			});
 		}
@@ -2113,7 +2119,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}
-		else if (me.getMostHated() != getAttackTarget())
+		else if (me.getMostHated() != getTarget())
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}
