@@ -22,8 +22,10 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
-import java.lang.ref.WeakReference;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -36,6 +38,7 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
+import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -56,6 +59,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableFactionCall;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
@@ -837,7 +841,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 100) / npc.getMaxHp())))
 						{
-							aggroReconsider();
+							setTarget(targetReconsider(false, true));
 							chaostime = 0;
 							return;
 						}
@@ -849,7 +853,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp())))
 						{
-							aggroReconsider();
+							setTarget(targetReconsider(false, true));
 							chaostime = 0;
 							return;
 						}
@@ -863,7 +867,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					double chaosRate = 100 - ((npc.getCurrentHp() * 300) / npc.getMaxHp());
 					if (((chaosRate <= 10) && (Rnd.get(100) <= 10)) || ((chaosRate > 10) && (Rnd.get(100) <= chaosRate)))
 					{
-						aggroReconsider();
+						setTarget(targetReconsider(false, true));
 						chaostime = 0;
 						return;
 					}
@@ -875,7 +879,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp())))
 					{
-						aggroReconsider();
+						setTarget(targetReconsider(false, true));
 						chaostime = 0;
 						return;
 					}
@@ -1035,7 +1039,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			if (npc.isMovementDisabled())
 			{
-				targetReconsider();
+				setTarget(targetReconsider(true, false));
 			}
 			else if (getTarget() != null)
 			{
@@ -1103,7 +1107,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			else if (sk.getAffectScope() == AffectScope.SINGLE)
 			{
-				Creature target = effectTargetReconsider(sk, false);
+				Creature target = skillTargetReconsider(sk);
 				if (target != null)
 				{
 					caster.doCast(sk);
@@ -1121,7 +1125,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					caster.doCast(sk);
 					return true;
 				}
-				Creature target = effectTargetReconsider(sk, false);
+				Creature target = skillTargetReconsider(sk);
 				if (target != null)
 				{
 					caster.setTarget(target);
@@ -1237,7 +1241,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 				}
 				
-				Creature target = effectTargetReconsider(sk, false);
+				Creature target = skillTargetReconsider(sk);
 				if (target != null)
 				{
 					caster.setTarget(target);
@@ -1262,7 +1266,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			else if (sk.getAffectScope() == AffectScope.SINGLE)
 			{
-				Creature target = effectTargetReconsider(sk, false);
+				Creature target = skillTargetReconsider(sk);
 				if (target != null)
 				{
 					caster.setTarget(target);
@@ -1282,7 +1286,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			else if (sk.getAffectScope() == AffectScope.SINGLE)
 			{
-				Creature target = effectTargetReconsider(sk, false);
+				Creature target = skillTargetReconsider(sk);
 				if (target != null)
 				{
 					caster.setTarget(target);
@@ -1475,7 +1479,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			if (npc.isMovementDisabled())
 			{
 				// timepass = 0;
-				targetReconsider();
+				setTarget(targetReconsider(true, false));
 				
 				return;
 			}
@@ -1571,472 +1575,119 @@ public class AttackableAI extends CharacterAI implements Runnable
 		return false;
 	}
 	
-	private Creature effectTargetReconsider(Skill sk, boolean positive)
+	private Creature skillTargetReconsider(Skill skill)
 	{
-		if (sk == null)
+		// Check if skill can be casted.
+		if ((skill == null) || SkillCaster.checkUseConditions(getActor(), skill))
 		{
 			return null;
 		}
-		Attackable actor = getActiveChar();
-		if (!sk.hasEffectType(L2EffectType.DISPEL, L2EffectType.DISPEL_BY_SLOT))
-		{
-			if (!positive)
-			{
-				double dist = 0;
-				double dist2 = 0;
-				int range = 0;
-				
-				for (WeakReference<Creature> obj : actor.getAttackByList())
-				{
-					final Creature creature = obj.get();
-					if (creature == null)
-					{
-						actor.getAttackByList().remove(obj);
-						continue;
-					}
-					else if (creature.isDead() || !GeoData.getInstance().canSeeTarget(actor, creature) || (creature == getTarget()))
-					{
-						continue;
-					}
-					try
-					{
-						actor.setTarget(creature);
-						dist = actor.calculateDistance(creature, false, false);
-						dist2 = dist - actor.getTemplate().getCollisionRadius();
-						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + creature.getTemplate().getCollisionRadius();
-						if (creature.isMoving())
-						{
-							dist2 = dist2 - 70;
-						}
-					}
-					catch (NullPointerException e)
-					{
-						continue;
-					}
-					if (dist2 <= range)
-					{
-						if (!creature.isAffectedBySkill(sk.getId()))
-						{
-							return creature;
-						}
-					}
-				}
-				
-				// ----------------------------------------------------------------------
-				// If there is nearby Target with aggro, start going on random target that is attackable
-				for (Creature obj : World.getInstance().getVisibleObjects(actor, Creature.class, range))
-				{
-					if (obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
-					{
-						continue;
-					}
-					try
-					{
-						actor.setTarget(obj);
-						dist = actor.calculateDistance(obj, false, false);
-						dist2 = dist;
-						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
-						if (obj.isMoving())
-						{
-							dist2 = dist2 - 70;
-						}
-					}
-					catch (NullPointerException e)
-					{
-						continue;
-					}
-					
-					if ((obj.isPlayer()) || (obj.isSummon()))
-					{
-						if (dist2 <= range)
-						{
-							if (!obj.isAffectedBySkill(sk.getId()))
-							{
-								return obj;
-							}
-						}
-					}
-				}
-			}
-			else if (positive)
-			{
-				double dist = 0;
-				double dist2 = 0;
-				int range = 0;
-				for (Attackable targets : World.getInstance().getVisibleObjects(actor, Attackable.class, range))
-				{
-					if (targets.isDead() || !GeoData.getInstance().canSeeTarget(actor, targets))
-					{
-						continue;
-					}
-					
-					if (targets.isInMyClan(actor))
-					{
-						continue;
-					}
-					
-					try
-					{
-						actor.setTarget(targets);
-						dist = actor.calculateDistance(targets, false, false);
-						dist2 = dist - actor.getTemplate().getCollisionRadius();
-						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + targets.getTemplate().getCollisionRadius();
-						if (targets.isMoving())
-						{
-							dist2 = dist2 - 70;
-						}
-					}
-					catch (NullPointerException e)
-					{
-						continue;
-					}
-					if (dist2 <= range)
-					{
-						if (!targets.isAffectedBySkill(sk.getId()))
-						{
-							return targets;
-						}
-					}
-				}
-			}
-		}
-		else
-		{
-			double dist = 0;
-			double dist2 = 0;
-			int range = 0;
-			range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getTarget().getTemplate().getCollisionRadius();
-			for (Creature obj : World.getInstance().getVisibleObjects(actor, Creature.class, range))
-			{
-				if (obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
-				{
-					continue;
-				}
-				try
-				{
-					actor.setTarget(obj);
-					dist = actor.calculateDistance(obj, false, false);
-					dist2 = dist - actor.getTemplate().getCollisionRadius();
-					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
-					if (obj.isMoving())
-					{
-						dist2 = dist2 - 70;
-					}
-				}
-				catch (NullPointerException e)
-				{
-					continue;
-				}
-				
-				if ((obj.isPlayer()) || (obj.isSummon()))
-				{
-					
-					if (dist2 <= range)
-					{
-						if (obj.getEffectList().getFirstEffect(L2EffectType.BUFF) != null)
-						{
-							return obj;
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-	
-	private Creature skillTargetReconsider(Skill sk)
-	{
-		double dist = 0;
-		double dist2 = 0;
-		int range = 0;
-		Attackable actor = getActiveChar();
-		if (actor.getHateList() != null)
-		{
-			for (Creature obj : actor.getHateList())
-			{
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead())
-				{
-					continue;
-				}
-				try
-				{
-					actor.setTarget(obj);
-					dist = actor.calculateDistance(obj, false, false);
-					dist2 = dist - actor.getTemplate().getCollisionRadius();
-					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
-					// if(obj.isMoving())
-					// dist2 = dist2 - 40;
-				}
-				catch (NullPointerException e)
-				{
-					continue;
-				}
-				if (dist2 <= range)
-				{
-					return obj;
-				}
-			}
-		}
 		
-		if (!(actor instanceof L2GuardInstance))
+		final int range = skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius();
+		
+		final List<Creature> targets = World.getInstance().getVisibleObjects(getActiveChar(), Creature.class, range, c ->
 		{
-			for (WorldObject target : World.getInstance().getVisibleObjects(actor, WorldObject.class))
+			// Bad skills will be casted only to hating targets.
+			if (skill.isBad() && !getActiveChar().getAggroList().containsKey(c))
 			{
-				try
-				{
-					actor.setTarget(target);
-					dist = actor.calculateDistance(target, false, false);
-					dist2 = dist;
-					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getTarget().getTemplate().getCollisionRadius();
-					// if(obj.isMoving())
-					// dist2 = dist2 - 40;
-				}
-				catch (NullPointerException e)
-				{
-					continue;
-				}
-				Creature obj = null;
-				if (target.isCreature())
-				{
-					obj = (Creature) target;
-				}
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || (dist2 > range))
-				{
-					continue;
-				}
-				if (obj.isPlayer())
-				{
-					return obj;
-					
-				}
-				if (obj.isAttackable())
-				{
-					if (actor.getTemplate().isChaos())
-					{
-						if (((Attackable) obj).isInMyClan(actor))
-						{
-							continue;
-						}
-						
-						return obj;
-					}
-				}
-				if (obj.isSummon())
-				{
-					return obj;
-				}
+				return false;
 			}
-		}
-		return null;
-	}
-	
-	private void targetReconsider()
-	{
-		double dist = 0;
-		double dist2 = 0;
-		int range = 0;
-		Attackable actor = getActiveChar();
-		Creature MostHate = actor.getMostHated();
-		if (actor.getHateList() != null)
-		{
-			for (Creature obj : actor.getHateList())
-			{
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor))
-				{
-					continue;
-				}
-				try
-				{
-					dist = actor.calculateDistance(obj, false, false);
-					dist2 = dist - actor.getTemplate().getCollisionRadius();
-					range = actor.getPhysicalAttackRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
-					if (obj.isMoving())
-					{
-						dist2 = dist2 - 70;
-					}
-				}
-				catch (NullPointerException e)
-				{
-					continue;
-				}
-				
-				if (dist2 <= range)
-				{
-					if (MostHate != null)
-					{
-						actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-					}
-					else
-					{
-						actor.addDamageHate(obj, 0, 2000);
-					}
-					actor.setTarget(obj);
-					setTarget(obj);
-					return;
-				}
-			}
-		}
-		if (!(actor instanceof L2GuardInstance))
-		{
-			World.getInstance().forEachVisibleObject(actor, Creature.class, obj ->
-			{
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor) || (obj == getTarget()))
-				{
-					return;
-				}
-				if (obj.isPlayer())
-				{
-					if (MostHate != null)
-					{
-						actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-					}
-					else
-					{
-						actor.addDamageHate(obj, 0, 2000);
-					}
-					actor.setTarget(obj);
-					setTarget(obj);
-					
-				}
-				else if (obj.isAttackable())
-				{
-					if (actor.getTemplate().isChaos())
-					{
-						if (((Attackable) obj).isInMyClan(actor))
-						{
-							return;
-						}
-						
-						if (MostHate != null)
-						{
-							actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-						}
-						else
-						{
-							actor.addDamageHate(obj, 0, 2000);
-						}
-						actor.setTarget(obj);
-						setTarget(obj);
-					}
-				}
-				else if (obj.isSummon())
-				{
-					if (MostHate != null)
-					{
-						actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-					}
-					else
-					{
-						actor.addDamageHate(obj, 0, 2000);
-					}
-					actor.setTarget(obj);
-					setTarget(obj);
-				}
-			});
-		}
-	}
-	
-	private void aggroReconsider()
-	{
-		Attackable actor = getActiveChar();
-		Creature MostHate = actor.getMostHated();
-		if (actor.getHateList() != null)
-		{
 			
-			int rand = Rnd.get(actor.getHateList().size());
-			int count = 0;
-			for (Creature obj : actor.getHateList())
+			// Check if target is valid and within cast range.
+			if (skill.getTarget(getActiveChar(), c, false, true, false) == null)
 			{
-				if (count < rand)
-				{
-					count++;
-					continue;
-				}
-				
-				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj == getTarget()) || (obj == actor))
-				{
-					continue;
-				}
-				
-				try
-				{
-					actor.setTarget(getTarget());
-				}
-				catch (NullPointerException e)
-				{
-					continue;
-				}
-				if (MostHate != null)
-				{
-					actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-				}
-				else
-				{
-					actor.addDamageHate(obj, 0, 2000);
-				}
-				actor.setTarget(obj);
-				setTarget(obj);
-				return;
+				return false;
 			}
+			
+			// Skip if target is already affected by such skill.
+			if (skill.hasContinuousEffects())
+			{
+				final BuffInfo info = c.getEffectList().getBuffInfoByAbnormalType(skill.getAbnormalType());
+				if ((info != null) && (info.getSkill().getAbnormalLvl() >= skill.getAbnormalLvl()))
+				{
+					return false;
+				}
+			}
+			
+			// Check if target had buffs if skill is bad cancel, or debuffs if skill is good cancel.
+			if (skill.hasEffectType(L2EffectType.DISPEL, L2EffectType.DISPEL_BY_SLOT))
+			{
+				if (skill.isBad())
+				{
+					if (!c.getEffectList().hasBuffs() && !c.getEffectList().hasDances())
+					{
+						return false;
+					}
+				}
+				else if (!c.getEffectList().hasDebuffs())
+				{
+					return false;
+				}
+			}
+			
+			return true;
+		});
+		
+		// TODO sort by hated maybe.
+		return targets.stream().findAny().orElse(null);
+	}
+	
+	private Creature targetReconsider(boolean insideAttackRange, boolean dontSortByHate)
+	{
+		Attackable actor = getActiveChar();
+		final int range = insideAttackRange ? (actor.getPhysicalAttackRange() + actor.getTemplate().getCollisionRadius()) : 2000; // TODO: Need some value for forget range.
+		
+		Collection<AggroInfo> aggroList = actor.getAggroList().values();
+		if (aggroList != null)
+		{
+			if (dontSortByHate)
+			{
+				//@formatter:off
+				return aggroList.stream()
+				.map(AggroInfo::getAttacker)
+				.filter(Objects::nonNull)
+				.filter(a -> !a.isDead())
+				.filter(a -> a.isInsideRadius(actor, range, false, true))
+				.filter(a -> GeoData.getInstance().canSeeTarget(actor, a))
+				.findFirst().orElse(null);
+				//@formatter:on
+			}
+			
+			//@formatter:off
+			return aggroList.stream()
+			.filter(a -> a.getAttacker() != null)
+			.filter(a -> !a.getAttacker().isDead())
+			.filter(a -> a.getAttacker().isInsideRadius(actor, range, false, true))
+			.filter(a -> GeoData.getInstance().canSeeTarget(actor, a.getAttacker()))
+			.sorted(Comparator.comparingInt(AggroInfo::getHate))
+			.map(AggroInfo::getAttacker)
+			.findFirst().orElse(null);
+			//@formatter:on
 		}
 		
-		if (!(actor instanceof L2GuardInstance))
+		if (actor.isAggressive())
 		{
-			World.getInstance().forEachVisibleObject(actor, Creature.class, obj ->
+			List<Creature> targetList = World.getInstance().getVisibleObjects(actor, Creature.class, actor.getAggroRange(), c ->
 			{
-				if (!GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor))
+				if (c.isDead())
 				{
-					return;
+					return false;
 				}
-				if (obj.isPlayer())
+				if (insideAttackRange && !c.isInsideRadius(actor, range, false, true))
 				{
-					if ((MostHate != null) && !MostHate.isDead())
-					{
-						actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-					}
-					else
-					{
-						actor.addDamageHate(obj, 0, 2000);
-					}
-					actor.setTarget(obj);
-					setTarget(obj);
+					return false;
 				}
-				else if (obj.isAttackable())
+				if (!GeoData.getInstance().canSeeTarget(actor, c))
 				{
-					if (actor.getTemplate().isChaos())
-					{
-						if (((Attackable) obj).isInMyClan(actor))
-						{
-							return;
-						}
-						
-						if (MostHate != null)
-						{
-							actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-						}
-						else
-						{
-							actor.addDamageHate(obj, 0, 2000);
-						}
-						actor.setTarget(obj);
-						setTarget(obj);
-					}
+					return false;
 				}
-				else if (obj.isSummon())
-				{
-					if (MostHate != null)
-					{
-						actor.addDamageHate(obj, 0, actor.getHating(MostHate));
-					}
-					else
-					{
-						actor.addDamageHate(obj, 0, 2000);
-					}
-					actor.setTarget(obj);
-					setTarget(obj);
-				}
+				return true;
 			});
+			
+			return targetList.stream().findAny().orElse(null);
 		}
+		
+		return null;
 	}
 	
 	/**
