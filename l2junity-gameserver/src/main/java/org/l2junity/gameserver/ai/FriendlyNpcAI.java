@@ -26,6 +26,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 
@@ -82,7 +83,7 @@ public class FriendlyNpcAI extends AttackableAI
 		changeIntention(AI_INTENTION_ATTACK, target);
 		
 		// Set the AI attack target
-		setTarget(target);
+		_actor.setTarget(target);
 		
 		stopFollow();
 		
@@ -99,7 +100,8 @@ public class FriendlyNpcAI extends AttackableAI
 			return;
 		}
 		
-		Creature originalAttackTarget = getTarget();
+		final WorldObject target = npc.getTarget();
+		Creature originalAttackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead())
 		{
@@ -230,10 +232,10 @@ public class FriendlyNpcAI extends AttackableAI
 	@Override
 	protected void thinkCast()
 	{
-		final Creature target = getTarget();
+		final WorldObject target = _actor.getTarget();
 		if (checkTargetLost(target))
 		{
-			setTarget(null);
+			_actor.setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))

@@ -646,7 +646,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	public boolean isFollowing()
 	{
-		return (getTarget() != null) && (getIntention() == CtrlIntention.AI_INTENTION_FOLLOW);
+		return (_actor.getTarget() != null) && (getIntention() == CtrlIntention.AI_INTENTION_FOLLOW);
 	}
 	
 	/**
@@ -671,7 +671,7 @@ public abstract class AbstractAI implements Ctrl
 			_followTask = null;
 		}
 		
-		setTarget(target);
+		_actor.setTarget(target);
 		
 		final int followRange = range == -1 ? Rnd.get(50, 100) : range;
 		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() ->
@@ -683,7 +683,7 @@ public abstract class AbstractAI implements Ctrl
 					return;
 				}
 				
-				final Creature followTarget = getTarget(); // copy to prevent NPE
+				final WorldObject followTarget = _actor.getTarget(); // copy to prevent NPE
 				if (followTarget == null)
 				{
 					if (_actor.isSummon())
@@ -729,22 +729,6 @@ public abstract class AbstractAI implements Ctrl
 			_followTask.cancel(false);
 			_followTask = null;
 		}
-	}
-	
-	public Creature getTarget()
-	{
-		final WorldObject target = _target;
-		if ((target != null) && target.isCreature())
-		{
-			return (Creature) target;
-		}
-		
-		return null;
-	}
-	
-	protected void setTarget(WorldObject target)
-	{
-		_target = target;
 	}
 	
 	/**

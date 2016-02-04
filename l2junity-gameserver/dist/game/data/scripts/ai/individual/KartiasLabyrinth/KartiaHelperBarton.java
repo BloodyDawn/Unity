@@ -159,7 +159,7 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 				if ((infinitySkill != null) && SkillCaster.checkUseConditions(npc, infinitySkill.getSkill()))
 				{
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.DIE3);
-					addSkillCastDesire(npc, npc.getAI().getTarget(), infinitySkill, 23);
+					addSkillCastDesire(npc, npc.getTarget(), infinitySkill, 23);
 				}
 			}
 			else if ((npc.getCurrentHpPercent() < 50) && npc.isScriptValue(0))
@@ -168,7 +168,7 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 				if ((berserkerSkill != null) && !npc.isAffectedBySkill(berserkerSkill.getSkillId()) && SkillCaster.checkUseConditions(npc, berserkerSkill.getSkill()))
 				{
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WAAAAAAAAHHHHHH);
-					addSkillCastDesire(npc, npc.getAI().getTarget(), berserkerSkill, 23);
+					addSkillCastDesire(npc, npc.getTarget(), berserkerSkill, 23);
 					getTimers().addTimer("RESTORE_SCRIPTVAL", 10000, n -> npc.setScriptValue(0));
 				}
 			}

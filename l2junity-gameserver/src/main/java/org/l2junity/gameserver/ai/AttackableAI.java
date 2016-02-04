@@ -373,7 +373,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 				target = skillTargetReconsider(buff, true, true);
 				if (target != null)
 				{
-					setTarget(target);
 					_actor.setTarget(target);
 					_actor.doCast(buff);
 					LOGGER.debug("{} used buff skill {} on {}", this, buff, _actor);
@@ -389,10 +388,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	protected void thinkCast()
 	{
-		final Creature target = getTarget();
+		final WorldObject target = getActiveChar().getTarget();
 		if (checkTargetLost(target))
 		{
-			setTarget(null);
+			getActiveChar().setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
@@ -415,7 +414,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkActive()
 	{
 		final Attackable npc = getActiveChar();
-		final Creature target = getTarget();
+		WorldObject target = npc.getTarget();
 		// Update every 1s the _globalAggro counter to come close to 0
 		if (_globalAggro != 0)
 		{
@@ -468,9 +467,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			// Chose a target from its aggroList
 			Creature hated;
-			if (npc.isConfused())
+			if (npc.isConfused() && (target != null) && target.isCreature())
 			{
-				hated = target; // effect handles selection
+				hated = (Creature) target; // effect handles selection
 			}
 			else
 			{
@@ -583,12 +582,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 				{
-					WorldObject buffTarget = skillTargetReconsider(sk, true, true);
-					
-					if (buffTarget != null)
+					target = skillTargetReconsider(sk, true, true);
+					if (target != null)
 					{
-						setTarget(buffTarget);
-						npc.setTarget(buffTarget);
+						npc.setTarget(target);
 						npc.doCast(sk);
 						return;
 					}
@@ -605,12 +602,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				WorldObject buffTarget = skillTargetReconsider(sk, true, true);
-				
-				if (buffTarget != null)
+				target = skillTargetReconsider(sk, true, true);
+				if (target != null)
 				{
-					setTarget(buffTarget);
-					npc.setTarget(buffTarget);
+					npc.setTarget(target);
 					npc.doCast(sk);
 					return;
 				}
@@ -654,7 +649,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
-		final Creature target = getTarget();
+		Creature target = (npc.getTarget() != null) && npc.getTarget().isCreature() ? (Creature) npc.getTarget() : null;
 		
 		if (npc.isCastingNow(s -> !s.isSimultaneousType()))
 		{
@@ -685,6 +680,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			// Go through all L2Object that belong to its faction
 			try
 			{
+				final Creature finalTarget = target;
 				World.getInstance().forEachVisibleObjectInRange(npc, Npc.class, factionRange, called ->
 				{
 					if (!getActiveChar().getTemplate().isClan(called.getTemplate().getClans()))
@@ -695,19 +691,19 @@ public class AttackableAI extends CharacterAI implements Runnable
 					// Check if the L2Object is inside the Faction Range of the actor
 					if (called.hasAI())
 					{
-						if ((Math.abs(target.getZ() - called.getZ()) < 600) && npc.getAttackByList().contains(target) && ((called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)))
+						if ((Math.abs(finalTarget.getZ() - called.getZ()) < 600) && npc.getAttackByList().contains(finalTarget) && ((called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)))
 						{
-							if (target.isPlayable())
+							if (finalTarget.isPlayable())
 							{
 								// By default, when a faction member calls for help, attack the caller's attacker.
 								// Notify the AI with EVT_AGGRESSION
-								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, target, 1);
-								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), target.getActingPlayer(), target.isSummon()), called);
+								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
+								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), finalTarget.getActingPlayer(), finalTarget.isSummon()), called);
 							}
 							else if (called.isAttackable() && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
 							{
-								((Attackable) called).addDamageHate(target, 0, npc.getHating(target));
-								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+								((Attackable) called).addDamageHate(finalTarget, 0, npc.getHating(finalTarget));
+								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, finalTarget);
 							}
 						}
 					}
@@ -732,7 +728,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return;
 		}
 		
-		setTarget(mostHate);
 		npc.setTarget(mostHate);
 		
 		final int combinedCollision = collision + mostHate.getTemplate().getCollisionRadius();
@@ -743,12 +738,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 			final Skill skill = aiSuicideSkills.get(Rnd.get(aiSuicideSkills.size()));
 			if (Util.checkIfInRange(skill.getAffectRange(), getActiveChar(), mostHate, false) && npc.hasSkillChance())
 			{
-				Creature suicideTarget = skillTargetReconsider(skill, true, true);
+				WorldObject skillTarget = skillTargetReconsider(skill, true, true);
 				
-				if (suicideTarget != null)
+				if (skillTarget != null)
 				{
-					setTarget(suicideTarget);
-					npc.setTarget(suicideTarget);
+					npc.setTarget(skillTarget);
 					npc.doCast(skill);
 					LOGGER.debug("{} used suicide skill {}", this, skill);
 					return;
@@ -844,56 +838,36 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (npc.isRaid() || npc.isRaidMinion())
 		{
 			chaostime++;
-			if (npc instanceof L2RaidBossInstance)
+			if ((npc instanceof L2RaidBossInstance) && (chaostime > Config.RAID_CHAOS_TIME))
 			{
-				if (!((L2MonsterInstance) npc).hasMinions())
+				double multiplier = ((L2MonsterInstance) npc).hasMinions() ? 200 : 100;
+				if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * multiplier) / npc.getMaxHp())))
 				{
-					if (chaostime > Config.RAID_CHAOS_TIME)
-					{
-						if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 100) / npc.getMaxHp())))
-						{
-							setTarget(targetReconsider(false, false, true));
-							chaostime = 0;
-							return;
-						}
-					}
-				}
-				else
-				{
-					if (chaostime > Config.RAID_CHAOS_TIME)
-					{
-						if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp())))
-						{
-							setTarget(targetReconsider(false, false, true));
-							chaostime = 0;
-							return;
-						}
-					}
+					target = targetReconsider(false, false, true);
+					npc.setTarget(target);
+					chaostime = 0;
+					return;
 				}
 			}
-			else if (npc instanceof L2GrandBossInstance)
+			else if ((npc instanceof L2GrandBossInstance) && (chaostime > Config.GRAND_CHAOS_TIME))
 			{
-				if (chaostime > Config.GRAND_CHAOS_TIME)
+				double chaosRate = 100 - ((npc.getCurrentHp() * 300) / npc.getMaxHp());
+				if (((chaosRate <= 10) && (Rnd.get(100) <= 10)) || ((chaosRate > 10) && (Rnd.get(100) <= chaosRate)))
 				{
-					double chaosRate = 100 - ((npc.getCurrentHp() * 300) / npc.getMaxHp());
-					if (((chaosRate <= 10) && (Rnd.get(100) <= 10)) || ((chaosRate > 10) && (Rnd.get(100) <= chaosRate)))
-					{
-						setTarget(targetReconsider(false, false, true));
-						chaostime = 0;
-						return;
-					}
+					target = targetReconsider(false, false, true);
+					npc.setTarget(target);
+					chaostime = 0;
+					return;
 				}
 			}
-			else
+			else if (chaostime > Config.MINION_CHAOS_TIME)
 			{
-				if (chaostime > Config.MINION_CHAOS_TIME)
+				if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp())))
 				{
-					if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp())))
-					{
-						setTarget(targetReconsider(false, false, true));
-						chaostime = 0;
-						return;
-					}
+					target = targetReconsider(false, false, true);
+					npc.setTarget(target);
+					chaostime = 0;
+					return;
 				}
 			}
 		}
@@ -914,7 +888,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 		// Immobilize Condition
 		if ((npc.isMovementDisabled() && ((dist > range) || mostHate.isMoving())) || ((dist > range) && mostHate.isMoving()))
 		{
-			setTarget(targetReconsider(true, true, false));
+			target = targetReconsider(true, true, false);
+			npc.setTarget(target);
 			return;
 		}
 		
@@ -928,7 +903,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			if (skillTarget != null)
 			{
-				setTarget(skillTarget);
 				npc.setTarget(skillTarget);
 				npc.doCast(shortRangeSkill);
 				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
@@ -943,7 +917,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			if (skillTarget != null)
 			{
-				setTarget(skillTarget);
 				npc.setTarget(skillTarget);
 				npc.doCast(longRangeSkill);
 				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
@@ -957,7 +930,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			if (npc.isMovementDisabled())
 			{
-				setTarget(targetReconsider(true, true, false));
+				target = targetReconsider(true, true, false);
+				npc.setTarget(target);
 			}
 			else
 			{
@@ -1038,7 +1012,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		};
 		
 		// Check current target first.
-		Creature target = getTarget();
+		Creature target = (npc.getTarget() != null) && npc.getTarget().isCreature() ? (Creature) npc.getTarget() : null;
 		if (checkCurrentTargetFirst && filter.test(target))
 		{
 			return target;
@@ -1067,9 +1041,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	private Creature targetReconsider(boolean insideAttackRange, boolean checkCurrentTargetFirst, boolean randomTarget)
 	{
-		final Attackable actor = getActiveChar();
-		final int range = insideAttackRange ? (actor.getPhysicalAttackRange() + actor.getTemplate().getCollisionRadius()) : 2000; // TODO: Need some value for forget range.
-		Creature target = getTarget();
+		final Attackable npc = getActiveChar();
+		final int range = insideAttackRange ? (npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius()) : 2000; // TODO: Need some value for forget range.
+		Creature target = (npc.getTarget() != null) && npc.getTarget().isCreature() ? (Creature) npc.getTarget() : null;
 		
 		final Predicate<Creature> filter = c ->
 		{
@@ -1077,27 +1051,27 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				return false;
 			}
-			if (!c.isInsideRadius(actor, range + c.getTemplate().getCollisionRadius(), false, true))
+			if (!c.isInsideRadius(npc, range + c.getTemplate().getCollisionRadius(), false, true))
 			{
 				return false;
 			}
 			
-			if (!c.isAutoAttackable(actor))
+			if (!c.isAutoAttackable(npc))
 			{
 				return false;
 			}
 			
-			return GeoData.getInstance().canSeeTarget(actor, c);
+			return GeoData.getInstance().canSeeTarget(npc, c);
 		};
 		
 		if (randomTarget)
 		{
-			Stream<Creature> stream = actor.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(Objects::nonNull).filter(filter);
+			Stream<Creature> stream = npc.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(Objects::nonNull).filter(filter);
 			
 			// If npc is aggressive, add characters within aggro range too
-			if (actor.isAggressive())
+			if (npc.isAggressive())
 			{
-				stream = Stream.concat(stream, World.getInstance().getVisibleObjects(actor, Creature.class, actor.getAggroRange(), filter).stream());
+				stream = Stream.concat(stream, World.getInstance().getVisibleObjects(npc, Creature.class, npc.getAggroRange(), filter).stream());
 			}
 			
 			target = stream.findAny().orElse(null);
@@ -1110,12 +1084,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			
 			//@formatter:off
-			target = actor.getAggroList().values().stream()
+			target = npc.getAggroList().values().stream()
 				.filter(a -> (a.getAttacker() != null) && filter.test(a.getAttacker()))
 				.sorted(Comparator.comparingInt(AggroInfo::getHate))
 				.map(AggroInfo::getAttacker)
 				.findFirst()
-				.orElse(actor.isAggressive() ? World.getInstance().getVisibleObjects(actor, Creature.class, actor.getAggroRange(), filter).stream().findAny().orElse(null) : null);
+				.orElse(npc.isAggressive() ? World.getInstance().getVisibleObjects(npc, Creature.class, npc.getAggroRange(), filter).stream().findAny().orElse(null) : null);
 			//@formatter:on
 		}
 		
@@ -1178,7 +1152,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void onEvtAttacked(Creature attacker)
 	{
 		final Attackable me = getActiveChar();
-		final Creature target = getTarget();
+		final WorldObject target = me.getTarget();
 		// Calculate the attack timeout
 		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeController.getInstance().getGameTicks();
 		

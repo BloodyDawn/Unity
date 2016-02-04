@@ -28,6 +28,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.MobGroup;
 import org.l2junity.gameserver.model.MobGroupTable;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -127,13 +128,12 @@ public final class ControllableMobAI extends AttackableAI
 	protected void thinkCast()
 	{
 		Attackable npc = (Attackable) _actor;
-		Creature target = getTarget();
-		if ((target == null) || target.isAlikeDead())
+		WorldObject target = npc.getTarget();
+		if ((target == null) || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
-			setTarget(findNextRndTarget());
+			target = findNextRndTarget();
 		}
 		
-		target = getTarget();
 		if (target == null)
 		{
 			return;
@@ -362,7 +362,6 @@ public final class ControllableMobAI extends AttackableAI
 	@Override
 	protected void thinkActive()
 	{
-		setTarget(findNextRndTarget());
 		Creature hated;
 		
 		if (_actor.isConfused())
@@ -371,7 +370,8 @@ public final class ControllableMobAI extends AttackableAI
 		}
 		else
 		{
-			hated = getTarget();
+			final WorldObject target = _actor.getTarget();
+			hated = (target != null) && target.isCreature() ? (Creature) target : null;
 		}
 		
 		if (hated != null)
