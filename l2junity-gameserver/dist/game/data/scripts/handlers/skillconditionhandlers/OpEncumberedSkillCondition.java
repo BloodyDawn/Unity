@@ -49,6 +49,6 @@ public class OpEncumberedSkillCondition implements ISkillCondition
 		
 		final int currentSlotsPercent = (caster.getInventory().getSize() * 100) / caster.getActingPlayer().getInventoryLimit();
 		final int currentWeightPercent = (caster.getCurrentLoad() * 100) / caster.getMaxLoad();
-		return (currentSlotsPercent <= _slotsPercent) && (currentWeightPercent <= _weightPercent);
+		return (currentSlotsPercent >= _slotsPercent) && (currentWeightPercent >= _weightPercent);
 	}
 }
