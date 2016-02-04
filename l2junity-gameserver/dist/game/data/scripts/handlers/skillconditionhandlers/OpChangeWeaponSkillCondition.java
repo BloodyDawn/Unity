@@ -21,22 +21,38 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class OpChangeWeaponSkillCondition implements ISkillCondition
 {
 	public OpChangeWeaponSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final Weapon weaponItem = caster.getActiveWeaponItem();
+		if (weaponItem == null)
+		{
+			return false;
+		}
+		
+		if (weaponItem.getChangeWeaponId() == 0)
+		{
+			return false;
+		}
+		
+		if (caster.getActingPlayer().hasItemRequest())
+		{
+			return false;
+		}
+		return true;
 	}
 }

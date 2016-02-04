@@ -21,22 +21,56 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class CanSummonMultiSkillCondition implements ISkillCondition
 {
+	private final int _summonPoints;
+	
 	public CanSummonMultiSkillCondition(StatsSet params)
 	{
-
+		_summonPoints = params.getInt("summonPoints");
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		final PlayerInstance player = caster.getActingPlayer();
+		if (player == null)
+		{
+			return false;
+		}
+		
+		boolean canSummon = true;
+		
+		if (player.hasServitors())
+		{
+			canSummon = false;
+		}
+		else if (player.isFlyingMounted() || player.isMounted() || player.inObserverMode() || player.isTeleporting())
+		{
+			canSummon = false;
+		}
+		else if (player.isInAirShip())
+		{
+			player.sendPacket(SystemMessageId.A_SERVITOR_OR_PET_CANNOT_BE_SUMMONED_WHILE_ON_AN_AIRSHIP);
+			canSummon = false;
+		}
+		else if ((player.getSummonPoints() + _summonPoints) > player.getMaxSummonPoints())
+		{
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_USE_THE_S1_SKILL_DUE_TO_INSUFFICIENT_SUMMON_POINTS);
+			sm.addSkillName(skill);
+			player.sendPacket(sm);
+			canSummon = false;
+		}
+		
+		return canSummon;
 	}
 }

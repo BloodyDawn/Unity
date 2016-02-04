@@ -52,7 +52,7 @@ public class CheckLevelSkillCondition implements ISkillCondition
 			}
 			case TARGET:
 			{
-				if ((target != null) && !target.isPlayer())
+				if ((target != null) && target.isPlayer())
 				{
 					return (target.getActingPlayer().getLevel() >= _minLevel) && (target.getActingPlayer().getLevel() <= _maxLevel);
 				}

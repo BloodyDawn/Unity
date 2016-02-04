@@ -18,6 +18,7 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -25,18 +26,22 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class OpCannotUseTargetWithPrivateStoreSkillCondition implements ISkillCondition
 {
 	public OpCannotUseTargetWithPrivateStoreSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if ((target != null) && target.isPlayer() && (target.getActingPlayer().getPrivateStoreType() != PrivateStoreType.NONE))
+		{
+			return false;
+		}
+		return true;
 	}
 }
