@@ -25,11 +25,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.TimeUtil;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.IParserAdvUtils;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -636,12 +638,54 @@ public class StatsSet implements IParserAdvUtils
 			return null;
 		}
 		
-		final List<?> originalList = (List<?>) obj;
+		final List<Object> originalList = (List<Object>) obj;
 		if (!originalList.isEmpty() && (originalList.stream().filter(clazz::isInstance).count() == 0))
 		{
-			LOGGER.warn("getList(\"{}\", {}) requested with wrong generic type: {}!", key, clazz.getSimpleName(), obj.getClass().getGenericInterfaces()[0], new ClassNotFoundException());
+			// Attempt to convert the list
+			final List<T> convertedList = convertList(originalList, clazz);
+			if (convertedList == null)
+			{
+				LOGGER.warn("getList(\"{}\", {}) requested with wrong generic type: {}!", key, clazz.getSimpleName(), obj.getClass().getGenericInterfaces()[0], new ClassNotFoundException());
+				return null;
+			}
+			
+			// Overwrite the existing list with proper generic type
+			_set.put(key, convertedList);
+			return convertedList;
 		}
 		return (List<T>) obj;
+	}
+	
+	/**
+	 * @param <T>
+	 * @param originalList
+	 * @param clazz
+	 * @return
+	 */
+	private <T> List<T> convertList(List<Object> originalList, Class<T> clazz)
+	{
+		if (clazz == Integer.class)
+		{
+			if (originalList.stream().map(Object::toString).allMatch(Util::isInteger))
+			{
+				return originalList.stream().map(Object::toString).map(Integer::valueOf).map(clazz::cast).collect(Collectors.toList());
+			}
+		}
+		else if (clazz == Float.class)
+		{
+			if (originalList.stream().map(Object::toString).allMatch(Util::isFloat))
+			{
+				return originalList.stream().map(Object::toString).map(Float::valueOf).map(clazz::cast).collect(Collectors.toList());
+			}
+		}
+		else if (clazz == Double.class)
+		{
+			if (originalList.stream().map(Object::toString).allMatch(Util::isDouble))
+			{
+				return originalList.stream().map(Object::toString).map(Double::valueOf).map(clazz::cast).collect(Collectors.toList());
+			}
+		}
+		return null;
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -656,7 +700,7 @@ public class StatsSet implements IParserAdvUtils
 		final Map<?, ?> originalList = (Map<?, ?>) obj;
 		if (!originalList.isEmpty())
 		{
-			if ((originalList.keySet().stream().filter(keyClass::isInstance).count() == 0) || (originalList.values().stream().filter(valueClass::isInstance).count() == 0))
+			if ((!originalList.keySet().stream().allMatch(keyClass::isInstance)) || (originalList.values().stream().allMatch(valueClass::isInstance)))
 			{
 				LOGGER.warn("getMap(\"{}\", {}, {}) requested with wrong generic type: {}!", key, keyClass.getSimpleName(), valueClass.getSimpleName(), obj.getClass().getGenericInterfaces()[0], new ClassNotFoundException());
 			}
@@ -752,12 +796,10 @@ public class StatsSet implements IParserAdvUtils
 	{
 		return _set.containsKey(name);
 	}
-
+	
 	@Override
 	public String toString()
 	{
-		return "StatsSet{" +
-			"_set=" + _set +
-			'}';
+		return "StatsSet{" + "_set=" + _set + '}';
 	}
 }

@@ -28,13 +28,12 @@ import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author
+ * @author Sdw
  */
 public class CanUntransformSkillCondition implements ISkillCondition
 {
 	public CanUntransformSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

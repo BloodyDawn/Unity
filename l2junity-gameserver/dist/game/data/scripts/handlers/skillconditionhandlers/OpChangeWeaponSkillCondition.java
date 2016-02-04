@@ -32,7 +32,6 @@ public class OpChangeWeaponSkillCondition implements ISkillCondition
 {
 	public OpChangeWeaponSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

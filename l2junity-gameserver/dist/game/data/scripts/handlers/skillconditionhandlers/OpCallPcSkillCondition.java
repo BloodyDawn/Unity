@@ -34,7 +34,6 @@ public class OpCallPcSkillCondition implements ISkillCondition
 {
 	public OpCallPcSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

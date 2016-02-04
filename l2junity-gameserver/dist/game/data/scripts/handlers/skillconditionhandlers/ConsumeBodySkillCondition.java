@@ -21,22 +21,36 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class ConsumeBodySkillCondition implements ISkillCondition
 {
 	public ConsumeBodySkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
+		if ((target != null) && target.isMonster())
+		{
+			final L2MonsterInstance monster = (L2MonsterInstance) target;
+			if (monster.isDead() && monster.isSpawned())
+			{
+				return true;
+			}
+		}
+		
+		if (caster.isPlayer())
+		{
+			caster.sendPacket(SystemMessageId.INVALID_TARGET);
+		}
 		return false;
 	}
 }

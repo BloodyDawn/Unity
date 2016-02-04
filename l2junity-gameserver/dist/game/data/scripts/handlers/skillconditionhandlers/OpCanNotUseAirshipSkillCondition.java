@@ -32,7 +32,6 @@ public class OpCanNotUseAirshipSkillCondition implements ISkillCondition
 {
 	public OpCanNotUseAirshipSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

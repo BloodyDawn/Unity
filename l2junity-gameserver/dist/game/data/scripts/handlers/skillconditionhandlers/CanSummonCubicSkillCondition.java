@@ -21,22 +21,33 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author UnAfraid
  */
 public class CanSummonCubicSkillCondition implements ISkillCondition
 {
 	public CanSummonCubicSkillCondition(StatsSet params)
 	{
-
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		if (!caster.isPlayer() || caster.isAlikeDead() || caster.getActingPlayer().inObserverMode())
+		{
+			return false;
+		}
+		
+		final PlayerInstance player = caster.getActingPlayer();
+		if (player.inObserverMode() || player.isMounted())
+		{
+			return false;
+		}
+		
+		return true;
 	}
 }

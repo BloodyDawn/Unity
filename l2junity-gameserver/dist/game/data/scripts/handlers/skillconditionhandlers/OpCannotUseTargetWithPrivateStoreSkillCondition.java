@@ -32,7 +32,6 @@ public class OpCannotUseTargetWithPrivateStoreSkillCondition implements ISkillCo
 {
 	public OpCannotUseTargetWithPrivateStoreSkillCondition(StatsSet params)
 	{
-	
 	}
 	
 	@Override

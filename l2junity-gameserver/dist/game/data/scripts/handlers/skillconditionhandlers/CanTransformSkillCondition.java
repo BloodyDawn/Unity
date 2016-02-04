@@ -31,11 +31,12 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class CanTransformSkillCondition implements ISkillCondition
 {
-	private final int _transformId;
+	// TODO: What to do with this?
+	// private final int _transformId;
 	
 	public CanTransformSkillCondition(StatsSet params)
 	{
-		_transformId = params.getInt("transformId");
+		// _transformId = params.getInt("transformId");
 	}
 	
 	@Override
