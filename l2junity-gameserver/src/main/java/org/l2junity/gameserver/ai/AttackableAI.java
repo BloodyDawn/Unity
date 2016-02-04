@@ -582,11 +582,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 				{
-					WorldObject target = sk.getTarget(npc, getTarget(), false, true, false);
-					if (target == null)
-					{
-						target = skillTargetReconsider(sk, true, true);
-					}
+					WorldObject target = skillTargetReconsider(sk, true, true);
 					
 					if (target != null)
 					{
@@ -608,11 +604,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				WorldObject target = sk.getTarget(npc, getTarget(), false, true, false);
-				if (target == null)
-				{
-					target = skillTargetReconsider(sk, true, true);
-				}
+				WorldObject target = skillTargetReconsider(sk, true, true);
 				
 				if (target != null)
 				{
