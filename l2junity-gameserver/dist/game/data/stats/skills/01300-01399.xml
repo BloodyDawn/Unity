@@ -3830,11 +3830,6 @@
 	<skill id="1387" levels="3" name="Summon Cursed Bones">
 		<!-- Confirmed CT2.5 -->
 		<!-- Not Used Anymore -->
-		<capsuled_items_skill>
-			<value level="1">2508,25,30;2508,50,50;2508,100,20
-				2508,50,30;2508,100,50;2508,200,20
-				2508,100,30;2508,200,50;2508,400,20</value>
-		</capsuled_items_skill>
 		<hitTime>10000</hitTime>
 		<icon>icon.skill1387</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3866,7 +3861,43 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="30">
+							<item id="2508" count="25" />
+						</group>
+						<group chance="50">
+							<item id="2508" count="50" />
+						</group>
+						<group chance="20">
+							<item id="2508" count="100" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="30">
+							<item id="2508" count="50" />
+						</group>
+						<group chance="50">
+							<item id="2508" count="100" />
+						</group>
+						<group chance="20">
+							<item id="2508" count="200" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="30">
+							<item id="2508" count="100" />
+						</group>
+						<group chance="50">
+							<item id="2508" count="200" />
+						</group>
+						<group chance="20">
+							<item id="2508" count="400" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="1388" levels="3" name="Greater Might">

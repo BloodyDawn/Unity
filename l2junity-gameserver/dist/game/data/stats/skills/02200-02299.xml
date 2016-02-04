@@ -2,11 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="2200" levels="3" name="Small Jade Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6908,24,28.5;7609,26,26.0572
-				6908,24,31.5;7609,26,28.8
-				6908,24,34.5;7609,26,31.5428</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -21,16 +16,38 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="28.5">
+							<item id="6908" count="24" />
+						</group>
+						<group chance="26.0572">
+							<item id="7609" count="26" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="31.5">
+							<item id="6908" count="24" />
+						</group>
+						<group chance="28.8">
+							<item id="7609" count="26" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="34.5">
+							<item id="6908" count="24" />
+						</group>
+						<group chance="31.5428">
+							<item id="7609" count="26" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2201" levels="3" name="Small Blue Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6908,24,39.5;7609,26,36.1144
-				6904,1,5.028;6908,28,17.957;6909,8,16.76;7609,30,16.76
-				6904,1,5.22;6908,28,18.6428;6909,8,17.3999;7609,30,17.4</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -45,16 +62,50 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="39.5">
+							<item id="6908" count="24" />
+						</group>
+						<group chance="36.1144">
+							<item id="7609" count="26" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="5.028">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="17.957">
+							<item id="6908" count="28" />
+						</group>
+						<group chance="16.76">
+							<item id="6909" count="8" />
+						</group>
+						<group chance="16.76">
+							<item id="7609" count="30" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="5.22">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="18.6428">
+							<item id="6908" count="28" />
+						</group>
+						<group chance="17.3999">
+							<item id="6909" count="8" />
+						</group>
+						<group chance="17.4">
+							<item id="7609" count="30" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2202" levels="3" name="Small Yellow Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6904,1,5.424;6908,28,19.3714;6909,8,18.0799;7609,30,18.08
-				6904,1,6.816;6908,28,24.3428;6909,8,22.7199;7609,30,22.72
-				6904,1,7.296;6908,56,13.0286;6909,14,10.8088;7609,30,24.32</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -69,16 +120,56 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="5.424">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="19.3714">
+							<item id="6908" count="28" />
+						</group>
+						<group chance="18.0799">
+							<item id="6909" count="8" />
+						</group>
+						<group chance="18.08">
+							<item id="7609" count="30" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="6.816">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="24.3428">
+							<item id="6908" count="28" />
+						</group>
+						<group chance="22.7199">
+							<item id="6909" count="8" />
+						</group>
+						<group chance="22.72">
+							<item id="7609" count="30" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="7.296">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="13.0286">
+							<item id="6908" count="56" />
+						</group>
+						<group chance="10.8088">
+							<item id="6909" count="14" />
+						</group>
+						<group chance="24.32">
+							<item id="7609" count="30" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2203" levels="3" name="Small Orange Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6904,1,7.788;6908,56,13.9072;6909,14,11.5376;7609,60,12.98
-				6910,3,50.688
-				6910,3,54.912</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -93,16 +184,38 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="7.788">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="13.9072">
+							<item id="6908" count="56" />
+						</group>
+						<group chance="11.5376">
+							<item id="6909" count="14" />
+						</group>
+						<group chance="12.98">
+							<item id="7609" count="60" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="50.688">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="54.912">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2204" levels="3" name="Small Purple Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,3,58.24
-				6910,3,69.76
-				6910,3,74.048</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -117,16 +230,29 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="58.24">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="69.76">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="74.048">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2205" levels="3" name="Small Red Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,3,84.864
-				6910,3,89.728
-				6910,6,54.88</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -141,16 +267,29 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="84.864">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="89.728">
+							<item id="6910" count="3" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="54.88">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2206" levels="3" name="Small White Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,6,58.048
-				6910,6,61.536
-				6910,6,65.248</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -165,16 +304,29 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="58.048">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="61.536">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="65.248">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2207" levels="3" name="Small Black Treasure Chest">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,6,69.312
-				6910,6,76.896
-				6910,6,81.664</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -189,7 +341,25 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="69.312">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="76.896">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="81.664">
+							<item id="6910" count="6" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2208" levels="1" name="Blessed Scroll: Enchant Armor (S-grade)">
@@ -436,12 +606,6 @@
 	</skill>
 	<skill id="2215" levels="4" name="Chest Caught with Wind Bait">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">57,100000,8;3456,1,10;3454,1,5.5;3455,1,5.5;3448,1,17.6;3449,1,17;3446,1,18;3468,1,18.4
-				57,100000,7.5;3456,1,6;3454,1,7;3455,1,7.4;3448,1,10;3449,1,22;3446,1,19.6;3468,1,20.4
-				57,100000,12;3456,1,10;3470,1,12;3454,1,6;3455,1,6.5;3450,1,10;3452,1,19.5;3447,1,24
-				57,100000,19;3456,1,10;3470,1,5.9;3454,1,4;3455,1,6.5;3450,1,10;3452,1,19.6;3447,1,25</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -456,17 +620,118 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="8">
+							<item id="57" count="100000" />
+						</group>
+						<group chance="10">
+							<item id="3456" count="1" />
+						</group>
+						<group chance="5.5">
+							<item id="3454" count="1" />
+						</group>
+						<group chance="5.5">
+							<item id="3455" count="1" />
+						</group>
+						<group chance="17.6">
+							<item id="3448" count="1" />
+						</group>
+						<group chance="17">
+							<item id="3449" count="1" />
+						</group>
+						<group chance="18">
+							<item id="3446" count="1" />
+						</group>
+						<group chance="18.4">
+							<item id="3468" count="1" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="7.5">
+							<item id="57" count="100000" />
+						</group>
+						<group chance="6">
+							<item id="3456" count="1" />
+						</group>
+						<group chance="7">
+							<item id="3454" count="1" />
+						</group>
+						<group chance="7.4">
+							<item id="3455" count="1" />
+						</group>
+						<group chance="10">
+							<item id="3448" count="1" />
+						</group>
+						<group chance="22">
+							<item id="3449" count="1" />
+						</group>
+						<group chance="19.6">
+							<item id="3446" count="1" />
+						</group>
+						<group chance="20.4">
+							<item id="3468" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="12">
+							<item id="57" count="100000" />
+						</group>
+						<group chance="10">
+							<item id="3456" count="1" />
+						</group>
+						<group chance="12">
+							<item id="3470" count="1" />
+						</group>
+						<group chance="6">
+							<item id="3454" count="1" />
+						</group>
+						<group chance="6.5">
+							<item id="3455" count="1" />
+						</group>
+						<group chance="10">
+							<item id="3450" count="1" />
+						</group>
+						<group chance="19.5">
+							<item id="3452" count="1" />
+						</group>
+						<group chance="24">
+							<item id="3447" count="1" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="19">
+							<item id="57" count="100000" />
+						</group>
+						<group chance="10">
+							<item id="3456" count="1" />
+						</group>
+						<group chance="5.9">
+							<item id="3470" count="1" />
+						</group>
+						<group chance="4">
+							<item id="3454" count="1" />
+						</group>
+						<group chance="6.5">
+							<item id="3455" count="1" />
+						</group>
+						<group chance="10">
+							<item id="3450" count="1" />
+						</group>
+						<group chance="19.6">
+							<item id="3452" count="1" />
+						</group>
+						<group chance="25">
+							<item id="3447" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2216" levels="4" name="Special Fish 1">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">57,100,34;1867,1,33;1872,1,33
-				57,100,34;1867,1,33;1872,1,33
-				57,100,34;1867,1,33;1872,1,33
-				57,100,34;1867,1,33;1872,1,33</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -481,18 +746,58 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="34">
+							<item id="57" count="100" />
+						</group>
+						<group chance="33">
+							<item id="1867" count="1" />
+						</group>
+						<group chance="33">
+							<item id="1872" count="1" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="34">
+							<item id="57" count="100" />
+						</group>
+						<group chance="33">
+							<item id="1867" count="1" />
+						</group>
+						<group chance="33">
+							<item id="1872" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="34">
+							<item id="57" count="100" />
+						</group>
+						<group chance="33">
+							<item id="1867" count="1" />
+						</group>
+						<group chance="33">
+							<item id="1872" count="1" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="34">
+							<item id="57" count="100" />
+						</group>
+						<group chance="33">
+							<item id="1867" count="1" />
+						</group>
+						<group chance="33">
+							<item id="1872" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2217" levels="5" name="Looted Goods - White Cargo Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6697,1,9;6693,1,9;6694,1,9;6696,1,9;7579,1,9;6690,1,9;6688,1,9;6691,1,9;6689,1,9;6695,1,9;57,330000,10
-				6706,1,8.5;6710,1,8.5;6714,1,8.5;6703,1,8.5;6704,1,8.5;6708,1,8.5;6709,1,8.5;6712,1,8.5;6713,1,8.5;6705,1,8.5;13099,1,8.5;57,292000,15
-				6702,1,20;6701,1,20;6707,1,20;6711,1,20;57,93000,20
-				6857,1,8.5;6859,1,8.5;6867,1,8.5;6869,1,8.5;6875,1,8.5;6877,1,8.5;6861,1,8.5;13100,1,8.5;6863,1,8.5;6871,1,8.5;6879,1,8.5;57,340000,15
-				6855,1,20;6853,1,20;6865,1,20;6873,1,20;57,850000,20</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -507,16 +812,159 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="9">
+							<item id="6697" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6693" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6694" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6696" count="1" />
+						</group>
+						<group chance="9">
+							<item id="7579" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6690" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6688" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6691" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6689" count="1" />
+						</group>
+						<group chance="9">
+							<item id="6695" count="1" />
+						</group>
+						<group chance="10">
+							<item id="57" count="330000" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="8.5">
+							<item id="6706" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6710" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6714" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6703" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6704" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6708" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6709" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6712" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6713" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6705" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="13099" count="1" />
+						</group>
+						<group chance="15">
+							<item id="57" count="292000" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="20">
+							<item id="6702" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6701" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6707" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6711" count="1" />
+						</group>
+						<group chance="20">
+							<item id="57" count="93000" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="8.5">
+							<item id="6857" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6859" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6867" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6869" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6875" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6877" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6861" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="13100" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6863" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6871" count="1" />
+						</group>
+						<group chance="8.5">
+							<item id="6879" count="1" />
+						</group>
+						<group chance="15">
+							<item id="57" count="340000" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="20">
+							<item id="6855" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6853" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6865" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6873" count="1" />
+						</group>
+						<group chance="20">
+							<item id="57" count="850000" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2218" levels="3" name="Booty - Yellow Pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">1882,3,20;1876,6,16;1879,3,12;1881,1,12;1880,4,10;1874,1,10;1875,3,10;1877,3,10
-				4039,4,20;4043,4,20;4044,4,20;4040,2,15;4042,2,15;4041,1,10
-				1060,1,39;1061,1,11.8;1539,1,32.2;1540,1,3;735,1,7;6035,1,7</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -531,15 +979,80 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="20">
+							<item id="1882" count="3" />
+						</group>
+						<group chance="16">
+							<item id="1876" count="6" />
+						</group>
+						<group chance="12">
+							<item id="1879" count="3" />
+						</group>
+						<group chance="12">
+							<item id="1881" count="1" />
+						</group>
+						<group chance="10">
+							<item id="1880" count="4" />
+						</group>
+						<group chance="10">
+							<item id="1874" count="1" />
+						</group>
+						<group chance="10">
+							<item id="1875" count="3" />
+						</group>
+						<group chance="10">
+							<item id="1877" count="3" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="20">
+							<item id="4039" count="4" />
+						</group>
+						<group chance="20">
+							<item id="4043" count="4" />
+						</group>
+						<group chance="20">
+							<item id="4044" count="4" />
+						</group>
+						<group chance="15">
+							<item id="4040" count="2" />
+						</group>
+						<group chance="15">
+							<item id="4042" count="2" />
+						</group>
+						<group chance="10">
+							<item id="4041" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="39">
+							<item id="1060" count="1" />
+						</group>
+						<group chance="11.8">
+							<item id="1061" count="1" />
+						</group>
+						<group chance="32.2">
+							<item id="1539" count="1" />
+						</group>
+						<group chance="3">
+							<item id="1540" count="1" />
+						</group>
+						<group chance="7">
+							<item id="735" count="1" />
+						</group>
+						<group chance="7">
+							<item id="6035" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2219" levels="2" name="Looted Goods - Brown Pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">1882,20,18;1876,20,16;1879,20,10;1881,20,10;1880,20,5;1874,20,10;1875,20,10;1877,20,11;57,150000,10
-				4039,4,20;4043,4,20;4044,4,20;4040,4,10;4042,4,10;4041,4,10;57,160000,10</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -554,22 +1067,66 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="18">
+							<item id="1882" count="20" />
+						</group>
+						<group chance="16">
+							<item id="1876" count="20" />
+						</group>
+						<group chance="10">
+							<item id="1879" count="20" />
+						</group>
+						<group chance="10">
+							<item id="1881" count="20" />
+						</group>
+						<group chance="5">
+							<item id="1880" count="20" />
+						</group>
+						<group chance="10">
+							<item id="1874" count="20" />
+						</group>
+						<group chance="10">
+							<item id="1875" count="20" />
+						</group>
+						<group chance="11">
+							<item id="1877" count="20" />
+						</group>
+						<group chance="10">
+							<item id="57" count="150000" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="20">
+							<item id="4039" count="4" />
+						</group>
+						<group chance="20">
+							<item id="4043" count="4" />
+						</group>
+						<group chance="20">
+							<item id="4044" count="4" />
+						</group>
+						<group chance="10">
+							<item id="4040" count="4" />
+						</group>
+						<group chance="10">
+							<item id="4042" count="4" />
+						</group>
+						<group chance="10">
+							<item id="4041" count="4" />
+						</group>
+						<group chance="10">
+							<item id="57" count="160000" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2220" levels="9" name="Small Green Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6908,3,55.2
-				6908,3,56.8
-				6908,3,61.6
-				6908,3,67.2
-				6908,3,75.2
-				6908,3,83.2
-				6908,3,90.4
-				6908,3,99.2
-				6908,6,53.2</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -584,22 +1141,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="55.2">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="56.8">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="61.6">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="67.2">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="75.2">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="83.2">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="90.4">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="99.2">
+							<item id="6908" count="3" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="53.2">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2221" levels="9" name="Small Jade Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6908,6,57.2
-				6908,6,66.8
-				6908,6,66.8
-				6908,6,66.4
-				6908,6,66
-				6908,6,66
-				6908,6,65.6
-				6908,6,65.6
-				6908,6,65.2</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -614,22 +1208,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="57.2">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="66.8">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="66.8">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="66.4">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="66">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="66">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="65.6">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="65.6">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="65.2">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2222" levels="9" name="Small Blue Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6908,6,65.2
-				6908,6,65.2
-				6908,6,79.2
-				6904,1,1.616;6908,6,26.9331;6909,2,16.1598
-				6904,1,1.576;6908,6,26.2665;6909,2,15.7598
-				6904,1,1.68;6908,6,27.9998;6909,2,16.7998
-				6904,1,1.704;6908,6,28.3998;6909,2,17.0398
-				6904,1,1.728;6908,6,28.7998;6909,2,17.2798
-				6904,1,1.744;6908,6,29.0665;6909,2,17.4398</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -644,22 +1275,95 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="65.2">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="65.2">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="79.2">
+							<item id="6908" count="6" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="1.616">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="26.9331">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="16.1598">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="1.576">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="26.2665">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="15.7598">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="1.68">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="27.9998">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="16.7998">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="1.704">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="28.3998">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="17.0398">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="1.728">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="28.7998">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="17.2798">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="1.744">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="29.0665">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="17.4398">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2223" levels="9" name="Small Yellow Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6904,1,1.768;6908,6,29.4664;6909,2,17.6798
-				6904,1,1.792;6908,6,29.8664;6909,2,17.9198
-				6904,1,1.808;6908,6,30.1331;6909,2,18.0798
-				6904,1,2.16;6908,12,17.9998;6909,2,21.5998
-				6904,1,2.216;6908,8,29.5464;6909,2,22.16
-				6904,1,2.272;6908,8,30.2932;6909,2,22.72
-				6904,1,2.32;6908,8,30.9332;6909,2,23.2
-				6904,1,2.376;6908,8,31.68;6909,2,23.76
-				6904,1,2.432;6908,8,32.4264;6909,2,24.32</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -674,22 +1378,113 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="1.768">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="29.4664">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="17.6798">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="1.792">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="29.8664">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="17.9198">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="1.808">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="30.1331">
+							<item id="6908" count="6" />
+						</group>
+						<group chance="18.0798">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="2.16">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="17.9998">
+							<item id="6908" count="12" />
+						</group>
+						<group chance="21.5998">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="2.216">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="29.5464">
+							<item id="6908" count="8" />
+						</group>
+						<group chance="22.16">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="2.272">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="30.2932">
+							<item id="6908" count="8" />
+						</group>
+						<group chance="22.72">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="2.32">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="30.9332">
+							<item id="6908" count="8" />
+						</group>
+						<group chance="23.2">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="2.376">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="31.68">
+							<item id="6908" count="8" />
+						</group>
+						<group chance="23.76">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="2.432">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="32.4264">
+							<item id="6908" count="8" />
+						</group>
+						<group chance="24.32">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2224" levels="9" name="Small Orange Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6904,1,2.488;6908,8,33.1732;6909,2,24.88
-				6904,1,2.544;6908,16,16.96;6909,2,25.44
-				6904,1,2.6;6908,16,17.3332;6909,2,26
-				6910,1,31.872
-				6910,1,37.248
-				6910,1,38.016
-				6910,1,39.168
-				6910,1,40.32
-				6910,1,41.184</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -704,22 +1499,77 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="2.488">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="33.1732">
+							<item id="6908" count="8" />
+						</group>
+						<group chance="24.88">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="2.544">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="16.96">
+							<item id="6908" count="16" />
+						</group>
+						<group chance="25.44">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="2.6">
+							<item id="6904" count="1" />
+						</group>
+						<group chance="17.3332">
+							<item id="6908" count="16" />
+						</group>
+						<group chance="26">
+							<item id="6909" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="31.872">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="37.248">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="38.016">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="39.168">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="40.32">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="41.184">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2225" levels="9" name="Small Purple Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,1,42.048
-				6910,1,42.912
-				6910,1,43.68
-				6910,1,44.64
-				6910,1,45.504
-				6910,2,26.16
-				6910,2,26.688
-				6910,2,27.216
-				6910,2,27.792</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -734,22 +1584,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="42.048">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="42.912">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="43.68">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="44.64">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="45.504">
+							<item id="6910" count="1" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="26.16">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="26.688">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="27.216">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="27.792">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2226" levels="9" name="Small Red Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,2,30.672
-				6910,2,31.248
-				6910,2,31.824
-				6910,2,32.448
-				6910,2,33.024
-				6910,2,33.648
-				6910,2,37.872
-				6910,2,38.592
-				6910,2,41.184</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -764,22 +1651,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="30.672">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="31.248">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="31.824">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="32.448">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="33.024">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="33.648">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="37.872">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="38.592">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="41.184">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2227" levels="9" name="Small White Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,2,41.952
-				6910,2,42.768
-				6910,2,43.536
-				6910,2,44.4
-				6910,2,45.312
-				6910,2,46.176
-				6910,2,47.088
-				6910,2,48
-				6910,2,48.96</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -794,22 +1718,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="41.952">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="42.768">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="43.536">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="44.4">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="45.312">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="46.176">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="47.088">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="48">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="48.96">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2228" levels="9" name="Small Black Nimble Fish (Novice)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6910,2,49.968
-				6910,2,67.968
-				6910,2,69.312
-				6910,2,73.92
-				6910,2,75.456
-				6910,2,76.928
-				6910,2,78.464
-				6910,2,80.064
-				6910,2,81.664</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -824,7 +1785,55 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="49.968">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="67.968">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="69.312">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="73.92">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="75.456">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="76.928">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="78.464">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="80.064">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="81.664">
+							<item id="6910" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2229" levels="8" name="Deluxe Chest Key - Grade 1">
@@ -1579,17 +2588,6 @@
 	</skill>
 	<skill id="2261" levels="9" name="Small Green Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6913,1,11.04;6911,2,18.4;8353,2,27.6
-				6913,1,11.28;6911,2,18.8;8353,2,28.2
-				6913,1,12.24;6911,2,20.4;8353,2,30.6
-				6913,1,13.36;6911,2,22.2666;8353,4,16.7
-				6913,1,14.96;6911,2,24.9332;8353,4,18.7
-				6913,1,16.64;6911,2,27.7332;8353,4,20.8
-				6913,1,18;6911,2,30;8353,4,22.5
-				6913,1,19.84;6911,2,33.0666;8353,4,24.8
-				6913,1,16.96;6911,4,17.6667;8353,4,26.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1604,22 +2602,113 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="11.04">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="18.4">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="27.6">
+							<item id="8353" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="11.28">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="18.8">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="28.2">
+							<item id="8353" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="12.24">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="20.4">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="30.6">
+							<item id="8353" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="13.36">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="22.2666">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="16.7">
+							<item id="8353" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="14.96">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="24.9332">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="18.7">
+							<item id="8353" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="16.64">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="27.7332">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="20.8">
+							<item id="8353" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="18">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="30">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="22.5">
+							<item id="8353" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="19.84">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="33.0666">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="24.8">
+							<item id="8353" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="16.96">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="17.6667">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="26.5">
+							<item id="8353" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2262" levels="9" name="Small Jade Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6913,1,22.8;6911,2,28.5;8359,4,19
-				6913,1,18.88;6911,2,29.5;8359,4,19.6666
-				6913,1,19.84;6911,2,31;8359,4,20.6666
-				6913,1,20.8;6911,2,32.5;8359,4,21.6666
-				6913,1,21.76;6911,4,17;8359,4,22.6666
-				6913,1,22.72;6911,4,17.75;8359,4,23.6666
-				6913,1,23.36;6911,4,18.25;8359,4,24.3333
-				6913,1,24;6911,4,18.75;8359,4,24.9999
-				6913,1,24.64;6911,4,19.25;8359,4,25.6666</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1634,22 +2723,113 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="22.8">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="28.5">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="19">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="18.88">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="29.5">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="19.6666">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="19.84">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="31">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="20.6666">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="20.8">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="32.5">
+							<item id="6911" count="2" />
+						</group>
+						<group chance="21.6666">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="21.76">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="17">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="22.6666">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="22.72">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="17.75">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="23.6666">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="23.36">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="18.25">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="24.3333">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="24">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="18.75">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="24.9999">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="24.64">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="19.25">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="25.6666">
+							<item id="8359" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2263" levels="9" name="Small Blue Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6913,1,25.28;6911,4,19.75;8355,4,17.5556
-				6913,1,25.6;6911,4,20;8355,4,17.7778
-				6913,1,26.24;6911,4,20.5;8355,4,18.2223
-				6913,1,26.56;6911,4,20.75;8355,4,18.4445
-				6913,1,26.752;6911,4,20.9;8355,4,18.5778
-				6913,1,26.88;6911,4,21;8355,4,18.6667
-				6913,1,27.2;6911,4,21.25;8355,4,18.8889
-				6913,1,27.584;6911,4,21.55;8355,4,19.1556
-				6913,1,27.84;6911,4,21.75;8355,4,19.3334</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1664,22 +2844,113 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="25.28">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="19.75">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="17.5556">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="25.6">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="20">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="17.7778">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="26.24">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="20.5">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="18.2223">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="26.56">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="20.75">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="18.4445">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="26.752">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="20.9">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="18.5778">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="26.88">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="21">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="18.6667">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="27.2">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="21.25">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="18.8889">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="27.584">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="21.55">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="19.1556">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="27.84">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="21.75">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="19.3334">
+							<item id="8355" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2264" levels="9" name="Small Yellow Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6913,1,28.288;6911,4,29.4666;8354,2,22.1
-				6913,1,28.608;6911,4,29.7998;8354,2,22.35
-				6913,1,28.928;6911,4,30.1332;8354,2,22.6
-				6913,2,17.28;6911,8,17.9999;8354,2,27
-				6913,2,17.696;6911,8,18.4333;8354,2,27.65
-				6913,2,18.176;6911,8,18.9333;8354,2,28.4
-				6913,2,18.56;6911,8,19.3333;8354,2,29
-				6913,2,19.008;6911,8,19.7999;8354,2,29.7
-				6913,2,19.456;6911,8,20.2666;8354,2,30.4</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1694,22 +2965,113 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="28.288">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="29.4666">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="22.1">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="28.608">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="29.7998">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="22.35">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="28.928">
+							<item id="6913" count="1" />
+						</group>
+						<group chance="30.1332">
+							<item id="6911" count="4" />
+						</group>
+						<group chance="22.6">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="17.28">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="17.9999">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="27">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="17.696">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="18.4333">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="27.65">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="18.176">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="18.9333">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="28.4">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="18.56">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="19.3333">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="29">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="19.008">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="19.7999">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="29.7">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="19.456">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="20.2666">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="30.4">
+							<item id="8354" count="2" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2265" levels="9" name="Small Orange Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6913,2,24.88;6911,8,20.7333;8357,2,19.904
-				6913,2,25.4;6911,8,21.1666;8357,2,20.32
-				6913,2,25.96;6911,8,21.6333;8357,2,20.768
-				6914,1,21.216;6912,4,22.1;8357,4,17.68
-				6914,1,18.624;6912,4,19.4;8377,1,4.656;8357,4,15.5201
-				6914,1,19.008;6912,4,19.8;8378,1,4.752;8357,4,15.8401
-				6914,1,26.112;6912,4,27.2;8357,4,21.76
-				6914,1,20.16;6912,4,21;8377,1,5.04;8357,4,16.8001
-				6914,1,20.592;6912,4,21.45;8378,1,5.148;8357,4,17.1601</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1724,22 +3086,125 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="24.88">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="20.7333">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="19.904">
+							<item id="8357" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="25.4">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="21.1666">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="20.32">
+							<item id="8357" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="25.96">
+							<item id="6913" count="2" />
+						</group>
+						<group chance="21.6333">
+							<item id="6911" count="8" />
+						</group>
+						<group chance="20.768">
+							<item id="8357" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="21.216">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="22.1">
+							<item id="6912" count="4" />
+						</group>
+						<group chance="17.68">
+							<item id="8357" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="18.624">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="19.4">
+							<item id="6912" count="4" />
+						</group>
+						<group chance="4.656">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="15.5201">
+							<item id="8357" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="19.008">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="19.8">
+							<item id="6912" count="4" />
+						</group>
+						<group chance="4.752">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="15.8401">
+							<item id="8357" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="26.112">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="27.2">
+							<item id="6912" count="4" />
+						</group>
+						<group chance="21.76">
+							<item id="8357" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="20.16">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="21">
+							<item id="6912" count="4" />
+						</group>
+						<group chance="5.04">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="16.8001">
+							<item id="8357" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="20.592">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="21.45">
+							<item id="6912" count="4" />
+						</group>
+						<group chance="5.148">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="17.1601">
+							<item id="8357" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2266" levels="9" name="Small Purple Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6914,1,28;6912,8,19.4445;8358,2,29.1666
-				6914,1,21.432;6912,8,14.8833;8377,1,5.358;8358,2,22.325
-				6914,1,21.84;6912,8,15.1667;8378,1,5.46;8358,2,22.75
-				6914,1,29.76;6912,8,20.6667;8358,2,31
-				6914,1,22.752;6912,8,15.8;8377,1,5.688;8358,2,23.7
-				6914,2,13.08;6912,8,18.1667;8378,1,6.54;8358,4,13.625
-				6914,2,17.776;6912,9,16.4592;8358,4,18.5167
-				6914,2,13.596;6912,8,18.8833;8377,1,6.798;8358,4,14.1625
-				6914,2,13.884;6912,8,19.2833;8378,1,6.942;8358,4,14.4625</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1754,22 +3219,131 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="28">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="19.4445">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="29.1666">
+							<item id="8358" count="2" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="21.432">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="14.8833">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="5.358">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="22.325">
+							<item id="8358" count="2" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="21.84">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="15.1667">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="5.46">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="22.75">
+							<item id="8358" count="2" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="29.76">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="20.6667">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="31">
+							<item id="8358" count="2" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="22.752">
+							<item id="6914" count="1" />
+						</group>
+						<group chance="15.8">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="5.688">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="23.7">
+							<item id="8358" count="2" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="13.08">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="18.1667">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="6.54">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="13.625">
+							<item id="8358" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="17.776">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="16.4592">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="18.5167">
+							<item id="8358" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="13.596">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="18.8833">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="6.798">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="14.1625">
+							<item id="8358" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="13.884">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="19.2833">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="6.942">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="14.4625">
+							<item id="8358" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2267" levels="9" name="Small Red Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6914,2,20.432;6912,9,18.9184;8352,4,18.2428
-				6914,2,15.612;6912,9,14.4556;8377,1,7.806;8352,4,13.9393
-				6914,2,15.912;6912,9,14.7332;8378,1,7.956;8352,4,14.2072
-				6914,2,16.212;6912,8,22.5166;8373,1,2.0265;8352,4,14.475
-				6914,2,13.2096;6912,8,18.3466;8377,1,6.6048;8374,1,1.6512;8352,4,11.7942
-				6914,2,13.4592;6912,8,18.6933;8378,1,6.7296;8375,1,1.6824;8352,4,12.0171
-				6914,2,18.924;6912,9,17.5224;8373,1,2.3655;8352,4,16.8964
-				6914,2,15.4368;6912,9,14.2932;8377,1,7.7184;8374,1,1.9296;8352,4,13.7828
-				6914,2,16.464;6912,9,15.2444;8378,1,8.232;8375,1,2.058;8352,4,14.6999</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1784,22 +3358,149 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="20.432">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="18.9184">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="18.2428">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="15.612">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="14.4556">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="7.806">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="13.9393">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="15.912">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="14.7332">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="7.956">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="14.2072">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="16.212">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="22.5166">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="2.0265">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="14.475">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="13.2096">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="18.3466">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="6.6048">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="1.6512">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="11.7942">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="13.4592">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="18.6933">
+							<item id="6912" count="8" />
+						</group>
+						<group chance="6.7296">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="1.6824">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="12.0171">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="18.924">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="17.5224">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="2.3655">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="16.8964">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="15.4368">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="14.2932">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="7.7184">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="1.9296">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="13.7828">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="16.464">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="15.2444">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="8.232">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="2.058">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="14.6999">
+							<item id="8352" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2268" levels="9" name="Small White Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6914,2,20.964;6912,9,19.4112;8373,1,2.6205;8356,4,16.3781
-				6914,2,17.0976;6912,9,15.8312;8377,1,8.5488;8374,1,2.1372;8356,4,13.3575
-				6914,2,17.4144;6912,9,16.1244;8378,1,8.7072;8375,1,2.1768;8356,4,13.605
-				6914,2,22.188;6912,9,20.5444;8373,1,2.7735;8356,4,17.3344
-				6914,2,18.1152;6912,9,16.7732;8377,1,9.0576;8374,1,2.2644;8356,4,14.1525
-				6914,2,18.4608;6912,9,17.0932;8378,1,9.2304;8375,1,2.3076;8356,4,14.4225
-				6914,2,23.532;6912,9,21.7888;8373,1,2.9415;8356,4,18.3844
-				6914,2,19.2;6912,9,17.778;8377,1,9.6;8374,1,2.4;8356,4,15
-				6914,2,19.5744;6912,9,18.1244;8378,1,9.7872;8375,1,2.4468;8356,4,15.2925</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1814,22 +3515,158 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="20.964">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="19.4112">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="2.6205">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="16.3781">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="17.0976">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="15.8312">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="8.5488">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="2.1372">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="13.3575">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="17.4144">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="16.1244">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="8.7072">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="2.1768">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="13.605">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="22.188">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="20.5444">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="2.7735">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="17.3344">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="18.1152">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="16.7732">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="9.0576">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="2.2644">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="14.1525">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="18.4608">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="17.0932">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="9.2304">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="2.3076">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="14.4225">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="23.532">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="21.7888">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="2.9415">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="18.3844">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="19.2">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="17.778">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="9.6">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="2.4">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="15">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="19.5744">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="18.1244">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="9.7872">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="2.4468">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="15.2925">
+							<item id="8356" count="4" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2269" levels="9" name="Small Black Nimble Fish (High-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6914,2,24.972;6912,9,23.1224;8373,1,3.1215;8351,4,17.3416
-				6914,4,10.1904;6912,9,18.8712;8377,1,10.1904;8374,1,2.5476;8351,4,14.1534
-				6914,4,10.3968;6912,9,19.2532;8378,1,10.3968;8375,1,2.5992;8351,4,14.44
-				6914,4,13.854;6912,18,12.8278;8373,1,3.4635;8351,4,19.2417
-				6914,4,11.3136;6912,18,10.4756;8377,1,11.3136;8374,1,2.8284;8351,4,15.7134
-				6914,4,11.5344;6912,18,10.68;8378,1,11.5344;8375,1,2.8836;8351,4,16.0201
-				6914,4,14.712;6912,18,13.6222;8373,1,3.678;8351,4,20.4333
-				6914,4,12.0096;6912,18,11.12;8377,1,12.0096;8374,1,3.0024;8351,4,16.6801
-				6914,4,12.2496;6912,18,11.3422;8378,1,12.2496;8375,1,3.0624;8351,7,9.722</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1844,20 +3681,158 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="24.972">
+							<item id="6914" count="2" />
+						</group>
+						<group chance="23.1224">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="3.1215">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="17.3416">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="10.1904">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="18.8712">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="10.1904">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="2.5476">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="14.1534">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="10.3968">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="19.2532">
+							<item id="6912" count="9" />
+						</group>
+						<group chance="10.3968">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="2.5992">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="14.44">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="13.854">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="12.8278">
+							<item id="6912" count="18" />
+						</group>
+						<group chance="3.4635">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="19.2417">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="11.3136">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="10.4756">
+							<item id="6912" count="18" />
+						</group>
+						<group chance="11.3136">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="2.8284">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="15.7134">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="11.5344">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="10.68">
+							<item id="6912" count="18" />
+						</group>
+						<group chance="11.5344">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="2.8836">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="16.0201">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="14.712">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="13.6222">
+							<item id="6912" count="18" />
+						</group>
+						<group chance="3.678">
+							<item id="8373" count="1" />
+						</group>
+						<group chance="20.4333">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="8">
+						<group chance="12.0096">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="11.12">
+							<item id="6912" count="18" />
+						</group>
+						<group chance="12.0096">
+							<item id="8377" count="1" />
+						</group>
+						<group chance="3.0024">
+							<item id="8374" count="1" />
+						</group>
+						<group chance="16.6801">
+							<item id="8351" count="4" />
+						</group>
+					</value>
+					<value level="9">
+						<group chance="12.2496">
+							<item id="6914" count="4" />
+						</group>
+						<group chance="11.3422">
+							<item id="6912" count="18" />
+						</group>
+						<group chance="12.2496">
+							<item id="8378" count="1" />
+						</group>
+						<group chance="3.0624">
+							<item id="8375" count="1" />
+						</group>
+						<group chance="9.722">
+							<item id="8351" count="7" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2270" levels="7" name="Adventurer's Box: C-grade Accessory (Low-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">853,1,14.1723;884,1,21.3675;916,1,10.6428
-				854,1,14.1242;885,1,21.2585;917,1,10.6022
-				119,1,9.8328;855,1,13.1027;886,1,19.7005
-				856,1,13.7513;887,1,20.6270;918,1,10.3135
-				864,1,12.0250;895,1,18.0375;926,1,9.0334
-				8177,1,22.2222;8178,1,18.5185;8179,1,15.8730
-				8175,1,16.6666</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1872,14 +3847,85 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="14.1723">
+							<item id="853" count="1" />
+						</group>
+						<group chance="21.3675">
+							<item id="884" count="1" />
+						</group>
+						<group chance="10.6428">
+							<item id="916" count="1" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="14.1242">
+							<item id="854" count="1" />
+						</group>
+						<group chance="21.2585">
+							<item id="885" count="1" />
+						</group>
+						<group chance="10.6022">
+							<item id="917" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="9.8328">
+							<item id="119" count="1" />
+						</group>
+						<group chance="13.1027">
+							<item id="855" count="1" />
+						</group>
+						<group chance="19.7005">
+							<item id="886" count="1" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="13.7513">
+							<item id="856" count="1" />
+						</group>
+						<group chance="20.6270">
+							<item id="887" count="1" />
+						</group>
+						<group chance="10.3135">
+							<item id="918" count="1" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="12.0250">
+							<item id="864" count="1" />
+						</group>
+						<group chance="18.0375">
+							<item id="895" count="1" />
+						</group>
+						<group chance="9.0334">
+							<item id="926" count="1" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="22.2222">
+							<item id="8177" count="1" />
+						</group>
+						<group chance="18.5185">
+							<item id="8178" count="1" />
+						</group>
+						<group chance="15.8730">
+							<item id="8179" count="1" />
+						</group>
+					</value>
+					<value level="7">
+						<group chance="16.6666">
+							<item id="8175" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2271" levels="1" name="Old Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">8034,3,85;2134,3,4;2133,7,11</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1894,7 +3940,19 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="85">
+						<item id="8034" count="3" />
+					</group>
+					<group chance="4">
+						<item id="2134" count="3" />
+					</group>
+					<group chance="11">
+						<item id="2133" count="7" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2272" levels="1" name="Item - Theme Sound Crystal">
@@ -1908,9 +3966,6 @@
 	</skill>
 	<skill id="2273" levels="1" name="Red Devil Support Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">8552,1,25;8187,1,25;8555,5,25;6406,10,15;6407,5,9.991;5577,1,0.002;5578,1,0.002;5579,1,0.002;5580,1,0.001;5581,1,0.001;5582,1,0.001</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1925,7 +3980,43 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="25">
+						<item id="8552" count="1" />
+					</group>
+					<group chance="25">
+						<item id="8187" count="1" />
+					</group>
+					<group chance="25">
+						<item id="8555" count="5" />
+					</group>
+					<group chance="15">
+						<item id="6406" count="10" />
+					</group>
+					<group chance="9.991">
+						<item id="6407" count="5" />
+					</group>
+					<group chance="0.002">
+						<item id="5577" count="1" />
+					</group>
+					<group chance="0.002">
+						<item id="5578" count="1" />
+					</group>
+					<group chance="0.002">
+						<item id="5579" count="1" />
+					</group>
+					<group chance="0.001">
+						<item id="5580" count="1" />
+					</group>
+					<group chance="0.001">
+						<item id="5581" count="1" />
+					</group>
+					<group chance="0.001">
+						<item id="5582" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2274" levels="8" name="Fisherman's Potion">
@@ -2006,14 +4097,6 @@
 	</skill>
 	<skill id="2277" levels="6" name="Event Gift Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">1539,10,8592,1,50;1539,10,8592,1,50
-				1539,10,8593,1,50;1539,10,8593,1,50
-				1539,20,87.00;952,1,7.0;951,1,2.05;1538,1,2.00;3936,1,1.05;4637,1,0.3;4659,1,0.3;4648,1,0.3
-				1539,20,90.70;948,1,4.0;947,1,1.5;1538,1,2.00;3936,1,1.05;4638,1,0.25;4660,1,0.25;4649,1,0.25
-				1539,20,93.00;730,1,2.0;729,1,0.50;1538,1,3.00;3936,1,1.41;4639,1,0.03;4650,1,0.03;4661,1,0.03
-				1539,20,93.00;730,1,2.0;729,1,0.50;1538,1,3.00;3936,1,1.41;4639,1,0.03;4650,1,0.03;4661,1,0.03</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2028,7 +4111,134 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<value level="1">
+						<group chance="50">
+							<item id="1539" count="10" />
+							<item id="8592" count="1" />
+						</group>
+						<group chance="50">
+							<item id="1539" count="10" />
+							<item id="8592" count="1" />
+						</group>
+					</value>
+					<value level="2">
+						<group chance="50">
+							<item id="1539" count="10" />
+							<item id="8593" count="1" />
+						</group>
+						<group chance="50">
+							<item id="1539" count="10" />
+							<item id="8593" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="87.00">
+							<item id="1539" count="20" />
+						</group>
+						<group chance="7.0">
+							<item id="952" count="1" />
+						</group>
+						<group chance="2.05">
+							<item id="951" count="1" />
+						</group>
+						<group chance="2.00">
+							<item id="1538" count="1" />
+						</group>
+						<group chance="1.05">
+							<item id="3936" count="1" />
+						</group>
+						<group chance="0.3">
+							<item id="4637" count="1" />
+						</group>
+						<group chance="0.3">
+							<item id="4659" count="1" />
+						</group>
+						<group chance="0.3">
+							<item id="4648" count="1" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="90.70">
+							<item id="1539" count="20" />
+						</group>
+						<group chance="4.0">
+							<item id="948" count="1" />
+						</group>
+						<group chance="1.5">
+							<item id="947" count="1" />
+						</group>
+						<group chance="2.00">
+							<item id="1538" count="1" />
+						</group>
+						<group chance="1.05">
+							<item id="3936" count="1" />
+						</group>
+						<group chance="0.25">
+							<item id="4638" count="1" />
+						</group>
+						<group chance="0.25">
+							<item id="4660" count="1" />
+						</group>
+						<group chance="0.25">
+							<item id="4649" count="1" />
+						</group>
+					</value>
+					<value level="5">
+						<group chance="93.00">
+							<item id="1539" count="20" />
+						</group>
+						<group chance="2.0">
+							<item id="730" count="1" />
+						</group>
+						<group chance="0.50">
+							<item id="729" count="1" />
+						</group>
+						<group chance="3.00">
+							<item id="1538" count="1" />
+						</group>
+						<group chance="1.41">
+							<item id="3936" count="1" />
+						</group>
+						<group chance="0.03">
+							<item id="4639" count="1" />
+						</group>
+						<group chance="0.03">
+							<item id="4650" count="1" />
+						</group>
+						<group chance="0.03">
+							<item id="4661" count="1" />
+						</group>
+					</value>
+					<value level="6">
+						<group chance="93.00">
+							<item id="1539" count="20" />
+						</group>
+						<group chance="2.0">
+							<item id="730" count="1" />
+						</group>
+						<group chance="0.50">
+							<item id="729" count="1" />
+						</group>
+						<group chance="3.00">
+							<item id="1538" count="1" />
+						</group>
+						<group chance="1.41">
+							<item id="3936" count="1" />
+						</group>
+						<group chance="0.03">
+							<item id="4639" count="1" />
+						</group>
+						<group chance="0.03">
+							<item id="4650" count="1" />
+						</group>
+						<group chance="0.03">
+							<item id="4661" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2278" levels="3" name="Herb of Life">
@@ -2379,9 +4589,6 @@
 	</skill>
 	<skill id="2290" levels="1" name="Coffer of Shadows">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">8661,1,15;8660,1,15;5234,3,30;6406,10,20;6407,5,19.991;5577,1,0.002;5578,1,0.002;5579,1,0.002;5580,1,0.001;5581,1,0.001;5582,1,0.001</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2396,7 +4603,43 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="15">
+						<item id="8661" count="1" />
+					</group>
+					<group chance="15">
+						<item id="8660" count="1" />
+					</group>
+					<group chance="30">
+						<item id="5234" count="3" />
+					</group>
+					<group chance="20">
+						<item id="6406" count="10" />
+					</group>
+					<group chance="19.991">
+						<item id="6407" count="5" />
+					</group>
+					<group chance="0.002">
+						<item id="5577" count="1" />
+					</group>
+					<group chance="0.002">
+						<item id="5578" count="1" />
+					</group>
+					<group chance="0.002">
+						<item id="5579" count="1" />
+					</group>
+					<group chance="0.001">
+						<item id="5580" count="1" />
+					</group>
+					<group chance="0.001">
+						<item id="5581" count="1" />
+					</group>
+					<group chance="0.001">
+						<item id="5582" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2291" levels="1" name="Facelifting Potion">

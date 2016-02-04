@@ -135,9 +135,6 @@
 	</skill>
 	<skill id="22007" levels="1" name="Good Luck Bag">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20083,1,20;20086,1,20;20089,1,20;20084,1,10;20087,1,10;20090,1,10;20085,1,3.33;20088,1,3.33;20091,1,3.33</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -152,14 +149,41 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20">
+						<item id="20083" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20086" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20089" count="1" />
+					</group>
+					<group chance="10">
+						<item id="20084" count="1" />
+					</group>
+					<group chance="10">
+						<item id="20087" count="1" />
+					</group>
+					<group chance="10">
+						<item id="20090" count="1" />
+					</group>
+					<group chance="3.33">
+						<item id="20085" count="1" />
+					</group>
+					<group chance="3.33">
+						<item id="20088" count="1" />
+					</group>
+					<group chance="3.33">
+						<item id="20091" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22008" levels="1" name="Lucky Four-leaf Clover">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20083,1,20;20086,1,20;20089,1,20;20084,1,10;20087,1,10;20090,1,10;20085,1,3.33;20088,1,3.33;20091,1,3.33</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -174,15 +198,42 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20">
+						<item id="20083" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20086" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20089" count="1" />
+					</group>
+					<group chance="10">
+						<item id="20084" count="1" />
+					</group>
+					<group chance="10">
+						<item id="20087" count="1" />
+					</group>
+					<group chance="10">
+						<item id="20090" count="1" />
+					</group>
+					<group chance="3.33">
+						<item id="20085" count="1" />
+					</group>
+					<group chance="3.33">
+						<item id="20088" count="1" />
+					</group>
+					<group chance="3.33">
+						<item id="20091" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22009" levels="1" name="Holiday Miracle">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">20094,1,20;20095,1,80</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -197,14 +248,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20">
+						<item id="20094" count="1" />
+					</group>
+					<group chance="80">
+						<item id="20095" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22010" levels="1" name="Mysterious Formal Wear">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20098,1,20;20099,1,80</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -219,14 +276,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20">
+						<item id="20098" count="1" />
+					</group>
+					<group chance="80">
+						<item id="20099" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22011" levels="1" name="Santa Claus' Gift - Joy">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20103,1,20104,1,20105,1,20106,1,100</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -241,14 +304,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="100">
+						<item id="20103" count="1" />
+						<item id="20104" count="1" />
+						<item id="20105" count="1" />
+						<item id="20106" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22012" levels="1" name="Santa Claus' Gift - Enjoyment">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">10606,1,10;5561,1,90</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -263,7 +332,16 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="10">
+						<item id="10606" count="1" />
+					</group>
+					<group chance="90">
+						<item id="5561" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22013" levels="1" name="Winter Holiday Festival">
@@ -532,9 +610,6 @@
 	</skill>
 	<skill id="22017" levels="1" name="Santa Claus' Gift - Luck">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20107,1,99.99948;20108,1,0.00051</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -549,14 +624,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="99.99948">
+						<item id="20107" count="1" />
+					</group>
+					<group chance="0.00051">
+						<item id="20108" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22018" levels="1" name="Santa Claus' Gift - Luck">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20108,1,100</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -571,7 +652,13 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="100">
+						<item id="20108" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22019" levels="1" name="Extra Pass: Kamaloka (Hall of the Abyss)">
@@ -609,9 +696,6 @@
 	</skill>
 	<skill id="22022" levels="1" name="Miraculous Valentine Cake: Special Ingredient">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">20107,1,99.99948;20108,1,0.00051</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>20198</itemConsumeId> <!-- Decadent Valentine Cake -->
@@ -628,14 +712,17 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="100">
+						<item id="20199" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22023" levels="1" name="Simple Valentine Cake">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">10134,1,9;10138,1,9;1539,4,41;1540,3,16;20196,1,25</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -650,14 +737,29 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="9">
+						<item id="10134" count="1" />
+					</group>
+					<group chance="9">
+						<item id="10138" count="1" />
+					</group>
+					<group chance="41">
+						<item id="1539" count="4" />
+					</group>
+					<group chance="16">
+						<item id="1540" count="3" />
+					</group>
+					<group chance="25">
+						<item id="20196" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22024" levels="1" name="Velvety Valentine Cake">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">948,2,14;952,3,19;1538,1,11;3936,1,6;20200,1,20;20197,1,30</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -672,14 +774,32 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="14">
+						<item id="948" count="2" />
+					</group>
+					<group chance="19">
+						<item id="952" count="3" />
+					</group>
+					<group chance="11">
+						<item id="1538" count="1" />
+					</group>
+					<group chance="6">
+						<item id="3936" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20200" count="1" />
+					</group>
+					<group chance="30">
+						<item id="20197" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22025" levels="1" name="Delicious Valentine Cake">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">947,2,14;951,3,39;20201,1,17;20198,1,30</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -694,14 +814,26 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="14">
+						<item id="947" count="2" />
+					</group>
+					<group chance="39">
+						<item id="951" count="3" />
+					</group>
+					<group chance="17">
+						<item id="20201" count="1" />
+					</group>
+					<group chance="30">
+						<item id="20198" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22026" levels="1" name="Decadent Valentine Cake">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">959,1,14;729,2,26;20202,1,35;20203,1,25</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -716,14 +848,26 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="14">
+						<item id="959" count="1" />
+					</group>
+					<group chance="26">
+						<item id="729" count="2" />
+					</group>
+					<group chance="35">
+						<item id="20202" count="1" />
+					</group>
+					<group chance="25">
+						<item id="20203" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22027" levels="1" name="Heavenly Valentine Cake">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">6659,1,0.00661;6660,1,0.1;20208,1,8;20206,1,11;20207,1,18;20204,1,62.893</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -738,7 +882,28 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="0.00661">
+						<item id="6659" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="6660" count="1" />
+					</group>
+					<group chance="8">
+						<item id="20208" count="1" />
+					</group>
+					<group chance="11">
+						<item id="20206" count="1" />
+					</group>
+					<group chance="18">
+						<item id="20207" count="1" />
+					</group>
+					<group chance="62.893">
+						<item id="20204" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22028" levels="1" name="Chocolate Cookie">
@@ -847,9 +1012,6 @@
 	<skill id="22032" levels="1" name="Baguette Legacy">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">20255,1,8.34;20256,1,8.34;20257,1,8.34;20258,1,8.34;20259,1,8.34;20260,1,8.34;20261,1,8.34;20262,1,8.34;20263,1,8.34;20264,1,8.34;20265,1,8.34;20270,1,8.26</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -864,15 +1026,51 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="8.34">
+						<item id="20255" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20256" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20257" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20258" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20259" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20260" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20261" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20262" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20263" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20264" count="1" />
+					</group>
+					<group chance="8.34">
+						<item id="20265" count="1" />
+					</group>
+					<group chance="8.26">
+						<item id="20270" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22033" levels="1" name="Baguette Legacy - Kamael">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">20268,1,33;20269,1,33;20267,1,34</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -887,7 +1085,19 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="33">
+						<item id="20268" count="1" />
+					</group>
+					<group chance="33">
+						<item id="20269" count="1" />
+					</group>
+					<group chance="34">
+						<item id="20267" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22034" levels="1" name="Birthday Cake">
@@ -1843,9 +2053,6 @@
 	</skill>
 	<skill id="22071" levels="1" name="Huge Fortuna Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22009,2,27;20517,1,15;22015,1,0.78299;20519,1,0.27056;22019,1,0.00775;20521,1,0.0027;20545,8,3.75;20546,10,7.5;20547,10,4.5;8751,1,9.75;8752,1,8.125;9575,1,6.77083;8761,1,1.95;8762,1,1.625;9576,1,1.35416;22024,15,12.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1860,14 +2067,62 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="27">
+						<item id="22009" count="2" />
+					</group>
+					<group chance="15">
+						<item id="20517" count="1" />
+					</group>
+					<group chance="0.78299">
+						<item id="22015" count="1" />
+					</group>
+					<group chance="0.27056">
+						<item id="20519" count="1" />
+					</group>
+					<group chance="0.00775">
+						<item id="22019" count="1" />
+					</group>
+					<group chance="0.0027">
+						<item id="20521" count="1" />
+					</group>
+					<group chance="3.75">
+						<item id="20545" count="8" />
+					</group>
+					<group chance="7.5">
+						<item id="20546" count="10" />
+					</group>
+					<group chance="4.5">
+						<item id="20547" count="10" />
+					</group>
+					<group chance="9.75">
+						<item id="8751" count="1" />
+					</group>
+					<group chance="8.125">
+						<item id="8752" count="1" />
+					</group>
+					<group chance="6.77083">
+						<item id="9575" count="1" />
+					</group>
+					<group chance="1.95">
+						<item id="8761" count="1" />
+					</group>
+					<group chance="1.625">
+						<item id="8762" count="1" />
+					</group>
+					<group chance="1.35416">
+						<item id="9576" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="22024" count="15" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22072" levels="1" name="Huge Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22013,2,26.25;20518,1,14.58333;22017,1,0.69599;20520,1,0.24049;22021,1,0.00638;20522,1,0.0022;20545,8,3.95833;20546,10,7.91666;20547,10,4.75;8751,1,9.58333;8752,1,7.98611;9575,1,6.65509;8761,1,1.91666;8762,1,1.59722;9576,1,1.33101;22024,15,13.19444</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1882,7 +2137,58 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="26.25">
+						<item id="22013" count="2" />
+					</group>
+					<group chance="14.58333">
+						<item id="20518" count="1" />
+					</group>
+					<group chance="0.69599">
+						<item id="22017" count="1" />
+					</group>
+					<group chance="0.24049">
+						<item id="20520" count="1" />
+					</group>
+					<group chance="0.00638">
+						<item id="22021" count="1" />
+					</group>
+					<group chance="0.0022">
+						<item id="20522" count="1" />
+					</group>
+					<group chance="3.95833">
+						<item id="20545" count="8" />
+					</group>
+					<group chance="7.91666">
+						<item id="20546" count="10" />
+					</group>
+					<group chance="4.75">
+						<item id="20547" count="10" />
+					</group>
+					<group chance="9.58333">
+						<item id="8751" count="1" />
+					</group>
+					<group chance="7.98611">
+						<item id="8752" count="1" />
+					</group>
+					<group chance="6.65509">
+						<item id="9575" count="1" />
+					</group>
+					<group chance="1.91666">
+						<item id="8761" count="1" />
+					</group>
+					<group chance="1.59722">
+						<item id="8762" count="1" />
+					</group>
+					<group chance="1.33101">
+						<item id="9576" count="1" />
+					</group>
+					<group chance="13.19444">
+						<item id="22024" count="15" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22073" levels="1" name="Scroll: Enchant Weapon (S-grade)">
@@ -2253,9 +2559,6 @@
 	<skill id="22092" levels="1" name="Small Scroll Chest">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">20365,1,20;20364,1,20;20366,1,20;20367,1,20;20368,1,20</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2270,15 +2573,30 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20">
+						<item id="20365" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20364" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20366" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20367" count="1" />
+					</group>
+					<group chance="20">
+						<item id="20368" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22093" levels="1" name="Large Scroll Chest">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">20554,1,15;20392,1,15;20393,1,35;20394,1,35</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2293,15 +2611,27 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="15">
+						<item id="20554" count="1" />
+					</group>
+					<group chance="15">
+						<item id="20392" count="1" />
+					</group>
+					<group chance="35">
+						<item id="20393" count="1" />
+					</group>
+					<group chance="35">
+						<item id="20394" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22094" levels="1" name="Exp. Master">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">20581,1,70;20548,1,30</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2316,7 +2646,16 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="70">
+						<item id="20581" count="1" />
+					</group>
+					<group chance="30">
+						<item id="20548" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="22095" levels="1" name="Summon Fire Spirit">

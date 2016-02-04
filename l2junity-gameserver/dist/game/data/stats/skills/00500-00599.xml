@@ -1460,9 +1460,6 @@
 	</skill>
 	<skill id="519" levels="1" name="Quiver of Bolts: A-Grade">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">9636,700,30;9636,1400,50;9636,2800,20</value>
-		</capsuled_items_skill>
 		<hitTime>3000</hitTime>
 		<icon>icon.skill0519</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1482,14 +1479,23 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30">
+						<item id="9636" count="700" />
+					</group>
+					<group chance="50">
+						<item id="9636" count="1400" />
+					</group>
+					<group chance="20">
+						<item id="9636" count="2800" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="520" levels="1" name="Quiver of Bolts: S-Grade">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">9637,900,30;9637,1800,50;9637,3600,20</value>
-		</capsuled_items_skill>
 		<hitTime>3000</hitTime>
 		<icon>icon.skill0520</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1509,7 +1515,19 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30">
+						<item id="9637" count="900" />
+					</group>
+					<group chance="50">
+						<item id="9637" count="1800" />
+					</group>
+					<group chance="20">
+						<item id="9637" count="3600" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="521" levels="8" name="Sharpshooting">

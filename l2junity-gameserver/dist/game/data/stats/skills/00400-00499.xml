@@ -1769,12 +1769,6 @@
 	</skill>
 	<skill id="419" levels="4" name="Summon Treasure Key">
 		<!-- Glory Days Confirmed -->
-		<capsuled_items_skill>
-			<value level="1">21746,1,100
-				21746,1,70;21746,2,30
-				21746,1,50;21746,2,30;21746,3,20
-				21746,1,40;21746,2,30;21746,3,20;21746,4,10</value>
-		</capsuled_items_skill>
 		<hitTime>3000</hitTime>
 		<icon>icon.skill0419</icon>
 		<itemConsumeCount>2</itemConsumeCount>
@@ -1804,7 +1798,43 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom" fromLevel="2" toLevel="4">
+				<items>
+					<value level="2">
+						<group chance="30">
+							<item id="21746" count="2" />
+						</group>
+						<group chance="70">
+							<item id="21746" count="1" />
+						</group>
+					</value>
+					<value level="3">
+						<group chance="20">
+							<item id="21746" count="3" />
+						</group>
+						<group chance="30">
+							<item id="21746" count="2" />
+						</group>
+						<group chance="50">
+							<item id="21746" count="1" />
+						</group>
+					</value>
+					<value level="4">
+						<group chance="10">
+							<item id="21746" count="4" />
+						</group>
+						<group chance="20">
+							<item id="21746" count="3" />
+						</group>
+						<group chance="30">
+							<item id="21746" count="2" />
+						</group>
+						<group chance="40">
+							<item id="21746" count="1" />
+						</group>
+					</value>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="420" levels="3" name="Zealot">

@@ -317,9 +317,6 @@
 	</skill>
 	<skill id="2917" levels="1" name="Large Stakato Cocoon">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">9575,1,2.77;10485,1,2.31;10577,1,3.2;14209,1,3.2;14208,1,3.2;14212,1,3.2;960,1,6.4;9625,1,3.2;9626,1,2.13;959,1,0.64;10373,1,1.54;10374,1,1.54;10375,1,1.54;10376,1,1.54;10377,1,1.54;10378,1,1.54;10379,1,1.54;10380,1,1.54;10381,1,1.54</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14834</itemConsumeId> <!-- Large Stakato Cocoon -->
@@ -336,14 +333,71 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="2.77">
+						<item id="9575" count="1" />
+					</group>
+					<group chance="2.31">
+						<item id="10485" count="1" />
+					</group>
+					<group chance="3.2">
+						<item id="10577" count="1" />
+					</group>
+					<group chance="3.2">
+						<item id="14209" count="1" />
+					</group>
+					<group chance="3.2">
+						<item id="14208" count="1" />
+					</group>
+					<group chance="3.2">
+						<item id="14212" count="1" />
+					</group>
+					<group chance="6.4">
+						<item id="960" count="1" />
+					</group>
+					<group chance="3.2">
+						<item id="9625" count="1" />
+					</group>
+					<group chance="2.13">
+						<item id="9626" count="1" />
+					</group>
+					<group chance="0.64">
+						<item id="959" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10373" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10374" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10375" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10376" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10377" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10378" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10379" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10380" count="1" />
+					</group>
+					<group chance="1.54">
+						<item id="10381" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2918" levels="1" name="Small Stakato Cocoon">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">9575,1,2.36;10485,1,1.96;10577,1,2.72;14209,1,2.72;14208,1,2.72;14212,1,2.72;960,1,5.44;9625,1,2.72;9626,1,1.81;959,1,0.54;10373,1,1.31;10374,1,1.31;10375,1,1.31;10376,1,1.31;10377,1,1.31;10378,1,1.31;10379,1,1.31;10380,1,1.31;10381,1,1.31</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14833</itemConsumeId> <!-- Small Stakato Cocoon -->
@@ -360,14 +414,71 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="2.36">
+						<item id="9575" count="1" />
+					</group>
+					<group chance="1.96">
+						<item id="10485" count="1" />
+					</group>
+					<group chance="2.72">
+						<item id="10577" count="1" />
+					</group>
+					<group chance="2.72">
+						<item id="14209" count="1" />
+					</group>
+					<group chance="2.72">
+						<item id="14208" count="1" />
+					</group>
+					<group chance="2.72">
+						<item id="14212" count="1" />
+					</group>
+					<group chance="5.44">
+						<item id="960" count="1" />
+					</group>
+					<group chance="2.72">
+						<item id="9625" count="1" />
+					</group>
+					<group chance="1.81">
+						<item id="9626" count="1" />
+					</group>
+					<group chance="0.54">
+						<item id="959" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10373" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10374" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10375" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10376" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10377" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10378" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10379" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10380" count="1" />
+					</group>
+					<group chance="1.31">
+						<item id="10381" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2919" levels="1" name="Ancient Parchment">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">5942,1,40.0;5943,1,40.0;14836,1,4.0;14837,1,4.0;14838,1,4.0;14839,1,4.0;14840,1,4.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14841</itemConsumeId> <!-- Ancient Parchment -->
@@ -384,14 +495,35 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="40.0">
+						<item id="5942" count="1" />
+					</group>
+					<group chance="40.0">
+						<item id="5943" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14836" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14837" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14838" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14839" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14840" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2920" levels="1" name="Titan's Ancient Book">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">5942,1,40.0;5943,1,40.0;14842,1,4.0;14843,1,4.0;14844,1,4.0;14845,1,4.0;14846,1,4.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14847</itemConsumeId> <!-- Titan Ancient Book -->
@@ -408,14 +540,35 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="40.0">
+						<item id="5942" count="1" />
+					</group>
+					<group chance="40.0">
+						<item id="5943" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14842" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14843" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14844" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14845" count="1" />
+					</group>
+					<group chance="4.0">
+						<item id="14846" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2921" levels="1" name="Gludio Supply Box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13695</itemConsumeId> <!-- Gludio Supply Box - Magic Pin -->
@@ -432,14 +585,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2922" levels="1" name="Dion supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13696</itemConsumeId> <!-- Dion Supply Box - Magic Pin -->
@@ -456,14 +615,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2923" levels="1" name="Giran supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13697</itemConsumeId> <!-- Giran Supply Box - Magic Pin -->
@@ -480,14 +645,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2924" levels="1" name="Oren supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13698</itemConsumeId> <!-- Oren Supply Box - Magic Pin -->
@@ -504,14 +675,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2925" levels="1" name="Aden supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13699</itemConsumeId> <!-- Aden Supply Box - Magic Pin -->
@@ -528,14 +705,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2926" levels="1" name="Innadril supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13700</itemConsumeId> <!-- Innadril Supply Box - Magic Pin -->
@@ -552,14 +735,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2927" levels="1" name="Goddard Supply Box: magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13701</itemConsumeId> <!-- Goddard Supply Box: Magic Pin -->
@@ -576,14 +765,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2928" levels="1" name="Rune supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13702</itemConsumeId> <!-- Rune Supply Box - Magic Pin -->
@@ -600,14 +795,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2929" levels="1" name="Schuttgart supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13898,1,30.0;13899,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13703</itemConsumeId> <!-- Schuttgart Supply Box - Magic Pin -->
@@ -624,14 +825,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13898" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13899" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2930" levels="1" name="Gludio supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13704</itemConsumeId> <!-- Gludio Supply Box - Magic Pouch -->
@@ -648,14 +855,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2931" levels="1" name="Dion supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13705</itemConsumeId> <!-- Dion Supply Box - Magic Pouch -->
@@ -672,14 +885,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2932" levels="1" name="Giran supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13706</itemConsumeId> <!-- Giran Supply Box - Magic Pouch -->
@@ -696,14 +915,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2933" levels="1" name="Oren supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13707</itemConsumeId> <!-- Oren Supply Box - Magic Pouch -->
@@ -720,14 +945,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2934" levels="1" name="Aden supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13708</itemConsumeId> <!-- Aden Supply Box - Magic Pouch -->
@@ -744,14 +975,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2935" levels="1" name="Innadril supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13709</itemConsumeId> <!-- Innadril Supply Box - Magic Pouch -->
@@ -768,14 +1005,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2936" levels="1" name="Goddard Supply Box: magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13710</itemConsumeId> <!-- Goddard Supply Box: Magic Pouch -->
@@ -792,14 +1035,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2937" levels="1" name="Rune supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13711</itemConsumeId> <!-- Rune Supply Box - Magic Pouch -->
@@ -816,14 +1065,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2938" levels="1" name="Schuttgart supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13918,1,30.0;13919,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13712</itemConsumeId> <!-- Schuttgart Supply Box - Magic Pouch -->
@@ -840,14 +1095,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13918" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13919" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2939" levels="1" name="Gludio supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13713</itemConsumeId> <!-- Gludio Supply Box - Belt -->
@@ -864,14 +1125,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2940" levels="1" name="Dion supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13714</itemConsumeId> <!-- Dion Supply Box - Belt -->
@@ -888,14 +1155,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2941" levels="1" name="Giran supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13715</itemConsumeId> <!-- Giran Supply Box - Belt -->
@@ -912,14 +1185,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2942" levels="1" name="Oren supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13716</itemConsumeId> <!-- Oren Supply Box - Belt -->
@@ -936,14 +1215,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2943" levels="1" name="Aden supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13717</itemConsumeId> <!-- Aden Supply Box - Belt -->
@@ -960,14 +1245,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2944" levels="1" name="Innadril supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13718</itemConsumeId> <!-- Innadril Supply Box - Belt -->
@@ -984,14 +1275,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2945" levels="1" name="Goddard Supply Box: belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13719</itemConsumeId> <!-- Goddard Supply Box: Belt -->
@@ -1008,14 +1305,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2946" levels="1" name="Rune supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13720</itemConsumeId> <!-- Rune Supply Box - Belt -->
@@ -1032,14 +1335,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2947" levels="1" name="Schuttgart supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13894,1,30.0;13895,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>13721</itemConsumeId> <!-- Schuttgart Supply Box - Belt -->
@@ -1056,14 +1365,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13894" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13895" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2948" levels="1" name="Gludio Supply Box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14531</itemConsumeId> <!-- Gludio Supply Box - Magic Pin -->
@@ -1080,14 +1395,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2949" levels="1" name="Dion supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14532</itemConsumeId> <!-- Dion Supply Box - Magic Pin -->
@@ -1104,14 +1425,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2950" levels="1" name="Giran supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14533</itemConsumeId> <!-- Giran Supply Box - Magic Pin -->
@@ -1128,14 +1455,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2951" levels="1" name="Oren supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14534</itemConsumeId> <!-- Oren Supply Box - Magic Pin -->
@@ -1152,14 +1485,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2952" levels="1" name="Aden supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14535</itemConsumeId> <!-- Aden Supply Box - Magic Pin -->
@@ -1176,14 +1515,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2953" levels="1" name="Innadril supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14536</itemConsumeId> <!-- Innadril Supply Box - Magic Pin -->
@@ -1200,14 +1545,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2954" levels="1" name="Goddard Supply Box: magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14537</itemConsumeId> <!-- Goddard Supply Box: Magic Pin -->
@@ -1224,14 +1575,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2955" levels="1" name="Rune supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14538</itemConsumeId> <!-- Rune Supply Box - Magic Pin -->
@@ -1248,14 +1605,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2956" levels="1" name="Schuttgart supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13900,1,30.0;13901,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14539</itemConsumeId> <!-- Schuttgart Supply Box - Magic Pin -->
@@ -1272,14 +1635,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13900" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13901" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2957" levels="1" name="Gludio supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14540</itemConsumeId> <!-- Gludio Supply Box - Magic Pouch -->
@@ -1296,14 +1665,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2958" levels="1" name="Dion supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14541</itemConsumeId> <!-- Dion Supply Box - Magic Pouch -->
@@ -1320,14 +1695,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2959" levels="1" name="Giran supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14542</itemConsumeId> <!-- Giran Supply Box - Magic Pouch -->
@@ -1344,14 +1725,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2960" levels="1" name="Oren supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14543</itemConsumeId> <!-- Oren Supply Box - Magic Pouch -->
@@ -1368,14 +1755,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2961" levels="1" name="Aden supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14544</itemConsumeId> <!-- Aden Supply Box - Magic Pouch -->
@@ -1392,14 +1785,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2962" levels="1" name="Innadril supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14545</itemConsumeId> <!-- Innadril Supply Box - Magic Pouch -->
@@ -1416,14 +1815,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2963" levels="1" name="Goddard Supply Box: magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14546</itemConsumeId> <!-- Goddard Supply Box: Magic Pouch -->
@@ -1440,14 +1845,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2964" levels="1" name="Rune supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14547</itemConsumeId> <!-- Rune Supply Box - Magic Pouch -->
@@ -1464,14 +1875,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2965" levels="1" name="Schuttgart supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13920,1,30.0;13921,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14548</itemConsumeId> <!-- Schuttgart Supply Box - Magic Pouch -->
@@ -1488,14 +1905,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13920" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13921" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2966" levels="1" name="Gludio supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14549</itemConsumeId> <!-- Gludio Supply Box - Belt -->
@@ -1512,14 +1935,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2967" levels="1" name="Dion supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14550</itemConsumeId> <!-- Dion Supply Box - Belt -->
@@ -1536,14 +1965,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2968" levels="1" name="Giran supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14551</itemConsumeId> <!-- Giran Supply Box - Belt -->
@@ -1560,14 +1995,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2969" levels="1" name="Oren supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14552</itemConsumeId> <!-- Oren Supply Box - Belt -->
@@ -1584,14 +2025,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2970" levels="1" name="Aden supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14553</itemConsumeId> <!-- Aden Supply Box - Belt -->
@@ -1608,14 +2055,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2971" levels="1" name="Innadril supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14554</itemConsumeId> <!-- Innadril Supply Box - Belt -->
@@ -1632,14 +2085,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2972" levels="1" name="Goddard Supply Box: belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14555</itemConsumeId> <!-- Goddard Supply Box: Belt -->
@@ -1656,14 +2115,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2973" levels="1" name="Rune supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14556</itemConsumeId> <!-- Rune Supply Box - Belt -->
@@ -1680,14 +2145,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2974" levels="1" name="Schuttgart supply box - belt">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">13896,1,30.0;13897,1,15.0</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14557</itemConsumeId> <!-- Schuttgart Supply Box - Belt -->
@@ -1704,14 +2175,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30.0">
+						<item id="13896" count="1" />
+					</group>
+					<group chance="15.0">
+						<item id="13897" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2975" levels="1" name="Gludio supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14884</itemConsumeId> <!-- Gludio Supply Box - Magic Rune Clip -->
@@ -1728,14 +2205,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2976" levels="1" name="Dion supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14885</itemConsumeId> <!-- Dion Supply Box - Magic Rune Clip -->
@@ -1752,14 +2235,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2977" levels="1" name="Giran supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14886</itemConsumeId> <!-- Giran Supply Box - Magic Rune Clip -->
@@ -1776,14 +2265,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2978" levels="1" name="Oren supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14887</itemConsumeId> <!-- Oren Supply Box - Magic Rune Clip -->
@@ -1800,14 +2295,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2979" levels="1" name="Aden supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14888</itemConsumeId> <!-- Aden Supply Box - Magic Rune Clip -->
@@ -1824,14 +2325,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2980" levels="1" name="Innadril supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14889</itemConsumeId> <!-- Innadril Supply Box - Magic Rune Clip -->
@@ -1848,14 +2355,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2981" levels="1" name="Goddard Supply Box: magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14890</itemConsumeId> <!-- Goddard Supply Box: Magic Rune Clip -->
@@ -1872,14 +2385,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2982" levels="1" name="Rune supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14891</itemConsumeId> <!-- Rune Supply Box - Magic Rune Clip -->
@@ -1896,14 +2415,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2983" levels="1" name="Schuttgart supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14902,1,21.0;14903,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14892</itemConsumeId> <!-- Schuttgart Supply Box - Magic Rune Clip -->
@@ -1920,14 +2445,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14902" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14903" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2984" levels="1" name="Gludio supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14893</itemConsumeId> <!-- Gludio Supply Box - Magic Ornament -->
@@ -1944,14 +2475,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2985" levels="1" name="Dion supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14894</itemConsumeId> <!-- Dion Supply Box - Magic Ornament -->
@@ -1968,14 +2505,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2986" levels="1" name="Giran supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14895</itemConsumeId> <!-- Giran Supply Box - Magic Ornament -->
@@ -1992,14 +2535,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2987" levels="1" name="Oren supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14896</itemConsumeId> <!-- Oren Supply Box - Magic Ornament -->
@@ -2016,14 +2565,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2988" levels="1" name="Aden supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14897</itemConsumeId> <!-- Aden Supply Box - Magic Ornament -->
@@ -2040,14 +2595,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2989" levels="1" name="Innadril supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14898</itemConsumeId> <!-- Innadril Supply Box - Magic Ornament -->
@@ -2064,14 +2625,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2990" levels="1" name="Goddard Supply Box: magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14899</itemConsumeId> <!-- Goddard Supply Box: Magic Ornament -->
@@ -2088,14 +2655,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2991" levels="1" name="Rune supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14900</itemConsumeId> <!-- Rune Supply Box - Magic Ornament -->
@@ -2112,14 +2685,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2992" levels="1" name="Schuttgart supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">14904,1,21.0;14905,1,10.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14901</itemConsumeId> <!-- Schuttgart Supply Box - Magic Ornament -->
@@ -2136,7 +2715,16 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21.0">
+						<item id="14904" count="1" />
+					</group>
+					<group chance="10.5">
+						<item id="14905" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="2993" levels="1" name="Ancient herb - Deceiver">

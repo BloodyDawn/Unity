@@ -299,6 +299,8 @@
 	</skill>
 	<skill id="9620" levels="1" name="Yummy Gift Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36081</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -307,6 +309,18 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<hitTime>500</hitTime>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="50">
+						<item id="36079" count="2" />
+					</group>
+					<group chance="50">
+						<item id="36080" count="2" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9621" levels="1" name="Blessed Scroll of Escape: Gludio">
 		<!-- AUTO GENERATED SKILL -->
@@ -416,6 +430,8 @@
 	</skill>
 	<skill id="9628" levels="1" name="Star Agathion's Gift Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36093</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -424,6 +440,21 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="80">
+						<item id="36094" count="1" />
+					</group>
+					<group chance="16">
+						<item id="36096" count="1" />
+					</group>
+					<group chance="4">
+						<item id="36095" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9629" levels="1" name="Vitality Replenishing Star Candy">
 		<!-- AUTO GENERATED SKILL -->
@@ -484,6 +515,8 @@
 	</skill>
 	<skill id="9632" levels="1" name="Star Agathion Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36102</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -492,9 +525,32 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20">
+						<item id="36097" count="1" />
+					</group>
+					<group chance="20">
+						<item id="36098" count="1" />
+					</group>
+					<group chance="20">
+						<item id="36099" count="1" />
+					</group>
+					<group chance="20">
+						<item id="36100" count="1" />
+					</group>
+					<group chance="20">
+						<item id="36101" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9633" levels="1" name="Transformation Scroll Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36103</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -503,6 +559,24 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="25">
+						<item id="21188" count="1" />
+					</group>
+					<group chance="25">
+						<item id="21189" count="1" />
+					</group>
+					<group chance="25">
+						<item id="21190" count="1" />
+					</group>
+					<group chance="25">
+						<item id="21185" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9634" levels="1" name="Destroy Greedy Pixie">
 		<!-- AUTO GENERATED SKILL -->
@@ -1026,6 +1100,8 @@
 	<skill id="9667" levels="1" name="Mysterious Pouch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- What could be inside this pouch? -->
+		<itemConsumeId>35655</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1034,6 +1110,120 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<hitTime>500</hitTime>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="5.7">
+						<item id="34649" count="1" />
+					</group>
+					<group chance="5.7">
+						<item id="34650" count="1" />
+					</group>
+					<group chance="5.7">
+						<item id="34651" count="1" />
+					</group>
+					<group chance="5.7">
+						<item id="34652" count="1" />
+					</group>
+					<group chance="5.7">
+						<item id="34653" count="1" />
+					</group>
+					<group chance="5.7">
+						<item id="34654" count="1" />
+					</group>
+					<group chance="3.37">
+						<item id="34655" count="1" />
+					</group>
+					<group chance="3.37">
+						<item id="34656" count="1" />
+					</group>
+					<group chance="3.37">
+						<item id="34657" count="1" />
+					</group>
+					<group chance="3.36">
+						<item id="34658" count="1" />
+					</group>
+					<group chance="3.36">
+						<item id="34659" count="1" />
+					</group>
+					<group chance="3.37">
+						<item id="34660" count="1" />
+					</group>
+					<group chance="5">
+						<item id="9546" count="1" />
+					</group>
+					<group chance="5">
+						<item id="9547" count="1" />
+					</group>
+					<group chance="5">
+						<item id="9548" count="1" />
+					</group>
+					<group chance="5">
+						<item id="9549" count="1" />
+					</group>
+					<group chance="5">
+						<item id="9550" count="1" />
+					</group>
+					<group chance="5">
+						<item id="9551" count="1" />
+					</group>
+					<group chance="2">
+						<item id="9552" count="1" />
+					</group>
+					<group chance="2">
+						<item id="9553" count="1" />
+					</group>
+					<group chance="2">
+						<item id="9554" count="1" />
+					</group>
+					<group chance="2">
+						<item id="9555" count="1" />
+					</group>
+					<group chance="2">
+						<item id="9556" count="1" />
+					</group>
+					<group chance="2">
+						<item id="9557" count="1" />
+					</group>
+					<group chance="0.5">
+						<item id="34661" count="1" />
+					</group>
+					<group chance="0.5">
+						<item id="34662" count="1" />
+					</group>
+					<group chance="0.5">
+						<item id="34663" count="1" />
+					</group>
+					<group chance="0.5">
+						<item id="34664" count="1" />
+					</group>
+					<group chance="0.5">
+						<item id="34665" count="1" />
+					</group>
+					<group chance="0.5">
+						<item id="34666" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="34667" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="34668" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="34669" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="34670" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="34671" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="34672" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9668" levels="1" name="Summon Association Request Manager">
 		<!-- AUTO GENERATED SKILL -->
@@ -1051,6 +1241,8 @@
 	</skill>
 	<skill id="9669" levels="1" name="CON/MEN Pendant Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36131</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1059,9 +1251,23 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="50">
+						<item id="35903" count="1" />
+					</group>
+					<group chance="50">
+						<item id="35904" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9670" levels="1" name="INT/WIT Pendant Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36132</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1070,9 +1276,23 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="50">
+						<item id="35905" count="1" />
+					</group>
+					<group chance="50">
+						<item id="35906" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9671" levels="1" name="STR/DEX Pendant Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36133</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1081,9 +1301,23 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="50">
+						<item id="35901" count="1" />
+					</group>
+					<group chance="50">
+						<item id="35902" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9672" levels="1" name="P. Def./P. Evasion Pendant Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36134</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1092,9 +1326,26 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="33">
+						<item id="35909" count="1" />
+					</group>
+					<group chance="33">
+						<item id="35910" count="1" />
+					</group>
+					<group chance="34">
+						<item id="35911" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9673" levels="1" name="P. Atk./P. Accuracy Pendant Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36135</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1103,9 +1354,26 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="33">
+						<item id="35912" count="1" />
+					</group>
+					<group chance="33">
+						<item id="35913" count="1" />
+					</group>
+					<group chance="34">
+						<item id="35914" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9674" levels="1" name="Critical Pendant Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36136</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1114,9 +1382,23 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="50">
+						<item id="35907" count="1" />
+					</group>
+					<group chance="50">
+						<item id="35908" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9675" levels="1" name="Double Crystal Enhancement Reward: Amaranthine Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36143</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1125,9 +1407,41 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="12.5">
+						<item id="30233" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30235" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30238" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30243" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30246" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30249" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30250" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="30255" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9676" levels="1" name="Double Crystal Enhancement Reward: Amaranthine Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36144</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1136,9 +1450,26 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="33">
+						<item id="30258" count="1" />
+					</group>
+					<group chance="33">
+						<item id="30259" count="1" />
+					</group>
+					<group chance="34">
+						<item id="30263" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9677" levels="1" name="Double Crystal Enhancement Reward: Amaranthine Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36145</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1147,9 +1478,26 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="33">
+						<item id="30265" count="1" />
+					</group>
+					<group chance="33">
+						<item id="30268" count="1" />
+					</group>
+					<group chance="34">
+						<item id="30273" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9678" levels="1" name="Bloody Amaranthine Weapon Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36146</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1158,9 +1506,50 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="9">
+						<item id="35193" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35194" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35195" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35196" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35197" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35198" count="1" />
+					</group>
+					<group chance="10">
+						<item id="35199" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35200" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35201" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35202" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35203" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9679" levels="1" name="Dark Amaranthine Weapon Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36147</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1169,9 +1558,50 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="9">
+						<item id="35095" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35096" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35097" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35098" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35099" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35100" count="1" />
+					</group>
+					<group chance="10">
+						<item id="35101" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35102" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35103" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35104" count="1" />
+					</group>
+					<group chance="9">
+						<item id="35105" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9680" levels="1" name="Kaliel's Attribute Crystal Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36154</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1180,9 +1610,35 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="16">
+						<item id="9552" count="1" />
+					</group>
+					<group chance="16">
+						<item id="9553" count="1" />
+					</group>
+					<group chance="16">
+						<item id="9554" count="1" />
+					</group>
+					<group chance="16">
+						<item id="9555" count="1" />
+					</group>
+					<group chance="18">
+						<item id="9556" count="1" />
+					</group>
+					<group chance="18">
+						<item id="9557" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9681" levels="1" name="Enhanced Kaliel's Attribute Stone Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36155</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1191,9 +1647,35 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="16">
+						<item id="33481" count="1" />
+					</group>
+					<group chance="16">
+						<item id="33482" count="1" />
+					</group>
+					<group chance="16">
+						<item id="33483" count="1" />
+					</group>
+					<group chance="16">
+						<item id="33484" count="1" />
+					</group>
+					<group chance="18">
+						<item id="33485" count="1" />
+					</group>
+					<group chance="18">
+						<item id="33486" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9682" levels="1" name="Enhanced Kaliel's Attribute Crystal Pack">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36156</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1202,9 +1684,35 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="16">
+						<item id="33487" count="1" />
+					</group>
+					<group chance="16">
+						<item id="33488" count="1" />
+					</group>
+					<group chance="16">
+						<item id="33489" count="1" />
+					</group>
+					<group chance="16">
+						<item id="33490" count="1" />
+					</group>
+					<group chance="18">
+						<item id="33491" count="1" />
+					</group>
+					<group chance="18">
+						<item id="33492" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9683" levels="1" name="Kaliel's Soul Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36165</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1213,9 +1721,35 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="89.854">
+						<item id="36148" count="1" />
+					</group>
+					<group chance="0.449">
+						<item id="36149" count="1" />
+					</group>
+					<group chance="1.348">
+						<item id="36150" count="1" />
+					</group>
+					<group chance="7.702">
+						<item id="36151" count="1" />
+					</group>
+					<group chance="0.035">
+						<item id="36152" count="1" />
+					</group>
+					<group chance="0.612">
+						<item id="35562" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9684" levels="1" name="Kaliel's Gift Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>36166</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1224,6 +1758,57 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="68.0552">
+						<item id="36153" count="1" />
+					</group>
+					<group chance="17.0138">
+						<item id="36154" count="1" />
+					</group>
+					<group chance="3.545">
+						<item id="36155" count="1" />
+					</group>
+					<group chance="0.443">
+						<item id="36156" count="1" />
+					</group>
+					<group chance="0.945">
+						<item id="32814" count="1" />
+					</group>
+					<group chance="0.945">
+						<item id="32816" count="1" />
+					</group>
+					<group chance="2.836">
+						<item id="36157" count="1" />
+					</group>
+					<group chance="1.89">
+						<item id="36158" count="1" />
+					</group>
+					<group chance="3.867">
+						<item id="35563" count="1" />
+					</group>
+					<group chance="0.193">
+						<item id="34774" count="1" />
+					</group>
+					<group chance="0.08">
+						<item id="34775" count="1" />
+					</group>
+					<group chance="0.019">
+						<item id="34776" count="1" />
+					</group>
+					<group chance="0.009">
+						<item id="34777" count="1" />
+					</group>
+					<group chance="0.053">
+						<item id="36163" count="1" />
+					</group>
+					<group chance="0.106">
+						<item id="36164" count="1" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9685" levels="1" name="Kaliel's Hourglass">
 		<!-- AUTO GENERATED SKILL -->

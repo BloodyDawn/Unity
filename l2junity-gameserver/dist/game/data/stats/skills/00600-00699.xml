@@ -438,9 +438,6 @@
 	</skill>
 	<skill id="620" levels="1" name="Quiver of Bolts (B-grade)">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">9635,700,30;9635,1400,50;9635,2800,20</value>
-		</capsuled_items_skill>
 		<hitTime>3000</hitTime>
 		<icon>icon.skill0620</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -460,7 +457,19 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="30">
+						<item id="9635" count="700" />
+					</group>
+					<group chance="50">
+						<item id="9635" count="1400" />
+					</group>
+					<group chance="20">
+						<item id="9635" count="2800" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="621" levels="1" name="Create Special Bolt">

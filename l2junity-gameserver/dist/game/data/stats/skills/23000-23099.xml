@@ -1501,9 +1501,6 @@
 	<skill id="23066" levels="1" name="Daewoonso Agathion Special Skill - New Year's Gift Ability">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">57,2009,99;57,20090,0.99;57,200900,0.099;57,2009000,0.0099</value>
-		</capsuled_items_skill>
 		<icon>icon.skill_agathion_special</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>85</magicLvl>
@@ -1523,7 +1520,22 @@
 			<player agathionId="1526" />
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="99">
+						<item id="57" count="2009" />
+					</group>
+					<group chance="0.99">
+						<item id="57" count="20090" />
+					</group>
+					<group chance="0.099">
+						<item id="57" count="200900" />
+					</group>
+					<group chance="0.0099">
+						<item id="57" count="2009000" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="23067" levels="1" name="Agathion Cute Trick - Pomona">

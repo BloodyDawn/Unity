@@ -2,9 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="26000" levels="1" name="Small Fortuna Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22006,3,20.55555;22007,2,14.01515;22008,1,6.16666;22014,1,0.86999;22022,3,3.19444;22023,3,6.38888;22024,1,5.75;8743,1,10;8744,1,8.33333;8745,1,6.94444;8753,1,2;8754,1,1.66666;8755,1,1.38888;22025,5,12.77777</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -19,14 +16,56 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20.55555">
+						<item id="22006" count="3" />
+					</group>
+					<group chance="14.01515">
+						<item id="22007" count="2" />
+					</group>
+					<group chance="6.16666">
+						<item id="22008" count="1" />
+					</group>
+					<group chance="0.86999">
+						<item id="22014" count="1" />
+					</group>
+					<group chance="3.19444">
+						<item id="22022" count="3" />
+					</group>
+					<group chance="6.38888">
+						<item id="22023" count="3" />
+					</group>
+					<group chance="5.75">
+						<item id="22024" count="1" />
+					</group>
+					<group chance="10">
+						<item id="8743" count="1" />
+					</group>
+					<group chance="8.33333">
+						<item id="8744" count="1" />
+					</group>
+					<group chance="6.94444">
+						<item id="8745" count="1" />
+					</group>
+					<group chance="2">
+						<item id="8753" count="1" />
+					</group>
+					<group chance="1.66666">
+						<item id="8754" count="1" />
+					</group>
+					<group chance="1.38888">
+						<item id="8755" count="1" />
+					</group>
+					<group chance="12.77777">
+						<item id="22025" count="5" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26001" levels="1" name="Medium Fortuna Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22007,3,27.27272;22008,2,9;22009,1,5;22014,1,0.93959;22015,1,0.32467;22022,5,3.75;22023,5,7.5;22024,2,5.625;8746,1,9.11458;8747,1,7.875;8748,1,6.5625;8756,1,1.82291;8757,1,1.575;8758,1,1.3125;22025,10,12.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -41,14 +80,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="27.27272">
+						<item id="22007" count="3" />
+					</group>
+					<group chance="9">
+						<item id="22008" count="2" />
+					</group>
+					<group chance="5">
+						<item id="22009" count="1" />
+					</group>
+					<group chance="0.93959">
+						<item id="22014" count="1" />
+					</group>
+					<group chance="0.32467">
+						<item id="22015" count="1" />
+					</group>
+					<group chance="3.75">
+						<item id="22022" count="5" />
+					</group>
+					<group chance="7.5">
+						<item id="22023" count="5" />
+					</group>
+					<group chance="5.625">
+						<item id="22024" count="2" />
+					</group>
+					<group chance="9.11458">
+						<item id="8746" count="1" />
+					</group>
+					<group chance="7.875">
+						<item id="8747" count="1" />
+					</group>
+					<group chance="6.5625">
+						<item id="8748" count="1" />
+					</group>
+					<group chance="1.82291">
+						<item id="8756" count="1" />
+					</group>
+					<group chance="1.575">
+						<item id="8757" count="1" />
+					</group>
+					<group chance="1.3125">
+						<item id="8758" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="22025" count="10" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26002" levels="1" name="Large Fortuna Box">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22008,2,27;22009,1,15;22014,1,0.78299;22015,1,0.27056;22018,1,0.00775;22019,1,0.0027;22022,10,3.75;22023,10,7.5;22024,5,4.5;8749,1,9.75;8750,1,8.125;8751,1,6.77083;8759,1,1.95;8760,1,1.625;8761,1,1.35416;22025,20,12.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -63,14 +147,62 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="27">
+						<item id="22008" count="2" />
+					</group>
+					<group chance="15">
+						<item id="22009" count="1" />
+					</group>
+					<group chance="0.78299">
+						<item id="22014" count="1" />
+					</group>
+					<group chance="0.27056">
+						<item id="22015" count="1" />
+					</group>
+					<group chance="0.00775">
+						<item id="22018" count="1" />
+					</group>
+					<group chance="0.0027">
+						<item id="22019" count="1" />
+					</group>
+					<group chance="3.75">
+						<item id="22022" count="10" />
+					</group>
+					<group chance="7.5">
+						<item id="22023" count="10" />
+					</group>
+					<group chance="4.5">
+						<item id="22024" count="5" />
+					</group>
+					<group chance="9.75">
+						<item id="8749" count="1" />
+					</group>
+					<group chance="8.125">
+						<item id="8750" count="1" />
+					</group>
+					<group chance="6.77083">
+						<item id="8751" count="1" />
+					</group>
+					<group chance="1.95">
+						<item id="8759" count="1" />
+					</group>
+					<group chance="1.625">
+						<item id="8760" count="1" />
+					</group>
+					<group chance="1.35416">
+						<item id="8761" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="22025" count="20" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26003" levels="1" name="Small Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22010,3,20.22222;22011,2,13.78787;22012,1,6.06666;22016,1,0.69599;22022,3,3.47222;22023,3,6.94444;22024,1,6.25;8743,1,9.5;8744,1,7.91666;8745,1,6.59722;8753,1,1.9;8754,1,1.58333;8755,1,1.31944;22025,5,13.88888</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -85,14 +217,56 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="20.22222">
+						<item id="22010" count="3" />
+					</group>
+					<group chance="13.78787">
+						<item id="22011" count="2" />
+					</group>
+					<group chance="6.06666">
+						<item id="22012" count="1" />
+					</group>
+					<group chance="0.69599">
+						<item id="22016" count="1" />
+					</group>
+					<group chance="3.47222">
+						<item id="22022" count="3" />
+					</group>
+					<group chance="6.94444">
+						<item id="22023" count="3" />
+					</group>
+					<group chance="6.25">
+						<item id="22024" count="1" />
+					</group>
+					<group chance="9.5">
+						<item id="8743" count="1" />
+					</group>
+					<group chance="7.91666">
+						<item id="8744" count="1" />
+					</group>
+					<group chance="6.59722">
+						<item id="8745" count="1" />
+					</group>
+					<group chance="1.9">
+						<item id="8753" count="1" />
+					</group>
+					<group chance="1.58333">
+						<item id="8754" count="1" />
+					</group>
+					<group chance="1.31944">
+						<item id="8755" count="1" />
+					</group>
+					<group chance="13.88888">
+						<item id="22025" count="5" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26004" levels="1" name="Medium Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22011,3,26.51515;22012,2,8.75;22013,1,4.86111;22016,1,0.91349;22017,1,0.31565;22022,5,3.75;22023,5,7.5;22024,2,5.625;8746,1,9.54861;8747,1,8.25;8748,1,6.875;8756,1,1.90972;8757,1,1.65;8758,1,1.375;22025,10,12.5</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -107,14 +281,59 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="26.51515">
+						<item id="22011" count="3" />
+					</group>
+					<group chance="8.75">
+						<item id="22012" count="2" />
+					</group>
+					<group chance="4.86111">
+						<item id="22013" count="1" />
+					</group>
+					<group chance="0.91349">
+						<item id="22016" count="1" />
+					</group>
+					<group chance="0.31565">
+						<item id="22017" count="1" />
+					</group>
+					<group chance="3.75">
+						<item id="22022" count="5" />
+					</group>
+					<group chance="7.5">
+						<item id="22023" count="5" />
+					</group>
+					<group chance="5.625">
+						<item id="22024" count="2" />
+					</group>
+					<group chance="9.54861">
+						<item id="8746" count="1" />
+					</group>
+					<group chance="8.25">
+						<item id="8747" count="1" />
+					</group>
+					<group chance="6.875">
+						<item id="8748" count="1" />
+					</group>
+					<group chance="1.90972">
+						<item id="8756" count="1" />
+					</group>
+					<group chance="1.65">
+						<item id="8757" count="1" />
+					</group>
+					<group chance="1.375">
+						<item id="8758" count="1" />
+					</group>
+					<group chance="12.5">
+						<item id="22025" count="10" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26005" levels="1" name="Large Fortuna Cube">
 		<!-- Confirmed CT2.5 -->
-		<capsuled_items_skill>
-			<value level="1">22012,2,26.25;22013,1,14.58333;22016,1,0.69599;22017,1,0.24049;22020,1,0.00638;22021,1,0.0022;22022,10,3.95833;22023,10,7.91666;22024,5,4.75;8749,1,9.58333;8750,1,7.98611;8751,1,6.65509;8759,1,1.91666;8760,1,1.59722;8761,1,1.33101;22025,20,13.19444</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -129,7 +348,58 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="26.25">
+						<item id="22012" count="2" />
+					</group>
+					<group chance="14.58333">
+						<item id="22013" count="1" />
+					</group>
+					<group chance="0.69599">
+						<item id="22016" count="1" />
+					</group>
+					<group chance="0.24049">
+						<item id="22017" count="1" />
+					</group>
+					<group chance="0.00638">
+						<item id="22020" count="1" />
+					</group>
+					<group chance="0.0022">
+						<item id="22021" count="1" />
+					</group>
+					<group chance="3.95833">
+						<item id="22022" count="10" />
+					</group>
+					<group chance="7.91666">
+						<item id="22023" count="10" />
+					</group>
+					<group chance="4.75">
+						<item id="22024" count="5" />
+					</group>
+					<group chance="9.58333">
+						<item id="8749" count="1" />
+					</group>
+					<group chance="7.98611">
+						<item id="8750" count="1" />
+					</group>
+					<group chance="6.65509">
+						<item id="8751" count="1" />
+					</group>
+					<group chance="1.91666">
+						<item id="8759" count="1" />
+					</group>
+					<group chance="1.59722">
+						<item id="8760" count="1" />
+					</group>
+					<group chance="1.33101">
+						<item id="8761" count="1" />
+					</group>
+					<group chance="13.19444">
+						<item id="22025" count="20" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26006" levels="1" name="Scroll: Enchant Weapon (D-grade)">
@@ -1134,9 +1404,6 @@
 	<skill id="26065" levels="1" name="Fighter's Scroll Bundle">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">22039,1,22040,1,22047,1,22041,1,22042,1,22043,1,22044,1,22048,1,100</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1151,15 +1418,25 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="100">
+						<item id="22039" count="1" />
+						<item id="22040" count="1" />
+						<item id="22047" count="1" />
+						<item id="22041" count="1" />
+						<item id="22042" count="1" />
+						<item id="22043" count="1" />
+						<item id="22044" count="1" />
+						<item id="22048" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26066" levels="1" name="Mage's Scroll Bundle">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
-		<capsuled_items_skill>
-			<value level="1">22049,1,22050,1,22051,1,22045,1,22046,1,22052,1,22048,1,22053,1,100</value>
-		</capsuled_items_skill>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1174,7 +1451,20 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="100">
+						<item id="22049" count="1" />
+						<item id="22050" count="1" />
+						<item id="22051" count="1" />
+						<item id="22045" count="1" />
+						<item id="22046" count="1" />
+						<item id="22052" count="1" />
+						<item id="22048" count="1" />
+						<item id="22053" count="1" />
+					</group>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="26067" levels="5" name="Bone Quiver">

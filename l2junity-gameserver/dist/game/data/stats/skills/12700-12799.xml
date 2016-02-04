@@ -2378,6 +2378,8 @@
 	</skill>
 	<skill id="12799" levels="1" name="Awakened Hero's Olympiad Reward Box">
 		<!-- AUTO GENERATED SKILL -->
+		<itemConsumeId>32263</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.etc_pi_gift_box_i04</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -2388,5 +2390,54 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<group chance="21">
+						<item id="13722" count="250" />
+						<item id="13750" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="13722" count="250" />
+						<item id="30297" count="1" />
+					</group>
+					<group chance="0.05">
+						<item id="13722" count="250" />
+						<item id="17526" count="1" />
+					</group>
+					<group chance="0.1">
+						<item id="13722" count="250" />
+						<item id="17527" count="1" />
+					</group>
+					<group chance="3">
+						<item id="13722" count="250" />
+						<item id="30357" count="1" />
+					</group>
+					<group chance="1">
+						<item id="13722" count="250" />
+						<item id="30358" count="1" />
+					</group>
+					<group chance="3">
+						<item id="13722" count="250" />
+						<item id="30359" count="1" />
+					</group>
+					<group chance="2.52">
+						<item id="13722" count="250" />
+						<item id="32289" count="1" />
+					</group>
+					<group chance="1.05">
+						<item id="13722" count="250" />
+						<item id="32290" count="1" />
+					</group>
+					<group chance="1.68">
+						<item id="13722" count="250" />
+						<item id="32291" count="1" />
+					</group>
+					<group chance="66.5">
+						<item id="13722" count="350" />
+					</group>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 </list>
