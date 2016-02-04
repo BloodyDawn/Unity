@@ -1589,6 +1589,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
+		if (skill.isBad() && isAttackable() && (getTarget() == this))
+		{
+			_log.info(this + " is trying to cast bad skill '" + skill.getName() + "' onto himself... LOL!");
+		}
+		
 		SkillCaster skillCaster;
 		
 		if (skill.isWithoutAction())
