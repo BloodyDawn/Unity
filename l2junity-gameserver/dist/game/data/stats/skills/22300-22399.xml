@@ -1518,6 +1518,8 @@
 	</skill>
 	<skill id="22370" levels="1" name="Mysterious Soulshot Pack (S-grade)">
 		<!-- Desciption: There is no available description. -->
+		<itemConsumeId>22232</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1525,9 +1527,17 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>NONE</targetType>
+		<effects>
+			<effect name="Restoration">
+				<itemId>21850</itemId>
+				<itemCount>1000</itemCount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="22371" levels="1" name="Mysterious Blessed Spiritshot Pack (S-grade)">
 		<!-- Desciption: There is no available description. -->
+		<itemConsumeId>22231</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1535,6 +1545,12 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>NONE</targetType>
+		<effects>
+			<effect name="Restoration">
+				<itemId>22231</itemId>
+				<itemCount>1000</itemCount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="22372" levels="1" name="Meteor">
 		<!-- Desciption: There is no available description. -->

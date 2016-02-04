@@ -749,6 +749,10 @@
 			<effect name="GiveRecommendation">
 				<amount>10</amount>
 			</effect>
+			<effect name="Restoration">
+				<itemId>57</itemId>
+				<itemCount>100000</itemCount>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="9115" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -2022,6 +2026,8 @@
 	</skill>
 	<skill id="9173" levels="1" name="Nevit's Voice">
 		<!-- none -->
+		<itemConsumeId>17212</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2031,6 +2037,15 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>NONE</targetType>
+		<effects>
+			<effect name="GiveRecommendation">
+				<amount>10</amount>
+			</effect>
+			<effect name="Restoration">
+				<itemId>57</itemId>
+				<itemCount>100000</itemCount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="9174" levels="1" name="500,000 SP scroll">
 		<!-- High Five Skill -->
