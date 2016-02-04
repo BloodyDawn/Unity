@@ -91,34 +91,36 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkAttack()
 	{
-		if (checkTargetLostOrDead(getTarget()))
+		final Creature target = getTarget();
+		if (checkTargetLostOrDead(target))
 		{
 			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), _actor.getPhysicalAttackRange()))
+		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
 		clientStopMoving(null);
-		_actor.doAttack(getTarget());
+		_actor.doAttack(target);
 	}
 	
 	private void thinkCast()
 	{
 		Summon summon = (Summon) _actor;
+		final Creature target = getTarget();
 		if (summon.isCastingNow(SkillCaster::isNormalType))
 		{
 			return;
 		}
 		
-		if (checkTargetLost(getTarget()))
+		if (checkTargetLost(target))
 		{
 			setTarget(null);
 			return;
 		}
 		boolean val = _startFollow;
-		if (maybeMoveToPawn(getTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
@@ -130,25 +132,27 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkPickUp()
 	{
-		if (checkTargetLost(getTarget()))
+		final Creature target = getTarget();
+		if (checkTargetLost(target))
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		getActor().doPickupItem(getTarget());
+		getActor().doPickupItem(target);
 	}
 	
 	private void thinkInteract()
 	{
-		if (checkTargetLost(getTarget()))
+		final Creature target = getTarget();
+		if (checkTargetLost(target))
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}

@@ -734,7 +734,7 @@ public abstract class AbstractAI implements Ctrl
 	public Creature getTarget()
 	{
 		final WorldObject target = _target;
-		if (target instanceof Creature)
+		if ((target != null) && target.isCreature())
 		{
 			return (Creature) target;
 		}

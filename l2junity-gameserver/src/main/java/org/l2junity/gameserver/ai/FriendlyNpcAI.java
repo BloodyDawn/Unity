@@ -230,12 +230,13 @@ public class FriendlyNpcAI extends AttackableAI
 	@Override
 	protected void thinkCast()
 	{
-		if (checkTargetLost(getTarget()))
+		final Creature target = getTarget();
+		if (checkTargetLost(target))
 		{
 			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}

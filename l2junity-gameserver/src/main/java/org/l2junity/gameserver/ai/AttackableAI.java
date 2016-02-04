@@ -389,12 +389,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	protected void thinkCast()
 	{
-		if (checkTargetLost(getTarget()))
+		final Creature target = getTarget();
+		if (checkTargetLost(target))
 		{
 			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
@@ -413,8 +414,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 	 */
 	protected void thinkActive()
 	{
-		Attackable npc = getActiveChar();
-		
+		final Attackable npc = getActiveChar();
+		final Creature target = getTarget();
 		// Update every 1s the _globalAggro counter to come close to 0
 		if (_globalAggro != 0)
 		{
@@ -434,19 +435,19 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			if (npc.isAggressive())
 			{
-				World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, npc.getAggroRange(), target ->
+				World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, npc.getAggroRange(), t ->
 				{
-					if (target instanceof L2StaticObjectInstance)
+					if (t instanceof L2StaticObjectInstance)
 					{
 						return;
 					}
 					
 					// For each L2Character check if the target is autoattackable
-					if (autoAttackCondition(target)) // check aggression
+					if (autoAttackCondition(t)) // check aggression
 					{
-						if (target.isPlayable())
+						if (t.isPlayable())
 						{
-							final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnAttackableHate(getActiveChar(), target.getActingPlayer(), target.isSummon()), getActiveChar(), TerminateReturn.class);
+							final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnAttackableHate(getActiveChar(), t.getActingPlayer(), t.isSummon()), getActiveChar(), TerminateReturn.class);
 							if ((term != null) && term.terminate())
 							{
 								return;
@@ -454,12 +455,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 						}
 						
 						// Get the hate level of the L2Attackable against this L2Character target contained in _aggroList
-						int hating = npc.getHating(target);
+						int hating = npc.getHating(t);
 						
 						// Add the attacker to the L2Attackable _aggroList with 0 damage and 1 hate
 						if (hating == 0)
 						{
-							npc.addDamageHate(target, 0, 0);
+							npc.addDamageHate(t, 0, 0);
 						}
 					}
 				});
@@ -469,7 +470,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			Creature hated;
 			if (npc.isConfused())
 			{
-				hated = getTarget(); // effect handles selection
+				hated = target; // effect handles selection
 			}
 			else
 			{
@@ -582,12 +583,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 				{
-					WorldObject target = skillTargetReconsider(sk, true, true);
+					WorldObject buffTarget = skillTargetReconsider(sk, true, true);
 					
-					if (target != null)
+					if (buffTarget != null)
 					{
-						setTarget(target);
-						npc.setTarget(target);
+						setTarget(buffTarget);
+						npc.setTarget(buffTarget);
 						npc.doCast(sk);
 						return;
 					}
@@ -604,12 +605,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				WorldObject target = skillTargetReconsider(sk, true, true);
+				WorldObject buffTarget = skillTargetReconsider(sk, true, true);
 				
-				if (target != null)
+				if (buffTarget != null)
 				{
-					setTarget(target);
-					npc.setTarget(target);
+					setTarget(buffTarget);
+					npc.setTarget(buffTarget);
 					npc.doCast(sk);
 					return;
 				}
@@ -653,17 +654,18 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
+		final Creature target = getTarget();
+		
 		if (npc.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			return;
 		}
 		
-		Creature originalAttackTarget = getTarget();
 		// Check if target is dead or if timeout is expired to stop this attack
-		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead() || ((_attackTimeout < GameTimeController.getInstance().getGameTicks()) && npc.canStopAttackByTime()))
+		if ((target == null) || target.isAlikeDead() || ((_attackTimeout < GameTimeController.getInstance().getGameTicks()) && npc.canStopAttackByTime()))
 		{
 			// Stop hating this target after the attack timeout or if target is dead
-			npc.stopHating(originalAttackTarget);
+			npc.stopHating(target);
 			
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE);
@@ -693,19 +695,19 @@ public class AttackableAI extends CharacterAI implements Runnable
 					// Check if the L2Object is inside the Faction Range of the actor
 					if (called.hasAI())
 					{
-						if ((Math.abs(originalAttackTarget.getZ() - called.getZ()) < 600) && npc.getAttackByList().contains(originalAttackTarget) && ((called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)))
+						if ((Math.abs(target.getZ() - called.getZ()) < 600) && npc.getAttackByList().contains(target) && ((called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)))
 						{
-							if (originalAttackTarget.isPlayable())
+							if (target.isPlayable())
 							{
 								// By default, when a faction member calls for help, attack the caller's attacker.
 								// Notify the AI with EVT_AGGRESSION
-								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, originalAttackTarget, 1);
-								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), originalAttackTarget.getActingPlayer(), originalAttackTarget.isSummon()), called);
+								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, target, 1);
+								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), target.getActingPlayer(), target.isSummon()), called);
 							}
-							else if (called.isAttackable() && (getTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
+							else if (called.isAttackable() && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
 							{
-								((Attackable) called).addDamageHate(getTarget(), 0, npc.getHating(getTarget()));
-								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getTarget());
+								((Attackable) called).addDamageHate(target, 0, npc.getHating(target));
+								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 							}
 						}
 					}
@@ -741,12 +743,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 			final Skill skill = aiSuicideSkills.get(Rnd.get(aiSuicideSkills.size()));
 			if (Util.checkIfInRange(skill.getAffectRange(), getActiveChar(), mostHate, false) && npc.hasSkillChance())
 			{
-				Creature target = skillTargetReconsider(skill, true, true);
+				Creature suicideTarget = skillTargetReconsider(skill, true, true);
 				
-				if (target != null)
+				if (suicideTarget != null)
 				{
-					setTarget(target);
-					npc.setTarget(target);
+					setTarget(suicideTarget);
+					npc.setTarget(suicideTarget);
 					npc.doCast(skill);
 					LOGGER.debug("{} used suicide skill {}", this, skill);
 					return;
@@ -810,7 +812,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					int posY = npc.getY();
 					int posZ = npc.getZ() + 30;
 					
-					if (originalAttackTarget.getX() < posX)
+					if (target.getX() < posX)
 					{
 						posX = posX + 300;
 					}
@@ -819,7 +821,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						posX = posX - 300;
 					}
 					
-					if (originalAttackTarget.getY() < posY)
+					if (target.getY() < posY)
 					{
 						posY = posY + 300;
 					}
@@ -922,8 +924,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
-			if (SkillCaster.checkUseConditions(npc, shortRangeSkill))
+			WorldObject skillTarget = skillTargetReconsider(shortRangeSkill, true, true);
+			
+			if (skillTarget != null)
 			{
+				setTarget(skillTarget);
+				npc.setTarget(skillTarget);
 				npc.doCast(shortRangeSkill);
 				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
 				return;
@@ -933,8 +939,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getLongRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
-			if (SkillCaster.checkUseConditions(npc, longRangeSkill))
+			WorldObject skillTarget = skillTargetReconsider(longRangeSkill, true, true);
+			
+			if (skillTarget != null)
 			{
+				setTarget(skillTarget);
+				npc.setTarget(skillTarget);
 				npc.doCast(longRangeSkill);
 				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
 				return;
@@ -949,9 +959,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				setTarget(targetReconsider(true, true, false));
 			}
-			else if (getTarget() != null)
+			else
 			{
-				if (getTarget().isMoving())
+				if (target.isMoving())
 				{
 					range -= 100;
 				}
@@ -959,16 +969,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					range = 5;
 				}
-				moveToPawn(getTarget(), range);
+				moveToPawn(target, range);
 			}
 			return;
 		}
 		
 		// Attacks target
-		if (getTarget() != null)
-		{
-			_actor.doAttack(getTarget());
-		}
+		_actor.doAttack(target);
 	}
 	
 	private Creature skillTargetReconsider(Skill skill, boolean insideCastRange, boolean checkCurrentTargetFirst)
@@ -1170,8 +1177,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 	@Override
 	protected void onEvtAttacked(Creature attacker)
 	{
-		Attackable me = getActiveChar();
-		
+		final Attackable me = getActiveChar();
+		final Creature target = getTarget();
 		// Calculate the attack timeout
 		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeController.getInstance().getGameTicks();
 		
@@ -1195,7 +1202,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}
-		else if (me.getMostHated() != getTarget())
+		else if (me.getMostHated() != target)
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}

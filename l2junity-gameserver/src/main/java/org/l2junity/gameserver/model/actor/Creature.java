@@ -76,7 +76,6 @@ import org.l2junity.gameserver.model.TimeStamp;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
-import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.actor.status.CharStatus;
@@ -1528,36 +1527,18 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				continue;
 			}
 			
-			if (obj.isPet() && isPlayer() && (((L2PetInstance) obj).getOwner() == getActingPlayer()))
-			{
-				continue;
-			}
-			
 			if (!isFacing(obj, maxAngleDiff))
 			{
 				continue;
 			}
 			
-			if (isAttackable() && obj.isPlayer() && getTarget().isAttackable())
-			{
-				continue;
-			}
-			
-			if (isAttackable() && obj.isAttackable() && !((Attackable) this).getTemplate().isChaos())
-			{
-				continue;
-			}
-			
 			// Launch a simple attack against the L2Character targeted
-			if (!obj.isAlikeDead())
+			if (obj.isAutoAttackable(this))
 			{
-				if ((obj == getAI().getTarget()) || obj.isAutoAttackable(this))
+				list.add(obj);
+				if (list.size() >= attackCountMax)
 				{
-					list.add(obj);
-					if (list.size() >= attackCountMax)
-					{
-						break;
-					}
+					break;
 				}
 			}
 		}

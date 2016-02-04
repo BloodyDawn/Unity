@@ -447,7 +447,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 				&& target.isInsideRadius(npc, 1500, true, false) && GeoData.getInstance().canSeeTarget(npc, target))
 				{
 					// Notify the L2Object AI with EVT_AGGRESSION
-					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getTarget(), 1);
+					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, target, 1);
 					return;
 				}
 				// heal friends

@@ -750,21 +750,10 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtForgetObject(WorldObject object)
 	{
+		final Creature target = getTarget();
 		// If the object was targeted and the Intention was AI_INTENTION_INTERACT or AI_INTENTION_PICK_UP, set the Intention to AI_INTENTION_ACTIVE
-		if (getTarget() == object)
+		if (target == object)
 		{
-			setTarget(null);
-			
-			if ((getIntention() == AI_INTENTION_INTERACT) || (getIntention() == AI_INTENTION_PICK_UP))
-			{
-				setIntention(AI_INTENTION_ACTIVE);
-			}
-		}
-		
-		// Check if the object was targeted to attack
-		if (getTarget() == object)
-		{
-			// Cancel attack target
 			setTarget(null);
 			
 			if (isFollowing())
@@ -776,8 +765,10 @@ public class CharacterAI extends AbstractAI
 				stopFollow();
 			}
 			
-			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
-			setIntention(AI_INTENTION_ACTIVE);
+			if ((getIntention() == AI_INTENTION_INTERACT) || (getIntention() == AI_INTENTION_PICK_UP))
+			{
+				setIntention(AI_INTENTION_ACTIVE);
+			}
 		}
 		
 		// Check if the targeted object was the actor
