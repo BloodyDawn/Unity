@@ -700,7 +700,7 @@ public class StatsSet implements IParserAdvUtils
 		final Map<?, ?> originalList = (Map<?, ?>) obj;
 		if (!originalList.isEmpty())
 		{
-			if ((!originalList.keySet().stream().allMatch(keyClass::isInstance)) || (originalList.values().stream().allMatch(valueClass::isInstance)))
+			if ((!originalList.keySet().stream().allMatch(keyClass::isInstance)) || (!originalList.values().stream().allMatch(valueClass::isInstance)))
 			{
 				LOGGER.warn("getMap(\"{}\", {}, {}) requested with wrong generic type: {}!", key, keyClass.getSimpleName(), valueClass.getSimpleName(), obj.getClass().getGenericInterfaces()[0], new ClassNotFoundException());
 			}
