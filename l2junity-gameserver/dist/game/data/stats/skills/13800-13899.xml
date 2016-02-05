@@ -446,7 +446,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
-				<amount>{1+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{1+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -469,7 +471,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
-				<amount>{10+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{10+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -492,7 +496,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CriticalRate">
-				<amount>{52+index*6}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{52+index*6}</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -515,7 +521,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CriticalDamage">
-				<amount>{2+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{2+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -551,7 +559,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MaxHp">
-				<amount>{20+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{20+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -574,7 +584,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MAtk">
-				<amount>{1+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{1+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -597,7 +609,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
-				<amount>{10+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{10+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -620,7 +634,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicCriticalRate">
-				<amount>{20+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{20+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -643,7 +659,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicCriticalDamage">
-				<amount>{2+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{2+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -666,7 +684,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MaxMp">
-				<amount>{25+index}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{25+index}</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -702,7 +722,9 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalRate">
-				<amount>{23+index*3}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{23+index*3}</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus" fromLevel="2" toLevel="15">
@@ -830,7 +852,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CriticalRate">
-				<amount>{23+index*3}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{23+index*3}</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="CriticalDamage">
@@ -879,7 +903,9 @@
 		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CriticalRate">
-				<amount>{23+index*3}</amount>
+				<amount>
+					<value fromLevel="1" toLevel="15">{23+index*3}</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MaxHp">
