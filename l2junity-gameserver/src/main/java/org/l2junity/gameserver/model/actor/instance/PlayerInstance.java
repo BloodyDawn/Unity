@@ -675,7 +675,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean isSpawnProtected()
 	{
-		return _protectEndTime > GameTimeController.getInstance().getGameTicks();
+		return false;// TODO this is bugged. _protectEndTime > GameTimeController.getInstance().getGameTicks();
 	}
 	
 	private long _teleportProtectEndTime = 0;
@@ -8119,6 +8119,10 @@ public final class PlayerInstance extends Playable
 				Siege siege = SiegeManager.getInstance().getSiege(this);
 				return ((siege != null) && siege.checkIsAttacker(getClan()));
 			}
+		}
+		else if (attacker instanceof L2GuardInstance)
+		{
+			return (getReputation() < 0); // Guards attack only PK players.
 		}
 		
 		// Check if the L2PcInstance has Karma

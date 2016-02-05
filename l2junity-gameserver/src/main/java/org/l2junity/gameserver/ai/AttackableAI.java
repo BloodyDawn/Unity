@@ -24,10 +24,8 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.Future;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
@@ -44,13 +42,10 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2FriendlyMobInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
-import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -109,58 +104,20 @@ public class AttackableAI extends CharacterAI implements Runnable
 	}
 	
 	/**
-	 * <B><U> Actor is a L2GuardInstance</U> :</B>
-	 * <ul>
-	 * <li>The target isn't a Folk or a Door</li>
-	 * <li>The target isn't dead, isn't invulnerable, isn't in silent moving mode AND too far (>100)</li>
-	 * <li>The target is in the actor Aggro range and is at the same height</li>
-	 * <li>The L2PcInstance target has karma (=PK)</li>
-	 * <li>The L2MonsterInstance target is aggressive</li>
-	 * </ul>
-	 * <B><U> Actor is a L2SiegeGuardInstance</U> :</B>
-	 * <ul>
-	 * <li>The target isn't a Folk or a Door</li>
-	 * <li>The target isn't dead, isn't invulnerable, isn't in silent moving mode AND too far (>100)</li>
-	 * <li>The target is in the actor Aggro range and is at the same height</li>
-	 * <li>A siege is in progress</li>
-	 * <li>The L2PcInstance target isn't a Defender</li>
-	 * </ul>
-	 * <B><U> Actor is a L2FriendlyMobInstance</U> :</B>
-	 * <ul>
-	 * <li>The target isn't a Folk, a Door or another L2Npc</li>
-	 * <li>The target isn't dead, isn't invulnerable, isn't in silent moving mode AND too far (>100)</li>
-	 * <li>The target is in the actor Aggro range and is at the same height</li>
-	 * <li>The L2PcInstance target has karma (=PK)</li>
-	 * </ul>
-	 * <B><U> Actor is a L2MonsterInstance</U> :</B>
-	 * <ul>
-	 * <li>The target isn't a Folk, a Door or another L2Npc</li>
-	 * <li>The target isn't dead, isn't invulnerable, isn't in silent moving mode AND too far (>100)</li>
-	 * <li>The target is in the actor Aggro range and is at the same height</li>
-	 * <li>The actor is Aggressive</li>
-	 * </ul>
-	 * @param target The targeted L2Object
-	 * @return True if the target is autoattackable (depends on the actor type).
+	 * @param target The targeted WorldObject
+	 * @return {@code true} if target can be auto attacked due aggression.
 	 */
-	private boolean autoAttackCondition(Creature target)
+	private boolean isAggressiveTowards(Creature target)
 	{
-		if ((target == null) || !target.isTargetable() || (getActiveChar() == null))
+		if ((target == null) || (getActiveChar() == null))
 		{
 			return false;
 		}
 		
-		// Check if the target isn't invulnerable
-		if (target.isInvul())
+		// Check if the target isn't invulnerable GM
+		if (target.isInvul() && (target.getActingPlayer() != null) && target.getActingPlayer().isGM())
 		{
-			// However EffectInvincible requires to check GMs specially
-			if (target.isPlayer() && target.isGM())
-			{
-				return false;
-			}
-			if (target.isSummon() && ((Summon) target).getOwner().isGM())
-			{
-				return false;
-			}
+			return false;
 		}
 		
 		// Check if the target isn't a Folk or a Door
@@ -192,7 +149,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (player != null)
 		{
 			// Don't take the aggro if the GM has the access level below or equal to GM_DONT_TAKE_AGGRO
-			if (player.isGM() && !player.getAccessLevel().canTakeAggro())
+			if (!player.getAccessLevel().canTakeAggro())
 			{
 				return false;
 			}
@@ -204,62 +161,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		// Check if the actor is a L2GuardInstance
-		if (me instanceof L2GuardInstance)
+		else if (me.isMonster())
 		{
-			// Check if the PlayerInstance target has negative Reputation (=PK)
-			if ((player != null) && (player.getReputation() < 0))
-			{
-				return GeoData.getInstance().canSeeTarget(me, player); // Los Check
-			}
-			// Check if the L2MonsterInstance target is aggressive
-			if ((target.isMonster()) && Config.GUARD_ATTACK_AGGRO_MOB)
-			{
-				return (((L2MonsterInstance) target).isAggressive() && GeoData.getInstance().canSeeTarget(me, target));
-			}
-			
-			return false;
-		}
-		else if (me instanceof L2FriendlyMobInstance)
-		{
-			// Check if the target isn't another Npc
-			if (target.isNpc())
-			{
-				return false;
-			}
-			
-			// Check if the PlayerInstance target has negative Reputation (=PK)
-			if ((target.isPlayer()) && (target.getActingPlayer().getReputation() < 0))
-			{
-				return GeoData.getInstance().canSeeTarget(me, target); // Los Check
-			}
-			return false;
-		}
-		else
-		{
-			if (target.isAttackable())
-			{
-				if (!target.isAutoAttackable(me))
-				{
-					return false;
-				}
-				
-				if (me.getTemplate().isChaos())
-				{
-					if (((Attackable) target).isInMyClan(me))
-					{
-						return false;
-					}
-					// Los Check
-					return GeoData.getInstance().canSeeTarget(me, target);
-				}
-			}
-			
-			if ((target.isAttackable()) || (target.isNpc()))
-			{
-				return false;
-			}
-			
 			// depending on config, do not allow mobs to attack _new_ players in peacezones,
 			// unless they are already following those players from outside the peacezone.
 			if (!Config.ALT_MOB_AGRO_IN_PEACEZONE && target.isInsideZone(ZoneId.PEACE))
@@ -272,9 +175,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 				return false;
 			}
 			
-			// Check if the actor is Aggressive
-			return (me.isAggressive() && GeoData.getInstance().canSeeTarget(me, target));
+			if (!me.isAggressive())
+			{
+				return false;
+			}
 		}
+		
+		return target.isAutoAttackable(me) && GeoData.getInstance().canSeeTarget(me, target);
 	}
 	
 	public void startAITask()
@@ -368,7 +275,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			for (Skill buff : getActiveChar().getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				target = skillTargetReconsider(buff, true, true);
+				target = skillTargetReconsider(buff, true);
 				if (target != null)
 				{
 					_actor.setTarget(target);
@@ -430,17 +337,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 		// A L2Attackable isn't aggressive during 10s after its spawn because _globalAggro is set to -10
 		if (_globalAggro >= 0)
 		{
-			if (npc.isAggressive())
+			if (npc.isAggressive() || (npc instanceof L2GuardInstance))
 			{
-				World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, npc.getAggroRange(), t ->
+				final int range = npc instanceof L2GuardInstance ? 500 : npc.getAggroRange(); // TODO Make sure how guards behave towards players.
+				World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, range, t ->
 				{
-					if (t instanceof L2StaticObjectInstance)
-					{
-						return;
-					}
-					
 					// For each L2Character check if the target is autoattackable
-					if (autoAttackCondition(t)) // check aggression
+					if (isAggressiveTowards(t)) // check aggression
 					{
 						if (t.isPlayable())
 						{
@@ -580,7 +483,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 				{
-					target = skillTargetReconsider(sk, true, true);
+					target = skillTargetReconsider(sk, true);
 					if (target != null)
 					{
 						npc.setTarget(target);
@@ -600,7 +503,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			for (Skill sk : npc.getTemplate().getAISkills(AISkillScope.BUFF))
 			{
-				target = skillTargetReconsider(sk, true, true);
+				target = skillTargetReconsider(sk, true);
 				if (target != null)
 				{
 					npc.setTarget(target);
@@ -726,20 +629,14 @@ public class AttackableAI extends CharacterAI implements Runnable
 		final int combinedCollision = collision + target.getTemplate().getCollisionRadius();
 		
 		final List<Skill> aiSuicideSkills = npc.getTemplate().getAISkills(AISkillScope.SUICIDE);
-		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30))
+		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30) && npc.hasSkillChance())
 		{
 			final Skill skill = aiSuicideSkills.get(Rnd.get(aiSuicideSkills.size()));
-			if (npc.hasSkillChance())
+			if (SkillCaster.checkUseConditions(npc, skill) && checkSkillTarget(skill, target))
 			{
-				WorldObject skillTarget = skillTargetReconsider(skill, true, true);
-				
-				if (skillTarget != null)
-				{
-					npc.setTarget(skillTarget);
-					npc.doCast(skill);
-					LOGGER.debug("{} used suicide skill {}", this, skill);
-					return;
-				}
+				npc.doCast(skill);
+				LOGGER.debug("{} used suicide skill {}", this, skill);
+				return;
 			}
 		}
 		
@@ -831,33 +728,27 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (npc.isRaid() || npc.isRaidMinion())
 		{
 			chaostime++;
+			boolean changeTarget = false;
 			if ((npc instanceof L2RaidBossInstance) && (chaostime > Config.RAID_CHAOS_TIME))
 			{
 				double multiplier = ((L2MonsterInstance) npc).hasMinions() ? 200 : 100;
-				if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * multiplier) / npc.getMaxHp())))
-				{
-					target = targetReconsider(false, false, true);
-					npc.setTarget(target);
-					chaostime = 0;
-					return;
-				}
+				changeTarget = Rnd.get(100) <= (100 - ((npc.getCurrentHp() * multiplier) / npc.getMaxHp()));
 			}
 			else if ((npc instanceof L2GrandBossInstance) && (chaostime > Config.GRAND_CHAOS_TIME))
 			{
 				double chaosRate = 100 - ((npc.getCurrentHp() * 300) / npc.getMaxHp());
-				if (((chaosRate <= 10) && (Rnd.get(100) <= 10)) || ((chaosRate > 10) && (Rnd.get(100) <= chaosRate)))
-				{
-					target = targetReconsider(false, false, true);
-					npc.setTarget(target);
-					chaostime = 0;
-					return;
-				}
+				changeTarget = ((chaosRate <= 10) && (Rnd.get(100) <= 10)) || ((chaosRate > 10) && (Rnd.get(100) <= chaosRate));
 			}
 			else if (chaostime > Config.MINION_CHAOS_TIME)
 			{
-				if (Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp())))
+				changeTarget = Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp()));
+			}
+			
+			if (changeTarget)
+			{
+				target = targetReconsider(true);
+				if (target != null)
 				{
-					target = targetReconsider(false, false, true);
 					npc.setTarget(target);
 					chaostime = 0;
 					return;
@@ -870,11 +761,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
-			WorldObject skillTarget = skillTargetReconsider(shortRangeSkill, true, true);
-			
-			if (skillTarget != null)
+			if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
 			{
-				npc.setTarget(skillTarget);
 				npc.doCast(shortRangeSkill);
 				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
 				return;
@@ -884,73 +772,56 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!npc.getLongRangeSkills().isEmpty() && npc.hasSkillChance())
 		{
 			final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
-			WorldObject skillTarget = skillTargetReconsider(longRangeSkill, true, true);
-			
-			if (skillTarget != null)
+			if (SkillCaster.checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
 			{
-				npc.setTarget(skillTarget);
 				npc.doCast(longRangeSkill);
 				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
 				return;
 			}
 		}
 		
-		double dist = npc.calculateDistance(target, false, false) - collision;
+		// Check if target is within range or move.
 		int range = npc.getPhysicalAttackRange() + combinedCollision;
-		if ((dist > range) || !GeoData.getInstance().canSeeTarget(npc, target))
+		if (npc.calculateDistance(target, false, false) > range)
 		{
-			if (npc.isMovementDisabled())
-			{
-				target = targetReconsider(true, true, false);
-				if (target != null)
-				{
-					npc.setTarget(target);
-				}
-			}
-			else
+			if (checkTarget(target))
 			{
 				moveToPawn(target, range);
+				return;
 			}
-			return;
+			
+			target = targetReconsider(false);
+			if (target == null)
+			{
+				return;
+			}
+			
+			npc.setTarget(target);
 		}
 		
 		// Attacks target
 		_actor.doAttack(target);
 	}
 	
-	private Creature skillTargetReconsider(Skill skill, boolean insideCastRange, boolean checkCurrentTargetFirst)
+	private boolean checkSkillTarget(Skill skill, WorldObject target)
 	{
-		// Check if skill can be casted.
-		final Attackable npc = getActiveChar();
-		if ((skill == null) || !SkillCaster.checkUseConditions(npc, skill))
+		if (target == null)
 		{
-			return null;
+			return false;
 		}
 		
-		final int range = insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000; // TODO need some forget range
-		final Predicate<Creature> filter = c ->
+		// Check if target is valid and within cast range.
+		if (skill.getTarget(getActiveChar(), target, false, getActiveChar().isMovementDisabled(), false) == null)
 		{
-			if (c == null)
-			{
-				return false;
-			}
-			
-			// Check if target is valid and within cast range.
-			if (skill.getTarget(npc, c, false, !insideCastRange, false) == null)
-			{
-				return false;
-			}
-			
-			// Bad skills will be casted only to hating targets.
-			if (skill.isBad() && !npc.getAggroList().containsKey(c) && (!npc.isAggressive() || !c.isInsideRadius(npc, npc.getAggroRange(), false, true)))
-			{
-				return false;
-			}
-			
+			return false;
+		}
+		
+		if (target.isCreature())
+		{
 			// Skip if target is already affected by such skill.
-			if (skill.hasContinuousEffects())
+			if (skill.isContinuous())
 			{
-				final BuffInfo info = c.getEffectList().getBuffInfoByAbnormalType(skill.getAbnormalType());
+				final BuffInfo info = ((Creature) target).getEffectList().getBuffInfoByAbnormalType(skill.getAbnormalType());
 				if ((info != null) && (info.getSkill().getAbnormalLvl() >= skill.getAbnormalLvl()))
 				{
 					return false;
@@ -962,43 +833,91 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				if (skill.isBad())
 				{
-					if (!c.getEffectList().hasBuffs() && !c.getEffectList().hasDances())
+					if (!((Creature) target).getEffectList().hasBuffs() && !((Creature) target).getEffectList().hasDances())
 					{
 						return false;
 					}
 				}
-				else if (!c.getEffectList().hasDebuffs())
+				else if (!((Creature) target).getEffectList().hasDebuffs())
 				{
 					return false;
 				}
 			}
 			
 			// Check for damaged targets if using healing skill.
-			if ((c.getCurrentHp() == c.getMaxHp()) && skill.hasEffectType(L2EffectType.HEAL))
+			if ((((Creature) target).getCurrentHp() == ((Creature) target).getMaxHp()) && skill.hasEffectType(L2EffectType.HEAL))
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	private boolean checkTarget(WorldObject target)
+	{
+		if (target == null)
+		{
+			return false;
+		}
+		
+		final Attackable npc = getActiveChar();
+		if (target.isCreature())
+		{
+			if (((Creature) target).isDead())
 			{
 				return false;
 			}
 			
-			return true;
-		};
+			if (npc.isMovementDisabled())
+			{
+				if (!npc.isInsideRadius(target, npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + ((Creature) target).getTemplate().getCollisionRadius(), false, true))
+				{
+					return false;
+				}
+				
+				if (!GeoData.getInstance().canSeeTarget(npc, target))
+				{
+					return false;
+				}
+			}
+			
+			if (!target.isAutoAttackable(npc))
+			{
+				return false;
+			}
+		}
+		
+		return GeoData.getInstance().canMove(npc, target);
+	}
+	
+	private Creature skillTargetReconsider(Skill skill, boolean insideCastRange)
+	{
+		// Check if skill can be casted.
+		final Attackable npc = getActiveChar();
+		if (!SkillCaster.checkUseConditions(npc, skill))
+		{
+			return null;
+		}
 		
 		// Check current target first.
-		Creature target = (npc.getTarget() != null) && npc.getTarget().isCreature() ? (Creature) npc.getTarget() : null;
-		if (checkCurrentTargetFirst && filter.test(target))
-		{
-			return target;
-		}
+		final int range = insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000; // TODO need some forget range
 		
 		Stream<Creature> stream;
 		if (skill.isBad())
 		{
-			stream = npc.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(Objects::nonNull).filter(filter).sorted(Comparator.comparingInt(c -> npc.getHating(c)));
+			//@formatter:off
+			stream = npc.getAggroList().values().stream()
+					.map(AggroInfo::getAttacker)
+					.filter(c -> checkSkillTarget(skill, c))
+					.sorted(Comparator.comparingInt(c -> npc.getHating(c)));
+			//@formatter:on
 		}
 		else
 		{
-			stream = World.getInstance().getVisibleObjects(npc, Creature.class, range, filter).stream();
+			stream = World.getInstance().getVisibleObjects(npc, Creature.class, range, c -> checkSkillTarget(skill, c)).stream();
 			
-			// For heal skills sort by hp missing, then hp percent missing.
+			// For heal skills sort by hp missing.
 			if (skill.hasEffectType(L2EffectType.HEAL))
 			{
 				stream = stream.sorted(Comparator.<Creature> comparingInt(c -> (int) (c.getMaxHp() - c.getCurrentHp())));
@@ -1010,65 +929,31 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 	}
 	
-	private Creature targetReconsider(boolean insideAttackRange, boolean checkCurrentTargetFirst, boolean randomTarget)
+	private Creature targetReconsider(boolean randomTarget)
 	{
 		final Attackable npc = getActiveChar();
-		final int range = insideAttackRange ? (npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius()) : 2000; // TODO: Need some value for forget range.
-		Creature target = (npc.getTarget() != null) && npc.getTarget().isCreature() ? (Creature) npc.getTarget() : null;
-		
-		final Predicate<Creature> filter = c ->
-		{
-			if (c == null)
-			{
-				return false;
-			}
-			if (c.isDead())
-			{
-				return false;
-			}
-			if (!c.isInsideRadius(npc, range + c.getTemplate().getCollisionRadius(), false, true))
-			{
-				return false;
-			}
-			
-			if (!autoAttackCondition(c))
-			{
-				return false;
-			}
-			
-			return GeoData.getInstance().canMove(npc, c);
-		};
 		
 		if (randomTarget)
 		{
-			Stream<Creature> stream = npc.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(filter);
+			Stream<Creature> stream = npc.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(this::checkTarget);
 			
 			// If npc is aggressive, add characters within aggro range too
 			if (npc.isAggressive())
 			{
-				stream = Stream.concat(stream, World.getInstance().getVisibleObjects(npc, Creature.class, npc.getAggroRange(), filter).stream());
+				stream = Stream.concat(stream, World.getInstance().getVisibleObjects(npc, Creature.class, npc.getAggroRange(), this::checkTarget).stream());
 			}
 			
-			target = stream.findAny().orElse(null);
-		}
-		else
-		{
-			if (checkCurrentTargetFirst && filter.test(target))
-			{
-				return target;
-			}
-			
-			//@formatter:off
-			target = npc.getAggroList().values().stream()
-				.filter(a -> (a.getAttacker() != null) && filter.test(a.getAttacker()))
-				.sorted(Comparator.comparingInt(AggroInfo::getHate))
-				.map(AggroInfo::getAttacker)
-				.findFirst()
-				.orElse(npc.isAggressive() ? World.getInstance().getVisibleObjects(npc, Creature.class, npc.getAggroRange(), filter).stream().findAny().orElse(null) : null);
-			//@formatter:on
+			return stream.findAny().orElse(null);
 		}
 		
-		return target;
+		//@formatter:off
+		return npc.getAggroList().values().stream()
+			.filter(a -> checkTarget(a.getAttacker()))
+			.sorted(Comparator.comparingInt(AggroInfo::getHate))
+			.map(AggroInfo::getAttacker)
+			.findFirst()
+			.orElse(npc.isAggressive() ? World.getInstance().getVisibleObjects(npc, Creature.class, npc.getAggroRange(), this::checkTarget).stream().findAny().orElse(null) : null);
+		//@formatter:on
 	}
 	
 	/**

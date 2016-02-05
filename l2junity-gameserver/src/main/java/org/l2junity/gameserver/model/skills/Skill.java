@@ -1214,14 +1214,6 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * @return {@code true} if skill has any comtinuous effects, {@code false} if skill has only instant effects.
-	 */
-	public boolean hasContinuousEffects()
-	{
-		return _effectLists.values().stream().flatMap(List::stream).anyMatch(e -> !e.isInstant());
-	}
-	
-	/**
 	 * Applies the effects from this skill to the target for the given effect scope.
 	 * @param effectScope the effect scope
 	 * @param info the buff info
