@@ -286,6 +286,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("SummonAgathion", SummonAgathion::new);
 		EffectHandler.getInstance().registerHandler("SummonCubic", SummonCubic::new);
 		EffectHandler.getInstance().registerHandler("SummonHallucination", SummonHallucination::new);
+		EffectHandler.getInstance().registerHandler("SummonMulti", SummonMulti::new);
 		EffectHandler.getInstance().registerHandler("SummonNpc", SummonNpc::new);
 		EffectHandler.getInstance().registerHandler("SummonPet", SummonPet::new);
 		EffectHandler.getInstance().registerHandler("SummonPoints", SummonPoints::new);

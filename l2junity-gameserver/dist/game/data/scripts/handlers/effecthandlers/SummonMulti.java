@@ -32,29 +32,26 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * Summon effect implementation.
+ * SummonMulti effect implementation.
  * @author UnAfraid
  */
-public final class Summon extends AbstractEffect
+public final class SummonMulti extends AbstractEffect
 {
 	private final int _npcId;
 	private final float _expMultiplier;
 	private final ItemHolder _consumeItem;
 	private final int _lifeTime;
 	private final int _consumeItemInterval;
+	private final int _summonPoints;
 	
-	public Summon(StatsSet params)
+	public SummonMulti(StatsSet params)
 	{
-		if (params.isEmpty())
-		{
-			throw new IllegalArgumentException("Summon effect without parameters!");
-		}
-		
 		_npcId = params.getInt("npcId");
 		_expMultiplier = params.getFloat("expMultiplier", 1);
 		_consumeItem = new ItemHolder(params.getInt("consumeItemId", 0), params.getInt("consumeItemCount", 1));
 		_consumeItemInterval = params.getInt("consumeItemInterval", 0);
 		_lifeTime = params.getInt("lifeTime", 3600) > 0 ? params.getInt("lifeTime", 3600) * 1000 : -1;
+		_summonPoints = params.getInt("summonPoints", 0);
 	}
 	
 	@Override
@@ -66,15 +63,15 @@ public final class Summon extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		if (!effected.isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
 		
 		final PlayerInstance player = effected.getActingPlayer();
-		if (player.hasServitors())
+		if ((player.getSummonPoints() + _summonPoints) > player.getMaxSummonPoints())
 		{
-			player.getServitors().values().forEach(s -> s.unSummon(player));
+			return;
 		}
 		final L2NpcTemplate template = NpcData.getInstance().getTemplate(_npcId);
 		final L2ServitorInstance summon = new L2ServitorInstance(template, player);
@@ -101,6 +98,7 @@ public final class Summon extends AbstractEffect
 		summon.setCurrentHp(summon.getMaxHp());
 		summon.setCurrentMp(summon.getMaxMp());
 		summon.setHeading(player.getHeading());
+		summon.setSummonPoints(_summonPoints);
 		
 		player.addServitor(summon);
 		
