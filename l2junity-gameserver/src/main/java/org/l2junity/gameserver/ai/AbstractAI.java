@@ -630,7 +630,7 @@ public abstract class AbstractAI implements Ctrl
 		{
 			if (_clientMoving)
 			{
-				if ((_clientMovingToPawnOffset != 0) && (_target != null) && _target.isCreature())
+				if ((_clientMovingToPawnOffset != 0) && isFollowing())
 				{
 					// Send a Server->Client packet MoveToPawn to the actor and all L2PcInstance in its _knownPlayers
 					player.sendPacket(new MoveToPawn(_actor, (Creature) _target, _clientMovingToPawnOffset));
@@ -646,7 +646,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	public boolean isFollowing()
 	{
-		return (_actor.getTarget() != null) && (getIntention() == CtrlIntention.AI_INTENTION_FOLLOW);
+		return (_actor.getTarget() instanceof Creature) && (getIntention() == CtrlIntention.AI_INTENTION_FOLLOW);
 	}
 	
 	/**

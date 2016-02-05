@@ -232,7 +232,7 @@ public class FriendlyNpcAI extends AttackableAI
 	@Override
 	protected void thinkCast()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
 			_actor.setTarget(null);

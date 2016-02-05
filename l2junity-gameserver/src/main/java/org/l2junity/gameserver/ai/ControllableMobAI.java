@@ -128,10 +128,10 @@ public final class ControllableMobAI extends AttackableAI
 	protected void thinkCast()
 	{
 		Attackable npc = (Attackable) _actor;
-		WorldObject target = npc.getTarget();
+		WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if ((target == null) || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
-			target = findNextRndTarget();
+			target = _skill.getTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
 		}
 		
 		if (target == null)

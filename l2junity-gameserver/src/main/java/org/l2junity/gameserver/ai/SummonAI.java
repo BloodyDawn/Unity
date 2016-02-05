@@ -110,12 +110,12 @@ public class SummonAI extends PlayableAI implements Runnable
 	private void thinkCast()
 	{
 		Summon summon = (Summon) _actor;
-		final WorldObject target = summon.getTarget();
 		if (summon.isCastingNow(SkillCaster::isNormalType))
 		{
 			return;
 		}
 		
+		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
 			summon.setTarget(null);

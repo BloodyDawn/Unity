@@ -85,11 +85,12 @@ public class DoppelgangerAI extends CharacterAI
 	
 	private void thinkCast()
 	{
-		final WorldObject target = _actor.getTarget();
 		if (_actor.isCastingNow(SkillCaster::isNormalType))
 		{
 			return;
 		}
+		
+		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		
 		if (checkTargetLost(target))
 		{

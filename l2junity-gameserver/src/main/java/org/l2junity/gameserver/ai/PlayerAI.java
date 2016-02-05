@@ -269,7 +269,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkCast()
 	{
-		WorldObject target = _actor.getTarget();
+		WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if ((_skill.getTargetType() == TargetType.GROUND) && (_actor instanceof PlayerInstance))
 		{
 			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))

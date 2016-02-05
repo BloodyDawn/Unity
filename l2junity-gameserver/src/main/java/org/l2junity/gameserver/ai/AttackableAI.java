@@ -61,7 +61,6 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -92,7 +91,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 	 */
 	private boolean _thinking;
 	
-	private int timepass = 0;
 	private int chaostime = 0;
 	int lastBuffTick;
 	
@@ -388,7 +386,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	protected void thinkCast()
 	{
-		final WorldObject target = getActiveChar().getTarget();
+		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
 			getActiveChar().setTarget(null);
@@ -459,7 +457,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						// Add the attacker to the L2Attackable _aggroList with 0 damage and 1 hate
 						if (hating == 0)
 						{
-							npc.addDamageHate(t, 0, 0);
+							npc.addDamageHate(t, 0, 1);
 						}
 					}
 				});
@@ -649,11 +647,16 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
-		Creature target = (npc.getTarget() != null) && npc.getTarget().isCreature() ? (Creature) npc.getTarget() : null;
 		
 		if (npc.isCastingNow(s -> !s.isSimultaneousType()))
 		{
 			return;
+		}
+		
+		Creature target = npc.getMostHated();
+		if (npc.getTarget() != target)
+		{
+			npc.setTarget(target);
 		}
 		
 		// Check if target is dead or if timeout is expired to stop this attack
@@ -720,23 +723,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return;
 		}
 		
-		// Initialize data
-		Creature mostHate = npc.getMostHated();
-		if (mostHate == null)
-		{
-			setIntention(AI_INTENTION_ACTIVE);
-			return;
-		}
-		
-		npc.setTarget(mostHate);
-		
-		final int combinedCollision = collision + mostHate.getTemplate().getCollisionRadius();
+		final int combinedCollision = collision + target.getTemplate().getCollisionRadius();
 		
 		final List<Skill> aiSuicideSkills = npc.getTemplate().getAISkills(AISkillScope.SUICIDE);
 		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30))
 		{
 			final Skill skill = aiSuicideSkills.get(Rnd.get(aiSuicideSkills.size()));
-			if (Util.checkIfInRange(skill.getAffectRange(), getActiveChar(), mostHate, false) && npc.hasSkillChance())
+			if (npc.hasSkillChance())
 			{
 				WorldObject skillTarget = skillTargetReconsider(skill, true, true);
 				
@@ -760,25 +753,25 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			for (Attackable nearby : World.getInstance().getVisibleObjects(npc, Attackable.class))
 			{
-				if (npc.isInsideRadius(nearby, collision, false, false) && (nearby != mostHate))
+				if (npc.isInsideRadius(nearby, collision, false, false) && (nearby != target))
 				{
 					int newX = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
 					{
-						newX = mostHate.getX() + newX;
+						newX = target.getX() + newX;
 					}
 					else
 					{
-						newX = mostHate.getX() - newX;
+						newX = target.getX() - newX;
 					}
 					int newY = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
 					{
-						newY = mostHate.getY() + newY;
+						newY = target.getY() + newY;
 					}
 					else
 					{
-						newY = mostHate.getY() - newY;
+						newY = target.getY() - newY;
 					}
 					
 					if (!npc.isInsideRadius(newX, newY, 0, collision, false, false))
@@ -799,7 +792,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			if (Rnd.get(100) <= npc.getTemplate().getDodge())
 			{
 				// Micht: kepping this one otherwise we should do 2 sqrt
-				double distance2 = npc.calculateDistance(mostHate, false, true);
+				double distance2 = npc.calculateDistance(target, false, true);
 				if (Math.sqrt(distance2) <= (60 + combinedCollision))
 				{
 					int posX = npc.getX();
@@ -872,28 +865,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		double dist = npc.calculateDistance(mostHate, false, false);
-		int dist2 = (int) dist - collision;
-		int range = npc.getPhysicalAttackRange() + combinedCollision;
-		if (mostHate.isMoving())
-		{
-			range = range + 50;
-			if (npc.isMoving())
-			{
-				range = range + 50;
-			}
-		}
-		
-		// -------------------------------------------------------------------------------
-		// Immobilize Condition
-		if ((npc.isMovementDisabled() && ((dist > range) || mostHate.isMoving())) || ((dist > range) && mostHate.isMoving()))
-		{
-			target = targetReconsider(true, true, false);
-			npc.setTarget(target);
-			return;
-		}
-		
-		setTimepass(0);
 		// --------------------------------------------------------------------------------
 		// Long/Short Range skill usage.
 		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
@@ -924,25 +895,20 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		// --------------------------------------------------------------------------------
-		// Starts Melee or Primary Skill
-		if ((dist2 > range) || !GeoData.getInstance().canSeeTarget(npc, mostHate))
+		double dist = npc.calculateDistance(target, false, false) - collision;
+		int range = npc.getPhysicalAttackRange() + combinedCollision;
+		if ((dist > range) || !GeoData.getInstance().canSeeTarget(npc, target))
 		{
 			if (npc.isMovementDisabled())
 			{
 				target = targetReconsider(true, true, false);
-				npc.setTarget(target);
+				if (target != null)
+				{
+					npc.setTarget(target);
+				}
 			}
 			else
 			{
-				if (target.isMoving())
-				{
-					range -= 100;
-				}
-				if (range < 5)
-				{
-					range = 5;
-				}
 				moveToPawn(target, range);
 			}
 			return;
@@ -956,7 +922,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	{
 		// Check if skill can be casted.
 		final Attackable npc = getActiveChar();
-		if ((skill == null) || SkillCaster.checkUseConditions(npc, skill))
+		if ((skill == null) || !SkillCaster.checkUseConditions(npc, skill))
 		{
 			return null;
 		}
@@ -964,6 +930,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 		final int range = insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000; // TODO need some forget range
 		final Predicate<Creature> filter = c ->
 		{
+			if (c == null)
+			{
+				return false;
+			}
+			
 			// Check if target is valid and within cast range.
 			if (skill.getTarget(npc, c, false, !insideCastRange, false) == null)
 			{
@@ -1047,6 +1018,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		final Predicate<Creature> filter = c ->
 		{
+			if (c == null)
+			{
+				return false;
+			}
 			if (c.isDead())
 			{
 				return false;
@@ -1056,17 +1031,17 @@ public class AttackableAI extends CharacterAI implements Runnable
 				return false;
 			}
 			
-			if (!c.isAutoAttackable(npc))
+			if (!autoAttackCondition(c))
 			{
 				return false;
 			}
 			
-			return GeoData.getInstance().canSeeTarget(npc, c);
+			return GeoData.getInstance().canMove(npc, c);
 		};
 		
 		if (randomTarget)
 		{
-			Stream<Creature> stream = npc.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(Objects::nonNull).filter(filter);
+			Stream<Creature> stream = npc.getAggroList().values().stream().map(AggroInfo::getAttacker).filter(filter);
 			
 			// If npc is aggressive, add characters within aggro range too
 			if (npc.isAggressive())
@@ -1264,22 +1239,6 @@ public class AttackableAI extends CharacterAI implements Runnable
 	public void setGlobalAggro(int value)
 	{
 		_globalAggro = value;
-	}
-	
-	/**
-	 * @param TP The timepass to set.
-	 */
-	public void setTimepass(int TP)
-	{
-		timepass = TP;
-	}
-	
-	/**
-	 * @return Returns the timepass.
-	 */
-	public int getTimepass()
-	{
-		return timepass;
 	}
 	
 	public Attackable getActiveChar()
