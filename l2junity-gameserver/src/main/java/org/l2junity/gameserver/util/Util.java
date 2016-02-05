@@ -343,6 +343,28 @@ public final class Util
 	}
 	
 	/**
+	 * @param <T>
+	 * @param name - the text to check
+	 * @param enumType
+	 * @return {@code true} if {@code text} is enum, {@code false} otherwise
+	 */
+	public static <T extends Enum<T>> boolean isEnum(String name, Class<T> enumType)
+	{
+		if ((name == null) || name.isEmpty())
+		{
+			return false;
+		}
+		try
+		{
+			return Enum.valueOf(enumType, name) != null;
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
+	
+	/**
 	 * @param text - the text to check
 	 * @return {@code true} if {@code text} contains only letters and/or numbers, {@code false} otherwise
 	 */
