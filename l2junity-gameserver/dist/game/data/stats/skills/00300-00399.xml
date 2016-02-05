@@ -1238,9 +1238,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
-		<cond msgId="113" addName="1">
-			<player flying="true" />
-		</cond>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>7000</amount>
@@ -1546,11 +1543,6 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<cond msgId="113" addName="1">
-			<not>
-				<target npcType="Attackable" />
-			</not>
-		</cond>
 		<effects>
 			<effect name="HealOverTime">
 				<power>50</power>

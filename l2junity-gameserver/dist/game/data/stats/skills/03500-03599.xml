@@ -2474,11 +2474,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<!-- TODO: Remove this condition when proper target type is done -->
-		<cond msgId="113" addName="1">
-			<not>
-				<target npcType="Attackable" />
-			</not>
-		</cond>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -2534,11 +2529,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ONE</targetType>
 		<!-- TODO: Remove this condition when proper target type is done -->
-		<cond>
-			<not>
-				<target npcType="Attackable" />
-			</not>
-		</cond>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>

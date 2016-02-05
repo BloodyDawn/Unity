@@ -2281,9 +2281,6 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PARTY_MEMBER</targetType>
-		<cond msgId="109">
-			<target race="KAMAEL" />
-		</cond>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -4148,11 +4145,6 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ONE</targetType>
-		<cond msgId="113" addName="1">
-			<not>
-				<target npcType="Attackable" />
-			</not>
-		</cond>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
