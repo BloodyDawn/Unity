@@ -128,5 +128,6 @@ public class SkillConditionMasterHandler
 		SkillConditionHandler.getInstance().registerHandler("OpCheckOnGoingEventCampaign", OpCheckOnGoingEventCampaignSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("CanSummonMulti", CanSummonMultiSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpTargetMyPledgeAcademy", OpTargetMyPledgeAcademySkillCondition::new);
+		SkillConditionHandler.getInstance().registerHandler("OpCheckFlag", OpCheckFlagSkillCondition::new);
 	}
 }
