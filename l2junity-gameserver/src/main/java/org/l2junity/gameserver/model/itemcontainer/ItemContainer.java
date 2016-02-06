@@ -80,6 +80,29 @@ public abstract class ItemContainer
 	}
 	
 	/**
+	 * @param filter
+	 * @param filters
+	 * @return the quantity of items in the inventory
+	 */
+	@SafeVarargs
+	public final int getSize(Predicate<ItemInstance> filter, Predicate<ItemInstance>... filters)
+	{
+		int count = 0;
+		for (Predicate<ItemInstance> additionalFilter : filters)
+		{
+			filter = filter.and(additionalFilter);
+		}
+		for (ItemInstance item : _items.values())
+		{
+			if (filter.test(item))
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	/**
 	 * Gets the items in inventory.
 	 * @return the items in inventory.
 	 */
