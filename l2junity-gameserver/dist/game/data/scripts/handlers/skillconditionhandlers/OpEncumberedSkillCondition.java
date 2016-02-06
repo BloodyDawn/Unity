@@ -21,6 +21,7 @@ package handlers.skillconditionhandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -47,8 +48,14 @@ public class OpEncumberedSkillCondition implements ISkillCondition
 			return false;
 		}
 		
-		final int currentSlotsPercent = (caster.getInventory().getSize() * 100) / caster.getActingPlayer().getInventoryLimit();
-		final int currentWeightPercent = (caster.getCurrentLoad() * 100) / caster.getMaxLoad();
+		final PlayerInstance player = caster.getActingPlayer();
+		final int currentSlotsPercent = calcPercent(player.getInventoryLimit(), player.getInventory().getSize());
+		final int currentWeightPercent = calcPercent(player.getMaxLoad(), player.getCurrentLoad());
 		return (currentSlotsPercent >= _slotsPercent) && (currentWeightPercent >= _weightPercent);
+	}
+	
+	private int calcPercent(int max, int current)
+	{
+		return ((max - current) / 100) * 100;
 	}
 }
