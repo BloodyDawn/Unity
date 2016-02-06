@@ -6755,6 +6755,9 @@ public final class PlayerInstance extends Playable
 			
 			player.restoreItemReuse();
 			
+			// Initialize status update cache
+			player.initStatusUpdateCache();
+			
 			// Restore current Cp, HP and MP values
 			player.setCurrentCp(currentCp);
 			player.setCurrentHp(currentHp);
@@ -10320,8 +10323,6 @@ public final class PlayerInstance extends Playable
 			setCurrentHp(_originalHp);
 			setCurrentMp(_originalMp);
 		}
-		
-		initStatusUpdateCache();
 		
 		revalidateZone(true);
 		
