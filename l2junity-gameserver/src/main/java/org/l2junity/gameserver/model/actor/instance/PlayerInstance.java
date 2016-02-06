@@ -10321,6 +10321,8 @@ public final class PlayerInstance extends Playable
 			setCurrentMp(_originalMp);
 		}
 		
+		initStatusUpdateCache();
+		
 		revalidateZone(true);
 		
 		notifyFriends(L2FriendStatus.MODE_ONLINE);

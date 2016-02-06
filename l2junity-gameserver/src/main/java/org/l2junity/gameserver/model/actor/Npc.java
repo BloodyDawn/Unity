@@ -167,6 +167,7 @@ public class Npc extends Creature
 		_currentCollisionRadius = getTemplate().getfCollisionRadius();
 		
 		setIsFlying(template.isFlying());
+		initStatusUpdateCache();
 	}
 	
 	public void startRandomAnimationTask()
@@ -953,7 +954,8 @@ public class Npc extends Creature
 	 * <li>Decrease its spawn counter</li>
 	 * <li>Manage Siege task (killFlag, killCT)</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	@Override
 	public void onDecay()
@@ -995,7 +997,8 @@ public class Npc extends Creature
 	 * <li>Remove all L2Object from _knownObjects and _knownPlayer of the L2NpcInstance then cancel Attack or Cast and notify AI</li>
 	 * <li>Remove L2Object object from _allObjects of L2World</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND Server->Client packets to players</B></FONT><br> UnAfraid: TODO: Add Listener here
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND Server->Client packets to players</B></FONT><br>
+	 * UnAfraid: TODO: Add Listener here
 	 */
 	@Override
 	public boolean deleteMe()

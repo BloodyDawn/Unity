@@ -350,8 +350,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL));
 		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL_SECOND));
 		_skillCasters.add(new SkillCaster(this, SkillCastingType.SIMULTANEOUS));
-		
-		initStatusUpdateCache();
 	}
 	
 	public final CharEffectList getEffectList()
