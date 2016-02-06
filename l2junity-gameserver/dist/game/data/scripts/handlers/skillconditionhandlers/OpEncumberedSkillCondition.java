@@ -56,6 +56,6 @@ public class OpEncumberedSkillCondition implements ISkillCondition
 	
 	private int calcPercent(int max, int current)
 	{
-		return ((max - current) / 100) * 100;
+		return ((max - current) / max) * 100;
 	}
 }
