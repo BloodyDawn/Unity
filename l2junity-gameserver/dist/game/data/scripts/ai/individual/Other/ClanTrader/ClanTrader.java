@@ -110,7 +110,16 @@ public final class ClanTrader extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		return npc.getId() + ((player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME)) ? ".html" : "-01.html");
+		String htmltext = null;
+		if (player.getClanId() > 0)
+		{
+			htmltext = npc.getId() + ((player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME)) ? ".html" : "-06.html");
+		}
+		else
+		{
+			htmltext = npc.getId() + "-01.html";
+		}
+		return htmltext;
 	}
 	
 	public static void main(String[] args)
