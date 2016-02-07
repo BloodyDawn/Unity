@@ -670,11 +670,6 @@ public class StatsSet implements IParserAdvUtils
 	{
 		Objects.requireNonNull(key);
 		Objects.requireNonNull(clazz);
-		if (clazz.getSuperclass() == Enum.class)
-		{
-			throw new IllegalAccessError("Please use getEnumList if you want to get list of Enums!");
-		}
-		
 		final Object obj = _set.get(key);
 		if ((obj == null) || !(obj instanceof List<?>))
 		{
@@ -684,6 +679,11 @@ public class StatsSet implements IParserAdvUtils
 		final List<Object> originalList = (List<Object>) obj;
 		if (!originalList.isEmpty() && !originalList.stream().allMatch(clazz::isInstance))
 		{
+			if (clazz.getSuperclass() == Enum.class)
+			{
+				throw new IllegalAccessError("Please use getEnumList if you want to get list of Enums!");
+			}
+			
 			// Attempt to convert the list
 			final List<T> convertedList = convertList(originalList, clazz);
 			if (convertedList == null)
