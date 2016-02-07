@@ -32,7 +32,6 @@ import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.ExWorldChatCnt;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.network.client.send.QuestList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
@@ -307,7 +306,6 @@ public class AdminAdmin implements IAdminCommandHandler
 		else if (command.startsWith("admin_gmon"))
 		{
 			// nothing
-			activeChar.sendPacket(new QuestList(activeChar));
 		}
 		else if (command.startsWith("admin_worldchat"))
 		{

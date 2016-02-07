@@ -888,7 +888,7 @@ public class PcInventory extends Inventory
 		_blockMode = mode;
 		_blockItems = items;
 		
-		_owner.sendItemList(true);
+		_owner.sendItemList(false);
 	}
 	
 	/**
@@ -899,7 +899,7 @@ public class PcInventory extends Inventory
 		_blockMode = InventoryBlockType.NONE;
 		_blockItems = null;
 		
-		_owner.sendItemList(true);
+		_owner.sendItemList(false);
 	}
 	
 	/**
