@@ -38,7 +38,7 @@ public final class Q10442_TheAnnihilatedPlains1 extends Quest
 	
 	public Q10442_TheAnnihilatedPlains1()
 	{
-		super(10406);
+		super(10442);
 		addStartNpc(MATHIAS);
 		addTalkId(MATHIAS, TUSKA);
 		addCondMinLevel(MIN_LEVEL, "31340-06.htm");

@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10445_AnImpendingThreat;
+package quests.Q10450_ADarkAmbition;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -25,33 +25,29 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * An Impending Threat (10445)
+ * A Dark Ambition (10450)
  * @author St3eT
  */
-public final class Q10445_AnImpendingThreat extends Quest
+public final class Q10450_ADarkAmbition extends Quest
 {
 	// NPCs
 	private static final int MATHIAS = 31340;
 	private static final int TUSKA = 33839;
-	private static final int BRUENER = 33840;
 	// Items
-	private static final int LETTER = 36681; // Curious Letter
-	private static final int BADGE = 36685; // Reinforcements' Badge
 	private static final int ELIXIR_LIFE = 30357; // Elixir of Life (R-grade)
 	private static final int ELIXIR_MANA = 30358; // Elixir of Mind (R-grade)
 	private static final int SSR = 34609; // Mysterious Soulshot (R-grade) - Event
 	private static final int BSSR = 34616; // Mysterious Blessed Spiritshot (R-grade) - Event
-	private static final int SOE = 37017; // Scroll of Escape: Raider's Crossroads
+	private static final int SOE = 37019; // Scroll of Escape: Gainak
 	// Misc
-	private static final int MIN_LEVEL = 97;
+	private static final int MIN_LEVEL = 99;
 	
-	public Q10445_AnImpendingThreat()
+	public Q10450_ADarkAmbition()
 	{
-		super(10445);
+		super(10450);
 		addStartNpc(MATHIAS);
-		addTalkId(MATHIAS, TUSKA, BRUENER);
-		registerQuestItems(LETTER, BADGE);
-		addCondMinLevel(MIN_LEVEL, "31340-06.htm");
+		addTalkId(MATHIAS, TUSKA);
+		addCondMinLevel(MIN_LEVEL, "31340-07.htm");
 	}
 	
 	@Override
@@ -73,25 +69,13 @@ public final class Q10445_AnImpendingThreat extends Quest
 				htmltext = event;
 				break;
 			}
-			case "31340-04.htm":
+			case "31340-05.htm":
 			{
 				st.startQuest();
-				giveItems(player, LETTER, 1);
 				htmltext = event;
 				break;
 			}
 			case "33839-03.html":
-			{
-				if (st.isCond(1))
-				{
-					st.setCond(2);
-					takeItems(player, LETTER, 1);
-					giveItems(player, BADGE, 1);
-					htmltext = event;
-				}
-				break;
-			}
-			case "33840-02.html":
 			{
 				if (st.isCond(2))
 				{
@@ -102,7 +86,7 @@ public final class Q10445_AnImpendingThreat extends Quest
 					giveItems(player, SOE, 1);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						addExpAndSp(player, 100_506_183, 241_212);
+						addExpAndSp(player, 15_436_575, 3_704);
 					}
 					st.exitQuest(false, true);
 					htmltext = event;
@@ -131,45 +115,15 @@ public final class Q10445_AnImpendingThreat extends Quest
 			}
 			case State.STARTED:
 			{
-				switch (npc.getId())
+				if (st.isCond(1))
 				{
-					case MATHIAS:
-					{
-						if (st.isCond(1))
-						{
-							htmltext = "31340-05.html";
-						}
-						break;
-					}
-					case TUSKA:
-					{
-						if (st.isCond(1))
-						{
-							htmltext = "33839-01.html";
-						}
-						else if (st.isCond(2))
-						{
-							htmltext = "33839-04.html";
-						}
-						break;
-					}
-					case BRUENER:
-					{
-						if (st.isCond(2))
-						{
-							htmltext = "33840-01.html";
-						}
-						break;
-					}
+					htmltext = npc.getId() == MATHIAS ? "31340-06.html" : "33839-01.html";
 				}
 				break;
 			}
 			case State.COMPLETED:
 			{
-				if (npc.getId() == MATHIAS)
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
