@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.itemcontainer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,9 +29,9 @@ import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.InventoryBlockType;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.TradeList;
@@ -58,25 +59,13 @@ public class PcInventory extends Inventory
 	private ItemInstance _ancientAdena;
 	private ItemInstance _beautyTickets;
 	
-	private int[] _blockItems = null;
+	private Collection<Integer> _blockItems = null;
 	
-	private int _questSlots;
-	
-	private final Object _lock;
-	/**
-	 * Block modes:
-	 * <UL>
-	 * <LI>-1 - no block
-	 * <LI>0 - block items from _invItems, allow usage of other items
-	 * <LI>1 - allow usage of items from _invItems, block other items
-	 * </UL>
-	 */
-	private int _blockMode = -1;
+	private InventoryBlockType _blockMode = InventoryBlockType.NONE;
 	
 	public PcInventory(PlayerInstance owner)
 	{
 		_owner = owner;
-		_lock = new Object();
 	}
 	
 	@Override
@@ -145,11 +134,11 @@ public class PcInventory extends Inventory
 		final Collection<ItemInstance> list = new LinkedList<>();
 		for (ItemInstance item : _items.values())
 		{
-			if ((!allowAdena && (item.getId() == ADENA_ID)))
+			if (!allowAdena && (item.getId() == ADENA_ID))
 			{
 				continue;
 			}
-			if ((!allowAncientAdena && (item.getId() == ANCIENT_ADENA_ID)))
+			if (!allowAncientAdena && (item.getId() == ANCIENT_ADENA_ID))
 			{
 				continue;
 			}
@@ -187,11 +176,11 @@ public class PcInventory extends Inventory
 		final Collection<ItemInstance> list = new LinkedList<>();
 		for (ItemInstance item : _items.values())
 		{
-			if ((!allowAdena && (item.getId() == ADENA_ID)))
+			if (!allowAdena && (item.getId() == ADENA_ID))
 			{
 				continue;
 			}
-			if ((!allowAncientAdena && (item.getId() == ANCIENT_ADENA_ID)))
+			if (!allowAncientAdena && (item.getId() == ANCIENT_ADENA_ID))
 			{
 				continue;
 			}
@@ -491,7 +480,7 @@ public class PcInventory extends Inventory
 	@Override
 	public ItemInstance addItem(String process, int itemId, long count, PlayerInstance actor, Object reference)
 	{
-		ItemInstance item = super.addItem(process, itemId, count, actor, reference);
+		final ItemInstance item = super.addItem(process, itemId, count, actor, reference);
 		if (item != null)
 		{
 			if ((item.getId() == ADENA_ID) && !item.equals(_adena))
@@ -542,7 +531,7 @@ public class PcInventory extends Inventory
 	@Override
 	public ItemInstance transferItem(String process, int objectId, long count, ItemContainer target, PlayerInstance actor, Object reference)
 	{
-		ItemInstance item = super.transferItem(process, objectId, count, target, actor, reference);
+		final ItemInstance item = super.transferItem(process, objectId, count, target, actor, reference);
 		
 		if ((_adena != null) && ((_adena.getCount() <= 0) || (_adena.getOwnerId() != getOwnerId())))
 		{
@@ -748,18 +737,6 @@ public class PcInventory extends Inventory
 			_beautyTickets = null;
 		}
 		
-		if (item.isQuestItem())
-		{
-			synchronized (_lock)
-			{
-				_questSlots--;
-				if (_questSlots < 0)
-				{
-					_questSlots = 0;
-					_log.warn(this + ": QuestInventory size < 0!");
-				}
-			}
-		}
 		return super.removeItem(item);
 	}
 	
@@ -886,11 +863,7 @@ public class PcInventory extends Inventory
 	
 	public boolean validateCapacity(long slots, boolean questItem)
 	{
-		if (!questItem)
-		{
-			return (((_items.size() - _questSlots) + slots) <= _owner.getInventoryLimit());
-		}
-		return (_questSlots + slots) <= _owner.getQuestInventoryLimit();
+		return (getSize(item -> !item.isQuestItem() || questItem) + slots) <= _owner.getQuestInventoryLimit();
 	}
 	
 	@Override
@@ -910,12 +883,12 @@ public class PcInventory extends Inventory
 	 * @param items array of Ids to block/allow
 	 * @param mode blocking mode {@link PcInventory#_blockMode}
 	 */
-	public void setInventoryBlock(int[] items, int mode)
+	public void setInventoryBlock(Collection<Integer> items, InventoryBlockType mode)
 	{
 		_blockMode = mode;
 		_blockItems = items;
 		
-		_owner.sendItemList(false);
+		_owner.sendItemList(true);
 	}
 	
 	/**
@@ -923,10 +896,10 @@ public class PcInventory extends Inventory
 	 */
 	public void unblock()
 	{
-		_blockMode = -1;
+		_blockMode = InventoryBlockType.NONE;
 		_blockItems = null;
 		
-		_owner.sendItemList(false);
+		_owner.sendItemList(true);
 	}
 	
 	/**
@@ -935,35 +908,31 @@ public class PcInventory extends Inventory
 	 */
 	public boolean hasInventoryBlock()
 	{
-		return ((_blockMode > -1) && (_blockItems != null) && (_blockItems.length > 0));
+		return ((_blockMode != InventoryBlockType.NONE) && (_blockItems != null) && !_blockItems.isEmpty());
 	}
 	
 	/**
-	 * Block all player items
+	 * Block all items except adena
 	 */
 	public void blockAllItems()
 	{
-		// temp fix, some id must be sended
-		setInventoryBlock(new int[]
-		{
-			(ItemTable.getInstance().getArraySize() + 2)
-		}, 1);
+		setInventoryBlock(Arrays.asList(ADENA_ID), InventoryBlockType.WHITELIST);
 	}
 	
 	/**
 	 * Return block mode
 	 * @return int {@link PcInventory#_blockMode}
 	 */
-	public int getBlockMode()
+	public InventoryBlockType getBlockMode()
 	{
 		return _blockMode;
 	}
 	
 	/**
-	 * Return TIntArrayList with blocked item ids
-	 * @return TIntArrayList
+	 * Return Collection<Integer> with blocked item ids
+	 * @return Collection<Integer>
 	 */
-	public int[] getBlockItems()
+	public Collection<Integer> getBlockItems()
 	{
 		return _blockItems;
 	}
@@ -975,24 +944,26 @@ public class PcInventory extends Inventory
 	 */
 	public boolean canManipulateWithItemId(int itemId)
 	{
-		if (((_blockMode == 0) && CommonUtil.contains(_blockItems, itemId)) || ((_blockMode == 1) && !CommonUtil.contains(_blockItems, itemId)))
+		final Collection<Integer> blockedItems = _blockItems;
+		if (blockedItems != null)
 		{
-			return false;
-		}
-		return true;
-	}
-	
-	@Override
-	protected void addItem(ItemInstance item)
-	{
-		if (item.isQuestItem())
-		{
-			synchronized (_lock)
+			switch (_blockMode)
 			{
-				_questSlots++;
+				case NONE:
+				{
+					return true;
+				}
+				case WHITELIST:
+				{
+					return blockedItems.stream().anyMatch(id -> id == itemId);
+				}
+				case BLACKLIST:
+				{
+					return !blockedItems.stream().anyMatch(id -> id == itemId);
+				}
 			}
 		}
-		super.addItem(item);
+		return false;
 	}
 	
 	@Override

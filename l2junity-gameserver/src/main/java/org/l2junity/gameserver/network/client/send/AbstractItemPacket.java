@@ -213,11 +213,11 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 	{
 		if (inventory.hasInventoryBlock())
 		{
-			packet.writeH(inventory.getBlockItems().length);
-			packet.writeC(inventory.getBlockMode());
-			for (int i : inventory.getBlockItems())
+			packet.writeH(inventory.getBlockItems().size());
+			packet.writeC(inventory.getBlockMode().getClientId());
+			for (int id : inventory.getBlockItems())
 			{
-				packet.writeD(i);
+				packet.writeD(id);
 			}
 		}
 		else
