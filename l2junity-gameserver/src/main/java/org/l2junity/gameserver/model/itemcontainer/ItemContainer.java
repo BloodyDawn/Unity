@@ -87,19 +87,11 @@ public abstract class ItemContainer
 	@SafeVarargs
 	public final int getSize(Predicate<ItemInstance> filter, Predicate<ItemInstance>... filters)
 	{
-		int count = 0;
 		for (Predicate<ItemInstance> additionalFilter : filters)
 		{
 			filter = filter.and(additionalFilter);
 		}
-		for (ItemInstance item : _items.values())
-		{
-			if (filter.test(item))
-			{
-				count++;
-			}
-		}
-		return count;
+		return (int) _items.values().stream().filter(filter).count();
 	}
 	
 	/**

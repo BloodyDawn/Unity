@@ -18,8 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -32,18 +31,12 @@ import org.l2junity.network.PacketWriter;
 public class ExQuestItemList extends AbstractItemPacket
 {
 	private final PlayerInstance _activeChar;
-	private final List<ItemInstance> _items = new ArrayList<>();
+	private final Collection<ItemInstance> _items;
 	
 	public ExQuestItemList(PlayerInstance activeChar)
 	{
 		_activeChar = activeChar;
-		for (ItemInstance item : activeChar.getInventory().getItems())
-		{
-			if (item.isQuestItem())
-			{
-				_items.add(item);
-			}
-		}
+		_items = activeChar.getInventory().getItems(ItemInstance::isQuestItem);
 	}
 	
 	@Override
