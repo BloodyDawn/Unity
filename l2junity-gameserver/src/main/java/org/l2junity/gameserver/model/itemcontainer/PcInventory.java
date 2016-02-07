@@ -995,15 +995,6 @@ public class PcInventory extends Inventory
 		super.addItem(item);
 	}
 	
-	public int getSize(boolean quest)
-	{
-		if (quest)
-		{
-			return _questSlots;
-		}
-		return getSize() - _questSlots;
-	}
-	
 	@Override
 	public String toString()
 	{

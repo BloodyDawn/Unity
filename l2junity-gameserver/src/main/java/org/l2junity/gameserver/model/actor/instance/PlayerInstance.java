@@ -13048,7 +13048,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public boolean isInventoryUnder90(boolean includeQuestInv)
 	{
-		return (getInventory().getSize(includeQuestInv) <= (getInventoryLimit() * 0.9));
+		return (getInventory().getSize(item -> !item.isQuestItem() || includeQuestInv) <= (getInventoryLimit() * 0.9));
 	}
 	
 	/**
@@ -13058,7 +13058,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public boolean isInventoryUnder80(boolean includeQuestInv)
 	{
-		return (getInventory().getSize(includeQuestInv) <= (getInventoryLimit() * 0.8));
+		return (getInventory().getSize(item -> !item.isQuestItem() || includeQuestInv) <= (getInventoryLimit() * 0.8));
 	}
 	
 	public boolean havePetInvItems()

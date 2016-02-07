@@ -58,7 +58,7 @@ public class RequestCommissionBuyInfo implements IClientIncomingPacket
 			return;
 		}
 		
-		if ((player.getInventory().getSize(false) >= (player.getInventoryLimit() * 0.8)) || (player.getWeightPenalty() >= 3))
+		if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() >= 3))
 		{
 			client.sendPacket(SystemMessageId.IF_THE_WEIGHT_IS_80_OR_MORE_AND_THE_INVENTORY_NUMBER_IS_90_OR_MORE_PURCHASE_CANCELLATION_IS_NOT_POSSIBLE);
 			client.sendPacket(ExResponseCommissionBuyInfo.FAILED);
