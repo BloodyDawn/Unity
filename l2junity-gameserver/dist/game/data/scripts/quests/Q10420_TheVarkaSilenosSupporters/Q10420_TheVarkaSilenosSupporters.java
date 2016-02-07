@@ -62,7 +62,7 @@ public final class Q10420_TheVarkaSilenosSupporters extends Quest
 		27515, // Varka Backup Wizard
 	};
 	// Items
-	private static final int EAS = 960; // Scroll: Enchant Armor (S-grade)
+	private static final int EAS = 26353; // Scroll: Enchant Armor (S-grade)
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
