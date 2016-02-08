@@ -769,27 +769,37 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		if (npc.hasSkillChance())
 		{
-			// First use the most important skill - heal.
+			// First use the most important skill - heal. Even reconsider target.
 			if (!npc.getTemplate().getAISkills(AISkillScope.HEAL).isEmpty())
 			{
 				final Skill healSkill = npc.getTemplate().getAISkills(AISkillScope.HEAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.HEAL).size()));
-				if (SkillCaster.checkUseConditions(npc, healSkill) && checkSkillTarget(healSkill, target))
+				if (SkillCaster.checkUseConditions(npc, healSkill))
 				{
-					npc.doCast(healSkill);
-					LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, npc.getTarget());
-					return;
+					Creature healTarget = targetReconsider(false);
+					if (checkSkillTarget(healSkill, healTarget))
+					{
+						npc.setTarget(healTarget);
+						npc.doCast(healSkill);
+						LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, npc.getTarget());
+						return;
+					}
 				}
 			}
 			
-			// Then use the second most important skill - buff
+			// Then use the second most important skill - buff. Even reconsider target.
 			if (!npc.getTemplate().getAISkills(AISkillScope.BUFF).isEmpty())
 			{
 				final Skill buffSkill = npc.getTemplate().getAISkills(AISkillScope.BUFF).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.BUFF).size()));
-				if (SkillCaster.checkUseConditions(npc, buffSkill) && checkSkillTarget(buffSkill, target))
+				if (SkillCaster.checkUseConditions(npc, buffSkill))
 				{
-					npc.doCast(buffSkill);
-					LOGGER.debug("{} used buff skill {} with target {}", this, buffSkill, npc.getTarget());
-					return;
+					Creature buffTarget = targetReconsider(false);
+					if (checkSkillTarget(buffSkill, buffTarget))
+					{
+						npc.setTarget(buffTarget);
+						npc.doCast(buffSkill);
+						LOGGER.debug("{} used buff skill {} with target {}", this, buffSkill, npc.getTarget());
+						return;
+					}
 				}
 			}
 			
