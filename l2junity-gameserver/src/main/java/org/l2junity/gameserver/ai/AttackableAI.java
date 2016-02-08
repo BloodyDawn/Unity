@@ -910,7 +910,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			stream = npc.getAggroList().values().stream()
 					.map(AggroInfo::getAttacker)
 					.filter(c -> checkSkillTarget(skill, c))
-					.sorted(Comparator.comparingInt(c -> npc.getHating(c)));
+					.sorted(Comparator.<Creature>comparingInt(npc::getHating).reversed());
 			//@formatter:on
 		}
 		else
