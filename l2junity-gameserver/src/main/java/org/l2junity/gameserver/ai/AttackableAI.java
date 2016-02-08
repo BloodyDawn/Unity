@@ -920,7 +920,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			// For heal skills sort by hp missing.
 			if (skill.hasEffectType(L2EffectType.HEAL))
 			{
-				stream = stream.sorted(Comparator.<Creature> comparingInt(c -> (int) (c.getMaxHp() - c.getCurrentHp())));
+				stream = stream.sorted(Comparator.comparingInt(Creature::getCurrentHpPercent));
 			}
 		}
 		

@@ -846,7 +846,7 @@ public class Attackable extends Npc
 			return null;
 		}
 		
-		return getAggroList().values().stream().filter(Objects::nonNull).sorted(Comparator.comparingInt(AggroInfo::getHate)).map(AggroInfo::getAttacker).findFirst().orElse(null);
+		return getAggroList().values().stream().filter(Objects::nonNull).sorted(Comparator.comparingInt(AggroInfo::getHate).reversed()).map(AggroInfo::getAttacker).findFirst().orElse(null);
 	}
 	
 	/**
