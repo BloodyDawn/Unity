@@ -3,19 +3,31 @@
 	<option id="24700" name="o_f_84_1u_93">
 		<!-- CON +1 -->
 		<effects>
-			<add stat="CON" val="1" />
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>CON</stat>
+			</effect>
 		</effects>
 	</option>
 	<option id="24701" name="o_f_84_1u_94">
 		<!-- INT +1 increase. -->
 		<effects>
-			<add stat="INT" val="1" />
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>INT</stat>
+			</effect>
 		</effects>
 	</option>
 	<option id="24702" name="o_f_84_1u_95">
 		<!-- MEN +1 increase. -->
 		<effects>
-			<add stat="MEN" val="1" />
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>MEN</stat>
+			</effect>
 		</effects>
 	</option>
 	<option id="24703" name="o_s_84_2g_acc_ring_1">
