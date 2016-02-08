@@ -756,27 +756,101 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		// --------------------------------------------------------------------------------
-		// Long/Short Range skill usage.
-		if (!npc.getShortRangeSkills().isEmpty() && npc.hasSkillChance())
+		if (target == null)
 		{
-			final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
-			if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
+			target = targetReconsider(false);
+			if (target == null)
 			{
-				npc.doCast(shortRangeSkill);
-				LOGGER.debug("{} used short range skill {} on {}", this, shortRangeSkill, npc.getTarget());
 				return;
 			}
+			
+			npc.setTarget(target);
 		}
 		
-		if (!npc.getLongRangeSkills().isEmpty() && npc.hasSkillChance())
+		if (npc.hasSkillChance())
 		{
-			final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
-			if (SkillCaster.checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
+			// First use the most important skill - heal.
+			if (!npc.getTemplate().getAISkills(AISkillScope.HEAL).isEmpty())
 			{
-				npc.doCast(longRangeSkill);
-				LOGGER.debug("{} used long range skill {} on {}", this, longRangeSkill, npc.getTarget());
-				return;
+				final Skill healSkill = npc.getTemplate().getAISkills(AISkillScope.HEAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.HEAL).size()));
+				if (SkillCaster.checkUseConditions(npc, healSkill) && checkSkillTarget(healSkill, target))
+				{
+					npc.doCast(healSkill);
+					LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, npc.getTarget());
+					return;
+				}
+			}
+			
+			// Then use the second most important skill - buff
+			if (!npc.getTemplate().getAISkills(AISkillScope.BUFF).isEmpty())
+			{
+				final Skill buffSkill = npc.getTemplate().getAISkills(AISkillScope.BUFF).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.BUFF).size()));
+				if (SkillCaster.checkUseConditions(npc, buffSkill) && checkSkillTarget(buffSkill, target))
+				{
+					npc.doCast(buffSkill);
+					LOGGER.debug("{} used buff skill {} with target {}", this, buffSkill, npc.getTarget());
+					return;
+				}
+			}
+			
+			// Then try to immobolize target if moving.
+			if (target.isMoving() && !npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE).isEmpty())
+			{
+				final Skill immobolizeSkill = npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE).size()));
+				if (SkillCaster.checkUseConditions(npc, immobolizeSkill) && checkSkillTarget(immobolizeSkill, target))
+				{
+					npc.doCast(immobolizeSkill);
+					LOGGER.debug("{} used immobolize skill {} with target {}", this, immobolizeSkill, npc.getTarget());
+					return;
+				}
+			}
+			
+			// Then try to mute target if he is casting.
+			if (target.isCastingNow() && !npc.getTemplate().getAISkills(AISkillScope.COT).isEmpty())
+			{
+				final Skill muteSkill = npc.getTemplate().getAISkills(AISkillScope.COT).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.COT).size()));
+				if (SkillCaster.checkUseConditions(npc, muteSkill) && checkSkillTarget(muteSkill, target))
+				{
+					npc.doCast(muteSkill);
+					LOGGER.debug("{} used mute skill {} with target {}", this, muteSkill, npc.getTarget());
+					return;
+				}
+			}
+			
+			// Try cast short range skill.
+			if (!npc.getShortRangeSkills().isEmpty())
+			{
+				final Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
+				if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
+				{
+					npc.doCast(shortRangeSkill);
+					LOGGER.debug("{} used short range skill {} with target {}", this, shortRangeSkill, npc.getTarget());
+					return;
+				}
+			}
+			
+			// Try cast long range skill.
+			if (!npc.getLongRangeSkills().isEmpty())
+			{
+				final Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().size()));
+				if (SkillCaster.checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
+				{
+					npc.doCast(longRangeSkill);
+					LOGGER.debug("{} used long range skill {} with target {}", this, longRangeSkill, npc.getTarget());
+					return;
+				}
+			}
+			
+			// Finally, if none succeed, try to cast any skill.
+			if (target.isMoving() && !npc.getTemplate().getAISkills(AISkillScope.GENERAL).isEmpty())
+			{
+				final Skill generalSkill = npc.getTemplate().getAISkills(AISkillScope.GENERAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.GENERAL).size()));
+				if (SkillCaster.checkUseConditions(npc, generalSkill) && checkSkillTarget(generalSkill, target))
+				{
+					npc.doCast(generalSkill);
+					LOGGER.debug("{} used general skill {} with target {}", this, generalSkill, npc.getTarget());
+					return;
+				}
 			}
 		}
 		
