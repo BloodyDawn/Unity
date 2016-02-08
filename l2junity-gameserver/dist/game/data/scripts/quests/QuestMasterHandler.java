@@ -99,7 +99,6 @@ import quests.Q00298_LizardmensConspiracy.Q00298_LizardmensConspiracy;
 import quests.Q00300_HuntingLetoLizardman.Q00300_HuntingLetoLizardman;
 import quests.Q00307_ControlDeviceOfTheGiants.Q00307_ControlDeviceOfTheGiants;
 import quests.Q00310_OnlyWhatRemains.Q00310_OnlyWhatRemains;
-import quests.Q00350_EnhanceYourWeapon.Q00350_EnhanceYourWeapon;
 import quests.Q00359_ForASleeplessDeadman.Q00359_ForASleeplessDeadman;
 import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
 import quests.Q00373_SupplierOfReagents.Q00373_SupplierOfReagents;
@@ -393,7 +392,6 @@ public class QuestMasterHandler
 		Q00300_HuntingLetoLizardman.class,
 		Q00307_ControlDeviceOfTheGiants.class,
 		Q00310_OnlyWhatRemains.class,
-		Q00350_EnhanceYourWeapon.class,
 		Q00359_ForASleeplessDeadman.class,
 		Q00371_ShrieksOfGhosts.class,
 		Q00373_SupplierOfReagents.class,
