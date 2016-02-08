@@ -1342,7 +1342,10 @@
 	<option id="24970" name="high_five">
 		<!-- Increase M. Def. by 13 and Speed by 7. -->
 		<effects>
-			<add stat="moveSpeed" val="7" />
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="MagicalDefence">
 				<amount>13</amount>
 				<mode>DIFF</mode>
@@ -1352,7 +1355,10 @@
 	<option id="24971" name="high_five">
 		<!-- Increase M. Def. by 14 and Speed by 7. -->
 		<effects>
-			<add stat="moveSpeed" val="7" />
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="MagicalDefence">
 				<amount>14</amount>
 				<mode>DIFF</mode>
@@ -1362,9 +1368,29 @@
 	<option id="24972" name="high_five">
 		<!-- Increase M. Def. by 15 and Speed by 7,Increases physical skill damage by 93. Decreases MP Consumption by 3%. -->
 		<effects>
-			<add stat="moveSpeed" val="7" />
-			<add stat="physicalSkillPower" val="93" />
-			<mul stat="MpConsume" val="0.97" />
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
 			<effect name="MagicalDefence">
 				<amount>15</amount>
 				<mode>DIFF</mode>
@@ -1374,11 +1400,37 @@
 	<option id="24973" name="high_five">
 		<!-- Increase M. Def. by 16 and Speed by 7, Increases physical skill damage by 93. Decreases MP Consumption by 3%,Increases Critical Damage by 41.3 and Magical Critical Rate by 2. -->
 		<effects>
-			<add stat="moveSpeed" val="7" />
-			<add stat="physicalSkillPower" val="93" />
-			<mul stat="MpConsume" val="0.97" />
-			<add stat="cAtkAdd" val="41" />
-			<add stat="mCritRate" val="2" />
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="MagicalDefence">
 				<amount>16</amount>
 				<mode>DIFF</mode>
@@ -1388,11 +1440,37 @@
 	<option id="24974" name="high_five">
 		<!-- Increase M. Def. by 17 and Speed by 7, Increases physical skill damage by 93. Decreases MP Consumption by 3%,Increases Critical Damage by 41.3 and Magical Critical Rate by 2. -->
 		<effects>
-			<add stat="moveSpeed" val="7" />
-			<add stat="physicalSkillPower" val="93" />
-			<mul stat="MpConsume" val="0.97" />
-			<add stat="cAtkAdd" val="41" />
-			<add stat="mCritRate" val="2" />
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="MagicalDefence">
 				<amount>17</amount>
 				<mode>DIFF</mode>
@@ -1559,11 +1637,37 @@
 	<option id="24984" name="high_five">
 		<!-- Increases M. Def by 18 and Speed by 7, Increases physical skill damage by 93. Decreases MP Consumption by 3%, Increases Critical Damage by 41.3, and Magical Critical Rate by 2. -->
 		<effects>
-			<add stat="moveSpeed" val="7" />
-			<add stat="physicalSkillPower" val="93" />
-			<mul stat="MpConsume" val="0.97" />
-			<add stat="cAtkAdd" val="41" />
-			<add stat="mCritRate" val="2" />
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>93</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-3</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>41</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="MagicalDefence">
 				<amount>18</amount>
 				<mode>DIFF</mode>
