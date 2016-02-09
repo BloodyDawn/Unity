@@ -1002,6 +1002,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			stream = World.getInstance().getVisibleObjects(npc, Creature.class, range, c -> checkSkillTarget(skill, c)).stream();
 			
+			// Maybe add self to the list of targets since getVisibleObjects doesn't return yourself.
+			if (checkSkillTarget(skill, npc))
+			{
+				stream = Stream.concat(stream, Stream.of(npc));
+			}
+			
 			// For heal skills sort by hp missing.
 			if (skill.hasEffectType(L2EffectType.HEAL))
 			{
