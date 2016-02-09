@@ -28,6 +28,8 @@ import org.l2junity.gameserver.data.xml.impl.FishingData;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFishing;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -221,7 +223,7 @@ public class Fishing
 		{
 			_player.getFishing().reelInWithReward();
 			_startFishingTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> _player.getFishing().castLine(), 8000);
-		}, Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
+		} , Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStart(_player, -1, baitData.getLevel(), _baitLocation));
 		_player.sendPacket(new ExUserInfoFishing(_player, true, _baitLocation));
@@ -300,6 +302,11 @@ public class Fishing
 				{
 					LOGGER.warn("Could not find fishing rewards for bait ", bait.getId());
 				}
+			}
+			
+			if (consumeBait)
+			{
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerFishing(_player, reason), _player);
 			}
 		}
 		finally
