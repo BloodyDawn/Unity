@@ -121,7 +121,7 @@ public final class FishingData implements IGameXmlReader
 									final NamedNodeMap attrs = bait.getAttributes();
 									final int itemId = parseInteger(attrs, "itemId");
 									final int level = parseInteger(attrs, "level");
-									final double chance = parseDouble(attrs, "level");
+									final double chance = parseDouble(attrs, "chance");
 									final FishingBaitData baitData = new FishingBaitData(itemId, level, chance);
 									
 									for (Node c = bait.getFirstChild(); c != null; c = c.getNextSibling())
