@@ -5,12 +5,13 @@
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attribute type="xs:byte" name="level" use="optional" />
+				<xs:attribute type="xs:boolean" name="dualclass" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="conditionsType">
 		<xs:sequence>
-			<xs:element type="playerType" name="player" />
+			<xs:element type="playerType" name="player" maxOccurs="unbounded" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="itemType">
@@ -29,7 +30,7 @@
 	<xs:complexType name="rewardType">
 		<xs:sequence>
 			<xs:element type="xs:short" name="classId" maxOccurs="unbounded" minOccurs="0" />
-			<xs:element type="conditionsType" name="conditions" minOccurs="0" />
+			<xs:element type="conditionsType" name="conditions" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element type="itemsType" name="items" />
 		</xs:sequence>
 		<xs:attribute type="xs:short" name="id" use="optional" />
