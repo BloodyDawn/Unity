@@ -236,29 +236,27 @@ public class Fishing
 		// Fish may or may not eat the hook. If it does - it consumes fishing bait and fishing shot.
 		// Then player may or may not catch the fish. Using fishing shots increases chance to win.
 		final FishingBaitData baitData = getCurrentBaitData();
-		if ((baitData != null) && (baitData.getChance() > Rnd.get(0, 100)))
+		if (baitData == null)
 		{
-			int need = 50; // 50 % chance to win
-			if (_player.isChargedShot(ShotType.FISH_SOULSHOTS))
-			{
-				need += 25; // 75 % chance to win
-				_player.setChargedShot(ShotType.FISH_SOULSHOTS, false);
-			}
-			
-			if (need < Rnd.get(0, 100))
-			{
-				reelIn(FishingEndReason.WIN, true);
-			}
-			else
-			{
-				reelIn(FishingEndReason.LOSE, true);
-				_player.sendPacket(SystemMessageId.THE_BAIT_HAS_BEEN_LOST_BECAUSE_THE_FISH_GOT_AWAY);
-			}
+			reelIn(FishingEndReason.LOSE, false);
+			LOGGER.warn("Player {} is fishing with unhandled bait: {}", _player, _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND));
+			return;
+		}
+		
+		double chance = baitData.getChance();
+		if (_player.isChargedShot(ShotType.FISH_SOULSHOTS))
+		{
+			chance *= 1.5; // +50 % chance to win
+			_player.setChargedShot(ShotType.FISH_SOULSHOTS, false);
+		}
+		
+		if (Rnd.get(0, 100) <= chance)
+		{
+			reelIn(FishingEndReason.WIN, true);
 		}
 		else
 		{
-			reelIn(FishingEndReason.LOSE, false);
-			_player.sendPacket(SystemMessageId.THE_BAIT_HAS_BEEN_LOST_BECAUSE_THE_FISH_GOT_AWAY);
+			reelIn(FishingEndReason.LOSE, true);
 		}
 	}
 	
@@ -295,7 +293,7 @@ public class Fishing
 					_player.addExpAndSp(Rnd.get(fishingData.getExpRateMin(), fishingData.getExpRateMax()) * lvlModifier, Rnd.get(fishingData.getSpRateMin(), fishingData.getSpRateMax()) * lvlModifier);
 					final int fishId = baitData.getRewards().get(Rnd.get(0, numRewards - 1));
 					_player.getInventory().addItem("Fishing Reward", fishId, 1, _player, null);
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
+					final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
 					msg.addItemName(fishId);
 					_player.sendPacket(msg);
 				}

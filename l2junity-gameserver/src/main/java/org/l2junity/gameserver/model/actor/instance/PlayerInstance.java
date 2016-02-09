@@ -14134,7 +14134,7 @@ public final class PlayerInstance extends Playable
 			{
 				case SOULSHOT:
 				{
-					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == item.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItemType() != WeaponType.FISHINGROD) && (weapon.getItem().getCrystalTypePlus() == item.getItem().getCrystalType()))
 					{
 						soulShotId = item.getId();
 					}
