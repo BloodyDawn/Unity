@@ -853,7 +853,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			
 			// Finally, if none succeed, try to cast any skill.
-			if (target.isMoving() && !npc.getTemplate().getAISkills(AISkillScope.GENERAL).isEmpty())
+			if (!npc.getTemplate().getAISkills(AISkillScope.GENERAL).isEmpty())
 			{
 				final Skill generalSkill = npc.getTemplate().getAISkills(AISkillScope.GENERAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.GENERAL).size()));
 				if (SkillCaster.checkUseConditions(npc, generalSkill) && checkSkillTarget(generalSkill, target))
