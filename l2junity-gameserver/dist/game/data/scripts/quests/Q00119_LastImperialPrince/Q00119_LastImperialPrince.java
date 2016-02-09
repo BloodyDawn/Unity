@@ -18,6 +18,7 @@
  */
 package quests.Q00119_LastImperialPrince;
 
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -137,7 +138,7 @@ public class Q00119_LastImperialPrince extends Quest
 						else
 						{
 							htmltext = "31453-08.html";
-							st.exitQuest(true);
+							st.exitQuest(QuestType.REPEATABLE);
 						}
 					}
 					else if (st.isCond(2))

@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -373,7 +374,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 							takeItems(player, VOUCHER_OF_FAITH, -1);
 							giveItems(player, ALLIANCE_MANIFESTO, 1);
 							addExpAndSp(player, 0, 120000);
-							qs.exitQuest(false);
+							qs.exitQuest(QuestType.ONE_TIME);
 							htmltext = "30756-09.html";
 						}
 						else

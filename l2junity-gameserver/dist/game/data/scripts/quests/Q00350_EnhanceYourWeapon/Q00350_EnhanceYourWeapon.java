@@ -28,6 +28,7 @@ import java.util.StringTokenizer;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.AbsorberInfo;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -169,7 +170,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		}
 		else if (event.equalsIgnoreCase("exit.htm"))
 		{
-			st.exitQuest(true);
+			st.exitQuest(QuestType.REPEATABLE);
 		}
 		return htmltext;
 	}

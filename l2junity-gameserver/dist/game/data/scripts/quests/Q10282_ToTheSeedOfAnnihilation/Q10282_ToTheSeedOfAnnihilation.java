@@ -18,6 +18,7 @@
  */
 package quests.Q10282_ToTheSeedOfAnnihilation;
 
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -71,7 +72,7 @@ public final class Q10282_ToTheSeedOfAnnihilation extends Quest
 				giveAdena(player, 212182, true);
 				giveItems(player, EAR, 5);
 				addExpAndSp(player, 1148480, 275);
-				st.exitQuest(false);
+				st.exitQuest(QuestType.ONE_TIME);
 				break;
 			}
 		}

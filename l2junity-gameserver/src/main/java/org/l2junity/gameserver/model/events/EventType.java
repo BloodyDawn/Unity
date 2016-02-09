@@ -94,6 +94,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfes
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKill;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestAbort;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestComplete;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerRestore;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSelect;
@@ -252,6 +253,7 @@ public enum EventType
 	ON_PLAYER_TRANSFORM(OnPlayerTransform.class, void.class),
 	ON_PLAYER_SUB_CHANGE(OnPlayerSubChange.class, void.class),
 	ON_PLAYER_QUEST_ABORT(OnPlayerQuestAbort.class, void.class),
+	ON_PLAYER_QUEST_COMPLETE(OnPlayerQuestComplete.class, void.class),
 	
 	// Trap events
 	ON_TRAP_ACTION(OnTrapAction.class, void.class),
