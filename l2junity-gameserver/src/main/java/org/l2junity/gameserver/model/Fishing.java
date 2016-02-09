@@ -222,7 +222,7 @@ public class Fishing
 		_reelInTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
 			_player.getFishing().reelInWithReward();
-			_startFishingTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> _player.getFishing().castLine(), 8000);
+			_startFishingTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> _player.getFishing().castLine(), Rnd.get(FishingData.getInstance().getFishingTimeWaitMin(), FishingData.getInstance().getFishingTimeWaitMax()));
 		} , Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStart(_player, -1, baitData.getLevel(), _baitLocation));
@@ -258,6 +258,7 @@ public class Fishing
 		else
 		{
 			reelIn(FishingEndReason.LOSE, false);
+			_player.sendPacket(SystemMessageId.THE_BAIT_HAS_BEEN_LOST_BECAUSE_THE_FISH_GOT_AWAY);
 		}
 	}
 	
@@ -302,6 +303,10 @@ public class Fishing
 				{
 					LOGGER.warn("Could not find fishing rewards for bait ", bait.getId());
 				}
+			}
+			else if (reason == FishingEndReason.LOSE)
+			{
+				_player.sendPacket(SystemMessageId.THE_BAIT_HAS_BEEN_LOST_BECAUSE_THE_FISH_GOT_AWAY);
 			}
 			
 			if (consumeBait)

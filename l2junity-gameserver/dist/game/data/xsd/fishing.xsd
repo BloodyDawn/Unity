@@ -20,6 +20,12 @@
                         <xs:attribute type="xs:nonNegativeInteger" name="max" use="required" />
                     </xs:complexType>
                 </xs:element>
+                 <xs:element name="fishingTimeWait">
+                    <xs:complexType>
+                        <xs:attribute type="xs:positiveInteger" name="min" use="required" />
+                        <xs:attribute type="xs:nonNegativeInteger" name="max" use="required" />
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="expRate">
                     <xs:complexType>
                         <xs:attribute type="xs:positiveInteger" name="min" use="required" />
