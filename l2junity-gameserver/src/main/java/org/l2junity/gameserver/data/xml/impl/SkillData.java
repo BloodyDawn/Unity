@@ -9,14 +9,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BiConsumer;
+import java.util.stream.Stream;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.handler.EffectHandler;
+import org.l2junity.gameserver.handler.SkillConditionHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.EffectScope;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillConditionScope;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -29,6 +35,8 @@ import net.objecthunter.exp4j.ExpressionBuilder;
  */
 public class SkillData implements IGameXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(SkillData.class);
+
 	private static final Set<String> BLOCK_ITEM_VALUE_ELEMENTS = new HashSet<>();
 	private static final Set<String> BLOCK_ITEM_ELEMENTS = new HashSet<>();
 	
@@ -205,6 +213,7 @@ public class SkillData implements IGameXmlReader
 		_skillsMaxLevel.clear();
 		_enchantable.clear();
 		parseDatapackDirectory("data/stats/skills/", true);
+		LOGGER.info("Loaded {} Skills.", _skills.size());
 	}
 	
 	public void reload()
@@ -230,23 +239,12 @@ public class SkillData implements IGameXmlReader
 						final Map<Integer, Map<Integer, StatsSet>> skillInfo = new HashMap<>();
 						final StatsSet generalSkillInfo = new StatsSet();
 						
-						for (int i = 0; i < attributes.getLength(); i++)
-						{
-							final Node attributeNode = attributes.item(i);
-							final String attributeValue = attributeNode.getNodeValue();
-							if (attributeValue.startsWith("{") && attributeValue.endsWith("}"))
-							{
-								generalSkillInfo.set("skill." + attributeNode.getNodeName(), new ExpressionBuilder(attributeValue).build().evaluate());
-							}
-							else
-							{
-								generalSkillInfo.set("skill." + attributeNode.getNodeName(), attributeValue);
-							}
-						}
+						parseAttributes(attributes, "", generalSkillInfo);
 						
 						final Map<String, Map<Integer, Map<Integer, Object>>> variableValues = new HashMap<>();
 						final Map<String, Object> variableGeneralValues = new HashMap<>();
 						final Map<EffectScope, List<NamedParamInfo>> effectParamInfo = new HashMap<>();
+						final Map<SkillConditionScope, List<NamedParamInfo>> conditionParamInfo = new HashMap<>();
 						for (Node skillNode = listNode.getFirstChild(); skillNode != null; skillNode = skillNode.getNextSibling())
 						{
 							final String skillNodeName = skillNode.getNodeName();
@@ -257,6 +255,10 @@ public class SkillData implements IGameXmlReader
 									attributes = skillNode.getAttributes();
 									final String name = "@" + parseString(attributes, "name");
 									variableGeneralValues.put(name, parseValues(skillNode, variableValues.computeIfAbsent(name, k -> new HashMap<>())));
+									break;
+								}
+								case "#text":
+								{
 									break;
 								}
 								default:
@@ -270,55 +272,56 @@ public class SkillData implements IGameXmlReader
 											{
 												case "effect":
 												{
-													attributes = effectsNode.getAttributes();
-													final String name = parseString(attributes, "name");
-													final Integer level = parseInteger(attributes, "level");
-													final Integer fromLevel = parseInteger(attributes, "fromLevel", level);
-													final Integer toLevel = parseInteger(attributes, "toLevel", level);
-													final Integer subLevel = parseInteger(attributes, "subLevel", 0);
-													final Integer fromSubLevel = parseInteger(attributes, "fromSubLevel", subLevel);
-													final Integer toSubLevel = parseInteger(attributes, "toSubLevel", subLevel);
-													final Map<Integer, Map<Integer, StatsSet>> effectInfo = new HashMap<>();
-													final StatsSet generalEffectInfo = new StatsSet();
-													for (Node effectNode = effectsNode.getFirstChild(); effectNode != null; effectNode = effectNode.getNextSibling())
-													{
-														parseInfo(effectNode, variableValues, variableGeneralValues, effectInfo, generalEffectInfo);
-													}
-													effectParamInfo.computeIfAbsent(effectScope, k -> new LinkedList<>()).add(new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, effectInfo, generalEffectInfo));
+													effectParamInfo.computeIfAbsent(effectScope, k -> new LinkedList<>()).add(parseNamedParamInfo(effectsNode, variableValues, variableGeneralValues));
 													break;
 												}
 											}
 										}
 										break;
 									}
-									parseInfo(skillNode, variableValues, variableGeneralValues, skillInfo, generalSkillInfo);
+									else
+									{
+										final SkillConditionScope skillConditionScope = SkillConditionScope.findByXmlNodeName(skillNodeName);
+										if (skillConditionScope != null)
+										{
+											for (Node conditionNode = skillNode.getFirstChild(); conditionNode != null; conditionNode = conditionNode.getNextSibling())
+											{
+												switch (conditionNode.getNodeName().toLowerCase())
+												{
+													case "condition":
+													{
+														conditionParamInfo.computeIfAbsent(skillConditionScope, k -> new LinkedList<>()).add(parseNamedParamInfo(conditionNode, variableValues, variableGeneralValues));
+														break;
+													}
+												}
+											}
+										}
+										else
+										{
+											parseInfo(skillNode, variableValues, variableGeneralValues, skillInfo, generalSkillInfo);
+										}
+									}
 									break;
 								}
 							}
 						}
 						
-						final int skillLevels = generalSkillInfo.getInt("skill.levels", 0);
+						final int skillLevels = generalSkillInfo.getInt(".levels", 0);
 						for (int i = 1; i <= skillLevels; i++)
 						{
 							levels.computeIfAbsent(i, k -> new HashSet<>()).add(0);
 						}
 						
-						skillInfo.forEach((level, subLevelMap) ->
-						{
-							subLevelMap.forEach((subLevel, statsSet) ->
-							{
+						skillInfo.forEach((level, subLevelMap) -> {
+							subLevelMap.forEach((subLevel, statsSet) -> {
 								levels.computeIfAbsent(level, k -> new HashSet<>()).add(subLevel);
 							});
 						});
 						
-						effectParamInfo.forEach(((effectScope, namedParamInfos) ->
-						{
-							namedParamInfos.forEach(namedParamInfo ->
-							{
-								namedParamInfo.getInfo().forEach((level, subLevelMap) ->
-								{
-									subLevelMap.forEach((subLevel, statsSet) ->
-									{
+						Stream.concat(effectParamInfo.values().stream(), conditionParamInfo.values().stream()).forEach(namedParamInfos -> {
+							namedParamInfos.forEach(namedParamInfo -> {
+								namedParamInfo.getInfo().forEach((level, subLevelMap) -> {
+									subLevelMap.forEach((subLevel, statsSet) -> {
 										levels.computeIfAbsent(level, k -> new HashSet<>()).add(subLevel);
 									});
 								});
@@ -342,40 +345,41 @@ public class SkillData implements IGameXmlReader
 									}
 								}
 							});
-						}));
+						});
 						
-						levels.forEach((level, subLevels) ->
-						{
-							subLevels.forEach(subLevel ->
-							{
+						levels.forEach((level, subLevels) -> {
+							subLevels.forEach(subLevel -> {
 								final StatsSet statsSet = Optional.ofNullable(skillInfo.getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
 								generalSkillInfo.getSet().forEach((k, v) -> statsSet.getSet().putIfAbsent(k, v));
-								statsSet.set("skill.level", level);
-								statsSet.set("skill.subLevel", subLevel);
+								statsSet.set(".level", level);
+								statsSet.set(".subLevel", subLevel);
 								final Skill skill = new Skill(statsSet);
-								effectParamInfo.forEach((effectScope, namedParamInfos) ->
-								{
-									namedParamInfos.forEach(namedParamInfo ->
+								forEachNamedParamInfoParam(effectParamInfo, level, subLevel, ((effectScope, params) -> {
+									final String effectName = params.getString(".name");
+									params.remove(".name");
+									try
 									{
-										if (((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) || ((namedParamInfo.getFromLevel() >= level) && (namedParamInfo.getToLevel() <= level)))
-										{
-											if (((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) || ((namedParamInfo.getFromSubLevel() >= subLevel) && (namedParamInfo.getToSubLevel() <= subLevel)))
-											{
-												final StatsSet params = Optional.ofNullable(namedParamInfo.getInfo().getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
-												namedParamInfo.getGeneralInfo().getSet().forEach((k, v) -> params.getSet().putIfAbsent(k, v));
-												
-												try
-												{
-													skill.addEffect(effectScope, EffectHandler.getInstance().getHandlerFactory(namedParamInfo.getName()).apply(params));
-												}
-												catch (Exception e)
-												{
-													LOGGER.warn("Failed loading effect for Skill Id[{}] Level[{}] SubLevel[{}] Effect Scope[{}] Effect Name[{}]", statsSet.getInt("skill.id"), level, subLevel, effectScope, namedParamInfo.getName(), e);
-												}
-											}
-										}
-									});
-								});
+										skill.addEffect(effectScope, EffectHandler.getInstance().getHandlerFactory(effectName).apply(params));
+									}
+									catch (Exception e)
+									{
+										LOGGER.warn("Failed loading effect for Skill Id[{}] Level[{}] SubLevel[{}] Effect Scope[{}] Effect Name[{}]", statsSet.getInt(".id"), level, subLevel, effectScope, effectName, e);
+									}
+								}));
+
+								forEachNamedParamInfoParam(conditionParamInfo, level, subLevel, ((skillConditionScope, params) -> {
+									final String conditionName = params.getString(".name");
+									params.remove(".name");
+									try
+									{
+										skill.addCondition(skillConditionScope, SkillConditionHandler.getInstance().getHandlerFactory(conditionName).apply(params));
+									}
+									catch (Exception e)
+									{
+										LOGGER.warn("Failed loading condition for Skill Id[{}] Level[{}] SubLevel[{}] Condition Scope[{}] Condition Name[{}]", statsSet.getInt(".id"), level, subLevel, skillConditionScope, conditionName, e);
+									}
+								}));
+
 								_skills.put(getSkillHashCode(skill), skill);
 								_skillsMaxLevel.merge(skill.getId(), skill.getLevel(), Integer::max);
 								// TODO: add enchantable
@@ -386,7 +390,47 @@ public class SkillData implements IGameXmlReader
 			}
 		}
 	}
-	
+
+	private <T> void forEachNamedParamInfoParam(Map<T, List<NamedParamInfo>> paramInfo, int level, int subLevel, BiConsumer<T, StatsSet> consumer)
+	{
+		paramInfo.forEach((scope, namedParamInfos) -> {
+			namedParamInfos.forEach(namedParamInfo -> {
+				if (((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) || ((namedParamInfo.getFromLevel() >= level) && (namedParamInfo.getToLevel() <= level)))
+				{
+					if (((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) || ((namedParamInfo.getFromSubLevel() >= subLevel) && (namedParamInfo.getToSubLevel() <= subLevel)))
+					{
+						final StatsSet params = Optional.ofNullable(namedParamInfo.getInfo().getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
+						namedParamInfo.getGeneralInfo().getSet().forEach((k, v) -> params.getSet().putIfAbsent(k, v));
+						params.set(".name", namedParamInfo.getName());
+						consumer.accept(scope, params);
+					}
+				}
+			});
+		});
+	}
+
+	private NamedParamInfo parseNamedParamInfo(Node node, Map<String, Map<Integer, Map<Integer, Object>>> variableValues, Map<String, Object> variableGeneralValues)
+	{
+		final NamedNodeMap attributes = node.getAttributes();
+		final String name = parseString(attributes, "name");
+		final Integer level = parseInteger(attributes, "level");
+		final Integer fromLevel = parseInteger(attributes, "fromLevel", level);
+		final Integer toLevel = parseInteger(attributes, "toLevel", level);
+		final Integer subLevel = parseInteger(attributes, "subLevel", 0);
+		final Integer fromSubLevel = parseInteger(attributes, "fromSubLevel", subLevel);
+		final Integer toSubLevel = parseInteger(attributes, "toSubLevel", subLevel);
+		final Map<Integer, Map<Integer, StatsSet>> info = new HashMap<>();
+		final StatsSet generalInfo = new StatsSet();
+		for (node = node.getFirstChild(); node != null; node = node.getNextSibling())
+		{
+			if (!node.getNodeName().equals("#text"))
+			{
+				parseInfo(node, variableValues, variableGeneralValues, info, generalInfo);
+			}
+		}
+		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info, generalInfo);
+	}
+
 	private void parseInfo(Node node, Map<String, Map<Integer, Map<Integer, Object>>> variableValues, Map<String, Object> variableGeneralValues, Map<Integer, Map<Integer, StatsSet>> info, StatsSet generalInfo)
 	{
 		Map<Integer, Map<Integer, Object>> values = new HashMap<>();
@@ -419,10 +463,8 @@ public class SkillData implements IGameXmlReader
 			}
 		}
 		
-		values.forEach((level, subLevelMap) ->
-		{
-			subLevelMap.forEach((subLevel, value) ->
-			{
+		values.forEach((level, subLevelMap) -> {
+			subLevelMap.forEach((subLevel, value) -> {
 				info.computeIfAbsent(level, k -> new HashMap<>()).computeIfAbsent(subLevel, k -> new StatsSet()).set(node.getNodeName(), value);
 			});
 		});
@@ -430,7 +472,7 @@ public class SkillData implements IGameXmlReader
 	
 	private Object parseValues(Node node, Map<Integer, Map<Integer, Object>> values)
 	{
-		Object parsedValue = parseValue(node, BLOCK_ITEM_VALUE_ELEMENTS);
+		Object parsedValue = parseValue(node, true, Collections.emptyMap());
 		if (parsedValue != null)
 		{
 			return parsedValue;
@@ -439,26 +481,13 @@ public class SkillData implements IGameXmlReader
 		List<Object> list = null;
 		for (node = node.getFirstChild(); node != null; node = node.getNextSibling())
 		{
-			if (node.getNodeName().equalsIgnoreCase("item"))
-			{
-				if (list == null)
-				{
-					list = new LinkedList<>();
-				}
-				
-				parsedValue = parseValue(node);
-				if (parsedValue != null)
-				{
-					list.add(parsedValue);
-				}
-			}
-			else if (node.getNodeName().equalsIgnoreCase("value"))
+			if (node.getNodeName().equalsIgnoreCase("value"))
 			{
 				final NamedNodeMap attributes = node.getAttributes();
 				final Integer level = parseInteger(attributes, "level");
 				if (level != null)
 				{
-					parsedValue = parseValue(node);
+					parsedValue = parseValue(node, true, Collections.emptyMap());
 					if (parsedValue != null)
 					{
 						final Integer subLevel = parseInteger(attributes, "subLevel", 0);
@@ -484,35 +513,10 @@ public class SkillData implements IGameXmlReader
 							{
 								variables.put("base", Double.parseDouble(String.valueOf(base)));
 							}
-							parsedValue = parseValue(node, BLOCK_ITEM_ELEMENTS, variables);
+							parsedValue = parseValue(node, true, variables);
 							if (parsedValue != null)
 							{
 								subValues.put(j, parsedValue);
-							}
-							else
-							{
-								variables.remove("base");
-								List<Object> list2 = null;
-								for (Node valueNode = node.getFirstChild(); valueNode != null; valueNode = valueNode.getNextSibling())
-								{
-									if (valueNode.getNodeName().equalsIgnoreCase("item"))
-									{
-										if (list2 == null)
-										{
-											list2 = new LinkedList<>();
-										}
-										
-										parsedValue = parseValue(valueNode, Collections.emptySet(), variables);
-										if (parsedValue != null)
-										{
-											list2.add(parsedValue);
-										}
-									}
-								}
-								if (list2 != null)
-								{
-									subValues.put(j, list2);
-								}
 							}
 						}
 					}
@@ -522,71 +526,104 @@ public class SkillData implements IGameXmlReader
 		return list;
 	}
 	
-	private Object parseValue(Node node, Set<String> blockedNodeNames, Map<String, Double> variables)
+	private Object parseValue(Node node, boolean blockValue, Map<String, Double> variables)
 	{
 		StatsSet statsSet = null;
+		List<Object> list = null;
+		if ((!node.getNodeName().equals("value") || !blockValue) && node.getAttributes().getLength() > 0)
+		{
+			statsSet = new StatsSet();
+			parseAttributes(node.getAttributes(), "", statsSet, variables);
+		}
 		for (node = node.getFirstChild(); node != null; node = node.getNextSibling())
 		{
 			final String nodeName = node.getNodeName();
-			if (nodeName.equalsIgnoreCase("#text"))
+			switch (node.getNodeName())
 			{
-				final String value = node.getNodeValue().trim();
-				if (!value.isEmpty())
+				case "#text":
 				{
-					if (value.startsWith("{") && value.endsWith("}"))
+					final String value = node.getNodeValue().trim();
+					if (!value.isEmpty())
 					{
-						return new ExpressionBuilder(value).variables(variables.keySet()).build().setVariables(variables).evaluate();
+						return parseNodeValue(value, variables);
 					}
-					return value;
+					break;
 				}
-			}
-			else if (!blockedNodeNames.contains(nodeName.toLowerCase()))
-			{
-				final String value = node.getTextContent().trim();
-				if (!value.isEmpty())
+				case "item":
 				{
-					if (statsSet == null)
+					if (list == null)
 					{
-						statsSet = new StatsSet();
+						list = new LinkedList<>();
 					}
-					
-					if (value.startsWith("{") && value.endsWith("}"))
+
+					final Object value = parseValue(node, false, variables);
+					if (value != null)
 					{
-						statsSet.set(nodeName, new ExpressionBuilder(value).variables(variables.keySet()).build().setVariables(variables).evaluate());
+						list.add(value);
 					}
-					else
+					break;
+				}
+				case "value":
+				{
+					if (blockValue)
 					{
-						statsSet.set(nodeName, value);
+						break;
 					}
-					
-					final NamedNodeMap attributes = node.getAttributes();
-					for (int i = 0; i < attributes.getLength(); i++)
+				}
+				default:
+				{
+					final String value = node.getTextContent().trim();
+					if (!value.isEmpty())
 					{
-						final Node attributeNode = attributes.item(i);
-						final String attributeValue = attributeNode.getNodeValue();
-						if (attributeValue.startsWith("{") && attributeValue.endsWith("}"))
+						if (statsSet == null)
 						{
-							statsSet.set(nodeName + "." + attributeNode.getNodeName(), new ExpressionBuilder(attributeValue).variables(variables.keySet()).build().setVariables(variables).evaluate());
+							statsSet = new StatsSet();
 						}
-						else
-						{
-							statsSet.set(nodeName + "." + attributeNode.getNodeName(), attributeValue);
-						}
+
+						statsSet.set(nodeName, parseNodeValue(value, variables));
+						parseAttributes(node.getAttributes(), nodeName, statsSet, variables);
 					}
 				}
 			}
 		}
+		if (list != null)
+		{
+			if (statsSet != null)
+			{
+				statsSet.set(".", list);
+			}
+			else
+			{
+				return list;
+			}
+		}
 		return statsSet;
 	}
-	
-	private Object parseValue(Node value, Set<String> blockedNodeNames)
+
+	private void parseAttributes(NamedNodeMap attributes, String prefix, StatsSet statsSet, Map<String, Double> variables)
 	{
-		return parseValue(value, blockedNodeNames, Collections.emptyMap());
+		for (int i = 0; i < attributes.getLength(); i++)
+		{
+			final Node attributeNode = attributes.item(i);
+			statsSet.set(prefix + "." + attributeNode.getNodeName(), parseNodeValue(attributeNode.getNodeValue(), variables));
+		}
 	}
-	
-	private Object parseValue(Node value)
+
+	private void parseAttributes(NamedNodeMap attributes, String prefix, StatsSet statsSet)
 	{
-		return parseValue(value, Collections.emptySet());
+		parseAttributes(attributes, prefix, statsSet, Collections.emptyMap());
+	}
+
+	private Object parseNodeValue(String value, Map<String, Double> variables)
+	{
+		if (value.startsWith("{") && value.endsWith("}"))
+		{
+			return new ExpressionBuilder(value).variables(variables.keySet()).build().setVariables(variables).evaluate();
+		}
+		else
+		{
+			return value;
+		}
 	}
 	
 	public static SkillData getInstance()

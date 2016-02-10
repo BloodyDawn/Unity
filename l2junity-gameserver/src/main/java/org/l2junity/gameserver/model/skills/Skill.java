@@ -49,7 +49,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
@@ -164,12 +163,11 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 	private final int _effectPoint;
-	// Condition lists
-	private List<Condition> _preCondition;
 	private Set<MountType> _rideState;
-	
+
+	private final Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = new EnumMap<>(SkillConditionScope.class);
 	private final Map<EffectScope, List<AbstractEffect>> _effectLists = new EnumMap<>(EffectScope.class);
-	
+
 	// Flying support
 	private final FlyType _flyType;
 	private final int _flyRadius;
@@ -215,12 +213,12 @@ public final class Skill implements IIdentifiable
 	
 	public Skill(StatsSet set)
 	{
-		_id = set.getInt("skill.id");
-		_level = set.getInt("skill.level");
-		_refId = set.getInt("referenceId", 0);
-		_displayId = set.getInt("displayId", _id);
-		_displayLevel = set.getInt("displayLevel", _level);
-		_name = set.getString("name", "");
+		_id = set.getInt(".id");
+		_level = set.getInt(".level");
+		_refId = set.getInt(".referenceId", 0);
+		_displayId = set.getInt(".displayId", _id);
+		_displayLevel = set.getInt(".displayLevel", _level);
+		_name = set.getString(".name", "");
 		_operateType = set.getEnum("operateType", SkillOperateType.class);
 		_magic = set.getInt("isMagic", 0);
 		_traitType = set.getEnum("trait", TraitType.class, TraitType.NONE);
@@ -1019,36 +1017,8 @@ public final class Skill implements IIdentifiable
 			activeChar.sendPacket(sm);
 			return false;
 		}
-		
-		if ((_preCondition == null) || _preCondition.isEmpty())
-		{
-			return true;
-		}
-		
-		final Creature target = (object instanceof Creature) ? (Creature) object : null;
-		for (Condition cond : _preCondition)
-		{
-			if (!cond.test(activeChar, target, this))
-			{
-				final String msg = cond.getMessage();
-				final int msgId = cond.getMessageId();
-				if (msgId != 0)
-				{
-					final SystemMessage sm = SystemMessage.getSystemMessage(msgId);
-					if (cond.isAddName())
-					{
-						sm.addSkillName(_id);
-					}
-					activeChar.sendPacket(sm);
-				}
-				else if (msg != null)
-				{
-					activeChar.sendMessage(msg);
-				}
-				return false;
-			}
-		}
-		return true;
+
+		return checkConditions(SkillConditionScope.GENERAL, activeChar, object);
 	}
 	
 	/**
@@ -1223,7 +1193,17 @@ public final class Skill implements IIdentifiable
 		}
 		return true;
 	}
-	
+
+	/**
+	 * Adds an effect to the effect list for the given effect scope.
+	 * @param effectScope the effect scope
+	 * @param effect the effect
+	 */
+	public void addEffect(EffectScope effectScope, AbstractEffect effect)
+	{
+		_effectLists.computeIfAbsent(effectScope, k -> new ArrayList<>()).add(effect);
+	}
+
 	/**
 	 * Gets the skill effects.
 	 * @param effectScope the effect scope
@@ -1555,35 +1535,26 @@ public final class Skill implements IIdentifiable
 			caster.doDie(caster);
 		}
 	}
-	
+
+
 	/**
-	 * Adds an effect to the effect list for the give effect scope.
-	 * @param effectScope the effect scope
-	 * @param effect the effect to add
+	 * Adds a condition to the condition list for the given condition scope.
+	 * @param skillConditionScope the condition scope
+	 * @param skillCondition the condition
 	 */
-	public void addEffect(EffectScope effectScope, AbstractEffect effect)
+	public void addCondition(SkillConditionScope skillConditionScope, ISkillCondition skillCondition)
 	{
-		if (effect == null)
-		{
-			return;
-		}
-		
-		List<AbstractEffect> effects = _effectLists.get(effectScope);
-		if (effects == null)
-		{
-			effects = new ArrayList<>(1);
-			_effectLists.put(effectScope, effects);
-		}
-		effects.add(effect);
+		_conditionLists.computeIfAbsent(skillConditionScope, k -> new ArrayList<>()).add(skillCondition);
 	}
-	
-	public void attach(Condition c)
+
+	/**
+	 * Checks the conditions of this skills for the given condition scope.
+	 * @param skillConditionScope the condition scope
+	 * @return {@code false} if at least one condition returns false, {@code true} otherwise
+	 */
+	public boolean checkConditions(SkillConditionScope skillConditionScope, Creature caster, WorldObject target)
 	{
-		if (_preCondition == null)
-		{
-			_preCondition = new ArrayList<>();
-		}
-		_preCondition.add(c);
+		return _conditionLists.getOrDefault(skillConditionScope, Collections.emptyList()).stream().allMatch(c -> c.canUse(caster, this, target));
 	}
 	
 	@Override
