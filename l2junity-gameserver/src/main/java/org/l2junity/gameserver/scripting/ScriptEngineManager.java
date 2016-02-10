@@ -48,6 +48,7 @@ public final class ScriptEngineManager
 	public static final Path SCRIPT_FOLDER = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts");
 	public static final Path MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "MasterHandler.java");
 	public static final Path EFFECT_MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "EffectMasterHandler.java");
+	public static final Path ONE_DAY_REWARD_MASTER_HANDLER = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "OneDayRewardMasterHandler.java");
 	
 	private final Map<String, IExecutionContext> _extEngines = new HashMap<>();
 	private IExecutionContext _currentExecutionContext = null;
@@ -161,6 +162,11 @@ public final class ScriptEngineManager
 		executeScript(EFFECT_MASTER_HANDLER_FILE);
 	}
 	
+	public void executeOneDayRewardMasterHandler() throws Exception
+	{
+		executeScript(ONE_DAY_REWARD_MASTER_HANDLER);
+	}
+	
 	public void executeScriptList() throws Exception
 	{
 		if (Config.ALT_DEV_NO_QUESTS)
@@ -206,9 +212,15 @@ public final class ScriptEngineManager
 	
 	private void processFile(File file, Map<IExecutionContext, List<Path>> files)
 	{
-		if (file.getName().equals("package-info.java") || file.getName().equals(MASTER_HANDLER_FILE.toFile().getName()) || (file.getName().equals(EFFECT_MASTER_HANDLER_FILE.toFile().getName())))
+		switch (file.getName())
 		{
-			return;
+			case "package-info.java":
+			case "MasterHandler.java":
+			case "EffectMasterHandler.java":
+			case "OneDayRewardMasterHandler.java":
+			{
+				return;
+			}
 		}
 		
 		Path sourceFile = file.toPath();

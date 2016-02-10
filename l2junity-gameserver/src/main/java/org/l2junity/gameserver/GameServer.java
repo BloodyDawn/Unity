@@ -94,6 +94,7 @@ import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.EffectHandler;
+import org.l2junity.gameserver.handler.OneDayRewardHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
@@ -200,6 +201,7 @@ public class GameServer
 		AbilityPointsData.getInstance();
 		SayuneData.getInstance();
 		ClanRewardData.getInstance();
+		OneDayRewardHandler.getInstance().executeScript();
 		OneDayRewardData.getInstance();
 		
 		printSection("Skills");

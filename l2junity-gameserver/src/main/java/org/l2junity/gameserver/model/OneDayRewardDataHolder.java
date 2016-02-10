@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.model;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
-import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.enums.OneDayRewardStatus;
+import org.l2junity.gameserver.handler.AbstractOneDayRewardHandler;
+import org.l2junity.gameserver.handler.OneDayRewardHandler;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 
 /**
@@ -36,15 +38,23 @@ public class OneDayRewardDataHolder
 	private final List<ItemHolder> _rewardsItems;
 	private final List<ClassId> _classRestriction;
 	private final int _requiredCompletions;
-	private List<Condition> _preCondition;
+	private final StatsSet _params;
+	private AbstractOneDayRewardHandler _handler;
 	
 	public OneDayRewardDataHolder(StatsSet set)
 	{
 		_id = set.getInt("id");
 		_rewardId = set.getInt("reward_id");
-		_requiredCompletions = set.getInt("requiredCompletions", 0);
+		_requiredCompletions = set.getInt("requiredCompletion", 0);
 		_rewardsItems = set.getList("items", ItemHolder.class);
 		_classRestriction = set.getList("classRestriction", ClassId.class);
+		_params = set.getObject("params", StatsSet.class);
+		
+		final Function<OneDayRewardDataHolder, AbstractOneDayRewardHandler> handler = OneDayRewardHandler.getInstance().getHandler(set.getString("handler"));
+		if (handler != null)
+		{
+			_handler = handler.apply(this);
+		}
 	}
 	
 	public int getId()
@@ -57,11 +67,6 @@ public class OneDayRewardDataHolder
 		return _rewardId;
 	}
 	
-	public List<ItemHolder> getRewardsItems()
-	{
-		return _rewardsItems;
-	}
-	
 	public List<ClassId> getClassRestriction()
 	{
 		return _classRestriction;
@@ -72,34 +77,36 @@ public class OneDayRewardDataHolder
 		return _classRestriction.isEmpty() || _classRestriction.contains(c);
 	}
 	
-	public void attach(Condition c)
+	public List<ItemHolder> getRewards()
 	{
-		if (_preCondition == null)
-		{
-			_preCondition = new ArrayList<>();
-		}
-		_preCondition.add(c);
-	}
-	
-	public boolean canBeClaimed(Creature activeChar)
-	{
-		if ((_preCondition == null) || _preCondition.isEmpty())
-		{
-			return true;
-		}
-		
-		for (Condition cond : _preCondition)
-		{
-			if (!cond.test(activeChar, this))
-			{
-				return false;
-			}
-		}
-		return true;
+		return _rewardsItems;
 	}
 	
 	public int getRequiredCompletions()
 	{
 		return _requiredCompletions;
+	}
+	
+	public StatsSet getParams()
+	{
+		return _params;
+	}
+	
+	public void requestReward(PlayerInstance player)
+	{
+		if ((_handler != null) && isAllowedClass(player.getClassId()))
+		{
+			_handler.requestReward(player);
+		}
+	}
+	
+	public int getStatus(PlayerInstance player)
+	{
+		return _handler != null ? _handler.getStatus(player) : OneDayRewardStatus.NOT_AVAILABLE.getClientId();
+	}
+	
+	public int getProgress(PlayerInstance player)
+	{
+		return _handler != null ? _handler.getProgress(player) : OneDayRewardStatus.NOT_AVAILABLE.getClientId();
 	}
 }

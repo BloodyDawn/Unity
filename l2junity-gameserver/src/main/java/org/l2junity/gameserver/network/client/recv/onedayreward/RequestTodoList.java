@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -18,10 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv.onedayreward;
 
-import java.util.Collection;
-
-import org.l2junity.gameserver.data.xml.impl.OneDayRewardData;
-import org.l2junity.gameserver.model.OneDayRewardDataHolder;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
@@ -29,16 +25,19 @@ import org.l2junity.gameserver.network.client.send.onedayreward.ExOneDayReceiveR
 import org.l2junity.network.PacketReader;
 
 /**
- * @author Sdw
+ * @author UnAfraid
  */
-public class RequestOneDayRewardReceive implements IClientIncomingPacket
+public class RequestTodoList implements IClientIncomingPacket
 {
-	private int _id;
+	private int _tab;
+	@SuppressWarnings("unused")
+	private int _allLevels;
 	
 	@Override
 	public boolean read(L2GameClient client, PacketReader packet)
 	{
-		_id = packet.readH();
+		_tab = packet.readC();
+		_allLevels = packet.readC();
 		return true;
 	}
 	
@@ -51,13 +50,13 @@ public class RequestOneDayRewardReceive implements IClientIncomingPacket
 			return;
 		}
 		
-		final Collection<OneDayRewardDataHolder> reward = OneDayRewardData.getInstance().getOneDayRewardData(_id);
-		if (reward.isEmpty())
+		switch (_tab)
 		{
-			return;
+			case 9: // Daily Rewards
+			{
+				player.sendPacket(new ExOneDayReceiveRewardList(player));
+				break;
+			}
 		}
-		
-		reward.forEach(r -> r.requestReward(player));
-		player.sendPacket(new ExOneDayReceiveRewardList(player));
 	}
 }
