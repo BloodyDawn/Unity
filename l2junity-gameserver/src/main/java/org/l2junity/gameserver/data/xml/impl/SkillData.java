@@ -472,7 +472,7 @@ public class SkillData implements IGameXmlReader
 	
 	private Object parseValues(Node node, Map<Integer, Map<Integer, Object>> values)
 	{
-		Object parsedValue = parseValue(node, true, Collections.emptyMap());
+		Object parsedValue = parseValue(node, true, false, Collections.emptyMap());
 		if (parsedValue != null)
 		{
 			return parsedValue;
@@ -487,7 +487,7 @@ public class SkillData implements IGameXmlReader
 				final Integer level = parseInteger(attributes, "level");
 				if (level != null)
 				{
-					parsedValue = parseValue(node, true, Collections.emptyMap());
+					parsedValue = parseValue(node, false, false, Collections.emptyMap());
 					if (parsedValue != null)
 					{
 						final Integer subLevel = parseInteger(attributes, "subLevel", 0);
@@ -513,7 +513,7 @@ public class SkillData implements IGameXmlReader
 							{
 								variables.put("base", Double.parseDouble(String.valueOf(base)));
 							}
-							parsedValue = parseValue(node, true, variables);
+							parsedValue = parseValue(node, false, false, variables);
 							if (parsedValue != null)
 							{
 								subValues.put(j, parsedValue);
@@ -526,11 +526,12 @@ public class SkillData implements IGameXmlReader
 		return list;
 	}
 	
-	private Object parseValue(Node node, boolean blockValue, Map<String, Double> variables)
+	private Object parseValue(Node node, boolean blockValue, boolean parseAttributes, Map<String, Double> variables)
 	{
 		StatsSet statsSet = null;
 		List<Object> list = null;
-		if ((!node.getNodeName().equals("value") || !blockValue) && node.getAttributes().getLength() > 0)
+		Object text = null;
+		if (parseAttributes && node.getAttributes().getLength() > 0)
 		{
 			statsSet = new StatsSet();
 			parseAttributes(node.getAttributes(), "", statsSet, variables);
@@ -545,7 +546,7 @@ public class SkillData implements IGameXmlReader
 					final String value = node.getNodeValue().trim();
 					if (!value.isEmpty())
 					{
-						return parseNodeValue(value, variables);
+						text = parseNodeValue(value, variables);
 					}
 					break;
 				}
@@ -556,7 +557,7 @@ public class SkillData implements IGameXmlReader
 						list = new LinkedList<>();
 					}
 
-					final Object value = parseValue(node, false, variables);
+					final Object value = parseValue(node, false, true, variables);
 					if (value != null)
 					{
 						list.add(value);
@@ -565,29 +566,32 @@ public class SkillData implements IGameXmlReader
 				}
 				case "value":
 				{
-					if (blockValue)
+					if(blockValue)
 					{
 						break;
 					}
 				}
 				default:
 				{
-					final String value = node.getTextContent().trim();
-					if (!value.isEmpty())
+					final Object value = parseValue(node, false, true, variables);
+					if (value != null)
 					{
 						if (statsSet == null)
 						{
 							statsSet = new StatsSet();
 						}
 
-						statsSet.set(nodeName, parseNodeValue(value, variables));
-						parseAttributes(node.getAttributes(), nodeName, statsSet, variables);
+						statsSet.set(nodeName, value);
 					}
 				}
 			}
 		}
 		if (list != null)
 		{
+			if(text != null)
+			{
+				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + node.getNodeName() + "]");
+			}
 			if (statsSet != null)
 			{
 				statsSet.set(".", list);
@@ -595,6 +599,21 @@ public class SkillData implements IGameXmlReader
 			else
 			{
 				return list;
+			}
+		}
+		else if (text != null)
+		{
+			if(list != null)
+			{
+				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + node.getNodeName() + "]");
+			}
+			if (statsSet != null)
+			{
+				statsSet.set(".", text);
+			}
+			else
+			{
+				return text;
 			}
 		}
 		return statsSet;
