@@ -531,7 +531,7 @@ public class SkillData implements IGameXmlReader
 		StatsSet statsSet = null;
 		List<Object> list = null;
 		Object text = null;
-		if (parseAttributes && node.getAttributes().getLength() > 0)
+		if (parseAttributes && (!node.getNodeName().equals("value") || !blockValue) && node.getAttributes().getLength() > 0)
 		{
 			statsSet = new StatsSet();
 			parseAttributes(node.getAttributes(), "", statsSet, variables);
