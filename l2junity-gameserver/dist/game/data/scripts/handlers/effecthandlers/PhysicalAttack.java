@@ -162,8 +162,8 @@ public final class PhysicalAttack extends AbstractEffect
 	public final double calcPhysDam(Creature effector, Creature effected, Skill skill)
 	{
 		final boolean isPvP = effector.isPlayable() && effected.isPlayable();
-		double damage = effector.getPAtk(effected);
-		double defence = effected.getPDef(effector);
+		double damage = effector.getPAtk();
+		double defence = effected.getPDef();
 		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
 		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
 		final double distance = effector.calculateDistance(effected, true, false);

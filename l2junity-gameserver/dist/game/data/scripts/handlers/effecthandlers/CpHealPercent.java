@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -68,10 +67,7 @@ public final class CpHealPercent extends AbstractEffect
 		{
 			final double newCp = amount + effected.getCurrentCp();
 			effected.setCurrentCp(newCp, false);
-			final StatusUpdate su = new StatusUpdate(effected);
-			su.addAttribute(StatusUpdate.CUR_CP, (int) newCp);
-			su.addCaster(effector);
-			effected.broadcastPacket(su);
+			effected.broadcastStatusUpdate(effector);
 		}
 		
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);

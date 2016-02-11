@@ -29,6 +29,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.StatType;
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.RecipeInstance;
 import org.l2junity.gameserver.model.RecipeList;
@@ -349,7 +350,7 @@ public class RecipeController
 				// if still not empty, schedule another pass
 				if (!_items.isEmpty())
 				{
-					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * GameTimeController.TICKS_PER_SECOND * GameTimeController.MILLIS_IN_TICK);
+					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate() * GameTimeController.TICKS_PER_SECOND * GameTimeController.MILLIS_IN_TICK);
 					
 					// FIXME: please fix this packet to show crafting animation (somebody)
 					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
@@ -463,7 +464,7 @@ public class RecipeController
 		private void updateCurMp()
 		{
 			StatusUpdate su = new StatusUpdate(_target);
-			su.addAttribute(StatusUpdate.CUR_MP, (int) _target.getCurrentMp());
+			su.addUpdate(StatusUpdateType.CUR_MP, (int) _target.getCurrentMp());
 			_target.sendPacket(su);
 		}
 		

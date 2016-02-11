@@ -96,6 +96,7 @@ import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.Sex;
 import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
@@ -214,6 +215,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransf
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
+import org.l2junity.gameserver.model.holders.SellBuffHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -845,6 +847,29 @@ public final class PlayerInstance extends Playable
 	private boolean _hasCharmOfCourage = false;
 	
 	private final Set<Integer> _whisperers = ConcurrentHashMap.newKeySet();
+	
+	// Selling buffs system
+	private boolean _isSellingBuffs = false;
+	private List<SellBuffHolder> _sellingBuffs = null;
+	
+	public boolean isSellingBuffs()
+	{
+		return _isSellingBuffs;
+	}
+	
+	public void setIsSellingBuffs(boolean val)
+	{
+		_isSellingBuffs = val;
+	}
+	
+	public List<SellBuffHolder> getSellingBuffs()
+	{
+		if (_sellingBuffs == null)
+		{
+			_sellingBuffs = new ArrayList<>();
+		}
+		return _sellingBuffs;
+	}
 	
 	/**
 	 * Create a new L2PcInstance and add it in the characters table of the database.<br>
@@ -4074,21 +4099,25 @@ public final class PlayerInstance extends Playable
 	 * <li>Send the Server->Client packet PartySmallWindowUpdate with current HP, MP and Level to all other L2PcInstance of the Party</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND current HP and MP to all L2PcInstance of the _statusListener</B></FONT>
 	 */
 	@Override
-	public void broadcastStatusUpdate()
+	public void broadcastStatusUpdate(Creature caster)
 	{
-		// TODO We mustn't send these informations to other players
-		// Send the Server->Client packet StatusUpdate with current HP and MP to all L2PcInstance that must be informed of HP/MP updates of this L2PcInstance
-		// super.broadcastStatusUpdate();
+		final StatusUpdate su = new StatusUpdate(this);
+		if (caster != null)
+		{
+			su.addCaster(caster);
+		}
 		
-		// Send the Server->Client packet StatusUpdate with current HP, MP and CP to this L2PcInstance
-		StatusUpdate su = new StatusUpdate(this);
-		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
-		su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
-		su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
-		su.addAttribute(StatusUpdate.CUR_CP, (int) getCurrentCp());
-		broadcastPacket(su);
+		computeStatusUpdate(su, StatusUpdateType.LEVEL);
+		computeStatusUpdate(su, StatusUpdateType.MAX_HP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_HP);
+		computeStatusUpdate(su, StatusUpdateType.MAX_MP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_MP);
+		computeStatusUpdate(su, StatusUpdateType.MAX_CP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_CP);
+		if (su.hasUpdates())
+		{
+			broadcastPacket(su);
+		}
 		
 		final boolean needCpUpdate = needCpUpdate();
 		final boolean needHpUpdate = needHpUpdate();
@@ -4136,8 +4165,8 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
 	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B>
 	 * <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li>
-	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
+	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP,
+	 * STR, DEX...</B></FONT>
 	 */
 	public final void broadcastUserInfo()
 	{
@@ -4623,7 +4652,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean canOpenPrivateStore()
 	{
-		return !isAlikeDead() && !isInOlympiadMode() && !isMounted() && !isInsideZone(ZoneId.NO_STORE) && !isCastingNow();
+		return !isSellingBuffs() && !isAlikeDead() && !isInOlympiadMode() && !isMounted() && !isInsideZone(ZoneId.NO_STORE) && !isCastingNow();
 	}
 	
 	public void tryOpenPrivateBuyStore()
@@ -4815,8 +4844,8 @@ public final class PlayerInstance extends Playable
 			
 			// Send max/current hp.
 			final StatusUpdate su = new StatusUpdate(target);
-			su.addAttribute(StatusUpdate.MAX_HP, target.getMaxHp());
-			su.addAttribute(StatusUpdate.CUR_HP, (int) target.getCurrentHp());
+			su.addUpdate(StatusUpdateType.MAX_HP, target.getMaxHp());
+			su.addUpdate(StatusUpdateType.CUR_HP, (int) target.getCurrentHp());
 			sendPacket(su);
 			
 			// To others the new target, and not yourself!
@@ -6743,6 +6772,9 @@ public final class PlayerInstance extends Playable
 			player.rewardSkills();
 			
 			player.restoreItemReuse();
+			
+			// Initialize status update cache
+			player.initStatusUpdateCache();
 			
 			// Restore current Cp, HP and MP values
 			player.setCurrentCp(currentCp);
@@ -9842,6 +9874,11 @@ public final class PlayerInstance extends Playable
 			// 2. Register the correct _classId against applied 'classIndex'.
 			store(Config.SUBCLASS_STORE_SKILL_COOLTIME);
 			
+			if (_sellingBuffs != null)
+			{
+				_sellingBuffs.clear();
+			}
+			
 			resetTimeStamps();
 			
 			// clear charges
@@ -11585,7 +11622,7 @@ public final class PlayerInstance extends Playable
 			sm.addPcName(this);
 			sm.addCharName(target);
 			sm.addInt(damage);
-			sm.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+			sm.addPopup(target.getObjectId(), getObjectId(), -damage);
 		}
 		sendPacket(sm);
 	}
@@ -13899,7 +13936,7 @@ public final class PlayerInstance extends Playable
 			{
 				case SOULSHOT:
 				{
-					if ((weapon != null) && (weapon.getItem().getCrystalTypePlus() == item.getItem().getCrystalType()))
+					if ((weapon != null) && (weapon.getItemType() != WeaponType.FISHINGROD) && (weapon.getItem().getCrystalTypePlus() == item.getItem().getCrystalType()))
 					{
 						soulShotId = item.getId();
 					}
@@ -13959,5 +13996,14 @@ public final class PlayerInstance extends Playable
 	public void setTrueHero(boolean val)
 	{
 		_trueHero = val;
+	}
+	
+	@Override
+	protected void initStatusUpdateCache()
+	{
+		super.initStatusUpdateCache();
+		addStatusUpdateValue(StatusUpdateType.LEVEL);
+		addStatusUpdateValue(StatusUpdateType.MAX_CP);
+		addStatusUpdateValue(StatusUpdateType.CUR_CP);
 	}
 }

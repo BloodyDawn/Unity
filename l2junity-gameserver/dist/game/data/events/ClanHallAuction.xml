@@ -2,13 +2,13 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/events.xsd">
 	<event name="Clan Hall Auction" class="org.l2junity.gameserver.instancemanager.ClanHallAuctionManager">
 		<scheduler>
-			<!-- Schedule of the event start, Wednesday at 18:00 -->
-			<schedule minute="18" hour="00" dayOfMonth="*" month="*" dayOfWeek="3">
+			<!-- Schedule of the event start, Wednesday at 19:00 -->
+			<schedule minute="00" hour="18" dayOfMonth="*" month="*" dayOfWeek="3">
 				<event name="#onEventStart" />
 			</schedule>
 
 			<!-- Schedule of the event end, Wednesday at 11:00 -->
-			<schedule name="endAuction" minute="11" hour="00" dayOfMonth="*" month="*" dayOfWeek="3">
+			<schedule name="endAuction" minute="00" hour="11" dayOfMonth="*" month="*" dayOfWeek="3">
 				<event name="#onEventEnd" />
 			</schedule>
 		</scheduler>

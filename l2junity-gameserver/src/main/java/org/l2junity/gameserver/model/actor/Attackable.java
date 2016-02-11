@@ -1687,7 +1687,10 @@ public class Attackable extends Npc
 			}
 			if ((aggroList != null) && aggroList.isEmpty())
 			{
-				((AttackableAI) getAI()).setGlobalAggro(-25);
+				if (getAI() instanceof AttackableAI)
+				{
+					((AttackableAI) getAI()).setGlobalAggro(-25);
+				}
 				setWalking();
 				clearAggroList();
 			}

@@ -31,7 +31,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExMagicAttackInfo;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -107,10 +106,10 @@ public final class Heal extends AbstractEffect
 		
 		if (!skill.isStatic())
 		{
-			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk(effector, null));
+			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk());
 			amount = effected.getStat().getValue(Stats.HEAL_EFFECT, amount);
 			// Heal critic, since CT2.3 Gracia Final
-			if (skill.isMagic() && Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected))
+			if (skill.isMagic() && Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected))
 			{
 				amount *= 3;
 				effector.sendPacket(SystemMessageId.M_CRITICAL);
@@ -131,10 +130,7 @@ public final class Heal extends AbstractEffect
 		{
 			final double newHp = amount + effected.getCurrentHp();
 			effected.setCurrentHp(newHp, false);
-			final StatusUpdate su = new StatusUpdate(effected);
-			su.addAttribute(StatusUpdate.CUR_HP, (int) newHp);
-			su.addCaster(effector);
-			effected.broadcastPacket(su);
+			effected.broadcastStatusUpdate(effector);
 		}
 		
 		if (effected.isPlayer())

@@ -35,6 +35,7 @@ import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
@@ -231,7 +232,7 @@ public class SkillCaster implements Runnable
 		{
 			_caster.getStatus().reduceMp(initmpcons);
 			StatusUpdate su = new StatusUpdate(_caster);
-			su.addAttribute(StatusUpdate.CUR_MP, (int) _caster.getCurrentMp());
+			su.addUpdate(StatusUpdateType.CUR_MP, (int) _caster.getCurrentMp());
 			_caster.sendPacket(su);
 		}
 		
@@ -358,7 +359,7 @@ public class SkillCaster implements Runnable
 				}
 				
 				_caster.getStatus().reduceMp(mpConsume);
-				su.addAttribute(StatusUpdate.CUR_MP, (int) _caster.getCurrentMp());
+				su.addUpdate(StatusUpdateType.CUR_MP, (int) _caster.getCurrentMp());
 			}
 			
 			// Consume the required HP or stop casting if not enough.
@@ -373,11 +374,11 @@ public class SkillCaster implements Runnable
 				}
 				
 				_caster.getStatus().reduceHp(consumeHp, _caster, true);
-				su.addAttribute(StatusUpdate.CUR_HP, (int) _caster.getCurrentHp());
+				su.addUpdate(StatusUpdateType.CUR_HP, (int) _caster.getCurrentHp());
 			}
 			
 			// Send HP/MP consumption packet if any attribute is set.
-			if (su.hasAttributes())
+			if (su.hasUpdates())
 			{
 				_caster.sendPacket(su);
 			}

@@ -45,7 +45,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 	private static final int EVAIN = 33464;
 	private static final int HOLDEN = 33194;
 	private static final int SHANNON = 32974;
-	// Mobs
 	private static final int TRAINING_GOLEM = 27532;
 	// Items
 	private static final ItemHolder SPIRITSHOTS = new ItemHolder(2509, 500);
@@ -82,16 +81,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				htmltext = event;
 				break;
 			}
-			case "showscreen_spiritshot":
-			{
-				showOnScreenMsg(player, NpcStringId.AUTOMATE_SPIRITSHOT_AS_SHOWN_IN_THE_TUTORIAL, ExShowScreenMessage.TOP_CENTER, 4500);
-				break;
-			}
-			case "showscreen_soulshot":
-			{
-				showOnScreenMsg(player, NpcStringId.AUTOMATE_SOULSHOT_AS_SHOWN_IN_THE_TUTORIAL, ExShowScreenMessage.TOP_CENTER, 4500);
-				break;
-			}
 			case "33464-03.htm":
 			{
 				qs.startQuest();
@@ -112,20 +101,19 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				if (qs.isCond(3))
 				{
 					qs.setMemoState(0);
+					player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_003_bullet_01.htm", TutorialShowHtml.LARGE_WINDOW));
 					if (player.isMageClass())
 					{
 						giveItems(player, SPIRITSHOTS);
 						showOnScreenMsg(player, NpcStringId.SPIRITSHOT_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
-						startQuestTimer("showscreen_spiritshot", 4500, npc, player);
-						player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_003_bullet_01.htm", TutorialShowHtml.LARGE_WINDOW));
+						getTimers().addTimer("SHOW_SCREENMSG", 4500, evnt -> showOnScreenMsg(player, NpcStringId.AUTOMATE_SPIRITSHOT_AS_SHOWN_IN_THE_TUTORIAL, ExShowScreenMessage.TOP_CENTER, 4500));
 						qs.setCond(5, true);
 					}
 					else
 					{
 						giveItems(player, SOULSHOTS);
 						showOnScreenMsg(player, NpcStringId.SOULSHOT_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
-						startQuestTimer("showscreen_soulshot", 4500, npc, player);
-						player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_003_bullet_01.htm", TutorialShowHtml.LARGE_WINDOW));
+						getTimers().addTimer("SHOW_SCREENMSG", 4500, evnt -> showOnScreenMsg(player, NpcStringId.AUTOMATE_SOULSHOT_AS_SHOWN_IN_THE_TUTORIAL, ExShowScreenMessage.TOP_CENTER, 4500));
 						qs.setCond(4, true);
 					}
 					htmltext = event;
@@ -153,7 +141,6 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 	
@@ -170,20 +157,18 @@ public final class Q10323_TrainLikeItsReal extends Quest
 				if (npc.getId() == EVAIN)
 				{
 					htmltext = "33464-01.htm";
-					break;
 				}
 				else if (npc.getId() == SHANNON)
 				{
 					htmltext = "32974-03.htm";
-					break;
 				}
+				break;
 			}
 			case State.STARTED:
 			{
 				if (npc.getId() == EVAIN)
 				{
 					htmltext = "33464-03.htm";
-					break;
 				}
 				else if (npc.getId() == HOLDEN)
 				{
@@ -223,29 +208,24 @@ public final class Q10323_TrainLikeItsReal extends Quest
 							break;
 						}
 					}
-					break;
 				}
-				else if (npc.getId() == SHANNON)
+				else if ((npc.getId() == SHANNON) && qs.isCond(9))
 				{
-					if (qs.isCond(9))
-					{
-						htmltext = "32974-01.htm";
-						break;
-					}
+					htmltext = "32974-01.htm";
 				}
+				break;
 			}
 			case State.COMPLETED:
 			{
 				if (npc.getId() == EVAIN)
 				{
 					htmltext = "33464-04.htm";
-					break;
 				}
 				else if (npc.getId() == SHANNON)
 				{
 					htmltext = "32974-05.htm";
-					break;
 				}
+				break;
 			}
 		}
 		return htmltext;
@@ -258,37 +238,17 @@ public final class Q10323_TrainLikeItsReal extends Quest
 		
 		if ((qs != null) && qs.isStarted())
 		{
-			int killedGolem = qs.getMemoState();
-			
 			if (qs.isCond(2))
 			{
-				killedGolem++;
-				
-				if (killedGolem >= 4)
-				{
-					qs.setCond(3, true);
-				}
-				else
-				{
-					qs.setMemoState(killedGolem);
-					sendNpcLogList(killer);
-					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
+				qs.setMemoState(1);
+				qs.setCond(3, true);
+				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else if (qs.isCond(6) || qs.isCond(7))
 			{
-				killedGolem++;
-				
-				if (killedGolem >= 4)
-				{
-					qs.setCond(8, true);
-				}
-				else
-				{
-					qs.setMemoState(killedGolem);
-					sendNpcLogList(killer);
-					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
+				qs.setMemoState(1);
+				qs.setCond(8, true);
+				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

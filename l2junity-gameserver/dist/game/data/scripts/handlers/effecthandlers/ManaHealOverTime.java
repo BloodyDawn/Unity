@@ -22,7 +22,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 
 /**
  * Mana Heal Over Time effect implementation.
@@ -58,10 +57,7 @@ public final class ManaHealOverTime extends AbstractEffect
 		mp += _power * getTicksMultiplier();
 		mp = Math.min(mp, maxmp);
 		info.getEffected().setCurrentMp(mp, false);
-		final StatusUpdate su = new StatusUpdate(info.getEffected());
-		su.addAttribute(StatusUpdate.CUR_MP, (int) mp);
-		su.addCaster(info.getEffector());
-		info.getEffected().broadcastPacket(su);
+		info.getEffected().broadcastStatusUpdate(info.getEffector());
 		return info.getSkill().isToggle();
 	}
 }

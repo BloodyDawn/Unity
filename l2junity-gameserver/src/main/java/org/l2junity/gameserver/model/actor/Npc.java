@@ -167,6 +167,7 @@ public class Npc extends Creature
 		_currentCollisionRadius = getTemplate().getfCollisionRadius();
 		
 		setIsFlying(template.isFlying());
+		initStatusUpdateCache();
 	}
 	
 	public void startRandomAnimationTask()
@@ -836,7 +837,9 @@ public class Npc extends Creature
 	 */
 	public long getExpReward()
 	{
-		return (long) (getLevel() * getLevel() * getTemplate().getExpRate() * Config.RATE_XP);
+		final Instance instance = getInstanceWorld();
+		float rateMul = instance != null ? instance.getExpRate() : Config.RATE_XP;
+		return (long) (getLevel() * getLevel() * getTemplate().getExpRate() * rateMul);
 	}
 	
 	/**
@@ -844,7 +847,9 @@ public class Npc extends Creature
 	 */
 	public int getSpReward()
 	{
-		return (int) (getTemplate().getSP() * Config.RATE_SP);
+		final Instance instance = getInstanceWorld();
+		float rateMul = instance != null ? instance.getSPRate() : Config.RATE_SP;
+		return (int) (getTemplate().getSP() * rateMul);
 	}
 	
 	/**
@@ -1169,7 +1174,7 @@ public class Npc extends Creature
 	@Override
 	public final void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
-		if ((target != null) && target.isPlayable())
+		if (target != null)
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillFinished(this, target.getActingPlayer(), skill), this);
 		}

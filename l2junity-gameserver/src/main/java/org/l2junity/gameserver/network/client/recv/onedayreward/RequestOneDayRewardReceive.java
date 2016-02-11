@@ -23,7 +23,6 @@ import java.util.Collection;
 import org.l2junity.gameserver.data.xml.impl.OneDayRewardData;
 import org.l2junity.gameserver.model.OneDayRewardDataHolder;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.onedayreward.ExOneDayReceiveRewardList;
@@ -58,15 +57,7 @@ public class RequestOneDayRewardReceive implements IClientIncomingPacket
 			return;
 		}
 		
-		reward.forEach(r ->
-		{
-			final PlayerVariables vars = player.getVariables();
-			if (r.canBeClaimed(player) && r.isAllowedClass(player.getClassId()) && !vars.hasOneDayReward(r.getId()))
-			{
-				vars.addOneDayReward(r.getId());
-				r.getRewardsItems().forEach(i -> player.addItem("One Day Reward", i, player, true));
-			}
-		});
+		reward.forEach(r -> r.requestReward(player));
 		player.sendPacket(new ExOneDayReceiveRewardList(player));
 	}
 }

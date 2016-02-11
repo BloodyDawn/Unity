@@ -43,11 +43,13 @@ public final class FishingData implements IGameXmlReader
 	private int _baitDistanceMax;
 	private int _fishingTimeMin;
 	private int _fishingTimeMax;
+	private int _fishingTimeWaitMin;
+	private int _fishingTimeWaitMax;
 	private int _expRateMin;
 	private int _expRateMax;
 	private int _spRateMin;
 	private int _spRateMax;
-
+	
 	/**
 	 * Instantiates a new fishing data.
 	 */
@@ -63,7 +65,7 @@ public final class FishingData implements IGameXmlReader
 		parseDatapackFile("data/fishing.xml");
 		LOGGER.info("Loaded Fishing Data.");
 	}
-
+	
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
@@ -92,6 +94,12 @@ public final class FishingData implements IGameXmlReader
 							_fishingTimeMax = parseInteger(listItem.getAttributes(), "max");
 							break;
 						}
+						case "fishingTimeWait":
+						{
+							_fishingTimeWaitMin = parseInteger(listItem.getAttributes(), "min");
+							_fishingTimeWaitMax = parseInteger(listItem.getAttributes(), "max");
+							break;
+						}
 						case "experienceRate":
 						{
 							_expRateMin = parseInteger(listItem.getAttributes(), "min");
@@ -113,9 +121,9 @@ public final class FishingData implements IGameXmlReader
 									final NamedNodeMap attrs = bait.getAttributes();
 									final int itemId = parseInteger(attrs, "itemId");
 									final int level = parseInteger(attrs, "level");
-									final double chance = parseDouble(attrs, "level");
+									final double chance = parseDouble(attrs, "chance");
 									final FishingBaitData baitData = new FishingBaitData(itemId, level, chance);
-
+									
 									for (Node c = bait.getFirstChild(); c != null; c = c.getNextSibling())
 									{
 										if ("catch".equalsIgnoreCase(c.getNodeName()))
@@ -143,52 +151,62 @@ public final class FishingData implements IGameXmlReader
 	{
 		return _baitData.get(baitItemId);
 	}
-
+	
 	public int getMinPlayerLevel()
 	{
 		return _minPlayerLevel;
 	}
-
+	
 	public int getBaitDistanceMin()
 	{
 		return _baitDistanceMin;
 	}
-
+	
 	public int getBaitDistanceMax()
 	{
 		return _baitDistanceMax;
 	}
-
+	
 	public int getFishingTimeMin()
 	{
 		return _fishingTimeMin;
 	}
-
+	
 	public int getFishingTimeMax()
 	{
 		return _fishingTimeMax;
 	}
-
+	
+	public int getFishingTimeWaitMin()
+	{
+		return _fishingTimeWaitMin;
+	}
+	
+	public int getFishingTimeWaitMax()
+	{
+		return _fishingTimeWaitMax;
+	}
+	
 	public int getExpRateMin()
 	{
 		return _expRateMin;
 	}
-
+	
 	public int getExpRateMax()
 	{
 		return _expRateMax;
 	}
-
+	
 	public int getSpRateMin()
 	{
 		return _spRateMin;
 	}
-
+	
 	public int getSpRateMax()
 	{
 		return _spRateMax;
 	}
-
+	
 	/**
 	 * Gets the single instance of FishingData.
 	 * @return single instance of FishingData
@@ -197,7 +215,7 @@ public final class FishingData implements IGameXmlReader
 	{
 		return SingletonHolder._instance;
 	}
-
+	
 	private static class SingletonHolder
 	{
 		protected static final FishingData _instance = new FishingData();

@@ -18,6 +18,14 @@
 						<xs:attribute name="isPvP" type="xs:boolean" />
 					</xs:complexType>
 				</xs:element>
+				<xs:element name="rates" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="exp" type="xs:float" />
+						<xs:attribute name="sp" type="xs:float" />
+						<xs:attribute name="partyExp" type="xs:float" />
+						<xs:attribute name="partySp" type="xs:float" />
+					</xs:complexType>
+				</xs:element>
 				<xs:element name="removeBuffs" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
 						<xs:sequence>

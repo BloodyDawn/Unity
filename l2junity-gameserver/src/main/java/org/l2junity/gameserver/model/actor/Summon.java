@@ -359,9 +359,9 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public void broadcastStatusUpdate()
+	public void broadcastStatusUpdate(Creature caster)
 	{
-		super.broadcastStatusUpdate();
+		super.broadcastStatusUpdate(caster);
 		updateAndBroadcastStatus(1);
 	}
 	

@@ -87,7 +87,7 @@ public final class Q10339_FightingTheForgotten extends Quest
 				htmltext = event;
 				break;
 			}
-			case "32975-05.htm":
+			case "32975-05.html":
 			{
 				st.startQuest();
 				htmltext = event;

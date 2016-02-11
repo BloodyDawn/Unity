@@ -37,6 +37,7 @@ public final class KartiaHelperEliyah extends AbstractNpcAI
 		33626, // Eliyah (Kartia 90)
 		33637, // Eliyah (Kartia 95)
 	};
+	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
 		205, // Solo 85

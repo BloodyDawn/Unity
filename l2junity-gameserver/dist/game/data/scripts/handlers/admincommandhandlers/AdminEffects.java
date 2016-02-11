@@ -18,10 +18,12 @@
  */
 package handlers.admincommandhandlers;
 
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
@@ -30,6 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
 import org.l2junity.gameserver.model.html.styles.ButtonsStyle;
@@ -110,7 +113,8 @@ public class AdminEffects implements IAdminCommandHandler
 		"admin_set_displayeffect",
 		"admin_set_displayeffect_menu",
 		"admin_event_trigger",
-		"admin_settargetable"
+		"admin_settargetable",
+		"admin_playmovie",
 	};
 	
 	@Override
@@ -653,6 +657,17 @@ public class AdminEffects implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("Usage: //set_displayeffect <id>");
+			}
+		}
+		else if (command.startsWith("admin_playmovie"))
+		{
+			try
+			{
+				new MovieHolder(Arrays.asList(activeChar), Movie.findByClientId(Integer.parseInt(st.nextToken())));
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Usage: //playmovie <id>");
 			}
 		}
 		else if (command.startsWith("admin_event_trigger"))

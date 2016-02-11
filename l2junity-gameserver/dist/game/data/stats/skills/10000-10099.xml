@@ -174,7 +174,7 @@
 		<!-- For 9 seconds, Shield Defense/Skill Power + 25%. -->
 		<table name="#icons"> icon.skill10006 icon.skill10007 icon.skill10007 </table>
 		<table name="#magicLvl"> 89 93 97 </table>
-		<table name="#power">1.25 1.30 1.35</table>
+		<table name="#power"> 1.25 1.30 1.35 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="WEAPON_MASTERY" />
@@ -190,10 +190,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="4" />
-		<effect name="Buff">
-			<mul stat="sDef" val="#power" />
-			<mul stat="physicalSkillPower" val="#power" />
-		</effect>
+		<for>
+			<effect name="Buff">
+				<mul stat="sDef" val="#power" />
+				<mul stat="physicalSkillPower" val="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10008" levels="11" name="Shield Charge">
 		<!-- Glory Days confirmed -->
@@ -381,7 +383,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param ignoreShieldDefence="true" />
+				<param criticalChance="5" />
 			</effect>
 			<effect name="BlockActions">
 				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
@@ -429,7 +431,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param ignoreShieldDefence="true" />
+				<param criticalChance="5" />
 			</effect>
 			<effect name="BlockActions">
 				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />

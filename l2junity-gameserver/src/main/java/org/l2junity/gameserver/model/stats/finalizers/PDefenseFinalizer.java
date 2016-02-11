@@ -22,6 +22,7 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -52,6 +53,11 @@ public class PDefenseFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		if (creature.isPet())
+		{
+			final L2PetInstance pet = (L2PetInstance) creature;
+			baseValue = pet.getPetLevelData().getPetPDef();
+		}
 		baseValue += calcEnchantedItemBonus(creature, stat);
 		
 		final Transform transform = creature.getTransformation();
@@ -63,15 +69,18 @@ public class PDefenseFinalizer implements IStatsFunction
 				baseValue += item.getItem().getStats(stat, 0);
 			}
 			
-			final PlayerInstance player = creature.getActingPlayer();
-			for (int slot : SLOTS)
+			if (creature.isPlayer())
 			{
-				if (!inv.isPaperdollSlotEmpty(slot) || ((slot == Inventory.PAPERDOLL_LEGS) && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)))
+				final PlayerInstance player = creature.getActingPlayer();
+				for (int slot : SLOTS)
 				{
-					baseValue -= transform != null ? transform.getBaseDefBySlot(player, slot) : player.getTemplate().getBaseDefBySlot(slot);
+					if (!inv.isPaperdollSlotEmpty(slot) || ((slot == Inventory.PAPERDOLL_LEGS) && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)))
+					{
+						baseValue -= transform != null ? transform.getBaseDefBySlot(player, slot) : player.getTemplate().getBaseDefBySlot(slot);
+					}
 				}
 			}
-			baseValue *= BaseStats.CHA.calcBonus(player);
+			baseValue *= BaseStats.CHA.calcBonus(creature);
 		}
 		if (creature.isRaid())
 		{

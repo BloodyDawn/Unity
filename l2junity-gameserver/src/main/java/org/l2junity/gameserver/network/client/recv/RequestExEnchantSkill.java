@@ -90,6 +90,12 @@ public final class RequestExEnchantSkill implements IClientIncomingPacket
 			return;
 		}
 		
+		if (player.isSellingBuffs())
+		{
+			player.sendMessage("You cannot use the skill enhancing function while you selling buffs.");
+			return;
+		}
+		
 		final Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLvl);
 		if (skill == null)
 		{

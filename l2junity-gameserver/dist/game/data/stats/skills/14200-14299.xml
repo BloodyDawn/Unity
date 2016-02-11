@@ -533,7 +533,7 @@
 		</for>
 	</skill>
 	<skill id="14224" levels="1" name="Energy Control Device">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Energy Control -->
 		<set name="icon" val="icon.skill14216" />
 		<set name="operateType" val="CA5" />
@@ -553,12 +553,15 @@
 		<set name="isMagic" val="2" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="reuseDelay" val="20000" />
+		<cond msgId="109">
+			<target npcId="29195,29196,19036" />
+		</cond>
 	</skill>
 	<skill id="14225" levels="8" name="Control Stage 1">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Control Stage 1 -->
 		<table name="#icons"> icon.skill14225_1 icon.skill14225_2 icon.skill14225_3 icon.skill14225_4 icon.skill14225_5 icon.skill14225_5 icon.skill14225_5 icon.skill14225_5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="100" />
@@ -575,7 +578,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14226" levels="1" name="Flood Cancel">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill14226" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="100" />
@@ -591,7 +594,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14227" levels="1" name="Regeneration of Limit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Istina's life force is quickly regenerated. -->
 		<set name="icon" val="icon.skill1229" />
 		<set name="operateType" val="A2" />
@@ -608,9 +611,14 @@
 		<set name="abnormalTime" val="600" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealOverTime" ticks="1">
+				<param power="3000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14228" levels="1" name="Energy Regeneration Stage 1">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Energy Regeneration -->
 		<set name="icon" val="icon.skill1229" />
 		<set name="operateType" val="A2" />
@@ -632,7 +640,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14229" levels="1" name="Energy Regeneration Stage 2">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Energy Regeneration -->
 		<set name="icon" val="icon.skill1229" />
 		<set name="operateType" val="A2" />
@@ -654,7 +662,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14230" levels="1" name="Energy Regeneration Stage 3">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Energy Regeneration -->
 		<set name="icon" val="icon.skill1229" />
 		<set name="operateType" val="A2" />
@@ -676,11 +684,11 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14231" levels="1" name="Creation's Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<set name="icon" val="icon.skill0048" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-2" />
@@ -698,9 +706,19 @@
 		<set name="affectScope" val="POINT_BLANK" />
 		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="10373" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14232" levels="1" name="Yoke of Thorns">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed is decreased by 50%. -->
 		<set name="icon" val="icon.skill0127" />
 		<set name="operateType" val="A2" />
@@ -723,9 +741,14 @@
 		<set name="abnormalTime" val="20" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14233" levels="1" name="Shock Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ENEMY" />
@@ -740,9 +763,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealPercent">
+				<param power="-20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14234" levels="1" name="Mind Contamination">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Max HP and Max MP are decreased by 50%. -->
 		<set name="icon" val="icon.skill1045" />
 		<set name="operateType" val="A2" />
@@ -763,9 +791,22 @@
 		<set name="abnormalTime" val="15" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="10373" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="MaxHp">
+				<param amount="-50" mode="PER" />
+			</effect>
+			<effect name="MaxMp">
+				<param amount="-50" mode="PER" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14235" levels="1" name="Maguen Steal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="TARGET" />
@@ -781,7 +822,7 @@
 		<set name="hitTime" val="2000" />
 	</skill>
 	<skill id="14236" levels="1" name="Ultimate Forcefulness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Looking at Taklacan with forcefulness. -->
 		<set name="icon" val="icon.skill0018" />
 		<set name="operateType" val="A2" />
@@ -803,13 +844,22 @@
 		<set name="affectScope" val="RANGE" />
 		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="63230" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="14237" levels="1" name="Earth Vibration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Vibration spreads through the body to decrease HP continuously. -->
 		<set name="icon" val="icon.skill0096" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
@@ -827,9 +877,19 @@
 		<set name="affectScope" val="POINT_BLANK" />
 		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="63230" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="DamOverTime" ticks="1">
+				<param power="338" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14238" levels="1" name="Sound Blade">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Physical and magic skills are blocked. -->
 		<set name="icon" val="icon.skill1336" />
 		<set name="operateType" val="A2" />
@@ -851,9 +911,18 @@
 		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="77103" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="Mute" />
+			<effect name="PhysicalMute" />
+		</for>
 	</skill>
 	<skill id="14239" levels="1" name="Sound Prison">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hold status. -->
 		<set name="icon" val="icon.skill4047" />
 		<set name="operateType" val="A2" />
@@ -875,9 +944,17 @@
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="77103" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="Root" />
+		</for>
 	</skill>
 	<skill id="14240" levels="1" name="Poison Eruption">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill4035" />
 		<set name="operateType" val="A2" />
@@ -900,9 +977,19 @@
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="affectScope" val="SINGLE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="77103" />
+				<param criticalChance="10" />
+				<param ignoreShieldDefence="true" />
+			</effect>
+			<effect name="DamOverTime" ticks="1">
+				<param power="272" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14241" levels="1" name="Poison Fog">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill4035" />
 		<set name="operateType" val="A2" />
@@ -927,6 +1014,11 @@
 		<set name="affectScope" val="RANGE" />
 		<set name="affectObject" val="NOT_FRIEND" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="2">
+				<param power="472" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14242" levels="1" name="Wide Area Curse">
 		<!-- AUTO GENERATED SKILL -->

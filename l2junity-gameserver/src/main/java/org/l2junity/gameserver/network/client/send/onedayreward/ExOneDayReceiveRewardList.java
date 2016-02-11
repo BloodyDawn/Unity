@@ -53,9 +53,9 @@ public class ExOneDayReceiveRewardList implements IClientOutgoingPacket
 		for (OneDayRewardDataHolder reward : _rewards)
 		{
 			packet.writeH(reward.getId());
-			packet.writeC(_player.getVariables().hasOneDayReward(reward.getId()) ? 0x03 : (reward.canBeClaimed(_player) ? 0x01 : 0x02)); // 0x03 : Status complete
-			packet.writeC(reward.getRequiredCompletions() > 0 ? 0x01 : 0x00);
-			packet.writeD(0x00);
+			packet.writeC(reward.getStatus(_player));
+			packet.writeC(reward.getRequiredCompletions() > 0 ? 0x01 : 0x00); // TODO: Check this
+			packet.writeD(reward.getProgress(_player)); // TODO: Check this
 			packet.writeD(reward.getRequiredCompletions());
 		}
 		return true;

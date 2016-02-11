@@ -20,8 +20,11 @@ package org.l2junity.gameserver.network.client.send;
 
 import static org.l2junity.gameserver.data.xml.impl.MultisellData.PAGE_SIZE;
 
+import org.l2junity.gameserver.model.ensoul.EnsoulOption;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.multisell.Entry;
 import org.l2junity.gameserver.model.multisell.Ingredient;
+import org.l2junity.gameserver.model.multisell.ItemInfo;
 import org.l2junity.gameserver.model.multisell.ListContainer;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
@@ -109,29 +112,31 @@ public final class MultiSellList implements IClientOutgoingPacket
 				packet.writeQ(ing.getItemCount());
 				if (ing.getItemInfo() != null)
 				{
-					packet.writeH(ing.getItemInfo().getEnchantLevel()); // enchant level
-					packet.writeD(_list.isNewMultisell() ? ing.getChance() : ing.getItemInfo().getAugmentId()); // augment id
+					final ItemInfo item = ing.getItemInfo();
+					packet.writeH(item.getEnchantLevel()); // enchant level
+					packet.writeD(_list.isNewMultisell() ? ing.getChance() : item.getAugmentId()); // augment id
 					packet.writeD(0x00); // mana
 					packet.writeD(0x00); // time ?
-					packet.writeH(ing.getItemInfo().getElementId()); // attack element
-					packet.writeH(ing.getItemInfo().getElementPower()); // element power
-					packet.writeH(ing.getItemInfo().getElementals()[0]); // fire
-					packet.writeH(ing.getItemInfo().getElementals()[1]); // water
-					packet.writeH(ing.getItemInfo().getElementals()[2]); // wind
-					packet.writeH(ing.getItemInfo().getElementals()[3]); // earth
-					packet.writeH(ing.getItemInfo().getElementals()[4]); // holy
-					packet.writeH(ing.getItemInfo().getElementals()[5]); // dark
-					packet.writeC(0); // Size of regular soul crystal options.
-					// for (EnsoulOption option : item.getSoulCrystalOptions())
-					// {
-					// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
-					// }
+					packet.writeH(item.getElementId()); // attack element
+					packet.writeH(item.getElementPower()); // element power
 					
-					packet.writeC(0); // Size of special soul crystal options.
-					// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
-					// {
-					// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
-					// }
+					for (int i = 0; i < 6; i++)
+					{
+						final AttributeHolder holder = item.getElementals()[i];
+						packet.writeH(holder != null ? holder.getValue() : 0);
+					}
+					
+					packet.writeC(item.getSpecialAbilities().size()); // Size of regular soul crystal options.
+					for (EnsoulOption option : item.getSpecialAbilities())
+					{
+						packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+					}
+					
+					packet.writeC(item.getAdditionalSpecialAbilities().size()); // Size of special soul crystal options.
+					for (EnsoulOption option : item.getAdditionalSpecialAbilities())
+					{
+						packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+					}
 				}
 				else
 				{
@@ -168,28 +173,28 @@ public final class MultiSellList implements IClientOutgoingPacket
 				packet.writeQ(ing.getItemCount());
 				if (ing.getItemInfo() != null)
 				{
-					packet.writeH(ing.getItemInfo().getEnchantLevel()); // enchant level
-					packet.writeD(_list.isNewMultisell() ? ing.getChance() : ing.getItemInfo().getAugmentId()); // augment id
+					final ItemInfo item = ing.getItemInfo();
+					packet.writeH(item.getEnchantLevel()); // enchant level
+					packet.writeD(_list.isNewMultisell() ? ing.getChance() : item.getAugmentId()); // augment id
 					packet.writeD(0x00); // mana
-					packet.writeH(ing.getItemInfo().getElementId()); // attack element
-					packet.writeH(ing.getItemInfo().getElementPower()); // element power
-					packet.writeH(ing.getItemInfo().getElementals()[0]); // fire
-					packet.writeH(ing.getItemInfo().getElementals()[1]); // water
-					packet.writeH(ing.getItemInfo().getElementals()[2]); // wind
-					packet.writeH(ing.getItemInfo().getElementals()[3]); // earth
-					packet.writeH(ing.getItemInfo().getElementals()[4]); // holy
-					packet.writeH(ing.getItemInfo().getElementals()[5]); // dark
-					packet.writeC(0); // Size of regular soul crystal options.
-					// for (EnsoulOption option : item.getSoulCrystalOptions())
-					// {
-					// packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
-					// }
+					packet.writeH(item.getElementId()); // attack element
+					packet.writeH(item.getElementPower()); // element power
+					for (int i = 0; i < 6; i++)
+					{
+						final AttributeHolder holder = item.getElementals()[i];
+						packet.writeH(holder != null ? holder.getValue() : 0);
+					}
+					packet.writeC(item.getSpecialAbilities().size()); // Size of regular soul crystal options.
+					for (EnsoulOption option : item.getSpecialAbilities())
+					{
+						packet.writeD(option.getId()); // Regular Soul Crystal Ability ID.
+					}
 					
-					packet.writeC(0); // Size of special soul crystal options.
-					// for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
-					// {
-					// packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
-					// }
+					packet.writeC(item.getAdditionalSpecialAbilities().size()); // Size of special soul crystal options.
+					for (EnsoulOption option : item.getAdditionalSpecialAbilities())
+					{
+						packet.writeD(option.getId()); // Special Soul Crystal Ability ID.
+					}
 				}
 				else
 				{

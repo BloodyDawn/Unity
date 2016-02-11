@@ -84,6 +84,10 @@ public final class PartySmallWindowUpdate implements IClientOutgoingPacket
 		{
 			packet.writeH(_member.getClassId().getId());
 		}
+		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.PARTY_SUBSTITUTE))
+		{
+			packet.writeC(0x00);
+		}
 		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.VITALITY_POINTS))
 		{
 			packet.writeD(_member.getVitalityPoints());

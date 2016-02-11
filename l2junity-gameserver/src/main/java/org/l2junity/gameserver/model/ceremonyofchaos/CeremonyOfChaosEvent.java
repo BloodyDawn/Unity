@@ -39,10 +39,12 @@ import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
+import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.ceremonyofchaos.OnCeremonyOfChaosMatchResult;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -279,6 +281,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		validateWinner();
 		
 		final List<CeremonyOfChaosMember> winners = getWinners();
+		final List<CeremonyOfChaosMember> members = new ArrayList<>(getMembers().size());
 		final SystemMessage msg;
 		if (winners.isEmpty() || (winners.size() > 1))
 		{
@@ -300,10 +303,14 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				
 				// Send result
 				player.sendPacket(new ExCuriousHouseResult(member.getResultType(), this));
+				
+				members.add(member);
 			}
 		}
 		getTimers().cancelTimer("update", null, null);
 		getTimers().addTimer("match_end_countdown", StatsSet.valueOf("time", 30), 30 * 1000, null, null);
+		
+		EventDispatcher.getInstance().notifyEvent(new OnCeremonyOfChaosMatchResult(winners, members));
 	}
 	
 	private void teleportPlayersOut()

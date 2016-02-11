@@ -21,6 +21,7 @@ package quests.Q00642_APowerfulPrimevalCreature;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -86,7 +87,7 @@ public class Q00642_APowerfulPrimevalCreature extends Quest
 			}
 			case "32105-06.htm":
 			{
-				qs.exitQuest(true);
+				qs.exitQuest(QuestType.REPEATABLE);
 				break;
 			}
 			case "32105-09.html":

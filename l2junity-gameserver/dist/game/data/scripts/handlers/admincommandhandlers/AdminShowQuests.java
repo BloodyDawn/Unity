@@ -23,6 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.World;
@@ -330,13 +331,13 @@ public class AdminShowQuests implements IAdminCommandHandler
 			{
 				case "COMPLETED":
 				{
-					qs.exitQuest((val[3].equals("1")) ? true : false);
+					qs.exitQuest((val[3].equals("1")) ? QuestType.REPEATABLE : QuestType.ONE_TIME);
 					break;
 				}
 				case "DELETE":
 				{
 					Quest.deleteQuestInDb(qs, true);
-					qs.exitQuest(true);
+					qs.exitQuest(QuestType.REPEATABLE);
 					target.sendPacket(new QuestList(target));
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));
 					break;
@@ -354,7 +355,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 				case "CC":
 				{
 					qs = QuestManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
-					qs.exitQuest(false);
+					qs.exitQuest(QuestType.ONE_TIME);
 					target.sendPacket(new QuestList(target));
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));
 					val[0] = qs.getQuest().getName();

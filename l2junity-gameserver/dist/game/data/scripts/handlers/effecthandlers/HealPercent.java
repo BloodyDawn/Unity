@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -71,26 +70,34 @@ public final class HealPercent extends AbstractEffect
 		amount = full ? effected.getMaxHp() : (effected.getMaxHp() * power) / 100.0;
 		// Prevents overheal
 		amount = Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp());
-		if (amount != 0)
+		if (amount >= 0)
 		{
-			final double newHp = amount + effected.getCurrentHp();
-			effected.setCurrentHp(newHp, false);
-			final StatusUpdate su = new StatusUpdate(effected);
-			su.addAttribute(StatusUpdate.CUR_HP, (int) newHp);
-			su.addCaster(effector);
-			effected.broadcastPacket(su);
-		}
-		SystemMessage sm;
-		if (effector.getObjectId() != effected.getObjectId())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
-			sm.addCharName(effector);
+			if (amount != 0)
+			{
+				final double newHp = amount + effected.getCurrentHp();
+				effected.setCurrentHp(newHp, false);
+				effected.broadcastStatusUpdate(effector);
+			}
+			
+			SystemMessage sm;
+			if (effector.getObjectId() != effected.getObjectId())
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
+				sm.addCharName(effector);
+			}
+			else
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
+			}
+			sm.addInt((int) amount);
+			effected.sendPacket(sm);
 		}
 		else
 		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
+			final double damage = -amount;
+			effected.notifyDamageReceived(damage, effector, skill, false, false, false);
+			effected.reduceCurrentHp(damage, effector, skill);
+			effector.sendDamageMessage(effected, skill, (int) damage, false, false);
 		}
-		sm.addInt((int) amount);
-		effected.sendPacket(sm);
 	}
 }

@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -37,10 +38,18 @@ public class MaxMpFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
-		final PlayerInstance player = creature.getActingPlayer();
-		if (player != null)
+		if (creature.isPet())
 		{
-			baseValue = player.getTemplate().getBaseMpMax(player.getLevel());
+			final L2PetInstance pet = (L2PetInstance) creature;
+			baseValue = pet.getPetLevelData().getPetMaxMP();
+		}
+		else if (creature.isPlayer())
+		{
+			final PlayerInstance player = creature.getActingPlayer();
+			if (player != null)
+			{
+				baseValue = player.getTemplate().getBaseMpMax(player.getLevel());
+			}
 		}
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
 		final double menBonus = creature.getMEN() > 0 ? BaseStats.MEN.calcBonus(creature) : 1.;

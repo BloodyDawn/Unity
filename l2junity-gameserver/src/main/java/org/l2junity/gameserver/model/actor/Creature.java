@@ -58,6 +58,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.enums.StatusUpdateType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -271,6 +272,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private final Map<Integer, Integer> _knownRelations = new ConcurrentHashMap<>();
 	
 	private volatile CreatureContainer _seenCreatures;
+	
+	private final Map<StatusUpdateType, Integer> _statusUpdates = new ConcurrentHashMap<>();
 	
 	/**
 	 * Creates a creature.
@@ -647,6 +650,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return false;
 	}
 	
+	public final void broadcastStatusUpdate()
+	{
+		broadcastStatusUpdate(null);
+	}
+	
 	/**
 	 * Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform.<br>
 	 * <B><U>Actions</U>:</B>
@@ -655,30 +663,25 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Send the Server->Client packet StatusUpdate with current HP and MP to all L2Character called _statusListener that must be informed of HP/MP updates of this L2Character</li>
 	 * </ul>
 	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND CP information</B></FONT>
+	 * @param caster TODO
 	 */
-	public void broadcastStatusUpdate()
+	public void broadcastStatusUpdate(Creature caster)
 	{
-		if (getStatus().getStatusListener().isEmpty() || !needHpUpdate())
+		final StatusUpdate su = new StatusUpdate(this);
+		if (caster != null)
 		{
-			return;
+			su.addCaster(caster);
 		}
 		
-		// Create the Server->Client packet StatusUpdate with current HP
-		StatusUpdate su = new StatusUpdate(this);
-		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
-		su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
+		computeStatusUpdate(su, StatusUpdateType.MAX_HP);
+		computeStatusUpdate(su, StatusUpdateType.MAX_MP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_HP);
+		computeStatusUpdate(su, StatusUpdateType.CUR_MP);
 		
-		// Go through the StatusListener
-		// Send the Server->Client packet StatusUpdate with current HP and MP
-		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
+		if (su.hasUpdates())
 		{
-			if (isVisibleFor(player))
-			{
-				player.sendPacket(su);
-			}
-		});
+			broadcastPacket(su);
+		}
 	}
 	
 	/**
@@ -2825,6 +2828,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// overridden
 	}
 	
+	public boolean isAffectedBySkill(SkillHolder skill)
+	{
+		return isAffectedBySkill(skill.getSkillId());
+	}
+	
 	public boolean isAffectedBySkill(int skillId)
 	{
 		return _effectList.isAffectedBySkill(skillId);
@@ -2942,7 +2950,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else
 							{
-								su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
+								su.addUpdate(StatusUpdateType.MAX_CP, getMaxCp());
 							}
 							break;
 						}
@@ -2954,7 +2962,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else
 							{
-								su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
+								su.addUpdate(StatusUpdateType.MAX_HP, getMaxHp());
 							}
 							break;
 						}
@@ -2966,7 +2974,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else
 							{
-								su.addAttribute(StatusUpdate.MAX_CP, getMaxMp());
+								su.addUpdate(StatusUpdateType.MAX_CP, getMaxMp());
 							}
 							break;
 						}
@@ -3017,7 +3025,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				else
 				{
-					if (su.hasAttributes())
+					if (su.hasUpdates())
 					{
 						broadcastPacket(su);
 					}
@@ -3048,12 +3056,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						}
 					});
 				}
-				else if (su.hasAttributes())
+				else if (su.hasUpdates())
 				{
 					broadcastPacket(su);
 				}
 			}
-			else if (su.hasAttributes())
+			else if (su.hasUpdates())
 			{
 				broadcastPacket(su);
 			}
@@ -4245,7 +4253,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public boolean isInsidePeaceZone(WorldObject attacker, WorldObject target)
 	{
-		if ((target == null) || !(target.isPlayable() && attacker.isPlayable()) || getInstanceWorld().isPvP())
+		final Instance instanceWorld = getInstanceWorld();
+		if ((target == null) || !(target.isPlayable() && attacker.isPlayable()) || ((instanceWorld != null) && instanceWorld.isPvP()))
 		{
 			return false;
 		}
@@ -4655,7 +4664,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getMagicAccuracy();
 	}
 	
-	public int getMagicEvasionRate(Creature target)
+	public int getMagicEvasionRate()
 	{
 		return getStat().getMagicEvasionRate();
 	}
@@ -4665,17 +4674,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getAttackSpeedMultiplier();
 	}
 	
-	public final double getCriticalDmg(Creature target, double init)
+	public final double getCriticalDmg(int init)
 	{
 		return getStat().getCriticalDmg(init);
 	}
 	
-	public int getCriticalHit(Creature target, Skill skill)
+	public int getCriticalHit()
 	{
 		return getStat().getCriticalHit();
 	}
 	
-	public int getEvasionRate(Creature target)
+	public int getEvasionRate()
 	{
 		return getStat().getEvasionRate();
 	}
@@ -4695,7 +4704,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getMaxRecoverableCp();
 	}
 	
-	public int getMAtk(Creature target, Skill skill)
+	public int getMAtk()
 	{
 		return getStat().getMAtk();
 	}
@@ -4725,22 +4734,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getMaxRecoverableHp();
 	}
 	
-	public final int getMCriticalHit(Creature target, Skill skill)
+	public final int getMCriticalHit()
 	{
 		return getStat().getMCriticalHit();
 	}
 	
-	public int getMDef(Creature target, Skill skill)
+	public int getMDef()
 	{
 		return getStat().getMDef();
 	}
 	
-	public double getMReuseRate(Skill skill)
+	public double getMReuseRate()
 	{
 		return getStat().getMReuseRate();
 	}
 	
-	public int getPAtk(Creature target)
+	public int getPAtk()
 	{
 		return getStat().getPAtk();
 	}
@@ -4750,7 +4759,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStat().getPAtkSpd();
 	}
 	
-	public int getPDef(Creature target)
+	public int getPDef()
 	{
 		return getStat().getPDef();
 	}
@@ -5723,5 +5732,32 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return MoveType.WALKING;
 		}
 		return MoveType.STANDING;
+	}
+	
+	protected final void computeStatusUpdate(StatusUpdate su, StatusUpdateType type)
+	{
+		_statusUpdates.compute(type, (key, oldValue) ->
+		{
+			final int newValue = type.getValue(this);
+			if (oldValue != newValue)
+			{
+				su.addUpdate(type, newValue);
+				return newValue;
+			}
+			return oldValue;
+		});
+	}
+	
+	protected final void addStatusUpdateValue(StatusUpdateType type)
+	{
+		_statusUpdates.put(type, type.getValue(this));
+	}
+	
+	protected void initStatusUpdateCache()
+	{
+		addStatusUpdateValue(StatusUpdateType.MAX_HP);
+		addStatusUpdateValue(StatusUpdateType.MAX_MP);
+		addStatusUpdateValue(StatusUpdateType.CUR_HP);
+		addStatusUpdateValue(StatusUpdateType.CUR_MP);
 	}
 }

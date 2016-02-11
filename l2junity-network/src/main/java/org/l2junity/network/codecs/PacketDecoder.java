@@ -18,10 +18,6 @@
  */
 package org.l2junity.network.codecs;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.ByteToMessageDecoder;
-
 import java.nio.ByteOrder;
 import java.util.List;
 
@@ -31,6 +27,10 @@ import org.l2junity.network.IIncomingPackets;
 import org.l2junity.network.PacketReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.ByteToMessageDecoder;
 
 /**
  * @author Nos

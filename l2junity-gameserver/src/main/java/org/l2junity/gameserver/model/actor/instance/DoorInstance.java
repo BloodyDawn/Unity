@@ -351,7 +351,7 @@ public final class DoorInstance extends Creature
 	}
 	
 	@Override
-	public void broadcastStatusUpdate()
+	public void broadcastStatusUpdate(Creature caster)
 	{
 		final Collection<PlayerInstance> knownPlayers = World.getInstance().getVisibleObjects(this, PlayerInstance.class);
 		if ((knownPlayers == null) || knownPlayers.isEmpty())
