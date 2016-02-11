@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10000" levels="1" name="Steel Door Guild Reward Box  (Top-grade)">
-		<capsuled_items_skill>
-			<value level="1">36558,1,25;36563,1,25;36553,1,25;36548,1,25</value>
-		</capsuled_items_skill>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -15,7 +12,22 @@
 			</and>
 		</cond>
 		<effects>
-			<effect name="RestorationRandom" />
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25">
+						<item id="36558" count="1" />
+					</item>
+					<item chance="25">
+						<item id="36563" count="1" />
+					</item>
+					<item chance="25">
+						<item id="36553" count="1" />
+					</item>
+					<item chance="25">
+						<item id="36548" count="1" />
+					</item>
+				</items>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10001" levels="10" name="Superior Sword/Blunt Weapon Mastery">

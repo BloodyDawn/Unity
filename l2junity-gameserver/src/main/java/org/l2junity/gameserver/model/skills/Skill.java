@@ -40,8 +40,6 @@ import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
-import org.l2junity.gameserver.model.ExtractableProductItem;
-import org.l2junity.gameserver.model.ExtractableSkill;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
@@ -55,7 +53,6 @@ import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.holders.AttachSkillHolder;
-import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -164,10 +161,10 @@ public final class Skill implements IIdentifiable
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 	private final int _effectPoint;
 	private Set<MountType> _rideState;
-
+	
 	private final Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = new EnumMap<>(SkillConditionScope.class);
 	private final Map<EffectScope, List<AbstractEffect>> _effectLists = new EnumMap<>(EffectScope.class);
-
+	
 	// Flying support
 	private final FlyType _flyType;
 	private final int _flyRadius;
@@ -179,8 +176,6 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _excludedFromCheck;
 	private final boolean _withoutAction;
-	
-	private ExtractableSkill _extractableItems = null;
 	
 	private final String _icon;
 	
@@ -388,17 +383,6 @@ public final class Skill implements IIdentifiable
 		
 		_excludedFromCheck = set.getBoolean("excludedFromCheck", false);
 		_withoutAction = set.getBoolean("withoutAction", false);
-		
-		String capsuled_items = set.getString("capsuled_items_skill", null);
-		if (capsuled_items != null)
-		{
-			if (capsuled_items.isEmpty())
-			{
-				_log.warn("Empty Extractable Item Skill data in Skill Id: " + _id);
-			}
-			
-			_extractableItems = parseExtractableSkill(_id, _level, capsuled_items);
-		}
 		
 		_icon = set.getString("icon", "icon.skill0000");
 		
@@ -1017,7 +1001,7 @@ public final class Skill implements IIdentifiable
 			activeChar.sendPacket(sm);
 			return false;
 		}
-
+		
 		return checkConditions(SkillConditionScope.GENERAL, activeChar, object);
 	}
 	
@@ -1193,7 +1177,7 @@ public final class Skill implements IIdentifiable
 		}
 		return true;
 	}
-
+	
 	/**
 	 * Adds an effect to the effect list for the given effect scope.
 	 * @param effectScope the effect scope
@@ -1203,7 +1187,7 @@ public final class Skill implements IIdentifiable
 	{
 		_effectLists.computeIfAbsent(effectScope, k -> new ArrayList<>()).add(effect);
 	}
-
+	
 	/**
 	 * Gets the skill effects.
 	 * @param effectScope the effect scope
@@ -1535,8 +1519,7 @@ public final class Skill implements IIdentifiable
 			caster.doDie(caster);
 		}
 	}
-
-
+	
 	/**
 	 * Adds a condition to the condition list for the given condition scope.
 	 * @param skillConditionScope the condition scope
@@ -1546,10 +1529,12 @@ public final class Skill implements IIdentifiable
 	{
 		_conditionLists.computeIfAbsent(skillConditionScope, k -> new ArrayList<>()).add(skillCondition);
 	}
-
+	
 	/**
 	 * Checks the conditions of this skills for the given condition scope.
 	 * @param skillConditionScope the condition scope
+	 * @param caster the caster
+	 * @param target the target
 	 * @return {@code false} if at least one condition returns false, {@code true} otherwise
 	 */
 	public boolean checkConditions(SkillConditionScope skillConditionScope, Creature caster, WorldObject target)
@@ -1602,58 +1587,6 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Parse an extractable skill.
-	 * @param skillId the skill Id
-	 * @param skillLvl the skill level
-	 * @param values the values to parse
-	 * @return the parsed extractable skill
-	 * @author Zoey76
-	 */
-	private ExtractableSkill parseExtractableSkill(int skillId, int skillLvl, String values)
-	{
-		final String[] prodLists = values.split(";");
-		final List<ExtractableProductItem> products = new ArrayList<>();
-		String[] prodData;
-		for (String prodList : prodLists)
-		{
-			prodData = prodList.split(",");
-			if (prodData.length < 3)
-			{
-				_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> wrong seperator!");
-			}
-			List<ItemHolder> items = null;
-			double chance = 0;
-			final int length = prodData.length - 1;
-			try
-			{
-				items = new ArrayList<>(length / 2);
-				for (int j = 0; j < length; j += 2)
-				{
-					final int prodId = Integer.parseInt(prodData[j]);
-					final int quantity = Integer.parseInt(prodData[j + 1]);
-					if ((prodId <= 0) || (quantity <= 0))
-					{
-						_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " wrong production Id: " + prodId + " or wrond quantity: " + quantity + "!");
-					}
-					items.add(new ItemHolder(prodId, quantity));
-				}
-				chance = Double.parseDouble(prodData[length]);
-			}
-			catch (Exception e)
-			{
-				_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
-			}
-			products.add(new ExtractableProductItem(items, chance));
-		}
-		
-		if (products.isEmpty())
-		{
-			_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
-		}
-		return new ExtractableSkill(SkillData.getSkillHashCode(skillId, skillLvl), products);
-	}
-	
-	/**
 	 * Parses all the abnormal visual effects.
 	 * @param abnormalVisualEffects the abnormal visual effects list
 	 */
@@ -1681,11 +1614,6 @@ public final class Skill implements IIdentifiable
 				_abnormalVisualEffects = aves;
 			}
 		}
-	}
-	
-	public ExtractableSkill getExtractableSkill()
-	{
-		return _extractableItems;
 	}
 	
 	/**
