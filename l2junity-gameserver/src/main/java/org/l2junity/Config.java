@@ -731,6 +731,10 @@ public final class Config
 	public static float RATE_SP;
 	public static float RATE_PARTY_XP;
 	public static float RATE_PARTY_SP;
+	public static float RATE_INSTANCE_XP;
+	public static float RATE_INSTANCE_SP;
+	public static float RATE_INSTANCE_PARTY_XP;
+	public static float RATE_INSTANCE_PARTY_SP;
 	public static float RATE_HB_TRUST_INCREASE;
 	public static float RATE_HB_TRUST_DECREASE;
 	public static float RATE_RAIDBOSS_POINTS;
@@ -1832,6 +1836,28 @@ public final class Config
 			RATE_SP = RatesSettings.getFloat("RateSp", 1);
 			RATE_PARTY_XP = RatesSettings.getFloat("RatePartyXp", 1);
 			RATE_PARTY_SP = RatesSettings.getFloat("RatePartySp", 1);
+			
+			RATE_INSTANCE_XP = RatesSettings.getFloat("RateInstanceXp", -1);
+			if (RATE_INSTANCE_XP < 0)
+			{
+				RATE_INSTANCE_XP = RATE_XP;
+			}
+			RATE_INSTANCE_SP = RatesSettings.getFloat("RateInstanceSp", -1);
+			if (RATE_INSTANCE_SP < 0)
+			{
+				RATE_INSTANCE_SP = RATE_SP;
+			}
+			RATE_INSTANCE_PARTY_XP = RatesSettings.getFloat("RateInstancePartyXp", -1);
+			if (RATE_INSTANCE_PARTY_XP < 0)
+			{
+				RATE_INSTANCE_PARTY_XP = RATE_PARTY_XP;
+			}
+			RATE_INSTANCE_PARTY_SP = RatesSettings.getFloat("RateInstancePartyXp", -1);
+			if (RATE_INSTANCE_PARTY_SP < 0)
+			{
+				RATE_INSTANCE_PARTY_SP = RATE_PARTY_SP;
+			}
+			
 			RATE_EXTRACTABLE = RatesSettings.getFloat("RateExtractable", 1);
 			RATE_DROP_MANOR = RatesSettings.getInt("RateDropManor", 1);
 			RATE_QUEST_DROP = RatesSettings.getFloat("RateQuestDrop", 1);

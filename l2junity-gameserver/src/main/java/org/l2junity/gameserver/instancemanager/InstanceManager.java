@@ -177,6 +177,15 @@ public final class InstanceManager implements IGameXmlReader
 					template.setIsPvP(parseBoolean(attrs, "isPvP", false));
 					break;
 				}
+				case "rates":
+				{
+					attrs = d.getAttributes();
+					template.setExpRate(parseFloat(attrs, "exp", Config.RATE_INSTANCE_XP));
+					template.setSPRate(parseFloat(attrs, "sp", Config.RATE_INSTANCE_SP));
+					template.setExpPartyRate(parseFloat(attrs, "partyExp", Config.RATE_INSTANCE_PARTY_XP));
+					template.setSPPartyRate(parseFloat(attrs, "partySp", Config.RATE_INSTANCE_PARTY_SP));
+					break;
+				}
 				case "locations":
 				{
 					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
