@@ -288,6 +288,7 @@ import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
+import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.GameGuardQuery;
 import org.l2junity.gameserver.network.client.send.GetOnVehicle;
@@ -4746,7 +4747,7 @@ public final class PlayerInstance extends Playable
 			sendSkillList();
 			sendPacket(new SkillCoolTime(this));
 			broadcastUserInfo();
-			
+			sendPacket(new ExUserInfoEquipSlot(this));
 			// Notify to scripts
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(this, 0), this);
 		}
