@@ -142,7 +142,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Check if target is valid.
-		target = skill.getTarget(_caster, target, ctrlPressed, shiftPressed, true);
+		target = skill.getTarget(_caster, target, ctrlPressed, shiftPressed, false);
 		if (target == null)
 		{
 			_isCasting.set(false);
