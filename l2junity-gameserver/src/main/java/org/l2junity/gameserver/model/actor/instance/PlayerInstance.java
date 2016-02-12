@@ -8233,8 +8233,8 @@ public final class PlayerInstance extends Playable
 		{
 			setQueuedSkill(null, false, false);
 		}
-		
-		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
+		System.out.println("ere");
+		WorldObject target = skill.getTarget(this, forceUse, dontMove, true);
 		if (target == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);

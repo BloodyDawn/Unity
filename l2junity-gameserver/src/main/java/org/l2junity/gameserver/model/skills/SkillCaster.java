@@ -142,7 +142,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Check if target is valid.
-		target = skill.getTarget(_caster, target, ctrlPressed, shiftPressed, false);
+		target = skill.getTarget(_caster, target, ctrlPressed, shiftPressed, true);
 		if (target == null)
 		{
 			_isCasting.set(false);
@@ -492,7 +492,7 @@ public class SkillCaster implements Runnable
 								((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, _caster);
 							}
 						}
-						else if (obj.isAttackable() || (obj.isPlayer() && (obj.getActingPlayer().getPvpFlag() > 0)) || (obj.getActingPlayer().getReputation() < 0))
+						else if (obj.isAttackable() || ((obj.isPlayer() && (obj.getActingPlayer().getPvpFlag() > 0)) || (obj.getActingPlayer().getReputation() < 0)))
 						{
 							// Supporting players or monsters result in pvpflag.
 							player.updatePvPStatus();
