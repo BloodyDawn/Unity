@@ -20,6 +20,7 @@ package instances.BaylorWarzone;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
@@ -49,7 +50,7 @@ public final class BaylorWarzone extends AbstractInstance
 	private static final SkillHolder INVIS_NPC_SOCIAL_SKILL = new SkillHolder(5401, 1);
 	private static final SkillHolder BAYLOR_SOCIAL_SKILL = new SkillHolder(5402, 1);
 	// Locations
-	private static final Location BATTLE_PORT = new Location(153569, 143236, -12737);
+	private static final Location BATTLE_PORT = new Location(153567, 143319, -12736);
 	// Misc
 	private static final int TEMPLATE_ID = 166;
 	
@@ -161,6 +162,7 @@ public final class BaylorWarzone extends AbstractInstance
 						baylor.getVariables().set("is_after_you", count);
 						baylor.setRandomAnimation(false);
 						baylor.setRandomWalking(false);
+						((Attackable) baylor).setCanReturnToSpawnPoint(false);
 						count++;
 					}
 					getTimers().addTimer("START_SCENE_13", 300, npc, null);
