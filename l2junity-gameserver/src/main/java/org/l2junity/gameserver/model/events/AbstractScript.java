@@ -144,6 +144,7 @@ import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
+import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SpecialCamera;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -2731,6 +2732,11 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		return check;
 	}
 	
+	public static void playSound(Instance world, String sound)
+	{
+		world.broadcastPacket(new PlaySound(sound));
+	}
+	
 	/**
 	 * Send a packet in order to play a sound to the player.
 	 * @param player the player whom to send the packet
@@ -3080,6 +3086,11 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	public static void specialCamera3(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
 		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
+	}
+	
+	public static void specialCamera(Instance world, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
+	{
+		world.broadcastPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}
 	
 	/**
