@@ -15630,7 +15630,7 @@ public final class SystemMessageId
 				{
 					final ClientString annotation = field.getAnnotationsByType(ClientString.class)[0];
 					SystemMessageId smId = new SystemMessageId(annotation.id());
-					smId.setName(field.getName());
+					smId.setName(annotation.message());
 					smId.setParamCount(parseMessageParameters(field.getName()));
 					field.set(null, smId);
 					VALUES.put(smId.getId(), smId);
