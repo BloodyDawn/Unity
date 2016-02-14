@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -62,6 +63,7 @@ public final class BaylorWarzone extends AbstractInstance
 		addSpawnId(INVISIBLE_NPC_1);
 		addSpellFinishedId(INVISIBLE_NPC_1);
 		setCreatureSeeId(this::onCreatureSee, INVISIBLE_NPC_1);
+		setCreatureKillId(this::onBossKill, BAYLOR);
 	}
 	
 	@Override
@@ -292,6 +294,24 @@ public final class BaylorWarzone extends AbstractInstance
 		
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
+	}
+	
+	public void onBossKill(OnCreatureKill event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		final Instance world = npc.getInstanceWorld();
+		
+		if (isBylorInstance(world))
+		{
+			if (world.getAliveNpcs(BAYLOR).isEmpty())
+			{
+				world.finishInstance();
+			}
+			else
+			{
+				world.setReenterTime();
+			}
+		}
 	}
 	
 	@Override
