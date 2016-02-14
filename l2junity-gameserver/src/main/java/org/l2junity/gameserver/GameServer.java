@@ -103,6 +103,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.instancemanager.ClanHallAuctionManager;
+import org.l2junity.gameserver.instancemanager.CommissionManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
@@ -230,6 +231,7 @@ public class GameServer
 		PrimeShopData.getInstance();
 		AppearanceItemData.getInstance();
 		AlchemyData.getInstance();
+		CommissionManager.getInstance();
 		
 		printSection("Characters");
 		ClassListData.getInstance();
