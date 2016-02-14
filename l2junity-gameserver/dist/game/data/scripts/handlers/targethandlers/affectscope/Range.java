@@ -59,6 +59,10 @@ public class Range implements IAffectScopeHandler
 			{
 				return false;
 			}
+			if ((c == activeChar) && (target != activeChar)) // Range skills appear to not affect you unless you are the main target.
+			{
+				return false;
+			}
 			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
 			{
 				return false;

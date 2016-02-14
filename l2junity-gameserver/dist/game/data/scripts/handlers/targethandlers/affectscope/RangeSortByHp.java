@@ -60,6 +60,12 @@ public class RangeSortByHp implements IAffectScopeHandler
 				return false;
 			}
 			
+			// Range skills appear to not affect you unless you are the main target.
+			if ((c == activeChar) && (target != activeChar))
+			{
+				return false;
+			}
+			
 			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
 			{
 				return false;
