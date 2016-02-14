@@ -87,6 +87,7 @@ import org.slf4j.LoggerFactory;
 public class SkillCaster implements Runnable
 {
 	private static final Logger _log = LoggerFactory.getLogger(SkillCaster.class);
+	private static final int CASTING_TIME_CAP = 500;
 	
 	private final Creature _caster;
 	private final SkillCastingType _castingType;
@@ -226,16 +227,6 @@ public class SkillCaster implements Runnable
 			}
 		}
 		
-		// Consume skill initial MP needed for cast.
-		int initmpcons = _caster.getStat().getMpInitialConsume(_skill);
-		if (initmpcons > 0)
-		{
-			_caster.getStatus().reduceMp(initmpcons);
-			StatusUpdate su = new StatusUpdate(_caster);
-			su.addUpdate(StatusUpdateType.CUR_MP, (int) _caster.getCurrentMp());
-			_caster.sendPacket(su);
-		}
-		
 		if (_target != _caster)
 		{
 			// Face the target
@@ -254,6 +245,16 @@ public class SkillCaster implements Runnable
 		final int actionId = _caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.getId()) : -1;
 		_caster.broadcastPacket(new MagicSkillUse(_caster, _target, _skill.getDisplayId(), _skill.getDisplayLevel(), _castTime, _reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
 		
+		// Consume skill initial MP needed for cast.
+		int initmpcons = _caster.getStat().getMpInitialConsume(_skill);
+		if (initmpcons > 0)
+		{
+			_caster.getStatus().reduceMp(initmpcons);
+			StatusUpdate su = new StatusUpdate(_caster);
+			su.addUpdate(StatusUpdateType.CUR_MP, (int) _caster.getCurrentMp());
+			_caster.sendPacket(su);
+		}
+		
 		// Send a system message to the player.
 		if (_caster.isPlayer() && !_skill.isAbnormalInstant())
 		{
@@ -268,49 +269,31 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Trigger any skill cast start effects.
-		if (_skill.hasEffects(EffectScope.START))
-		{
-			_skill.applyEffectScope(EffectScope.START, new BuffInfo(_caster, _target, _skill, false, _item), true, false);
-		}
+		_skill.applyEffectScope(EffectScope.START, new BuffInfo(_caster, _target, _skill, false, _item), true, false);
 		
 		// Casting action is starting...
 		_caster.stopEffectsOnAction();
 		
-		// Start casting.
-		if (_castTime > 0)
+		// Show the gauge bar for casting.
+		if (_caster.isPlayer())
 		{
-			// Show the gauge bar for casting.
-			if (_caster.isPlayer())
-			{
-				_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
-			}
-			
-			// Broadcast fly animation if needed. Packet order is after setup gauge.
-			if (_skill.getFlyType() != null)
-			{
-				_caster.broadcastPacket(new FlyToLocation(_caster, _target, _skill.getFlyType()));
-			}
-			
-			// Start channeling if skill is channeling.
-			if (_skill.isChanneling() && (_skill.getChannelingSkillId() > 0))
-			{
-				_caster.getSkillChannelizer().startChanneling(_skill);
-			}
-			
-			// Schedule a thread that will execute after casting time is over.
-			_task = ThreadPoolManager.getInstance().scheduleGeneral(this, _castTime);
+			_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
 		}
-		else
+		
+		// Broadcast fly animation if needed. Packet order is after setup gauge.
+		if (_skill.getFlyType() != null)
 		{
-			// Broadcast fly animation if needed.
-			if (_skill.getFlyType() != null)
-			{
-				_caster.broadcastPacket(new FlyToLocation(_caster, _target, _skill.getFlyType()));
-			}
-			
-			// Casting time is instant, execute now.
-			run();
+			_caster.broadcastPacket(new FlyToLocation(_caster, _target, _skill.getFlyType()));
 		}
+		
+		// Start channeling if skill is channeling.
+		if (_skill.isChanneling() && (_skill.getChannelingSkillId() > 0))
+		{
+			_caster.getSkillChannelizer().startChanneling(_skill);
+		}
+		
+		// Schedule a thread that will execute 500ms before casting time is over (for animation issues and retail handling).
+		_task = ThreadPoolManager.getInstance().scheduleEffect(this, _castTime - CASTING_TIME_CAP);
 	}
 	
 	@Override
@@ -325,6 +308,7 @@ public class SkillCaster implements Runnable
 		Creature target = _target;
 		Skill skill = _skill;
 		ItemInstance item = _item;
+		int castTime = _castTime;
 		
 		try
 		{
@@ -336,10 +320,16 @@ public class SkillCaster implements Runnable
 				_caster.setXYZ(_target.getX(), _target.getY(), _target.getZ());
 			}
 			
-			// Broadcast MagicSkillLaunched packet.
-			if (!skill.isToggle())
+			// MagicSkillLaunched packet is only broadcasted for skills that are above the casting time cap. Instant cast skills never broadcast this packet.
+			if (!skill.isToggle() && (castTime >= CASTING_TIME_CAP))
 			{
 				_caster.broadcastPacket(new MagicSkillLaunched(_caster, skill.getDisplayId(), skill.getDisplayLevel(), _castingType, targets));
+			}
+			
+			// Skill has been launched, 500ms (or lower for instant skills) prematurely. Wait this time so casting is fully finished.
+			if (castTime > 0)
+			{
+				Thread.sleep((castTime >= CASTING_TIME_CAP) ? CASTING_TIME_CAP : castTime);
 			}
 			
 			// Recharge shots
@@ -950,16 +940,10 @@ public class SkillCaster implements Runnable
 			}
 		}
 		
-		// Avoid broken Casting Animation.
-		// Client can't handle less than 550ms Casting Animation in Magic Skills with more than 550ms base.
-		if (skill.isMagic() && ((skill.getHitTime() + skill.getCoolTime()) > 550) && (skillTime < 550))
+		// Client have casting time cap for skills that is 500ms. Skills cannot go lower than 500ms cast time, unless their original cast time is such.
+		if (skill.getHitTime() > CASTING_TIME_CAP)
 		{
-			skillTime = 550;
-		}
-		// Client can't handle less than 500ms Casting Animation in Physical Skills with 500ms base or more.
-		else if (!skill.isStatic() && ((skill.getHitTime() + skill.getCoolTime()) >= 500) && (skillTime < 500))
-		{
-			skillTime = 500;
+			skillTime = Math.max(CASTING_TIME_CAP, skillTime);
 		}
 		
 		return skillTime;
