@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.network.PacketWriter;
 
 /**
@@ -156,6 +157,16 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		if (npc.getTemplate().getDisplayId() != npc.getTemplate().getId())
 		{
 			addComponentType(NpcInfoType.NAME);
+		}
+		
+		if (npc.getNameString() != null)
+		{
+			addComponentType(NpcInfoType.NAME_NPCSTRINGID);
+		}
+		
+		if (npc.getTitleString() != null)
+		{
+			addComponentType(NpcInfoType.TITLE_NPCSTRINGID);
 		}
 		
 		if (!_abnormalVisualEffects.isEmpty() || npc.isInvisible())
@@ -393,11 +404,13 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.NAME_NPCSTRINGID))
 		{
-			packet.writeD(-1); // NPCStringId for name
+			final NpcStringId nameString = _npc.getNameString();
+			packet.writeD(nameString != null ? nameString.getId() : -1); // NPCStringId for name
 		}
 		if (containsMask(NpcInfoType.TITLE_NPCSTRINGID))
 		{
-			packet.writeD(-1); // NPCStringId for title
+			final NpcStringId titleString = _npc.getTitleString();
+			packet.writeD(titleString != null ? titleString.getId() : -1); // NPCStringId for title
 		}
 		if (containsMask(NpcInfoType.PVP_FLAG))
 		{
