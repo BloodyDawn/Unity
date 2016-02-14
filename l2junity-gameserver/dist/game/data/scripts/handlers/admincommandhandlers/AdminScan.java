@@ -184,12 +184,13 @@ public class AdminScan implements IAdminCommandHandler
 			.bodyHandler((pages, character, sb) ->
 		{
 			final BypassBuilder builder = createBypassBuilder(parser, "bypass -h admin_deleteNpcByObjectId");
+			final String npcName = character.getName();
 			builder.addParam("page", page);
 			builder.addParam("objectId", character.getObjectId());
 			
 			sb.append("<tr>");
 			sb.append("<td width=\"45\">").append(character.getId()).append("</td>");
-			sb.append("<td><a action=\"bypass -h admin_move_to ").append(character.getX()).append(SPACE).append(character.getY()).append(SPACE).append(character.getZ()).append("\">").append(character.getName()).append("</a></td>");
+			sb.append("<td><a action=\"bypass -h admin_move_to ").append(character.getX()).append(SPACE).append(character.getY()).append(SPACE).append(character.getZ()).append("\">").append(npcName.isEmpty() ? "No name NPC" : npcName).append("</a></td>");
 			sb.append("<td width=\"60\">").append(Util.formatAdena(Math.round(activeChar.calculateDistance(character, false, false)))).append("</td>");
 			sb.append("<td width=\"54\"><a action=\"").append(builder.toStringBuilder()).append("\"><font color=\"LEVEL\">Delete</font></a></td>");
 			sb.append("</tr>");
