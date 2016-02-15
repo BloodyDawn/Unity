@@ -5969,7 +5969,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		final int newValue = type.getValue(this);
 		_statusUpdates.compute(type, (key, oldValue) ->
 		{
-			if ((oldValue != null) && (oldValue != newValue))
+			if ((oldValue == null) || (oldValue != newValue))
 			{
 				su.addUpdate(type, newValue);
 				return newValue;
