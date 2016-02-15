@@ -2525,7 +2525,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Set the Title of the L2Character.
+	 * Set the Title of the Creature.
 	 * @param value
 	 */
 	public final void setTitle(String value)
@@ -5739,7 +5739,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		final int newValue = type.getValue(this);
 		_statusUpdates.compute(type, (key, oldValue) ->
 		{
-			if (oldValue != newValue)
+			if ((oldValue == null) || (oldValue != newValue))
 			{
 				su.addUpdate(type, newValue);
 				return newValue;

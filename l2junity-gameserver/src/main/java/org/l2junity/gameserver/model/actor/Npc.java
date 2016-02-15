@@ -138,6 +138,9 @@ public class Npc extends Creature
 	private int _cloneObjId; // Used in NpcInfo packet to clone the specified player.
 	private int _clanId; // Used in NpcInfo packet to show the specified clan.
 	
+	private NpcStringId _titleString;
+	private NpcStringId _nameString;
+	
 	/**
 	 * Constructor of L2NpcInstance (use L2Character constructor).<br>
 	 * <B><U>Actions</U>:</B>
@@ -1641,5 +1644,25 @@ public class Npc extends Creature
 	public void initSeenCreatures()
 	{
 		initSeenCreatures(getTemplate().getAggroRange());
+	}
+	
+	public NpcStringId getNameString()
+	{
+		return _nameString;
+	}
+	
+	public NpcStringId getTitleString()
+	{
+		return _titleString;
+	}
+	
+	public void setNameString(NpcStringId nameString)
+	{
+		_nameString = nameString;
+	}
+	
+	public void setTitleString(NpcStringId titleString)
+	{
+		_titleString = titleString;
 	}
 }

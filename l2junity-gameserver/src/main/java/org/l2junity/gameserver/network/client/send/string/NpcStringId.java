@@ -35171,7 +35171,7 @@ public final class NpcStringId
 				{
 					final ClientString annotation = field.getAnnotationsByType(ClientString.class)[0];
 					final NpcStringId nsId = new NpcStringId(annotation.id());
-					nsId.setName(field.getName());
+					nsId.setName(annotation.message());
 					nsId.setParamCount(parseMessageParameters(field.getName()));
 					field.set(null, nsId);
 					VALUES.put(nsId.getId(), nsId);
@@ -35285,7 +35285,7 @@ public final class NpcStringId
 		
 		_params = (byte) params;
 	}
-
+	
 	public final ExShowScreenMessage getStaticScreenMessage()
 	{
 		return _staticScreenMessage;

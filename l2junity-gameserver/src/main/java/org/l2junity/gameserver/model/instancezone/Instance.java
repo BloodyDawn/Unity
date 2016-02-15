@@ -441,7 +441,7 @@ public final class Instance implements IIdentifiable, INamable
 				{
 					spawn.stopRespawn();
 				}
-				npcs.add(spawn.doSpawn());
+				npcs.add(spawn.doSpawn(holder.isSpawnAnimation()));
 			}
 		}
 		catch (Exception e)

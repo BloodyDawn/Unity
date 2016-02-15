@@ -614,6 +614,12 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		// Reset summoned list
 		npc.resetSummonedNpcs();
 		
+		// Reset NpcStringId for name
+		npc.setNameString(null);
+		
+		// Reset NpcStringId for title
+		npc.setTitleString(null);
+		
 		// Link the L2NpcInstance to this L2Spawn
 		npc.setSpawn(this);
 		
