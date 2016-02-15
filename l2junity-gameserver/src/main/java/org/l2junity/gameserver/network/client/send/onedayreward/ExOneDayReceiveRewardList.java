@@ -54,8 +54,8 @@ public class ExOneDayReceiveRewardList implements IClientOutgoingPacket
 		{
 			packet.writeH(reward.getId());
 			packet.writeC(reward.getStatus(_player));
-			packet.writeC(reward.getRequiredCompletions() > 0 ? 0x01 : 0x00); // TODO: Check this
-			packet.writeD(reward.getProgress(_player)); // TODO: Check this
+			packet.writeC(reward.getRequiredCompletions() > 0 ? 0x01 : 0x00);
+			packet.writeD(reward.getProgress(_player));
 			packet.writeD(reward.getRequiredCompletions());
 		}
 		return true;
