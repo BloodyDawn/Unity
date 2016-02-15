@@ -57,7 +57,7 @@ public class RequestOneDayRewardReceive implements IClientIncomingPacket
 			return;
 		}
 		
-		reward.forEach(r -> r.requestReward(player));
+		reward.stream().filter(o -> o.isDisplayable(player)).forEach(r -> r.requestReward(player));
 		player.sendPacket(new ExOneDayReceiveRewardList(player));
 	}
 }

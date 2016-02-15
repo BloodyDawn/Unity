@@ -39,22 +39,21 @@ public class OneDayRewardDataHolder
 	private final List<ClassId> _classRestriction;
 	private final int _requiredCompletions;
 	private final StatsSet _params;
-	private AbstractOneDayRewardHandler _handler;
+	private final boolean _isOneTime;
+	private final AbstractOneDayRewardHandler _handler;
 	
 	public OneDayRewardDataHolder(StatsSet set)
 	{
+		final Function<OneDayRewardDataHolder, AbstractOneDayRewardHandler> handler = OneDayRewardHandler.getInstance().getHandler(set.getString("handler"));
+		
 		_id = set.getInt("id");
 		_rewardId = set.getInt("reward_id");
 		_requiredCompletions = set.getInt("requiredCompletion", 0);
 		_rewardsItems = set.getList("items", ItemHolder.class);
 		_classRestriction = set.getList("classRestriction", ClassId.class);
 		_params = set.getObject("params", StatsSet.class);
-		
-		final Function<OneDayRewardDataHolder, AbstractOneDayRewardHandler> handler = OneDayRewardHandler.getInstance().getHandler(set.getString("handler"));
-		if (handler != null)
-		{
-			_handler = handler.apply(this);
-		}
+		_isOneTime = set.getBoolean("isOneTime", true);
+		_handler = handler != null ? handler.apply(this) : null;
 	}
 	
 	public int getId()
@@ -72,11 +71,6 @@ public class OneDayRewardDataHolder
 		return _classRestriction;
 	}
 	
-	public boolean isAllowedClass(ClassId c)
-	{
-		return _classRestriction.isEmpty() || _classRestriction.contains(c);
-	}
-	
 	public List<ItemHolder> getRewards()
 	{
 		return _rewardsItems;
@@ -92,9 +86,19 @@ public class OneDayRewardDataHolder
 		return _params;
 	}
 	
+	public boolean isOneTime()
+	{
+		return _isOneTime;
+	}
+	
+	public boolean isDisplayable(PlayerInstance player)
+	{
+		return (!_isOneTime || (getStatus(player) != OneDayRewardStatus.COMPLETED.getClientId())) && (_classRestriction.isEmpty() || _classRestriction.contains(player.getClassId()));
+	}
+	
 	public void requestReward(PlayerInstance player)
 	{
-		if ((_handler != null) && isAllowedClass(player.getClassId()))
+		if ((_handler != null) && isDisplayable(player))
 		{
 			_handler.requestReward(player);
 		}

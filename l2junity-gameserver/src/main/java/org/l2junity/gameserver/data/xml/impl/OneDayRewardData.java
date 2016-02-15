@@ -102,12 +102,23 @@ public class OneDayRewardData implements IGameXmlReader
 	
 	public Collection<OneDayRewardDataHolder> getOneDayRewardData()
 	{
-		return _oneDayReward.values().stream().flatMap(l -> l.stream()).collect(Collectors.toList());
+		//@formatter:off
+		return _oneDayReward.values()
+			.stream()
+			.flatMap(List::stream)
+			.collect(Collectors.toList());
+		//@formatter:on
 	}
 	
 	public Collection<OneDayRewardDataHolder> getOneDayRewardData(PlayerInstance player)
 	{
-		return _oneDayReward.values().stream().flatMap(l -> l.stream()).filter(o -> o.isAllowedClass(player.getClassId())).collect(Collectors.toList());
+		//@formatter:off
+		return _oneDayReward.values()
+			.stream()
+			.flatMap(List::stream)
+			.filter(o -> o.isDisplayable(player))
+			.collect(Collectors.toList());
+		//@formatter:on
 	}
 	
 	public Collection<OneDayRewardDataHolder> getOneDayRewardData(int id)
