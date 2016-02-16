@@ -19,6 +19,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -57,6 +58,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -101,6 +103,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -139,6 +142,7 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -183,6 +187,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -221,6 +226,7 @@
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -258,6 +264,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>
@@ -294,6 +301,7 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -327,6 +335,7 @@
 		</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -353,6 +362,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="11811" levels="1" name="Total Resurrection Wish">
 		<!-- Glory Days confirmed -->
@@ -370,6 +380,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="11812" levels="1" name="Mark of Resurrection">
 		<!-- Updated to Ertheia -->
@@ -395,6 +406,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
@@ -426,6 +438,7 @@
 		<magicLvl>93</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
@@ -498,6 +511,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>KNOCKDOWN</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -547,6 +561,7 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -592,6 +607,7 @@
 		<magicLvl>99</magicLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -660,6 +676,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -703,6 +720,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>-300</amount>
@@ -725,8 +743,8 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>PARTY</targetType2>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -763,6 +781,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_PA_PD_UP,-1;PA_UP,-1;PD_UP,-1;IMPROVE_MA_MD_UP,-1;MD_UP,-1;MA_UP,-1;KAMAEL_SPECIAL,-1</dispel>
@@ -810,6 +829,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP,-1;CRITICAL_PROB_UP,-1;CRITICAL_DMG_UP,-1;CHEAP_MAGIC,-1;MAGIC_CRITICAL_UP,-1</dispel>
@@ -863,6 +883,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1</dispel>
@@ -906,6 +927,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1</dispel>
@@ -957,6 +979,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>40</SHOCK>
@@ -1000,6 +1023,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>50</HOLD>
@@ -1044,6 +1068,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>
@@ -1070,6 +1095,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -1101,6 +1127,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_NOT</targetType>
+		<affectScope>RANGE_SORT_BY_HP</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>40</power>
@@ -1129,6 +1156,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>MULTI_BUFF,-1;COUNTER_CRITICAL,-1</dispel>
@@ -1233,6 +1261,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="Unsummon">
 				<chance>50</chance>
@@ -1296,6 +1325,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1327,6 +1357,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<canBeDispelled>false</canBeDispelled>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>5</amount>
@@ -1364,6 +1395,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<canBeDispelled>false</canBeDispelled>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>5</amount>
@@ -1394,6 +1426,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>100</amount>

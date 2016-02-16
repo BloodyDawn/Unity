@@ -23,6 +23,7 @@
 		<castRange>40</castRange>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- NPC Trigger Target Cancel -->
@@ -63,6 +64,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- NPC Trigger Target Cancel -->
@@ -89,6 +91,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TargetCancel" />
 		</effects>
@@ -118,6 +121,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DISARM</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="Disarm" />
 		</effects>
@@ -156,6 +160,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -188,6 +193,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="5906" levels="1" name="Ritual of Revive">
 		<hitTime>3000</hitTime>
@@ -199,6 +205,7 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5907" levels="2" name="Ritual of Entombment">
 		<abnormalLvl>1</abnormalLvl>
@@ -224,6 +231,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
 		<targetType>NPC_BODY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -254,6 +262,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
 		<targetType>PC_BODY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -271,6 +280,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- FIXME: value unconfirmed -->
@@ -289,6 +299,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- FIXME: value unconfirmed -->
@@ -319,6 +330,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5913" levels="1" name="Putrefaction Cleanse">
 		<magicLvl>83</magicLvl>
@@ -360,6 +372,7 @@
 		<castRange>600</castRange>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5915" levels="9" name="Mummifying Aura">
 		<abnormalLvl>
@@ -385,6 +398,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5916" levels="9" name="Cruising Aura">
 		<abnormalLvl>
@@ -410,6 +424,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5917" levels="9" name="Shrouding Aura">
 		<abnormalLvl>
@@ -435,6 +450,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5918" levels="10" name="Physical Root Vulnerability">
 		<table name="#trait_root_physically"> -10 -20 -30 -40 -50 -60 -70 -80 -90 -99 </table>
@@ -492,6 +508,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockResurrection" />
 		</effects>
@@ -513,6 +530,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>BALAKAS_SCOPE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -546,6 +564,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>121</power>
@@ -603,6 +622,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
@@ -642,6 +662,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>3</amount>
@@ -672,6 +693,7 @@
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5925" levels="1" name="Goring Charge">
 		<effectPoint>-100</effectPoint>
@@ -683,6 +705,7 @@
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -700,6 +723,7 @@
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="5927" levels="4" name="Immortal Frenzy">
 		<abnormalLvl>
@@ -719,6 +743,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5928" levels="4" name="Immortal Resilience">
 		<abnormalLvl>
@@ -738,6 +763,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5929" levels="1" name="Pairing of the Lost">
 		<abnormalLvl>1</abnormalLvl>
@@ -752,6 +778,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5930" levels="1" name="Shielding of the Lost">
 		<!-- TODO: Implement me! -->
@@ -767,6 +794,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>90</BOW>
@@ -806,6 +834,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -831,6 +860,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -854,6 +884,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5935" levels="1" name="Dark Ring">
 		<!-- Confirmed CT2.5 -->
@@ -873,6 +904,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -897,6 +929,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -917,6 +950,7 @@
 		<icon>icon.skill1540</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5938" levels="5" name="P. Atk. Up">
 		<abnormalLvl>1</abnormalLvl>
@@ -932,6 +966,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1068</icon>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5939" levels="5" name="Defense Ability Up">
 		<abnormalLvl>1</abnormalLvl>
@@ -947,6 +982,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1040</icon>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5940" levels="12" name="Energy of Generation">
 		<abnormalLvl>
@@ -989,6 +1025,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5941" levels="1" name="Energy of Erosion">
 		<abnormalLvl>4</abnormalLvl>
@@ -1005,6 +1042,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5942" levels="1" name="Energy of Pollution">
 		<abnormalLvl>4</abnormalLvl>
@@ -1021,6 +1059,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5943" levels="1" name="Energy of Contamination">
 		<abnormalLvl>4</abnormalLvl>
@@ -1037,6 +1076,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5944" levels="1" name="Energy of Oblivion">
 		<abnormalLvl>4</abnormalLvl>
@@ -1053,6 +1093,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5945" levels="1" name="Region2 Rotation5">
 		<abnormalLvl>3</abnormalLvl>
@@ -1068,6 +1109,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5946" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1080,6 +1122,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5947" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1092,6 +1135,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5948" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1104,6 +1148,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5949" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1116,6 +1161,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5950" levels="1" name="Birthday Gift">
 		<!-- Confirmed CT2.5 -->
@@ -1138,6 +1184,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -1155,6 +1202,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5952" levels="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
@@ -1166,6 +1214,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5953" levels="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
@@ -1177,6 +1226,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5954" levels="1" name="Agathion Cute Trick - Tinplate Golem">
 		<hitTime>3000</hitTime>
@@ -1188,6 +1238,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5955" levels="1" name="Agathion Cute Trick - Joy">
 		<hitTime>3000</hitTime>
@@ -1199,6 +1250,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16056" />
 		</cond>
@@ -1213,6 +1265,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16058" />
 		</cond>
@@ -1227,6 +1280,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16057" />
 		</cond>
@@ -1241,6 +1295,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16059" />
 		</cond>
@@ -1255,6 +1310,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16060" />
 		</cond>
@@ -1277,6 +1333,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5961" levels="1" name="Barrier Thunder Storm">
 		<abnormalLvl>1</abnormalLvl>
@@ -1300,6 +1357,7 @@
 		<castRange>600</castRange>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="5962" levels="1" name="Air Defense Cannon">
 		<effectPoint>-100</effectPoint>
@@ -1311,6 +1369,7 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5963" levels="1" name="Emery Conversion">
 		<effectPoint>100</effectPoint>
@@ -1323,6 +1382,7 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5964" levels="1" name="Star Shard">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1335,6 +1395,7 @@
 		<reuseDelay>700</reuseDelay>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5965" levels="1" name="Fireworks">
 		<hitTime>500</hitTime>
@@ -1348,6 +1409,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5966" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1360,6 +1422,7 @@
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5967" levels="2" name="Aggression Aura">
 		<abnormalLvl>1</abnormalLvl>
@@ -1380,6 +1443,7 @@
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="5968" levels="2" name="Rapid Shot">
 		<abnormalLvl>
@@ -1405,6 +1469,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5969" levels="2" name="Punch of Doom">
 		<abnormalLvl>1</abnormalLvl>
@@ -1438,6 +1503,7 @@
 		</hpConsume>
 		<castRange>40</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -1463,6 +1529,7 @@
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5971" levels="1" name="Seduced Ranger's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1482,6 +1549,7 @@
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5972" levels="1" name="Seduced Wizard's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1501,6 +1569,7 @@
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5973" levels="1" name="Seduced Warrior's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1520,6 +1589,7 @@
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5974" levels="1" name="Tiat Transformation">
 		<abnormalLvl>1</abnormalLvl>
@@ -1536,6 +1606,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5975" levels="3" name="Dark Attack">
 		<table name="#power"> 1515 2365 6059 </table>
@@ -1562,6 +1633,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1597,6 +1669,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1626,6 +1699,7 @@
 		<effectRange>400</effectRange>
 		<castRange>40</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5978" levels="1" name="Devil Strike">
 		<effectPoint>-653</effectPoint>
@@ -1638,6 +1712,7 @@
 		<effectRange>-2</effectRange>
 		<castRange>500</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5979" levels="1" name="Forced Teleport">
 		<hitTime>2500</hitTime>
@@ -1649,6 +1724,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5980" levels="3" name="Seal Isolation">
 		<!-- Confirmed CT2.5 -->
@@ -1676,6 +1752,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1704,6 +1781,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5982" levels="1" name="Aura Bird - Falcon">
 		<abnormalLvl>1</abnormalLvl>
@@ -1727,6 +1805,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1775,6 +1854,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1818,6 +1898,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5985" levels="9" name="Decaying Aura">
 		<abnormalLvl>
@@ -1842,6 +1923,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5986" levels="9" name="Vampiric Aura">
 		<abnormalLvl>
@@ -1866,6 +1948,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5987" levels="1" name="Weapon Maintenance">
 		<!-- Confirmed CT2.5 -->
@@ -1885,6 +1968,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="AttackTrait">
 				<SHOCK>8</SHOCK>
@@ -1948,6 +2032,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
@@ -2001,6 +2086,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5990" levels="3" name="Lesser Heal">
 		<effectPoint>
@@ -2020,6 +2106,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5991" levels="1" name="Presentation - Summon Tiat">
 		<hitTime>11760</hitTime>
@@ -2030,6 +2117,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5992" levels="12" name="Aggression">
 		<abnormalLvl>1</abnormalLvl>
@@ -2075,6 +2163,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5993" levels="1" name="Command of Anchor">
 		<!-- Confirmed CT2.5 -->
@@ -2101,6 +2190,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>171</power>
@@ -2140,6 +2230,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>ETC</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5995" levels="1" name="not_used">
 		<magicLvl>83</magicLvl>

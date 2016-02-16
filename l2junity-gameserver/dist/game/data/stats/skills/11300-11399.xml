@@ -20,6 +20,7 @@
 		<trait>AIRBIND</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -68,6 +69,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -114,6 +116,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player hasSummon="true" />
 		</cond>
@@ -158,6 +161,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
@@ -188,6 +192,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
@@ -218,6 +223,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -248,6 +254,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>79</amount>
@@ -278,6 +285,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>17</amount>
@@ -308,6 +316,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>34</amount>
@@ -335,6 +344,7 @@
 		<abnormalTime>3</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -369,6 +379,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -409,6 +420,7 @@
 		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -442,6 +454,7 @@
 		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -474,6 +487,7 @@
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>4000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -509,6 +523,7 @@
 		<affectLimit>6-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>NPC_BODY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
@@ -557,6 +572,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -609,6 +625,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>

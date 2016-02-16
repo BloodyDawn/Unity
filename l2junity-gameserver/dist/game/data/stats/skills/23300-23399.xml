@@ -19,6 +19,7 @@
 		<icon>icon.skill0773</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>300</power>
@@ -36,6 +37,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23302" levels="1" name="Dimensional Door B">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door A. -->
@@ -47,6 +49,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23303" levels="1" name="Teleport">
 		<!-- none -->
@@ -61,6 +64,7 @@
 		<castRange>2000</castRange>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23304" levels="1" name="Teleport">
 		<!-- none -->
@@ -75,6 +79,7 @@
 		<castRange>2000</castRange>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
 		<!-- Restores all HP/MP/CP and becomes invincible for 5 seconds. But can only be used when HP is below 30%. -->
@@ -94,6 +99,7 @@
 		<reuseDelay>43200000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Zinenze perform cute tricks. -->
@@ -106,6 +112,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23307" levels="1" name="Yanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Enze perform cute tricks. -->
@@ -118,6 +125,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
 		<!-- Increases HP Recovery Bonus by 30% and decreases damage from the topography by 80% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
@@ -135,6 +143,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="HpRegen">
 				<amount>30</amount>
@@ -162,6 +171,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MpRegen">
 				<amount>30</amount>
@@ -185,6 +195,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -208,6 +219,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>25</amount>
@@ -234,6 +246,7 @@
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<abnormalTime>3600</abnormalTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ExpModify">
 				<amount>100</amount>
@@ -272,6 +285,7 @@
 		<icon>icon.skill0386</icon>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
 		<!-- Increases resistance to control-inhibiting attacks by 100%. -->
@@ -294,6 +308,7 @@
 		<icon>icon.skill0388</icon>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23315" levels="5" name="Paralysis Immunity Enhance">
 		<!-- Increases resistance to paralysis attacks by 100%. -->
@@ -309,6 +324,7 @@
 		<abnormalTime>2</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23316" levels="5" name="Enhance Petrification Immunity">
 		<!-- Increases resistance to petrification attacks by 100%. -->
@@ -324,6 +340,7 @@
 		<abnormalTime>2</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23317" levels="5" name="Fear Immunity Enhance">
 		<!-- Increases resistance to fear attacks by 100%. -->
@@ -339,6 +356,7 @@
 		<abnormalTime>2</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23318" levels="1" name="Cat the Ranger Boost">
 		<!-- "Recovers the master's HP by 10%. For 1 minute(s), receives power from Cat the Ranger to increase the master's resistance to debuff attacks by 80%, resistance to buff canceling attacks by 40%, Speed by 10%, P. Def. by 20%, and M. Def. by 20%. Does not receive preemptive attacks from monsters. Reuse delay 10 minutes." -->
@@ -359,6 +377,7 @@
 		<isMagic>1</isMagic>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23319" levels="1" name="Blood Seeker">
 		<!-- High Five Skill -->
@@ -388,6 +407,7 @@
 		<attributeValue>180</attributeValue>
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>170</power>
@@ -423,6 +443,7 @@
 		<attributeValue>180</attributeValue>
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>230</power>
@@ -456,6 +477,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -486,6 +508,7 @@
 		<trait>SHOCK</trait>
 		<icon>BranchSys2.icon.br_wp_astarot_i00</icon>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-23</amount>
@@ -519,6 +542,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 			</effect>
@@ -548,6 +572,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
@@ -567,6 +592,7 @@
 		<magicLvl>85</magicLvl>
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23326" levels="1" name="Reduce - Luckpy">
 		<operateType>A1</operateType>
@@ -576,6 +602,7 @@
 		<magicLvl>85</magicLvl>
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23327" levels="1" name="Boss Test - Weaken">
 		<!-- A skill to test a boss mob - Weaken -->
@@ -591,6 +618,7 @@
 		<abnormalTime>648000</abnormalTime>
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23328" levels="1" name="Boss Test - Strengthen">
 		<!-- A skill to test a boss mob - Strengthen -->
@@ -606,6 +634,7 @@
 		<abnormalTime>648000</abnormalTime>
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23329" levels="1" name="Lantern Agathion's Gift1">
 		<operateType>A1</operateType>
@@ -618,6 +647,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22220</itemId>
@@ -636,6 +666,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22220</itemId>
@@ -654,6 +685,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22220</itemId>
@@ -672,6 +704,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22220</itemId>
@@ -699,6 +732,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23334" levels="1" name="Lantern Agathion Cute Trick">
 		<!-- Description: Able to see the summoned Lantern's perform cute tricks. -->
@@ -711,6 +745,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Vitality is maintained with the power of Juju Agathion. -->
@@ -732,6 +767,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23336" levels="1" name="Juju Agathion Cute Trick">
 		<!-- Description: Summoned Juju performs cute tricks. -->
@@ -744,6 +780,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23337" levels="1" name="Juju Agathion's Gift 1">
 		<operateType>A1</operateType>
@@ -756,6 +793,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22289</itemId>
@@ -774,6 +812,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22289</itemId>
@@ -792,6 +831,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22289</itemId>
@@ -810,6 +850,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22289</itemId>
@@ -842,6 +883,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
 		<!-- AUTO GENERATED SKILL -->
@@ -869,6 +911,7 @@
 		<abnormalVisualEffect>AURA_BUFF</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
 		<!-- AUTO GENERATED SKILL -->
@@ -895,6 +938,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23345" levels="1" name="Region Banishment">
 		<!-- AUTO GENERATED SKILL -->
@@ -907,6 +951,7 @@
 		<isMagic>2</isMagic>
 		<hitTime>200</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23346" levels="7" name="Valakas Agathion Cute Trick">
 		<!-- AUTO GENERATED SKILL -->
@@ -920,6 +965,7 @@
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23347" levels="7" name="Valakas Agathion Special Skill: Valakas' Blessing">
 		<!-- AUTO GENERATED SKILL -->
@@ -952,6 +998,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23349" levels="1" name="Tree's Blessing - Stage 1">
 		<!-- AUTO GENERATED SKILL -->
@@ -970,6 +1017,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23350" levels="1" name="Tree's Blessing - Stage 2">
 		<!-- AUTO GENERATED SKILL -->
@@ -988,6 +1036,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23351" levels="1" name="Tree's Blessing - Stage 3">
 		<!-- AUTO GENERATED SKILL -->
@@ -1006,6 +1055,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23352" levels="1" name="Tree's Blessing - Stage 4">
 		<!-- AUTO GENERATED SKILL -->
@@ -1024,6 +1074,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23353" levels="1" name="Tree's Blessing - Stage 5">
 		<!-- AUTO GENERATED SKILL -->
@@ -1042,6 +1093,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23354" levels="1" name="Lingering Tree's Blessing - Stage 1">
 		<!-- AUTO GENERATED SKILL -->
@@ -1062,6 +1114,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23355" levels="1" name="Lingering Tree's Blessing - Stage 2">
 		<!-- AUTO GENERATED SKILL -->
@@ -1082,6 +1135,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23356" levels="1" name="Lingering Tree's Blessing - Stage 3">
 		<!-- AUTO GENERATED SKILL -->
@@ -1102,6 +1156,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23357" levels="1" name="Lingering Tree's Blessing - Stage 4">
 		<!-- AUTO GENERATED SKILL -->
@@ -1122,6 +1177,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23358" levels="1" name="Lingering Tree's Blessing - Stage 5">
 		<!-- AUTO GENERATED SKILL -->
@@ -1142,6 +1198,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23359" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1158,6 +1215,7 @@
 		<abnormalTime>600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23360" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1174,6 +1232,7 @@
 		<abnormalTime>900</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23361" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1190,6 +1249,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23362" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1206,6 +1266,7 @@
 		<abnormalTime>1500</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23363" levels="1" name="Tree's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1222,6 +1283,7 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23364" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1238,6 +1300,7 @@
 		<abnormalTime>600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23365" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1254,6 +1317,7 @@
 		<abnormalTime>900</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23366" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1270,6 +1334,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23367" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1286,6 +1351,7 @@
 		<abnormalTime>1500</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23368" levels="1" name="Tree's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1302,6 +1368,7 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23369" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1318,6 +1385,7 @@
 		<abnormalTime>600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23370" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1334,6 +1402,7 @@
 		<abnormalTime>900</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23371" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1350,6 +1419,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23372" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1366,6 +1436,7 @@
 		<abnormalTime>1500</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23373" levels="1" name="Tree's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1382,6 +1453,7 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23374" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1398,6 +1470,7 @@
 		<abnormalTime>600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23375" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1414,6 +1487,7 @@
 		<abnormalTime>900</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23376" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1430,6 +1504,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23377" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1446,6 +1521,7 @@
 		<abnormalTime>1500</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23378" levels="1" name="Tree's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1462,6 +1538,7 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23379" levels="1" name="Elpy Master">
 		<!-- AUTO GENERATED SKILL -->
@@ -1483,6 +1560,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23380" levels="1" name="Jermann - Soul Blackmail">
 		<!-- AUTO GENERATED SKILL -->
@@ -1499,6 +1577,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1200000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23381" levels="3" name="Jermann - Flow of Destruction">
 		<!-- AUTO GENERATED SKILL -->
@@ -1524,6 +1603,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23382" levels="1" name="Jermann - Swiftness">
 		<!-- AUTO GENERATED SKILL -->
@@ -1543,6 +1623,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23383" levels="1" name="Jermann - Shadow of Darkness">
 		<!-- AUTO GENERATED SKILL -->
@@ -1558,6 +1639,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>60000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23384" levels="3" name="Jermann - Burning Darkness">
 		<!-- AUTO GENERATED SKILL -->
@@ -1580,6 +1662,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23385" levels="3" name="Jermann - Devourer of Nature">
 		<!-- AUTO GENERATED SKILL -->
@@ -1607,6 +1690,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23386" levels="3" name="Jermann - Destruction Instinct">
 		<!-- AUTO GENERATED SKILL -->
@@ -1628,6 +1712,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>12000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="23387" levels="1" name="Jermann">
 		<!-- AUTO GENERATED SKILL -->
@@ -1649,6 +1734,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23388" levels="1" name="Jermann">
 		<!-- AUTO GENERATED SKILL -->
@@ -1670,6 +1756,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23389" levels="1" name="Jermann">
 		<!-- AUTO GENERATED SKILL -->
@@ -1691,6 +1778,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23390" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
@@ -1711,6 +1799,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23391" levels="1" name="Great Mysterious Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
@@ -1731,6 +1820,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23392" levels="1" name="Stabilized Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
@@ -1750,6 +1840,7 @@
 		<trait>POISON</trait>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23393" levels="1" name="Self-destruction">
 		<!-- AUTO GENERATED SKILL -->
@@ -1767,6 +1858,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="23394" levels="1" name="Jermann - Grave of the Sword">
 		<!-- AUTO GENERATED SKILL -->
@@ -1784,6 +1876,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="23395" levels="1" name="Jermann - Death' Calling">
 		<!-- AUTO GENERATED SKILL -->
@@ -1809,6 +1902,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23396" levels="1" name="Jermann - Freezing Cold">
 		<!-- AUTO GENERATED SKILL -->
@@ -1828,6 +1922,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23397" levels="1" name="Jermann - Shard of Ice">
 		<!-- AUTO GENERATED SKILL -->
@@ -1847,6 +1942,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23398" levels="3" name="Grave of the Sword">
 		<!-- AUTO GENERATED SKILL -->
@@ -1872,6 +1968,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
 		<!-- AUTO GENERATED SKILL -->
@@ -1897,5 +1994,6 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 </list>

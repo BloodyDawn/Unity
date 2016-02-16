@@ -398,6 +398,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CpHeal">
 				<power>1200</power>
@@ -427,6 +428,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CpHeal">
 				<power>800</power>
@@ -508,6 +510,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16063</npcId>
@@ -736,6 +739,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8324" levels="1" name="Warrior's Shirt">
 		<magicLvl>75</magicLvl>
@@ -765,6 +769,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8326" levels="1" name="Wild Rose Pig Candy">
 		<icon>icon.etc_pig_candy_i00</icon>
@@ -783,6 +788,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16064</npcId>
@@ -800,6 +806,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16065</npcId>
@@ -818,6 +825,7 @@
 		<effectRange>-2</effectRange>
 		<hitTime>10000</hitTime>
 		<targetType>OTHERS</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
@@ -835,6 +843,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16066</npcId>
@@ -858,6 +867,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -883,6 +893,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="StealAbnormal">
 				<slot>buff</slot>
@@ -910,6 +921,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CpHeal">
 				<power>1500</power>
@@ -939,6 +951,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PvpPhysicalAttackDefenceBonus">
 				<amount>75</amount>
@@ -969,6 +982,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>15</amount>
@@ -1012,6 +1026,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1558,6 +1573,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="StaticDamage">
 				<power>10000</power>
@@ -1575,6 +1591,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16070</npcId>
@@ -1591,6 +1608,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8360" levels="1" name="Vitality Maintenance Effect">
 		<!-- Confirmed CT2.5 -->
@@ -1612,6 +1630,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-100</amount>
@@ -1651,6 +1670,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8363" levels="1" name="Beast Training - Accompany">
 		<!-- Confirmed CT2.5 -->
@@ -1664,6 +1684,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8364" levels="1" name="Beast Training - Use Special Ability">
 		<!-- Confirmed CT2.5 -->
@@ -1677,6 +1698,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8365" levels="1" name="Dynasty Tunic">
 		<icon>icon.armor_t93_ue_i00</icon>
@@ -1715,6 +1737,7 @@
 		<effectRange>400</effectRange>
 		<castRange>150</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8370" levels="1" name="Rotten Pumpkin Card">
 		<effectPoint>-100</effectPoint>
@@ -1729,6 +1752,7 @@
 		<effectRange>400</effectRange>
 		<castRange>150</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8371" levels="1" name="Transform Halloween Pumpkin">
 		<abnormalLvl>1</abnormalLvl>
@@ -1747,6 +1771,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1769,6 +1794,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8373" levels="1" name="Silent Scream's Mask">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, Critical rate by 5%, and wind tolerance by 5. -->
@@ -1788,6 +1814,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8374" levels="1" name="Wrathful Spirit's Mask">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, moving speed by 5%, and fire tolerance by 5. -->
@@ -1807,6 +1834,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8375" levels="1" name="Unrotten Corpse's Mask">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, skill's MP consumption by 5%, and darkness tolerance by 5. -->
@@ -1826,6 +1854,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8376" levels="1" name="Planet X235 Alien Mask's Effect">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, damage magic's Prominent Damage occurrence by 2, and water tolerance by 5. -->
@@ -1845,6 +1874,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8377" levels="1" name="Golden Jack O'Lantern Mask's Effect">
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 20%, moving speed by 10%, and resistance to debuffs by 10%. -->
@@ -1864,6 +1894,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8378" levels="1" name="Beast Training - Release All">
 		<!-- Confirmed CT2.5 -->
@@ -1877,6 +1908,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8379" levels="2" name="Protection Ring - Gludio">
 		<table name="#earthRes"> 12 15 </table>

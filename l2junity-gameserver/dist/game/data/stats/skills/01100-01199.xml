@@ -41,6 +41,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -92,6 +93,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -162,6 +164,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
@@ -268,6 +271,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
@@ -367,6 +371,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Confuse" abnormalTime="20">
 				<chance>20</chance>
@@ -414,6 +419,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -471,6 +477,7 @@
 			<value level="4">74</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -614,6 +621,7 @@
 			<value level="18">74</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -842,6 +850,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
@@ -1084,6 +1093,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -1268,6 +1278,7 @@
 			<value level="18">74</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -1427,6 +1438,7 @@
 		</magicLvl>
 		<coolTime>500</coolTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -1511,6 +1523,7 @@
 			<value level="2">52</value>
 		</magicLvl>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1561,6 +1574,7 @@
 			<value level="3">56</value>
 		</magicLvl>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1607,6 +1621,7 @@
 			<value level="2">52</value>
 		</magicLvl>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -1652,6 +1667,7 @@
 			<value level="2">48</value>
 		</magicLvl>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -1702,6 +1718,7 @@
 			<value level="3">56</value>
 		</magicLvl>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -1753,6 +1770,7 @@
 			<value level="3">56</value>
 		</magicLvl>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1810,6 +1828,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -1898,6 +1917,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
@@ -1985,6 +2005,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NPC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpByLevel">
 				<power>
@@ -2050,6 +2071,7 @@
 		</magicLvl>
 		<castRange>40</castRange>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2154,6 +2176,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NPC_BODY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2234,6 +2257,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DeleteHateOfMe">
 				<chance>80</chance>
@@ -2271,6 +2295,7 @@
 			<value level="5">66</value>
 		</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHeal">
 				<power>
@@ -2393,6 +2418,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DeathLink">
 				<power>
@@ -2525,6 +2551,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -2624,6 +2651,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<!-- FIXME: this shouldbe "Distrust" effect -->
 			<effect name="Confuse" abnormalTime="20">
@@ -2754,6 +2782,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2843,6 +2872,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -2922,6 +2952,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -3021,6 +3052,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3106,6 +3138,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<trait>PARALYZE</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>-50</amount>
@@ -3225,6 +3258,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3303,6 +3337,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3431,6 +3466,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3514,6 +3550,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
@@ -3614,6 +3651,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3684,6 +3722,7 @@
 			<value level="4">ENEMY</value>
 			<value level="5">ENEMY</value>
 		</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3750,6 +3789,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3801,6 +3841,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3851,6 +3892,7 @@
 			<value level="3">44</value>
 		</magicLvl>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -3913,6 +3955,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -3979,6 +4022,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4036,6 +4080,7 @@
 			<value level="3">44</value>
 		</magicLvl>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -4087,6 +4132,7 @@
 			<value level="3">44</value>
 		</magicLvl>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>

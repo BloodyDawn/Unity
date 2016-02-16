@@ -9,6 +9,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -31,6 +32,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -53,6 +55,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -75,6 +78,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -108,6 +112,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -135,6 +140,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -162,6 +168,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -192,6 +199,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>12774</npcId>
@@ -214,6 +222,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>12777</npcId>
@@ -233,6 +242,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -310,6 +320,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -336,6 +347,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -361,6 +373,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player flyMounted="false" />
@@ -397,6 +410,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -412,6 +426,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2516" levels="1" name="Lucky Clover (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -421,6 +436,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2517" levels="1" name="Lucky Clover (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -430,6 +446,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2518" levels="1" name="Lucky Clover (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -439,6 +456,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2519" levels="1" name="Lucky Clover (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -448,6 +466,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2520" levels="1" name="Lucky Clover (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -457,6 +476,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2521" levels="1" name="Lucky Clover (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -466,6 +486,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2522" levels="1" name="Lucky Clover (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -475,6 +496,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2523" levels="1" name="Lucky Clover (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -484,6 +506,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2524" levels="1" name="Lucky Clover (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -493,6 +516,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2525" levels="1" name="Scroll of Escape: Kamael Village">
 		<!-- Confirmed CT2.5 -->
@@ -505,6 +529,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -532,6 +557,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -559,6 +585,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -586,6 +613,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -613,6 +641,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -640,6 +669,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>DEATH_PENALTY,-1</dispel>
@@ -656,6 +686,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -681,6 +712,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -710,6 +742,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -741,6 +774,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -770,6 +804,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -802,6 +837,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -834,6 +870,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -867,6 +904,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -896,6 +934,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -928,6 +967,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -957,6 +997,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -990,6 +1031,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1022,6 +1064,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1054,6 +1097,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1087,6 +1131,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1116,6 +1161,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1148,6 +1194,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1177,6 +1224,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1210,6 +1258,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1241,6 +1290,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1273,6 +1323,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1306,6 +1357,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1335,6 +1387,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1366,6 +1419,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1397,6 +1451,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1430,6 +1485,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1462,6 +1518,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1494,6 +1551,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1526,6 +1584,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1555,6 +1614,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1586,6 +1646,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1615,6 +1676,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1647,6 +1709,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1678,6 +1741,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1710,6 +1774,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1742,6 +1807,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1771,6 +1837,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1802,6 +1869,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1834,6 +1902,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1865,6 +1934,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1897,6 +1967,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1929,6 +2000,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1956,6 +2028,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1983,6 +2056,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2010,6 +2084,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2088,6 +2163,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2153,6 +2229,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -2166,6 +2243,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,9</dispel>
@@ -2181,6 +2259,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>DEATH_CLACK,1</dispel>
@@ -2205,6 +2284,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -2222,6 +2302,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2582" levels="1" name="not_used">
 		<effectPoint>1</effectPoint>
@@ -2233,6 +2314,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2583" levels="1" name="not_used">
 		<effectPoint>1</effectPoint>
@@ -2244,6 +2326,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2584" levels="1" name="Item - Special Sound Crystal">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2253,6 +2336,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2585" levels="1" name="Item - Special Sound Crystal">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2262,6 +2346,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2586" levels="2" name="Vitality Replenishing Potion">
 		<!-- Confirmed CT2.5 -->
@@ -2276,6 +2361,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>
@@ -2295,6 +2381,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player hasFreeTeleportBookmarkSlots="3" />
 		</cond>
@@ -2312,6 +2399,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2589" levels="1" name="Extra Pass: Kamaloka (Hall of the Abyss)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2323,6 +2411,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2590" levels="1" name="Extra Pass: Near Kamaloka">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2334,6 +2423,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2591" levels="1" name="Extra Pass: Kamaloka (Labyrinth of the Abyss)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2345,6 +2435,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2592" levels="1" name="Quick Healing Potion">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2354,6 +2445,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
@@ -2373,6 +2465,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>40</BOW>
@@ -2390,6 +2483,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -2415,6 +2509,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -2443,6 +2538,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<coolTime>500</coolTime>
 		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -2460,6 +2556,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2598" levels="1" name="Gran Kain's Echo Crystal - Theme of Battle">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2469,6 +2566,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2599" levels="1" name="Gran Kain's Echo Crystal - Theme of Love">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2478,5 +2576,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 </list>

@@ -77,6 +77,7 @@
 		<attributeValue>20</attributeValue>
 		<abnormalTime>20</abnormalTime>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target race="UNDEAD" />
 		</cond>
@@ -155,6 +156,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -209,6 +211,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0.2</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -237,6 +240,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>OTHERS</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<target myPartyExceptMe="true" />
@@ -273,6 +277,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>OTHERS</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<target myPartyExceptMe="true" />
@@ -333,6 +338,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -363,6 +369,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -395,6 +402,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -427,6 +435,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -458,6 +467,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>
@@ -482,6 +492,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DebuffBlock" />
 		</effects>
@@ -501,6 +512,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SkillTurning">
 				<chance>50</chance>
@@ -527,6 +539,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -606,6 +619,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY_PLEDGE</affectScope>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>20</power>
@@ -683,6 +697,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY_PLEDGE</affectScope>
 		<effects>
 			<effect name="ResistDispelByCategory">
 				<amount>-30</amount>
@@ -720,6 +735,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<coolTime>500</coolTime>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY_PLEDGE</affectScope>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>
@@ -790,6 +806,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -832,6 +849,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -869,6 +887,7 @@
 			</effect>
 		</channelingEffects>
 		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1420" levels="1" name="Cyclone">
 		<affectLimit>15-25</affectLimit>
@@ -903,6 +922,7 @@
 			</effect>
 		</channelingEffects>
 		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1421" levels="1" name="Raging Waves">
 		<affectLimit>15-25</affectLimit>
@@ -937,6 +957,7 @@
 			</effect>
 		</channelingEffects>
 		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1422" levels="1" name="Day of Doom">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -958,6 +979,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13028</npcId>
@@ -998,6 +1020,7 @@
 			</effect>
 		</channelingEffects>
 		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1424" levels="1" name="Anti-summoning Field">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1018,6 +1041,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1000</effectRange>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13030</npcId>
@@ -1042,6 +1066,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>PLEDGE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1067,6 +1092,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>PLEDGE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -1097,6 +1123,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>PLEDGE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -1118,6 +1145,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>1500</power>
@@ -1141,6 +1169,7 @@
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player callPc="true" />
 		</cond>
@@ -1193,6 +1222,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 			</effect>
@@ -1267,6 +1297,7 @@
 			<value level="5">ENEMY</value>
 			<value level="6">ENEMY</value>
 		</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -1314,6 +1345,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1388,6 +1420,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -1447,6 +1480,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -1539,6 +1573,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1731,6 +1766,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -1911,6 +1947,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -2010,6 +2047,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -2069,6 +2107,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackByAbnormal">
 				<power>
@@ -2124,6 +2163,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="StealAbnormal">
 				<slot>buff</slot>
@@ -2177,6 +2217,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -2229,6 +2270,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -2260,6 +2302,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -2287,6 +2330,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2467,6 +2511,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -2565,6 +2610,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -2617,6 +2663,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Mute" />
 		</effects>
@@ -2648,6 +2695,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>1</power>
@@ -2677,6 +2725,7 @@
 		<soulMaxConsumeCount>1</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>OTHERS</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2195">
 			<player souls="1" />
 		</cond>
@@ -2710,6 +2759,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>200</power>
@@ -2733,6 +2783,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target active_effect_id="1339" />
 		</cond>
@@ -2771,6 +2822,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1400</effectRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>173</power>
@@ -2795,6 +2847,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target active_effect_id="1340" />
 		</cond>
@@ -2830,6 +2883,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
@@ -2864,6 +2918,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>173</power>
@@ -2888,6 +2943,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target active_effect_id="1341" />
 		</cond>
@@ -2926,6 +2982,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>25</amount>
@@ -2963,6 +3020,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>173</power>
@@ -2986,6 +3044,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>1000</amount>
@@ -3012,6 +3071,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<not>
 				<target class_id_restriction="29, 30, 105, 42, 43, 112" />
@@ -3042,6 +3102,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>-30</amount>
@@ -3078,6 +3139,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>PHYSICAL_BLOCKADE</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>80</power>
@@ -3105,6 +3167,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -3132,6 +3195,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -3159,6 +3223,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -3186,6 +3251,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -3221,6 +3287,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -3257,6 +3324,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -3288,6 +3356,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>224</power>
@@ -3313,6 +3382,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>3000</amount>
@@ -3347,6 +3417,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<coolTime>1400</coolTime>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -3384,6 +3455,7 @@
 			</effect>
 		</channelingEffects>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1473" levels="1" name="Change Weapon">
 		<!-- Confirmed CT2.5 -->
@@ -3399,6 +3471,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using weaponChange="true" />
 		</cond>
@@ -3452,6 +3525,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
@@ -3500,6 +3574,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -3564,6 +3639,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>
@@ -3609,6 +3685,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -3664,6 +3741,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -3709,6 +3787,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="ManaHealOverTime">
 				<power>200</power>
@@ -3779,6 +3858,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Oblivion -->
@@ -3838,6 +3918,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Weak Constitution -->
@@ -3909,6 +3990,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Thin Skin -->
@@ -3968,6 +4050,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Enervation -->
@@ -4023,6 +4106,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Spite -->
@@ -4078,6 +4162,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Mental Impoverish -->
@@ -4150,6 +4235,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_NOT</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -4199,6 +4285,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target active_effect_id="1487" />
 		</cond>
@@ -4301,6 +4388,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Flame Armor -->
@@ -4337,6 +4425,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Frost Armor -->
@@ -4373,6 +4462,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Hurricane Armor -->
@@ -4415,6 +4505,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>117</power>
@@ -4460,6 +4551,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -4526,6 +4618,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>

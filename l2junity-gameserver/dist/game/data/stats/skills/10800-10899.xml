@@ -147,6 +147,7 @@
 		</effectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>
@@ -227,6 +228,7 @@
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>-60</BOW>
@@ -263,6 +265,7 @@
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSaveHp">
 				<power>
@@ -287,6 +290,7 @@
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSaveHp">
 				<power>
@@ -337,6 +341,7 @@
 		</effectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Front -->
@@ -369,6 +374,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -408,6 +414,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -440,6 +447,7 @@
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="TargetMe" /> <!-- p_berserker ? -->
 		</effects>
@@ -463,6 +471,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>15</amount>

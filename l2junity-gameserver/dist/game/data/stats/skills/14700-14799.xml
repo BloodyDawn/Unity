@@ -21,6 +21,7 @@
 		<effectRange>1600</effectRange>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>25</amount>
@@ -62,6 +63,7 @@
 		<magicLvl>88</magicLvl>
 		<hitTime>2000</hitTime>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14702" levels="1" name="Invasion of Darkness">
 		<!-- AUTO GENERATED SKILL -->
@@ -78,6 +80,7 @@
 		<affectRange>300</affectRange>
 		<hitTime>3000</hitTime>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14703" levels="1" name="Cycle of Blood">
 		<!-- AUTO GENERATED SKILL -->
@@ -104,6 +107,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14704" levels="1" name="Forced Yoke">
 		<!-- AUTO GENERATED SKILL -->
@@ -127,6 +131,7 @@
 		<trait>PULL</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14705" levels="1" name="Stun Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -394,6 +399,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
@@ -416,6 +422,7 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14738" levels="1" name="Olympiad - Horn Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -436,6 +443,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14739" levels="1" name="Olympiad - Drum Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -456,6 +464,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14740" levels="1" name="Olympiad - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -476,6 +485,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14741" levels="1" name="Olympiad - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -496,6 +506,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14742" levels="1" name="Olympiad - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -516,6 +527,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14743" levels="1" name="Olympiad - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -536,6 +548,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14744" levels="1" name="Olympiad - Knight's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -556,6 +569,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14745" levels="1" name="Olympiad - Warrior's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -576,6 +590,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14746" levels="1" name="Olympiad - Wizard's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -596,6 +611,7 @@
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14747" levels="1" name="Raid Boss (Lv. 88)">
 		<!-- AUTO GENERATED SKILL -->
@@ -762,6 +778,7 @@
 		<magicLvl>99</magicLvl>
 		<reuseDelay>120000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14767" levels="1" name="Siege Punch">
 		<!-- AUTO GENERATED SKILL -->
@@ -779,6 +796,7 @@
 		<affectLimit>5-12</affectLimit>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14768" levels="1" name="Raid Boss (Lv. 85)">
 		<!-- AUTO GENERATED SKILL -->
@@ -888,6 +906,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14780" levels="1" name="Master's Blessing - Drum Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -909,6 +928,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14781" levels="1" name="Master's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -930,6 +950,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14782" levels="1" name="Master's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -951,6 +972,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14783" levels="1" name="Master's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -972,6 +994,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14784" levels="1" name="Master's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -993,6 +1016,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14785" levels="1" name="Master's Blessing - Knight's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -1014,6 +1038,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14786" levels="1" name="Master's Blessing - Warrior's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -1035,6 +1060,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14787" levels="1" name="Master's Blessing - Wizard's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -1056,6 +1082,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14788" levels="1" name="Master's Blessing - Elemental Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -1077,6 +1104,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14789" levels="1" name="Master's Blessing - Holy Attack Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -1098,6 +1126,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14790" levels="1" name="Master's Blessing - Mental Attack Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -1119,6 +1148,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14791" levels="1" name="Master's Blessing - Horn Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1139,6 +1169,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14792" levels="1" name="Master's Blessing - Drum Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1159,6 +1190,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14793" levels="1" name="Master's Blessing - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1179,6 +1211,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14794" levels="1" name="Master's Blessing - Guitar Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1199,6 +1232,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14795" levels="1" name="Master's Blessing - Harp Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1219,6 +1253,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14796" levels="1" name="Master's Blessing - Lute Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1239,6 +1274,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14797" levels="1" name="Master's Blessing - Knight's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -1259,6 +1295,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14798" levels="1" name="Master's Blessing - Warrior's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -1279,6 +1316,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14799" levels="1" name="Master's Blessing - Wizard's Harmony">
 		<!-- AUTO GENERATED SKILL -->
@@ -1299,5 +1337,6 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 </list>

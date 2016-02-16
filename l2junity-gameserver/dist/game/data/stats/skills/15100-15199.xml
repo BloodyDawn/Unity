@@ -18,6 +18,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="NoblesseBless" />
 		</effects>
@@ -37,6 +38,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
@@ -58,6 +60,7 @@
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
@@ -79,6 +82,7 @@
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
@@ -108,6 +112,7 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -135,6 +140,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>34903</itemConsumeId> <!-- Mysterious Shadow -->
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Hide">
 			</effect>
@@ -158,6 +164,7 @@
 		<magicLvl>99</magicLvl>
 		<reuseDelay>360000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15107" levels="1" name="Mysterious Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
@@ -174,6 +181,7 @@
 		<abnormalTime>300</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15108" levels="1" name="Ruler's Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -191,6 +199,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<reuseDelay>3600000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15109" levels="1" name="Ruler's Blessing">
 		<!-- AUTO GENERATED SKILL -->
@@ -212,6 +221,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15110" levels="1" name="Mandra's Spell">
 		<!-- AUTO GENERATED SKILL -->
@@ -227,6 +237,7 @@
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15111" levels="1" name="Mace of Punishment">
 		<!-- AUTO GENERATED SKILL -->
@@ -249,6 +260,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15112" levels="1" name="Threat">
 		<!-- AUTO GENERATED SKILL -->
@@ -269,6 +281,7 @@
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15113" levels="1" name="Imposing Axe">
 		<!-- AUTO GENERATED SKILL -->
@@ -291,6 +304,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15114" levels="1" name="Massive Blade">
 		<!-- AUTO GENERATED SKILL -->
@@ -311,6 +325,7 @@
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15115" levels="1" name="Black Kiss">
 		<!-- AUTO GENERATED SKILL -->
@@ -327,6 +342,7 @@
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15116" levels="1" name="Dreaming Romantic Pig">
 		<!-- AUTO GENERATED SKILL -->
@@ -350,6 +366,7 @@
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15117" levels="1" name="Massacre Execution">
 		<!-- AUTO GENERATED SKILL -->
@@ -370,6 +387,7 @@
 		<affectLimit>3-3</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15118" levels="1" name="Induce Mental Illness">
 		<!-- AUTO GENERATED SKILL -->
@@ -396,6 +414,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15119" levels="1" name="Whole Body Recovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -411,6 +430,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15120" levels="1" name="Death by Execution">
 		<!-- AUTO GENERATED SKILL -->
@@ -429,6 +449,7 @@
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15121" levels="1" name="Rage Explosion">
 		<!-- AUTO GENERATED SKILL -->
@@ -447,6 +468,7 @@
 		<abnormalTime>120</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15122" levels="1" name="Vernier Calipers Hurl">
 		<!-- AUTO GENERATED SKILL -->
@@ -470,6 +492,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15123" levels="1" name="Sword Cleave">
 		<!-- AUTO GENERATED SKILL -->
@@ -490,6 +513,7 @@
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15124" levels="1" name="Axe Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -510,6 +534,7 @@
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15125" levels="1" name="Tauti Final Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -537,6 +562,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15126" levels="1" name="Tauti Final Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -564,6 +590,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15127" levels="1" name="Equip Weapon">
 		<!-- AUTO GENERATED SKILL -->
@@ -584,6 +611,7 @@
 		<affectRange>400</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15128" levels="1" name="Equip Armor">
 		<!-- AUTO GENERATED SKILL -->
@@ -604,6 +632,7 @@
 		<affectRange>400</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15129" levels="1" name="Full Buff Knight Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
@@ -621,6 +650,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15130" levels="1" name="Full Buff Knight Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
@@ -638,6 +668,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15131" levels="1" name="Full Buff Knight Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
@@ -655,6 +686,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15132" levels="1" name="Full Buff Knight Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
@@ -672,6 +704,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15133" levels="1" name="Full Buff Warrior Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
@@ -689,6 +722,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15134" levels="1" name="Full Buff Warrior Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
@@ -706,6 +740,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15135" levels="1" name="Full Buff Warrior Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
@@ -723,6 +758,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15136" levels="1" name="Full Buff Warrior Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
@@ -740,6 +776,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15137" levels="1" name="Full Buff Wizard Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
@@ -757,6 +794,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15138" levels="1" name="Full Buff Wizard Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
@@ -774,6 +812,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15139" levels="1" name="Full Buff Wizard Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
@@ -791,6 +830,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15140" levels="1" name="Full Buff Wizard Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
@@ -808,6 +848,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15141" levels="1" name="Super CP Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
@@ -825,6 +866,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15142" levels="1" name="Super CP Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
@@ -842,6 +884,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15143" levels="1" name="Super CP Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
@@ -859,6 +902,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15144" levels="1" name="Super CP Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
@@ -876,6 +920,7 @@
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15145" levels="1" name="Ruler's Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -914,6 +959,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>120000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15148" levels="1" name="Coolant Leak">
 		<!-- AUTO GENERATED SKILL -->
@@ -936,6 +982,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>120000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15149" levels="1" name="Self Recovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -957,6 +1004,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15150" levels="1" name="Self Defense">
 		<!-- AUTO GENERATED SKILL -->
@@ -978,6 +1026,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15151" levels="1" name="Overheat">
 		<!-- AUTO GENERATED SKILL -->
@@ -1002,6 +1051,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15152" levels="1" name="Coolant Leak">
 		<!-- AUTO GENERATED SKILL -->
@@ -1026,6 +1076,7 @@
 		<abnormalVisualEffect>SPEED_DOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15153" levels="1" name="Attention to Draco Incubation">
 		<!-- AUTO GENERATED SKILL -->
@@ -1045,6 +1096,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15154" levels="1" name="Attention to Draco Incubation">
 		<!-- AUTO GENERATED SKILL -->
@@ -1065,6 +1117,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15155" levels="1" name="Petrify">
 		<!-- Glory Days confirmed -->
@@ -1084,6 +1137,7 @@
 		<abnormalTime>3600</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
@@ -1103,6 +1157,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15157" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1113,6 +1168,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15158" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1123,6 +1179,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15159" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1133,6 +1190,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15160" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1143,6 +1201,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15161" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1153,6 +1212,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15162" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1163,6 +1223,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15163" levels="1" name="Tauti Typhoon">
 		<!-- AUTO GENERATED SKILL -->
@@ -1184,6 +1245,7 @@
 		<fanRange>0;0;600;0</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>RING_RANGE</affectScope>
 	</skill>
 	<skill id="15164" levels="1" name="Tauti Typhoon">
 		<!-- AUTO GENERATED SKILL -->
@@ -1205,6 +1267,7 @@
 		<fanRange>0;0;600;0</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>RING_RANGE</affectScope>
 	</skill>
 	<skill id="15165" levels="1" name="Tauti Shock Wave">
 		<!-- AUTO GENERATED SKILL -->
@@ -1228,6 +1291,7 @@
 		<fanRange>0;0;300;300</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SQUARE_PB</affectScope>
 	</skill>
 	<skill id="15166" levels="1" name="Tauti Rush">
 		<!-- AUTO GENERATED SKILL -->
@@ -1253,6 +1317,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15167" levels="1" name="Tauti Leap Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -1277,6 +1342,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15168" levels="1" name="Tauti Ultimate Chain Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1299,6 +1365,7 @@
 		<affectRange>1500</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15169" levels="1" name="Tauti Great Shout">
 		<!-- AUTO GENERATED SKILL -->
@@ -1322,6 +1389,7 @@
 		<affectRange>1500</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="15170" levels="1" name="Chaos Shield">
 		<!-- AUTO GENERATED SKILL -->
@@ -1341,6 +1409,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15171" levels="1" name="Tauti Boomerang">
 		<!-- AUTO GENERATED SKILL -->
@@ -1357,6 +1426,7 @@
 		<fanRange>0;0;200;200</fanRange>
 		<coolTime>500</coolTime>
 		<targetType>SELF</targetType>
+		<affectScope>SQUARE</affectScope>
 	</skill>
 	<skill id="15172" levels="1" name="Tauti Air Binding">
 		<!-- AUTO GENERATED SKILL -->
@@ -1382,6 +1452,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15173" levels="1" name="Tauti Air Binding">
 		<!-- AUTO GENERATED SKILL -->
@@ -1407,6 +1478,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15174" levels="1" name="Petra Injection - Enhance HP Recovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -1428,6 +1500,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15175" levels="1" name="Petra Injection - Enhance HP Recovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -1447,6 +1520,7 @@
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15176" levels="1" name="Petra Injection - Enhance P. Def.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1468,6 +1542,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15177" levels="1" name="Petra Injection - Enhance P. Def.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1487,6 +1562,7 @@
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15178" levels="1" name="Petra Injection - Enhance M. Def.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1508,6 +1584,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15179" levels="1" name="Petra Injection - Enhance M. Def.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1527,6 +1604,7 @@
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15180" levels="1" name="Petra Injection - Enhance P. Atk.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1548,6 +1626,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15181" levels="1" name="Petra Injection - Enhance P. Atk.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1567,6 +1646,7 @@
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15182" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
@@ -1586,6 +1666,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1609,6 +1690,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1632,6 +1714,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1663,6 +1746,7 @@
 		<affectRange>150</affectRange>
 		<fanRange>0;0;150;180</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9516</power>
@@ -1698,6 +1782,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11162</power>
@@ -1733,6 +1818,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>12809</power>
@@ -1760,6 +1846,7 @@
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>23391</power>
@@ -1784,6 +1871,7 @@
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>27459</power>
@@ -1808,6 +1896,7 @@
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>31527</power>
@@ -1831,6 +1920,7 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>22526</power>
@@ -1854,6 +1944,7 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>26448</power>
@@ -1877,6 +1968,7 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>30371</power>
@@ -1910,6 +2002,7 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>282</power>
@@ -1948,6 +2041,7 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>296</power>
@@ -1986,6 +2080,7 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>313</power>
@@ -2012,6 +2107,7 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15198" levels="1" name="Guardian Spirit's Wrath">
 		<!-- AUTO GENERATED SKILL -->
@@ -2028,6 +2124,7 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="15199" levels="1" name="Guardian Spirit's Wrath">
 		<!-- AUTO GENERATED SKILL -->
@@ -2044,5 +2141,6 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 </list>

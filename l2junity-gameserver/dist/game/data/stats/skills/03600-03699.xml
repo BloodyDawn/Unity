@@ -1174,6 +1174,7 @@
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<mpPerChanneling>15</mpPerChanneling>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
@@ -1199,6 +1200,7 @@
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<mpPerChanneling>15</mpPerChanneling>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
@@ -1224,6 +1226,7 @@
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<mpPerChanneling>15</mpPerChanneling>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
@@ -1490,6 +1493,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11500</power>
@@ -1510,6 +1514,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1532,6 +1537,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
@@ -1560,6 +1566,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2367,6 +2374,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MaxCp">
 				<amount>30</amount>
@@ -2394,6 +2402,7 @@
 		<basicProperty>NONE</basicProperty>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CpRegen">
 				<amount>30</amount>

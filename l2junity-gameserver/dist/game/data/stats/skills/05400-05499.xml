@@ -13,6 +13,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5401" levels="1" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
@@ -33,6 +34,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="ThrowUp" />
 			<effect name="BlockActions" />
@@ -48,6 +50,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5403" levels="1" name="Presentation - Baylor 3">
 		<!-- Balor - Magic Skill2 -->
@@ -59,6 +62,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5404" levels="1" name="Presentation - Baylor 4">
 		<!-- Balor - Instant Cast Skill -->
@@ -72,6 +76,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5405" levels="1" name="Presentation - Demonic 1">
 		<!-- Demonic - General Long Range Magic Skill -->
@@ -84,6 +89,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5406" levels="1" name="Presentation - Demonic 2">
 		<castRange>600</castRange>
@@ -96,6 +102,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5407" levels="1" name="Presentation - Crystalline Golem 1">
 		<!-- Crystaline-Instant Cast Skill -->
@@ -106,6 +113,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5408" levels="1" name="Presentation - Crystalline Golem 2">
 		<!-- Crystaline-General Long Range Magic Skill -->
@@ -119,6 +127,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5409" levels="1" name="Presentation - Crystalline Golem 3">
 		<!-- Crystaline Golem -->
@@ -132,6 +141,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5410" levels="1" name="Presentation - Baylor 10">
 		<!-- Balor Social. -->
@@ -142,6 +152,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5411" levels="1" name="Presentation - Baylor 11">
 		<hitTime>1000</hitTime>
@@ -153,6 +164,7 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5412" levels="1" name="Presentation - Baylor 12">
 		<hitTime>2500</hitTime>
@@ -162,6 +174,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5413" levels="1" name="Agathion Cute Trick - Beast Farm">
 		<!-- TODO: Needs to be verified -->
@@ -174,6 +187,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16026" />
 		</cond>
@@ -189,6 +203,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16027" />
 		</cond>
@@ -204,6 +219,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16028" />
 		</cond>
@@ -220,6 +236,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5417" levels="1" name="Invincibility">
 		<!-- Invincible against general attack and skill, buff/de-buff. -->
@@ -249,6 +266,7 @@
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5420" levels="1" name="Invincibility">
 		<!-- Invincible against general attack and skill, buff/de-buff. -->
@@ -294,6 +312,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -370,6 +389,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -429,6 +449,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -470,6 +491,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ShieldDefence">
 				<amount>30</amount>
@@ -495,6 +517,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>-15</amount>
@@ -525,6 +548,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
@@ -554,6 +578,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>40</amount>
@@ -571,6 +596,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>49</power>
@@ -590,6 +616,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>115</power>
@@ -616,6 +643,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>40</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5432" levels="2" name="Weapon Supply">
 		<magicLvl>76</magicLvl>
@@ -633,6 +661,7 @@
 		<effectRange>900</effectRange>
 		<castRange>400</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5434" levels="1" name="Gust">
 		<!-- Confirmed CT2.5 -->
@@ -655,6 +684,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>GUST</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="BlockActions" />
@@ -688,6 +718,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>GUST</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="BlockActions" />
@@ -713,6 +744,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5437" levels="2" name="Dissonance">
 		<!-- Confirmed CT2.5 -->
@@ -802,6 +834,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -862,6 +895,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -886,6 +920,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5441" levels="1" name="Incarnation">
 		<hitTime>3000</hitTime>
@@ -895,6 +930,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5442" levels="4" name="Bite Attack">
 		<table name="#power"> 916 1136 1376 1626 </table>
@@ -925,6 +961,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -966,6 +1003,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
@@ -1005,6 +1043,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1036,6 +1075,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -1152,6 +1192,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1165,6 +1206,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TargetCancel" />
 		</effects>
@@ -1183,6 +1225,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1229,6 +1272,7 @@
 			<value level="7">4</value>
 		</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1258,6 +1302,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -1296,6 +1341,7 @@
 			<value level="3">4</value>
 		</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>
@@ -1322,6 +1368,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackMp">
 				<power>
@@ -1347,6 +1394,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5455" levels="1" name="Voice Bind">
 		<!-- Silenced. -->
@@ -1362,6 +1410,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5456" levels="1" name="Stubborn Resistance">
 		<abnormalLvl>1</abnormalLvl>
@@ -1377,6 +1426,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -1401,6 +1451,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5458" levels="1" name="Agathion Cute Trick - Fortress">
 		<!-- TODO: Needs to be verified -->
@@ -1413,6 +1464,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="16029" />
 		</cond>
@@ -1436,6 +1488,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>PARALYZE</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5460" levels="1" name="Fear">
 		<!-- Causes a temporary fear so strong that a target flees mindlessly. -->
@@ -1456,6 +1509,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5461" levels="12" name="Power Shot">
 		<!-- Confirmed CT2.5 -->
@@ -1497,6 +1551,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1594,6 +1649,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1709,6 +1765,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>INVINCIBILITY,9</dispel>
@@ -1732,6 +1789,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5482" levels="1" name="Transformation Penalty">
 		<!-- You cannot be transformed while under this effect. -->
@@ -1750,6 +1808,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5483" levels="1" name="Counter Aggression">
 		<effectPoint>-662</effectPoint>
@@ -1761,6 +1820,7 @@
 		<effectRange>400</effectRange>
 		<castRange>40</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5484" levels="1" name="Endurance Defense Up">
 		<!-- Increases P. Def. Effect 1. -->
@@ -1776,6 +1836,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5485" levels="1" name="Endurance Defense Up">
 		<!-- Increases P. Def. Effect 1. -->
@@ -1791,6 +1852,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5486" levels="1" name="Endurance Offense Up">
 		<!-- Increases P. Atk. Effect 1. -->
@@ -1806,6 +1868,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5487" levels="1" name="Counter Delete Aggression">
 		<effectPoint>-662</effectPoint>
@@ -1817,6 +1880,7 @@
 		<effectRange>1000</effectRange>
 		<castRange>600</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5488" levels="1" name="Counter Critical Damage Up">
 		<!-- Increases critical attack power. Effect 1. -->
@@ -1834,6 +1898,7 @@
 		<effectRange>400</effectRange>
 		<castRange>40</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5489" levels="1" name="Counter Critical Rate Up">
 		<!-- Increases critical attack rate. Effect 1. -->
@@ -1851,6 +1916,7 @@
 		<effectRange>400</effectRange>
 		<castRange>40</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5490" levels="1" name="Weakened Life">
 		<!-- You have been infected by a fatal poison. -->
@@ -1868,6 +1934,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5491" levels="1" name="Decrease Bow/Crossbow Atk. Spd.">
 		<!-- Confirmed CT2.5 -->
@@ -1932,6 +1999,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1970,6 +2038,7 @@
 		<channelingTickInitialDelay>3600</channelingTickInitialDelay>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5494" levels="1" name="Gust">
 		<!-- Confirmed CT2.5 -->
@@ -1983,6 +2052,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ThrowUp" />
 		</effects>
@@ -2009,6 +2079,7 @@
 		<hitCancelTime>0.8</hitCancelTime>
 		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2616</power>
@@ -2036,6 +2107,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>607</power>
@@ -2065,6 +2137,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2319</power>
@@ -2088,6 +2161,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="TargetMeProbability">
 				<chance>80</chance>
@@ -2110,6 +2184,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>200</power>

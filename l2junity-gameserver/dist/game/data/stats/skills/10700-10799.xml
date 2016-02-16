@@ -286,6 +286,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
@@ -320,6 +321,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -349,6 +351,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -1032,6 +1035,7 @@
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<targetType>ENEMY</targetType>
+		<affectScope>SQUARE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1118,6 +1122,7 @@
 		<rideState>NONE</rideState>
 		<trait>KNOCKDOWN</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1207,6 +1212,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1286,6 +1292,7 @@
 		<effectRange>1500</effectRange>
 		<reuseDelay>7000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1332,6 +1339,7 @@
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
@@ -1360,6 +1368,7 @@
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
@@ -1386,6 +1395,7 @@
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceCriticalRate">
 				<amount>50</amount>
@@ -1404,6 +1414,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Lethal">
 				<halfLethal>100</halfLethal>
@@ -1427,6 +1438,7 @@
 		<trait>SHOCK</trait>
 		<!-- TODO cond {op_blink;_back;300} -->
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1497,6 +1509,7 @@
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1583,6 +1596,7 @@
 		<rideState>NONE</rideState>
 		<trait>KNOCKDOWN</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1671,6 +1685,7 @@
 		<fanRange>0;0;900;90</fanRange>
 		<rideState>NONE</rideState>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1750,6 +1765,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE</rideState>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1791,6 +1807,7 @@
 		<fanRange>0;0;900;100</fanRange>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SQUARE</affectScope>
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
 		<!-- Glory Days confirmed -->
@@ -1830,6 +1847,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
@@ -1872,6 +1890,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>600000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13328</npcId>
@@ -1910,6 +1929,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
@@ -1974,6 +1994,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2002,6 +2023,7 @@
 		<effectRange>1400</effectRange>
 		<reuseDelay>60000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<cond>
 			<target myPartyExceptMe="true" />
 		</cond>
@@ -2039,6 +2061,7 @@
 		<abnormalVisualEffect>REAL_TARGET</abnormalVisualEffect>
 		<reuseDelay>120000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -2111,6 +2134,7 @@
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2162,6 +2186,7 @@
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>GROUND</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2196,6 +2221,7 @@
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2239,6 +2265,7 @@
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -2291,6 +2318,7 @@
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Hide">
 			</effect>
@@ -2332,6 +2360,7 @@
 		<isDebuff>true</isDebuff>
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2398,6 +2427,7 @@
 		<activateRate>80</activateRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Accuracy">
 				<amount>-10</amount>
@@ -2453,6 +2483,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2489,6 +2520,7 @@
 		<affectRange>300</affectRange>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
 		<!-- Glory Days confirmed -->
@@ -2505,6 +2537,7 @@
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13052,150,false" />
 		</cond>
@@ -2529,6 +2562,7 @@
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13037,150,false" />
 		</cond>
@@ -2559,6 +2593,7 @@
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13057,150,false" />
 		</cond>
@@ -2583,6 +2618,7 @@
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13057,150,false" />
 		</cond>
@@ -2612,6 +2648,7 @@
 		<affectRange>300</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
 		<!-- Updated to IO -->
@@ -2649,6 +2686,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -2673,6 +2711,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -2708,6 +2747,7 @@
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="KnockBack">
 				<speed>400</speed>
@@ -2771,6 +2811,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2842,6 +2883,7 @@
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

@@ -154,6 +154,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13307</npcId>
@@ -182,6 +183,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -213,6 +215,7 @@
 		<trait>SHOCK</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>55</power>
@@ -242,6 +245,7 @@
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -270,6 +274,7 @@
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -298,6 +303,7 @@
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -325,6 +331,7 @@
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -637,6 +644,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -694,6 +702,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -751,6 +760,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -854,6 +864,7 @@
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDamOverTime">
 				<power>
@@ -945,6 +956,7 @@
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDamOverTime">
 				<power>
@@ -1054,6 +1066,7 @@
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDamOverTime">
 				<ticks>1</ticks>
@@ -1140,6 +1153,7 @@
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDamOverTime">
 				<power>
@@ -1216,6 +1230,7 @@
 		<affectLimit>5-12</affectLimit>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1266,6 +1281,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHeal">
 				<power>
@@ -1303,6 +1319,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>OTHERS</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<target myPartyExceptMe="true" />
@@ -1351,6 +1368,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>
@@ -1401,6 +1419,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1468,6 +1487,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonCubic">
 				<cubicId>15</cubicId>
@@ -1521,6 +1541,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -1623,6 +1644,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAbnormalDispelAttack">
 				<power>
@@ -1691,6 +1713,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlinkSwap" />
 		</effects>
@@ -1759,6 +1782,7 @@
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1823,6 +1847,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<player hasSummon="true" />
 		</cond>
@@ -1867,6 +1892,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1908,6 +1934,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -1943,6 +1970,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>4</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2049,6 +2077,7 @@
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2133,6 +2162,7 @@
 		<affectLimit>6-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2201,6 +2231,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2274,6 +2305,7 @@
 		<affectLimit>6-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -2334,6 +2366,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -2402,6 +2435,7 @@
 		<affectLimit>6-12</affectLimit>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2451,6 +2485,7 @@
 		</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2494,6 +2529,7 @@
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2522,6 +2558,7 @@
 		<abnormalTime>60</abnormalTime>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
 		<!-- Glory Days confirmed -->
@@ -2643,6 +2680,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
 			<effect name="ServitorShare">
@@ -2682,6 +2720,7 @@
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -2703,6 +2742,7 @@
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<!-- Hodling -->
@@ -2730,6 +2770,7 @@
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2767,6 +2808,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -2808,6 +2850,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -2850,6 +2893,7 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -2969,6 +3013,7 @@
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3028,6 +3073,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>60000</reuseDelay>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -3132,6 +3178,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
@@ -3173,6 +3220,7 @@
 		</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
 		<effects>
 			<effect name="RebalanceHP" />
 		</effects>

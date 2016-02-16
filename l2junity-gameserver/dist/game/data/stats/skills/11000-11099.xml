@@ -16,6 +16,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<target abnormalType="KNOCKDOWN" />
@@ -362,18 +363,23 @@
 		<attachSkillList>
 			<skill requiredId="11007" id="11012">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Fire Stance / Elemental Spike (Fire) -->
 			<skill requiredId="11008" id="11013">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Water Stance / Elemental Spike (Water) -->
 			<skill requiredId="11009" id="11014">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Wind Stance / Elemental Spike (Wind) -->
 			<skill requiredId="11010" id="11015">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Earth Stance / Elemental Spike (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -753,6 +759,7 @@
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -833,18 +840,23 @@
 		<attachSkillList>
 			<skill requiredId="11007" id="11018">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Fire Stance / Elemental Crash (Fire) -->
 			<skill requiredId="11008" id="11019">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Water Stance / Elemental Crash (Water) -->
 			<skill requiredId="11009" id="11020">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Wind Stance / Elemental Crash (Wind) -->
 			<skill requiredId="11010" id="11021">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Earth Stance / Elemental Crash (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1230,6 +1242,7 @@
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1310,18 +1323,23 @@
 		<attachSkillList>
 			<skill requiredId="11007" id="11024">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Fire Stance / Elemental Destruction (Fire) -->
 			<skill requiredId="11008" id="11025">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Water Stance / Elemental Destruction (Water) -->
 			<skill requiredId="11009" id="11026">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Wind Stance / Elemental Destruction (Wind) -->
 			<skill requiredId="11010" id="11027">
 				<targetType>ENEMY</targetType>
+				<affectScope>SINGLE</affectScope>
 			</skill> <!-- Earth Stance / Elemental Destruction (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1704,6 +1722,7 @@
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1766,6 +1785,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1827,6 +1847,7 @@
 			</effect>
 		</channelingEffects>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="11032" levels="7" name="Death Howl">
 		<!-- Updated to IO -->
@@ -1878,6 +1899,7 @@
 		</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1923,6 +1945,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>114</power>
@@ -1991,18 +2014,23 @@
 		<attachSkillList>
 			<skill requiredId="11007" id="11035">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Fire Stance / Elemental Blast (Fire) -->
 			<skill requiredId="11008" id="11036">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Water Stance / Elemental Blast (Water) -->
 			<skill requiredId="11009" id="11037">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Wind Stance / Elemental Blast (Wind) -->
 			<skill requiredId="11010" id="11038">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Earth Stance / Elemental Blast (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2333,6 +2361,7 @@
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2402,18 +2431,23 @@
 		<attachSkillList>
 			<skill requiredId="11007" id="11041">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Fire Stance / Elemental Storm (Fire) -->
 			<skill requiredId="11008" id="11042">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Water Stance / Elemental Storm (Water) -->
 			<skill requiredId="11009" id="11043">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Wind Stance / Elemental Storm (Wind) -->
 			<skill requiredId="11010" id="11044">
 				<targetType>ENEMY</targetType>
+				<affectScope>RANGE</affectScope>
 			</skill> <!-- Earth Stance / Elemental Storm (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2745,6 +2779,7 @@
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2792,6 +2827,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Flame Armor -->
@@ -2905,6 +2941,7 @@
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3010,6 +3047,7 @@
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -3095,6 +3133,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -3161,6 +3200,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3229,6 +3269,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3290,6 +3331,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -3339,6 +3381,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -3363,6 +3406,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3444,6 +3488,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3540,6 +3585,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3629,6 +3675,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3694,6 +3741,7 @@
 		<trait>PULL</trait>
 		<isMagic>1</isMagic>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>
@@ -3734,6 +3782,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -3778,6 +3827,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>30000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Floating Blow -->
@@ -3811,6 +3861,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP_SPECIAL,9</dispel>
@@ -3870,6 +3921,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHeal">
 				<power>
@@ -3909,6 +3961,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MpShield">
 				<amount>90</amount>
@@ -3956,6 +4009,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4017,6 +4071,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4069,6 +4124,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<!-- TODO please change/remove this shit effect -->
 			<effect name="VisualBuff">
@@ -4237,6 +4293,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4276,6 +4333,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4315,6 +4373,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4352,6 +4411,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_HOLY,9</dispel>
@@ -4389,6 +4449,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4556,6 +4617,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -4601,6 +4663,7 @@
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -4632,6 +4695,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="KnockBack">
 				<speed>600</speed>
@@ -4663,6 +4727,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -4691,6 +4756,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -4720,6 +4786,7 @@
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>139</power>
@@ -4756,6 +4823,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>300000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="HealOverTime">
@@ -4834,6 +4902,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4876,6 +4945,7 @@
 		<magicLvl>87</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AbnormalTimeChange">
 				<slot>CHANGEBODY;DISARM;PARALYZE;ROOT_MAGICALLY;SILENCE;SLEEP;STUN;TURN_FLEE;TURN_STONE</slot>

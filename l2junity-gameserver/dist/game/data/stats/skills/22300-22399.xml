@@ -16,6 +16,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<castRange>600</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>30</amount>
@@ -37,6 +38,7 @@
 		<icon>BranchSys.icon.br_birthday_cake_i00</icon>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22302" levels="1" name="Sweet Chocolate (4-hour)">
 		<!-- "For 4 hours, recovers energy when Exp. is acquired through hunting." -->
@@ -57,6 +59,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22303" levels="1" name="Party Cake">
 		<!-- Party Cake's energy effect. Maintains vitality for 20 minutes. -->
@@ -76,6 +79,7 @@
 		<isMagic>4</isMagic>
 		<castRange>500</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22304" levels="1" name="Campfire's Warmth">
 		<!-- "The campfire's warmth can be felt. Increases HP regeneration by 80%, CP regeneration by 60%, and MP regeneration by 40%." -->
@@ -92,6 +96,7 @@
 		<icon>icon.etc_torch_on_i00</icon>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="22305" levels="1" name="Summon Campfire">
 		<!-- none -->
@@ -103,6 +108,7 @@
 		<reuseDelay>3600000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22306" levels="1" name="Event - Summon Scroll: Bad Bunny">
 		<!-- none -->
@@ -116,6 +122,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22307" levels="1" name="Event - Summon Scroll: Bad Bunny Captain">
 		<!-- none -->
@@ -129,6 +136,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22308" levels="1" name="Event - Summon Scroll: Liverless Bunny">
 		<!-- none -->
@@ -140,6 +148,7 @@
 		<icon>icon.etc_scroll_of_return_i00</icon>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22309" levels="1" name="Event - Summon Scroll: Liverless Bunny Captain">
 		<!-- none -->
@@ -151,6 +160,7 @@
 		<icon>icon.etc_scroll_of_return_i00</icon>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22310" levels="1" name="Cupid's Cure">
 		<!-- Sends mutated animals a heart filled with love. -->
@@ -167,6 +177,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22311" levels="1" name="Cupid's Enhanced Cure">
 		<!-- Sends mutated animals a powerful heart filled with love. -->
@@ -183,6 +194,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22312" levels="1" name="Birthday Vitality Buff">
 		<!-- "Birthday gift received once a year. For 4 hours, recovers energy when Exp. is acquired through hunting. The buff disappears when the sub-class is changed." -->
@@ -206,6 +218,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -232,6 +245,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22314" levels="1" name="1st Place Treasure Sack">
 		<!-- none -->
@@ -242,6 +256,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -316,6 +331,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom" fromLevel="2" toLevel="2">
 				<items>
@@ -363,6 +379,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom" fromLevel="3" toLevel="3">
 				<items>
@@ -404,6 +421,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom" fromLevel="4" toLevel="4">
 				<items>
@@ -439,6 +457,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom" fromLevel="5" toLevel="5">
 				<items>
@@ -457,6 +476,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom" fromLevel="6" toLevel="6">
 				<items>
@@ -512,6 +532,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22321" levels="1" name="Acumen">
 		<!-- Increases Casting Spd. by 30% for 60 minutes. -->
@@ -528,6 +549,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22322" levels="1" name="Magic Barrier">
 		<!-- Increases M. Def. by 30% for 60 minutes. -->
@@ -544,6 +566,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22323" levels="1" name="Clarity">
 		<!-- "Decreases MP Consumption by 20% for physical skills, by 10% for magical skills, and by 20% for song/dance skills for 60 minutes." -->
@@ -560,6 +583,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22324" levels="1" name="Blessed Soul">
 		<!-- Increases Max MP by 35% for 60 minutes. -->
@@ -576,6 +600,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22325" levels="1" name="Blessed Body">
 		<!-- Increases Max HP by 35% for 60 minutes. -->
@@ -592,6 +617,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22326" levels="1" name="Empower">
 		<!-- Increases M. Atk. by 75% for 60 minutes. -->
@@ -608,6 +634,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22327" levels="1" name="Wind Walk">
 		<!-- Increases Speed by 33 for 60 minutes. -->
@@ -624,6 +651,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22328" levels="1" name="Shield">
 		<!-- Increases P. Def. by 15% for 60 minutes. -->
@@ -640,6 +668,7 @@
 		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22329" levels="1" name="Wind Walk">
 		<!-- Increases Speed by 33 for 60 minutes. -->
@@ -656,6 +685,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22330" levels="1" name="Shield">
 		<!-- Increases P. Def. by 15% for 60 minutes. -->
@@ -672,6 +702,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22331" levels="1" name="Haste">
 		<!-- Increases Atk. Spd. by 33% for 60 minutes. -->
@@ -688,6 +719,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22332" levels="1" name="Death Whisper">
 		<!-- Increases Critical Attack by 35% for 60 minutes. -->
@@ -704,6 +736,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22333" levels="1" name="Vampiric Rage">
 		<!-- Absorbs 9% of standard melee damage inflicted upon an enemy as HP for 60 minutes. -->
@@ -720,6 +753,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22334" levels="1" name="Guidance">
 		<!-- Increases Accuracy by 4 for 60 minutes. -->
@@ -736,6 +770,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22335" levels="1" name="Might">
 		<!-- Increases P. Atk. by 15% for 60 minutes. -->
@@ -752,6 +787,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22336" levels="1" name="Blessed Body">
 		<!-- Increases Max HP by 35% for 60 minutes. -->
@@ -768,6 +804,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22337" levels="1" name="Focus">
 		<!-- Increases Critical Rate by 30% for 60 minutes. -->
@@ -784,6 +821,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22338" levels="1" name="Blessed Shield">
 		<!-- Increases Shield Defense Rate by 30% for 60 minutes. -->
@@ -800,6 +838,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22339" levels="1" name="Berserker Spirit">
 		<!-- "Decreases P. Def. by 8%, M. Def. by 16%, and Evasion by 4, and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8 for 60 minutes." -->
@@ -816,6 +855,7 @@
 		<icon>icon.etc_fruit_cocktail_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22340" levels="1" name="Might">
 		<!-- Increases P. Atk. by 15% for 60 minutes. -->
@@ -833,6 +873,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22341" levels="1" name="Wind Walk">
 		<!-- Increases Speed by 33 for 60 minutes. -->
@@ -850,6 +891,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22342" levels="1" name="Haste">
 		<!-- Increases Atk. Spd. by 33% for 60 minutes. -->
@@ -867,6 +909,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22343" levels="1" name="Vampiric Rage">
 		<!-- Absorbs 9% of standard melee damage inflicted upon an enemy as HP for 60 minutes. -->
@@ -884,6 +927,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22344" levels="1" name="Berserker Spirit">
 		<!-- "Decreases P. Def. by 8%, M. Def. by 16%, and Evasion by 4, and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8 for 60 minutes." -->
@@ -901,6 +945,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22345" levels="1" name="Empower">
 		<!-- Increases M. Atk. by 75% for 60 minutes. -->
@@ -918,6 +963,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22346" levels="1" name="Acumen">
 		<!-- Increases Casting Spd. by 30% for 60 minutes. -->
@@ -935,6 +981,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22347" levels="1" name="Shield">
 		<!-- Increases P. Def. by 15% for 60 minutes. -->
@@ -952,6 +999,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22348" levels="1" name="Focus">
 		<!-- Increases Critical Rate by 30% for 60 minutes. -->
@@ -969,6 +1017,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22349" levels="1" name="Death Whisper">
 		<!-- Increases Critical Attack by 35% for 60 minutes. -->
@@ -986,6 +1035,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22350" levels="1" name="Guidance">
 		<!-- Increases Accuracy by 4 for 60 minutes. -->
@@ -1003,6 +1053,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22351" levels="1" name="Clarity">
 		<!-- "Decreases MP Consumption by 20% for physical skills, by 10% for magical skills, and by 20% for song/dance skills for 60 minutes." -->
@@ -1020,6 +1071,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22352" levels="1" name="Wild Magic">
 		<!-- Increases the chance of prominent magic damage by 2 for 60 minutes. -->
@@ -1037,6 +1089,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22353" levels="6" name="Concentration">
 		<!-- Decreases magic cancel damage by 53 for 60 minutes. -->
@@ -1054,6 +1107,7 @@
 		<icon>icon.etc_fresh_milk_i00</icon>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22354" levels="1" name="Lantern Agathion's Gift">
 		<!-- Desciption: There is no available description. -->
@@ -1066,6 +1120,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1223,6 +1278,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1251,6 +1307,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1278,6 +1335,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1338,6 +1396,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1405,6 +1464,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22360" levels="1" name="Scroll: Enchant Armor of Destruction (S-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1415,6 +1475,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22361" levels="1" name="Scroll: Enchant Weapon of Destruction (A-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1425,6 +1486,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22362" levels="1" name="Scroll: Enchant Armor of Destruction (A-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1435,6 +1497,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22363" levels="1" name="Scroll: Enchant Weapon of Destruction (B-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1445,6 +1508,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22364" levels="1" name="Scroll: Enchant Armor of Destruction (B-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1455,6 +1519,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22365" levels="1" name="Scroll: Enchant Weapon of Destruction (C-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1465,6 +1530,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22366" levels="1" name="Scroll: Enchant Armor of Destruction (C-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1475,6 +1541,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22367" levels="1" name="Scroll: Enchant Weapon of Destruction (D-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1485,6 +1552,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22368" levels="1" name="Scroll: Enchant Armor of Destruction (D-Grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1495,6 +1563,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22369" levels="1" name="Blessed Spiritshot (S-grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1505,6 +1574,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22370" levels="1" name="Mysterious Soulshot Pack (S-grade)">
 		<!-- Desciption: There is no available description. -->
@@ -1517,6 +1587,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21850</itemId>
@@ -1535,6 +1606,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22231</itemId>
@@ -1551,6 +1623,7 @@
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22373" levels="1" name="Starfall">
 		<!-- Desciption: There is no available description. -->
@@ -1561,6 +1634,7 @@
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22374" levels="1" name="Sweet Chocolate">
 		<!-- Desciption: For 30 minutes, Vitality is replenished when Exp. is acquired through hunting. -->
@@ -1581,6 +1655,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22375" levels="1" name="Valentine's Day Love Pouch">
 		<!-- Desciption: There is no available description. -->
@@ -1593,6 +1668,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1634,6 +1710,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22377" levels="1" name="Bad Bunny's Necklace Box">
 		<!-- Desciption: There is no available description. -->
@@ -1646,6 +1723,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1670,6 +1748,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1694,6 +1773,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1718,6 +1798,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1748,6 +1829,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1784,6 +1866,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1820,6 +1903,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1846,6 +1930,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1872,6 +1957,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1899,6 +1985,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1947,6 +2034,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1971,6 +2059,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1995,6 +2084,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2016,6 +2106,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2037,6 +2128,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2322,6 +2414,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2364,6 +2457,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2394,6 +2488,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2424,6 +2519,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2454,6 +2550,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2491,6 +2588,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22398" levels="1" name="Allegra Box">
 		<!-- Desciption: There is no available description. -->
@@ -2503,6 +2601,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2584,6 +2683,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>

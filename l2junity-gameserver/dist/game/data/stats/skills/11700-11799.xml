@@ -74,6 +74,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
@@ -98,6 +99,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -123,6 +125,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -257,6 +260,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -317,6 +321,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -382,6 +387,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_NOT</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- On retail activated every ~2 attacks with ~2sec cooldown -->
@@ -481,6 +487,7 @@
 			<value level="11">34</value>
 		</mpInitialConsume>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -566,6 +573,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -638,6 +646,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -680,6 +689,7 @@
 		<affectRange>1000</affectRange>
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -714,6 +724,7 @@
 		<affectRange>1000</affectRange>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -798,6 +809,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -902,6 +914,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
@@ -951,6 +964,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>4</abnormalLvl>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="RebalanceHP" />
 			<effect name="HealOverTime">
@@ -977,6 +991,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_NOT</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1008,6 +1023,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1070,6 +1086,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
@@ -1159,6 +1176,7 @@
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1234,6 +1252,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1273,6 +1292,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="ManaHealPercent">
 				<power>100</power>
@@ -1357,6 +1377,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -1453,6 +1474,7 @@
 		<trait>DERANGEMENT</trait>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DeleteHate">
 				<chance>100</chance>
@@ -1482,6 +1504,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13300</npcId>
@@ -1535,6 +1558,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1657,6 +1681,7 @@
 		<hitCancelTime>3</hitCancelTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Summon">
 				<npcId>
@@ -1682,6 +1707,7 @@
 		<magicLvl>91</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1729,6 +1755,7 @@
 		<hitCancelTime>3</hitCancelTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Summon">
 				<npcId>
@@ -1805,6 +1832,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1903,6 +1931,7 @@
 		</magicLvl>
 		<trait>SLEEP</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
@@ -1946,6 +1975,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -2055,6 +2085,7 @@
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2093,6 +2124,7 @@
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>666</power>
@@ -2148,6 +2180,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<!-- effect name="ResetDebuff" / -->
 		</effects>
@@ -2184,6 +2217,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -2236,6 +2270,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>
+			<value level="1">DEAD_PARTY</value>
+			<value level="2">DEAD_PARTY</value>
+			<value level="3">DEAD_PARTY_PLEDGE</value>
+		</affectScope>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -2266,6 +2305,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DebuffBlock" />
 		</effects>
@@ -2726,6 +2766,7 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -2771,6 +2812,7 @@
 		<magicLvl>87</magicLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2813,6 +2855,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -2857,6 +2900,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2899,6 +2943,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -2943,6 +2988,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2985,6 +3031,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>

@@ -20,6 +20,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>-20</amount>
@@ -41,6 +42,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -77,6 +79,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -111,6 +114,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -144,6 +148,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -176,6 +181,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
@@ -208,6 +214,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -233,6 +240,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
 		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockResurrection" />
 		</effects>
@@ -256,6 +264,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6409" levels="1" name="Reptilikon Earthquake">
 		<affectRange>200</affectRange>
@@ -269,6 +278,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -300,6 +310,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9125</power>
@@ -315,6 +326,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6412" levels="1" name="Reptilikon Critical Blow">
 		<castRange>900</castRange>
@@ -329,6 +341,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -349,6 +362,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -379,6 +393,7 @@
 		<specialLevel>-1</specialLevel>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9125</power>
@@ -406,6 +421,7 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -438,6 +454,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="ManaDamOverTime">
 				<power>4</power>
@@ -470,6 +487,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="ManaDamOverTime">
 				<power>4</power>
@@ -502,6 +520,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>69</power>
@@ -524,6 +543,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
@@ -541,6 +561,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
@@ -558,6 +579,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
@@ -574,6 +596,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
@@ -602,6 +625,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2738</power>
@@ -621,6 +645,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6844</power>
@@ -643,6 +668,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-90</amount>
@@ -666,6 +692,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
@@ -683,6 +710,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6428" levels="1" name="Restore HP">
 		<!-- Confirmed CT2.5 -->
@@ -709,6 +737,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -738,6 +767,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>2000</effectRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -766,6 +796,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>2000</effectRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
@@ -791,6 +822,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>19</amount>
@@ -817,6 +849,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>35</amount>
@@ -843,6 +876,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Accuracy">
 				<amount>7</amount>
@@ -869,6 +903,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>38</amount>
@@ -901,6 +936,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTimePercent">
 				<power>
@@ -954,6 +990,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTimePercent">
 				<power>0.05</power>
@@ -998,6 +1035,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1031,6 +1069,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6439" levels="1" name="Energy of Wisdom">
 		<abnormalLvl>1</abnormalLvl>
@@ -1049,6 +1088,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>95</BLUNT>
@@ -1082,6 +1122,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>99</BOW>
@@ -1115,6 +1156,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>95</BLUNT>
@@ -1148,6 +1190,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>100</amount>
@@ -1172,6 +1215,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>100</amount>
@@ -1200,6 +1244,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PvePhysicalAttackDamageBonus">
 				<amount>100</amount>
@@ -1222,6 +1267,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6446" levels="1" name="Presentation - Freya's Message 2">
 		<!-- Confirmed CT2.5 -->
@@ -1234,6 +1280,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6447" levels="1" name="Presentation - Freya's Message 3">
 		<!-- Confirmed CT2.5 -->
@@ -1246,6 +1293,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6448" levels="1" name="Presentation - Freya's Message 4">
 		<!-- Confirmed CT2.5 -->
@@ -1258,6 +1306,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6449" levels="1" name="Presentation - Freya's Message 5">
 		<!-- Confirmed CT2.5 -->
@@ -1270,6 +1319,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6450" levels="1" name="Presentation - Freya Nova">
 		<!-- Confirmed CT2.5 -->
@@ -1282,6 +1332,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6451" levels="1" name="Presentation - Freya Move">
 		<!-- Confirmed CT2.5 -->
@@ -1294,6 +1345,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6452" levels="1" name="Presentation - Freya Space Change">
 		<!-- Confirmed CT2.5 -->
@@ -1306,6 +1358,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6453" levels="1" name="Presentation - Freya Death">
 		<!-- Confirmed CT2.5 -->
@@ -1318,6 +1371,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6454" levels="1" name="Presentation - Freya Frustration">
 		<!-- Confirmed CT2.5 -->
@@ -1330,6 +1384,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6455" levels="1" name="Presentation - Freya Destroy">
 		<!-- Confirmed CT2.5 -->
@@ -1342,6 +1397,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6456" levels="1" name="Presentation - Freya Eternal Blizzard">
 		<!-- Confirmed CT2.5 -->
@@ -1354,6 +1410,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6457" levels="1" name="Presentation - Absorption of Sirr">
 		<!-- Confirmed CT2.5 -->
@@ -1366,6 +1423,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6458" levels="1" name="Presentation - Transform of Sirr">
 		<!-- Confirmed CT2.5 -->
@@ -1378,6 +1436,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6459" levels="1" name="Presentation - Kegor Super Buff">
 		<!-- Confirmed CT2.5 -->
@@ -1390,6 +1449,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6460" levels="1" name="Presentation - Jinia Super Buff">
 		<!-- Confirmed CT2.5 -->
@@ -1402,6 +1462,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6461" levels="1" name="Presentation - Kegor's Message 1">
 		<!-- Confirmed CT2.5 -->
@@ -1414,6 +1475,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6462" levels="1" name="Presentation - Kegor's Message 1">
 		<!-- Confirmed CT2.5 -->
@@ -1426,6 +1488,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6463" levels="1" name="Presentation - Transfer Achievement">
 		<!-- Confirmed CT2.5 -->
@@ -1440,6 +1503,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6464" levels="1" name="Three Siblings' Trickery">
 		<!-- By the three sibling's trickery, Max HP/MP/CP are increased by 40% for 10 seconds. -->
@@ -1461,6 +1525,7 @@
 		<castRange>600</castRange>
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6465" levels="1" name="Jack O'Lantern Card">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1472,6 +1537,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6466" levels="1" name="Rotten Jack O'Lantern Card">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1483,6 +1549,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6467" levels="1" name="Jack O'Lantern Card - Confirm Skill">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1496,6 +1563,7 @@
 		<effectRange>500</effectRange>
 		<castRange>500</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6468" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1509,6 +1577,7 @@
 		<effectRange>500</effectRange>
 		<castRange>500</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6469" levels="1" name="Halloween Defeat">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1522,6 +1591,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6470" levels="1" name="First win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1535,6 +1605,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6471" levels="1" name="2nd Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1548,6 +1619,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6472" levels="1" name="3rd Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1561,6 +1633,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6473" levels="1" name="4th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1574,6 +1647,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6474" levels="1" name="5th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1587,6 +1661,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6475" levels="1" name="6th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1600,6 +1675,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6476" levels="1" name="7th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1613,6 +1689,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6477" levels="1" name="8th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1626,6 +1703,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6478" levels="1" name="9th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1639,6 +1717,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6479" levels="1" name="10th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1652,6 +1731,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6480" levels="1" name="11th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1665,6 +1745,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6481" levels="1" name="12th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1678,6 +1759,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6482" levels="1" name="13th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1691,6 +1773,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6483" levels="1" name="14th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1704,6 +1787,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6484" levels="1" name="15th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1717,6 +1801,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6485" levels="1" name="16th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1730,6 +1815,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6486" levels="1" name="17th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1743,6 +1829,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6487" levels="1" name="18th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1756,6 +1843,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6488" levels="1" name="19th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1769,6 +1857,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6489" levels="1" name="20th Consecutive Win">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1782,6 +1871,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6490" levels="1" name="Jack's game - Gauge">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1795,6 +1885,7 @@
 		<effectRange>500</effectRange>
 		<castRange>500</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6491" levels="1" name="Jack's game - Target">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1808,6 +1899,7 @@
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6492" levels="28" name="Holy Attack">
 		<coolTime>500</coolTime>
@@ -1880,6 +1972,7 @@
 		<hitTime>1500</hitTime>
 		<castRange>40</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6493" levels="28" name="Jack's game - Target">
 		<coolTime>500</coolTime>
@@ -1952,6 +2045,7 @@
 		<hitTime>1500</hitTime>
 		<castRange>40</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6494" levels="28" name="Holy Attack">
 		<coolTime>500</coolTime>
@@ -2024,6 +2118,7 @@
 		<hitTime>1500</hitTime>
 		<castRange>40</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6495" levels="28" name="Holy Attack">
 		<coolTime>500</coolTime>
@@ -2095,6 +2190,7 @@
 		<affectRange>200</affectRange>
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6496" levels="28" name="Holy Attack">
 		<coolTime>500</coolTime>
@@ -2166,6 +2262,7 @@
 		<affectRange>200</affectRange>
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6497" levels="28" name="Holy Attack">
 		<coolTime>500</coolTime>
@@ -2237,6 +2334,7 @@
 		<affectRange>200</affectRange>
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6498" levels="28" name="Holy Shot">
 		<coolTime>500</coolTime>
@@ -2309,6 +2407,7 @@
 		<hitTime>3000</hitTime>
 		<castRange>700</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6499" levels="28" name="Holy Shot">
 		<coolTime>500</coolTime>
@@ -2381,5 +2480,6 @@
 		<hitTime>3000</hitTime>
 		<castRange>700</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 </list>

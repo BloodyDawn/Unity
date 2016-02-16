@@ -11,6 +11,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -37,6 +38,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1576" />
 		</cond>
@@ -51,6 +53,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1577" />
 		</cond>
@@ -65,6 +68,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1578" />
 		</cond>
@@ -79,6 +83,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1579" />
 		</cond>
@@ -93,6 +98,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1580" />
 		</cond>
@@ -107,6 +113,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1581" />
 		</cond>
@@ -121,6 +128,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1582" />
 		</cond>
@@ -135,6 +143,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1583" />
 		</cond>
@@ -149,6 +158,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2292">
 			<player agathionId="1584" />
 		</cond>
@@ -343,6 +353,7 @@
 		<hitTime>1000</hitTime>
 		<castRange>150</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23211" levels="85" name="Prominence">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -532,6 +543,7 @@
 		<hitTime>1500</hitTime>
 		<castRange>900</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23212" levels="85" name="Flame Strike">
 		<affectLimit>5-12</affectLimit>
@@ -723,6 +735,7 @@
 		<hitTime>2500</hitTime>
 		<castRange>500</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="23213" levels="2" name="Berserker Spirit">
 		<abnormalLvl>
@@ -746,6 +759,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>4000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23214" levels="1" name="Good/Bad of Life">
 		<!-- Confirmed CT2.5 -->
@@ -759,6 +773,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>500</power>
@@ -777,6 +792,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHeal">
 				<power>500</power>
@@ -793,6 +809,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23217" levels="1" name="Granny Tiger Agathion Special Skill: Fundamentals">
 		<!-- For 1 minute(s), 50% of the standard short-range physical damage inflicted on the enemy is recovered as HP. Reuse delay is 1 hours. -->
@@ -815,6 +832,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23218" levels="1" name="Flower Fairy Spirit Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -826,6 +844,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23219" levels="1" name="Flower Fairy Spirit Agathion Special Skill - Fairy's Blessing">
 		<!-- For 5 minutes, increases Atk. Spd. by 30% and all attribute defense by 10. Reuse delay is 1 hours. -->
@@ -848,6 +867,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23220" levels="1" name="Cheerleader Orodriel Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -859,6 +879,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23221" levels="1" name="Cheerleader Orodriel Agathion Special Skill: Joy of Cheering">
 		<!-- For 20 minutes, increases Casting Spd. by 10% and Atk. Spd. by 10%. Decreases MP consumption for skill use by 30%. Reuse delay is 2 hours. -->
@@ -881,6 +902,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23222" levels="1" name="Cheerleader Lanya Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -892,6 +914,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23223" levels="1" name="Cheerleader Lanya Agathion Special Skill: Joy of Cheering">
 		<!-- For 20 minutes, increases Casting Spd. by 10% and Atk. Spd. by 10%. Decreases MP consumption for skill use by 30%. Reuse delay is 2 hours. -->
@@ -914,6 +937,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23224" levels="1" name="Cheerleader Naonin Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -925,6 +949,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23225" levels="1" name="Cheerleader Naonin Agathion Special Skill: Joy of Cheering">
 		<!-- For 20 minutes, increases Casting Spd. by 10% and Atk. Spd. by 10%. Decreases MP consumption for skill use by 30%. Reuse delay is 2 hours. -->
@@ -947,6 +972,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23226" levels="1" name="Cheerleader Mortia Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -958,6 +984,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23227" levels="1" name="Cheerleader Mortia Agathion Special Skill: Joy of Cheering">
 		<!-- For 20 minutes, increases Casting Spd. by 10% and Atk. Spd. by 10%. Decreases MP consumption for skill use by 30%. Reuse delay is 2 hours. -->
@@ -980,6 +1007,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23228" levels="1" name="Cheerleader Kaurin Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -991,6 +1019,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23229" levels="1" name="Cheerleader Kaurin Agathion Special Skill: Joy of Cheering">
 		<!-- For 20 minutes, increases Casting Spd. by 10% and Atk. Spd. by 10%. Decreases MP consumption for skill use by 30%. Reuse delay is 2 hours. -->
@@ -1013,6 +1042,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23230" levels="1" name="Cheerleader Meruril Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -1024,6 +1054,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23231" levels="1" name="Cheerleader Meruril Agathion Special Skill: Joy of Cheering">
 		<!-- For 20 minutes, increases Casting Spd. by 10% and Atk. Spd. by 10%. Decreases MP consumption for skill use by 30%. Reuse delay is 2 hours. -->
@@ -1046,6 +1077,7 @@
 		<hitTime>4000</hitTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23232" levels="1" name="Handy Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -1057,6 +1089,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23233" levels="1" name="Handy Agathion Special Skill - Halloween's Blessing">
 		<!-- For 1 hour, increases Max HP by 40% and Max MP by 40%. Increases Atk. Spd. by 20% and P. Atk. by 10%. Increases resistance to darkness by 20. Reuse delay is 2 hours. -->
@@ -1079,6 +1112,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<hitTime>4000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23234" levels="1" name="Singer and Dancer Agathion Cute Trick">
 		<!-- You can see the summoned spirit's cute tricks. -->
@@ -1091,6 +1125,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23235" levels="1" name="Singer and Dancer Agathion Special Skill: Hunter's Song">
 		<!-- Increases critical attack rate by 100% for 2 minutes. Reuse delay 20 minutes. -->
@@ -1109,6 +1144,7 @@
 		<reuseDelay>1200000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23236" levels="1" name="Agathion Cute Trick - Zaken's Spirit Swords">
 		<!-- You can see the summoned spirit's cute tricks. -->
@@ -1121,6 +1157,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23237" levels="1" name="Swords' Song">
 		<!-- "For 30 minutes, increases Max HP by 40% and Max MP by 40%. Increases Atk. Spd. by 20% and P. Atk. by 10%. Reuse delay is 2 hours." -->
@@ -1139,6 +1176,7 @@
 		<reuseDelay>7200000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23238" levels="1" name="Master's Blessing - Eye of Pa'agrio">
 		<!-- High Five Skill -->
@@ -1159,6 +1197,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1364</icon>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>HIT_UP,9</dispel>
@@ -1195,6 +1234,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1365</icon>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
@@ -1231,6 +1271,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -1308,6 +1349,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1519</icon>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
@@ -1345,6 +1387,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackTrait">
 				<SHOCK>8</SHOCK>
@@ -1378,6 +1421,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -1417,6 +1461,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
@@ -1454,6 +1499,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
@@ -1490,6 +1536,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
@@ -1527,6 +1574,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
@@ -1565,6 +1613,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ResistDispelByCategory">
 				<amount>-30</amount>
@@ -1592,6 +1641,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CallTargetParty" />
 		</effects>
@@ -1607,6 +1657,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23251" levels="1" name="Agathion Cute Trick - Makeshift Bat">
 		<!-- You can see the summoned spirit's cute tricks. -->
@@ -1619,6 +1670,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23252" levels="1" name="Agathion Cute Trick - Griffin">
 		<!-- You can see the summoned spirit's cute tricks. -->
@@ -1631,6 +1683,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23253" levels="1" name="Master's Blessing - Focus">
 		<!-- High Five Skill -->
@@ -1650,6 +1703,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>30</amount>
@@ -1675,6 +1729,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -1700,6 +1755,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
@@ -1725,6 +1781,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
@@ -1750,6 +1807,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -1775,6 +1833,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
@@ -1800,6 +1859,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
@@ -1825,6 +1885,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
@@ -1850,6 +1911,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="WeightPenalty">
 				<amount>9000</amount>
@@ -1874,6 +1936,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -1899,6 +1962,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -1924,6 +1988,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
@@ -1949,6 +2014,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -1974,6 +2040,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
@@ -1999,6 +2066,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
@@ -2024,6 +2092,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -2077,6 +2146,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2102,6 +2172,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -2127,6 +2198,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
@@ -2152,6 +2224,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-10</amount>
@@ -2188,6 +2261,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2264,6 +2338,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2337,6 +2412,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2406,6 +2482,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2478,6 +2555,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1499</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
@@ -2515,6 +2593,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1500</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
@@ -2552,6 +2631,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1501</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
@@ -2589,6 +2669,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1502</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
@@ -2626,6 +2707,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1503</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9</dispel>
@@ -2663,6 +2745,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1504</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
@@ -2699,6 +2782,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -2749,6 +2833,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
@@ -2778,6 +2863,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="NoblesseBless" />
 		</effects>
@@ -2800,6 +2886,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1364</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>HIT_UP,9</dispel>
@@ -2835,6 +2922,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1365</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MA_UP,9;MD_UP,9</dispel>
@@ -2870,6 +2958,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -2946,6 +3035,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1519</icon>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
@@ -2982,6 +3072,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -3014,6 +3105,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
@@ -3052,6 +3144,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
@@ -3088,6 +3181,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>5</amount>
@@ -3123,6 +3217,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Counter Critical -->
@@ -3159,6 +3254,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
@@ -3196,6 +3292,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="ResistDispelByCategory">
 				<amount>-30</amount>
@@ -3227,6 +3324,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">
 		<abnormalLvl>1</abnormalLvl>
@@ -3246,6 +3344,7 @@
 		<icon>icon.skill0771</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>300</power>
@@ -3272,6 +3371,7 @@
 		<icon>icon.skill0772</icon>
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>300</power>

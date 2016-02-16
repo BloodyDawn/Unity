@@ -78,6 +78,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9</dispel>
@@ -145,6 +146,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>50</amount>
@@ -262,6 +264,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DebuffBlock" />
 			<effect name="DispelByCategory">
@@ -308,6 +311,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -416,6 +420,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
@@ -469,6 +474,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealOverTime">
 				<power>92</power>
@@ -521,6 +527,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="KnockBack">
 				<distance>50</distance>
@@ -604,6 +611,7 @@
 		<activateRate>0</activateRate>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DebuffBlock">
 				<times>
@@ -674,6 +682,7 @@
 		<specialLevel>-1</specialLevel>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
@@ -736,6 +745,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>1</amount>
@@ -783,6 +793,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>1</amount>
@@ -830,6 +841,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>1</amount>
@@ -877,6 +889,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MpRegen">
 				<amount>50</amount>
@@ -924,6 +937,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>1</amount>
@@ -971,6 +985,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-3</amount>
@@ -1024,6 +1039,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>MY_PARTY</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>1</amount>
@@ -1046,6 +1062,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13158</power>
@@ -1070,6 +1087,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>4000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9000</power>
@@ -1095,6 +1113,7 @@
 		<rideState>NONE</rideState>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -1123,6 +1142,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>182</power>
@@ -1151,6 +1171,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>212</power>
@@ -1242,6 +1263,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
@@ -1309,6 +1331,7 @@
 		</abnormalLvl>
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1922,6 +1945,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>27</amount>
@@ -1967,6 +1991,7 @@
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<!-- TODO mul stat="magicalSkillPower" val="1.27" / -->
 			<effect name="PhysicalSkillPower">
@@ -2015,6 +2040,7 @@
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>27</amount>
@@ -2061,6 +2087,7 @@
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>5000</power>
@@ -2090,6 +2117,7 @@
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -2120,6 +2148,7 @@
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -2152,6 +2181,7 @@
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -2181,6 +2211,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
 		<!-- Glory Days confirmed -->
@@ -2403,6 +2434,7 @@
 		<magicLvl>99</magicLvl>
 		<reuseDelay>6000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ManaHeal">
 				<power>68</power>

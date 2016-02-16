@@ -147,6 +147,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -173,6 +174,7 @@
 		<effectRange>-2</effectRange>
 		<hitTime>10000</hitTime>
 		<targetType>OTHERS</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
@@ -200,6 +202,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -246,6 +249,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -288,6 +292,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -331,6 +336,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1576</npcId>
@@ -349,6 +355,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1577</npcId>
@@ -367,6 +374,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1578</npcId>
@@ -384,6 +392,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8519" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
@@ -396,6 +405,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8520" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
@@ -408,6 +418,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8521" levels="1" name="Release Agathion's Seal - Antharas">
 		<!-- High Five Skill -->
@@ -420,6 +431,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16077</npcId>
@@ -437,6 +449,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16078</npcId>
@@ -454,6 +467,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16079</npcId>
@@ -493,6 +507,7 @@
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8528" levels="1" name="Release Agathion's Seal">
 		<!-- AUTO GENERATED SKILL -->
@@ -506,6 +521,7 @@
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8529" levels="1" name="Ring of Insolence">
 		<!-- AUTO GENERATED SKILL -->
@@ -598,6 +614,7 @@
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8539" levels="1" name="Spirit of the Phoenix">
 		<!-- AUTO GENERATED SKILL -->
@@ -617,6 +634,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8540" levels="1" name="Shield of Faith">
 		<!-- AUTO GENERATED SKILL -->
@@ -636,6 +654,7 @@
 		<affectRange>1000</affectRange>
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="8541" levels="1" name="Seed of Revenge">
 		<!-- AUTO GENERATED SKILL -->
@@ -655,6 +674,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8542" levels="1" name="Touch of Eva">
 		<!-- AUTO GENERATED SKILL -->
@@ -678,6 +698,7 @@
 		<affectRange>1000</affectRange>
 		<reuseDelay>150000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="8543" levels="1" name="Pain of Shilen">
 		<!-- AUTO GENERATED SKILL -->
@@ -697,6 +718,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8544" levels="1" name="Prophecy of Fire">
 		<!-- AUTO GENERATED SKILL -->
@@ -718,6 +740,7 @@
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8545" levels="1" name="Turn to Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -737,6 +760,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8546" levels="1" name="Arcane Wisdom">
 		<!-- AUTO GENERATED SKILL -->
@@ -768,6 +792,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="8548" levels="1" name="Song of Purification">
 		<!-- AUTO GENERATED SKILL -->
@@ -788,6 +813,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="8549" levels="1" name="Dance of Berserker">
 		<!-- AUTO GENERATED SKILL -->
@@ -808,6 +834,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="8550" levels="1" name="Dance of Medusa">
 		<!-- AUTO GENERATED SKILL -->
@@ -835,6 +862,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8551" levels="1" name="Chant of Victory">
 		<!-- AUTO GENERATED SKILL -->
@@ -855,6 +883,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="8552" levels="1" name="Onslaught of Pa'agrio">
 		<!-- AUTO GENERATED SKILL -->
@@ -884,6 +913,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="8553" levels="1" name="Arcane Power">
 		<!-- AUTO GENERATED SKILL -->
@@ -912,6 +942,7 @@
 		<trait>DEATH</trait>
 		<reuseDelay>4000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8555" levels="1" name="Throwing Dagger">
 		<!-- AUTO GENERATED SKILL -->
@@ -936,6 +967,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8556" levels="1" name="Exciting Adventure">
 		<!-- AUTO GENERATED SKILL -->
@@ -955,6 +987,7 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8557" levels="1" name="Wind Riding">
 		<!-- AUTO GENERATED SKILL -->
@@ -974,6 +1007,7 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8558" levels="1" name="Ghost Walking">
 		<!-- AUTO GENERATED SKILL -->
@@ -993,6 +1027,7 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8559" levels="1" name="Lethal Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1010,6 +1045,7 @@
 		<trait>DEATH</trait>
 		<reuseDelay>8000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8560" levels="1" name="Flame Hawk">
 		<!-- AUTO GENERATED SKILL -->
@@ -1029,6 +1065,7 @@
 		<fanRange>0;0;900;40</fanRange>
 		<reuseDelay>75000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="8561" levels="1" name="Arrow Rain">
 		<!-- AUTO GENERATED SKILL -->
@@ -1048,6 +1085,7 @@
 		<affectLimit>5-12</affectLimit>
 		<reuseDelay>75000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="8562" levels="1" name="Ghost Piercing">
 		<!-- AUTO GENERATED SKILL -->
@@ -1067,6 +1105,7 @@
 		<fanRange>0;0;900;100</fanRange>
 		<reuseDelay>75000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SQUARE</affectScope>
 	</skill>
 	<skill id="8563" levels="1" name="Death Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1085,6 +1124,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>12000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="8564" levels="1" name="Rush Impact">
 		<!-- AUTO GENERATED SKILL -->
@@ -1112,6 +1152,7 @@
 		<fanRange>0;0;600;60</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="8565" levels="1" name="Dread Pool">
 		<!-- AUTO GENERATED SKILL -->
@@ -1137,6 +1178,7 @@
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8566" levels="1" name="Earthquake">
 		<!-- AUTO GENERATED SKILL -->
@@ -1154,6 +1196,7 @@
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>8000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="8567" levels="1" name="Maximum Force Focus">
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
@@ -1168,6 +1211,7 @@
 		<magicLvl>81</magicLvl>
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -1194,6 +1238,7 @@
 		<magicLvl>81</magicLvl>
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -1222,6 +1267,7 @@
 		<hitTime>1500</hitTime>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL, DUALBLUNT" />
 		</cond>
@@ -1254,6 +1300,7 @@
 		<hitTime>1500</hitTime>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -1288,6 +1335,7 @@
 		<affectRange>500</affectRange>
 		<fanRange>0;0;500;60</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -1329,6 +1377,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -1367,6 +1416,7 @@
 		<magicLvl>78</magicLvl>
 		<hitTime>1500</hitTime>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<criticalChance>10</criticalChance>
@@ -1399,6 +1449,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<fanRange>0;0;400;90</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>6468</power>
@@ -1430,6 +1481,7 @@
 		<isDebuff>true</isDebuff>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>112</power>
@@ -1469,6 +1521,7 @@
 		<isMagic>1</isMagic>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<target abnormalType="MULTI_DEBUFF_SOUL" />
 		</cond>
@@ -1501,6 +1554,7 @@
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;40</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
@@ -1532,6 +1586,7 @@
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;60</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="BOW, CROSSBOW" />
 		</cond>
@@ -1568,6 +1623,7 @@
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
@@ -1613,6 +1669,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_FIRE" />
 		</cond>
@@ -1648,6 +1705,7 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -1683,6 +1741,7 @@
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>139</power>
@@ -1716,6 +1775,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
 		<targetType>GROUND</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlotMyself">
 				<dispel>MAGICAL_STANCE</dispel>
@@ -1751,6 +1811,7 @@
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
@@ -1796,6 +1857,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_WATER" />
 		</cond>
@@ -1829,6 +1891,7 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -1860,6 +1923,7 @@
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
@@ -1905,6 +1969,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_WIND" />
 		</cond>
@@ -1932,6 +1997,7 @@
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -1970,6 +2036,7 @@
 		<itemConsumeCount>20</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2037,6 +2104,7 @@
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2067,6 +2135,7 @@
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2106,6 +2175,7 @@
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>SUMMON</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -2128,6 +2198,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -2158,6 +2229,7 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2238,6 +2310,7 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2308,6 +2381,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2342,6 +2416,7 @@
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -2368,6 +2443,7 @@
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>ENEMY_NOT</targetType>
+		<affectScope>RANGE_SORT_BY_HP</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>

@@ -23,6 +23,7 @@
 		</magicLvl>
 		<reuseDelay>2500</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -56,6 +57,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -94,6 +96,7 @@
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -154,6 +157,7 @@
 		</magicLvl>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -189,6 +193,7 @@
 		<fanRange>0;0;90;150</fanRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -234,6 +239,7 @@
 		<fanRange>0;0;15;200</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -281,6 +287,7 @@
 		</magicLvl>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -311,6 +318,7 @@
 		<affectRange>150</affectRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -347,6 +355,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -381,6 +390,7 @@
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -425,6 +435,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -468,6 +479,7 @@
 		<fanRange>0;0;300;90</fanRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -503,6 +515,7 @@
 		<fanRange>0;0;250;90</fanRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -540,6 +553,7 @@
 		<fanRange>0;0;150;90</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -593,6 +607,7 @@
 		<affectRange>250</affectRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>201710</power>
@@ -615,6 +630,7 @@
 		<fanRange>0;0;90;250</fanRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>201710</power>
@@ -648,6 +664,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14018" levels="1" name="Downward Blow">
 		<!-- AUTO GENERATED SKILL -->
@@ -665,6 +682,7 @@
 		<fanRange>0;0;200;90</fanRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="14019" levels="1" name="Ice Chill Spell">
 		<!-- AUTO GENERATED SKILL -->
@@ -685,6 +703,7 @@
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14020" levels="1" name="Ice Wall">
 		<!-- AUTO GENERATED SKILL -->
@@ -714,6 +733,7 @@
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14021" levels="1" name="Ice Chill Range">
 		<!-- AUTO GENERATED SKILL -->
@@ -741,6 +761,7 @@
 		<affectRange>400</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14022" levels="1" name="Ice Drop">
 		<!-- AUTO GENERATED SKILL -->
@@ -762,6 +783,7 @@
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14023" levels="1" name="Hero's Teleport">
 		<!-- AUTO GENERATED SKILL -->
@@ -789,6 +811,7 @@
 		<affectRange>400</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14024" levels="1" name="Ancient Hero's Roar">
 		<!-- AUTO GENERATED SKILL -->
@@ -816,6 +839,7 @@
 		<affectRange>450</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14025" levels="1" name="Hero's Arrow Shaft">
 		<!-- AUTO GENERATED SKILL -->
@@ -833,6 +857,7 @@
 		<affectRange>150</affectRange>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14026" levels="1" name="Hero's Sword Energy">
 		<!-- AUTO GENERATED SKILL -->
@@ -851,6 +876,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="14027" levels="1" name="Hero's Rage">
 		<!-- AUTO GENERATED SKILL -->
@@ -874,6 +900,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14028" levels="1" name="Hero's Influence">
 		<!-- AUTO GENERATED SKILL -->
@@ -892,6 +919,7 @@
 		<affectRange>600</affectRange>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14029" levels="1" name="Hero's Influence">
 		<!-- AUTO GENERATED SKILL -->
@@ -910,6 +938,7 @@
 		<affectRange>600</affectRange>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14030" levels="1" name="Hero's Magic">
 		<!-- AUTO GENERATED SKILL -->
@@ -929,6 +958,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14031" levels="1" name="Hero's Magic">
 		<!-- AUTO GENERATED SKILL -->
@@ -948,6 +978,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14032" levels="1" name="Red Net">
 		<!-- AUTO GENERATED SKILL -->
@@ -975,6 +1006,7 @@
 		<fanRange>0;0;500;90</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="14033" levels="1" name="Vital Spot Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -992,6 +1024,7 @@
 		<effectRange>500</effectRange>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14034" levels="1" name="Waist Slash">
 		<!-- AUTO GENERATED SKILL -->
@@ -1017,6 +1050,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14035" levels="1" name="Octavis' Obedience">
 		<!-- AUTO GENERATED SKILL -->
@@ -1034,6 +1068,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14036" levels="1" name="Vulnerability Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -1050,6 +1085,7 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14037" levels="1" name="Front Foot Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -1066,6 +1102,7 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14038" levels="1" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1084,6 +1121,7 @@
 		<fanRange>0;0;90;200</fanRange>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="14039" levels="1" name="Curse Shock">
 		<!-- AUTO GENERATED SKILL -->
@@ -1111,6 +1149,7 @@
 		<fanRange>0;0;45;300</fanRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 	</skill>
 	<skill id="14040" levels="6" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1148,6 +1187,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14041" levels="1" name="Teleport">
 		<!-- AUTO GENERATED SKILL -->
@@ -1164,6 +1204,7 @@
 		<magicLvl>90</magicLvl>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14042" levels="6" name="Disarm">
 		<!-- Glory Days confirmed -->
@@ -1211,6 +1252,7 @@
 		<abnormalTime>5</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Disarm">
 			</effect>
@@ -1256,6 +1298,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14044" levels="1" name="Teleport">
 		<!-- AUTO GENERATED SKILL -->
@@ -1277,6 +1320,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14045" levels="6" name="Fairy Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -1317,6 +1361,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14046" levels="6" name="Fairy Curse Gloom">
 		<!-- AUTO GENERATED SKILL -->
@@ -1363,6 +1408,7 @@
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14047" levels="6" name="Fairy Curse Poison">
 		<!-- AUTO GENERATED SKILL -->
@@ -1409,6 +1455,7 @@
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14048" levels="1" name="Fairy Acumen">
 		<!-- AUTO GENERATED SKILL -->
@@ -1429,6 +1476,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14049" levels="1" name="Fairy Heal">
 		<!-- AUTO GENERATED SKILL -->
@@ -1444,6 +1492,7 @@
 		<magicLvl>94</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14050" levels="4" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1475,6 +1524,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14051" levels="4" name="Decrease P. Def.">
 		<!-- AUTO GENERATED SKILL -->
@@ -1506,6 +1556,7 @@
 		<affectRange>600</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14052" levels="4" name="Rush">
 		<!-- AUTO GENERATED SKILL -->
@@ -1527,6 +1578,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14053" levels="4" name="Mace Downward Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1558,6 +1610,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14054" levels="4" name="Wood Upward Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1589,6 +1642,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14055" levels="4" name="Power Shot">
 		<!-- Glory Days confirmed -->
@@ -1621,6 +1675,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1653,6 +1708,7 @@
 		<staticReuse>true</staticReuse>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1677,6 +1733,7 @@
 		<magicLvl>85</magicLvl>
 		<hitTime>5000</hitTime>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14058" levels="2" name="X Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1699,6 +1756,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14059" levels="2" name="Sneer Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -1721,6 +1779,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14060" levels="2" name="Hold">
 		<!-- AUTO GENERATED SKILL -->
@@ -1757,6 +1816,7 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14061" levels="2" name="Frontal Brandish">
 		<!-- Glory Days confirmed -->
@@ -1784,6 +1844,7 @@
 		</magicLvl>
 		<reuseDelay>8000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>12411</power>
@@ -1824,6 +1885,7 @@
 		<abnormalVisualEffect>SLEEP</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14063" levels="1" name="Fatal Rush">
 		<!-- AUTO GENERATED SKILL -->
@@ -1840,6 +1902,7 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14064" levels="1" name="Wisp Heal">
 		<!-- AUTO GENERATED SKILL -->
@@ -1856,6 +1919,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14065" levels="1" name="Wisp Heal">
 		<!-- Glory Days confirmed -->
@@ -1873,6 +1937,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -1944,6 +2009,7 @@
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14067" levels="11" name="Blind Light">
 		<!-- AUTO GENERATED SKILL -->
@@ -1995,6 +2061,7 @@
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14068" levels="6" name="Garden Inducement">
 		<!-- AUTO GENERATED SKILL -->
@@ -2036,6 +2103,7 @@
 		<affectRange>300</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14069" levels="6" name="Garden Dark Magic">
 		<!-- AUTO GENERATED SKILL -->
@@ -2084,6 +2152,7 @@
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14070" levels="6" name="Branch Straightening">
 		<!-- AUTO GENERATED SKILL -->
@@ -2132,6 +2201,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14071" levels="6" name="Destroyer's Friction">
 		<!-- AUTO GENERATED SKILL -->
@@ -2152,6 +2222,7 @@
 		<affectRange>300</affectRange>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14072" levels="6" name="Gardener Blow">
 		<!-- AUTO GENERATED SKILL -->
@@ -2192,6 +2263,7 @@
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14073" levels="6" name="Garden Destroyer Slash">
 		<!-- AUTO GENERATED SKILL -->
@@ -2229,6 +2301,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14074" levels="1" name="Garden Destroyer Slash">
 		<!-- AUTO GENERATED SKILL -->
@@ -2251,6 +2324,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14075" levels="1" name="Harmful Trap">
 		<!-- AUTO GENERATED SKILL -->
@@ -2271,6 +2345,7 @@
 		<affectRange>100</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14076" levels="1" name="Harmful Trap">
 		<!-- AUTO GENERATED SKILL -->
@@ -2291,6 +2366,7 @@
 		<affectRange>100</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14077" levels="6" name="Gardener Slash">
 		<!-- AUTO GENERATED SKILL -->
@@ -2332,6 +2408,7 @@
 		<affectRange>150</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14078" levels="6" name="Pirate Gardener Shock">
 		<!-- AUTO GENERATED SKILL -->
@@ -2380,6 +2457,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14079" levels="1" name="Garden Reflect">
 		<!-- AUTO GENERATED SKILL -->
@@ -2399,6 +2477,7 @@
 		<abnormalTime>10</abnormalTime>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14080" levels="1" name="Self Defense">
 		<!-- AUTO GENERATED SKILL -->
@@ -2419,6 +2498,7 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14081" levels="6" name="Garden Judgment">
 		<!-- AUTO GENERATED SKILL -->
@@ -2456,6 +2536,7 @@
 		</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14082" levels="6" name="Gardener's Wrath">
 		<!-- AUTO GENERATED SKILL -->
@@ -2493,6 +2574,7 @@
 		</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14083" levels="1" name="Garden Elixir">
 		<!-- AUTO GENERATED SKILL -->
@@ -2513,6 +2595,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14084" levels="6" name="Garden Range Bleed">
 		<!-- AUTO GENERATED SKILL -->
@@ -2561,6 +2644,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14085" levels="1" name="Protection">
 		<!-- AUTO GENERATED SKILL -->
@@ -2579,6 +2663,7 @@
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14086" levels="1" name="Apherus Gate Key Discovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -2592,6 +2677,7 @@
 		<magicLvl>90</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14087" levels="6" name="Apherus' Binding">
 		<!-- AUTO GENERATED SKILL -->
@@ -2629,6 +2715,7 @@
 		<affectRange>500</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14088" levels="1" name="Garden Apherus Recovery">
 		<!-- AUTO GENERATED SKILL -->
@@ -2649,6 +2736,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14089" levels="5" name="Reflect">
 		<!-- AUTO GENERATED SKILL -->
@@ -2685,6 +2773,7 @@
 		<affectRange>300</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14090" levels="6" name="Apherus Paralysis">
 		<!-- AUTO GENERATED SKILL -->
@@ -2726,6 +2815,7 @@
 		<affectRange>100</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="14091" levels="6" name="Rose Poison">
 		<!-- AUTO GENERATED SKILL -->
@@ -2763,6 +2853,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14092" levels="6" name="Entangle">
 		<!-- AUTO GENERATED SKILL -->
@@ -2807,6 +2898,7 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="14093" levels="5" name="Sakum Follower Blow">
 		<!-- Glory Days Confimed -->
@@ -2842,6 +2934,7 @@
 		</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2888,6 +2981,7 @@
 		</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2915,6 +3009,7 @@
 		<magicLvl>40</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1295</power>
@@ -2936,6 +3031,7 @@
 		<magicLvl>40</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14097" levels="6" name="Fear of the Basilisk">
 		<!-- AUTO GENERATED SKILL -->
@@ -2973,6 +3069,7 @@
 		</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14098" levels="6" name="Sahara Blow">
 		<!-- AUTO GENERATED SKILL -->
@@ -3010,6 +3107,7 @@
 		</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14099" levels="6" name="Lachik Front Foot Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -3047,5 +3145,6 @@
 		</magicLvl>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 </list>

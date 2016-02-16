@@ -20,6 +20,7 @@
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -93,6 +94,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>60580</power>
@@ -113,6 +115,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>277440</power>
@@ -135,6 +138,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>100</amount>
@@ -158,6 +162,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>100</amount>
@@ -185,6 +190,7 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockMove">
 			</effect>
@@ -218,6 +224,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>20</amount>
@@ -243,6 +250,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Heal">
 				<power>1024</power>
@@ -263,6 +271,7 @@
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>36675</power>
@@ -285,6 +294,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>300</amount>
@@ -310,6 +320,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -345,6 +356,7 @@
 		<isDebuff>true</isDebuff>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -374,6 +386,7 @@
 		<isDebuff>true</isDebuff>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -401,6 +414,7 @@
 		<isDebuff>true</isDebuff>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -430,6 +444,7 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -460,6 +475,7 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -488,6 +504,7 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -518,6 +535,7 @@
 		<trait>PARALYZE</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>-50</amount>
@@ -555,6 +573,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamageShield">
 				<amount>50</amount>
@@ -577,6 +596,7 @@
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DebuffBlock" />
 		</effects>
@@ -596,6 +616,7 @@
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="1647" levels="1" name="50% Instant Herb of Mana">
 		<!-- AUTO GENERATED SKILL -->
@@ -610,6 +631,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="1648" levels="1" name="MP Recovery Herb">
 		<!-- AUTO GENERATED SKILL -->
@@ -629,6 +651,7 @@
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="1649" levels="1" name="MP Regen">
 		<!-- AUTO GENERATED SKILL -->
@@ -646,6 +669,7 @@
 		<affectRange>1100</affectRange>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="1650" levels="1" name="Absolute Defense">
 		<!-- Glory Days confirmed -->
@@ -663,6 +687,7 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>50000</amount>
@@ -705,6 +730,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
@@ -726,6 +752,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
@@ -748,6 +775,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>49414</power>
@@ -770,6 +798,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>
@@ -794,6 +823,7 @@
 		<castRange>2000</castRange>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
@@ -817,6 +847,7 @@
 		<hitTime>5000</hitTime>
 		<isSuicideAttack>true</isSuicideAttack>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>237492</power>
@@ -838,6 +869,7 @@
 		<hitTime>5000</hitTime>
 		<isSuicideAttack>true</isSuicideAttack>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>500000</power>
@@ -862,6 +894,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
@@ -884,6 +917,7 @@
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>4000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>100000</power>
@@ -904,6 +938,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1662" levels="1" name="Super Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -919,6 +954,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1663" levels="1" name="Berserker">
 		<!-- AUTO GENERATED SKILL -->
@@ -938,6 +974,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1664" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -954,6 +991,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1665" levels="1" name="Mana Burn">
 		<!-- AUTO GENERATED SKILL -->
@@ -969,6 +1007,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1666" levels="1" name="Cancellation">
 		<!-- AUTO GENERATED SKILL -->
@@ -988,6 +1027,7 @@
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="1667" levels="1" name="Long Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1004,6 +1044,7 @@
 		<magicLvl>85</magicLvl>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1668" levels="1" name="Vampiric Touch">
 		<!-- AUTO GENERATED SKILL -->
@@ -1021,6 +1062,7 @@
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="1669" levels="1" name="Sleep">
 		<!-- AUTO GENERATED SKILL -->
@@ -1042,6 +1084,7 @@
 		<abnormalVisualEffect>SLEEP</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1670" levels="1" name="Silence">
 		<!-- AUTO GENERATED SKILL -->
@@ -1065,6 +1108,7 @@
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1671" levels="1" name="Disarm">
 		<!-- AUTO GENERATED SKILL -->
@@ -1088,6 +1132,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1672" levels="1" name="Gust">
 		<!-- AUTO GENERATED SKILL -->
@@ -1101,6 +1146,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1673" levels="1" name="Death">
 		<!-- AUTO GENERATED SKILL -->
@@ -1122,6 +1168,7 @@
 		<trait>PARALYZE</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1674" levels="1" name="Death">
 		<!-- AUTO GENERATED SKILL -->
@@ -1135,6 +1182,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1675" levels="1" name="Flood">
 		<!-- AUTO GENERATED SKILL -->
@@ -1152,6 +1200,7 @@
 		<abnormalTime>5</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1676" levels="1" name="Crazy After-effect">
 		<!-- Glory Days confirmed -->
@@ -1171,6 +1220,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1195,6 +1245,7 @@
 		<affectLimit>6-12</affectLimit>
 		<hitTime>300</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1678" levels="1" name="Self-destruction">
 		<!-- AUTO GENERATED SKILL -->
@@ -1215,6 +1266,7 @@
 		<abnormalTime>15</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1679" levels="1" name="Self-destruction">
 		<!-- AUTO GENERATED SKILL -->
@@ -1228,6 +1280,7 @@
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="1680" levels="1" name="Smokescreen">
 		<!-- AUTO GENERATED SKILL -->
@@ -1242,6 +1295,7 @@
 		<affectRange>1000</affectRange>
 		<reuseDelay>3000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="1681" levels="1" name="Haste">
 		<!-- AUTO GENERATED SKILL -->
@@ -1263,6 +1317,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1682" levels="1" name="Aggression">
 		<!-- AUTO GENERATED SKILL -->
@@ -1285,6 +1340,7 @@
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1683" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1300,6 +1356,7 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1684" levels="2" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1315,6 +1372,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1685" levels="3" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1330,6 +1388,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1686" levels="4" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1345,6 +1404,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1687" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1360,6 +1420,7 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1688" levels="2" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1375,6 +1436,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1689" levels="3" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1390,6 +1452,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1690" levels="4" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1405,6 +1468,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1691" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1423,6 +1487,7 @@
 		<affectLimit>5-12</affectLimit>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="1692" levels="1" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1439,6 +1504,7 @@
 		<magicLvl>95</magicLvl>
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1693" levels="2" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1455,6 +1521,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1694" levels="3" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1471,6 +1538,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1695" levels="4" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1487,6 +1555,7 @@
 		<magicLvl>85</magicLvl>
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1696" levels="1" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1509,6 +1578,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1697" levels="1" name="Prominence">
 		<!-- AUTO GENERATED SKILL -->
@@ -1528,6 +1598,7 @@
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="1698" levels="1" name="Rain of Fire">
 		<!-- AUTO GENERATED SKILL -->
@@ -1549,6 +1620,7 @@
 		<affectLimit>5-12</affectLimit>
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="1699" levels="1" name="Blink">
 		<!-- AUTO GENERATED SKILL -->
@@ -1575,5 +1647,6 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 </list>

@@ -634,6 +634,7 @@
 		<effectRange>300</effectRange>
 		<castRange>200</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4990" levels="1" name="Hot Spring Mineral">
 		<!-- TODO -->
@@ -646,6 +647,7 @@
 		<effectRange>300</effectRange>
 		<castRange>200</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4991" levels="1" name="Hot Spring Brimstone">
 		<!-- TODO -->
@@ -663,6 +665,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4992" levels="1" name="Stun">
 		<!-- TODO -->
@@ -681,6 +684,7 @@
 		<isDebuff>true</isDebuff>
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="4993" levels="1" name="Venom Strike">
 		<!-- Confirmed CT2.5 -->
@@ -696,6 +700,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>57742</power>
@@ -717,6 +722,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>28871</power>
@@ -736,6 +742,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4996" levels="1" name="Venom Mass Teleport">
 		<!-- Confirmed CT2.5 -->
@@ -751,6 +758,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="4997" levels="1" name="Lidia Regeneration">
 		<!-- TODO: Needs to be done -->
@@ -766,6 +774,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4998" levels="1" name="Lidia Twister">
 		<!-- TODO: Needs to be done -->
@@ -779,6 +788,7 @@
 		<effectRange>1250</effectRange>
 		<castRange>750</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4999" levels="1" name="Lidia Vampiric Touch">
 		<!-- TODO: Needs to be done -->
@@ -792,5 +802,6 @@
 		<effectRange>2000</effectRange>
 		<castRange>1000</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 </list>

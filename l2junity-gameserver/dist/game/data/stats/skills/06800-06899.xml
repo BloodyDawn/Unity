@@ -9,6 +9,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6801" levels="1" name="Presentation - Yellow-Green Portal Ray">
 		<!-- none -->
@@ -19,6 +20,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6802" levels="1" name="Presentation - SSQ2 General Purpose 6">
 		<!-- none -->
@@ -37,6 +39,7 @@
 		<abnormalTime>86400</abnormalTime>
 		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6803" levels="1" name="Arena Haste">
 		<!-- High Five Skill -->
@@ -57,6 +60,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
@@ -83,6 +87,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
@@ -109,6 +114,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
@@ -135,6 +141,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
@@ -161,6 +168,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="ReduceCancel">
 				<amount>-53</amount>
@@ -187,6 +195,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -213,6 +222,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
@@ -239,6 +249,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>30</amount>
@@ -265,6 +276,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -291,6 +303,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -347,6 +360,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="324">
 			<not>
 				<player Charges="#maxCharges" />
@@ -387,6 +401,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="324">
 			<not>
 				<player Charges="#maxCharges" />
@@ -442,6 +457,7 @@
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6816" levels="16" name="Deadly Bleed">
 		<!-- "Bleed becomes deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the bleed will worsen." -->
@@ -478,6 +494,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6817" levels="1" name="Arena HP Recovery">
 		<!-- Arena Skill -->
@@ -492,6 +509,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -517,6 +535,7 @@
 		<specialLevel>-1</specialLevel>
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -557,6 +576,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6820" levels="1" name="P. Def. Enhance">
 		<!-- High Five Skill -->
@@ -576,6 +596,7 @@
 		<specialLevel>-1</specialLevel>
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
@@ -603,6 +624,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>140</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6822" levels="1" name="P. Def. Decrease">
 		<!-- "For 4 seconds, P. Def. decreases by 40%." -->
@@ -623,6 +645,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>140</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6823" levels="1" name="Reflect Attack">
 		<!-- none -->
@@ -640,6 +663,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6824" levels="1" name="Piercing Storm">
 		<!-- none -->
@@ -656,6 +680,7 @@
 		<isMagic>1</isMagic>
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6825" levels="2" name="Bleed">
 		<!-- "For 8 seconds, inflicts bleed and decreases 120 HP every second." -->
@@ -681,6 +706,7 @@
 		<castRange>300</castRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6826" levels="1" name="Critical Strike">
 		<!-- none -->
@@ -694,6 +720,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<castRange>40</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6827" levels="1" name="Petrify">
 		<!-- "Inflicted with petrification, the body is rigid like stone for 30 seconds." -->
@@ -715,6 +742,7 @@
 		<castRange>300</castRange>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6828" levels="1" name="Dust Storm">
 		<!-- "For 30 seconds, Atk. Spd. is decreased by 50% and Casting Spd. is decreased by 50%." -->
@@ -737,6 +765,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6829" levels="1" name="Vampiric Attack">
 		<!-- none -->
@@ -752,6 +781,7 @@
 		<isMagic>1</isMagic>
 		<castRange>800</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6830" levels="1" name="Bleed">
 		<!-- "For 5 seconds, inflicts bleed and decreases 100 HP every second. Decreases the effect of recovery magic by 600." -->
@@ -776,6 +806,7 @@
 		<castRange>800</castRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6831" levels="1" name="Blood Burst">
 		<!-- none -->
@@ -791,6 +822,7 @@
 		<isMagic>1</isMagic>
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6832" levels="1" name="Summon Parasitic Leech">
 		<!-- none -->
@@ -800,6 +832,7 @@
 		<magicLvl>84</magicLvl>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6833" levels="1" name="Power Strike">
 		<!-- none -->
@@ -813,6 +846,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<castRange>40</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6834" levels="1" name="Range Magic Attack">
 		<!-- none -->
@@ -828,6 +862,7 @@
 		<isMagic>1</isMagic>
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6835" levels="1" name="Summon Skeleton">
 		<!-- none -->
@@ -837,6 +872,7 @@
 		<magicLvl>84</magicLvl>
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6836" levels="1" name="Silence">
 		<!-- Magic skills are blocked. -->
@@ -860,6 +896,7 @@
 		<castRange>1000</castRange>
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6837" levels="1" name="Range Magic Attack">
 		<!-- none -->
@@ -874,6 +911,7 @@
 		<isMagic>1</isMagic>
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6838" levels="1" name="Self-destruction">
 		<!-- none -->
@@ -887,6 +925,7 @@
 		<hitTime>4000</hitTime>
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6839" levels="2" name="Power Attack">
 		<!-- none -->
@@ -899,6 +938,7 @@
 		<hitTime>2500</hitTime>
 		<castRange>40</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6840" levels="1" name="Paralysis">
 		<!-- Temporarily inflicted with paralysis and cannot move. -->
@@ -923,6 +963,7 @@
 		<castRange>150</castRange>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="6841" levels="1" name="Summon Subordinate">
 		<!-- none -->
@@ -932,6 +973,7 @@
 		<magicLvl>84</magicLvl>
 		<hitTime>5000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6842" levels="2" name="Enhance">
 		<!-- High Five Skill -->
@@ -960,6 +1002,7 @@
 		<specialLevel>-1</specialLevel>
 		<lvlBonusRate>2</lvlBonusRate>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -992,6 +1035,7 @@
 		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6844" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
@@ -1010,6 +1054,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<fanRange>0;0;300;60</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1033,6 +1078,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1057,6 +1103,7 @@
 		<effectPoint>-10000</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>300</power>
@@ -1075,6 +1122,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6848" levels="1" name="Summoner Appearance">
 		<!-- none -->
@@ -1086,6 +1134,7 @@
 		<hitTime>5000</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6849" levels="1" name="Summoner Strike">
 		<!-- High Five Skill -->
@@ -1103,6 +1152,7 @@
 		<effectPoint>-10000</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1123,6 +1173,7 @@
 		<effectRange>800</effectRange>
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1145,6 +1196,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1169,6 +1221,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>100</power>
@@ -1202,6 +1255,7 @@
 		<trait>SLEEP</trait>
 		<abnormalVisualEffect>SLEEP</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1232,6 +1286,7 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -1252,6 +1307,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -1271,6 +1327,7 @@
 		<isMagic>1</isMagic>
 		<castRange>400</castRange>
 		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6857" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
@@ -1288,6 +1345,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1304,6 +1362,7 @@
 		<magicLvl>81</magicLvl>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6859" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
@@ -1321,6 +1380,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1344,6 +1404,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1375,6 +1436,7 @@
 		<lvlBonusRate>2</lvlBonusRate>
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>20</amount>
@@ -1410,6 +1472,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>100</power>
@@ -1442,6 +1505,7 @@
 		<affectRange>600</affectRange>
 		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>120</power>
@@ -1458,6 +1522,7 @@
 		<magicLvl>81</magicLvl>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6865" levels="1" name="Poison">
 		<!-- High Five Skill -->
@@ -1482,6 +1547,7 @@
 		<icon>icon.skill0129</icon>
 		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>100</power>
@@ -1505,6 +1571,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>200</power>
@@ -1529,6 +1596,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>1000</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -1544,6 +1612,7 @@
 		<magicLvl>83</magicLvl>
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6869" levels="1" name="Detonate">
 		<!-- High Five Skill -->
@@ -1563,6 +1632,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>1000</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
@@ -1586,6 +1656,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>100</power>
@@ -1611,6 +1682,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>100</power>
@@ -1635,6 +1707,7 @@
 		<effectRange>800</effectRange>
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
@@ -1666,6 +1739,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1693,6 +1767,7 @@
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -1724,6 +1799,7 @@
 		<lvlBonusRate>2</lvlBonusRate>
 		<affectRange>200</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1750,6 +1826,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1773,6 +1850,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1806,6 +1884,7 @@
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<trait>PARALYZE</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1826,6 +1905,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HpDrain">
 				<power>100</power>
@@ -1857,6 +1937,7 @@
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Mute" />
 		</effects>
@@ -1877,6 +1958,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1905,6 +1987,7 @@
 		<icon>icon.skill4111</icon>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1930,6 +2013,7 @@
 		<castRange>900</castRange>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>TARGET</targetType>
+		<affectScope>PARTY</affectScope>
 	</skill>
 	<skill id="6884" levels="1" name="Morale Boost">
 		<!-- none -->
@@ -1945,6 +2029,7 @@
 		<magicLvl>80</magicLvl>
 		<castRange>1600</castRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6885" levels="3" name="Morale Boost">
 		<!-- "The persistence of the brave who fight together in Dragon Valley receive resistance to Paralysis/Bleed/Poison/Stun +90, Critical Rate +50%, Critical Damage +15%, P. Atk. +15%, M. Atk. +15%, Atk. Spd. +15%, Casting Spd. +15%, and EXP bonus +20%." -->
@@ -1978,6 +2063,7 @@
 		<castRange>1600</castRange>
 		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
 		<targetType>TARGET</targetType>
+		<affectScope>PARTY</affectScope>
 		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>
@@ -2071,6 +2157,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -2091,6 +2178,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2113,6 +2201,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2135,6 +2224,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<fanRange>0;0;300;60</fanRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2162,6 +2252,7 @@
 		<castRange>300</castRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6891" levels="1" name="Power Attack">
 		<!-- High Five Skill -->
@@ -2179,6 +2270,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>120</attributeValue>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2203,6 +2295,7 @@
 		<attributeValue>120</attributeValue>
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2226,6 +2319,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>120</attributeValue>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2250,6 +2344,7 @@
 		<attributeValue>120</attributeValue>
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2273,6 +2368,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>120</attributeValue>
 		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2297,6 +2393,7 @@
 		<attributeValue>120</attributeValue>
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2338,6 +2435,7 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- High Five Skill -->
