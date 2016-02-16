@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExRegenMax;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 
 /**
  * Heal Over Time effect implementation.
@@ -60,10 +59,7 @@ public final class HealOverTime extends AbstractEffect
 		hp += _power * getTicksMultiplier();
 		hp = Math.min(hp, maxhp);
 		info.getEffected().setCurrentHp(hp, false);
-		final StatusUpdate su = new StatusUpdate(info.getEffected());
-		su.addAttribute(StatusUpdate.CUR_HP, (int) hp);
-		su.addCaster(info.getEffector());
-		info.getEffected().broadcastPacket(su);
+		info.getEffected().broadcastStatusUpdate(info.getEffector());
 		return info.getSkill().isToggle();
 	}
 	

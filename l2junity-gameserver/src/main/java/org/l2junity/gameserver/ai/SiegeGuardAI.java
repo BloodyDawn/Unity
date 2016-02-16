@@ -247,7 +247,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	private void thinkActive()
 	{
 		Attackable npc = (Attackable) _actor;
-		
+		final WorldObject target = npc.getTarget();
 		// Update every 1s the _globalAggro counter to come close to 0
 		if (_globalAggro != 0)
 		{
@@ -265,26 +265,26 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		// A L2Attackable isn't aggressive during 10s after its spawn because _globalAggro is set to -10
 		if (_globalAggro >= 0)
 		{
-			World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, _attackRange, target ->
+			World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, _attackRange, t ->
 			{
-				if (autoAttackCondition(target)) // check aggression
+				if (autoAttackCondition(t)) // check aggression
 				{
 					// Get the hate level of the L2Attackable against this L2Character target contained in _aggroList
-					int hating = npc.getHating(target);
+					int hating = npc.getHating(t);
 					
 					// Add the attacker to the L2Attackable _aggroList with 0 damage and 1 hate
 					if (hating == 0)
 					{
-						npc.addDamageHate(target, 0, 1);
+						npc.addDamageHate(t, 0, 1);
 					}
 				}
 			});
 			
 			// Chose a target from its aggroList
 			Creature hated;
-			if (_actor.isConfused())
+			if (_actor.isConfused() && (target != null) && target.isCreature())
 			{
-				hated = getAttackTarget(); // Force mobs to attack anybody if confused
+				hated = (Creature) target; // Force mobs to attack anybody if confused
 			}
 			else
 			{
@@ -344,7 +344,8 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		Creature attackTarget = getAttackTarget();
+		final WorldObject target = _actor.getTarget();
+		final Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((attackTarget == null) || attackTarget.isAlikeDead() || (_attackTimeout < GameTimeController.getInstance().getGameTicks()))
 		{
@@ -357,7 +358,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			
 			// Cancel target and timeout
 			_attackTimeout = Integer.MAX_VALUE;
-			setAttackTarget(null);
+			_actor.setTarget(null);
 			
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE, null, null);
@@ -372,7 +373,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	
 	private final void factionNotifyAndSupport()
 	{
-		Creature target = getAttackTarget();
+		WorldObject target = _actor.getTarget();
 		// Call all L2Object of its Faction inside the Faction Range
 		if ((((Npc) _actor).getTemplate().getClans() == null) || (target == null))
 		{
@@ -441,13 +442,13 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			if (npc.getAI() != null) // TODO: possibly check not needed
 			{
 				if (!npc.isDead() && (Math.abs(target.getZ() - npc.getZ()) < 600)
-				// && _actor.getAttackByList().contains(getAttackTarget())
+				// && _actor.getAttackByList().contains(getTarget())
 				&& ((npc.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (npc.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE))
 				// limiting aggro for siege guards
-				&& target.isInsideRadius(npc, 1500, true, false) && GeoData.getInstance().canSeeTarget(npc, target))
+				&& npc.isInsideRadius(target, 1500, true, false) && GeoData.getInstance().canSeeTarget(npc, target))
 				{
 					// Notify the L2Object AI with EVT_AGGRESSION
-					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getAttackTarget(), 1);
+					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, target, 1);
 					return;
 				}
 				// heal friends
@@ -491,12 +492,20 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	
 	private void attackPrepare()
 	{
+		final WorldObject target = _actor.getTarget();
+		Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
+		if (attackTarget == null)
+		{
+			_actor.setTarget(null);
+			setIntention(AI_INTENTION_IDLE, null, null);
+			return;
+		}
+		
 		// Get all information needed to choose between physical or magical attack
 		Collection<Skill> skills = null;
 		double dist_2 = 0;
 		int range = 0;
 		L2DefenderInstance sGuard = (L2DefenderInstance) _actor;
-		Creature attackTarget = getAttackTarget();
 		
 		try
 		{

@@ -64,14 +64,6 @@ public class FishShots implements IItemHandler
 		}
 		
 		final long count = item.getCount();
-		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
-		
-		if (skills == null)
-		{
-			_log.warn(getClass().getSimpleName() + ": is missing skills!");
-			return false;
-		}
-		
 		boolean gradeCheck = item.isEtcItem() && (item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT) && (weaponInst.getItem().getCrystalTypePlus() == item.getItem().getCrystalTypePlus());
 		
 		if (!gradeCheck)
@@ -89,6 +81,14 @@ public class FishShots implements IItemHandler
 		activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false);
 		WorldObject oldTarget = activeChar.getTarget();
 		activeChar.setTarget(activeChar);
+		
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
+		
+		if (skills == null)
+		{
+			_log.warn(getClass().getSimpleName() + ": is missing skills!");
+			return false;
+		}
 		
 		skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, holder.getSkillId(), holder.getSkillLvl(), 0, 0), 600));
 		activeChar.setTarget(oldTarget);

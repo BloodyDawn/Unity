@@ -207,19 +207,19 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			packet.writeH(56);
 			packet.writeH(_activeChar.getActiveWeaponItem() != null ? 40 : 20);
-			packet.writeD(_activeChar.getPAtk(null));
+			packet.writeD(_activeChar.getPAtk());
 			packet.writeD(_activeChar.getPAtkSpd());
-			packet.writeD(_activeChar.getPDef(null));
-			packet.writeD(_activeChar.getEvasionRate(null));
+			packet.writeD(_activeChar.getPDef());
+			packet.writeD(_activeChar.getEvasionRate());
 			packet.writeD(_activeChar.getAccuracy());
 			packet.writeD(_activeChar.getCriticalHit());
-			packet.writeD(_activeChar.getMAtk(null, null));
+			packet.writeD(_activeChar.getMAtk());
 			packet.writeD(_activeChar.getMAtkSpd());
 			packet.writeD(_activeChar.getPAtkSpd()); // Seems like atk speed - 1
-			packet.writeD(_activeChar.getMagicEvasionRate(null));
-			packet.writeD(_activeChar.getMDef(null, null));
+			packet.writeD(_activeChar.getMagicEvasionRate());
+			packet.writeD(_activeChar.getMDef());
 			packet.writeD(_activeChar.getMagicAccuracy());
-			packet.writeD(_activeChar.getMCriticalHit(null, null));
+			packet.writeD(_activeChar.getMCriticalHit());
 		}
 		
 		if (containsMask(UserInfoType.ELEMENTALS))

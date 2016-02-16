@@ -32,6 +32,7 @@ import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -159,6 +160,34 @@ public class NpcViewMod implements IBypassHandler
 				sendNpcSkillView(activeChar, npc);
 				break;
 			}
+			case "aggrolist":
+			{
+				final WorldObject target;
+				if (st.hasMoreElements())
+				{
+					try
+					{
+						target = World.getInstance().findObject(Integer.parseInt(st.nextToken()));
+					}
+					catch (NumberFormatException e)
+					{
+						return false;
+					}
+				}
+				else
+				{
+					target = activeChar.getTarget();
+				}
+				
+				final Npc npc = target instanceof Npc ? (Npc) target : null;
+				if (npc == null)
+				{
+					return false;
+				}
+				
+				sendAggroListView(activeChar, npc);
+				break;
+			}
 		}
 		
 		return true;
@@ -216,17 +245,17 @@ public class NpcViewMod implements IBypassHandler
 		html.replace("%atktype%", CommonUtil.capitalizeFirst(npc.getAttackType().name().toLowerCase()));
 		html.replace("%atkrange%", npc.getStat().getPhysicalAttackRange());
 		
-		html.replace("%patk%", npc.getPAtk(activeChar));
-		html.replace("%pdef%", npc.getPDef(activeChar));
+		html.replace("%patk%", npc.getPAtk());
+		html.replace("%pdef%", npc.getPDef());
 		
-		html.replace("%matk%", npc.getMAtk(activeChar, null));
-		html.replace("%mdef%", npc.getMDef(activeChar, null));
+		html.replace("%matk%", npc.getMAtk());
+		html.replace("%mdef%", npc.getMDef());
 		
 		html.replace("%atkspd%", npc.getPAtkSpd());
 		html.replace("%castspd%", npc.getMAtkSpd());
 		
 		html.replace("%critrate%", npc.getStat().getCriticalHit());
-		html.replace("%evasion%", npc.getEvasionRate(activeChar));
+		html.replace("%evasion%", npc.getEvasionRate());
 		
 		html.replace("%accuracy%", npc.getStat().getAccuracy());
 		html.replace("%speed%", (int) npc.getStat().getMoveSpeed());
@@ -273,6 +302,38 @@ public class NpcViewMod implements IBypassHandler
 		html.replace("%skills%", sb.toString());
 		html.replace("%npc_name%", npc.getName());
 		html.replace("%npcId%", npc.getId());
+		
+		activeChar.sendPacket(html);
+	}
+	
+	public static void sendAggroListView(PlayerInstance activeChar, Npc npc)
+	{
+		final NpcHtmlMessage html = new NpcHtmlMessage();
+		html.setFile(activeChar.getHtmlPrefix(), "data/html/mods/NpcView/AggroList.htm");
+		
+		final StringBuilder sb = new StringBuilder();
+		
+		if (npc.isAttackable())
+		{
+			((Attackable) npc).getAggroList().values().forEach(a ->
+			{
+				sb.append("<table width=277 height=32 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
+				sb.append("<tr><td width=110>");
+				sb.append(a.getAttacker() != null ? a.getAttacker().getName() : "NULL");
+				sb.append("</td>");
+				sb.append("<td width=60 align=center>");
+				sb.append(a.getHate());
+				sb.append("</td>");
+				sb.append("<td width=60 align=center>");
+				sb.append(a.getDamage());
+				sb.append("</td></tr></table>");
+			});
+		}
+		
+		html.replace("%aggrolist%", sb.toString());
+		html.replace("%npc_name%", npc.getName());
+		html.replace("%npcId%", npc.getId());
+		html.replace("%objid%", npc.getObjectId());
 		
 		activeChar.sendPacket(html);
 	}

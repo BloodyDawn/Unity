@@ -18,6 +18,8 @@
  */
 package handlers.skillconditionhandlers;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
@@ -41,39 +43,40 @@ public class OpSweeperSkillCondition implements ISkillCondition
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		boolean canSweep = false;
-		final PlayerInstance sweeper = caster.getActingPlayer();
-		if (sweeper != null)
+		AtomicBoolean canSweep = new AtomicBoolean(false);
+		if (caster.getActingPlayer() != null)
 		{
+			final PlayerInstance sweeper = caster.getActingPlayer();
 			if (skill != null)
 			{
-				final WorldObject[] targets = skill.getTargetList(sweeper);
-				if (targets != null)
+				skill.forEachTargetAffected(sweeper, target, o ->
 				{
-					Attackable swept;
-					for (WorldObject objTarget : targets)
+					if (o.isAttackable())
 					{
-						if (objTarget instanceof Attackable)
+						Attackable a = (Attackable) o;
+						if (a.isDead())
 						{
-							swept = (Attackable) objTarget;
-							if (swept.isDead())
+							if (a.isSpoiled())
 							{
-								if (swept.isSpoiled())
+								canSweep.set(a.checkSpoilOwner(sweeper, true));
+								if (canSweep.get())
 								{
-									canSweep = swept.checkSpoilOwner(sweeper, true);
-									canSweep &= !swept.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
-									canSweep &= sweeper.getInventory().checkInventorySlotsAndWeight(swept.getSpoilLootItems(), true, true);
+									canSweep.set(!a.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true));
 								}
-								else
+								if (canSweep.get())
 								{
-									sweeper.sendPacket(SystemMessageId.SWEEPER_FAILED_TARGET_NOT_SPOILED);
+									canSweep.set(sweeper.getInventory().checkInventorySlotsAndWeight(a.getSpoilLootItems(), true, true));
 								}
+							}
+							else
+							{
+								sweeper.sendPacket(SystemMessageId.SWEEPER_FAILED_TARGET_NOT_SPOILED);
 							}
 						}
 					}
-				}
+				});
 			}
 		}
-		return canSweep;
+		return canSweep.get();
 	}
 }

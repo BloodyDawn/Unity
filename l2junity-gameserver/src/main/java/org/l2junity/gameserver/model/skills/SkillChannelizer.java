@@ -162,14 +162,17 @@ public class SkillChannelizer implements Runnable
 				}
 				
 				final List<Creature> targetList = new ArrayList<>();
-				
-				for (WorldObject chars : skill.getTargetList(_channelizer))
+				WorldObject target = skill.getTarget(_channelizer, false, false, false);
+				if (target != null)
 				{
-					if (chars.isCreature())
+					skill.forEachTargetAffected(_channelizer, target, o ->
 					{
-						targetList.add((Creature) chars);
-						((Creature) chars).getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), getChannelizer());
-					}
+						if (o.isCreature())
+						{
+							targetList.add((Creature) o);
+							((Creature) o).getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), getChannelizer());
+						}
+					});
 				}
 				
 				if (targetList.isEmpty())

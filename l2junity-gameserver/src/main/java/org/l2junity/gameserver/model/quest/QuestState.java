@@ -27,6 +27,8 @@ import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestComplete;
 import org.l2junity.gameserver.network.client.send.ExShowQuestMark;
 import org.l2junity.gameserver.network.client.send.QuestList;
 import org.l2junity.gameserver.util.Util;
@@ -635,6 +637,10 @@ public final class QuestState
 				break;
 			}
 		}
+		
+		// Notify to scripts
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), type), _player);
+		
 		return this;
 	}
 	
@@ -667,7 +673,7 @@ public final class QuestState
 	 * @see #exitQuest(QuestType type, boolean playExitQuest)
 	 * @see #exitQuest(boolean repeatable, boolean playExitQuest)
 	 */
-	public QuestState exitQuest(boolean repeatable)
+	private QuestState exitQuest(boolean repeatable)
 	{
 		_player.removeNotifyQuestOfDeath(this);
 		
@@ -710,6 +716,9 @@ public final class QuestState
 		{
 			AbstractScript.playSound(getPlayer(), QuestSound.ITEMSOUND_QUEST_FINISH);
 		}
+		
+		// Notify to scripts
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), repeatable ? QuestType.REPEATABLE : QuestType.ONE_TIME), _player);
 		return this;
 	}
 	

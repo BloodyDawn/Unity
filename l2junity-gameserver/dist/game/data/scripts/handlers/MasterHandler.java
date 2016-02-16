@@ -27,6 +27,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ActionHandler;
 import org.l2junity.gameserver.handler.ActionShiftHandler;
 import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.AffectObjectHandler;
+import org.l2junity.gameserver.handler.AffectScopeHandler;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.ChatHandler;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
@@ -39,22 +41,22 @@ import org.l2junity.gameserver.handler.VoicedCommandHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import handlers.actionhandlers.DoorInstanceAction;
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
-import handlers.actionhandlers.DoorInstanceAction;
 import handlers.actionhandlers.L2ItemInstanceAction;
-import handlers.actionhandlers.NpcAction;
-import handlers.actionhandlers.PlayerInstanceAction;
 import handlers.actionhandlers.L2PetInstanceAction;
 import handlers.actionhandlers.L2StaticObjectInstanceAction;
 import handlers.actionhandlers.L2SummonAction;
 import handlers.actionhandlers.L2TrapAction;
+import handlers.actionhandlers.NpcAction;
+import handlers.actionhandlers.PlayerInstanceAction;
 import handlers.actionshifthandlers.DoorInstanceActionShift;
 import handlers.actionshifthandlers.L2ItemInstanceActionShift;
-import handlers.actionshifthandlers.NpcActionShift;
-import handlers.actionshifthandlers.PlayerInstanceActionShift;
 import handlers.actionshifthandlers.L2StaticObjectInstanceActionShift;
 import handlers.actionshifthandlers.L2SummonActionShift;
+import handlers.actionshifthandlers.NpcActionShift;
+import handlers.actionshifthandlers.PlayerInstanceActionShift;
 import handlers.admincommandhandlers.AdminAdmin;
 import handlers.admincommandhandlers.AdminAnnouncements;
 import handlers.admincommandhandlers.AdminBBS;
@@ -142,8 +144,6 @@ import handlers.bypasshandlers.Loto;
 import handlers.bypasshandlers.Multisell;
 import handlers.bypasshandlers.NpcViewMod;
 import handlers.bypasshandlers.Observation;
-import handlers.bypasshandlers.OlympiadManagerLink;
-import handlers.bypasshandlers.OlympiadObservation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
 import handlers.bypasshandlers.QuestLink;
@@ -206,42 +206,55 @@ import handlers.itemhandlers.SummonItems;
 import handlers.punishmenthandlers.BanHandler;
 import handlers.punishmenthandlers.ChatBanHandler;
 import handlers.punishmenthandlers.JailHandler;
-import handlers.targethandlers.Area;
-import handlers.targethandlers.AreaCorpseMob;
-import handlers.targethandlers.AreaFriendly;
-import handlers.targethandlers.AreaSummon;
-import handlers.targethandlers.Aura;
-import handlers.targethandlers.AuraCorpseMob;
-import handlers.targethandlers.BehindArea;
-import handlers.targethandlers.BehindAura;
-import handlers.targethandlers.Clan;
-import handlers.targethandlers.ClanMember;
-import handlers.targethandlers.CommandChannel;
-import handlers.targethandlers.CorpseClan;
-import handlers.targethandlers.CorpseMob;
-import handlers.targethandlers.CorpseParty;
-import handlers.targethandlers.CorpsePartyClan;
-import handlers.targethandlers.EnemySummon;
-import handlers.targethandlers.FlagPole;
-import handlers.targethandlers.FrontArea;
-import handlers.targethandlers.FrontAura;
+import handlers.targethandlers.AdvanceBase;
+import handlers.targethandlers.Artillery;
+import handlers.targethandlers.DoorTreasure;
+import handlers.targethandlers.Enemy;
+import handlers.targethandlers.EnemyNot;
+import handlers.targethandlers.EnemyOnly;
+import handlers.targethandlers.FortressFlagpole;
 import handlers.targethandlers.Ground;
-import handlers.targethandlers.Holy;
-import handlers.targethandlers.One;
-import handlers.targethandlers.OneFriendly;
-import handlers.targethandlers.OwnerPet;
-import handlers.targethandlers.Party;
-import handlers.targethandlers.PartyClan;
-import handlers.targethandlers.PartyMember;
-import handlers.targethandlers.PartyNotMe;
-import handlers.targethandlers.PartyOther;
+import handlers.targethandlers.HolyThing;
+import handlers.targethandlers.Item;
+import handlers.targethandlers.MyMentor;
+import handlers.targethandlers.MyParty;
+import handlers.targethandlers.NpcBody;
+import handlers.targethandlers.Others;
 import handlers.targethandlers.PcBody;
-import handlers.targethandlers.Pet;
 import handlers.targethandlers.Self;
-import handlers.targethandlers.Servitor;
 import handlers.targethandlers.Summon;
-import handlers.targethandlers.TargetParty;
-import handlers.targethandlers.Unlockable;
+import handlers.targethandlers.Target;
+import handlers.targethandlers.WyvernTarget;
+import handlers.targethandlers.affectobject.All;
+import handlers.targethandlers.affectobject.Clan;
+import handlers.targethandlers.affectobject.Friend;
+import handlers.targethandlers.affectobject.FriendPc;
+import handlers.targethandlers.affectobject.HiddenPlace;
+import handlers.targethandlers.affectobject.Invisible;
+import handlers.targethandlers.affectobject.NotFriend;
+import handlers.targethandlers.affectobject.NotFriendPc;
+import handlers.targethandlers.affectobject.ObjectDeadNpcBody;
+import handlers.targethandlers.affectobject.UndeadRealEnemy;
+import handlers.targethandlers.affectobject.WyvernObject;
+import handlers.targethandlers.affectscope.BalakasScope;
+import handlers.targethandlers.affectscope.DeadParty;
+import handlers.targethandlers.affectscope.DeadPartyPledge;
+import handlers.targethandlers.affectscope.DeadPledge;
+import handlers.targethandlers.affectscope.DeadUnion;
+import handlers.targethandlers.affectscope.Fan;
+import handlers.targethandlers.affectscope.FanPB;
+import handlers.targethandlers.affectscope.Party;
+import handlers.targethandlers.affectscope.PartyPledge;
+import handlers.targethandlers.affectscope.Pledge;
+import handlers.targethandlers.affectscope.PointBlank;
+import handlers.targethandlers.affectscope.Range;
+import handlers.targethandlers.affectscope.RangeSortByHp;
+import handlers.targethandlers.affectscope.RingRange;
+import handlers.targethandlers.affectscope.Single;
+import handlers.targethandlers.affectscope.Square;
+import handlers.targethandlers.affectscope.SquarePB;
+import handlers.targethandlers.affectscope.StaticObjectScope;
+import handlers.targethandlers.affectscope.SummonExceptMaster;
 import handlers.usercommandhandlers.ChannelDelete;
 import handlers.usercommandhandlers.ChannelInfo;
 import handlers.usercommandhandlers.ChannelLeave;
@@ -285,6 +298,8 @@ public class MasterHandler
 		UserCommandHandler.getInstance(),
 		VoicedCommandHandler.getInstance(),
 		TargetHandler.getInstance(),
+		AffectObjectHandler.getInstance(),
+		AffectScopeHandler.getInstance(),
 	};
 	
 	private static final Class<?>[][] HANDLERS =
@@ -403,8 +418,6 @@ public class MasterHandler
 			Multisell.class,
 			NpcViewMod.class,
 			Observation.class,
-			OlympiadObservation.class,
-			OlympiadManagerLink.class,
 			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
@@ -512,43 +525,62 @@ public class MasterHandler
 		},
 		{
 			// Target Handlers
-			Area.class,
-			AreaCorpseMob.class,
-			AreaFriendly.class,
-			AreaSummon.class,
-			Aura.class,
-			AuraCorpseMob.class,
-			BehindArea.class,
-			BehindAura.class,
-			Clan.class,
-			ClanMember.class,
-			CommandChannel.class,
-			CorpseClan.class,
-			CorpseParty.class,
-			CorpsePartyClan.class,
-			CorpseMob.class,
-			EnemySummon.class,
-			FlagPole.class,
-			FrontArea.class,
-			FrontAura.class,
+			AdvanceBase.class,
+			Artillery.class,
+			DoorTreasure.class,
+			Enemy.class,
+			EnemyNot.class,
+			EnemyOnly.class,
+			FortressFlagpole.class,
 			Ground.class,
-			Holy.class,
-			One.class,
-			OneFriendly.class,
-			OwnerPet.class,
-			Party.class,
-			PartyClan.class,
-			PartyMember.class,
-			PartyNotMe.class,
-			PartyOther.class,
+			HolyThing.class,
+			Item.class,
+			MyMentor.class,
+			MyParty.class,
+			NpcBody.class,
+			Others.class,
 			PcBody.class,
-			Pet.class,
 			Self.class,
-			Servitor.class,
 			Summon.class,
-			TargetParty.class,
-			Unlockable.class,
+			Target.class,
+			WyvernTarget.class,
 		},
+		{
+			// Affect Objects
+			All.class,
+			Clan.class,
+			Friend.class,
+			FriendPc.class,
+			HiddenPlace.class,
+			Invisible.class,
+			NotFriend.class,
+			NotFriendPc.class,
+			ObjectDeadNpcBody.class,
+			UndeadRealEnemy.class,
+			WyvernObject.class,
+		},
+		{
+			// Affect Scopes
+			BalakasScope.class,
+			DeadParty.class,
+			DeadPartyPledge.class,
+			DeadPledge.class,
+			DeadUnion.class,
+			Fan.class,
+			FanPB.class,
+			Party.class,
+			PartyPledge.class,
+			Pledge.class,
+			PointBlank.class,
+			Range.class,
+			RangeSortByHp.class,
+			RingRange.class,
+			Single.class,
+			Square.class,
+			SquarePB.class,
+			StaticObjectScope.class,
+			SummonExceptMaster.class,
+		}
 	};
 	
 	public static void main(String[] args)

@@ -168,48 +168,7 @@ public final class L2TrapInstance extends Npc
 			return false;
 		}
 		
-		if (!Skill.checkForAreaOffensiveSkills(this, target, _skill.getSkill(), _isInArena))
-		{
-			return false;
-		}
-		
-		// observers
-		if ((target.isPlayer()) && target.getActingPlayer().inObserverMode())
-		{
-			return false;
-		}
-		
-		// olympiad own team and their summons not attacked
-		if ((_owner != null) && _owner.isInOlympiadMode())
-		{
-			final PlayerInstance player = target.getActingPlayer();
-			if ((player != null) && player.isInOlympiadMode() && (player.getOlympiadSide() == _owner.getOlympiadSide()))
-			{
-				return false;
-			}
-		}
-		
-		if (_isInArena)
-		{
-			return true;
-		}
-		
-		// trap owned by players not attack non-flagged players
-		if (_owner != null)
-		{
-			if (target.isAttackable())
-			{
-				return true;
-			}
-			
-			final PlayerInstance player = target.getActingPlayer();
-			if ((player == null) || ((player.getPvpFlag() == 0) && (player.getReputation() >= 0)))
-			{
-				return false;
-			}
-		}
-		
-		return true;
+		return _skill.getSkill().getTarget(this, target, false, true, false) != null;
 	}
 	
 	@Override

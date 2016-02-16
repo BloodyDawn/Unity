@@ -265,53 +265,50 @@ public final class Minigame extends AbstractNpcAI
 		final boolean miniGameStarted = room.getStarted();
 		if (miniGameStarted && (event.getSkill().getId() == SKILL_TORCH_LIGHT))
 		{
-			for (WorldObject obj : event.getTargets())
+			WorldObject obj = event.getTarget();
+			if ((obj != null) && obj.isNpc())
 			{
-				if ((obj != null) && obj.isNpc())
+				Npc npc = (Npc) obj;
+				if (npc.getId() == BURNER)
 				{
-					Npc npc = (Npc) obj;
-					if (npc.getId() == BURNER)
+					npc.doCast(TRIGGER_MIRAGE.getSkill());
+					final int pos = room.getBurnerPos(npc);
+					if (pos == room.getOrder()[room.getCurrentPot()])
 					{
-						npc.doCast(TRIGGER_MIRAGE.getSkill());
-						final int pos = room.getBurnerPos(npc);
-						if (pos == room.getOrder()[room.getCurrentPot()])
+						if (room.getCurrentPot() < 8)
 						{
-							if (room.getCurrentPot() < 8)
-							{
-								npc.setState(1);
-								npc.setIsRunning(false);
-								startQuestTimer("off", 2000, npc, null);
-								room.setCurrentPot(room.getCurrentPot() + 1);
-							}
-							else
-							{
-								addSpawn(TREASURE_BOX, room.getParticipant().getLocation(), true, 0);
-								room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THAT_S_IT_YOU_VE_DONE_IT);
-								room.setCurrentPot(0);
-								room.burnThemAll();
-								startQuestTimer("off", 2000, room.getManager(), null);
-								startQuestTimer("end", 4000, room.getManager(), null);
-							}
+							npc.setState(1);
+							npc.setIsRunning(false);
+							startQuestTimer("off", 2000, npc, null);
+							room.setCurrentPot(room.getCurrentPot() + 1);
 						}
 						else
 						{
-							if (room.getAttemptNumber() == MAX_ATTEMPTS)
-							{
-								room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_VE_FAILED_ANY_FURTHER_ATTEMPTS_WOULD_BE_WASTEFUL);
-								room.burnThemAll();
-								startQuestTimer("off", 2000, room.getManager(), null);
-								room.getParticipant().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == room);
-								startQuestTimer("end", 4000, room.getManager(), null);
-							}
-							else if (room.getAttemptNumber() < MAX_ATTEMPTS)
-							{
-								room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TOO_BAD_I_WILL_NOT_GIVE_UP_ON_THIS_THOUGH);
-								room.burnThemAll();
-								startQuestTimer("off", 2000, room.getManager(), null);
-								room.setAttemptNumber(room.getAttemptNumber() + 1);
-							}
+							addSpawn(TREASURE_BOX, room.getParticipant().getLocation(), true, 0);
+							room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THAT_S_IT_YOU_VE_DONE_IT);
+							room.setCurrentPot(0);
+							room.burnThemAll();
+							startQuestTimer("off", 2000, room.getManager(), null);
+							startQuestTimer("end", 4000, room.getManager(), null);
 						}
-						break;
+					}
+					else
+					{
+						if (room.getAttemptNumber() == MAX_ATTEMPTS)
+						{
+							room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_VE_FAILED_ANY_FURTHER_ATTEMPTS_WOULD_BE_WASTEFUL);
+							room.burnThemAll();
+							startQuestTimer("off", 2000, room.getManager(), null);
+							room.getParticipant().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == room);
+							startQuestTimer("end", 4000, room.getManager(), null);
+						}
+						else if (room.getAttemptNumber() < MAX_ATTEMPTS)
+						{
+							room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TOO_BAD_I_WILL_NOT_GIVE_UP_ON_THIS_THOUGH);
+							room.burnThemAll();
+							startQuestTimer("off", 2000, room.getManager(), null);
+							room.setAttemptNumber(room.getAttemptNumber() + 1);
+						}
 					}
 				}
 			}

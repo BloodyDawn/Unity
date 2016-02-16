@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Trigger Skill By Avoid effect implementation.
@@ -41,7 +41,7 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 {
 	private final int _chance;
 	private final SkillHolder _skill;
-	private final L2TargetType _targetType;
+	private final TargetType _targetType;
 	
 	/**
 	 * @param params
@@ -51,7 +51,7 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 	{
 		_chance = params.getInt("chance", 100);
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
-		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
+		_targetType = params.getEnum("targetType", TargetType.class, TargetType.TARGET);
 	}
 	
 	public void onAvoidEvent(OnCreatureAttackAvoid event)
@@ -68,26 +68,25 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 			return;
 		}
 		
-		if (Rnd.get(100) > _chance)
+		if ((_chance < 100) && (Rnd.get(100) > _chance))
 		{
 			return;
 		}
 		
 		final Skill triggerSkill = _skill.getSkill();
-		final WorldObject[] targets = targetHandler.getTargetList(triggerSkill, event.getTarget(), false, event.getAttacker());
-		
-		for (WorldObject triggerTarget : targets)
+		WorldObject target = null;
+		try
 		{
-			if ((triggerTarget == null) || !triggerTarget.isCreature())
-			{
-				continue;
-			}
-			
-			final Creature targetChar = (Creature) triggerTarget;
-			if (!targetChar.isInvul())
-			{
-				event.getTarget().makeTriggerCast(triggerSkill, targetChar);
-			}
+			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(event.getTarget(), event.getAttacker(), triggerSkill, false, false, false);
+		}
+		catch (Exception e)
+		{
+			_log.warn("Exception in ITargetTypeHandler.getTarget(): " + e.getMessage(), e);
+		}
+		
+		if ((target != null) && target.isCreature())
+		{
+			event.getAttacker().makeTriggerCast(triggerSkill, (Creature) target);
 		}
 	}
 	

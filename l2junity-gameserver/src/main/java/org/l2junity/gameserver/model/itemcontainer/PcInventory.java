@@ -460,6 +460,11 @@ public class PcInventory extends Inventory
 					actor.sendItemList(false);
 				}
 				
+				if (item.isEtcItem() && (item.getItemType() == EtcItemType.SOULSHOT))
+				{
+					actor.handleAutoShots();
+				}
+				
 				// Notify to scripts
 				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, item), actor, item.getItem());
 			}
@@ -511,10 +516,14 @@ public class PcInventory extends Inventory
 				actor.sendItemList(false);
 			}
 			
+			if (item.isEtcItem() && (item.getItemType() == EtcItemType.SOULSHOT))
+			{
+				actor.handleAutoShots();
+			}
+			
 			// Notify to scripts
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, item), actor, item.getItem());
 		}
-		
 		return item;
 	}
 	

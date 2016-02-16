@@ -91,17 +91,20 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkAttack()
 	{
-		if (checkTargetLostOrDead(getAttackTarget()))
+		final WorldObject target = _actor.getTarget();
+		final Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
+		
+		if (checkTargetLostOrDead(attackTarget))
 		{
-			setAttackTarget(null);
+			_actor.setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange()))
+		if (maybeMoveToPawn(attackTarget, _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
 		clientStopMoving(null);
-		_actor.doAttack(getAttackTarget());
+		_actor.doAttack(attackTarget);
 	}
 	
 	private void thinkCast()
@@ -112,13 +115,14 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		
-		if (checkTargetLost(getCastTarget()))
+		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
+		if (checkTargetLost(target))
 		{
-			setCastTarget(null);
+			summon.setTarget(null);
 			return;
 		}
 		boolean val = _startFollow;
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
@@ -130,25 +134,27 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkPickUp()
 	{
-		if (checkTargetLost(getTarget()))
+		final WorldObject target = _actor.getTarget();
+		if (checkTargetLost(target))
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		getActor().doPickupItem(getTarget());
+		getActor().doPickupItem(target);
 	}
 	
 	private void thinkInteract()
 	{
-		if (checkTargetLost(getTarget()))
+		final WorldObject target = _actor.getTarget();
+		if (checkTargetLost(target))
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
@@ -309,7 +315,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
-			_lastAttack = getAttackTarget();
+			_lastAttack = (_actor.getTarget() != null) && _actor.getTarget().isCreature() ? (Creature) _actor.getTarget() : null;
 		}
 		else
 		{

@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -72,10 +71,7 @@ public final class ManaHealPercent extends AbstractEffect
 		{
 			final double newMp = amount + effected.getCurrentMp();
 			effected.setCurrentMp(newMp, false);
-			final StatusUpdate su = new StatusUpdate(effected);
-			su.addAttribute(StatusUpdate.CUR_MP, (int) newMp);
-			su.addCaster(effector);
-			effected.broadcastPacket(su);
+			effected.broadcastStatusUpdate(effector);
 		}
 		SystemMessage sm;
 		if (effector.getObjectId() != effected.getObjectId())

@@ -18,6 +18,7 @@
  */
 package quests.Q00511_AwlUnderFoot;
 
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -93,7 +94,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 				qs.startQuest();
 				break;
 			case "Warden-10.html":
-				qs.exitQuest(true);
+				qs.exitQuest(QuestType.REPEATABLE);
 				break;
 			default:
 				htmltext = null;

@@ -4,9 +4,9 @@
 -- Queries that create these tables and/or populate them apropiately are available in
 -- the ../sql/ folder.
 --
--- See the documentation.txt file for more details.  
+-- See the documentation.txt file for more details.
 
-DROP TABLE IF EXISTS 
+DROP TABLE IF EXISTS
 account_gsdata,
 airships,
 auction,
@@ -21,6 +21,7 @@ castle_manor_procure,
 castle_manor_production,
 castle_siege_guards,
 character_contacts,
+character_daily_rewards,
 character_friends,
 character_hennas,
 character_instance_time,

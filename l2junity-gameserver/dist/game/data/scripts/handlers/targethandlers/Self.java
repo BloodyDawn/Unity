@@ -19,28 +19,38 @@
 package handlers.targethandlers;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author UnAfraid
+ * Target yourself.
+ * @author Nik
  */
 public class Self implements ITargetTypeHandler
 {
+	@Override
+	public Enum<TargetType> getTargetType()
+	{
+		return TargetType.SELF;
+	}
 	
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		return new Creature[]
+		if (activeChar.isInsideZone(ZoneId.PEACE) && skill.isBad())
 		{
-			activeChar
-		};
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
+			}
+			
+			return null;
+		}
+		return activeChar;
 	}
 	
-	@Override
-	public Enum<L2TargetType> getTargetType()
-	{
-		return L2TargetType.SELF;
-	}
 }

@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.events;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.events.impl.OnDayNightChange;
+import org.l2junity.gameserver.model.events.impl.ceremonyofchaos.OnCeremonyOfChaosMatchResult;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttack;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttackAvoid;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
@@ -73,6 +74,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDelete
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDlgAnswer;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFishing;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaAdd;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaRemove;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerItemAdd;
@@ -95,6 +97,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfes
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKill;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestAbort;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestComplete;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerRestore;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSelect;
@@ -195,6 +198,9 @@ public enum EventType
 	// Olympiad events
 	ON_OLYMPIAD_MATCH_RESULT(OnOlympiadMatchResult.class, void.class),
 	
+	// Ceremony of Chaos events
+	ON_CEREMONY_OF_CHAOS_MATCH_RESULT(OnCeremonyOfChaosMatchResult.class, void.class),
+	
 	// Playable events
 	ON_PLAYABLE_EXP_CHANGED(OnPlayableExpChanged.class, void.class, TerminateReturn.class),
 	
@@ -218,6 +224,7 @@ public enum EventType
 	ON_PLAYER_DLG_ANSWER(OnPlayerDlgAnswer.class, void.class, TerminateReturn.class),
 	ON_PLAYER_EQUIP_ITEM(OnPlayerEquipItem.class, void.class),
 	ON_PLAYER_FAME_CHANGED(OnPlayerFameChanged.class, void.class),
+	ON_PLAYER_FISHING(OnPlayerFishing.class, void.class),
 	// Henna events
 	ON_PLAYER_HENNA_ADD(OnPlayerHennaAdd.class, void.class),
 	ON_PLAYER_HENNA_REMOVE(OnPlayerHennaRemove.class, void.class),
@@ -254,6 +261,7 @@ public enum EventType
 	ON_PLAYER_TRANSFORM(OnPlayerTransform.class, void.class),
 	ON_PLAYER_SUB_CHANGE(OnPlayerSubChange.class, void.class),
 	ON_PLAYER_QUEST_ABORT(OnPlayerQuestAbort.class, void.class),
+	ON_PLAYER_QUEST_COMPLETE(OnPlayerQuestComplete.class, void.class),
 	
 	// Trap events
 	ON_TRAP_ACTION(OnTrapAction.class, void.class),

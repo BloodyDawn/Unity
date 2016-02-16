@@ -365,7 +365,7 @@ public final class Formulas
 			return 0;
 		}
 		
-		double defence = target.getPDef(attacker);
+		double defence = target.getPDef();
 		
 		switch (shld)
 		{
@@ -396,7 +396,7 @@ public final class Formulas
 		}
 		
 		// Initial damage
-		final double baseMod = ((77 * (power + (attacker.getPAtk(target) * ssboost))) / defence);
+		final double baseMod = ((77 * (power + (attacker.getPAtk() * ssboost))) / defence);
 		// Critical
 		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
@@ -449,7 +449,7 @@ public final class Formulas
 			return 0;
 		}
 		
-		double defence = target.getPDef(attacker);
+		double defence = target.getPDef();
 		
 		switch (shld)
 		{
@@ -480,7 +480,7 @@ public final class Formulas
 		}
 		
 		// Initial damage
-		double baseMod = ((77 * (power + attacker.getPAtk(target))) / defence) * ssboost;
+		double baseMod = ((77 * (power + attacker.getPAtk())) / defence) * ssboost;
 		// Critical
 		double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
 		double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
@@ -536,8 +536,8 @@ public final class Formulas
 	public static double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
 	{
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		double damage = attacker.getPAtk(target);
-		double defence = target.getPDef(attacker);
+		double damage = attacker.getPAtk();
+		double defence = target.getPDef();
 		final double distance = attacker.calculateDistance(target, true, false);
 		
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
@@ -666,7 +666,7 @@ public final class Formulas
 			return 0;
 		}
 		
-		int mDef = target.getMDef(attacker, skill);
+		int mDef = target.getMDef();
 		switch (shld)
 		{
 			case SHIELD_DEFENSE_SUCCEED:
@@ -680,7 +680,7 @@ public final class Formulas
 			}
 		}
 		
-		int mAtk = attacker.getMAtk(target, skill);
+		int mAtk = attacker.getMAtk();
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		
 		// PvP bonuses for defense
@@ -776,7 +776,7 @@ public final class Formulas
 	
 	public static double calcMagicDam(CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
-		int mDef = target.getMDef(attacker.getOwner(), skill);
+		int mDef = target.getMDef();
 		switch (shld)
 		{
 			case SHIELD_DEFENSE_SUCCEED:
@@ -984,7 +984,7 @@ public final class Formulas
 	 */
 	public static boolean calcHitMiss(Creature attacker, Creature target)
 	{
-		int chance = (80 + (2 * (attacker.getAccuracy() - target.getEvasionRate(attacker)))) * 10;
+		int chance = (80 + (2 * (attacker.getAccuracy() - target.getEvasionRate()))) * 10;
 		
 		// Get additional bonus from the conditions when you are attacking
 		chance *= HitConditionBonusData.getInstance().getConditionBonus(attacker, target);
@@ -1078,10 +1078,10 @@ public final class Formulas
 		double defence = 0;
 		if (skill.isActive() && skill.isBad())
 		{
-			defence = target.getMDef(actor, skill);
+			defence = target.getMDef();
 		}
 		
-		double attack = 2 * actor.getMAtk(target, skill) * calcGeneralTraitBonus(actor, target, skill.getTraitType(), false);
+		double attack = 2 * actor.getMAtk() * calcGeneralTraitBonus(actor, target, skill.getTraitType(), false);
 		double d = (attack - defence) / (attack + defence);
 		
 		if (skill.isDebuff())
@@ -1325,8 +1325,8 @@ public final class Formulas
 	public static double calcManaDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		// Formula: (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
-		double mAtk = attacker.getMAtk(target, skill);
-		double mDef = target.getMDef(attacker, skill);
+		double mAtk = attacker.getMAtk();
+		double mDef = target.getMDef();
 		double mp = target.getMaxMp();
 		
 		switch (shld)
@@ -1654,7 +1654,7 @@ public final class Formulas
 				attacker.sendPacket(sm);
 			}
 			
-			double counterdmg = ((target.getPAtk(attacker) * 873) / attacker.getPDef(target)); // Old: (((target.getPAtk(attacker) * 10.0) * 70.0) / attacker.getPDef(target));
+			double counterdmg = ((target.getPAtk() * 873) / attacker.getPDef()); // Old: (((target.getPAtk(attacker) * 10.0) * 70.0) / attacker.getPDef(target));
 			counterdmg *= calcWeaponTraitBonus(attacker, target);
 			counterdmg *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 			counterdmg *= calcAttributeBonus(attacker, target, skill);
@@ -2012,7 +2012,7 @@ public final class Formulas
 		}
 		
 		// DEFENCE CALCULATION (pDef + sDef)
-		double defence = target.getPDef(attacker);
+		double defence = target.getPDef();
 		
 		switch (shld)
 		{
@@ -2038,7 +2038,7 @@ public final class Formulas
 		double cAtkAdd = 0;
 		double critMod = 0;
 		double ssBonus = ss ? 2 * shotsBonus : 1;
-		double attack = attacker.getPAtk(target);
+		double attack = attacker.getPAtk();
 		double random_damage = attacker.getRandomDamageMultiplier();
 		attack *= random_damage;
 		
@@ -2050,7 +2050,7 @@ public final class Formulas
 			cAtkAdd += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
 		}
 		
-		double proxBonus = (attacker.isInFrontOf(target) ? 0 : (attacker.isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk(target);
+		double proxBonus = (attacker.isInFrontOf(target) ? 0 : (attacker.isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk();
 		attack += proxBonus;
 		
 		// ....................______________Critical Section___________________...._______Non-Critical Section______

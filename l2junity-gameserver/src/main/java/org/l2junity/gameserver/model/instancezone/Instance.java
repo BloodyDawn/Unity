@@ -441,7 +441,7 @@ public final class Instance implements IIdentifiable, INamable
 				{
 					spawn.stopRespawn();
 				}
-				npcs.add(spawn.doSpawn());
+				npcs.add(spawn.doSpawn(holder.isSpawnAnimation()));
 			}
 		}
 		catch (Exception e)
@@ -1009,6 +1009,38 @@ public final class Instance implements IIdentifiable, INamable
 	public Location getExitLocation(PlayerInstance player)
 	{
 		return _template.getExitLocation(player);
+	}
+	
+	/**
+	 * @return the exp rate of the instance
+	 */
+	public float getExpRate()
+	{
+		return _template.getExpRate();
+	}
+	
+	/**
+	 * @return the sp rate of the instance
+	 */
+	public float getSPRate()
+	{
+		return _template.getSPRate();
+	}
+	
+	/**
+	 * @return the party exp rate of the instance
+	 */
+	public float getExpPartyRate()
+	{
+		return _template.getExpPartyRate();
+	}
+	
+	/**
+	 * @return the party sp rate of the instance
+	 */
+	public float getSPPartyRate()
+	{
+		return _template.getSPPartyRate();
 	}
 	
 	// ----------------------------------------------

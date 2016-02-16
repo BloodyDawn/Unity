@@ -68,6 +68,7 @@ import org.l2junity.gameserver.model.conditions.ConditionPlayerCheckAbnormal;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerClassIdRestriction;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerCloakStatus;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerCp;
+import org.l2junity.gameserver.model.conditions.ConditionPlayerDualclass;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerFlyMounted;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerGrade;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasCastle;
@@ -657,6 +658,12 @@ public abstract class DocumentBase
 				{
 					boolean val = Boolean.parseBoolean(a.getNodeValue());
 					cond = joinAnd(cond, new ConditionPlayerSubclass(val));
+					break;
+				}
+				case "dualclass":
+				{
+					boolean val = Boolean.parseBoolean(a.getNodeValue());
+					cond = joinAnd(cond, new ConditionPlayerDualclass(val));
 					break;
 				}
 				case "canswitchsubclass":

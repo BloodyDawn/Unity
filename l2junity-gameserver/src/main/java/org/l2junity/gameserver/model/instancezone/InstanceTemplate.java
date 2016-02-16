@@ -70,6 +70,10 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	private int _maxWorldCount = -1;
 	private boolean _isPvP = false;
 	private boolean _allowPlayerSummon = false;
+	private float _expRate = Config.RATE_INSTANCE_XP;
+	private float _spRate = Config.RATE_INSTANCE_SP;
+	private float _expPartyRate = Config.RATE_INSTANCE_PARTY_XP;
+	private float _spPartyRate = Config.RATE_INSTANCE_PARTY_SP;
 	private StatsSet _parameters = StatsSet.EMPTY_STATSET;
 	private final Map<Integer, DoorTemplate> _doors = new HashMap<>();
 	private final Map<String, List<SpawnHolder>> _spawns = new HashMap<>();
@@ -711,6 +715,74 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	public void applyConditionEffects(List<PlayerInstance> group)
 	{
 		_conditions.forEach(c -> c.applyEffect(group));
+	}
+	
+	/**
+	 * @return the exp rate of the instance
+	 **/
+	public float getExpRate()
+	{
+		return _expRate;
+	}
+	
+	/**
+	 * Sets the exp rate of the instance
+	 * @param expRate
+	 **/
+	public void setExpRate(float expRate)
+	{
+		_expRate = expRate;
+	}
+	
+	/**
+	 * @return the sp rate of the instance
+	 */
+	public float getSPRate()
+	{
+		return _spRate;
+	}
+	
+	/**
+	 * Sets the sp rate of the instance
+	 * @param spRate
+	 **/
+	public void setSPRate(float spRate)
+	{
+		_spRate = spRate;
+	}
+	
+	/**
+	 * @return the party exp rate of the instance
+	 */
+	public float getExpPartyRate()
+	{
+		return _expPartyRate;
+	}
+	
+	/**
+	 * Sets the party exp rate of the instance
+	 * @param expRate
+	 **/
+	public void setExpPartyRate(float expRate)
+	{
+		_expPartyRate = expRate;
+	}
+	
+	/**
+	 * @return the party sp rate of the instance
+	 */
+	public float getSPPartyRate()
+	{
+		return _spPartyRate;
+	}
+	
+	/**
+	 * Sets the party sp rate of the instance
+	 * @param spRate
+	 **/
+	public void setSPPartyRate(float spRate)
+	{
+		_spPartyRate = spRate;
 	}
 	
 	/**

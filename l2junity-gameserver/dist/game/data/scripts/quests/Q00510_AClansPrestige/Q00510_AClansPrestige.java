@@ -19,6 +19,7 @@
 package quests.Q00510_AClansPrestige;
 
 import org.l2junity.gameserver.enums.QuestSound;
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -125,7 +126,7 @@ public class Q00510_AClansPrestige extends Quest
 			case State.STARTED:
 				if ((clan == null) || !player.isClanLeader())
 				{
-					st.exitQuest(true);
+					st.exitQuest(QuestType.REPEATABLE);
 					return "31331-8.html";
 				}
 				

@@ -123,6 +123,13 @@ public final class RequestActionUse implements IClientIncomingPacket
 					client.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
+				
+				if (activeChar.isSellingBuffs())
+				{
+					client.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+				
 				if (activeChar.getPrivateStoreType() != PrivateStoreType.NONE)
 				{
 					activeChar.setPrivateStoreType(PrivateStoreType.NONE);

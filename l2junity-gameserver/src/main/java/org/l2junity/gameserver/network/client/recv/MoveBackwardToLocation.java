@@ -80,7 +80,7 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 	@Override
 	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = client.getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;

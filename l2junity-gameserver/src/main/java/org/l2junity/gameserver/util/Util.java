@@ -35,10 +35,12 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.commons.util.file.filter.ExtFilter;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -89,6 +91,25 @@ public final class Util
 			angleTarget = 360 + angleTarget;
 		}
 		return angleTarget;
+	}
+	
+	/**
+	 * Gets a random position around the specified location.
+	 * @param loc the center location
+	 * @param minRange the minimum range from the center to pick a point.
+	 * @param maxRange the maximum range from the center to pick a point.
+	 * @return a random location between minRange and maxRange of the center location.
+	 */
+	public static Location getRandomPosition(ILocational loc, int minRange, int maxRange)
+	{
+		final int randomX = Rnd.get(minRange, maxRange);
+		final int randomY = Rnd.get(minRange, maxRange);
+		final double rndAngle = Math.toRadians(Rnd.get(360));
+		
+		final int newX = (int) (loc.getX() + (randomX * Math.cos(rndAngle)));
+		final int newY = (int) (loc.getY() + (randomY * Math.sin(rndAngle)));
+		
+		return new Location(newX, newY, loc.getZ());
 	}
 	
 	public static double convertHeadingToDegree(int clientHeading)

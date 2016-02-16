@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.gameserver.enums.QuestSound;
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -175,7 +176,7 @@ public class Q00508_AClansReputation extends Quest
 			case State.STARTED:
 				if ((clan == null) || !player.isClanLeader())
 				{
-					st.exitQuest(true);
+					st.exitQuest(QuestType.REPEATABLE);
 					return "30868-8.html";
 				}
 				

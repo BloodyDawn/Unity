@@ -28,6 +28,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.MobGroup;
 import org.l2junity.gameserver.model.MobGroupTable;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -127,17 +128,18 @@ public final class ControllableMobAI extends AttackableAI
 	protected void thinkCast()
 	{
 		Attackable npc = (Attackable) _actor;
-		if ((getAttackTarget() == null) || getAttackTarget().isAlikeDead())
+		WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
+		if ((target == null) || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
-			setAttackTarget(findNextRndTarget());
+			target = _skill.getTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
 		}
 		
-		if (getAttackTarget() == null)
+		if (target == null)
 		{
 			return;
 		}
 		
-		npc.setTarget(getAttackTarget());
+		npc.setTarget(target);
 		
 		if (!_actor.isMuted())
 		{
@@ -146,7 +148,7 @@ public final class ControllableMobAI extends AttackableAI
 			
 			for (Skill sk : _actor.getAllSkills())
 			{
-				if (Util.checkIfInRange(sk.getCastRange(), _actor, getAttackTarget(), true) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
+				if (Util.checkIfInRange(sk.getCastRange(), _actor, target, true) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
 				{
 					_actor.doCast(sk);
 					return;
@@ -157,7 +159,7 @@ public final class ControllableMobAI extends AttackableAI
 			
 			if (!isNotMoving())
 			{
-				moveToPawn(getAttackTarget(), max_range);
+				moveToPawn(target, max_range);
 			}
 			
 			return;
@@ -259,13 +261,14 @@ public final class ControllableMobAI extends AttackableAI
 	@Override
 	protected void thinkAttack()
 	{
-		if ((getAttackTarget() == null) || getAttackTarget().isAlikeDead())
+		Creature target = getForcedTarget();
+		if ((target == null) || target.isAlikeDead())
 		{
-			if (getAttackTarget() != null)
+			if (target != null)
 			{
 				// stop hating
 				Attackable npc = (Attackable) _actor;
-				npc.stopHating(getAttackTarget());
+				npc.stopHating(target);
 			}
 			
 			setIntention(AI_INTENTION_ACTIVE);
@@ -273,6 +276,7 @@ public final class ControllableMobAI extends AttackableAI
 		else
 		{
 			// notify aggression
+			final Creature finalTarget = target;
 			if (((Npc) _actor).getTemplate().getClans() != null)
 			{
 				World.getInstance().forEachVisibleObject(_actor, Npc.class, npc ->
@@ -284,14 +288,14 @@ public final class ControllableMobAI extends AttackableAI
 					
 					if (_actor.isInsideRadius(npc, npc.getTemplate().getClanHelpRange(), true, true))
 					{
-						npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getAttackTarget(), 1);
+						npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
 					}
 				});
 			}
 			
-			_actor.setTarget(getAttackTarget());
-			double dist2 = _actor.calculateDistance(getAttackTarget(), false, true);
-			int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
+			_actor.setTarget(target);
+			double dist2 = _actor.calculateDistance(target, false, true);
+			int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius();
 			int max_range = range;
 			
 			if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
@@ -310,7 +314,7 @@ public final class ControllableMobAI extends AttackableAI
 					max_range = Math.max(max_range, castRange);
 				}
 				
-				moveToPawn(getAttackTarget(), range);
+				moveToPawn(target, range);
 				return;
 			}
 			
@@ -323,7 +327,7 @@ public final class ControllableMobAI extends AttackableAI
 			}
 			else
 			{
-				hated = getAttackTarget();
+				hated = target;
 			}
 			
 			if (hated == null)
@@ -332,9 +336,9 @@ public final class ControllableMobAI extends AttackableAI
 				return;
 			}
 			
-			if (hated != getAttackTarget())
+			if (hated != target)
 			{
-				setAttackTarget(hated);
+				target = hated;
 			}
 			
 			if (!_actor.isMuted() && (Rnd.nextInt(5) == 3))
@@ -351,14 +355,13 @@ public final class ControllableMobAI extends AttackableAI
 				}
 			}
 			
-			_actor.doAttack(getAttackTarget());
+			_actor.doAttack(target);
 		}
 	}
 	
 	@Override
 	protected void thinkActive()
 	{
-		setAttackTarget(findNextRndTarget());
 		Creature hated;
 		
 		if (_actor.isConfused())
@@ -367,7 +370,8 @@ public final class ControllableMobAI extends AttackableAI
 		}
 		else
 		{
-			hated = getAttackTarget();
+			final WorldObject target = _actor.getTarget();
+			hated = (target != null) && target.isCreature() ? (Creature) target : null;
 		}
 		
 		if (hated != null)

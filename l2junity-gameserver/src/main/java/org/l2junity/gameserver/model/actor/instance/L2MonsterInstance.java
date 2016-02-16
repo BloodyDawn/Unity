@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.concurrent.ScheduledFuture;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -68,6 +69,12 @@ public class L2MonsterInstance extends Attackable
 	@Override
 	public boolean isAutoAttackable(Creature attacker)
 	{
+		// Check if the L2MonsterInstance target is aggressive
+		if (Config.GUARD_ATTACK_AGGRO_MOB && isAggressive() && (attacker instanceof L2GuardInstance))
+		{
+			return true;
+		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	

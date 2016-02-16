@@ -163,16 +163,16 @@ public class PetInfo implements IClientOutgoingPacket
 		
 		packet.writeD(_summon.isPet() ? _summon.getInventory().getTotalWeight() : 0);// weight
 		packet.writeD(_summon.getMaxLoad());// max weight it can carry
-		packet.writeD(_summon.getPAtk(null));// patk
-		packet.writeD(_summon.getPDef(null));// pdef
+		packet.writeD(_summon.getPAtk());// patk
+		packet.writeD(_summon.getPDef());// pdef
 		packet.writeD(_summon.getAccuracy());// accuracy
-		packet.writeD(_summon.getEvasionRate(null));// evasion
+		packet.writeD(_summon.getEvasionRate());// evasion
 		packet.writeD(_summon.getCriticalHit());// critical
-		packet.writeD(_summon.getMAtk(null, null));// matk
-		packet.writeD(_summon.getMDef(null, null));// mdef
+		packet.writeD(_summon.getMAtk());// matk
+		packet.writeD(_summon.getMDef());// mdef
 		packet.writeD(_summon.getMagicAccuracy()); // magic accuracy
-		packet.writeD(_summon.getMagicEvasionRate(null)); // magic evasion
-		packet.writeD(_summon.getMCriticalHit(null, null)); // mcritical
+		packet.writeD(_summon.getMagicEvasionRate()); // magic evasion
+		packet.writeD(_summon.getMCriticalHit()); // mcritical
 		packet.writeD((int) _summon.getStat().getMoveSpeed());// speed
 		packet.writeD(_summon.getPAtkSpd());// atkspeed
 		packet.writeD(_summon.getMAtkSpd());// casting speed

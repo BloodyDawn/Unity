@@ -61,30 +61,4 @@ public class SummonStat extends PlayableStat
 		
 		return val;
 	}
-	
-	@Override
-	public int getPAtkSpd()
-	{
-		int val = super.getPAtkSpd();
-		
-		// Apply attack speed cap.
-		if (val > Config.MAX_PATK_SPEED)
-		{
-			return Config.MAX_PATK_SPEED;
-		}
-		return val;
-	}
-	
-	@Override
-	public int getMAtkSpd()
-	{
-		int val = super.getMAtkSpd();
-		
-		// Apply casting speed cap.
-		if (val > Config.MAX_MATK_SPEED)
-		{
-			return Config.MAX_MATK_SPEED;
-		}
-		return val;
-	}
 }

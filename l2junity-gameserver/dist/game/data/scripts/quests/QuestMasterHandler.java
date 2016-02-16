@@ -99,7 +99,6 @@ import quests.Q00298_LizardmensConspiracy.Q00298_LizardmensConspiracy;
 import quests.Q00300_HuntingLetoLizardman.Q00300_HuntingLetoLizardman;
 import quests.Q00307_ControlDeviceOfTheGiants.Q00307_ControlDeviceOfTheGiants;
 import quests.Q00310_OnlyWhatRemains.Q00310_OnlyWhatRemains;
-import quests.Q00350_EnhanceYourWeapon.Q00350_EnhanceYourWeapon;
 import quests.Q00359_ForASleeplessDeadman.Q00359_ForASleeplessDeadman;
 import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
 import quests.Q00373_SupplierOfReagents.Q00373_SupplierOfReagents;
@@ -248,6 +247,10 @@ import quests.Q10413_EmbryoInTheForestOfTheDead.Q10413_EmbryoInTheForestOfTheDea
 import quests.Q10414_KekropusLetterWithCourage.Q10414_KekropusLetterWithCourage;
 import quests.Q10416_InSearchOfTheEyeOfArgos.Q10416_InSearchOfTheEyeOfArgos;
 import quests.Q10417_DaimonTheWhiteEyed.Q10417_DaimonTheWhiteEyed;
+import quests.Q10421_AssassinationOfTheVarkaSilenosCommander.Q10421_AssassinationOfTheVarkaSilenosCommander;
+import quests.Q10442_TheAnnihilatedPlains1.Q10442_TheAnnihilatedPlains1;
+import quests.Q10445_AnImpendingThreat.Q10445_AnImpendingThreat;
+import quests.Q10450_ADarkAmbition.Q10450_ADarkAmbition;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10464_BePreparedForAnything.Q10464_BePreparedForAnything;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
@@ -393,7 +396,6 @@ public class QuestMasterHandler
 		Q00300_HuntingLetoLizardman.class,
 		Q00307_ControlDeviceOfTheGiants.class,
 		Q00310_OnlyWhatRemains.class,
-		Q00350_EnhanceYourWeapon.class,
 		Q00359_ForASleeplessDeadman.class,
 		Q00371_ShrieksOfGhosts.class,
 		Q00373_SupplierOfReagents.class,
@@ -542,6 +544,10 @@ public class QuestMasterHandler
 		Q10414_KekropusLetterWithCourage.class,
 		Q10416_InSearchOfTheEyeOfArgos.class,
 		Q10417_DaimonTheWhiteEyed.class,
+		Q10421_AssassinationOfTheVarkaSilenosCommander.class,
+		Q10442_TheAnnihilatedPlains1.class,
+		Q10445_AnImpendingThreat.class,
+		Q10450_ADarkAmbition.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10464_BePreparedForAnything.class,
 		Q10472_WindsOfFateEncroachingShadows.class,

@@ -50,6 +50,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -144,6 +145,7 @@ import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
+import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SpecialCamera;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -2731,6 +2733,11 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		return check;
 	}
 	
+	public static void playSound(Instance world, String sound)
+	{
+		world.broadcastPacket(new PlaySound(sound));
+	}
+	
 	/**
 	 * Send a packet in order to play a sound to the player.
 	 * @param player the player whom to send the packet
@@ -3000,7 +3007,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param skill the skill to cast
 	 * @param desire the desire to cast the skill
 	 */
-	protected void addSkillCastDesire(Npc npc, Creature target, SkillHolder skill, int desire)
+	protected void addSkillCastDesire(Npc npc, WorldObject target, SkillHolder skill, int desire)
 	{
 		addSkillCastDesire(npc, target, skill.getSkill(), desire);
 	}
@@ -3012,11 +3019,11 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param skill the skill to cast
 	 * @param desire the desire to cast the skill
 	 */
-	protected void addSkillCastDesire(Npc npc, Creature target, Skill skill, int desire)
+	protected void addSkillCastDesire(Npc npc, WorldObject target, Skill skill, int desire)
 	{
-		if (npc instanceof Attackable)
+		if (npc.isAttackable() && (target != null) && target.isCreature())
 		{
-			((Attackable) npc).addDamageHate(target, 0, desire);
+			((Attackable) npc).addDamageHate((Creature) target, 0, desire);
 		}
 		npc.setTarget(target);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
@@ -3080,6 +3087,11 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	public static void specialCamera3(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
 		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
+	}
+	
+	public static void specialCamera(Instance world, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
+	{
+		world.broadcastPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}
 	
 	/**

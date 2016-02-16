@@ -101,7 +101,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ItemInstance extends WorldObject
 {
-	private static final Logger _log = LoggerFactory.getLogger(ItemInstance.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ItemInstance.class);
 	private static final Logger _logItems = LoggerFactory.getLogger("item");
 	
 	/** ID of the owner */
@@ -275,8 +275,17 @@ public final class ItemInstance extends WorldObject
 	 * <li>Send a Server->Client Packet GetItem to player that pick up and its _knowPlayers member</li>
 	 * <li>Remove the L2Object from the world</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <BR> <B><U> Assert </U> :</B><BR> <BR> <li>this instanceof L2ItemInstance</li> <li>_worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR> <BR> <B><U>
-	 * Example of use </U> :</B><BR> <BR> <li>Do Pickup Item : PCInstance and Pet</li><BR> <BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
+	 * <BR>
+	 * <B><U> Assert </U> :</B><BR>
+	 * <BR>
+	 * <li>this instanceof L2ItemInstance</li>
+	 * <li>_worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR>
+	 * <BR>
+	 * <B><U> Example of use </U> :</B><BR>
+	 * <BR>
+	 * <li>Do Pickup Item : PCInstance and Pet</li><BR>
+	 * <BR>
 	 * @param player Player that pick up the item
 	 */
 	public final void pickupMe(Creature player)
@@ -569,7 +578,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public int getLocationSlot()
 	{
-		assert(_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP) || (_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.MAIL) || (_loc == ItemLocation.FREIGHT);
+		assert (_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP) || (_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.MAIL) || (_loc == ItemLocation.FREIGHT);
 		return _locData;
 	}
 	
@@ -941,7 +950,7 @@ public final class ItemInstance extends WorldObject
 		// there shall be no previous augmentation..
 		if (_augmentation != null)
 		{
-			_log.info("Warning: Augment set for ({}) {} owner: {}", getObjectId(), getName(), getOwnerId());
+			LOGGER.info("Warning: Augment set for ({}) {} owner: {}", getObjectId(), getName(), getOwnerId());
 			return false;
 		}
 		
@@ -952,7 +961,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update atributes for item: " + this + " from DB:", e);
+			LOGGER.error("Could not update atributes for item: " + this + " from DB:", e);
 		}
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerAugment(getActingPlayer(), this, augmentation, true), getItem());
 		return true;
@@ -980,7 +989,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not remove augmentation for item: {} from DB:", toString(), e);
+			LOGGER.error("Could not remove augmentation for item: {} from DB:", toString(), e);
 		}
 		
 		// Notify to scripts.
@@ -1022,7 +1031,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not restore augmentation and elemental data for item {} from DB: ", toString(), e);
+			LOGGER.error("Could not restore augmentation and elemental data for item {} from DB: ", toString(), e);
 		}
 	}
 	
@@ -1036,7 +1045,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update atributes for item: {} from DB:", toString(), e);
+			LOGGER.error("Could not update atributes for item: {} from DB:", toString(), e);
 		}
 	}
 	
@@ -1049,7 +1058,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update elementals for item: {} from DB:", toString(), e);
+			LOGGER.error("Could not update elementals for item: {} from DB:", toString(), e);
 		}
 		
 		if (_elementals == null)
@@ -1070,7 +1079,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update elementals for item: {} from DB:", toString(), e);
+			LOGGER.error("Could not update elementals for item: {} from DB:", toString(), e);
 		}
 	}
 	
@@ -1175,7 +1184,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update elementals for item: " + this + " from DB:", e);
+			LOGGER.error("Could not update elementals for item: " + this + " from DB:", e);
 		}
 	}
 	
@@ -1204,7 +1213,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not remove elemental enchant for item: {} from DB:", toString(), e);
+			LOGGER.error("Could not remove elemental enchant for item: {} from DB:", toString(), e);
 		}
 	}
 	
@@ -1228,7 +1237,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not remove all elemental enchant for item: {} from DB:", toString(), e);
+			LOGGER.error("Could not remove all elemental enchant for item: {} from DB:", toString(), e);
 		}
 	}
 	
@@ -1471,8 +1480,16 @@ public final class ItemInstance extends WorldObject
 	 * <li>Add the L2ItemInstance dropped to _visibleObjects of its L2WorldRegion</li>
 	 * <li>Add the L2ItemInstance dropped in the world as a <B>visible</B> object</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects of L2World </B></FONT><BR> <BR> <B><U> Assert </U> :</B><BR> <BR> <li>_worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR> <BR> <B><U> Example of use </U> :</B><BR> <BR>
-	 * <li>Drop item</li> <li>Call Pet</li><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects of L2World </B></FONT><BR>
+	 * <BR>
+	 * <B><U> Assert </U> :</B><BR>
+	 * <BR>
+	 * <li>_worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR>
+	 * <BR>
+	 * <B><U> Example of use </U> :</B><BR>
+	 * <BR>
+	 * <li>Drop item</li>
+	 * <li>Call Pet</li><BR>
 	 */
 	public class ItemDropTask implements Runnable
 	{
@@ -1574,7 +1591,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not update item " + this + " in DB: Reason: " + e.getMessage(), e);
+			LOGGER.error("Could not update item " + this + " in DB: Reason: " + e.getMessage(), e);
 		}
 	}
 	
@@ -1583,7 +1600,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	private void insertIntoDb()
 	{
-		assert!_existsInDb && (getObjectId() != 0);
+		assert !_existsInDb && (getObjectId() != 0);
 		
 		if (_wear)
 		{
@@ -1620,7 +1637,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not insert item " + this + " into DB: Reason: " + e.getMessage(), e);
+			LOGGER.error("Could not insert item " + this + " into DB: Reason: " + e.getMessage(), e);
 		}
 	}
 	
@@ -1642,8 +1659,6 @@ public final class ItemInstance extends WorldObject
 			{
 				ps.setInt(1, getObjectId());
 				ps.executeUpdate();
-				_existsInDb = false;
-				_storedInDb = false;
 			}
 			
 			try (PreparedStatement ps = con.prepareStatement("DELETE FROM item_attributes WHERE itemId = ?"))
@@ -1657,10 +1672,27 @@ public final class ItemInstance extends WorldObject
 				ps.setInt(1, getObjectId());
 				ps.executeUpdate();
 			}
+			
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM item_special_abilities WHERE objectId = ?"))
+			{
+				ps.setInt(1, getObjectId());
+				ps.executeUpdate();
+			}
+			
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM item_variables WHERE id = ?"))
+			{
+				ps.setInt(1, getObjectId());
+				ps.executeUpdate();
+			}
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not delete item " + this + " in DB: " + e.getMessage(), e);
+			LOGGER.error("Could not delete item {} in DB", this, e);
+		}
+		finally
+		{
+			_existsInDb = false;
+			_storedInDb = false;
 		}
 	}
 	
@@ -1679,8 +1711,8 @@ public final class ItemInstance extends WorldObject
 		if (itemLootShedule != null)
 		{
 			itemLootShedule.cancel(true);
+			itemLootShedule = null;
 		}
-		itemLootShedule = null;
 	}
 	
 	public void setItemLootShedule(ScheduledFuture<?> sf)
@@ -1752,20 +1784,19 @@ public final class ItemInstance extends WorldObject
 	
 	public void endOfLife()
 	{
-		PlayerInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		if (player != null)
 		{
 			if (isEquipped())
 			{
-				ItemInstance[] unequiped = player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot());
-				InventoryUpdate iu = new InventoryUpdate();
+				final ItemInstance[] unequiped = player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot());
+				final InventoryUpdate iu = new InventoryUpdate();
 				for (ItemInstance item : unequiped)
 				{
 					item.unChargeAllShots();
 					iu.addModifiedItem(item);
 				}
-				player.sendPacket(iu);
-				player.broadcastUserInfo();
+				player.sendInventoryUpdate(iu);
 			}
 			
 			if (getItemLocation() != ItemLocation.WAREHOUSE)
@@ -1794,7 +1825,7 @@ public final class ItemInstance extends WorldObject
 		{
 			return;
 		}
-		if (getRemainingTime() <= 0)
+		else if (getRemainingTime() <= 0)
 		{
 			endOfLife();
 		}
@@ -1802,18 +1833,18 @@ public final class ItemInstance extends WorldObject
 		{
 			if (_lifeTimeTask != null)
 			{
-				_lifeTimeTask.cancel(false);
+				_lifeTimeTask.cancel(true);
 			}
 			_lifeTimeTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleLifeTimeTask(this), getRemainingTime());
 		}
 	}
 	
-	public static class ScheduleLifeTimeTask implements Runnable
+	static class ScheduleLifeTimeTask implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(ScheduleLifeTimeTask.class);
+		private static final Logger LOGGER = LoggerFactory.getLogger(ScheduleLifeTimeTask.class);
 		private final ItemInstance _limitedItem;
 		
-		public ScheduleLifeTimeTask(ItemInstance item)
+		ScheduleLifeTimeTask(ItemInstance item)
 		{
 			_limitedItem = item;
 		}
@@ -1830,7 +1861,7 @@ public final class ItemInstance extends WorldObject
 			}
 			catch (Exception e)
 			{
-				_log.error("", e);
+				LOGGER.error("", e);
 			}
 		}
 	}
@@ -1876,11 +1907,7 @@ public final class ItemInstance extends WorldObject
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
 		
-		if (!super.decayMe())
-		{
-			return false;
-		}
-		return true;
+		return super.decayMe();
 	}
 	
 	public boolean isQuestItem()
@@ -2132,7 +2159,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.warn("Couldn't remove special ability for item: {}", this, e);
+			LOGGER.warn("Couldn't remove special ability for item: {}", this, e);
 		}
 	}
 	
@@ -2188,7 +2215,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.warn("Couldn't restore special abilities for item: {}", this, e);
+			LOGGER.warn("Couldn't restore special abilities for item: {}", this, e);
 		}
 	}
 	
@@ -2224,7 +2251,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.warn("Couldn't update item special abilities", e);
+			LOGGER.warn("Couldn't update item special abilities", e);
 		}
 	}
 	
@@ -2268,7 +2295,7 @@ public final class ItemInstance extends WorldObject
 			}
 			else if (id != 0)
 			{
-				_log.info("applyEnchantStats: Couldn't find option: " + id);
+				LOGGER.info("applyEnchantStats: Couldn't find option: " + id);
 			}
 		}
 	}

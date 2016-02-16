@@ -80,12 +80,12 @@ public class Debug
 		
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		msg.setFile(attacker.getActingPlayer().getHtmlPrefix(), "data/html/admin/skilldebug.htm");
-		msg.replace("%patk%", target.getPAtk(target));
-		msg.replace("%matk%", target.getMAtk(target, skill));
-		msg.replace("%pdef%", target.getPDef(target));
-		msg.replace("%mdef%", target.getMDef(target, skill));
+		msg.replace("%patk%", target.getPAtk());
+		msg.replace("%matk%", target.getMAtk());
+		msg.replace("%pdef%", target.getPDef());
+		msg.replace("%mdef%", target.getMDef());
 		msg.replace("%acc%", target.getAccuracy());
-		msg.replace("%evas%", target.getEvasionRate(target));
+		msg.replace("%evas%", target.getEvasionRate());
 		msg.replace("%crit%", target.getCriticalHit());
 		msg.replace("%speed%", target.getRunSpeed());
 		msg.replace("%pAtkSpd%", target.getPAtkSpd());

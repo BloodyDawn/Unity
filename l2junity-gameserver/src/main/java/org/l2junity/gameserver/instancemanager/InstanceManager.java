@@ -177,6 +177,15 @@ public final class InstanceManager implements IGameXmlReader
 					template.setIsPvP(parseBoolean(attrs, "isPvP", false));
 					break;
 				}
+				case "rates":
+				{
+					attrs = d.getAttributes();
+					template.setExpRate(parseFloat(attrs, "exp", Config.RATE_INSTANCE_XP));
+					template.setSPRate(parseFloat(attrs, "sp", Config.RATE_INSTANCE_SP));
+					template.setExpPartyRate(parseFloat(attrs, "partyExp", Config.RATE_INSTANCE_PARTY_XP));
+					template.setSPPartyRate(parseFloat(attrs, "partySp", Config.RATE_INSTANCE_PARTY_SP));
+					break;
+				}
 				case "locations":
 				{
 					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
@@ -240,7 +249,8 @@ public final class InstanceManager implements IGameXmlReader
 									final int npcId = parseInteger(attrs, "npcId");
 									final int respawn = parseInteger(attrs, "respawn", 0);
 									final Location spawnLoc = parseLocation(f);
-									group.add(new SpawnHolder(npcId, spawnLoc, respawn));
+									final boolean spawnAnimation = parseBoolean(attrs, "spawnAnimation", false);
+									group.add(new SpawnHolder(npcId, spawnLoc, respawn, spawnAnimation));
 								}
 							}
 							template.addSpawnGroup(groupName, group);

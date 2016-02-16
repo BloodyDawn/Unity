@@ -26,16 +26,26 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.handler.BypassHandler;
+import org.l2junity.gameserver.handler.IBypassHandler;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.CompetitionType;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
+import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
+import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
+import org.l2junity.gameserver.network.client.send.ExOlympiadMatchList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ai.AbstractNpcAI;
 
@@ -43,15 +53,11 @@ import ai.AbstractNpcAI;
  * Olympiad Manager AI.
  * @author St3eT
  */
-public final class OlyManager extends AbstractNpcAI
+public final class OlyManager extends AbstractNpcAI implements IBypassHandler
 {
-	// NPCs
-	private static final int[] MANAGERS =
-	{
-		31688,
-	};
+	// NPC
+	private static final int MANAGER = 31688;
 	// Misc
-	
 	private static final Map<CategoryType, Integer> EQUIPMENT_MULTISELL = new HashMap<>();
 	
 	{
@@ -65,11 +71,19 @@ public final class OlyManager extends AbstractNpcAI
 		EQUIPMENT_MULTISELL.put(CategoryType.AEORE_GROUP, 924);
 	}
 	
+	private static final String[] BYPASSES =
+	{
+		"watchmatch",
+		"arenachange"
+	};
+	private static final Logger _LOG = LoggerFactory.getLogger(OlyManager.class);
+	
 	private OlyManager()
 	{
-		addStartNpc(MANAGERS);
-		addFirstTalkId(MANAGERS);
-		addTalkId(MANAGERS);
+		addStartNpc(MANAGER);
+		addFirstTalkId(MANAGER);
+		addTalkId(MANAGER);
+		BypassHandler.getInstance().registerHandler(this);
 	}
 	
 	@Override
@@ -309,6 +323,76 @@ public final class OlyManager extends AbstractNpcAI
 			htmltext = "OlyManager-noCursed.html";
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature bypassOrigin)
+	{
+		try
+		{
+			final Npc olymanager = activeChar.getLastFolkNPC();
+			
+			if (command.startsWith(BYPASSES[0])) // list
+			{
+				if (!Olympiad.getInstance().inCompPeriod())
+				{
+					activeChar.sendPacket(SystemMessageId.THE_OLYMPIAD_GAMES_ARE_NOT_CURRENTLY_IN_PROGRESS);
+					return false;
+				}
+				
+				activeChar.sendPacket(new ExOlympiadMatchList());
+			}
+			else
+			{
+				if ((olymanager == null) || (olymanager.getId() != MANAGER) || (!activeChar.inObserverMode() && !activeChar.isInsideRadius(olymanager, 300, false, false)))
+				{
+					return false;
+				}
+				else if (OlympiadManager.getInstance().isRegisteredInComp(activeChar))
+				{
+					activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_OBSERVE_A_OLYMPIAD_GAMES_MATCH_WHILE_YOU_ARE_ON_THE_WAITING_LIST);
+					return false;
+				}
+				else if (!Olympiad.getInstance().inCompPeriod())
+				{
+					activeChar.sendPacket(SystemMessageId.THE_OLYMPIAD_GAMES_ARE_NOT_CURRENTLY_IN_PROGRESS);
+					return false;
+				}
+				else if (activeChar.isOnEvent())
+				{
+					activeChar.sendMessage("You can not observe games while registered on an event");
+					return false;
+				}
+				else
+				{
+					final int arenaId = Integer.parseInt(command.substring(12).trim());
+					final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId);
+					if (nextArena != null)
+					{
+						final List<Location> spectatorSpawns = nextArena.getStadium().getZone().getSpectatorSpawns();
+						if (spectatorSpawns.isEmpty())
+						{
+							_LOG.warn(getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
+							return false;
+						}
+						final Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));
+						activeChar.enterOlympiadObserverMode(loc, arenaId);
+					}
+				}
+			}
+			return true;
+		}
+		catch (Exception e)
+		{
+			_LOG.warn("Exception in " + getClass().getSimpleName(), e);
+		}
+		return false;
+	}
+	
+	@Override
+	public String[] getBypassList()
+	{
+		return BYPASSES;
 	}
 	
 	public static void main(String[] args)

@@ -18,75 +18,53 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author St3eT
+ * Target ground location. Returns yourself if your current skill's ground location meets the conditions.
+ * @author Nik
  */
 public class Ground implements ITargetTypeHandler
 {
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Enum<TargetType> getTargetType()
 	{
-		final List<Creature> targetList = new ArrayList<>();
-		final PlayerInstance player = (PlayerInstance) activeChar;
-		final int maxTargets = skill.getAffectLimit();
-		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
-		
-		World.getInstance().forEachVisibleObject(activeChar, Creature.class, character ->
-		{
-			if ((character != null) && character.isInsideRadius(player.getCurrentSkillWorldPosition(), skill.getAffectRange(), false, false))
-			{
-				if (!Skill.checkForAreaOffensiveSkills(activeChar, character, skill, srcInArena))
-				{
-					return;
-				}
-				
-				if (character.isDoor())
-				{
-					return;
-				}
-				
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
-					return;
-				}
-				
-				if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
-				{
-					if (((activeChar.getZ() + skill.getAffectHeightMin()) > character.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < character.getZ()))
-					{
-						return;
-					}
-				}
-				
-				targetList.add(character);
-			}
-		});
-		
-		if (targetList.isEmpty())
-		{
-			if (skill.hasEffectType(L2EffectType.SUMMON_NPC))
-			{
-				targetList.add(activeChar);
-			}
-		}
-		return targetList.isEmpty() ? EMPTY_TARGET_LIST : targetList.toArray(new Creature[targetList.size()]);
+		return TargetType.GROUND;
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		return L2TargetType.GROUND;
+		if (activeChar.isPlayer())
+		{
+			Location worldPosition = activeChar.getActingPlayer().getCurrentSkillWorldPosition();
+			if (worldPosition != null)
+			{
+				if (dontMove && !activeChar.isInsideRadius(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + activeChar.getTemplate().getCollisionRadius(), false, false))
+				{
+					return null;
+				}
+				
+				if (!GeoData.getInstance().canSeeTarget(activeChar, worldPosition))
+				{
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+					}
+					return null;
+				}
+				
+				return activeChar; // Return yourself to know that your ground location is legit.
+			}
+		}
+		
+		return null;
 	}
 }

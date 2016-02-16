@@ -95,8 +95,8 @@ public final class EnergyAttack extends AbstractEffect
 			return;
 		}
 		
-		double attack = attacker.getPAtk(effected);
-		int defence = effected.getPDef(attacker);
+		double attack = attacker.getPAtk();
+		int defence = effected.getPDef();
 		
 		if (!_ignoreShieldDefence)
 		{

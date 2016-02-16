@@ -229,11 +229,11 @@ public class AdminFightCalculator implements IAdminCommandHandler
 				crit1++;
 			}
 			
-			double _patk1 = npc1.getPAtk(npc2);
+			double _patk1 = npc1.getPAtk();
 			_patk1 += npc1.getRandomDamageMultiplier();
 			patk1 += _patk1;
 			
-			double _pdef1 = npc1.getPDef(npc2);
+			double _pdef1 = npc1.getPDef();
 			pdef1 += _pdef1;
 			
 			if (!_miss1)
@@ -262,11 +262,11 @@ public class AdminFightCalculator implements IAdminCommandHandler
 				crit2++;
 			}
 			
-			double _patk2 = npc2.getPAtk(npc1);
+			double _patk2 = npc2.getPAtk();
 			_patk2 *= npc2.getRandomDamageMultiplier();
 			patk2 += _patk2;
 			
-			double _pdef2 = npc2.getPDef(npc1);
+			double _pdef2 = npc2.getPDef();
 			pdef2 += _pdef2;
 			
 			if (!_miss2)

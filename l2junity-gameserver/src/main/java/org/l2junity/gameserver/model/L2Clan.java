@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -632,15 +633,13 @@ public class L2Clan implements IIdentifiable, INamable
 	 */
 	public List<PlayerInstance> getOnlineMembers(int exclude)
 	{
-		final List<PlayerInstance> onlineMembers = new LinkedList<>();
-		for (ClanMember temp : _members.values())
-		{
-			if ((temp != null) && temp.isOnline() && (temp.getObjectId() != exclude))
-			{
-				onlineMembers.add(temp.getPlayerInstance());
-			}
-		}
-		return onlineMembers;
+		//@formatter:off
+		return _members.values().stream()
+			.filter(member -> member.getObjectId() != exclude)
+			.filter(ClanMember::isOnline)
+			.map(ClanMember::getPlayerInstance)
+			.collect(Collectors.toList());
+		//@formatter:on
 	}
 	
 	/**
@@ -648,16 +647,11 @@ public class L2Clan implements IIdentifiable, INamable
 	 */
 	public int getOnlineMembersCount()
 	{
-		int count = 0;
-		for (ClanMember temp : _members.values())
-		{
-			if ((temp == null) || !temp.isOnline())
-			{
-				continue;
-			}
-			count++;
-		}
-		return count;
+		//@formatter:off
+		return (int) _members.values().stream()
+			.filter(ClanMember::isOnline)
+			.count();
+		//@formatter:on
 	}
 	
 	/**

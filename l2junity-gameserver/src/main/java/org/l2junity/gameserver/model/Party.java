@@ -42,6 +42,7 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -825,8 +826,8 @@ public class Party extends AbstractPlayerGroup
 	{
 		final List<PlayerInstance> validMembers = getValidMembers(rewardedMembers, topLvl);
 		
-		xpReward *= getExpBonus(validMembers.size());
-		spReward *= getSpBonus(validMembers.size());
+		xpReward *= getExpBonus(validMembers.size(), target.getInstanceWorld());
+		spReward *= getSpBonus(validMembers.size(), target.getInstanceWorld());
 		
 		int sqLevelSum = 0;
 		for (PlayerInstance member : validMembers)
@@ -1020,14 +1021,16 @@ public class Party extends AbstractPlayerGroup
 		return BONUS_EXP_SP[i];
 	}
 	
-	private double getExpBonus(int membersCount)
+	private double getExpBonus(int membersCount, Instance instance)
 	{
-		return (membersCount < 2) ? (getBaseExpSpBonus(membersCount)) : (getBaseExpSpBonus(membersCount) * Config.RATE_PARTY_XP);
+		final float rateMul = instance != null ? instance.getExpPartyRate() : Config.RATE_PARTY_XP;
+		return (membersCount < 2) ? (getBaseExpSpBonus(membersCount)) : (getBaseExpSpBonus(membersCount) * rateMul);
 	}
 	
-	private double getSpBonus(int membersCount)
+	private double getSpBonus(int membersCount, Instance instance)
 	{
-		return (membersCount < 2) ? (getBaseExpSpBonus(membersCount)) : (getBaseExpSpBonus(membersCount) * Config.RATE_PARTY_SP);
+		final float rateMul = instance != null ? instance.getSPPartyRate() : Config.RATE_PARTY_SP;
+		return (membersCount < 2) ? (getBaseExpSpBonus(membersCount)) : (getBaseExpSpBonus(membersCount) * rateMul);
 	}
 	
 	@Override

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.Containers;
@@ -59,12 +60,11 @@ public final class RequestQuestAbort implements IClientIncomingPacket
 			final QuestState qs = activeChar.getQuestState(qe.getName());
 			if (qs != null)
 			{
-				qs.exitQuest(true);
+				qs.exitQuest(QuestType.REPEATABLE);
 				activeChar.sendPacket(new QuestList(activeChar));
 				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestAbort(activeChar, _questId), activeChar, Containers.Players());
 				qe.onQuestAborted(activeChar);
 			}
 		}
 	}
-	
 }

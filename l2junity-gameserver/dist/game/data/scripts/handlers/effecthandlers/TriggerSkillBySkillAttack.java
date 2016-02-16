@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Trigger Skill By Skill Attack effect implementation.
@@ -48,7 +48,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 	private final SkillHolder _attackSkill;
 	private final SkillHolder _skill;
 	private final int _skillLevelScaleTo;
-	private final L2TargetType _targetType;
+	private final TargetType _targetType;
 	private final InstanceType _attackerType;
 	
 	public TriggerSkillBySkillAttack(StatsSet params)
@@ -60,7 +60,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
 		_attackSkill = new SkillHolder(params.getInt("attackSkillId"), params.getInt("attackSkillLevel", 1));
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
-		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
+		_targetType = params.getEnum("targetType", TargetType.class, TargetType.TARGET);
 		_attackerType = params.getEnum("attackerType", InstanceType.class, InstanceType.L2Character);
 	}
 	
@@ -115,44 +115,34 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 			return;
 		}
 		
-		if ((event.getDamage() < _minDamage) || (Rnd.get(100) > _chance) || !event.getAttacker().getInstanceType().isType(_attackerType))
+		if ((event.getDamage() < _minDamage) || ((_chance < 100) && (Rnd.get(100) > _chance)) || !event.getAttacker().getInstanceType().isType(_attackerType))
 		{
 			return;
 		}
 		
-		final WorldObject[] targets = targetHandler.getTargetList(_skill.getSkill(), event.getAttacker(), false, event.getTarget());
-		for (WorldObject triggerTarget : targets)
+		Skill triggerSkill = _skill.getSkill();
+		WorldObject target = null;
+		try
 		{
-			if ((triggerTarget == null) || !triggerTarget.isCreature())
+			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(event.getAttacker(), event.getTarget(), triggerSkill, false, false, false);
+		}
+		catch (Exception e)
+		{
+			_log.warn("Exception in ITargetTypeHandler.getTarget(): " + e.getMessage(), e);
+		}
+		
+		if ((target != null) && target.isCreature())
+		{
+			if (_skillLevelScaleTo > 0)
 			{
-				continue;
-			}
-			
-			final Creature targetChar = (Creature) triggerTarget;
-			
-			final Skill skill;
-			if (_skillLevelScaleTo <= 0)
-			{
-				skill = _skill.getSkill();
-			}
-			else
-			{
-				final BuffInfo buffInfo = targetChar.getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+				final BuffInfo buffInfo = ((Creature) target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
 				if (buffInfo != null)
 				{
-					skill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+					triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
 				}
-				else
-				{
-					skill = _skill.getSkill();
-				}
-				
 			}
 			
-			if (!targetChar.isInvul())
-			{
-				event.getAttacker().makeTriggerCast(skill, targetChar);
-			}
+			event.getAttacker().makeTriggerCast(triggerSkill, (Creature) target);
 		}
 	}
 }

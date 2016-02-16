@@ -40,7 +40,6 @@ import org.l2junity.gameserver.network.client.send.ExVoteSystemInfo;
 import org.l2junity.gameserver.network.client.send.PartySmallWindowUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.SocialAction;
-import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.ability.ExAcquireAPSkillList;
@@ -267,13 +266,7 @@ public class PcStat extends PlayableStat
 			}
 		}
 		
-		StatusUpdate su = new StatusUpdate(getActiveChar());
-		su.addAttribute(StatusUpdate.LEVEL, getLevel());
-		su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
-		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
-		getActiveChar().sendPacket(su);
-		
+		getActiveChar().broadcastStatusUpdate();
 		// Update the overloaded status of the L2PcInstance
 		getActiveChar().refreshOverloaded(true);
 		// Update the expertise status of the L2PcInstance
@@ -283,14 +276,6 @@ public class PcStat extends PlayableStat
 		// Send acquirable skill list
 		getActiveChar().sendPacket(new AcquireSkillList(getActiveChar()));
 		getActiveChar().sendPacket(new ExVoteSystemInfo(getActiveChar()));
-		
-		if (getActiveChar().isInParty())
-		{
-			final PartySmallWindowUpdate partyWindow = new PartySmallWindowUpdate(getActiveChar(), false);
-			partyWindow.addUpdateType(PartySmallWindowUpdateType.LEVEL);
-			getActiveChar().getParty().broadcastToPartyMembers(getActiveChar(), partyWindow);
-		}
-		
 		if ((getLevel() >= 99) && getActiveChar().isNoble())
 		{
 			getActiveChar().sendPacket(new ExAcquireAPSkillList(getActiveChar()));

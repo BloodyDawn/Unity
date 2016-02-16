@@ -243,8 +243,17 @@ public class AdminSkill implements IAdminCommandHandler
 				if (command.equalsIgnoreCase("admin_castnow"))
 				{
 					activeChar.sendMessage("Admin instant casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
-					final Creature[] targets = skill.getTargetList(activeChar);
-					skill.activateSkill(activeChar, targets);
+					final WorldObject target = skill.getTarget(activeChar, true, false, true);
+					if (target != null)
+					{
+						skill.forEachTargetAffected(activeChar, target, o ->
+						{
+							if (o.isCreature())
+							{
+								skill.activateSkill(activeChar, (Creature) o);
+							}
+						});
+					}
 				}
 				else
 				{

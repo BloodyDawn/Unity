@@ -58,12 +58,6 @@ public interface Ctrl
 	CtrlIntention getIntention();
 	
 	/**
-	 * Gets the attack target.
-	 * @return the attack target
-	 */
-	Creature getAttackTarget();
-	
-	/**
 	 * Set general state/intention for AI, with optional data.
 	 * @param intention the new intention
 	 */
