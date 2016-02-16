@@ -10,7 +10,6 @@
 		<effectPoint>-692</effectPoint>
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>500</castRange>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -20,6 +19,7 @@
 		<magicLvl>85</magicLvl>
 		<trait>AIRBIND</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -49,7 +49,6 @@
 		<affectRange>300</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>2560</hitTime>
 		<coolTime>500</coolTime>
@@ -68,6 +67,7 @@
 			<value level="8">98</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -90,7 +90,6 @@
 		<table name="#power"> 1637 1645 1658 1671 1685 1698 1713 1727 1928 1944 1960 </table>
 		<icon>icon.skill1127</icon>
 		<operateType>A1</operateType>
-		<targetType2>SERVITOR</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
@@ -114,6 +113,7 @@
 			<value level="11">105</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<cond>
 			<player hasSummon="true" />
 		</cond>
@@ -144,7 +144,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>MD_UP</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -158,6 +157,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
@@ -174,7 +174,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -188,6 +187,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
@@ -204,7 +204,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -218,6 +217,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -234,7 +234,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -248,6 +247,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="MAtk">
 				<amount>79</amount>
@@ -264,7 +264,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -278,6 +277,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>17</amount>
@@ -294,7 +294,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>SPEED_UP</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -308,6 +307,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>34</amount>
@@ -321,7 +321,6 @@
 		<!-- Dispels debuffs on all servitors. -->
 		<icon>icon.skill1301</icon>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -335,6 +334,7 @@
 		<affectRange>1000</affectRange>
 		<abnormalTime>3</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -355,7 +355,6 @@
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -369,6 +368,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -393,7 +393,6 @@
 		<table name="#power"> 20633 21717 22799 </table>
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>70</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<castRange>40</castRange>
@@ -409,6 +408,7 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -426,7 +426,6 @@
 		<table name="#power"> 18758 19743 20727 </table>
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>70</mpConsume>
 		<nextActionAttack>true</nextActionAttack>
 		<castRange>900</castRange>
@@ -442,6 +441,7 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -460,7 +460,6 @@
 		<icon>icon.skill_transform_etc</icon>
 		<affectRange>200</affectRange> <!-- Guessed -->
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>1490</hitTime>
 		<coolTime>500</coolTime>
@@ -474,6 +473,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -492,7 +492,6 @@
 		<icon>icon.skill_transform_debuff</icon>
 		<affectRange>150</affectRange>
 		<operateType>A1</operateType>
-		<targetType2>AREA_CORPSE_MOB</targetType2>
 		<mpConsume>70</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>1500</hitTime>
@@ -509,6 +508,7 @@
 		</magicLvl>
 		<affectLimit>6-12</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>NPC_BODY</targetType>
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
@@ -548,7 +548,6 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>17371</itemConsumeId> <!-- Crystal (R-Grade) -->
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpInitialConsume>398</mpInitialConsume>
 		<hitTime>3000</hitTime>
 		<reuseDelay>60000</reuseDelay>
@@ -557,6 +556,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -578,7 +578,6 @@
 		<table name="#heal"> 1191 1196 1206 1216 1226 1236 1246 1256 </table>
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
-		<targetType2>SUMMON</targetType2>
 		<mpConsume>
 			<value level="1">278</value>
 			<value level="2">280</value>
@@ -609,6 +608,7 @@
 		</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>

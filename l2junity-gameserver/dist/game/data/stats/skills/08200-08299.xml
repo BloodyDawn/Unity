@@ -1788,7 +1788,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>540</power>
@@ -1808,7 +1808,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1827</power>
@@ -1830,7 +1830,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Critical Hit -->
@@ -1875,10 +1875,10 @@
 		<operateType>A2</operateType>
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>SHOCK</trait>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player checkAbnormal="SEED_OF_CRITICAL,#abnormalLvl" />
 		</cond>
@@ -1917,7 +1917,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>30</amount>
@@ -1940,7 +1940,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1230</power>
@@ -1962,7 +1962,7 @@
 		<reuseDelay>120000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1845</power>
@@ -1986,7 +1986,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2010,7 +2010,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16049</npcId>
@@ -2032,7 +2032,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2059,7 +2059,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2080,7 +2080,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TRANSFORM,319</dispel>
@@ -2096,7 +2096,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SEED_OF_CRITICAL,10</dispel>
@@ -2115,7 +2115,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canSummonPet="true" />
 		</cond>
@@ -2139,7 +2139,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16061</npcId>
@@ -2161,7 +2161,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2181,7 +2181,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2196,7 +2196,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16054</npcId>
@@ -2213,7 +2213,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16055</npcId>
@@ -2230,7 +2230,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16056</npcId>
@@ -2247,7 +2247,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16058</npcId>
@@ -2264,7 +2264,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16057</npcId>
@@ -2281,7 +2281,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16059</npcId>
@@ -2298,7 +2298,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16060</npcId>
@@ -2322,7 +2322,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2349,7 +2349,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2375,7 +2375,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2401,7 +2401,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2427,7 +2427,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2510,7 +2510,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16062</npcId>
@@ -2534,7 +2534,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>FRONT_AREA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>400</effectRange>
 		<attributeType>HOLY</attributeType>
@@ -2542,6 +2541,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>40</castRange>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8277" levels="1" name="Transform Native">
 		<!-- Confirmed CT2.5 -->
@@ -2558,7 +2558,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2582,7 +2582,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2604,7 +2604,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8280" levels="1" name="Blessing of Earth">
 		<abnormalLvl>1</abnormalLvl>
@@ -2618,7 +2618,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8281" levels="1" name="Inventory Slot Add">
 		<icon>icon.skill8281</icon>

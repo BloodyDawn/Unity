@@ -13,7 +13,7 @@
 		</magicLvl>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>NONE</targetType>
 		<effects>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>
@@ -64,7 +64,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<reuseDelayGroup>11011</reuseDelayGroup>
@@ -75,6 +74,7 @@
 		<magicLvl>85</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
@@ -100,7 +100,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>6000</reuseDelay>
 		<reuseDelayGroup>10008</reuseDelayGroup>
@@ -111,6 +110,7 @@
 		<magicLvl>85</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
@@ -126,7 +126,6 @@
 		<magicLvl>85</magicLvl>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<effectRange>200</effectRange>
 		<hitTime>2000</hitTime>
@@ -135,6 +134,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -152,7 +152,6 @@
 		<magicLvl>85</magicLvl>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<effectRange>800</effectRange>
 		<coolTime>500</coolTime>
@@ -160,6 +159,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -661,7 +661,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-690</value>
@@ -682,6 +681,7 @@
 			<skill id="10499" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -767,7 +767,7 @@
 			<value level="10">-711</value>
 			<value level="11">-712</value>
 		</effectPoint>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -833,7 +833,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<isDebuff>true</isDebuff>
 		<effectPoint>
 			<value level="1">-700</value>
@@ -848,6 +847,7 @@
 		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<trait>KNOCKDOWN</trait>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -929,7 +929,6 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-692</value>
 			<value level="2">-696</value>
@@ -945,6 +944,7 @@
 		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -1001,7 +1001,6 @@
 		</effectPoint>
 		<icon>icon.skill10265</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">122</value>
 			<value level="2">124</value>
@@ -1038,6 +1037,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<trait>SHOCK</trait>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
 		</cond>
@@ -1081,7 +1081,6 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<icon>icon.skill10266</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">76</value>
 			<value level="2">79</value>
@@ -1129,6 +1128,7 @@
 		</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<target playable="true" />
 		</cond>
@@ -1170,7 +1170,6 @@
 		<flyType>CHARGE</flyType>
 		<operateType>DA2</operateType>
 		<nextActionAttack>true</nextActionAttack>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>
 			<value level="1">38</value>
@@ -1213,6 +1212,7 @@
 			<value level="9">105</value>
 		</magicLvl>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<target mindistance="200" />
@@ -1285,7 +1285,6 @@
 		<flyType>CHARGE</flyType>
 		<icon>icon.skill10269</icon>
 		<operateType>DA2</operateType>
-		<targetType2>AREA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">87</value>
@@ -1332,6 +1331,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>800</effectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -1380,7 +1380,7 @@
 		<reuseDelay>120000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -1407,7 +1407,6 @@
 		<affectRange>700</affectRange>
 		<icon>icon.skill10271</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">97</value>
@@ -1424,6 +1423,7 @@
 		<isDebuff>true</isDebuff>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -1457,7 +1457,6 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<icon>icon.skill10273</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>DISARM</trait>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
@@ -1473,6 +1472,7 @@
 		<effectPoint>-707</effectPoint>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Disarm">
 			</effect>
@@ -1515,7 +1515,6 @@
 		<abnormalType>SPECIAL_BERSERKER</abnormalType>
 		<icon>icon.skill10274</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1541,6 +1540,7 @@
 		<rideState>NONE</rideState>
 		<isMagic>4</isMagic>
 		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
 		<cond addName="1" msgId="113">
 			<player hp="70" />
 		</cond>
@@ -1637,7 +1637,6 @@
 		<table name="#power"> 65085 69414 73352 77290 </table>
 		<icon>icon.skill10275</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>1178</mpConsume>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
@@ -1657,6 +1656,7 @@
 		<rideState>NONE</rideState>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY</targetType>
 		<cond addName="1" msgId="113">
 			<using kind="SWORD, BLUNT, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -1677,7 +1677,6 @@
 		<!-- Immediately increases Momentum to its maximum level. -->
 		<icon>icon.skill10276</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>85</magicLvl>
 		<mpConsume>38</mpConsume>
 		<hitTime>1200</hitTime>
@@ -1687,6 +1686,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="FocusMaxMomentum" />
 		</effects>
@@ -1696,7 +1696,6 @@
 		<!-- Increases P. Atk. + 20% and skill damage + 10% for 2 minutes. Increases general/skill attack damage + 5% during PvP. -->
 		<icon>icon.skill10277</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">38</value>
 			<value level="2">41</value>
@@ -1729,13 +1728,13 @@
 		</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<reuseDelay>180000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases the aggression of nearby enemies toward the caster. -->
 		<icon>icon.skill10278</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">76</value>
 			<value level="2">77</value>
@@ -1765,6 +1764,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10279" levels="1" name="Giant Barrier">
 		<!-- Glory Days confirmed -->
@@ -1775,7 +1775,6 @@
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<icon>icon.skill10279</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>91</magicLvl>
 		<mpConsume>42</mpConsume>
@@ -1785,6 +1784,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player hp="70" />
 		</cond>
@@ -1808,9 +1808,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>T</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<mpConsume>58</mpConsume>
+		<targetType>NONE</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>30</power>
@@ -1833,7 +1833,6 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill10281</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">95</value>
@@ -1864,6 +1863,7 @@
 		<effectRange>400</effectRange>
 		<isMagic>4</isMagic>
 		<trait>KNOCKDOWN</trait>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -1890,13 +1890,13 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill10283</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
 		<hitCancelTime>0</hitCancelTime>
 		<isTriggeredSkill>true</isTriggeredSkill>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>15</maxCharges>
@@ -1912,7 +1912,6 @@
 			<value level="3">icon.skill10284_3</value>
 		</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<abnormalType>WEAPON_MASTER_SPECIAL</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1931,6 +1930,7 @@
 			<value level="3">15</value>
 		</abnormalTime>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">
 		<!-- Glory Days confirmed -->
@@ -1940,12 +1940,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>20</power>
@@ -2082,7 +2082,6 @@
 			<value level="5">97</value>
 			<value level="6">99</value>
 		</magicLvl>
-		<targetType2>AURA</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 		<effectPoint>
@@ -2097,6 +2096,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -2119,7 +2119,6 @@
 		<affectRange>150</affectRange>
 		<icon>icon.skill10288</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2155,6 +2154,7 @@
 		<effectPoint>-709</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -2198,7 +2198,6 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>143</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -2206,6 +2205,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>180000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>
@@ -2241,7 +2241,6 @@
 		<!-- Attacks around the enemy with 11557 Power added to P. Atk. Decreases power - 10% when equipped with a sword/blunt/fist weapon. Increases power + 50% when equipped with a spear. Requires a dagger, blunt, spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Critical. -->
 		<icon>icon.skill0007</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">138</value>
 			<value level="2">141</value>
@@ -2269,6 +2268,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>7000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry">
 		<!-- Glory Days confirmed -->
@@ -2286,7 +2286,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>30</amount>
@@ -2314,7 +2314,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>10</amount>
@@ -2355,7 +2355,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Accuracy">
 				<amount>10</amount>
@@ -2387,7 +2387,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>35</amount>
@@ -2419,7 +2419,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Accuracy">
 				<amount>8</amount>
@@ -2443,7 +2443,6 @@
 		<abnormalType>DETECT_WEAKNESS</abnormalType>
 		<icon>icon.skill0359</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>38</mpConsume>
@@ -2452,6 +2451,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="AttackTrait">
 				<BUG_WEAKNESS>10</BUG_WEAKNESS>
@@ -2468,7 +2468,6 @@
 		<abnormalType>DETECT_WEAKNESS</abnormalType>
 		<icon>icon.skill0360</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>38</mpConsume>
@@ -2477,6 +2476,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="AttackTrait">
 				<BEAST_WEAKNESS>10</BEAST_WEAKNESS>
@@ -2494,12 +2494,12 @@
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<mpConsume>38</mpConsume>
 		<hitTime>200</hitTime>
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -2518,7 +2518,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<effectRange>400</effectRange>
 		<effectPoint>-687</effectPoint>
@@ -2529,6 +2528,7 @@
 		<affectRange>300</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>

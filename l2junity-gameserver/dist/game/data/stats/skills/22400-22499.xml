@@ -15,7 +15,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<icon>icon.skilltransform1</icon>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22401" levels="1" name="Transformation Scroll: Ranku">
 		<!-- Desciption: Transformed into Ranku. -->
@@ -32,7 +32,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<icon>icon.skilltransform1</icon>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22402" levels="1" name="Juju Agathion's Gift">
 		<!-- Desciption: There is no available description. -->
@@ -44,7 +44,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -198,7 +198,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22404" levels="1" name="Pathfinder's Reward">
 		<!-- Desciption: There is no available description. -->
@@ -210,7 +210,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -291,7 +291,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -351,7 +351,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -429,7 +429,7 @@
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22408" levels="1" name="Enchanting Tool Box">
 		<!-- Desciption: There is no available description. -->
@@ -441,7 +441,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -471,7 +471,6 @@
 		<!-- Receives Eva's protection and Shilen's energy is weakened. -->
 		<icon>BranchSys3.Icon.g_sing_of_adventurer_eva_r</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>WEAKENED_DEATH_PENALTY</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -484,13 +483,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22411" levels="1" name="Adventurer's Song - Eva's Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Receives Eva's protection and Shilen's energy is weakened. -->
 		<icon>BranchSys3.Icon.g_sing_of_adventurer_eva_r</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>WEAKENED_DEATH_PENALTY</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -503,13 +502,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22412" levels="1" name="Weapon Conversion - One-handed Emerald Weapon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 2 hours, a one-handed sword is changed into an Emerald Weapon. -->
 		<icon>BranchSys3.Icon.g_beam_1h_sword</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -523,13 +522,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>BR_BEAM_SWORD_ONEHAND</abnormalVisualEffect>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22413" levels="1" name="Weapon Conversion - Dual Emerald Weapons">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 2 hours, a dualsword is changed into dual Emerald Weapons. -->
 		<icon>BranchSys3.Icon.g_beam_1h_sword</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -543,6 +542,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>BR_BEAM_SWORD_DUAL</abnormalVisualEffect>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22414" levels="1" name="Halloween Gift Box">
 		<!-- AUTO GENERATED SKILL -->
@@ -555,7 +555,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -586,7 +586,6 @@
 		<!-- Increases Speed by 33 for 60 minutes. -->
 		<icon>BranchSys3.Icon.ev_halloween_cookie</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PA_PD_UP</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -600,13 +599,13 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22416" levels="1" name="Halloween Special Cookie">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases Max MP by 20%, HP recovery bonus by 20%, attack M. Critical Rate by 2, critical rate during a normal attack by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, Debuff Resistance by 10%, and P. Def. upon evading a critical attack. Decreases speed by 15%. Also for party members who are equipped with melee weapons, bows, or crossbows that receive more than a set amount of damage, critical power increases during a normal attack. -->
 		<icon>BranchSys3.Icon.ev_halloween_cookie</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -620,13 +619,13 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22417" levels="1" name="Equip Magic Saddle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- When the magic saddle is equipped, your mount runs at maximum speed for 30 seconds. -->
 		<icon>BranchSys3.Icon.s_g_magic_saddle_up</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>SPECIAL_RIDE</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -639,12 +638,12 @@
 		<reuseDelay>45000</reuseDelay>
 		<isMagic>2</isMagic>
 		<withoutAction>true</withoutAction>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22418" levels="1" name="Root of Evolution">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -653,6 +652,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>86400000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22419" levels="1" name="Weapon Appearance Stone (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -663,7 +663,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22420" levels="1" name="Weapon Appearance Stone (S-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -674,7 +674,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22421" levels="1" name="Weapon Appearance Stone (A-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -685,7 +685,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22422" levels="1" name="Weapon Appearance Stone (B-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -696,7 +696,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22423" levels="1" name="Weapon Appearance Stone (C-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -707,7 +707,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22424" levels="1" name="Weapon Appearance Stone (D-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -718,7 +718,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22425" levels="1" name="Blessed Weapon Appearance Stone (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -729,7 +729,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22426" levels="1" name="Blessed Weapon Appearance Stone (S-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -740,7 +740,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22427" levels="1" name="Blessed Weapon Appearance Stone (A-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -751,7 +751,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22428" levels="1" name="Blessed Weapon Appearance Stone (B-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -762,7 +762,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22429" levels="1" name="Blessed Weapon Appearance Stone (C-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -773,7 +773,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22430" levels="1" name="Blessed Weapon Appearance Stone (D-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -784,7 +784,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22431" levels="1" name="Weapon Restoration Stone (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -795,7 +795,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22432" levels="1" name="Weapon Restoration Stone (S-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -806,7 +806,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22433" levels="1" name="Weapon Restoration Stone (A-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -817,7 +817,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22434" levels="1" name="Weapon Restoration Stone (B-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -828,7 +828,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22435" levels="1" name="Weapon Restoration Stone (C-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -839,7 +839,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22436" levels="1" name="Weapon Restoration Stone (D-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -850,7 +850,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22437" levels="1" name="(Test) Emerald Sword Modification Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -861,7 +861,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22438" levels="1" name="Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -872,7 +872,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22439" levels="1" name="Ancient Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -883,7 +883,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22440" levels="1" name="Divine Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -894,7 +894,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22441" levels="1" name="Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -905,7 +905,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22442" levels="1" name="Ancient Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -916,7 +916,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22443" levels="1" name="Divine Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -927,7 +927,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22444" levels="1" name="Radiant Fortuna Box">
 		<!-- AUTO GENERATED SKILL -->
@@ -938,7 +938,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1003,7 +1003,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1068,7 +1068,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22447" levels="1" name="Blessed Spiritshot (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1079,17 +1079,17 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22448" levels="5" name="Soulshot Medium Pack (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22433</itemId>
@@ -1101,11 +1101,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22433</itemId>
@@ -1117,11 +1117,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22434</itemId>
@@ -1133,11 +1133,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22434</itemId>
@@ -1156,7 +1156,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1283,7 +1283,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1567,7 +1567,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22455" levels="1" name="Scroll: Enchant Armor (D-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1578,7 +1578,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22456" levels="1" name="Scroll: Enchant Weapon (C-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1589,7 +1589,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22457" levels="1" name="Scroll: Enchant Armor (C-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1600,7 +1600,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22458" levels="1" name="Scroll: Enchant Weapon (B-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1611,7 +1611,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22459" levels="1" name="Scroll: Enchant Armor (B-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1622,7 +1622,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22460" levels="1" name="Scroll: Enchant Weapon (A-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1633,7 +1633,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22461" levels="1" name="Scroll: Enchant Armor (A-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1644,7 +1644,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22462" levels="1" name="Scroll: Enchant Weapon (S-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1655,7 +1655,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22463" levels="1" name="Scroll: Enchant Armor (S-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1666,7 +1666,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22464" levels="1" name="Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1677,7 +1677,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22465" levels="1" name="Scroll: Enchant Armor (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1688,82 +1688,81 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>ITEM</targetType>
 	</skill>
 	<skill id="22466" levels="1" name="Scroll of Escape">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>20000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22467" levels="1" name="Scroll of Escape: Castle">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>20000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22468" levels="1" name="Scroll of Escape: Clan Hall">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>20000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22469" levels="1" name="Blessed Scroll of Escape">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>200</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22470" levels="1" name="Blessed Scroll of Escape: Castle">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>200</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22471" levels="1" name="Blessed Scroll of Escape: Clan Hall">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>200</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22472" levels="1" name="Blessed Scroll of Resurrection (Pet)">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
@@ -1773,6 +1772,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<coolTime>500</coolTime>
+		<targetType>PC_BODY</targetType>
 	</skill>
 	<skill id="22473" levels="1" name="Agathion Pack">
 		<!-- AUTO GENERATED SKILL -->
@@ -1785,7 +1785,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1809,11 +1809,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22433</itemId>
@@ -1825,11 +1825,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22434</itemId>
@@ -1841,11 +1841,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22433</itemId>
@@ -1857,11 +1857,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22434</itemId>
@@ -1873,11 +1873,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22247</itemId>
@@ -1889,11 +1889,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>22252</itemId>
@@ -1906,7 +1906,6 @@
 		<!-- For 1 hour, with the help from the Leaf of Appreciation, increases Max MP by 20%, MP Recovery Bonus by 20%, HP recovery bonus by 20%, the chance of prominent damage occurring through magic damage by 2, the power of critical attacks by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP consumption needed for skill use by 5%. -->
 		<icon>icon.etc_leaf_green_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>MULTI_BUFF</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1918,16 +1917,17 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="22481" levels="10" name="Mysterious Soulshot d 10000">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21846</itemId>
@@ -1939,11 +1939,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21846</itemId>
@@ -1955,11 +1955,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21847</itemId>
@@ -1971,11 +1971,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21847</itemId>
@@ -1987,11 +1987,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21848</itemId>
@@ -2003,11 +2003,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21848</itemId>
@@ -2019,11 +2019,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21849</itemId>
@@ -2035,11 +2035,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21849</itemId>
@@ -2051,11 +2051,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21852</itemId>
@@ -2067,11 +2067,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21852</itemId>
@@ -2083,11 +2083,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21853</itemId>
@@ -2099,11 +2099,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21853</itemId>
@@ -2115,11 +2115,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21854</itemId>
@@ -2131,11 +2131,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21854</itemId>
@@ -2147,11 +2147,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21855</itemId>
@@ -2163,11 +2163,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21855</itemId>
@@ -2179,11 +2179,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21856</itemId>
@@ -2195,11 +2195,11 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>false</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>21856</itemId>
@@ -2216,6 +2216,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 </list>

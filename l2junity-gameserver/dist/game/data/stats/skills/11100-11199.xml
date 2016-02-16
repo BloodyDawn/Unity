@@ -1867,7 +1867,6 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill11032</icon>
 		<operateType>A4</operateType>
-		<targetType2>AURA</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-702</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -1877,6 +1876,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>90</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>123</power>
@@ -1907,7 +1907,6 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill11032</icon>
 		<operateType>A4</operateType>
-		<targetType2>AURA</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-707</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -1917,6 +1916,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>95</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>131</power>
@@ -2156,7 +2156,6 @@
 		<affectLimit>5-12</affectLimit>
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>PULL</trait>
 		<effectPoint>
 			<value level="1">-709</value>
@@ -2172,6 +2171,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -2192,7 +2192,6 @@
 		<affectLimit>5-12</affectLimit>
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>PULL</trait>
 		<effectPoint>
 			<value level="1">-709</value>
@@ -2209,6 +2208,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -2318,7 +2318,6 @@
 		<abnormalType>AIRBIND</abnormalType>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<effectPoint>-698</effectPoint>
@@ -2329,6 +2328,7 @@
 		<magicLvl>89</magicLvl>
 		<trait>AIRBIND</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -2362,7 +2362,6 @@
 		<abnormalType>AIRBIND</abnormalType>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<effectPoint>-704</effectPoint>
@@ -2373,6 +2372,7 @@
 		<magicLvl>93</magicLvl>
 		<trait>AIRBIND</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -2406,7 +2406,6 @@
 		<abnormalType>AIRBIND</abnormalType>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<effectPoint>-708</effectPoint>
@@ -2417,6 +2416,7 @@
 		<magicLvl>97</magicLvl>
 		<trait>AIRBIND</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -2451,7 +2451,6 @@
 		<abnormalType>AIRBIND</abnormalType>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
 		<effectPoint>-707</effectPoint>
@@ -2462,6 +2461,7 @@
 		<magicLvl>95</magicLvl>
 		<trait>AIRBIND</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>

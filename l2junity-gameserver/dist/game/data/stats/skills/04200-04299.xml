@@ -58,7 +58,7 @@
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -137,9 +137,9 @@
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SLEEP</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -201,9 +201,9 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -266,7 +266,7 @@
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -345,9 +345,9 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -425,9 +425,9 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>PARALYZE</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -491,7 +491,7 @@
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="ManaDamOverTime">
 				<power>
@@ -550,7 +550,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -628,9 +628,9 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -690,7 +690,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -769,7 +769,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1229</icon>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -835,7 +835,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1068</icon>
-		<targetType2>CLAN</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -885,7 +885,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1040</icon>
-		<targetType2>CLAN</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>50</amount>
@@ -935,7 +935,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1086</icon>
-		<targetType2>CLAN</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>50</amount>
@@ -985,7 +985,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill0086</icon>
-		<targetType2>CLAN</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
@@ -1012,7 +1012,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -1031,7 +1031,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="4217" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
@@ -1047,7 +1047,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="4218" levels="1" name="Drain">
 		<!-- Confirmed CT2.5 -->
@@ -1064,7 +1064,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="HpDrain">
 				<power>57</power>
@@ -1094,9 +1094,9 @@
 		<magicLvl>60</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -1113,7 +1113,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9390</power>
@@ -1131,7 +1131,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>5164</power>
@@ -1147,7 +1147,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4223" levels="1" name="Face Chance: Night to Day">
 		<!-- Confirmed CT2.5 -->
@@ -1164,7 +1164,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4224" levels="1" name="Face Chance: Day to Night">
 		<!-- Confirmed CT2.5 -->
@@ -1181,7 +1181,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4225" levels="5" name="Stun Resistance">
 		<!-- Freya retail confirmed -->
@@ -1226,7 +1226,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpRegen">
 				<amount>1900</amount>
@@ -1273,7 +1273,7 @@
 		<reuseDelay>17000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1332,7 +1332,7 @@
 		<reuseDelay>17000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1364,7 +1364,7 @@
 		<reuseDelay>10500</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1330120</power>
@@ -1413,7 +1413,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1474,7 +1474,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack" />
 		</effects>
@@ -1531,7 +1531,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1559,7 +1559,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4236" levels="1" name="Decrease Heal">
 		<!-- Freya retail confirmed -->
@@ -1583,7 +1583,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>51</power>
@@ -1617,7 +1617,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>FRONT_AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>72</power>
@@ -1645,7 +1645,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Reuse">
 				<amount>200</amount>
@@ -1673,7 +1673,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1044</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpRegen">
 				<amount>-60</amount>
@@ -1695,7 +1695,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1044</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpRegen">
 				<amount>-30</amount>
@@ -1717,7 +1717,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1044</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpRegen">
 				<amount>0</amount>
@@ -1738,7 +1738,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4243" levels="1" name="Venomous Poison">
 		<!-- Freya retail confirmed -->
@@ -1758,7 +1758,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>98</power>
@@ -1808,7 +1808,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>FRONT_AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1841,7 +1841,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>76</amount>
@@ -1915,7 +1915,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1977,7 +1977,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -2049,7 +2049,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2115,7 +2115,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2175,7 +2175,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2238,7 +2238,7 @@
 		<hitCancelTime>2</hitCancelTime>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2300,7 +2300,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2362,7 +2362,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2422,7 +2422,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>2</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2496,7 +2496,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3.5</hitCancelTime>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2536,7 +2536,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -2620,10 +2620,10 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType2>AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
 		<trait>POISON</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -2712,7 +2712,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -2788,7 +2788,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2825,7 +2825,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<basicProperty>NONE</basicProperty>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
@@ -2850,7 +2850,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
@@ -2875,7 +2875,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
@@ -2905,7 +2905,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -2935,7 +2935,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -3338,7 +3338,7 @@
 		<rideState>WYVERN</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3.6</hitCancelTime>
-		<targetType2>AREA</targetType2>
+		<targetType>WYVERN_TARGET</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>379</power>

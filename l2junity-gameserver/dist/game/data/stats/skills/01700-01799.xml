@@ -5,7 +5,6 @@
 		<!-- Recovers HP by 15%. -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
@@ -16,13 +15,13 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_NOT</targetType>
 	</skill>
 	<skill id="1701" levels="1" name="Mass Life">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers HP by 15%. -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<hitTime>4000</hitTime>
 		<reuseDelay>4000</reuseDelay>
@@ -32,6 +31,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1702" levels="1" name="Cancel Hold">
 		<!-- AUTO GENERATED SKILL -->
@@ -42,7 +42,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>60</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1703" levels="1" name="Cancel Fear">
 		<!-- Glory Days confirmed -->
@@ -52,8 +52,8 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>60</magicLvl>
-		<targetType2>SELF</targetType2>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TURN_FLEE,9</dispel>
@@ -64,7 +64,6 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0018</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<reuseDelay>40000</reuseDelay>
 		<effectPoint>-10330</effectPoint>
@@ -79,12 +78,12 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1705" levels="1" name="Fury">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0275</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>4000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>DANCE_OF_FURY</abnormalType>
@@ -96,12 +95,12 @@
 		<abnormalTime>120</abnormalTime>
 		<affectRange>1000</affectRange>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1706" levels="1" name="Earthquake">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0347</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1800</hitTime>
 		<effectPoint>-679</effectPoint>
 		<rideState>NONE</rideState>
@@ -110,12 +109,12 @@
 		<affectRange>500</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>8000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1708" levels="1" name="Bleeding Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>1000</coolTime>
@@ -132,12 +131,12 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1709" levels="1" name="Poison Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>1000</coolTime>
@@ -154,12 +153,12 @@
 		<trait>POISON</trait>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1710" levels="1" name="Bleeding Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>1000</coolTime>
@@ -178,12 +177,12 @@
 		<affectLimit>5-12</affectLimit>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1711" levels="1" name="Poison Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>1000</coolTime>
@@ -202,12 +201,12 @@
 		<affectLimit>5-12</affectLimit>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1712" levels="1" name="Burst Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0024</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>800</coolTime>
@@ -219,12 +218,12 @@
 		<affectRange>500</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1713" levels="1" name="Unison Whirl">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0245</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -235,12 +234,12 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1714" levels="1" name="Unison Downblow">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0245</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -251,13 +250,13 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1715" levels="1" name="Unison Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Provoked by the unison of light. -->
 		<icon>icon.skill0245</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -270,25 +269,25 @@
 		<magicLvl>85</magicLvl>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1716" levels="1" name="Wise Retainer's Resurrection">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1271</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_NOT</targetType>
 	</skill>
 	<skill id="1717" levels="1" name="Wise Retainer's Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Protected by Lakcis, the giant of light. -->
 		<icon>icon.skill1271</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -300,18 +299,19 @@
 		<abnormalTime>10</abnormalTime>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_NOT</targetType>
 	</skill>
 	<skill id="1718" levels="1" name="Wise Retainer's Punishment">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1271</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1719" levels="1" name="Wise Retainer's Price">
 		<!-- AUTO GENERATED SKILL -->
@@ -325,19 +325,18 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1271</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_NOT</targetType>
 	</skill>
 	<skill id="1721" levels="1" name="Chain Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
@@ -347,12 +346,12 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1722" levels="1" name="Chain Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -362,12 +361,12 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>21</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1723" levels="1" name="Breakthrough">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -375,12 +374,12 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1724" levels="1" name="Breakthrough">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -390,12 +389,12 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>21</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1725" levels="1" name="Strong Offense">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
@@ -406,12 +405,12 @@
 		<affectRange>500</affectRange>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1726" levels="1" name="Strong Offense">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -422,12 +421,12 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>21</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1727" levels="1" name="Comeback">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -435,12 +434,12 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1728" levels="1" name="Rally">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -454,12 +453,12 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1729" levels="1" name="Inspire">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -473,12 +472,12 @@
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1730" levels="1" name="Dimensional Force">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -487,6 +486,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>21</isMagic>
 		<castRange>300</castRange>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1731" levels="1" name="Dimensional Force">
 		<!-- AUTO GENERATED SKILL -->
@@ -499,7 +499,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>600</affectRange>
 		<isMagic>21</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1732" levels="1" name="Magmeld's Promise">
 		<!-- AUTO GENERATED SKILL -->
@@ -554,7 +554,6 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<effectPoint>-1</effectPoint>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -569,12 +568,12 @@
 		<affectRange>500</affectRange>
 		<isMagic>21</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1748" levels="1" name="Slaughter">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -589,13 +588,13 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>500</affectRange>
 		<isMagic>21</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="1749" levels="1" name="Decrease Speed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- 10 second Slow -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>-1</effectPoint>
@@ -609,13 +608,13 @@
 		<affectRange>150</affectRange>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1750" levels="1" name="Invincibility">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincibility -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<abnormalType>INVINCIBILITY</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -627,13 +626,13 @@
 		<abnormalTime>5</abnormalTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="1751" levels="1" name="Monster PC Bomb Making">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincibility -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<abnormalType>INVINCIBILITY</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -645,13 +644,13 @@
 		<abnormalTime>3</abnormalTime>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="1752" levels="1" name="PC becomes monster bomb">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- DD + DOT -->
 		<icon>icon.skill1169</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>BLEEDING</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -662,6 +661,7 @@
 		<affectRange>150</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1753" levels="1" name="Mass Kill">
 		<!-- AUTO GENERATED SKILL -->
@@ -672,14 +672,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="1754" levels="1" name="Self-destruction">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- DD + DOT -->
 		<icon>icon.skill1754</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-1</effectPoint>
 		<abnormalType>BLEEDING</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -691,6 +690,7 @@
 		<affectRange>150</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1755" levels="1" name="Monster Area Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -703,7 +703,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<affectRange>300</affectRange>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1756" levels="1" name="Trick">
 		<!-- AUTO GENERATED SKILL -->
@@ -717,14 +717,13 @@
 		<magicLvl>97</magicLvl>
 		<trait>DERANGEMENT</trait>
 		<affectRange>700</affectRange>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1757" levels="10" name="Attack Enhance">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enhances P. Atk., M. Atk., Atk. Spd., and Casting Spd. -->
 		<icon>icon.skill0077</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PA_UP</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -734,6 +733,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1758" levels="1" name="Monster Mass Kill">
 		<!-- AUTO GENERATED SKILL -->
@@ -745,7 +745,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<affectRange>200</affectRange>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1759" levels="1" name="Armor Destroyer">
 		<!-- AUTO GENERATED SKILL -->
@@ -756,11 +756,11 @@
 		<magicLvl>99</magicLvl>
 	</skill>
 	<skill id="1760" levels="6" name="Armor Destruction">
+		<table name="#targetType"> ENEMY SELF SELF SELF SELF SELF </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. and M. Def. decreased 7%. Additional 350 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>
 			<value level="1">900</value>
 			<value level="2">-1</value>
@@ -803,13 +803,13 @@
 		</abnormalTime>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>#targetType</targetType>
 	</skill>
 	<skill id="1761" levels="10" name="Armor Destruction">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases P. Def. as it accumulates. Currently decreased by 10%. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<isMagic>1</isMagic>
@@ -835,6 +835,7 @@
 		</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="1762" levels="1" name="Boss Multi Resistance">
 		<!-- AUTO GENERATED SKILL -->

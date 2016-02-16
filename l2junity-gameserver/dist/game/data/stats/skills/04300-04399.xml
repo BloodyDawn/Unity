@@ -142,7 +142,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -207,9 +207,9 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -255,7 +255,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -297,7 +297,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -331,7 +331,7 @@
 			<value level="1">icon.skill0755</value>
 			<value level="2">icon.skill0757</value>
 		</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Grow">
 			</effect>
@@ -394,11 +394,11 @@
 		<mpConsume>50</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType2>ONE</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -459,11 +459,11 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType2>ONE</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -502,7 +502,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-66</amount>
@@ -526,7 +526,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
@@ -550,7 +550,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -574,7 +574,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -598,7 +598,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -622,7 +622,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
@@ -646,7 +646,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
@@ -670,7 +670,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
@@ -694,7 +694,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
@@ -718,7 +718,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ReduceCancel">
 				<amount>-18</amount>
@@ -742,7 +742,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
@@ -794,7 +794,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>AREA</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelAll" />
 		</effects>
@@ -863,7 +863,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="SummonCubic">
 				<cubicId>3</cubicId>
@@ -880,7 +880,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="4340" levels="1" name="Ultimate Buff, 2nd">
 		<!-- Freya retail confirmed -->
@@ -896,7 +896,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Grow">
 			</effect>
@@ -920,7 +920,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Grow">
 			</effect>
@@ -957,7 +957,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -993,7 +993,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="WeightPenalty">
 				<amount>
@@ -1033,7 +1033,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1070,7 +1070,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1109,7 +1109,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -1164,7 +1164,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -1210,7 +1210,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -1248,7 +1248,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1286,7 +1286,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -1329,7 +1329,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ReduceCancel">
 				<amount>
@@ -1374,7 +1374,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1465,7 +1465,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
@@ -1507,7 +1507,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>
@@ -1545,7 +1545,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
@@ -1582,7 +1582,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -1617,7 +1617,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -1653,7 +1653,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -1690,7 +1690,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
@@ -1727,7 +1727,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
@@ -1762,7 +1762,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -1807,7 +1807,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -1846,7 +1846,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Accuracy">
 				<amount>-12</amount>
@@ -1876,7 +1876,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<POISON>25</POISON>
@@ -1922,7 +1922,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>25</HOLD>
@@ -1959,7 +1959,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<POISON>25</POISON>
@@ -2227,7 +2227,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2290,7 +2290,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
@@ -2328,7 +2328,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="CpHeal">
 				<power>5000</power>
@@ -2388,7 +2388,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>200</effectRange>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2425,7 +2425,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>AURA</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="BlockActions" />
 			<effect name="TargetMeProbability">
@@ -2449,7 +2449,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="4385" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2467,7 +2467,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="4386" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2486,7 +2486,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="4387" levels="1" name="Scapegoat's Grace">
 		<!-- Freya retail confirmed -->
@@ -2504,7 +2504,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="4388" levels="5" name="Paralysis Resistance">
 		<!-- Freya retail confirmed -->
@@ -2575,7 +2575,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -2607,7 +2607,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2640,7 +2640,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2675,7 +2675,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -2713,7 +2713,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -2747,7 +2747,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2785,7 +2785,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2868,7 +2868,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
@@ -2904,7 +2904,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>

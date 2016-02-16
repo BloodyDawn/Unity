@@ -1514,10 +1514,10 @@
 		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1638,7 +1638,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -1760,10 +1760,10 @@
 		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -1825,7 +1825,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-23</amount>
@@ -1882,7 +1882,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<!-- FIXME: this should be "Distrust" effect -->
 			<effect name="Confuse" abnormalTime="20">
@@ -1994,10 +1994,10 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -2064,10 +2064,10 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="PhysicalMute" />
 		</effects>
@@ -2134,10 +2134,10 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -2203,10 +2203,10 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Mute" />
 		</effects>
@@ -2269,7 +2269,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<!-- NOTE: The Cancel effect have been reduced in H5, value unconfirmed -->
 			<effect name="DispelByCategory">
@@ -2325,7 +2325,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -2387,8 +2387,8 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
 		<!-- TODO: Remove this condition when proper target type is done -->
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -2441,8 +2441,8 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>ONE</targetType2>
 		<!-- TODO: Remove this condition when proper target type is done -->
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>

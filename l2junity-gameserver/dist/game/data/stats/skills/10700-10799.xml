@@ -271,7 +271,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>50</castRange>
 		<effectRange>60</effectRange>
 		<hitTime>1200</hitTime>
@@ -286,6 +285,7 @@
 		<magicLvl>85</magicLvl>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
@@ -310,7 +310,6 @@
 		<magicLevel>85</magicLevel>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<effectRange>200</effectRange>
 		<hitTime>2000</hitTime>
@@ -320,6 +319,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -339,7 +339,6 @@
 		<magicLevel>85</magicLevel>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<effectRange>800</effectRange>
 		<hitTime>1000</hitTime>
@@ -349,6 +348,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -966,7 +966,6 @@
 		<table name="#power"> 20814 21546 23011 24476 25941 27406 28871 30336 33258 34786 36314 </table>
 		<icon>icon.skill10760</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>
 			<value level="1">98</value>
 			<value level="2">100</value>
@@ -1032,6 +1031,7 @@
 			<skill id="10999" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1067,7 +1067,6 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<icon>icon.skill10761</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1118,6 +1117,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<trait>KNOCKDOWN</trait>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1159,7 +1159,6 @@
 		<table name="#power"> 22183 24401 26619 28837 31055 33273 35491 37709 39249 41163 43077 </table>
 		<icon>icon.skill10762</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1207,6 +1206,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1239,7 +1239,6 @@
 		<icon>icon.skill10763</icon>
 		<operateType>A1</operateType>
 		<nextActionAttack>true</nextActionAttack>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1286,6 +1285,7 @@
 		<rideState>NONE</rideState>
 		<effectRange>1500</effectRange>
 		<reuseDelay>7000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1328,10 +1328,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
@@ -1355,11 +1355,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>STUN</abnormalType>
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
@@ -1382,10 +1382,10 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DefenceCriticalRate">
 				<amount>50</amount>
@@ -1403,7 +1403,7 @@
 		<magicLvl>97</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="Lethal">
 				<halfLethal>100</halfLethal>
@@ -1423,10 +1423,10 @@
 		<magicLvl>97</magicLvl>
 		<operateType>A1</operateType>
 		<reuseDelay>15000</reuseDelay>
-		<targetType2>AURA</targetType2>
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
 		<!-- TODO cond {op_blink;_back;300} -->
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1466,7 +1466,6 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<icon>icon.skill10769</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">98</value>
 			<value level="2">103</value>
@@ -1497,6 +1496,7 @@
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1548,7 +1548,6 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<icon>icon.skill10770</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">102</value>
 			<value level="2">106</value>
@@ -1583,6 +1582,7 @@
 		<isDebuff>true</isDebuff>
 		<rideState>NONE</rideState>
 		<trait>KNOCKDOWN</trait>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1619,7 +1619,6 @@
 		<table name="#power"> 23391 25018 26645 28272 29900 31527 33154 34781 35966 37720 39474 </table>
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>900</affectRange>
 		<fenRange>0,0,900,90</fenRange>
@@ -1671,6 +1670,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<fanRange>0;0;900;90</fanRange>
 		<rideState>NONE</rideState>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1700,7 +1700,6 @@
 		<table name="#power"> 22526 23310 24879 26448 28017 29586 31155 32724 33772 35526 37280 </table>
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1750,6 +1749,7 @@
 		</effectPoint>
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE</rideState>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1778,7 +1778,6 @@
 		<!-- Not in use -->
 		<icon>icon.skill0773</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2200</hitTime>
@@ -1791,6 +1790,7 @@
 		<affectLimit>5-12</affectLimit>
 		<fanRange>0;0;900;100</fanRange>
 		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
 		<!-- Glory Days confirmed -->
@@ -1798,7 +1798,6 @@
 		<table name="#range"> 300 350 400 450 </table>
 		<icon>icon.skill10774</icon>
 		<operateType>DA3</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1830,6 +1829,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->
@@ -1850,7 +1850,6 @@
 		<!-- Summons a decoy that receives attacks for you. -->
 		<icon>icon.skill10775</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">87</value>
@@ -1872,6 +1871,7 @@
 		<coolTime>500</coolTime>
 		<rideState>NONE</rideState>
 		<reuseDelay>600000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13328</npcId>
@@ -1890,7 +1890,6 @@
 		<icon>icon.skill10776</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1910,6 +1909,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<reuseDelay>900000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
@@ -1956,7 +1956,6 @@
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>TARGET_LOCK</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1974,6 +1973,7 @@
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1991,7 +1991,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill10778</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>91</magicLvl>
 		<mpConsume>85</mpConsume>
@@ -2002,6 +2001,7 @@
 		<rideState>NONE</rideState>
 		<effectRange>1400</effectRange>
 		<reuseDelay>60000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<cond>
 			<target myPartyExceptMe="true" />
 		</cond>
@@ -2018,7 +2018,6 @@
 		<abnormalType>SNIPE</abnormalType>
 		<icon>icon.skill10779</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2039,6 +2038,7 @@
 		<rideState>NONE</rideState>
 		<abnormalVisualEffect>REAL_TARGET</abnormalVisualEffect>
 		<reuseDelay>120000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -2068,7 +2068,6 @@
 		<icon>icon.skill10780</icon>
 		<lvlBonusRate>20</lvlBonusRate>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2111,6 +2110,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2143,7 +2143,6 @@
 		<affectLimit>5-12</affectLimit>
 		<affectRange>300</affectRange>
 		<operateType>A1</operateType>
-		<targetType2>GROUND</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">95</value>
@@ -2162,6 +2161,7 @@
 		<magicLvl>93</magicLvl>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>GROUND</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2183,7 +2183,6 @@
 		<affectRange>200</affectRange>
 		<icon>icon.skill10782</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
 		<mpConsume>226</mpConsume>
@@ -2196,6 +2195,7 @@
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2217,7 +2217,6 @@
 		<abnormalType>POSSESSION</abnormalType>
 		<icon>icon.skill10783</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2239,6 +2238,7 @@
 		<basicProperty>NONE</basicProperty>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -2281,7 +2281,6 @@
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
 		<removedOnDamage>true</removedOnDamage>
 		<staticReuse>true</staticReuse>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>93</magicLvl>
 		<mpConsume>9</mpConsume>
@@ -2291,6 +2290,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Hide">
 			</effect>
@@ -2317,7 +2317,6 @@
 		<affectLimit>5-12</affectLimit>
 		<affectRange>500</affectRange>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2332,6 +2331,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isDebuff>true</isDebuff>
 		<reuseDelay>20000</reuseDelay>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2363,7 +2363,6 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TIME_BOMB</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">93</value>
@@ -2398,6 +2397,7 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<activateRate>80</activateRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="Accuracy">
 				<amount>-10</amount>
@@ -2426,7 +2426,6 @@
 		<table name="#npcIds"> 14932 14940 14941 14942 14986 14987 14988 14989 </table>
 		<icon>icon.skill10787</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2453,6 +2452,7 @@
 		<reuseDelay>60000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2480,7 +2480,6 @@
 		<!-- Remotely controls a trap to set it off. -->
 		<icon>icon.skill10788</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -2489,13 +2488,13 @@
 		<magicLvl>93</magicLvl>
 		<affectRange>300</affectRange>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
 		<!-- Glory Days confirmed -->
 		<!-- Flash Trap -->
 		<icon>icon.skill0517</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>47</mpConsume>
 		<hitTime>800</hitTime>
@@ -2505,6 +2504,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13052,150,false" />
 		</cond>
@@ -2519,7 +2519,6 @@
 		<!-- Damage Trap -->
 		<icon>icon.skill0514</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>39</mpConsume>
 		<hitTime>800</hitTime>
@@ -2529,6 +2528,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13037,150,false" />
 		</cond>
@@ -2545,7 +2545,6 @@
 		<!-- TODO: Correct it -->
 		<icon>icon.skill10791</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">101</value>
@@ -2559,6 +2558,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13057,150,false" />
 		</cond>
@@ -2574,7 +2574,6 @@
 		<!-- TODO: Find npcId for additional level -->
 		<icon>icon.skill10792</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>85</magicLvl>
 		<mpConsume>39</mpConsume>
 		<hitTime>800</hitTime>
@@ -2583,6 +2582,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>45000</reuseDelay>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="13057,150,false" />
 		</cond>
@@ -2597,7 +2597,6 @@
 		<!-- Cancels targets of nearby enemies. Increases Speed + 50 for 5 seconds and prevents enemies from targeting you. -->
 		<icon>icon.skill10793</icon>
 		<operateType>A3</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>77</mpConsume>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -2612,6 +2611,7 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>300</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
 		<!-- Updated to IO -->
@@ -2631,7 +2631,6 @@
 		</magicLvl>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>400</castRange>
 		<effectRange>600</effectRange>
 		<flyType>CHARGE</flyType>
@@ -2649,6 +2648,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -2662,7 +2662,6 @@
 		<!-- Purifies the master. -->
 		<icon>icon.skill6042</icon>
 		<operateType>A1</operateType>
-		<targetType2>OWNER_PET</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>96</mpConsume>
@@ -2673,6 +2672,7 @@
 		<effectPoint>687</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -2693,7 +2693,6 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>46</mpConsume>
@@ -2708,6 +2707,7 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="KnockBack">
 				<speed>400</speed>
@@ -2733,7 +2733,6 @@
 		<attributeValue>20</attributeValue>
 		<icon>icon.skill6044</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2771,6 +2770,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2801,7 +2801,6 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>BLEED</trait>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
@@ -2842,6 +2841,7 @@
 		</effectPoint>
 		<rideState>NONE</rideState>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

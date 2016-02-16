@@ -17,7 +17,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -26,6 +25,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelayGroup>10258</reuseDelayGroup>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -41,7 +41,6 @@
 		<magicLvl>85</magicLvl>
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<effectRange>200</effectRange>
 		<hitTime>2000</hitTime>
@@ -50,6 +49,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" /> <!-- Air Bind -->
 		</cond>

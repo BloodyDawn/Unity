@@ -1173,7 +1173,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<mpPerChanneling>15</mpPerChanneling>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
@@ -1198,7 +1198,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<mpPerChanneling>15</mpPerChanneling>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
@@ -1223,7 +1223,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<mpPerChanneling>15</mpPerChanneling>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond msgId="109">
 			<target npcId="22215,22216,22217" />
 		</cond>
@@ -1489,7 +1489,7 @@
 		<reuseDelay>60000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11500</power>
@@ -1509,7 +1509,7 @@
 		<reuseDelay>60000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1531,7 +1531,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
@@ -1559,7 +1559,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -2366,7 +2366,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MaxCp">
 				<amount>30</amount>
@@ -2393,7 +2393,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<basicProperty>NONE</basicProperty>
 		<staticReuse>true</staticReuse>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CpRegen">
 				<amount>30</amount>

@@ -92,7 +92,6 @@
 		<!-- Momentarily stunned and unable to move. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-100</effectPoint>
 		<abnormalType>STUN</abnormalType>
 		<basicProperty>PHYSICAL</basicProperty>
@@ -107,13 +106,13 @@
 		<trait>SHOCK</trait>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="13113" levels="1" name="Special Ability: Critical Slow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily decreases Speed. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<abnormalType>SPEED_DOWN</abnormalType>
@@ -128,13 +127,13 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="13114" levels="1" name="Special Ability: Magic Hold">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily inflicted with hold and unable to move. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<isMagic>1</isMagic>
 		<effectPoint>-100</effectPoint>
@@ -152,6 +151,7 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="13115" levels="1" name="Polearm Multi-attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -321,7 +321,6 @@
 		<!-- Extends the summoner's abilities to the servitor. Using the summoner's abilities as the basis, extends to the servitor P. Atk./P. Def. by 50%, M. Atk./M. Def. by 25%, Max HP/MP by 10%, Critical Rate by 20%, Atk. Spd. by 10%, and Casting Spd. by 3%. -->
 		<icon>icon.skill1557</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>35</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>60000</reuseDelay>
@@ -335,6 +334,7 @@
 		<abnormalTime>1200</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="13136" levels="1" name="Hero's Cloak">
 		<!-- AUTO GENERATED SKILL -->

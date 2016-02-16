@@ -99,7 +99,6 @@
 		<activateRate>100</activateRate>
 		<icon>icon.skill10801</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">88</value>
@@ -147,6 +146,7 @@
 			<value level="8">1400</value>
 		</effectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>
@@ -209,7 +209,6 @@
 		<affectRange>400</affectRange>
 		<icon>icon.skill10782</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">99</value>
 			<value level="2">101</value>
@@ -227,6 +226,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>-60</BOW>
@@ -257,12 +257,12 @@
 		<table name="#power"> 30000 33546 35088 36630 </table>
 		<icon>icon.skill0099</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSaveHp">
 				<power>
@@ -281,12 +281,12 @@
 		<table name="#power"> 30000 33546 35088 36630</table>
 		<icon>icon.skill0099</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSaveHp">
 				<power>
@@ -304,7 +304,6 @@
 		<!-- Momentarily teleport 500 forward. -->
 		<icon>icon.skill10805</icon>
 		<operateType>DA1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">89</value>
 			<value level="2">92</value>
@@ -337,6 +336,7 @@
 			<value level="4">1300</value>
 		</effectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Front -->
@@ -353,7 +353,6 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<icon>icon.skill0516</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>ALL_SPEED_DOWN</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -369,6 +368,7 @@
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -390,7 +390,6 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<icon>icon.skill0518</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
@@ -408,6 +407,7 @@
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -420,7 +420,6 @@
 		<!-- Decoy's provocation. Cannot change target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>TARGET_LOCK</abnormalType>
@@ -440,6 +439,7 @@
 		<affectRange>300</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TargetMe" /> <!-- p_berserker ? -->
 		</effects>
@@ -454,7 +454,6 @@
 		<icon>icon.skill1087</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>30000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<basicProperty>NONE</basicProperty>
@@ -463,6 +462,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>15</amount>

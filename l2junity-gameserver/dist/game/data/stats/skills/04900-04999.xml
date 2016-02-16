@@ -633,7 +633,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>300</effectRange>
 		<castRange>200</castRange>
-		<targetType2>SELF</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="4990" levels="1" name="Hot Spring Mineral">
 		<!-- TODO -->
@@ -645,7 +645,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>300</effectRange>
 		<castRange>200</castRange>
-		<targetType2>SELF</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="4991" levels="1" name="Hot Spring Brimstone">
 		<!-- TODO -->
@@ -662,7 +662,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType2>SELF</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="4992" levels="1" name="Stun">
 		<!-- TODO -->
@@ -674,13 +674,13 @@
 		<magicLvl>1</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
 		<trait>SHOCK</trait>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4993" levels="1" name="Venom Strike">
 		<!-- Confirmed CT2.5 -->
@@ -695,7 +695,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>57742</power>
@@ -716,7 +716,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>28871</power>
@@ -735,7 +735,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="4996" levels="1" name="Venom Mass Teleport">
 		<!-- Confirmed CT2.5 -->
@@ -750,7 +750,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="4997" levels="1" name="Lidia Regeneration">
 		<!-- TODO: Needs to be done -->
@@ -765,7 +765,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="4998" levels="1" name="Lidia Twister">
 		<!-- TODO: Needs to be done -->
@@ -778,7 +778,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1250</effectRange>
 		<castRange>750</castRange>
-		<targetType2>SELF</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="4999" levels="1" name="Lidia Vampiric Touch">
 		<!-- TODO: Needs to be done -->
@@ -791,6 +791,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>2000</effectRange>
 		<castRange>1000</castRange>
-		<targetType2>SELF</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 </list>

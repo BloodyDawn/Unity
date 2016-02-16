@@ -5,7 +5,6 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>71</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -17,6 +16,7 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -397,7 +397,6 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA2</operateType>
 		<lvlBonusRate>1</lvlBonusRate>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">38</value>
 			<value level="2">39</value>
@@ -440,6 +439,7 @@
 			<value level="9">105</value>
 		</magicLvl>
 		<trait>SHOCK</trait>
+		<targetType>ENEMY</targetType>
 		<cond addName="1" msgId="113">
 			<and>
 				<using kind="SWORD, DUAL, DUALBLUNT, BLUNT" />
@@ -496,7 +496,6 @@
 		<nextActionAttack>true</nextActionAttack>
 		<reuseDelay>7000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-694</value>
@@ -518,6 +517,7 @@
 			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -596,7 +596,6 @@
 		<nextActionAttack>true</nextActionAttack>
 		<reuseDelay>7000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-694</value>
@@ -613,6 +612,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -697,7 +697,7 @@
 			<value level="11">-712</value>
 		</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -765,7 +765,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-694</value>
@@ -784,6 +783,7 @@
 		<effectRange>400</effectRange>
 		<activateRate>99</activateRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
@@ -862,7 +862,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-692</value>
 			<value level="2">-696</value>
@@ -881,6 +880,7 @@
 		<effectRange>400</effectRange>
 		<activateRate>99</activateRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -918,7 +918,6 @@
 		<table name="#skillLevel"> 1 2 3 4 5 </table>
 		<icon>icon.skill11515</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">76</value>
 			<value level="2">80</value>
@@ -955,6 +954,7 @@
 		<abnormalTime>5</abnormalTime>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>-5</amount>
@@ -987,7 +987,6 @@
 		<table name="#power"> 8805 9717 10630 11542 12454 13366 13670 13974 14278 14582 14886 15190 15494 15799 16103 </table>
 		<icon>icon.skill1170</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<effectPoint>
 			<value level="1">-696</value>
 			<value level="2">-702</value>
@@ -1027,6 +1026,7 @@
 		<trait>DERANGEMENT</trait>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1067,7 +1067,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11517</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1105,6 +1104,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
@@ -1166,7 +1166,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11522</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1204,6 +1203,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Critical Damage Increase -->
@@ -1299,7 +1299,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1337,6 +1336,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</dispel>
@@ -1393,7 +1393,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11520</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1426,6 +1425,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
@@ -1481,7 +1481,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1514,6 +1513,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
@@ -1580,7 +1580,6 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1613,6 +1612,7 @@
 			<value level="4">50-50</value>
 		</affectLimit>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
@@ -1653,7 +1653,6 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11523</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -1667,6 +1666,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -1709,7 +1709,6 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11524</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -1723,6 +1722,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -1769,7 +1769,6 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11525</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -1783,6 +1782,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -1920,7 +1920,6 @@
 		<abnormalTime>300</abnormalTime>
 		<icon>icon.skill11529</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -1933,6 +1932,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
@@ -1977,7 +1977,6 @@
 		<abnormalTime>300</abnormalTime>
 		<icon>icon.skill11530</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -1990,6 +1989,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
@@ -2045,7 +2045,6 @@
 		<abnormalTime>300</abnormalTime>
 		<icon>icon.skill11532</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -2058,6 +2057,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
@@ -2114,7 +2114,6 @@
 		<abnormalType>RHAPSODY</abnormalType>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>342</mpConsume>
 		<hitTime>3000</hitTime>
@@ -2126,6 +2125,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>22</isMagic>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>BUFF_SPECIAL_MULTI,-1</dispel>
@@ -2152,7 +2152,6 @@
 		</abnormalTime>
 		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<magicLvl>
 			<value level="1">87</value>
 			<value level="2">90</value>
@@ -2186,6 +2185,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DebuffBlock" />
 		</effects>
@@ -2198,7 +2198,6 @@
 		<icon>icon.skill11536</icon>
 		<effectPoint>-709</effectPoint>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">70</value>
 			<value level="2">70</value>
@@ -2230,6 +2229,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -2255,7 +2255,6 @@
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>15</abnormalTime>
-		<targetType2>ONE</targetType2>
 		<trait>CHANGEBODY</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2308,6 +2307,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -2358,7 +2358,6 @@
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-709</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -2388,6 +2387,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<trait>HOLD</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -2409,7 +2409,6 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -2445,6 +2444,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>TURN_STONE</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -2466,7 +2466,6 @@
 		<abnormalType>TURN_STONE</abnormalType>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -2493,6 +2492,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<transformationId>500</transformationId>
@@ -2547,7 +2547,6 @@
 		<abnormalType>TURN_STONE</abnormalType>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -2558,6 +2557,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Untargetable" />
 			<effect name="Transformation"> <!-- TODO check effects -->
@@ -2584,7 +2584,6 @@
 		<abnormalType>BUFF_SPECIAL_MULTI</abnormalType>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">330</value>
 			<value level="2">350</value>
@@ -2617,6 +2616,7 @@
 		</magicLvl>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
@@ -2682,7 +2682,6 @@
 		<abnormalTime>30</abnormalTime>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>916</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -2695,6 +2694,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>100</amount>
@@ -2721,7 +2721,6 @@
 		<abnormalTime>15</abnormalTime>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>1032</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -2734,6 +2733,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceCriticalRate">
 				<amount>50</amount>
@@ -2757,7 +2757,6 @@
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<icon>icon.skill11533</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<mpConsume>1767</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -2772,6 +2771,7 @@
 		<trait>DERANGEMENT</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -2895,12 +2895,12 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill11505</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="ManaHeal">
 				<power>30</power>
@@ -3029,8 +3029,8 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<trait>HOLD</trait>
-		<targetType2>SELF</targetType2>
 		<isMagic>2</isMagic> <!-- Static Skill -->
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
@@ -3049,7 +3049,6 @@
 		<affectLimit>10-10</affectLimit>
 		<effectPoint>-379</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>423</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -3061,6 +3060,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<trait>BOSS</trait>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpRegen">
 				<amount>-100</amount>
@@ -3075,7 +3075,6 @@
 		<affectRange>200</affectRange>
 		<effectPoint>-457</effectPoint>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>423</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -3087,6 +3086,7 @@
 		<magicLvl>85</magicLvl>
 		<affectLimit>10-10</affectLimit>
 		<trait>DERANGEMENT</trait>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TargetCancel" />
 		</effects>
@@ -3100,7 +3100,6 @@
 		<affectRange>200</affectRange>
 		<effectPoint>-457</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>423</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -3116,6 +3115,7 @@
 		<trait>BOSS</trait>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Reuse">
 				<amount>200</amount>
@@ -3140,10 +3140,6 @@
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>
-			<value level="1">PARTY</value>
-			<value level="2">PARTY_CLAN</value>
-		</targetType2>
 		<mpConsume>
 			<value level="1">423</value>
 			<value level="2">557</value>
@@ -3165,6 +3161,7 @@
 		</affectLimit>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelBySlotMyself">
@@ -3184,7 +3181,6 @@
 		<activateRate>65</activateRate>
 		<basicProperty>MAGIC</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -3222,6 +3218,7 @@
 			<value level="7">105</value>
 		</magicLvl>
 		<trait>HOLD</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -3241,7 +3238,6 @@
 		<affectRange>1000</affectRange>
 		<effectPoint>666</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<basicProperty>NONE</basicProperty>
@@ -3251,6 +3247,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SilentMove" />
 			<effect name="TriggerSkillByMagicType">
@@ -3296,7 +3293,6 @@
 		<icon>icon.skill11819</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>75000</reuseDelay>
@@ -3304,6 +3300,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<player canEscape="true" />
 		</cond>
@@ -3321,7 +3318,6 @@
 		<icon>icon.skill1016</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<operateType>A1</operateType>
-		<targetType2>PC_BODY</targetType2>
 		<mpConsume>60</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
@@ -3339,6 +3335,7 @@
 		</magicLvl>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>PC_BODY</targetType>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -3362,7 +3359,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<icon>icon.skill11565</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -3374,6 +3370,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND</dispel>
@@ -3409,7 +3406,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<icon>icon.skill11567</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -3421,6 +3417,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>50</BLEED>
@@ -3452,7 +3449,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<icon>icon.skill11824</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -3463,6 +3459,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>50</HOLD>
@@ -3502,7 +3499,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>100</amount>
@@ -3532,7 +3529,6 @@
 		<effectPoint>1301</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A1</operateType>
-		<targetType2>AREA_FRIENDLY</targetType2>
 		<mpConsume>582</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -3541,6 +3537,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
@@ -3555,7 +3552,6 @@
 		<effectPoint>780</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>120</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>5000</hitTime>
@@ -3564,6 +3560,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="CpHeal">
 				<power>1000</power>

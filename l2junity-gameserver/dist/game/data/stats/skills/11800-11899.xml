@@ -12,13 +12,13 @@
 		<icon>icon.skill1217</icon>
 		<magicLvl>93</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -50,13 +50,13 @@
 		</mpConsume>
 		<magicLvl>95</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -94,13 +94,13 @@
 		<icon>icon.skill1217</icon>
 		<magicLvl>95</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -131,7 +131,6 @@
 		</mpConsume>
 		<magicLvl>97</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -139,6 +138,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -176,13 +176,13 @@
 		<icon>icon.skill1217</icon>
 		<magicLvl>97</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -208,7 +208,6 @@
 		<table name="#heal"> 3274 3296 3319 3338 </table>
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>7000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -221,6 +220,7 @@
 		</magicLvl>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -250,7 +250,6 @@
 			<value level="5">99</value>
 		</magicLvl>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -258,6 +257,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>
@@ -281,7 +281,6 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill0086</icon>
 		<operateType>A5</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<reuseDelay>10000</reuseDelay>
@@ -294,6 +293,7 @@
 			<value level="2">97</value>
 		</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -315,7 +315,6 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill0086</icon>
 		<operateType>A5</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<effectPoint>379</effectPoint>
@@ -327,6 +326,7 @@
 			<value level="2">97</value>
 		</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -345,7 +345,6 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>AB_HAWK_EYE</abnormalType>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -353,6 +352,7 @@
 		<activateRate>0</activateRate>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="11811" levels="1" name="Total Resurrection Wish">
 		<!-- Glory Days confirmed -->
@@ -362,7 +362,6 @@
 		<abnormalType>SNIPE</abnormalType>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -370,6 +369,7 @@
 		<activateRate>0</activateRate>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="11812" levels="1" name="Mark of Resurrection">
 		<!-- Updated to Ertheia -->
@@ -383,7 +383,6 @@
 		<itemConsumeCount>2</itemConsumeCount>
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>38</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
@@ -395,6 +394,7 @@
 		<effectRange>900</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
@@ -416,7 +416,6 @@
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
 		<effectPoint>379</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>77</mpConsume>
 		<hitTime>4000</hitTime>
 		<reuseDelay>600000</reuseDelay>
@@ -426,6 +425,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>93</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
@@ -475,7 +475,6 @@
 			<value level="11">-959</value>
 		</effectPoint>
 		<effectRange>900</effectRange>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">87</value>
 			<value level="2">91</value>
@@ -498,6 +497,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>KNOCKDOWN</trait>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -539,7 +539,6 @@
 		</mpConsume>
 		<magicLvl>99</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -547,6 +546,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -584,7 +584,6 @@
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -592,6 +591,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -627,7 +627,6 @@
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -660,6 +659,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -691,7 +691,6 @@
 		<abnormalType>DOT_MP</abnormalType>
 		<icon>icon.skill1100</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<reuseDelay>8000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -703,6 +702,7 @@
 		<activateRate>100</activateRate>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>-300</amount>
@@ -718,7 +718,6 @@
 		<affectRange>1000</affectRange>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>91</mpConsume>
 		<hitTime>3500</hitTime>
 		<reuseDelay>150000</reuseDelay>
@@ -727,6 +726,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<targetType2>PARTY</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -750,7 +750,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalType>BUFF_SPECIAL_ATTACK</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -763,6 +762,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_PA_PD_UP,-1;PA_UP,-1;PD_UP,-1;IMPROVE_MA_MD_UP,-1;MD_UP,-1;MA_UP,-1;KAMAEL_SPECIAL,-1</dispel>
@@ -797,7 +797,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -810,6 +809,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP,-1;CRITICAL_PROB_UP,-1;CRITICAL_DMG_UP,-1;CHEAP_MAGIC,-1;MAGIC_CRITICAL_UP,-1</dispel>
@@ -850,7 +850,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -863,6 +862,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1</dispel>
@@ -893,7 +893,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -906,6 +905,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP,-1;HIT_UP,-1;T_CRT_DMG_DOWN,-1;IMPROVE_SPEED_AVOID_UP,-1;SPEED_UP,-1;AVOID_UP,-1</dispel>
@@ -944,7 +944,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>ARMOR_HOLY</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -957,6 +956,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>40</SHOCK>
@@ -987,7 +987,6 @@
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalType>RESIST_DERANGEMENT</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -1000,6 +999,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>50</HOLD>
@@ -1043,7 +1043,7 @@
 		<staticReuse>true</staticReuse>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>
@@ -1057,7 +1057,6 @@
 		<table name="#power"> 521 532 540 546 554 </table>
 		<icon>icon.skill11827</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
@@ -1070,6 +1069,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -1100,7 +1100,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>AREA_FRIENDLY</targetType2>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>40</power>
@@ -1116,7 +1116,6 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>35</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -1129,6 +1128,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<isMagic>22</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>MULTI_BUFF,-1;COUNTER_CRITICAL,-1</dispel>
@@ -1199,7 +1199,6 @@
 		<effectPoint>-655</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1233,6 +1232,7 @@
 		<trait>DERANGEMENT</trait>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="Unsummon">
 				<chance>50</chance>
@@ -1266,7 +1266,6 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
-		<targetType2>AURA</targetType2>
 		<trait>SLEEP</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1296,6 +1295,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1315,7 +1315,6 @@
 		<abnormalTime>70</abnormalTime> <!-- Tested -->
 		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -1327,6 +1326,7 @@
 		<magicLvl>99</magicLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<canBeDispelled>false</canBeDispelled>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>5</amount>
@@ -1352,7 +1352,6 @@
 		<abnormalTime>70</abnormalTime> <!-- Tested -->
 		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -1364,6 +1363,7 @@
 		<magicLvl>99</magicLvl>
 		<irreplacableBuff>true</irreplacableBuff>
 		<canBeDispelled>false</canBeDispelled>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>5</amount>
@@ -1393,7 +1393,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>100</amount>

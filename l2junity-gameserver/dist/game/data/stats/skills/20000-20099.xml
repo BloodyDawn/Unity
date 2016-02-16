@@ -13,7 +13,7 @@
 		<hitTime>1500</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="20001" levels="1" name="Block Checker Hammer Punch">
 		<!-- Slams down on the treasure chest with a hammer to open it. -->
@@ -29,7 +29,7 @@
 		<reuseDelay>60000</reuseDelay>
 		<castRange>40</castRange>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>DOOR_TREASURE</targetType>
 	</skill>
 	<skill id="20002" levels="1" name="Dragon Kick">
 		<!-- A dragon's powerful blow that attacks an enemy with 3420 Power added to P. Atk. Over-hit is possible. -->
@@ -45,7 +45,7 @@
 		<icon>icon.skill_transform_s_attack</icon>
 		<coolTime>167</coolTime>
 		<staticReuse>true</staticReuse>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="FatalBlow">
 				<power>3420</power>
@@ -68,7 +68,7 @@
 		<icon>icon.skill_transform_s_attack</icon>
 		<coolTime>167</coolTime>
 		<staticReuse>true</staticReuse>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3420</power>
@@ -91,7 +91,7 @@
 		<abnormalLvl>2</abnormalLvl>
 		<icon>icon.skill_transform_buff</icon>
 		<isMagic>1</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>100</amount>
@@ -117,7 +117,7 @@
 		<icon>icon.skill_transform_buff</icon>
 		<isMagic>1</isMagic>
 		<castRange>400</castRange>
-		<targetType2>SELF</targetType2>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>30</amount>
@@ -140,7 +140,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>1</abnormalLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>15</power>

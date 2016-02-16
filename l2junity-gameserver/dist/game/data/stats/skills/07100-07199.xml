@@ -5,7 +5,6 @@
 		<!-- Stuns the target for 3 seconds. -->
 		<icon>icon.skill5168</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>5</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -22,13 +21,13 @@
 		<trait>SHOCK</trait>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="7101" levels="1" name="Clan-exclusive Pet Aerial Thrust">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lifts and holds the target in the air for 3 seconds. -->
 		<icon>icon.skill11276</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>5</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
@@ -47,23 +46,23 @@
 		<trait>AIRBIND</trait>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="7102" levels="1" name="Summon Clan Pet">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>5000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7103" levels="1" name="Helping Tree CP Recovery Range">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>300</hitTime>
 		<effectPoint>635</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -73,13 +72,13 @@
 		<affectRange>1000</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7104" levels="1" name="Pa'agrio's Hand">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Raise the temperature of the Draco Egg through Pa'agrio's Hand. It raises the temperature by 1 - 10 degrees on a Small Draco Egg and 0.1 - 1.0 degrees on a Large Draco Egg. The Fire Spirit Agathion must be summoned for it to be used. -->
 		<icon>icon.skill11775</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>100</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -90,13 +89,13 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="7105" levels="1" name="Incubation Possible">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Incubation Possible -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>100</castRange>
 		<effectPoint>-1</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
@@ -105,13 +104,13 @@
 		<effectRange>700</effectRange>
 		<magicLvl>1</magicLvl>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="7106" levels="1" name="Optimal Temperature Incubation Success">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Optimal Temperature Incubation Success -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<coolTime>800</coolTime>
 		<effectPoint>-1</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
@@ -119,13 +118,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7107" levels="1" name="Incubation Success">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Incubation Success -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<coolTime>800</coolTime>
 		<effectPoint>-1</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
@@ -133,13 +132,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7108" levels="1" name="Incubation Failure">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Incubation Failure -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<coolTime>800</coolTime>
 		<effectPoint>-1</effectPoint>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
@@ -147,13 +146,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7109" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
 		<icon>icon.skill0028</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -162,13 +161,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7110" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
 		<icon>icon.skill0028</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -177,13 +176,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7111" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
 		<icon>icon.skill0028</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -192,13 +191,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7112" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
 		<icon>icon.skill0028</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -207,13 +206,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7113" levels="1" name="Pet Invincibility Effect">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincibility Effect -->
 		<icon>icon.skill0442</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>78</mpConsume>
 		<hitTime>500</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -226,17 +225,18 @@
 		<abnormalTime>5</abnormalTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7114" levels="1" name="Spellbook: Clan Flag">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7115" levels="1" name="Energy of Chaos">
 		<!-- AUTO GENERATED SKILL -->
@@ -246,7 +246,6 @@
 		<icon>icon.skill0810</icon>
 		<canBeDispelled>false</canBeDispelled>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>CURIOUS_HOUSE</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -257,6 +256,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>2</isMagic>
 		<hitTime>500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="7116" levels="1" name="Spellbook: Air Bike">
 		<!-- AUTO GENERATED SKILL -->

@@ -5,7 +5,6 @@
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpInitialConsume>1</mpInitialConsume>
 		<castRange>700</castRange>
 		<hitTime>1000</hitTime>
@@ -16,6 +15,7 @@
 		<effectRange>1200</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<target abnormalType="KNOCKDOWN" />
@@ -306,7 +306,6 @@
 		<icon>icon.skill11011</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<doubleCastSkill>11016</doubleCastSkill>
 		<magicLvl>
@@ -361,11 +360,20 @@
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<attachSkillList>
-			<skill requiredId="11007" id="11012" /> <!-- Fire Stance / Elemental Spike (Fire) -->
-			<skill requiredId="11008" id="11013" /> <!-- Water Stance / Elemental Spike (Water) -->
-			<skill requiredId="11009" id="11014" /> <!-- Wind Stance / Elemental Spike (Wind) -->
-			<skill requiredId="11010" id="11015" /> <!-- Earth Stance / Elemental Spike (Earth) -->
+			<skill requiredId="11007" id="11012">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Fire Stance / Elemental Spike (Fire) -->
+			<skill requiredId="11008" id="11013">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Water Stance / Elemental Spike (Water) -->
+			<skill requiredId="11009" id="11014">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Wind Stance / Elemental Spike (Wind) -->
+			<skill requiredId="11010" id="11015">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Earth Stance / Elemental Spike (Earth) -->
 		</attachSkillList>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -696,7 +704,6 @@
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
 		<icon>icon.skill11011</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -745,6 +752,7 @@
 		<magicCriticalRate>6</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -772,7 +780,6 @@
 		<icon>icon.skill11017</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<doubleCastSkill>11022</doubleCastSkill>
 		<magicLvl>
@@ -824,11 +831,20 @@
 		<hitCancelTime>0.8</hitCancelTime>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11018" /> <!-- Fire Stance / Elemental Crash (Fire) -->
-			<skill requiredId="11008" id="11019" /> <!-- Water Stance / Elemental Crash (Water) -->
-			<skill requiredId="11009" id="11020" /> <!-- Wind Stance / Elemental Crash (Wind) -->
-			<skill requiredId="11010" id="11021" /> <!-- Earth Stance / Elemental Crash (Earth) -->
+			<skill requiredId="11007" id="11018">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Fire Stance / Elemental Crash (Fire) -->
+			<skill requiredId="11008" id="11019">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Water Stance / Elemental Crash (Water) -->
+			<skill requiredId="11009" id="11020">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Wind Stance / Elemental Crash (Wind) -->
+			<skill requiredId="11010" id="11021">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Earth Stance / Elemental Crash (Earth) -->
 		</attachSkillList>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1163,7 +1179,6 @@
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1214,6 +1229,7 @@
 		<hitCancelTime>0.8</hitCancelTime>
 		<canDoubleCast>true</canDoubleCast>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1241,7 +1257,6 @@
 		<icon>icon.skill11023</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<doubleCastSkill>11028</doubleCastSkill>
 		<magicLvl>
@@ -1293,11 +1308,20 @@
 		<hitCancelTime>1</hitCancelTime>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11024" /> <!-- Fire Stance / Elemental Destruction (Fire) -->
-			<skill requiredId="11008" id="11025" /> <!-- Water Stance / Elemental Destruction (Water) -->
-			<skill requiredId="11009" id="11026" /> <!-- Wind Stance / Elemental Destruction (Wind) -->
-			<skill requiredId="11010" id="11027" /> <!-- Earth Stance / Elemental Destruction (Earth) -->
+			<skill requiredId="11007" id="11024">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Fire Stance / Elemental Destruction (Fire) -->
+			<skill requiredId="11008" id="11025">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Water Stance / Elemental Destruction (Water) -->
+			<skill requiredId="11009" id="11026">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Wind Stance / Elemental Destruction (Wind) -->
+			<skill requiredId="11010" id="11027">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Earth Stance / Elemental Destruction (Earth) -->
 		</attachSkillList>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1628,7 +1652,6 @@
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1680,6 +1703,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1712,7 +1736,6 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">88</value>
@@ -1742,6 +1765,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1764,7 +1788,6 @@
 		<channelingTickInterval>1000</channelingTickInterval>
 		<channelingTickInitialDelay>1200</channelingTickInitialDelay>
 		<operateType>CA1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -1803,6 +1826,7 @@
 				<percentage>100</percentage>
 			</effect>
 		</channelingEffects>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="11032" levels="7" name="Death Howl">
 		<!-- Updated to IO -->
@@ -1819,7 +1843,6 @@
 		<affectRange>200</affectRange>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>SHOCK</trait>
 		<mpConsume>
 			<value level="1">204</value>
@@ -1854,6 +1877,7 @@
 			<value level="7">105</value>
 		</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1889,7 +1913,6 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill11032</icon>
 		<operateType>A4</operateType>
-		<targetType2>AURA</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-696</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -1899,6 +1922,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>114</power>
@@ -1924,7 +1948,6 @@
 		<icon>icon.skill11034</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<doubleCastSkill>11039</doubleCastSkill>
 		<magicLvl>
@@ -1966,11 +1989,20 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11035" /> <!-- Fire Stance / Elemental Blast (Fire) -->
-			<skill requiredId="11008" id="11036" /> <!-- Water Stance / Elemental Blast (Water) -->
-			<skill requiredId="11009" id="11037" /> <!-- Wind Stance / Elemental Blast (Wind) -->
-			<skill requiredId="11010" id="11038" /> <!-- Earth Stance / Elemental Blast (Earth) -->
+			<skill requiredId="11007" id="11035">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Fire Stance / Elemental Blast (Fire) -->
+			<skill requiredId="11008" id="11036">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Water Stance / Elemental Blast (Water) -->
+			<skill requiredId="11009" id="11037">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Wind Stance / Elemental Blast (Wind) -->
+			<skill requiredId="11010" id="11038">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Earth Stance / Elemental Blast (Earth) -->
 		</attachSkillList>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2259,7 +2291,6 @@
 		<affectRange>100</affectRange>
 		<icon>icon.skill11034</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2301,6 +2332,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2327,7 +2359,6 @@
 		<icon>icon.skill11040</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<doubleCastSkill>11045</doubleCastSkill>
 		<magicLvl>
@@ -2369,11 +2400,20 @@
 		<magicCriticalRate>11</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11041" /> <!-- Fire Stance / Elemental Storm (Fire) -->
-			<skill requiredId="11008" id="11042" /> <!-- Water Stance / Elemental Storm (Water) -->
-			<skill requiredId="11009" id="11043" /> <!-- Wind Stance / Elemental Storm (Wind) -->
-			<skill requiredId="11010" id="11044" /> <!-- Earth Stance / Elemental Storm (Earth) -->
+			<skill requiredId="11007" id="11041">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Fire Stance / Elemental Storm (Fire) -->
+			<skill requiredId="11008" id="11042">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Water Stance / Elemental Storm (Water) -->
+			<skill requiredId="11009" id="11043">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Wind Stance / Elemental Storm (Wind) -->
+			<skill requiredId="11010" id="11044">
+				<targetType>ENEMY</targetType>
+			</skill> <!-- Earth Stance / Elemental Storm (Earth) -->
 		</attachSkillList>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2663,7 +2703,6 @@
 		<affectRange>150</affectRange>
 		<icon>icon.skill11040</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2705,6 +2744,7 @@
 		<magicCriticalRate>11</magicCriticalRate>
 		<canDoubleCast>true</canDoubleCast>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2733,7 +2773,6 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>FINAL_SECRET</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">95</value>
@@ -2752,6 +2791,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Flame Armor -->
@@ -2820,7 +2860,6 @@
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<activateRate>60</activateRate>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -2865,6 +2904,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2925,7 +2965,6 @@
 		<activateRate>60</activateRate>
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -2970,6 +3009,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -3025,7 +3065,6 @@
 		<table name="#buffCount"> 1 2 2 2 2 </table>
 		<icon>icon.skill11049</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">82</value>
 			<value level="2">91</value>
@@ -3055,6 +3094,7 @@
 		</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -3080,7 +3120,6 @@
 		<activateRate>90</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">70</value>
@@ -3121,6 +3160,7 @@
 		<reuseDelayGroup>11050</reuseDelayGroup>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3148,7 +3188,6 @@
 		<activateRate>90</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">70</value>
@@ -3189,6 +3228,7 @@
 		<reuseDelayGroup>11050</reuseDelayGroup>
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3216,7 +3256,6 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<mpPerChanneling>15</mpPerChanneling>
 		<operateType>CA2</operateType>
-		<targetType2>AREA</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">228</value>
@@ -3250,6 +3289,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -3265,7 +3305,6 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<mpPerChanneling>15</mpPerChanneling>
 		<operateType>CA2</operateType>
-		<targetType2>AREA</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">228</value>
@@ -3299,6 +3338,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -3312,7 +3352,6 @@
 		<abnormalType>AIRBIND</abnormalType>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>AIRBIND</trait>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
@@ -3323,6 +3362,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -3357,7 +3397,6 @@
 		<activateRate>60</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>DERANGEMENT</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3404,6 +3443,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3450,7 +3490,6 @@
 		<activateRate>60</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -3500,6 +3539,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3547,7 +3587,6 @@
 		<activateRate>150</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>SHOCK</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3589,6 +3628,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3620,7 +3660,6 @@
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<icon>icon.skill11058</icon>
 		<operateType>A1</operateType>
-		<targetType2>GROUND</targetType2>
 		<magicLvl>
 			<value level="1">91</value>
 			<value level="2">94</value>
@@ -3654,6 +3693,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PULL</trait>
 		<isMagic>1</isMagic>
+		<targetType>GROUND</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>
@@ -3679,7 +3719,6 @@
 		<affectLimit>5-12</affectLimit>
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>PULL</trait>
 		<effectPoint>
 			<value level="1">-709</value>
@@ -3694,6 +3733,7 @@
 		<magicLvl>97</magicLvl>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -3713,7 +3753,6 @@
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>SPEED_UP_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">87</value>
 			<value level="2">91</value>
@@ -3738,6 +3777,7 @@
 		<removedOnDamage>true</removedOnDamage>
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>30000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Floating Blow -->
@@ -3769,8 +3809,8 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
-		<targetType2>SELF</targetType2>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP_SPECIAL,9</dispel>
@@ -3784,7 +3824,6 @@
 		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 591 623 655 </table>
 		<icon>icon.skill11064</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hpConsume>
 			<value level="1">384</value>
 			<value level="2">388</value>
@@ -3830,6 +3869,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="ManaHeal">
 				<power>
@@ -3858,7 +3898,6 @@
 		<abnormalType>MP_SHIELD</abnormalType>
 		<abnormalVisualEffect>MP_SHIELD</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>120000</reuseDelay>
@@ -3869,6 +3908,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MpShield">
 				<amount>90</amount>
@@ -3892,7 +3932,6 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>DERANGEMENT</trait>
 		<magicLvl>
 			<value level="1">95</value>
@@ -3916,6 +3955,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3953,7 +3993,6 @@
 		<basicProperty>NONE</basicProperty>
 		<icon>icon.skill11067</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<trait>DERANGEMENT</trait>
 		<magicLvl>
 			<value level="1">95</value>
@@ -3977,6 +4016,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4006,7 +4046,6 @@
 		<icon>icon.skill11068</icon>
 		<abnormalTime>30</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -4029,6 +4068,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<!-- TODO please change/remove this shit effect -->
 			<effect name="VisualBuff">
@@ -4189,7 +4229,6 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>MULTI_DEBUFF_FIRE</abnormalType>
 		<rideState>NONE</rideState>
@@ -4197,6 +4236,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4228,7 +4268,6 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>MULTI_DEBUFF_WATER</abnormalType>
 		<rideState>NONE</rideState>
@@ -4236,6 +4275,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4267,7 +4307,6 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>MULTI_DEBUFF_WIND</abnormalType>
 		<rideState>NONE</rideState>
@@ -4275,6 +4314,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4305,13 +4345,13 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_HOLY,9</dispel>
@@ -4342,13 +4382,13 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9</dispel>
@@ -4508,7 +4548,6 @@
 		<activateRate>50</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<trait>DERANGEMENT</trait>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
@@ -4516,6 +4555,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -4553,7 +4593,6 @@
 		<activateRate>99</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -4561,6 +4600,7 @@
 		<magicLvl>85</magicLvl>
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -4584,7 +4624,6 @@
 		<activateRate>99</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<trait>KNOCKDOWN</trait>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
@@ -4592,6 +4631,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="KnockBack">
 				<speed>600</speed>
@@ -4615,7 +4655,6 @@
 		<basicProperty>NONE</basicProperty>
 		<activateRate>80</activateRate>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<trait>HOLD</trait>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
@@ -4623,6 +4662,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Root" />
 		</effects>
@@ -4643,7 +4683,6 @@
 		<activateRate>99</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<trait>SHOCK</trait>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
@@ -4651,6 +4690,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -4670,7 +4710,6 @@
 		<affectLimit>5-12</affectLimit>
 		<icon>icon.skill11032</icon>
 		<operateType>A4</operateType>
-		<targetType2>AURA</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-711</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -4680,6 +4719,7 @@
 		<activateRate>100</activateRate>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>139</power>
@@ -4707,7 +4747,6 @@
 		<canCastWhileDisabled>true</canCastWhileDisabled>
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>73</mpConsume>
 		<hitTime>500</hitTime>
@@ -4716,6 +4755,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="HealOverTime">
@@ -4752,7 +4792,6 @@
 		<affectLimit>6-12</affectLimit>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<trait>SHOCK</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -4794,6 +4833,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4825,7 +4865,6 @@
 		<!-- Resets the duration of target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm. -->
 		<icon>icon.skill11535</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>190</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
@@ -4836,6 +4875,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>87</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="AbnormalTimeChange">
 				<slot>CHANGEBODY;DISARM;PARALYZE;ROOT_MAGICALLY;SILENCE;SLEEP;STUN;TURN_FLEE;TURN_STONE</slot>

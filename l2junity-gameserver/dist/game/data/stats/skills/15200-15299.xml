@@ -5,7 +5,6 @@
 		<!-- Being hurled away from shock. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>7000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -19,13 +18,13 @@
 		<abnormalTime>3</abnormalTime>
 		<affectRange>400</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15201" levels="1" name="Tauti Ultra Whirlwind">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Being hurled away from shock. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>6000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -39,13 +38,13 @@
 		<abnormalTime>3</abnormalTime>
 		<affectRange>400</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15202" levels="1" name="Tauti Ultra Typhoon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>7000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -60,13 +59,13 @@
 		<affectRange>1500</affectRange>
 		<fanRange>0;0;600;0</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15203" levels="1" name="Tauti Ultra Typhoon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>6000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -81,13 +80,13 @@
 		<affectRange>1500</affectRange>
 		<fanRange>0;0;600;0</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15204" levels="1" name="Tauti Omega Whirlwind">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Becomes knocked down after receiving Tauti's ultimate attack. -->
 		<icon>icon.skill10266</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>15000</reuseDelay>
@@ -105,13 +104,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15205" levels="1" name="Tauti Omega Whirlwind">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Becomes knocked down after receiving Tauti's ultimate attack. -->
 		<icon>icon.skill10266</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>15000</reuseDelay>
@@ -129,12 +128,12 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15206" levels="1" name="Explosion">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-574</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -143,6 +142,7 @@
 		<affectRange>100</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15207" levels="1" name="Debuff Immunity">
 		<!-- AUTO GENERATED SKILL -->
@@ -166,7 +166,6 @@
 			<value level="9">icon.skill1418</value>
 		</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>MP_SHIELD</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -189,13 +188,13 @@
 		<abnormalTime>-1</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15209" levels="1" name="Pa'agrio's Gift 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gives a gift. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2700</hitTime>
 		<coolTime>1000</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -205,6 +204,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>-1000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>34864</itemId>
@@ -217,7 +217,6 @@
 		<!-- Gives a gift. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2700</hitTime>
 		<coolTime>1000</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -227,6 +226,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>-1000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>34865</itemId>
@@ -239,7 +239,6 @@
 		<!-- Gives a gift. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2700</hitTime>
 		<coolTime>1000</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -249,6 +248,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>-1000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>34864</itemId>
@@ -261,7 +261,6 @@
 		<!-- Gives a gift. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2700</hitTime>
 		<coolTime>1000</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -271,6 +270,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>-1000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Restoration">
 				<itemId>34865</itemId>
@@ -283,7 +283,6 @@
 		<!-- Flying away due to the twisted space. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -298,6 +297,7 @@
 		<affectRange>400</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15214" levels="1" name="Tauti">
 		<!-- AUTO GENERATED SKILL -->
@@ -336,7 +336,6 @@
 		<!-- Cancels the enemy's target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>1500</hitTime>
@@ -348,6 +347,7 @@
 		<effectRange>460</effectRange>
 		<magicLvl>93</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>50</chance>
@@ -359,7 +359,6 @@
 		<!-- Inflicts strong damage upon the enemies near the target. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>2000</hitTime>
@@ -371,6 +370,7 @@
 		<magicLvl>94</magicLvl>
 		<affectRange>100</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -382,7 +382,6 @@
 		<!-- Inflicts damage upon monsters around you and inflicts Bleed for 5 sec. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2000</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -400,6 +399,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<isSuicideAttack>true</isSuicideAttack>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -416,7 +416,6 @@
 		<table name="#power"> 1000 1500 2000 </table>
 		<icon>icon.skill0122</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>2000</hitTime>
@@ -432,6 +431,7 @@
 			<value level="3">95</value>
 		</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -448,7 +448,6 @@
 		<table name="#power"> 30000 40000 50000 </table>
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<effectPoint>-2</effectPoint>
@@ -462,6 +461,7 @@
 			<value level="3">95</value>
 		</magicLvl>
 		<hitTime>2000</hitTime>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -477,7 +477,6 @@
 		<!-- Launches a powerful attack on enemies within a 120 degree radius. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<effectPoint>-2</effectPoint>
@@ -488,6 +487,7 @@
 		<magicLvl>94</magicLvl>
 		<fanRange>0;0;100;120</fanRange>
 		<hitTime>2000</hitTime>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -499,7 +499,6 @@
 		<!-- Your soul is sucked away, and your P. Def. and M. Def. is decreased. -->
 		<icon>icon.skill11769</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>2000</hitTime>
@@ -518,6 +517,7 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>-10</amount>
@@ -534,7 +534,6 @@
 		<!-- Strikes down with the sword to inflict powerful damage on enemies within 200 grids of you. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>3000</hitTime>
@@ -546,6 +545,7 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -557,7 +557,6 @@
 		<!-- Strikes down with the sword to inflict powerful damage on enemies within 200 grids of you. Additional damage on targets debuffed with Soul Drain. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>3000</hitTime>
@@ -569,6 +568,7 @@
 		<magicLvl>96</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -584,13 +584,13 @@
 		<!-- Additional damage received when debuffed with Soul Drain. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>5</mpConsume>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>94</magicLvl>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>30000</power>
@@ -602,7 +602,6 @@
 		<!-- Uses the absorbed soul to send a powerful shock wave within a 120 degree radius. Only damages targets debuffed with Soul Drain. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -612,6 +611,7 @@
 		<magicLvl>94</magicLvl>
 		<fanRange>0;0;150;120</fanRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttackByAbnormalSlot">
 				<abnormalType>PD_DOWN</abnormalType>
@@ -624,7 +624,6 @@
 		<!-- Uses the absorbed soul to send a powerful shock wave within a 120 degree radius. Additional damage on targets debuffed with Soul Drain. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -634,6 +633,7 @@
 		<magicLvl>94</magicLvl>
 		<fanRange>0;0;150;120</fanRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -649,13 +649,13 @@
 		<!-- Additional damage received when debuffed with Soul Drain. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>5</mpConsume>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>94</magicLvl>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalAttackByAbnormalSlot">
 				<abnormalType>PD_DOWN</abnormalType>
@@ -668,7 +668,6 @@
 		<!-- Inflicts a powerful attack on the target. -->
 		<icon>icon.skill11508</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
@@ -685,13 +684,13 @@
 		<abnormalTime>1</abnormalTime>
 		<trait>SHOCK</trait>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15232" levels="1" name="Speed Up">
 		<!-- Glory Days confirmed -->
 		<!-- Increases your Atk. Spd. by 200%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -702,6 +701,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>100</amount>
@@ -714,7 +714,6 @@
 		<!-- Swing your sword to launch a powerful attack on nearby enemies. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -724,6 +723,7 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>200</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>40000</power>
@@ -735,7 +735,6 @@
 		<!-- Shoot dark red spheres toward enemies within 120 degrees of you. Additional damage on PCs debuffed with Soul Drain. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>5000</hitTime>
@@ -747,6 +746,7 @@
 		<magicLvl>96</magicLvl>
 		<fanRange>0;0;200;120</fanRange>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>200000</power>
@@ -762,7 +762,6 @@
 		<!-- Create a strong wind around you to push back enemies. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<coolTime>3000</coolTime>
@@ -778,6 +777,7 @@
 		<affectRange>250</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>180000</power>
@@ -798,7 +798,6 @@
 		<!-- Powerful attack on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE </targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<effectPoint>-2</effectPoint>
@@ -808,6 +807,7 @@
 		<effectRange>400</effectRange>
 		<magicLvl>96</magicLvl>
 		<hitTime>2000</hitTime>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>200000</power>
@@ -819,7 +819,6 @@
 		<!-- Inflicts strong damage upon the enemies near the target. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<effectPoint>-2</effectPoint>
@@ -830,6 +829,7 @@
 		<magicLvl>96</magicLvl>
 		<affectRange>200</affectRange>
 		<hitTime>3000</hitTime>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>200000</power>
@@ -841,7 +841,6 @@
 		<!-- Absorb the souls of enemies within 180 degrees of you and decrease their P. Def. and M. Def. by 30%. -->
 		<icon>icon.skill11769</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>250</castRange>
 		<hitTime>3000</hitTime>
@@ -859,26 +858,26 @@
 		<abnormalTime>15</abnormalTime>
 		<fanRange>0;0;200;180</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15239" levels="1" name="Added Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Additional damage received when debuffed with Soul Drain. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>5</mpConsume>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>93</magicLvl>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15240" levels="1" name="Toad Cannon Explosion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- A broken Toad Cannon sparks into explosion, knocking back nearby targets. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>KNOCKDOWN</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -892,12 +891,12 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>250</affectRange>
 		<mpConsume>10</mpConsume>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15241" levels="1" name="">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -905,30 +904,31 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<castRange>600</castRange>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15242" levels="1" name="Presentation - Summon Attack Robot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons an Attack Robot that attacks nearby Helper Robots. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15243" levels="1" name="Presentation - Summon Stone Gathering Robot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Zombie Robot that attacks nearby Stone Gathering Robots. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15244" levels="1" name="Presentation - Destroy Dark Summon Circle">
 		<!-- AUTO GENERATED SKILL -->
@@ -939,26 +939,25 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15245" levels="1" name="Presentation - Summon Robot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon Device summons either a Repair Robot, or one of the two Destroyer Robots. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15246" levels="1" name="Nurka Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts powerful damage on target and nearby enemies. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<hitTime>2500</hitTime>
@@ -970,13 +969,13 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>100</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15247" levels="1" name="Nurka Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on the target and knocks them down. -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<hitTime>1500</hitTime>
@@ -995,13 +994,13 @@
 		<trait>KNOCKDOWN</trait>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15248" levels="1" name="Nurka Howl">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Nurka's P. Atk. and Atk. Spd. increased and P. Def. decreased. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1014,13 +1013,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15249" levels="1" name="Nurka Fireball">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts powerful magical damage on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>2500</hitTime>
@@ -1034,13 +1033,13 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15250" levels="1" name="Nurka's Cold Shoulders">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Aerial Yoke on nearby enemies. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1058,13 +1057,13 @@
 		<affectRange>150</affectRange>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15251" levels="1" name="Invincible Nurka">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- No attacks are working on Nurka. -->
 		<icon>icon.skill11758</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1079,13 +1078,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15252" levels="1" name="With Nurka">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Target is pulled to Nurka. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>350</castRange>
 		<hitTime>1000</hitTime>
@@ -1104,13 +1103,13 @@
 		<abnormalTime>1</abnormalTime>
 		<trait>PULL</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15253" levels="1" name="Earth-rumbling Nurka">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Damages nearby enemies and decreases their Spd. -->
 		<icon>icon.skill11509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>300</coolTime>
@@ -1128,13 +1127,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>100</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15254" levels="1" name="Nurka's Healing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores your HP and allies' HP. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1145,13 +1144,13 @@
 		<magicLvl>95</magicLvl>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15255" levels="1" name="Defensive Nurka">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Nurka's P. Def. + 50%. -->
 		<icon>icon.skill11252</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1165,13 +1164,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7200</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15256" levels="1" name="Aggressive Nurka">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Nurka's P. Atk. + 50%. -->
 		<icon>icon.skill10252</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1185,13 +1184,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7200</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15257" levels="1" name="Resistance Blaze">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreased Spd. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
@@ -1210,13 +1209,13 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>50</attributeValue>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15258" levels="1" name="Resistance Treatment">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores allies' HP. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
@@ -1228,6 +1227,7 @@
 		<effectRange>540</effectRange>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15259" levels="1" name="Fireworks">
 		<!-- AUTO GENERATED SKILL -->
@@ -1238,7 +1238,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15260" levels="1" name="Time Up">
 		<!-- AUTO GENERATED SKILL -->
@@ -1249,38 +1249,37 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15261" levels="1" name="Lindvior's Skill 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Wave Skill Presentation -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>17000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15262" levels="1" name="Lindvior's Skill 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Wave Skill Range -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>17000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15263" levels="1" name="Bombing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Wave Skill Damage -->
 		<icon>icon.skill1296</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<effectPoint>-686</effectPoint>
 		<rideState>NONE</rideState>
@@ -1288,25 +1287,25 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15264" levels="1" name="Lindvior's Skill 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's AoE Skill Presentation -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>17000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15265" levels="1" name="Lindvior's AoE 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's AoE Skill Range -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<effectPoint>-686</effectPoint>
 		<rideState>NONE</rideState>
@@ -1314,25 +1313,25 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>4200</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15266" levels="1" name="Lindvior's Skill 6">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's AoE Skill Damage -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>17000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15267" levels="1" name="Cyclone">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Summon Whirlwind Skill Presentation -->
 		<icon>icon.skill10263</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>-867</effectPoint>
 		<rideState>NONE</rideState>
@@ -1340,13 +1339,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15268" levels="1" name="Cyclone">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Whirlwind Knockback Skill -->
 		<icon>icon.skill10263</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>-867</effectPoint>
 		<rideState>NONE</rideState>
@@ -1354,26 +1353,26 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15269" levels="1" name="Lindvior's Wrath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Aerial Yoke for All Skill Presentation -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>15000</hitTime>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<coolTime>8000</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15270" levels="1" name="Lindvior's Mass Yoke">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Aerial Yoke for All Skill Area Data -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>-707</effectPoint>
@@ -1382,13 +1381,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15271" levels="1" name="Body Slam">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's stun -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>2500</hitTime>
 		<coolTime>1000</coolTime>
@@ -1398,13 +1397,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15272" levels="1" name="Wind Breath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Landing Breath Skill -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>2500</hitTime>
 		<coolTime>3000</coolTime>
@@ -1414,13 +1413,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15273" levels="1" name="Tail Swipe">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Landing Range -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2500</hitTime>
 		<effectPoint>-574</effectPoint>
 		<rideState>NONE</rideState>
@@ -1428,13 +1427,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<coolTime>1500</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15274" levels="1" name="Mighty Wind Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Long-range projectile -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1800</castRange>
 		<hitTime>2500</hitTime>
 		<effectPoint>-707</effectPoint>
@@ -1443,13 +1442,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15275" levels="1" name="Tornado">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's Takeoff Presentation -->
 		<icon>icon.skill10263</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>7000</hitTime>
 		<coolTime>2000</coolTime>
 		<effectPoint>-867</effectPoint>
@@ -1458,13 +1457,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15276" levels="1" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bleeding -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1474,13 +1473,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15277" levels="1" name="Knock Back">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knock back -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>100</coolTime>
@@ -1490,13 +1489,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15278" levels="1" name="Yoke">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior's aerial yoke -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -1507,25 +1506,25 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15279" levels="1" name="Soar">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior Raid's PC Chain Skill -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>5000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15280" levels="1" name="Lindvior's Berserk">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior Raid's Berserk -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE</rideState>
@@ -1533,13 +1532,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15281" levels="1" name="Lindvior's Skill 21">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Atk. Spd. and Speed + 30%. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1100</castRange>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE</rideState>
@@ -1547,64 +1546,64 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15282" levels="1" name="Lindvior's Skill 22">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lindvior Raid's Structure Repair Skill -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>17000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15283" levels="1" name="Summon Jacquard">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons Jacquard, the Herald from the Fortress of the Dead. The Clan Hall Siege for the contestable Fortress of the Dead runs between 21:00 and 22:00 on the Thursday of the Castle Siege week. Jacquard teleports you to the battleground, and despawns after 5 min. Cooldown is 30 min. -->
 		<icon>icon.skill15283</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>1800000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15284" levels="1" name="Summon Brakel">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons Brakel, the Herald from the Fortress of Resistance. The Clan Hall Siege for the contestable Fortress of Resistance runs between 21:00 and 22:00 on the Friday of the Castle Siege week. Brakel teleports you to the battleground, and despawns after 5 min. Cooldown is 30 min. -->
 		<icon>icon.skill15284</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>1800000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15285" levels="1" name="Summon Loken">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons Loken, the Herald from Devastated Castle. The Clan Hall Siege for the contestable Devastated Castle runs between 21:00 and 22:00 on the Friday of the Castle Siege week. Loken teleports you to the battleground, and despawns after 5 min. Cooldown is 30 min. -->
 		<icon>icon.skill15285</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>1800000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15286" levels="1" name="Blood Siphon Master">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Steals a large portion of the target's HP. -->
 		<icon>icon.skill1147</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>1000</hitTime>
@@ -1617,13 +1616,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15287" levels="1" name="Twister">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts magical damage on PCs near the target and immobilizes them. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>2500</hitTime>
@@ -1645,13 +1644,13 @@
 		<affectRange>100</affectRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15288" levels="1" name="Increase Recovery Rate">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lidia's HP Recovery Rate is greatly increased. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<abnormalType>HP_REGEN_DOWN</abnormalType>
@@ -1664,13 +1663,13 @@
 		<abnormalLvl>11</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15289" levels="1" name="Decrease Atk. Spd.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Energy that formed in Lidia's room because Giselle von Hellmann and Alfred von Hellmann were not eliminated. Atk. Spd. is decreased. -->
 		<icon>icon.skill11509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<coolTime>300</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1683,13 +1682,13 @@
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalTime>0</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15290" levels="1" name="Decrease Casting Spd.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Energy that formed in Lidia's room because Giselle von Hellmann and Alfred von Hellmann were not eliminated. Casting Spd. is decreased. -->
 		<icon>icon.skill11509</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<coolTime>300</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1702,13 +1701,13 @@
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalTime>0</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15291" levels="1" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Energy that formed in Lidia's room because Giselle von Hellmann and Alfred von Hellmann were not eliminated. HP continues to decrease. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
@@ -1726,13 +1725,13 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15292" levels="1" name="Logan's Revenge">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's revenge left in his dying breath. Lidia's Atk. Spd. is greatly increased. -->
 		<icon>icon.skill0168</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<abnormalType>SPEED_UP</abnormalType>
@@ -1744,13 +1743,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>180</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15293" levels="1" name="Logan's Revenge">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's revenge left in his dying breath. Momentarily invincible. -->
 		<icon>icon.skill11758</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>867</effectPoint>
@@ -1764,13 +1763,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15294" levels="1" name="Logan's Revenge">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's revenge left in his dying breath. Lidia's Atk. Spd. is greatly increased (Presentation). -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1779,13 +1778,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15295" levels="1" name="Logan's Mistake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's mistake left in his escape. Lidia's Atk. Spd. is great increased. -->
 		<icon>icon.skill0168</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<abnormalType>SPEED_UP</abnormalType>
@@ -1797,13 +1796,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>180</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15296" levels="1" name="Logan's Mistake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's mistake left in his escape. Momentarily invincible. -->
 		<icon>icon.skill11758</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>867</effectPoint>
@@ -1817,13 +1816,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15297" levels="1" name="Logan's Mistake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's mistake left in his escape. Lidia's Atk. Spd. is great increased (Presentation). -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1832,13 +1831,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15298" levels="1" name="Logan's Token of Gratitude">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Logan's token of gratitude left in his escape. Character's HP Recovery Rate is greatly increased temporarily. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1853,13 +1852,13 @@
 		<abnormalTime>60</abnormalTime>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15299" levels="1" name="Blood Siphon Energy">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Giselle von Hellmann attacks to recover her own HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1872,5 +1871,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 </list>

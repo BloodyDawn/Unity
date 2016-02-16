@@ -5,7 +5,6 @@
 		<!-- For 6 hours, buffs and debuffs do not disappear but remain upon death. -->
 		<icon>icon.skill1323</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
@@ -18,6 +17,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="NoblesseBless" />
 		</effects>
@@ -27,7 +27,6 @@
 		<!-- Heals the target with 1488 power. If HP is full, CP is restored with the remaining power. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
@@ -37,6 +36,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
@@ -48,7 +48,6 @@
 		<!-- Heals the target with 1519 power. If HP is full, CP is restored with the remaining power. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
@@ -58,6 +57,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
@@ -69,7 +69,6 @@
 		<!-- Heals the target with 1557 power. If HP is full, CP is restored with the remaining power. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
@@ -79,6 +78,7 @@
 		<hitCancelTime>1</hitCancelTime>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
@@ -90,7 +90,6 @@
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<icon>icon.skill11561</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>2500</hitTime>
 		<coolTime>500</coolTime>
@@ -108,6 +107,7 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -120,7 +120,6 @@
 		<!-- Becomes invisible and decreases speed by 30%. -->
 		<icon>icon.skill10784</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<effectPoint>2</effectPoint>
 		<abnormalType>HIDE</abnormalType>
@@ -135,6 +134,7 @@
 		<reuseDelay>360000</reuseDelay>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>34903</itemConsumeId> <!-- Mysterious Shadow -->
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Hide">
 			</effect>
@@ -149,7 +149,6 @@
 		<!-- Sacrifice yourself to attempt a Lethal Strike on the enemy. -->
 		<icon>icon.skill10784</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>-700</effectPoint>
@@ -158,13 +157,13 @@
 		<effectRange>200</effectRange>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>360000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15107" levels="1" name="Mysterious Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sacrifice. A state in which HP cannot be recovered. -->
 		<icon>icon.skill4036</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>TRANSFORM_SCRIFICE_P</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -174,13 +173,13 @@
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15108" levels="1" name="Ruler's Authority">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases your battle abilities. -->
 		<icon>icon.skill10292</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<effectPoint>707</effectPoint>
 		<abnormalType>POSSESSION</abnormalType>
@@ -191,13 +190,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1800</abnormalTime>
 		<reuseDelay>3600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15109" levels="1" name="Ruler's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases sleep, bleed, shock, poison, and hold attack bonus by 30. -->
 		<icon>icon.skill0335</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>689</effectPoint>
@@ -212,13 +211,13 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15110" levels="1" name="Mandra's Spell">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage around you. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -227,13 +226,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15111" levels="1" name="Mace of Punishment">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage and hurls one person for a certain distance. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -249,13 +248,13 @@
 		<trait>SHOCK</trait>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15112" levels="1" name="Threat">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-2</effectPoint>
@@ -269,13 +268,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15113" levels="1" name="Imposing Axe">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -291,13 +290,13 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15114" levels="1" name="Massive Blade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-2</effectPoint>
@@ -311,13 +310,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15115" levels="1" name="Black Kiss">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage around you. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-2</effectPoint>
@@ -327,13 +326,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15116" levels="1" name="Dreaming Romantic Pig">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 seconds, change one party member's silhouette into that of a pig. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>2500</hitTime>
 		<coolTime>500</coolTime>
@@ -350,13 +349,13 @@
 		<trait>CHANGEBODY</trait>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15117" levels="1" name="Massacre Execution">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Chooses 3 party members and kills them on the spot. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
@@ -370,13 +369,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>3-3</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15118" levels="1" name="Induce Mental Illness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stuns all party members for 5 seconds. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
@@ -396,13 +395,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15119" levels="1" name="Whole Body Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fully recovers your HP. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
@@ -411,13 +410,13 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15120" levels="1" name="Death by Execution">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Selects one party member at random and kills him/her on the spot. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
@@ -429,13 +428,13 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>97</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15121" levels="1" name="Rage Explosion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rage explodes at the death of your child. Uses Petra to greatly decrease HP and greatly increases HP Recovery Rate and P. Atk. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>2</effectPoint>
@@ -447,13 +446,13 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15122" levels="1" name="Vernier Calipers Hurl">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Hurls the opponent with a Vernier Calipers in your hands. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -470,13 +469,13 @@
 		<trait>KNOCKDOWN</trait>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15123" levels="1" name="Sword Cleave">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -490,13 +489,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15124" levels="1" name="Axe Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -510,13 +509,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15125" levels="1" name="Tauti Final Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Tauti's final attack skill when he has lost almost all of his power. -->
 		<icon>icon.skill0793</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>83</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>100</hitTime>
@@ -537,13 +536,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15126" levels="1" name="Tauti Final Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Tauti's final attack skill when he has lost almost all of his power. -->
 		<icon>icon.skill0793</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>83</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>100</hitTime>
@@ -564,13 +563,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15127" levels="1" name="Equip Weapon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Continuously receives new weapons from the weapon stand to increase P. Atk. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -584,13 +583,13 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>400</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15128" levels="1" name="Equip Armor">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Continuously receives new armor from the armor stand to increase P. Def. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -604,13 +603,13 @@
 		<abnormalTime>5</abnormalTime>
 		<affectRange>400</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15129" levels="1" name="Full Buff Knight Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Knight Full Buff stage 1. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -621,13 +620,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15130" levels="1" name="Full Buff Knight Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Knight Full Buff stage 2. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -638,13 +637,13 @@
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15131" levels="1" name="Full Buff Knight Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Knight Full Buff stage 3. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -655,13 +654,13 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15132" levels="1" name="Full Buff Knight Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Knight Full Buff stage 4. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -672,13 +671,13 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15133" levels="1" name="Full Buff Warrior Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Warrior Full Buff stage 1. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -689,13 +688,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15134" levels="1" name="Full Buff Warrior Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Warrior Full Buff stage 2. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -706,13 +705,13 @@
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15135" levels="1" name="Full Buff Warrior Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Warrior Full Buff stage 3. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -723,13 +722,13 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15136" levels="1" name="Full Buff Warrior Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Warrior Full Buff stage 4. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -740,13 +739,13 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15137" levels="1" name="Full Buff Wizard Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 1. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -757,13 +756,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15138" levels="1" name="Full Buff Wizard Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 2. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -774,13 +773,13 @@
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15139" levels="1" name="Full Buff Wizard Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 3. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -791,13 +790,13 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15140" levels="1" name="Full Buff Wizard Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 4. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
@@ -808,13 +807,13 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15141" levels="1" name="Super CP Lv. 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 1. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
@@ -825,13 +824,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15142" levels="1" name="Super CP Lv. 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 2. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
@@ -842,13 +841,13 @@
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15143" levels="1" name="Super CP Lv. 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 3. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
@@ -859,13 +858,13 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15144" levels="1" name="Super CP Lv. 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For test. Wizard Full Buff stage 4. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_CONDITION</abnormalType>
@@ -876,6 +875,7 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15145" levels="1" name="Ruler's Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -898,7 +898,6 @@
 		<!-- The machine is overheated. Inflicts continuous damage on the target that harms you. -->
 		<icon>icon.skill1492</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
@@ -914,13 +913,13 @@
 		<trait>BLEED</trait>
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>120000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15148" levels="1" name="Coolant Leak">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The machine is overheated. Inflicts a speed decreasing effect on the target that harms you. -->
 		<icon>icon.skill0102</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
@@ -936,13 +935,13 @@
 		<trait>BLEED</trait>
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>120000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15149" levels="1" name="Self Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers your HP. -->
 		<icon>icon.skill1216</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<coolTime>500</coolTime>
 		<reuseDelay>120000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -957,13 +956,13 @@
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15150" levels="1" name="Self Defense">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The machine is protecting itself. Increases your P. Def. -->
 		<icon>icon.skill1389</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<coolTime>500</coolTime>
 		<reuseDelay>120000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -978,13 +977,13 @@
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15151" levels="1" name="Overheat">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The machine is burning from overheating and HP is wearing away. -->
 		<icon>icon.skill1492</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic>
@@ -1002,13 +1001,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15152" levels="1" name="Coolant Leak">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed is decreased due to the machine's coolant leak. -->
 		<icon>icon.skill0102</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic>
@@ -1026,13 +1025,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<abnormalVisualEffect>SPEED_DOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15153" levels="1" name="Attention to Draco Incubation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You are concentrating on incubating the summoned Draco Egg. Other Draco Eggs cannot be summoned. -->
 		<icon>icon.skill11507</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>SIGNAL_C</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1045,13 +1044,13 @@
 		<abnormalTime>25</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15154" levels="1" name="Attention to Draco Incubation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You are concentrating on incubating the summoned Draco Egg. Other Draco Eggs cannot be summoned. -->
 		<icon>icon.skill11507</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>SIGNAL_C</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1065,13 +1064,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15155" levels="1" name="Petrify">
 		<!-- Glory Days confirmed -->
 		<!-- Petrify status. -->
 		<icon>icon.skill1540</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<abnormalType>TURN_STONE</abnormalType>
@@ -1084,6 +1083,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
@@ -1102,7 +1102,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15157" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1112,7 +1112,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15158" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1122,7 +1122,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15159" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1132,7 +1132,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15160" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1142,7 +1142,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15161" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1152,7 +1152,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15162" levels="1" name="Flower Planting">
 		<!-- AUTO GENERATED SKILL -->
@@ -1162,14 +1162,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15163" levels="1" name="Tauti Typhoon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -1184,13 +1183,13 @@
 		<affectRange>1500</affectRange>
 		<fanRange>0;0;600;0</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15164" levels="1" name="Tauti Typhoon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -1205,13 +1204,13 @@
 		<affectRange>1500</affectRange>
 		<fanRange>0;0;600;0</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15165" levels="1" name="Tauti Shock Wave">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cannot move due to shock. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -1228,13 +1227,13 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<fanRange>0;0;300;300</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15166" levels="1" name="Tauti Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Throws forward toward the target who is holding Tauti to inflict damage and to knock down. -->
 		<icon>icon.skill0100</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>100</hitTime>
 		<coolTime>500</coolTime>
@@ -1253,13 +1252,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15167" levels="1" name="Tauti Leap Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Takes hold of Tauti and throws him up. Uses falling damage to inflict tremendous harm. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2000</castRange>
 		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
@@ -1277,13 +1276,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15168" levels="1" name="Tauti Ultimate Chain Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls in all the PC's who are near Tauti. -->
 		<icon>icon.skill10016</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>123</mpConsume>
 		<hitTime>500</hitTime>
 		<coolTime>1000</coolTime>
@@ -1299,13 +1298,13 @@
 		<trait>PULL</trait>
 		<affectRange>1500</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15169" levels="1" name="Tauti Great Shout">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP is cut down from the roar. HP is decreased by the energy of fire in the roar. -->
 		<icon>icon.skill0102</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<isMagic>1</isMagic>
@@ -1322,13 +1321,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>1500</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15170" levels="1" name="Chaos Shield">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. and M. Def. are increased. -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
@@ -1341,13 +1340,13 @@
 		<abnormalTime>-1</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15171" levels="1" name="Tauti Boomerang">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Skill where Tauti throws crossways and receives back again. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
@@ -1357,13 +1356,13 @@
 		<affectLimit>10-10</affectLimit>
 		<fanRange>0;0;200;200</fanRange>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15172" levels="1" name="Tauti Air Binding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bound in the air from Tauti's gaze. Cannot be removed with a de-buff removing skill. -->
 		<icon>icon.skill11276</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>AIRBIND</abnormalType>
@@ -1382,13 +1381,13 @@
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15173" levels="1" name="Tauti Air Binding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bound in the air from Tauti's gaze. Cannot be removed with a de-buff removing skill. -->
 		<icon>icon.skill11276</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>AIRBIND</abnormalType>
@@ -1407,12 +1406,12 @@
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15174" levels="1" name="Petra Injection - Enhance HP Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1434</icon>
 		<operateType>CA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<hitTime>15000</hitTime>
 		<effectPoint>2</effectPoint>
@@ -1428,13 +1427,13 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15175" levels="1" name="Petra Injection - Enhance HP Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Zahak has used its Petra to increase Tauti's HP Recovery. -->
 		<icon>icon.skill1434</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<effectPoint>2</effectPoint>
 		<abnormalType>HP_REGEN_UP</abnormalType>
@@ -1447,12 +1446,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15176" levels="1" name="Petra Injection - Enhance P. Def.">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1434</icon>
 		<operateType>CA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<hitTime>15000</hitTime>
 		<effectPoint>2</effectPoint>
@@ -1468,13 +1467,13 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15177" levels="1" name="Petra Injection - Enhance P. Def.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Zahak has used its Petra to increase Tauti's P. Def. -->
 		<icon>icon.skill1434</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<effectPoint>2</effectPoint>
 		<abnormalType>PD_UP</abnormalType>
@@ -1487,12 +1486,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15178" levels="1" name="Petra Injection - Enhance M. Def.">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1434</icon>
 		<operateType>CA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<hitTime>15000</hitTime>
 		<effectPoint>2</effectPoint>
@@ -1508,13 +1507,13 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15179" levels="1" name="Petra Injection - Enhance M. Def.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Zahak has used its Petra to increase Tauti's M. Def. -->
 		<icon>icon.skill1434</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<effectPoint>2</effectPoint>
 		<abnormalType>MD_UP</abnormalType>
@@ -1527,12 +1526,12 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15180" levels="1" name="Petra Injection - Enhance P. Atk.">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1434</icon>
 		<operateType>CA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<hitTime>15000</hitTime>
 		<effectPoint>2</effectPoint>
@@ -1548,13 +1547,13 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15181" levels="1" name="Petra Injection - Enhance P. Atk.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Zahak has used its Petra to increase Tauti's P. Atk. -->
 		<icon>icon.skill1434</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2500</castRange>
 		<effectPoint>2</effectPoint>
 		<abnormalType>PA_PD_UP</abnormalType>
@@ -1567,13 +1566,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>4</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15182" levels="1" name="Adolph's Superior Aggression Aura">
 		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -1586,6 +1585,7 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1596,7 +1596,6 @@
 		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -1609,6 +1608,7 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1619,7 +1619,6 @@
 		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -1632,6 +1631,7 @@
 		<affectLimit>10-10</affectLimit>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1642,7 +1642,6 @@
 		<!-- Attacks targets at the front and inflicts Stun for 9 second(s). -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
@@ -1663,6 +1662,7 @@
 		<isDebuff>true</isDebuff>
 		<affectRange>150</affectRange>
 		<fanRange>0;0;150;180</fanRange>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9516</power>
@@ -1677,7 +1677,6 @@
 		<!-- Attacks targets at the front and inflicts Stun for 9 second(s). -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
@@ -1698,6 +1697,7 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11162</power>
@@ -1712,7 +1712,6 @@
 		<!-- Attacks targets at the front and inflicts Stun for 9 second(s). -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
@@ -1733,6 +1732,7 @@
 		<fanRange>0;0;150;180</fanRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>12809</power>
@@ -1747,7 +1747,6 @@
 		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 23391 power added to P. Atk. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>350</coolTime>
@@ -1760,6 +1759,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>23391</power>
@@ -1771,7 +1771,6 @@
 		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 27459 power added to P. Atk. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>350</coolTime>
@@ -1784,6 +1783,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>27459</power>
@@ -1795,7 +1795,6 @@
 		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 31527 power added to P. Atk. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>350</coolTime>
@@ -1808,6 +1807,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;90</fanRange>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>31527</power>
@@ -1819,7 +1819,6 @@
 		<!-- Rains down arrows like rain on the target and its surrounding area with 22526 power added to P. Atk. -->
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>350</coolTime>
@@ -1831,6 +1830,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>22526</power>
@@ -1842,7 +1842,6 @@
 		<!-- Rains down arrows like rain on the target and its surrounding area with 26448 power added to P. Atk. -->
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>350</coolTime>
@@ -1854,6 +1853,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>26448</power>
@@ -1865,7 +1865,6 @@
 		<!-- Rains down arrows like rain on the target and its surrounding area with 30371 power added to P. Atk. -->
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>350</coolTime>
@@ -1877,6 +1876,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>30371</power>
@@ -1888,7 +1888,6 @@
 		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases 282 HP per second. -->
 		<icon>icon.skill11296</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<trait>DEPORT</trait>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
@@ -1910,6 +1909,7 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>282</power>
@@ -1926,7 +1926,6 @@
 		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases 296 HP per second. -->
 		<icon>icon.skill11296</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<trait>DEPORT</trait>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
@@ -1948,6 +1947,7 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>296</power>
@@ -1964,7 +1964,6 @@
 		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases 313 HP per second. -->
 		<icon>icon.skill11296</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<trait>DEPORT</trait>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
@@ -1986,6 +1985,7 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>313</power>
@@ -2002,7 +2002,6 @@
 		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-183</effectPoint>
@@ -2012,13 +2011,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15198" levels="1" name="Guardian Spirit's Wrath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-183</effectPoint>
@@ -2028,13 +2027,13 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15199" levels="1" name="Guardian Spirit's Wrath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-183</effectPoint>
@@ -2044,5 +2043,6 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>20000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 </list>

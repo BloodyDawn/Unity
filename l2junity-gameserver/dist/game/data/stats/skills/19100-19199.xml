@@ -13,7 +13,6 @@
 		<!-- Inflicts damage with 33717 Power added to P. Atk. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. Additional damage occurs with Bleed. -->
 		<icon>icon.skill19101</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1130</hitTime>
 		<coolTime>700</coolTime>
@@ -23,13 +22,13 @@
 		<effectRange>400</effectRange>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="19102" levels="1" name="Chaos Sympathy">
 		<!-- Glory Days confirmed -->
 		<!-- Temporarily makes a participant in the Ceremony of Chaos invincible. -->
 		<icon>icon.skill1505</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1200</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -42,6 +41,7 @@
 		<coolTime>300</coolTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="ResistDispelByCategory">

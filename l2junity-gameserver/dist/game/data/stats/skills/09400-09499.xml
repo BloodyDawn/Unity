@@ -6,7 +6,6 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -14,6 +13,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -33,7 +33,6 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -41,6 +40,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -60,7 +60,6 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -68,6 +67,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -83,7 +83,6 @@
 		<!-- For 2 hr., Vitality replenished if XP is gained through hunting. Buff remains even after death. -->
 		<icon>icon.etc_hot_spring_nectar_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>3600000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<abnormalType>VP_UP</abnormalType>
@@ -98,6 +97,7 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9404" levels="1" name="Wondrous Herb of Power">
 		<!-- For 1 min. 30 sec., P. Atk. + 100%. -->
@@ -116,7 +116,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>100</amount>
@@ -141,7 +141,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MAtk">
 				<amount>400</amount>
@@ -155,7 +155,6 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -163,6 +162,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -229,72 +229,71 @@
 		<!-- Releases Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9408" levels="1" name="Release Agathion's Seal - Jang Hyuk">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Releases Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9409" levels="1" name="Release Agathion's Seal - Kim Sooro">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Releases Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9410" levels="1" name="Release Agathion's Seal - Park Jaebum">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Releases Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9411" levels="1" name="Release Agathion's Seal - Kim Shinyoung">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Releases Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9412" levels="1" name="Agathion Cute Trick - Jang Heejin">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -302,13 +301,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9413" levels="1" name="Agathion Cute Trick - Jang Hyuk">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -316,13 +315,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<hitTime>3800</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9414" levels="1" name="Agathion Cute Trick - Kim Sooro">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -330,13 +329,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<hitTime>3400</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9415" levels="1" name="Agathion Cute Trick - Park Jaebum">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -344,13 +343,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<hitTime>6200</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9416" levels="1" name="Agathion Cute Trick - Kim Shinyoung">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -358,6 +357,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<hitTime>3700</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9417" levels="1" name="Dimension Keeper's Blue Box">
 		<!-- AUTO GENERATED SKILL -->
@@ -368,7 +368,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -421,7 +421,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -480,7 +480,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -545,7 +545,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -598,7 +598,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -669,7 +669,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -748,7 +748,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -773,7 +773,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -798,7 +798,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -835,7 +835,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -872,7 +872,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -909,7 +909,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -946,7 +946,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -983,7 +983,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1020,7 +1020,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1057,7 +1057,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1094,7 +1094,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1131,7 +1131,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1168,7 +1168,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1205,7 +1205,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1242,7 +1242,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1291,7 +1291,6 @@
 		<!-- For 1 hr., Atk. Spd. + 10%, Casting Spd. + 10%, Max HP/MP + 10%, and Speed + 10. -->
 		<icon>icon.shield_bread_i02</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1800000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
@@ -1306,13 +1305,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>CHANGE_GRADE_B</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9439" levels="1" name="Scroll: 10,000 Individual Fame">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores 10,000 Individual Fame. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1320,13 +1319,13 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9440" levels="1" name="Scroll: 50,000 Individual Fame">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores 50,000 Individual Fame. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1334,13 +1333,13 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9441" levels="1" name="Scroll: 100,000 Individual Fame">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores 100,000 Individual Fame. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1348,12 +1347,12 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9442" levels="1" name="Trowel">
 		<!-- Gathers the Flame Flower. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1364,6 +1363,7 @@
 		<effectRange>400</effectRange>
 		<isMagic>2</isMagic>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<cond>
 			<target npcId="33735" />
 		</cond>
@@ -1402,7 +1402,6 @@
 		<!-- Summons the Helping Tree. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<effectPoint>1</effectPoint>
 		<itemConsumeId>34961</itemConsumeId>
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1413,6 +1412,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<castRange>230</castRange>
+		<targetType>TARGET</targetType>
 		<cond>
 			<target npcId="19293" />
 		</cond>
@@ -1432,7 +1432,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>33696</npcId>
@@ -1443,7 +1443,6 @@
 	</skill>
 	<skill id="9446" levels="1" name="Scroll of Escape: Hot Springs">
 		<icon>icon.skill0000</icon>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -1455,6 +1454,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1473,7 +1473,6 @@
 	</skill>
 	<skill id="9447" levels="1" name="Scroll of Escape: Forge of the Gods">
 		<icon>icon.skill0000</icon>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -1485,6 +1484,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1503,7 +1503,6 @@
 	</skill>
 	<skill id="9448" levels="1" name="Scroll of Escape: Isle of Prayer">
 		<icon>icon.skill0000</icon>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -1515,6 +1514,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1533,7 +1533,6 @@
 	</skill>
 	<skill id="9449" levels="1" name="Scroll of Escape: Aden Battlefield">
 		<icon>icon.skill0000</icon>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -1545,6 +1544,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1563,7 +1563,6 @@
 	</skill>
 	<skill id="9450" levels="1" name="Scroll of Escape: Rune Battlefield">
 		<icon>icon.skill0000</icon>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -1575,6 +1574,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1596,7 +1596,6 @@
 		<!-- Stuns and removes the targeting of nearby enemies and teleport forward. Cooldown is 24 sec. Consumes 10 Gemstones (B-grade). -->
 		<icon>icon.wizard_danger_warppow</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>24000</reuseDelay>
 		<effectPoint>-687</effectPoint>
@@ -1614,13 +1613,13 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9452" levels="1" name="Item Skill: Dash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., Speed + 30, P. Evasion + 7, and HP Recovery Bonus + 7. Consumes 10 Gemstones (B-grade). -->
 		<icon>icon.rogue_shadow_dash</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>692</effectPoint>
 		<abnormalType>SUPER_MOVE</abnormalType>
@@ -1633,13 +1632,13 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>90000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9453" levels="1" name="Item Skill: Undying Will">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincible for 5 sec. Can only be used when HP is 20% or below. Consumes 20 Gemstones (B-grade). -->
 		<icon>icon.race_orc_immortality</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<abnormalType>RACE_ORC2</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1653,13 +1652,13 @@
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<reuseDelay>480000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9454" levels="1" name="Item Skill: Silence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., cannot use P. Atk./M. Atk. Consumes 30 Gemstones (B-grade). -->
 		<icon>icon.song_of_silence</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>240000</reuseDelay>
@@ -1678,13 +1677,13 @@
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="9455" levels="1" name="Item Skill: Disable Target">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., enemy cannot target you. Consumes 10 Gemstones (B-grade). -->
 		<icon>icon.notargetting</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>800</hitTime>
 		<abnormalType>MA_DOWN</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1698,13 +1697,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<reuseDelay>480000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9456" levels="3" name="Item Skill: Damage Reflect Resistance">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., Damage Reflect Resistance + 10%. -->
 		<icon>icon.active_damage_shield1</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>4000</hitTime>
 		<reuseDelay>4000</reuseDelay>
 		<effectPoint>
@@ -1729,13 +1728,13 @@
 		<abnormalTime>300</abnormalTime>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9459" levels="1" name="Tauti's Wrath">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Tauti's Wrath. Inflicts 27557 damage and Knocks Down nearby enemies. -->
 		<icon>icon.weapon_tauti_one_hand_axe_i01</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>191</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>300</coolTime>
@@ -1756,13 +1755,13 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9460" levels="1" name="Tauti's Authority">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Tauti's Authority. Inflicts 371 damage and Knocks Down nearby enemies. -->
 		<icon>icon.skill1181</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>279</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>300</coolTime>
@@ -1784,17 +1783,18 @@
 		<staticReuse>true</staticReuse>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9461" levels="1" name="Scroll of Escape: Guillotine Fortress">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>20000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9464" levels="1" name="Treasure Chest of the King of Aden">
 		<!-- AUTO GENERATED SKILL -->
@@ -1807,7 +1807,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1844,7 +1844,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2259,7 +2259,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2291,13 +2291,13 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2318,7 +2318,6 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2326,12 +2325,12 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9469" levels="1" name="Large Draco Egg">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2339,6 +2338,7 @@
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9470" levels="1" name="Draco's Gift">
 		<!-- AUTO GENERATED SKILL -->
@@ -2351,7 +2351,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2418,7 +2418,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2491,13 +2491,13 @@
 		<!-- Releases Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9473" levels="1" name="Deadman's Chest">
 		<!-- AUTO GENERATED SKILL -->
@@ -2510,7 +2510,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2910,7 +2910,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -3124,7 +3124,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -3191,7 +3191,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -3591,7 +3591,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -3985,7 +3985,6 @@
 		<!-- Blocks chat for a certain time. -->
 		<icon>icon.shutup</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -4005,6 +4004,7 @@
 		<abnormalTime>60</abnormalTime>
 		<trait>PARALYZE</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="9479" levels="1" name="Extra Pass">
 		<!-- AUTO GENERATED SKILL -->
@@ -4015,7 +4015,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9480" levels="1" name="Extra Pass">
 		<!-- AUTO GENERATED SKILL -->
@@ -4026,7 +4026,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9481" levels="1" name="Extra Pass">
 		<!-- AUTO GENERATED SKILL -->
@@ -4037,7 +4037,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9482" levels="1" name="Extra Pass">
 		<!-- AUTO GENERATED SKILL -->
@@ -4048,7 +4048,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9483" levels="1" name="Extra Pass">
 		<!-- AUTO GENERATED SKILL -->
@@ -4059,7 +4059,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9484" levels="1" name="Extra Pass">
 		<!-- AUTO GENERATED SKILL -->
@@ -4070,7 +4070,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9485" levels="1" name="Contaminated Draco Egg - Item Obtained">
 		<!-- AUTO GENERATED SKILL -->
@@ -4083,7 +4083,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -4113,7 +4113,6 @@
 		<!-- For 60 min., P. Atk. + 5%, M. Atk. + 20%, P. Def./M. Def. + 5%, Atk. Spd./Casting Spd. + 5%, Max HP/MP + 5%, and XP/SP gained through hunting + 30%. -->
 		<icon>icon.skilltransform4</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1800000</reuseDelay>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
@@ -4125,13 +4124,13 @@
 		<abnormalTime>3600</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9488" levels="1" name="Holiday Blessing Stage 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Holiday Blessing. For 10 min., P. Atk. + 1%, M. Atk. + 2%, and Vitality is replenished when XP is gained through hunting. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
@@ -4148,13 +4147,13 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="9489" levels="1" name="Holiday Blessing Stage 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Holiday Blessing. For 10 min., P. Atk. + 2%, M. Atk. + 4%, and Vitality is replenished when XP is gained through hunting. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
@@ -4171,13 +4170,13 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="9490" levels="1" name="Holiday Blessing Stage 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Holiday Blessing. For 10 min., P. Atk. + 3%, M. Atk. + 6%, and Vitality is replenished when XP is gained through hunting. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
@@ -4194,13 +4193,13 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="9491" levels="1" name="Holiday Blessing Stage 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Holiday Blessing. For 10 min., P. Atk. + 4%, M. Atk. + 8%, and Vitality is replenished when XP is gained through hunting. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
@@ -4217,13 +4216,13 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="9492" levels="1" name="Holiday Blessing Stage 5">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Holiday Blessing. For 10 min., P. Atk. + 5%, M. Atk. + 10%, and Vitality is replenished when XP is gained through hunting. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
@@ -4240,13 +4239,13 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="9493" levels="1" name="Lingering Holiday Blessing Stage 1">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Feeling the lingering glow of the Holiday Blessing. Seems you need 3 hr. to receive the Holiday Blessing Stage 1 again. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -4260,13 +4259,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9494" levels="1" name="Lingering Holiday Blessing Stage 2">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Feeling the lingering glow of the Holiday Blessing. Seems you need 3 hr. to receive the Holiday Blessing Stage 2 again. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -4280,13 +4279,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9495" levels="1" name="Lingering Holiday Blessing Stage 3">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Feeling the lingering glow of the Holiday Blessing. Seems you need 3 hr. to receive the Holiday Blessing Stage 3 again. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -4300,13 +4299,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9496" levels="1" name="Lingering Holiday Blessing Stage 4">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Feeling the lingering glow of the Holiday Blessing. Seems you need 3 hr. to receive the Holiday Blessing Stage 4 again. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -4320,13 +4319,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9497" levels="1" name="Lingering Holiday Blessing Stage 5">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Feeling the lingering glow of the Holiday Blessing. Seems you need 3 hr. to receive the Holiday Blessing Stage 5 again. -->
 		<icon>BranchSys.icon.br_xmas_reward_buff_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INSTANT_EV_BUFF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -4340,6 +4339,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="9498" levels="1" name="Santa Girl's Cloak">
 		<!-- AUTO GENERATED SKILL -->
@@ -4358,7 +4358,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>

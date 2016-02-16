@@ -14,7 +14,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>NONE</targetType>
 		<effects>
 			<effect name="PveMagicalSkillDamageBonus">
 				<amount>
@@ -63,7 +63,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<icon>icon.skill1543</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<reuseDelayGroup>11509</reuseDelayGroup>
@@ -74,6 +73,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>30</amount>
@@ -86,7 +86,6 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -98,6 +97,7 @@
 		<effectRange>200</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
 		</cond>
@@ -112,7 +112,6 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<icon>icon.skill10317</icon>
 		<operateType>DA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-687</effectPoint>
@@ -123,6 +122,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
 		</cond>
@@ -235,7 +235,6 @@
 			<value level="11">105</value>
 		</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<icon>icon.skill11752</icon>
 		<hitTime>500</hitTime>
 		<effectPoint>
@@ -257,6 +256,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -308,7 +308,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<icon>icon.skill11752</icon>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -317,6 +316,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -381,7 +381,7 @@
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
 		<staticReuse>true</staticReuse>
-		<targetType2>PARTY_MEMBER</targetType2>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- On retail activated every ~2 attacks with ~2sec cooldown -->
@@ -418,7 +418,6 @@
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -481,6 +480,7 @@
 			<value level="10">33</value>
 			<value level="11">34</value>
 		</mpInitialConsume>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -505,7 +505,6 @@
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<icon>icon.skill11756</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -566,6 +565,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -590,7 +590,6 @@
 		<table name="#power"> 1191 1200 1210 1220 1230 1240 1250 1261 1406 1418 1430 </table>
 		<icon>icon.skill11757</icon>
 		<operateType>A1</operateType>
-		<targetType2>PARTY</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -638,6 +637,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -666,7 +666,6 @@
 		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
@@ -680,6 +679,7 @@
 		<magicLvl>85</magicLvl>
 		<affectRange>1000</affectRange>
 		<staticReuse>true</staticReuse>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -702,7 +702,6 @@
 		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>36</mpConsume>
 		<hitTime>500</hitTime>
 		<reuseDelay>120000</reuseDelay>
@@ -714,6 +713,7 @@
 		<magicLvl>87</magicLvl>
 		<affectRange>1000</affectRange>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -797,7 +797,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
-		<targetType2>ONE</targetType2>
+		<targetType>TARGET</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<not>
@@ -901,7 +901,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
-		<targetType2>PARTY</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
@@ -950,7 +950,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLvl>4</abnormalLvl>
-		<targetType2>PARTY</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RebalanceHP" />
 			<effect name="HealOverTime">
@@ -976,7 +976,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>ONE_FRIENDLY</targetType2>
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1007,7 +1007,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>PARTY</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1069,7 +1069,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
@@ -1120,7 +1120,6 @@
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1159,6 +1158,7 @@
 			<skill id="11999" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1200,7 +1200,6 @@
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1234,6 +1233,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1261,7 +1261,6 @@
 		<icon>icon.skill11768</icon>
 		<affectRange>1000</affectRange>
 		<operateType>A1</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>53</mpConsume>
 		<mpInitialConsume>13</mpInitialConsume>
 		<magicLvl>93</magicLvl>
@@ -1273,6 +1272,7 @@
 		<effectPoint>1811</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="ManaHealPercent">
 				<power>100</power>
@@ -1303,7 +1303,6 @@
 		<abnormalType>MP_COST_UP</abnormalType>
 		<icon>icon.skill11769</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1357,6 +1356,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -1443,7 +1443,6 @@
 		<icon>icon.skill11770</icon>
 		<affectRange>500</affectRange>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>8</mpConsume>
 		<mpInitialConsume>2</mpInitialConsume>
@@ -1453,6 +1452,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DeleteHate">
 				<chance>100</chance>
@@ -1470,7 +1470,6 @@
 		<!-- Finally! Causes Lakcis, the giant of light, to materialize. Protects allies near the giant and attacks the enemies. Continuously decreases HP. -->
 		<icon>icon.skill1349</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpInitialConsume>94</mpInitialConsume>
 		<mpConsume>376</mpConsume>
 		<hitTime>5000</hitTime>
@@ -1482,6 +1481,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13300</npcId>
@@ -1534,7 +1534,7 @@
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1623,7 +1623,6 @@
 		<table name="#npcIds"> 14933 14943 15010 15011 </table>
 		<icon>icon.skill11774</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -1657,6 +1656,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Summon">
 				<npcId>
@@ -1674,7 +1674,6 @@
 		<!-- Moves to the summoned entity. Cannot be used beyond 1000 range. -->
 		<icon>icon.skill11775</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>60000</reuseDelay>
@@ -1682,6 +1681,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>91</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1703,7 +1703,6 @@
 		<table name="#npcIds"> 14925 14944 14945 14946 </table>
 		<icon>icon.skill11776</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -1729,6 +1728,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Summon">
 				<npcId>
@@ -1754,7 +1754,6 @@
 		<lvlBonusRate>20</lvlBonusRate>
 		<icon>icon.skill11777</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">88</value>
@@ -1805,6 +1804,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1858,7 +1858,6 @@
 		<activateRate>100</activateRate> <!-- Custom -->
 		<basicProperty>MAGIC</basicProperty>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">26</value>
 			<value level="2">26</value>
@@ -1903,6 +1902,7 @@
 			<value level="9">105</value>
 		</magicLvl>
 		<trait>SLEEP</trait>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
@@ -1928,7 +1928,6 @@
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<activateRate>100</activateRate>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<trait>SLEEP</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1946,6 +1945,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -2000,7 +2000,6 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<icon>icon.skill11780</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -2055,6 +2054,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2076,7 +2076,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill1367</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<castRange>0</castRange>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2093,6 +2092,7 @@
 		</magicLvl>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>666</power>
@@ -2112,7 +2112,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
+		<targetType>NONE</targetType>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>30</amount>
@@ -2138,7 +2138,6 @@
 		<!-- Restarts target's debuff timers. -->
 		<icon>icon.skill11783</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<magicLvl>95</magicLvl>
 		<hitTime>6000</hitTime>
@@ -2148,6 +2147,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY_ONLY</targetType>
 		<effects>
 			<!-- effect name="ResetDebuff" / -->
 		</effects>
@@ -2181,9 +2181,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effectPoint>2</effectPoint>
 		<effectRange>900</effectRange>
-		<targetType2>PC_BODY</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
+		<targetType>PC_BODY</targetType>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -2213,11 +2213,6 @@
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>2</effectPoint>
 		<operateType>A1</operateType>
-		<targetType2>
-			<value level="1">CORPSE_PARTY</value>
-			<value level="2">CORPSE_PARTY</value>
-			<value level="3">CORPSE_PARTY_CLAN</value>
-		</targetType2>
 		<magicLvl>
 			<value level="1">89</value>
 			<value level="2">93</value>
@@ -2240,6 +2235,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -2262,7 +2258,6 @@
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>1</effectPoint>
 		<magicLvl>97</magicLvl>
@@ -2270,6 +2265,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DebuffBlock" />
 		</effects>
@@ -2722,7 +2718,6 @@
 		</mpConsume>
 		<magicLvl>87</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -2730,6 +2725,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -2767,7 +2763,6 @@
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -2775,6 +2770,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>87</magicLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2807,7 +2803,6 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
@@ -2817,6 +2812,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -2851,7 +2847,6 @@
 		<abnormalTime>10</abnormalTime>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -2861,6 +2856,7 @@
 		<magicLvl>89</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2893,7 +2889,6 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
@@ -2903,6 +2898,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -2937,7 +2933,6 @@
 		<abnormalTime>10</abnormalTime>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -2947,6 +2942,7 @@
 		<magicLvl>91</magicLvl>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2979,7 +2975,6 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<operateType>A4</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>LIFE_FORCE_HEALER</abnormalType>
@@ -2989,6 +2984,7 @@
 		<effectRange>1100</effectRange>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>

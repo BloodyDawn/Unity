@@ -5,7 +5,6 @@
 		<!-- P. Def. greatly increases temporarily due to the power of darkness. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -19,13 +18,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>30000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15401" levels="1" name="Burning Blood">
 		<!-- Glory Days confirmed -->
 		<!-- Restored to full health from death. Buffs/ Debuffs remain even after death, but the Noblesse Blessing and Raid Blessing disappear. (Effect only applied at Kartia's Labyrinth - Tainted Dimension Attacker.) -->
 		<icon>icon.skill5873</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -41,6 +40,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>22</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>
@@ -53,7 +53,6 @@
 		<!-- P. Atk. And M. Atk. increases temporarily. -->
 		<icon>icon.skill11046</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -66,13 +65,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15403" levels="1" name="Favor Exchange">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 sec., Speed + 30%. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
@@ -87,6 +86,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>2</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15404" levels="1" name="Unable to Target">
 		<!-- AUTO GENERATED SKILL -->
@@ -102,79 +102,78 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15405" levels="1" name="Master's Blessing (Awakening)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses the Master's Blessing buff. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15406" levels="1" name="Warrior's Harmony Zone">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a zone that provides the Harmony skill. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15407" levels="1" name="Knight's Harmony Zone">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a zone that provides the Harmony skill. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15408" levels="1" name="Wizard's Harmony Zone">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a zone that provides the Harmony skill. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15409" levels="1" name="Summon Buff Servant">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons the Buff Servant. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15410" levels="1" name="Full Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls in PCs within range and inflicts damage. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
@@ -196,13 +195,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>800</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15411" levels="1" name="Soul Break">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack on a target. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -220,18 +219,19 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15412" levels="1" name="Presentation - Toad Cannon Explosion">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15413" levels="1" name="Raid Boss (Lv. 96)">
 		<!-- AUTO GENERATED SKILL -->
@@ -254,7 +254,6 @@
 		<!-- Changed to the appearance of a No-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -270,13 +269,13 @@
 		<abnormalTime>10800</abnormalTime>
 		<abnormalVisualEffect>NGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15416" levels="1" name="Appearance Modification (D-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a D-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -292,13 +291,13 @@
 		<abnormalTime>10800</abnormalTime>
 		<abnormalVisualEffect>DGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15417" levels="1" name="Appearance Modification (C-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a C-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -314,13 +313,13 @@
 		<abnormalTime>10800</abnormalTime>
 		<abnormalVisualEffect>CGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15418" levels="1" name="Appearance Modification (B-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a B-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -336,13 +335,13 @@
 		<abnormalTime>10800</abnormalTime>
 		<abnormalVisualEffect>BGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15419" levels="1" name="Appearance Modification (A-grade)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of an A-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -358,6 +357,7 @@
 		<abnormalTime>10800</abnormalTime>
 		<abnormalVisualEffect>AGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15420" levels="1" name="Before Lind Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -433,7 +433,6 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>42</mpConsume>
 		<castRange>1200</castRange>
 		<hitTime>1900</hitTime>
@@ -443,12 +442,12 @@
 		<effectRange>1700</effectRange>
 		<magicLvl>97</magicLvl>
 		<reuseDelay>7000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15432" levels="1" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>80</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
@@ -459,13 +458,13 @@
 		<effectRange>200</effectRange>
 		<magicLvl>97</magicLvl>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15433" levels="1" name="Surrender to Dark">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Dark Attack Resistance decreased, and Holy Attack Resistance increases momentarily. -->
 		<icon>icon.skill4336_new</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>65</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -484,12 +483,12 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15434" levels="1" name="Drain Energy">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>73</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -502,12 +501,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15435" levels="1" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>20</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
@@ -518,12 +517,12 @@
 		<effectRange>200</effectRange>
 		<magicLvl>97</magicLvl>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15436" levels="1" name="Wide Sweep">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>119</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -534,12 +533,12 @@
 		<magicLvl>97</magicLvl>
 		<fanRange>0;0;1000;180</fanRange>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15437" levels="1" name="Sonic Blaster">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>80</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1900</hitTime>
@@ -549,13 +548,13 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>97</magicLvl>
 		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15438" levels="1" name="Hold">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Afflicted with Hold and unable to move temporarily. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>73</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2500</hitTime>
@@ -575,12 +574,12 @@
 		<trait>HOLD</trait>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15439" levels="1" name="Drain Energy">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>109</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -593,12 +592,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15440" levels="1" name="Aura Burn">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>1500</hitTime>
@@ -609,12 +608,12 @@
 		<effectRange>650</effectRange>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15441" levels="1" name="Death Bomb">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-100</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -622,13 +621,13 @@
 		<magicLvl>97</magicLvl>
 		<affectRange>150</affectRange>
 		<mpConsume>119</mpConsume>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15442" levels="1" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>80</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
@@ -649,12 +648,12 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15443" levels="1" name="Drain Energy">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>102</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2500</hitTime>
@@ -668,13 +667,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15444" levels="1" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>120</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>2000</hitTime>
@@ -695,12 +694,12 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15445" levels="1" name="Super Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>247</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -710,12 +709,12 @@
 		<effectRange>200</effectRange>
 		<magicLvl>97</magicLvl>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15446" levels="1" name="Drain Energy">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>282</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>2500</hitTime>
@@ -729,13 +728,13 @@
 		<attributeValue>20</attributeValue>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15447" levels="1" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>83</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
@@ -756,12 +755,12 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15448" levels="1" name="Aura Burn">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>3</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>1500</hitTime>
@@ -772,12 +771,12 @@
 		<effectRange>650</effectRange>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15449" levels="1" name="Wind Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>7</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>3000</hitTime>
@@ -790,13 +789,13 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15450" levels="1" name="Weakness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. decreases momentarily. -->
 		<icon>icon.skill4037</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>20</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
@@ -814,13 +813,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15451" levels="1" name="Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>112</mpConsume>
 		<hitTime>3300</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -836,13 +835,13 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15452" levels="1" name="Decrease P. Atk.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. decreases momentarily. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>112</mpConsume>
 		<hitTime>3300</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -856,12 +855,12 @@
 		<abnormalTime>30</abnormalTime>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15453" levels="1" name="Vampiric Touch">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>135</mpConsume>
 		<castRange>750</castRange>
 		<effectPoint>-100</effectPoint>
@@ -872,13 +871,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>2500</hitTime>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15454" levels="1" name="Memorable Raid Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 2 hr., P. Atk. + 5%, M. Atk. + 20%, P. Def. + 5%, M. Def. + 5%, Atk. Spd. + 5%, Casting Spd. + 5%, Max HP/ MP + 5%, and XP/ SP gained through hunting + 30%. -->
 		<icon>icon.skilltransform4</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<reuseDelay>1800000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -895,6 +894,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15455" levels="1" name="Sensitive Skin">
 		<!-- AUTO GENERATED SKILL -->
@@ -909,7 +909,6 @@
 		<!-- Triol's Voice. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -919,13 +918,13 @@
 		<magicLvl>99</magicLvl>
 		<affectRange>800</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15457" levels="2" name="Triol's Reign">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Blood is drained by Triol, one of the 4 Demons of Hell. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>-100</effectPoint>
 		<abnormalType>BLEEDING</abnormalType>
 		<basicProperty>PHYSICAL</basicProperty>
@@ -941,13 +940,13 @@
 		<trait>BLEED</trait>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15458" levels="1" name="Memorable Raid Shield">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Defensive shield cast by the Memorable Raid boss unto itself. For 10 min., it only receives a certain amount of damage. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -959,12 +958,12 @@
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15459" levels="1" name="Blaze">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>73</mpConsume>
 		<castRange>1000</castRange>
 		<hitTime>2000</hitTime>
@@ -977,13 +976,13 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15460" levels="1" name="Poison">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from poison momentarily. -->
 		<icon>icon.skill4036</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>109</mpConsume>
 		<isMagic>1</isMagic>
 		<effectPoint>-100</effectPoint>
@@ -1001,12 +1000,12 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15461" levels="1" name="Drain Energy">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>52</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
@@ -1019,12 +1018,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15462" levels="1" name="Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>127</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -1035,12 +1034,12 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>97</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15463" levels="1" name="Prominence">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>37</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
@@ -1053,12 +1052,12 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15464" levels="1" name="Death Link">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>37</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
@@ -1071,12 +1070,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15465" levels="15" name="Vitality Reward 1 (Quest)">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1117,6 +1116,7 @@
 			<value level="14">900</value>
 			<value level="15">-1</value>
 		</castRange>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15466" levels="1" name="Triol's CON Increase">
 		<!-- AUTO GENERATED SKILL -->
@@ -1152,7 +1152,6 @@
 		<!-- For 60 min., HP Recovery Bonus + 20%. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>HP_REGEN_UP</abnormalType>
@@ -1164,6 +1163,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15470" levels="1" name="Cancel HP Regeneration">
 		<!-- AUTO GENERATED SKILL -->
@@ -1174,14 +1174,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15471" levels="1" name="Appearance Modification (No-grade) (Raid)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a No-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -1197,13 +1196,13 @@
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>NGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15472" levels="1" name="Appearance Modification (D-grade) (Raid)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a D-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -1219,13 +1218,13 @@
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>DGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15473" levels="1" name="Appearance Modification (C-grade) (Raid)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a C-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -1241,13 +1240,13 @@
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>CGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15474" levels="1" name="Appearance Modification (B-grade) (Raid)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of a B-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -1263,13 +1262,13 @@
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>BGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15475" levels="1" name="Appearance Modification (A-grade) (Raid)">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changed to the appearance of an A-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<reuseDelay>2000</reuseDelay>
@@ -1285,13 +1284,13 @@
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>AGRADE_CHANGE</abnormalVisualEffect>
 		<isMagic>4</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15476" levels="1" name="Spore Spray">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP and Speed decreased due to spores. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic>
@@ -1307,13 +1306,13 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15477" levels="1" name="Corrosive Acid Spray">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. and M. Def. decreased. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-190</effectPoint>
@@ -1327,13 +1326,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15478" levels="1" name="Spread Disease">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from disease momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic>
@@ -1350,13 +1349,13 @@
 		<trait>POISON</trait>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15479" levels="1" name="Vomit Mucus">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Accuracy decreased due to mucus. -->
 		<icon>icon.skill1222</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-331</effectPoint>
@@ -1370,13 +1369,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15480" levels="1" name="Shoot Poison">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreased due to poison. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic>
@@ -1393,13 +1392,13 @@
 		<trait>POISON</trait>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15481" levels="1" name="Shoot Spider Web">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The web decreases Speed by 10%. -->
 		<icon>icon.skill0102</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic>
@@ -1414,6 +1413,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15482" levels="1" name="Presentation - Lind">
 		<!-- AUTO GENERATED SKILL -->

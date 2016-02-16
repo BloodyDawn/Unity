@@ -71,13 +71,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<reuseDelay>600000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9</dispel>
@@ -138,13 +138,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<reuseDelay>600000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>50</amount>
@@ -255,13 +255,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<reuseDelay>600000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DebuffBlock" />
 			<effect name="DispelByCategory">
@@ -301,13 +301,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<basicProperty>NONE</basicProperty>
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -409,13 +409,13 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<reuseDelay>300000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
@@ -462,13 +462,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<basicProperty>NONE</basicProperty>
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE</rideState>
 		<hitCancelTime>0.2</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>92</power>
@@ -507,7 +507,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>-2</effectPoint>
@@ -521,6 +520,7 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="KnockBack">
 				<distance>50</distance>
@@ -595,7 +595,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -604,6 +603,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<activateRate>0</activateRate>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DebuffBlock">
 				<times>
@@ -665,7 +665,6 @@
 		<icon>icon.skill1926</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2500</hitTime>
 		<coolTime>200</coolTime>
 		<effectPoint>2</effectPoint>
@@ -674,6 +673,7 @@
 		<rideState>NONE</rideState>
 		<specialLevel>-1</specialLevel>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
@@ -728,7 +728,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -736,6 +735,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>1</amount>
@@ -775,7 +775,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -783,6 +782,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>1</amount>
@@ -822,7 +822,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -830,6 +829,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>1</amount>
@@ -869,7 +869,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -877,6 +876,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="MpRegen">
 				<amount>50</amount>
@@ -916,7 +916,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -924,6 +923,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>1</amount>
@@ -963,7 +963,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -971,6 +970,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-3</amount>
@@ -1016,7 +1016,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A6</operateType>
-		<targetType2>PARTY</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -1024,6 +1023,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>MY_PARTY</targetType>
 		<effects>
 			<effect name="MAtk">
 				<amount>1</amount>
@@ -1037,7 +1037,6 @@
 		<effectRange>400</effectRange>
 		<icon>icon.skill0539</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>1</mpConsume>
@@ -1046,6 +1045,7 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13158</power>
@@ -1059,7 +1059,6 @@
 		<affectRange>150</affectRange>
 		<icon>icon.skill0492</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>1</mpConsume>
@@ -1070,6 +1069,7 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9000</power>
@@ -1083,7 +1083,6 @@
 		<affectRange>150</affectRange>
 		<icon>icon.skill0540</icon>
 		<operateType>DA1</operateType>
-		<targetType2>AREA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>1</mpConsume>
@@ -1095,6 +1094,7 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -1112,7 +1112,6 @@
 		<attributeValue>20</attributeValue>
 		<icon>icon.skill1431</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<mpConsume>1</mpConsume>
@@ -1123,6 +1122,7 @@
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>182</power>
@@ -1139,7 +1139,6 @@
 		<attributeValue>20</attributeValue>
 		<icon>icon.skill1471</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<fanRange>0;0;400;180</fanRange>
 		<mpConsume>1</mpConsume>
 		<castRange>40</castRange>
@@ -1151,6 +1150,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>212</power>
@@ -1230,7 +1230,6 @@
 		<icon>icon.skill0840</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2500</hitTime>
 		<coolTime>200</coolTime>
 		<effectPoint>1</effectPoint>
@@ -1242,6 +1241,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 		<cond msgId="2195">
 			<player canTransform="true" />
 		</cond>
@@ -1296,7 +1296,7 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A5</operateType>
-		<targetType2>PARTY</targetType2> <!-- Target ONE on retail, will be PARTY here. -->
+		<!-- Target ONE on retail, will be PARTY here. -->
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -1308,6 +1308,7 @@
 			<value level="3">3</value>
 		</abnormalLvl>
 		<isMagic>3</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1912,7 +1913,6 @@
 		<abnormalType>DUAL_ATTACK_UP</abnormalType>
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>20000</reuseDelay>
 		<icon>icon.dual_t_atkup</icon>
 		<isMagic>4</isMagic>
@@ -1921,6 +1921,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>27</amount>
@@ -1953,7 +1954,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>DUAL_SKILL_UP</abnormalType>
-		<targetType2>SELF</targetType2>
 		<operateType>A2</operateType>
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1966,6 +1966,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<!-- TODO mul stat="magicalSkillPower" val="1.27" / -->
 			<effect name="PhysicalSkillPower">
@@ -2002,7 +2003,6 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>DUAL_DEFENCE_UP</abnormalType>
-		<targetType2>SELF</targetType2>
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>20000</reuseDelay>
@@ -2014,6 +2014,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>27</amount>
@@ -2049,7 +2050,6 @@
 	</skill>
 	<skill id="1981" levels="1" name="Dual - Light of Blessing">
 		<!-- Restores HP. -->
-		<targetType2>SELF</targetType2>
 		<magicLvl>99</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<reuseDelay>30000</reuseDelay>
@@ -2060,6 +2060,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
 		<staticDelay>true</staticDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>5000</power>
@@ -2076,7 +2077,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<icon>icon.dual_a_pblock</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -2089,6 +2089,7 @@
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -2102,7 +2103,6 @@
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<icon>icon.dual_a_mblock</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -2119,6 +2119,7 @@
 		<trait>DERANGEMENT</trait>
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -2131,7 +2132,6 @@
 		<!-- Decreases target and nearby enemies' Spd. by 90% for 5 sec. Can only use on PCs. -->
 		<icon>icon.dual_a_spdown</icon>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -2151,6 +2151,7 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>2</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>ENEMY_ONLY</targetType>
 		<cond addName="1" msgId="113">
 			<target player="true" />
 		</cond>
@@ -2166,7 +2167,6 @@
 		<!-- Damage Reflect Resistance becomes 100% for 30 sec. -->
 		<icon>icon.dual_a_refdmg</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
@@ -2180,6 +2180,7 @@
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
 		<reuseDelay>600000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
 		<!-- Glory Days confirmed -->
@@ -2195,7 +2196,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType2>SELF</targetType2>
+		<targetType>NONE</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -2396,12 +2397,12 @@
 		<!-- Restores MP. -->
 		<icon>icon.dual_mpsteal</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="ManaHeal">
 				<power>68</power>

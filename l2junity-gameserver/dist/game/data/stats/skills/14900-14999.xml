@@ -5,7 +5,6 @@
 		<!-- Heals the target with 1519 power. If HP is full, CP is restored with the remaining power. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -17,6 +16,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
@@ -28,7 +28,6 @@
 		<!-- Heals the target with 1557 power. If HP is full, CP is restored with the remaining power. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -40,6 +39,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
@@ -51,7 +51,6 @@
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<icon>icon.skill11774</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>5500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -61,6 +60,7 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>14933</npcId>
@@ -73,7 +73,6 @@
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<icon>icon.skill11774</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>5500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -83,6 +82,7 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>90</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>14943</npcId>
@@ -95,7 +95,6 @@
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<icon>icon.skill11774</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>5500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -105,6 +104,7 @@
 		<hitCancelTime>3</hitCancelTime>
 		<magicLvl>95</magicLvl>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>15010</npcId>
@@ -117,7 +117,6 @@
 		<!-- Instantly recovers the target's MP with a maximum of 166 power depending on the target's Lv.. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<icon>icon.skill11760</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -133,6 +132,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>166</power>
@@ -148,7 +148,6 @@
 		<!-- Instantly recovers the target's MP with a maximum of 174 power depending on the target's Lv.. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<icon>icon.skill11760</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -164,6 +163,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>174</power>
@@ -179,7 +179,6 @@
 		<!-- Instantly recovers the target's MP with a maximum of 183 power depending on the target's Lv.. Also, for 10 seconds, recovers 13 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<icon>icon.skill11760</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -195,6 +194,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>183</power>
@@ -210,7 +210,6 @@
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover HP and MP by 100%. -->
 		<icon>icon.skill11765</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>867</effectPoint>
@@ -223,6 +222,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
@@ -240,7 +240,6 @@
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover HP and MP by 100%. -->
 		<icon>icon.skill11765</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>895</effectPoint>
@@ -253,6 +252,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
@@ -270,7 +270,6 @@
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover HP and MP by 100%. -->
 		<icon>icon.skill11765</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>913</effectPoint>
@@ -283,6 +282,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<reuseDelay>300000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="BlockActions" />
@@ -299,7 +299,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -308,6 +307,7 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6500</power>
@@ -318,7 +318,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -327,6 +326,7 @@
 		<effectRange>400</effectRange>
 		<magicLvl>90</magicLvl>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>8190</power>
@@ -337,7 +337,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -346,6 +345,7 @@
 		<effectRange>400</effectRange>
 		<magicLvl>95</magicLvl>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9750</power>
@@ -356,7 +356,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -367,6 +366,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>-391</power>
@@ -377,7 +377,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -388,6 +387,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>-417</power>
@@ -398,7 +398,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -409,6 +408,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="Heal">
 				<power>-454</power>
@@ -420,7 +420,6 @@
 		<!-- Increases Atk. Spd. by 15% for 20 minutes. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>2000</reuseDelay>
@@ -433,6 +432,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
@@ -444,7 +444,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -459,6 +458,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>52</power>
@@ -469,7 +469,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -484,6 +483,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>59</power>
@@ -494,7 +494,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -509,6 +508,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>65</power>
@@ -519,7 +519,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -534,6 +533,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>62</power>
@@ -544,7 +544,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -559,6 +558,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
@@ -569,7 +569,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -584,6 +583,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>78</power>
@@ -594,7 +594,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -609,6 +608,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>57</power>
@@ -619,7 +619,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -634,6 +633,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>64</power>
@@ -644,7 +644,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -659,6 +658,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
@@ -669,7 +669,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -684,6 +683,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>64</power>
@@ -694,7 +694,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -709,6 +708,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
@@ -719,7 +719,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -734,6 +733,7 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>78</power>
@@ -744,7 +744,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -753,6 +752,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>5200</power>
@@ -763,7 +763,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -772,6 +771,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6552</power>
@@ -782,7 +782,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -791,6 +790,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>7800</power>
@@ -801,7 +801,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -810,6 +809,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6240</power>
@@ -820,7 +820,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -829,6 +828,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>7862</power>
@@ -839,7 +839,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -848,6 +847,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9360</power>
@@ -859,7 +859,6 @@
 		<!-- Stuns the target. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -878,6 +877,7 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -889,7 +889,6 @@
 		<!-- Stuns the target. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -908,6 +907,7 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -919,7 +919,6 @@
 		<!-- Stuns the target. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -938,6 +937,7 @@
 		<trait>SHOCK</trait>
 		<isMagic>2</isMagic>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -949,7 +949,6 @@
 		<!-- For 15 seconds, increases Speed by 40, P. Evasion by 10, and HP Recovery Bonus by 10. -->
 		<icon>icon.skill10525</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>692</effectPoint>
@@ -961,6 +960,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<reuseDelay>60000</reuseDelay>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Speed">
 				<amount>40</amount>
@@ -980,7 +980,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -989,6 +988,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6500</power>
@@ -999,7 +999,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1008,6 +1007,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>8190</power>
@@ -1018,7 +1018,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1027,6 +1026,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6500</power>
@@ -1037,7 +1037,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1046,6 +1045,7 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>20000</power>
@@ -1057,7 +1057,6 @@
 		<!-- Receives damage and incurs bleeding. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1077,6 +1076,7 @@
 		<abnormalTime>10</abnormalTime>
 		<trait>BLEED</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>350</power>
@@ -1092,7 +1092,6 @@
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2500</hitTime>
 		<coolTime>500</coolTime>
@@ -1114,6 +1113,7 @@
 		<fanRange>0;0;80;200</fanRange>
 		<affectRange>80</affectRange>
 		<isMagic>2</isMagic>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1125,7 +1125,6 @@
 		<!-- You have reached your physical limit. Increases debuff resistance, Speed, P. Atk., Accuracy, P. Def., Atk. Spd., and Critical Damage. When the target is killed, recovers HP by 20%. When HP falls below 60%, increases P. Atk. by 10% and Critical Rate by 100. When HP falls below 30%, increases P. Atk. by 30% and Critical Rate by an additional 300. -->
 		<icon>icon.skill10274</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>300000</reuseDelay>
@@ -1139,6 +1138,7 @@
 		<abnormalTime>60</abnormalTime>
 		<isMagic>4</isMagic>
 		<staticReuse>true</staticReuse>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="TriggerSkillByKill">
 				<!-- HP Drain -->
@@ -1200,7 +1200,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1213,6 +1212,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9000</power>
@@ -1224,7 +1224,6 @@
 		<!-- Afflicted with Fear and moving against own will. -->
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<hitTime>2500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
@@ -1242,6 +1241,7 @@
 		<affectRange>400</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -1251,7 +1251,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1260,6 +1259,7 @@
 		<effectRange>200</effectRange>
 		<magicLvl>78</magicLvl>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1270,7 +1270,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1279,6 +1278,7 @@
 		<effectRange>200</effectRange>
 		<magicLvl>79</magicLvl>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1289,7 +1289,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1298,6 +1297,7 @@
 		<effectRange>1400</effectRange>
 		<magicLvl>79</magicLvl>
 		<coolTime>300</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1308,7 +1308,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
@@ -1320,6 +1319,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>29</power>
@@ -1330,7 +1330,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1341,6 +1340,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1351,7 +1351,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1362,6 +1361,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1372,7 +1372,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1383,6 +1382,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>300</coolTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1393,7 +1393,6 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
@@ -1405,6 +1404,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>29</power>
@@ -1416,7 +1416,6 @@
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
@@ -1437,12 +1436,12 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14958" levels="1" name="Apparition Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1453,12 +1452,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14959" levels="1" name="Apparition Cut">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1469,12 +1468,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14960" levels="1" name="Apparition Flash">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -1485,12 +1484,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<coolTime>300</coolTime>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14961" levels="1" name="Apparition Magic Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
@@ -1502,13 +1501,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14962" levels="1" name="Apparition Bleed Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
@@ -1529,13 +1528,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14963" levels="1" name="Spirit Gathering">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gather spirit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>4000</hitTime>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1543,13 +1542,13 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<coolTime>300</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14964" levels="1" name="Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes the enemy to inflict Shock for 1 second(s). -->
 		<icon>icon.skill11508</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>100</hitTime>
 		<coolTime>300</coolTime>
@@ -1566,12 +1565,12 @@
 		<abnormalTime>1</abnormalTime>
 		<trait>SHOCK</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14965" levels="1" name="Judgment of Blood">
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -1586,13 +1585,13 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14966" levels="1" name="Group Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores all party members' HP with 66 Power. -->
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6000</reuseDelay>
@@ -1602,12 +1601,12 @@
 		<magicLvl>81</magicLvl>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14967" levels="1" name="Judgment of Death">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1619,12 +1618,12 @@
 		<affectLimit>10-10</affectLimit>
 		<fanRange>0;0;350;150</fanRange>
 		<coolTime>300</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14968" levels="1" name="Judgment of Darkness">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6000</reuseDelay>
@@ -1637,13 +1636,13 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14969" levels="1" name="Group Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores all party members' HP with 66 Power. -->
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6000</reuseDelay>
@@ -1654,12 +1653,12 @@
 		<affectRange>1000</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14970" levels="1" name="Judgment of Lunacy">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1671,12 +1670,12 @@
 		<affectLimit>10-10</affectLimit>
 		<fanRange>0;0;350;150</fanRange>
 		<coolTime>300</coolTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14971" levels="1" name="Judgment of Silence">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6000</reuseDelay>
@@ -1689,13 +1688,13 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14972" levels="1" name="Group Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores all party members' HP with 66 Power. -->
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>300</coolTime>
 		<reuseDelay>6000</reuseDelay>
@@ -1706,12 +1705,12 @@
 		<affectRange>1000</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14973" levels="1" name="Delusion Cut">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1723,12 +1722,12 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>100</attributeValue>
 		<coolTime>300</coolTime>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14974" levels="1" name="Delusion Judgment">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1740,13 +1739,13 @@
 		<affectLimit>10-10</affectLimit>
 		<fanRange>0;0;350;150</fanRange>
 		<reuseDelay>6000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14975" levels="1" name="Mysterious Combat Buff">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, increases Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, and MP recovery bonus by 20%, and decreases MP Consumption for magic skill by 10% and the magic cancel rate. -->
 		<icon>icon.skill11529</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2000</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -1762,13 +1761,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="14976" levels="1" name="Mysterious Speed Buff">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8%, and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<icon>icon.skill11530</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2000</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -1784,13 +1783,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="14977" levels="1" name="Mysterious Focus Buff">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 		<icon>icon.skill11532</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2000</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -1806,13 +1805,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="14978" levels="1" name="Fear">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily inflicted with fear and changed to another life form that moves regardless of your own volition. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<isMagic>1</isMagic>
 		<effectPoint>-100</effectPoint>
@@ -1831,25 +1830,25 @@
 		<trait>CHANGEBODY</trait>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="14979" levels="1" name="Decoration Line">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<hitTime>1600</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14980" levels="1" name="Vesper Transformation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 2 minutes, the equipped weapon and armor are changed into a Vesper Set. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>WP_CHANGE_EVENT</abnormalType>
@@ -1862,13 +1861,13 @@
 		<abnormalVisualEffect>CHANGE_VES_S</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14981" levels="1" name="Baguette">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 2 minutes, the equipped weapon is changed to bread and turns into hair. -->
 		<icon>icon.etc_herb_of_baguette</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>WP_CHANGE_EVENT</abnormalType>
@@ -1881,13 +1880,13 @@
 		<abnormalVisualEffect>CHANGE_WP;CHANGE_HAIR_B</abnormalVisualEffect>
 		<isMagic>2</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14982" levels="1" name="HP Drain">
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, HP is absorbed by 10% every second. If untreated while inflicted with absorption, this will lead to death. -->
 		<icon>icon.skill1042</icon>
 		<operateType>CA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1905,13 +1904,13 @@
 				<power>-10</power>
 			</effect>
 		</channelingEffects>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14983" levels="1" name="HP Drain">
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, HP is absorbed by 10% every second. If untreated while inflicted with absorption, this will lead to death. -->
 		<icon>icon.skill1042</icon>
 		<operateType>CA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1929,13 +1928,13 @@
 				<power>-10</power>
 			</effect>
 		</channelingEffects>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14984" levels="1" name="HP Drain">
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, HP is absorbed by 10% every second. If untreated while inflicted with absorption, this will lead to death. -->
 		<icon>icon.skill1042</icon>
 		<operateType>CA1</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1953,13 +1952,13 @@
 				<power>-10</power>
 			</effect>
 		</channelingEffects>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="14985" levels="1" name="Drain Status">
 		<!-- Glory Days confirmed -->
 		<!-- HP is being absorbed. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>POISON</abnormalType>
@@ -1973,6 +1972,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>800</power>
@@ -1985,7 +1985,6 @@
 		<!-- HP is being absorbed. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>POISON</abnormalType>
@@ -1999,6 +1998,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>1050</power>
@@ -2011,7 +2011,6 @@
 		<!-- HP is being absorbed. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>500</castRange>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>POISON</abnormalType>
@@ -2025,6 +2024,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>12</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>1300</power>
@@ -2037,7 +2037,6 @@
 		<!-- Cannot move. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
@@ -2051,6 +2050,7 @@
 		<abnormalTime>1000</abnormalTime>
 		<trait>HOLD</trait>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -2063,7 +2063,6 @@
 		<!-- Poisoned with a power that is unknown in this dimension. HP is continuously decreased. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
@@ -2076,6 +2075,7 @@
 		<abnormalLvl>50</abnormalLvl>
 		<abnormalTime>1000</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>15.5</power>
@@ -2088,7 +2088,6 @@
 		<!-- Poisoned with a power that is unknown in this dimension. HP is continuously decreased. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
@@ -2101,6 +2100,7 @@
 		<abnormalLvl>50</abnormalLvl>
 		<abnormalTime>1000</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>20</power>
@@ -2113,7 +2113,6 @@
 		<!-- Poisoned with a power that is unknown in this dimension. HP is continuously decreased. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
@@ -2126,6 +2125,7 @@
 		<abnormalLvl>50</abnormalLvl>
 		<abnormalTime>1000</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DamOverTime">
 				<power>25</power>
@@ -2138,7 +2138,6 @@
 		<!-- Free from all abnormal statuses. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
@@ -2146,6 +2145,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_MAGICALLY,-1;POISON,-1</dispel>
@@ -2157,7 +2157,6 @@
 		<!-- The GM is always with you. For 1 hour, increases Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate. -->
 		<icon>icon.skill11529</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
@@ -2171,13 +2170,13 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="14994" levels="1" name="Master's Blessing - Daring Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The GM is always with you. For 1 hour, increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<icon>icon.skill11530</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
@@ -2191,13 +2190,13 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="14995" levels="1" name="Master's Blessing - Refreshing Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 		<icon>icon.skill11532</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
@@ -2211,13 +2210,13 @@
 		<abnormalTime>3600</abnormalTime>
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="14996" levels="1" name="Master's Blessing - Prevailing Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The GM is always with you. For 1 hour, increases Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate. -->
 		<icon>icon.skill11529</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>BUFF_SPECIAL_AURA</abnormalType>
@@ -2231,13 +2230,13 @@
 		<affectLimit>50-50</affectLimit>
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14997" levels="1" name="Master's Blessing - Daring Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The GM is always with you. For 1 hour, increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<icon>icon.skill11530</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>ENCHANTER_MOD</abnormalType>
@@ -2251,13 +2250,13 @@
 		<affectLimit>50-50</affectLimit>
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14998" levels="1" name="Master's Blessing - Refreshing Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 		<icon>icon.skill11532</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>SYNERGY_IS</abnormalType>
@@ -2271,13 +2270,13 @@
 		<affectLimit>50-50</affectLimit>
 		<isMagic>2</isMagic>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="14999" levels="1" name="Transform IM - IM Abyu">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- IM transformed state. -->
 		<icon>icon.skilltransform1</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2500</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -2292,5 +2291,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 </list>

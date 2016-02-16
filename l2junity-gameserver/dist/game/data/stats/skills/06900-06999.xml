@@ -75,7 +75,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>22</transformationId>
@@ -91,7 +91,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skilltransform1</icon>
 		<hitTime>2700</hitTime>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6910" levels="1" name="Dance">
 		<!-- Shows the game master's dancing skills. -->
@@ -102,7 +102,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skilltransform2</icon>
 		<hitTime>4800</hitTime>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6911" levels="1" name="Greeting">
 		<!-- Shows the game master's greeting. -->
@@ -113,7 +113,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skilltransform3</icon>
 		<hitTime>3200</hitTime>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6912" levels="1" name="Stigma Aftermath">
 		<!-- "Antharas's Stigma Aftermath. For 10 seconds, decreases 500 HP and 300 MP per second." -->
@@ -134,7 +134,7 @@
 		<castRange>1200</castRange>
 		<abnormalVisualEffect>TIME_BOMB</abnormalVisualEffect>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="6913" levels="1" name="Challenge of Faith">
 		<!-- High Five Skill -->
@@ -154,7 +154,7 @@
 		<affectRange>1000</affectRange>
 		<reuseDelay>60000</reuseDelay>
 		<isMagic>4</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>270</amount>
@@ -179,7 +179,7 @@
 		<abnormalTime>600</abnormalTime>
 		<icon>icon.skill1086</icon>
 		<isMagic>1</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6915" levels="10" name="Acumen">
 		<!-- none -->
@@ -195,7 +195,7 @@
 		<icon>icon.skill1085</icon>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6916" levels="1" name="Antharas's Cute Tricks">
 		<!-- You can see the summoned spirit's cute tricks. -->
@@ -207,7 +207,7 @@
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6917" levels="1" name="Kanna's Splendor">
 		<!-- Able to see the summoned spirit's splendor. -->
@@ -219,7 +219,7 @@
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6918" levels="1" name="Kallesin's Splendor">
 		<!-- Able to see the summoned spirit's splendor. -->
@@ -231,7 +231,7 @@
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6919" levels="1" name="Challenge Acceptance">
 		<!-- none -->
@@ -246,7 +246,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="6920" levels="1" name="Collector's Fortune">
 		<!-- High Five Skill -->
@@ -264,7 +264,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<abnormalLvl>1</abnormalLvl>
 		<isMagic>4</isMagic>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -309,7 +309,7 @@
 		<isMagic>1</isMagic>
 		<isDebuff>true</isDebuff>
 		<castRange>500</castRange>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-23</amount>

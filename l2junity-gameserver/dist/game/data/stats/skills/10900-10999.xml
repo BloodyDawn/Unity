@@ -434,7 +434,6 @@
 		<!-- Atk. Spd. + 30% for 5 seconds. -->
 		<icon>icon.skill1543</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -448,13 +447,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="10999" levels="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>700</castRange>
 		<hitTime>2000</hitTime>
@@ -465,5 +464,6 @@
 		<effectRange>1200</effectRange>
 		<magicLvl>85</magicLvl>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 </list>

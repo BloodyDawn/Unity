@@ -5,7 +5,6 @@
 		<!-- Attacks the target's area with ranged magic. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>2000</hitTime>
@@ -20,13 +19,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>100</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15301" levels="1" name="Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a physical attack in a fan-shaped range around you, and knocks back the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -43,13 +42,13 @@
 		<attributeValue>50</attributeValue>
 		<fanRange>0;0;200;120</fanRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15302" levels="1" name="Mass Blood Siphon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Drains the HP of targets in a wide area around you. -->
 		<icon>icon.skill1090</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -61,13 +60,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>200</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15303" levels="1" name="Blood Siphon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Steals the target's HP. -->
 		<icon>icon.skill1090</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>150</castRange>
 		<hitTime>1500</hitTime>
@@ -80,13 +79,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15304" levels="1" name="Power of Blood">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., Atk. Spd. / Spd. + 30%. -->
 		<icon>icon.skill0077</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -99,13 +98,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15305" levels="1" name="Hurricane">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with magic. -->
 		<icon>icon.skill1239</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
@@ -118,13 +117,13 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15306" levels="1" name="Blazing Circle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby enemies with ranged magic. -->
 		<icon>icon.skill1239</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -136,13 +135,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>150</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15307" levels="1" name="Chilling Power of Blood">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Greatly increases your P. Atk. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -155,13 +154,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15308" levels="1" name="Half-Chop">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful P. Atk. on the target and Stuns them. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<hitTime>2000</hitTime>
@@ -180,13 +179,13 @@
 		<trait>SHOCK</trait>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15309" levels="1" name="Model Blood Siphon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Instantly kills an ally and increases your P. Atk./ Atk. Spd./ Max HP/ HP Recovery Rate by 200% for 1 min. -->
 		<icon>icon.skill11544</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -200,13 +199,13 @@
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15310" levels="1" name="Feast of Blood">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks with Bleed Attack within a fan-shaped range around you. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>2500</hitTime>
 		<coolTime>800</coolTime>
@@ -228,13 +227,13 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<fanRange>0;0;150;120</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15311" levels="1" name="Irresistible Temptation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes nearby enemies for 10 sec. -->
 		<icon>icon.skill11538</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -252,13 +251,13 @@
 		<affectRange>2000</affectRange>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15312" levels="1" name="Dreamy Steps">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases nearby enemies' Spd. -->
 		<icon>icon.skill0102</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
@@ -274,13 +273,13 @@
 		<abnormalTime>30</abnormalTime>
 		<affectRange>2000</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15313" levels="1" name="Sophie's Misunderstanding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases nearby enemies' Spd. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -294,13 +293,13 @@
 		<abnormalTime>30</abnormalTime>
 		<affectRange>500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15314" levels="1" name="Sophie's Temper">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts AoE mutation on nearby enemies. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<trait>CHANGEBODY</trait>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
@@ -320,13 +319,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15315" levels="1" name="Alfred's Nemesis">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Able to inflict a powerful attack on Alfred. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>1000</castRange>
 		<hitTime>1000</hitTime>
@@ -341,13 +340,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15316" levels="1" name="Delayed Healing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target's area with magic and decreases the power of healing magic by 50%. -->
 		<icon>icon.skill11510</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>2500</hitTime>
@@ -368,13 +367,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15317" levels="1" name="Sabotage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target's area with magic and eliminates 1 helpful buff. -->
 		<icon>icon.skill11536</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>2500</hitTime>
@@ -390,13 +389,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15318" levels="1" name="Memory Deterioration">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target's area with magic and increases skill Cooldown by 100%. -->
 		<icon>icon.skill1248</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>2500</hitTime>
@@ -417,13 +416,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15319" levels="1" name="Hell Allegiance">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases your Atk. Spd. -->
 		<icon>icon.skill0168</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -438,13 +437,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15320" levels="1" name="Hell Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts P. Atk. on the target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
 		<hitTime>1500</hitTime>
@@ -457,13 +456,13 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15321" levels="1" name="Hell Arrow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts P. Atk. on the target and leaves DOT Damage. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2500</hitTime>
@@ -485,13 +484,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
 	</skill>
 	<skill id="15322" levels="1" name="Hell Wheel">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts physical damage on nearby targets and knocks them back. -->
 		<icon>icon.skill11032</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
 		<effectPoint>-696</effectPoint>
@@ -508,13 +507,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>100</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15323" levels="1" name="Hell Defense">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stunned. -->
 		<icon>icon.skill11057</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>200</coolTime>
@@ -534,13 +533,13 @@
 		<affectRange>100</affectRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15324" levels="1" name="Hell Fang">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a ranged physical attack in a fan-shaped range around you. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -552,13 +551,13 @@
 		<attributeValue>50</attributeValue>
 		<fanRange>0;0;100;120</fanRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15325" levels="1" name="Hour of Penitence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You can receive the mark of penitence after obtaining a certain amount of XP. -->
 		<icon>icon.etc_leash_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>EXP_BOTTLE</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -570,13 +569,13 @@
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15326" levels="1" name="Hour of Penitence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You can receive the mark of penitence after obtaining a certain amount of XP. -->
 		<icon>icon.etc_leash_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>EXP_BOTTLE</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -588,13 +587,13 @@
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15327" levels="1" name="Hour of Penitence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You can receive the mark of penitence after obtaining a certain amount of XP. -->
 		<icon>icon.etc_leash_i00</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>EXP_BOTTLE</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -606,6 +605,7 @@
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>4</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15328" levels="1" name="Hour of Penitence">
 		<!-- AUTO GENERATED SKILL -->
@@ -622,7 +622,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15329" levels="1" name="Hour of Penitence">
 		<!-- AUTO GENERATED SKILL -->
@@ -639,7 +639,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15330" levels="7" name="Reputation Penalty">
 		<!-- AUTO GENERATED SKILL -->
@@ -654,7 +654,6 @@
 		<!-- P. Atk./ M. Atk. + 200%. Skill Cooldown - 50%. -->
 		<icon>icon.skill11544</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>600000</reuseDelay>
@@ -668,13 +667,13 @@
 		<abnormalTime>30</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15332" levels="1" name="Power Smash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Powerful attack on one target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -687,13 +686,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>300</affectRange>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15333" levels="1" name="Clear Target">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels the enemy's target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>150</castRange>
 		<hitTime>500</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -706,13 +705,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>300</affectRange>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15334" levels="1" name="Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rush toward target. -->
 		<icon>icon.skill0493</icon>
 		<operateType>DA1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -725,13 +724,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>300</affectRange>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15335" levels="1" name="Electric Stun">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stunned for 3 sec. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>150</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -751,13 +750,13 @@
 		<affectRange>300</affectRange>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15336" levels="1" name="Trouble Benefit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk./ M. Atk. + 10%. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -776,13 +775,13 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15337" levels="1" name="Pinch Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls the target and inflicts damage. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>1500</reuseDelay>
@@ -803,13 +802,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15338" levels="1" name="Punch Stun">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knocks down the target for 3 sec. to interrupt their attacks. -->
 		<icon>icon.skill10262</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>200</coolTime>
@@ -830,13 +829,13 @@
 		<affectRange>300</affectRange>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15339" levels="1" name="Half-kill">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack that cuts the target's HP in half. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -847,13 +846,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>1500</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15340" levels="1" name="Trouble Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores the target's HP. -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -862,13 +861,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<hitTime>1000</hitTime>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15341" levels="1" name="Crane Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -881,13 +880,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>300</affectRange>
 		<reuseDelay>1500</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15342" levels="1" name="Shock Smash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target and throws them off a certain distance. -->
 		<icon>icon.skill0101</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -907,13 +906,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15343" levels="1" name="Trouble Ability">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk./ M. Atk. + 30%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -931,13 +930,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>700</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15344" levels="1" name="Rake Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes to the target to inflict damage. -->
 		<icon>icon.skill6041</icon>
 		<operateType>DA1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>800</hitTime>
 		<coolTime>200</coolTime>
@@ -950,13 +949,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>450</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15345" levels="1" name="Spanner Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -968,13 +967,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15346" levels="1" name="Turn Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Turns your whole body to inflict damage on the target and throw them off a certain distance. -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>1000</coolTime>
@@ -992,13 +991,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15347" levels="1" name="Spread Notice">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>121</effectPoint>
@@ -1012,13 +1011,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15348" levels="1" name="Ally Spread">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill (range). -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1028,13 +1027,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15349" levels="1" name="Mental Collapse">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill (range). -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<hitTime>3000</hitTime>
 		<rideState>NONE</rideState>
@@ -1045,13 +1044,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15350" levels="1" name="Arrow Fringe">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts ranged damage by shooting a rain of arrows. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1064,13 +1063,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>400</affectRange>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15351" levels="1" name="Life Extension">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Damages the target and restores your HP by 50%. -->
 		<icon>icon.skill1147</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-143</effectPoint>
@@ -1081,13 +1080,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15352" levels="1" name="Strife">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts powerful damage on targets within a fan-shaped range. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1100,13 +1099,13 @@
 		<attributeValue>50</attributeValue>
 		<fanRange>0;0;100;120</fanRange>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15353" levels="1" name="Bleeding Range">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Bleed 10% to nearby targets. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>800</coolTime>
@@ -1128,13 +1127,13 @@
 		<affectRange>400</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15354" levels="1" name="Stark Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a blow on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1146,13 +1145,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15355" levels="1" name="Shackles">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Damages a target with Yoke. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>5000</hitTime>
@@ -1173,13 +1172,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15356" levels="1" name="Slash Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful damage on nearby targets. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1192,13 +1191,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>300</affectRange>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15357" levels="1" name="Heavy Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful damage on a target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1210,13 +1209,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15358" levels="1" name="Screw Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts physical damage and Stuns them. -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>1000</coolTime>
@@ -1236,13 +1235,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15359" levels="1" name="Cornering Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Yokes a target. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>200</castRange>
 		<hitTime>3000</hitTime>
@@ -1263,13 +1262,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15360" levels="1" name="Tetanus">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Poisons the target. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>150</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>800</coolTime>
@@ -1292,13 +1291,13 @@
 		<affectRange>200</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15361" levels="1" name="Attribute Change">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Makes the target mutate. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<trait>CHANGEBODY</trait>
 		<castRange>200</castRange>
 		<hitTime>1000</hitTime>
@@ -1319,13 +1318,13 @@
 		<affectRange>300</affectRange>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15362" levels="1" name="Instant Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores 2000 HP of all party members. -->
 		<icon>icon.skill1402</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1334,13 +1333,13 @@
 		<magicLvl>94</magicLvl>
 		<affectRange>400</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15363" levels="1" name="Fear Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Fear and damage on target. -->
 		<icon>icon.skill11055</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>300</coolTime>
@@ -1361,13 +1360,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15364" levels="1" name="Shock Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Paralyzed. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>3000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>-457</effectPoint>
@@ -1385,13 +1384,13 @@
 		<attributeValue>50</attributeValue>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15365" levels="1" name="Shoot Cannon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1500</castRange>
 		<hitTime>5000</hitTime>
 		<rideState>NONE</rideState>
@@ -1403,13 +1402,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>1500</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15366" levels="1" name="Cannon Fire">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bleeding. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1200</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>800</coolTime>
@@ -1431,13 +1430,13 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<fanRange>0;0;1800;120</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15367" levels="1" name="Black Out">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knocks down the whole group. -->
 		<icon>icon.skill10266</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>2000</castRange>
 		<hitTime>5000</hitTime>
 		<coolTime>300</coolTime>
@@ -1459,13 +1458,13 @@
 		<affectRange>2200</affectRange>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15368" levels="1" name="Massive Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill (range). -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1500</castRange>
 		<hitTime>5000</hitTime>
 		<rideState>NONE</rideState>
@@ -1477,13 +1476,13 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>2000</affectRange>
 		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15369" levels="1" name="Massive Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack and Bleed on nearby targets. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1500</castRange>
 		<hitTime>5000</hitTime>
 		<coolTime>800</coolTime>
@@ -1504,13 +1503,13 @@
 		<affectRange>2000</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15370" levels="1" name="Body Slash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful blow on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>1500</hitTime>
 		<effectPoint>-2</effectPoint>
@@ -1522,13 +1521,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15371" levels="1" name="Stun Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes to the target to inflict damage. -->
 		<icon>icon.skill11508</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<coolTime>200</coolTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1545,13 +1544,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15372" levels="1" name="Zero Absorption">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Absorbs Zero's body. -->
 		<icon>icon.skill0000</icon>
 		<operateType>CA1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>1200</castRange>
 		<hitTime>1000</hitTime>
 		<effectPoint>100</effectPoint>
@@ -1563,13 +1562,13 @@
 		<channelingTickInitialDelay>1000</channelingTickInitialDelay>
 		<channelingTickInterval>0</channelingTickInterval>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15373" levels="1" name="Spell of Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Protected from preemptive monster attacks for 2 min. The status is cancelled if you take preemptive action. -->
 		<icon>icon.skill11562</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>300</castRange>
 		<hitTime>800</hitTime>
 		<effectPoint>666</effectPoint>
@@ -1584,6 +1583,7 @@
 		<abnormalTime>0</abnormalTime>
 		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15374" levels="2" name="Clan Hall - Horn Melody">
 		<!-- Glory Days confirmed -->
@@ -1592,7 +1592,6 @@
 		<table name="#mAtk"> 1.79 1.83 </table>
 		<icon>icon.skill11517</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>
@@ -1614,6 +1613,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
@@ -1652,7 +1652,6 @@
 		<table name="#moveSpeed"> 0.85 0.9 </table>
 		<icon>icon.skill11522</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>
@@ -1674,6 +1673,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Critical Damage Increase -->
@@ -1759,7 +1759,6 @@
 		<table name="#max"> 1.37 1.39 </table>
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>
@@ -1781,6 +1780,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</dispel>
@@ -1822,7 +1822,6 @@
 		<table name="#rCrit"> 0.32 0.34 </table>
 		<icon>icon.skill11520</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
@@ -1841,6 +1840,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
@@ -1883,7 +1883,6 @@
 		<table name="#moveSpeed"> 34 35 </table>
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
@@ -1902,6 +1901,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
@@ -1951,7 +1951,6 @@
 		<table name="#mAtkSpd"> 1.31 1.32 </table>
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>687</effectPoint>
@@ -1970,6 +1969,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
@@ -2003,7 +2003,6 @@
 		<!-- For 30 min., P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 		<icon>icon.skill11523</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -2018,6 +2017,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -2057,7 +2057,6 @@
 		<!-- For 30 min., P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, and Spd. + 8. -->
 		<icon>icon.skill11524</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -2072,6 +2071,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -2115,7 +2115,6 @@
 		<!-- For 30 min., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Spd. + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. Also, M. Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, Skill Cooldown - 20%. -->
 		<icon>icon.skill11525</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -2130,6 +2129,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<isMagic>22</isMagic>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL</dispel>
@@ -2202,7 +2202,6 @@
 		<!-- Inflicts a powerful attack on the target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>200</castRange>
 		<hitTime>2000</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -2213,13 +2212,13 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>2000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15390" levels="1" name="Multiple Focus Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a series of powerful attacks on targets within a 120 degree radius. -->
 		<icon>icon.skill0987</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>250</castRange>
 		<hitTime>2500</hitTime>
 		<coolTime>1000</coolTime>
@@ -2235,49 +2234,49 @@
 		<staticReuse>true</staticReuse>
 		<fanRange>0;0;250;120</fanRange>
 		<reuseDelay>3000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="15391" levels="1" name="Check Increase in Handicrafting">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill for increasing handicrafting. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15392" levels="1" name="Check Increase in Alterations">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill for increasing alterations. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15393" levels="1" name="Check Increase in Production">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill for increasing production. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15394" levels="1" name="Invincibility">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Becomes invincible. -->
 		<icon>icon.skill1427</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -2288,25 +2287,25 @@
 		<abnormalTime>300</abnormalTime>
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15395" levels="1" name="Repair Broken Toad Cannon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill used when the Repair Robot repairs the Toad Cannon. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="15396" levels="1" name="Skill Usage Restriction Area">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cannot use all skills due to clan request progress, but Spd. and Atk. Spd. are increased. -->
 		<icon>icon.skill1064</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -2316,6 +2315,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="BlockSkill">
 				<magicTypes>0;1;2;3;4;5;22</magicTypes>
@@ -2327,7 +2327,6 @@
 		<!-- Skill used to attack the Guardian Robot whose Repair Robot is broken. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -2340,13 +2339,13 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15398" levels="1" name="Flame Throw">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Skill used when the Destroyer Robot is attacking the Broken Toad Cannon. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -2359,13 +2358,13 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>50</attributeValue>
 		<reuseDelay>5000</reuseDelay>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="15399" levels="1" name="Cursed Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation Skill for destroying the cocoon. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>100</castRange>
 		<effectPoint>-100</effectPoint>
 		<rideState>NONE</rideState>
@@ -2374,5 +2373,6 @@
 		<effectRange>400</effectRange>
 		<magicLvl>85</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>TARGET</targetType>
 	</skill>
 </list>

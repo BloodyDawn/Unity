@@ -146,7 +146,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -172,7 +172,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>-2</effectRange>
 		<hitTime>10000</hitTime>
-		<targetType2>NONE</targetType2>
+		<targetType>OTHERS</targetType>
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
@@ -199,7 +199,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -245,7 +245,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -287,7 +287,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -330,7 +330,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1576</npcId>
@@ -348,7 +348,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1577</npcId>
@@ -366,7 +366,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>1578</npcId>
@@ -383,7 +383,7 @@
 		<icon>icon.skill5239</icon>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8519" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
@@ -395,7 +395,7 @@
 		<icon>icon.skill5239</icon>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8520" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
@@ -407,7 +407,7 @@
 		<icon>icon.skill5239</icon>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>2</isMagic>
-		<targetType2>NONE</targetType2>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8521" levels="1" name="Release Agathion's Seal - Antharas">
 		<!-- High Five Skill -->
@@ -419,7 +419,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16077</npcId>
@@ -436,7 +436,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16078</npcId>
@@ -453,7 +453,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16079</npcId>
@@ -486,26 +486,26 @@
 		<!-- Removes the Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8528" levels="1" name="Release Agathion's Seal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Removes the Agathion's seal. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>75</magicLvl>
 		<isMagic>2</isMagic>
 		<hitTime>3000</hitTime>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8529" levels="1" name="Ring of Insolence">
 		<!-- AUTO GENERATED SKILL -->
@@ -584,7 +584,6 @@
 		<!-- Provokes nearby enemies to switch targets and attack through Power 7987. For 30 seconds, increases P. Def. by 5400, M. Def. by 4050, and Buff-canceling Attack Resistance by 50, and becomes unable to move. Requires a shield. -->
 		<icon>icon.skill0368</icon>
 		<operateType>A3</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>35</mpConsume>
 		<hitTime>1000</hitTime>
 		<effectPoint>-7985</effectPoint>
@@ -598,13 +597,13 @@
 		<affectRange>200</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<reuseDelay>900000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8539" levels="1" name="Spirit of the Phoenix">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Share Phoenix's spirit and yours. There is a chance that the Spirit of the Phoenix will expand when being attacked. Additional effects appear as it expands. Use requirements are complete through the ring's power. -->
 		<icon>icon.skill0784</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>37</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -617,13 +616,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8540" levels="1" name="Shield of Faith">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 seconds, increases party members' P. Def. by 3600 and M. Def. by 2700, and absorbs 90% of any damage received by a party member. -->
 		<icon>icon.skill0528</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>43</mpConsume>
 		<hitTime>1000</hitTime>
 		<effectPoint>673</effectPoint>
@@ -636,13 +635,13 @@
 		<abnormalTime>15</abnormalTime>
 		<affectRange>1000</affectRange>
 		<reuseDelay>900000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8541" levels="1" name="Seed of Revenge">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- One sows a seed of wrath himself. There is a chance that the Seed of Wrath will grow when being attacked. P. Atk. increases with growth. -->
 		<icon>icon.skill0761</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>37</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -655,13 +654,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8542" levels="1" name="Touch of Eva">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores HP of party members by 50%. For 1 minute, increases Buff-canceling Attack Resistance by 100% and the power of received HP recovery magic by 30%. Restores 50 HP every second. Use requirements are complete through the ring's power. -->
 		<icon>icon.skill0787</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hpConsume>1253</hpConsume>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -678,13 +677,13 @@
 		<attributeValue>20</attributeValue>
 		<affectRange>1000</affectRange>
 		<reuseDelay>150000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8543" levels="1" name="Pain of Shilen">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shilen's pain becomes your own. Shilen's suffering wracks your body, having a chance to increase when you are being attacked. Additional effects appear with each increase. When Lv. 3 is achieved, you can then use the Spirit of Shilen. -->
 		<icon>icon.skill0788</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>37</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -697,13 +696,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8544" levels="1" name="Prophecy of Fire">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, a powerful spirit acts to increase a party member's Max MP by 20%, HP Recovery Bonus by 20%, magic damage's Critical Rate by 2, Critical Damages by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1356</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>72</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -718,13 +717,13 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
 	</skill>
 	<skill id="8545" levels="1" name="Turn to Stone">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Petrifies oneself for 8 seconds to avoid incurring damage. -->
 		<icon>icon.skill1540</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<hitTime>1200</hitTime>
 		<reuseDelay>600000</reuseDelay>
 		<effectPoint>343</effectPoint>
@@ -737,24 +736,24 @@
 		<abnormalTime>8</abnormalTime>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8546" levels="1" name="Arcane Wisdom">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Maximizes magic efficiency by decreasing MP Consumption by 30% and Casting Spd. by 10%. 50 HP is consumed per second. -->
 		<icon>icon.skill0336</icon>
 		<operateType>T</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>78</magicLvl>
 		<mpConsume>36</mpConsume>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="8547" levels="1" name="Song of Champion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 2 minutes, decreases all party members' physical/sing/dance skill use MP Consumption by 20% and physical/sing/dance skill reuse time by 10%. Additionally increases MP Consumption when singing while song/dance is in effect. -->
 		<icon>icon.skill0364</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -768,13 +767,13 @@
 		<abnormalTime>120</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8548" levels="1" name="Song of Purification">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Provides an 80% chance of removing a party member's debuffs. And for the next 2 minutes, increases Debuff Resistance by 30% and increases the power of received HP recovery magic by 30%. -->
 		<icon>icon.skill0914</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>240000</reuseDelay>
@@ -788,13 +787,13 @@
 		<abnormalTime>120</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8549" levels="1" name="Dance of Berserker">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases a party member's P. Def., M. Def. and Evasion, and increases their P. Atk., M. Atk., Atk. Spd., Casting Spd. and Speed for 2 minutes. -->
 		<icon>icon.skill0915</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>240000</reuseDelay>
@@ -808,13 +807,13 @@
 		<abnormalTime>120</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8550" levels="1" name="Dance of Medusa">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Dances to stir up the illusion of Medusa. Petrifies nearby enemies for 30 seconds. Requires a dualsword. -->
 		<icon>icon.skill0367</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>53</mpConsume>
 		<hitTime>2000</hitTime>
 		<reuseDelay>30000</reuseDelay>
@@ -835,13 +834,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8551" levels="1" name="Chant of Victory">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers all party members' HP by 20%, and for 5 minutes, receives help from a great spirit to increase Max HP by 20%, magic damage Critical Damage by 2, Critical Damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, Debuff Resistance by 10%, and Accuracy by 4. Decreases Speed by 20%. Consumes 40 Spirit Ore. -->
 		<icon>icon.skill1363</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>284</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>300000</reuseDelay>
@@ -855,13 +854,13 @@
 		<abnormalTime>300</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8552" levels="1" name="Onslaught of Pa'agrio">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks near the enemy with 4563 Power added to P. Atk., causes burns for 15 seconds, and makes him consume 92 HP every second. Requires a blunt weapon. Over-hit is possible. -->
 		<icon>icon.skill0949</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>35</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1080</hitTime>
@@ -884,24 +883,24 @@
 		<affectRange>150</affectRange>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8553" levels="1" name="Arcane Power">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Maximizes magic efficiency by increasing M. Atk. by 30% and MP Consumption by 10%. Every second, 50 HP is consumed. -->
 		<icon>icon.skill0337</icon>
 		<operateType>T</operateType>
-		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>78</magicLvl>
 		<mpConsume>36</mpConsume>
+		<targetType>NONE</targetType>
 	</skill>
 	<skill id="8554" levels="1" name="Lethal Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target's vital points with 5773 Power added to P. Atk. Requires a dagger. Over-hit is possible. Half-kill. -->
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>77</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -912,13 +911,13 @@
 		<magicLvl>76</magicLvl>
 		<trait>DEATH</trait>
 		<reuseDelay>4000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8555" levels="1" name="Throwing Dagger">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the enemy by throwing a dagger with 3488 Power added to P. Atk. and decreases Speed by 80% for 10 seconds. Requires a dagger to be equipped. -->
 		<icon>icon.skill0991</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>82</mpConsume>
 		<castRange>300</castRange>
 		<hitTime>1080</hitTime>
@@ -936,13 +935,13 @@
 		<abnormalTime>10</abnormalTime>
 		<staticReuse>true</staticReuse>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8556" levels="1" name="Exciting Adventure">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Feels extreme excitement during a melee. For 30 seconds, increases Speed by 20, Evasion by 15, vital point attack rate by 30%, physical skill Evasion Rate by 40%, and Buff-canceling Attack Resistance by 90. -->
 		<icon>icon.skill0768</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>36</mpConsume>
 		<hitTime>1000</hitTime>
 		<effectPoint>679</effectPoint>
@@ -955,13 +954,13 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8557" levels="1" name="Wind Riding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Storms the battleground riding the Wind. For 30 seconds, increases Speed by 50, Evasion by 20, vital point attack rate by 20%, physical skill Evasion Rate by 75%, and Buff-canceling Attack Resistance by 80. -->
 		<icon>icon.skill0769</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>36</mpConsume>
 		<hitTime>1000</hitTime>
 		<effectPoint>679</effectPoint>
@@ -974,13 +973,13 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8558" levels="1" name="Ghost Walking">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Infiltrates the battleground like a ghost.ﾠFor 30 seconds, increases Speed by 33, Evasion by 15, vital point attack rate by 40%, physical skill Evasion Rate by 60%, and Buff-canceling Attack Resistance by 90. -->
 		<icon>icon.skill0770</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>36</mpConsume>
 		<hitTime>1000</hitTime>
 		<effectPoint>679</effectPoint>
@@ -993,13 +992,13 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
 		<reuseDelay>900000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8559" levels="1" name="Lethal Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots an arrow at a vital spot. Attacks the enemy with 7698 Power added to P. Atk. Requires a bow. Over-hit, Half-Kill, and Critical are possible. -->
 		<icon>icon.skill0343</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>153</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
@@ -1010,13 +1009,13 @@
 		<magicLvl>76</magicLvl>
 		<trait>DEATH</trait>
 		<reuseDelay>8000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8560" levels="1" name="Flame Hawk">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots an arrow filled with the energy of the phoenix to attack the enemies with 6084 Power added to P. Atk. Requires a bow. Over-hit and critical hit are possible. -->
 		<icon>icon.skill0771</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>164</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -1029,13 +1028,13 @@
 		<affectLimit>5-12</affectLimit>
 		<fanRange>0;0;900;40</fanRange>
 		<reuseDelay>75000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8561" levels="1" name="Arrow Rain">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Causes arrows to rain down from the sky to attack near the enemy with 4563 Power added to P. Atk. Requires a bow. Over-hit and critical hit are possible. -->
 		<icon>icon.skill0772</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>164</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
@@ -1048,13 +1047,13 @@
 		<affectRange>200</affectRange>
 		<affectLimit>5-12</affectLimit>
 		<reuseDelay>75000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8562" levels="1" name="Ghost Piercing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots an arrow filled with the energy of a ghost to attack the enemies with 6388 Power added to P. Atk. Requires a bow. Over-hit and critical hit are possible. -->
 		<icon>icon.skill0773</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>164</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
@@ -1067,13 +1066,13 @@
 		<affectLimit>5-12</affectLimit>
 		<fanRange>0;0;900;100</fanRange>
 		<reuseDelay>75000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8563" levels="1" name="Death Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots an arrow to kill. Attacks the enemy with 24306 Power added to P. Atk. Over-hit possible. Critical hit possible. Requires a bow/crossbow to be equipped. -->
 		<icon>icon.skill0990</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>165</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -1085,13 +1084,13 @@
 		<magicLvl>83</magicLvl>
 		<staticReuse>true</staticReuse>
 		<reuseDelay>12000</reuseDelay>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8564" levels="1" name="Rush Impact">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes forward to attack the enemies in front with 4040 Power added to P. Atk. and inflicts Stun for 9 seconds. Use requirements are completed through the ring's power. -->
 		<icon>icon.skill0793</icon>
 		<operateType>DA2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>83</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>800</hitTime>
@@ -1112,13 +1111,13 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<fanRange>0;0;600;60</fanRange>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="8565" levels="1" name="Dread Pool">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fear spreads around the area. Decreases nearby enemies' Speed by 33%. Inflicts fear and causes them to flee for 8 seconds. -->
 		<icon>icon.skill0774</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>87</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>75000</reuseDelay>
@@ -1137,13 +1136,13 @@
 		<affectLimit>10-10</affectLimit>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8566" levels="1" name="Earthquake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Wields a spear at neary by enemies with 4848 Power added to P. Atk. Requires a polearm. Over-hit and critical hit are possible. Ignores Shield Defense. Target may be canceled. -->
 		<icon>icon.skill0347</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hpConsume>340</hpConsume>
 		<mpConsume>78</mpConsume>
 		<hitTime>1800</hitTime>
@@ -1154,12 +1153,12 @@
 		<affectRange>150</affectRange>
 		<affectLimit>6-12</affectLimit>
 		<reuseDelay>8000</reuseDelay>
+		<targetType>SELF</targetType>
 	</skill>
 	<skill id="8567" levels="1" name="Maximum Force Focus">
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
 		<icon>icon.skill0918</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<hpConsume>80</hpConsume>
 		<mpConsume>20</mpConsume>
 		<hitTime>900</hitTime>
@@ -1168,6 +1167,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>81</magicLvl>
 		<rideState>NONE</rideState>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -1185,7 +1185,6 @@
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
 		<icon>icon.skill0919</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hpConsume>80</hpConsume>
 		<mpConsume>20</mpConsume>
 		<hitTime>900</hitTime>
@@ -1194,6 +1193,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>81</magicLvl>
 		<rideState>NONE</rideState>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -1211,7 +1211,6 @@
 		<!-- Attacks the enemy with a devastating momentum burst. Requires a dualsword. Possible up to stage 7. Over-hit and critical hit are possible. -->
 		<icon>icon.skill0345</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hpConsume>50</hpConsume>
 		<mpConsume>5</mpConsume>
 		<castRange>600</castRange>
@@ -1222,6 +1221,7 @@
 		<magicLvl>78</magicLvl>
 		<hitTime>1500</hitTime>
 		<nextActionAttack>true</nextActionAttack>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL, DUALBLUNT" />
 		</cond>
@@ -1243,7 +1243,6 @@
 		<!-- Attacks the enemy with a devastating burst of energy of wind. Requires a fist weapon. Possible up to stage 7. Over-hit and critical hit are possible. -->
 		<icon>icon.skill0346</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hpConsume>50</hpConsume>
 		<mpConsume>5</mpConsume>
 		<castRange>600</castRange>
@@ -1254,6 +1253,7 @@
 		<magicLvl>78</magicLvl>
 		<hitTime>1500</hitTime>
 		<nextActionAttack>true</nextActionAttack>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -1275,7 +1275,6 @@
 		<!-- Unleashes a stun of destruction to attack nearby enemies with 6084 Power added to P. Atk. Requires a two-handed sword/ blunt weapon. Over-hit and Critical are possible. -->
 		<icon>icon.skill0777</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>164</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1200</hitTime>
@@ -1288,6 +1287,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<affectRange>500</affectRange>
 		<fanRange>0;0;500;60</fanRange>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -1307,7 +1307,6 @@
 		<!-- Attacks the enemy with 3295 Power added to P. Atk. Stun the enemy for 9 seconds, and decrease their P. Def. by 30% and M. Def. by 30%. Requires a sword, blunt weapon, two-handed sword or two-handed blunt weapon. Over-hit and critical hit are possible. Ignores Shield Defense. -->
 		<icon>icon.skill0362</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<hpConsume>338</hpConsume>
 		<mpConsume>35</mpConsume>
 		<castRange>40</castRange>
@@ -1329,6 +1328,7 @@
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<nextActionAttack>true</nextActionAttack>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -1357,7 +1357,6 @@
 		<!-- Gathers souls and attacks the enemy by hurling projectiles. Possible up to Lv. 40. Critical hit and over-hit are possible. -->
 		<icon>icon.skill0939</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<hpConsume>25</hpConsume>
 		<mpConsume>5</mpConsume>
 		<castRange>600</castRange>
@@ -1367,6 +1366,7 @@
 		<effectRange>1100</effectRange>
 		<magicLvl>78</magicLvl>
 		<hitTime>1500</hitTime>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalAttack">
 				<criticalChance>10</criticalChance>
@@ -1384,7 +1384,6 @@
 		<!-- Attacks enemies in front using the mighty Sword of Creation with 6468 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible. -->
 		<icon>icon.skill0526</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>80</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>1080</hitTime>
@@ -1399,6 +1398,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<fanRange>0;0;400;90</fanRange>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>6468</power>
@@ -1411,7 +1411,6 @@
 		<!-- Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 112 Power added to M. Atk. For 30 seconds, decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. -->
 		<icon>icon.skill1512</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>105</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
@@ -1430,6 +1429,7 @@
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>112</power>
@@ -1457,7 +1457,6 @@
 		<!-- Detonates an Soul Vortex to inflict non-attribute damage on the enemy with 195 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
 		<icon>icon.skill1513</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>108</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -1469,6 +1468,7 @@
 		<magicLvl>79</magicLvl>
 		<isMagic>1</isMagic>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<target abnormalType="MULTI_DEBUFF_SOUL" />
 		</cond>
@@ -1486,7 +1486,6 @@
 		<!-- Fires bolt at random to attack enemies in front with 6084 Power added to P. Atk. Requires a crossbow. Over-hit and Critical are possible. Increases Power upon the consumption of up to 5 souls. -->
 		<icon>icon.skill0790</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>123</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -1501,6 +1500,7 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;40</fanRange>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
@@ -1517,7 +1517,6 @@
 		<!-- Attacks multiple enemies with 16667 Power added to P. Atk. Over-hit and Critical hit are possible. Requires a bow/crossbow. -->
 		<icon>icon.skill0987</icon>
 		<operateType>A1</operateType>
-		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>83</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
@@ -1532,6 +1531,7 @@
 		<staticReuse>true</staticReuse>
 		<affectRange>900</affectRange>
 		<fanRange>0;0;900;60</fanRange>
+		<targetType>ENEMY</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="BOW, CROSSBOW" />
 		</cond>
@@ -1548,7 +1548,6 @@
 		<!-- Summons a dimensional vortex that inflicts Fire damage on the enemy, supplementing user's M. Atk. with 140 Power. For 30 seconds, decreases Speed by 10%, Atk. Spd. by 30%, Casting Spd. by 10%, and Fire Resistance by 20. Consumes 12 MP every second. Over-hit is possible. -->
 		<icon>icon.skill1339</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>105</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>6000</hitTime>
@@ -1568,6 +1567,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
@@ -1600,7 +1600,6 @@
 		<!-- Detonates a Fire Vortex that inflicts Fire damage on the enemy with 195 Power added to user's M. Atk. -->
 		<icon>icon.skill1451</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>108</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -1613,6 +1612,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_FIRE" />
 		</cond>
@@ -1630,7 +1630,6 @@
 		<!-- Crashes down meteors to inflict continuous fire damage near the enemy with 117 Power added to M. Atk. -->
 		<icon>icon.skill1467</icon>
 		<operateType>CA1</operateType>
-		<targetType2>AREA</targetType2>
 		<mpConsume>72</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>11000</hitTime>
@@ -1648,6 +1647,7 @@
 		<mpPerChanneling>72</mpPerChanneling>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -1663,7 +1663,6 @@
 		<!-- Stirs up a vortex connecting to the dimension of darkness and inflicts dark damage on the enemy with 139 Power added to M. Atk. Absorbs 25% as HP. For 30 seconds, decreases Accuracy by 6 and Dark Resistance by 30. Consumes 12 MP every second. -->
 		<icon>icon.skill1343</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>105</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>6000</hitTime>
@@ -1683,6 +1682,7 @@
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="HpDrain">
 				<power>139</power>
@@ -1703,7 +1703,6 @@
 		<!-- Creates a seal that casts a powerful curse that decreases all the abilities of nearby enemies. The seal's effect disappears upon leaving the area. Consumes 1 Magic Symbol. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>74</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>5000</hitTime>
@@ -1716,6 +1715,7 @@
 		<attributeValue>20</attributeValue>
 		<staticReuse>true</staticReuse>
 		<isMagic>1</isMagic>
+		<targetType>GROUND</targetType>
 		<effects>
 			<effect name="DispelBySlotMyself">
 				<dispel>MAGICAL_STANCE</dispel>
@@ -1731,7 +1731,6 @@
 		<!-- Stirs up a vortex connecting to the dimension of Water and inflicts Water damage on the enemy with 140 Power added to M. Atk. For 30 seconds, decreases Speed by 30%, Atk. Spd. by 10%, Casting Spd. by 10%, and resistance against Water by 20. Consumes 12 MP every second. Over-hit is possible. -->
 		<icon>icon.skill1340</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>105</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>6000</hitTime>
@@ -1751,6 +1750,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
@@ -1783,7 +1783,6 @@
 		<!-- Detonates an Ice Vortex that inflicts Water damage on the enemy with 195 Power added to user's M. Atk. -->
 		<icon>icon.skill1453</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>108</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -1796,6 +1795,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_WATER" />
 		</cond>
@@ -1813,7 +1813,6 @@
 		<!-- Crashes down meteors to inflict continuous non-type damage near the enemy with 117 Power added to M. Atk. -->
 		<icon>icon.skill1468</icon>
 		<operateType>CA1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>72</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>11000</hitTime>
@@ -1829,6 +1828,7 @@
 		<mpPerChanneling>72</mpPerChanneling>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -1840,7 +1840,6 @@
 		<!-- Stirs up a vortex connecting to the dimension of Wind and inflicts Wind damage on the enemy with 140 Power added to M. Atk. For 30 seconds, decreases Speed by 10%, Atk. Spd. by 10%, Casting Spd. by 30%, and resistance against Wind by 20. Consumes 12 MP every second. Over-hit is possible. -->
 		<icon>icon.skill1341</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>105</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>6000</hitTime>
@@ -1860,6 +1859,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>140</power>
@@ -1892,7 +1892,6 @@
 		<!-- Creates a powerful Wind Vortex that inflicts Wind damage on the enemy with 195 Power added to user's M. Atk. -->
 		<icon>icon.skill1456</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>108</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -1905,6 +1904,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
 		<cond msgId="109">
 			<target abnormalType="MULTI_DEBUFF_WIND" />
 		</cond>
@@ -1922,7 +1922,6 @@
 		<!-- Summon the servitor Feline King. Requires 4 Spirit Ore and consumes 11 Spirit Ore at regular intervals up to 14 times. -->
 		<icon>icon.skill1406</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>15000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1932,6 +1931,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>SELF</targetType>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -1953,7 +1953,6 @@
 		<!-- For 5 minutes, causes the servitor to be possessed with the spirit of an ancient hero, instantly recovering 20% of HP. Increases Max HP by 20%, Accuracy by 4, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, Critical Rate by 20%, Critical Damage by 20%, M. Def. by 20%, M. Atk. by 20%, Casting Spd. by 20%, and Debuff Resistance by 20. Decreases Speed by 20%. Consumes 20 Spirit Ore. -->
 		<icon>icon.skill1349</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>72</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -1970,6 +1969,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>20</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2027,7 +2027,6 @@
 		<!-- Summons Magnus the Unicorn. Requires 4 Spirit Ore and additionally consumes 11 Spirit Ore up to 14 times. -->
 		<icon>icon.skill1407</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>15000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -2037,6 +2036,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>SELF</targetType>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2057,7 +2057,6 @@
 		<!-- Summon the servitor Spectral Lord. Requires 4 Spirit Ore and consumes 11 Spirit Ore at regular intervals up to 14 times. -->
 		<icon>icon.skill1408</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>15000</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -2067,6 +2066,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>SELF</targetType>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -2087,7 +2087,6 @@
 		<!-- Momentarily makes the servitor invincible. Consumes 5 Spirit Ore. -->
 		<icon>icon.skill1496</icon>
 		<operateType>A2</operateType>
-		<targetType2>SERVITOR</targetType2>
 		<mpConsume>73</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2500</hitTime>
@@ -2106,6 +2105,7 @@
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>SUMMON</targetType>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -2115,7 +2115,6 @@
 		<!-- Cancels the target's debuffs. Consumes 1 Einhasad's Holy Water. -->
 		<icon>icon.skill1409</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
 		<mpConsume>59</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
@@ -2128,6 +2127,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -2141,7 +2141,6 @@
 		<!-- For 5 minutes, a powerful spirit acts to increase the damage caused by the targeted party member's magic damage by 2, MP Recovery Bonus by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP Consumption for skill use by 5%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1355</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>72</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -2158,6 +2157,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2221,7 +2221,6 @@
 		<!-- For 5 minutes, a powerful spirit acts to increase a party member's Max HP by 20%, rate of critical attack by 20%, magic damage's Critical Rate by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Restores HP by using 5% of the damage inflicted upon the enemy with a certain probability. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1357</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>72</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -2238,6 +2237,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>TARGET</targetType>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2294,7 +2294,6 @@
 		<!-- Increases the Critical Rate of all party members' damage attack magic by 100% for 2 minutes. Additionally increases MP Consumption when dancing while song/dance is in effect. Requires a dualsword. -->
 		<icon>icon.skill0365</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -2308,6 +2307,7 @@
 		<abnormalTime>120</abnormalTime>
 		<affectRange>1000</affectRange>
 		<isMagic>3</isMagic>
+		<targetType>SELF</targetType>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2323,7 +2323,6 @@
 		<!-- Weaves a mystical song that blocks all the enemy's physical and magical skills for 2 minutes. -->
 		<icon>icon.skill0437</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
 		<mpConsume>54</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>150000</reuseDelay>
@@ -2342,6 +2341,7 @@
 		<affectRange>150</affectRange>
 		<affectLimit>10-10</affectLimit>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
 		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -2352,7 +2352,6 @@
 		<!-- Recovers the target and the 10 most injured allies around the target by 30% of their Max HP. The recovery amount decreases starting from the most injured person. Requires 4 Spirit Ore. -->
 		<icon>icon.skill1553</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA_FRIENDLY</targetType2>
 		<mpConsume>155</mpConsume>
 		<mpInitialConsume>39</mpInitialConsume>
 		<castRange>900</castRange>
@@ -2368,6 +2367,7 @@
 		<isMagic>1</isMagic>
 		<itemConsumeCount>4</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<targetType>ENEMY_NOT</targetType>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
