@@ -205,7 +205,6 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="21212" levels="1" name="Release Agathion's Seal - Granny Tiger">
 		<!-- Confirmed CT2.5 -->
@@ -634,7 +633,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<icon>BranchSys2.icon.7anni_shirt_i00</icon>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>7</amount>
@@ -750,7 +748,6 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>70</amount>
@@ -1008,7 +1005,7 @@
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>3</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ONE</targetType>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>23319</skillId>
@@ -1031,7 +1028,7 @@
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>3</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ONE</targetType>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>23320</skillId>
@@ -1054,7 +1051,7 @@
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>3</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ONE</targetType>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>23321</skillId>
@@ -1077,7 +1074,7 @@
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>3</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ONE</targetType>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>23322</skillId>
@@ -1100,7 +1097,7 @@
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>3</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ONE</targetType>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>23323</skillId>
@@ -1122,7 +1119,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>3</chance>
-				<targetType2>SELF</targetType2>
+				<targetType>SELF</targetType>
 				<minDamage>1</minDamage>
 				<skillId>23324</skillId>
 				<skillLevel>1</skillLevel>
@@ -1188,7 +1185,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<icon>branchsys2.icon2.g_accessory_event_necklace</icon>
-		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="21262" levels="1" name="Bad Bunny's Earring">
 		<!-- Description: Its effects are HP+250, Vampiric Rage effect, increased accuracy, decreased re-use time for magic skills, and decreased MP consumption for magic skills. When two identical earrings are equipped, only one effect is applied. -->
@@ -1196,7 +1192,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<icon>branchsys2.icon2.g_accessory_event_earring</icon>
-		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="21263" levels="1" name="Bad Bunny's Ring">
 		<!-- Description: Its effects are increased Atk. Spd., and increased Casting Spd. When two identical rings are equipped, only one effect is applied. -->
@@ -1204,7 +1199,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<icon>branchsys2.icon2.g_accessory_event_ring</icon>
-		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="21264" levels="1" name="Summon Friend">
 		<!-- Description: Summons your friend. The target to be summoned must be equipped with a Shining Couple Ring and be a party member. -->
@@ -1444,7 +1438,6 @@
 		<!-- Increases inventory size when equipped with a cloak. -->
 		<icon>icon.skill0332</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isDebuff>false</isDebuff>
@@ -1454,7 +1447,6 @@
 		<!-- Increases Weight Gauge when equipped with a cloak. -->
 		<icon>icon.skill0150</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isDebuff>false</isDebuff>
@@ -1512,7 +1504,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>80</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21280" levels="1" name="Freya's Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1521,7 +1512,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>80</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21281" levels="1" name="Spezion's Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1530,7 +1520,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21282" levels="1" name="Maliss' Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1539,7 +1528,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>95</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21283" levels="1" name="Steregos' Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1548,7 +1536,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>95</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21284" levels="1" name="Ron's Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1557,7 +1544,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>95</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21285" levels="1" name="Scroll of Escape: Uthanka's Tomb">
 		<!-- AUTO GENERATED SKILL -->
@@ -1686,7 +1672,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>67</magicLvl>
-		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="21294" levels="1" name="Transformed: Uthanka">
 		<!-- AUTO GENERATED SKILL -->

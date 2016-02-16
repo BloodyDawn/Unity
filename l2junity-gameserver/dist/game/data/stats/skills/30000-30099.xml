@@ -5,7 +5,6 @@
 		<!-- Stacks Storm Marks when using Hydro Attack. -->
 		<icon>icon.skill11011</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<castRange>0</castRange>
 	</skill>
 	<skill id="30001" levels="28" name="Hydro Attack">
@@ -1428,7 +1427,6 @@
 		<icon>icon.skill30025</icon>
 		<operateType>P</operateType>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 		</effects>
 	</skill>
@@ -1442,7 +1440,6 @@
 		<table name="#mCritPower"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
 		<icon>icon.skill30023</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack"> <!-- TODO: This should start triggering on skill level 3 -->
 				<!-- Storm Sign -->
@@ -1609,7 +1606,6 @@
 		<table name="#magicSuccRes"> 1 1.05 1.1 1.15 1.2 1.25 1.3 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
 		<icon>icon.skill30024</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1748,7 +1744,6 @@
 		<table name="#MagicalMpConsumeRate"> 1 1 0.95 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 </table>
 		<icon>icon.skill10504</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -1846,7 +1841,6 @@
 			<value level="10">108</value>
 			<value level="11">110</value>
 		</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1937,7 +1931,6 @@
 		<table name="#hateRes"> 0 30 </table>
 		<icon>icon.skill10005</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -1963,7 +1956,6 @@
 			<value level="2">76</value>
 			<value level="3">85</value>
 		</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>INT</stat>

@@ -31,7 +31,6 @@
 	<skill id="11001" levels="10" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
 		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -79,7 +78,6 @@
 	<skill id="11002" levels="10" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -133,7 +131,6 @@
 	<skill id="11003" levels="10" name="Superior Anti Magic">
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
-		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -177,7 +174,6 @@
 	</skill>
 	<skill id="11004" levels="1" name="Superior Sigil Mastery">
 		<!-- When a Sigil is equipped, increases M. Atk. by 5% and MP Recovery Bonus by 20%. -->
-		<targetType2>SELF</targetType2>
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11791</icon>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -206,7 +202,6 @@
 		<operateType>P</operateType>
 		<icon>icon.skill11253</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>6</amount>
@@ -235,7 +230,6 @@
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<magicLvl>95</magicLvl>
-		<targetType2>SELF</targetType2>
 		<icon>icon.skill11006</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -4081,7 +4075,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Fire) -->
@@ -4103,7 +4096,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Water) -->
@@ -4125,7 +4117,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Wind) -->
@@ -4147,7 +4138,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Earth) -->
@@ -4169,7 +4159,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (4 Elements) -->
@@ -4406,7 +4395,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Fire) -->
@@ -4428,7 +4416,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Water) -->
@@ -4450,7 +4437,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Wind) -->
@@ -4472,7 +4458,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Earth) -->
@@ -4494,7 +4479,6 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (4 Elements) -->
@@ -4863,7 +4847,6 @@
 		<!-- Fire Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Fire) -->
@@ -4880,7 +4863,6 @@
 		<!-- Water Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Water) -->
@@ -4897,7 +4879,6 @@
 		<!-- Wind Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Wind) -->
@@ -4914,7 +4895,6 @@
 		<!-- Earth Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Earth) -->
