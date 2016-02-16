@@ -178,7 +178,7 @@
 			<effect name="TriggerSkillByAvoid">
 				<!-- Assassin's Reflex -->
 				<chance>10</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<skillId>10518</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -377,7 +377,7 @@
 				<skillId>10530</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>100</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -1250,7 +1250,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>40</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
 				<minDamage>1</minDamage>
 				<skillId>10544</skillId>
 				<skillLevel>1</skillLevel>
@@ -1863,7 +1863,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>80</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
 				<minDamage>1</minDamage>
 				<skillId>10545</skillId>
 				<skillLevel>
@@ -2007,7 +2007,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<isCritical>false</isCritical>
-				<targetType2>ONE</targetType2>
+				<targetType>TARGET</targetType>
 				<chance>15</chance>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10537</skillId>
@@ -2038,7 +2038,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<isCritical>false</isCritical>
-				<targetType2>ONE</targetType2>
+				<targetType>TARGET</targetType>
 				<chance>10</chance>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10537</skillId>
@@ -2055,7 +2055,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<isCritical>false</isCritical>
-				<targetType2>ONE</targetType2>
+				<targetType>TARGET</targetType>
 				<skillId>10538</skillId>
 				<skillLevel>
 					<value level="1">1</value>
@@ -3226,7 +3226,7 @@
 				</skillLevel>
 				<minDamage>1</minDamage>
 				<chance>50</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -3254,7 +3254,7 @@
 				<skillId>10559</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>80</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>SELF</targetType>
 			</effect>
 		</effects>
 	</skill>
