@@ -19,6 +19,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealOverTime">
 				<power>27</power>
@@ -91,6 +92,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player mp="10" />
 		</cond>
@@ -422,6 +424,7 @@
 		<trait>HOLD</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -448,6 +451,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player mp="10" />
 		</cond>
@@ -663,6 +667,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player mp="10" />
 		</cond>
@@ -719,6 +724,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -849,6 +855,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -957,6 +964,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -995,6 +1003,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1021,6 +1030,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Heal">
 				<power>1340</power>
@@ -1100,6 +1110,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1174,6 +1185,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1774</power>
@@ -1205,6 +1217,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>-23</amount>
@@ -1239,6 +1252,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>162</power>
@@ -1342,6 +1356,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>162</power>
@@ -1678,6 +1693,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1721,6 +1737,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1846,6 +1863,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2003,6 +2021,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2399,6 +2418,7 @@
 		<trait>DEATH</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -2458,6 +2478,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear">
@@ -2494,6 +2515,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
@@ -2519,6 +2541,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2705,6 +2728,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -2738,6 +2762,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -2772,6 +2797,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -2811,6 +2837,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear">
@@ -3145,6 +3172,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player active_effect_id_lvl="5562,3" />
 		</cond>
@@ -3258,6 +3286,7 @@
 		<castRange>40</castRange>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player active_effect_id_lvl="5563,3" />
 		</cond>
@@ -3338,6 +3367,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player active_effect_id_lvl="5564,3" />
 		</cond>
@@ -3402,6 +3432,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
@@ -3451,6 +3482,7 @@
 		<trait>PARALYZE</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>69</power>
@@ -3575,6 +3607,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD" />
@@ -3621,6 +3654,7 @@
 		<trait>DISARM</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Disarm">
 			</effect>
@@ -3648,6 +3682,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2322</power>
@@ -3670,6 +3705,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1900</power>
@@ -3694,6 +3730,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2111</power>

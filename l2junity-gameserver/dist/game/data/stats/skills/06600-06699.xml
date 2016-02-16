@@ -71,6 +71,7 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6601" levels="28" name="Earth Attack">
 		<coolTime>500</coolTime>
@@ -143,6 +144,7 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6602" levels="28" name="Earth Attack">
 		<coolTime>500</coolTime>
@@ -215,6 +217,7 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6603" levels="28" name="Earth Shot">
 		<coolTime>500</coolTime>
@@ -508,6 +511,7 @@
 		<castRange>700</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6607" levels="28" name="Earth Shot">
 		<coolTime>500</coolTime>
@@ -582,6 +586,7 @@
 		<castRange>700</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6608" levels="28" name="Earth Shot">
 		<coolTime>500</coolTime>
@@ -656,6 +661,7 @@
 		<castRange>700</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6609" levels="28" name="Earth Magic">
 		<coolTime>500</coolTime>
@@ -949,6 +955,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6613" levels="28" name="Earth Magic">
 		<coolTime>500</coolTime>
@@ -1023,6 +1030,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6614" levels="28" name="Earth Magic">
 		<coolTime>500</coolTime>
@@ -1097,6 +1105,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6615" levels="28" name="Earth Magic">
 		<coolTime>500</coolTime>
@@ -1169,6 +1178,7 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6616" levels="28" name="Earth Magic">
 		<coolTime>500</coolTime>
@@ -1241,6 +1251,7 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6617" levels="28" name="Earth Magic">
 		<coolTime>500</coolTime>
@@ -1313,6 +1324,7 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6618" levels="7" name="Maguen Strike">
 		<!-- Moving Spd. Is decreased by 50% for 10 seconds. -->
@@ -1547,6 +1559,7 @@
 		<trait>SHOCK</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2748</power>
@@ -2221,6 +2234,7 @@
 		<castRange>1200</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6657" levels="1" name="Lavasaurus Alpha Heal">
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2610,6 +2624,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6676" levels="1" name="Magician's Perversity">
 		<castRange>900</castRange>
@@ -2754,6 +2769,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>TARGET</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>45</amount>
@@ -2804,6 +2820,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -2859,6 +2876,7 @@
 		<!-- FIXME: Aura Friendly ? -->
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
@@ -2909,6 +2927,7 @@
 		<!-- FIXME: Aura Friendly ? -->
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTimePercent">
 				<power>0.02</power>
@@ -2935,6 +2954,7 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6690" levels="1" name="Hold">
 		<abnormalLvl>1</abnormalLvl>
@@ -2982,6 +3002,7 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6693" levels="12" name="Power Strike">
 		<coolTime>800</coolTime>
@@ -3060,6 +3081,7 @@
 		<hitTime>830</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6696" levels="1" name="Presentation - Quest Done">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -3094,6 +3116,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>45257</power>

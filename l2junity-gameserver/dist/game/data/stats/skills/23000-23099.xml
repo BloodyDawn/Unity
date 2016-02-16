@@ -468,6 +468,7 @@
 		<hitTime>4000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 		<effects>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -563,6 +564,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>ALL</affectObject>
 	</skill>
 	<skill id="23021" levels="3" name="Turkey's Attack Scissors">
 		<!-- Confirmed CT2.5 -->
@@ -1752,6 +1754,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 	</skill>
 	<skill id="23073" levels="1" name="Switch Mode">
 		<!-- State to switch the spirit's mode. Switches to counter-attack mode or deadly mode. -->
@@ -1854,6 +1857,7 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="2292">
 			<player agathionId="1528" />
 		</cond>
@@ -1929,6 +1933,7 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="2292">
 			<player agathionId="1528" />
 		</cond>

@@ -536,6 +536,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -577,6 +578,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6820" levels="1" name="P. Def. Enhance">
 		<!-- High Five Skill -->
@@ -597,6 +599,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>20</amount>
@@ -681,6 +684,7 @@
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6825" levels="2" name="Bleed">
 		<!-- "For 8 seconds, inflicts bleed and decreases 120 HP every second." -->
@@ -707,6 +711,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6826" levels="1" name="Critical Strike">
 		<!-- none -->
@@ -766,6 +771,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6829" levels="1" name="Vampiric Attack">
 		<!-- none -->
@@ -807,6 +813,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6831" levels="1" name="Blood Burst">
 		<!-- none -->
@@ -823,6 +830,7 @@
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6832" levels="1" name="Summon Parasitic Leech">
 		<!-- none -->
@@ -863,6 +871,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6835" levels="1" name="Summon Skeleton">
 		<!-- none -->
@@ -912,6 +921,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6838" levels="1" name="Self-destruction">
 		<!-- none -->
@@ -926,6 +936,7 @@
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6839" levels="2" name="Power Attack">
 		<!-- none -->
@@ -964,6 +975,7 @@
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6841" levels="1" name="Summon Subordinate">
 		<!-- none -->
@@ -1055,6 +1067,7 @@
 		<fanRange>0;0;300;60</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1174,6 +1187,7 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>
@@ -1506,6 +1520,7 @@
 		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>120</power>
@@ -1597,6 +1612,7 @@
 		<affectRange>1000</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -1633,6 +1649,7 @@
 		<affectRange>1000</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
@@ -1683,6 +1700,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>100</power>
@@ -1708,6 +1726,7 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>300</power>
@@ -1768,6 +1787,7 @@
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -1800,6 +1820,7 @@
 		<affectRange>200</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1885,6 +1906,7 @@
 		<trait>PARALYZE</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -2202,6 +2224,7 @@
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2225,6 +2248,7 @@
 		<fanRange>0;0;300;60</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2296,6 +2320,7 @@
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2345,6 +2370,7 @@
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2394,6 +2420,7 @@
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -2436,6 +2463,7 @@
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- High Five Skill -->

@@ -62,6 +62,7 @@
 		<trait>SHOCK</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>16</power>
@@ -118,6 +119,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
@@ -492,6 +494,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -610,6 +613,7 @@
 		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -699,6 +703,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -784,6 +789,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>
@@ -826,6 +832,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
@@ -867,6 +874,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
@@ -920,6 +928,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -979,6 +988,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -1038,6 +1048,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1122,6 +1133,7 @@
 		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -1323,6 +1335,7 @@
 		<affectRange>200</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -1387,6 +1400,7 @@
 		<hitCancelTime>3.5</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -1451,6 +1465,7 @@
 		<affectRange>200</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -2441,6 +2456,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -2505,6 +2521,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2617,6 +2634,7 @@
 		<trait>SLEEP</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -3052,6 +3070,7 @@
 		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -3085,6 +3104,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_MAGICALLY,1</dispel>
@@ -3117,6 +3137,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
@@ -3140,6 +3161,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE,1</dispel>
@@ -4899,6 +4921,7 @@
 		<trait>VALAKAS</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>30416</power>
@@ -4927,6 +4950,7 @@
 		<trait>VALAKAS</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>30416</power>
@@ -4963,6 +4987,7 @@
 		<affectHeight>-100;100</affectHeight>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>648</power>
@@ -5002,6 +5027,7 @@
 		<affectHeight>100;300</affectHeight>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>648</power>
@@ -5030,6 +5056,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>48391</power>
@@ -5054,6 +5081,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>157</power>
@@ -5102,6 +5130,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>27849</power>
@@ -5156,6 +5185,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -5177,6 +5207,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>BALAKAS_SCOPE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>1084</power>
@@ -5399,6 +5430,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="4698" levels="12" name="Regeneration">
 		<!-- Confirmed CT2.5 -->
@@ -5570,6 +5602,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>

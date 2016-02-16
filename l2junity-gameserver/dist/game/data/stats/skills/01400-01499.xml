@@ -212,6 +212,7 @@
 		<hitCancelTime>0.2</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -540,6 +541,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MAtk">
 				<amount>30</amount>
@@ -620,6 +622,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>20</power>
@@ -698,6 +701,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="ResistDispelByCategory">
 				<amount>-30</amount>
@@ -736,6 +740,7 @@
 		<coolTime>500</coolTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>
@@ -807,6 +812,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -888,6 +894,7 @@
 		</channelingEffects>
 		<targetType>GROUND</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1420" levels="1" name="Cyclone">
 		<affectLimit>15-25</affectLimit>
@@ -923,6 +930,7 @@
 		</channelingEffects>
 		<targetType>GROUND</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1421" levels="1" name="Raging Waves">
 		<affectLimit>15-25</affectLimit>
@@ -958,6 +966,7 @@
 		</channelingEffects>
 		<targetType>GROUND</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1422" levels="1" name="Day of Doom">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1021,6 +1030,7 @@
 		</channelingEffects>
 		<targetType>GROUND</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1424" levels="1" name="Anti-summoning Field">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1067,6 +1077,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1093,6 +1104,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
@@ -1124,6 +1136,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -1146,6 +1159,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>1500</power>
@@ -1481,6 +1495,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -1948,6 +1963,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -2048,6 +2064,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -2696,6 +2713,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>1</power>
@@ -2760,6 +2778,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>200</power>
@@ -2884,6 +2903,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>70</power>
@@ -3103,6 +3123,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>-30</amount>
@@ -3140,6 +3161,7 @@
 		<trait>PHYSICAL_BLOCKADE</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>80</power>
@@ -3288,6 +3310,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -3325,6 +3348,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -3357,6 +3381,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>224</power>
@@ -3383,6 +3408,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>3000</amount>
@@ -3418,6 +3444,7 @@
 		<coolTime>1400</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -3575,6 +3602,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -3640,6 +3668,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>
@@ -3686,6 +3715,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -3742,6 +3772,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -3788,6 +3819,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="ManaHealOverTime">
 				<power>200</power>
@@ -4506,6 +4538,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>117</power>

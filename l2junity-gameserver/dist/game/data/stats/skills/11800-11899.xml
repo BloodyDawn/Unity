@@ -227,6 +227,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -302,6 +303,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -336,6 +338,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealOverTime">
 				<power>
@@ -439,6 +442,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<!-- TODO check Zealar implementation of Res special -->
 			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
@@ -677,6 +681,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -745,6 +750,7 @@
 		<magicLvl>85</magicLvl>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1128,6 +1134,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>RANGE_SORT_BY_HP</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealPercent">
 				<power>40</power>
@@ -1262,6 +1269,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Unsummon">
 				<chance>50</chance>
@@ -1326,6 +1334,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>

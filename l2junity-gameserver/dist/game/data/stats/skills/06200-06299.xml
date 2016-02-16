@@ -450,6 +450,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -767,6 +768,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>-80</amount>
@@ -794,6 +796,7 @@
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18162</power>
@@ -1077,6 +1080,7 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6253" levels="1" name="Heatstroke Prevention Effect - Gludio">
 		<abnormalLvl>1</abnormalLvl>
@@ -1261,6 +1265,7 @@
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6263" levels="1" name="EMP Shock">
 		<abnormalLvl>1</abnormalLvl>
@@ -1284,6 +1289,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6264" levels="1" name="Golem Boom">
 		<coolTime>500</coolTime>
@@ -1297,6 +1303,7 @@
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6265" levels="1" name="Smokescreen">
 		<coolTime>500</coolTime>
@@ -1310,6 +1317,7 @@
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6266" levels="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -1370,6 +1378,7 @@
 		<attributeValue>20</attributeValue>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>150000</power>
@@ -1466,6 +1475,7 @@
 		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6274" levels="1" name="Eternal Blizzard">
 		<!-- Confirmed CT2.5 -->
@@ -1487,6 +1497,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>38976</power>
@@ -1517,6 +1528,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>45256</power>
@@ -1546,6 +1558,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6277" levels="1" name="Summon Spirits">
 		<!-- Confirmed CT2.5 -->
@@ -1583,6 +1596,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1606,6 +1620,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1658,6 +1673,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1821,6 +1837,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>100</power>
@@ -1852,6 +1869,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>300</amount>
@@ -1882,6 +1900,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -1938,6 +1957,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1991,6 +2011,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -2018,6 +2039,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -2125,6 +2147,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1547</power>

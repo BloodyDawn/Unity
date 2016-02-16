@@ -646,6 +646,7 @@
 		<trait>HOLD</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -910,6 +911,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1042,6 +1044,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2513,6 +2516,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -2696,6 +2700,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>OBJECT_DEAD_NPC_BODY</affectObject>
 		<effects>
 			<effect name="Sweeper" />
 			<effect name="ConsumeBody" />
@@ -3006,6 +3011,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
@@ -3965,6 +3971,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>INVISIBLE</affectObject>
 		<effects>
 			<effect name="TrapDetect">
 				<power>
@@ -4021,6 +4028,7 @@
 		</effect>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="472" levels="45" name="Ancient Sword Mastery">
 		<!-- Confirmed CT2.5 -->
@@ -5235,6 +5243,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond>
 			<target myPartyExceptMe="true" />
 		</cond>
@@ -5409,6 +5418,7 @@
 		<castRange>40</castRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -5608,6 +5618,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD" />
@@ -5980,6 +5991,7 @@
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD" />
@@ -6122,6 +6134,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="ANCIENTSWORD" />
 		</cond>

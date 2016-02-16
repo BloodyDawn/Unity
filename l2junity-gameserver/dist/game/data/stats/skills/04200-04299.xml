@@ -848,6 +848,7 @@
 		<icon>icon.skill1068</icon>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -899,6 +900,7 @@
 		<icon>icon.skill1040</icon>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>50</amount>
@@ -950,6 +952,7 @@
 		<icon>icon.skill1086</icon>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>50</amount>
@@ -1001,6 +1004,7 @@
 		<icon>icon.skill0086</icon>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
@@ -1066,6 +1070,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="4218" levels="1" name="Drain">
 		<!-- Confirmed CT2.5 -->
@@ -1084,6 +1089,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>57</power>
@@ -1154,6 +1160,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>5164</power>
@@ -1506,6 +1513,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack" />
 		</effects>
@@ -1618,6 +1626,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>51</power>
@@ -1653,6 +1662,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>72</power>
@@ -1682,6 +1692,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Reuse">
 				<amount>200</amount>
@@ -1851,6 +1862,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2288,6 +2300,7 @@
 		<attributeValue>20</attributeValue>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2550,6 +2563,7 @@
 		<hitCancelTime>3.5</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2679,6 +2693,7 @@
 		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -3402,6 +3417,7 @@
 		<hitCancelTime>3.6</hitCancelTime>
 		<targetType>WYVERN_TARGET</targetType>
 		<affectScope>WYVERN_SCOPE</affectScope>
+		<affectObject>WYVERN_OBJECT</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>379</power>

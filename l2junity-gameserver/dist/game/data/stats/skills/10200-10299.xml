@@ -1047,6 +1047,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
 		</cond>
@@ -1139,6 +1140,7 @@
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<target playable="true" />
 		</cond>
@@ -1344,6 +1346,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -1438,6 +1441,7 @@
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -1488,6 +1492,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Disarm">
 			</effect>
@@ -1785,6 +1790,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="10279" levels="1" name="Giant Barrier">
 		<!-- Glory Days confirmed -->
@@ -1886,6 +1892,7 @@
 		<trait>KNOCKDOWN</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -2123,6 +2130,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>
@@ -2182,6 +2190,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
@@ -2298,6 +2307,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry">
 		<!-- Glory Days confirmed -->
@@ -2567,6 +2577,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>

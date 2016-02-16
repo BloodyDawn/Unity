@@ -70,6 +70,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -162,6 +163,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
@@ -193,6 +195,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
@@ -224,6 +227,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -255,6 +259,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MAtk">
 				<amount>79</amount>
@@ -286,6 +291,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>17</amount>
@@ -317,6 +323,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>34</amount>
@@ -345,6 +352,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -380,6 +388,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -488,6 +497,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -524,6 +534,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
@@ -626,6 +637,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SUMMON</targetType>
 		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Heal">
 				<power>

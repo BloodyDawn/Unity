@@ -548,6 +548,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>INVISIBLE</affectObject>
 		<effects>
 			<effect name="TrapDetect">
 				<power>78</power>
@@ -571,6 +572,7 @@
 		</effect>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="625" levels="1" name="Soul Gathering">
 		<!-- Confirmed CT2.5 -->
@@ -2223,6 +2225,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2323</power>
@@ -2273,6 +2276,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player hp="30" />
 		</cond>
@@ -2340,6 +2344,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 		</effects>
@@ -2401,6 +2406,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>775</power>
@@ -2463,6 +2469,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player hp="30" />
 		</cond>
@@ -2645,6 +2652,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player hp="30" />
 		</cond>
@@ -2736,6 +2744,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>64</power>
@@ -2769,6 +2778,7 @@
 		<trait>SLEEP</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
@@ -2830,6 +2840,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player mp="10" />
 		</cond>

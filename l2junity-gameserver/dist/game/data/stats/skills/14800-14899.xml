@@ -20,6 +20,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14801" levels="1" name="Master's Blessing - Holy Attack Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -41,6 +42,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14802" levels="1" name="Master's Blessing - Mental Attack Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -62,6 +64,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14803" levels="1" name="Garden Dark Magic">
 		<!-- AUTO GENERATED SKILL -->
@@ -325,6 +328,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14827" levels="9" name="Lovely Fire">
 		<table name="#power"> 62 150 49 62 82 102 118 135 150 </table>
@@ -385,6 +389,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14829" levels="9" name="Grace Strike">
 		<table name="#power"> 1187 11821 571 1187 2188 3677 6320 9499 11821 </table>
@@ -441,6 +446,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14831" levels="9" name="Mystery Bolt">
 		<table name="#power"> 69 166 54 69 91 113 130 150 166 </table>
@@ -501,6 +507,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14833" levels="1" name="Tersi's Holy Water">
 		<!-- AUTO GENERATED SKILL -->
@@ -541,6 +548,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14835" levels="1" name="Dwarf Explosion">
 		<!-- AUTO GENERATED SKILL -->
@@ -559,6 +567,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14836" levels="1" name="Nonsense">
 		<!-- AUTO GENERATED SKILL -->
@@ -585,6 +594,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14837" levels="1" name="Poor and Pitiful Creature">
 		<!-- AUTO GENERATED SKILL -->
@@ -611,6 +621,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14838" levels="1" name="Hide">
 		<!-- AUTO GENERATED SKILL -->
@@ -665,6 +676,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -689,6 +701,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -713,6 +726,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -745,6 +759,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -782,6 +797,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -819,6 +835,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -1456,6 +1473,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11159</power>
@@ -1504,6 +1522,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13102</power>
@@ -1552,6 +1571,7 @@
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15046</power>
@@ -2461,6 +2481,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11159</power>
@@ -2483,6 +2504,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13102</power>
@@ -2505,6 +2527,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15046</power>

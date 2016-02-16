@@ -213,6 +213,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="CpHeal">
@@ -313,6 +314,7 @@
 		<trait>HOLD</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -386,6 +388,7 @@
 		<castRange>900</castRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="LimitHp">
 				<amount>
@@ -792,6 +795,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
@@ -829,6 +833,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
@@ -866,6 +871,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9</dispel>
@@ -2115,6 +2121,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2214,6 +2221,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -2487,6 +2495,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MaxCp">
 				<amount>10</amount>
@@ -2514,6 +2523,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
@@ -2552,6 +2562,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>PA_UP,9;PD_UP,9</dispel>
@@ -2590,6 +2601,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
@@ -2628,6 +2640,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
@@ -2916,6 +2929,7 @@
 		<attributeValue>20</attributeValue>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalSoulAttack">
 				<power>
@@ -2987,6 +3001,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3155,6 +3170,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>20</amount>
@@ -3190,6 +3206,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,10</dispel>
@@ -3212,6 +3229,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>POISON,10;BLEEDING,10;PARALYZE,1;TURN_STONE,1</dispel>
@@ -3234,6 +3252,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Heal">
 				<power>796</power>
@@ -3264,6 +3283,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>RANGE_SORT_BY_HP</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
@@ -3306,6 +3326,7 @@
 		</selfEffects>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1555" levels="1" name="Aura Cannon">
 		<!-- Glory Days confirmed -->
@@ -3715,6 +3736,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -3811,6 +3833,7 @@
 		<affectLimit>50-50</affectLimit>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -4390,6 +4413,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4430,6 +4454,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_HUNTER</slot>
@@ -4467,6 +4492,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4507,6 +4533,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_WARDING</slot>
@@ -4544,6 +4571,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4584,6 +4612,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_EARTH</slot>
@@ -4621,6 +4650,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4661,6 +4691,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VITALITY</slot>
@@ -4698,6 +4729,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4737,6 +4769,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_VENGEANCE</slot>
@@ -4773,6 +4806,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4834,6 +4868,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_RENEWAL</slot>
@@ -4904,6 +4939,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -4953,6 +4989,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="BlockBuffSlot">
 				<slot>SONG_OF_MEDITATION</slot>

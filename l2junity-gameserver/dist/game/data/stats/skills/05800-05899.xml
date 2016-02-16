@@ -13,6 +13,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5801" levels="1" name="Drake Breath">
 		<affectLimit>5-12</affectLimit>
@@ -32,6 +33,7 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5802" levels="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -59,6 +61,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5803" levels="3" name="Green Chili">
 		<effectPoint>
@@ -155,6 +158,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5808" levels="1" name="Burst Flame">
 		<effectPoint>-676</effectPoint>
@@ -215,6 +219,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5811" levels="1" name="Sonic Bomb">
 		<effectPoint>-635</effectPoint>
@@ -248,6 +253,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5813" levels="1" name="Sand Ball">
 		<effectPoint>-676</effectPoint>
@@ -287,6 +293,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5815" levels="1" name="Presentation - Mercenary Troops Shout">
 		<!-- Confirmed CT2.5 -->
@@ -459,6 +466,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -510,6 +518,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -675,6 +684,7 @@
 		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4640</power>
@@ -707,6 +717,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 		</effects>
@@ -732,6 +743,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -760,6 +772,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
@@ -810,6 +823,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="HealOverTime">
 				<power>270</power>
@@ -878,6 +892,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>183</power>
@@ -906,6 +921,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>244</power>
@@ -934,6 +950,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>33</amount>
@@ -962,6 +979,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>17400</power>
@@ -995,6 +1013,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -1017,6 +1036,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>BALAKAS_SCOPE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>834</power>
@@ -1328,6 +1348,7 @@
 			<value level="1">SINGLE</value>
 			<value level="2">FAN</value>
 		</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5856" levels="1" name="Transformation Scroll: Makeshift Bat">
 		<!-- Confirmed CT2.5 -->
@@ -1494,6 +1515,7 @@
 		<castRange>2000</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5863" levels="1" name="Destruction of the Soul">
 		<affectLimit>10-10</affectLimit>
@@ -1508,6 +1530,7 @@
 		<castRange>2000</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5864" levels="1" name="Decrease Valakas Defense">
 		<abnormalLvl>1</abnormalLvl>
@@ -1643,6 +1666,7 @@
 		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5868" levels="10" name="Soul Worm">
 		<abnormalLvl>
@@ -1692,6 +1716,7 @@
 		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5869" levels="10" name="Soul Worm">
 		<abnormalLvl>
@@ -1739,6 +1764,7 @@
 		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5870" levels="10" name="Flash Worm">
 		<abnormalLvl>
@@ -1833,6 +1859,7 @@
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5872" levels="10" name="Flash Worm">
 		<abnormalLvl>
@@ -1879,6 +1906,7 @@
 		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5873" levels="5" name="Death Worm">
 		<abnormalLvl>
@@ -1932,6 +1960,7 @@
 		<castRange>40</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5875" levels="5" name="Death Worm">
 		<abnormalLvl>
@@ -2203,6 +2232,7 @@
 		<trait>DISARM</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2245,6 +2275,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2278,6 +2309,7 @@
 		<affectRange>150</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -2309,6 +2341,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5888" levels="2" name="Earth Shaker">
 		<abnormalLvl>1</abnormalLvl>
@@ -2341,6 +2374,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -2398,6 +2432,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5891" levels="1" name="Threatening Bellow">
 		<effectPoint>-100</effectPoint>
@@ -2670,6 +2705,7 @@
 		<affectRange>300</affectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -2708,6 +2744,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3000</power>

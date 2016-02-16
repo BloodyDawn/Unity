@@ -72,6 +72,7 @@
 		<affectRange>400</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 	</skill>
 	<skill id="6106" levels="1" name="Winter Holiday Festival">
 		<abnormalLvl>1</abnormalLvl>
@@ -91,6 +92,7 @@
 		<affectRange>400</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 	</skill>
 	<skill id="6107" levels="1" name="Winter Holiday Blessing - Gludio">
 		<abnormalLvl>1</abnormalLvl>
@@ -311,6 +313,7 @@
 		<affectRange>400</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -557,6 +560,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6131" levels="1" name="Decrease Speed">
 		<abnormalLvl>1</abnormalLvl>
@@ -740,6 +744,7 @@
 		<affectRange>1000</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 	</skill>
 	<skill id="6140" levels="3" name="Bog Stride">
 		<abnormalLvl>
@@ -992,6 +997,7 @@
 		<affectRange>2000</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>-50</amount>
@@ -1228,6 +1234,7 @@
 		<trait>HOLD</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6167" levels="12" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -1263,6 +1270,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6168" levels="12" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -1836,6 +1844,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

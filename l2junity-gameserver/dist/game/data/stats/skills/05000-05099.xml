@@ -58,6 +58,7 @@
 		<affectRange>900</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -82,6 +83,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>111</power>
@@ -111,6 +113,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>5964</power>
@@ -368,6 +371,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>6400</power>
@@ -391,6 +395,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>106</power>
@@ -412,6 +417,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>364</power>
@@ -492,6 +498,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -556,6 +563,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<player insideZoneId="5015" />
 		</cond>
@@ -597,6 +605,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -652,6 +661,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -676,6 +686,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>314</power>
@@ -729,6 +740,7 @@
 		<castRange>400</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5022" levels="12" name="Decrease Speed">
 		<abnormalLvl>
@@ -966,6 +978,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5038" levels="16" name="Servitor PvP Penalty">
 		<!-- CT2.5 retail confirmed -->
@@ -1190,6 +1203,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1484,6 +1498,7 @@
 		<affectRange>150</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5048" levels="12" name="Burst Shot">
 		<affectLimit>5-12</affectLimit>
@@ -1512,6 +1527,7 @@
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5049" levels="12" name="Mortal Blow">
 		<effectPoint>-100</effectPoint>
@@ -1623,6 +1639,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1700,6 +1717,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1806,6 +1824,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5055" levels="12" name="Aqua Splash">
 		<effectPoint>-100</effectPoint>
@@ -1835,6 +1854,7 @@
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5056" levels="12" name="Hurricane">
 		<!-- CT2.5 retail confirmed -->
@@ -1938,6 +1958,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5058" levels="12" name="Tempest">
 		<effectPoint>-100</effectPoint>
@@ -1967,6 +1988,7 @@
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5059" levels="12" name="Rock Strike">
 		<effectPoint>-100</effectPoint>
@@ -2022,6 +2044,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5061" levels="12" name="Earthquake">
 		<effectPoint>-100</effectPoint>
@@ -2051,6 +2074,7 @@
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5062" levels="12" name="Holy Strike">
 		<effectPoint>-100</effectPoint>
@@ -2106,6 +2130,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5064" levels="12" name="Holy Blast">
 		<effectPoint>-100</effectPoint>
@@ -2135,6 +2160,7 @@
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5065" levels="12" name="Unholy Strike">
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
@@ -2223,6 +2249,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5067" levels="12" name="Unholy Blast">
 		<effectPoint>-100</effectPoint>
@@ -2252,6 +2279,7 @@
 		<castRange>1500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5068" levels="12" name="Decrease Speed">
 		<abnormalLvl>3</abnormalLvl>
@@ -2750,6 +2778,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
@@ -2781,6 +2810,7 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -2849,6 +2879,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2112</power>
@@ -2957,6 +2988,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -2985,6 +3017,7 @@
 		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<canKill>true</canKill>
@@ -3040,6 +3073,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="5089" levels="1" name="Presentation -  Enter the Sailren Nest Quest">
 		<!-- Confirmed CT2.5 -->
@@ -3103,6 +3137,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3127,6 +3162,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>1084</power>
@@ -3148,6 +3184,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>473</power>
@@ -3206,6 +3243,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>473</power>

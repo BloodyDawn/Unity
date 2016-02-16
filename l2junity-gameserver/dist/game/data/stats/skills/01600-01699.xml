@@ -21,6 +21,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -272,6 +273,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>36675</power>
@@ -387,6 +389,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -415,6 +418,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -476,6 +480,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -505,6 +510,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -617,6 +623,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1647" levels="1" name="50% Instant Herb of Mana">
 		<!-- AUTO GENERATED SKILL -->
@@ -652,6 +659,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="1649" levels="1" name="MP Regen">
 		<!-- AUTO GENERATED SKILL -->
@@ -670,6 +678,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1650" levels="1" name="Absolute Defense">
 		<!-- Glory Days confirmed -->
@@ -824,6 +833,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
@@ -848,6 +858,7 @@
 		<isSuicideAttack>true</isSuicideAttack>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>237492</power>
@@ -870,6 +881,7 @@
 		<isSuicideAttack>true</isSuicideAttack>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>500000</power>
@@ -895,6 +907,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>54355</power>
@@ -918,6 +931,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>100000</power>
@@ -1028,6 +1042,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1667" levels="1" name="Long Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1063,6 +1078,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1669" levels="1" name="Sleep">
 		<!-- AUTO GENERATED SKILL -->
@@ -1147,6 +1163,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1673" levels="1" name="Death">
 		<!-- AUTO GENERATED SKILL -->
@@ -1246,6 +1263,7 @@
 		<hitTime>300</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1678" levels="1" name="Self-destruction">
 		<!-- AUTO GENERATED SKILL -->
@@ -1281,6 +1299,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="1680" levels="1" name="Smokescreen">
 		<!-- AUTO GENERATED SKILL -->
@@ -1296,6 +1315,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1681" levels="1" name="Haste">
 		<!-- AUTO GENERATED SKILL -->
@@ -1488,6 +1508,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1692" levels="1" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1621,6 +1642,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="1699" levels="1" name="Blink">
 		<!-- AUTO GENERATED SKILL -->
@@ -1648,5 +1670,6 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 </list>

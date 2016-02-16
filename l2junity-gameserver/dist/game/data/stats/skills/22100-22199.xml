@@ -548,6 +548,7 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpRegen">
 				<amount>40</amount>
@@ -2159,6 +2160,7 @@
 		<affectRange>500</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="22174" levels="1" name="Yibein's Recovery Scroll">
 		<!-- Recovers HP of yourself and friendly nearby targets by 500. -->
@@ -2177,6 +2179,7 @@
 		<affectRange>500</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="22175" levels="1" name="Good/Bad of Life">
 		<!-- Confirmed CT2.5 -->

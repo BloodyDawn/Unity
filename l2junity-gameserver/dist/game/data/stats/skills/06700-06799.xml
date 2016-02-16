@@ -117,6 +117,7 @@
 		<fanRange>0;0;300;65</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6706" levels="1" name="Piercing Attack">
 		<!-- High Five Skill -->
@@ -139,6 +140,7 @@
 		<fanRange>0;180;200;300</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<!-- FIXME: Time value is unconfirmed -->
 			<effect name="PhysicalDefence">
@@ -160,6 +162,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6708" levels="1" name="Self-destruction">
 		<!-- none -->
@@ -173,6 +176,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6709" levels="1" name="Multi Shot">
 		<!-- none -->
@@ -189,6 +193,7 @@
 		<fanRange>0;0;300;65</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6710" levels="1" name="Etis Haste">
 		<!-- Atk. Spd. increases by 10%. -->
@@ -796,6 +801,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6736" levels="1" name="Fierce Attack">
 		<!-- High Five Skill -->
@@ -813,6 +819,7 @@
 		<fanRange>0;0;500;40</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -836,6 +843,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Heal">
 				<power>800</power>
@@ -982,6 +990,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
 		<!-- none -->
@@ -1006,6 +1015,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="6746" levels="1" name="Dark Space">
 		<!-- Darkness attribute is weakened. -->
@@ -1031,6 +1041,7 @@
 		<castRange>900</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
 		<!-- none -->
@@ -1150,6 +1161,7 @@
 		<castRange>150</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6752" levels="1" name="Revival">
 		<!-- High Five Skill -->
@@ -1223,6 +1235,7 @@
 		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>200</power>
@@ -1271,6 +1284,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>100</power>
@@ -1331,6 +1345,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1408,6 +1423,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>10000</power>
@@ -1561,6 +1577,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6768" levels="1" name="Stun Attack">
 		<!-- High Five Skill -->
@@ -1625,6 +1642,7 @@
 		<abnormalVisualEffect>FLESH_STONE</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1722,6 +1740,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1795,6 +1814,7 @@
 		<fanRange>0;0;150;60</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15000</power>
@@ -1876,6 +1896,7 @@
 		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>200</power>

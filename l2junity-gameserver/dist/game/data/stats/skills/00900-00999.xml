@@ -62,6 +62,7 @@
 		</pvpEffects>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="901" levels="6" name="Dark Strike">
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
@@ -249,6 +250,7 @@
 		</pvpEffects>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="904" levels="6" name="Corpse Burst">
 		<table name="#pvePower"> 348 351 355 358 361 364 </table>
@@ -300,6 +302,7 @@
 		<trait>POISON</trait>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>230</power>
@@ -378,6 +381,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -468,6 +472,7 @@
 		</pvpEffects>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="907" levels="6" name="Aqua Blast">
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
@@ -594,6 +599,7 @@
 		</pvpEffects>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="909" levels="6" name="Ice Fog">
 		<table name="#pvePower"> 348 351 355 358 361 364 </table>
@@ -643,6 +649,7 @@
 		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DamOverTime">
 				<power>230</power>
@@ -758,6 +765,7 @@
 		</pvpEffects>
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="911" levels="11" name="Energy Burst">
 		<!-- Aurabird Falcon and Owl -->
@@ -811,6 +819,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -900,6 +909,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -935,6 +945,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -1764,6 +1775,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>INVISIBLE</affectObject>
 		<effects>
 			<effect name="Detection" />
 		</effects>
@@ -2839,6 +2851,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -2903,6 +2916,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
 		</cond>
@@ -3003,6 +3017,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -4404,6 +4419,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -4498,6 +4514,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -4694,6 +4711,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -4833,6 +4851,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -5214,6 +5233,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<target mindistance="200" />

@@ -799,6 +799,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -885,6 +886,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -969,6 +971,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
@@ -1054,6 +1057,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1203,6 +1207,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -1403,6 +1408,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="TransferDamageToPlayer">
 				<amount>90</amount>
@@ -1626,6 +1632,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -1663,6 +1670,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113">
 			<using kind="SHIELD" />
 		</cond>
@@ -1902,6 +1910,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -1979,6 +1988,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>-20</amount>
@@ -2069,6 +2079,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-15</amount>
@@ -2150,6 +2161,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
@@ -2221,6 +2233,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>10</amount>
@@ -2294,6 +2307,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>20</SHOCK>
@@ -2356,6 +2370,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceTrait">
 				<AIRBIND>20</AIRBIND>
@@ -3141,6 +3156,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -3190,6 +3206,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

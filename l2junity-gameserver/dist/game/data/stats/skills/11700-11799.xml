@@ -647,6 +647,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>
@@ -690,6 +691,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -725,6 +727,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -915,6 +918,7 @@
 		<hitCancelTime>3</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
@@ -965,6 +969,7 @@
 		<abnormalLvl>4</abnormalLvl>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="RebalanceHP" />
 			<effect name="HealOverTime">
@@ -1024,6 +1029,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
@@ -1253,6 +1259,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1293,6 +1300,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="ManaHealPercent">
 				<power>100</power>
@@ -1475,6 +1483,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DeleteHate">
 				<chance>100</chance>
@@ -2125,6 +2134,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>666</power>
@@ -2275,6 +2285,7 @@
 			<value level="2">DEAD_PARTY</value>
 			<value level="3">DEAD_PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond>
 			<player canResurrect="true" />
 		</cond>

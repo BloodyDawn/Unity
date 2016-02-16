@@ -157,6 +157,7 @@
 		<coolTime>300</coolTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14608" levels="1" name="Chain Skills">
 		<!-- AUTO GENERATED SKILL -->
@@ -742,6 +743,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>75816</power>
@@ -798,6 +800,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>75816</power>
@@ -914,6 +917,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>50000</power>
@@ -995,6 +999,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>32000</power>
@@ -1061,6 +1066,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-20</amount>
@@ -1089,6 +1095,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-20</amount>
@@ -1169,6 +1176,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14650" levels="1" name="Corpse' Blow">
 		<!-- Glory Days confirmed -->
@@ -1400,6 +1408,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>36675</power>
@@ -1561,6 +1570,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="ANCIENTSWORD,RAPIER" />
@@ -1643,6 +1653,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>254</power>
@@ -1663,6 +1674,7 @@
 		<castRange>2000</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14670" levels="1" name="Earth Wyrm Feeler Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1677,6 +1689,7 @@
 		<fanRange>0;0;900;0</fanRange>
 		<targetType>SELF</targetType>
 		<affectScope>RING_RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14671" levels="1" name="Earth Wyrm Feeler Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -1690,6 +1703,7 @@
 		<affectRange>900</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14672" levels="1" name="Bounce">
 		<!-- AUTO GENERATED SKILL -->
@@ -1711,6 +1725,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14673" levels="1" name="Cry of Destiny - Shield Charge">
 		<!-- AUTO GENERATED SKILL -->
@@ -1840,6 +1855,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14678" levels="1" name="Cry of Destiny - Power Bomber">
 		<!-- AUTO GENERATED SKILL -->
@@ -2199,6 +2215,7 @@
 		<coolTime>300</coolTime>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14694" levels="1" name="Cry of Destiny - Dark Blast">
 		<!-- AUTO GENERATED SKILL -->

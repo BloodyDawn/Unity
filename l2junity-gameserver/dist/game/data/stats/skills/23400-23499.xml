@@ -20,6 +20,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23401" levels="1" name="">
 		<!-- AUTO GENERATED SKILL -->
@@ -365,6 +366,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23415" levels="3" name="Borna Storm (Fire)">
 		<!-- AUTO GENERATED SKILL -->
@@ -402,6 +404,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23416" levels="3" name="Borna Storm (Water)">
 		<!-- AUTO GENERATED SKILL -->
@@ -439,6 +442,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23417" levels="3" name="Borna Storm (Wind)">
 		<!-- AUTO GENERATED SKILL -->
@@ -476,6 +480,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23418" levels="3" name="Borna Storm (Earth)">
 		<!-- AUTO GENERATED SKILL -->
@@ -513,6 +518,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23419" levels="3" name="Borna Storm (4 Attributes)">
 		<!-- AUTO GENERATED SKILL -->
@@ -551,6 +557,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23420" levels="3" name="Borna Heal">
 		<table name="#power"> 1191 1210 1230 </table>
@@ -579,6 +586,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="23421" levels="2" name="Recharge of Borna">
 		<!-- AUTO GENERATED SKILL -->
@@ -611,6 +619,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="23422" levels="1" name="Escape: Clan Hall">
 		<!-- AUTO GENERATED SKILL -->
@@ -659,6 +668,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23425" levels="1" name="Physical Strike">
 		<!-- Glory Days confirmed -->
@@ -766,6 +776,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>39</power>
@@ -792,6 +803,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>44</power>
@@ -818,6 +830,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>48</power>
@@ -843,6 +856,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1488</power>
@@ -868,6 +882,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1519</power>
@@ -893,6 +908,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 		<effects>
 			<effect name="HpCpHeal">
 				<power>1557</power>
@@ -1271,6 +1287,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23446" levels="1" name="Steregos' Authority">
 		<!-- AUTO GENERATED SKILL -->
@@ -1363,6 +1380,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1404,6 +1422,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1509,6 +1528,7 @@
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="23453" levels="3" name="(Superior Aggression)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1700,6 +1720,7 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23460" levels="1" name="(Hurricane Storm)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1719,6 +1740,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23461" levels="3" name="(Armor Destruction)">
 		<!-- Glory Days Confirmed -->
@@ -1841,6 +1863,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23465" levels="1" name="(Impact Shot)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1887,6 +1910,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23467" levels="2" name="(Blood Stab)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1956,6 +1980,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23470" levels="3" name="(Death Howl)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1984,6 +2009,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23471" levels="2" name="(Elemental Destruction)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2036,6 +2062,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="23473" levels="2" name="(Unleash Hell)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2137,6 +2164,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="23477" levels="2" name="(Assault Rush)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2182,6 +2210,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23479" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
 		<!-- AUTO GENERATED SKILL -->
@@ -2432,6 +2461,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="23492" levels="1" name="(Horn Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2453,6 +2483,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23493" levels="1" name="(Horn Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2474,6 +2505,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23494" levels="1" name="(Drum Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2495,6 +2527,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23495" levels="1" name="(Drum Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2516,6 +2549,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23496" levels="1" name="(Pipe Organ Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2537,6 +2571,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23497" levels="1" name="(Pipe Organ Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2558,6 +2593,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23498" levels="1" name="(Guitar Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2579,6 +2615,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 	<skill id="23499" levels="1" name="(Guitar Melody)">
 		<!-- AUTO GENERATED SKILL -->
@@ -2600,5 +2637,6 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>CLAN</affectObject>
 	</skill>
 </list>

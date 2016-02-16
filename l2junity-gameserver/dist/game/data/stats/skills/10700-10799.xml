@@ -1036,6 +1036,7 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1369,6 +1370,7 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="KnockBack">
 				<speed>200</speed>
@@ -1439,6 +1441,7 @@
 		<!-- TODO cond {op_blink;_back;300} -->
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1686,6 +1689,7 @@
 		<rideState>NONE</rideState>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1766,6 +1770,7 @@
 		<rideState>NONE</rideState>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -1808,6 +1813,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
 		<!-- Glory Days confirmed -->
@@ -2024,6 +2030,7 @@
 		<reuseDelay>60000</reuseDelay>
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond>
 			<target myPartyExceptMe="true" />
 		</cond>
@@ -2187,6 +2194,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>GROUND</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2222,6 +2230,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2361,6 +2370,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>INVISIBLE</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
@@ -2521,6 +2531,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>INVISIBLE</affectObject>
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
 		<!-- Glory Days confirmed -->
@@ -2649,6 +2660,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
 		<!-- Updated to IO -->
@@ -2748,6 +2760,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="KnockBack">
 				<speed>400</speed>

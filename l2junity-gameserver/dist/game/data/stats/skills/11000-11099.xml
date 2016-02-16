@@ -1900,6 +1900,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1946,6 +1947,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>114</power>
@@ -2015,22 +2017,27 @@
 			<skill requiredId="11007" id="11035">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Fire Stance / Elemental Blast (Fire) -->
 			<skill requiredId="11008" id="11036">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Water Stance / Elemental Blast (Water) -->
 			<skill requiredId="11009" id="11037">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Wind Stance / Elemental Blast (Wind) -->
 			<skill requiredId="11010" id="11038">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Earth Stance / Elemental Blast (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2362,6 +2369,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2432,22 +2440,27 @@
 			<skill requiredId="11007" id="11041">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Fire Stance / Elemental Storm (Fire) -->
 			<skill requiredId="11008" id="11042">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Water Stance / Elemental Storm (Water) -->
 			<skill requiredId="11009" id="11043">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Wind Stance / Elemental Storm (Wind) -->
 			<skill requiredId="11010" id="11044">
 				<targetType>ENEMY</targetType>
 				<affectScope>RANGE</affectScope>
+				<affectObject>NOT_FRIEND</affectObject>
 			</skill> <!-- Earth Stance / Elemental Storm (Earth) -->
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2780,6 +2793,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3048,6 +3062,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -3332,6 +3347,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -3382,6 +3398,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<target checkCrtEffect="true" />
 		</cond>
@@ -3586,6 +3603,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
@@ -3676,6 +3694,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -3783,6 +3802,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -4072,6 +4092,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4787,6 +4808,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>139</power>
@@ -4903,6 +4925,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>

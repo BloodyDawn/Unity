@@ -112,6 +112,7 @@
 		<affectRange>200</affectRange>
 		<targetType>TARGET</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -140,6 +141,7 @@
 		<affectRange>200</affectRange>
 		<targetType>TARGET</targetType>
 		<affectScope>PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="7007" levels="4" name="Greater Seal of Flame">
 		<!-- Needs to be done -->
@@ -168,6 +170,7 @@
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<targetType>TARGET</targetType>
 		<affectScope>PLEDGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7008" levels="1" name="Feather of Blessing">
 		<magicLvl>-2</magicLvl>
@@ -281,6 +284,7 @@
 		<affectRange>1000</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>STATIC_OBJECT_SCOPE</affectScope>
+		<affectObject>HIDDEN_PLACE</affectObject>
 	</skill>
 	<skill id="7023" levels="1" name="not_used">
 		<magicLvl>1</magicLvl>
@@ -1639,6 +1643,7 @@
 		<trait>SHOCK</trait>
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -1665,6 +1670,7 @@
 		<affectRange>1000</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="7080" levels="1" name="Test - General Attack Prohibited">
 		<abnormalLvl>1</abnormalLvl>
@@ -1698,6 +1704,7 @@
 		<castRange>500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7082" levels="1" name="Effect Test - Chain Lightning">
 		<affectLimit>5-12</affectLimit>
@@ -1716,6 +1723,7 @@
 		<castRange>500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7083" levels="1" name="Test - Trap Skill">
 		<affectLimit>6-12</affectLimit>
@@ -1730,6 +1738,7 @@
 		<affectRange>200</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7084" levels="1" name="Test - Trap Skill">
 		<affectLimit>6-12</affectLimit>
@@ -1746,6 +1755,7 @@
 		<channelingTickInterval>0</channelingTickInterval>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7085" levels="1" name="Self-Destruct Explosion_test">
 		<effectPoint>-100</effectPoint>
@@ -1760,6 +1770,7 @@
 		<affectRange>300</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7086" levels="1" name="Last Stand_test">
 		<effectPoint>-100</effectPoint>
@@ -1786,6 +1797,7 @@
 		<castRange>500</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7088" levels="1" name="Master's Blessing - Improve Combat">
 		<!-- Confirmed CT2.5 -->
@@ -2141,6 +2153,7 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>DANCE_OF_SHADOW,-1;STEALTH,-1</dispel>

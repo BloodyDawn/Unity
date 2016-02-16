@@ -790,6 +790,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
@@ -888,6 +889,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -1036,6 +1038,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>ALL</affectObject>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1120,6 +1123,7 @@
 			<value level="3">PARTY</value>
 			<value level="4">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL</dispel>
@@ -1225,6 +1229,7 @@
 			<value level="3">PARTY</value>
 			<value level="4">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Critical Damage Increase -->
@@ -1364,6 +1369,7 @@
 			<value level="3">PARTY</value>
 			<value level="4">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP</dispel>
@@ -1459,6 +1465,7 @@
 			<value level="3">PARTY</value>
 			<value level="4">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP</dispel>
@@ -1553,6 +1560,7 @@
 			<value level="3">PARTY</value>
 			<value level="4">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_HIT_DEFENCE_CRT_RATE_UP;HIT_UP;T_CRT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP</dispel>
@@ -1658,6 +1666,7 @@
 			<value level="3">PARTY</value>
 			<value level="4">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
@@ -1982,6 +1991,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
@@ -2040,6 +2050,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
@@ -2109,6 +2120,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD</dispel>
@@ -2178,6 +2190,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>BUFF_SPECIAL_MULTI,-1</dispel>
@@ -2444,6 +2457,7 @@
 		<trait>HOLD</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Root" />
 			<effect name="DefenceTrait">
@@ -2756,6 +2770,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PAtk">
 				<amount>100</amount>
@@ -2796,6 +2811,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceCriticalRate">
 				<amount>50</amount>
@@ -2835,6 +2851,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -3127,6 +3144,7 @@
 		<trait>BOSS</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="HpRegen">
 				<amount>-100</amount>
@@ -3154,6 +3172,7 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="TargetCancel" />
 		</effects>
@@ -3184,6 +3203,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Reuse">
 				<amount>200</amount>
@@ -3234,6 +3254,7 @@
 			<value level="1">PARTY</value>
 			<value level="2">PARTY_PLEDGE</value>
 		</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelBySlotMyself">
@@ -3322,6 +3343,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="SilentMove" />
 			<effect name="TriggerSkillByMagicType">
@@ -3448,6 +3470,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>ARMOR_FIRE;ARMOR_WATER;ARMOR_WIND;ARMOR_EARTH;MD_UP_ATTR;DANCE_OF_AQUA_GUARD;DANCE_OF_EARTH_GUARD;SONG_OF_ELEMENTAL;SONG_OF_FLAME_GUARD;SONG_OF_STORM_GUARD;SONG_OF_WIND</dispel>
@@ -3496,6 +3519,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceTrait">
 				<BLEED>50</BLEED>
@@ -3539,6 +3563,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>50</HOLD>
@@ -3619,6 +3644,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>RANGE_SORT_BY_HP</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>

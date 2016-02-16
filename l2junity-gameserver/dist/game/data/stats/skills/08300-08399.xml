@@ -868,6 +868,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -1574,6 +1575,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="StaticDamage">
 				<power>10000</power>
@@ -1671,6 +1673,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8363" levels="1" name="Beast Training - Accompany">
 		<!-- Confirmed CT2.5 -->
@@ -1685,6 +1688,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8364" levels="1" name="Beast Training - Use Special Ability">
 		<!-- Confirmed CT2.5 -->
@@ -1699,6 +1703,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8365" levels="1" name="Dynasty Tunic">
 		<icon>icon.armor_t93_ue_i00</icon>
@@ -1909,6 +1914,7 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8379" levels="2" name="Protection Ring - Gludio">
 		<table name="#earthRes"> 12 15 </table>

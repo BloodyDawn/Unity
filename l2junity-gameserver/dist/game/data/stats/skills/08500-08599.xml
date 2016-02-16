@@ -615,6 +615,7 @@
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8539" levels="1" name="Spirit of the Phoenix">
 		<!-- AUTO GENERATED SKILL -->
@@ -655,6 +656,7 @@
 		<reuseDelay>900000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8541" levels="1" name="Seed of Revenge">
 		<!-- AUTO GENERATED SKILL -->
@@ -699,6 +701,7 @@
 		<reuseDelay>150000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8543" levels="1" name="Pain of Shilen">
 		<!-- AUTO GENERATED SKILL -->
@@ -793,6 +796,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8548" levels="1" name="Song of Purification">
 		<!-- AUTO GENERATED SKILL -->
@@ -814,6 +818,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8549" levels="1" name="Dance of Berserker">
 		<!-- AUTO GENERATED SKILL -->
@@ -835,6 +840,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8550" levels="1" name="Dance of Medusa">
 		<!-- AUTO GENERATED SKILL -->
@@ -863,6 +869,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8551" levels="1" name="Chant of Victory">
 		<!-- AUTO GENERATED SKILL -->
@@ -884,6 +891,7 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="8552" levels="1" name="Onslaught of Pa'agrio">
 		<!-- AUTO GENERATED SKILL -->
@@ -914,6 +922,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8553" levels="1" name="Arcane Power">
 		<!-- AUTO GENERATED SKILL -->
@@ -1066,6 +1075,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8561" levels="1" name="Arrow Rain">
 		<!-- AUTO GENERATED SKILL -->
@@ -1086,6 +1096,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8562" levels="1" name="Ghost Piercing">
 		<!-- AUTO GENERATED SKILL -->
@@ -1106,6 +1117,7 @@
 		<reuseDelay>75000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8563" levels="1" name="Death Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1153,6 +1165,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8565" levels="1" name="Dread Pool">
 		<!-- AUTO GENERATED SKILL -->
@@ -1179,6 +1192,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8566" levels="1" name="Earthquake">
 		<!-- AUTO GENERATED SKILL -->
@@ -1197,6 +1211,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="8567" levels="1" name="Maximum Force Focus">
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
@@ -1336,6 +1351,7 @@
 		<fanRange>0;0;500;60</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -1450,6 +1466,7 @@
 		<fanRange>0;0;400;90</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>6468</power>
@@ -1555,6 +1572,7 @@
 		<fanRange>0;0;900;40</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
@@ -1587,6 +1605,7 @@
 		<fanRange>0;0;900;60</fanRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="BOW, CROSSBOW" />
 		</cond>
@@ -1706,6 +1725,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -1892,6 +1912,7 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>117</power>
@@ -2382,6 +2403,7 @@
 		<isMagic>3</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2417,6 +2439,7 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -2444,6 +2467,7 @@
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>RANGE_SORT_BY_HP</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
