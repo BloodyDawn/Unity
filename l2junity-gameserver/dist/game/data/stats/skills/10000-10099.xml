@@ -3958,7 +3958,8 @@
 		<!-- HP Recovery -->
 		<icon>icon.skill10069</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -3997,7 +3998,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType2>PARTY</targetType2>
+				<targetType>MY_PARTY</targetType>
 				<minDamage>1</minDamage>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10072</skillId>
@@ -4048,7 +4049,9 @@
 		</magicLvl>
 		<icon>icon.skill10071</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
@@ -4170,7 +4173,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType2>PARTY</targetType2>
+				<targetType>MY_PARTY</targetType>
 				<minDamage>1</minDamage>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10078</skillId>
