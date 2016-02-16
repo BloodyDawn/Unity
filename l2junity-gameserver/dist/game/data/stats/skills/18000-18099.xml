@@ -4,34 +4,39 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="18001" levels="1" name="Scroll of Escape: Guillotine Fortress">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="18002" levels="1" name="Scroll of Escape: Orbis Temple">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="18003" levels="1" name="Scroll of Escape: Heine">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="18004" levels="1" name="Scroll of Escape: Valley of Saints">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -42,7 +47,8 @@
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -62,7 +68,8 @@
 	<skill id="18005" levels="1" name="Scroll of Escape: Forge of the Gods">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -93,7 +100,8 @@
 	<skill id="18006" levels="1" name="Scroll of Escape: Ivory Tower">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -123,7 +131,8 @@
 	</skill>
 	<skill id="18007" levels="1" name="Scroll of Escape: Secret Room">
 		<icon>icon.skill0000</icon>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
@@ -155,7 +164,8 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="18009" levels="1" name="Tempest Stone">
@@ -163,7 +173,8 @@
 		<!-- Double-click for a chance to obtain either a Low/Mid/High-grade Dye Pack, or Talisman - Wind Pack. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="18010" levels="1" name="Love Potion: Atk. Spd.">
 		<!-- AUTO GENERATED SKILL -->
@@ -282,14 +293,6 @@
 	<skill id="18024" levels="24" name="Venir's Talisman">
 		<!-- Updated to Infinity Odyssey -->
 		<!-- MEN + 1. -->
-		<table name="#MEN"> 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 </table>
-		<table name="#WIT"> 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 </table>
-		<table name="#CON"> 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 </table>
-		<table name="#INT"> 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 </table>
-		<table name="#DEX"> 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 </table>
-		<table name="#STR"> 0 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 </table>
-		<table name="#LUC"> 0 0 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 </table>
-		<table name="#CHA"> 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 </table>
 		<icon>
 			<value level="1">icon.etc_all_stat_talisman_i00</value>
 			<value level="2">icon.etc_all_stat_talisman_i00</value>

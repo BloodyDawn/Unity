@@ -1743,7 +1743,8 @@
 		<table name="#power"> 198 200 203 240 244 248 </table>
 		<icon>icon.skill11859</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">92</value>
 			<value level="2">96</value>
@@ -1778,9 +1779,6 @@
 		<reuseDelay>3000</reuseDelay>
 		<effectPoint>867</effectPoint>
 		<isMagic>1</isMagic>
-		<effects>
-			<effect name="MagicalAttack" />
-		</effects>
 	</skill>
 	<skill id="11861" levels="1" name="Elemental Resistance">
 		<!-- AUTO GENERATED SKILL -->
