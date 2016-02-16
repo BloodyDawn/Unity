@@ -13,7 +13,8 @@
 		<table name="#power"> 6 14 19 25 32 36 41 46 50 55 60 64 69 72 75 77 79 171 179 187 195 203 211 219 227 231 235 239 </table>
 		<icon>icon.skill30001</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">2</value>
 			<value level="2">6</value>
@@ -161,7 +162,8 @@
 		<icon>icon.skill30027</icon>
 		<abnormalTime>5</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<isMagic>4</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -184,7 +186,8 @@
 		<icon>icon.skill30003</icon>
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">47</value>
 			<value level="2">51</value>
@@ -282,7 +285,8 @@
 		<icon>icon.skill30004</icon>
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">31</value>
 			<value level="2">34</value>
@@ -391,7 +395,8 @@
 		<!-- M. Def. - 50%, Speed - 100. -->
 		<icon>icon.skill30027</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<isMagic>4</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -419,7 +424,9 @@
 		<affectLimit>5-10</affectLimit> <!-- Unconfirmed -->
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -488,7 +495,8 @@
 		<affectLimit>5-10</affectLimit> <!-- Unconfirmed -->
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">78</value>
 			<value level="2">80</value>
@@ -728,7 +736,8 @@
 		<icon>icon.skill30011</icon>
 		<affectRange>1400</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">76</value>
 			<value level="2">78</value>
@@ -787,7 +796,8 @@
 		<icon>icon.skill30012</icon>
 		<abnormalTime>1</abnormalTime>
 		<operateType>DA1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">31</value>
 			<value level="2">34</value>
@@ -873,7 +883,8 @@
 		<affectRange>1400</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-709</effectPoint>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>705</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1200</hitTime>
@@ -1069,7 +1080,8 @@
 				<!-- Unconfirmed -->
 				<!-- Lightning Squall -->
 				<chance>50</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<skillId>30026</skillId>
 				<skillLevel>
 					<value level="1">1</value>
@@ -1152,7 +1164,8 @@
 		<abnormalTime>10</abnormalTime>
 		<effectPoint>-687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1247,7 +1260,8 @@
 				<!-- Unconfirmed -->
 				<!-- Destructive Bolt -->
 				<chance>50</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<skillId>30027</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -1339,7 +1353,8 @@
 		<affectRange>1600</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-711</effectPoint> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>1100</castRange>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
@@ -1365,7 +1380,8 @@
 		<affectRange>1600</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-711</effectPoint> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>1100</castRange>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
@@ -1390,7 +1406,9 @@
 		<affectRange>200</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-707</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<magicLvl>
 			<value level="1">98</value>
 			<value level="2">101</value>

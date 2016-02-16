@@ -4225,7 +4225,9 @@
 		</magicLvl>
 		<icon>icon.skill11832</icon>
 		<operateType>A2</operateType>
-		<targetType2>PARTY</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
@@ -4287,7 +4289,8 @@
 		<activateRate>40</activateRate>
 		<icon>icon.skill0279</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<lvlBonusRate>1</lvlBonusRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -4396,7 +4399,9 @@
 		<affectRange>150</affectRange>
 		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<trait>PHYSICAL_BLOCKADE</trait>
 		<mpConsume>
 			<value level="1">159</value>
@@ -4524,7 +4529,9 @@
 			<value level="4">65</value>
 		</mpConsume>
 		<reuseDelay>60000</reuseDelay>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<icon>icon.skill10090new</icon>
 		<effectPoint>
 			<value level="1">-1098</value>
@@ -4601,7 +4608,9 @@
 		</itemConsumeCount>
 		<lvlBonusRate>1</lvlBonusRate>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -4661,7 +4670,8 @@
 				<!-- Death Touch -->
 				<isCritical>false</isCritical>
 				<chance>30</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<skillId>10096</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -4670,7 +4680,8 @@
 				<!-- Death Touch -->
 				<skillId>10096</skillId>
 				<skillLevel>1</skillLevel>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<isCritical>true</isCritical>
 				<chance>15</chance>
 			</effect>
@@ -4687,7 +4698,8 @@
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>1</mpConsume>
 		<castRange>100</castRange>
 		<hitTime>500</hitTime>
@@ -4712,7 +4724,9 @@
 		<itemConsumeId>1785</itemConsumeId>
 		<itemConsumeCount>6</itemConsumeCount>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<magicLvl>
 			<value level="1">97</value>
 			<value level="2">98</value>

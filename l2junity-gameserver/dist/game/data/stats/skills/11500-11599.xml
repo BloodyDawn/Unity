@@ -3681,7 +3681,9 @@
 		<icon>icon.skill11580</icon>
 		<abnormalTime>10</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<trait>CHANGEBODY</trait>
 		<affectRange>200</affectRange>
 		<magicLvl>
@@ -3821,7 +3823,9 @@
 		<affectRange>150</affectRange> <!-- Custom -->
 		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -3899,7 +3903,9 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -4792,7 +4798,8 @@
 		<activateRate>70</activateRate> <!-- Custom -->
 		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">73</value>
 			<value level="2">79</value>

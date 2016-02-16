@@ -308,7 +308,10 @@
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<itemConsumeCount>6</itemConsumeCount>
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<fanRange>0;0;200;180</fanRange>
 		<mpConsume>
 			<value level="1">185</value>
 			<value level="2">191</value>
@@ -378,7 +381,9 @@
 			<value level="5">103</value>
 			<value level="6">105</value>
 		</magicLvl>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">185</value>
 			<value level="2">191</value>
@@ -593,7 +598,9 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10105</icon>
 		<operateType>A5</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<effectPoint>2</effectPoint>

@@ -76,7 +76,8 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -225,7 +226,8 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -335,7 +337,8 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKDOWN</trait>
 		<cond msgId="113" addName="1">
@@ -388,7 +391,8 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -464,7 +468,8 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>9000</reuseDelay>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -536,7 +541,9 @@
 		<operateType>A2</operateType>
 		<trait>PULL</trait>
 		<reuseDelay>30000</reuseDelay>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -663,7 +670,8 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>900</effectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType> <!-- A1 in client? -->
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">13</value>
 			<value level="2">14</value>
@@ -725,7 +733,8 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>900</effectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType> <!-- A1 in client? -->
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">7</value>
 			<value level="2">9</value>
@@ -820,7 +829,8 @@
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>NONE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">27</value>
 			<value level="2">30</value>
@@ -1146,7 +1156,9 @@
 		<affectRange>300</affectRange>
 		<effectPoint>-379</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">73</value>
 			<value level="2">74</value>
@@ -1189,7 +1201,9 @@
 		<affectRange>300</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">1479</value>
 			<value level="2">1487</value>
@@ -1295,7 +1309,8 @@
 			<effect name="TriggerSkillByAttack">
 				<!-- Damage Up -->
 				<chance>100</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<minDamage>1</minDamage>
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
@@ -1341,7 +1356,8 @@
 		<!-- Inflicts normal damage x 5. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1445,7 +1461,8 @@
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>13</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>
 	</skill>
@@ -1471,7 +1488,8 @@
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<abnormalVisualEffect>GRAVITY_SPACE_3</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">34</value>
 			<value level="2">35</value>
@@ -2408,7 +2426,8 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA2</operateType>
 		<trait>KNOCKDOWN</trait>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">29</value>
 			<value level="2">29</value>
@@ -2448,7 +2467,8 @@
 		<table name="#power"> 91570 95080 98736 102392 </table>
 		<icon>icon.skill30547</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>85</mpConsume>
 		<castRange>80</castRange>
 		<hitTime>500</hitTime>

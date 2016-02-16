@@ -7,7 +7,9 @@
 		<affectRange>250</affectRange>
 		<icon>icon.skill10700</icon>
 		<operateType>A1</operateType>
-		<targetType2>AREA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -110,7 +112,8 @@
 		<table name="#power"> 13580 15946 18311 20204 27142 28466 29790 </table>
 		<icon>icon.skill10548</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -164,7 +167,8 @@
 		<activateRate>80</activateRate> <!-- Guessed -->
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<trait>DISARM</trait> <!-- Guessed -->
 		<mpConsume>
 			<value level="1">77</value>
@@ -194,7 +198,9 @@
 		<itemConsumeCount>2</itemConsumeCount>
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<operateType>A2</operateType>
-		<targetType2>AREA</targetType2>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<trait>DERANGEMENT</trait>
 		<mpConsume>155</mpConsume>
 		<castRange>40</castRange>

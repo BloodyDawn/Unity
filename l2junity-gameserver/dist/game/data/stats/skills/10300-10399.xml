@@ -184,7 +184,9 @@
 		<abnormalType>REAL_TARGET</abnormalType>
 		<icon>icon.skill11833</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">62</value>
 			<value level="2">69</value>
@@ -599,7 +601,9 @@
 		<trait>SHOCK</trait>
 		<icon>icon.skill10317new</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">122</value>
 			<value level="2">124</value>
@@ -638,7 +642,8 @@
 		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
 		<icon>icon.skill10318new</icon>
 		<operateType>A1</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -748,7 +753,8 @@
 		<abnormalVisualEffect>DUELING</abnormalVisualEffect>
 		<icon>icon.skll10319</icon>
 		<operateType>A4</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>43</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>300</hitTime>
@@ -797,7 +803,9 @@
 		<trait>SHOCK</trait>
 		<icon>icon.skll10321</icon>
 		<operateType>A2</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">122</value>
 			<value level="2">124</value>
@@ -900,7 +908,9 @@
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<icon>icon.skill10325</icon>
 		<operateType>A1</operateType>
-		<targetType2>AURA</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">149</value>
 			<value level="2">151</value>
@@ -1062,7 +1072,8 @@
 		</magicLvl>
 		<icon>icon.skill10330</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>
 			<value level="1">92</value>
 			<value level="2">96</value>
@@ -1138,7 +1149,8 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<isCritical>false</isCritical>
 				<allowWeapons>POLE</allowWeapons>
 				<skillId>10339</skillId>
@@ -1151,7 +1163,8 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<skillId>10339</skillId>
 				<skillLevel>1</skillLevel>
 				<allowWeapons>POLE</allowWeapons>
@@ -1227,7 +1240,8 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<isCritical>false</isCritical>
 				<allowWeapons>DUALFIST</allowWeapons>
 				<skillId>10338</skillId>
@@ -1240,7 +1254,8 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType2>ONE</targetType2>
+				<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 				<skillId>10338</skillId>
 				<skillLevel>1</skillLevel>
 				<allowWeapons>DUALFIST</allowWeapons>
@@ -1283,7 +1298,8 @@
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<icon>icon.skill10335</icon>
 		<operateType>A2</operateType>
-		<targetType2>ONE</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>1</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>100</hitTime>
