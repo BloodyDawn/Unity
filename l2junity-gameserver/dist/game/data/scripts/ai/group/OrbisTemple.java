@@ -35,6 +35,7 @@ public final class OrbisTemple extends AbstractNpcAI
 {
 	private static final Map<Integer, Location> TELEPORT_DATA = new HashMap<>();
 	
+	static
 	{
 		TELEPORT_DATA.put(12036, new Location(213983, 53250, -8176));
 		TELEPORT_DATA.put(12037, new Location(198022, 90032, -192));
