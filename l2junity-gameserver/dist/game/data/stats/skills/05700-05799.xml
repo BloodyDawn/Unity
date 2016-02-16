@@ -57,7 +57,6 @@
 		</effects>
 	</skill>
 	<skill id="5702" levels="2" name="Adiantum Round Fighter">
-		<table name="#targetType"> SELF ENEMY </table>
 		<!-- Confirmed CT2.5 -->
 		<affectRange>400</affectRange>
 		<castRange>
@@ -80,7 +79,10 @@
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>#targetType</targetType>
+		<targetType>
+			<value level="1">SELF</value>
+			<value level="2">ENEMY</value>
+		</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>69</power>

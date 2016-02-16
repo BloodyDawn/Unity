@@ -1221,7 +1221,6 @@
 		<targetType>ENEMY</targetType>
 	</skill>
 	<skill id="5855" levels="2" name="Stun">
-		<table name="#targetType"> ENEMY_ONLY ENEMY </table>
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -1269,7 +1268,10 @@
 			<value level="2">40</value>
 		</castRange>
 		<trait>SHOCK</trait>
-		<targetType>#targetType</targetType>
+		<targetType>
+			<value level="1">ENEMY_ONLY</value>
+			<value level="2">ENEMY</value>
+		</targetType>
 	</skill>
 	<skill id="5856" levels="1" name="Transformation Scroll: Makeshift Bat">
 		<!-- Confirmed CT2.5 -->

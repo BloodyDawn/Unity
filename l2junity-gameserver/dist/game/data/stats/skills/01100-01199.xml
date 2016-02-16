@@ -3637,7 +3637,6 @@
 		</effects>
 	</skill>
 	<skill id="1177" levels="5" name="Wind Strike">
-		<table name="#targetType"> ENEMY_ONLY ENEMY ENEMY ENEMY ENEMY </table>
 		<table name="#power"> 12 13 15 18 21 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -3678,7 +3677,13 @@
 		<reuseDelay>1200</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>#targetType</targetType>
+		<targetType>
+			<value level="1">ENEMY_ONLY</value>
+			<value level="2">ENEMY</value>
+			<value level="3">ENEMY</value>
+			<value level="4">ENEMY</value>
+			<value level="5">ENEMY</value>
+		</targetType>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
