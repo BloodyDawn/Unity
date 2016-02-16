@@ -1828,7 +1828,9 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>GREATER_SERVITOR_BUFF</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">61</value>
 			<value level="2">67</value>
@@ -1867,7 +1869,9 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>GREATER_SERVITOR_BUFF</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">61</value>
 			<value level="2">67</value>
@@ -1906,7 +1910,9 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>GREATER_SERVITOR_BUFF</abnormalType>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">61</value>
 			<value level="2">67</value>
@@ -1994,7 +2000,9 @@
 		<abnormalType>SUMMONER_LINK</abnormalType>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<castRange>900</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>4</isMagic>
@@ -2154,7 +2162,9 @@
 		<abnormalType>SUMMONER_LINK</abnormalType>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<castRange>900</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>4</isMagic>
@@ -2272,7 +2282,9 @@
 		<abnormalType>SUMMONER_LINK</abnormalType>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<castRange>900</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>4</isMagic>
@@ -2362,7 +2374,9 @@
 		<itemConsumeCount>15</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A1</operateType>
-		<targetType2>GROUND</targetType2>
+		<targetType>GROUND</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">137</value>
 			<value level="2">132</value>
@@ -3111,7 +3125,9 @@
 		<activateRate>100</activateRate> <!-- Guessed -->
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<operateType>DA2</operateType>
-		<targetType2>FRONT_AREA</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">86</value>
 			<value level="2">86</value>
@@ -3286,7 +3302,9 @@
 		<fanRange>0;0;600;60</fanRange>
 		<flyType>CHARGE</flyType>
 		<operateType>DA2</operateType>
-		<targetType2>FRONT_AREA</targetType2>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 		<trait>SHOCK</trait>
 		<mpConsume>
 			<value level="1">86</value>
@@ -3585,7 +3603,9 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -3653,7 +3673,9 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -3730,7 +3752,9 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>SUMMON</targetType2>
+		<targetType>SUMMON</targetType>
+		<affectScope>SUMMON_EXCEPT_MASTER</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>70</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
