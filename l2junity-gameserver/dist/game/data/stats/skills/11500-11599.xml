@@ -3962,7 +3962,9 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY_PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -4827,7 +4829,8 @@
 		<table name="#mdot"> 4 4 4 4 </table> <!-- Custom -->
 		<icon>icon.skill1001</icon>
 		<operateType>T</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>1</mpConsume>
 		<effects>
 			<effect name="ManaDamOverTime">

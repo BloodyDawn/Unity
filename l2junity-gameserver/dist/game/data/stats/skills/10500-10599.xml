@@ -178,7 +178,7 @@
 			<effect name="TriggerSkillByAvoid">
 				<!-- Assassin's Reflex -->
 				<chance>10</chance>
-				<targetType2>SELF</targetType2>
+				<targetType>SELF</targetType>
 				<skillId>10518</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -377,7 +377,7 @@
 				<skillId>10530</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>100</chance>
-				<targetType2>SELF</targetType2>
+				<targetType>SELF</targetType>
 			</effect>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -3226,7 +3226,7 @@
 				</skillLevel>
 				<minDamage>1</minDamage>
 				<chance>50</chance>
-				<targetType2>SELF</targetType2>
+				<targetType>SELF</targetType>
 			</effect>
 		</effects>
 	</skill>
@@ -3237,7 +3237,8 @@
 		<abnormalType>MIRAGE</abnormalType>
 		<icon>icon.skill11861</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>85</magicLvl>
 		<mpConsume>72</mpConsume>
 		<hitTime>1000</hitTime>
@@ -3265,7 +3266,8 @@
 		<abnormalTime>2</abnormalTime>
 		<activateRate>80</activateRate>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<trait>DERANGEMENT</trait>
 		<castRange>900</castRange>
 		<effectRange>1400</effectRange>
@@ -3289,7 +3291,8 @@
 		<abnormalType>MIGHT_MORTAL</abnormalType>
 		<icon>icon.skill11877</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>38</mpConsume>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -3365,7 +3368,8 @@
 		<abnormalType>FOCUS_DAGGER</abnormalType>
 		<icon>icon.skill10562</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>85</magicLvl>
 		<mpConsume>36</mpConsume>
 		<hitTime>2000</hitTime>

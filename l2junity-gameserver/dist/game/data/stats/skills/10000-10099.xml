@@ -1935,7 +1935,6 @@
 		<magicLvl>85</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>AU</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2017,7 +2016,6 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>AU</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2122,7 +2120,6 @@
 		<magicLvl>85</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>AU</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2182,7 +2179,6 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10034</icon>
 		<operateType>AU</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2266,7 +2262,6 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10036</icon>
 		<operateType>AU</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2330,7 +2325,6 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10038</icon>
 		<operateType>AU</operateType>
-		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -3883,7 +3877,8 @@
 		<!-- Summons a Blood Panther to fight with you. -->
 		<icon>icon.skill11853</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -3952,7 +3947,7 @@
 				<allowWeapons>ALL</allowWeapons>
 				<minDamage>1</minDamage>
 				<chance>30</chance>
-				<targetType2>SELF</targetType2>
+				<targetType>SELF</targetType>
 			</effect>
 		</effects>
 	</skill>
@@ -4090,7 +4085,8 @@
 		<!-- Summons a Melody Cubic. The Melody Cubic uses magic to restore its owner's HP and MP. -->
 		<icon>icon.skill10073</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>96</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -4102,7 +4098,8 @@
 		<!-- Summons the Mind Cubic. The Sigel Mind Cubic uses magic to restore the owner's MP. -->
 		<icon>icon.skill10074</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>96</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -4253,7 +4250,8 @@
 		<!-- Summons a Phantom Cubic. It uses magic to decrease the enemy's physical and magic Spd. -->
 		<icon>icon.skill10079</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>96</mpConsume>
 		<hitTime>3500</hitTime>
 		<coolTime>500</coolTime>
@@ -4266,7 +4264,8 @@
 		<!-- Summons the Hex Cubic, which uses magic to decrease the enemy's P. Def. and M. Def. -->
 		<icon>icon.skill10080</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>96</mpConsume>
 		<hitTime>3500</hitTime>
 		<coolTime>500</coolTime>
@@ -4327,7 +4326,8 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4336,7 +4336,8 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4344,7 +4345,8 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0191</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4354,7 +4356,8 @@
 		<!-- For 5 sec., Atk. Spd./ Casting Spd. - 5%. -->
 		<icon>icon.skill1206</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
 		<effectPoint>-408</effectPoint>
@@ -4367,7 +4370,8 @@
 		<!-- For 5 sec., P. Def./ M. Def. - 5%. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
 		<effectPoint>-379</effectPoint>
@@ -4479,7 +4483,8 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0191</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4535,7 +4540,8 @@
 		<!-- Removes your debuff. -->
 		<icon>icon.skll10092</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>35</mpConsume>
 		<hitTime>200</hitTime>
 		<effectPoint>867</effectPoint>
@@ -4547,7 +4553,8 @@
 		<!-- Summons a Guardian Cubic. The Guardian Cubic uses magic to increase its owner's Shield Defense and Spd. -->
 		<icon>icon.skll10093</icon>
 		<operateType>A1</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>96</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -4560,7 +4567,8 @@
 		<!-- Increases Shield P. Def. and Shield Defense. Spd. + 13. -->
 		<icon>icon.skll10093</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4749,7 +4757,8 @@
 		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
 		<icon>icon.skill10098</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -4864,7 +4873,8 @@
 		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
 		<icon>icon.skill10099</icon>
 		<operateType>A2</operateType>
-		<targetType2>SELF</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
