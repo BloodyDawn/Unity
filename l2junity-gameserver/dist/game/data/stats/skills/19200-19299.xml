@@ -108,13 +108,19 @@
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ores -->
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>270</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>8000</hitTime>
 		<coolTime>300</coolTime>
 		<effectPoint>712</effectPoint>
 		<reuseDelay>600000</reuseDelay>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SkillCriticalDamage">
 				<amount>25</amount>

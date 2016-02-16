@@ -824,13 +824,19 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MpRegen">
 				<amount>10</amount>
@@ -868,13 +874,19 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>PARTY_MEMBER</targetType2>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>4</amount>
@@ -908,7 +920,9 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>CLAN_MEMBER</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -952,7 +966,9 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType2>CLAN_MEMBER</targetType2>
+		<targetType>SELF</targetType>
+		<affectScope>PLEDGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>

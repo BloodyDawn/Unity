@@ -30,8 +30,11 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class TargetMyPartySkillCondition implements ISkillCondition
 {
+	final boolean _includeMe;
+	
 	public TargetMyPartySkillCondition(StatsSet params)
 	{
+		_includeMe = params.getBoolean("includeMe");
 	}
 	
 	@Override
