@@ -3,7 +3,7 @@
 	<skill id="10000" levels="1" name="Steel Door Guild Reward Box  (Top-grade)">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<cond msgId="129">
 			<and>
@@ -49,7 +49,7 @@
 			<value level="9">108</value>
 			<value level="10">110</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>STR</stat>
@@ -63,7 +63,7 @@
 				<allowWeapons>SWORD,BLUNT</allowWeapons>
 				<minDamage>1</minDamage>
 				<chance>60</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -112,7 +112,7 @@
 			<value level="9">108</value>
 			<value level="10">110</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
@@ -181,7 +181,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefenceRate">
@@ -228,7 +228,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -274,7 +274,7 @@
 			<value level="9">108</value>
 			<value level="10">110</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -383,14 +383,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
 		<magicLvl>89</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>10007</skillId>
 				<skillLevel>1</skillLevel>
@@ -420,7 +420,7 @@
 			<value level="3">97</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>8000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE</rideState>
@@ -468,7 +468,7 @@
 		<affectHeight>-100;200</affectHeight>
 		<icon>icon.skill10008</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">53</value>
 			<value level="2">54</value>
@@ -570,7 +570,7 @@
 		<effectRange>400</effectRange>
 		<icon>icon.skill10009</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -674,7 +674,7 @@
 		<basicProperty>MAGIC</basicProperty>
 		<icon>icon.skill10010</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>
 			<value level="1">80</value>
@@ -770,7 +770,7 @@
 		<trait>SHOCK</trait>
 		<icon>icon.skill10011</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>
 			<value level="1">49</value>
@@ -851,7 +851,7 @@
 		<icon>icon.skill10012</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">59</value>
 			<value level="2">61</value>
@@ -934,7 +934,7 @@
 		<icon>icon.skill10013</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<mpConsume>
 			<value level="1">121</value>
 			<value level="2">125</value>
@@ -1018,7 +1018,7 @@
 		</magicLvl>
 		<icon>icon.skill10014</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">159</value>
 			<value level="2">162</value>
@@ -1096,7 +1096,7 @@
 		</magicLvl>
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>
 			<value level="1">58</value>
@@ -1166,7 +1166,7 @@
 		</magicLvl>
 		<icon>icon.skill10016</icon>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<mpConsume>
 			<value level="1">123</value>
 			<value level="2">127</value>
@@ -1234,7 +1234,7 @@
 		</magicLvl>
 		<icon>icon.skill10017</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">58</value>
 			<value level="2">63</value>
@@ -1328,7 +1328,7 @@
 		</magicLvl>
 		<icon>icon.skill10018</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>
 			<value level="1">60</value>
 			<value level="2">65</value>
@@ -1374,7 +1374,7 @@
 		</magicLvl>
 		<icon>icon.skill10019</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">127</value>
 			<value level="2">140</value>
@@ -1451,7 +1451,7 @@
 		</magicLvl>
 		<icon>icon.skill10020</icon>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<mpConsume>50</mpConsume>
 		<effects>
@@ -1507,7 +1507,7 @@
 		<abnormalType>REFLECT_MAGIC_DD</abnormalType>
 		<icon>icon.skill10021</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>
 			<value level="1">20</value>
@@ -1560,7 +1560,7 @@
 		<magicLvl>97</magicLvl>
 		<icon>icon.skill10022</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>38</mpConsume>
 		<hitTime>500</hitTime>
@@ -1591,7 +1591,7 @@
 		</magicLvl>
 		<icon>icon.skill10023</icon>
 		<operateType>A1</operateType>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<mpConsume>
 			<value level="1">1103</value>
 			<value level="2">1158</value>
@@ -1640,7 +1640,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill10024</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<mpConsume>96</mpConsume>
 		<hitTime>3000</hitTime>
@@ -1684,7 +1684,7 @@
 		<icon>icon.skill10025</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">20</value>
 			<value level="2">21</value>
@@ -1800,7 +1800,7 @@
 		<icon>icon.skill10026</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<hitTime>800</hitTime>
@@ -1869,7 +1869,7 @@
 		<icon>icon.skill10027</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>10000</reuseDelay>
@@ -1911,7 +1911,7 @@
 		<magicLvl>85</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>AU</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -1956,7 +1956,7 @@
 		<operateType>A5</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
 		<effectPoint>-2</effectPoint>
@@ -1991,7 +1991,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>AU</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2047,7 +2047,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10030</icon>
 		<operateType>A5</operateType>
-		<targetType>PARTY_NOTME</targetType>
+		<targetType2>PARTY_NOTME</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -2094,7 +2094,7 @@
 		<magicLvl>85</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>AU</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2127,7 +2127,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10032</icon>
 		<operateType>A5</operateType>
-		<targetType>PARTY_NOTME</targetType>
+		<targetType2>PARTY_NOTME</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -2152,7 +2152,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10034</icon>
 		<operateType>AU</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2197,7 +2197,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10034</icon>
 		<operateType>A5</operateType>
-		<targetType>PARTY_NOTME</targetType>
+		<targetType2>PARTY_NOTME</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -2234,7 +2234,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10036</icon>
 		<operateType>AU</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2269,7 +2269,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10036</icon>
 		<operateType>A5</operateType>
-		<targetType>PARTY_NOTME</targetType>
+		<targetType2>PARTY_NOTME</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -2296,7 +2296,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10038</icon>
 		<operateType>AU</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
@@ -2330,7 +2330,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10038</icon>
 		<operateType>A5</operateType>
-		<targetType>PARTY_NOTME</targetType>
+		<targetType2>PARTY_NOTME</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -2363,7 +2363,7 @@
 			<value level="6">98</value>
 		</magicLvl>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">154</value>
 			<value level="2">156</value>
@@ -2408,7 +2408,7 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0010</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -2433,7 +2433,7 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0010</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -2459,7 +2459,7 @@
 		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 </table>
 		<icon>icon.skill0010</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">96</value>
 			<value level="2">98</value>
@@ -2521,7 +2521,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -2623,7 +2623,7 @@
 		<!-- Strikes with the shield. Attacks target with 14179 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<icon>icon.skill10045</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">54</value>
 			<value level="2">0</value>
@@ -2696,7 +2696,7 @@
 		<!-- Strikes with the shield. Attacks target with 15269 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<icon>icon.skill10046</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">56</value>
 			<value level="2">0</value>
@@ -2773,7 +2773,7 @@
 		<table name="#defCritRate"> 1.1 1.2 1.3 </table>
 		<icon>icon.skill10047</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">58</value>
 			<value level="2">0</value>
@@ -2850,7 +2850,7 @@
 		<table name="#defCritRate"> 1.1 1.2 1.3 </table>
 		<icon>icon.skill10048</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">59</value>
 			<value level="2">0</value>
@@ -2927,7 +2927,7 @@
 		<table name="#defCritRate"> 1.1 1.2 1.3 </table>
 		<icon>icon.skill10049</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">61</value>
 			<value level="2">0</value>
@@ -3000,7 +3000,7 @@
 		<!-- Strikes with the shield. Attacks target with 19629 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<icon>icon.skill10050</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">63</value>
 			<value level="2">0</value>
@@ -3084,7 +3084,7 @@
 		<affectRange>200</affectRange>
 		<basicProperty>MAGIC</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3134,7 +3134,7 @@
 		<affectLimit>5-12</affectLimit>
 		<fanRange>0;0;80;150</fanRange>
 		<operateType>A1</operateType>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3188,7 +3188,7 @@
 		<basicProperty>PHYSICAL</basicProperty>
 		<flyType>CHARGE</flyType>
 		<operateType>DA2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>SHOCK</trait>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
@@ -3241,7 +3241,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3294,7 +3294,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-379</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -3326,7 +3326,7 @@
 			<value level="7">A2</value>
 			<value level="8">A2</value>
 		</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<effectPoint>2</effectPoint>
@@ -3407,7 +3407,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-467</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -3430,7 +3430,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<reuseDelay>30000</reuseDelay>
@@ -3473,7 +3473,7 @@
 		<!-- Strikes with the shield. Attacks target with 20719 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<icon>icon.skill10059</icon>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">65</value>
 			<value level="2">0</value>
@@ -3529,7 +3529,7 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
-		<targetType>SELF</targetType> <!-- TODO: Check with our crappy targeting -->
+		<targetType2>SELF</targetType2> <!-- TODO: Check with our crappy targeting -->
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -3546,7 +3546,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>99</magicLevel>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<reuseDelay>8000</reuseDelay>
@@ -3579,14 +3579,14 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<minDamage>1</minDamage>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10063</skillId>
@@ -3637,7 +3637,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<castRange>400</castRange>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
@@ -3669,7 +3669,7 @@
 		<table name="#power"> 1000 1300 1500 2000 </table>
 		<icon>icon.skill10064</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<hpConsume>
 			<value level="1">800</value>
 			<value level="2">1100</value>
@@ -3705,7 +3705,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
@@ -3737,14 +3737,14 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<minDamage>1</minDamage>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10067</skillId>
@@ -3796,7 +3796,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>4</isMagic>
 		<effects>
@@ -3825,7 +3825,7 @@
 		<!-- Summons a Blood Panther to fight with you. -->
 		<icon>icon.skill11853</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -3878,7 +3878,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Vampirism -->
@@ -3895,7 +3895,7 @@
 				<allowWeapons>ALL</allowWeapons>
 				<minDamage>1</minDamage>
 				<chance>30</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -3903,7 +3903,7 @@
 		<!-- HP Recovery -->
 		<icon>icon.skill10069</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -3936,14 +3936,14 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<minDamage>1</minDamage>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10072</skillId>
@@ -3994,7 +3994,7 @@
 		</magicLvl>
 		<icon>icon.skill10071</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
@@ -4034,7 +4034,7 @@
 		<!-- Summons a Melody Cubic. The Melody Cubic uses magic to restore its owner's HP and MP. -->
 		<icon>icon.skill10073</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>96</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -4046,7 +4046,7 @@
 		<!-- Summons the Mind Cubic. The Sigel Mind Cubic uses magic to restore the owner's MP. -->
 		<icon>icon.skill10074</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>96</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -4058,7 +4058,7 @@
 		<icon>icon.skill0143</icon>
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CubicMastery">
 				<cubicCount>3</cubicCount>
@@ -4075,7 +4075,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>8</mpConsume>
 		<effects>
 			<effect name="ShieldDefenceRate">
@@ -4110,14 +4110,14 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>30</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<minDamage>1</minDamage>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>10078</skillId>
@@ -4169,7 +4169,7 @@
 		</magicLvl>
 		<icon>icon.skill11832</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
@@ -4200,7 +4200,7 @@
 		<!-- Summons a Phantom Cubic. It uses magic to decrease the enemy's physical and magic Spd. -->
 		<icon>icon.skill10079</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>96</mpConsume>
 		<hitTime>3500</hitTime>
 		<coolTime>500</coolTime>
@@ -4213,7 +4213,7 @@
 		<!-- Summons the Hex Cubic, which uses magic to decrease the enemy's P. Def. and M. Def. -->
 		<icon>icon.skill10080</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>96</mpConsume>
 		<hitTime>3500</hitTime>
 		<coolTime>500</coolTime>
@@ -4229,7 +4229,7 @@
 		<activateRate>40</activateRate>
 		<icon>icon.skill0279</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<lvlBonusRate>1</lvlBonusRate>
 		<magicLvl>
 			<value level="1">85</value>
@@ -4274,7 +4274,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4283,7 +4283,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4291,7 +4291,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0191</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4301,7 +4301,7 @@
 		<!-- For 5 sec., Atk. Spd./ Casting Spd. - 5%. -->
 		<icon>icon.skill1206</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
 		<effectPoint>-408</effectPoint>
@@ -4314,7 +4314,7 @@
 		<!-- For 5 sec., P. Def./ M. Def. - 5%. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>5000</reuseDelay>
 		<isMagic>1</isMagic>
 		<effectPoint>-379</effectPoint>
@@ -4333,7 +4333,7 @@
 		<affectRange>150</affectRange>
 		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<trait>PHYSICAL_BLOCKADE</trait>
 		<mpConsume>
 			<value level="1">159</value>
@@ -4387,7 +4387,7 @@
 		<fanRange>0;0;600;60</fanRange>
 		<flyType>CHARGE</flyType>
 		<operateType>DA2</operateType>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<trait>SHOCK</trait>
 		<mpConsume>
 			<value level="1">30</value>
@@ -4426,7 +4426,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0191</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4460,7 +4460,7 @@
 			<value level="4">65</value>
 		</mpConsume>
 		<reuseDelay>60000</reuseDelay>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<icon>icon.skill10090new</icon>
 		<effectPoint>
 			<value level="1">-1098</value>
@@ -4482,7 +4482,7 @@
 		<!-- Removes your debuff. -->
 		<icon>icon.skll10092</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>35</mpConsume>
 		<hitTime>200</hitTime>
 		<effectPoint>867</effectPoint>
@@ -4494,7 +4494,7 @@
 		<!-- Summons a Guardian Cubic. The Guardian Cubic uses magic to increase its owner's Shield Defense and Spd. -->
 		<icon>icon.skll10093</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>96</mpConsume>
 		<hitTime>2200</hitTime>
 		<coolTime>300</coolTime>
@@ -4507,7 +4507,7 @@
 		<!-- Increases Shield P. Def. and Shield Defense. Spd. + 13. -->
 		<icon>icon.skll10093</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>408</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -4534,7 +4534,7 @@
 		</itemConsumeCount>
 		<lvlBonusRate>1</lvlBonusRate>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -4587,7 +4587,7 @@
 		<!-- When a normal attack or skill attack is successful, casts a de-buff that increases the critical damage received from target with a certain probability. -->
 		<icon>icon.skll10091</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>1</isMagic>
 		<effects>
 			<effect name="TriggerSkillByAttack">
@@ -4595,7 +4595,7 @@
 				<!-- Death Touch -->
 				<isCritical>false</isCritical>
 				<chance>30</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<skillId>10096</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -4604,7 +4604,7 @@
 				<!-- Death Touch -->
 				<skillId>10096</skillId>
 				<skillLevel>1</skillLevel>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<isCritical>true</isCritical>
 				<chance>15</chance>
 			</effect>
@@ -4621,7 +4621,7 @@
 		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>100</castRange>
 		<hitTime>500</hitTime>
@@ -4646,7 +4646,7 @@
 		<itemConsumeId>1785</itemConsumeId>
 		<itemConsumeCount>6</itemConsumeCount>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">97</value>
 			<value level="2">98</value>
@@ -4697,7 +4697,7 @@
 		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
 		<icon>icon.skill10098</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -4812,7 +4812,7 @@
 		<abnormalType>PINCH</abnormalType> <!-- TODO Confirm -->
 		<icon>icon.skill10099</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>

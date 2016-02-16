@@ -9,7 +9,7 @@
 		<mpConsume>2</mpConsume>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5101" levels="1" name="Cancel Capture C">
 		<effectPoint>1</effectPoint>
@@ -20,7 +20,7 @@
 		<mpConsume>2</mpConsume>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5102" levels="1" name="Cancel All Capture">
 		<effectPoint>1</effectPoint>
@@ -31,7 +31,7 @@
 		<mpConsume>2</mpConsume>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5103" levels="1" name="Production - Clan / Transfer">
 		<!-- Confirmed CT2.5 -->
@@ -44,7 +44,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="5104" levels="3" name="Battle Force">
 		<!-- Not Used Anymore -->
@@ -66,7 +66,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -98,7 +98,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -129,7 +129,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="5107" levels="4" name="Capture B State">
 		<abnormalLvl>
@@ -150,7 +150,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="5108" levels="4" name="Capture C State">
 		<abnormalLvl>
@@ -171,7 +171,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="5109" levels="1" name="Presentation -  Clan Gate">
 		<!-- Confirmed CT2.5 -->
@@ -185,7 +185,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="5110" levels="1" name="Cannon Fodder">
 		<!-- Confirmed CT2.5 -->
@@ -202,7 +202,7 @@
 		<reuseDelay>10500</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<!-- FIXME: This condition is a hack fix, until support for retail target system is done -->
@@ -233,7 +233,7 @@
 		<reuseDelay>10500</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<!-- FIXME: This condition is a hack fix, until support for retail target system is done -->
@@ -295,7 +295,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -340,7 +340,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -409,7 +409,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpInitialConsume>#mpInitialConsume</mpInitialConsume>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
@@ -453,7 +453,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="TargetMeProbability">
 				<chance>80</chance>
@@ -489,7 +489,7 @@
 		</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
@@ -521,7 +521,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -543,7 +543,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="DispelByCategory">
 				<slot>buff</slot>
@@ -569,7 +569,7 @@
 		<reuseDelay>17000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2487</power>
@@ -596,7 +596,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>100</affectRange>
 		<trait>SHOCK</trait>
@@ -615,7 +615,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="5122" levels="1" name="Sailren Use Might">
 		<!-- CT2.5 retail confirmed -->
@@ -631,7 +631,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>50</amount>
@@ -654,7 +654,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>800</amount>
@@ -679,7 +679,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>DANCE_OF_AQUA_GUARD;DANCE_OF_CONCENTRATION;DANCE_OF_CONCENTRATION;DANCE_OF_EARTH_GUARD;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_LIGHT;DANCE_OF_MYSTIC;DANCE_OF_PROTECTION;DANCE_OF_SHADOW;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_FLAME_GUARD;SONG_OF_HUNTER;SONG_OF_INVOCATION;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_STORM_GUARD;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BLADESTORM;DANCE_OF_ALIGNMENT;SONG_OF_ELEMENTAL;SONG_OF_WINDSTORM</dispel>
@@ -702,7 +702,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="ResistAbnormalByCategory">
 				<amount>-60</amount>
@@ -725,7 +725,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="HpRegen">
 				<amount>40</amount>
@@ -752,7 +752,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>7</maxCharges>
@@ -778,7 +778,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>20</amount>
@@ -813,7 +813,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>15</amount>
@@ -833,7 +833,7 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<attributeType>FIRE</attributeType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -852,7 +852,7 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<attributeType>WATER</attributeType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -871,7 +871,7 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<attributeType>WIND</attributeType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -890,7 +890,7 @@
 		<magicLvl>80</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<attributeType>DARK</attributeType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -919,7 +919,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>2</lvlBonusRate>
 		<abnormalLvl>1</abnormalLvl>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="Unsummon">
 				<chance>80</chance>
@@ -953,7 +953,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>8264</power>
@@ -974,7 +974,7 @@
 		<reuseDelay>17000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4132</power>
@@ -1004,7 +1004,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>HOLD</trait>
 		<effects>
@@ -1037,7 +1037,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -1067,7 +1067,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>228</power>
@@ -1097,7 +1097,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="DamOverTime">
 				<power>109</power>
@@ -1124,7 +1124,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>8264</power>
@@ -1147,7 +1147,7 @@
 		<reuseDelay>20000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA_CORPSE_MOB</targetType>
+		<targetType2>AREA_CORPSE_MOB</targetType2>
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
@@ -1167,7 +1167,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="FatalBlow">
 				<power>39544</power>
@@ -1185,7 +1185,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="TargetCancel" />
 		</effects>
@@ -1206,7 +1206,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>30</lvlBonusRate>
 		<activateRate>100</activateRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
 			<effect name="PAtk">
@@ -1282,7 +1282,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -1328,7 +1328,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -1375,7 +1375,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -1418,7 +1418,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
@@ -1464,7 +1464,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -1516,7 +1516,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ManaCharge">
 				<amount>1</amount>
@@ -1548,7 +1548,7 @@
 		<reuseDelay>300000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CpHeal">
 				<power>
@@ -1594,7 +1594,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxCp">
 				<amount>
@@ -1647,7 +1647,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1705,7 +1705,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -1756,7 +1756,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
@@ -1802,7 +1802,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1860,7 +1860,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1916,7 +1916,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>-5</amount>
@@ -1962,7 +1962,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
@@ -2020,7 +2020,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -2072,7 +2072,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
@@ -2119,7 +2119,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>
@@ -2169,7 +2169,7 @@
 		<operateType>A1</operateType>
 		<reuseDelay>180000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
@@ -2232,7 +2232,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -2278,7 +2278,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
@@ -2317,7 +2317,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
@@ -2356,7 +2356,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>HOLD</trait>
@@ -2398,7 +2398,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>SLEEP</trait>
@@ -2440,7 +2440,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>PARALYZE</trait>
@@ -2483,7 +2483,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -2519,7 +2519,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
@@ -2584,7 +2584,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>POISON</trait>
@@ -2667,7 +2667,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>BLEED</trait>
@@ -2725,7 +2725,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
@@ -2764,7 +2764,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<trait>DERANGEMENT</trait>
@@ -2786,7 +2786,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>3.5</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>116</power>
@@ -2799,7 +2799,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="5180" levels="1" name="Raid Boss (Lv. 80)">
 		<!-- Confirmed CT2.5 -->
@@ -2807,7 +2807,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="5181" levels="1" name="Raid Boss (Lv. 80)">
 		<!-- Confirmed CT2.5 -->
@@ -2815,7 +2815,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="5182" levels="1" name="Blessing of Protection">
 		<!-- Newbie Guide Buff -->
@@ -2834,7 +2834,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="ProtectionBlessing" />
 		</effects>
@@ -2849,7 +2849,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<isDebuff>true</isDebuff>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
@@ -2871,7 +2871,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectHeight>-100;100</affectHeight>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 	</skill>
 	<skill id="5185" levels="1" name="Production: Magic-type Guard">
 		<!-- Confirmed CT2.5 -->
@@ -2886,7 +2886,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>54</power>
@@ -2924,7 +2924,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -2974,7 +2974,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>
@@ -3026,7 +3026,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="HpRegen">
 				<amount>
@@ -3092,7 +3092,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -3161,7 +3161,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -3215,7 +3215,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -3261,7 +3261,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -3311,7 +3311,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
@@ -3362,7 +3362,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -3459,7 +3459,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>OWNER_PET</targetType>
+		<targetType2>OWNER_PET</targetType2>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -3516,7 +3516,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
@@ -3561,7 +3561,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-23</amount>
@@ -3606,7 +3606,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -3651,7 +3651,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>-23</amount>

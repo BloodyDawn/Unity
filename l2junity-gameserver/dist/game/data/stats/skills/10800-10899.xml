@@ -19,7 +19,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -100,7 +100,7 @@
 		<activateRate>100</activateRate>
 		<icon>icon.skill10801</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">88</value>
@@ -210,7 +210,7 @@
 		<affectRange>400</affectRange>
 		<icon>icon.skill10782</icon>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">99</value>
 			<value level="2">101</value>
@@ -258,7 +258,7 @@
 		<table name="#power"> 30000 33546 35088 36630 </table>
 		<icon>icon.skill0099</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -282,7 +282,7 @@
 		<table name="#power"> 30000 33546 35088 36630</table>
 		<icon>icon.skill0099</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -305,7 +305,7 @@
 		<!-- Momentarily teleport 500 forward. -->
 		<icon>icon.skill10805</icon>
 		<operateType>DA1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">89</value>
 			<value level="2">92</value>
@@ -354,7 +354,7 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<icon>icon.skill0516</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>ALL_SPEED_DOWN</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -391,7 +391,7 @@
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<icon>icon.skill0518</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
@@ -421,7 +421,7 @@
 		<!-- Decoy's provocation. Cannot change target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>-2</effectPoint>
 		<abnormalType>TARGET_LOCK</abnormalType>
@@ -455,7 +455,7 @@
 		<icon>icon.skill1087</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>30000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<basicProperty>NONE</basicProperty>
@@ -491,7 +491,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">62</value>
 			<value level="2">69</value>
@@ -561,7 +561,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -586,7 +586,7 @@
 		<!-- Attacks distant target with 29176 Power added to P. Atk. Inflicts Stun when attacking from behind. Requires a bow/crossbow. Over-hit. Critical. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">93</value>
 			<value level="2">96</value>
@@ -607,7 +607,7 @@
 		<!-- Stuns the enemy for 5 sec. Has a chance of canceling enemy's targeting. Requires a bow/crossbow. Over-hit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1100</castRange>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>-70</effectPoint>
@@ -635,7 +635,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">62</value>
 			<value level="2">69</value>
@@ -703,7 +703,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -723,7 +723,7 @@
 		<!-- Attacks target with 29176 Power added to P. Atk., cancels their targeting, and retreats 400 grids backward. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">32</value>
 			<value level="2">33</value>

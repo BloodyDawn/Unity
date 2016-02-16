@@ -8,7 +8,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22701" levels="1" name="Harp's Sealed Rune of Power_Trigger">
 		<!-- AUTO GENERATED SKILL -->
@@ -19,14 +19,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22702" levels="1" name="Harp's Sealed Rune of Magic_Trigger_Decrease Defense">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases M. Def. of target and all enemies within 400 grids by 20% for 10 sec. -->
 		<icon>icon.skill1263</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -51,7 +51,7 @@
 		<!-- Becomes invincible for 5 sec. -->
 		<icon>icon.skill1551</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<reuseDelay>180000</reuseDelay>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -72,7 +72,7 @@
 		<!-- Rune is activated, inflicting a brand and additional damage. -->
 		<icon>icon.skill11511</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<coolTime>30000</coolTime>
 		<effectPoint>-712</effectPoint>
@@ -101,14 +101,14 @@
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22706" levels="1" name="Dr. Destroy's Sealed Rune of Wisdom_Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., skills do not consume MP. -->
 		<icon>icon.etc_hot_spring_nectar_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>CHEAP_MAGIC</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -124,7 +124,7 @@
 		<!-- Maintains Vitality for 30 min. -->
 		<icon>icon.etc_lesser_potion_scarlet_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>3600000</reuseDelay>
 		<isMagic>4</isMagic>
 		<effectPoint>100</effectPoint>
@@ -144,7 +144,7 @@
 		<!-- Obtained XP + 50%. -->
 		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<abnormalType>VOTE</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -162,7 +162,7 @@
 		<!-- Obtained XP + 50%. -->
 		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<abnormalType>VOTE</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -179,7 +179,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<reuseDelay>259200000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -191,7 +191,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -206,7 +206,7 @@
 		<!-- For 30 min., Vitality is replenished with XP gain through hunting. Effect remains even after death. -->
 		<icon>icon.etc_hot_spring_mineral_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>3600000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<abnormalType>VP_UP</abnormalType>
@@ -227,7 +227,7 @@
 		<!-- For 2 hr., Atk./Casting Spd. + 15%, and Speed + 20. -->
 		<icon>icon.shield_bread_i01</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>3600000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<abnormalType>BR_EVENT_BUF1</abnormalType>
@@ -254,7 +254,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -303,7 +303,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -388,7 +388,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -455,7 +455,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -519,7 +519,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -649,7 +649,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -693,7 +693,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -762,7 +762,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -810,7 +810,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -858,7 +858,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -897,7 +897,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -936,7 +936,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -975,7 +975,7 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -1024,7 +1024,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22728" levels="1" name="Transformation Scroll: Oel Mahum">
 		<!-- AUTO GENERATED SKILL -->
@@ -1042,7 +1042,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22729" levels="1" name="Transformation Scroll: Doll Blader">
 		<!-- AUTO GENERATED SKILL -->
@@ -1060,7 +1060,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22730" levels="1" name="Transformation Scroll: Zaken">
 		<!-- AUTO GENERATED SKILL -->
@@ -1078,7 +1078,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22731" levels="1" name="Transformation Scroll: Anakim">
 		<!-- AUTO GENERATED SKILL -->
@@ -1096,7 +1096,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22732" levels="1" name="Transformation Scroll: Venom">
 		<!-- AUTO GENERATED SKILL -->
@@ -1114,7 +1114,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22733" levels="1" name="Transformation Scroll: Gordon">
 		<!-- AUTO GENERATED SKILL -->
@@ -1132,7 +1132,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22734" levels="1" name="Transformation Scroll: Ranku">
 		<!-- AUTO GENERATED SKILL -->
@@ -1150,7 +1150,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22735" levels="1" name="Transformation Scroll: Kechi">
 		<!-- AUTO GENERATED SKILL -->
@@ -1168,7 +1168,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22736" levels="1" name="Transformation Scroll: Demon Prince">
 		<!-- AUTO GENERATED SKILL -->
@@ -1186,13 +1186,13 @@
 		<abnormalTime>1800</abnormalTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22737" levels="1" name="Ink Herb">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1205,7 +1205,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>800</castRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1218,7 +1218,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1231,7 +1231,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>800</castRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1251,7 +1251,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1346,7 +1346,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22743" levels="1" name="Fantasy Mana Potion">
 		<!-- AUTO GENERATED SKILL -->
@@ -1357,14 +1357,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22744" levels="1" name="Fantasy Cookie">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 min., Speed + 33. -->
 		<icon>BranchSys3.Icon.ev_halloween_cookie</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PA_PD_UP</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1384,7 +1384,7 @@
 		<!-- For 60 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and increases P. Def. when receiving a critical attack. Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
 		<icon>BranchSys3.Icon.ev_halloween_cookie</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1404,7 +1404,7 @@
 		<!-- For 60 min., acquired XP/SP + 100%. (Lv.95 or below) -->
 		<icon>BranchSys3.Icon.ev_halloween_cookie</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<abnormalType>G_EV_BUFF1</abnormalType>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1424,7 +1424,7 @@
 		<!-- Individual Fame + 200. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1437,7 +1437,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1455,7 +1455,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1473,7 +1473,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1491,7 +1491,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1509,7 +1509,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1528,7 +1528,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1547,7 +1547,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1566,7 +1566,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1585,7 +1585,7 @@
 		<!-- CON + 1, MEN + 1, WIT + 1. -->
 		<icon>BranchSys3.icon1.g_co_ninja_u</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1610,7 +1610,7 @@
 		<!-- CON + 1, MEN + 1, WIT + 1. -->
 		<icon>BranchSys3.icon1.g_co_paiwan_u</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1635,7 +1635,7 @@
 		<!-- CON + 1, MEN + 1, WIT + 1. -->
 		<icon>BranchSys3.icon1.g_co_military_u</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1660,7 +1660,7 @@
 		<!-- CON + 1, MEN + 1, WIT + 1. -->
 		<icon>BranchSys3.icon1.g_co_sf_u</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1685,7 +1685,7 @@
 		<!-- CON + 1, MEN + 1, WIT + 1. -->
 		<icon>BranchSys3.icon1.g_co_cutie_maid</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1710,7 +1710,7 @@
 		<!-- STR + 1, DEX + 1, INT + 1. -->
 		<icon>BranchSys3.Icon.g_beam_sword</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1735,7 +1735,7 @@
 		<!-- STR + 1, DEX + 1, INT + 1. -->
 		<icon>BranchSys3.Icon.g_japan_sword</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>5000</reuseDelay>
@@ -1764,7 +1764,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22764" levels="1" name="Santa Outfit Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1775,14 +1775,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22765" levels="1" name="PC Vitality">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 min., Vitality is replenished with XP gain through hunting. -->
 		<icon>icon.etc_pccafe_point_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 		<effectPoint>100</effectPoint>
@@ -1804,7 +1804,7 @@
 		<!-- Maintains Vitality for 10 min. -->
 		<icon>icon.etc_lesser_potion_blue_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>1800000</reuseDelay>
 		<effectPoint>100</effectPoint>
 		<abnormalType>VP_KEEP</abnormalType>
@@ -1825,7 +1825,7 @@
 		<!-- Maintains Vitality for 30 min. -->
 		<icon>icon.etc_lesser_potion_scarlet_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>3600000</reuseDelay>
 		<isMagic>4</isMagic>
 		<effectPoint>100</effectPoint>
@@ -1849,7 +1849,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22769" levels="1" name="Metal Suit Pants Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1860,7 +1860,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22770" levels="1" name="Metal Suit Gloves Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1871,7 +1871,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22771" levels="1" name="Metal Suit Shoes Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1882,7 +1882,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22772" levels="1" name="Metal Suit Hair Accessory Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1893,7 +1893,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22773" levels="1" name="Metal Suit Top Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1904,7 +1904,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22774" levels="1" name="Metal Suit Pants Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1915,7 +1915,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22775" levels="1" name="Metal Suit Gloves Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1926,7 +1926,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22776" levels="1" name="Metal Suit Shoes Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1937,7 +1937,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22777" levels="1" name="Metal Suit Hair Accessory Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1948,7 +1948,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22778" levels="1" name="Military Top Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1959,7 +1959,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22779" levels="1" name="Military Pants Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1970,7 +1970,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22780" levels="1" name="Military Gloves Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1981,7 +1981,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22781" levels="1" name="Military Shoes Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -1992,7 +1992,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22782" levels="1" name="Military Hair Accessory Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2003,7 +2003,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22783" levels="1" name="Military Top Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2014,7 +2014,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22784" levels="1" name="Military Pants Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2025,7 +2025,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22785" levels="1" name="Military Gloves Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2036,7 +2036,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22786" levels="1" name="Military Shoes Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2047,7 +2047,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22787" levels="1" name="Military Hair Accessory Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2058,7 +2058,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22788" levels="1" name="Maid Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2069,7 +2069,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22789" levels="1" name="Maid Hair Accessory Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2080,7 +2080,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22790" levels="1" name="Maid Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2091,7 +2091,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22791" levels="1" name="Maid Hair Accessory Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2102,7 +2102,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22792" levels="1" name="Automatic Appearance Stone: Emerald Weapon">
 		<!-- AUTO GENERATED SKILL -->
@@ -2113,7 +2113,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22793" levels="1" name="Automatic Appearance Stone: Japanese Weapon">
 		<!-- AUTO GENERATED SKILL -->
@@ -2124,7 +2124,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22794" levels="1" name="Shining Accessory Pack">
 		<!-- AUTO GENERATED SKILL -->
@@ -2135,7 +2135,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -2161,7 +2161,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22796" levels="1" name="Vesper Noble Pants Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2172,7 +2172,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22797" levels="1" name="Vesper Noble Gloves Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2183,7 +2183,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22798" levels="1" name="Vesper Noble Shoes Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2194,7 +2194,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22799" levels="1" name="Vesper Noble Top Appearance Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2205,6 +2205,6 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 </list>

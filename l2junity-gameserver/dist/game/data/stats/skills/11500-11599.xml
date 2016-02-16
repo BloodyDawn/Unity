@@ -5,7 +5,7 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>71</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -45,7 +45,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>STR</stat>
@@ -57,7 +57,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>3</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>DUAL,DUALBLUNT</allowWeapons>
 				<skillId>5559</skillId>
@@ -127,7 +127,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -179,7 +179,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -231,7 +231,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -283,7 +283,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -325,7 +325,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="StatUp">
 				<amount>2</amount>
@@ -367,7 +367,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -404,7 +404,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA2</operateType>
 		<lvlBonusRate>1</lvlBonusRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">38</value>
 			<value level="2">39</value>
@@ -503,7 +503,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<reuseDelay>7000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-694</value>
@@ -603,7 +603,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<reuseDelay>7000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-694</value>
@@ -704,7 +704,7 @@
 			<value level="11">-712</value>
 		</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
@@ -772,7 +772,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-687</value>
 			<value level="2">-694</value>
@@ -869,7 +869,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effectPoint>
 			<value level="1">-692</value>
 			<value level="2">-696</value>
@@ -925,7 +925,7 @@
 		<table name="#skillLevel"> 1 2 3 4 5 </table>
 		<icon>icon.skill11515</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">76</value>
 			<value level="2">80</value>
@@ -994,7 +994,7 @@
 		<table name="#power"> 8805 9717 10630 11542 12454 13366 13670 13974 14278 14582 14886 15190 15494 15799 16103 </table>
 		<icon>icon.skill1170</icon>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effectPoint>
 			<value level="1">-696</value>
 			<value level="2">-702</value>
@@ -1074,7 +1074,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11517</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1173,7 +1173,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11522</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1218,7 +1218,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>80</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>300</minDamage>
 				<skillId>11569</skillId>
 				<skillLevel>1</skillLevel>
@@ -1306,7 +1306,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1400,7 +1400,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11520</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1488,7 +1488,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11521</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1587,7 +1587,7 @@
 		<affectRange>1000</affectRange>
 		<icon>icon.skill11518</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -1660,7 +1660,7 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11523</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -1716,7 +1716,7 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11524</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -1776,7 +1776,7 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11525</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -1876,7 +1876,7 @@
 			<value level="10">110</value>
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>30</amount>
@@ -1928,7 +1928,7 @@
 		<abnormalTime>300</abnormalTime>
 		<icon>icon.skill11529</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -1985,7 +1985,7 @@
 		<abnormalTime>300</abnormalTime>
 		<icon>icon.skill11530</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -2053,7 +2053,7 @@
 		<abnormalTime>300</abnormalTime>
 		<icon>icon.skill11532</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -2122,7 +2122,7 @@
 		<abnormalType>RHAPSODY</abnormalType>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>342</mpConsume>
 		<hitTime>3000</hitTime>
@@ -2160,7 +2160,7 @@
 		</abnormalTime>
 		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<magicLvl>
 			<value level="1">87</value>
 			<value level="2">90</value>
@@ -2206,7 +2206,7 @@
 		<icon>icon.skill11536</icon>
 		<effectPoint>-709</effectPoint>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">70</value>
 			<value level="2">70</value>
@@ -2263,7 +2263,7 @@
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>15</abnormalTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>CHANGEBODY</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2331,7 +2331,7 @@
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<chance>100</chance>
 			</effect>
 			<effect name="Speed">
@@ -2366,7 +2366,7 @@
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-709</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -2417,7 +2417,7 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -2474,7 +2474,7 @@
 		<abnormalType>TURN_STONE</abnormalType>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -2555,7 +2555,7 @@
 		<abnormalType>TURN_STONE</abnormalType>
 		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -2592,7 +2592,7 @@
 		<abnormalType>BUFF_SPECIAL_MULTI</abnormalType>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>
 			<value level="1">330</value>
 			<value level="2">350</value>
@@ -2690,7 +2690,7 @@
 		<abnormalTime>30</abnormalTime>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>916</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -2729,7 +2729,7 @@
 		<abnormalTime>15</abnormalTime>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>1032</mpConsume>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -2765,7 +2765,7 @@
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<icon>icon.skill11533</icon>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<mpConsume>1767</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -2835,7 +2835,7 @@
 		</magicLvl>
 		<icon>icon.skill0212</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HpRegen">
 				<amount>
@@ -2865,7 +2865,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="StatUp">
 				<amount>2</amount>
@@ -2885,7 +2885,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Superior Mana Steal -->
@@ -2894,7 +2894,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>100</minDamage>
 				<chance>5</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>SWORD,BLUNT,DUAL,DUALBLUNT</allowWeapons>
 				<skillId>11550</skillId>
@@ -2906,7 +2906,7 @@
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill11505</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -2925,7 +2925,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill10257</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -2948,7 +2948,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11506</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
@@ -2989,7 +2989,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11187</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpRegen">
 				<amount>8.4</amount>
@@ -3008,7 +3008,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11504</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>17</amount>
@@ -3028,7 +3028,7 @@
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11788</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
@@ -3045,7 +3045,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
 		<trait>HOLD</trait>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<effects>
 			<effect name="DispelBySlot">
@@ -3065,7 +3065,7 @@
 		<affectLimit>10-10</affectLimit>
 		<effectPoint>-379</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>423</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -3091,7 +3091,7 @@
 		<affectRange>200</affectRange>
 		<effectPoint>-457</effectPoint>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>423</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -3116,7 +3116,7 @@
 		<affectRange>200</affectRange>
 		<effectPoint>-457</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>423</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -3156,10 +3156,10 @@
 		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
 		<affectRange>1000</affectRange>
 		<operateType>A2</operateType>
-		<targetType>
+		<targetType2>
 			<value level="1">PARTY</value>
 			<value level="2">PARTY_CLAN</value>
-		</targetType>
+		</targetType2>
 		<mpConsume>
 			<value level="1">423</value>
 			<value level="2">557</value>
@@ -3200,7 +3200,7 @@
 		<activateRate>65</activateRate>
 		<basicProperty>MAGIC</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -3257,7 +3257,7 @@
 		<affectRange>1000</affectRange>
 		<effectPoint>666</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<basicProperty>NONE</basicProperty>
@@ -3275,7 +3275,7 @@
 				<skillId>7097</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>100</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Cancel Shadow Move -->
@@ -3284,7 +3284,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>100</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<isCritical>true</isCritical>
 				<allowWeapons>SWORD,BLUNT</allowWeapons>
 				<skillId>7097</skillId>
@@ -3297,7 +3297,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>100</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<skillId>7097</skillId>
 				<skillLevel>1</skillLevel>
 				<isCritical>false</isCritical>
@@ -3312,7 +3312,7 @@
 		<icon>icon.skill11819</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>60</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>75000</reuseDelay>
@@ -3337,7 +3337,7 @@
 		<icon>icon.skill1016</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<operateType>A1</operateType>
-		<targetType>PC_BODY</targetType>
+		<targetType2>PC_BODY</targetType2>
 		<mpConsume>60</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
@@ -3378,7 +3378,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<icon>icon.skill11565</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -3425,7 +3425,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<icon>icon.skill11567</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<hitTime>700</hitTime>
@@ -3468,7 +3468,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<icon>icon.skill11824</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>140</mpConsume>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -3518,7 +3518,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>4</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>100</amount>
@@ -3548,7 +3548,7 @@
 		<effectPoint>1301</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A1</operateType>
-		<targetType>AREA_FRIENDLY</targetType>
+		<targetType2>AREA_FRIENDLY</targetType2>
 		<mpConsume>582</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -3571,7 +3571,7 @@
 		<effectPoint>780</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>120</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>5000</hitTime>
@@ -3592,7 +3592,7 @@
 		<icon>icon.skill11580</icon>
 		<abnormalTime>10</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<trait>CHANGEBODY</trait>
 		<affectRange>200</affectRange>
 		<magicLvl>
@@ -3647,7 +3647,7 @@
 		<operateType>P</operateType>
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11841</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxCp">
 				<amount>
@@ -3733,7 +3733,7 @@
 		<affectRange>150</affectRange> <!-- Custom -->
 		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -3770,7 +3770,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -3812,7 +3812,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -3840,7 +3840,7 @@
 		<table name="#attack"> 1.05 1.07 1.10 1.15 </table>
 		<icon>icon.skill0141</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -3876,7 +3876,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">126</value>
 			<value level="2">139</value>
@@ -3914,7 +3914,7 @@
 		<icon>icon.skill11587</icon>
 		<abnormalTime>10</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">252</value>
 			<value level="2">278</value>
@@ -3937,7 +3937,7 @@
 		<table name="#maxMp"> 1.10 1.12 1.15 1.20 </table>
 		<icon>icon.skill0164</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -3969,7 +3969,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -4060,7 +4060,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -4096,7 +4096,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>25</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>300</minDamage>
 				<allowWeapons>SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT</allowWeapons>
 				<skillId>11569</skillId>
@@ -4186,7 +4186,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -4273,7 +4273,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -4353,7 +4353,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -4445,7 +4445,7 @@
 		<affectLimit>50-100</affectLimit> <!-- Custom -->
 		<affectRange>1000</affectRange> <!-- Custom -->
 		<operateType>A2</operateType>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<mpConsume>
 			<value level="1">140</value>
 			<value level="2">151</value>
@@ -4509,7 +4509,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>CLAN_MEMBER</targetType>
+		<targetType2>CLAN_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -4562,7 +4562,7 @@
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<icon>icon.skill11524</icon>
 		<operateType>A2</operateType>
-		<targetType>CLAN_MEMBER</targetType>
+		<targetType2>CLAN_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -4618,7 +4618,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>CLAN_MEMBER</targetType>
+		<targetType2>CLAN_MEMBER</targetType2>
 		<mpConsume>140</mpConsume>
 		<mpInitialConsume>28</mpInitialConsume>
 		<castRange>900</castRange>
@@ -4706,7 +4706,7 @@
 		<activateRate>70</activateRate> <!-- Custom -->
 		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">73</value>
 			<value level="2">79</value>
@@ -4742,7 +4742,7 @@
 		<table name="#mdot"> 4 4 4 4 </table> <!-- Custom -->
 		<icon>icon.skill1001</icon>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<effects>
 			<effect name="ManaDamOverTime">

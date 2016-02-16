@@ -16,7 +16,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22001" levels="1" name="Spicy Kimchi">
 		<abnormalInstant>true</abnormalInstant>
@@ -34,7 +34,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22002" levels="1" name="Spicy Kimchi">
 		<abnormalInstant>true</abnormalInstant>
@@ -53,7 +53,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22003" levels="1" name="Sweet-and-Sour White Kimchi">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -66,7 +66,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22004" levels="1" name="Vitality Ginseng">
 		<!-- Confirmed CT2.5 -->
@@ -87,7 +87,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -108,7 +108,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>600</value>
@@ -126,7 +126,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>3600000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
@@ -141,7 +141,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -190,7 +190,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -240,7 +240,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -268,7 +268,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -296,7 +296,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -324,7 +324,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -361,7 +361,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>60</amount>
@@ -425,7 +425,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -489,7 +489,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>60</amount>
@@ -549,7 +549,7 @@
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -604,7 +604,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -632,7 +632,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -658,7 +658,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22020" levels="1" name="Extra Pass: Near Kamaloka">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -669,7 +669,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22021" levels="1" name="Extra Pass: Kamaloka (Labyrinth of the Abyss)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -680,7 +680,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22022" levels="1" name="Miraculous Valentine Cake: Special Ingredient">
 		<!-- Confirmed CT2.5 -->
@@ -692,7 +692,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -717,7 +717,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -754,7 +754,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -794,7 +794,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -828,7 +828,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -862,7 +862,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -905,7 +905,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>3600000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
@@ -929,7 +929,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>8</amount>
@@ -955,7 +955,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -980,7 +980,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>8</amount>
@@ -997,7 +997,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1056,7 +1056,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1090,7 +1090,7 @@
 		<effectPoint>1</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>106</npcId>
@@ -1119,7 +1119,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -1134,7 +1134,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22037" levels="1" name="Beast Spiritshot">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1143,7 +1143,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22038" levels="1" name="Blessed Beast Spiritshot">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1152,7 +1152,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22039" levels="2" name="XP Rune III (Lv. 1-99) 30%">
 		<!-- Confirmed CT2.5 -->
@@ -1164,7 +1164,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ExpModify">
 				<amount>
@@ -1185,7 +1185,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SpModify">
 				<amount>
@@ -1206,7 +1206,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CrystalGradeModify">
 				<grade>
@@ -1225,7 +1225,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CpHeal">
 				<power>200</power>
@@ -1243,7 +1243,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
@@ -1279,7 +1279,7 @@
 			<value level="6">0</value>
 			<value level="7">300000</value>
 		</reuseDelay>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player levelRange="#levelRange" />
 		</cond>
@@ -1306,7 +1306,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1333,7 +1333,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1360,7 +1360,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1387,7 +1387,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1414,7 +1414,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1441,7 +1441,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1468,7 +1468,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1495,7 +1495,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1539,7 +1539,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -1633,7 +1633,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-100</amount>
@@ -1654,7 +1654,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<reuseDelay>3600000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>5000</value>
@@ -1675,7 +1675,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
@@ -1697,7 +1697,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>33</amount>
@@ -1719,7 +1719,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -1741,7 +1741,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>15</amount>
@@ -1763,7 +1763,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -1785,7 +1785,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
@@ -1807,7 +1807,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>75</amount>
@@ -1829,7 +1829,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
@@ -1851,7 +1851,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -1873,7 +1873,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>35</amount>
@@ -1895,7 +1895,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>8</amount>
@@ -1945,7 +1945,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>30</amount>
@@ -1967,7 +1967,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>35</amount>
@@ -1989,7 +1989,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-10</amount>
@@ -2022,7 +2022,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
@@ -2038,7 +2038,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2108,7 +2108,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2177,7 +2177,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22074" levels="1" name="Scroll: Enchant Armor (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2186,7 +2186,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22075" levels="1" name="Ancient Scroll: Enchant Weapon (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2195,7 +2195,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22076" levels="1" name="Ancient Scroll: Enchant Armor (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2204,7 +2204,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22077" levels="1" name="Divine Scroll: Enchant Weapon (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2213,7 +2213,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22078" levels="1" name="Divine Scroll: Enchant Armor (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2222,7 +2222,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="22079" levels="1" name="Water Resistance">
 		<!-- Increases resistance to water type attacks by 20% for 1 hour -->
@@ -2242,7 +2242,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22080" levels="1" name="Wind Resistance">
 		<!-- Increases resistance to wind type attacks by 20% for 1 hour -->
@@ -2262,7 +2262,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22081" levels="1" name="Fire Resistance">
 		<!-- Increases resistance to fire type attacks by 20% for 1 hour -->
@@ -2282,7 +2282,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22082" levels="1" name="Holy Attack Resistance">
 		<!-- Increases resistance to divinity type attacks by 23% for 1 hour -->
@@ -2302,7 +2302,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22083" levels="1" name="Dark Attack Resistance">
 		<!-- Increases resistance to darkness type attacks by 23% for 1 hour -->
@@ -2322,7 +2322,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="22084" levels="1" name="Mental Shield">
 		<!-- Confirmed CT2.5 -->
@@ -2342,7 +2342,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>40</HOLD>
@@ -2369,7 +2369,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>30</amount>
@@ -2395,7 +2395,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ReduceCancel">
 				<amount>-36</amount>
@@ -2421,7 +2421,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>15</amount>
@@ -2447,7 +2447,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>4</amount>
@@ -2473,7 +2473,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HpRegen">
 				<amount>20</amount>
@@ -2499,7 +2499,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefence">
 				<amount>40</amount>
@@ -2513,7 +2513,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>10</amount>
@@ -2544,7 +2544,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2582,7 +2582,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2617,7 +2617,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2649,7 +2649,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>8</npcId>
@@ -2671,7 +2671,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>9</npcId>
@@ -2700,7 +2700,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>60</amount>
@@ -2766,7 +2766,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -2833,7 +2833,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-3</specialLevel>
-		<targetType>CORPSE_MOB</targetType>
+		<targetType2>CORPSE_MOB</targetType2>
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="PAtk">

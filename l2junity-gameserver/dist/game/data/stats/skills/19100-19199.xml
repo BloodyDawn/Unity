@@ -7,14 +7,14 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19101" levels="1" name="Chain Blow - Test">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 33717 Power added to P. Atk. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. Additional damage occurs with Bleed. -->
 		<icon>icon.skill19101</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1130</hitTime>
 		<coolTime>700</coolTime>
@@ -30,7 +30,7 @@
 		<!-- Temporarily makes a participant in the Ceremony of Chaos invincible. -->
 		<icon>icon.skill1505</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1200</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -58,7 +58,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxCp">
 				<amount>700</amount>
@@ -83,7 +83,7 @@
 		<!-- For clan members owning a residence, Max CP + 1000, and PvP Def. + 5%. -->
 		<icon>icon.skill0050</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<effects>
@@ -112,7 +112,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player levelRange="1;84" />
 		</cond>
@@ -136,7 +136,7 @@
 		<!-- For clan members level 1 - 84 owning a residence, Atk. Spd./ Casting Spd/ Speed + 15%. -->
 		<icon>icon.skill0820</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isDebuff>false</isDebuff>
@@ -165,7 +165,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ExpModify">
 				<amount>3</amount>
@@ -178,7 +178,7 @@
 		<!-- For clan members owning a residence, acquired XP + 5%. -->
 		<icon>icon.skill0788_5</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<effects>
@@ -193,7 +193,7 @@
 		<!-- Merge with a powerful Siege Golem. For 5 min., P. Def./ M. Def. + 50%, and resistance to bows/crossbows + 50%. Consumes 10 Crystals (R-grade). -->
 		<icon>icon.skill19109</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>10000</hitTime>
 		<coolTime>300</coolTime>
@@ -211,21 +211,21 @@
 		<!-- Clan members' resistance to Knock Back / Knock Down + 12. Elder or above only. -->
 		<icon>icon.skill_tough_spirit</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19111" levels="5" name="Clan Steadfastness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Clan members' resistance to Aerial Yoke + 12. Elder or above only. -->
 		<icon>icon.skill_heavy_heart</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19112" levels="1" name="Clan Escape">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teleports nearby clan members to town. Cannot be used in special places such as GM Consultation Services. Consumes 50 Spirit Ores and 2000 Individual Fame. Viscount or above only. -->
 		<icon>icon.skill_pledge_party_recall</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>3500</hitTime>
 		<reuseDelay>1800000</reuseDelay>
 		<effectPoint>100</effectPoint>
@@ -236,7 +236,7 @@
 		<!-- For 60 sec., blocks target's Escape. Consumes 100 Spirit Ores and 3000 Individual Fame. Marquis or above only. -->
 		<icon>icon.skill_recall</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>1800000</reuseDelay>
@@ -248,7 +248,7 @@
 		<!-- For 60 sec., blocks target's Resurrection. Consumes 150 Spirit Ores and 1000 Clan Reputation. Marquis or above only. -->
 		<icon>icon.skill_resurrection</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -262,7 +262,7 @@
 		<!-- Can mount the Air Bike. Must belong to a clan Lv. 5 or above. -->
 		<icon>icon.etc_dwarf_craft_vehicle</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<hitTime>1000</hitTime>
 	</skill>
@@ -271,7 +271,7 @@
 		<!-- Can mount a Lind Rider. -->
 		<icon>icon.etc_lind_vehicle</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<hitTime>1000</hitTime>
 	</skill>
@@ -280,14 +280,14 @@
 		<!-- Status defense abilities are greatly increased by receiving dimensional abilities. -->
 		<icon>icon.skill14216</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19118" levels="4" name="Bike Ability">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Blend in with enemies to avoid their notice. If you attack in this state, the entire party becomes exposed. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">61</value>
 			<value level="2">63</value>
@@ -308,7 +308,7 @@
 		<!-- Retains target's buffs/debuffs upon death, except for Noblesse Grace and Lucky Charm. Consumes 1000 Spirit Ore. -->
 		<icon>icon.skill1323</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>500</mpConsume>
 		<hitTime>4000</hitTime>
 		<effectPoint>1</effectPoint>
@@ -319,7 +319,7 @@
 		<table name="#bonus"> 1.02 1.04 1.06 1.08 </table>
 		<icon>icon.skill19120</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -337,7 +337,7 @@
 		<table name="#bonus"> 1.03 1.05 1.07 1.10 </table>
 		<icon>icon.skill19121</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -355,7 +355,7 @@
 		<table name="#bonus"> 6 10 12 16 </table>
 		<icon>icon.skill1045</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -373,7 +373,7 @@
 		<table name="#bonus"> 1.02 1.04 1.06 1.09 </table>
 		<icon>icon.skill1086</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
@@ -391,7 +391,7 @@
 		<table name="#bonus"> 5 10 </table>
 		<icon>icon.skill19124</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="AttackTrait">
 				<PARALYZE>
@@ -420,7 +420,7 @@
 		<table name="#bonus"> 1.05 1.10 </table>
 		<icon>icon.skill0193</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>
@@ -436,7 +436,7 @@
 		<table name="#bonus"> 4 10 </table>
 		<icon>icon.skill0229</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpRegen">
 				<amount>
@@ -452,7 +452,7 @@
 		<table name="#bonus"> 8 16 </table>
 		<icon>icon.skill19127</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -474,7 +474,7 @@
 		<!-- Physical Skill Critical Damage + 5%. -->
 		<icon>icon.skill10655</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>5</amount>
@@ -487,7 +487,7 @@
 		<table name="#bonus"> 0.02 0.04 </table>
 		<icon>icon.skill19129</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
@@ -503,7 +503,7 @@
 		<table name="#bonus"> 20 50 </table>
 		<icon>icon.skill19130</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -554,7 +554,7 @@
 		<table name="#bonus"> 1.03 1.05 </table>
 		<icon>icon.skill19131</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -597,7 +597,7 @@
 		<table name="#bonus"> 0.97 0.95 </table>
 		<icon>icon.skill19132</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Reuse">
 				<amount>
@@ -613,7 +613,7 @@
 		<!-- When equipped with Heavy Armor, P. Def. + 3% and Max MP + 6%. -->
 		<icon>icon.skill19133</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>3</amount>
@@ -636,7 +636,7 @@
 		<table name="#bonus"> 1.03 1.05 1.07 1.10 </table>
 		<icon>icon.skill19134</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -657,7 +657,7 @@
 		<table name="#bonus"> 1.02 1.04 1.06 1.08 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19135</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -678,7 +678,7 @@
 		<table name="#bonus"> 1.03 1.06 1.09 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1273</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -694,14 +694,14 @@
 		<!-- Received damage - 10%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19137</icon>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<!-- TODO: Handle received damage - 10% -->
 	</skill>
 	<skill id="19138" levels="1" name="Noble Frenzy">
 		<!-- Physical Skill Power + 10%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19138</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>10</amount>
@@ -714,7 +714,7 @@
 		<table name="#bonus"> 1.02 1.04 1.06 1.09 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19139</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -732,7 +732,7 @@
 		<table name="#bonus"> 0.95 0.90 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19140</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
@@ -749,7 +749,7 @@
 		<table name="#bonus"> 5 10 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1204</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -765,7 +765,7 @@
 		<table name="#bonus"> 5 10 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19142</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<!-- TODO: Handle Restrain trait -->
 			<effect name="AttackTrait">
@@ -787,7 +787,7 @@
 		<table name="#bonus"> 20 40 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1077</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
@@ -803,7 +803,7 @@
 		<table name="#bonus"> 1.03 1.05 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill0030</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<!-- TODO: Handle rear damage stat -->
 	</skill>
 	<skill id="19145" levels="2" name="Noble Death Whisper">
@@ -811,7 +811,7 @@
 		<table name="#bonus"> 1.03 1.05 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill4278</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
@@ -826,7 +826,7 @@
 		<!-- Chance of receiving an M. Critical attack - 2%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19146</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<!-- TODO: Find which skill triggers and under what circumstances -->
 		</effects>
@@ -836,7 +836,7 @@
 		<table name="#bonus"> 6 12 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1905</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -852,7 +852,7 @@
 		<!-- When equipped with Light Armor, Max HP + 6% and Max MP + 6%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19148</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>6</amount>
@@ -875,7 +875,7 @@
 		<table name="#bonus"> 1.03 1.05 1.09 1.12 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill0146</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -896,7 +896,7 @@
 		<table name="#bonus"> 1.02 1.04 1.06 1.08 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19150</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -917,7 +917,7 @@
 		<table name="#bonus"> 3 6 9 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1268</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>
@@ -933,14 +933,14 @@
 		<!-- Damage received while immobile decreases - 21%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19152</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<!-- TODO: Handle this skill -->
 	</skill>
 	<skill id="19153" levels="1" name="Noble Critical Boost">
 		<!-- P. Critical Rate + 50, M. Critical Rate + 20, and Skill Mastery Rate + 50%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19153</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>50</amount>
@@ -961,7 +961,7 @@
 		<table name="#bonus"> 1.03 1.06 1.09 1.14 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1059</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -979,7 +979,7 @@
 		<table name="#bonus"> 1.02 1.04 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1085</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>
@@ -995,7 +995,7 @@
 		<table name="#bonus"> 5 10 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19156</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<!-- TODO: Handle Restrain trait -->
 			<effect name="AttackTrait">
@@ -1017,7 +1017,7 @@
 		<table name="#bonus"> 20 30 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1303</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>
@@ -1033,7 +1033,7 @@
 		<table name="#bonus"> 1.06 1.10	</table>
 		<operateType>P</operateType>
 		<icon>icon.skill1048</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -1049,7 +1049,7 @@
 		<table name="#bonus"> 5 10 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill11567</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ResistAbnormalByCategory">
 				<amount>
@@ -1065,7 +1065,7 @@
 		<table name="#bonus"> 1.03 1.05 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19160</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicCriticalDamage">
 				<amount>
@@ -1081,7 +1081,7 @@
 		<table name="#defCritDamage"> 0.98 0.96 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19161</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>
@@ -1096,7 +1096,7 @@
 		<!-- MP Recovery Bonus + 8 while running. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19162</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="StatByMoveType">
 				<stat>REGENERATE_MP_RATE</stat>
@@ -1113,7 +1113,7 @@
 		<table name="#bonus"> 1.30 1.50 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill0330</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCriticalProbability">
 				<amount>
@@ -1128,7 +1128,7 @@
 		<!-- When equipped with a Robe, P. Def. + 3% and Max MP + 6%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19164</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>3</amount>
@@ -1151,7 +1151,7 @@
 		<table name="#bonus"> 1.03 1.05 1.07 1.10 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19165</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1172,7 +1172,7 @@
 		<table name="#bonus"> 1.03 1.06 1.09 1.12 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19166</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -1193,7 +1193,7 @@
 		<table name="#bonus"> 1.03 1.06 1.09 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19167</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HpRegen">
 				<amount>
@@ -1209,7 +1209,7 @@
 		<!-- MP Recovery Bonus + 33 and Max MP + 10%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19168</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>10</amount>
@@ -1225,7 +1225,7 @@
 		<!-- MP Recovery Bonus + 33 and magic skill Cooldown - 5%. -->
 		<operateType>P</operateType>
 		<icon>icon.skill19169</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpRegen">
 				<amount>33</amount>
@@ -1243,7 +1243,7 @@
 		<table name="#bonus"> 1.03 1.05 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19120</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1259,7 +1259,7 @@
 		<table name="#bonus"> 6 10 14 20 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1045</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -1277,7 +1277,7 @@
 		<table name="#bonus"> 8 16 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19127</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -1300,7 +1300,7 @@
 		<table name="#bonus"> 20 50 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19130</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1351,7 +1351,7 @@
 		<table name="#bonus"> 1.03 1.05 1.06 1.08 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19121</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1369,7 +1369,7 @@
 		<table name="#bonus"> 6 10 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill1045</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -1385,7 +1385,7 @@
 		<table name="#bonus"> 8 16 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19127</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -1408,7 +1408,7 @@
 		<table name="#bonus"> 20 50 </table>
 		<operateType>P</operateType>
 		<icon>icon.skill19130</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1458,63 +1458,63 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19179" levels="1" name="Warrior Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19180" levels="1" name="Rogue Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19181" levels="1" name="Archer Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19182" levels="1" name="Wizard Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19183" levels="1" name="Enchanter Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19184" levels="1" name="Summoner Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19185" levels="1" name="Healer Hidden Trigger">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19186" levels="1" name="Rampage Shield">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Has a chance of increasing P. Atk. when Shield Defense is successful. Requires Abilities. -->
 		<icon>icon.skill19186</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19187" levels="1" name="Blockade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., blocks target's P./M. Skills. Requires Abilities. -->
 		<icon>icon.skill19187</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>34</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -1528,14 +1528,14 @@
 		<!-- When hit in PvP, has a chance of canceling target's target. Requires Abilities. -->
 		<icon>icon.skill19188</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19189" levels="1" name="Retreating Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 30534 power added to P. Atk., and cancels their target while moving 450 grids backward. Requires Abilities and bow/crossbow. -->
 		<icon>icon.skill10858</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>34</mpConsume>
 		<castRange>450</castRange>
 		<hitTime>1500</hitTime>
@@ -1548,21 +1548,21 @@
 		<!-- Maximum MP + 10%, and MP Recovery Bonus + 8 when running. Requires Abilities. -->
 		<icon>icon.skill19190</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19191" levels="1" name="Mist Armor">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Damage Received - 10%. Requires Abilities. -->
 		<icon>icon.skill19191</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19192" levels="1" name="Mass Servitor Berserk">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., servitor's P. Atk. + 15%, and Critical Damage + 15%. Requires Abilities. -->
 		<icon>icon.skill19192</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>67</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>3500</hitTime>
@@ -1576,14 +1576,14 @@
 		<!-- Healing power and magic power increases when using Radiant Heal. Requires Abilities. -->
 		<icon>icon.skill19193</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19196" levels="1" name="Rampage Shield">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., P. Atk. + 30%. Requires a shield. -->
 		<icon>icon.skill19186</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>4</isMagic>
 	</skill>
@@ -1592,7 +1592,7 @@
 		<!-- For 15 sec., M. Atk. + 16%, and Healing Magic Power + 242. -->
 		<icon>icon.skill19193</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>10000</reuseDelay>
 		<isMagic>4</isMagic>
 	</skill>
@@ -1600,7 +1600,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0445</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1100</castRange>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
@@ -1609,7 +1609,7 @@
 		<!-- For 60 sec., P./M. Atk. + 10%. -->
 		<icon>icon.skill1996</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
 	</skill>

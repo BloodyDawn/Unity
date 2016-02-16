@@ -15,7 +15,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
@@ -35,7 +35,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
@@ -58,7 +58,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
@@ -84,7 +84,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player level="78" />
 		</cond>
@@ -108,7 +108,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>100</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2905" levels="1" name="Growth Accelerator">
 		<effectPoint>-100</effectPoint>
@@ -124,7 +124,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effectRange>120</effectRange>
 		<castRange>120</castRange>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<target npcId="18793,18794,18795,18796,18797,18798" />
 		</cond>
@@ -138,7 +138,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>4000</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2907" levels="5" name="Battlefield Use Secret Medicine of Life">
 		<!-- Confirmed CT2.5 -->
@@ -148,7 +148,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player levelRange="61;75" />
 		</cond>
@@ -166,7 +166,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player levelRange="61;75" />
 		</cond>
@@ -184,7 +184,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<player levelRange="61;75" />
 		</cond>
@@ -203,7 +203,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2911" levels="1" name="Skull Key of Erosion">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -214,7 +214,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2912" levels="1" name="Skull Key of the Heart">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -225,7 +225,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2913" levels="1" name="Soul Extraction">
 		<effectPoint>-100</effectPoint>
@@ -238,7 +238,7 @@
 		<effectRange>400</effectRange>
 		<hitTime>4000</hitTime>
 		<castRange>40</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2914" levels="3" name="Equipment Set Pack (10-day)">
 		<!-- Confirmed CT2.5 -->
@@ -257,7 +257,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>
@@ -280,7 +280,7 @@
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -306,7 +306,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Feed">
 				<normal>11000</normal>
@@ -325,7 +325,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -406,7 +406,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -487,7 +487,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -532,7 +532,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -577,7 +577,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -607,7 +607,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -637,7 +637,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -667,7 +667,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -697,7 +697,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -727,7 +727,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -757,7 +757,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -787,7 +787,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -817,7 +817,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -847,7 +847,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -877,7 +877,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -907,7 +907,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -937,7 +937,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -967,7 +967,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -997,7 +997,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1027,7 +1027,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1057,7 +1057,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1087,7 +1087,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1117,7 +1117,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1147,7 +1147,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1177,7 +1177,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1207,7 +1207,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1237,7 +1237,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1267,7 +1267,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1297,7 +1297,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1327,7 +1327,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1357,7 +1357,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1387,7 +1387,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1417,7 +1417,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1447,7 +1447,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1477,7 +1477,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1507,7 +1507,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1537,7 +1537,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1567,7 +1567,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1597,7 +1597,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1627,7 +1627,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1657,7 +1657,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1687,7 +1687,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1717,7 +1717,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1747,7 +1747,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1777,7 +1777,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1807,7 +1807,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1837,7 +1837,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1867,7 +1867,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1897,7 +1897,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1927,7 +1927,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1957,7 +1957,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1987,7 +1987,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2017,7 +2017,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2047,7 +2047,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2077,7 +2077,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2107,7 +2107,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2137,7 +2137,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2167,7 +2167,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2197,7 +2197,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2227,7 +2227,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2257,7 +2257,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2287,7 +2287,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2317,7 +2317,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2347,7 +2347,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2377,7 +2377,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2407,7 +2407,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2437,7 +2437,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2467,7 +2467,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2497,7 +2497,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2527,7 +2527,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2557,7 +2557,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2587,7 +2587,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2617,7 +2617,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2647,7 +2647,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2677,7 +2677,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2707,7 +2707,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -2743,7 +2743,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitTime>100</hitTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="2994" levels="1" name="Transformation Harp: Aqua Elf">
 		<abnormalLvl>1</abnormalLvl>
@@ -2760,7 +2760,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -2777,7 +2777,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="2996" levels="1" name="Player Commendation - Scroll: Enchant Weapon (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2786,7 +2786,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="2997" levels="1" name="Player Commendation - Scroll: Enchant Weapon (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2795,7 +2795,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="2998" levels="1" name="Player Commendation - Scroll: Enchant Weapon (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2804,7 +2804,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="2999" levels="1" name="Player Commendation - Scroll: Enchant Weapon (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2813,6 +2813,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 </list>

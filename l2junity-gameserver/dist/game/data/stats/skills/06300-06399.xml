@@ -16,7 +16,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3194</power>
@@ -51,7 +51,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="ManaHealOverTime">
 				<power>
@@ -79,7 +79,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>15</amount>
@@ -107,7 +107,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -138,7 +138,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -160,7 +160,7 @@
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -192,7 +192,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -222,7 +222,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
@@ -249,7 +249,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
@@ -276,7 +276,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
@@ -300,7 +300,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -323,7 +323,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -348,7 +348,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -377,7 +377,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
+		<targetType2>CLAN</targetType2> <!-- FIXME: Aura Friendly ? -->
 		<effects>
 			<effect name="PhysicalSkillPower">
 				<amount>100</amount>
@@ -406,7 +406,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>125</power>
@@ -429,7 +429,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -451,7 +451,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HealPercent">
 				<power>15</power>
@@ -477,7 +477,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>128</power>
@@ -504,7 +504,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
+		<targetType2>CLAN</targetType2> <!-- FIXME: Aura Friendly ? -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
@@ -532,7 +532,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>CLAN</targetType> <!-- FIXME: Aura Friendly ? -->
+		<targetType2>CLAN</targetType2> <!-- FIXME: Aura Friendly ? -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>10</amount>
@@ -562,7 +562,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>-23</amount>
@@ -593,7 +593,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
@@ -619,7 +619,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
@@ -640,7 +640,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>85</power>
@@ -664,7 +664,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
@@ -688,7 +688,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>85</power>
@@ -711,7 +711,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>20531</power>
@@ -734,7 +734,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>11407</power>
@@ -761,7 +761,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>205</power>
@@ -784,7 +784,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -803,7 +803,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="HealPercent">
 				<power>5</power>
@@ -827,7 +827,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1206</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-30</amount>
@@ -852,7 +852,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<icon>icon.skill1206</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -887,7 +887,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -922,7 +922,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -948,7 +948,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>120</power>
@@ -971,7 +971,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
@@ -992,7 +992,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1013,7 +1013,7 @@
 		<reuseDelay>2000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1044,7 +1044,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -1080,7 +1080,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -1109,7 +1109,7 @@
 		<activateRate>30</activateRate>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>2</abnormalTime>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1127,7 +1127,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1160,7 +1160,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>TARGET_PARTY</targetType>
+		<targetType2>TARGET_PARTY</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1204,7 +1204,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>TARGET_PARTY</targetType>
+		<targetType2>TARGET_PARTY</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -1256,7 +1256,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>TARGET_PARTY</targetType>
+		<targetType2>TARGET_PARTY</targetType2>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
@@ -1338,7 +1338,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitTime>1500</hitTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="6369" levels="3" name="Maguen Plasma - Reptilikon">
 		<!-- Confirmed CT2.5 -->
@@ -1368,7 +1368,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitTime>1500</hitTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="6370" levels="1" name="Thunderbolt">
 		<abnormalLvl>1</abnormalLvl>
@@ -1389,7 +1389,7 @@
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<castRange>150</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6371" levels="1" name="Invincibility">
 		<abnormalLvl>1</abnormalLvl>
@@ -1405,7 +1405,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitTime>3500</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6372" levels="10" name="Power Up">
 		<abnormalLvl>
@@ -1434,7 +1434,7 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill0917</icon>
 		<hitTime>1500</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6373" levels="1" name="Thunderbolt">
 		<abnormalLvl>1</abnormalLvl>
@@ -1455,7 +1455,7 @@
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<castRange>150</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6374" levels="1" name="Notification - Thunderbolts">
 		<effectPoint>1</effectPoint>
@@ -1468,7 +1468,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>3000</hitTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6375" levels="1" name="Notification - Thunderbolts">
 		<effectPoint>1</effectPoint>
@@ -1481,7 +1481,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>3000</hitTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6376" levels="9" name="Sonic Strike">
 		<abnormalLvl>
@@ -1509,7 +1509,7 @@
 		<effectRange>2200</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>2000</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6377" levels="10" name="Speed Up">
 		<abnormalLvl>
@@ -1538,7 +1538,7 @@
 		<specialLevel>-1</specialLevel>
 		<icon>icon.skill1086</icon>
 		<hitTime>1500</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6378" levels="1" name="Earth Shift">
 		<abnormalLvl>1</abnormalLvl>
@@ -1556,7 +1556,7 @@
 		<affectRange>300</affectRange>
 		<hitTime>2000</hitTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6379" levels="1" name="Critical Hit">
 		<!-- Profuse bleeding causes you to loss 93 HP per second for 15 seconds. -->
@@ -1576,7 +1576,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>200</effectRange>
 		<hitTime>1500</hitTime>
@@ -1604,7 +1604,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
@@ -1635,7 +1635,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<trait>DERANGEMENT</trait>
@@ -1665,7 +1665,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -1695,7 +1695,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
@@ -1717,7 +1717,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1749,7 +1749,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -1779,7 +1779,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>150</affectRange>
 		<trait>SHOCK</trait>
@@ -1804,7 +1804,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -1831,7 +1831,7 @@
 		<abnormalTime>20</abnormalTime>
 		<icon>icon.skill1336</icon>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -1855,7 +1855,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>-50</amount>
@@ -1882,7 +1882,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>-50</amount>
@@ -1910,7 +1910,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<effects>
@@ -1944,7 +1944,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1500</effectRange>
 		<castRange>1200</castRange>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-50</amount>
@@ -1972,7 +1972,7 @@
 		<icon>icon.skill0122</icon>
 		<isDebuff>true</isDebuff>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -1990,7 +1990,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>
@@ -2018,7 +2018,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -2049,7 +2049,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
@@ -2077,7 +2077,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<trait>SHOCK</trait>
@@ -2109,7 +2109,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
@@ -2129,7 +2129,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>13688</power>

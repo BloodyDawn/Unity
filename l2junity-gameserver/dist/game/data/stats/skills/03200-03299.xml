@@ -33,7 +33,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Reuse">
 				<amount>-15</amount>
@@ -75,7 +75,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Reuse">
 				<amount>-15</amount>
@@ -117,7 +117,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Reuse">
 				<amount>-15</amount>
@@ -150,7 +150,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1800000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -190,7 +190,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DamageShield">
 				<amount>
@@ -228,7 +228,7 @@
 		<reuseDelay>3600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -264,7 +264,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="3207" levels="10" name="Item Skill: Heal">
 		<!-- Confirmed CT2.5 -->
@@ -284,7 +284,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Heal -->
@@ -292,7 +292,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>2</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5146</skillId>
 				<skillLevel>
@@ -328,7 +328,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Blessed Body -->
@@ -336,7 +336,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5147</skillId>
 				<skillLevel>
@@ -372,7 +372,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Prayer -->
@@ -380,7 +380,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5148</skillId>
 				<skillLevel>
@@ -416,7 +416,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Recharge -->
@@ -424,7 +424,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5149</skillId>
 				<skillLevel>
@@ -460,7 +460,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Blessed Soul -->
@@ -468,7 +468,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5150</skillId>
 				<skillLevel>
@@ -509,7 +509,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Mana Gain -->
@@ -517,7 +517,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5151</skillId>
 				<skillLevel>
@@ -558,7 +558,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Ritual -->
@@ -566,7 +566,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>2</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5152</skillId>
 				<skillLevel>
@@ -602,7 +602,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Cheer -->
@@ -610,7 +610,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>2</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5153</skillId>
 				<skillLevel>
@@ -651,7 +651,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Might -->
@@ -659,7 +659,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5154</skillId>
 				<skillLevel>
@@ -705,7 +705,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Empower -->
@@ -713,7 +713,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5156</skillId>
 				<skillLevel>
@@ -753,7 +753,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Duel Might -->
@@ -761,7 +761,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5157</skillId>
 				<skillLevel>
@@ -802,7 +802,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Shield -->
@@ -810,7 +810,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5158</skillId>
 				<skillLevel>
@@ -856,7 +856,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Magic Barrier -->
@@ -864,7 +864,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5159</skillId>
 				<skillLevel>
@@ -905,7 +905,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Duel Weakness -->
@@ -913,7 +913,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5160</skillId>
 				<skillLevel>
@@ -954,7 +954,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Agility -->
@@ -962,7 +962,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5161</skillId>
 				<skillLevel>
@@ -1008,7 +1008,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Guidance -->
@@ -1016,7 +1016,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5162</skillId>
 				<skillLevel>
@@ -1057,7 +1057,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Focus -->
@@ -1065,7 +1065,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5163</skillId>
 				<skillLevel>
@@ -1101,7 +1101,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Wild Magic -->
@@ -1109,7 +1109,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5164</skillId>
 				<skillLevel>
@@ -1150,7 +1150,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Charm -->
@@ -1158,7 +1158,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>1</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5165</skillId>
 				<skillLevel>
@@ -1204,7 +1204,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Slow -->
@@ -1212,7 +1212,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>2</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5166</skillId>
 				<skillLevel>
@@ -1258,7 +1258,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Winter -->
@@ -1266,7 +1266,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5167</skillId>
 				<skillLevel>
@@ -1307,7 +1307,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Stun -->
@@ -1315,7 +1315,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5168</skillId>
 				<skillLevel>
@@ -1351,7 +1351,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Hold -->
@@ -1359,7 +1359,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5169</skillId>
 				<skillLevel>
@@ -1395,7 +1395,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Sleep -->
@@ -1403,7 +1403,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5170</skillId>
 				<skillLevel>
@@ -1439,7 +1439,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Paralyze -->
@@ -1447,7 +1447,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5171</skillId>
 				<skillLevel>
@@ -1483,7 +1483,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Medusa -->
@@ -1491,7 +1491,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5172</skillId>
 				<skillLevel>
@@ -1527,7 +1527,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Fear -->
@@ -1535,7 +1535,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5173</skillId>
 				<skillLevel>
@@ -1576,7 +1576,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Poison -->
@@ -1584,7 +1584,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5174</skillId>
 				<skillLevel>
@@ -1630,7 +1630,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Bleed -->
@@ -1638,7 +1638,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5175</skillId>
 				<skillLevel>
@@ -1679,7 +1679,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Silence -->
@@ -1687,7 +1687,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5176</skillId>
 				<skillLevel>
@@ -1723,7 +1723,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Doom -->
@@ -1731,7 +1731,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<chance>4</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5177</skillId>
 				<skillLevel>
@@ -1766,7 +1766,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HealEffect">
 				<amount>1</amount>
@@ -1796,7 +1796,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ManaCharge">
 				<amount>1</amount>
@@ -1827,7 +1827,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1873,7 +1873,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>55</amount>
@@ -1898,7 +1898,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>5</amount>
@@ -1933,7 +1933,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -1980,7 +1980,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2022,7 +2022,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HealEffect">
 				<amount>
@@ -2063,7 +2063,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
@@ -2093,7 +2093,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>2</amount>
@@ -2118,7 +2118,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>20</amount>
@@ -2143,7 +2143,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>4</amount>
@@ -2168,7 +2168,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="WeightLimit">
 				<amount>100</amount>
@@ -2193,7 +2193,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Breath">
 				<amount>500</amount>
@@ -2218,7 +2218,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SafeFallHeight">
 				<amount>-100</amount>
@@ -2248,7 +2248,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="AreaDamage">
 				<amount>-40</amount>
@@ -2272,7 +2272,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
@@ -2306,7 +2306,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
@@ -2335,7 +2335,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
@@ -2360,7 +2360,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
@@ -2398,7 +2398,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DamageShield">
 				<amount>
@@ -2426,7 +2426,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="109">
 			<target npcId="13031,13032,13033,13034,13035,13120,13121,13122,13123,13124" />
 		</cond>
@@ -2452,7 +2452,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="3262" levels="1" name="Pardon">
 		<!-- Confirmed CT2.5 -->
@@ -2470,7 +2470,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="109">
 			<target npcId="13031,13032,13033,13034,13035,13120,13121,13122,13123,13124" />
 		</cond>
@@ -2495,7 +2495,7 @@
 		<reuseDelay>1800000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PC_BODY</targetType>
+		<targetType2>PC_BODY</targetType2>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -2518,7 +2518,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -2544,7 +2544,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1800000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -2562,7 +2562,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="3267" levels="1" name="Seal Agathion">
 		<!-- Confirmed CT2.5 -->
@@ -2574,7 +2574,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="UnsummonAgathion" />
 		</effects>
@@ -2589,7 +2589,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16028</npcId>
@@ -2606,7 +2606,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16027</npcId>
@@ -2623,7 +2623,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonAgathion">
 				<npcId>16026</npcId>
@@ -2648,7 +2648,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>63</amount>
@@ -2674,7 +2674,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>72</amount>
@@ -2696,7 +2696,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Heal">
 				<power>200</power>
@@ -2724,7 +2724,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefence">
 				<amount>220</amount>
@@ -2750,7 +2750,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>30</amount>
@@ -2776,7 +2776,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>100</amount>
@@ -2802,7 +2802,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
@@ -2828,7 +2828,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpRegen">
 				<amount>10</amount>
@@ -2855,7 +2855,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="BlockActions">
 			</effect>
@@ -2888,7 +2888,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SilentMove">
 			</effect>
@@ -2916,7 +2916,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-4</amount>
@@ -2953,7 +2953,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-100</amount>
@@ -2990,7 +2990,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HealEffect">
 				<amount>100</amount>
@@ -3016,7 +3016,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>2700</amount>
@@ -3046,7 +3046,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>8.7</amount>
@@ -3096,7 +3096,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>BLEEDING,9</dispel>
@@ -3117,7 +3117,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_PHYSICALLY,9</dispel>
@@ -3138,7 +3138,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_MAGICALLY,9</dispel>
@@ -3159,7 +3159,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3</dispel>
@@ -3180,7 +3180,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE_PHYSICAL,9</dispel>
@@ -3201,7 +3201,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE,9</dispel>
@@ -3222,7 +3222,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>SILENCE_ALL,9</dispel>
@@ -3235,7 +3235,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>20.8</amount>
@@ -3249,7 +3249,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>24.3</amount>
@@ -3263,7 +3263,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>32.8</amount>
@@ -3277,7 +3277,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>26.4</amount>
@@ -3291,7 +3291,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>2</amount>
@@ -3305,7 +3305,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>2</amount>
@@ -3319,7 +3319,7 @@
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>30</amount>

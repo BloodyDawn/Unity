@@ -76,7 +76,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -225,7 +225,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -335,7 +335,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKDOWN</trait>
 		<cond msgId="113" addName="1">
@@ -388,7 +388,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -464,7 +464,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A1</operateType>
 		<reuseDelay>9000</reuseDelay>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -536,7 +536,7 @@
 		<operateType>A2</operateType>
 		<trait>PULL</trait>
 		<reuseDelay>30000</reuseDelay>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<isDebuff>true</isDebuff>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -617,7 +617,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKBACK</trait>
 		<cond msgId="113" addName="1">
@@ -663,7 +663,7 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>900</effectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType> <!-- A1 in client? -->
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">13</value>
 			<value level="2">14</value>
@@ -725,7 +725,7 @@
 		<effectPoint>-687</effectPoint>
 		<effectRange>900</effectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType> <!-- A1 in client? -->
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">7</value>
 			<value level="2">9</value>
@@ -820,7 +820,7 @@
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>NONE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">27</value>
 			<value level="2">30</value>
@@ -879,7 +879,7 @@
 		<icon>icon.skill30510</icon>
 		<operateType>P</operateType>
 		<magicLvl>97</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
 				<!-- Inside Position -->
@@ -913,7 +913,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>NONE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">20</value>
 			<value level="2">44</value>
@@ -980,7 +980,7 @@
 		</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>41</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1034,7 +1034,7 @@
 		</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">13</value>
 			<value level="2">29</value>
@@ -1090,7 +1090,7 @@
 		<abnormalType>NONE</abnormalType>
 		<abnormalVisualEffect>SPACEREF</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>31</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1116,7 +1116,7 @@
 		<canCastWhileDisabled>true</canCastWhileDisabled>
 		<operateType>A2</operateType>
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>30</mpConsume>
 		<hitTime>200</hitTime>
 		<effectPoint>379</effectPoint>
@@ -1142,7 +1142,7 @@
 		<affectRange>300</affectRange>
 		<effectPoint>-379</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">73</value>
 			<value level="2">74</value>
@@ -1185,7 +1185,7 @@
 		<affectRange>300</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">1479</value>
 			<value level="2">1487</value>
@@ -1237,7 +1237,7 @@
 		<!-- Creates a warped space where the enemy is trapped and their abilities are decreased. Requires a fist weapon. -->
 		<icon>icon.skill30519</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>772</mpConsume>
 		<hitTime>2500</hitTime>
 		<coolTime>500</coolTime>
@@ -1259,7 +1259,7 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>PMENTAL_TRAIL</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">221</value>
 			<value level="2">232</value>
@@ -1291,7 +1291,7 @@
 			<effect name="TriggerSkillByAttack">
 				<!-- Damage Up -->
 				<chance>100</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
@@ -1337,7 +1337,7 @@
 		<!-- Inflicts normal damage x 5. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1354,7 +1354,7 @@
 		<!-- Speed has a chance to increase every time you receive damage. -->
 		<icon>icon.skill30522</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Battle Dash -->
@@ -1362,7 +1362,7 @@
 				<skillId>30523</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>20</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -1375,7 +1375,7 @@
 		<icon>icon.skill30523</icon>
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
@@ -1390,7 +1390,7 @@
 					<value level="3">0</value>
 				</skillLevel>
 				<chance>20</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -1423,7 +1423,7 @@
 		<!-- Fixed damage. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>-100</effectPoint>
 		<mpConsume>1</mpConsume>
 	</skill>
@@ -1432,7 +1432,7 @@
 		<!-- Has a chance to inflict normal damage x 5. Requires a Fist Weapon to activate. -->
 		<icon>icon.skill30526</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -1443,7 +1443,7 @@
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>13</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -1451,7 +1451,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1042</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>-707</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
@@ -1460,7 +1460,7 @@
 		<!-- Trapped in some space, your battle strength is weakened. -->
 		<icon>icon.skill30525</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>-707</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
@@ -1471,7 +1471,7 @@
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<abnormalVisualEffect>GRAVITY_SPACE_3</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">34</value>
 			<value level="2">35</value>
@@ -1522,7 +1522,7 @@
 		<icon>icon.skill30510</icon>
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
@@ -1606,7 +1606,7 @@
 			<value level="17">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1805,7 +1805,7 @@
 			<value level="17">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2010,7 +2010,7 @@
 			<value level="13">104</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -2142,7 +2142,7 @@
 			<value level="11">85</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -2349,7 +2349,7 @@
 			<value level="2">85</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -2385,7 +2385,7 @@
 			<value level="2">76</value>
 			<value level="3">85</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>STR</stat>
@@ -2413,7 +2413,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<operateType>DA2</operateType>
 		<trait>KNOCKDOWN</trait>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">29</value>
 			<value level="2">29</value>
@@ -2453,7 +2453,7 @@
 		<table name="#power"> 91570 95080 98736 102392 </table>
 		<icon>icon.skill30547</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>85</mpConsume>
 		<castRange>80</castRange>
 		<hitTime>500</hitTime>

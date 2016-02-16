@@ -30,7 +30,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<and>
 				<player canSummonServitor="true" />
@@ -100,7 +100,7 @@
 		<rideState>NONE</rideState>
 		<abnormalType>HOLY_ATTACK</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="Spoil" />
 		</effects>
@@ -140,7 +140,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -169,7 +169,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>30</amount>
@@ -193,7 +193,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
@@ -216,7 +216,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
@@ -240,7 +240,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -267,7 +267,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
@@ -291,7 +291,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -318,7 +318,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -345,7 +345,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -407,7 +407,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>0.8</power>
@@ -493,7 +493,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -622,7 +622,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -716,7 +716,7 @@
 		<reuseDelay>7000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD,BLUNT" />
@@ -754,7 +754,7 @@
 		<magicLvl>60</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalShieldAngleAll" />
 		</effects>
@@ -781,7 +781,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>2000</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HitNumber">
 				<amount>1</amount>
@@ -825,7 +825,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalShieldAngleAll" />
 			<effect name="ShieldDefence">
@@ -844,7 +844,7 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -941,7 +941,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
@@ -1021,7 +1021,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
@@ -1079,7 +1079,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>0.8</power>
@@ -1111,7 +1111,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1147,7 +1147,7 @@
 		<reuseDelay>600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -1186,7 +1186,7 @@
 		<rideState>STRIDER</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<player SiegeZone="126" /> <!-- TODO: add new condition -->
 		</cond>
@@ -1210,7 +1210,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>4</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond>
 			<player canCreateBase="true" />
 		</cond>
@@ -1237,7 +1237,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>7000</amount>
@@ -1258,7 +1258,7 @@
 		<magicLvl>76</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>20</HOLD>
@@ -1272,7 +1272,7 @@
 		<magicLvl>76</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<POISON>20</POISON>
@@ -1285,7 +1285,7 @@
 		<magicLvl>77</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>STR</stat>
@@ -1297,7 +1297,7 @@
 		<magicLvl>77</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>INT</stat>
@@ -1310,7 +1310,7 @@
 		<magicLvl>76</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="EnlargeSlot">
 				<amount>1</amount>
@@ -1323,7 +1323,7 @@
 		<magicLvl>76</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="EnlargeSlot">
 				<amount>1</amount>
@@ -1345,7 +1345,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>2</power>
@@ -1364,7 +1364,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>30</SHOCK>
@@ -1379,7 +1379,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DamOverTime">
 				<power>50</power>
@@ -1403,7 +1403,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DamOverTime">
 				<power>50</power>
@@ -1427,7 +1427,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DamOverTime">
 				<power>50</power>
@@ -1456,7 +1456,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>1</power>
@@ -1491,7 +1491,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>1</power>
@@ -1542,7 +1542,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="HealOverTime">
 				<power>50</power>
@@ -1585,7 +1585,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>150000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DEATH</trait>
 		<effects>
@@ -1622,7 +1622,7 @@
 		<operateType>A1</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DEATH</trait>
 		<cond msgId="113" addName="1">
@@ -1652,7 +1652,7 @@
 		<operateType>A1</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<coolTime>720</coolTime>
 		<trait>DEATH</trait>
@@ -1721,7 +1721,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT,FIST,DUAL,DUALFIST" />
 		</cond>
@@ -1805,7 +1805,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<coolTime>300</coolTime>
 		<isDebuff>true</isDebuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -1854,7 +1854,7 @@
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />
 		</cond>
@@ -1884,7 +1884,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
@@ -1914,7 +1914,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-5</amount>
@@ -1952,7 +1952,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -1988,7 +1988,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -2030,7 +2030,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<cond msgId="113" addName="1">
@@ -2063,7 +2063,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<cond msgId="113" addName="1">
@@ -2095,7 +2095,7 @@
 		<reuseDelay>15000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -2125,7 +2125,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
@@ -2164,7 +2164,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
@@ -2200,7 +2200,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
@@ -2242,7 +2242,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<cond msgId="113" addName="1">
@@ -2275,7 +2275,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="AttackTrait">
 				<BUG_WEAKNESS>30</BUG_WEAKNESS>
@@ -2298,7 +2298,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="AttackTrait">
 				<BEAST_WEAKNESS>30</BEAST_WEAKNESS>
@@ -2330,7 +2330,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<cond msgId="113" addName="1">
@@ -2380,7 +2380,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<cond msgId="113" addName="1">
@@ -2421,7 +2421,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="MpRegen">
 				<amount>20</amount>
@@ -2450,7 +2450,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-20</amount>
@@ -2490,7 +2490,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2519,7 +2519,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2532,7 +2532,7 @@
 				<skillId>7097</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>100</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 			</effect>
 			<effect name="TriggerSkillByAttack">
 				<!-- Cancel Shadow Move -->
@@ -2541,7 +2541,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>100</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<isCritical>true</isCritical>
 				<allowWeapons>SWORD,BLUNT</allowWeapons>
 				<skillId>7097</skillId>
@@ -2554,7 +2554,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>100</chance>
-				<targetType>PARTY</targetType>
+				<targetType2>PARTY</targetType2>
 				<skillId>7097</skillId>
 				<skillLevel>1</skillLevel>
 				<isCritical>false</isCritical>
@@ -2617,7 +2617,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>TURN_STONE</trait>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
 		</cond>
@@ -2642,7 +2642,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -2684,7 +2684,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
@@ -2708,7 +2708,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -2729,7 +2729,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxCp">
 				<amount>
@@ -2750,7 +2750,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxMp">
 				<amount>
@@ -2771,7 +2771,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="HpRegen">
 				<amount>
@@ -2792,7 +2792,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="CpRegen">
 				<amount>
@@ -2813,7 +2813,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MpRegen">
 				<amount>
@@ -2834,7 +2834,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2855,7 +2855,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2876,7 +2876,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -2897,7 +2897,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -2918,7 +2918,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Accuracy">
 				<amount>
@@ -2939,7 +2939,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>
@@ -2960,7 +2960,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefenceRate">
 				<amount>
@@ -2981,7 +2981,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ShieldDefence">
 				<amount>
@@ -3002,7 +3002,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -3033,7 +3033,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -3064,7 +3064,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<SHOCK>
@@ -3084,7 +3084,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>
@@ -3104,7 +3104,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<SLEEP>
@@ -3124,7 +3124,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -3145,7 +3145,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ReduceDropPenalty">
 				<exp>
@@ -3190,28 +3190,28 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="392" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="393" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="394" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="395" levels="1" name="Heroic Miracle">
 		<!-- Confirmed CT2.5 -->
@@ -3233,7 +3233,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>5</amount>
@@ -3273,7 +3273,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DebuffBlock" />
 			<effect name="PAtk">
@@ -3327,20 +3327,20 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="398" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="399" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 </list>

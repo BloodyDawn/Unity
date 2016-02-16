@@ -5,7 +5,7 @@
 		<!-- Race confirm -->
 		<icon>icon.skill0010509</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1080</hitTime>
 		<coolTime>720</coolTime>
@@ -30,7 +30,7 @@
 		<!-- Action prevent item skill confirm -->
 		<icon>icon.skill10510</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -57,7 +57,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -88,7 +88,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19005" levels="5" name="Clan Muzzle Control">
 		<!-- Updated to Ertheia -->
@@ -97,7 +97,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<PARALYZE>
@@ -117,7 +117,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<DERANGEMENT>
@@ -135,7 +135,7 @@
 		<!-- Summons a clan member. Consumes 5 Spirit Ores. Consumes 900 Individual Fame. Applies after the viscount stage. -->
 		<icon>icon.skill19007</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>-2</castRange>
 		<hitTime>15000</hitTime>
 		<effectPoint>467</effectPoint>
@@ -151,7 +151,7 @@
 		<!-- Uses the clan guardian's power to restore nearby clan members' HP/MP/CP. Consumes 100 Spirit Ores. Consumes 1000 Clan Reputation. Distinguished King or above only. -->
 		<icon>icon.skill19008</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
@@ -166,7 +166,7 @@
 		<!-- When the clan leader logs in, clan members' P. Atk., P. Def., and M. Def. + 5%, M. Atk. + 6%, and HP/MP recovery bonus + 5. -->
 		<icon>icon.skill19009</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>100</effectPoint>
 		<abnormalType>CLAN_ADVENT</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -188,7 +188,7 @@
 		<!-- Summons a copy of yourself to cause confusion among the enemy. Consumes 50 Spirit Ores. Consumes 1500 Individual Fame. Marquis or above only. -->
 		<icon>icon.skill19010</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -203,14 +203,14 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19012" levels="1" name="Clan Hide">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Hides nearby clan members. Decreases Speed by 50% when hidden. Consumes 150 Soulstones. Consumes 1000 Clan Reputation. Applies after the lord stage. -->
 		<icon>icon.skill19012</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>HIDE</abnormalType>
@@ -233,7 +233,7 @@
 		<!-- Cancels all debuffs of nearby clan members. Consumes 30 Spirit Ore. Consumes 1500 Individual Fame. Applies after the marquis stage. -->
 		<icon>icon.skill19013</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
@@ -251,7 +251,7 @@
 		<!-- Makes nearby clan members invincible. Consumes 30 Spirit Ore. Consumes 1000 Clan Reputation. Applies after the distinguished king stage. -->
 		<icon>icon.SKILL19014</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -273,7 +273,7 @@
 		<!-- Increases nearby clan members' P. Critical Rate by 3% and M. Critical Rate by 20. Consumes 50 Spirit Ore. Consumes 3500 Individual Fame. Applies after the marquis stage. -->
 		<icon>icon.skill19015</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2500</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>CLAN_FRIEND</abnormalType>
@@ -294,7 +294,7 @@
 		<!-- Increases nearby clan members' P. Atk. by 3% and P. Def. by 3%. Consumes 50 Spirit Ore. Consumes 3000 Individual Fame. Applies after the count stage. -->
 		<icon>icon.skill19016</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>2500</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>CLAN_BOUNDARY</abnormalType>
@@ -315,7 +315,7 @@
 		<!-- For 60 sec., Speed of nearby enemies - 23% and stops them from escaping. Consumes 30 Spirit Ore. Consumes 3000 Individual Fame. Applies after the duke stage. -->
 		<icon>icon.skill19017</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 		<effectPoint>-100</effectPoint>
@@ -340,7 +340,7 @@
 		<!-- Restores HP/MP/CP. -->
 		<icon>icon.skill19008</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1500</hitTime>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -356,7 +356,7 @@
 		<!-- Inflicts physical damage on target. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10013</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -373,7 +373,7 @@
 		<!-- Attacks frontal targets to inflict physical damage. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10265</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -392,7 +392,7 @@
 		<!-- Inflicts powerful physical damage on target. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10260</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -409,7 +409,7 @@
 		<!-- Attacks distant enemies. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10762</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -426,7 +426,7 @@
 		<!-- Does ranged attacks centered on frontal target. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -445,7 +445,7 @@
 		<!-- Inflicts a penetrating attack on enemies at the front. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10760</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -462,7 +462,7 @@
 		<!-- Inflicts a magic attack on target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11011</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -479,7 +479,7 @@
 		<!-- Inflicts a magic attack on target and enemies near target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11034</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -498,7 +498,7 @@
 		<!-- Inflicts a powerful magic attack on target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11023</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -515,7 +515,7 @@
 		<!-- Increases Max CP by 10000, P. Def. by 1000, and M. Def. by 1000 for 5 minutes. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>BranchSys2.icon.skill20006</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
 		<effectPoint>635</effectPoint>
@@ -540,7 +540,7 @@
 		<!-- Increases combat spirit to recover your own CP by 2000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill0440</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
 		<effectPoint>669</effectPoint>
@@ -555,7 +555,7 @@
 		<!-- Increases combat spirit to recover target's CP by 1000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
@@ -572,7 +572,7 @@
 		<!-- Increases combat spirit to recover a party member's CP by 1000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11757</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>200</coolTime>
 		<effectPoint>669</effectPoint>
@@ -590,7 +590,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113">
 			<player chaotic="false" />
 		</cond>
@@ -620,7 +620,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxCp">
 				<amount>3000</amount>
@@ -652,7 +652,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>HOLY</targetType>
+		<targetType2>HOLY</targetType2>
 		<cond>
 			<player canTakeCastle="true" />
 		</cond>
@@ -677,7 +677,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>HOLY</targetType>
+		<targetType2>HOLY</targetType2>
 		<cond>
 			<player canTakeCastle="true" />
 		</cond>
@@ -695,7 +695,7 @@
 		<!-- Acquires 3% additional XP and SP through the blessing of the Guardian of Light. -->
 		<icon>icon.etc_pi_gift_box_i04</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>BRIGHTNESS_BLESS</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -725,7 +725,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113">
 			<player chaotic="false" />
 		</cond>
@@ -783,7 +783,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>80.0</amount>
@@ -838,7 +838,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>40.0</amount>
@@ -893,7 +893,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>40.0</amount>
@@ -952,7 +952,7 @@
 		<reuseDelay>3600000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -972,7 +972,7 @@
 		<!-- Return to Castle. -->
 		<icon>icon.vesper_cloack_i00</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>200</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -986,7 +986,7 @@
 		<!-- For 60 minutes, increases academy members' P. Atk. by 10%, M. Atk. by 10%, Critical Rate by 10%, and M. Critical Rate by 10%. -->
 		<icon>icon.skill19008</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>100</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -1017,7 +1017,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="19076" levels="1" name="Clan Academy Reward">
 		<!-- AUTO GENERATED SKILL -->
@@ -1028,7 +1028,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>1</magicLvl>
 		<isMagic>2</isMagic>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1047,7 +1047,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1066,7 +1066,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1085,7 +1085,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1104,7 +1104,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1123,7 +1123,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1142,7 +1142,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1161,7 +1161,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1180,7 +1180,7 @@
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>TRANSFORM</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -1199,7 +1199,7 @@
 		<!-- Summons a siege weapon. Requires 400 R-grade Crystals. Automatically acquired by dwarves at level 85. -->
 		<icon>icon.skill0013</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>530</mpConsume>
 		<hitTime>180000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1218,7 +1218,7 @@
 		<!-- Summons a siege weapon. Can only move in normal mode. During siege mode, it cannot move, and it can inflict ranged attacks. Switching modes takes 30 seconds. Requires 100 R-grade Crystals. Automatically acquired by Maestro class at level 85. -->
 		<icon>icon.skill0299</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>530</mpConsume>
 		<hitTime>30000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1237,7 +1237,7 @@
 		<!-- Summons a Swoop Cannon. Requires 500 R-grade Crystals. Automatically acquired by dwarves at level 85. -->
 		<icon>icon.skill0448</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>530</mpConsume>
 		<hitTime>10000</hitTime>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -1257,7 +1257,7 @@
 		<!-- Increases Item Drop Rate upon PK. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
@@ -1285,7 +1285,7 @@
 			<value level="2">icon.skill10313</value>
 		</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1336,7 +1336,7 @@
 		<!-- Chance of inflicting damage again upon shooting. -->
 		<icon>icon.skill0256</icon>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<rideState>NONE</rideState>
@@ -1349,7 +1349,7 @@
 		<!-- Great damage occurs if critical occurs while shooting. -->
 		<icon>icon.skill0256</icon>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<rideState>NONE</rideState>
@@ -1362,7 +1362,7 @@
 		<!-- Chance of inflicting bleed if critical occurs while shooting. -->
 		<icon>icon.skill0256</icon>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<rideState>NONE</rideState>
@@ -1374,7 +1374,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1387,7 +1387,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<effectPoint>-2</effectPoint>
 		<rideState>NONE</rideState>
@@ -1402,7 +1402,7 @@
 		<!-- Consumes 100 HP per second for 15 seconds. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>-2</effectPoint>
@@ -1425,7 +1425,7 @@
 		<!-- Inflicts petrification on target for 60 minutes. -->
 		<icon>icon.skill0367</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>500</hitTime>
 		<abnormalType>TURN_STONE</abnormalType>

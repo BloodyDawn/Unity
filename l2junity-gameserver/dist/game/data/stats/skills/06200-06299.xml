@@ -12,7 +12,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canUntransform="true" />
 		</cond>
@@ -40,7 +40,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -85,7 +85,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -130,7 +130,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -175,7 +175,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -285,7 +285,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>BLEED</trait>
 		<effects>
@@ -440,7 +440,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DERANGEMENT</trait>
 		<effects>
@@ -464,7 +464,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>66</amount>
@@ -485,7 +485,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6209" levels="4" name="Weapon Grade Penalty">
 		<table name="#cAtk"> 0.9 0.8 0.7 0.6 </table>
@@ -500,7 +500,7 @@
 		<operateType>P</operateType>
 		<stayAfterDeath>true</stayAfterDeath>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>-10</amount>
@@ -547,7 +547,7 @@
 		<operateType>P</operateType>
 		<stayAfterDeath>true</stayAfterDeath>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -593,7 +593,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6218" levels="1" name="Raid Boss (Lv. 81)">
 		<!-- Confirmed CT2.5 -->
@@ -601,7 +601,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6219" levels="1" name="Raid Boss (Lv. 81)">
 		<!-- Confirmed CT2.5 -->
@@ -609,7 +609,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6220" levels="1" name="Raid Boss (Lv. 81)">
 		<!-- Confirmed CT2.5 -->
@@ -617,7 +617,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6221" levels="1" name="Raid Boss (Lv. 82)">
 		<!-- Confirmed CT2.5 -->
@@ -625,7 +625,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6222" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -633,7 +633,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6223" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -641,7 +641,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6224" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -649,7 +649,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6225" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -657,7 +657,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6226" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -665,7 +665,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6227" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -673,7 +673,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6228" levels="1" name="Raid Boss (Lv. 83)">
 		<!-- Confirmed CT2.5 -->
@@ -681,7 +681,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6229" levels="1" name="Raid Boss (Lv. 84)">
 		<!-- Confirmed CT2.5 -->
@@ -689,7 +689,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6230" levels="1" name="Raid Boss (Lv. 82)">
 		<!-- Confirmed CT2.5 -->
@@ -697,7 +697,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6231" levels="1" name="Raid Boss (Lv. 82)">
 		<!-- Confirmed CT2.5 -->
@@ -705,7 +705,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6232" levels="1" name="Raid Boss (Lv. 83)">
 		<!-- Confirmed CT2.5 -->
@@ -713,7 +713,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6233" levels="1" name="Raid Boss (Lv. 83)">
 		<!-- Confirmed CT2.5 -->
@@ -721,7 +721,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6234" levels="1" name="Presentation - Adena Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -730,7 +730,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="6235" levels="1" name="Blessed Focus">
 		<abnormalLvl>3</abnormalLvl>
@@ -745,7 +745,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6236" levels="1" name="Presentation - Party Return">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -755,7 +755,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>2500</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6237" levels="1" name="Decrease Speed">
 		<abnormalLvl>3</abnormalLvl>
@@ -772,7 +772,7 @@
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>-80</amount>
@@ -798,7 +798,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>2000</hitTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18162</power>
@@ -829,7 +829,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<staticReuse>true</staticReuse>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -866,7 +866,7 @@
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<castRange>300</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6241" levels="1" name="Heatstroke Prevention Effect - Gludio">
 		<abnormalLvl>1</abnormalLvl>
@@ -883,7 +883,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6242" levels="1" name="Heatstroke Prevention Effect - Dion">
 		<abnormalLvl>1</abnormalLvl>
@@ -900,7 +900,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6243" levels="1" name="Heatstroke Prevention Effect - Giran">
 		<abnormalLvl>1</abnormalLvl>
@@ -917,7 +917,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6244" levels="1" name="Heatstroke Prevention Effect - Oren">
 		<abnormalLvl>1</abnormalLvl>
@@ -934,7 +934,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6245" levels="1" name="Heatstroke Prevention Effect - Aden">
 		<abnormalLvl>1</abnormalLvl>
@@ -951,7 +951,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6246" levels="1" name="Heatstroke Prevention Effect - Innadril">
 		<abnormalLvl>1</abnormalLvl>
@@ -968,7 +968,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6247" levels="1" name="Heatstroke Prevention Effect - Goddard">
 		<abnormalLvl>1</abnormalLvl>
@@ -985,7 +985,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6248" levels="1" name="Heatstroke Prevention Effect - Rune">
 		<abnormalLvl>1</abnormalLvl>
@@ -1002,7 +1002,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6249" levels="1" name="Heatstroke Prevention Effect -Schuttgart">
 		<abnormalLvl>1</abnormalLvl>
@@ -1019,7 +1019,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6250" levels="1" name="Severe Heatstroke">
 		<abnormalLvl>1</abnormalLvl>
@@ -1039,7 +1039,7 @@
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<castRange>200</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6251" levels="1" name="Summon Sultriness">
 		<!-- Confirmed CT2.5 -->
@@ -1049,7 +1049,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13270</npcId>
@@ -1067,7 +1067,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<hitTime>1500</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6253" levels="1" name="Heatstroke Prevention Effect - Gludio">
 		<abnormalLvl>1</abnormalLvl>
@@ -1085,7 +1085,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6254" levels="1" name="Heatstroke Prevention Effect - Dion">
 		<abnormalLvl>1</abnormalLvl>
@@ -1103,7 +1103,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6255" levels="1" name="Heatstroke Prevention Effect - Giran">
 		<abnormalLvl>1</abnormalLvl>
@@ -1121,7 +1121,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6256" levels="1" name="Heatstroke Prevention Effect - Oren">
 		<abnormalLvl>1</abnormalLvl>
@@ -1139,7 +1139,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6257" levels="1" name="Heatstroke Prevention Effect - Aden">
 		<abnormalLvl>1</abnormalLvl>
@@ -1157,7 +1157,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6258" levels="1" name="Heatstroke Prevention Effect - Innadril">
 		<abnormalLvl>1</abnormalLvl>
@@ -1175,7 +1175,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6259" levels="1" name="Heatstroke Prevention Effect - Goddard">
 		<abnormalLvl>1</abnormalLvl>
@@ -1193,7 +1193,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6260" levels="1" name="Heatstroke Prevention Effect - Rune">
 		<abnormalLvl>1</abnormalLvl>
@@ -1211,7 +1211,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6261" levels="1" name="Heatstroke Prevention Effect -Schuttgart">
 		<abnormalLvl>1</abnormalLvl>
@@ -1229,7 +1229,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>300</affectRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6262" levels="1" name="EMP Power">
 		<coolTime>500</coolTime>
@@ -1241,7 +1241,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>150</affectRange>
 		<hitTime>2000</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6263" levels="1" name="EMP Shock">
 		<abnormalLvl>1</abnormalLvl>
@@ -1258,7 +1258,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>100</affectRange>
 		<hitTime>2000</hitTime>
@@ -1275,7 +1275,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>150</affectRange>
 		<hitTime>1000</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6265" levels="1" name="Smokescreen">
 		<coolTime>500</coolTime>
@@ -1287,7 +1287,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>50</affectRange>
 		<hitTime>1000</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6266" levels="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
@@ -1303,7 +1303,7 @@
 		<magicLvl>84</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>2500</effectRange>
 		<isDebuff>true</isDebuff>
@@ -1328,7 +1328,7 @@
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
 		<isMagic>2</isMagic>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6268" levels="1" name="Jump Attack">
 		<effectPoint>-273</effectPoint>
@@ -1342,7 +1342,7 @@
 		<affectRange>500</affectRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>5000</reuseDelay>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<effects>
@@ -1364,7 +1364,7 @@
 		<magicLvl>-1</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>1.5</hitCancelTime>
@@ -1380,7 +1380,7 @@
 		<magicLvl>84</magicLvl>
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>200</affectRange>
@@ -1406,7 +1406,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitTime>1000</hitTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6272" levels="1" name="Underbug Defense Up">
 		<!-- Increase each of P. Def. and M. Def. by 30%. -->
@@ -1422,7 +1422,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="6273" levels="1" name="Underbug Self Blasting">
 		<effectPoint>-676</effectPoint>
@@ -1430,7 +1430,7 @@
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<hitTime>10000</hitTime>
@@ -1455,7 +1455,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>38976</power>
@@ -1484,7 +1484,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>45256</power>
@@ -1512,7 +1512,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 	</skill>
 	<skill id="6277" levels="1" name="Summon Spirits">
 		<!-- Confirmed CT2.5 -->
@@ -1528,7 +1528,7 @@
 		<rideState>NONE</rideState>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="6278" levels="1" name="Ice Ball">
 		<!-- Confirmed CT2.5 -->
@@ -1547,7 +1547,7 @@
 		<rideState>NONE</rideState>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1569,7 +1569,7 @@
 		<rideState>NONE</rideState>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1598,7 +1598,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitTime>500</hitTime>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6281</skillId>
@@ -1619,7 +1619,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1643,7 +1643,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitTime>500</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="ReflectMagic">
 				<amount>20</amount>
@@ -1666,7 +1666,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>18560</power>
@@ -1690,7 +1690,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitTime>1000</hitTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -1721,7 +1721,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
@@ -1749,7 +1749,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
@@ -1776,7 +1776,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>100</power>
@@ -1806,7 +1806,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>300</amount>
@@ -1835,7 +1835,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -1869,7 +1869,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1889,7 +1889,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1913,7 +1913,7 @@
 		<operateType>DA1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
@@ -1940,7 +1940,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -1966,7 +1966,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>CLAN</targetType>
+		<targetType2>CLAN</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -1986,7 +1986,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="6296" levels="1" name="Rush">
 		<!-- Confirmed CT2.5 -->
@@ -2005,7 +2005,7 @@
 		<operateType>DA1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
@@ -2031,7 +2031,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -2050,7 +2050,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 	</skill>
 	<skill id="6299" levels="1" name="Icy Breath - Ice Storm">
 		<!-- Confirmed CT2.5 -->
@@ -2068,7 +2068,7 @@
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1547</power>

@@ -5,7 +5,7 @@
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpInitialConsume>1</mpInitialConsume>
 		<castRange>700</castRange>
 		<hitTime>1000</hitTime>
@@ -31,7 +31,7 @@
 	<skill id="11001" levels="10" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
 		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -79,7 +79,7 @@
 	<skill id="11002" levels="10" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -133,7 +133,7 @@
 	<skill id="11003" levels="10" name="Superior Anti Magic">
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -177,7 +177,7 @@
 	</skill>
 	<skill id="11004" levels="1" name="Superior Sigil Mastery">
 		<!-- When a Sigil is equipped, increases M. Atk. by 5% and MP Recovery Bonus by 20%. -->
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11791</icon>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -206,7 +206,7 @@
 		<operateType>P</operateType>
 		<icon>icon.skill11253</icon>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>6</amount>
@@ -235,7 +235,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<magicLvl>95</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<icon>icon.skill11006</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -260,7 +260,7 @@
 		<isNecessaryToggle>true</isNecessaryToggle>
 		<magicLvl>85</magicLvl>
 		<operateType>TG</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
@@ -272,7 +272,7 @@
 		<toggleGroupId>1</toggleGroupId>
 		<isNecessaryToggle>true</isNecessaryToggle>
 		<operateType>TG</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
@@ -285,7 +285,7 @@
 		<toggleGroupId>1</toggleGroupId>
 		<isNecessaryToggle>true</isNecessaryToggle>
 		<operateType>TG</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
@@ -298,7 +298,7 @@
 		<toggleGroupId>1</toggleGroupId>
 		<isNecessaryToggle>true</isNecessaryToggle>
 		<operateType>TG</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
@@ -312,7 +312,7 @@
 		<icon>icon.skill11011</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<doubleCastSkill>11016</doubleCastSkill>
 		<magicLvl>
@@ -400,7 +400,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -476,7 +476,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -552,7 +552,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -628,7 +628,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -702,7 +702,7 @@
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
 		<icon>icon.skill11011</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11011</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -778,7 +778,7 @@
 		<icon>icon.skill11017</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<doubleCastSkill>11022</doubleCastSkill>
 		<magicLvl>
@@ -863,7 +863,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -940,7 +940,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1017,7 +1017,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1094,7 +1094,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1169,7 +1169,7 @@
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<icon>icon.skill11017</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11017</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1247,7 +1247,7 @@
 		<icon>icon.skill11023</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<doubleCastSkill>11028</doubleCastSkill>
 		<magicLvl>
@@ -1332,7 +1332,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1408,7 +1408,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1484,7 +1484,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1560,7 +1560,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1634,7 +1634,7 @@
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<icon>icon.skill11023</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<reuseDelayGroup>11023</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1718,7 +1718,7 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">88</value>
@@ -1770,7 +1770,7 @@
 		<channelingTickInterval>1000</channelingTickInterval>
 		<channelingTickInitialDelay>1200</channelingTickInitialDelay>
 		<operateType>CA1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -1825,7 +1825,7 @@
 		<affectRange>200</affectRange>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<trait>SHOCK</trait>
 		<mpConsume>
 			<value level="1">204</value>
@@ -1895,7 +1895,7 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill11032</icon>
 		<operateType>A4</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-696</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -1930,7 +1930,7 @@
 		<icon>icon.skill11034</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<doubleCastSkill>11039</doubleCastSkill>
 		<magicLvl>
@@ -2004,7 +2004,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>10</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2070,7 +2070,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>10</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2135,7 +2135,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>10</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2201,7 +2201,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>10</attributeValue>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2265,7 +2265,7 @@
 		<affectRange>100</affectRange>
 		<icon>icon.skill11034</icon>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11034</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2333,7 +2333,7 @@
 		<icon>icon.skill11040</icon>
 		<attachToggleGroupId>1</attachToggleGroupId>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<doubleCastSkill>11045</doubleCastSkill>
 		<magicLvl>
@@ -2407,7 +2407,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>10</attributeValue> <!-- TODO : Check me, Glory days says no attribute -->
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2473,7 +2473,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>10</attributeValue>  <!-- TODO : Check me, Glory days says no attribute -->
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2539,7 +2539,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>10</attributeValue>  <!-- TODO : Check me, Glory days says no attribute -->
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2605,7 +2605,7 @@
 		<attributeType>EARTH</attributeType>
 		<attributeValue>10</attributeValue>  <!-- TODO : Check me, Glory days says no attribute -->
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2669,7 +2669,7 @@
 		<affectRange>150</affectRange>
 		<icon>icon.skill11040</icon>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<reuseDelayGroup>11040</reuseDelayGroup>
 		<magicLvl>
 			<value level="1">85</value>
@@ -2739,7 +2739,7 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>FINAL_SECRET</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">95</value>
@@ -2764,7 +2764,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>10</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>5567</skillId>
 				<skillLevel>1</skillLevel>
@@ -2826,7 +2826,7 @@
 		<abnormalType>MULTI_DEBUFF</abnormalType>
 		<activateRate>60</activateRate>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -2931,7 +2931,7 @@
 		<activateRate>60</activateRate>
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">86</value>
@@ -3031,7 +3031,7 @@
 		<table name="#buffCount"> 1 2 2 2 2 </table>
 		<icon>icon.skill11049</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">82</value>
 			<value level="2">91</value>
@@ -3086,7 +3086,7 @@
 		<activateRate>90</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">70</value>
@@ -3154,7 +3154,7 @@
 		<activateRate>90</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">70</value>
@@ -3222,7 +3222,7 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<mpPerChanneling>15</mpPerChanneling>
 		<operateType>CA2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">228</value>
@@ -3271,7 +3271,7 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<mpPerChanneling>15</mpPerChanneling>
 		<operateType>CA2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<trait>AIRBIND</trait>
 		<mpConsume>
 			<value level="1">228</value>
@@ -3318,7 +3318,7 @@
 		<abnormalType>AIRBIND</abnormalType>
 		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>AIRBIND</trait>
 		<castRange>1100</castRange>
 		<effectRange>1100</effectRange>
@@ -3363,7 +3363,7 @@
 		<activateRate>60</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>DERANGEMENT</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3419,7 +3419,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>100</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
@@ -3456,7 +3456,7 @@
 		<activateRate>60</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -3515,7 +3515,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>100</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
@@ -3553,7 +3553,7 @@
 		<activateRate>150</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<trait>SHOCK</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -3626,7 +3626,7 @@
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<icon>icon.skill11058</icon>
 		<operateType>A1</operateType>
-		<targetType>GROUND</targetType>
+		<targetType2>GROUND</targetType2>
 		<magicLvl>
 			<value level="1">91</value>
 			<value level="2">94</value>
@@ -3685,7 +3685,7 @@
 		<affectLimit>5-12</affectLimit>
 		<affectRange>300</affectRange>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<trait>PULL</trait>
 		<effectPoint>
 			<value level="1">-709</value>
@@ -3719,7 +3719,7 @@
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>SPEED_UP_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">87</value>
 			<value level="2">91</value>
@@ -3754,7 +3754,7 @@
 				<skillLevel>1</skillLevel>
 				<minDamage>1</minDamage>
 				<chance>100</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -3775,7 +3775,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>2</isMagic>
 		<effects>
 			<effect name="DispelBySlot">
@@ -3790,7 +3790,7 @@
 		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 591 623 655 </table>
 		<icon>icon.skill11064</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hpConsume>
 			<value level="1">384</value>
 			<value level="2">388</value>
@@ -3864,7 +3864,7 @@
 		<abnormalType>MP_SHIELD</abnormalType>
 		<abnormalVisualEffect>MP_SHIELD</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>70</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>120000</reuseDelay>
@@ -3898,7 +3898,7 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<trait>DERANGEMENT</trait>
 		<magicLvl>
 			<value level="1">95</value>
@@ -3959,7 +3959,7 @@
 		<basicProperty>NONE</basicProperty>
 		<icon>icon.skill11067</icon>
 		<operateType>A2</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<trait>DERANGEMENT</trait>
 		<magicLvl>
 			<value level="1">95</value>
@@ -4012,7 +4012,7 @@
 		<icon>icon.skill11068</icon>
 		<abnormalTime>30</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -4081,7 +4081,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Fire) -->
@@ -4091,7 +4091,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4103,7 +4103,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Water) -->
@@ -4113,7 +4113,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4125,7 +4125,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Wind) -->
@@ -4135,7 +4135,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4147,7 +4147,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (Earth) -->
@@ -4157,7 +4157,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4169,7 +4169,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Spike (4 Elements) -->
@@ -4179,7 +4179,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4200,7 +4200,7 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>MULTI_DEBUFF_FIRE</abnormalType>
 		<rideState>NONE</rideState>
@@ -4239,7 +4239,7 @@
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>MULTI_DEBUFF_WATER</abnormalType>
 		<rideState>NONE</rideState>
@@ -4278,7 +4278,7 @@
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<abnormalType>MULTI_DEBUFF_WIND</abnormalType>
 		<rideState>NONE</rideState>
@@ -4316,7 +4316,7 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -4353,7 +4353,7 @@
 		<activateRate>100</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -4406,7 +4406,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Fire) -->
@@ -4416,7 +4416,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>30</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4428,7 +4428,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Water) -->
@@ -4438,7 +4438,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4450,7 +4450,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Wind) -->
@@ -4460,7 +4460,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>50</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4472,7 +4472,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (Earth) -->
@@ -4482,7 +4482,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>40</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4494,7 +4494,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkill">
 				<!-- Elemental Crash (4 Elements) -->
@@ -4504,7 +4504,7 @@
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>30</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 			</effect>
 		</effects>
 	</skill>
@@ -4524,7 +4524,7 @@
 		<activateRate>50</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<trait>DERANGEMENT</trait>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
@@ -4542,7 +4542,7 @@
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>100</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
@@ -4569,7 +4569,7 @@
 		<activateRate>99</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -4600,7 +4600,7 @@
 		<activateRate>99</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<trait>KNOCKDOWN</trait>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
@@ -4631,7 +4631,7 @@
 		<basicProperty>NONE</basicProperty>
 		<activateRate>80</activateRate>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<trait>HOLD</trait>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
@@ -4659,7 +4659,7 @@
 		<activateRate>99</activateRate>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<trait>SHOCK</trait>
 		<isMagic>4</isMagic>
 		<rideState>NONE</rideState>
@@ -4686,7 +4686,7 @@
 		<affectLimit>5-12</affectLimit>
 		<icon>icon.skill11032</icon>
 		<operateType>A4</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>-711</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -4723,7 +4723,7 @@
 		<canCastWhileDisabled>true</canCastWhileDisabled>
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove> <!-- Guessed -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>97</magicLvl>
 		<mpConsume>73</mpConsume>
 		<hitTime>500</hitTime>
@@ -4768,7 +4768,7 @@
 		<affectLimit>6-12</affectLimit>
 		<basicProperty>NONE</basicProperty>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<trait>SHOCK</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -4841,7 +4841,7 @@
 		<!-- Resets the duration of target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm. -->
 		<icon>icon.skill11535</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>190</mpConsume>
 		<castRange>1100</castRange>
 		<effectRange>1400</effectRange>
@@ -4863,7 +4863,7 @@
 		<!-- Fire Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Fire) -->
@@ -4880,7 +4880,7 @@
 		<!-- Water Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Water) -->
@@ -4897,7 +4897,7 @@
 		<!-- Wind Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Wind) -->
@@ -4914,7 +4914,7 @@
 		<!-- Earth Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
 				<!-- Elemental Destruction (Earth) -->

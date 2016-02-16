@@ -12,7 +12,7 @@
 		<icon>icon.skill1217</icon>
 		<magicLvl>93</magicLvl>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -50,7 +50,7 @@
 		</mpConsume>
 		<magicLvl>95</magicLvl>
 		<operateType>A4</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -94,7 +94,7 @@
 		<icon>icon.skill1217</icon>
 		<magicLvl>95</magicLvl>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -131,7 +131,7 @@
 		</mpConsume>
 		<magicLvl>97</magicLvl>
 		<operateType>A4</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -176,7 +176,7 @@
 		<icon>icon.skill1217</icon>
 		<magicLvl>97</magicLvl>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -200,7 +200,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="11806" levels="4" name="Blessing of Tree">
 		<!-- Updated to Ertheia -->
@@ -209,7 +209,7 @@
 		<table name="#heal"> 3274 3296 3319 3338 </table>
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<reuseDelay>7000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -251,7 +251,7 @@
 			<value level="5">99</value>
 		</magicLvl>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -282,7 +282,7 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill0086</icon>
 		<operateType>A5</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<reuseDelay>10000</reuseDelay>
@@ -316,7 +316,7 @@
 		<affectRange>300</affectRange>
 		<icon>icon.skill0086</icon>
 		<operateType>A5</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>500</hitTime>
 		<effectPoint>379</effectPoint>
@@ -346,7 +346,7 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>AB_HAWK_EYE</abnormalType>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -363,7 +363,7 @@
 		<abnormalType>SNIPE</abnormalType>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -384,7 +384,7 @@
 		<itemConsumeCount>2</itemConsumeCount>
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>38</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
@@ -417,7 +417,7 @@
 		<itemConsumeId>8874</itemConsumeId> <!-- Einhasad's Holy Water -->
 		<effectPoint>379</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>77</mpConsume>
 		<hitTime>4000</hitTime>
 		<reuseDelay>600000</reuseDelay>
@@ -476,7 +476,7 @@
 			<value level="11">-959</value>
 		</effectPoint>
 		<effectRange>900</effectRange>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">87</value>
 			<value level="2">91</value>
@@ -540,7 +540,7 @@
 		</mpConsume>
 		<magicLvl>99</magicLvl>
 		<operateType>A4</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>500</hitTime>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
@@ -585,7 +585,7 @@
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
 		<icon>icon.skill1217</icon>
 		<operateType>A4</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<basicProperty>NONE</basicProperty>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -628,7 +628,7 @@
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -692,7 +692,7 @@
 		<abnormalType>DOT_MP</abnormalType>
 		<icon>icon.skill1100</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<reuseDelay>8000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -719,7 +719,7 @@
 		<affectRange>1000</affectRange>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>91</mpConsume>
 		<hitTime>3500</hitTime>
 		<reuseDelay>150000</reuseDelay>
@@ -727,7 +727,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<cond msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
@@ -751,7 +751,7 @@
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalType>BUFF_SPECIAL_ATTACK</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -798,7 +798,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CRITICAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -851,7 +851,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_MOVE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -894,7 +894,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_HITAVOID</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -945,7 +945,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>ARMOR_HOLY</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -988,7 +988,7 @@
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalType>RESIST_DERANGEMENT</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>17</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -1044,7 +1044,7 @@
 		<staticReuse>true</staticReuse>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>
@@ -1058,7 +1058,7 @@
 		<table name="#power"> 521 532 540 546 554 </table>
 		<icon>icon.skill11827</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>
@@ -1101,7 +1101,7 @@
 		<reuseDelay>5000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>AREA_FRIENDLY</targetType>
+		<targetType2>AREA_FRIENDLY</targetType2>
 		<effects>
 			<effect name="HealPercent">
 				<power>40</power>
@@ -1117,7 +1117,7 @@
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_DEFENCE</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>35</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -1200,7 +1200,7 @@
 		<effectPoint>-655</effectPoint>
 		<effectRange>1100</effectRange>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1267,7 +1267,7 @@
 		<lvlBonusRate>30</lvlBonusRate>
 		<operateType>A2</operateType>
 		<removedOnDamage>true</removedOnDamage>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<trait>SLEEP</trait>
 		<magicLvl>
 			<value level="1">85</value>
@@ -1316,7 +1316,7 @@
 		<abnormalTime>70</abnormalTime> <!-- Tested -->
 		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -1353,7 +1353,7 @@
 		<abnormalTime>70</abnormalTime> <!-- Tested -->
 		<abnormalType>INVINCIBILITY_SPECIAL</abnormalType>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<isMagic>1</isMagic>
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -1394,7 +1394,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>97</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Speed">
 				<amount>100</amount>
@@ -1407,14 +1407,14 @@
 		<!-- Increases P. Atk. -->
 		<icon>icon.skill10001</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="11850" levels="4" name="Miraculous Benediction">
 		<!-- Restores clan members' CP/HP. Can only be used when MP is 50% or below. -->
 		<table name="#mp"> 50 60 70 100 </table>
 		<icon>icon.skill11850new</icon>
 		<operateType>A1</operateType>
-		<targetType>PARTY_CLAN</targetType>
+		<targetType2>PARTY_CLAN</targetType2>
 		<mpConsume>
 			<value level="1">148</value>
 			<value level="2">164</value>
@@ -1487,7 +1487,7 @@
 			<value level="3">45</value>
 			<value level="4">49</value>
 		</mpInitialConsume>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effectPoint>611</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<effects>
@@ -1539,7 +1539,7 @@
 			<value level="4">49</value>
 		</mpInitialConsume>
 		<effectPoint>1</effectPoint>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="ManaCharge">
 				<amount>
@@ -1563,7 +1563,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Reuse">
 				<amount>
@@ -1614,7 +1614,7 @@
 			<value level="4">49</value>
 		</mpInitialConsume>
 		<effectPoint>1</effectPoint>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="ManaCharge">
 				<amount>
@@ -1638,7 +1638,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>
@@ -1661,7 +1661,7 @@
 		<!-- Restores target's MP. -->
 		<icon>icon.skill11856</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>66</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>5500</hitTime>
@@ -1675,7 +1675,7 @@
 		<!-- Summons a Flag of Life, which restores the HP of those that click on it. -->
 		<icon>icon.skill11774</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>185</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>5000</hitTime>
@@ -1690,7 +1690,7 @@
 		<icon>icon.skill11754</icon>
 		<abnormalTime>60</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>43</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>2200</hitTime>
@@ -1705,7 +1705,7 @@
 		<table name="#power"> 198 200 203 240 244 248 </table>
 		<icon>icon.skill11859</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">92</value>
 			<value level="2">96</value>
@@ -1732,7 +1732,7 @@
 		<table name="#power"> 2490 3520 5760 </table>
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>50</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -1749,7 +1749,7 @@
 		<!-- For 30 min., increases party member's Elemental Resistance by 30. Consumes 10 Spirit Ores. -->
 		<icon>icon.skill11861</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>82</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -1786,7 +1786,7 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<magicLvl>99</magicLvl>
 		<mpConsume>82</mpConsume>
 		<castRange>900</castRange>
@@ -1818,7 +1818,7 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<magicLvl>99</magicLvl>
 		<mpConsume>82</mpConsume>
 		<castRange>900</castRange>

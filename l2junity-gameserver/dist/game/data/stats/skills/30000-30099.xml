@@ -5,7 +5,7 @@
 		<!-- Stacks Storm Marks when using Hydro Attack. -->
 		<icon>icon.skill11011</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>0</castRange>
 	</skill>
 	<skill id="30001" levels="28" name="Hydro Attack">
@@ -14,7 +14,7 @@
 		<table name="#power"> 6 14 19 25 32 36 41 46 50 55 60 64 69 72 75 77 79 171 179 187 195 203 211 219 227 231 235 239 </table>
 		<icon>icon.skill30001</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">2</value>
 			<value level="2">6</value>
@@ -162,7 +162,7 @@
 		<icon>icon.skill30027</icon>
 		<abnormalTime>5</abnormalTime>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<isMagic>4</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -185,7 +185,7 @@
 		<icon>icon.skill30003</icon>
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">47</value>
 			<value level="2">51</value>
@@ -283,7 +283,7 @@
 		<icon>icon.skill30004</icon>
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">31</value>
 			<value level="2">34</value>
@@ -392,7 +392,7 @@
 		<!-- M. Def. - 50%, Speed - 100. -->
 		<icon>icon.skill30027</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<isMagic>4</isMagic>
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -420,7 +420,7 @@
 		<affectLimit>5-10</affectLimit> <!-- Unconfirmed -->
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -489,7 +489,7 @@
 		<affectLimit>5-10</affectLimit> <!-- Unconfirmed -->
 		<affectRange>100</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">78</value>
 			<value level="2">80</value>
@@ -583,7 +583,7 @@
 		<abnormalTime>3</abnormalTime>
 		<effectPoint>687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">20</value>
 			<value level="2">85</value>
@@ -645,7 +645,7 @@
 		<operateType>A2</operateType>
 		<removedOnAnyActionExceptMove>true</removedOnAnyActionExceptMove>
 		<removedOnDamage>true</removedOnDamage>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">77</value>
 			<value level="2">78</value>
@@ -689,7 +689,7 @@
 		<blockedInOlympiad>true</blockedInOlympiad> <!-- Unconfirmed -->
 		<effectPoint>687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">88</value>
 			<value level="2">101</value>
@@ -726,7 +726,7 @@
 		<icon>icon.skill30011</icon>
 		<affectRange>1400</affectRange> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">76</value>
 			<value level="2">78</value>
@@ -785,7 +785,7 @@
 		<icon>icon.skill30012</icon>
 		<abnormalTime>1</abnormalTime>
 		<operateType>DA1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">31</value>
 			<value level="2">34</value>
@@ -871,7 +871,7 @@
 		<affectRange>1400</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-709</effectPoint>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>705</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1200</hitTime>
@@ -894,7 +894,7 @@
 		<icon>icon.skill30014</icon>
 		<effectPoint>-1371</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">31</value>
 			<value level="2">31</value>
@@ -928,7 +928,7 @@
 		<!-- Sends a breeze that pushes target and nearby enemies toward you. -->
 		<icon>icon.skill0028</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1100</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>500</coolTime>
@@ -945,7 +945,7 @@
 		<abnormalTime>30</abnormalTime>
 		<effectPoint>687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">18</value>
 			<value level="2">37</value>
@@ -1036,7 +1036,7 @@
 		<abnormalVisualEffect>SQUALL</abnormalVisualEffect>
 		<effectPoint>2</effectPoint> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>
 			<value level="1">40</value>
 			<value level="2">76</value>
@@ -1067,7 +1067,7 @@
 				<!-- Unconfirmed -->
 				<!-- Lightning Squall -->
 				<chance>50</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<skillId>30026</skillId>
 				<skillLevel>
 					<value level="1">1</value>
@@ -1110,7 +1110,7 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalVisualEffect>WIND_ILLUSION</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>41</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>500</hitTime>
@@ -1149,7 +1149,7 @@
 		<abnormalTime>10</abnormalTime>
 		<effectPoint>-687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">87</value>
@@ -1224,7 +1224,7 @@
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>SAYHA_FURY</abnormalVisualEffect>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>40</mpConsume>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -1243,7 +1243,7 @@
 				<!-- Unconfirmed -->
 				<!-- Destructive Bolt -->
 				<chance>50</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<skillId>30027</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -1267,7 +1267,7 @@
 		<abnormalTime>30</abnormalTime>
 		<effectPoint>687</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<magicLvl>
 			<value level="1">99</value>
 			<value level="2">101</value>
@@ -1320,7 +1320,7 @@
 		<!-- Cannot change target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>-102</effectPoint>
 		<isDebuff>true</isDebuff>
@@ -1334,7 +1334,7 @@
 		<affectRange>1600</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-711</effectPoint> <!-- Unconfirmed -->
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>1100</castRange>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
@@ -1360,7 +1360,7 @@
 		<affectRange>1600</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-711</effectPoint> <!-- Unconfirmed -->
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>1100</castRange>
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
@@ -1385,7 +1385,7 @@
 		<affectRange>200</affectRange> <!-- Unconfirmed -->
 		<effectPoint>-707</effectPoint>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicLvl>
 			<value level="1">98</value>
 			<value level="2">101</value>
@@ -1419,7 +1419,7 @@
 		<!-- Trapped by a storm that gives continuous damage. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>-707</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
@@ -1428,7 +1428,7 @@
 		<icon>icon.skill30025</icon>
 		<operateType>P</operateType>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 		</effects>
 	</skill>
@@ -1442,7 +1442,7 @@
 		<table name="#mCritPower"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
 		<icon>icon.skill30023</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack"> <!-- TODO: This should start triggering on skill level 3 -->
 				<!-- Storm Sign -->
@@ -1609,7 +1609,7 @@
 		<table name="#magicSuccRes"> 1 1.05 1.1 1.15 1.2 1.25 1.3 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
 		<icon>icon.skill30024</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
@@ -1748,7 +1748,7 @@
 		<table name="#MagicalMpConsumeRate"> 1 1 0.95 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 0.93 </table>
 		<icon>icon.skill10504</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
@@ -1846,7 +1846,7 @@
 			<value level="10">108</value>
 			<value level="11">110</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>
@@ -1937,7 +1937,7 @@
 		<table name="#hateRes"> 0 30 </table>
 		<icon>icon.skill10005</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>30</HOLD>
@@ -1963,7 +1963,7 @@
 			<value level="2">76</value>
 			<value level="3">85</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="SkillCritical">
 				<stat>INT</stat>

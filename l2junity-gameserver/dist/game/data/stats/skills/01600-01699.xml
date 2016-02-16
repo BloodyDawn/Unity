@@ -9,7 +9,7 @@
 		<affectRange>600</affectRange>
 		<icon>icon.skill1600</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<mpConsume>148</mpConsume>
 		<hitTime>2500</hitTime>
 		<reuseDelay>300000</reuseDelay>
@@ -52,7 +52,7 @@
 		<!-- Attempt to fish at the dock. Put on a fishing rod and bait. -->
 		<icon>icon.skill1312</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 	</skill>
 	<skill id="1602" levels="13" name="Reeling">
@@ -60,7 +60,7 @@
 		<!-- Loosen the fishing line when the fish is struggling. -->
 		<icon>icon.skill1314</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<reuseDelay>2000</reuseDelay>
 	</skill>
@@ -69,7 +69,7 @@
 		<!-- Tighten the fishing line when the fish is tired. -->
 		<icon>icon.skill1313</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<reuseDelay>2000</reuseDelay>
 	</skill>
@@ -78,14 +78,14 @@
 		<!-- Higher expertise gets you better fish. -->
 		<icon>icon.skill1315</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="1627" levels="1" name="Power Strike">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -105,7 +105,7 @@
 		<!-- Monster attack! Power 277440. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -125,7 +125,7 @@
 		<!-- Increases P. Atk. by 100%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PA_UP</abnormalType>
@@ -148,7 +148,7 @@
 		<!-- Increases Critical Rate/Damage by 100%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>CRITICAL_PROB_UP</abnormalType>
@@ -175,7 +175,7 @@
 		<!-- Monster absolute defense. P. Def. and M. Def. + 5000. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -208,7 +208,7 @@
 		<!-- P. Def. and M. Def. + 20%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PD_UP</abnormalType>
@@ -235,7 +235,7 @@
 		<!-- Monster heal. Power 1024. -->
 		<icon>icon.skill1401</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
 		<effectPoint>403</effectPoint>
@@ -255,7 +255,7 @@
 		<!-- Monster attack! Power 36675. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<hitTime>3000</hitTime>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
@@ -275,7 +275,7 @@
 		<!-- Damage blood siphon 100%. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
@@ -298,7 +298,7 @@
 		<!-- Petrify -->
 		<icon>icon.skill1540</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>343</effectPoint>
 		<abnormalType>TURN_STONE</abnormalType>
@@ -328,7 +328,7 @@
 		<!-- Inflicts stun on the enemy for 7 seconds. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
@@ -357,7 +357,7 @@
 		<!-- Inflicts stun on the enemy for 7 seconds. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
@@ -386,7 +386,7 @@
 		<!-- Inflicts stun on the enemy for 7 seconds. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>-1</effectPoint>
 		<abnormalType>STUN</abnormalType>
@@ -413,7 +413,7 @@
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
@@ -443,7 +443,7 @@
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>600</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
@@ -473,7 +473,7 @@
 		<!-- Immobilizes the enemy for 15 seconds. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic>
 		<effectPoint>-1</effectPoint>
@@ -501,7 +501,7 @@
 		<!-- Causes the enemy's body to go completely rigid for 15 seconds and causes paralysis for 10 seconds. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>400</castRange>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
@@ -545,7 +545,7 @@
 		<!-- Reflect damage 50% -->
 		<icon>icon.skill0086</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>379</effectPoint>
 		<abnormalType>DMG_SHIELD</abnormalType>
@@ -567,7 +567,7 @@
 		<!-- Becomes invincible from debuffs for 30 seconds. Can only be used on party members. -->
 		<icon>icon.skill1411</icon>
 		<operateType>A2</operateType>
-		<targetType>PARTY_MEMBER</targetType>
+		<targetType2>PARTY_MEMBER</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
@@ -587,7 +587,7 @@
 		<!-- Mana burn. Power 110. Enchant Power: Increases the effect. -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
 		<effectPoint>-655</effectPoint>
@@ -602,7 +602,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -617,7 +617,7 @@
 		<!-- Herb's effect increases MP Recovery. -->
 		<icon>icon.etc_herb_red_i00</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>100</hitTime>
 		<effectPoint>100</effectPoint>
 		<abnormalType>PA_UP_HERB</abnormalType>
@@ -636,7 +636,7 @@
 		<!-- Increases MP recovery for 10 seconds. -->
 		<icon>icon.skill4106</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>-100</effectPoint>
 		<abnormalType>PA_UP_HERB</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -653,7 +653,7 @@
 		<!-- Monster absolute defense. Defense increased 50000. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
 		<basicProperty>NONE</basicProperty>
@@ -678,7 +678,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>100</BLUNT>
@@ -697,7 +697,7 @@
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -718,7 +718,7 @@
 		<!-- Monster attack! Power 50937. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -739,7 +739,7 @@
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -761,7 +761,7 @@
 		<!-- Monster attack! Power 50937. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -783,7 +783,7 @@
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill1181</icon>
 		<operateType>A1</operateType>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -807,7 +807,7 @@
 		<!-- Monster attack! Power 237492. -->
 		<icon>icon.skill1181</icon>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -830,7 +830,7 @@
 		<!-- Monster attack! Power 500000. -->
 		<icon>icon.skill1181</icon>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -851,7 +851,7 @@
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill0245</icon>
 		<operateType>A1</operateType>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<castRange>40</castRange>
 		<hitTime>1080</hitTime>
 		<coolTime>720</coolTime>
@@ -875,7 +875,7 @@
 		<!-- Monster attack! Power 100000. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>1</mpConsume>
 		<hitTime>1067</hitTime>
 		<coolTime>733</coolTime>
@@ -897,7 +897,7 @@
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -912,7 +912,7 @@
 		<!-- Monster attack! Power 296865. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -927,7 +927,7 @@
 		<!-- Triples Atk. Spd. for 1 minute. -->
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -946,7 +946,7 @@
 		<!-- Monster attack! Power 6984. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<castRange>40</castRange>
 		<hitTime>4000</hitTime>
@@ -962,7 +962,7 @@
 		<!-- Mana burn. Power 110. Enchant Power: Increases the effect. -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -977,7 +977,7 @@
 		<!-- Cancels multiple enemy buffs. -->
 		<icon>icon.skill1056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>700</hitTime>
@@ -996,7 +996,7 @@
 		<!-- Monster attack! Power 6984. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -1012,7 +1012,7 @@
 		<!-- Monster Blood Siphon Range Attack -->
 		<icon>icon.skill1668</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -1029,7 +1029,7 @@
 		<!-- Sleep -->
 		<icon>icon.skill1669</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<isMagic>1</isMagic>
 		<effectPoint>-1</effectPoint>
@@ -1050,7 +1050,7 @@
 		<!-- No magic use -->
 		<icon>icon.skill1670</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<hitTime>1000</hitTime>
 		<reuseDelay>8000</reuseDelay>
@@ -1073,7 +1073,7 @@
 		<!-- Disarms equipment. -->
 		<icon>icon.skill01671</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<trait>DISARM</trait>
 		<mpConsume>1</mpConsume>
 		<castRange>1000</castRange>
@@ -1102,14 +1102,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>85</magicLvl>
 		<affectRange>300</affectRange>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="1673" levels="1" name="Death">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- 1 HP after 15 seconds -->
 		<icon>icon.skill1673</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic>
@@ -1130,7 +1130,7 @@
 		<!-- hp1 -->
 		<icon>icon.skill1170</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1143,7 +1143,7 @@
 		<!-- Increases P. Atk., Critical rage/damage, and Atk. Spd. by 100%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PA_UP</abnormalType>
@@ -1160,7 +1160,7 @@
 		<!-- Aftereffect of going insane. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>1</effectPoint>
 		<abnormalType>PARALYZE</abnormalType>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
@@ -1188,7 +1188,7 @@
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<effectPoint>-1</effectPoint>
 		<rideState>NONE</rideState>
@@ -1203,7 +1203,7 @@
 		<!-- Self-destruction after 5 seconds -->
 		<icon>icon.skill1678</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>1000</castRange>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic>
@@ -1223,7 +1223,7 @@
 		<!-- Self-destruction -->
 		<icon>icon.skill1170</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
@@ -1235,7 +1235,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1250,7 +1250,7 @@
 		<!-- Increases Atk. Spd. -->
 		<icon>icon.skill1681</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -1271,7 +1271,7 @@
 		<!-- Look at me -->
 		<icon>icon.skill0028</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>700</hitTime>
 		<coolTime>200</coolTime>
@@ -1293,7 +1293,7 @@
 		<!-- Monster attack! Power 45844. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -1308,7 +1308,7 @@
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1323,7 +1323,7 @@
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1338,7 +1338,7 @@
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1353,7 +1353,7 @@
 		<!-- Monster attack! Power 50937. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<effectPoint>-1</effectPoint>
@@ -1368,7 +1368,7 @@
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1383,7 +1383,7 @@
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1398,7 +1398,7 @@
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>40</castRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1413,7 +1413,7 @@
 		<!-- Monster Rush -->
 		<icon>icon.skill0493</icon>
 		<operateType>DA1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>400</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>200</coolTime>
@@ -1431,7 +1431,7 @@
 		<!-- Monster attack! Power 50937. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -1447,7 +1447,7 @@
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -1463,7 +1463,7 @@
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -1479,7 +1479,7 @@
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<coolTime>500</coolTime>
@@ -1495,7 +1495,7 @@
 		<!-- slowly -->
 		<icon>icon.skill0354</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<castRange>900</castRange>
 		<hitTime>3000</hitTime>
 		<reuseDelay>15000</reuseDelay>
@@ -1516,7 +1516,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>4000</hitTime>
@@ -1535,7 +1535,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1296</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>4000</hitTime>
@@ -1556,7 +1556,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1448</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>2</mpConsume>
 		<hitTime>300</hitTime>
 		<coolTime>200</coolTime>

@@ -17,7 +17,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>400</effectRange>
 		<isDebuff>true</isDebuff>
@@ -31,7 +31,7 @@
 				<maxAttackerLevel>99</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>90</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>5902</skillId>
@@ -58,7 +58,7 @@
 		<magicLvl>85</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
@@ -71,7 +71,7 @@
 				<maxAttackerLevel>99</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>90</chance>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>5902</skillId>
@@ -88,7 +88,7 @@
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TargetCancel" />
 		</effects>
@@ -115,7 +115,7 @@
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<soulMaxConsumeCount>1</soulMaxConsumeCount>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>DISARM</trait>
 		<effects>
@@ -155,7 +155,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="HpDrain">
 				<power>
@@ -183,7 +183,7 @@
 		<magicLvl>83</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
@@ -198,7 +198,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5907" levels="2" name="Ritual of Entombment">
 		<abnormalLvl>1</abnormalLvl>
@@ -223,7 +223,7 @@
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -253,7 +253,7 @@
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
@@ -270,7 +270,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- FIXME: value unconfirmed -->
@@ -288,7 +288,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- FIXME: value unconfirmed -->
@@ -300,7 +300,7 @@
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5912" levels="1" name="Pestilence Cleanse">
 		<abnormalLvl>1</abnormalLvl>
@@ -315,7 +315,7 @@
 		<magicLvl>83</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
@@ -333,7 +333,7 @@
 				<maxAttackerLevel>100</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>100</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
 				<skillId>5914</skillId>
@@ -354,7 +354,7 @@
 		<magicLvl>83</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
@@ -385,7 +385,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5916" levels="9" name="Cruising Aura">
 		<abnormalLvl>
@@ -410,7 +410,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5917" levels="9" name="Shrouding Aura">
 		<abnormalLvl>
@@ -435,7 +435,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5918" levels="10" name="Physical Root Vulnerability">
 		<table name="#trait_root_physically"> -10 -20 -30 -40 -50 -60 -70 -80 -90 -99 </table>
@@ -492,7 +492,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-2</specialLevel>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="BlockResurrection" />
 		</effects>
@@ -513,7 +513,7 @@
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>150</power>
@@ -546,7 +546,7 @@
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<effects>
 			<effect name="HpDrain">
 				<power>121</power>
@@ -603,7 +603,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>121</power>
@@ -642,7 +642,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MAtk">
 				<amount>3</amount>
@@ -672,7 +672,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5925" levels="1" name="Goring Charge">
 		<effectPoint>-100</effectPoint>
@@ -683,7 +683,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
@@ -700,7 +700,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>600</effectRange>
 		<castRange>300</castRange>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 	</skill>
 	<skill id="5927" levels="4" name="Immortal Frenzy">
 		<abnormalLvl>
@@ -719,7 +719,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5928" levels="4" name="Immortal Resilience">
 		<abnormalLvl>
@@ -738,7 +738,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5929" levels="1" name="Pairing of the Lost">
 		<abnormalLvl>1</abnormalLvl>
@@ -752,7 +752,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5930" levels="1" name="Shielding of the Lost">
 		<!-- TODO: Implement me! -->
@@ -767,7 +767,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>90</BOW>
@@ -783,7 +783,7 @@
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -806,7 +806,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -831,7 +831,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -854,7 +854,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5935" levels="1" name="Dark Ring">
 		<!-- Confirmed CT2.5 -->
@@ -873,7 +873,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -897,7 +897,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AREA</targetType>
+		<targetType2>AREA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>9279</power>
@@ -917,7 +917,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1540</icon>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5938" levels="5" name="P. Atk. Up">
 		<abnormalLvl>1</abnormalLvl>
@@ -932,7 +932,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1068</icon>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5939" levels="5" name="Defense Ability Up">
 		<abnormalLvl>1</abnormalLvl>
@@ -947,7 +947,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<icon>icon.skill1040</icon>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5940" levels="12" name="Energy of Generation">
 		<abnormalLvl>
@@ -989,7 +989,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5941" levels="1" name="Energy of Erosion">
 		<abnormalLvl>4</abnormalLvl>
@@ -1005,7 +1005,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5942" levels="1" name="Energy of Pollution">
 		<abnormalLvl>4</abnormalLvl>
@@ -1021,7 +1021,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5943" levels="1" name="Energy of Contamination">
 		<abnormalLvl>4</abnormalLvl>
@@ -1037,7 +1037,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5944" levels="1" name="Energy of Oblivion">
 		<abnormalLvl>4</abnormalLvl>
@@ -1053,7 +1053,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5945" levels="1" name="Region2 Rotation5">
 		<abnormalLvl>3</abnormalLvl>
@@ -1068,7 +1068,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5946" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1080,7 +1080,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5947" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1092,7 +1092,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5948" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1104,7 +1104,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5949" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1116,7 +1116,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5950" levels="1" name="Birthday Gift">
 		<!-- Confirmed CT2.5 -->
@@ -1138,7 +1138,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -1155,7 +1155,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5952" levels="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
@@ -1166,7 +1166,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5953" levels="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
@@ -1177,7 +1177,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5954" levels="1" name="Agathion Cute Trick - Tinplate Golem">
 		<hitTime>3000</hitTime>
@@ -1188,7 +1188,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5955" levels="1" name="Agathion Cute Trick - Joy">
 		<hitTime>3000</hitTime>
@@ -1199,7 +1199,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="2292">
 			<player agathionId="16056" />
 		</cond>
@@ -1213,7 +1213,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="2292">
 			<player agathionId="16058" />
 		</cond>
@@ -1227,7 +1227,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="2292">
 			<player agathionId="16057" />
 		</cond>
@@ -1241,7 +1241,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="2292">
 			<player agathionId="16059" />
 		</cond>
@@ -1255,7 +1255,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="2292">
 			<player agathionId="16060" />
 		</cond>
@@ -1273,7 +1273,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
@@ -1294,7 +1294,7 @@
 		<magicLvl>99</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE</rideState>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<affectRange>300</affectRange>
@@ -1311,7 +1311,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5963" levels="1" name="Emery Conversion">
 		<effectPoint>100</effectPoint>
@@ -1323,7 +1323,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1100</effectRange>
 		<castRange>600</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5964" levels="1" name="Star Shard">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1335,7 +1335,7 @@
 		<effectRange>1500</effectRange>
 		<reuseDelay>700</reuseDelay>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5965" levels="1" name="Fireworks">
 		<hitTime>500</hitTime>
@@ -1348,7 +1348,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="5966" levels="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1360,7 +1360,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>1500</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5967" levels="2" name="Aggression Aura">
 		<abnormalLvl>1</abnormalLvl>
@@ -1380,7 +1380,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5968" levels="2" name="Rapid Shot">
 		<abnormalLvl>
@@ -1405,7 +1405,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5969" levels="2" name="Punch of Doom">
 		<abnormalLvl>1</abnormalLvl>
@@ -1438,7 +1438,7 @@
 			<value level="2">526</value>
 		</hpConsume>
 		<castRange>40</castRange>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<ignoreShieldDefence>true</ignoreShieldDefence>
@@ -1463,7 +1463,7 @@
 		<specialLevel>-1</specialLevel>
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5971" levels="1" name="Seduced Ranger's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1482,7 +1482,7 @@
 		<specialLevel>-1</specialLevel>
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5972" levels="1" name="Seduced Wizard's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1501,7 +1501,7 @@
 		<specialLevel>-1</specialLevel>
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5973" levels="1" name="Seduced Warrior's Help">
 		<abnormalLvl>1</abnormalLvl>
@@ -1520,7 +1520,7 @@
 		<specialLevel>-1</specialLevel>
 		<effectRange>100</effectRange>
 		<castRange>75</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5974" levels="1" name="Tiat Transformation">
 		<abnormalLvl>1</abnormalLvl>
@@ -1536,7 +1536,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5975" levels="3" name="Dark Attack">
 		<table name="#power"> 1515 2365 6059 </table>
@@ -1562,7 +1562,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1597,7 +1597,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1626,7 +1626,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>400</effectRange>
 		<castRange>40</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5978" levels="1" name="Devil Strike">
 		<effectPoint>-653</effectPoint>
@@ -1638,7 +1638,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>-2</effectRange>
 		<castRange>500</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5979" levels="1" name="Forced Teleport">
 		<hitTime>2500</hitTime>
@@ -1649,7 +1649,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1200</effectRange>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5980" levels="3" name="Seal Isolation">
 		<!-- Confirmed CT2.5 -->
@@ -1676,7 +1676,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1704,7 +1704,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5982" levels="1" name="Aura Bird - Falcon">
 		<abnormalLvl>1</abnormalLvl>
@@ -1727,7 +1727,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1775,7 +1775,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<irreplacableBuff>true</irreplacableBuff>
 		<staticReuse>true</staticReuse>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<cond>
 			<player canTransform="true" />
 		</cond>
@@ -1818,7 +1818,7 @@
 		<effectRange>2000</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>1500</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5985" levels="9" name="Decaying Aura">
 		<abnormalLvl>
@@ -1842,7 +1842,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5986" levels="9" name="Vampiric Aura">
 		<abnormalLvl>
@@ -1866,7 +1866,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5987" levels="1" name="Weapon Maintenance">
 		<!-- Confirmed CT2.5 -->
@@ -1885,7 +1885,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="AttackTrait">
 				<SHOCK>8</SHOCK>
@@ -1948,7 +1948,7 @@
 		<rideState>NONE</rideState>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>PARTY</targetType>
+		<targetType2>PARTY</targetType2>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>10</amount>
@@ -2001,7 +2001,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5990" levels="3" name="Lesser Heal">
 		<effectPoint>
@@ -2020,7 +2020,7 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5991" levels="1" name="Presentation - Summon Tiat">
 		<hitTime>11760</hitTime>
@@ -2030,7 +2030,7 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5992" levels="12" name="Aggression">
 		<abnormalLvl>1</abnormalLvl>
@@ -2075,7 +2075,7 @@
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5993" levels="1" name="Command of Anchor">
 		<!-- Confirmed CT2.5 -->
@@ -2098,7 +2098,7 @@
 		<mpInitialConsume>15</mpInitialConsume>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<trait>DERANGEMENT</trait>
@@ -2114,7 +2114,7 @@
 				<attackerType>Attackable</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>100</maxAttackerLevel>
-				<targetType>SELF</targetType>
+				<targetType2>SELF</targetType2>
 				<chance>90</chance>
 			</effect>
 			<effect name="Mute" />
@@ -2136,7 +2136,7 @@
 		<magicLvl>1</magicLvl>
 		<operateType>A2</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -2146,30 +2146,30 @@
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5996" levels="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5997" levels="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5998" levels="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 	<skill id="5999" levels="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>NONE</targetType>
+		<targetType2>NONE</targetType2>
 	</skill>
 </list>

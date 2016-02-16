@@ -15,7 +15,7 @@
 		</magicLvl>
 		<icon>icon.skill10300</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">276</value>
 			<value level="2">297</value>
@@ -71,7 +71,7 @@
 		<!-- Max Momentum increases to Stage 15. -->
 		<icon>icon.skill11842</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="FocusEnergy">
 				<amount>5</amount>
@@ -83,7 +83,7 @@
 		<!-- Gathers Momentum to inflict 22531 damage onto the enemy, increasing the damage as Momentum is consumed. Damage + 30% at max Momentum consumption of 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<icon>icon.skill10302</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">98</value>
 			<value level="2">105</value>
@@ -107,7 +107,7 @@
 		</magicLvl>
 		<icon>icon.skill0430</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="MaxCp">
 				<amount>
@@ -141,7 +141,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -187,7 +187,7 @@
 		<abnormalType>REAL_TARGET</abnormalType>
 		<icon>icon.skill11833</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">62</value>
 			<value level="2">69</value>
@@ -223,7 +223,7 @@
 			<value level="3">95</value>
 			<value level="4">99</value>
 		</magicLvl>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -268,7 +268,7 @@
 		<!-- Greatly increases Atk. Spd. Continuously consumes HP. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
 		<icon>icon.skill10307new</icon>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="10308" levels="1" name="Wild Roar">
 		<!-- Shouts loudly to invoke the power of the Bison. For 5 minutes, P. Atk. and Critical Damage + 45%, Critical Rate + 45, and Atk. Spd. - 15%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
@@ -277,7 +277,7 @@
 		<abnormalType>POSSESSION</abnormalType>
 		<icon>icon.skill11834</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>85</magicLvl>
 		<mpConsume>38</mpConsume>
 		<hitTime>2000</hitTime>
@@ -349,7 +349,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -385,7 +385,7 @@
 		<!-- TODO abnormalType -->
 		<icon>icon.skill10310</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<magicLvl>85</magicLvl>
 		<mpConsume>38</mpConsume>
 		<hitTime>1500</hitTime>
@@ -421,7 +421,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="TwoHandedSwordBonus">
 				<pAtkAmount>
@@ -466,7 +466,7 @@
 		<!-- There is a small chance that the item quantity will double upon crafting. Critical level 1. -->
 		<icon>icon.skill10312</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="10313" levels="4" name="Infinite Rush">
 		<!-- Rush toward the frontal enemies to inflict Shock for 9 sec. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
@@ -490,7 +490,7 @@
 		<nextActionAttack>true</nextActionAttack>
 		<icon>icon.skill10313</icon>
 		<operateType>A1</operateType>
-		<targetType>FRONT_AREA</targetType>
+		<targetType2>FRONT_AREA</targetType2>
 		<trait>SHOCK</trait>
 		<mpConsume>
 			<value level="1">92</value>
@@ -518,7 +518,7 @@
 		<!-- Disarms enemies for 5 sec. and decreases their P. Atk./ M. Atk. by 40%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
 		<icon>icon.skill0485</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<trait>DISARM</trait>
 		<mpConsume>38</mpConsume>
 		<castRange>40</castRange>
@@ -539,7 +539,7 @@
 			<value level="2">90</value>
 		</magicLvl>
 		<icon>icon.skill11836</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -574,7 +574,7 @@
 			<value level="4">99</value>
 		</magicLvl>
 		<icon>icon.skill0193</icon>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>
@@ -608,7 +608,7 @@
 		<trait>SHOCK</trait>
 		<icon>icon.skill10317new</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">122</value>
 			<value level="2">124</value>
@@ -647,7 +647,7 @@
 		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
 		<icon>icon.skill10318new</icon>
 		<operateType>A1</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">90</value>
@@ -714,7 +714,7 @@
 		</magicLvl>
 		<icon>icon.skll10319</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<hitTime>300</hitTime>
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>500</effectPoint>
@@ -756,7 +756,7 @@
 		<abnormalVisualEffect>DUELING</abnormalVisualEffect>
 		<icon>icon.skll10319</icon>
 		<operateType>A4</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>43</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>300</hitTime>
@@ -805,7 +805,7 @@
 		<trait>SHOCK</trait>
 		<icon>icon.skll10321</icon>
 		<operateType>A2</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">122</value>
 			<value level="2">124</value>
@@ -849,7 +849,7 @@
 		<abnormalType>POSSESSION</abnormalType>
 		<icon>icon.skll10320</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>38</mpConsume>
 		<hitTime>2000</hitTime>
 		<effectPoint>707</effectPoint>
@@ -881,7 +881,7 @@
 		<!-- Recovers 10% of Max HP. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<effectPoint>100</effectPoint>
 		<reuseDelay>5000</reuseDelay>
@@ -891,7 +891,7 @@
 		<!-- Power of skills that consume Momentum increase by 10%. -->
 		<icon>icon.skill10324</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="10325" levels="6" name="Dreadful Roar">
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
@@ -909,7 +909,7 @@
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<icon>icon.skill10325</icon>
 		<operateType>A1</operateType>
-		<targetType>AURA</targetType>
+		<targetType2>AURA</targetType2>
 		<mpConsume>
 			<value level="1">149</value>
 			<value level="2">151</value>
@@ -936,7 +936,7 @@
 		<!-- For 30 sec., P. Atk. + 450, Skill Power + 5%, and HP Recovery is limited to 70%. -->
 		<icon>icon.skill10326</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">45</value>
 			<value level="2">50</value>
@@ -954,7 +954,7 @@
 		<!-- Attacks target with 17348 Power added to P. Atk. Requires a sword/dagger/blunt weapon/fist weapon. Damage increases when using Momentum, which you can use up to 3. Over-hit. Critical. -->
 		<icon>icon.skill10327</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">98</value>
 			<value level="2">105</value>
@@ -988,7 +988,7 @@
 			<value level="3">99</value>
 		</magicLvl>
 		<operateType>T</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
@@ -1033,7 +1033,7 @@
 		<icon>icon.skill10329</icon>
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effects>
 			<effect name="PAtk">
 				<amount>21</amount>
@@ -1073,7 +1073,7 @@
 		</magicLvl>
 		<icon>icon.skill10330</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>
 			<value level="1">92</value>
 			<value level="2">96</value>
@@ -1105,7 +1105,7 @@
 		<!-- Engages target in 1:1 combat. All damage from the target is ignored. -->
 		<icon>icon.skill10331</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>43</mpConsume>
 		<castRange>600</castRange>
 		<hitTime>300</hitTime>
@@ -1118,7 +1118,7 @@
 		<!-- Increases P. Atk. by 20% for 60 seconds when a dualsword/dual blunt is equipped. Critical Rate of skills that consume Momentum greatly increases, and their Power increases by 20%. Consumes 5 Soulstones. -->
 		<icon>icon.skill10332</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>64</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -1136,7 +1136,7 @@
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>64</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -1150,7 +1150,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>POLE</allowWeapons>
 				<skillId>10339</skillId>
@@ -1163,7 +1163,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<skillId>10339</skillId>
 				<skillLevel>1</skillLevel>
 				<allowWeapons>POLE</allowWeapons>
@@ -1192,7 +1192,7 @@
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>64</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -1223,7 +1223,7 @@
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstones -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>64</mpConsume>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -1237,7 +1237,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<isCritical>false</isCritical>
 				<allowWeapons>DUALFIST</allowWeapons>
 				<skillId>10338</skillId>
@@ -1250,7 +1250,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<minDamage>1</minDamage>
 				<chance>10</chance>
-				<targetType>ONE</targetType>
+				<targetType2>ONE</targetType2>
 				<skillId>10338</skillId>
 				<skillLevel>1</skillLevel>
 				<allowWeapons>DUALFIST</allowWeapons>
@@ -1277,14 +1277,14 @@
 		<!-- Increases power when using the Rush Impact. -->
 		<icon>icon.skill10336</icon>
 		<operateType>P</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 	</skill>
 	<skill id="10337" levels="3" name="Infinity Rush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. + 10% and P. Critical Damage + 10%. -->
 		<icon>icon.skill10336</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<effectPoint>2</effectPoint>
 		<isMagic>4</isMagic>
 	</skill>
@@ -1295,7 +1295,7 @@
 		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
 		<icon>icon.skill10335</icon>
 		<operateType>A2</operateType>
-		<targetType>ONE</targetType>
+		<targetType2>ONE</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>100</hitTime>
@@ -1321,7 +1321,7 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<lvlBonusRate>1</lvlBonusRate>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>1</mpConsume>
 		<castRange>500</castRange>
 		<hitTime>100</hitTime>
@@ -1344,7 +1344,7 @@
 			<value level="3">icon.skill0526</value>
 		</icon>
 		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
+		<targetType2>SELF</targetType2>
 		<mpConsume>
 			<value level="1">233</value>
 			<value level="2">236</value>
