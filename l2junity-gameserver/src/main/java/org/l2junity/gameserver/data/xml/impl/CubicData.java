@@ -64,8 +64,7 @@ public class CubicData implements IGameXmlReader
 	{
 		forEach(doc, "list", listNode -> forEach(listNode, "cubic", cubicNode ->
 		{
-			final StatsSet set = new StatsSet(parseAttributes(cubicNode));
-			parseTemplate(cubicNode, new L2CubicTemplate(set));
+			parseTemplate(cubicNode, new L2CubicTemplate(new StatsSet(parseAttributes(cubicNode))));
 		}));
 	}
 	
@@ -137,8 +136,7 @@ public class CubicData implements IGameXmlReader
 	{
 		forEach(cubicNode, "skill", skillNode ->
 		{
-			final StatsSet skillSet = new StatsSet(parseAttributes(skillNode));
-			final CubicSkill skill = new CubicSkill(skillSet);
+			final CubicSkill skill = new CubicSkill(new StatsSet(parseAttributes(skillNode)));
 			forEach(cubicNode, "conditions", conditionNode -> parseConditions(cubicNode, template, skill));
 			template.getSkills().add(skill);
 		});

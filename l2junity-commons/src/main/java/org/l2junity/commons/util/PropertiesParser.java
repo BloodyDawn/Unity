@@ -284,7 +284,7 @@ public final class PropertiesParser
 	 * @param key
 	 * @param separator
 	 * @param defaultValues
-	 * @return
+	 * @return int array
 	 */
 	public int[] getIntArray(String key, String separator, int... defaultValues)
 	{
@@ -318,7 +318,7 @@ public final class PropertiesParser
 	 * @param separator
 	 * @param clazz
 	 * @param defaultValues
-	 * @return
+	 * @return enum array
 	 */
 	@SafeVarargs
 	public final <T extends Enum<T>> T[] getEnumArray(String key, String separator, Class<T> clazz, T... defaultValues)
@@ -354,7 +354,7 @@ public final class PropertiesParser
 	 * @param separator
 	 * @param clazz
 	 * @param defaultValues
-	 * @return
+	 * @return list
 	 */
 	@SafeVarargs
 	public final <T extends Enum<T>> List<T> getEnumList(String key, String separator, Class<T> clazz, T... defaultValues)

@@ -436,7 +436,7 @@ public final class Rnd
 	
 	/**
 	 * @param n
-	 * @return
+	 * @return int
 	 * @see org.l2junity.commons.util.Rnd#get(int n)
 	 */
 	public static final int nextInt(final int n)

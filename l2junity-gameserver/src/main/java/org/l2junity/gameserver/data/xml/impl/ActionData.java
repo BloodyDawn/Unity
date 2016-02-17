@@ -28,8 +28,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 /**
  * @author UnAfraid
@@ -61,15 +59,7 @@ public class ActionData implements IGameXmlReader
 	{
 		forEach(doc, "list", listNode -> forEach(listNode, "action", actionNode ->
 		{
-			final NamedNodeMap attrs = actionNode.getAttributes();
-			final StatsSet set = new StatsSet();
-			for (int i = 0; i < attrs.getLength(); i++)
-			{
-				Node att = attrs.item(i);
-				set.set(att.getNodeName(), att.getNodeValue());
-			}
-			
-			final ActionDataHolder holder = new ActionDataHolder(set);
+			final ActionDataHolder holder = new ActionDataHolder(new StatsSet(parseAttributes(actionNode)));
 			_actionData.put(holder.getId(), holder);
 		}));
 	}

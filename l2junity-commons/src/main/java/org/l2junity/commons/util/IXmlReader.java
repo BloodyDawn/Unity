@@ -645,21 +645,30 @@ public interface IXmlReader
 	}
 	
 	/**
-	 * Gets the current file filter.
-	 * @return the current file filter
-	 */
-	default FileFilter getCurrentFileFilter()
-	{
-		return XML_FILTER;
-	}
-	
-	/**
 	 * @param node
 	 * @return {@code true} if the node is an element type, {@code false} otherwise
 	 */
 	public static boolean isNode(Node node)
 	{
 		return node.getNodeType() == Node.ELEMENT_NODE;
+	}
+	
+	/**
+	 * @param node
+	 * @return {@code true} if the node is an element type, {@code false} otherwise
+	 */
+	public static boolean isText(Node node)
+	{
+		return node.getNodeType() == Node.TEXT_NODE;
+	}
+	
+	/**
+	 * Gets the current file filter.
+	 * @return the current file filter
+	 */
+	default FileFilter getCurrentFileFilter()
+	{
+		return XML_FILTER;
 	}
 	
 	/**
