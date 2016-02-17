@@ -43,9 +43,10 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 	@Override
 	public final void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		if (_holders.putIfAbsent(effected.getObjectId(), new EffectedConditionHolder(effector, effected, skill, canPump(effector, effected, skill))) != null)
+		final EffectedConditionHolder oldHolder = _holders.putIfAbsent(effected.getObjectId(), new EffectedConditionHolder(effector, effected, skill, canPump(effector, effected, skill)));
+		if (oldHolder != null)
 		{
-			_log.warn("Duplicate effect condition holder effected: {} skill: {}", effected, skill, new IllegalStateException());
+			_log.warn("Duplicate effect condition holder old effected: {} old skill: {},  new effected: {} new skill: {}", oldHolder.getEffected(), oldHolder.getSkill(), effected, skill, new IllegalStateException());
 		}
 	}
 	
@@ -56,7 +57,7 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 		_holders.remove(info.getEffected().getObjectId());
 	}
 	
-	protected EffectedConditionHolder getHolder(int objectId)
+	protected final EffectedConditionHolder getHolder(int objectId)
 	{
 		return _holders.get(objectId);
 	}
@@ -67,7 +68,7 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 	
 	protected final void update(int objectId)
 	{
-		final EffectedConditionHolder holder = getHolder(objectId);
+		final EffectedConditionHolder holder = _holders.get(objectId);
 		if (holder == null)
 		{
 			_log.warn("Effected condition holder is null!", new NullPointerException());
