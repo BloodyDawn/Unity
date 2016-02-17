@@ -37,22 +37,12 @@ public class EquipWeaponSkillCondition implements ISkillCondition
 	
 	public EquipWeaponSkillCondition(StatsSet params)
 	{
-		final List<String> weaponTypes = params.getList("weaponType", String.class);
-		
+		final List<WeaponType> weaponTypes = params.getEnumList("weaponType", WeaponType.class);
 		if (weaponTypes != null)
 		{
-			for (String weaponType : weaponTypes)
+			for (WeaponType weaponType : weaponTypes)
 			{
-				try
-				{
-					_weaponTypesMask |= WeaponType.valueOf(weaponType).mask();
-				}
-				catch (IllegalArgumentException e)
-				{
-					final IllegalArgumentException exception = new IllegalArgumentException("weaponType should contain WeaponType enum value but found " + weaponType);
-					exception.addSuppressed(e);
-					throw exception;
-				}
+				_weaponTypesMask |= weaponType.mask();
 			}
 		}
 	}

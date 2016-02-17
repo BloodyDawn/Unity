@@ -601,7 +601,7 @@ public class SkillData implements IGameXmlReader
 		{
 			if (text != null)
 			{
-				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + node.getNodeName() + "]");
+				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + node + "]");
 			}
 			if (statsSet != null)
 			{
@@ -614,10 +614,6 @@ public class SkillData implements IGameXmlReader
 		}
 		else if (text != null)
 		{
-			if (list != null)
-			{
-				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + node.getNodeName() + "]");
-			}
 			if (statsSet != null)
 			{
 				statsSet.set(".", text);
