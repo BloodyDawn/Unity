@@ -29,6 +29,7 @@ public class SkillConditionMasterHandler
 {
 	public static void main(String[] args)
 	{
+		SkillConditionHandler.getInstance().registerHandler("EquipWeapon", EquipWeaponSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("EquipShield", EquipShieldSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("PossessHolything", PossessHolythingSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpSkillAcquire", OpSkillAcquireSkillCondition::new);
