@@ -53,7 +53,7 @@ public final class OrbisTemple extends AbstractNpcAI
 	@Override
 	public String onEnterZone(Creature creature, ZoneType zone)
 	{
-		if (creature.isPlayer())
+		if (creature.isPlayer() && (creature.getInstanceWorld() == null))
 		{
 			creature.teleToLocation(TELEPORT_DATA.get(zone.getId()));
 		}
