@@ -612,8 +612,12 @@ public class SkillData implements IGameXmlReader
 				return list;
 			}
 		}
-		else if (text != null)
+		if (text != null)
 		{
+			if (list != null)
+			{
+				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + node + "]");
+			}
 			if (statsSet != null)
 			{
 				statsSet.set(".", text);
