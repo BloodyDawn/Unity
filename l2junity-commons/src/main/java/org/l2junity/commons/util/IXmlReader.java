@@ -74,7 +74,7 @@ public interface IXmlReader
 		final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setNamespaceAware(true);
 		dbf.setValidating(isValidating());
-		dbf.setIgnoringComments(true);
+		dbf.setIgnoringComments(isIgnoringComments());
 		try
 		{
 			dbf.setAttribute(JAXP_SCHEMA_LANGUAGE, W3C_XML_SCHEMA);
@@ -99,6 +99,15 @@ public interface IXmlReader
 	 * @return {@code true} if its enabled, {@code false} otherwise
 	 */
 	default boolean isValidating()
+	{
+		return true;
+	}
+	
+	/**
+	 * Checks if XML comments are ignored.
+	 * @return {@code true} if its comments are ignored, {@code false} otherwise
+	 */
+	default boolean isIgnoringComments()
 	{
 		return true;
 	}
