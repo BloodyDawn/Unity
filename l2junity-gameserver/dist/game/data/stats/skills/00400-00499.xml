@@ -2844,13 +2844,9 @@
 		<hitCancelTime>7.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<and>
-				<player canSummonServitor="true" />
-				<player canSummonSiegeGolem="true" />
-				<player hasFreeSummonPoints="0" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CanSummonSiegeGolem" />
+		</conditions>
 		<effects>
 			<effect name="Summon">
 				<npcId>14839</npcId>
