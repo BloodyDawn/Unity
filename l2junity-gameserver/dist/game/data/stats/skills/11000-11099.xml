@@ -3380,9 +3380,9 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<target checkCrtEffect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCrtEffect" />
+		</conditions>
 	</skill>
 	<skill id="11053" levels="7" name="Mass Hell Binding">
 		<!-- Glory Days confirmed -->
@@ -3431,9 +3431,9 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<target checkCrtEffect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCrtEffect" />
+		</conditions>
 	</skill>
 	<skill id="11054" levels="1" name="Yoke Status">
 		<!-- Glory Days confirmed -->
@@ -3456,6 +3456,9 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckCrtEffect" />
+		</conditions>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>

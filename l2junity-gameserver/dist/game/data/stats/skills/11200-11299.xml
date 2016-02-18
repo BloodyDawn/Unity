@@ -1957,9 +1957,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target checkCrtEffect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCrtEffect" />
+		</conditions>
 	</skill>
 	<skill id="11277" levels="4" name="Sense of Loyalty">
 		<!-- Glory Days confirmed -->
