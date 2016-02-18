@@ -921,6 +921,9 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="21247" levels="1" name="Santa's Gift">
 		<!-- "Receives a gift from Santa Claus. It can be used only once a day, and the reuse time is reset every morning at 6:30 AM." -->
@@ -1561,6 +1564,9 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="21279" levels="1" name="Drake Lord's Authority">
 		<!-- AUTO GENERATED SKILL -->

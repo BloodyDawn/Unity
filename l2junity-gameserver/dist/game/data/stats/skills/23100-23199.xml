@@ -946,6 +946,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="23157" levels="1" name="Donateloph's Blessing">
 		<!-- For 1 hour, increases Max HP, MP, and CP by 40%. Increases physical P. Def. and magic M. Def. by 20%. Increases moving speed by 20%. Increases physical P. Atk. by 10%. Increases physical Atk. Spd. by 20%. Bestows the ability to recover as HP 10% of the standard short-range physical damage inflicted on the enemy. -->
@@ -1056,6 +1059,9 @@
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="23162" levels="1" name="Rudolphina's Blessing - Replenish Vitality">
 		<!-- Confirmed CT2.5 -->
@@ -1071,6 +1077,9 @@
 		<castRange>600</castRange>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
@@ -1157,6 +1166,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<!-- TODO: Need new effect i_dispel_by_name. -->
 			<effect name="VitalityPointUp">
@@ -1499,6 +1511,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-100</amount>
@@ -1521,6 +1536,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>

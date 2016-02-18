@@ -2529,9 +2529,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>20002</transformationId>
@@ -2565,9 +2565,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>20003</transformationId>
@@ -2651,6 +2651,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>

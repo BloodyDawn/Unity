@@ -746,6 +746,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="9114" levels="1" name="Nevit's Voice">
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1988,6 +1991,9 @@
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="9167" levels="1" name="Nevit's Hourglass - 1 hour(s)">
 		<!-- Increases Nevit's blessing by 1 hour(s). -->
@@ -2922,6 +2928,9 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="9184" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
 		<!-- "For 4 hours, recovers vitality when Exp. is acquired through hunting." -->
@@ -2943,6 +2952,9 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="9185" levels="1" name="Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->

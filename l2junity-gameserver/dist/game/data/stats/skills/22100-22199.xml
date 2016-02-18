@@ -960,6 +960,9 @@
 		<reuseDelay>14400000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="22131" levels="1" name="Red Fireworks">
 		<!-- Confirmed CT2.5 -->
@@ -1160,6 +1163,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
@@ -1182,6 +1188,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
@@ -2551,6 +2560,9 @@
 		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
 				<amount>-10</amount>
@@ -2652,6 +2664,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 	</skill>
 	<skill id="22188" levels="1" name="Summon Big Wedding Cake">
 		<!-- none -->

@@ -1179,6 +1179,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
@@ -1200,6 +1203,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanRestoreVitalPoint" />
+		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
 				<value>20000</value>
