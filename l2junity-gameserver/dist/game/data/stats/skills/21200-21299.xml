@@ -933,6 +933,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="21247" levels="1" name="Santa's Gift">
@@ -1596,6 +1597,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="21279" levels="1" name="Drake Lord's Authority">
@@ -1730,6 +1732,9 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<conditions>
+			<condition name="CanUseInBattlefield" />
+		</conditions>
 	</skill>
 	<skill id="21290" levels="1" name="Throw Corrosive Acid">
 		<!-- AUTO GENERATED SKILL -->
@@ -1746,6 +1751,9 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<conditions>
+			<condition name="CanUseInBattlefield" />
+		</conditions>
 	</skill>
 	<skill id="21291" levels="1" name="Relic Engraving Activation">
 		<!-- AUTO GENERATED SKILL -->
@@ -1762,6 +1770,9 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<conditions>
+			<condition name="CanUseInBattlefield" />
+		</conditions>
 	</skill>
 	<skill id="21292" levels="1" name="Relic Engraving Activation">
 		<!-- AUTO GENERATED SKILL -->
@@ -1778,6 +1789,9 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<conditions>
+			<condition name="CanUseInBattlefield" />
+		</conditions>
 	</skill>
 	<skill id="21293" levels="1" name="Two-handed Weapon of Vampiric Rage">
 		<!-- AUTO GENERATED SKILL -->

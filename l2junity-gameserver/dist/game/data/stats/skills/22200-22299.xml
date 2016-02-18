@@ -407,6 +407,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -556,6 +557,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
@@ -582,6 +584,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointUp">
@@ -614,6 +617,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -648,6 +652,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -1580,6 +1585,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="22253" levels="1" name="Prophecy of Water">
@@ -2810,6 +2816,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="22285" levels="1" name="PC Vitality">
@@ -2835,6 +2842,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="22286" levels="1" name="PC Vitality">
@@ -2860,6 +2868,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="22287" levels="1" name="PC Vitality">
@@ -2885,6 +2894,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanUseVitalityConsumeItem" />
 		</conditions>
 	</skill>
 	<skill id="22288" levels="1" name="Player Commendation - Vitality Pack">
@@ -3203,6 +3213,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanUseInDragonLair" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>143</npcId>
@@ -3222,6 +3235,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanUseInDragonLair" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>144</npcId>
@@ -3242,6 +3258,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanUseInDragonLair" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>145</npcId>
@@ -3261,6 +3280,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanUseInDragonLair" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>146</npcId>
@@ -3286,6 +3308,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="CanUseInDragonLair" />
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<!-- TODO: Custom. -->
@@ -3310,6 +3335,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="CanUseInDragonLair" />
+		</conditions>
 		<effects>
 			<effect name="ManaHeal">
 				<!-- TODO: Custom. -->
