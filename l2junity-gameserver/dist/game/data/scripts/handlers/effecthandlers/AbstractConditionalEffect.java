@@ -54,7 +54,12 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 	public final void onExit(BuffInfo info)
 	{
 		unregisterCondition(info);
-		_holders.remove(info.getEffected().getObjectId());
+		final EffectedConditionHolder oldHolder = _holders.remove(info.getEffected().getObjectId());
+		if (oldHolder == null)
+		{
+			_log.warn("Failed onExit condition holder new effected: {} new skill: {}", info.getEffected(), info.getSkill(), new IllegalStateException());
+		}
+		
 	}
 	
 	protected final EffectedConditionHolder getHolder(int objectId)
