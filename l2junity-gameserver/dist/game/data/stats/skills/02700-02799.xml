@@ -3139,6 +3139,25 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ARCHMAGE />
+					<SOULTAKER />
+					<ARCANA_LORD />
+					<CARDINAL />
+					<HIEROPHANT />
+					<MYSTIC_MUSE />
+					<ELEMENTAL_MASTER />
+					<EVA_SAINT />
+					<STORM_SCREAMER />
+					<SPECTRAL_MASTER />
+					<SHILLIEN_SAINT />
+					<DOMINATOR />
+					<DOOMCRYER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -3165,6 +3184,15 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<SAGITTARIUS />
+					<MOONLIGHT_SENTINEL />
+					<GHOST_SENTINEL />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -3190,6 +3218,18 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<CARDINAL />
+					<HIEROPHANT />
+					<EVA_SAINT />
+					<SHILLIEN_SAINT />
+					<DOMINATOR />
+					<DOOMCRYER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>
@@ -3372,6 +3412,17 @@
 				<minLevel>79</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<DOOMBRINGER />
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+					<TRICKSTER />
+					<JUDICATOR />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>

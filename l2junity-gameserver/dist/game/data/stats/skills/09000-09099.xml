@@ -5207,6 +5207,25 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ARCHMAGE />
+					<SOULTAKER />
+					<ARCANA_LORD />
+					<CARDINAL />
+					<HIEROPHANT />
+					<MYSTIC_MUSE />
+					<ELEMENTAL_MASTER />
+					<EVA_SAINT />
+					<STORM_SCREAMER />
+					<SPECTRAL_MASTER />
+					<SHILLIEN_SAINT />
+					<DOMINATOR />
+					<DOOMCRYER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">

@@ -505,6 +505,14 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -635,6 +643,14 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ARCHMAGE />
+					<SOULTAKER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -660,6 +676,14 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<MYSTIC_MUSE />
+					<STORM_SCREAMER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>

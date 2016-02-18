@@ -2603,6 +2603,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<EVA_TEMPLAR />
+					<SHILLIEN_TEMPLAR />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8277" levels="1" name="Transform Native">
 		<!-- Confirmed CT2.5 -->

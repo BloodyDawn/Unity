@@ -640,6 +640,18 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<TREASURE_HUNTER />
+					<PLAINS_WALKER />
+					<ABYSS_WALKER />
+					<ADVENTURER />
+					<WIND_RIDER />
+					<GHOST_HUNTER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">

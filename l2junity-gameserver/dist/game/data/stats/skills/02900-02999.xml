@@ -304,6 +304,25 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<FIGHTER />
+					<MAGE />
+					<ELVEN_FIGHTER />
+					<ELVEN_MAGE />
+					<DARK_FIGHTER />
+					<DARK_MAGE />
+					<ORC_FIGHTER />
+					<ORC_MAGE />
+					<DWARVEN_FIGHTER />
+					<MALE_SOLDIER />
+					<FEMALE_SOLDIER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>false</isWithin>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>

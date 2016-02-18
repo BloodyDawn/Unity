@@ -192,6 +192,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<EVA_TEMPLAR />
+					<SHILLIEN_TEMPLAR />
+					<SIGEL_KNIGHT />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="12009" levels="1" name="Teredor Antidote">
 		<!-- AUTO GENERATED SKILL -->

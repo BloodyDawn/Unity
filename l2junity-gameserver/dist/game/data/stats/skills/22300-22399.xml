@@ -1684,6 +1684,14 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ARCHMAGE />
+					<SOULTAKER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22373" levels="1" name="Starfall">
@@ -1701,6 +1709,14 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<MYSTIC_MUSE />
+					<STORM_SCREAMER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 	</skill>

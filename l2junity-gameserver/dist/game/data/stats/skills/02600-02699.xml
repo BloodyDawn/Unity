@@ -493,6 +493,16 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<WARSMITH />
+					<MAESTRO />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>32544</npcId>
@@ -1378,6 +1388,18 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<EVA_TEMPLAR />
+					<SHILLIEN_TEMPLAR />
+					<SWORD_MUSE />
+					<SPECTRAL_DANCER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -1455,6 +1477,19 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<DUELIST />
+					<DREADNOUGHT />
+					<TITAN />
+					<GRAND_KHAVATARI />
+					<FORTUNE_SEEKER />
+					<MAESTRO />
+					<DOOMBRINGER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>
@@ -1534,6 +1569,15 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ADVENTURER />
+					<WIND_RIDER />
+					<GHOST_HUNTER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -1559,6 +1603,16 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ADVENTURER />
+					<WIND_RIDER />
+					<GHOST_HUNTER />
+					<FORTUNE_SEEKER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>
@@ -1586,6 +1640,15 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<SAGITTARIUS />
+					<MOONLIGHT_SENTINEL />
+					<GHOST_SENTINEL />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -1612,6 +1675,18 @@
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ARCHMAGE />
+					<SOULTAKER />
+					<MYSTIC_MUSE />
+					<STORM_SCREAMER />
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SetSkill">
@@ -1637,6 +1712,18 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<CARDINAL />
+					<HIEROPHANT />
+					<EVA_SAINT />
+					<SHILLIEN_SAINT />
+					<DOMINATOR />
+					<DOOMCRYER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>
@@ -1767,6 +1854,15 @@
 				<minLevel>81</minLevel>
 				<maxLevel>84</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classIds>
+					<ADVENTURER />
+					<WIND_RIDER />
+					<GHOST_HUNTER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
 		<effects>
