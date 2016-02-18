@@ -702,7 +702,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
-			<condition name="CheckLevel">
+			<condition name="CheckLevel" fromLevel="2" toLevel="6">
 				<minLevel>
 					<value level="2">20</value>
 					<value level="3">40</value>
@@ -717,13 +717,7 @@
 					<value level="5">75</value>
 					<value level="6">85</value>
 				</maxLevel>
-				<affectType>
-					<value level="2">CASTER</value>
-					<value level="3">CASTER</value>
-					<value level="4">CASTER</value>
-					<value level="5">CASTER</value>
-					<value level="6">CASTER</value>
-				</affectType>
+				<affectType>CASTER</affectType>
 			</condition>
 		</conditions>
 		<effects>
@@ -761,7 +755,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
-			<condition name="CheckLevel">
+			<condition name="CheckLevel" fromLevel="2" toLevel="6">
 				<minLevel>
 					<value level="2">20</value>
 					<value level="3">40</value>
@@ -776,13 +770,7 @@
 					<value level="5">75</value>
 					<value level="6">85</value>
 				</maxLevel>
-				<affectType>
-					<value level="2">CASTER</value>
-					<value level="3">CASTER</value>
-					<value level="4">CASTER</value>
-					<value level="5">CASTER</value>
-					<value level="6">CASTER</value>
-				</affectType>
+				<affectType>CASTER</affectType>
 			</condition>
 		</conditions>
 		<effects>

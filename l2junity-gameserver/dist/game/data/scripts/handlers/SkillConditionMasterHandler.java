@@ -80,6 +80,7 @@ public class SkillConditionMasterHandler
 		SkillConditionHandler.getInstance().registerHandler("CannotUseInTransform", CannotUseInTransformSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("CheckSex", CheckSexSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("CheckLevel", CheckLevelSkillCondition::new);
+		SkillConditionHandler.getInstance().registerHandler("CanChangeVitalItemCount", CanChangeVitalItemCountSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpHome", OpHomeSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpCompanion", OpCompanionSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpAlignment", OpAlignmentSkillCondition::new);
