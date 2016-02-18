@@ -1323,17 +1323,14 @@
 		<isMagic>1</isMagic>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<and>
-				<target myPartyExceptMe="true" />
-				<player callPc="true" />
-			</and>
-		</cond>
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 			</not>
 		</cond>
+		<conditions>
+			<condition name="OpCallPc" />
+		</conditions>
 		<effects>
 			<effect name="CallPc">
 				<itemId>8615</itemId>

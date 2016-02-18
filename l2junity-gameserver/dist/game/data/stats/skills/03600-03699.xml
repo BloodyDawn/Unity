@@ -1539,11 +1539,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<not>
-				<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-			</not>
-		</cond>
+		<conditions>
+			<condition name="OpCallPc" />
+		</conditions>
 		<effects>
 			<effect name="SendSystemMessageToClan">
 				<id>1923</id>

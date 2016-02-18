@@ -1357,6 +1357,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanSummon" />
+			<condition name="OpCallPc" />
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">
@@ -1411,6 +1412,9 @@
 			<value level="2">PARTY</value>
 		</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="OpCallPc" />
+		</conditions>
 		<effects>
 			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
 				<npcId>13354</npcId>
@@ -1537,6 +1541,9 @@
 		<isMagic>1</isMagic>
 		<targetType>MY_MENTOR</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCallPc" />
+		</conditions>
 	</skill>
 	<skill id="9380" levels="1" name="Soulshot Pack">
 		<!-- AUTO GENERATED SKILL -->
