@@ -70,9 +70,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
+		<conditions>
+			<condition name="CheckSex">
+				<isFemale>true</isFemale>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ChangeHairStyle">
 				<value>5</value>
@@ -92,9 +94,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
+		<conditions>
+			<condition name="CheckSex">
+				<isFemale>true</isFemale>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ChangeHairStyle">
 				<value>6</value>
