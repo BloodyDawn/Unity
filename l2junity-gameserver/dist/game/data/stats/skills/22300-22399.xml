@@ -1692,6 +1692,11 @@
 				<affectType>CASTER</affectType>
 				<isWithin>true</isWithin>
 			</condition>
+			<condition name="OpCheckClassList">
+				<classId>ARCHMAGE</classId>
+				<affectType>TARGET</affectType>
+				<isWithin>false</isWithin>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22373" levels="1" name="Starfall">
@@ -1717,6 +1722,11 @@
 				</classIds>
 				<affectType>CASTER</affectType>
 				<isWithin>true</isWithin>
+			</condition>
+			<condition name="OpCheckClassList">
+				<classId>MYSTIC_MUSE</classId>
+				<affectType>TARGET</affectType>
+				<isWithin>false</isWithin>
 			</condition>
 		</conditions>
 	</skill>

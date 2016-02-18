@@ -22,6 +22,7 @@ import org.l2junity.gameserver.enums.SkillConditionAffectType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -30,13 +31,13 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class OpCheckClassSkillCondition implements ISkillCondition
 {
-	private final int _classId;
+	private final ClassId _classId;
 	private final SkillConditionAffectType _affectType;
 	private final boolean _isWithin;
 	
 	public OpCheckClassSkillCondition(StatsSet params)
 	{
-		_classId = params.getInt("classId");
+		_classId = params.getEnum("classId", ClassId.class);
 		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 		_isWithin = params.getBoolean("isWithin");
 	}
@@ -48,13 +49,13 @@ public class OpCheckClassSkillCondition implements ISkillCondition
 		{
 			case CASTER:
 			{
-				return caster.isPlayer() && (_isWithin == (_classId == caster.getActingPlayer().getClassId().getId()));
+				return caster.isPlayer() && (_isWithin == (_classId == caster.getActingPlayer().getClassId()));
 			}
 			case TARGET:
 			{
 				if ((target != null) && !target.isPlayer())
 				{
-					return _isWithin == (_classId == target.getActingPlayer().getClassId().getId());
+					return _isWithin == (_classId == target.getActingPlayer().getClassId());
 				}
 				break;
 			}
