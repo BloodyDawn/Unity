@@ -2382,9 +2382,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player hasFreeTeleportBookmarkSlots="3" />
-		</cond>
+		<conditions>
+			<condition name="CanBookmarkAddSlot">
+				<teleportBookmarkSlots>3</teleportBookmarkSlots>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="AddTeleportBookmarkSlot">
 				<amount>3</amount>
