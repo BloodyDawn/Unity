@@ -294,6 +294,14 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
@@ -1047,9 +1055,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1134,9 +1148,15 @@
 		<trait>KNOCKDOWN</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1224,9 +1244,15 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Disregards 30% of the target's P. Def -->
@@ -1304,9 +1330,15 @@
 		<reuseDelay>7000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1523,9 +1555,15 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1610,9 +1648,15 @@
 		<trait>KNOCKDOWN</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1700,9 +1744,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1781,9 +1831,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1824,6 +1880,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
 		<!-- Glory Days confirmed -->
@@ -2011,9 +2076,15 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
@@ -2152,9 +2223,15 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2205,9 +2282,15 @@
 		<targetType>GROUND</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2241,9 +2324,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>74885</power>
@@ -2381,9 +2470,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>INVISIBLE</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Detection" />
 			<effect name="TrapRemove">

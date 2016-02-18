@@ -334,9 +334,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="RAPIER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<RAPIER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -488,9 +492,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="RAPIER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<RAPIER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SoulBlow">
 				<power>
@@ -562,12 +570,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="RAPIER" />
-				<target active_effect_id="1435" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<RAPIER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -713,9 +722,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -879,9 +893,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -1056,9 +1075,14 @@
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -1172,12 +1196,14 @@
 		<trait>DEATH</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="CROSSBOW" />
-				<player hp="10" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Lethal">
 				<fullLethal>
@@ -1608,9 +1634,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockMove">
 			</effect>
@@ -2035,9 +2066,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
@@ -2090,9 +2126,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DefenceCriticalDamage">
 				<amount>

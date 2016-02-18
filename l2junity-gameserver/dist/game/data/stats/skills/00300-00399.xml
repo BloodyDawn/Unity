@@ -253,9 +253,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
@@ -308,9 +313,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
@@ -337,9 +347,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>8</amount>
@@ -366,9 +381,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="AreaDamage">
 				<amount>-30</amount>
@@ -515,9 +535,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockMove">
 			</effect>
@@ -645,9 +669,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttackHpLink">
 				<power>
@@ -965,9 +993,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CpDamPercent">
 				<power>
@@ -1046,9 +1078,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FatalBlow">
 				<power>
@@ -1651,9 +1688,13 @@
 		<trait>DEATH</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>7698</power>
@@ -1683,9 +1724,14 @@
 		<trait>DEATH</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FatalBlow">
 				<power>5773</power>
@@ -1750,9 +1796,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT,FIST,DUAL,DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1835,9 +1886,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1886,9 +1941,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>60</chance>
@@ -1917,9 +1976,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>5</power>
@@ -2135,9 +2199,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1973</power>
@@ -2166,9 +2234,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CriticalDamagePosition">
 				<amount>-30</amount>
@@ -2206,9 +2279,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CriticalRatePositionBonus">
 				<amount>-30</amount>
@@ -2243,9 +2321,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CriticalDamagePosition">
 				<amount>-30</amount>
@@ -2288,9 +2371,14 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Bluff">
 				<chance>80</chance>
@@ -2380,9 +2468,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>60</chance>
@@ -2431,9 +2523,14 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BLUNT,SWORD" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BLUNT />
+					<SWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>3077</power>
@@ -2545,9 +2642,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>100</amount>
@@ -2576,9 +2678,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SilentMove">
 			</effect>
@@ -2676,9 +2783,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>
@@ -2746,9 +2858,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>2020</power>

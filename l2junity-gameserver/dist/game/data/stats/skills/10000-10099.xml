@@ -618,9 +618,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -710,9 +715,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -973,9 +983,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+					<DUAL />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -4673,7 +4689,7 @@
 				<isCritical>false</isCritical>
 				<chance>30</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<skillId>10096</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -4683,7 +4699,7 @@
 				<skillId>10096</skillId>
 				<skillLevel>1</skillLevel>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<isCritical>true</isCritical>
 				<chance>15</chance>
 			</effect>

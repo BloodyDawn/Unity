@@ -1506,6 +1506,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="1692" levels="1" name="Power Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1597,6 +1604,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="1697" levels="1" name="Prominence">
 		<!-- AUTO GENERATED SKILL -->

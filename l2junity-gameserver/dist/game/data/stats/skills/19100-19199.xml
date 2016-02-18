@@ -24,6 +24,14 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="19102" levels="1" name="Chaos Sympathy">
 		<!-- Glory Days confirmed -->

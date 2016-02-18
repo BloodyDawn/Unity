@@ -474,5 +474,14 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 </list>

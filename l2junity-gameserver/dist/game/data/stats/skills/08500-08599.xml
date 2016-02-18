@@ -841,6 +841,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8550" levels="1" name="Dance of Medusa">
 		<!-- AUTO GENERATED SKILL -->
@@ -870,6 +878,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8551" levels="1" name="Chant of Victory">
 		<!-- AUTO GENERATED SKILL -->
@@ -923,6 +939,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8553" levels="1" name="Arcane Power">
 		<!-- AUTO GENERATED SKILL -->
@@ -952,6 +975,14 @@
 		<reuseDelay>4000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8555" levels="1" name="Throwing Dagger">
 		<!-- AUTO GENERATED SKILL -->
@@ -977,6 +1008,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8556" levels="1" name="Exciting Adventure">
 		<!-- AUTO GENERATED SKILL -->
@@ -1055,6 +1094,13 @@
 		<reuseDelay>8000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8560" levels="1" name="Flame Hawk">
 		<!-- AUTO GENERATED SKILL -->
@@ -1076,6 +1122,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8561" levels="1" name="Arrow Rain">
 		<!-- AUTO GENERATED SKILL -->
@@ -1097,6 +1150,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8562" levels="1" name="Ghost Piercing">
 		<!-- AUTO GENERATED SKILL -->
@@ -1118,6 +1178,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8563" levels="1" name="Death Shot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1137,6 +1204,14 @@
 		<reuseDelay>12000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8564" levels="1" name="Rush Impact">
 		<!-- AUTO GENERATED SKILL -->
@@ -1212,6 +1287,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8567" levels="1" name="Maximum Force Focus">
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
@@ -1227,14 +1309,18 @@
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
 		<cond msgId="324">
 			<not>
 				<player Charges="8" />
 			</not>
 		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FocusMaxMomentum" />
 		</effects>
@@ -1254,14 +1340,19 @@
 		<rideState>NONE</rideState>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
 		<cond msgId="324">
 			<not>
 				<player Charges="8" />
 			</not>
 		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FocusMaxMomentum" />
 		</effects>
@@ -1283,9 +1374,14 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
@@ -1316,9 +1412,13 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
@@ -1394,9 +1494,14 @@
 		<nextActionAttack>true</nextActionAttack>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BLUNT />
+					<SWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1573,9 +1678,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>6468</power>
@@ -1606,9 +1715,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="BOW, CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>16667</power>
@@ -2404,9 +2518,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>100</amount>

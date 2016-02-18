@@ -1134,9 +1134,17 @@
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,DAGGER,DUAL,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<DAGGER />
+					<DUAL />
+					<DUALBLUNT />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2530,9 +2538,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -3443,9 +3455,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -3940,9 +3957,13 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -4118,12 +4139,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="DUAL" />
-				<player Charges="4" /> <!-- Need to recharge 4th stage of Sword Energy. -->
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnergyAttack">
 				<chargeConsume>4</chargeConsume>
@@ -4475,9 +4498,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FatalBlow">
 				<power>
@@ -4728,9 +4756,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>12</amount>
@@ -4757,9 +4790,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Accuracy">
 				<amount>4</amount>
@@ -4786,9 +4824,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MAtk">
 				<amount>20</amount>
@@ -4815,9 +4858,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -4844,9 +4892,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>15</amount>
@@ -4873,9 +4926,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>30</amount>
@@ -4907,9 +4965,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -5235,9 +5298,13 @@
 		<coolTime>500</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -5501,9 +5568,13 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -5568,9 +5639,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Accuracy">
 				<amount>6</amount>
@@ -5809,12 +5884,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="DUALFIST" /> <!-- Requires a hand-to-hand weapon -->
-				<player Charges="2" /> <!-- recharged to its 2nd energy stage -->
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnergyAttack">
 				<chargeConsume>2</chargeConsume>
@@ -6320,9 +6396,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Accuracy">
 				<amount>6</amount>
@@ -6525,9 +6605,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>30</amount>

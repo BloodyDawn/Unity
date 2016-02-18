@@ -72,9 +72,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -292,9 +297,16 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT,DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1045,9 +1057,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="DUAL" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1165,9 +1182,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FatalBlow">
 				<power>
@@ -1262,9 +1284,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FatalBlowRate">
 				<amount>
@@ -1491,9 +1518,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1581,9 +1612,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2023,9 +2058,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HitNumber">
 				<amount>
@@ -2177,9 +2216,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Accuracy">
 				<amount>6</amount>
@@ -2647,12 +2690,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="DUAL" /> <!-- Requires a dualsword weapon -->
-				<player Charges="5" /> <!-- Requires 5th stage Sword Energy -->
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -2676,12 +2721,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="DUALFIST" /> <!-- Requires a hand-to-hand weapon -->
-				<player Charges="4" /> <!-- Requires 4th stage Energy -->
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUALFIST />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -2963,12 +3009,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="DUAL" />
-				<player Charges="#chargeConsume" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>
@@ -3012,9 +3060,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions" />
 			<effect name="TargetCancel">
@@ -3895,9 +3947,15 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT,RAPIER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+					<RAPIER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -4496,9 +4554,15 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT,ANCIENTSWORD" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+					<ANCIENTSWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -4655,9 +4719,19 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="ANCIENTSWORD" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -4770,9 +4844,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="RAPIER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<RAPIER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -5005,12 +5083,15 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD,RAPIER" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<ANCIENTSWORD />
+					<RAPIER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnemyCharge" />
 		</effects>
@@ -5198,9 +5279,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -5244,12 +5330,16 @@
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond>
-			<target myPartyExceptMe="true" />
-		</cond>
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<CROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TransferHate">
 				<chance>80</chance>
@@ -5619,12 +5709,19 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -5879,12 +5976,19 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>1</power>
@@ -5992,12 +6096,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<ANCIENTSWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>1</power>
@@ -6135,9 +6241,19 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="ANCIENTSWORD" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -6247,9 +6363,19 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="ANCIENTSWORD" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>
@@ -6333,12 +6459,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD" />
-				<target abnormalType="BLEEDING" /> <!-- bleed -->
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<ANCIENTSWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalSoulAttack">
 				<power>

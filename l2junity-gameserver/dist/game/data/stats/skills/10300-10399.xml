@@ -34,12 +34,6 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				<player hp="10" />
-			</and>
-		</cond>
 		<pveEffects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -67,6 +61,18 @@
 				</power>
 			</effect>
 		</pvpEffects>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
 		<!-- Max Momentum increases to Stage 15. -->
@@ -1152,7 +1158,7 @@
 				<minDamage>1</minDamage>
 				<chance>10</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<isCritical>false</isCritical>
 				<allowWeapons>POLE</allowWeapons>
 				<skillId>10339</skillId>
@@ -1166,7 +1172,7 @@
 				<minDamage>1</minDamage>
 				<chance>10</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<skillId>10339</skillId>
 				<skillLevel>1</skillLevel>
 				<allowWeapons>POLE</allowWeapons>
@@ -1243,7 +1249,7 @@
 				<minDamage>1</minDamage>
 				<chance>10</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<isCritical>false</isCritical>
 				<allowWeapons>DUALFIST</allowWeapons>
 				<skillId>10338</skillId>
@@ -1257,7 +1263,7 @@
 				<minDamage>1</minDamage>
 				<chance>10</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<skillId>10338</skillId>
 				<skillLevel>1</skillLevel>
 				<allowWeapons>DUALFIST</allowWeapons>

@@ -121,6 +121,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="14606" levels="1" name="Cry of Destiny - Death Strike">
 		<!-- AUTO GENERATED SKILL -->
@@ -137,6 +148,17 @@
 		<coolTime>500</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="14607" levels="1" name="Cry of Destiny - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1571,12 +1593,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD,RAPIER" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>50937</power>

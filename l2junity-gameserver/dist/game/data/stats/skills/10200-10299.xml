@@ -687,9 +687,18 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -774,9 +783,18 @@
 		</effectPoint>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnergyAttack">
 				<power>
@@ -855,9 +873,18 @@
 		<trait>KNOCKDOWN</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnergyAttack">
 				<power>
@@ -953,9 +980,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1048,9 +1084,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttackWeaponBonus">
 				<power>
@@ -1142,11 +1187,20 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<cond msgId="113" addName="1">
-			<target playable="true" />
-		</cond>
-		<cond msgId="113" addName="1">
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
 		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="KnockBack">
 				<speed>400</speed>
@@ -1226,12 +1280,18 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<target mindistance="200" />
-				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1346,12 +1406,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnemyCharge" />
 			<effect name="EnergyAttack">
@@ -1678,9 +1744,18 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond addName="1" msgId="113">
-			<using kind="SWORD, BLUNT, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<criticalChance>5</criticalChance>
@@ -1892,9 +1967,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -2190,9 +2274,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttackWeaponBonus">
 				<power>
@@ -2307,6 +2400,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry">
 		<!-- Glory Days confirmed -->
@@ -2577,9 +2682,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="POLE" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<POLE />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>

@@ -17,12 +17,15 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<target abnormalType="KNOCKDOWN" />
-				<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<BOW />
+					<CROSSBOW />
+					<TWOHANDCROSSBOW />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>21365.2</power>
@@ -4551,7 +4554,7 @@
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>30</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>
 	</skill>
@@ -4573,7 +4576,7 @@
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>99</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>
 	</skill>
@@ -4595,7 +4598,7 @@
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>50</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>
 	</skill>
@@ -4617,7 +4620,7 @@
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>40</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>
 	</skill>
@@ -4639,7 +4642,7 @@
 				<skillLevelScaleTo>3</skillLevelScaleTo>
 				<chance>30</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>
 	</skill>
@@ -4679,7 +4682,7 @@
 				<maxAttackerLevel>107</maxAttackerLevel>
 				<chance>100</chance>
 				<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+				<affectScope>SINGLE</affectScope>
 				<minDamage>1</minDamage>
 				<skillId>1703</skillId>
 				<skillLevel>1</skillLevel>
