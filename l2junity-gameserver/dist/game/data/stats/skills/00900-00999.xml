@@ -1017,9 +1017,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="ReflectMagic">
 				<amount>
@@ -4711,9 +4711,9 @@
 		<coolTime>500</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

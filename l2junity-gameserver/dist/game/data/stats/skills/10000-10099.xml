@@ -522,9 +522,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -811,9 +811,9 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -898,9 +898,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -1153,9 +1153,9 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -1225,9 +1225,9 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -1561,9 +1561,9 @@
 		<reuseDelay>60000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond addName="1" msgId="113">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="DamageShield">
 				<amount>
@@ -1650,9 +1650,6 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
 		<effect name="PhysicalDamage">
 			<power>
 				<value level="1">35222</value>
@@ -1663,6 +1660,9 @@
 			</power>
 			<overHit>true</overHit>
 		</effect>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 	</skill>
 	<skill id="10024" levels="1" name="Party Rescue">
 		<!-- Glory Days confirmed -->
@@ -1688,9 +1688,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PullBack">
 				<speed>600</speed>
@@ -2715,9 +2715,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
 				<power>14179</power>
@@ -2789,9 +2789,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
 				<power>15269</power>
@@ -2867,9 +2867,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
 				<power>16359</power>
@@ -2945,9 +2945,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
 				<power>17449</power>
@@ -3023,9 +3023,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
 				<power>18539</power>
@@ -3097,9 +3097,9 @@
 		</alterSkill>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" fromLevel="1" toLevel="1">
 				<power>19629</power>
@@ -3576,6 +3576,9 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
 		<!-- Glory Days confirmed -->

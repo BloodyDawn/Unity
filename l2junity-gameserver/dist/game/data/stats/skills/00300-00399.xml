@@ -1275,6 +1275,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="BuildCamp" />
+			<condition name="NotInUnderwater" />
 		</conditions>
 		<effects>
 			<effect name="HeadquarterCreate">
@@ -2049,9 +2050,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="ReflectSkill">
 				<amount>30</amount>
@@ -2086,9 +2087,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="ReflectSkill">
 				<amount>10</amount>
@@ -2131,9 +2132,9 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -2165,9 +2166,9 @@
 		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -2812,9 +2813,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="TargetMeProbability">
 				<chance>40</chance>
