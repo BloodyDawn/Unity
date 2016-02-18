@@ -198,15 +198,15 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player active_skill_id="21120" />
-		</cond>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
 				<player weight="80" />
 			</and>
 		</cond>
+		<conditions>
+			<condition name="CanSummon" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>20</npcId>
@@ -229,15 +229,15 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player active_skill_id="21120" />
-		</cond>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
 				<player weight="80" />
 			</and>
 		</cond>
+		<conditions>
+			<condition name="CanSummon" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>21</npcId>
@@ -260,15 +260,15 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player active_skill_id="21120" />
-		</cond>
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
 				<player weight="80" />
 			</and>
 		</cond>
+		<conditions>
+			<condition name="CanSummon" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>19</npcId>

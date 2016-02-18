@@ -1401,6 +1401,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanSummonSiegeGolem" />
+			<condition name="CanSummon" />
 		</conditions>
 		<effects>
 			<effect name="Summon">
@@ -2606,12 +2607,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<and>
-				<player canSummonServitor="true" />
-				<player hasFreeSummonPoints="0" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CanSummon" />
+		</conditions>
 		<effects>
 			<effect name="Summon">
 				<npcId>
