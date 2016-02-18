@@ -2608,9 +2608,9 @@
 		<hitCancelTime>4</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canCreateBase="true" />
-		</cond>
+		<conditions>
+			<condition name="BuildCamp" />
+		</conditions>
 		<effects>
 			<effect name="HeadquarterCreate" />
 		</effects>
