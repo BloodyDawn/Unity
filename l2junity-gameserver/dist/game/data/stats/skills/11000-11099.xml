@@ -3722,6 +3722,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="OpBlink">
+				<direction>BACK</direction>
+				<angle>600</angle>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -4959,6 +4965,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="OpBlink">
+				<direction>FRONT</direction>
+				<angle>600</angle>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>

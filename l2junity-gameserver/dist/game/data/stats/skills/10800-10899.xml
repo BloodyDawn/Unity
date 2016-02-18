@@ -343,6 +343,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpBlink">
+				<direction>FRONT</direction>
+				<angle>
+					<value level="1">500</value>
+					<value level="2">600</value>
+					<value level="3">700</value>
+					<value level="4">800</value>
+				</angle>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Front -->

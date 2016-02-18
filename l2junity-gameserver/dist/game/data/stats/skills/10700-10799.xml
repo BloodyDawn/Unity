@@ -1484,6 +1484,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="OpBlink">
+				<direction>BACK</direction>
+				<angle>300</angle>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
@@ -1929,6 +1935,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpBlink">
+				<direction>BACK</direction>
+				<angle>
+					<value level="1">300</value>
+					<value level="2">350</value>
+					<value level="3">400</value>
+					<value level="4">450</value>
+				</angle>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back -->

@@ -862,6 +862,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpBlink">
+				<direction>FRONT</direction>
+				<angle>500</angle>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Front -->
