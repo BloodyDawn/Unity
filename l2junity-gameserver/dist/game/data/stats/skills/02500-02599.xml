@@ -374,14 +374,11 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player flyMounted="false" />
-				<not>
-					<player transformationId="103" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CannotUseInTransform">
+				<transformId>103</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HpRegen">
 				<amount>100</amount>

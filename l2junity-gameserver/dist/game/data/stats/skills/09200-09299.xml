@@ -86,9 +86,9 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CannotUseInTransform" />
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>137</transformationId>

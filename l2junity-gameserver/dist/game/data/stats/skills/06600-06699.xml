@@ -1924,11 +1924,11 @@
 		<trait>ETC</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<not>
-				<player transformationId="103" />
-			</not>
-		</cond>
+		<conditions>
+			<condition name="CannotUseInTransform">
+				<transformId>103</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HpRegen">
 				<amount>100</amount>

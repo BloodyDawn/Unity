@@ -78,11 +78,11 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<not>
-				<player transformationId="103" />
-			</not>
-		</cond>
+		<conditions>
+			<condition name="CannotUseInTransform">
+				<transformId>103</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2104" levels="1" name="Greater Compressed Package of Soulshots: No-grade">
 		<!-- Confirmed CT2.5 -->
