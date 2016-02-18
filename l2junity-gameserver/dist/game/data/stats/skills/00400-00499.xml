@@ -2651,9 +2651,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player Charges="3" /> <!-- Must recharge 3rd energy stage. -->
-		</cond>
+		<conditions>
+			<condition name="EnergySaved">
+				<amount>3</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions">
 			</effect>
@@ -2697,6 +2699,9 @@
 					<DUALBLUNT />
 				</weaponType>
 			</condition>
+			<condition name="EnergySaved">
+				<amount>5</amount>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Invincible" />
@@ -2726,6 +2731,9 @@
 				<weaponType>
 					<DUALFIST />
 				</weaponType>
+			</condition>
+			<condition name="EnergySaved">
+				<amount>4</amount>
 			</condition>
 		</conditions>
 		<effects>
@@ -3016,6 +3024,12 @@
 					<DUALBLUNT />
 				</weaponType>
 			</condition>
+			<condition name="EnergySaved">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</amount>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Speed">
@@ -3299,9 +3313,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player Charges="#chargeConsume" /> <!-- Level 2 3 Focused Force charge required. -->
-		</cond>
+		<conditions>
+			<condition name="EnergySaved">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+				</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>
