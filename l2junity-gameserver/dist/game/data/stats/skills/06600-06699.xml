@@ -2153,9 +2153,11 @@
 		<castRange>2000</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>126</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>126</transformationId>

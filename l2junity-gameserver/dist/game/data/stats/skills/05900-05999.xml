@@ -1828,12 +1828,14 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>8</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>8</transformationId>
@@ -1877,12 +1879,14 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>9</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>9</transformationId>

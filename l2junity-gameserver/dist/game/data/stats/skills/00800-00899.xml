@@ -206,9 +206,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>312</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>312</transformationId>
@@ -244,9 +246,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>313</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>313</transformationId>
@@ -285,9 +289,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>314</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>314</transformationId>
@@ -323,9 +329,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>315</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>315</transformationId>
@@ -1915,15 +1923,14 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
-		<cond msgId="2195">
-			<player souls="20" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>260</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>260</transformationId>
@@ -1974,12 +1981,14 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>8</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>8</transformationId>
@@ -2030,12 +2039,14 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>9</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>9</transformationId>
@@ -2340,9 +2351,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>10</transformationId>
@@ -2369,9 +2382,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>11</transformationId>
@@ -2398,9 +2413,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>12</transformationId>
@@ -2427,9 +2444,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>13</transformationId>
@@ -2456,9 +2475,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>14</transformationId>
@@ -2485,9 +2506,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>15</transformationId>
@@ -2514,9 +2537,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>16</transformationId>
@@ -2543,9 +2568,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>17</transformationId>
@@ -2572,9 +2599,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>18</transformationId>
@@ -2601,9 +2630,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>19</transformationId>
@@ -2630,9 +2661,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>20</transformationId>
@@ -2659,9 +2692,11 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>201</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>21</transformationId>

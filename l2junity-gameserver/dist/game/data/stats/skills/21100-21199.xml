@@ -2055,9 +2055,11 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>20000</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>20000</transformationId>
@@ -2111,9 +2113,11 @@
 		<blockActionUseSkill>true</blockActionUseSkill>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>20001</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>20001</transformationId>
@@ -2531,6 +2535,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanTransform">
+				<transformId>20002</transformId>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Transformation">
@@ -2567,6 +2574,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
+			<condition name="CanTransform">
+				<transformId>20003</transformId>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Transformation">

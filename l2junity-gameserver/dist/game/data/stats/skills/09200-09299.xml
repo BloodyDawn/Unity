@@ -88,6 +88,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CannotUseInTransform" />
+			<condition name="CanTransform">
+				<transformId>137</transformId>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Transformation">
@@ -182,6 +185,11 @@
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>13</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9210" levels="1" name="Dismount">
 		<!-- Dismounts from a ridable mount. -->
@@ -243,6 +251,11 @@
 		<hitTime>1000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>138</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9214" levels="1" name="Divine Inspiration">
 		<!-- AUTO GENERATED SKILL -->

@@ -684,9 +684,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2195">
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>506</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
@@ -1268,9 +1270,11 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2195">
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>507</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">

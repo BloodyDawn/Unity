@@ -18,6 +18,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>4</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22201" levels="1" name="Transformation Scroll: Saber Tooth Tiger">
 		<!-- Transformed into a Saber Tooth Tiger. -->
@@ -37,6 +42,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>5</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22202" levels="1" name="Transformation Scroll: Oel Mahum">
 		<!-- Transformed into an Ol Mahum. -->
@@ -56,6 +66,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>6</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22203" levels="1" name="Transformation Scroll: Doll Blader">
 		<!-- Transformed into a Doll Blader. -->
@@ -75,6 +90,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>7</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22204" levels="1" name="Transformation Scroll: Zaken">
 		<!-- Transformed into Zaken. -->
@@ -94,6 +114,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>305</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22205" levels="1" name="Transformation Scroll: Anakim">
 		<!-- Transformed into Anakim. -->
@@ -113,6 +138,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>306</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22206" levels="1" name="Transformation Scroll: Venom">
 		<!-- Transformed into Venom. -->
@@ -132,6 +162,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>307</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22207" levels="1" name="Transformation Scroll: Gordon">
 		<!-- Transformed into Gordon. -->
@@ -151,6 +186,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>308</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22208" levels="1" name="Transformation Scroll: Ranku">
 		<!-- Transformed into Ranku. -->
@@ -170,6 +210,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>309</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22209" levels="1" name="Transformation Scroll: Kechi">
 		<!-- Transformed into Kietch. -->
@@ -189,6 +234,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>310</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22210" levels="1" name="Transformation Scroll: Demon Prince">
 		<!-- Transformed into Duke Devil. -->
@@ -208,6 +258,11 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>311</transformId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22211" levels="1" name="Blessed Scroll of Escape">
 		<!-- none -->
@@ -383,9 +438,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>306</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>306</transformationId>
