@@ -1119,9 +1119,11 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<target mindistance="200" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnemyCharge" />
 			<effect name="PhysicalAttack">

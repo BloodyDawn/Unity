@@ -1485,9 +1485,11 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target mindistance="200" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7069" levels="1" name="Test Abnormal State DD">
 		<coolTime>200</coolTime>
@@ -1502,9 +1504,11 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target mindistance="200" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7070" levels="1" name="Test - Soul Eating Passive">
 		<magicLvl>75</magicLvl>

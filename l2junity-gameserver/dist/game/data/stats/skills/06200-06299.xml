@@ -1991,9 +1991,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target mindistance="250" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>250</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
@@ -2089,9 +2091,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target mindistance="250" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>250</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>4563</power>
