@@ -12,15 +12,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-		<cond msgId="2292">
-			<player agathionId="20991" />
-		</cond>
+		<conditions>
+			<condition name="OpAgathionEnergy">
+				<enegry>500</enegry>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Restoration">
 				<itemId>20993</itemId>
