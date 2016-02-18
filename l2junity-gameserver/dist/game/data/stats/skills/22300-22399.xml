@@ -41,6 +41,11 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckAbnormal">
+				<type>TRANSFORM</type>
+				<level>0</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22302" levels="1" name="Sweet Chocolate (4-hour)">
@@ -66,6 +71,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22303" levels="1" name="Party Cake">
@@ -248,6 +258,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -279,6 +294,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22314" levels="1" name="1st Place Treasure Sack">
@@ -1707,6 +1727,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22375" levels="1" name="Valentine's Day Love Pouch">
@@ -1766,6 +1791,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="22377" levels="1" name="Bad Bunny's Necklace Box">

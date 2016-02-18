@@ -2423,6 +2423,11 @@
 					<BLUNT />
 				</weaponType>
 			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>SEED_OF_KNIGHT</type>
+				<level>4</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
@@ -3217,9 +3222,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<player active_effect_id_lvl="5562,3" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>SEED_OF_KNIGHT</type>
+				<level>4</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>30</amount>
@@ -3331,9 +3340,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<player active_effect_id_lvl="5563,3" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>SEED_OF_KNIGHT</type>
+				<level>4</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HealOverTime">
 				<power>50</power>
@@ -3412,9 +3425,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<player active_effect_id_lvl="5564,3" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>SEED_OF_KNIGHT</type>
+				<level>4</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>40</amount>

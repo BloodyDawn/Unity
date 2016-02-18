@@ -43,6 +43,13 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>RESURRECTION_SPECIAL</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ResurrectionSpecial">
 				<power>100</power>

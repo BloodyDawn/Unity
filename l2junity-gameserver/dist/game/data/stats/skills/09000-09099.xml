@@ -891,6 +891,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9042" levels="1" name="6th Anniversary Cube">

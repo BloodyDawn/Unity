@@ -914,6 +914,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="21247" levels="1" name="Santa's Gift">
@@ -1853,6 +1858,13 @@
 		<reuseDelay>20000</reuseDelay>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="21298" levels="1" name="Release Agathion's Seal - Lancet">
 		<!-- AUTO GENERATED SKILL -->

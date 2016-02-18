@@ -2794,9 +2794,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target active_effect_id="1339" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_FIRE</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
@@ -2858,9 +2862,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target active_effect_id="1340" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_WATER</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
@@ -2955,9 +2963,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target active_effect_id="1341" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_WIND</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>

@@ -105,6 +105,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9404" levels="1" name="Wondrous Herb of Power">
@@ -2406,6 +2411,11 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckAbnormal">
+				<type>SIGNAL_C</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9469" levels="1" name="Large Draco Egg">
@@ -2423,6 +2433,11 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckAbnormal">
+				<type>SIGNAL_C</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9470" levels="1" name="Draco's Gift">

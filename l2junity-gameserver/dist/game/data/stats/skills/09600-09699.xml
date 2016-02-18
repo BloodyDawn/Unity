@@ -590,6 +590,13 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9631" levels="1" name="Vitality Maintaining Star Candy">
 		<!-- AUTO GENERATED SKILL -->
@@ -2057,6 +2064,13 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>VOTE</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9686" levels="1" name="Kaliel's Training Scroll">
 		<!-- AUTO GENERATED SKILL -->
@@ -2081,6 +2095,11 @@
 				<minLevel>1</minLevel>
 				<maxLevel>90</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>INSTANT_EV_BUFF1</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
 			</condition>
 		</conditions>
 	</skill>

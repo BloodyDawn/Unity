@@ -1524,6 +1524,11 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckAbnormal">
+				<type>TRANSFORM</type>
+				<level>0</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">

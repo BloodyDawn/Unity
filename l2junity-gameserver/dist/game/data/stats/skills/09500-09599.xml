@@ -380,6 +380,11 @@
 				<maxLevel>90</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>INSTANT_EV_BUFF1</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9519" levels="1" name="Draco's Blessing (1-hour)">
@@ -405,6 +410,11 @@
 				<minLevel>85</minLevel>
 				<maxLevel>90</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>INSTANT_EV_BUFF1</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
 			</condition>
 		</conditions>
 	</skill>
@@ -432,6 +442,11 @@
 				<maxLevel>95</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>INSTANT_EV_BUFF1</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9521" levels="1" name="Draco's Blessing (3-hour)">
@@ -457,6 +472,11 @@
 				<minLevel>85</minLevel>
 				<maxLevel>90</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>INSTANT_EV_BUFF1</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
 			</condition>
 		</conditions>
 	</skill>
@@ -1334,6 +1354,11 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpCheckAbnormal">
+				<type>VP_UP</type>
+				<level>8</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="9579" levels="1" name="Clearest Water">

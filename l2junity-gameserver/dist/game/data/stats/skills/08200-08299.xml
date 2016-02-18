@@ -1884,9 +1884,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<player checkAbnormal="SEED_OF_CRITICAL,#abnormalLvl" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>SEED_OF_CRITICAL</type>
+				<level>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+				</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

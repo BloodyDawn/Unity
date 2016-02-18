@@ -165,6 +165,13 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>VOTE</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22709" levels="1" name="XP Buff 50% (2-hour)">
 		<!-- AUTO GENERATED SKILL -->
@@ -184,6 +191,13 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>VOTE</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22710" levels="3" name="Scroll: Increase Vitality">
 		<!-- AUTO GENERATED SKILL -->
@@ -1533,6 +1547,11 @@
 				<minLevel>1</minLevel>
 				<maxLevel>95</maxLevel>
 				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>G_EV_BUFF1</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
 			</condition>
 		</conditions>
 	</skill>

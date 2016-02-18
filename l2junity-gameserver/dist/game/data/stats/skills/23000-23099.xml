@@ -1681,6 +1681,13 @@
 		<!-- TODO: Add new operate condition check_abnormal -->
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF2</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>-80</amount>
@@ -1715,6 +1722,13 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF2</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="23071" levels="1" name="Blue Flame">
 		<!-- Cannot damage the spirit for 8 seconds. Exclusive use for the Spirit of Fire. -->
@@ -1739,6 +1753,13 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF2</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="23072" levels="1" name="Eva's Wrath">
 		<!-- You are endowed with the spirit of Eva's Wrath for the next 70 seconds. This allows you to do damage to a Spirit of Fire. -->
@@ -1783,6 +1804,13 @@
 		<castRange>600</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF2</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="23074" levels="1" name="Icy Air Explosion">
 		<!-- For 4 seconds, damage inflicted on the spirit doubles. -->
@@ -1805,6 +1833,13 @@
 		<castRange>600</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF2</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="23075" levels="1" name="Flame Shock">
 		<!-- Loses the target. -->
@@ -1820,6 +1855,13 @@
 		<castRange>600</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF2</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="23076" levels="1" name="Weaver Agathion Cute Trick">
 		<!-- Confirmed CT2.5 -->

@@ -1642,9 +1642,13 @@
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target abnormalType="MULTI_DEBUFF_SOUL" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_SOUL</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>MULTI_DEBUFF_SOUL,9</dispel>
@@ -1801,9 +1805,13 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target abnormalType="MULTI_DEBUFF_FIRE" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_FIRE</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
@@ -1990,9 +1998,13 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target abnormalType="MULTI_DEBUFF_WATER" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_WATER</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
@@ -2103,9 +2115,13 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target abnormalType="MULTI_DEBUFF_WIND" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>MULTI_DEBUFF_WIND</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>195</power>
