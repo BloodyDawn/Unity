@@ -388,6 +388,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanSummonCubic" />
+		</conditions>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- On retail activated every ~2 attacks with ~2sec cooldown -->
