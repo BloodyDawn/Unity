@@ -14,9 +14,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canUntransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanUntransform" />
+		</conditions>
 		<effects>
 			<effect name="DispelBySlot">
 				<dispel>TRANSFORM,-1</dispel>
