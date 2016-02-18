@@ -2000,6 +2000,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="HpByLevel">
 				<power>
@@ -2169,6 +2172,9 @@
 		<targetType>NPC_BODY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>

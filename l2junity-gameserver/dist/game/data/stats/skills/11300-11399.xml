@@ -535,6 +535,9 @@
 		<targetType>NPC_BODY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">

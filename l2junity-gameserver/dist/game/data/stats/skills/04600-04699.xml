@@ -3208,6 +3208,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -4492,6 +4495,9 @@
 		<effectRange>1500</effectRange>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 	</skill>
 	<skill id="4673" levels="12" name="Dispel Attack">
 		<table name="#power"> 8 17 25 33 42 50 58 67 75 83 92 100 </table> <!-- Base Land Rate -->

@@ -3864,9 +3864,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canSweep="true" />
-		</cond>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="Sweeper" />
 			<effect name="ConsumeBody" />
@@ -4048,6 +4048,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NPC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="HpByLevel">
 				<power>
