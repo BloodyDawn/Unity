@@ -693,14 +693,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
@@ -818,14 +813,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>52195</x>
@@ -848,14 +838,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>102728</x>
@@ -878,14 +863,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>181378</x>
@@ -1671,6 +1651,7 @@
 				<affectType>CASTER</affectType>
 				<alignment>LAWFUL</alignment>
 			</condition>
+			<condition name="OpCanEscape" />
 		</conditions>
 	</skill>
 	<skill id="21286" levels="1" name="Ride Unicorn">

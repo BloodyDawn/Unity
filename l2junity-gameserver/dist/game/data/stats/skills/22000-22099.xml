@@ -1142,6 +1142,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>106</npcId>
@@ -1673,6 +1676,7 @@
 				<affectType>CASTER</affectType>
 				<alignment>LAWFUL</alignment>
 			</condition>
+			<condition name="OpCanEscape" />
 		</conditions>
 		<effects>
 			<effect name="Teleport">
@@ -2824,6 +2828,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>8</npcId>
@@ -2847,6 +2854,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>9</npcId>

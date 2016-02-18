@@ -276,6 +276,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 	</skill>
 	<skill id="22212" levels="1" name="Superior Quick Healing Potion">
 		<!-- none -->
@@ -1519,6 +1522,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>139</npcId>
@@ -3119,14 +3125,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>183624</x>
@@ -3148,14 +3149,9 @@
 		<icon>BranchSys2.icon.orb_of_fire_dragon</icon>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>183624</x>
@@ -3177,14 +3173,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>154596</x>
@@ -3206,14 +3197,9 @@
 		<icon>BranchSys2.icon.orb_of_earth_dragon</icon>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>154596</x>

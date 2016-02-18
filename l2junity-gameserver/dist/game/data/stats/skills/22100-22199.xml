@@ -146,14 +146,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
@@ -201,14 +196,9 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
 		<conditions>
 			<condition name="CanSummon" />
+			<condition name="OpCanNotUseAirship" />
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">
@@ -232,14 +222,9 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
 		<conditions>
 			<condition name="CanSummon" />
+			<condition name="OpCanNotUseAirship" />
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">
@@ -263,14 +248,9 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
 		<conditions>
 			<condition name="CanSummon" />
+			<condition name="OpCanNotUseAirship" />
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">
@@ -370,6 +350,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>22</npcId>
@@ -390,6 +373,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>23</npcId>
@@ -410,6 +396,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>24</npcId>
@@ -430,6 +419,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>25</npcId>
@@ -515,6 +507,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>29</npcId>
@@ -552,6 +547,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="HpRegen">
 				<amount>40</amount>
@@ -878,6 +876,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>127</npcId>
@@ -2700,6 +2701,9 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 	</skill>
 	<skill id="22189" levels="1" name="Flower Shower">
 		<!-- none -->

@@ -11,14 +11,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
@@ -797,6 +792,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13006</npcId>
@@ -815,6 +813,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>13007</npcId>
@@ -841,6 +842,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="HpRegen">
 				<amount>40</amount>
@@ -1820,15 +1824,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<player clanHall="-1" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>CLANHALL</escapeType>
@@ -1848,14 +1846,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>CASTLE</escapeType>

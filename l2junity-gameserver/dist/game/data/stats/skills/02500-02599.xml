@@ -194,6 +194,9 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>12774</npcId>
@@ -217,6 +220,9 @@
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>12777</npcId>
@@ -528,6 +534,7 @@
 				<affectType>CASTER</affectType>
 				<alignment>LAWFUL</alignment>
 			</condition>
+			<condition name="OpCanEscape" />
 		</conditions>
 		<effects>
 			<effect name="Teleport">
@@ -670,14 +677,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
@@ -2473,14 +2475,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>
@@ -2499,14 +2496,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>

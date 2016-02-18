@@ -960,6 +960,9 @@
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 	</skill>
 	<skill id="22860" levels="1" name="Summon Roaring Campfire">
 		<!-- AUTO GENERATED SKILL -->
@@ -973,6 +976,9 @@
 		<reuseDelay>1800000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 	</skill>
 	<skill id="22861" levels="1" name="Knighthood's Fortune Box">
 		<!-- AUTO GENERATED SKILL -->

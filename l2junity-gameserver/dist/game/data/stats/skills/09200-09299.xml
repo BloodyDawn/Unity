@@ -457,6 +457,7 @@
 				<affectType>CASTER</affectType>
 				<alignment>LAWFUL</alignment>
 			</condition>
+			<condition name="OpCanEscape" />
 		</conditions>
 		<effects>
 			<effect name="Teleport">
@@ -480,6 +481,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
 	</skill>
 	<skill id="9226" levels="1" name="Fragment of Light">
 		<!-- AUTO GENERATED SKILL -->

@@ -3444,9 +3444,9 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player canEscape="true" />
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>TOWN</escapeType>

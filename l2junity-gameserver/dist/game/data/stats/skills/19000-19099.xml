@@ -1081,14 +1081,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 		<effects>
 			<effect name="Escape">
 				<escapeType>CASTLE</escapeType>
@@ -1109,6 +1104,9 @@
 		<reuseDelay>3600000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 	</skill>
 	<skill id="19074" levels="2" name="Academy Precept">
 		<!-- AUTO GENERATED SKILL -->
@@ -1525,6 +1523,9 @@
 		</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
 	</skill>
 	<skill id="19093" levels="1" name="Added Blow Quiver">
 		<!-- AUTO GENERATED SKILL -->
