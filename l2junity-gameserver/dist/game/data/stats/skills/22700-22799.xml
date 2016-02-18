@@ -1528,6 +1528,13 @@
 		<reuseDelay>3600000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>95</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22747" levels="1" name="Fantasy Isle Medal of Glory">
 		<!-- AUTO GENERATED SKILL -->

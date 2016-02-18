@@ -17,9 +17,13 @@
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player level="78" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>78</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2901" levels="1" name="Ancient Herb - Immortal">
 		<abnormalInstant>true</abnormalInstant>
@@ -38,9 +42,13 @@
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player level="78" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>78</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Invincible" />
 		</effects>
@@ -62,9 +70,13 @@
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player level="78" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>78</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>70</amount>
@@ -89,9 +101,13 @@
 		<hitTime>100</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player level="78" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>78</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>250</amount>
@@ -157,9 +173,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="61;75" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>61</minLevel>
+				<maxLevel>75</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>1900</power>
@@ -176,9 +196,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="61;75" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>61</minLevel>
+				<maxLevel>75</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ManaHeal">
 				<power>360</power>
@@ -195,9 +219,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="61;75" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>61</minLevel>
+				<maxLevel>75</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CpHeal">
 				<power>360</power>
@@ -2838,6 +2866,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>77</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2994" levels="1" name="Transformation Harp: Aqua Elf">
 		<abnormalLvl>1</abnormalLvl>

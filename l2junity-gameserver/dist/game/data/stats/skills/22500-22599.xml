@@ -170,6 +170,13 @@
 		<isDebuff>false</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>85</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22504" levels="7" name="Superior Elixir of Mind (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -182,6 +189,13 @@
 		<isDebuff>false</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>85</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22505" levels="7" name="Superior Elixir of CP (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -194,6 +208,13 @@
 		<isDebuff>false</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>85</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22506" levels="1" name="Scroll: Enchant Weapon (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1338,5 +1359,12 @@
 		<reuseDelay>86400000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>85</minLevel>
+				<maxLevel>89</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 </list>

@@ -851,9 +851,13 @@
 		<staticReuse>true</staticReuse>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="1538" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>1</maxLevel>
+				<affectType>TARGET</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="22127" levels="1" name="Summon Warm Kotatz">
 		<!-- Confirmed CT2.5 and Updated to H5 -->

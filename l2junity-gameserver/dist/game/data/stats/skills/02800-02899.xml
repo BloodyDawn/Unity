@@ -67,15 +67,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="761" />
-				</not>
-				<player class_id_restriction="91" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>761</skillId>
@@ -99,15 +97,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="763" />
-				</not>
-				<player class_id_restriction="91" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>763</skillId>
@@ -127,15 +123,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="784" />
-				</not>
-				<player class_id_restriction="90" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>784</skillId>
@@ -159,15 +153,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="786" />
-				</not>
-				<player class_id_restriction="99" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>786</skillId>
@@ -191,15 +183,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="788" />
-				</not>
-				<player class_id_restriction="106" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>788</skillId>
@@ -223,15 +213,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="768" />
-				</not>
-				<player class_id_restriction="93" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>768</skillId>
@@ -251,15 +239,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="769" />
-				</not>
-				<player class_id_restriction="101" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>769</skillId>
@@ -279,15 +265,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="770" />
-				</not>
-				<player class_id_restriction="108" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>770</skillId>
@@ -307,15 +291,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="771" />
-				</not>
-				<player class_id_restriction="92" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>771</skillId>
@@ -335,15 +317,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="772" />
-				</not>
-				<player class_id_restriction="102" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>772</skillId>
@@ -363,15 +343,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="773" />
-				</not>
-				<player class_id_restriction="109" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>773</skillId>
@@ -391,15 +369,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="774" />
-				</not>
-				<player class_id_restriction="89" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>774</skillId>
@@ -419,15 +395,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="776" />
-				</not>
-				<player class_id_restriction="114" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>776</skillId>
@@ -447,15 +421,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="777" />
-				</not>
-				<player class_id_restriction="113" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>777</skillId>
@@ -475,15 +447,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="778" />
-				</not>
-				<player class_id_restriction="118" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>778</skillId>
@@ -503,15 +473,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="790" />
-				</not>
-				<player class_id_restriction="134" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>790</skillId>
@@ -531,15 +499,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="791" />
-				</not>
-				<player class_id_restriction="132, 133" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>791</skillId>
@@ -559,15 +525,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1492" />
-				</not>
-				<player class_id_restriction="94" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1492</skillId>
@@ -587,15 +551,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1493" />
-				</not>
-				<player class_id_restriction="103" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1493</skillId>
@@ -615,15 +577,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1494" />
-				</not>
-				<player class_id_restriction="110" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1494</skillId>
@@ -643,15 +603,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1495" />
-				</not>
-				<player class_id_restriction="95" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1495</skillId>
@@ -671,15 +629,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1467" />
-				</not>
-				<player class_id_restriction="94, 95" />
-				<player level="81" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>81</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1467</skillId>
@@ -699,15 +655,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1468" />
-				</not>
-				<player class_id_restriction="103, 110" />
-				<player level="81" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>81</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1468</skillId>
@@ -727,15 +681,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1505" />
-				</not>
-				<player class_id_restriction="97" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1505</skillId>
@@ -755,15 +707,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1506" />
-				</not>
-				<player class_id_restriction="105" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1506</skillId>
@@ -783,15 +733,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1507" />
-				</not>
-				<player class_id_restriction="112" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1507</skillId>
@@ -811,15 +759,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1508" />
-				</not>
-				<player class_id_restriction="112" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1508</skillId>
@@ -839,15 +785,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1509" />
-				</not>
-				<player class_id_restriction="115" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>83</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1509</skillId>
@@ -867,15 +811,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="775" />
-				</not>
-				<player class_id_restriction="88" />
-				<player level="83" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>80</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>775</skillId>
@@ -1247,14 +1189,13 @@
 		<hitCancelTime>0.1</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="932" />
-				</not>
-				<player level="75" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>75</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>932</skillId>
@@ -2067,9 +2008,29 @@
 		</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="#levelRange" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>
+					<value level="1">1</value>
+					<value level="2">20</value>
+					<value level="3">40</value>
+					<value level="4">52</value>
+					<value level="5">61</value>
+					<value level="6">76</value>
+					<value level="7">85</value>
+				</minLevel>
+				<maxLevel>
+					<value level="1">19</value>
+					<value level="2">39</value>
+					<value level="3">51</value>
+					<value level="4">60</value>
+					<value level="5">75</value>
+					<value level="6">84</value>
+					<value level="7">99</value>
+				</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -2115,9 +2076,29 @@
 		</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="#levelRange" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>
+					<value level="1">1</value>
+					<value level="2">20</value>
+					<value level="3">40</value>
+					<value level="4">52</value>
+					<value level="5">61</value>
+					<value level="6">76</value>
+					<value level="7">85</value>
+				</minLevel>
+				<maxLevel>
+					<value level="1">19</value>
+					<value level="2">39</value>
+					<value level="3">51</value>
+					<value level="4">60</value>
+					<value level="5">75</value>
+					<value level="6">84</value>
+					<value level="7">99</value>
+				</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ManaHeal">
 				<power>
@@ -2163,9 +2144,29 @@
 		</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="#levelRange" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>
+					<value level="1">1</value>
+					<value level="2">20</value>
+					<value level="3">40</value>
+					<value level="4">52</value>
+					<value level="5">61</value>
+					<value level="6">76</value>
+					<value level="7">85</value>
+				</minLevel>
+				<maxLevel>
+					<value level="1">19</value>
+					<value level="2">39</value>
+					<value level="3">51</value>
+					<value level="4">60</value>
+					<value level="5">75</value>
+					<value level="6">84</value>
+					<value level="7">99</value>
+				</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CpHeal">
 				<power>

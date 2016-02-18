@@ -113,15 +113,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1517" />
-				</not>
-				<player class_id_restriction="52, 116" />
-				<player level="70" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>70</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1517</skillId>
@@ -141,15 +139,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1518" />
-				</not>
-				<player class_id_restriction="52, 116" />
-				<player level="72" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>72</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1518</skillId>
@@ -169,15 +165,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="1519" />
-				</not>
-				<player class_id_restriction="52, 116" />
-				<player level="74" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>74</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>1519</skillId>
@@ -557,15 +551,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="818" />
-				</not>
-				<player class_id_restriction="36, 108" />
-				<player level="74" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>74</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>818</skillId>
@@ -585,15 +577,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="819" />
-				</not>
-				<player class_id_restriction="23, 101" />
-				<player level="74" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>74</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>819</skillId>
@@ -613,15 +603,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="820" />
-				</not>
-				<player class_id_restriction="8, 93" />
-				<player level="74" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>74</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>820</skillId>
@@ -641,15 +629,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<player active_skill_id="821" />
-				</not>
-				<player class_id_restriction="8, 93, 23, 101, 36, 108" />
-				<player level="72" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>40</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SetSkill">
 				<skillId>821</skillId>

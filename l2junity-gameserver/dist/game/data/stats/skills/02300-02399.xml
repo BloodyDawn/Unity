@@ -142,9 +142,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player levelRange="76;85" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>76</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="GiveSp">
 				<sp>
@@ -165,9 +169,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="1902">
-			<player levelRange="61;85" />
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>61</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>TURN_STONE</dispel>
@@ -2746,12 +2754,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player SiegeZone="126" />
-				<player level="52" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>52</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>1900</power>
