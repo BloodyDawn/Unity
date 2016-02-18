@@ -1218,9 +1218,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player canRefuelAirship="25" />
-		</cond>
+		<conditions>
+			<condition name="CanRefuelAirship">
+				<amount>25</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RefuelAirship">
 				<value>25</value>
@@ -1239,9 +1241,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player canRefuelAirship="100" />
-		</cond>
+		<conditions>
+			<condition name="CanRefuelAirship">
+				<amount>100</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RefuelAirship">
 				<value>100</value>
