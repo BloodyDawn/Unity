@@ -1570,8 +1570,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="OpInstantzone">
+				<instanceId>112</instanceId>
+			</condition>
+		</conditions>
 		<effects>
-			<effect name="StaticDamage">
+			<effect name="RealDamage">
 				<power>10000</power>
 			</effect>
 		</effects>

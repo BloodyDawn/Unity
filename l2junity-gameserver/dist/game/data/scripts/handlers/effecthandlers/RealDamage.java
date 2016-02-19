@@ -47,6 +47,9 @@ public class RealDamage extends AbstractEffect
 	{
 		effected.notifyDamageReceived(_power, effector, skill, false, false, false);
 		effected.reduceCurrentHp(_power, effector, skill);
-		effector.sendDamageMessage(effected, skill, (int) _power, false, false);
+		if (effector.isPlayer())
+		{
+			effector.sendDamageMessage(effected, skill, (int) _power, false, false);
+		}
 	}
 }
