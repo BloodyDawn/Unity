@@ -950,6 +950,13 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckClassList">
+				<classId>SAGITTARIUS</classId>
+				<affectType>TARGET</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="DamOverTimePercent">
 				<power>

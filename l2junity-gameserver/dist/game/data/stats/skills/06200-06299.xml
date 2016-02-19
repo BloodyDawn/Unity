@@ -872,6 +872,13 @@
 		<castRange>300</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>EVENT_TERRITORY</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="6241" levels="1" name="Heatstroke Prevention Effect - Gludio">
 		<abnormalLvl>1</abnormalLvl>

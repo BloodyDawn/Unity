@@ -3137,11 +3137,18 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<not>
-				<target class_id_restriction="29, 30, 105, 42, 43, 112" />
-			</not>
-		</cond>
+		<conditions>
+			<condition name="OpCheckClass">
+				<classId>ORACLE</classId>
+				<affectType>TARGET</affectType>
+				<isWithin>false</isWithin>
+			</condition>
+			<condition name="OpCheckClass">
+				<classId>SHILLIEN_ORACLE</classId>
+				<affectType>TARGET</affectType>
+				<isWithin>false</isWithin>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ManaCharge">
 				<amount>85</amount>
@@ -4363,9 +4370,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target active_effect_id="1487" />
-		</cond>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>LIFE_FORCE_KAMAEL</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="HealPercent">
 				<power>

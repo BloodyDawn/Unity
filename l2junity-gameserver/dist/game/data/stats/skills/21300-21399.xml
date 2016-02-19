@@ -311,6 +311,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>TRANSFORM</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="21321" levels="1" name="Desperate Exorcism - Trigger">
 		<!-- AUTO GENERATED SKILL -->

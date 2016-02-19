@@ -1427,6 +1427,11 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="7066" levels="1" name="Test Stun Charge">
 		<abnormalLvl>1</abnormalLvl>
@@ -1449,9 +1454,11 @@
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target mindistance="200" />
-		</cond>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="7067" levels="1" name="Test Range Charge">
 		<abnormalLvl>1</abnormalLvl>
@@ -1474,9 +1481,11 @@
 		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target mindistance="200" />
-		</cond>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="7068" levels="1" name="Test Steal Abnormal State">
 		<coolTime>200</coolTime>
@@ -1531,6 +1540,11 @@
 		<hpConsume>20</hpConsume>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="7072" levels="1" name="Test - Basic Trap">
 		<!-- Confirmed CT2.5 -->

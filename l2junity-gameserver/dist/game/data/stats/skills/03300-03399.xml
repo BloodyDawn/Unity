@@ -246,9 +246,9 @@
 		<channelingTickInterval>0</channelingTickInterval>
 		<targetType>FORTRESS_FLAGPOLE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTakeFort="true" />
-		</cond>
+		<targetConditions>
+			<condition name="OpCheckFlag" />
+		</targetConditions>
 		<startEffects>
 			<effect name="TakeFortStart" />
 		</startEffects>

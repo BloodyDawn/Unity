@@ -2384,6 +2384,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Bless the Blood -->
