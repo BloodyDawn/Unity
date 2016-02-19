@@ -972,7 +972,7 @@ public class PcInventory extends Inventory
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	@Override
