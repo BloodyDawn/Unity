@@ -1285,7 +1285,7 @@ public final class CharEffectList
 	 * Removes a set of effects from this effect list.
 	 * @param removed {@code true} if the effect is removed, {@code false} otherwise
 	 * @param info the effects to remove
-	 * @param option TODO
+	 * @param option augmentation option
 	 */
 	public void remove(boolean removed, BuffInfo info, Options option)
 	{
@@ -1296,6 +1296,7 @@ public final class CharEffectList
 		
 		// Remove the effect from creature effects.
 		stopAndRemove(removed, info, getEffectList(info.getSkill(), option));
+		
 		// Update effect flags and icons.
 		updateEffectList(true);
 	}

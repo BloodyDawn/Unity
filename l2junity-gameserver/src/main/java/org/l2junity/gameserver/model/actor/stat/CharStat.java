@@ -44,10 +44,6 @@ import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.model.stats.functions.FuncAdd;
-import org.l2junity.gameserver.model.stats.functions.FuncMul;
-import org.l2junity.gameserver.model.stats.functions.FuncSet;
-import org.l2junity.gameserver.model.stats.functions.FuncSub;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 public class CharStat
@@ -802,36 +798,6 @@ public class CharStat
 	protected void onRecalculateStats(boolean broadcast)
 	{
 	
-	}
-	
-	public void processStats(Creature effected, Class<?> funcClass, Stats stat, double value)
-	{
-		if (funcClass == FuncSet.class)
-		{
-			effected.getStat().mergeAdd(stat, value);
-		}
-		else if (funcClass == FuncAdd.class)
-		{
-			effected.getStat().mergeAdd(stat, value);
-		}
-		else if (funcClass == FuncSub.class)
-		{
-			effected.getStat().mergeAdd(stat, -value);
-		}
-		else if (funcClass == FuncMul.class)
-		{
-			effected.getStat().mergeMul(stat, value);
-		}
-		
-		if (stat == Stats.MOVE_SPEED)
-		{
-			processStats(effected, funcClass, Stats.RUN_SPEED, value);
-			processStats(effected, funcClass, Stats.WALK_SPEED, value);
-			processStats(effected, funcClass, Stats.SWIM_RUN_SPEED, value);
-			processStats(effected, funcClass, Stats.SWIM_WALK_SPEED, value);
-			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value);
-			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value);
-		}
 	}
 	
 	public double getPositionTypeValue(Stats stat, Position position)
