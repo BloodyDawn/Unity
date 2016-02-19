@@ -150,11 +150,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2163">
-			<not>
-				<player souls="40" /> <!-- Max Amount of Souls -->
-			</not>
-		</cond>
+		<conditions>
+			<condition name="OpSoulMax" />
+		</conditions>
 		<effects>
 			<effect name="FocusSouls">
 				<charge>
