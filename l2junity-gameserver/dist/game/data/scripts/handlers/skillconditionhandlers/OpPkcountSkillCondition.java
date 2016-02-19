@@ -18,6 +18,7 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.enums.SkillConditionAffectType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -29,24 +30,31 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class OpPkcountSkillCondition implements ISkillCondition
 {
-	private final boolean _verifyTarget;
+	private final SkillConditionAffectType _affectType;
 	
 	public OpPkcountSkillCondition(StatsSet params)
 	{
-		_verifyTarget = params.getBoolean("verifyTarget");
+		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 	}
 	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		if (_verifyTarget)
+		switch (_affectType)
 		{
-			if ((target == null) || !target.isPlayer())
+			case CASTER:
 			{
-				return false;
+				return caster.isPlayer() && (caster.getActingPlayer().getPkKills() > 0);
 			}
-			return target.getActingPlayer().getPkKills() > 0;
+			case TARGET:
+			{
+				if ((target != null) && target.isPlayer())
+				{
+					return target.getActingPlayer().getPkKills() > 0;
+				}
+				break;
+			}
 		}
-		return caster.isPlayer() && (caster.getActingPlayer().getPkKills() > 0);
+		return false;
 	}
 }
