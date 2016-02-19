@@ -2735,12 +2735,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2195">
-			<player souls="1" />
-		</cond>
 		<cond msgId="109">
 			<target race="KAMAEL" />
 		</cond>
+		<conditions>
+			<condition name="SoulSaved">
+				<amount>1</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FocusSouls">
 				<charge>1</charge>

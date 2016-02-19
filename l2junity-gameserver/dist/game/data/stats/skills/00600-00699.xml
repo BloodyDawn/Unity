@@ -905,9 +905,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13098,900102" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 	</skill>
 	<skill id="631" levels="6" name="Emergent Ability: Attack">
 		<!-- CT2.5 retail confirmed -->

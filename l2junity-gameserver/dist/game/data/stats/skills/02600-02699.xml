@@ -143,9 +143,9 @@
 		<castRange>40</castRange>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="22110100,22110101,22110102,22110103,22110104,22110105" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
@@ -700,9 +700,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="17240101,17240105,17240109" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
@@ -724,9 +724,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="17240103,17240107" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>

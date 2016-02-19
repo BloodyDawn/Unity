@@ -4392,9 +4392,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="23150001,23150002" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>

@@ -2749,9 +2749,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2195">
-			<player souls="5" />
-		</cond>
+		<conditions>
+			<condition name="SoulSaved">
+				<amount>5</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Restoration">
 				<itemId>10410</itemId>

@@ -2041,9 +2041,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="19160002,19160003,19160004,19160005,19160006,19160007,19160008,19160009" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 	</skill>
 	<skill id="2236" levels="1" name="Chapel Key">
 		<!-- Confirmed CT2.5 -->
@@ -2061,9 +2061,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="19160010,19160011" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
@@ -2087,9 +2087,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="19160012,19160013" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>
@@ -2113,9 +2113,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="23150003,23150004" />
-		</cond>
+		<conditions>
+			<condition name="OpUnlock" />
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>

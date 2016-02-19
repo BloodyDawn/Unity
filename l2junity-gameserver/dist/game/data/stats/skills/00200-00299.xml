@@ -2584,9 +2584,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>HOLYTHING</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTakeCastle="true" />
-		</cond>
+		<conditions>
+			<condition name="PossessHolything" />
+		</conditions>
 		<effects>
 			<effect name="TakeCastle">
 				<side>NEUTRAL</side>

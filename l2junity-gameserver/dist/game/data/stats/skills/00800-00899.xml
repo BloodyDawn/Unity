@@ -1927,12 +1927,12 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2721">
-			<player landingZone="true" />
-		</cond>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>260</transformId>
+			</condition>
+			<condition name="SoulSaved">
+				<amount>20</amount>
 			</condition>
 		</conditions>
 		<effects>

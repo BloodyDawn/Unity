@@ -782,12 +782,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>HOLYTHING</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTakeCastle="true" />
-		</cond>
 		<startEffects>
 			<effect name="TakeCastleStart" />
 		</startEffects>
+		<conditions>
+			<condition name="PossessHolything" />
+		</conditions>
 		<effects>
 			<effect name="TakeCastle">
 				<side>LIGHT</side>
@@ -808,12 +808,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>HOLYTHING</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canTakeCastle="true" />
-		</cond>
 		<startEffects>
 			<effect name="TakeCastleStart" />
 		</startEffects>
+		<conditions>
+			<condition name="PossessHolything" />
+		</conditions>
 		<effects>
 			<effect name="TakeCastle">
 				<side>DARK</side>
