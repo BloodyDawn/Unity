@@ -1641,9 +1641,13 @@
 		<reuseDelay>300000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond addName="1" msgId="113">
-			<player hp="70" />
-		</cond>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>70</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -1905,9 +1909,13 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player hp="70" />
-		</cond>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>20</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">

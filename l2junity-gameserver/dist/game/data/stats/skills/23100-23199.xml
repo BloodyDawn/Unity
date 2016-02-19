@@ -1321,6 +1321,11 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpNeedAgathion" />
+			<condition name="RemainHpPer">
+				<amount>30</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Invincible" />

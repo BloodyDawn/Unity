@@ -1731,6 +1731,13 @@
 		<reuseDelay>480000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>20</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9454" levels="1" name="Item Skill: Silence">
 		<!-- AUTO GENERATED SKILL -->

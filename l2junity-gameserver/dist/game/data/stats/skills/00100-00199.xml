@@ -1910,9 +1910,16 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player hp="#hp" />
-		</cond>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>
+					<value fromLevel="1" toLevel="5">60</value>
+					<value fromLevel="6" toLevel="9">90</value>
+				</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2815,9 +2822,16 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player hp="#hp" />
-		</cond>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>
+					<value fromLevel="1" toLevel="5">60</value>
+					<value fromLevel="6" toLevel="9">90</value>
+				</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -2949,9 +2963,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player hp="10" />
-		</cond>
+		<conditions>
+			<condition name="RemainHpPer">
+				<amount>10</amount>
+				<percentType>LESS</percentType>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
