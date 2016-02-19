@@ -1847,12 +1847,12 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RestorationRandom" fromLevel="2" toLevel="4">
 				<items>
@@ -5425,12 +5425,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="492" levels="25" name="Spread Wing">
 		<!-- Confirmed CT2.5 -->

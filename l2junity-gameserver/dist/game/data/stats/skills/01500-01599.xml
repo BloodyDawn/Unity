@@ -3924,17 +3924,12 @@
 		<reuseDelayGroup>1566</reuseDelayGroup>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="3574">
-			<and>
-				<player canSwitchSubClass="0" />
-				<not>
-					<player active_effect_id="1570" />
-				</not>
-				<player invSize="10" />
-				<player weight="90" />
-				<player inInstance="false" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ClassChange">
 				<index>0</index>
@@ -3960,17 +3955,12 @@
 		<reuseDelayGroup>1566</reuseDelayGroup>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="3574">
-			<and>
-				<player canSwitchSubClass="1" />
-				<not>
-					<player active_effect_id="1570" />
-				</not>
-				<player invSize="10" />
-				<player weight="90" />
-				<player inInstance="false" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ClassChange">
 				<index>1</index>
@@ -3996,17 +3986,12 @@
 		<reuseDelayGroup>1566</reuseDelayGroup>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="3574">
-			<and>
-				<player canSwitchSubClass="2" />
-				<not>
-					<player active_effect_id="1570" />
-				</not>
-				<player invSize="10" />
-				<player weight="90" />
-				<player inInstance="false" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ClassChange">
 				<index>2</index>
@@ -4032,17 +4017,12 @@
 		<reuseDelayGroup>1566</reuseDelayGroup>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="3574">
-			<and>
-				<player canSwitchSubClass="3" />
-				<not>
-					<player active_effect_id="1570" />
-				</not>
-				<player invSize="10" />
-				<player weight="90" />
-				<player inInstance="false" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ClassChange">
 				<index>3</index>
