@@ -837,12 +837,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Restoration">
 				<itemId>15352</itemId>

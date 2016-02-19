@@ -491,6 +491,9 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpPeacezone" />
+		</conditions>
 	</skill>
 	<skill id="13348" levels="1" name="Hand">
 		<!-- AUTO GENERATED SKILL -->
@@ -508,6 +511,9 @@
 		<coolTime>200</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpPeacezone" />
+		</conditions>
 	</skill>
 	<skill id="13349" levels="1" name="Talisman (R-grade) - Damage Reflect Resistance (Active)">
 		<!-- AUTO GENERATED SKILL -->
@@ -564,6 +570,9 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="13352" levels="1" name="Increase Hair Accessory Weight Gauge">
 		<!-- AUTO GENERATED SKILL -->
@@ -873,6 +882,7 @@
 				<maxLevel>99</maxLevel>
 				<affectType>CASTER</affectType>
 			</condition>
+			<condition name="OpMainjob" />
 		</conditions>
 	</skill>
 	<skill id="13376" levels="1" name="XP Bottle's Divine Power">

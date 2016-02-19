@@ -953,9 +953,9 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16031" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5536" levels="1" name="Little Devil Agathion Cute Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -968,9 +968,9 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16032" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5537" levels="1" name="Rudolph Cuteness Trick">
 		<icon>icon.skill_agathion_cute</icon>
@@ -983,9 +983,9 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16033" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5538" levels="1" name="Little Angel Agathion Special Skill: Firecrackers">
 		<icon>icon.skill_agathion_special</icon>
@@ -998,9 +998,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16031" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5539" levels="1" name="Little Angel Agathion Special Skill: Mysterious Power">
 		<abnormalLvl>0</abnormalLvl>
@@ -1020,9 +1020,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16031" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5540" levels="1" name="Little Angel Agathion Special Skill: Blessed Escape">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1037,16 +1037,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1069,12 +1062,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16031" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -1092,9 +1085,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16032" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5543" levels="1" name="Little Devil Agathion Special Skill: Mysterious Power">
 		<abnormalLvl>0</abnormalLvl>
@@ -1114,9 +1107,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16032" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5544" levels="1" name="Little Devil Agathion Special Skill: Blessed Escape">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1131,16 +1124,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1163,12 +1149,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16032" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>

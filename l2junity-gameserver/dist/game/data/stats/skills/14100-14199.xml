@@ -88,6 +88,9 @@
 		<hitTime>3000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="14103" levels="1" name="Agathion Return - Magmeld Fairy">
 		<!-- AUTO GENERATED SKILL -->
@@ -102,6 +105,9 @@
 		<reuseDelay>1800000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="14104" levels="1" name="Transformed: Orbis' Curse">
 		<!-- AUTO GENERATED SKILL -->
@@ -2203,6 +2209,7 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
 	<skill id="14188" levels="1" name="Millipede's Gas">

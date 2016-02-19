@@ -367,12 +367,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Restoration">
 				<itemId>14676</itemId>
@@ -394,12 +391,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Restoration">
 				<itemId>14677</itemId>
@@ -444,9 +438,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16063" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6125" levels="1" name="Paralysis">
 		<!-- Summon Binding Cubic Skill Effect -->
@@ -691,9 +685,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16064" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6137" levels="1" name="Agathion Juju - Mysterious Effect">
 		<abnormalLvl>0</abnormalLvl>
@@ -715,6 +709,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6138" levels="1" name="Agathion Juju - Large Firecracker">
 		<hitTime>1500</hitTime>
@@ -728,6 +725,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6139" levels="1" name="Fake Tears">
 		<abnormalLvl>1</abnormalLvl>
@@ -1784,6 +1784,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
 	<skill id="6197" levels="1" name="Agathion Cute Trick - Oink Oink">
@@ -1797,9 +1798,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16065" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6198" levels="1" name="Agathion Cute Trick - Light of the Dawn">
 		<icon>icon.skill_agathion_cute</icon>
@@ -1812,6 +1813,9 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6199" levels="7" name="Tail Strike">
 		<table name="#power"> 1832 2272 2751 3252 3752 4224 4640 </table>

@@ -11,9 +11,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1501" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23001" levels="1" name="Gold Majo Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -26,9 +26,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1502" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23002" levels="1" name="Black Majo Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -41,9 +41,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1503" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23003" levels="1" name="Plaipitak Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -56,9 +56,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1504" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23004" levels="1" name="Majo Agathion Special Skill: Mysterious Power">
 		<abnormalLvl>0</abnormalLvl>
@@ -80,9 +80,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1501" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23005" levels="1" name="Gold Majo Agathion Special Skill: Blessed Resurrection">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -99,12 +99,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1502" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -124,16 +124,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -161,9 +154,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1504" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23008" levels="1" name="Plaipitak Agathion Special Skill: Blessed Escape">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -178,16 +171,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -210,12 +196,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1504" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -233,9 +219,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1505" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23011" levels="1" name="Bamboo Panda Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -248,9 +234,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1506" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23012" levels="1" name="Sexy Panda Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -263,9 +249,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1507" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23013" levels="1" name="Baby Panda Agathion Special Skill: Mysterious Power">
 		<abnormalLvl>0</abnormalLvl>
@@ -287,9 +273,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1505" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23014" levels="1" name="Bamboo Panda Agathion Special Skill: Blessed Resurrection">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -306,12 +292,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1506" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -331,16 +317,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -373,6 +352,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -662,6 +642,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -681,9 +662,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1508" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23026" levels="1" name="Naughty Cupid Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -696,9 +677,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1509" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23027" levels="1" name="White Maneki Neko Agathion Cute Trick I">
 		<hitTime>3000</hitTime>
@@ -711,9 +692,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1510" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23028" levels="1" name="Black Maneki Neko Agathion Cute Trick I">
 		<hitTime>3000</hitTime>
@@ -726,9 +707,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1511" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23029" levels="1" name="Brown Maneki Neko Agathion Cute Trick I">
 		<hitTime>3000</hitTime>
@@ -741,9 +722,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1512" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23030" levels="1" name="White Maneki Neko Agathion Special Skill: Ability of Blessed Resurrection">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -760,12 +741,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1510" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -785,16 +766,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -828,6 +802,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -847,9 +822,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1513" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23034" levels="1" name="One-eyed Bat Drove Agathion Special Skill: Ability of Dark Attack Resistance">
 		<!-- Increases resistance to darkness type attacks by 30% for 5 minutes. Reuse Delay 1 hours -->
@@ -873,9 +848,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1513" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>
@@ -909,6 +884,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -928,9 +904,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1514" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23037" levels="1" name="Pegasus Agathion Special Skill: Ability of Wind Walk">
 		<!-- Increases moving speed by 33 for 5 minutes. Reuse Delay 4 hours -->
@@ -954,9 +930,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1514" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>33</amount>
@@ -977,16 +953,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1005,9 +974,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1515" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23040" levels="1" name="Blue-robed Tojigong Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1020,9 +989,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1516" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23041" levels="1" name="Green-robed Tojigong Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1035,9 +1004,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1517" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23042" levels="1" name="Yellow-robed Tojigong Agathion Special Skill: Ability of Greater Heal">
 		<!-- Recovers HP by 444 and increases HP Recovery by 30 for 15 seconds. Reuse Delay 4 hours -->
@@ -1061,9 +1030,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1515" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>444</power>
@@ -1096,9 +1065,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1516" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="DamageShield">
 				<amount>20</amount>
@@ -1128,9 +1097,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1517" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MpRegen">
 				<amount>3</amount>
@@ -1149,9 +1118,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1518" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23046" levels="1" name="White Maneki Neko Agathion Cute Trick II">
 		<hitTime>3000</hitTime>
@@ -1164,9 +1133,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1510" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23047" levels="1" name="Black Maneki Neko Agathion Cute Trick II">
 		<hitTime>3000</hitTime>
@@ -1179,9 +1148,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1511" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23048" levels="1" name="Brown Maneki Neko Agathion Cute Trick II">
 		<hitTime>3000</hitTime>
@@ -1194,9 +1163,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1512" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23049" levels="1" name="Red Sumo Wrestler Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1209,9 +1178,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1519" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23050" levels="1" name="Blue Sumo Wrestler Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1224,9 +1193,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1520" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23051" levels="1" name="Great Sumo Match Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1239,9 +1208,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1521" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23052" levels="1" name="Button-eyed Bear Doll Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1254,9 +1223,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1522" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23053" levels="1" name="God of Fortune Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1269,9 +1238,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1523" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23054" levels="1" name="Agathion Cute Trick - Dryad">
 		<hitTime>3000</hitTime>
@@ -1284,9 +1253,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1524" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23055" levels="1" name="Wonboso Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1299,9 +1268,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1525" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23056" levels="1" name="Daewoonso Agathion Cute Trick">
 		<hitTime>3000</hitTime>
@@ -1314,9 +1283,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1526" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23057" levels="1" name="Red Sumo Wrestler Agathion Special Skill: Death Whisper Ability">
 		<!-- Increases Critical attack power by 35% for 5 minutes. Reuse Delay 1 hours -->
@@ -1337,9 +1306,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1519" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>35</amount>
@@ -1366,9 +1335,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1520" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MagicCriticalRate">
 				<amount>2</amount>
@@ -1398,9 +1367,9 @@
 		<trait>ETC</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1521" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23060" levels="1" name="Great Sumo Match Agathion Special Skill: Firecracker's Power">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1414,9 +1383,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1521" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23061" levels="1" name="Button-eyed Bear Doll Agathion Special Skill: Ability of Blessed Escape">
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -1431,16 +1400,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
-		</cond>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1463,12 +1425,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1522" />
-		</cond>
 		<cond>
 			<player canResurrect="true" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -1501,6 +1463,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -1535,6 +1498,7 @@
 		<conditions>
 			<condition name="CanRestoreVitalPoint" />
 			<condition name="CanUseVitalityConsumeItem" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="VitalityPointsRate">
@@ -1562,9 +1526,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1525" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>20</amount>
@@ -1585,15 +1549,12 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
 		<cond msgId="2292">
 			<player agathionId="1526" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -1624,9 +1585,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1527" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23068" levels="1" name="Pomona Agathion Special Skill: Mental Shield">
 		<!-- Confirmed CT2.5 -->
@@ -1646,9 +1607,9 @@
 		<icon>icon.skill_agathion_special</icon>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1527" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="DefenceTrait">
 				<HOLD>50</HOLD>
@@ -1875,9 +1836,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1528" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23077" levels="1" name="Weaver Agathion Special Skill: Power of the Golden Calf">
 		<!-- Confirmed CT2.5 -->
@@ -1906,9 +1867,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="2292">
-			<player agathionId="1528" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MaxHp">
 				<amount>60</amount>
@@ -1982,9 +1943,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="2292">
-			<player agathionId="1528" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MaxHp">
 				<amount>40</amount>
@@ -2043,9 +2004,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1529" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23080" levels="1" name="Lucky Girl Agathion Special Skill: Brave Warrior's Soul Power">
 		<!-- Confirmed CT2.5 -->
@@ -2066,9 +2027,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1529" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2104,9 +2065,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1530" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23082" levels="1" name="Lucky Boy Agathion Special Skill: Great Magician Soul's Ability">
 		<!-- Confirmed CT2.5 -->
@@ -2127,9 +2088,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1530" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MAtk">
 				<amount>20</amount>
@@ -2165,9 +2126,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1531" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23084" levels="1" name="Dancing Child Agathion Special Skill: Prominent Adventurer Soul's Ability">
 		<!-- Confirmed CT2.5 -->
@@ -2188,9 +2149,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1531" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>
@@ -2226,9 +2187,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1532" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23086" levels="1" name="Great Wizard's Soul Power">
 		<!-- Confirmed CT2.5 -->
@@ -2249,9 +2210,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1532" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MAtk">
 				<amount>20</amount>
@@ -2287,9 +2248,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1533" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23088" levels="1" name="Uthanka Agathion Special Skill: Brave Warrior's Soul Power">
 		<!-- Confirmed CT2.5 -->
@@ -2310,9 +2271,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1533" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2348,9 +2309,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1534" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="23090" levels="1" name="Bonus B Agathion Special Skill: Prominent Adventurer Soul's Ability">
 		<!-- Confirmed CT2.5 -->
@@ -2371,9 +2332,9 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="1534" />
-		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>

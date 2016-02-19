@@ -25,18 +25,18 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class OpNeedAgathionSkillCondition implements ISkillCondition
 {
 	public OpNeedAgathionSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		return caster.isPlayer() && (caster.getActingPlayer().getAgathionId() != 0);
 	}
 }

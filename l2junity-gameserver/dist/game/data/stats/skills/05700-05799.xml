@@ -2365,6 +2365,9 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5764" levels="1" name="Terror of the Pumpkin Ghost">
 		<abnormalLvl>1</abnormalLvl>
@@ -2728,12 +2731,12 @@
 		<channelingTickInterval>5800</channelingTickInterval>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="2292">
-			<player agathionId="16061" />
-		</cond>
 		<cond msgId="109">
 			<target npcId="18678, 18679, 18680, 18681, 18682, 18683" />
 		</cond>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5781" levels="1" name="Presentation - Lindvior Approach">
 		<!-- Confirmed CT2.5 -->
