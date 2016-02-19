@@ -199,12 +199,15 @@ public class Options
 	public void remove(PlayerInstance player)
 	{
 		player.sendDebugMessage("Deactivating option id: " + _id);
-		for (BuffInfo info : player.getEffectList().getOptions())
+		if (hasEffects())
 		{
-			if (info.getOption() == this)
+			for (BuffInfo info : player.getEffectList().getOptions())
 			{
-				player.sendDebugMessage("Removing effects: " + info.getEffects());
-				player.getEffectList().remove(false, info, this);
+				if (info.getOption() == this)
+				{
+					player.sendDebugMessage("Removing effects: " + info.getEffects());
+					player.getEffectList().remove(false, info, this);
+				}
 			}
 		}
 		if (hasActiveSkill())
