@@ -1439,6 +1439,9 @@
 		<conditions>
 			<condition name="OpCallPc" />
 			<condition name="OpCanEscape" />
+			<condition name="OpHaveSummonedNpc">
+				<npcId>13354</npcId>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
