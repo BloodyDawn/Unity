@@ -1870,9 +1870,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player hasSummon="true" />
-		</cond>
+		<conditions>
+			<condition name="OpHaveSummon" />
+		</conditions>
 		<effects>
 			<effect name="Invincible">
 			</effect>
@@ -2710,6 +2710,9 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpHaveSummon" />
+		</conditions>
 		<effects>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
 			<effect name="ServitorShare">

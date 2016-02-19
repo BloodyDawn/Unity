@@ -3424,9 +3424,9 @@
 		<!-- Should be self -->
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player hasSummon="true" />
-		</cond>
+		<conditions>
+			<condition name="OpHaveSummon" />
+		</conditions>
 		<effects>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
 			<effect name="ServitorShare">
