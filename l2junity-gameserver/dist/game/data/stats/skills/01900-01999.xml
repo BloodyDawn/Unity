@@ -2135,9 +2135,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond addName="1" msgId="113">
-			<target player="true" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalMute" />
 		</effects>
@@ -2166,9 +2166,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond addName="1" msgId="113">
-			<target player="true" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<effects>
 			<effect name="Mute" />
 		</effects>
@@ -2200,9 +2200,9 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND_PC</affectObject>
-		<cond addName="1" msgId="113">
-			<target player="true" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>-90</amount>
