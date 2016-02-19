@@ -2247,9 +2247,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player cp="80" />
-		</cond>
+		<conditions>
+			<condition name="RemainCpPer">
+				<amount>80</amount>
+				<percentType>MORE</percentType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CpDamPercent">
 				<power>100</power>

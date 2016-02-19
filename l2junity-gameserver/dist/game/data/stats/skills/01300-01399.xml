@@ -827,6 +827,10 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanUseInBattlefield" />
+			<condition name="RemainCpPer">
+				<amount>50</amount>
+				<percentType>MORE</percentType>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="DefenceTrait">
@@ -884,6 +888,10 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="CanUseInBattlefield" />
+			<condition name="RemainCpPer">
+				<amount>50</amount>
+				<percentType>MORE</percentType>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="DefenceTrait">

@@ -18,7 +18,6 @@
  */
 package handlers.skillconditionhandlers;
 
-import org.l2junity.gameserver.enums.SkillConditionAffectType;
 import org.l2junity.gameserver.enums.SkillConditionPercentType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
@@ -33,33 +32,16 @@ public class RemainCpPerSkillCondition implements ISkillCondition
 {
 	private final int _amount;
 	private final SkillConditionPercentType _percentType;
-	private final SkillConditionAffectType _affectType;
 	
 	public RemainCpPerSkillCondition(StatsSet params)
 	{
 		_amount = params.getInt("amount");
 		_percentType = params.getEnum("percentType", SkillConditionPercentType.class);
-		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 	}
 	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		switch (_affectType)
-		{
-			case CASTER:
-			{
-				return _percentType.test(caster.getCurrentCpPercent(), _amount);
-			}
-			case TARGET:
-			{
-				if ((target != null) && target.isCreature())
-				{
-					return _percentType.test(((Creature) target).getCurrentCpPercent(), _amount);
-				}
-				break;
-			}
-		}
-		return false;
+		return _percentType.test(caster.getCurrentCpPercent(), _amount);
 	}
 }
