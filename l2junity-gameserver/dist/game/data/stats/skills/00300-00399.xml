@@ -1250,9 +1250,9 @@
 		<specialLevel>-1</specialLevel>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player SiegeZone="126" /> <!-- TODO: add new condition -->
-		</cond>
+		<targetConditions>
+			<condition name="OpSiegeHammer" />
+		</targetConditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>15005</power>

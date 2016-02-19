@@ -2743,9 +2743,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target race="KAMAEL" />
-		</cond>
+		<targetConditions>
+			<condition name="TargetRace">
+				<race>KAMAEL</race>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="SoulSaved">
 				<amount>1</amount>

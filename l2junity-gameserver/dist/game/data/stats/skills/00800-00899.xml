@@ -1294,9 +1294,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target race="CONSTRUCT" />
-		</cond>
+		<targetConditions>
+			<condition name="TargetRace">
+				<race>CONSTRUCT</race>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="HealPercent">
 				<power>
@@ -1341,9 +1343,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target race="CONSTRUCT" />
-		</cond>
+		<targetConditions>
+			<condition name="TargetRace">
+				<race>CONSTRUCT</race>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>
@@ -1397,9 +1401,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target race="CONSTRUCT" />
-		</cond>
+		<targetConditions>
+			<condition name="TargetRace">
+				<race>CONSTRUCT</race>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="MaxHp">
 				<amount>
