@@ -404,6 +404,11 @@
 		<conditions>
 			<condition name="CanSummonCubic" />
 		</conditions>
+		<targetConditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</targetConditions>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- On retail activated every ~2 attacks with ~2sec cooldown -->

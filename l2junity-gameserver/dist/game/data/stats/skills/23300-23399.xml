@@ -2025,6 +2025,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>DOT_ATTR</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23396" levels="1" name="Jermann - Freezing Cold">
 		<!-- AUTO GENERATED SKILL -->

@@ -280,6 +280,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>20017</transformId>
@@ -307,6 +314,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="OpCannotUseTargetWithPrivateStore" />
 		</conditions>
@@ -328,6 +342,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="OpCannotUseTargetWithPrivateStore" />
 		</conditions>
@@ -354,6 +375,13 @@
 		<reuseDelay>60000</reuseDelay>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="OpCannotUseTargetWithPrivateStore" />
 		</conditions>
@@ -506,6 +534,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>TRANSFORM</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="OpCannotUseTargetWithPrivateStore" />
 		</conditions>
@@ -552,6 +592,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="OpCannotUseTargetWithPrivateStore" />
 		</conditions>
@@ -577,6 +624,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 		<conditions>
 			<condition name="OpCannotUseTargetWithPrivateStore" />
 		</conditions>
@@ -602,6 +656,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF7</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23527" levels="1" name="Zombie Shaman's Curse">
 		<!-- AUTO GENERATED SKILL -->
@@ -638,6 +699,13 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23529" levels="1" name="Event Campaign - Zombie Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -657,6 +725,13 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23530" levels="1" name="Event Campaign - Zombie Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -676,6 +751,13 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23531" levels="1" name="Event Campaign - Zombie Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -695,6 +777,13 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23532" levels="1" name="Start Event">
 		<!-- AUTO GENERATED SKILL -->
@@ -709,6 +798,13 @@
 		<castRange>2000</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23533" levels="1" name="Start Event">
 		<!-- AUTO GENERATED SKILL -->
@@ -723,6 +819,13 @@
 		<castRange>2000</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23534" levels="1" name="Start Event">
 		<!-- AUTO GENERATED SKILL -->
@@ -737,6 +840,13 @@
 		<castRange>2000</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23535" levels="1" name="Start Event">
 		<!-- AUTO GENERATED SKILL -->
@@ -751,6 +861,13 @@
 		<castRange>2000</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>BR_EVENT_BUF6</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23536" levels="1" name="Elixir of Blessing - Horn Melody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1447,6 +1564,13 @@
 		<affectRange>3000</affectRange>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
+		<targetConditions>
+			<condition name="OpCheckAbnormal">
+				<type>TRANSFORM</type>
+				<level>30</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</targetConditions>
 	</skill>
 	<skill id="23568" levels="1" name="Monster Dueling">
 		<!-- AUTO GENERATED SKILL -->
