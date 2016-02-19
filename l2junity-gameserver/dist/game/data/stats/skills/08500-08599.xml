@@ -1943,6 +1943,21 @@
 		<isMagic>1</isMagic>
 		<targetType>GROUND</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>13018</item>
+					<item>13019</item>
+					<item>13020</item>
+					<item>13021</item>
+					<item>13022</item>
+					<item>13023</item>
+					<item>13024</item>
+				</npcIds>
+				<range>200</range>
+				<isAround>false</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DispelBySlotMyself">
 				<dispel>MAGICAL_STANCE</dispel>

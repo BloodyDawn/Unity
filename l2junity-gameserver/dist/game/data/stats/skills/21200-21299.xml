@@ -1485,6 +1485,15 @@
 		<reuseDelay>86400000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>5008</item>
+				</npcIds>
+				<range>1000</range>
+				<isAround>true</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>

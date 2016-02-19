@@ -2678,9 +2678,15 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player npcIdRadius="13052,150,false" />
-		</cond>
+		<conditions>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>13052</item>
+				</npcIds>
+				<range>150</range>
+				<isAround>false</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SummonTrap">
 				<npcId>13052</npcId>
@@ -2703,9 +2709,15 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player npcIdRadius="13037,150,false" />
-		</cond>
+		<conditions>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>13037</item>
+				</npcIds>
+				<range>150</range>
+				<isAround>false</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SummonTrap">
 				<npcId>13037</npcId>
@@ -2734,9 +2746,15 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player npcIdRadius="13057,150,false" />
-		</cond>
+		<conditions>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>13057</item>
+				</npcIds>
+				<range>150</range>
+				<isAround>false</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SummonTrap">
 				<npcId>13326</npcId>
@@ -2759,9 +2777,15 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player npcIdRadius="13057,150,false" />
-		</cond>
+		<conditions>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>13057</item>
+				</npcIds>
+				<range>150</range>
+				<isAround>false</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SummonTrap">
 				<npcId>13327</npcId>

@@ -377,15 +377,19 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-		<cond msgId="113" addName="1">
-			<player npcIdRadius="32529,300,true" />
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+			<condition name="OpExistNpc">
+				<npcIds>
+					<item>32529</item>
+				</npcIds>
+				<range>300</range>
+				<isAround>true</isAround>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Restoration">
 				<itemId>13854</itemId>
