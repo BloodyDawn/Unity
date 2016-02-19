@@ -409,6 +409,11 @@
 		<castRange>900</castRange>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18672</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2617" levels="1" name="Stun Planter">
 		<abnormalLvl>1</abnormalLvl>
@@ -426,6 +431,11 @@
 		<castRange>900</castRange>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18672</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2618" levels="1" name="Stun Land Mine">
 		<abnormalLvl>1</abnormalLvl>
@@ -623,12 +633,19 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player flyMounted="true" />
-				<target npcId="18684,18685,18686,18687,18688,18689,18690,18691,18692" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18684</npcId>
+				<npcId>18685</npcId>
+				<npcId>18686</npcId>
+				<npcId>18687</npcId>
+				<npcId>18688</npcId>
+				<npcId>18689</npcId>
+				<npcId>18690</npcId>
+				<npcId>18691</npcId>
+				<npcId>18692</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2631" levels="1" name="Transformation Scroll: Frog">
 		<abnormalLvl>1</abnormalLvl>

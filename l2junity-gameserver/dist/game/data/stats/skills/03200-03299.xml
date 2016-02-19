@@ -2379,9 +2379,20 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13031,13032,13033,13034,13035,13120,13121,13122,13123,13124" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>13031</npcId>
+				<npcId>13032</npcId>
+				<npcId>13033</npcId>
+				<npcId>13034</npcId>
+				<npcId>13035</npcId>
+				<npcId>13120</npcId>
+				<npcId>13121</npcId>
+				<npcId>13122</npcId>
+				<npcId>13123</npcId>
+				<npcId>13124</npcId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RealDamage">
 				<power>100</power>
@@ -2425,9 +2436,20 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13031,13032,13033,13034,13035,13120,13121,13122,13123,13124" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>13031</npcId>
+				<npcId>13032</npcId>
+				<npcId>13033</npcId>
+				<npcId>13034</npcId>
+				<npcId>13035</npcId>
+				<npcId>13120</npcId>
+				<npcId>13121</npcId>
+				<npcId>13122</npcId>
+				<npcId>13123</npcId>
+				<npcId>13124</npcId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RealDamage">
 				<power>200</power>

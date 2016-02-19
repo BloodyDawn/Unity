@@ -17,9 +17,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>DOOR_TREASURE</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="18477" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18477</npcId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="OpenChest" />
 		</effects>

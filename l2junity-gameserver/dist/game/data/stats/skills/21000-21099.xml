@@ -336,9 +336,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13183" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>100</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="21015" levels="1" name="Rock">
 		<castRange>400</castRange>
@@ -356,9 +358,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13183" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>100</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="21016" levels="1" name="Paper">
 		<castRange>400</castRange>
@@ -376,9 +380,11 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13183" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>100</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="21017" levels="1" name="Holiday Dream Weapon">
 		<icon>BranchSys.icon.br_xmas_weapon_i00</icon>

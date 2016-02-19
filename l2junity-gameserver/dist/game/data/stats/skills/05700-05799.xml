@@ -2731,11 +2731,16 @@
 		<channelingTickInterval>5800</channelingTickInterval>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18678, 18679, 18680, 18681, 18682, 18683" />
-		</cond>
 		<conditions>
 			<condition name="OpNeedAgathion" />
+			<condition name="OpTargetNpc">
+				<npcId>18678</npcId>
+				<npcId>18679</npcId>
+				<npcId>18680</npcId>
+				<npcId>18681</npcId>
+				<npcId>18682</npcId>
+				<npcId>18683</npcId>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="5781" levels="1" name="Presentation - Lindvior Approach">

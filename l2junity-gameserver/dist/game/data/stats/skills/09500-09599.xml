@@ -1415,9 +1415,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<target npcId="33786" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>33786</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9580" levels="1" name="Brightest Light">
 		<!-- Brightest Light given by Nerupa in the Arms of Timiniel of Magmeld. You can use it at Shilen's Stone Statue in the Dark Elf Village. -->
@@ -1437,9 +1439,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<target npcId="33785" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>33785</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9581" levels="1" name="Purest Soul">
 		<!-- Purest Soul given by Enfeux in the Valley of Saints. You can use it at the Cave of Souls near Kamael Village. -->
@@ -1459,9 +1463,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<target npcId="33789" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>33789</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9582" levels="1" name="Fiercest Flame">
 		<!-- Fiercest Flame given by Vulcan, the Blacksmith of Flame at the Forge of the Gods. You can use it at the Pa'agrio Temple in the Orc Village. -->
@@ -1481,9 +1487,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<target npcId="33787" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>33787</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9583" levels="1" name="Fondest Heart">
 		<!-- Letter containing the fond heart of Vulcan, the Blacksmith of Flame. You can use it at the ruined Dwarven Village. -->
@@ -1503,9 +1511,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<target npcId="33788" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>33788</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9584" levels="1" name="Verna's Vaccine">
 		<!-- AUTO GENERATED SKILL -->
@@ -1524,6 +1534,11 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19296</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9585" levels="1" name="Chef's Sand Spray">
 		<!-- AUTO GENERATED SKILL -->
@@ -1561,6 +1576,11 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19380</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9587" levels="1" name="Destroy Destroyer Robot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1577,6 +1597,11 @@
 		<hitTime>1000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19381</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9588" levels="1" name="Repair Crystal-gathering Robot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1594,6 +1619,11 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19380</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9589" levels="1" name="Destroy Crystal Raider">
 		<!-- AUTO GENERATED SKILL -->
@@ -1610,6 +1640,11 @@
 		<hitTime>1000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19385</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9590" levels="1" name="Attack Silvermane White Tiger">
 		<!-- AUTO GENERATED SKILL -->
@@ -1626,6 +1661,11 @@
 		<hitTime>1000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19367</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9591" levels="1" name="Repair Toad Robot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1643,6 +1683,11 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19373</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9592" levels="1" name="Destroy Destroyer Robot">
 		<!-- AUTO GENERATED SKILL -->
@@ -1659,6 +1704,12 @@
 		<hitTime>1000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19374</npcId>
+				<npcId>19375</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9593" levels="1" name="Repair Robot of Repairs">
 		<!-- AUTO GENERATED SKILL -->
@@ -1676,6 +1727,11 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19376</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9594" levels="1" name="Mysterious Incantation">
 		<!-- AUTO GENERATED SKILL -->
@@ -1739,6 +1795,13 @@
 		<isMagic>4</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19333</npcId>
+				<npcId>19334</npcId>
+				<npcId>19335</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9597" levels="1" name="Stronghold Siege (20-second)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1755,6 +1818,13 @@
 		<isMagic>4</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19333</npcId>
+				<npcId>19334</npcId>
+				<npcId>19335</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9598" levels="1" name="Stronghold Siege (30-second)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1771,6 +1841,13 @@
 		<isMagic>4</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19333</npcId>
+				<npcId>19334</npcId>
+				<npcId>19335</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9599" levels="1" name="Stronghold Siege (40-second)">
 		<!-- AUTO GENERATED SKILL -->
@@ -1787,5 +1864,12 @@
 		<isMagic>4</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>19333</npcId>
+				<npcId>19334</npcId>
+				<npcId>19335</npcId>
+			</condition>
+		</conditions>
 	</skill>
 </list>

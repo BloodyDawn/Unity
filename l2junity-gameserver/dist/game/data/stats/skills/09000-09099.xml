@@ -118,9 +118,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="13270" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>13270</npcId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>1</power>
@@ -571,6 +573,11 @@
 		<castRange>200</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>13270</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9029" levels="1" name="Watermelon Seed">
 		<!-- Confirmed CT2.5 -->
@@ -3672,9 +3679,38 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18873,18874,18875,18876,18877,18878,18879,18880,18881,18882,18883,18884,18885,18886,18887,18888,18889,18890,18891,18892,18893,18894,18895,18896,18897,18898,18899,18900" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18873</npcId>
+				<npcId>18874</npcId>
+				<npcId>18875</npcId>
+				<npcId>18876</npcId>
+				<npcId>18877</npcId>
+				<npcId>18878</npcId>
+				<npcId>18879</npcId>
+				<npcId>18880</npcId>
+				<npcId>18881</npcId>
+				<npcId>18882</npcId>
+				<npcId>18883</npcId>
+				<npcId>18884</npcId>
+				<npcId>18885</npcId>
+				<npcId>18886</npcId>
+				<npcId>18887</npcId>
+				<npcId>18888</npcId>
+				<npcId>18889</npcId>
+				<npcId>18890</npcId>
+				<npcId>18891</npcId>
+				<npcId>18892</npcId>
+				<npcId>18893</npcId>
+				<npcId>18894</npcId>
+				<npcId>18895</npcId>
+				<npcId>18896</npcId>
+				<npcId>18897</npcId>
+				<npcId>18898</npcId>
+				<npcId>18899</npcId>
+				<npcId>18900</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9050" levels="1" name="Crystal Spice">
 		<castRange>400</castRange>
@@ -3692,9 +3728,38 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18873,18874,18875,18876,18877,18878,18879,18880,18881,18882,18883,18884,18885,18886,18887,18888,18889,18890,18891,18892,18893,18894,18895,18896,18897,18898,18899,18900" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18873</npcId>
+				<npcId>18874</npcId>
+				<npcId>18875</npcId>
+				<npcId>18876</npcId>
+				<npcId>18877</npcId>
+				<npcId>18878</npcId>
+				<npcId>18879</npcId>
+				<npcId>18880</npcId>
+				<npcId>18881</npcId>
+				<npcId>18882</npcId>
+				<npcId>18883</npcId>
+				<npcId>18884</npcId>
+				<npcId>18885</npcId>
+				<npcId>18886</npcId>
+				<npcId>18887</npcId>
+				<npcId>18888</npcId>
+				<npcId>18889</npcId>
+				<npcId>18890</npcId>
+				<npcId>18891</npcId>
+				<npcId>18892</npcId>
+				<npcId>18893</npcId>
+				<npcId>18894</npcId>
+				<npcId>18895</npcId>
+				<npcId>18896</npcId>
+				<npcId>18897</npcId>
+				<npcId>18898</npcId>
+				<npcId>18899</npcId>
+				<npcId>18900</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9051" levels="1" name="Blessed Golden Spice">
 		<castRange>400</castRange>
@@ -3712,9 +3777,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18873,18880,18887,18894" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18873</npcId>
+				<npcId>18880</npcId>
+				<npcId>18887</npcId>
+				<npcId>18894</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9052" levels="1" name="Blessed Crystal Spice">
 		<castRange>400</castRange>
@@ -3732,9 +3802,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18873,18880,18887,18894" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18873</npcId>
+				<npcId>18880</npcId>
+				<npcId>18887</npcId>
+				<npcId>18894</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9053" levels="1" name="Golden Spice (S-grade)">
 		<castRange>400</castRange>
@@ -3752,9 +3827,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18873,18880,18887,18894" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18873</npcId>
+				<npcId>18880</npcId>
+				<npcId>18887</npcId>
+				<npcId>18894</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9054" levels="1" name="Crystal Spice (S-grade)">
 		<castRange>400</castRange>
@@ -3772,9 +3852,14 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18873,18880,18887,18894" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18873</npcId>
+				<npcId>18880</npcId>
+				<npcId>18887</npcId>
+				<npcId>18894</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9055" levels="1" name="Golden Spice Capsule">
 		<!-- Confirmed CT2.5 -->
@@ -5134,6 +5219,17 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>13286</npcId>
+				<npcId>13287</npcId>
+				<npcId>13288</npcId>
+				<npcId>13289</npcId>
+				<npcId>13290</npcId>
+				<npcId>13291</npcId>
+				<npcId>13196</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9089" levels="1" name="Cupid's Major Cure">
 		<effectPoint>-1000</effectPoint>
@@ -5152,6 +5248,17 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>13286</npcId>
+				<npcId>13287</npcId>
+				<npcId>13288</npcId>
+				<npcId>13289</npcId>
+				<npcId>13290</npcId>
+				<npcId>13291</npcId>
+				<npcId>13196</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9090" levels="1" name="Fighter's Will">
 		<!-- Confirmed CT2.5 -->

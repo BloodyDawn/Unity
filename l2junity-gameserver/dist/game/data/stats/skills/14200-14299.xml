@@ -566,9 +566,13 @@
 		<reuseDelay>20000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="29195,29196,19036" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>29195</npcId>
+				<npcId>29196</npcId>
+				<npcId>19036</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="14225" levels="8" name="Control Stage 1">
 		<!-- Glory Days confirmed -->

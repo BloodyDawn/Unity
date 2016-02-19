@@ -1431,9 +1431,11 @@
 		<reuseDelay>6000</reuseDelay>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<target npcId="33735" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>33735</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="9443" levels="1" name="Empty Hot Spring Water Bottle">
 		<!-- Gathers Water from the Hot Springs. -->
@@ -1484,6 +1486,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanNotUseAirship" />
+			<condition name="OpTargetNpc">
+				<npcId>19293</npcId>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Restoration">

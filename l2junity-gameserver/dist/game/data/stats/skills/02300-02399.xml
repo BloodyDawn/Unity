@@ -1407,9 +1407,31 @@
 		<effectRange>650</effectRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="35685,35723,35754,35792,35823,35854,35892,35923,35961,35999,36030,36068,36106,36137,36168,36206,36244,36282,36313,36351,36389" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>35685</npcId>
+				<npcId>35723</npcId>
+				<npcId>35754</npcId>
+				<npcId>35792</npcId>
+				<npcId>35823</npcId>
+				<npcId>35854</npcId>
+				<npcId>35892</npcId>
+				<npcId>35923</npcId>
+				<npcId>35961</npcId>
+				<npcId>35999</npcId>
+				<npcId>36030</npcId>
+				<npcId>36068</npcId>
+				<npcId>36106</npcId>
+				<npcId>36137</npcId>
+				<npcId>36168</npcId>
+				<npcId>36206</npcId>
+				<npcId>36244</npcId>
+				<npcId>36282</npcId>
+				<npcId>36313</npcId>
+				<npcId>36351</npcId>
+				<npcId>36389</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2343" levels="1" name="Gate Key: Kamael">
 		<afterEffectId>1</afterEffectId> <!-- Hack to keep doors opened -->
@@ -1833,12 +1855,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player flyMounted="false" />
-				<target npcId="29099" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>29099</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2361" levels="1" name="Evolving Wolf's Food">
 		<!-- Confirmed CT2.5 -->
@@ -2019,9 +2040,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="18482" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18482</npcId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HealPercent">
 				<power>30</power>
@@ -2042,12 +2065,12 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player flyMounted="false" />
-				<target npcId="25534" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>25534</npcId>
+				<npcId>25535</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2370" levels="1" name="Transformation Scroll: Pig">
 		<!-- Confirmed CT2.5 -->

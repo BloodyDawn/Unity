@@ -147,9 +147,16 @@
 		<castRange>120</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target npcId="18793,18794,18795,18796,18797,18798" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18793</npcId>
+				<npcId>18794</npcId>
+				<npcId>18795</npcId>
+				<npcId>18796</npcId>
+				<npcId>18797</npcId>
+				<npcId>18798</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2906" levels="1" name="Incubation Accelerator">
 		<effectPoint>100</effectPoint>

@@ -394,9 +394,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="109">
-			<target npcId="18781" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18781</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="5823" levels="1" name="Boss Defeat">
 		<!-- Confirmed CT2.5 -->

@@ -1797,12 +1797,22 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<player flyMounted="true" />
-		</cond>
 		<cond msgId="109">
 			<target npcId="18684,18685,18686,18687,18688,18689,18690,18691,18692" />
 		</cond>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcId>18684</npcId>
+				<npcId>18685</npcId>
+				<npcId>18686</npcId>
+				<npcId>18687</npcId>
+				<npcId>18688</npcId>
+				<npcId>18689</npcId>
+				<npcId>18690</npcId>
+				<npcId>18691</npcId>
+				<npcId>18692</npcId>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="933" levels="1" name="Detection">
 		<!-- Confirmed CT2.5 -->
