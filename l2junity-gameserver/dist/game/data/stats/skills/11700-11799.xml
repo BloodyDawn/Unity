@@ -834,16 +834,16 @@
 		<hitCancelTime>3</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<not>
-					<target active_skill_id="11760" /> <!-- Cannot be used to classes that has Radiant Recharge skill -->
-				</not>
-				<not>
-					<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
-				</not>
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpSkillAcquire">
+				<skillId>11760</skillId>
+				<hasLearned>false</hasLearned>
+			</condition>
+			<condition name="OpSkillAcquire">
+				<skillId>1013</skillId>
+				<hasLearned>false</hasLearned>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
