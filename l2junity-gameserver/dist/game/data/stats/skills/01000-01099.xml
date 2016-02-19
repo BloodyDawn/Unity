@@ -2125,6 +2125,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="AttackAttribute">
 				<amount>20</amount>
@@ -2668,6 +2673,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>

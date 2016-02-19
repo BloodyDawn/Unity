@@ -113,6 +113,9 @@
 		<targetType>TARGET</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="TargetMyPledge" />
+		</conditions>
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
@@ -142,6 +145,9 @@
 		<targetType>TARGET</targetType>
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<conditions>
+			<condition name="TargetMyPledge" />
+		</conditions>
 	</skill>
 	<skill id="7007" levels="4" name="Greater Seal of Flame">
 		<!-- Needs to be done -->

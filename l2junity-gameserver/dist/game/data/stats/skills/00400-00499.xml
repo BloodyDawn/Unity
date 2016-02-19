@@ -2267,6 +2267,11 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="427" levels="1" name="Spell Stance">
 		<!-- Not Used Anymore -->
@@ -2289,6 +2294,11 @@
 		<channelingTickInterval>2000</channelingTickInterval>
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="428" levels="1" name="Inner Rhythm">
 		<icon>icon.skill0428</icon>
@@ -5352,14 +5362,14 @@
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW" />
-		</cond>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
 					<CROSSBOW />
 				</weaponType>
+			</condition>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
 			</condition>
 		</conditions>
 		<effects>

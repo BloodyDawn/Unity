@@ -172,6 +172,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCallPc" />
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="8511" levels="1" name="Blessing of Victory">
@@ -758,6 +761,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="8545" levels="1" name="Turn to Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -2389,6 +2397,11 @@
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -2470,6 +2483,11 @@
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MaxHp">
 				<amount>20</amount>

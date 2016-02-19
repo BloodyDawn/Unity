@@ -2137,9 +2137,11 @@
 		<targetType>TARGET</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<cond>
-			<target myPartyExceptMe="true" />
-		</cond>
+		<conditions>
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TransferHate" />
 		</effects>
