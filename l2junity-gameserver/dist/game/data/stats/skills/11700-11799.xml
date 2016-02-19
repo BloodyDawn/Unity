@@ -2233,9 +2233,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>
@@ -2291,9 +2291,9 @@
 			<value level="3">DEAD_PARTY_PLEDGE</value>
 		</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>

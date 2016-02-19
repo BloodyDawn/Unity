@@ -4068,9 +4068,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>
@@ -4143,6 +4143,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>

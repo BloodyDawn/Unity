@@ -3133,9 +3133,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>DEAD_UNION</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>

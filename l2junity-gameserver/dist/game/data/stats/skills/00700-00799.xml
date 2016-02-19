@@ -45,9 +45,9 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>70</power>
@@ -1547,9 +1547,9 @@
 		<staticReuse>true</staticReuse>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>

@@ -249,9 +249,9 @@
 		<coolTime>500</coolTime>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection" />
 		</effects>
@@ -759,9 +759,9 @@
 		<coolTime>500</coolTime>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>
@@ -1039,9 +1039,9 @@
 		<coolTime>500</coolTime>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>100</power>

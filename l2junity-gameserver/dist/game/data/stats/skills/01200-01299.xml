@@ -5122,9 +5122,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>DEAD_PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
 		<effects>
 			<effect name="Resurrection">
 				<power>

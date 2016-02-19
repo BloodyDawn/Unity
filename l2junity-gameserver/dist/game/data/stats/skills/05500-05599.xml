@@ -1062,11 +1062,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
 		<conditions>
 			<condition name="OpNeedAgathion" />
+			<condition name="OpResurrection" />
 		</conditions>
 		<effects>
 			<effect name="Resurrection">
@@ -1149,11 +1147,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
 		<conditions>
 			<condition name="OpNeedAgathion" />
+			<condition name="OpResurrection" />
 		</conditions>
 		<effects>
 			<effect name="Resurrection">
