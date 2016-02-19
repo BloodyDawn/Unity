@@ -34,6 +34,25 @@
 		<staticReuse>true</staticReuse>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALFIST />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
+		<targetConditions>
+			<condition name="RemainHpPer">
+				<amount>10</amount>
+				<percentType>LESS</percentType>
+				<affectType>TARGET</affectType>
+			</condition>
+		</targetConditions>
 		<pveEffects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -61,18 +80,6 @@
 				</power>
 			</effect>
 		</pvpEffects>
-		<conditions>
-			<condition name="EquipWeapon">
-				<weaponType>
-					<DUAL />
-					<POLE />
-					<SWORD />
-					<BLUNT />
-					<DUALFIST />
-					<DUALBLUNT />
-				</weaponType>
-			</condition>
-		</conditions>
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
 		<!-- Max Momentum increases to Stage 15. -->
