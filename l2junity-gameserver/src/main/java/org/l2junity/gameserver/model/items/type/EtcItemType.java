@@ -84,7 +84,8 @@ public enum EtcItemType implements ItemType
 	MULTI_ENCHT_AM,
 	MULTI_INC_PROB_ENCHT_WP,
 	MULTI_INC_PROB_ENCHT_AM,
-	SOUL_CRYSTAL;
+	SOUL_CRYSTAL,
+	ENSOUL_STONE;
 	
 	/**
 	 * @return the ID of the item after applying the mask.

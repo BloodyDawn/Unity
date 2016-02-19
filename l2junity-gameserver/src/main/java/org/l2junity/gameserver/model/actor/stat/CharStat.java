@@ -760,7 +760,8 @@ public class CharStat
 			// Collect all necessary effects
 			final CharEffectList effectList = _activeChar.getEffectList();
 			final Stream<BuffInfo> passives = effectList.hasPassives() ? effectList.getPassives().stream() : null;
-			final Stream<BuffInfo> effectsStream = Stream.concat(effectList.getEffects().stream(), passives != null ? passives : Stream.empty());
+			final Stream<BuffInfo> options = effectList.hasOptions() ? effectList.getOptions().stream() : null;
+			final Stream<BuffInfo> effectsStream = Stream.concat(effectList.getEffects().stream(), Stream.concat(passives != null ? passives : Stream.empty(), options != null ? options : Stream.empty()));
 			
 			// Call pump to each effect
 			//@formatter:off

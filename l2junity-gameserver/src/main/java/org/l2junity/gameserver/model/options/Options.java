@@ -22,9 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 
 /**
@@ -33,7 +34,7 @@ import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 public class Options
 {
 	private final int _id;
-	private final List<FuncTemplate> _funcs = new ArrayList<>();
+	private final List<AbstractEffect> _effects = new ArrayList<>();
 	
 	private SkillHolder _activeSkill = null;
 	private SkillHolder _passiveSkill = null;
@@ -53,14 +54,19 @@ public class Options
 		return _id;
 	}
 	
-	public void addFunc(FuncTemplate template)
+	public void addEffect(AbstractEffect effect)
 	{
-		_funcs.add(template);
+		_effects.add(effect);
 	}
 	
-	public List<FuncTemplate> getFunctionTemplates()
+	public List<AbstractEffect> getEffects()
 	{
-		return _funcs;
+		return _effects;
+	}
+	
+	public boolean hasEffects()
+	{
+		return !_effects.isEmpty();
 	}
 	
 	public boolean hasActiveSkill()
@@ -136,6 +142,37 @@ public class Options
 	public void apply(PlayerInstance player)
 	{
 		player.sendDebugMessage("Activating option id: " + _id);
+		if (hasEffects())
+		{
+			final BuffInfo info = new BuffInfo(player, player, null, true, null, this);
+			for (AbstractEffect effect : _effects)
+			{
+				if (effect.isInstant())
+				{
+					if (effect.calcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
+					{
+						effect.instant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
+					}
+					player.sendDebugMessage("Appling instant effect: " + effect.getClass().getSimpleName());
+				}
+				else
+				{
+					effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
+					effect.pump(player, info.getSkill());
+					
+					if (effect.canStart(info))
+					{
+						info.addEffect(effect);
+					}
+					
+					player.sendDebugMessage("Appling continious effect: " + effect.getClass().getSimpleName());
+				}
+			}
+			if (!info.getEffects().isEmpty())
+			{
+				player.getEffectList().add(info);
+			}
+		}
 		if (hasActiveSkill())
 		{
 			addSkill(player, getActiveSkill().getSkill());
@@ -155,12 +192,21 @@ public class Options
 			}
 		}
 		
+		player.getStat().recalculateStats(true);
 		player.sendSkillList();
 	}
 	
 	public void remove(PlayerInstance player)
 	{
 		player.sendDebugMessage("Deactivating option id: " + _id);
+		for (BuffInfo info : player.getEffectList().getOptions())
+		{
+			if (info.getOption() == this)
+			{
+				player.sendDebugMessage("Removing effects: " + info.getEffects());
+				player.getEffectList().remove(false, info, this);
+			}
+		}
 		if (hasActiveSkill())
 		{
 			player.removeSkill(getActiveSkill().getSkill(), false, false);
@@ -180,6 +226,7 @@ public class Options
 			}
 		}
 		
+		player.getStat().recalculateStats(true);
 		player.sendSkillList();
 	}
 	

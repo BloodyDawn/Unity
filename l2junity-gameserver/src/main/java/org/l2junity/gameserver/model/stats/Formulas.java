@@ -1806,17 +1806,17 @@ public final class Formulas
 	 */
 	public static int calcEffectAbnormalTime(Creature caster, Creature target, Skill skill)
 	{
-		int time = skill.isPassive() || skill.isToggle() ? -1 : skill.getAbnormalTime();
+		int time = (skill == null) || skill.isPassive() || skill.isToggle() ? -1 : skill.getAbnormalTime();
 		
 		// An herb buff will affect both master and servitor, but the buff duration will be half of the normal duration.
 		// If a servitor is not summoned, the master will receive the full buff duration.
-		if ((target != null) && target.isServitor() && skill.isAbnormalInstant())
+		if ((target != null) && (skill != null) && target.isServitor() && skill.isAbnormalInstant())
 		{
 			time /= 2;
 		}
 		
 		// If the skill is a mastery skill, the effect will last twice the default time.
-		if (Formulas.calcSkillMastery(caster, skill))
+		if ((skill != null) && Formulas.calcSkillMastery(caster, skill))
 		{
 			time *= 2;
 		}

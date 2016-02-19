@@ -29,8 +29,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -704,14 +702,6 @@ public class PcStat extends PlayableStat
 	protected void onRecalculateStats(boolean broadcast)
 	{
 		final PlayerInstance player = getActiveChar();
-		final Inventory inventory = player.getInventory();
-		if (inventory != null)
-		{
-			for (ItemInstance item : inventory.getPaperdollItems(ItemInstance::isAugmented))
-			{
-				item.getAugmentation().applyStats(player);
-			}
-		}
 		
 		// Upon master stats recalculation trigger pet/servitor recalculation too
 		if (player.hasPet())

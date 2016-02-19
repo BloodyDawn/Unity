@@ -268,7 +268,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Trigger any skill cast start effects.
-		_skill.applyEffectScope(EffectScope.START, new BuffInfo(_caster, _target, _skill, false, _item), true, false);
+		_skill.applyEffectScope(EffectScope.START, new BuffInfo(_caster, _target, _skill, false, _item, null), true, false);
 		
 		// Casting action is starting...
 		_caster.stopEffectsOnAction();

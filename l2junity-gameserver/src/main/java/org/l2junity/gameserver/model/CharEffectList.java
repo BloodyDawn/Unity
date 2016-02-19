@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
+import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.EffectScope;
@@ -77,6 +78,8 @@ public final class CharEffectList
 	private volatile Queue<BuffInfo> _debuffs;
 	/** Queue containing all passives for this effect list. They bypass most of the actions and they are not included in most operations. */
 	private volatile Queue<BuffInfo> _passives;
+	/** Queue containing all options for this effect list. They bypass most of the actions and they are not included in most operations. */
+	private volatile Queue<BuffInfo> _options;
 	/** Map containing the all stacked effect in progress for each abnormal type. */
 	private volatile Map<AbnormalType, BuffInfo> _stackedEffects;
 	/** Set containing all abnormal types that shouldn't be added to this creature effect list. */
@@ -224,6 +227,25 @@ public final class CharEffectList
 	}
 	
 	/**
+	 * Gets passive skills.
+	 * @return the options (augments) skills
+	 */
+	public Queue<BuffInfo> getOptions()
+	{
+		if (_options == null)
+		{
+			synchronized (this)
+			{
+				if (_options == null)
+				{
+					_options = new ConcurrentLinkedQueue<>();
+				}
+			}
+		}
+		return _options;
+	}
+	
+	/**
 	 * Gets all the effects on this effect list.
 	 * @return all the effects on this effect list
 	 */
@@ -265,12 +287,17 @@ public final class CharEffectList
 	/**
 	 * Gets the effect list where the skill effects should be.
 	 * @param skill the skill
+	 * @param option TODO
 	 * @return the effect list
 	 */
-	private Queue<BuffInfo> getEffectList(Skill skill)
+	private Queue<BuffInfo> getEffectList(Skill skill, Options option)
 	{
 		if (skill == null)
 		{
+			if (option != null)
+			{
+				return getOptions();
+			}
 			return null;
 		}
 		
@@ -594,7 +621,7 @@ public final class CharEffectList
 			return false;
 		}
 		
-		final Queue<BuffInfo> effects = getEffectList(skill);
+		final Queue<BuffInfo> effects = getEffectList(skill, null);
 		
 		for (BuffInfo info : effects)
 		{
@@ -651,7 +678,7 @@ public final class CharEffectList
 	 */
 	protected void stopAndRemove(BuffInfo info)
 	{
-		stopAndRemove(true, info, getEffectList(info.getSkill()));
+		stopAndRemove(true, info, getEffectList(info.getSkill(), null));
 	}
 	
 	/**
@@ -679,8 +706,16 @@ public final class CharEffectList
 		
 		// Removes the buff from the given effect list.
 		buffs.remove(info);
+		
 		// Stop the buff effects.
 		info.stopAllEffects(removed);
+		
+		// Augmentation options doesn't have skill
+		if (info.getSkill() == null)
+		{
+			return;
+		}
+		
 		// If it's a hidden buff that ends, then decrease hidden buff count.
 		if (!info.isInUse())
 		{
@@ -1185,6 +1220,16 @@ public final class CharEffectList
 	}
 	
 	/**
+	 * Verify if this effect list has options skills.<br>
+	 * Prevents initialization.
+	 * @return {@code true} if {@link #_options} is not {@code null} and is not empty
+	 */
+	public boolean hasOptions()
+	{
+		return (_options != null) && !_options.isEmpty();
+	}
+	
+	/**
 	 * Executes a procedure for all effects.<br>
 	 * Prevents initialization.
 	 * @param function the function to execute
@@ -1249,7 +1294,26 @@ public final class CharEffectList
 		}
 		
 		// Remove the effect from creature effects.
-		stopAndRemove(removed, info, getEffectList(info.getSkill()));
+		stopAndRemove(removed, info, getEffectList(info.getSkill(), null));
+		// Update effect flags and icons.
+		updateEffectList(true);
+	}
+	
+	/**
+	 * Removes a set of effects from this effect list.
+	 * @param removed {@code true} if the effect is removed, {@code false} otherwise
+	 * @param info the effects to remove
+	 * @param option
+	 */
+	public void remove(boolean removed, BuffInfo info, Options option)
+	{
+		if (info == null)
+		{
+			return;
+		}
+		
+		// Remove the effect from creature effects.
+		stopAndRemove(removed, info, getEffectList(info.getSkill(), option));
 		// Update effect flags and icons.
 		updateEffectList(true);
 	}
@@ -1267,6 +1331,20 @@ public final class CharEffectList
 		
 		// Support for blocked buff slots.
 		final Skill skill = info.getSkill();
+		
+		// Options
+		if (skill == null)
+		{
+			if (info.getOption() != null)
+			{
+				getOptions().add(info);
+				
+				// Initialize effects.
+				info.initializeEffects();
+			}
+			return;
+		}
+		
 		if ((_blockedBuffSlots != null) && _blockedBuffSlots.contains(skill.getAbnormalType()))
 		{
 			return;
@@ -1379,7 +1457,7 @@ public final class CharEffectList
 		}
 		
 		// Select the map that holds the effects related to this skill.
-		final Queue<BuffInfo> effects = getEffectList(skill);
+		final Queue<BuffInfo> effects = getEffectList(skill, null);
 		// Remove first buff when buff list is full.
 		if (!skill.isDebuff() && !skill.isToggle() && !skill.is7Signs() && !doesStack(skill))
 		{

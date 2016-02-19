@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectTaskInfo;
 import org.l2junity.gameserver.model.effects.EffectTickTask;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -69,6 +70,7 @@ public final class BuffInfo
 	private boolean _isInUse = true;
 	private final boolean _hideStartMessage;
 	private final ItemInstance _item;
+	private final Options _option;
 	
 	/**
 	 * Buff Info constructor.
@@ -77,8 +79,9 @@ public final class BuffInfo
 	 * @param skill the skill
 	 * @param hideStartMessage hides start message
 	 * @param item
+	 * @param option
 	 */
-	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage, ItemInstance item)
+	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage, ItemInstance item, Options option)
 	{
 		_effector = effector;
 		_effected = effected;
@@ -87,6 +90,7 @@ public final class BuffInfo
 		_periodStartTicks = GameTimeController.getInstance().getGameTicks();
 		_hideStartMessage = hideStartMessage;
 		_item = item;
+		_option = option;
 	}
 	
 	/**
@@ -180,6 +184,14 @@ public final class BuffInfo
 	public ItemInstance getItem()
 	{
 		return _item;
+	}
+	
+	/**
+	 * @return the options that issued this effect
+	 */
+	public Options getOption()
+	{
+		return _option;
 	}
 	
 	/**
@@ -368,7 +380,7 @@ public final class BuffInfo
 		_effected.getStat().recalculateStats(true);
 		
 		// Set the proper system message.
-		if (!(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())
+		if ((_skill != null) && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())
 		{
 			SystemMessageId smId = null;
 			if (_skill.isToggle())
@@ -404,7 +416,7 @@ public final class BuffInfo
 	 */
 	private void resetAbnormalVisualEffects()
 	{
-		if (_skill.hasAbnormalVisualEffects())
+		if ((_skill != null) && _skill.hasAbnormalVisualEffects())
 		{
 			_effected.resetCurrentAbnormalVisualEffects();
 		}

@@ -107,12 +107,4 @@ public final class Augmentation
 		player.getStat().recalculateStats(true);
 		_active = false;
 	}
-	
-	/**
-	 * @param actingPlayer
-	 */
-	public void applyStats(PlayerInstance actingPlayer)
-	{
-		_options.stream().flatMap(option -> option.getFunctionTemplates().stream()).forEach(func -> actingPlayer.getStat().processStats(actingPlayer, func.getFunctionClass(), func.getStat(), func.getValue()));
-	}
 }

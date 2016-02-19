@@ -37,6 +37,7 @@ import org.l2junity.gameserver.data.xml.impl.FishingData;
 import org.l2junity.gameserver.data.xml.impl.ItemCrystalizationData;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.data.xml.impl.OptionData;
 import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.TeleportersData;
@@ -65,7 +66,7 @@ public class AdminReload implements IAdminCommandHandler
 		"admin_reload"
 	};
 	
-	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|fishing>";
+	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|options|fishing>";
 	
 	@Override
 	public boolean useAdminCommand(String command, PlayerInstance activeChar)
@@ -283,6 +284,12 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					ArmorSetsData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Armor sets data.");
+					break;
+				}
+				case "options":
+				{
+					OptionData.getInstance().load();
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Options data.");
 					break;
 				}
 				case "fishing":
