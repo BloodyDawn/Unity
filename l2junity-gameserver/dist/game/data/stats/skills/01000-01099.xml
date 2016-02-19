@@ -1584,9 +1584,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target race="UNDEAD" />
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>UNDEAD</race>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1668,9 +1670,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target race="UNDEAD" />
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>UNDEAD</race>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2093,9 +2097,11 @@
 		<trait>PARALYZE</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target race="UNDEAD" />
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>UNDEAD</race>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>

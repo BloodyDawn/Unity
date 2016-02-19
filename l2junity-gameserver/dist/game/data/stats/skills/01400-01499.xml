@@ -78,9 +78,11 @@
 		<abnormalTime>20</abnormalTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<target race="UNDEAD" />
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>UNDEAD</race>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockControl" />
 			<effect name="Fear" abnormalTime="20" />

@@ -2171,12 +2171,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player insideZoneId="2240123" />
-				<target race="HUMANOID" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>HUMANOID</race>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2241" levels="1" name="Hot Spring Mineral Water">
 		<!-- Confirmed CT2.5 -->
@@ -2194,12 +2193,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player insideZoneId="2240123" />
-				<target race="HUMANOID" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>HUMANOID</race>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2242" levels="1" name="Hot Spring Water">
 		<!-- Confirmed CT2.5 -->
@@ -2217,12 +2215,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player insideZoneId="2240123" />
-				<target race="HUMANOID" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>HUMANOID</race>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2243" levels="1" name="Hot Spring Brimstone">
 		<!-- Confirmed CT2.5 -->
@@ -2240,12 +2237,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<and>
-				<player insideZoneId="2240123" />
-				<target race="HUMANOID" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="TargetRace">
+				<race>HUMANOID</race>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="2244" levels="1" name="Herb of Life">
 		<!-- Confirmed CT2.5 -->
