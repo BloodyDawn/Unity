@@ -4245,11 +4245,11 @@
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="324">
-			<not>
-				<player Charges="5" />
-			</not>
-		</cond>
+		<conditions>
+			<condition name="OpEnergyMax">
+				<amount>5</amount>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FocusMomentum">
 				<maxCharges>5</maxCharges>

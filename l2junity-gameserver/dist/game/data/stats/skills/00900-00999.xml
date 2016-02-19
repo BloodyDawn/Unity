@@ -1073,16 +1073,14 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="324">
-			<not>
-				<player Charges="8" />
-			</not>
-		</cond>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
 					<DUALFIST />
 				</weaponType>
+			</condition>
+			<condition name="OpEnergyMax">
+				<amount>8</amount>
 			</condition>
 		</conditions>
 		<effects>
@@ -1103,17 +1101,15 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="324">
-			<not>
-				<player Charges="8" />
-			</not>
-		</cond>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
 					<DUAL />
 					<DUALBLUNT />
 				</weaponType>
+			</condition>
+			<condition name="OpEnergyMax">
+				<amount>8</amount>
 			</condition>
 		</conditions>
 		<effects>
