@@ -1000,7 +1000,7 @@ public final class CharEffectList
 		final BuffInfo info = getBuffInfoBySkillId(skillId);
 		if (info != null)
 		{
-			remove(removed, info);
+			remove(removed, info, null);
 		}
 	}
 	
@@ -1285,25 +1285,7 @@ public final class CharEffectList
 	 * Removes a set of effects from this effect list.
 	 * @param removed {@code true} if the effect is removed, {@code false} otherwise
 	 * @param info the effects to remove
-	 */
-	public void remove(boolean removed, BuffInfo info)
-	{
-		if (info == null)
-		{
-			return;
-		}
-		
-		// Remove the effect from creature effects.
-		stopAndRemove(removed, info, getEffectList(info.getSkill(), null));
-		// Update effect flags and icons.
-		updateEffectList(true);
-	}
-	
-	/**
-	 * Removes a set of effects from this effect list.
-	 * @param removed {@code true} if the effect is removed, {@code false} otherwise
-	 * @param info the effects to remove
-	 * @param option
+	 * @param option TODO
 	 */
 	public void remove(boolean removed, BuffInfo info, Options option)
 	{

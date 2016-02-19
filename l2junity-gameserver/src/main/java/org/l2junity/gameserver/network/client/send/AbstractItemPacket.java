@@ -105,8 +105,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		packet.writeC(0x01); // GOD Item enabled = 1 disabled (red) = 0
 		if (containsMask(mask, ItemListType.AUGMENT_BONUS))
 		{
-			packet.writeD(item.getAugmentationBonus());
-			packet.writeD(0x00);
+			packet.writeQ(item.getAugmentationBonus());
 		}
 		if (containsMask(mask, ItemListType.ELEMENTAL_ATTRIBUTE))
 		{
