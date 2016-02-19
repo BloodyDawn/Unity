@@ -2716,6 +2716,12 @@
 		<staticReuse>true</staticReuse>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="RemainMpPer">
+				<amount>30</amount>
+				<percentType>LESS</percentType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="21198" levels="1" name="Silence of Loyalty">
 		<!-- Through the power of loyalty, raises party members' physical P. Def., M. Def. by 30%, physical P. Atk. by 20%, M. Atk. by 45%, and moving speed by 30 for 5 minutes. Reuse delay 30 minutes. Consumes 1 Proof of a Warrior upon skill use. -->

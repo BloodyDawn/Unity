@@ -2892,9 +2892,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<player mp="10" />
-		</cond>
+		<conditions>
+			<condition name="RemainMpPer">
+				<amount>10</amount>
+				<percentType>LESS</percentType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MAtk">
 				<amount>20</amount>

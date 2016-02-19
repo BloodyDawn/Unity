@@ -6461,9 +6461,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
-		<cond msgId="113" addName="1">
-			<player mp="25" />
-		</cond>
+		<conditions>
+			<condition name="RemainMpPer">
+				<amount>25</amount>
+				<percentType>LESS</percentType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="HealPercent">
 				<power>100</power>
