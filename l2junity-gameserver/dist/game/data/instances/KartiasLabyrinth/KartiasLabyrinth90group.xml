@@ -24,10 +24,10 @@
 		<location name="teleportZone3_loc" x="-120861" y="-14149" z="-11427" />
 	</parameters>
 	<conditions>
-		<condition type="Party" showMessageAndHtml="true" >
+		<condition type="Party" showMessageAndHtml="true">
 			<param name="html" value="condNoParty.html" />
 		</condition>
-		<condition type="PartyLeader" showMessageAndHtml="true" >
+		<condition type="PartyLeader" showMessageAndHtml="true">
 			<param name="html" value="condNoParty.html" />
 		</condition>
 		<condition type="GroupMin">
@@ -36,15 +36,15 @@
 		<condition type="GroupMax">
 			<param name="limit" value="7" />
 		</condition>
-		<condition type="Level" showMessageAndHtml="true" >
+		<condition type="Level" showMessageAndHtml="true">
 			<param name="min" value="90" />
 			<param name="max" value="94" />
 			<param name="html" value="condNoLevel.html" />
 		</condition>
-		<condition type="Distance" showMessageAndHtml="true" >
+		<condition type="Distance" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
-		<condition type="Reenter" showMessageAndHtml="true" >
+		<condition type="Reenter" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
 	</conditions>
@@ -62,7 +62,7 @@
 		<door id="16170012" />
 		<door id="16170013" />
 	</doorlist>
-		<spawnlist>
+	<spawnlist>
 		<group name="general">
 			<npc id="25883" x="-120864" y="-15776" z="-11400" heading="16772" /> <!-- Pelline -->
 		</group>

@@ -8,9 +8,9 @@
 		<exit type="ORIGIN" />
 	</locations>
 	<parameters>
-		<param name="firstDoorId" value="16180031"/>
-		<param name="secondDoorId" value="16180032"/>
-		<param name="thirdDoorId" value="16180033"/>
+		<param name="firstDoorId" value="16180031" />
+		<param name="secondDoorId" value="16180032" />
+		<param name="thirdDoorId" value="16180033" />
 		<param name="route1" value="kartia_85_route_1" />
 		<param name="route2" value="kartia_85_route_2" />
 		<param name="helperSurvivor" value="33642" />
@@ -24,10 +24,10 @@
 		<location name="teleportZone3_loc" x="-111618" y="18345" z="-10319" />
 	</parameters>
 	<conditions>
-		<condition type="Party" showMessageAndHtml="true" >
+		<condition type="Party" showMessageAndHtml="true">
 			<param name="html" value="condNoParty.html" />
 		</condition>
-		<condition type="PartyLeader" showMessageAndHtml="true" >
+		<condition type="PartyLeader" showMessageAndHtml="true">
 			<param name="html" value="condNoParty.html" />
 		</condition>
 		<condition type="GroupMin">
@@ -36,15 +36,15 @@
 		<condition type="GroupMax">
 			<param name="limit" value="7" />
 		</condition>
-		<condition type="Level" showMessageAndHtml="true" >
+		<condition type="Level" showMessageAndHtml="true">
 			<param name="min" value="85" />
 			<param name="max" value="89" />
 			<param name="html" value="condNoLevel.html" />
 		</condition>
-		<condition type="Distance" showMessageAndHtml="true" >
+		<condition type="Distance" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
-		<condition type="Reenter" showMessageAndHtml="true" >
+		<condition type="Reenter" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
 	</conditions>
@@ -62,7 +62,7 @@
 		<door id="16180032" />
 		<door id="16180033" />
 	</doorlist>
-		<spawnlist>
+	<spawnlist>
 		<group name="general">
 			<npc id="25882" x="-111616" y="16608" z="-10288" heading="15001" /> <!-- Zellaka -->
 		</group>
@@ -133,7 +133,7 @@
 			<npc id="19230" x="-111642" y="21462" z="-10576" heading="33120" /> <!-- Kartia Watchman -->
 		</group>
 		<group name="ROOM1_STAGE2_WAVE3">
-			<npc id="18919" x="-109512" y="22037" z="-10808" heading="33120" /> <!--  -->
+			<npc id="18919" x="-109512" y="22037" z="-10808" heading="33120" /> <!-- -->
 			<npc id="19229" x="-111642" y="21462" z="-10576" heading="33120" /> <!-- Kartia Guard -->
 			<npc id="19229" x="-111642" y="21462" z="-10576" heading="33120" /> <!-- Kartia Guard -->
 			<npc id="19229" x="-111642" y="21462" z="-10576" heading="33120" /> <!-- Kartia Guard -->

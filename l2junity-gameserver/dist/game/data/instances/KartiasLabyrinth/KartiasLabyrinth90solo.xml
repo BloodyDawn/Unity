@@ -22,15 +22,15 @@
 		<param name="SoloEXP_Rand" value="6173918" />
 		<param name="SoloSP" value="5600000" />
 		<param name="SoloSP_Rand" value="82134" />
-		<skill name="adolphHate" id="15183" level="1"/> <!-- Adolph's Superior Aggression Aura -->
-		<skill name="adolphPunish" id="14847" level="1"/> <!-- Adolph's Justice Punishment -->
-		<skill name="adolphShield" id="15186" level="1"/> <!-- Adolph's Shield Wave -->
-		<skill name="adolphUltimate" id="14853" level="1"/> <!-- Adolph's Final Ultimate Defense -->
-		<skill name="bartonInfinity" id="14859" level="1"/> <!-- Barton's Infinity Strike -->
-		<skill name="bartonBerserker" id="14868" level="1"/> <!-- Barton's Berserker Rage -->
-		<skill name="eliseChainHeal" id="15002" level="1"/> <!-- Progressive Heal - NPC -->
-		<skill name="eliseHeal" id="14900" level="1"/> <!-- Elise' Radiant Heal -->
-		<skill name="eliseRecharge" id="14906" level="1"/> <!-- Elise' Radiant Recharge -->
+		<skill name="adolphHate" id="15183" level="1" /> <!-- Adolph's Superior Aggression Aura -->
+		<skill name="adolphPunish" id="14847" level="1" /> <!-- Adolph's Justice Punishment -->
+		<skill name="adolphShield" id="15186" level="1" /> <!-- Adolph's Shield Wave -->
+		<skill name="adolphUltimate" id="14853" level="1" /> <!-- Adolph's Final Ultimate Defense -->
+		<skill name="bartonInfinity" id="14859" level="1" /> <!-- Barton's Infinity Strike -->
+		<skill name="bartonBerserker" id="14868" level="1" /> <!-- Barton's Berserker Rage -->
+		<skill name="eliseChainHeal" id="15002" level="1" /> <!-- Progressive Heal - NPC -->
+		<skill name="eliseHeal" id="14900" level="1" /> <!-- Elise' Radiant Heal -->
+		<skill name="eliseRecharge" id="14906" level="1" /> <!-- Elise' Radiant Recharge -->
 		<location name="playerLoc" x="-118532" y="-10456" z="-11920" heading="32460" />
 		<location name="prisonerEscapeLoc" x="-118505" y="-10461" z="-11924" />
 		<location name="middlePointRoom1" x="-120848" y="-10452" z="-11685" />
@@ -52,15 +52,15 @@
 		<location name="eliseTeleportStatus3" x="-120765" y="-14145" z="-11424" />
 	</parameters>
 	<conditions>
-		<condition type="Level" showMessageAndHtml="true" >
+		<condition type="Level" showMessageAndHtml="true">
 			<param name="min" value="90" />
 			<param name="max" value="94" />
 			<param name="html" value="condNoLevel.html" />
 		</condition>
-		<condition type="Distance" showMessageAndHtml="true" >
+		<condition type="Distance" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
-		<condition type="Reenter" showMessageAndHtml="true" >
+		<condition type="Reenter" showMessageAndHtml="true">
 			<param name="html" value="otherError.html" />
 		</condition>
 	</conditions>

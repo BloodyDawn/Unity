@@ -24,10 +24,10 @@
 		<location name="teleportZone3_loc" x="-111297" y="-14147" z="-11429" />
 	</parameters>
 	<conditions>
-		<condition type="Party" showMessageAndHtml="true" >
+		<condition type="Party" showMessageAndHtml="true">
 			<param name="html" value="condNoParty.html" />
 		</condition>
-		<condition type="PartyLeader" showMessageAndHtml="true" >
+		<condition type="PartyLeader" showMessageAndHtml="true">
 			<param name="html" value="condNoParty.html" />
 		</condition>
 		<condition type="GroupMin">
@@ -36,14 +36,14 @@
 		<condition type="GroupMax">
 			<param name="limit" value="7" />
 		</condition>
-		<condition type="Level" showMessageAndHtml="true" >
+		<condition type="Level" showMessageAndHtml="true">
 			<param name="min" value="95" />
 			<param name="html" value="condNoLevel.html" />
 		</condition>
-		<condition type="Distance" showMessageAndHtml="true" >
+		<condition type="Distance" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
-		<condition type="Reenter" showMessageAndHtml="true" >
+		<condition type="Reenter" showMessageAndHtml="true">
 			<param name="html" value="condOtherError.html" />
 		</condition>
 	</conditions>
@@ -61,7 +61,7 @@
 		<door id="16170002" />
 		<door id="16170003" />
 	</doorlist>
-		<spawnlist>
+	<spawnlist>
 		<group name="general">
 			<npc id="25884" x="-111296" y="-15872" z="-11400" heading="15596" /> <!-- Kalios -->
 		</group>
