@@ -20,7 +20,8 @@ package ai.individual.IsleOfPrayer;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 
 import ai.AbstractNpcAI;
 
@@ -33,40 +34,35 @@ public final class EvasGiftBox extends AbstractNpcAI
 	// NPC
 	private static final int BOX = 32342; // Eva's Gift Box
 	// Skill
-	private static final int BUFF = 1073; // Kiss of Eva
+	private static final SkillHolder KISS_OF_EVA = new SkillHolder(1073, 1); // Kiss of Eva
 	// Items
-	private static final ItemHolder CORAL = new ItemHolder(9692, 1); // Red Coral
-	private static final ItemHolder CRYSTAL = new ItemHolder(9693, 1); // Crystal Fragment
+	private static final int CORAL = 9692; // Red Coral
+	private static final int CRYSTAL = 9693; // Crystal Fragment
 	
 	private EvasGiftBox()
 	{
 		addKillId(BOX);
-		addSpawnId(BOX);
 	}
 	
 	@Override
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		if (killer.isAffectedBySkill(BUFF))
+		final BuffInfo buffInfo = killer.getEffectList().getBuffInfoByAbnormalType(KISS_OF_EVA.getSkill().getAbnormalType());
+		final int abnoLv = buffInfo == null ? 0 : buffInfo.getSkill().getAbnormalLvl();
+		
+		if (abnoLv > 0)
 		{
 			if (getRandomBoolean())
 			{
-				npc.dropItem(killer, CRYSTAL);
+				npc.dropItem(killer, CRYSTAL, 1);
 			}
 			
 			if (getRandom(100) < 33)
 			{
-				npc.dropItem(killer, CORAL);
+				npc.dropItem(killer, CORAL, 1);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onSpawn(Npc npc)
-	{
-		npc.setRandomWalking(false);
-		return super.onSpawn(npc);
 	}
 	
 	public static void main(String[] args)
