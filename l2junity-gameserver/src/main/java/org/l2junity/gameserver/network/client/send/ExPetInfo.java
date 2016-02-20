@@ -144,6 +144,11 @@ public class ExPetInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.TRANSFORMATION);
 		}
 		
+		if (summon.isShowSummonAnimation())
+		{
+			addComponentType(NpcInfoType.SUMMONED);
+		}
+		
 		if (summon.getOwner().getClan() != null)
 		{
 			_clanId = summon.getOwner().getAppearance().getVisibleClanId();
@@ -338,9 +343,9 @@ public class ExPetInfo extends AbstractMaskPacket<NpcInfoType>
 		{
 			packet.writeD(_summon.getMaxMp());
 		}
-		if (containsMask(NpcInfoType.UNKNOWN11))
+		if (containsMask(NpcInfoType.SUMMONED))
 		{
-			packet.writeC(0x00); // 2 - do some animation on spawn
+			packet.writeC(_summon.isShowSummonAnimation() ? 0x02 : 0x00); // 2 - do some animation on spawn
 		}
 		if (containsMask(NpcInfoType.UNKNOWN12))
 		{

@@ -184,6 +184,11 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.TRANSFORMATION);
 		}
 		
+		if (npc.isShowSummonAnimation())
+		{
+			addComponentType(NpcInfoType.SUMMONED);
+		}
+		
 		if (npc.getClanId() > 0)
 		{
 			L2Clan clan = ClanTable.getInstance().getClan(npc.getClanId());
@@ -389,9 +394,9 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		{
 			packet.writeD(_npc.getMaxMp());
 		}
-		if (containsMask(NpcInfoType.UNKNOWN11))
+		if (containsMask(NpcInfoType.SUMMONED))
 		{
-			packet.writeC(0x00); // 2 - do some animation on spawn
+			packet.writeC(_npc.isShowSummonAnimation() ? 0x02 : 0x00); // 2 - do some animation on spawn
 		}
 		if (containsMask(NpcInfoType.UNKNOWN12))
 		{
