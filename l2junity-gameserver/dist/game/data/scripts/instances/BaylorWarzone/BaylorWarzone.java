@@ -162,6 +162,7 @@ public final class BaylorWarzone extends AbstractInstance
 					for (Npc baylor : world.spawnGroup("BAYLOR"))
 					{
 						baylor.getVariables().set("is_after_you", count);
+						baylor.disableCoreAI(true);
 						baylor.setRandomAnimation(false);
 						baylor.setRandomWalking(false);
 						((Attackable) baylor).setCanReturnToSpawnPoint(false);
@@ -250,6 +251,7 @@ public final class BaylorWarzone extends AbstractInstance
 				case "BAYLOR_SOCIAL_SKILL":
 				{
 					npc.doCast(BAYLOR_SOCIAL_SKILL.getSkill());
+					npc.disableCoreAI(false);
 					world.getAliveNpcs(INVISIBLE_NPC_1).forEach(invisNpc -> getTimers().addTimer("INVIS_NPC_SOCIAL_SKILL", 1300, invisNpc, null));
 					break;
 				}
