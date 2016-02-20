@@ -1145,7 +1145,7 @@ public final class Config
 			ROYAL_GUARD_COST = Feature.getInt("CreateRoyalGuardCost", 5000);
 			KNIGHT_UNIT_COST = Feature.getInt("CreateKnightUnitCost", 10000);
 			KNIGHT_REINFORCE_COST = Feature.getInt("ReinforceKnightUnitCost", 5000);
-			BALLISTA_POINTS = Feature.getInt("KillBallistaPoints", 30);
+			BALLISTA_POINTS = Feature.getInt("KillBallistaPoints", 500);
 			BLOODALLIANCE_POINTS = Feature.getInt("BloodAlliancePoints", 500);
 			BLOODOATH_POINTS = Feature.getInt("BloodOathPoints", 200);
 			KNIGHTSEPAULETTE_POINTS = Feature.getInt("KnightsEpaulettePoints", 20);
