@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import ai.AbstractNpcAI;
 
 /**
- * Fortune Telling AI.<br>
+ * Fortune Telling AI.
  * @author Nyaran
  */
 public final class FortuneTelling extends AbstractNpcAI
@@ -44,7 +44,7 @@ public final class FortuneTelling extends AbstractNpcAI
 	@Override
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
-		String htmltext = getNoQuestMsg(player);
+		String htmltext = null;
 		if (player.getAdena() < COST)
 		{
 			htmltext = "lowadena.htm";

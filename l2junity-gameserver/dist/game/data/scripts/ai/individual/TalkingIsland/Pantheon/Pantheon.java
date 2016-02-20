@@ -63,20 +63,19 @@ public final class Pantheon extends AbstractNpcAI
 			}
 			case "teleport_museum":
 			{
-				if (player.getLevel() >= MIN_LEVEL)
+				if (player.getLevel() < MIN_LEVEL)
+				{
+					htmltext = "32972-noteleport.html";
+				}
+				else
 				{
 					player.teleToLocation(MUSEUM);
-					break;
 				}
-				htmltext = "32972-noteleport.html";
 				break;
 			}
 			case "TEXT_SPAM":
 			{
-				if (npc != null)
-				{
-					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.IS_IT_BETTER_TO_END_DESTINY_OR_START_DESTINY);
-				}
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.IS_IT_BETTER_TO_END_DESTINY_OR_START_DESTINY);
 				break;
 			}
 		}

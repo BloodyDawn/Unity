@@ -63,12 +63,7 @@ public final class Incarnation extends AbstractNpcAI
 	
 	public void onOffense(Npc npc, Creature attacker, Creature target)
 	{
-		if (attacker == target)
-		{
-			return;
-		}
-		
-		if (npc.getSummoner() == null)
+		if ((attacker == target) || (npc.getSummoner() == null))
 		{
 			return;
 		}

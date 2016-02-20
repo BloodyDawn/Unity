@@ -37,7 +37,7 @@ import ai.AbstractNpcAI;
 public final class GateOfUnlimitedSummoning extends AbstractNpcAI
 {
 	// NPCs
-	private static final Map<Integer, Integer> DEATH_GATE = new HashMap<>(); // ai_gate_of_unlimited_summoning
+	private static final Map<Integer, Integer> DEATH_GATE = new HashMap<>();
 	
 	static
 	{
@@ -73,34 +73,40 @@ public final class GateOfUnlimitedSummoning extends AbstractNpcAI
 	@Override
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		if (event.equals("SKILL_CAST_SLOW"))
+		switch (event)
 		{
-			final int skillLevel = DEATH_GATE.get(npc.getId());
-			if (skillLevel > 0)
+			case "SKILL_CAST_SLOW":
 			{
-				final Skill skill = SkillData.getInstance().getSkill(GATE_ROOT, skillLevel);
+				final int skillLevel = DEATH_GATE.get(npc.getId());
+				if (skillLevel > 0)
+				{
+					final Skill skill = SkillData.getInstance().getSkill(GATE_ROOT, skillLevel);
+					if (skill != null)
+					{
+						npc.doCast(skill);
+					}
+				}
+				getTimers().addTimer("SKILL_CAST_SLOW", 3000, npc, player);
+				break;
+			}
+			case "SKILL_CAST_DAMAGE":
+			{
+				final Skill skill = SkillData.getInstance().getSkill(GATE_VORTEX, 1);
 				if (skill != null)
 				{
 					npc.doCast(skill);
 				}
+				
+				getTimers().addTimer("SKILL_CAST_DAMAGE", 2000, npc, player);
+				break;
 			}
-			getTimers().addTimer("SKILL_CAST_SLOW", 3000, npc, player);
-		}
-		else if (event.equals("SKILL_CAST_DAMAGE"))
-		{
-			final Skill skill = SkillData.getInstance().getSkill(GATE_VORTEX, 1);
-			if (skill != null)
+			case "END_OF_LIFE":
 			{
-				npc.doCast(skill);
+				getTimers().cancelTimer("SKILL_CAST_SLOW", npc, player);
+				getTimers().cancelTimer("SKILL_CAST_DAMAGE", npc, player);
+				npc.deleteMe();
+				break;
 			}
-			
-			getTimers().addTimer("SKILL_CAST_DAMAGE", 2000, npc, player);
-		}
-		else if (event.equals("END_OF_LIFE"))
-		{
-			getTimers().cancelTimer("SKILL_CAST_SLOW", npc, player);
-			getTimers().cancelTimer("SKILL_CAST_DAMAGE", npc, player);
-			npc.deleteMe();
 		}
 	}
 	
