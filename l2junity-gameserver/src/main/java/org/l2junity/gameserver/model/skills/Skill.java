@@ -23,47 +23,46 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.handler.AffectScopeHandler;
+import org.l2junity.gameserver.handler.IAffectScopeHandler;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
-import org.l2junity.gameserver.model.ExtractableProductItem;
-import org.l2junity.gameserver.model.ExtractableSkill;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.holders.AttachSkillHolder;
-import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.AffectObject;
+import org.l2junity.gameserver.model.skills.targets.AffectScope;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -73,8 +72,6 @@ import org.slf4j.LoggerFactory;
 public final class Skill implements IIdentifiable
 {
 	private static final Logger _log = LoggerFactory.getLogger(Skill.class);
-	
-	private static final Creature[] EMPTY_TARGET_LIST = new Creature[0];
 	
 	/** Skill ID. */
 	private final int _id;
@@ -131,8 +128,6 @@ public final class Skill implements IIdentifiable
 	private final int _reuseDelay;
 	private final int _reuseDelayGroup;
 	
-	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
-	private final L2TargetType _targetType;
 	private final int _magicLevel;
 	private final int _lvlBonusRate;
 	private final int _activateRate;
@@ -142,6 +137,9 @@ public final class Skill implements IIdentifiable
 	// Effecting area of the skill, in radius.
 	// The radius center varies according to the _targetType:
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
+	private final TargetType _targetType;
+	private final AffectScope _affectScope;
+	private final AffectObject _affectObject;
 	private final int _affectRange;
 	private final int[] _fanRange = new int[4]; // unk;startDegree;fanAffectRange;fanAffectAngle
 	private final int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
@@ -164,10 +162,9 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 	private final int _effectPoint;
-	// Condition lists
-	private List<Condition> _preCondition;
 	private Set<MountType> _rideState;
 	
+	private final Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = new EnumMap<>(SkillConditionScope.class);
 	private final Map<EffectScope, List<AbstractEffect>> _effectLists = new EnumMap<>(EffectScope.class);
 	
 	// Flying support
@@ -181,8 +178,6 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _excludedFromCheck;
 	private final boolean _withoutAction;
-	
-	private ExtractableSkill _extractableItems = null;
 	
 	private final String _icon;
 	
@@ -215,12 +210,12 @@ public final class Skill implements IIdentifiable
 	
 	public Skill(StatsSet set)
 	{
-		_id = set.getInt("skill_id");
-		_level = set.getInt("level");
-		_refId = set.getInt("referenceId", 0);
-		_displayId = set.getInt("displayId", _id);
-		_displayLevel = set.getInt("displayLevel", _level);
-		_name = set.getString("name", "");
+		_id = set.getInt(".id");
+		_level = set.getInt(".level");
+		_refId = set.getInt(".referenceId", 0);
+		_displayId = set.getInt(".displayId", _id);
+		_displayLevel = set.getInt(".displayLevel", _level);
+		_name = set.getString(".name", "");
 		_operateType = set.getEnum("operateType", SkillOperateType.class);
 		_magic = set.getInt("isMagic", 0);
 		_traitType = set.getEnum("trait", TraitType.class, TraitType.NONE);
@@ -277,6 +272,9 @@ public final class Skill implements IIdentifiable
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
+		_targetType = set.getEnum("targetType", TargetType.class, TargetType.NONE);
+		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.SINGLE);
+		_affectObject = set.getEnum("affectObject", AffectObject.class, AffectObject.ALL);
 		_affectRange = set.getInt("affectRange", 0);
 		
 		final String rideState = set.getString("rideState", null);
@@ -355,7 +353,6 @@ public final class Skill implements IIdentifiable
 			}
 		}
 		
-		_targetType = set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
 		_magicLevel = set.getInt("magicLvl", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
 		_activateRate = set.getInt("activateRate", -1);
@@ -390,17 +387,6 @@ public final class Skill implements IIdentifiable
 		
 		_excludedFromCheck = set.getBoolean("excludedFromCheck", false);
 		_withoutAction = set.getBoolean("withoutAction", false);
-		
-		String capsuled_items = set.getString("capsuled_items_skill", null);
-		if (capsuled_items != null)
-		{
-			if (capsuled_items.isEmpty())
-			{
-				_log.warn("Empty Extractable Item Skill data in Skill Id: " + _id);
-			}
-			
-			_extractableItems = parseExtractableSkill(_id, _level, capsuled_items);
-		}
 		
 		_icon = set.getString("icon", "icon.skill0000");
 		
@@ -471,26 +457,17 @@ public final class Skill implements IIdentifiable
 		return _attributeValue;
 	}
 	
-	/**
-	 * Return the target type of the skill : SELF, PARTY, CLAN, PET...
-	 * @return
-	 */
-	public L2TargetType getTargetType()
-	{
-		return _targetType;
-	}
-	
 	public boolean isAOE()
 	{
-		switch (_targetType)
+		switch (_affectScope)
 		{
-			case AREA:
-			case AURA:
-			case AURA_FRIENDLY:
-			case BEHIND_AREA:
-			case BEHIND_AURA:
-			case FRONT_AREA:
-			case FRONT_AURA:
+			case FAN:
+			case FAN_PB:
+			case POINT_BLANK:
+			case RANGE:
+			case RING_RANGE:
+			case SQUARE:
+			case SQUARE_PB:
 			{
 				return true;
 			}
@@ -858,19 +835,57 @@ public final class Skill implements IIdentifiable
 		return _coolTime;
 	}
 	
+	/**
+	 * @return the target type of the skill : SELF, TARGET, SUMMON, GROUND...
+	 */
+	public TargetType getTargetType()
+	{
+		return _targetType;
+	}
+	
+	/**
+	 * @return the affect scope of the skill : SINGLE, FAN, SQUARE, PARTY, PLEDGE...
+	 */
+	public AffectScope getAffectScope()
+	{
+		return _affectScope;
+	}
+	
+	/**
+	 * @return the affect object of the skill : All, Clan, Friend, NotFriend, Invisible...
+	 */
+	public AffectObject getAffectObject()
+	{
+		return _affectObject;
+	}
+	
+	/**
+	 * @return the AOE range of the skill.
+	 */
 	public int getAffectRange()
 	{
 		return _affectRange;
 	}
 	
+	/**
+	 * @return the AOE fan range of the skill.
+	 */
 	public int[] getFanRange()
 	{
 		return _fanRange;
 	}
 	
+	/**
+	 * @return the maximum amount of targets the skill can affect or 0 if unlimited.
+	 */
 	public int getAffectLimit()
 	{
-		return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
+		if ((_affectLimit[0] > 0) || (_affectLimit[1] > 0))
+		{
+			return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
+		}
+		
+		return 0;
 	}
 	
 	public int getAffectHeightMin()
@@ -1003,7 +1018,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isBad()
 	{
-		return (_effectPoint < 0) && (_targetType != L2TargetType.SELF);
+		return (_effectPoint < 0) && !hasEffectType(L2EffectType.HATE);
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object)
@@ -1021,35 +1036,7 @@ public final class Skill implements IIdentifiable
 			return false;
 		}
 		
-		if ((_preCondition == null) || _preCondition.isEmpty())
-		{
-			return true;
-		}
-		
-		final Creature target = (object instanceof Creature) ? (Creature) object : null;
-		for (Condition cond : _preCondition)
-		{
-			if (!cond.test(activeChar, target, this))
-			{
-				final String msg = cond.getMessage();
-				final int msgId = cond.getMessageId();
-				if (msgId != 0)
-				{
-					final SystemMessage sm = SystemMessage.getSystemMessage(msgId);
-					if (cond.isAddName())
-					{
-						sm.addSkillName(_id);
-					}
-					activeChar.sendPacket(sm);
-				}
-				else if (msg != null)
-				{
-					activeChar.sendMessage(msg);
-				}
-				return false;
-			}
-		}
-		return true;
+		return checkConditions(SkillConditionScope.GENERAL, activeChar, object);
 	}
 	
 	/**
@@ -1062,167 +1049,111 @@ public final class Skill implements IIdentifiable
 		return (_rideState == null) || _rideState.contains(player.getMountType());
 	}
 	
-	public Creature[] getTargetList(Creature activeChar, boolean onlyFirst)
+	/**
+	 * @param activeChar the character that requests getting the skill target.
+	 * @param forceUse if character pressed ctrl (force pick target)
+	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
+	 * @param sendMessage send SystemMessageId packet if target is incorrect.
+	 * @return {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
+	 */
+	public WorldObject getTarget(Creature activeChar, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		// Init to null the target of the skill
-		Creature target = null;
-		
-		// Get the L2Objcet targeted by the user of the skill at this moment
-		WorldObject objTarget = activeChar.getTarget();
-		// If the L2Object targeted is a L2Character, it becomes the L2Character target
-		if (objTarget instanceof Creature)
-		{
-			target = (Creature) objTarget;
-		}
-		
-		return getTargetList(activeChar, onlyFirst, target);
+		return getTarget(activeChar, activeChar.getTarget(), forceUse, dontMove, sendMessage);
 	}
 	
 	/**
-	 * Return all targets of the skill in a table in function a the skill type.<br>
-	 * <B><U>Values of skill type</U>:</B>
-	 * <ul>
-	 * <li>ONE : The skill can only be used on the L2PcInstance targeted, or on the caster if it's a L2PcInstance and no L2PcInstance targeted</li>
-	 * <li>SELF</li>
-	 * <li>HOLY, UNDEAD</li>
-	 * <li>PET</li>
-	 * <li>AURA, AURA_CLOSE</li>
-	 * <li>AREA</li>
-	 * <li>MULTIFACE</li>
-	 * <li>PARTY, CLAN</li>
-	 * <li>CORPSE_PLAYER, CORPSE_MOB, CORPSE_CLAN</li>
-	 * <li>UNLOCKABLE</li>
-	 * <li>ITEM</li>
-	 * <ul>
-	 * @param activeChar The L2Character who use the skill
-	 * @param onlyFirst
-	 * @param target
-	 * @return
+	 * @param activeChar the character that requests getting the skill target.
+	 * @param seletedTarget the target that has been selected by this character to be checked.
+	 * @param forceUse if character pressed ctrl (force pick target)
+	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
+	 * @param sendMessage send SystemMessageId packet if target is incorrect.
+	 * @return the selected {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
 	 */
-	public Creature[] getTargetList(Creature activeChar, boolean onlyFirst, Creature target)
+	public WorldObject getTarget(Creature activeChar, WorldObject seletedTarget, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
 		final ITargetTypeHandler handler = TargetHandler.getInstance().getHandler(getTargetType());
 		if (handler != null)
 		{
 			try
 			{
-				return handler.getTargetList(this, activeChar, onlyFirst, target);
+				return handler.getTarget(activeChar, seletedTarget, this, forceUse, dontMove, sendMessage);
 			}
 			catch (Exception e)
 			{
-				_log.warn("Exception in L2Skill.getTargetList(): " + e.getMessage(), e);
+				_log.warn("Exception in Skill.getTarget(): " + e.getMessage(), e);
 			}
 		}
 		activeChar.sendMessage("Target type of skill is not currently handled.");
-		return EMPTY_TARGET_LIST;
-	}
-	
-	public Creature[] getTargetList(Creature activeChar)
-	{
-		return getTargetList(activeChar, false);
-	}
-	
-	public WorldObject getFirstOfTargetList(Creature activeChar)
-	{
-		WorldObject[] targets = getTargetList(activeChar, true);
-		if (targets.length == 0)
-		{
-			return null;
-		}
-		return targets[0];
+		return null;
 	}
 	
 	/**
-	 * Check if should be target added to the target list false if target is dead, target same as caster,<br>
-	 * target inside peace zone, target in the same party with caster, caster can see target Additional checks if not in PvP zones (arena, siege):<br>
-	 * target in not the same clan and alliance with caster, and usual skill PvP check. If TvT event is active - performing additional checks. Caution: distance is not checked.
-	 * @param caster
-	 * @param target
-	 * @param skill
-	 * @param sourceInArena
-	 * @return
+	 * @param activeChar the character that needs to gather targets.
+	 * @param target the initial target activeChar is focusing upon.
+	 * @return list containing objects gathered in a specific geometric way that are valid to be affected by this skill.
 	 */
-	public static boolean checkForAreaOffensiveSkills(Creature caster, Creature target, Skill skill, boolean sourceInArena)
+	public List<WorldObject> getTargetsAffected(Creature activeChar, WorldObject target)
 	{
-		if ((target == null) || target.isDead() || (target == caster))
+		if (target == null)
 		{
-			return false;
+			return null;
 		}
-		
-		final PlayerInstance player = caster.getActingPlayer();
-		final PlayerInstance targetPlayer = target.getActingPlayer();
-		if (player != null)
+		activeChar.sendDebugMessage(String.valueOf(getTargetType()));
+		activeChar.sendDebugMessage(String.valueOf(getAffectScope()));
+		activeChar.sendDebugMessage(String.valueOf(getAffectObject()));
+		final IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
+		if (handler != null)
 		{
-			if (targetPlayer != null)
+			try
 			{
-				if ((targetPlayer == caster) || (targetPlayer == player))
-				{
-					return false;
-				}
-				
-				if (targetPlayer.inObserverMode())
-				{
-					return false;
-				}
-				
-				if (skill.isBad() && (player.getSiegeState() > 0) && player.isInsideZone(ZoneId.SIEGE) && (player.getSiegeState() == targetPlayer.getSiegeState()) && (player.getSiegeSide() == targetPlayer.getSiegeSide()))
-				{
-					return false;
-				}
-				
-				if (skill.isBad() && target.isInsideZone(ZoneId.PEACE))
-				{
-					return false;
-				}
-				
-				if (player.isInParty() && targetPlayer.isInParty())
-				{
-					// Same party
-					if (player.getParty().getLeaderObjectId() == targetPlayer.getParty().getLeaderObjectId())
-					{
-						return false;
-					}
-					
-					// Same command channel
-					if (player.getParty().isInCommandChannel() && (player.getParty().getCommandChannel() == targetPlayer.getParty().getCommandChannel()))
-					{
-						return false;
-					}
-				}
-				
-				if (!sourceInArena && !(targetPlayer.isInsideZone(ZoneId.PVP) && !targetPlayer.isInsideZone(ZoneId.SIEGE)))
-				{
-					if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
-					{
-						return false;
-					}
-					
-					if ((player.getClanId() != 0) && (player.getClanId() == targetPlayer.getClanId()))
-					{
-						return false;
-					}
-					
-					if (!player.checkPvpSkill(targetPlayer, skill))
-					{
-						return false;
-					}
-				}
+				final List<WorldObject> result = new LinkedList<>();
+				handler.forEachAffected(activeChar, target, this, o -> result.add(o));
+				return result;
+			}
+			catch (Exception e)
+			{
+				_log.warn("Exception in Skill.getTargetsAffected(): " + e.getMessage(), e);
 			}
 		}
-		else if (target.isAttackable() && caster.isAttackable())
+		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+		return null;
+	}
+	
+	/**
+	 * @param activeChar the character that needs to gather targets.
+	 * @param target the initial target activeChar is focusing upon.
+	 * @param action for each affected target.
+	 */
+	public void forEachTargetAffected(Creature activeChar, WorldObject target, Consumer<? super WorldObject> action)
+	{
+		if (target == null)
 		{
-			return false;
-		}
-		else if ((caster instanceof FriendlyNpcInstance) && (target.isPlayable() || (target instanceof FriendlyNpcInstance)))
-		{
-			return false;
+			return;
 		}
 		
-		if (!GeoData.getInstance().canSeeTarget(caster, target))
+		final IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
+		if (handler != null)
 		{
-			return false;
+			try
+			{
+				handler.forEachAffected(activeChar, target, this, action);
+			}
+			catch (Exception e)
+			{
+				_log.warn("Exception in Skill.forEachTargetAffected(): " + e.getMessage(), e);
+			}
 		}
-		return true;
+		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+	}
+	
+	/**
+	 * Adds an effect to the effect list for the given effect scope.
+	 * @param effectScope the effect scope
+	 * @param effect the effect
+	 */
+	public void addEffect(EffectScope effectScope, AbstractEffect effect)
+	{
+		_effectLists.computeIfAbsent(effectScope, k -> new ArrayList<>()).add(effect);
 	}
 	
 	/**
@@ -1357,7 +1288,7 @@ public final class Skill implements IIdentifiable
 		boolean addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isContinuous() && Formulas.calcEffectSuccess(effector, effected, this)));
 		if (!self && !passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effected, this, !instant, item);
+			final BuffInfo info = new BuffInfo(effector, effected, this, !instant, item, null);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1397,7 +1328,7 @@ public final class Skill implements IIdentifiable
 		{
 			addContinuousEffects = !passive && (_operateType.isToggle() || ((_operateType.isContinuous() || _operateType.isSelfContinuous()) && Formulas.calcEffectSuccess(effector, effector, this)));
 			
-			final BuffInfo info = new BuffInfo(effector, effector, this, !instant, item);
+			final BuffInfo info = new BuffInfo(effector, effector, this, !instant, item, null);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1421,7 +1352,7 @@ public final class Skill implements IIdentifiable
 		
 		if (passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effector, this, true, item);
+			final BuffInfo info = new BuffInfo(effector, effector, this, true, item, null);
 			applyEffectScope(EffectScope.PASSIVE, info, false, true);
 			effector.getEffectList().add(info);
 		}
@@ -1432,7 +1363,7 @@ public final class Skill implements IIdentifiable
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, Creature... targets)
+	public void activateSkill(Creature caster, WorldObject... targets)
 	{
 		activateSkill(caster, null, targets);
 	}
@@ -1443,7 +1374,7 @@ public final class Skill implements IIdentifiable
 	 * @param item
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, ItemInstance item, Creature... targets)
+	public void activateSkill(Creature caster, ItemInstance item, WorldObject... targets)
 	{
 		activateSkill(caster, null, item, targets);
 	}
@@ -1453,7 +1384,7 @@ public final class Skill implements IIdentifiable
 	 * @param cubic the cubic
 	 * @param targets the targets
 	 */
-	public void activateSkill(CubicInstance cubic, Creature... targets)
+	public void activateSkill(CubicInstance cubic, WorldObject... targets)
 	{
 		activateSkill(cubic.getOwner(), cubic, null, targets);
 	}
@@ -1465,7 +1396,7 @@ public final class Skill implements IIdentifiable
 	 * @param item
 	 * @param targets the targets
 	 */
-	public final void activateSkill(Creature caster, CubicInstance cubic, ItemInstance item, Creature... targets)
+	public final void activateSkill(Creature caster, CubicInstance cubic, ItemInstance item, WorldObject... targets)
 	{
 		// TODO: replace with AI
 		switch (getId())
@@ -1504,15 +1435,21 @@ public final class Skill implements IIdentifiable
 			}
 			default:
 			{
-				for (Creature target : targets)
+				for (WorldObject targetObject : targets)
 				{
+					if (!targetObject.isCreature())
+					{
+						continue;
+					}
+					
+					Creature target = (Creature) targetObject;
 					if (Formulas.calcBuffDebuffReflection(target, this))
 					{
 						// if skill is reflected instant effects should be casted on target
 						// and continuous effects on caster
 						applyEffects(target, caster, false, 0);
 						
-						final BuffInfo info = new BuffInfo(caster, target, this, false, item);
+						final BuffInfo info = new BuffInfo(caster, target, this, false, item, null);
 						applyEffectScope(EffectScope.GENERAL, info, true, false);
 						
 						EffectScope pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
@@ -1558,33 +1495,25 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Adds an effect to the effect list for the give effect scope.
-	 * @param effectScope the effect scope
-	 * @param effect the effect to add
+	 * Adds a condition to the condition list for the given condition scope.
+	 * @param skillConditionScope the condition scope
+	 * @param skillCondition the condition
 	 */
-	public void addEffect(EffectScope effectScope, AbstractEffect effect)
+	public void addCondition(SkillConditionScope skillConditionScope, ISkillCondition skillCondition)
 	{
-		if (effect == null)
-		{
-			return;
-		}
-		
-		List<AbstractEffect> effects = _effectLists.get(effectScope);
-		if (effects == null)
-		{
-			effects = new ArrayList<>(1);
-			_effectLists.put(effectScope, effects);
-		}
-		effects.add(effect);
+		_conditionLists.computeIfAbsent(skillConditionScope, k -> new ArrayList<>()).add(skillCondition);
 	}
 	
-	public void attach(Condition c)
+	/**
+	 * Checks the conditions of this skills for the given condition scope.
+	 * @param skillConditionScope the condition scope
+	 * @param caster the caster
+	 * @param target the target
+	 * @return {@code false} if at least one condition returns false, {@code true} otherwise
+	 */
+	public boolean checkConditions(SkillConditionScope skillConditionScope, Creature caster, WorldObject target)
 	{
-		if (_preCondition == null)
-		{
-			_preCondition = new ArrayList<>();
-		}
-		_preCondition.add(c);
+		return _conditionLists.getOrDefault(skillConditionScope, Collections.emptyList()).stream().allMatch(c -> c.canUse(caster, this, target));
 	}
 	
 	@Override
@@ -1632,58 +1561,6 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Parse an extractable skill.
-	 * @param skillId the skill Id
-	 * @param skillLvl the skill level
-	 * @param values the values to parse
-	 * @return the parsed extractable skill
-	 * @author Zoey76
-	 */
-	private ExtractableSkill parseExtractableSkill(int skillId, int skillLvl, String values)
-	{
-		final String[] prodLists = values.split(";");
-		final List<ExtractableProductItem> products = new ArrayList<>();
-		String[] prodData;
-		for (String prodList : prodLists)
-		{
-			prodData = prodList.split(",");
-			if (prodData.length < 3)
-			{
-				_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> wrong seperator!");
-			}
-			List<ItemHolder> items = null;
-			double chance = 0;
-			final int length = prodData.length - 1;
-			try
-			{
-				items = new ArrayList<>(length / 2);
-				for (int j = 0; j < length; j += 2)
-				{
-					final int prodId = Integer.parseInt(prodData[j]);
-					final int quantity = Integer.parseInt(prodData[j + 1]);
-					if ((prodId <= 0) || (quantity <= 0))
-					{
-						_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " wrong production Id: " + prodId + " or wrond quantity: " + quantity + "!");
-					}
-					items.add(new ItemHolder(prodId, quantity));
-				}
-				chance = Double.parseDouble(prodData[length]);
-			}
-			catch (Exception e)
-			{
-				_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
-			}
-			products.add(new ExtractableProductItem(items, chance));
-		}
-		
-		if (products.isEmpty())
-		{
-			_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
-		}
-		return new ExtractableSkill(SkillData.getSkillHashCode(skillId, skillLvl), products);
-	}
-	
-	/**
 	 * Parses all the abnormal visual effects.
 	 * @param abnormalVisualEffects the abnormal visual effects list
 	 */
@@ -1711,11 +1588,6 @@ public final class Skill implements IIdentifiable
 				_abnormalVisualEffects = aves;
 			}
 		}
-	}
-	
-	public ExtractableSkill getExtractableSkill()
-	{
-		return _extractableItems;
 	}
 	
 	/**

@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttackAvoid
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageDealt;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
@@ -156,6 +157,7 @@ public enum EventType
 	ON_CREATURE_ATTACKED(OnCreatureAttacked.class, void.class, TerminateReturn.class),
 	ON_CREATURE_DAMAGE_RECEIVED(OnCreatureDamageReceived.class, void.class, DamageReturn.class),
 	ON_CREATURE_DAMAGE_DEALT(OnCreatureDamageDealt.class, void.class),
+	ON_CREATURE_HP_CHANGE(OnCreatureHpChange.class, void.class),
 	ON_CREATURE_KILL(OnCreatureKill.class, void.class, TerminateReturn.class),
 	ON_CREATURE_SEE(OnCreatureSee.class, void.class),
 	ON_CREATURE_SKILL_USE(OnCreatureSkillUse.class, void.class, TerminateReturn.class),

@@ -28,8 +28,10 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
+import org.l2junity.gameserver.model.effects.EffectFlag;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.stats.Formulas;
-import org.l2junity.gameserver.model.stats.Stats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -168,9 +170,10 @@ public class CharStatus
 		
 		if (value > 0)
 		{
-			final double hpLockMin = activeChar.getStat().getValue(Stats.HP_LOCK_MIN, activeChar.isUndying() ? 1 : 0);
-			final double newHp = Math.max(getCurrentHp() - value, hpLockMin);
+			final double oldHp = getCurrentHp();
+			final double newHp = Math.max(getCurrentHp() - value, (activeChar.isAffected(EffectFlag.IGNORE_DEATH) || activeChar.isUndying()) ? 1 : 0);
 			setCurrentHp(newHp);
+			EventDispatcher.getInstance().notifyEventAsync(new OnCreatureHpChange(activeChar, oldHp, newHp), activeChar);
 		}
 		
 		if ((activeChar.getCurrentHp() < 0.5)) // Die
@@ -275,24 +278,12 @@ public class CharStatus
 		// Get the Max HP of the L2Character
 		int currentHp = (int) getCurrentHp();
 		final double maxHp = getActiveChar().getStat().getMaxHp();
-		final double hpLock = getActiveChar().getStat().getValue(Stats.HP_LOCK);
 		
 		synchronized (this)
 		{
 			if (getActiveChar().isDead())
 			{
 				return false;
-			}
-			
-			if (hpLock > 0)
-			{
-				if (_currentHp == hpLock)
-				{
-					return false;
-				}
-				
-				_currentHp = hpLock;
-				return true;
 			}
 			
 			if (newHp >= maxHp)

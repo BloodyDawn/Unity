@@ -22,7 +22,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -38,10 +37,8 @@ public final class MagicalSoulAttack extends AbstractEffect
 {
 	private final double _power;
 	
-	public MagicalSoulAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MagicalSoulAttack(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

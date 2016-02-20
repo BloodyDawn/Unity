@@ -22,7 +22,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -43,10 +42,8 @@ public final class PhysicalSoulAttack extends AbstractEffect
 	private final boolean _ignoreShieldDefence;
 	private final boolean _overHit;
 	
-	public PhysicalSoulAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PhysicalSoulAttack(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
@@ -120,7 +117,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 			if (damageCap > 0)
 			{
 				damage = Math.min(damage, damageCap);

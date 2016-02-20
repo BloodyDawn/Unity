@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -35,10 +34,8 @@ public final class CpHealPercent extends AbstractEffect
 {
 	private final double _power;
 	
-	public CpHealPercent(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CpHealPercent(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	

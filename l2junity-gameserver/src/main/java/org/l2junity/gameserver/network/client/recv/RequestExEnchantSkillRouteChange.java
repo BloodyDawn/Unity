@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.client.recv;
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -164,7 +164,6 @@ public final class RequestExEnchantSkillRouteChange implements IClientIncomingPa
 			}
 			
 			skill = SkillData.getInstance().getSkill(_skillId, _skillLvl);
-			
 			if (skill != null)
 			{
 				if (Config.LOG_SKILL_ENCHANTS)

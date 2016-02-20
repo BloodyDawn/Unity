@@ -25,7 +25,7 @@ import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;

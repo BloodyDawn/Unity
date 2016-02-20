@@ -129,8 +129,6 @@ import org.l2junity.gameserver.model.conditions.ConditionUsingItemType;
 import org.l2junity.gameserver.model.conditions.ConditionUsingSkill;
 import org.l2junity.gameserver.model.conditions.ConditionUsingSlotType;
 import org.l2junity.gameserver.model.conditions.ConditionWithSkill;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
@@ -236,15 +234,6 @@ public abstract class DocumentBase
 			
 			switch (name)
 			{
-				case "effect":
-				{
-					if (template instanceof AbstractEffect)
-					{
-						throw new RuntimeException("Nested effects");
-					}
-					attachEffect(n, template, condition, effectScope);
-					break;
-				}
 				case "add":
 				case "sub":
 				case "mul":
@@ -287,91 +276,10 @@ public abstract class DocumentBase
 		{
 			((L2Item) template).addFunctionTemplate(ft);
 		}
-		else if (template instanceof AbstractEffect)
-		{
-			((AbstractEffect) template).addFunctionTemplate(ft);
-		}
 		else
 		{
 			throw new RuntimeException("Attaching stat to a non-effect template [" + template + "]!!!");
 		}
-	}
-	
-	protected void attachEffect(Node n, Object template, Condition attachCond)
-	{
-		attachEffect(n, template, attachCond, null);
-	}
-	
-	protected void attachEffect(Node n, Object template, Condition attachCond, EffectScope effectScope)
-	{
-		final NamedNodeMap attrs = n.getAttributes();
-		final StatsSet set = new StatsSet();
-		for (int i = 0; i < attrs.getLength(); i++)
-		{
-			Node att = attrs.item(i);
-			set.set(att.getNodeName(), getValue(att.getNodeValue(), template));
-		}
-		
-		final StatsSet parameters = parseParameters(n.getFirstChild(), template);
-		final Condition applayCond = parseCondition(n.getFirstChild(), template);
-		
-		if (template instanceof IIdentifiable)
-		{
-			set.set("id", ((IIdentifiable) template).getId());
-		}
-		
-		final AbstractEffect effect = AbstractEffect.createEffect(attachCond, applayCond, set, parameters);
-		parseTemplate(n, effect);
-		if (template instanceof L2Item)
-		{
-			_log.error("Item " + template + " with effects!!!");
-		}
-		else if (template instanceof Skill)
-		{
-			final Skill skill = (Skill) template;
-			if (effectScope != null)
-			{
-				skill.addEffect(effectScope, effect);
-			}
-			else if (skill.isPassive())
-			{
-				skill.addEffect(EffectScope.PASSIVE, effect);
-			}
-			else
-			{
-				skill.addEffect(EffectScope.GENERAL, effect);
-			}
-		}
-	}
-	
-	/**
-	 * Parse effect's parameters.
-	 * @param n the node to start the parsing
-	 * @param template the effect template
-	 * @return the list of parameters if any, {@code null} otherwise
-	 */
-	private StatsSet parseParameters(Node n, Object template)
-	{
-		StatsSet parameters = null;
-		while ((n != null))
-		{
-			// Parse all parameters.
-			if ((n.getNodeType() == Node.ELEMENT_NODE) && "param".equals(n.getNodeName()))
-			{
-				if (parameters == null)
-				{
-					parameters = new StatsSet();
-				}
-				NamedNodeMap params = n.getAttributes();
-				for (int i = 0; i < params.getLength(); i++)
-				{
-					Node att = params.item(i);
-					parameters.set(att.getNodeName(), getValue(att.getNodeValue(), template));
-				}
-			}
-			n = n.getNextSibling();
-		}
-		return parameters == null ? StatsSet.EMPTY_STATSET : parameters;
 	}
 	
 	protected Condition parseCondition(Node n, Object template)

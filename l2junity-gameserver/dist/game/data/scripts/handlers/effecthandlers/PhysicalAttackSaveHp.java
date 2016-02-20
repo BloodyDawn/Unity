@@ -23,7 +23,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -46,10 +45,8 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 	private final boolean _overHit;
 	private final double _saveHp;
 	
-	public PhysicalAttackSaveHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PhysicalAttackSaveHp(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
@@ -115,7 +112,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 			if (damageCap > 0)
 			{
 				damage = Math.min(damage, damageCap);
@@ -152,7 +149,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
 		final double distance = effector.calculateDistance(effected, true, false);
 		
-		if (distance > effected.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		if (distance > effected.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}
@@ -160,7 +157,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		// Defense bonuses in PvP fight
 		if (isPvP)
 		{
-			defence *= effected.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
+			defence *= effected.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		switch (shld)
@@ -209,23 +206,22 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		// Dmg bonuses in PvP fight
 		if (isPvP)
 		{
-			damage *= effector.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1);
+			damage *= effector.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
 		}
 		
 		// Physical skill dmg boost
 		damage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 		
 		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
-		damage *= (1 - (effected.getStat().getValue(Stats.FIXED_DAMAGE_RES, 0) / 100)); // Include fixed damage resistance.
 		
 		// PvE Bonuses.
 		if (effected.isAttackable() || effector.isAttackable())
 		{
 			damage *= Formulas.calcPveDamagePenalty(effector, effected, skill, false);
-			damage *= effector.getStat().getValue(Stats.PVE_PHYS_SKILL_DMG, 1) * effected.getStat().getValue(Stats.PVE_PHYS_SKILL_DEF, 1);
+			damage *= effector.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DAMAGE, 1) * effected.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DEFENCE, 1);
 			if (effector.isRaid())
 			{
-				damage *= effected.getStat().getValue(Stats.PVE_RAID_PHYS_SKILL_DEF, 1);
+				damage *= effected.getStat().getValue(Stats.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1);
 			}
 		}
 		

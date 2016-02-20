@@ -18,11 +18,10 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.ai.CtrlEvent;
+import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -34,9 +33,8 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public final class GetAgro extends AbstractEffect
 {
-	public GetAgro(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public GetAgro(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
@@ -56,7 +54,7 @@ public final class GetAgro extends AbstractEffect
 	{
 		if (effected instanceof Attackable)
 		{
-			effected.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, effector, skill.getEffectPoint());
+			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
 		}
 	}
 }

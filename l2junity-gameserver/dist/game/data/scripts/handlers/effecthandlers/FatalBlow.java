@@ -26,7 +26,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -49,10 +48,8 @@ public final class FatalBlow extends AbstractEffect
 	private final Set<AbnormalType> _abnormals;
 	private final double _abnormalPower;
 	
-	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public FatalBlow(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
@@ -126,7 +123,7 @@ public final class FatalBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 		if (damageCap > 0)
 		{
 			damage = Math.min(damage, damageCap);

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.client.send;
 
 import java.util.Collection;
 
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;

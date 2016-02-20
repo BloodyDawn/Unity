@@ -23,7 +23,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -42,10 +41,8 @@ public final class TeleportToNpc extends AbstractEffect
 	private final int[] _npcIds;
 	private final boolean _party;
 	
-	public TeleportToNpc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TeleportToNpc(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_npcIds = params.getIntArray("npcId", ";");
 		_party = params.getBoolean("party", false);
 	}

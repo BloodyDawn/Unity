@@ -22,11 +22,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.AbnormalType;
@@ -44,10 +42,8 @@ public final class Synergy extends AbstractEffect
 	private final int _skillLevelScaleTo;
 	private final int _minSlot;
 	
-	public Synergy(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Synergy(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		String requiredSlots = params.getString("requiredSlots", null);
 		if ((requiredSlots != null) && !requiredSlots.isEmpty())
 		{
@@ -79,6 +75,7 @@ public final class Synergy extends AbstractEffect
 		_partyBuffSkillId = params.getInt("partyBuffSkillId");
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 1);
 		_minSlot = params.getInt("minSlot", 2);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override
@@ -106,11 +103,12 @@ public final class Synergy extends AbstractEffect
 			
 			if (partyBuffSkill != null)
 			{
-				final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(partyBuffSkill.getTargetType());
+				final WorldObject target = partyBuffSkill.getTarget(info.getEffector(), info.getEffected(), false, false, false);
 				
-				final Creature[] targets = targetHandler.getTargetList(partyBuffSkill, info.getEffector(), false, info.getEffected());
-				
-				info.getEffector().callSkill(partyBuffSkill, null, targets);
+				if ((target != null) && target.isCreature())
+				{
+					info.getEffector().makeTriggerCast(partyBuffSkill, (Creature) target);
+				}
 			}
 			else
 			{

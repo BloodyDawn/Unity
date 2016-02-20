@@ -21,7 +21,7 @@ package handlers.itemhandlers;
 import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;

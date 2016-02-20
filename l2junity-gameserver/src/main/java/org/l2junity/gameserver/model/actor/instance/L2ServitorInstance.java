@@ -34,7 +34,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
 import org.l2junity.gameserver.data.sql.impl.SummonEffectsTable;
 import org.l2junity.gameserver.data.sql.impl.SummonEffectsTable.SummonEffect;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.WorldObject;

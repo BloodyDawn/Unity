@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
@@ -29,20 +28,13 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
  */
 public final class Lucky extends AbstractEffect
 {
-	public Lucky(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Lucky(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
 	public boolean canStart(BuffInfo info)
 	{
 		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
-	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		return info.getSkill().isPassive();
 	}
 }

@@ -23,7 +23,6 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -37,10 +36,8 @@ public class VisualBuff extends AbstractEffect
 {
 	private final List<SkillHolder> _visualSkills = new ArrayList<>();
 	
-	public VisualBuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public VisualBuff(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		for (Object param : params.getSet().values())
 		{
 			final int skillId = Integer.parseInt((String) param);

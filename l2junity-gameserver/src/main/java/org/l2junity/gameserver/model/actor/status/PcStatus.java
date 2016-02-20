@@ -29,6 +29,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.entity.Duel;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -155,7 +157,7 @@ public class PcStatus extends PlayableStatus
 			final Summon summon = getActiveChar().getFirstServitor();
 			if ((summon != null) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
-				tDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stats.TRANSFER_DAMAGE_PERCENT, 0)) / 100;
+				tDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stats.TRANSFER_DAMAGE_SUMMON_PERCENT, 0)) / 100;
 				
 				// Only transfer dmg up to current HP, it should not be killed
 				tDmg = Math.min((int) summon.getCurrentHp() - 1, tDmg);
@@ -264,9 +266,9 @@ public class PcStatus extends PlayableStatus
 		
 		if (value > 0)
 		{
-			final double hpLockMin = getActiveChar().getStat().getValue(Stats.HP_LOCK_MIN, 0);
-			value = Math.max(getCurrentHp() - value, hpLockMin);
-			if (value <= 0)
+			final double oldHp = getCurrentHp();
+			double newHp = Math.max(getCurrentHp() - value, (getActiveChar().isAffected(EffectFlag.IGNORE_DEATH) || getActiveChar().isUndying()) ? 1 : 0);
+			if (newHp <= 0)
 			{
 				if (getActiveChar().isInDuel())
 				{
@@ -279,14 +281,16 @@ public class PcStatus extends PlayableStatus
 					}
 					// let the DuelManager know of his defeat
 					DuelManager.getInstance().onPlayerDefeat(getActiveChar());
-					value = 1;
+					newHp = 1;
 				}
 				else
 				{
-					value = 0;
+					newHp = 0;
 				}
 			}
-			setCurrentHp(value);
+			setCurrentHp(newHp);
+			
+			EventDispatcher.getInstance().notifyEventAsync(new OnCreatureHpChange(getActiveChar(), oldHp, newHp), getActiveChar());
 		}
 		
 		if ((getActiveChar().getCurrentHp() < 0.5) && !isHPConsumption && !getActiveChar().isUndying())

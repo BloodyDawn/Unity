@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -47,7 +48,6 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
-import org.l2junity.gameserver.model.AbsorberInfo;
 import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.DamageDoneInfo;
@@ -87,7 +87,7 @@ public class Attackable extends Npc
 	private boolean _isRaidMinion = false;
 	//
 	private boolean _champion = false;
-	private final Map<Creature, AggroInfo> _aggroList = new ConcurrentHashMap<>();
+	private volatile Map<Creature, AggroInfo> _aggroList = null;
 	private boolean _isReturningToSpawnPoint = false;
 	private boolean _canReturnToSpawnPoint = true;
 	private boolean _seeThroughSilentMove = false;
@@ -108,9 +108,6 @@ public class Attackable extends Npc
 	private volatile CommandChannel _firstCommandChannelAttacked = null;
 	private CommandChannelTimer _commandChannelTimer = null;
 	private long _commandChannelLastAttack = 0;
-	// Soul crystal
-	private boolean _absorbed;
-	private final Map<Integer, AbsorberInfo> _absorbersList = new ConcurrentHashMap<>();
 	// Misc
 	private boolean _mustGiveExpSp;
 	
@@ -150,7 +147,7 @@ public class Attackable extends Npc
 	
 	public final Map<Creature, AggroInfo> getAggroList()
 	{
-		return _aggroList;
+		return _aggroList != null ? _aggroList : Collections.emptyMap();
 	}
 	
 	public final boolean isReturningToSpawnPoint()
@@ -204,7 +201,7 @@ public class Attackable extends Npc
 			return;
 		}
 		
-		final WorldObject target = skill.getFirstOfTargetList(this);
+		final WorldObject target = skill.getTarget(this, false, false, false);
 		if (target != null)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
@@ -365,11 +362,6 @@ public class Attackable extends Npc
 			// Go through the _aggroList of the L2Attackable
 			for (AggroInfo info : getAggroList().values())
 			{
-				if (info == null)
-				{
-					continue;
-				}
-				
 				// Get the L2Character corresponding to this attacker
 				final PlayerInstance attacker = info.getAttacker().getActingPlayer();
 				if (attacker != null)
@@ -683,10 +675,6 @@ public class Attackable extends Npc
 				
 				// Calculate the amount of hate this attackable receives from this attack.
 				double hateValue = (damage * 100) / (getLevel() + 7);
-				if (skill == null)
-				{
-					hateValue = attacker.getStat().getValue(Stats.HATE_ATTACK, hateValue);
-				}
 				
 				addDamageHate(attacker, damage, (int) hateValue);
 				
@@ -725,7 +713,17 @@ public class Attackable extends Npc
 		}
 		
 		// Get the AggroInfo of the attacker L2Character from the _aggroList of the L2Attackable
-		final AggroInfo ai = getAggroList().computeIfAbsent(attacker, AggroInfo::new);
+		if (_aggroList == null)
+		{
+			synchronized (this)
+			{
+				if (_aggroList == null)
+				{
+					_aggroList = new ConcurrentHashMap<>();
+				}
+			}
+		}
+		final AggroInfo ai = _aggroList.computeIfAbsent(attacker, AggroInfo::new);
 		ai.addDamage(damage);
 		
 		// traps does not cause aggro
@@ -784,10 +782,6 @@ public class Attackable extends Npc
 			
 			for (AggroInfo ai : getAggroList().values())
 			{
-				if (ai == null)
-				{
-					return;
-				}
 				ai.addHate(amount);
 			}
 			
@@ -829,7 +823,8 @@ public class Attackable extends Npc
 		{
 			return;
 		}
-		AggroInfo ai = getAggroList().get(target);
+		
+		final AggroInfo ai = getAggroList().get(target);
 		if (ai != null)
 		{
 			ai.stopHate();
@@ -846,7 +841,7 @@ public class Attackable extends Npc
 			return null;
 		}
 		
-		return getAggroList().values().stream().filter(Objects::nonNull).sorted(Comparator.comparingInt(AggroInfo::getHate)).map(AggroInfo::getAttacker).findFirst().orElse(null);
+		return getAggroList().values().stream().filter(Objects::nonNull).sorted(Comparator.comparingInt(AggroInfo::getHate).reversed()).map(AggroInfo::getAttacker).findFirst().orElse(null);
 	}
 	
 	/**
@@ -868,11 +863,6 @@ public class Attackable extends Npc
 		// Go through the aggroList of the L2Attackable
 		for (AggroInfo ai : getAggroList().values())
 		{
-			if (ai == null)
-			{
-				continue;
-			}
-			
 			if (ai.checkHate(this) > maxHate)
 			{
 				secondMostHated = mostHated;
@@ -901,13 +891,9 @@ public class Attackable extends Npc
 			return null;
 		}
 		
-		List<Creature> result = new ArrayList<>();
+		final List<Creature> result = new ArrayList<>();
 		for (AggroInfo ai : getAggroList().values())
 		{
-			if (ai == null)
-			{
-				continue;
-			}
 			ai.checkHate(this);
 			
 			result.add(ai.getAttacker());
@@ -1135,7 +1121,7 @@ public class Attackable extends Npc
 	 */
 	public void clearAggroList()
 	{
-		getAggroList().clear();
+		_aggroList = null;
 		
 		// clear overhit values
 		_overhit = false;
@@ -1283,56 +1269,6 @@ public class Attackable extends Npc
 	}
 	
 	/**
-	 * Activate the absorbed soul condition on the L2Attackable.
-	 */
-	public void absorbSoul()
-	{
-		_absorbed = true;
-	}
-	
-	/**
-	 * @return True if the L2Attackable had his soul absorbed.
-	 */
-	public boolean isAbsorbed()
-	{
-		return _absorbed;
-	}
-	
-	/**
-	 * Adds an attacker that successfully absorbed the soul of this L2Attackable into the _absorbersList.
-	 * @param attacker
-	 */
-	public void addAbsorber(PlayerInstance attacker)
-	{
-		// If we have no _absorbersList initiated, do it
-		final AbsorberInfo ai = _absorbersList.get(attacker.getObjectId());
-		
-		// If the L2Character attacker isn't already in the _absorbersList of this L2Attackable, add it
-		if (ai == null)
-		{
-			_absorbersList.put(attacker.getObjectId(), new AbsorberInfo(attacker.getObjectId(), getCurrentHp()));
-		}
-		else
-		{
-			ai.setAbsorbedHp(getCurrentHp());
-		}
-		
-		// Set this L2Attackable as absorbed
-		absorbSoul();
-	}
-	
-	public void resetAbsorbList()
-	{
-		_absorbed = false;
-		_absorbersList.clear();
-	}
-	
-	public Map<Integer, AbsorberInfo> getAbsorbersList()
-	{
-		return _absorbersList;
-	}
-	
-	/**
 	 * Calculate the Experience and SP to distribute to attacker (L2PcInstance, L2ServitorInstance or L2Party) of the L2Attackable.
 	 * @param charLevel The killer level
 	 * @param damage The damages given by the attacker (L2PcInstance, L2ServitorInstance or L2Party)
@@ -1445,21 +1381,21 @@ public class Attackable extends Npc
 	public void onSpawn()
 	{
 		super.onSpawn();
+		
 		// Clear mob spoil, seed
 		setSpoilerObjectId(0);
-		// Clear all aggro char from list
+		
+		// Clear all aggro list and overhit
 		clearAggroList();
+		
 		// Clear Harvester reward
 		_harvestItem.set(null);
+		_sweepItems.set(null);
+		
 		// Clear mod Seeded stat
 		_seeded = false;
 		_seed = null;
 		_seederObjId = 0;
-		// Clear overhit value
-		overhitEnabled(false);
-		
-		_sweepItems.set(null);
-		resetAbsorbList();
 		
 		setWalking();
 		
@@ -1737,17 +1673,22 @@ public class Attackable extends Npc
 		if (object == null)
 		{
 			final WorldObject target = getTarget();
+			final Map<Creature, AggroInfo> aggroList = _aggroList;
 			if (target != null)
 			{
-				getAggroList().remove(target);
+				if (aggroList != null)
+				{
+					aggroList.remove(target);
+				}
 			}
-			if (getAggroList().isEmpty())
+			if ((aggroList != null) && aggroList.isEmpty())
 			{
 				if (getAI() instanceof AttackableAI)
 				{
 					((AttackableAI) getAI()).setGlobalAggro(-25);
 				}
 				setWalking();
+				clearAggroList();
 			}
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}

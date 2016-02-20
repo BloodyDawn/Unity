@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -32,10 +31,8 @@ public class RealDamage extends AbstractEffect
 {
 	private final double _power;
 	
-	public RealDamage(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public RealDamage(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	
@@ -50,6 +47,9 @@ public class RealDamage extends AbstractEffect
 	{
 		effected.notifyDamageReceived(_power, effector, skill, false, false, false);
 		effected.reduceCurrentHp(_power, effector, skill);
-		effector.sendDamageMessage(effected, skill, (int) _power, false, false);
+		if (effector.isPlayer())
+		{
+			effector.sendDamageMessage(effected, skill, (int) _power, false, false);
+		}
 	}
 }

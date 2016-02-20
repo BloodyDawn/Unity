@@ -3,50 +3,88 @@
 	<skill id="30400" levels="2" name="Divine Wind">
 		<!-- Wind/Holy Resistance + 10. -->
 		<table name="#res"> 10 20</table>
-		<table name="#magicLvl"> 85 85 </table>
-		<set name="icon" val="icon.skill30400" />
-		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="targetType" val="SELF" />
-		<for>
-			<effect name="Buff">
-				<add stat="windRes" val="#res" />
-				<add stat="holyRes" val="#res" />
+		<icon>icon.skill30400</icon>
+		<operateType>P</operateType>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">85</value>
+		</magicLvl>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+				</amount>
+				<attribute>WIND</attribute>
 			</effect>
-		</for>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+				</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="30401" levels="2" name="Tenacity">
 		<!-- Max. HP + 1%, Speed + 4. -->
 		<table name="#maxHp"> 1 2 </table>
 		<table name="#runSpd"> 4 7 </table>
-		<table name="#magicLvl"> 85 85 </table>
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="icon" val="icon.skill30401" />
-		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
-		<for>
-			<effect name="Buff">
-				<add stat="moveSpeed" val="#runSpd" />
-			</effect>
+		<magicLvl>
+			<value level="1">85</value>
+			<value level="2">85</value>
+		</magicLvl>
+		<icon>icon.skill30401</icon>
+		<operateType>P</operateType>
+		<effects>
 			<effect name="MaxHp">
-				<param amount="#maxHp" mode="PER" />
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+			<effect name="Speed">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">7</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="30402" levels="2" name="Efficacy">
 		<!-- MP Consumption - 1%. -->
 		<table name="#consumeRate"> 0.99 0.98 </table>
 		<table name="#magicLvl"> 85 85 </table>
-		<set name="icon" val="icon.skill30402" />
-		<set name="operateType" val="P" />
+		<icon>icon.skill30402</icon>
+		<operateType>P</operateType>
 		<table name="#magicLvl"> 85 85 </table>
-		<set name="targetType" val="SELF" />
-		<for>
-			<effect name="Buff">
-				<mul stat="MagicalMpConsumeRate" val="#consumeRate" />
-				<mul stat="PhysicalMpConsumeRate" val="#consumeRate" />
-				<mul stat="DanceMpConsumeRate" val="#consumeRate" />
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
-		</for>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-1</value>
+					<value level="2">-2</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
 	</skill>
 </list>

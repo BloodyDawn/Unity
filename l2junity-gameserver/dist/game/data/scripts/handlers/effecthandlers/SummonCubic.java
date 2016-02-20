@@ -24,11 +24,11 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CubicTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,10 +44,8 @@ public final class SummonCubic extends AbstractEffect
 	private final int _cubicId;
 	private final int _cubicLvl;
 	
-	public SummonCubic(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SummonCubic(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_cubicId = params.getInt("cubicId", -1);
 		_cubicLvl = params.getInt("cubicLvl", 0);
 	}
@@ -95,7 +93,7 @@ public final class SummonCubic extends AbstractEffect
 		{
 			// If maximum amount is reached, random cubic is removed.
 			// Players with no mastery can have only one cubic.
-			final int allowedCubicCount = effected.getActingPlayer().getStat().getMaxCubicCount();
+			final int allowedCubicCount = (int) effected.getActingPlayer().getStat().getValue(Stats.MAX_CUBIC, 1);
 			final int currentCubicCount = player.getCubics().size();
 			// Extra cubics are removed, one by one, randomly.
 			for (int i = 0; i <= (currentCubicCount - allowedCubicCount); i++)

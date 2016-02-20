@@ -29,8 +29,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -54,8 +52,6 @@ public class PcStat extends PlayableStat
 	private int _oldMaxMp; // stats watch
 	private int _oldMaxCp; // stats watch
 	private long _startingXp;
-	/** Player's maximum cubic count. */
-	private int _maxCubicCount = 1;
 	/** Player's maximum talisman count. */
 	private final AtomicInteger _talismanSlots = new AtomicInteger();
 	private boolean _cloakSlot = false;
@@ -355,24 +351,6 @@ public class PcStat extends PlayableStat
 	}
 	
 	/**
-	 * Gets the maximum cubic count.
-	 * @return the maximum cubic count
-	 */
-	public int getMaxCubicCount()
-	{
-		return _maxCubicCount;
-	}
-	
-	/**
-	 * Sets the maximum cubic count.
-	 * @param cubicCount the maximum cubic count
-	 */
-	public void setMaxCubicCount(int cubicCount)
-	{
-		_maxCubicCount = cubicCount;
-	}
-	
-	/**
 	 * Gets the maximum talisman count.
 	 * @return the maximum talisman count
 	 */
@@ -535,7 +513,7 @@ public class PcStat extends PlayableStat
 	
 	public double getVitalityExpBonus()
 	{
-		return (getVitalityPoints() > 0) ? getValue(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) : 1.0;
+		return (getVitalityPoints() > 0) ? Config.RATE_VITALITY_EXP_MULTIPLIER : 1.0;
 	}
 	
 	public void setVitalityPoints(int value)
@@ -724,14 +702,6 @@ public class PcStat extends PlayableStat
 	protected void onRecalculateStats(boolean broadcast)
 	{
 		final PlayerInstance player = getActiveChar();
-		final Inventory inventory = player.getInventory();
-		if (inventory != null)
-		{
-			for (ItemInstance item : inventory.getPaperdollItems(ItemInstance::isAugmented))
-			{
-				item.getAugmentation().applyStats(player);
-			}
-		}
 		
 		// Upon master stats recalculation trigger pet/servitor recalculation too
 		if (player.hasPet())

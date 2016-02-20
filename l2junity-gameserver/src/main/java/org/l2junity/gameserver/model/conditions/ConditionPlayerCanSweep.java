@@ -18,8 +18,9 @@
  */
 package org.l2junity.gameserver.model.conditions;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -51,39 +52,40 @@ public class ConditionPlayerCanSweep extends Condition
 	@Override
 	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
-		boolean canSweep = false;
+		AtomicBoolean canSweep = new AtomicBoolean(false);
 		if (effector.getActingPlayer() != null)
 		{
 			final PlayerInstance sweeper = effector.getActingPlayer();
 			if (skill != null)
 			{
-				final WorldObject[] targets = skill.getTargetList(sweeper);
-				if (targets != null)
+				skill.forEachTargetAffected(sweeper, effected, o ->
 				{
-					Attackable target;
-					for (WorldObject objTarget : targets)
+					if (o instanceof Attackable)
 					{
-						if (objTarget instanceof Attackable)
+						Attackable target = (Attackable) o;
+						if (target.isDead())
 						{
-							target = (Attackable) objTarget;
-							if (target.isDead())
+							if (target.isSpoiled())
 							{
-								if (target.isSpoiled())
+								canSweep.set(target.checkSpoilOwner(sweeper, true));
+								if (canSweep.get())
 								{
-									canSweep = target.checkSpoilOwner(sweeper, true);
-									canSweep &= !target.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
-									canSweep &= sweeper.getInventory().checkInventorySlotsAndWeight(target.getSpoilLootItems(), true, true);
+									canSweep.set(!target.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true));
 								}
-								else
+								if (canSweep.get())
 								{
-									sweeper.sendPacket(SystemMessageId.SWEEPER_FAILED_TARGET_NOT_SPOILED);
+									canSweep.set(sweeper.getInventory().checkInventorySlotsAndWeight(target.getSpoilLootItems(), true, true));
 								}
+							}
+							else
+							{
+								sweeper.sendPacket(SystemMessageId.SWEEPER_FAILED_TARGET_NOT_SPOILED);
 							}
 						}
 					}
-				}
+				});
 			}
 		}
-		return (_val == canSweep);
+		return (_val == canSweep.get());
 	}
 }

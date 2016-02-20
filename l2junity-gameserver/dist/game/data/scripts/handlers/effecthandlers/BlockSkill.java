@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
@@ -36,10 +35,8 @@ public final class BlockSkill extends AbstractEffect
 {
 	private final int[] _magicTypes;
 	
-	public BlockSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockSkill(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_magicTypes = params.getIntArray("magicTypes", ";");
 	}
 	

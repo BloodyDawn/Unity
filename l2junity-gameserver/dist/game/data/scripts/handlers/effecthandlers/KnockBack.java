@@ -24,7 +24,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -49,10 +48,8 @@ public final class KnockBack extends AbstractEffect
 	private final boolean _knockDown;
 	private final FlyType _type;
 	
-	public KnockBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public KnockBack(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_distance = params.getInt("distance", 50);
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);

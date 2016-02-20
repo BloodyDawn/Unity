@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 public class PlayerAI extends PlayableAI
 {
@@ -187,11 +187,7 @@ public class PlayerAI extends PlayableAI
 		if (getIntention() != AI_INTENTION_REST)
 		{
 			changeIntention(AI_INTENTION_REST);
-			setTarget(null);
-			if (getAttackTarget() != null)
-			{
-				setAttackTarget(null);
-			}
+			_actor.setTarget(null);
 			clientStopMoving(null);
 		}
 	}
@@ -252,15 +248,15 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkAttack()
 	{
-		Creature target = getAttackTarget();
-		if (target == null)
+		WorldObject target = _actor.getTarget();
+		if ((target == null) || !target.isCreature())
 		{
 			return;
 		}
-		if (checkTargetLostOrDead(target))
+		if (checkTargetLostOrDead((Creature) target))
 		{
 			// Notify the target
-			setAttackTarget(null);
+			_actor.setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
@@ -268,13 +264,13 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		
-		_actor.doAttack(target);
+		_actor.doAttack((Creature) target);
 	}
 	
 	private void thinkCast()
 	{
-		Creature target = getCastTarget();
-		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor instanceof PlayerInstance))
+		WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
+		if ((_skill.getTargetType() == TargetType.GROUND) && (_actor instanceof PlayerInstance))
 		{
 			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
 			{
@@ -285,10 +281,10 @@ public class PlayerAI extends PlayableAI
 		{
 			if (checkTargetLost(target))
 			{
-				if (_skill.isBad() && (getAttackTarget() != null))
+				if (_skill.isBad() && (target != null))
 				{
 					// Notify the target
-					setCastTarget(null);
+					_actor.setTarget(null);
 				}
 				return;
 			}
@@ -307,7 +303,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		WorldObject target = getTarget();
+		WorldObject target = _actor.getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
@@ -326,7 +322,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		WorldObject target = getTarget();
+		WorldObject target = _actor.getTarget();
 		if (checkTargetLost(target))
 		{
 			return;

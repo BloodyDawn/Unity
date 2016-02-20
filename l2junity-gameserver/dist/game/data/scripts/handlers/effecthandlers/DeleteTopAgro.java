@@ -22,7 +22,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -36,10 +35,8 @@ public class DeleteTopAgro extends AbstractEffect
 {
 	private final int _chance;
 	
-	public DeleteTopAgro(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DeleteTopAgro(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

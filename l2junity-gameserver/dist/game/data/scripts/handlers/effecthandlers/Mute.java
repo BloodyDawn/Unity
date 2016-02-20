@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -32,9 +31,8 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public final class Mute extends AbstractEffect
 {
-	public Mute(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Mute(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

@@ -22,7 +22,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -37,10 +36,8 @@ public final class DeleteHateOfMe extends AbstractEffect
 {
 	private final int _chance;
 	
-	public DeleteHateOfMe(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DeleteHateOfMe(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_chance = params.getInt("chance", 100);
 	}
 	

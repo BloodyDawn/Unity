@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
@@ -30,11 +29,10 @@ public final class CpHealOverTime extends AbstractEffect
 {
 	private final double _power;
 	
-	public CpHealOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CpHealOverTime(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

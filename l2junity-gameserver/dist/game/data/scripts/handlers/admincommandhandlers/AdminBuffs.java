@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;

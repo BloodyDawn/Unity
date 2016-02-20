@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -38,10 +37,8 @@ public class Feed extends AbstractEffect
 	private final int _ride;
 	private final int _wyvern;
 	
-	public Feed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Feed(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_normal = params.getInt("normal", 0);
 		_ride = params.getInt("ride", 0);
 		_wyvern = params.getInt("wyvern", 0);

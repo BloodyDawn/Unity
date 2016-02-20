@@ -350,7 +350,7 @@ public class RecipeController
 				// if still not empty, schedule another pass
 				if (!_items.isEmpty())
 				{
-					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate() * GameTimeController.TICKS_PER_SECOND * GameTimeController.MILLIS_IN_TICK);
+					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) * GameTimeController.TICKS_PER_SECOND * GameTimeController.MILLIS_IN_TICK);
 					
 					// FIXME: please fix this packet to show crafting animation (somebody)
 					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);

@@ -22,7 +22,6 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -54,9 +53,8 @@ public final class ServitorShare extends AbstractEffect
 		}
 	}
 	
-	public ServitorShare(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ServitorShare(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

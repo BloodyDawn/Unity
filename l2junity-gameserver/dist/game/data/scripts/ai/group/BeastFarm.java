@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;

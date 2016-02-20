@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 
 /**
@@ -30,10 +29,8 @@ public final class EffectFlag extends AbstractEffect
 {
 	private org.l2junity.gameserver.model.effects.EffectFlag _flag = org.l2junity.gameserver.model.effects.EffectFlag.NONE;
 	
-	public EffectFlag(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public EffectFlag(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		String flag = params.getString("effectFlag", null);
 		if (flag != null)
 		{

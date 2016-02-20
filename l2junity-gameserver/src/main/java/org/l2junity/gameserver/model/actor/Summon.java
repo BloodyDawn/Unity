@@ -53,7 +53,6 @@ import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -323,7 +322,7 @@ public abstract class Summon extends Playable
 					return;
 				}
 				
-				AggroInfo info = TgMob.getAggroList().get(this);
+				final AggroInfo info = TgMob.getAggroList().get(this);
 				if (info != null)
 				{
 					TgMob.addDamageHate(owner, info.getDamage(), info.getHate());
@@ -611,29 +610,7 @@ public abstract class Summon extends Playable
 		}
 		
 		// Get the target for the skill
-		WorldObject target = null;
-		switch (skill.getTargetType())
-		{
-			// OWNER_PET should be cast even if no target has been found
-			case OWNER_PET:
-				target = getOwner();
-				break;
-			// PARTY, AURA, SELF should be cast even if no target has been found
-			case PARTY:
-			case AURA:
-			case AURA_FRIENDLY:
-			case FRONT_AURA:
-			case BEHIND_AURA:
-			case SELF:
-			case AURA_CORPSE_MOB:
-			case COMMAND_CHANNEL:
-				target = this;
-				break;
-			default:
-				// Get the first target of the list
-				target = skill.getFirstOfTargetList(this);
-				break;
-		}
+		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
 		
 		// Check the validity of the target
 		if (target == null)
@@ -676,56 +653,14 @@ public abstract class Summon extends Playable
 		// Check if this is bad magic skill
 		if (skill.isBad())
 		{
-			if (getOwner() == target)
-			{
-				return false;
-			}
-			
-			// Summons can cast skills on NPCs inside peace zones.
-			if (isInsidePeaceZone(this, target) && !getOwner().getAccessLevel().allowPeaceAttack())
-			{
-				// If summon or target is in a peace zone, send a system message:
-				sendPacket(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_A_PEACEFUL_ZONE);
-				return false;
-			}
-			
 			// If L2PcInstance is in Olympiad and the match isn't already start, send a Server->Client packet ActionFailed
 			if (getOwner().isInOlympiadMode() && !getOwner().isOlympiadStart())
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
 			}
-			
-			if ((target.getActingPlayer() != null) && (getOwner().getSiegeState() > 0) && getOwner().isInsideZone(ZoneId.SIEGE) && (target.getActingPlayer().getSiegeState() == getOwner().getSiegeState()) && (target.getActingPlayer() != getOwner()) && (target.getActingPlayer().getSiegeSide() == getOwner().getSiegeSide()))
-			{
-				sendPacket(SystemMessageId.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
-			// Check if the target is attackable
-			if (target.isDoor())
-			{
-				if (!target.isAutoAttackable(getOwner()))
-				{
-					return false;
-				}
-			}
-			else
-			{
-				// Summons can cast skills on NPCs inside peace zones.
-				if (!target.canBeAttacked() && !getOwner().getAccessLevel().allowPeaceAttack())
-				{
-					return false;
-				}
-				
-				// Check if a Forced attack is in progress on non-attackable target
-				if (!target.isAutoAttackable(this) && !forceUse && !target.isNpc() && (skill.getTargetType() != L2TargetType.AURA) && (skill.getTargetType() != L2TargetType.FRONT_AURA) && (skill.getTargetType() != L2TargetType.BEHIND_AURA) && (skill.getTargetType() != L2TargetType.CLAN) && (skill.getTargetType() != L2TargetType.PARTY) && (skill.getTargetType() != L2TargetType.SELF))
-				{
-					return false;
-				}
-			}
 		}
+		
 		// Notify the AI with AI_INTENTION_CAST and target
 		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
 		return true;

@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -36,12 +35,11 @@ public final class MagicalDamOverTime extends AbstractEffect
 	private final double _power;
 	private final boolean _canKill;
 	
-	public MagicalDamOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public MagicalDamOverTime(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 		_canKill = params.getBoolean("canKill", false);
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override

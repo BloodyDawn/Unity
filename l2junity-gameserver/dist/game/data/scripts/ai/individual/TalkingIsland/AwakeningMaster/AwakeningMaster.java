@@ -280,7 +280,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 			return;
 		}
 		
-		if (player.getInventory().getSize(false) >= (player.getInventoryLimit() * 0.8))
+		if (!player.isInventoryUnder80(false))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_AWAKEN_DUE_TO_YOUR_CURRENT_INVENTORY_WEIGHT_PLEASE_ORGANIZE_YOUR_INVENTORY_AND_TRY_AGAIN_DWARVEN_CHARACTERS_MUST_BE_AT_20_OR_BELOW_THE_INVENTORY_MAX_TO_AWAKEN);
 			return;

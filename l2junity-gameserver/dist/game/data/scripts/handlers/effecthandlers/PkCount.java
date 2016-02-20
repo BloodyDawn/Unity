@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -35,10 +34,8 @@ public class PkCount extends AbstractEffect
 {
 	private final int _amount;
 	
-	public PkCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
+	public PkCount(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_amount = params.getInt("amount", 0);
 	}
 	

@@ -22,7 +22,6 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -40,10 +39,8 @@ public final class DispelByCategory extends AbstractEffect
 	private final int _rate;
 	private final int _max;
 	
-	public DispelByCategory(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DispelByCategory(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_slot = params.getString("slot", null);
 		_rate = params.getInt("rate", 0);
 		_max = params.getInt("max", 0);

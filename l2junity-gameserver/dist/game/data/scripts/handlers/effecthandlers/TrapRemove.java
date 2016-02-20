@@ -22,7 +22,6 @@ import org.l2junity.gameserver.enums.TrapAction;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
@@ -38,10 +37,8 @@ public final class TrapRemove extends AbstractEffect
 {
 	private final int _power;
 	
-	public TrapRemove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TrapRemove(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		if (params.isEmpty())
 		{
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": effect without power!");

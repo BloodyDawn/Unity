@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -35,9 +34,8 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class TakeCastleStart extends AbstractEffect
 {
-	public TakeCastleStart(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TakeCastleStart(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

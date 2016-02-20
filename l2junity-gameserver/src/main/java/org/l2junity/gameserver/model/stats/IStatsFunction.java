@@ -69,7 +69,7 @@ public interface IStatsFunction
 		{
 			final L2PetInstance pet = (L2PetInstance) creature;
 			final ItemInstance weapon = pet.getActiveWeaponInstance();
-			final double baseVal = stat == Stats.POWER_ATTACK ? pet.getPetLevelData().getPetPAtk() : stat == Stats.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateBalue;
+			final double baseVal = stat == Stats.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() : stat == Stats.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateBalue;
 			return baseVal + (weapon != null ? weapon.getItem().getStats(stat, baseVal) : 0);
 		}
 		else if (creature.isPlayer())
@@ -131,7 +131,7 @@ public interface IStatsFunction
 				}
 			}
 			
-			if ((stat == Stats.MAGIC_DEFENCE) || (stat == Stats.POWER_DEFENCE))
+			if ((stat == Stats.MAGICAL_DEFENCE) || (stat == Stats.PHYSICAL_DEFENCE))
 			{
 				value += calcEnchantDefBonus(item, blessedBonus, enchant, overEnchant);
 			}
@@ -139,7 +139,7 @@ public interface IStatsFunction
 			{
 				value += calcEnchantMatkBonus(item, blessedBonus, enchant, overEnchant);
 			}
-			else if ((stat == Stats.POWER_ATTACK) && item.isWeapon())
+			else if ((stat == Stats.PHYSICAL_ATTACK) && item.isWeapon())
 			{
 				value += calcEnchantedPAtkBonus(item, blessedBonus, enchant, overEnchant);
 			}

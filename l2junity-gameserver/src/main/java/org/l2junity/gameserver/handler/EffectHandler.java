@@ -20,51 +20,38 @@ package org.l2junity.gameserver.handler;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 
 /**
  * @author BiggBoss, UnAfraid
  */
-public final class EffectHandler implements IHandler<Class<? extends AbstractEffect>, String>
+public final class EffectHandler
 {
-	private final Map<String, Class<? extends AbstractEffect>> _handlers;
-	
-	protected EffectHandler()
+	private final Map<String, Function<StatsSet, AbstractEffect>> _effectHandlerFactories = new HashMap<>();
+
+	public void registerHandler(String name, Function<StatsSet, AbstractEffect> handlerFactory)
 	{
-		_handlers = new HashMap<>();
+		_effectHandlerFactories.put(name, handlerFactory);
 	}
-	
-	@Override
-	public void registerHandler(Class<? extends AbstractEffect> handler)
+
+	public Function<StatsSet, AbstractEffect> getHandlerFactory(String name)
 	{
-		_handlers.put(handler.getSimpleName(), handler);
+		return _effectHandlerFactories.get(name);
 	}
-	
-	@Override
-	public synchronized void removeHandler(Class<? extends AbstractEffect> handler)
-	{
-		_handlers.remove(handler.getSimpleName());
-	}
-	
-	@Override
-	public Class<? extends AbstractEffect> getHandler(String name)
-	{
-		return _handlers.get(name);
-	}
-	
-	@Override
+
 	public int size()
 	{
-		return _handlers.size();
+		return _effectHandlerFactories.size();
 	}
 	
 	public void executeScript()
 	{
 		try
 		{
-			
 			ScriptEngineManager.getInstance().executeEffectMasterHandler();
 		}
 		catch (Exception e)

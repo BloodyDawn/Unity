@@ -19,7 +19,7 @@
 package ai.individual.Other.OlyBuffer;
 
 import org.l2junity.commons.util.CommonUtil;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;

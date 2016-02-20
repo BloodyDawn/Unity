@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -41,10 +40,8 @@ public final class PullBack extends AbstractEffect
 	private final int _animationSpeed;
 	private final FlyType _type;
 	
-	public PullBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PullBack(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", _speed);
 		_animationSpeed = params.getInt("animationSpeed", 0);

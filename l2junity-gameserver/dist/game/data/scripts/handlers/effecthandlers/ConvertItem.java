@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
@@ -38,9 +37,8 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ConvertItem extends AbstractEffect
 {
-	public ConvertItem(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ConvertItem(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.enums.InventoryBlockType;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -288,22 +289,12 @@ public final class Transform implements IIdentifiable
 				
 				if (!allowed.isEmpty())
 				{
-					final int[] items = new int[allowed.size()];
-					for (int i = 0; i < items.length; i++)
-					{
-						items[i] = allowed.get(i);
-					}
-					player.getInventory().setInventoryBlock(items, 1);
+					player.getInventory().setInventoryBlock(allowed, InventoryBlockType.WHITELIST);
 				}
 				
 				if (!notAllowed.isEmpty())
 				{
-					final int[] items = new int[notAllowed.size()];
-					for (int i = 0; i < items.length; i++)
-					{
-						items[i] = notAllowed.get(i);
-					}
-					player.getInventory().setInventoryBlock(items, 2);
+					player.getInventory().setInventoryBlock(notAllowed, InventoryBlockType.BLACKLIST);
 				}
 			}
 			

@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -42,10 +41,8 @@ public final class Heal extends AbstractEffect
 {
 	private final double _power;
 	
-	public Heal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Heal(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 	}
 	
@@ -120,9 +117,6 @@ public final class Heal extends AbstractEffect
 				}
 			}
 		}
-		
-		// Adding healer's heal power
-		amount = effector.getStat().getValue(Stats.HEAL_POWER, amount);
 		
 		// Prevents overheal
 		amount = Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp());

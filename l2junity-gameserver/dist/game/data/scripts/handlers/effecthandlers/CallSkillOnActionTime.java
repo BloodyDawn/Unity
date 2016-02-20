@@ -18,11 +18,9 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -35,11 +33,10 @@ public final class CallSkillOnActionTime extends AbstractEffect
 {
 	private final SkillHolder _skill;
 	
-	public CallSkillOnActionTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CallSkillOnActionTime(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
+		setTicks(params.getInt("ticks"));
 	}
 	
 	@Override
@@ -64,16 +61,11 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		final Skill skill = _skill.getSkill();
 		if (skill != null)
 		{
-			final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(skill.getTargetType());
+			final WorldObject target = skill.getTarget(info.getEffector(), info.getEffected(), false, false, false);
 			
-			final Creature[] targets = targetHandler.getTargetList(skill, info.getEffector(), false, info.getEffected());
-			
-			for (Creature target : targets)
+			if ((target != null) && target.isCreature())
 			{
-				if (skill.checkCondition(info.getEffector(), target))
-				{
-					info.getEffector().callSkill(skill, null, target);
-				}
+				info.getEffector().makeTriggerCast(skill, (Creature) target);
 			}
 		}
 		else

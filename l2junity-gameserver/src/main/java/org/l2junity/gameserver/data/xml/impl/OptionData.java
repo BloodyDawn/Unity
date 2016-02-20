@@ -19,21 +19,21 @@
 package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
+import org.l2junity.gameserver.handler.EffectHandler;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.options.OptionsSkillHolder;
 import org.l2junity.gameserver.model.options.OptionsSkillType;
-import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 /**
  * @author UnAfraid
@@ -60,88 +60,58 @@ public class OptionData implements IGameXmlReader
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		forEach(doc, "list", listNode -> forEach(listNode, "option", optionNode ->
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			final int id = parseInteger(optionNode.getAttributes(), "id");
+			final Options option = new Options(id);
+			
+			forEach(optionNode, IXmlReader::isNode, innerNode ->
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				switch (innerNode.getNodeName())
 				{
-					if ("option".equalsIgnoreCase(d.getNodeName()))
+					case "effects":
 					{
-						final int id = parseInteger(d.getAttributes(), "id");
-						final Options op = new Options(id);
-						
-						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
+						forEach(innerNode, "effect", effectNode ->
 						{
-							switch (cd.getNodeName())
+							final String name = parseString(effectNode.getAttributes(), "name");
+							final StatsSet params = new StatsSet();
+							forEach(effectNode, IXmlReader::isNode, paramNode ->
 							{
-								case "for":
-								{
-									for (Node fd = cd.getFirstChild(); fd != null; fd = fd.getNextSibling())
-									{
-										switch (fd.getNodeName())
-										{
-											case "add":
-											case "sub":
-											case "mul":
-											case "div":
-											case "set":
-											case "share":
-											case "enchant":
-											case "enchanthp":
-											{
-												parseFuncs(fd.getAttributes(), fd.getNodeName(), op);
-											}
-										}
-										
-									}
-									break;
-								}
-								case "active_skill":
-								{
-									op.setActiveSkill(new SkillHolder(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "level")));
-									break;
-								}
-								case "passive_skill":
-								{
-									op.setPassiveSkill(new SkillHolder(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "level")));
-									break;
-								}
-								case "attack_skill":
-								{
-									op.addActivationSkill(new OptionsSkillHolder(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "level"), parseDouble(cd.getAttributes(), "chance"), OptionsSkillType.ATTACK));
-									break;
-								}
-								case "magic_skill":
-								{
-									op.addActivationSkill(new OptionsSkillHolder(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "level"), parseDouble(cd.getAttributes(), "chance"), OptionsSkillType.MAGIC));
-									break;
-								}
-								case "critical_skill":
-								{
-									op.addActivationSkill(new OptionsSkillHolder(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "level"), parseDouble(cd.getAttributes(), "chance"), OptionsSkillType.CRITICAL));
-									break;
-								}
-							}
-						}
-						_optionData.put(op.getId(), op);
+								params.set(paramNode.getNodeName(), SkillData.getInstance().parseValue(paramNode, true, false, Collections.emptyMap()));
+							});
+							option.addEffect(EffectHandler.getInstance().getHandlerFactory(name).apply(params));
+						});
+						break;
+					}
+					case "active_skill":
+					{
+						option.setActiveSkill(new SkillHolder(parseInteger(innerNode.getAttributes(), "id"), parseInteger(innerNode.getAttributes(), "level")));
+						break;
+					}
+					case "passive_skill":
+					{
+						option.setPassiveSkill(new SkillHolder(parseInteger(innerNode.getAttributes(), "id"), parseInteger(innerNode.getAttributes(), "level")));
+						break;
+					}
+					case "attack_skill":
+					{
+						option.addActivationSkill(new OptionsSkillHolder(parseInteger(innerNode.getAttributes(), "id"), parseInteger(innerNode.getAttributes(), "level"), parseDouble(innerNode.getAttributes(), "chance"), OptionsSkillType.ATTACK));
+						break;
+					}
+					case "magic_skill":
+					{
+						option.addActivationSkill(new OptionsSkillHolder(parseInteger(innerNode.getAttributes(), "id"), parseInteger(innerNode.getAttributes(), "level"), parseDouble(innerNode.getAttributes(), "chance"), OptionsSkillType.MAGIC));
+						break;
+					}
+					case "critical_skill":
+					{
+						option.addActivationSkill(new OptionsSkillHolder(parseInteger(innerNode.getAttributes(), "id"), parseInteger(innerNode.getAttributes(), "level"), parseDouble(innerNode.getAttributes(), "chance"), OptionsSkillType.CRITICAL));
+						break;
 					}
 				}
-			}
-		}
-	}
-	
-	private void parseFuncs(NamedNodeMap attrs, String functionName, Options op)
-	{
-		Stats stat = Stats.valueOfXml(parseString(attrs, "stat"));
-		double val = parseDouble(attrs, "val");
-		int order = -1;
-		final Node orderNode = attrs.getNamedItem("order");
-		if (orderNode != null)
-		{
-			order = Integer.parseInt(orderNode.getNodeValue());
-		}
-		op.addFunc(new FuncTemplate(null, null, functionName, order, stat, val));
+			});
+			_optionData.put(option.getId(), option);
+		}));
 	}
 	
 	public Options getOptions(int id)

@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -33,10 +32,8 @@ public final class EnlargeAbnormalSlot extends AbstractEffect
 {
 	private final int _slots;
 	
-	public EnlargeAbnormalSlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public EnlargeAbnormalSlot(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_slots = params.getInt("slots", 0);
 	}
 	
@@ -50,12 +47,6 @@ public final class EnlargeAbnormalSlot extends AbstractEffect
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		effected.getStat().setMaxBuffCount(effected.getStat().getMaxBuffCount() + _slots);
-	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		return info.getSkill().isPassive();
 	}
 	
 	@Override

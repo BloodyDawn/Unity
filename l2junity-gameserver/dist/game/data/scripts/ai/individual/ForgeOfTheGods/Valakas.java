@@ -24,7 +24,7 @@ import java.util.List;
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;

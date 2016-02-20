@@ -23,7 +23,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -56,13 +55,10 @@ public final class Blink extends AbstractEffect
 	private final int _flyDelay;
 	private final int _animationSpeed;
 	
-	public Blink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Blink(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_flyCourse = params.getInt("angle", 0);
 		_flyRadius = params.getInt("range", 0);
-		
 		_flyType = params.getEnum("flyType", FlyType.class, FlyType.DUMMY);
 		_flySpeed = params.getInt("speed", 0);
 		_flyDelay = params.getInt("delay", 0);

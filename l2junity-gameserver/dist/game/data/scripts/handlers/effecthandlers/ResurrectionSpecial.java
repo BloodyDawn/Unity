@@ -25,7 +25,6 @@ import java.util.Set;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -42,10 +41,8 @@ public final class ResurrectionSpecial extends AbstractEffect
 	private final int _power;
 	private final Set<Integer> _instanceId;
 	
-	public ResurrectionSpecial(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public ResurrectionSpecial(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getInt("power", 0);
 		
 		final String instanceIds = params.getString("instanceId", null);

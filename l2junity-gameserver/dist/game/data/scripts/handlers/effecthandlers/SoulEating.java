@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayableExpChanged;
@@ -41,11 +40,12 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class SoulEating extends AbstractEffect
 {
 	private final int _expNeeded;
+	private final int _maxSouls;
 	
-	public SoulEating(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SoulEating(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 		_expNeeded = params.getInt("expNeeded");
+		_maxSouls = params.getInt("maxSouls");
 	}
 	
 	@Override
@@ -64,6 +64,12 @@ public final class SoulEating extends AbstractEffect
 		{
 			info.getEffected().removeListenerIf(EventType.ON_PLAYABLE_EXP_CHANGED, listener -> listener.getOwner() == this);
 		}
+	}
+	
+	@Override
+	public void pump(Creature effected, Skill skill)
+	{
+		effected.getStat().mergeAdd(Stats.MAX_SOULS, _maxSouls);
 	}
 	
 	public void onExperienceReceived(Playable playable, long exp)

@@ -22,7 +22,6 @@ import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -36,10 +35,8 @@ public final class TakeCastle extends AbstractEffect
 {
 	private final CastleSide _side;
 	
-	public TakeCastle(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public TakeCastle(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_side = params.getEnum("side", CastleSide.class);
 	}
 	

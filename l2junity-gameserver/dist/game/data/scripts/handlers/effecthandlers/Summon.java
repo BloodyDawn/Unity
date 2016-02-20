@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -43,12 +42,9 @@ public final class Summon extends AbstractEffect
 	private final ItemHolder _consumeItem;
 	private final int _lifeTime;
 	private final int _consumeItemInterval;
-	private final int _summonPoints;
 	
-	public Summon(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Summon(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		if (params.isEmpty())
 		{
 			throw new IllegalArgumentException("Summon effect without parameters!");
@@ -59,7 +55,6 @@ public final class Summon extends AbstractEffect
 		_consumeItem = new ItemHolder(params.getInt("consumeItemId", 0), params.getInt("consumeItemCount", 1));
 		_consumeItemInterval = params.getInt("consumeItemInterval", 0);
 		_lifeTime = params.getInt("lifeTime", 3600) > 0 ? params.getInt("lifeTime", 3600) * 1000 : -1;
-		_summonPoints = params.getInt("summonPoints", 0);
 	}
 	
 	@Override
@@ -77,6 +72,10 @@ public final class Summon extends AbstractEffect
 		}
 		
 		final PlayerInstance player = effected.getActingPlayer();
+		if (player.hasServitors())
+		{
+			player.getServitors().values().forEach(s -> s.unSummon(player));
+		}
 		final L2NpcTemplate template = NpcData.getInstance().getTemplate(_npcId);
 		final L2ServitorInstance summon = new L2ServitorInstance(template, player);
 		final int consumeItemInterval = (_consumeItemInterval > 0 ? _consumeItemInterval : (template.getRace() != Race.SIEGE_WEAPON ? 240 : 60)) * 1000;
@@ -102,7 +101,6 @@ public final class Summon extends AbstractEffect
 		summon.setCurrentHp(summon.getMaxHp());
 		summon.setCurrentMp(summon.getMaxMp());
 		summon.setHeading(player.getHeading());
-		summon.setSummonPoints(_summonPoints);
 		
 		player.addServitor(summon);
 		

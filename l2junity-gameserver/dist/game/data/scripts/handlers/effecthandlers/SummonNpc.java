@@ -29,11 +29,11 @@ import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.L2EffectPointInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
  * Summon Npc effect implementation.
@@ -48,10 +48,8 @@ public final class SummonNpc extends AbstractEffect
 	private final boolean _isSummonSpawn;
 	private final boolean _singleInstance; // Only one instance of this NPC is allowed.
 	
-	public SummonNpc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SummonNpc(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_despawnDelay = params.getInt("despawnDelay", 20000);
 		_npcId = params.getInt("npcId", 0);
 		_npcCount = params.getInt("npcCount", 1);
@@ -103,25 +101,21 @@ public final class SummonNpc extends AbstractEffect
 		int y = player.getY();
 		int z = player.getZ();
 		
-		switch (skill.getTargetType())
+		if (skill.getTargetType() == TargetType.GROUND)
 		{
-			case GROUND:
-				final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
-				if (wordPosition != null)
-				{
-					x = wordPosition.getX();
-					y = wordPosition.getY();
-					z = wordPosition.getZ();
-				}
-				break;
-			case ONE:
-				if (player.getTarget() != null)
-				{
-					x = player.getTarget().getX();
-					y = player.getTarget().getY();
-					z = player.getTarget().getZ();
-				}
-				break;
+			final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
+			if (wordPosition != null)
+			{
+				x = wordPosition.getX();
+				y = wordPosition.getY();
+				z = wordPosition.getZ();
+			}
+		}
+		else
+		{
+			x = effected.getX();
+			y = effected.getY();
+			z = effected.getZ();
 		}
 		
 		if (_randomOffset)

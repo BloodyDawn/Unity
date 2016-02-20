@@ -22,7 +22,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -37,10 +36,8 @@ public final class OpenDoor extends AbstractEffect
 	private final int _chance;
 	private final boolean _isItem;
 	
-	public OpenDoor(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public OpenDoor(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_chance = params.getInt("chance", 0);
 		_isItem = params.getBoolean("isItem", false);
 	}

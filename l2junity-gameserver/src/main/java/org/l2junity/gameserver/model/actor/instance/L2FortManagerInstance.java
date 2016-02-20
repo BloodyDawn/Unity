@@ -23,7 +23,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2TeleportLocation;

@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
@@ -35,9 +34,8 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public final class BlockParty extends AbstractEffect
 {
-	public BlockParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockParty(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

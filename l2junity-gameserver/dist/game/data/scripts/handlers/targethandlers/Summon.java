@@ -18,47 +18,32 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
- * Target Summon handler.
- * @author UnAfraid
+ * Target automatically one of my summons.
+ * @author Nik
  */
 public class Summon implements ITargetTypeHandler
 {
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Enum<TargetType> getTargetType()
 	{
-		if (activeChar.hasSummon())
-		{
-			if (!activeChar.hasPet() && activeChar.hasServitors())
-			{
-				return activeChar.getServitors().values().toArray(new Creature[0]);
-			}
-			else if (activeChar.hasPet() && !activeChar.hasServitors())
-			{
-				return new Creature[]
-				{
-					activeChar.getPet()
-				};
-			}
-			final List<Creature> targets = new ArrayList<>(1 + activeChar.getServitors().size());
-			targets.add(activeChar.getPet());
-			targets.addAll(activeChar.getServitors().values());
-			return targets.toArray(new Creature[0]);
-		}
-		return EMPTY_TARGET_LIST;
+		return TargetType.SUMMON;
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		return L2TargetType.SUMMON;
+		if (activeChar.isPlayer() && activeChar.hasSummon())
+		{
+			return activeChar.getActingPlayer().getAnyServitor();
+		}
+		
+		return activeChar.getPet();
 	}
 }

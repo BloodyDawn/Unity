@@ -70,20 +70,16 @@ public enum Stats
 	REGENERATE_MP_RATE("regMp"),
 	MANA_CHARGE("manaCharge"),
 	HEAL_EFFECT("healEffect"),
-	HEAL_POWER("healPower"),
 	
 	// ATTACK & DEFENCE
-	POWER_DEFENCE("pDef", new PDefenseFinalizer()),
-	MAGIC_DEFENCE("mDef", new MDefenseFinalizer()),
-	POWER_ATTACK("pAtk", new PAttackFinalizer()),
+	PHYSICAL_DEFENCE("pDef", new PDefenseFinalizer()),
+	MAGICAL_DEFENCE("mDef", new MDefenseFinalizer()),
+	PHYSICAL_ATTACK("pAtk", new PAttackFinalizer()),
 	MAGIC_ATTACK("mAtk", new MAttackFinalizer()),
 	PHYSICAL_SKILL_POWER("physicalSkillPower"),
-	POWER_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
+	PHYSICAL_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
 	MAGIC_ATTACK_SPEED("mAtkSpd", new MAttackSpeedFinalizer()), // Magic Skill Casting Time Rate
 	ATK_REUSE("atkReuse"), // Bows Hits Reuse Rate
-	P_REUSE("pReuse"), // Physical Skill Reuse Rate
-	MAGIC_REUSE_RATE("mReuse"), // Magic Skill Reuse Rate
-	DANCE_REUSE("dReuse"), // Dance Skill Reuse Rate
 	SHIELD_DEFENCE("sDef"),
 	CRITICAL_DAMAGE("cAtk"),
 	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
@@ -92,29 +88,27 @@ public enum Stats
 	MAGIC_CRIT_DMG_ADD("mCritPowerAdd"),
 	
 	// PVP BONUS
-	PVP_DAMAGE("pvpDamage"), // TODO: Implement me
-	PVP_PHYSICAL_DMG("pvpPhysDmg"),
-	PVP_MAGICAL_DMG("pvpMagicalDmg"),
-	PVP_PHYS_SKILL_DMG("pvpPhysSkillsDmg"),
-	PVP_PHYSICAL_DEF("pvpPhysDef"),
-	PVP_MAGICAL_DEF("pvpMagicalDef"),
-	PVP_PHYS_SKILL_DEF("pvpPhysSkillsDef"),
+	PVP_PHYSICAL_ATTACK_DAMAGE("pvpPhysDmg"),
+	PVP_MAGICAL_SKILL_DAMAGE("pvpMagicalDmg"),
+	PVP_PHYSICAL_SKILL_DAMAGE("pvpPhysSkillsDmg"),
+	PVP_PHYSICAL_ATTACK_DEFENCE("pvpPhysDef"),
+	PVP_MAGICAL_SKILL_DEFENCE("pvpMagicalDef"),
+	PVP_PHYSICAL_SKILL_DEFENCE("pvpPhysSkillsDef"),
 	
 	// PVE BONUS
-	PVE_PHYSICAL_DMG("pvePhysDmg"),
-	PVE_PHYS_SKILL_DMG("pvePhysSkillsDmg"),
-	PVE_MAGICAL_DMG("pveMagicalDmg"),
-	PVE_PHYSICAL_DEF("pvePhysDef"),
-	PVE_PHYS_SKILL_DEF("pvePhysSkillsDef"),
-	PVE_MAGICAL_DEF("pveMagicalDef"),
-	PVE_RAID_PHYSICAL_DEF("pveRaidPhysDef"),
-	PVE_RAID_PHYS_SKILL_DEF("pveRaidPhysSkillsDef"),
-	PVE_RAID_MAGICAL_DEF("pveRaidMagicalDef"),
+	PVE_PHYSICAL_ATTACK_DAMAGE("pvePhysDmg"),
+	PVE_PHYSICAL_SKILL_DAMAGE("pvePhysSkillsDmg"),
+	PVE_MAGICAL_SKILL_DAMAGE("pveMagicalDmg"),
+	PVE_PHYSICAL_ATTACK_DEFENCE("pvePhysDef"),
+	PVE_PHYSICAL_SKILL_DEFENCE("pvePhysSkillsDef"),
+	PVE_MAGICAL_SKILL_DEFENCE("pveMagicalDef"),
+	PVE_RAID_PHYSICAL_ATTACK_DEFENCE("pveRaidPhysDef"),
+	PVE_RAID_PHYSICAL_SKILL_DEFENCE("pveRaidPhysSkillsDef"),
+	PVE_RAID_MAGICAL_SKILL_DEFENCE("pveRaidMagicalDef"),
 	
 	// ATTACK & DEFENCE RATES
 	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
 	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
-	P_SKILL_EVASION("pSkillEvas"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),
 	DEFENCE_CRITICAL_RATE_ADD("defCritRateAdd"),
 	DEFENCE_MAGIC_CRITICAL_RATE("defMCritRate"),
@@ -122,9 +116,9 @@ public enum Stats
 	DEFENCE_CRITICAL_DAMAGE("defCritDamage"),
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
-	SHIELD_RATE("rShld"),
+	SHIELD_DEFENCE_RATE("rShld"),
 	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
-	MCRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
+	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
 	BLOW_RATE("blowRate"),
 	EXPSP_RATE("rExp"),
 	BONUS_EXP("bonusExp"),
@@ -134,7 +128,7 @@ public enum Stats
 	// ACCURACY & RANGE
 	ACCURACY_COMBAT("accCombat", new PAccuracyFinalizer()),
 	ACCURACY_MAGIC("accMagic", new MAccuracyFinalizer()),
-	POWER_ATTACK_RANGE("pAtkRange", new PRangeFinalizer()),
+	PHYSICAL_ATTACK_RANGE("pAtkRange", new PRangeFinalizer()),
 	MAGIC_ATTACK_RANGE("mAtkRange"),
 	ATTACK_COUNT_MAX("atkCountMax"),
 	// Run speed, walk & escape speed are calculated proportionally, magic speed is a buff
@@ -164,10 +158,8 @@ public enum Stats
 	
 	// VULNERABILITIES
 	DAMAGE_ZONE_VULN("damageZoneVuln"),
-	MOVEMENT_VULN("movementVuln"),
-	CANCEL_VULN("cancelVuln"), // Resistance for cancel type skills
-	DEBUFF_VULN("debuffVuln"),
-	BUFF_VULN("buffVuln"),
+	RESIST_DISPEL_BUFF("cancelVuln"), // Resistance for cancel type skills
+	RESIST_ABNORMAL_DEBUFF("debuffVuln"),
 	
 	// RESISTANCES
 	FIRE_RES("fireRes", new AttributeFinalizer(AttributeType.FIRE, false)),
@@ -179,10 +171,8 @@ public enum Stats
 	BASE_ATTRIBUTE_RES("baseAttrRes"),
 	MAGIC_SUCCESS_RES("magicSuccRes"),
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
-	DEBUFF_IMMUNITY("debuffImmunity"),
 	ABNORMAL_RESIST_PHYSICAL("abnormalResPhysical"),
 	ABNORMAL_RESIST_MAGICAL("abnormalResMagical"),
-	FIXED_DAMAGE_RES("fixedDamageRes"), // Resistance agains fixed damage.
 	
 	// ELEMENT POWER
 	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),
@@ -193,17 +183,15 @@ public enum Stats
 	DARK_POWER("darkPower", new AttributeFinalizer(AttributeType.DARK, true)),
 	
 	// PROFICIENCY
-	CANCEL_PROF("cancelProf"),
-	
 	REFLECT_DAMAGE_PERCENT("reflectDam"),
 	REFLECT_DAMAGE_PERCENT_DEFENSE("reflectDamDef"),
-	REFLECT_SKILL_MAGIC("reflectSkillMagic"),
-	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"),
+	REFLECT_SKILL_MAGIC("reflectSkillMagic"), // Need rework
+	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"), // Need rework
 	VENGEANCE_SKILL_MAGIC_DAMAGE("vengeanceMdam"),
 	VENGEANCE_SKILL_PHYSICAL_DAMAGE("vengeancePdam"),
 	ABSORB_DAMAGE_PERCENT("absorbDam"),
 	ABSORB_DAMAGE_CHANCE("absorbDamChance", new VampiricChanceFinalizer()),
-	TRANSFER_DAMAGE_PERCENT("transDam"),
+	TRANSFER_DAMAGE_SUMMON_PERCENT("transDam"),
 	MANA_SHIELD_PERCENT("manaShield"),
 	TRANSFER_DAMAGE_TO_PLAYER("transDamToPlayer"),
 	ABSORB_MANA_DAMAGE_PERCENT("absorbDamMana"),
@@ -212,23 +200,12 @@ public enum Stats
 	WEIGHT_PENALTY("weightPenalty"),
 	
 	// ExSkill
-	INV_LIM("inventoryLimit"),
-	WH_LIM("whLimit"),
-	FREIGHT_LIM("FreightLimit"),
-	P_SELL_LIM("PrivateSellLimit"),
-	P_BUY_LIM("PrivateBuyLimit"),
-	REC_D_LIM("DwarfRecipeLimit"),
-	REC_C_LIM("CommonRecipeLimit"),
-	
-	// C4 Stats
-	PHYSICAL_MP_CONSUME_RATE("PhysicalMpConsumeRate"),
-	MAGICAL_MP_CONSUME_RATE("MagicalMpConsumeRate"),
-	DANCE_MP_CONSUME_RATE("DanceMpConsumeRate"),
-	BOW_MP_CONSUME_RATE("BowMpConsumeRate"),
-	MP_CONSUME("MpConsume"),
-	
-	// Shield Stats
-	SHIELD_DEFENCE_ANGLE("shieldDefAngle"),
+	INVENTORY_NORMAL("inventoryLimit"),
+	STORAGE_PRIVATE("whLimit"),
+	TRADE_SELL("PrivateSellLimit"),
+	TRADE_BUY("PrivateBuyLimit"),
+	RECIPE_DWARVEN("DwarfRecipeLimit"),
+	RECIPE_COMMON("CommonRecipeLimit"),
 	
 	// Skill mastery
 	SKILL_CRITICAL("skillCritical"),
@@ -248,26 +225,20 @@ public enum Stats
 	REDUCE_DEATH_PENALTY_BY_MOB("reduceDeathPenaltyByMob"),
 	REDUCE_DEATH_PENALTY_BY_RAID("reduceDeathPenaltyByRaid"),
 	
-	// Fishing
-	FISHING_EXPERTISE("fishingExpertise"),
-	
 	// Brooches
 	BROOCH_JEWELS("broochJewels"),
 	
 	// Summon Points
 	MAX_SUMMON_POINTS("summonPoints"),
 	
-	// Exp bonus applied to vitality
-	VITALITY_EXP_BONUS("vitalityExpBonus"),
+	// Cubic Count
+	MAX_CUBIC("cubicCount"),
 	
 	// Storm Sign bonus damage
 	STORM_SIGN_BONUS("stormSignBonus"),
 	
-	// The maximum allowed range to be damaged from.
-	DAMAGED_MAX_RANGE("damagedMaxRange"),
-	
-	// The maximum allowed range to be debuffed from.
-	DEBUFFED_MAX_RANGE("debuffedMaxRange"),
+	// The maximum allowed range to be damaged/debuffed from.
+	SPHERIC_BARRIER_RANGE("sphericBarrier"),
 	
 	// Blocks given amount of debuffs.
 	DEBUFF_BLOCK("debuffBlock"),
@@ -276,23 +247,14 @@ public enum Stats
 	RANDOM_DAMAGE("randomDamage", new RandomDamageFinalizer()),
 	
 	// Affects the random weapon damage.
-	DAMAGE_CAP("damageCap"),
-	
-	// Lock your HP at the given value.
-	HP_LOCK("hpLock"),
-	
-	// Lock HP, can't go below min value.
-	HP_LOCK_MIN("hpLockMin"),
+	DAMAGE_LIMIT("damageCap"),
 	
 	// Maximun momentum one can charge
 	MAX_MOMENTUM("maxMomentum"),
 	
-	// Alters the hate of your physical attacks.
-	HATE_ATTACK("hateAttack"),
-	
 	// Which base stat ordinal should alter skill critical formula.
-	STAT_SKILLCRITICAL("statSkillCritical"),
-	STAT_SPEED("statSpeed"),
+	STAT_BONUS_SKILL_CRITICAL("statSkillCritical"),
+	STAT_BONUS_SPEED("statSpeed"),
 	SHOTS_BONUS("shotBonus", new ShotsBonusFinalizer());
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(Stats.class);

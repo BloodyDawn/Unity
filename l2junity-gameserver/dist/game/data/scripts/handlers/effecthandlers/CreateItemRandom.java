@@ -22,7 +22,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -38,9 +37,8 @@ public class CreateItemRandom extends AbstractEffect
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CreateItemRandom.class);
 	
-	public CreateItemRandom(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CreateItemRandom(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

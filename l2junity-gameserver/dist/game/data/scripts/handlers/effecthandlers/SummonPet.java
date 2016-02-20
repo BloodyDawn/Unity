@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.PetItemHolder;
@@ -41,9 +40,8 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class SummonPet extends AbstractEffect
 {
-	public SummonPet(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SummonPet(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override

@@ -24,7 +24,7 @@ import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -162,14 +162,17 @@ public class SkillChannelizer implements Runnable
 				}
 				
 				final List<Creature> targetList = new ArrayList<>();
-				
-				for (WorldObject chars : skill.getTargetList(_channelizer))
+				WorldObject target = skill.getTarget(_channelizer, false, false, false);
+				if (target != null)
 				{
-					if (chars.isCreature())
+					skill.forEachTargetAffected(_channelizer, target, o ->
 					{
-						targetList.add((Creature) chars);
-						((Creature) chars).getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), getChannelizer());
-					}
+						if (o.isCreature())
+						{
+							targetList.add((Creature) o);
+							((Creature) o).getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), getChannelizer());
+						}
+					});
 				}
 				
 				if (targetList.isEmpty())

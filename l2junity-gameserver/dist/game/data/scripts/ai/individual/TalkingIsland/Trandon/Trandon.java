@@ -21,7 +21,7 @@ package ai.individual.TalkingIsland.Trandon;
 import java.util.Set;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;

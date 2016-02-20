@@ -79,6 +79,7 @@ import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
 import org.l2junity.gameserver.data.xml.impl.ShuttleData;
 import org.l2junity.gameserver.data.xml.impl.SiegeScheduleData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillLearnData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.data.xml.impl.SpawnsData;
@@ -91,10 +92,10 @@ import org.l2junity.gameserver.datatables.BotReportTable;
 import org.l2junity.gameserver.datatables.EventDroplist;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.handler.OneDayRewardHandler;
+import org.l2junity.gameserver.handler.SkillConditionHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
@@ -206,6 +207,7 @@ public class GameServer
 		OneDayRewardData.getInstance();
 		
 		printSection("Skills");
+		SkillConditionHandler.getInstance().executeScript();
 		EffectHandler.getInstance().executeScript();
 		EnchantSkillGroupsData.getInstance();
 		SkillTreesData.getInstance();
@@ -275,6 +277,7 @@ public class GameServer
 		CastleManager.getInstance().loadInstances();
 		GrandBossManager.getInstance();
 		EventDroplist.getInstance();
+		CommissionManager.getInstance();
 		
 		printSection("Olympiad");
 		Olympiad.getInstance();

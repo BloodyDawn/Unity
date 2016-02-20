@@ -19,35 +19,21 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
  * Silent Move effect implementation.
  */
 public final class SilentMove extends AbstractEffect
 {
-	public SilentMove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SilentMove(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
 	}
 	
 	@Override
 	public int getEffectFlags()
 	{
 		return EffectFlag.SILENT_MOVE.getMask();
-	}
-	
-	@Override
-	public boolean onActionTime(BuffInfo info)
-	{
-		if (info.getEffected().isDead())
-		{
-			return false;
-		}
-		
-		return info.getSkill().isToggle();
 	}
 }

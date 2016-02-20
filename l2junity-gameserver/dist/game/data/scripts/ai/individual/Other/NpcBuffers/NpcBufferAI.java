@@ -19,7 +19,7 @@
 package ai.individual.Other.NpcBuffers;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;

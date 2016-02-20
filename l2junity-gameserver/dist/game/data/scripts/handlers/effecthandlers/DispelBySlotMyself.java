@@ -25,7 +25,6 @@ import java.util.Set;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -41,10 +40,8 @@ public final class DispelBySlotMyself extends AbstractEffect
 {
 	private final Set<AbnormalType> _dispelAbnormals;
 	
-	public DispelBySlotMyself(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DispelBySlotMyself(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		String dispel = params.getString("dispel", null);
 		if ((dispel != null) && !dispel.isEmpty())
 		{

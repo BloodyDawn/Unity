@@ -18,98 +18,116 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * @author UnAfraid
+ * Target dead player or pet.
+ * @author Nik
  */
 public class PcBody implements ITargetTypeHandler
 {
+	
 	@Override
-	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Enum<TargetType> getTargetType()
 	{
-		List<Creature> targetList = new ArrayList<>();
-		if ((target != null) && target.isDead())
-		{
-			final PlayerInstance player;
-			if (activeChar.isPlayer())
-			{
-				player = activeChar.getActingPlayer();
-			}
-			else
-			{
-				player = null;
-			}
-			
-			final PlayerInstance targetPlayer;
-			if (target.isPlayer())
-			{
-				targetPlayer = target.getActingPlayer();
-			}
-			else
-			{
-				targetPlayer = null;
-			}
-			
-			final L2PetInstance targetPet;
-			if (target.isPet())
-			{
-				targetPet = (L2PetInstance) target;
-			}
-			else
-			{
-				targetPet = null;
-			}
-			
-			if ((player != null) && ((targetPlayer != null) || (targetPet != null)))
-			{
-				boolean condGood = true;
-				
-				if (skill.hasEffectType(L2EffectType.RESURRECTION))
-				{
-					if (targetPlayer != null)
-					{
-						// check target is not in a active siege zone
-						if (targetPlayer.isInsideZone(ZoneId.SIEGE) && !targetPlayer.isInSiege())
-						{
-							condGood = false;
-							activeChar.sendPacket(SystemMessageId.IT_IS_NOT_POSSIBLE_TO_RESURRECT_IN_BATTLEGROUNDS_WHERE_A_SIEGE_WAR_IS_TAKING_PLACE);
-						}
-					}
-				}
-				
-				if (condGood)
-				{
-					if (!onlyFirst)
-					{
-						targetList.add(target);
-						return targetList.toArray(new Creature[targetList.size()]);
-					}
-					return new Creature[]
-					{
-						target
-					};
-				}
-			}
-		}
-		activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
-		return EMPTY_TARGET_LIST;
+		return TargetType.PC_BODY;
 	}
 	
 	@Override
-	public Enum<L2TargetType> getTargetType()
+	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		return L2TargetType.PC_BODY;
+		if (selectedTarget == null)
+		{
+			return null;
+		}
+		
+		if (!selectedTarget.isCreature())
+		{
+			return null;
+		}
+		
+		if (!selectedTarget.isPlayer() || selectedTarget.isPet())
+		{
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+			}
+			
+			return null;
+		}
+		
+		Playable target = (Playable) selectedTarget;
+		
+		if (target.isDead())
+		{
+			if (skill.hasEffectType(L2EffectType.RESURRECTION))
+			{
+				if (activeChar.isResurrectionBlocked() || target.isResurrectionBlocked())
+				{
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
+						target.sendPacket(SystemMessageId.REJECT_RESURRECTION); // Reject resurrection
+					}
+					
+					return null;
+				}
+				
+				// check target is not in a active siege zone
+				if (target.isPlayer() && target.isInsideZone(ZoneId.SIEGE) && !target.getActingPlayer().isInSiege())
+				{
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.IT_IS_NOT_POSSIBLE_TO_RESURRECT_IN_BATTLEGROUNDS_WHERE_A_SIEGE_WAR_IS_TAKING_PLACE);
+					}
+					
+					return null;
+				}
+			}
+			
+			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
+			if (dontMove)
+			{
+				if (activeChar.calculateDistance(target, false, false) > skill.getCastRange())
+				{
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
+					}
+					
+					return null;
+				}
+			}
+			
+			// Geodata check when character is within range.
+			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+			{
+				if (sendMessage)
+				{
+					activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+				}
+				
+				return null;
+			}
+			
+			return target;
+		}
+		
+		// If target is not dead or not player/pet it will not even bother to walk within range, unlike Enemy target type.
+		if (sendMessage)
+		{
+			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+		}
+		
+		return null;
 	}
 }

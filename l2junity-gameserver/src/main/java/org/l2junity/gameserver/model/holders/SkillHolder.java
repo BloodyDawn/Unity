@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.holders;
 
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**

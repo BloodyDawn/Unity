@@ -24,11 +24,9 @@ import java.util.List;
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.ExtractableProductItem;
-import org.l2junity.gameserver.model.ExtractableSkill;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -43,9 +41,19 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class RestorationRandom extends AbstractEffect
 {
-	public RestorationRandom(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	final List<ExtractableProductItem> _products = new ArrayList<>();
+	
+	public RestorationRandom(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
+		for (StatsSet group : params.getList("items", StatsSet.class))
+		{
+			final List<ItemHolder> items = new ArrayList<>();
+			for (StatsSet item : group.getList(".", StatsSet.class))
+			{
+				items.add(new ItemHolder(item.getInt(".id"), item.getInt(".count")));
+			}
+			_products.add(new ExtractableProductItem(items, group.getFloat(".chance")));
+		}
 	}
 	
 	@Override
@@ -57,23 +65,6 @@ public final class RestorationRandom extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		if (!effector.isPlayer() || !effected.isPlayer())
-		{
-			return;
-		}
-		
-		final ExtractableSkill exSkill = skill.getExtractableSkill();
-		if (exSkill == null)
-		{
-			return;
-		}
-		
-		if (exSkill.getProductItems().isEmpty())
-		{
-			_log.warn("Extractable Skill with no data, probably wrong/empty table in Skill Id: " + skill.getId());
-			return;
-		}
-		
 		final double rndNum = 100 * Rnd.nextDouble();
 		double chance = 0;
 		double chanceFrom = 0;
@@ -88,7 +79,7 @@ public final class RestorationRandom extends AbstractEffect
 		// If you get chance equal 45% you fall into the second zone 30-80.
 		// Meaning you get the second production list.
 		// Calculate extraction
-		for (ExtractableProductItem expi : exSkill.getProductItems())
+		for (ExtractableProductItem expi : _products)
 		{
 			chance = expi.getChance();
 			if ((rndNum >= chanceFrom) && (rndNum <= (chance + chanceFrom)))

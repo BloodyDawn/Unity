@@ -18,62 +18,16 @@
  */
 package handlers.effecthandlers;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
-import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
-import org.l2junity.gameserver.model.events.returns.DamageReturn;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Sdw
  */
-public class DamageShield extends AbstractEffect
+public class DamageShield extends AbstractStatAddEffect
 {
-	private final double _damage;
-	private static final Map<Integer, Double> _damageHolder = new ConcurrentHashMap<>();
-	
-	public DamageShield(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public DamageShield(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
-		_damage = params.getDouble("damage", 0);
-	}
-	
-	private DamageReturn onDamageReceivedEvent(OnCreatureDamageReceived event)
-	{
-		if (event.isDamageOverTime()) // TODO: Check if that's true
-		{
-			return null;
-		}
-		
-		final int objectId = event.getTarget().getObjectId();
-		
-		double damageLeft = _damageHolder.get(objectId);
-		double newDamageLeft = Math.max(damageLeft - event.getDamage(), 0);
-		double newDamage = Math.max(event.getDamage() - damageLeft, 0);
-		
-		_damageHolder.put(objectId, newDamageLeft);
-		
-		return new DamageReturn(false, true, false, newDamage);
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().removeListenerIf(EventType.ON_CREATURE_DAMAGE_RECEIVED, listener -> listener.getOwner() == this);
-		_damageHolder.remove(info.getEffected().getObjectId());
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		_damageHolder.put(info.getEffected().getObjectId(), _damage);
-		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_DAMAGE_RECEIVED, (OnCreatureDamageReceived event) -> onDamageReceivedEvent(event), this));
+		super(params, Stats.REFLECT_DAMAGE_PERCENT);
 	}
 }

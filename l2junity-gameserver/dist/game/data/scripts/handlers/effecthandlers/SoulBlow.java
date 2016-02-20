@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -41,10 +40,8 @@ public final class SoulBlow extends AbstractEffect
 	private final double _chance;
 	private final boolean _overHit;
 	
-	public SoulBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public SoulBlow(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_overHit = params.getBoolean("overHit", false);
@@ -100,7 +97,7 @@ public final class SoulBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 		if (damageCap > 0)
 		{
 			damage = Math.min(damage, damageCap);

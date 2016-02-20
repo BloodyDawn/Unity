@@ -3,266 +3,727 @@
 	<skill id="7100" levels="1" name="Clan-exclusive Pet Stun">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stuns the target for 3 seconds. -->
-		<set name="icon" val="icon.skill5168" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="5" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1000" />
-		<set name="effectPoint" val="-700" />
-		<set name="abnormalType" val="STUN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="trait" val="SHOCK" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill5168</icon>
+		<operateType>A2</operateType>
+		<mpConsume>5</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+		<effectPoint>-700</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<trait>SHOCK</trait>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7101" levels="1" name="Clan-exclusive Pet Aerial Thrust">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lifts and holds the target in the air for 3 seconds. -->
-		<set name="icon" val="icon.skill11276" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="5" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-700" />
-		<set name="abnormalType" val="AIRBIND" />
-		<set name="abnormalResists" val="STUN;TURN_FLEE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="trait" val="AIRBIND" />
-		<set name="abnormalVisualEffect" val="AIRBIND" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11276</icon>
+		<operateType>A2</operateType>
+		<mpConsume>5</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-700</effectPoint>
+		<abnormalType>AIRBIND</abnormalType>
+		<abnormalResists>STUN;TURN_FLEE</abnormalResists>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<trait>AIRBIND</trait>
+		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7102" levels="1" name="Summon Clan Pet">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="isMagic" val="2" />
-		<set name="hitTime" val="5000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<isMagic>2</isMagic>
+		<hitTime>5000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CanSummonPet" />
+			<condition name="OpPledge">
+				<level>5</level>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7103" levels="1" name="Helping Tree CP Recovery Range">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="300" />
-		<set name="effectPoint" val="635" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="affectRange" val="1000" />
-		<set name="affectLimit" val="5-12" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>300</hitTime>
+		<effectPoint>635</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<affectRange>1000</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="7104" levels="1" name="Pa'agrio's Hand">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Raise the temperature of the Draco Egg through Pa'agrio's Hand. It raises the temperature by 1 - 10 degrees on a Small Draco Egg and 0.1 - 1.0 degrees on a Large Draco Egg. The Fire Spirit Agathion must be summoned for it to be used. -->
-		<set name="icon" val="icon.skill11775" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="100" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="1" />
-		<set name="isMagic" val="2" />
-		<set name="reuseDelay" val="2000" />
+		<icon>icon.skill11775</icon>
+		<operateType>A1</operateType>
+		<castRange>100</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>1</magicLvl>
+		<isMagic>2</isMagic>
+		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7105" levels="1" name="Incubation Possible">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Incubation Possible -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="100" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="700" />
-		<set name="magicLvl" val="1" />
-		<set name="reuseDelay" val="2000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>100</castRange>
+		<effectPoint>-1</effectPoint>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>700</effectRange>
+		<magicLvl>1</magicLvl>
+		<reuseDelay>2000</reuseDelay>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>19257</item>
+					<item>19258</item>
+					<item>19449</item>
+					<item>19450</item>
+				</npcIds>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7106" levels="1" name="Optimal Temperature Incubation Success">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Optimal Temperature Incubation Success -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="coolTime" val="800" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="reuseDelay" val="2000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1</effectPoint>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>19257</item>
+					<item>19258</item>
+					<item>19449</item>
+					<item>19450</item>
+				</npcIds>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7107" levels="1" name="Incubation Success">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Incubation Success -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="coolTime" val="800" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="reuseDelay" val="2000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1</effectPoint>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>19257</item>
+					<item>19258</item>
+					<item>19449</item>
+					<item>19450</item>
+				</npcIds>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7108" levels="1" name="Incubation Failure">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Incubation Failure -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="coolTime" val="800" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="1" />
-		<set name="reuseDelay" val="2000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1</effectPoint>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
+		<reuseDelay>2000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>19257</item>
+					<item>19258</item>
+					<item>19449</item>
+					<item>19450</item>
+				</npcIds>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7109" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
-		<set name="icon" val="icon.skill0028" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="100" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0028</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>76</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckClassList">
+				<classIds>
+					<GLADIATOR />
+					<WARLORD />
+					<PALADIN />
+					<DARK_AVENGER />
+					<TREASURE_HUNTER />
+					<HAWKEYE />
+					<SORCERER />
+					<NECROMANCER />
+					<WARLOCK />
+					<BISHOP />
+					<PROPHET />
+					<TEMPLE_KNIGHT />
+					<SWORDSINGER />
+					<PLAINS_WALKER />
+					<SILVER_RANGER />
+					<SPELLSINGER />
+					<ELEMENTAL_SUMMONER />
+					<ELDER />
+					<SHILLIEN_KNIGHT />
+					<BLADEDANCER />
+					<ABYSS_WALKER />
+					<PHANTOM_RANGER />
+					<SPELLHOWLER />
+					<PHANTOM_SUMMONER />
+					<SHILLIEN_ELDER />
+					<DESTROYER />
+					<TYRANT />
+					<OVERLORD />
+					<WARCRYER />
+					<BOUNTY_HUNTER />
+					<WARSMITH />
+					<BERSERKER />
+					<MALE_SOULBREAKER />
+					<FEMALE_SOULBREAKER />
+					<ARBALESTER />
+					<INSPECTOR />
+					<DUELIST />
+					<DREADNOUGHT />
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<ADVENTURER />
+					<SAGITTARIUS />
+					<ARCHMAGE />
+					<SOULTAKER />
+					<ARCANA_LORD />
+					<CARDINAL />
+					<HIEROPHANT />
+					<EVA_TEMPLAR />
+					<SWORD_MUSE />
+					<WIND_RIDER />
+					<MOONLIGHT_SENTINEL />
+					<MYSTIC_MUSE />
+					<ELEMENTAL_MASTER />
+					<EVA_SAINT />
+					<SHILLIEN_TEMPLAR />
+					<SPECTRAL_DANCER />
+					<GHOST_HUNTER />
+					<GHOST_SENTINEL />
+					<STORM_SCREAMER />
+					<SPECTRAL_MASTER />
+					<SHILLIEN_SAINT />
+					<TITAN />
+					<GRAND_KHAVATARI />
+					<DOMINATOR />
+					<DOOMCRYER />
+					<FORTUNE_SEEKER />
+					<MAESTRO />
+					<DOOMBRINGER />
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+					<TRICKSTER />
+					<JUDICATOR />
+					<SIGEL_KNIGHT />
+					<TYRR_WARRIOR />
+					<OTHELL_ROGUE />
+					<YUL_ARCHER />
+					<FEOH_WIZARD />
+					<ISS_ENCHANTER />
+					<WYNN_SUMMONER />
+					<AEORE_HEALER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+			<condition name="OpPledge">
+				<level>5</level>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7110" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
-		<set name="icon" val="icon.skill0028" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="100" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0028</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>85</minLevel>
+				<maxLevel>89</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckClassList">
+				<classIds>
+					<GLADIATOR />
+					<WARLORD />
+					<PALADIN />
+					<DARK_AVENGER />
+					<TREASURE_HUNTER />
+					<HAWKEYE />
+					<SORCERER />
+					<NECROMANCER />
+					<WARLOCK />
+					<BISHOP />
+					<PROPHET />
+					<TEMPLE_KNIGHT />
+					<SWORDSINGER />
+					<PLAINS_WALKER />
+					<SILVER_RANGER />
+					<SPELLSINGER />
+					<ELEMENTAL_SUMMONER />
+					<ELDER />
+					<SHILLIEN_KNIGHT />
+					<BLADEDANCER />
+					<ABYSS_WALKER />
+					<PHANTOM_RANGER />
+					<SPELLHOWLER />
+					<PHANTOM_SUMMONER />
+					<SHILLIEN_ELDER />
+					<DESTROYER />
+					<TYRANT />
+					<OVERLORD />
+					<WARCRYER />
+					<BOUNTY_HUNTER />
+					<WARSMITH />
+					<BERSERKER />
+					<MALE_SOULBREAKER />
+					<FEMALE_SOULBREAKER />
+					<ARBALESTER />
+					<INSPECTOR />
+					<DUELIST />
+					<DREADNOUGHT />
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<ADVENTURER />
+					<SAGITTARIUS />
+					<ARCHMAGE />
+					<SOULTAKER />
+					<ARCANA_LORD />
+					<CARDINAL />
+					<HIEROPHANT />
+					<EVA_TEMPLAR />
+					<SWORD_MUSE />
+					<WIND_RIDER />
+					<MOONLIGHT_SENTINEL />
+					<MYSTIC_MUSE />
+					<ELEMENTAL_MASTER />
+					<EVA_SAINT />
+					<SHILLIEN_TEMPLAR />
+					<SPECTRAL_DANCER />
+					<GHOST_HUNTER />
+					<GHOST_SENTINEL />
+					<STORM_SCREAMER />
+					<SPECTRAL_MASTER />
+					<SHILLIEN_SAINT />
+					<TITAN />
+					<GRAND_KHAVATARI />
+					<DOMINATOR />
+					<DOOMCRYER />
+					<FORTUNE_SEEKER />
+					<MAESTRO />
+					<DOOMBRINGER />
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+					<TRICKSTER />
+					<JUDICATOR />
+					<SIGEL_KNIGHT />
+					<TYRR_WARRIOR />
+					<OTHELL_ROGUE />
+					<YUL_ARCHER />
+					<FEOH_WIZARD />
+					<ISS_ENCHANTER />
+					<WYNN_SUMMONER />
+					<AEORE_HEALER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+			<condition name="OpPledge">
+				<level>5</level>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7111" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
-		<set name="icon" val="icon.skill0028" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="100" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0028</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>90</minLevel>
+				<maxLevel>94</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckClassList">
+				<classIds>
+					<GLADIATOR />
+					<WARLORD />
+					<PALADIN />
+					<DARK_AVENGER />
+					<TREASURE_HUNTER />
+					<HAWKEYE />
+					<SORCERER />
+					<NECROMANCER />
+					<WARLOCK />
+					<BISHOP />
+					<PROPHET />
+					<TEMPLE_KNIGHT />
+					<SWORDSINGER />
+					<PLAINS_WALKER />
+					<SILVER_RANGER />
+					<SPELLSINGER />
+					<ELEMENTAL_SUMMONER />
+					<ELDER />
+					<SHILLIEN_KNIGHT />
+					<BLADEDANCER />
+					<ABYSS_WALKER />
+					<PHANTOM_RANGER />
+					<SPELLHOWLER />
+					<PHANTOM_SUMMONER />
+					<SHILLIEN_ELDER />
+					<DESTROYER />
+					<TYRANT />
+					<OVERLORD />
+					<WARCRYER />
+					<BOUNTY_HUNTER />
+					<WARSMITH />
+					<BERSERKER />
+					<MALE_SOULBREAKER />
+					<FEMALE_SOULBREAKER />
+					<ARBALESTER />
+					<INSPECTOR />
+					<DUELIST />
+					<DREADNOUGHT />
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<ADVENTURER />
+					<SAGITTARIUS />
+					<ARCHMAGE />
+					<SOULTAKER />
+					<ARCANA_LORD />
+					<CARDINAL />
+					<HIEROPHANT />
+					<EVA_TEMPLAR />
+					<SWORD_MUSE />
+					<WIND_RIDER />
+					<MOONLIGHT_SENTINEL />
+					<MYSTIC_MUSE />
+					<ELEMENTAL_MASTER />
+					<EVA_SAINT />
+					<SHILLIEN_TEMPLAR />
+					<SPECTRAL_DANCER />
+					<GHOST_HUNTER />
+					<GHOST_SENTINEL />
+					<STORM_SCREAMER />
+					<SPECTRAL_MASTER />
+					<SHILLIEN_SAINT />
+					<TITAN />
+					<GRAND_KHAVATARI />
+					<DOMINATOR />
+					<DOOMCRYER />
+					<FORTUNE_SEEKER />
+					<MAESTRO />
+					<DOOMBRINGER />
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+					<TRICKSTER />
+					<JUDICATOR />
+					<SIGEL_KNIGHT />
+					<TYRR_WARRIOR />
+					<OTHELL_ROGUE />
+					<YUL_ARCHER />
+					<FEOH_WIZARD />
+					<ISS_ENCHANTER />
+					<WYNN_SUMMONER />
+					<AEORE_HEALER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+			<condition name="OpPledge">
+				<level>5</level>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7112" levels="1" name="Summon Bratty Angma">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon a Bratty Angma. -->
-		<set name="icon" val="icon.skill0028" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="100" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0028</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>95</minLevel>
+				<maxLevel>99</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpCanNotUseAirship" />
+			<condition name="OpCheckClassList">
+				<classIds>
+					<GLADIATOR />
+					<WARLORD />
+					<PALADIN />
+					<DARK_AVENGER />
+					<TREASURE_HUNTER />
+					<HAWKEYE />
+					<SORCERER />
+					<NECROMANCER />
+					<WARLOCK />
+					<BISHOP />
+					<PROPHET />
+					<TEMPLE_KNIGHT />
+					<SWORDSINGER />
+					<PLAINS_WALKER />
+					<SILVER_RANGER />
+					<SPELLSINGER />
+					<ELEMENTAL_SUMMONER />
+					<ELDER />
+					<SHILLIEN_KNIGHT />
+					<BLADEDANCER />
+					<ABYSS_WALKER />
+					<PHANTOM_RANGER />
+					<SPELLHOWLER />
+					<PHANTOM_SUMMONER />
+					<SHILLIEN_ELDER />
+					<DESTROYER />
+					<TYRANT />
+					<OVERLORD />
+					<WARCRYER />
+					<BOUNTY_HUNTER />
+					<WARSMITH />
+					<BERSERKER />
+					<MALE_SOULBREAKER />
+					<FEMALE_SOULBREAKER />
+					<ARBALESTER />
+					<INSPECTOR />
+					<DUELIST />
+					<DREADNOUGHT />
+					<PHOENIX_KNIGHT />
+					<HELL_KNIGHT />
+					<ADVENTURER />
+					<SAGITTARIUS />
+					<ARCHMAGE />
+					<SOULTAKER />
+					<ARCANA_LORD />
+					<CARDINAL />
+					<HIEROPHANT />
+					<EVA_TEMPLAR />
+					<SWORD_MUSE />
+					<WIND_RIDER />
+					<MOONLIGHT_SENTINEL />
+					<MYSTIC_MUSE />
+					<ELEMENTAL_MASTER />
+					<EVA_SAINT />
+					<SHILLIEN_TEMPLAR />
+					<SPECTRAL_DANCER />
+					<GHOST_HUNTER />
+					<GHOST_SENTINEL />
+					<STORM_SCREAMER />
+					<SPECTRAL_MASTER />
+					<SHILLIEN_SAINT />
+					<TITAN />
+					<GRAND_KHAVATARI />
+					<DOMINATOR />
+					<DOOMCRYER />
+					<FORTUNE_SEEKER />
+					<MAESTRO />
+					<DOOMBRINGER />
+					<MALE_SOUL_HOUND />
+					<FEMALE_SOUL_HOUND />
+					<TRICKSTER />
+					<JUDICATOR />
+					<SIGEL_KNIGHT />
+					<TYRR_WARRIOR />
+					<OTHELL_ROGUE />
+					<YUL_ARCHER />
+					<FEOH_WIZARD />
+					<ISS_ENCHANTER />
+					<WYNN_SUMMONER />
+					<AEORE_HEALER />
+				</classIds>
+				<affectType>CASTER</affectType>
+				<isWithin>true</isWithin>
+			</condition>
+			<condition name="OpPledge">
+				<level>5</level>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7113" levels="1" name="Pet Invincibility Effect">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincibility Effect -->
-		<set name="icon" val="icon.skill0442" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="78" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="-100" />
-		<set name="abnormalType" val="INVINCIBILITY" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill0442</icon>
+		<operateType>A2</operateType>
+		<mpConsume>78</mpConsume>
+		<hitTime>500</hitTime>
+		<effectPoint>-100</effectPoint>
+		<abnormalType>INVINCIBILITY</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7114" levels="1" name="Spellbook: Clan Flag">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="2" />
-		<set name="hitTime" val="1500" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<isMagic>2</isMagic>
+		<hitTime>1500</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpMainjob" />
+			<condition name="OpSocialClass">
+				<socialClass>8</socialClass>
+			</condition>
+			<condition name="OpSkill">
+				<skillId>15094</skillId>
+				<skillLevel>1</skillLevel>
+				<hasLearned>false</hasLearned>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="7115" levels="1" name="Energy of Chaos">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Character's hair and cloak have been changed due to participation in the Ceremony of Chaos. -->
-		<set name="abnormalTime" val="600" />
-		<set name="abnormalVisualEffect" val="CURIOUS_HOUSE" />
-		<set name="icon" val="icon.skill0810" />
-		<set name="canBeDispelled" val="false" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="CURIOUS_HOUSE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-2" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="isMagic" val="2" />
-		<set name="hitTime" val="500" />
+		<abnormalTime>600</abnormalTime>
+		<abnormalVisualEffect>CURIOUS_HOUSE</abnormalVisualEffect>
+		<icon>icon.skill0810</icon>
+		<canBeDispelled>false</canBeDispelled>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>CURIOUS_HOUSE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<isMagic>2</isMagic>
+		<hitTime>500</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7116" levels="1" name="Spellbook: Air Bike">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="1500" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1500</hitTime>
 	</skill>
 </list>

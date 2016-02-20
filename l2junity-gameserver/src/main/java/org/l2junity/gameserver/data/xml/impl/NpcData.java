@@ -34,7 +34,6 @@ import java.util.stream.Collectors;
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.MpRewardAffectType;
 import org.l2junity.gameserver.enums.MpRewardType;

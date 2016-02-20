@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;

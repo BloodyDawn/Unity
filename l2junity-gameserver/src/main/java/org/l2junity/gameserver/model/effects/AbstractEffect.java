@@ -18,20 +18,11 @@
  */
 package org.l2junity.gameserver.model.effects;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.l2junity.Config;
-import org.l2junity.gameserver.handler.EffectHandler;
-import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,106 +36,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractEffect
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class);
-	
-	// Conditions
-	/** Attach condition. */
-	private final Condition _attachCond;
-	// Apply condition
-	// private final Condition _applyCond; // TODO: Use or cleanup.
-	private List<FuncTemplate> _funcTemplates;
-	/** Effect name. */
-	private final String _name;
-	/** Ticks. */
-	private final int _ticks;
-	
-	/**
-	 * Abstract effect constructor.
-	 * @param attachCond the attach condition
-	 * @param applyCond the apply condition
-	 * @param set the attributes
-	 * @param params the parameters
-	 */
-	protected AbstractEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
-		_attachCond = attachCond;
-		// _applyCond = applyCond;
-		_name = set.getString("name");
-		_ticks = set.getInt("ticks", 0);
-	}
-	
-	/**
-	 * Creates an effect given the parameters.
-	 * @param attachCond the attach condition
-	 * @param applyCond the apply condition
-	 * @param set the attributes
-	 * @param params the parameters
-	 * @return the new effect
-	 */
-	public static AbstractEffect createEffect(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
-	{
-		final String name = set.getString("name");
-		final Class<? extends AbstractEffect> handler = EffectHandler.getInstance().getHandler(name);
-		if (handler == null)
-		{
-			_log.warn(AbstractEffect.class.getSimpleName() + ": Requested unexistent effect handler: " + name);
-			return null;
-		}
-		
-		final Constructor<?> constructor;
-		try
-		{
-			constructor = handler.getConstructor(Condition.class, Condition.class, StatsSet.class, StatsSet.class);
-		}
-		catch (NoSuchMethodException | SecurityException e)
-		{
-			_log.warn(AbstractEffect.class.getSimpleName() + ": Requested unexistent constructor for effect handler: " + name + ": " + e.getMessage());
-			return null;
-		}
-		
-		try
-		{
-			return (AbstractEffect) constructor.newInstance(attachCond, applyCond, set, params);
-		}
-		catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
-		{
-			_log.warn(AbstractEffect.class.getSimpleName() + ": Unable to initialize effect handler: " + name + ": " + e.getMessage(), e);
-		}
-		return null;
-	}
-	
-	/**
-	 * Tests the attach condition.
-	 * @param caster the caster
-	 * @param target the target
-	 * @param skill the skill
-	 * @return {@code true} if there isn't a condition to test or it's passed, {@code false} otherwise
-	 */
-	public boolean testConditions(Creature caster, Creature target, Skill skill)
-	{
-		return (_attachCond == null) || _attachCond.test(caster, target, skill);
-	}
-	
-	/**
-	 * Attaches a function template.
-	 * @param f the function
-	 */
-	public void addFunctionTemplate(FuncTemplate f)
-	{
-		if (_funcTemplates == null)
-		{
-			_funcTemplates = new ArrayList<>(1);
-		}
-		_funcTemplates.add(f);
-	}
-	
-	/**
-	 * Gets the effect name.
-	 * @return the name
-	 */
-	public String getName()
-	{
-		return _name;
-	}
+
+	private int _ticks;
 	
 	/**
 	 * Gets the effect ticks
@@ -155,16 +48,20 @@ public abstract class AbstractEffect
 		return _ticks;
 	}
 	
+	/**
+	 * Sets the effect ticks
+	 * @param ticks the ticks
+	 */
+	protected void setTicks(int ticks)
+	{
+		_ticks = ticks;
+	}
+	
 	public double getTicksMultiplier()
 	{
 		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
 	}
-	
-	public List<FuncTemplate> getFuncTemplates()
-	{
-		return _funcTemplates;
-	}
-	
+
 	/**
 	 * Calculates whether this effects land or not.<br>
 	 * If it lands will be scheduled and added to the character effect list.<br>
@@ -257,7 +154,7 @@ public abstract class AbstractEffect
 	@Override
 	public String toString()
 	{
-		return "Effect " + _name;
+		return "Effect " + getClass().getSimpleName();
 	}
 	
 	public boolean checkCondition(Object obj)
@@ -275,14 +172,22 @@ public abstract class AbstractEffect
 	}
 	
 	/**
+	 * @param effector
+	 * @param effected
+	 * @param skill
+	 * @return {@code true} if pump can be invoked, {@code false} otherwise
+	 */
+	public boolean canPump(Creature effector, Creature effected, Skill skill)
+	{
+		return true;
+	}
+	
+	/**
 	 * @param effected
 	 * @param skill
 	 */
 	public void pump(Creature effected, Skill skill)
 	{
-		if (_funcTemplates != null)
-		{
-			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> effected.getStat().processStats(effected, func.getFunctionClass(), func.getStat(), func.getValue()));
-		}
+
 	}
 }

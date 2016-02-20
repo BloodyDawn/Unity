@@ -37,7 +37,6 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -50,7 +49,6 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -137,10 +135,7 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtAttacked(Creature attacker)
 	{
-		if ((attacker instanceof Attackable) && !attacker.isCoreAIDisabled())
-		{
-			clientStartAutoAttack();
-		}
+		clientStartAutoAttack();
 	}
 	
 	/**
@@ -159,10 +154,6 @@ public class CharacterAI extends AbstractAI
 	{
 		// Set the AI Intention to AI_INTENTION_IDLE
 		changeIntention(AI_INTENTION_IDLE);
-		
-		// Init cast and attack target
-		setCastTarget(null);
-		setAttackTarget(null);
 		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 		clientStopMoving(null);
@@ -191,10 +182,6 @@ public class CharacterAI extends AbstractAI
 		{
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			changeIntention(AI_INTENTION_ACTIVE);
-			
-			// Init cast and attack target
-			setCastTarget(null);
-			setAttackTarget(null);
 			
 			// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 			clientStopMoving(null);
@@ -270,10 +257,10 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
 			// Check if the AI already targets the L2Character
-			if (getAttackTarget() != target)
+			if (_actor.getTarget() != target)
 			{
 				// Set the AI attack target (change target)
-				setAttackTarget(target);
+				_actor.setTarget(target);
 				
 				stopFollow();
 				
@@ -292,7 +279,7 @@ public class CharacterAI extends AbstractAI
 			changeIntention(AI_INTENTION_ATTACK, target);
 			
 			// Set the AI attack target
-			setAttackTarget(target);
+			_actor.setTarget(target);
 			
 			stopFollow();
 			
@@ -335,7 +322,7 @@ public class CharacterAI extends AbstractAI
 	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Set the AI cast target
-		setCastTarget((Creature) target);
+		// _actor.setTarget(target);
 		
 		// Set the AI skill used by INTENTION_CAST
 		_skill = skill;
@@ -488,7 +475,7 @@ public class CharacterAI extends AbstractAI
 		changeIntention(AI_INTENTION_PICK_UP, object);
 		
 		// Set the AI pick up target
-		setTarget(object);
+		getActor().setTarget(object);
 		if ((object.getX() == 0) && (object.getY() == 0)) // TODO: Find the drop&spawn bug
 		{
 			LOGGER.warn("Object in coords 0,0 - using a temporary fix");
@@ -535,7 +522,7 @@ public class CharacterAI extends AbstractAI
 			changeIntention(AI_INTENTION_INTERACT, object);
 			
 			// Set the AI interact target
-			setTarget(object);
+			getActor().setTarget(object);
 			
 			// Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn (broadcast)
 			moveToPawn(object, 60);
@@ -763,10 +750,20 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtForgetObject(WorldObject object)
 	{
+		final WorldObject target = getActor().getTarget();
 		// If the object was targeted and the Intention was AI_INTENTION_INTERACT or AI_INTENTION_PICK_UP, set the Intention to AI_INTENTION_ACTIVE
-		if (getTarget() == object)
+		if (target == object)
 		{
-			setTarget(null);
+			getActor().setTarget(null);
+			
+			if (isFollowing())
+			{
+				// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
+				clientStopMoving(null);
+				
+				// Stop an AI Follow Task
+				stopFollow();
+			}
 			
 			if ((getIntention() == AI_INTENTION_INTERACT) || (getIntention() == AI_INTENTION_PICK_UP))
 			{
@@ -774,46 +771,11 @@ public class CharacterAI extends AbstractAI
 			}
 		}
 		
-		// Check if the object was targeted to attack
-		if (getAttackTarget() == object)
-		{
-			// Cancel attack target
-			setAttackTarget(null);
-			
-			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
-			setIntention(AI_INTENTION_ACTIVE);
-		}
-		
-		// Check if the object was targeted to cast
-		if (getCastTarget() == object)
-		{
-			// Cancel cast target
-			setCastTarget(null);
-			
-			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
-			setIntention(AI_INTENTION_ACTIVE);
-		}
-		
-		// Check if the object was targeted to follow
-		if (getFollowTarget() == object)
-		{
-			// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
-			clientStopMoving(null);
-			
-			// Stop an AI Follow Task
-			stopFollow();
-			
-			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
-			setIntention(AI_INTENTION_ACTIVE);
-		}
-		
 		// Check if the targeted object was the actor
 		if (_actor == object)
 		{
 			// Cancel AI target
-			setTarget(null);
-			setAttackTarget(null);
-			setCastTarget(null);
+			getActor().setTarget(null);
 			
 			// Stop an AI Follow Task
 			stopFollow();
@@ -892,9 +854,7 @@ public class CharacterAI extends AbstractAI
 		
 		// Init AI
 		_intention = AI_INTENTION_IDLE;
-		setTarget(null);
-		setCastTarget(null);
-		setAttackTarget(null);
+		getActor().setTarget(null);
 	}
 	
 	/**
@@ -953,7 +913,7 @@ public class CharacterAI extends AbstractAI
 			return true;
 		}
 		
-		if (getFollowTarget() != null)
+		if (isFollowing())
 		{
 			stopFollow();
 		}
@@ -999,7 +959,7 @@ public class CharacterAI extends AbstractAI
 		if (!_actor.isInsideRadius(target, offset, false, false))
 		{
 			// Caller should be L2Playable and thinkAttack/thinkCast/thinkInteract/thinkPickUp
-			if (getFollowTarget() != null)
+			if (isFollowing())
 			{
 				
 				// allow larger hit range when the target is moving (check is run only once per second)
@@ -1062,7 +1022,7 @@ public class CharacterAI extends AbstractAI
 			return true;
 		}
 		
-		if (getFollowTarget() != null)
+		if (isFollowing())
 		{
 			stopFollow();
 		}
@@ -1325,185 +1285,5 @@ public class CharacterAI extends AbstractAI
 				isMage = false;
 			}
 		}
-	}
-	
-	public boolean canAura(Skill sk)
-	{
-		int affectRange = ((sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA)) ? sk.getFanRange()[2] : sk.getAffectRange();
-		if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
-		{
-			for (WorldObject target : World.getInstance().getVisibleObjects(_actor, Creature.class, affectRange))
-			{
-				if (target == getAttackTarget())
-				{
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	public boolean canAOE(Skill sk)
-	{
-		int affectRange = ((sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AURA)) ? sk.getFanRange()[2] : sk.getAffectRange();
-		if (sk.hasEffectType(L2EffectType.DISPEL, L2EffectType.DISPEL_BY_SLOT))
-		{
-			if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
-			{
-				boolean cancast = true;
-				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, affectRange))
-				{
-					if (!GeoData.getInstance().canSeeTarget(_actor, target))
-					{
-						continue;
-					}
-					if (target.isAttackable())
-					{
-						Npc actors = ((Npc) _actor);
-						
-						if (!actors.getTemplate().isChaos())
-						{
-							continue;
-						}
-					}
-					
-					if (target.isAffectedBySkill(sk.getId()))
-					{
-						cancast = false;
-					}
-				}
-				if (cancast)
-				{
-					return true;
-				}
-			}
-			else if ((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA))
-			{
-				boolean cancast = true;
-				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, affectRange))
-				{
-					if (!GeoData.getInstance().canSeeTarget(_actor, target) || (target == null))
-					{
-						continue;
-					}
-					if (target.isAttackable())
-					{
-						Npc actors = ((Npc) _actor);
-						
-						if (!actors.getTemplate().isChaos())
-						{
-							continue;
-						}
-					}
-					
-					if (!target.getEffectList().isEmpty())
-					{
-						cancast = true;
-					}
-				}
-				if (cancast)
-				{
-					return true;
-				}
-			}
-		}
-		else
-		{
-			if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
-			{
-				boolean cancast = false;
-				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, affectRange))
-				{
-					if (!GeoData.getInstance().canSeeTarget(_actor, target))
-					{
-						continue;
-					}
-					if (target.isAttackable())
-					{
-						Npc actors = ((Npc) _actor);
-						
-						if (!actors.getTemplate().isChaos())
-						{
-							continue;
-						}
-					}
-					
-					if (!target.getEffectList().isEmpty())
-					{
-						cancast = true;
-					}
-				}
-				if (cancast)
-				{
-					return true;
-				}
-			}
-			else if ((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA))
-			{
-				boolean cancast = true;
-				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, affectRange))
-				{
-					if (!GeoData.getInstance().canSeeTarget(_actor, target))
-					{
-						continue;
-					}
-					
-					if (target.isAttackable())
-					{
-						Npc actors = ((Npc) _actor);
-						if (!actors.getTemplate().isChaos())
-						{
-							continue;
-						}
-					}
-					
-					if (target.isAffectedBySkill(sk.getId()))
-					{
-						cancast = false;
-					}
-				}
-				if (cancast)
-				{
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	public boolean canParty(Skill sk)
-	{
-		if (isParty(sk))
-		{
-			int count = 0;
-			int ccount = 0;
-			for (Attackable target : World.getInstance().getVisibleObjects(_actor, Attackable.class, sk.getAffectRange()))
-			{
-				if (!GeoData.getInstance().canSeeTarget(_actor, target))
-				{
-					continue;
-				}
-				Npc targets = (target);
-				Npc actors = ((Npc) _actor);
-				if (targets.isInMyClan(actors))
-				{
-					count++;
-					if (target.isAffectedBySkill(sk.getId()))
-					{
-						ccount++;
-					}
-				}
-			}
-			if (ccount < count)
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean isParty(Skill sk)
-	{
-		return (sk.getTargetType() == L2TargetType.PARTY);
 	}
 }

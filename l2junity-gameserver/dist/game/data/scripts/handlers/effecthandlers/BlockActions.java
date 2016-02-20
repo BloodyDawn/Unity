@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -40,10 +39,8 @@ public final class BlockActions extends AbstractEffect
 {
 	private final Set<Integer> _allowedSkills;
 	
-	public BlockActions(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockActions(StatsSet params)
 	{
-		super(attachCond, applyCond, set, params);
-		
 		final String[] allowedSkills = params.getString("allowedSkills", "").split(";");
 		_allowedSkills = Arrays.stream(allowedSkills).filter(s -> !s.isEmpty()).map(Integer::parseInt).collect(Collectors.toSet());
 	}

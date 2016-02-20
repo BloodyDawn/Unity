@@ -28,7 +28,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
@@ -459,14 +459,10 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				{
 					WorldObject oldTarget = owner.getTarget();
 					owner.setTarget(_tamedBeast);
-					Creature[] targets =
-					{
-						_tamedBeast
-					};
 					
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
-					owner.callSkill(SkillData.getInstance().getSkill(foodTypeSkillId, 1), null, targets);
+					owner.makeTriggerCast(SkillData.getInstance().getSkill(foodTypeSkillId, 1), _tamedBeast);
 					owner.setTarget(oldTarget);
 				}
 				else

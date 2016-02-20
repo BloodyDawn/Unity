@@ -65,7 +65,7 @@ public class FuncShare extends AbstractFunction
 			{
 				return player.getMaxMp();
 			}
-			case POWER_ATTACK:
+			case PHYSICAL_ATTACK:
 			{
 				return player.getPAtk();
 			}
@@ -73,11 +73,11 @@ public class FuncShare extends AbstractFunction
 			{
 				return player.getMAtk();
 			}
-			case POWER_DEFENCE:
+			case PHYSICAL_DEFENCE:
 			{
 				return player.getPDef();
 			}
-			case MAGIC_DEFENCE:
+			case MAGICAL_DEFENCE:
 			{
 				return player.getMDef();
 			}
@@ -85,7 +85,7 @@ public class FuncShare extends AbstractFunction
 			{
 				return player.getCriticalHit();
 			}
-			case POWER_ATTACK_SPEED:
+			case PHYSICAL_ATTACK_SPEED:
 			{
 				return player.getPAtkSpd();
 			}

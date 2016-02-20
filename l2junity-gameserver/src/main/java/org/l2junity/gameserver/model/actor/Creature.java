@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.model.actor;
 
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
-import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -42,7 +41,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.EmptyQueue;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
@@ -79,7 +77,6 @@ import org.l2junity.gameserver.model.TimeStamp;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
-import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.actor.status.CharStatus;
@@ -101,7 +98,6 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageRecei
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleport;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleported;
-import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillSee;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2junity.gameserver.model.events.returns.DamageReturn;
 import org.l2junity.gameserver.model.events.returns.LocationReturn;
@@ -517,7 +513,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Remove the L2Character from the world when the decay task is launched.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	public void onDecay()
 	{
@@ -1024,7 +1021,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
+							mpConsume = isAffected(EffectFlag.CHEAPSHOT) ? 0 : mpConsume;
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1086,7 +1083,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
+							mpConsume = isAffected(EffectFlag.CHEAPSHOT) ? 0 : mpConsume;
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1193,10 +1190,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			if (player != null)
 			{
 				AttackStanceTaskManager.getInstance().addAttackStanceTask(player);
-				if ((player.getPet() != target) && !player.hasServitor(target.getObjectId()))
-				{
-					player.updatePvPStatus(target);
-				}
+				player.updatePvPStatus(target);
 			}
 			// Check if hit isn't missed
 			if (!hitted)
@@ -1537,36 +1531,18 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				continue;
 			}
 			
-			if (obj.isPet() && isPlayer() && (((L2PetInstance) obj).getOwner() == getActingPlayer()))
-			{
-				continue;
-			}
-			
 			if (!isFacing(obj, maxAngleDiff))
 			{
 				continue;
 			}
 			
-			if (isAttackable() && obj.isPlayer() && getTarget().isAttackable())
-			{
-				continue;
-			}
-			
-			if (isAttackable() && obj.isAttackable() && !((Attackable) this).getTemplate().isChaos())
-			{
-				continue;
-			}
-			
 			// Launch a simple attack against the L2Character targeted
-			if (!obj.isAlikeDead())
+			if (obj.isAutoAttackable(this))
 			{
-				if ((obj == getAI().getAttackTarget()) || obj.isAutoAttackable(this))
+				list.add(obj);
+				if (list.size() >= attackCountMax)
 				{
-					list.add(obj);
-					if (list.size() >= attackCountMax)
-					{
-						break;
-					}
+					break;
 				}
 			}
 		}
@@ -1598,6 +1574,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
+		if (skill.isBad() && isAttackable() && (getTarget() == this))
+		{
+			_log.info(this + " is trying to cast bad skill '" + skill.getName() + "' onto himself... LOL!");
+		}
+		
 		SkillCaster skillCaster;
 		
 		if (skill.isWithoutAction())
@@ -2942,22 +2923,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							info.addComponentType(UserInfoType.MULTIPLIER);
 							break;
 						}
-						case POWER_ATTACK_SPEED:
+						case PHYSICAL_ATTACK_SPEED:
 						{
 							info.addComponentType(UserInfoType.MULTIPLIER, UserInfoType.STATS);
 							break;
 						}
-						case POWER_ATTACK:
-						case POWER_DEFENCE:
+						case PHYSICAL_ATTACK:
+						case PHYSICAL_DEFENCE:
 						case EVASION_RATE:
 						case ACCURACY_COMBAT:
 						case CRITICAL_RATE:
-						case MCRITICAL_RATE:
+						case MAGIC_CRITICAL_RATE:
 						case MAGIC_EVASION_RATE:
 						case ACCURACY_MAGIC:
 						case MAGIC_ATTACK:
 						case MAGIC_ATTACK_SPEED:
-						case MAGIC_DEFENCE:
+						case MAGICAL_DEFENCE:
 						{
 							info.addComponentType(UserInfoType.STATS);
 							break;
@@ -3135,7 +3116,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean isInCombat()
 	{
-		return hasAI() && ((getAI().getAttackTarget() != null) || getAI().isAutoAttacking());
+		return hasAI() && getAI().isAutoAttacking();
 	}
 	
 	/**
@@ -3235,7 +3216,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * That's why, client send regularly a Client->Server ValidatePosition packet to eventually correct the gap on the server.<br>
 	 * But, it's always the server position that is used in range calculation. At the end of the estimated movement time,<br>
 	 * the L2Character position is automatically set to the destination position even if the movement is not finished.<br>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br> But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br>
+	 * But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
 	 * @return True if the movement is finished
 	 */
 	public boolean updatePosition()
@@ -3449,6 +3431,16 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			object = null;
 		}
 		
+		if (isAttackable() && (object != _target))
+		{
+			PlayerInstance player = World.getInstance().getPlayer("Feoh");
+			if ((player != null) && Util.checkIfInRange(5000, this, player, false))
+			{
+				setTitle(String.valueOf(object));
+				broadcastInfo();
+			}
+		}
+		
 		_target = object;
 	}
 	
@@ -3489,7 +3481,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Add the L2Character to movingObjects of the GameTimeController</li>
 	 * <li>Create a task to notify the AI that L2Character arrives at a check point of the movement</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li> <li>FollowTask</li>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br>
+	 * <B><U>Example of use</U>:</B>
+	 * <ul>
+	 * <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li>
+	 * <li>FollowTask</li>
 	 * </ul>
 	 * @param x The X position of the destination
 	 * @param y The Y position of the destination
@@ -4256,14 +4252,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param attacker
 	 * @return True if inside peace zone.
 	 */
-	public boolean isInsidePeaceZone(PlayerInstance attacker)
+	public boolean isInsidePeaceZone(WorldObject attacker)
 	{
 		return isInsidePeaceZone(attacker, this);
-	}
-	
-	public boolean isInsidePeaceZone(PlayerInstance attacker, WorldObject target)
-	{
-		return (!attacker.getAccessLevel().allowPeaceAttack() && isInsidePeaceZone((WorldObject) attacker, target));
 	}
 	
 	public boolean isInsidePeaceZone(WorldObject attacker, WorldObject target)
@@ -4286,6 +4277,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				return false;
 			}
 		}
+		
+		if ((attacker.getActingPlayer() != null) && attacker.getActingPlayer().getAccessLevel().allowPeaceAttack())
+		{
+			return false;
+		}
+		
 		return (target.isInsideZone(ZoneId.PEACE) || attacker.isInsideZone(ZoneId.PEACE));
 	}
 	
@@ -4495,226 +4492,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
 	
-	}
-	
-	/**
-	 * Launch the magic skill and calculate its effects on each target contained in the targets table.
-	 * @param skill The L2Skill to use
-	 * @param item
-	 * @param targets The table of L2Object targets
-	 */
-	public void callSkill(Skill skill, ItemInstance item, Creature... targets)
-	{
-		try
-		{
-			Weapon activeWeapon = getActiveWeaponItem();
-			
-			// Check if the toggle skill effects are already in progress on the L2Character
-			if (skill.isToggle() && isAffectedBySkill(skill.getId()))
-			{
-				return;
-			}
-			
-			// Initial checks
-			for (WorldObject obj : targets)
-			{
-				if ((obj == null) || !obj.isCreature())
-				{
-					continue;
-				}
-				
-				final Creature target = (Creature) obj;
-				// Check raid monster attack and check buffing characters who attack raid monsters.
-				Creature targetsAttackTarget = null;
-				Creature targetsCastTarget = null;
-				if (target.hasAI())
-				{
-					targetsAttackTarget = target.getAI().getAttackTarget();
-					targetsCastTarget = target.getAI().getCastTarget();
-				}
-				
-				if (!Config.RAID_DISABLE_CURSE && ((target.isRaid() && target.giveRaidCurse() && (getLevel() > (target.getLevel() + 8))) || (!skill.isBad() && (targetsAttackTarget != null) && targetsAttackTarget.isRaid() && targetsAttackTarget.giveRaidCurse() && targetsAttackTarget.getAttackByList().contains(target) && (getLevel() > (targetsAttackTarget.getLevel() + 8))) || (!skill.isBad() && (targetsCastTarget != null) && targetsCastTarget.isRaid() && targetsCastTarget.giveRaidCurse() && targetsCastTarget.getAttackByList().contains(target) && (getLevel() > (targetsCastTarget.getLevel() + 8)))))
-				{
-					final CommonSkill curse = skill.isMagic() ? CommonSkill.RAID_CURSE : CommonSkill.RAID_CURSE2;
-					Skill curseSkill = curse.getSkill();
-					if (curseSkill != null)
-					{
-						curseSkill.applyEffects(target, this);
-					}
-					else
-					{
-						_log.warn("Skill ID " + curse.getId() + " level " + curse.getLevel() + " is missing in DP!");
-					}
-					return;
-				}
-				
-				// Static skills not trigger any chance skills
-				if (!skill.isStatic())
-				{
-					// Launch weapon Special ability skill effect if available
-					if ((activeWeapon != null) && !target.isDead())
-					{
-						activeWeapon.applyConditionalSkills(this, target, skill, ItemSkillType.ON_MAGIC_SKILL);
-					}
-					
-					if (_triggerSkills != null)
-					{
-						for (OptionsSkillHolder holder : _triggerSkills.values())
-						{
-							if ((skill.isMagic() && (holder.getSkillType() == OptionsSkillType.MAGIC)) || (skill.isPhysical() && (holder.getSkillType() == OptionsSkillType.ATTACK)))
-							{
-								if (Rnd.get(100) < holder.getChance())
-								{
-									makeTriggerCast(holder.getSkill(), target, false);
-								}
-							}
-						}
-					}
-				}
-			}
-			
-			// Launch the magic skill and calculate its effects
-			skill.activateSkill(this, item, targets);
-			
-			PlayerInstance player = getActingPlayer();
-			if (player != null)
-			{
-				for (WorldObject target : targets)
-				{
-					// EVT_ATTACKED and PvPStatus
-					if (target instanceof Creature)
-					{
-						if (skill.getEffectPoint() <= 0)
-						{
-							if ((target.isPlayable() || target.isTrap()) && skill.isBad())
-							{
-								// Casted on target_self but don't harm self
-								if (!target.equals(this))
-								{
-									// Combat-mode check
-									if (target.isPlayer())
-									{
-										target.getActingPlayer().getAI().clientStartAutoAttack();
-									}
-									else if (target.isSummon() && ((Creature) target).hasAI())
-									{
-										PlayerInstance owner = ((Summon) target).getOwner();
-										if (owner != null)
-										{
-											owner.getAI().clientStartAutoAttack();
-										}
-									}
-									
-									// attack of the own pet does not flag player
-									// triggering trap not flag trap owner
-									if ((player.getPet() != target) && !player.hasServitor(target.getObjectId()) && !isTrap() && !((skill.getEffectPoint() == 0) && (skill.getAffectRange() > 0)))
-									{
-										player.updatePvPStatus((Creature) target);
-									}
-								}
-							}
-							else if (target.isAttackable() && (skill.getEffectPoint() < 0))
-							{
-								// Add hate to the attackable, and put it in the attack list.
-								((Attackable) target).addDamageHate(this, 0, -skill.getEffectPoint());
-								((Creature) target).addAttackerToAttackByList(this);
-							}
-							
-							// notify target AI about the attack
-							if (((Creature) target).hasAI() && !skill.hasEffectType(L2EffectType.HATE))
-							{
-								((Creature) target).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, this);
-							}
-						}
-						else
-						{
-							if (target.isPlayer())
-							{
-								// Casting non offensive skill on player with pvp flag set or with karma
-								if (!(target.equals(this) || target.equals(player)) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getReputation() < 0)))
-								{
-									player.updatePvPStatus();
-								}
-							}
-							else if (target.isAttackable())
-							{
-								((Attackable) target).reduceHate(this, skill.getEffectPoint());
-								player.updatePvPStatus();
-							}
-						}
-						
-						if (target.isSummon())
-						{
-							((Summon) target).updateAndBroadcastStatus(1);
-						}
-					}
-				}
-				
-				// Mobs in range 1000 see spell
-				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
-				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, isSummon(), targets), npcMob);
-					
-					// On Skill See logic
-					if (npcMob.isAttackable())
-					{
-						final Attackable attackable = (Attackable) npcMob;
-						
-						int skillEffectPoint = skill.getEffectPoint();
-						
-						if (player.hasSummon())
-						{
-							if (targets.length == 1)
-							{
-								if (CommonUtil.contains(targets, player.getPet()))
-								{
-									skillEffectPoint = 0;
-								}
-								for (Summon servitor : player.getServitors().values())
-								{
-									if (CommonUtil.contains(targets, servitor))
-									{
-										skillEffectPoint = 0;
-									}
-								}
-							}
-						}
-						
-						if (skillEffectPoint > 0)
-						{
-							if (attackable.hasAI() && (attackable.getAI().getIntention() == AI_INTENTION_ATTACK))
-							{
-								WorldObject npcTarget = attackable.getTarget();
-								for (WorldObject skillTarget : targets)
-								{
-									if ((npcTarget == skillTarget) || (npcMob == skillTarget))
-									{
-										Creature originalCaster = isSummon() ? this : player;
-										attackable.addDamageHate(originalCaster, 0, (skillEffectPoint * 150) / (attackable.getLevel() + 7));
-									}
-								}
-							}
-						}
-					}
-				});
-			}
-			// Notify AI
-			if (skill.isBad() && !skill.hasEffectType(L2EffectType.HATE))
-			{
-				for (WorldObject target : targets)
-				{
-					if ((target instanceof Creature) && ((Creature) target).hasAI())
-					{
-						// notify target AI about the attack
-						((Creature) target).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, this);
-					}
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_log.warn(getClass().getSimpleName() + ": callSkill() failed.", e);
-		}
 	}
 	
 	/**
@@ -4971,11 +4748,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public int getMDef()
 	{
 		return getStat().getMDef();
-	}
-	
-	public double getMReuseRate()
-	{
-		return getStat().getMReuseRate();
 	}
 	
 	public int getPAtk()
@@ -5341,6 +5113,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return _lethalable;
 	}
 	
+	public boolean hasTriggerSkills()
+	{
+		return (_triggerSkills != null) && !_triggerSkills.isEmpty();
+	}
+	
 	public Map<Integer, OptionsSkillHolder> getTriggerSkills()
 	{
 		if (_triggerSkills == null)
@@ -5386,20 +5163,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					disableSkill(skill, skill.getReuseDelay());
 				}
 				
-				// @formatter:off
-				final Creature[] targets = ignoreTargetType ? new Creature[]{ target } : skill.getTargetList(this, false, target);
-				// @formatter:on
-				if (targets.length == 0)
+				if (!ignoreTargetType)
 				{
-					return;
-				}
-				
-				for (WorldObject obj : targets)
-				{
-					if ((obj != null) && obj.isCreature())
+					WorldObject objTarget = skill.getTarget(this, false, false, false);
+					if (objTarget.isCreature())
 					{
-						target = (Creature) obj;
-						break;
+						target = (Creature) objTarget;
 					}
 				}
 				
@@ -5411,6 +5180,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						return;
 					}
 				}
+				
+				WorldObject[] targets = skill.getTargetsAffected(this, target).toArray(new WorldObject[0]);
 				
 				broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
 				broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));

@@ -3,2193 +3,2381 @@
 	<skill id="14600" levels="1" name="Chain Skills">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enables use of chain skills. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10317</icon>
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14601" levels="1" name="Cry of Destiny - Mark of Weakness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 seconds, weakens the enemy. Decreases 174 HP per second and increases weakness to de-buff by 5%. -->
-		<set name="icon" val="icon.skill11259" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="MULTI_DEBUFF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="100" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11259</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>MULTI_DEBUFF</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>100</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14602" levels="1" name="Cry of Destiny - Mark of Plague">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stigma that connects to the epidemic dimension. For 10 seconds, inflicts the plague in the enemy. Decreases 238 HP per second and block recovery. -->
-		<set name="icon" val="icon.skill11261" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-692" />
-		<set name="abnormalType" val="MULTI_DEBUFF_B" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11261</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-692</effectPoint>
+		<abnormalType>MULTI_DEBUFF_B</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14603" levels="1" name="Cry of Destiny - Exile">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Kicks out the target to another dimension. The exiled target becomes incapacitated and loses 167 HP per second. -->
-		<set name="icon" val="icon.skill11273" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="trait" val="TURN_STONE" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="DEPORT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="1" />
-		<set name="effectRange" val="1100" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="DEPORT" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11273</icon>
+		<operateType>A2</operateType>
+		<trait>TURN_STONE</trait>
+		<castRange>600</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>DEPORT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>1</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14604" levels="1" name="Chain Skills">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enables use of chain skills. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10317</icon>
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14605" levels="1" name="Cry of Destiny - Crippling Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with 5175 power added to P. Atk. For 5 seconds, decreases the enemy's P. Def./M. Def. by 70% and evasion by 10. -->
-		<set name="icon" val="icon.skill11509" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="910" />
-		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11509</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>910</hitTime>
+		<coolTime>300</coolTime>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>CRITICAL_PROB_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="14606" levels="1" name="Cry of Destiny - Death Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with 9444 Power added to P. Atk. -->
-		<set name="icon" val="icon.skill11511" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1410" />
-		<set name="effectPoint" val="-692" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="coolTime" val="500" />
+		<icon>icon.skill11511</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1410</hitTime>
+		<effectPoint>-692</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<POLE />
+					<SWORD />
+					<BLUNT />
+					<DUALBLUNT />
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="14607" levels="1" name="Cry of Destiny - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 seconds, increases Max HP by 2572, Max MP by 953, HP recovery by 20%, and MP recovery by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="700" />
-		<set name="effectPoint" val="687" />
-		<set name="abnormalType" val="MAX_HP_UP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="affectRange" val="1000" />
-		<set name="isMagic" val="22" />
-		<set name="coolTime" val="300" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<hitTime>700</hitTime>
+		<effectPoint>687</effectPoint>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<affectRange>1000</affectRange>
+		<isMagic>22</isMagic>
+		<coolTime>300</coolTime>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14608" levels="1" name="Chain Skills">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Enables use of chain skills. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill10317</icon>
+		<operateType>A1</operateType>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14609" levels="1" name="Cry of Destiny - Dark Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts no-type damage on the enemy with 124 power added to M. Atk. Decreases the enemy's attacking urge against yourself. -->
-		<set name="icon" val="icon.skill11766" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-867" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11766</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-867</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effectRange>1100</effectRange>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14610" levels="1" name="Cry of Destiny - Radiant Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores the target's HP with 1488 Power. Once HP is filled, the remaining effect stores CP. -->
-		<set name="icon" val="icon.skill11755" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="867" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="1" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11755</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>867</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>1</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14611" levels="1" name="Cry of Destiny - Dark Force">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pushes and inflicts a magic attack. -->
-		<set name="icon" val="icon.skill0101" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="43" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-867" />
-		<set name="abnormalType" val="STUN" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0101</icon>
+		<operateType>A2</operateType>
+		<mpConsume>43</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-867</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14612" levels="1" name="Press the icon to use the chain skill.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use chain attacks. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="3000" />
-		<set name="effectPoint" val="696" />
-		<set name="abnormalType" val="NPC_ATTACK1" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill10317</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>696</effectPoint>
+		<abnormalType>NPC_ATTACK1</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14613" levels="1" name="Press the icon to use the chain skill.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use chain attacks. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="3000" />
-		<set name="effectPoint" val="696" />
-		<set name="abnormalType" val="NPC_ATTACK2" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill10317</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>696</effectPoint>
+		<abnormalType>NPC_ATTACK2</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14614" levels="1" name="Press the icon to use the chain skill.">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Can use chain attacks. -->
-		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="reuseDelay" val="3000" />
-		<set name="effectPoint" val="696" />
-		<set name="abnormalType" val="NPC_ATTACK3" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill10317</icon>
+		<operateType>A2</operateType>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>696</effectPoint>
+		<abnormalType>NPC_ATTACK3</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14615" levels="1" name="Teredor Biting">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
-		<set name="icon" val="icon.skill0122" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="1500" />
-		<set name="effectPoint" val="-686" />
-		<set name="abnormalType" val="ABSORB" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="20" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0122</icon>
+		<operateType>A2</operateType>
+		<castRange>150</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-686</effectPoint>
+		<abnormalType>ABSORB</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14616" levels="1" name="Blood Siphon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Blood is being sucked. -->
-		<set name="icon" val="icon.skill1042" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="ROOT_MAGICALLY" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1000" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="trait" val="HOLD" />
-		<set name="abnormalVisualEffect" val="ROOT" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill1042</icon>
+		<operateType>A2</operateType>
+		<castRange>500</castRange>
+		<isMagic>1</isMagic>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>ROOT_MAGICALLY</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1000</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<trait>HOLD</trait>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14617" levels="1" name="Knock Down Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param KNOCKDOWN="100" />
+				<KNOCKDOWN>100</KNOCKDOWN>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14618" levels="1" name="Knock Back Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param KNOCKBACK="100" />
+				<KNOCKBACK>100</KNOCKBACK>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14619" levels="1" name="Disarm Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param DISARM="100" />
+				<DISARM>100</DISARM>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14620" levels="4" name="Aerial Yoke Resistance 4">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param AIRBIND="100" />
+				<AIRBIND>100</AIRBIND>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14621" levels="1" name="Pulling Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param PULL="100" />
+				<PULL>100</PULL>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14622" levels="1" name="Banishment Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param DEPORT="100" />
+				<DEPORT>100</DEPORT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14623" levels="1" name="Mutation Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param CHANGEBODY="100" />
+				<CHANGEBODY>100</CHANGEBODY>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14624" levels="1" name="Apherus Dark Space">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Atk. Spd. and HP are decreased. -->
-		<set name="icon" val="icon.skill0048" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="1000" />
-		<set name="reuseDelay" val="2000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1500" />
-		<set name="magicLvl" val="95" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0048</icon>
+		<operateType>A2</operateType>
+		<castRange>1000</castRange>
+		<reuseDelay>2000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1500</effectRange>
+		<magicLvl>95</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14625" levels="1" name="Release of Power">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shares power with the target. -->
-		<set name="castRange" val="900" />
-		<set name="effectRange" val="1400" />
-		<set name="hitTime" val="10000" />
-		<set name="icon" val="icon.skill1042" />
-		<set name="isMagic" val="1" />
-		<set name="operateType" val="CA1" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="-696" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="85" />
-		<set name="channelingTickInitialDelay" val="1200" />
-		<set name="channelingTickInterval" val="2000" />
-		<set name="targetType" val="ONE" />
+		<castRange>900</castRange>
+		<effectRange>1400</effectRange>
+		<hitTime>10000</hitTime>
+		<icon>icon.skill1042</icon>
+		<isMagic>1</isMagic>
+		<operateType>CA1</operateType>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-696</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>85</magicLvl>
+		<channelingTickInitialDelay>1200</channelingTickInitialDelay>
+		<channelingTickInterval>2000</channelingTickInterval>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14626" levels="1" name="Mental Attack Resistance">
 		<!-- Glory Days confirmed. -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="P" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="targetType" val="SELF" />
-		<for>
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
 			<effect name="DefenceTrait">
-				<param DERANGEMENT="100" />
+				<DERANGEMENT>100</DERANGEMENT>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14627" levels="1" name="Foul Secretion">
 		<!-- Glory Days confirmed -->
 		<!-- P. Def. is decreased. -->
-		<set name="icon" val="icon.skill0122" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="PD_DOWN" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="800" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="20" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="Debuff">
-				<mul stat="pDef" val="0.9" />
+		<icon>icon.skill0122</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>PD_DOWN</abnormalType>
+		<basicProperty>MAGIC</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>800</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14628" levels="1" name="Gastric Juice Eruption">
 		<!-- Glory Days confirmed -->
 		<!-- Speed is decreased. -->
-		<set name="icon" val="icon.skill1184" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="800" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="BLEED" />
-		<set name="isDebuff" val="true" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="isSuicideAttack" val="true" />
-		<for>
-			<effect name="DamOverTime" ticks="5">
-				<param power="100" />
+		<icon>icon.skill1184</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>800</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>BLEED</trait>
+		<isDebuff>true</isDebuff>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<isSuicideAttack>true</isSuicideAttack>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>100</power>
+				<ticks>5</ticks>
 			</effect>
-			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14629" levels="1" name="Corpse Grinding">
 		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
-		<set name="icon" val="icon.skill0096" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="100" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="BLEEDING" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="lvlBonusRate" val="2" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="10" />
-		<set name="trait" val="BLEED" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0096</icon>
+		<operateType>A2</operateType>
+		<castRange>100</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>BLEEDING</abnormalType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<lvlBonusRate>2</lvlBonusRate>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<trait>BLEED</trait>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="10000" />
+				<power>10000</power>
 			</effect>
-			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14630" levels="1" name="Discard Decayed Branch">
 		<!-- Glory Days confirmed -->
 		<!-- Knocked back. -->
-		<set name="icon" val="icon.skill0101" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="80" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0101</icon>
+		<operateType>A2</operateType>
+		<castRange>150</castRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>80</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="4912" />
+				<power>4912</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="500" />
+				<distance>100</distance>
+				<speed>500</speed>
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14631" levels="1" name="Foul Spore">
 		<!-- Glory Days confirmed -->
 		<!-- Silence status. -->
-		<set name="icon" val="icon.skill1064" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="3000" />
-		<set name="reuseDelay" val="10000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="SILENCE" />
-		<set name="abnormalVisualEffect" val="SILENCE" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="trait" val="DERANGEMENT" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill1064</icon>
+		<operateType>A2</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>SILENCE</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<basicProperty>MAGIC</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<trait>DERANGEMENT</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="Mute" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14632" levels="1" name="Terrifying Sword Dance">
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. is increased. -->
-		<set name="icon" val="icon.skill1086" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="7000" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="isMagic" val="1" />
-		<for>
-			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.15" />
+		<icon>icon.skill1086</icon>
+		<operateType>A2</operateType>
+		<hitTime>7000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14633" levels="1" name="Severed Ankle">
 		<!-- Glory Days confirmed -->
 		<!-- Knocked back. -->
-		<set name="icon" val="icon.skill0261" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="100" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="87" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0261</icon>
+		<operateType>A2</operateType>
+		<castRange>100</castRange>
+		<hitTime>500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>87</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="3000" />
+				<power>3000</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="400" />
+				<distance>100</distance>
+				<speed>400</speed>
 			</effect>
 			<effect name="DefenceTrait">
-				<param AIRBIND="100" />
-				<param HOLD="100" />
-				<param KNOCKBACK="100" />
-				<param SLEEP="100" />
-				<param SHOCK="100" />
+				<AIRBIND>100</AIRBIND>
+				<KNOCKBACK>100</KNOCKBACK>
+				<SHOCK>100</SHOCK>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14634" levels="1" name="Stigma's Despair">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill14634" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="7000" />
-		<set name="reuseDelay" val="15000" />
-		<set name="effectPoint" val="-2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="800" />
-		<set name="magicLvl" val="87" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
-		<set name="isMagic" val="1" />
-		<for>
+		<icon>icon.skill14634</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<hitTime>7000</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>800</effectRange>
+		<magicLvl>87</magicLvl>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="MaxHp">
-				<param amount="-30" mode="PER" />
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14635" levels="1" name="Corpse Explosion">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill14635" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="castRange" val="100" />
-		<set name="hitTime" val="5000" />
-		<set name="effectPoint" val="-2" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="87" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
-		<set name="affectRange" val="200" />
-		<set name="isMagic" val="1" />
-		<for>
+		<icon>icon.skill14635</icon>
+		<operateType>A1</operateType>
+		<castRange>100</castRange>
+		<hitTime>5000</hitTime>
+		<effectPoint>-2</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>87</magicLvl>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<affectRange>200</affectRange>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
 			<effect name="MagicalAttack">
-				<param power="75816" />
+				<power>75816</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14636" levels="1" name="Merciless Grip">
 		<!-- Glory Days confirmed -->
 		<!-- Aerial yoke status. -->
-		<set name="icon" val="icon.skill1042" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="150" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="60000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="AIRBIND" />
-		<set name="abnormalVisualEffect" val="AIRBIND" />
-		<set name="abnormalResists" val="STUN;TURN_FLEE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="87" />
-		<set name="reuseDelayGroup" val="11050" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="DamOverTime" ticks="5">
-				<param canKill="true" power="500" />
+		<icon>icon.skill1042</icon>
+		<operateType>A2</operateType>
+		<castRange>150</castRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>AIRBIND</abnormalType>
+		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
+		<abnormalResists>STUN;TURN_FLEE</abnormalResists>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>87</magicLvl>
+		<reuseDelayGroup>11050</reuseDelayGroup>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<canKill>true</canKill>
+				<power>500</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14637" levels="1" name="Driving Fog">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill0014637" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="hitTime" val="5000" />
-		<set name="effectPoint" val="-2" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="87" />
-		<set name="affectRange" val="150" />
-		<set name="reuseDelay" val="10000" />
-		<for>
+		<icon>icon.skill0014637</icon>
+		<operateType>A1</operateType>
+		<hitTime>5000</hitTime>
+		<effectPoint>-2</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>87</magicLvl>
+		<affectRange>150</affectRange>
+		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="75816" />
+				<power>75816</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14638" levels="1" name="Blade Claw">
 		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
-		<set name="icon" val="icon.skill0096" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="100" />
-		<set name="hitTime" val="2500" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="BLEEDING" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="BLEED" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="DamOverTime" ticks="1">
-				<param canKill="true" power="500" />
+		<icon>icon.skill0096</icon>
+		<operateType>A2</operateType>
+		<castRange>100</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>BLEED</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<canKill>true</canKill>
+				<power>500</power>
+				<ticks>1</ticks>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14639" levels="1" name="Compound Poison">
 		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
-		<set name="icon" val="icon.skill0129" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="200" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="15000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="POISON" />
-		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="600" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="80" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="POISON" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="DamOverTime" ticks="5">
-				<param canKill="true" power="500" />
+		<icon>icon.skill0129</icon>
+		<operateType>A2</operateType>
+		<castRange>200</castRange>
+		<hitTime>1500</hitTime>
+		<reuseDelay>15000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>POISON</abnormalType>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>600</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>80</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>POISON</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<canKill>true</canKill>
+				<power>500</power>
+				<ticks>5</ticks>
 			</effect>
-			<effect name="Debuff">
-				<mul stat="moveSpeed" val="0.8" />
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14640" levels="1" name="High-speed Movement">
 		<!-- Glory Days confirmed -->
 		<!-- Evasion is increased. -->
-		<set name="icon" val="icon.skill1087" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="AVOID_UP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="isMagic" val="1" />
-		<for>
-			<effect name="Buff">
-				<mul stat="rEvas" val="2" />
+		<icon>icon.skill1087</icon>
+		<operateType>A2</operateType>
+		<hitTime>1500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>AVOID_UP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14641" levels="1" name="Earthquake">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill0014641" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="castRange" val="500" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="-2" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1000" />
-		<set name="magicLvl" val="85" />
-		<set name="affectRange" val="150" />
-		<set name="reuseDelay" val="5000" />
-		<for>
+		<icon>icon.skill0014641</icon>
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>-2</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1000</effectRange>
+		<magicLvl>85</magicLvl>
+		<affectRange>150</affectRange>
+		<reuseDelay>5000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="50000" />
+				<power>50000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14642" levels="1" name="Sever">
 		<!-- Glory Days confirmed -->
 		<!-- Knocked back. -->
-		<set name="icon" val="icon.skill0261" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="100" />
-		<set name="hitTime" val="2500" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="87" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0261</icon>
+		<operateType>A2</operateType>
+		<castRange>100</castRange>
+		<hitTime>2500</hitTime>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>87</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="25000" />
+				<power>25000</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="400" />
+				<distance>100</distance>
+				<speed>400</speed>
 			</effect>
 			<effect name="DefenceTrait">
-				<param AIRBIND="100" />
-				<param HOLD="100" />
-				<param KNOCKBACK="100" />
-				<param SLEEP="100" />
-				<param SHOCK="100" />
+				<AIRBIND>100</AIRBIND>
+				<KNOCKBACK>100</KNOCKBACK>
+				<SHOCK>100</SHOCK>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14643" levels="1" name="Summon">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="2" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="87" />
-		<set name="reuseDelay" val="20000" />
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>2</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>87</magicLvl>
+		<reuseDelay>20000</reuseDelay>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14644" levels="1" name="White Dog's Fang">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill0014644" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="FRONT_AREA" />
-		<set name="castRange" val="80" />
-		<set name="fanRange" val="0;0;500;180" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="10000" />
-		<set name="effectPoint" val="-2" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="87" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0014644</icon>
+		<operateType>A1</operateType>
+		<castRange>80</castRange>
+		<fanRange>0;0;500;180</fanRange>
+		<hitTime>2000</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-2</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>87</magicLvl>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="32000" />
+				<power>32000</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14645" levels="1" name="Dark Arrow">
 		<!-- Glory Days confirmed -->
 		<!-- Knocked back. -->
-		<set name="icon" val="icon.skill0101" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="500" />
-		<set name="hitTime" val="500" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1000" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="80" />
-		<set name="magicLvl" val="88" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0101</icon>
+		<operateType>A2</operateType>
+		<castRange>500</castRange>
+		<hitTime>500</hitTime>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1000</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>80</activateRate>
+		<magicLvl>88</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="25272" />
+				<power>25272</power>
 			</effect>
 			<effect name="KnockBack">
-				<param distance="100" speed="500" />
+				<distance>100</distance>
+				<speed>500</speed>
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="40" />
+				<chance>40</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14646" levels="1" name="Polarization">
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. is decreased. -->
-		<set name="icon" val="icon.skill0115" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
-		<set name="castRange" val="300" />
-		<set name="hitTime" val="5000" />
-		<set name="reuseDelay" val="30000" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="800" />
-		<set name="magicLvl" val="88" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="20" />
-		<set name="affectRange" val="300" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.8" />
+		<icon>icon.skill0115</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<hitTime>5000</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<isMagic>1</isMagic>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<basicProperty>MAGIC</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>800</effectRange>
+		<magicLvl>88</magicLvl>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<affectRange>300</affectRange>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14647" levels="1" name="Polarization">
 		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. is decreased. -->
-		<set name="icon" val="icon.skill0115" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="AREA" />
-		<set name="castRange" val="300" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="2" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="800" />
-		<set name="magicLvl" val="88" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="20" />
-		<set name="affectRange" val="300" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.8" />
+		<icon>icon.skill0115</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<isMagic>1</isMagic>
+		<effectPoint>2</effectPoint>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<basicProperty>MAGIC</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>800</effectRange>
+		<magicLvl>88</magicLvl>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<affectRange>300</affectRange>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14648" levels="1" name="Flood">
 		<!-- Glory Days confirmed -->
 		<!-- Flood status. -->
-		<set name="icon" val="icon.skill1062" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="30000" />
-		<set name="effectPoint" val="2" />
-		<set name="abnormalType" val="BERSERKER" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3600" />
-		<set name="isMagic" val="1" />
-		<for>
-			<effect name="Buff">
-				<mul stat="pAtk" val="1.05" />
-				<mul stat="pAtkSpd" val="1.05" />
-				<mul stat="mAtk" val="1.1" />
-				<mul stat="mAtkSpd" val="1.05" />
-				<mul stat="moveSpeed" val="1.05" />
-				<mul stat="pDef" val="0.95" />
-				<mul stat="mDef" val="0.9" />
-				<sub stat="rEvas" val="-2" />
+		<icon>icon.skill1062</icon>
+		<operateType>A2</operateType>
+		<hitTime>500</hitTime>
+		<reuseDelay>30000</reuseDelay>
+		<effectPoint>2</effectPoint>
+		<abnormalType>BERSERKER</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3600</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+			<effect name="MAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14649" levels="1" name="Bounce">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bounce status. -->
-		<set name="icon" val="icon.skill4107" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="FLY_AWAY" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="affectRange" val="600" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill4107</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>FLY_AWAY</abnormalType>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>99</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<affectRange>600</affectRange>
+		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14650" levels="1" name="Corpse' Blow">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! -->
-		<set name="icon" val="icon.skill0003" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="3000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="15000" />
-		<for>
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="31593" />
+				<power>31593</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14651" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
 		<!-- Stuns the enemy for 7 seconds. -->
-		<set name="icon" val="icon.skill0092" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="95" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="7" />
-		<set name="trait" val="SHOCK" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0092</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>300</coolTime>
+		<effectPoint>-1</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>95</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>7</abnormalTime>
+		<trait>SHOCK</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="15796" />
+				<power>15796</power>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14652" levels="1" name="Blood Siphon">
 		<!-- Glory Days confirmed -->
 		<!-- Damage blood siphon 100%. -->
-		<set name="icon" val="icon.skill1268" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="1000" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1200" />
-		<set name="isMagic" val="1" />
-		<for>
+		<icon>icon.skill1268</icon>
+		<operateType>A2</operateType>
+		<hitTime>1000</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="VampiricAttack">
-				<param amount="300" chance="30" />
+				<amount>300</amount>
+				<chance>30</chance>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14653" levels="1" name="Rigor Mortis">
 		<!-- Glory Days confirmed -->
 		<!-- Monster absolute defense. Defense increased 50000. -->
-		<set name="icon" val="icon.skill0110" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="PD_UP_SPECIAL" />
-		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
-		<set name="hitTime" val="1000" />
-		<for>
-			<effect name="Buff">
-				<add stat="pDef" val="50000" />
+		<icon>icon.skill0110</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>PD_UP_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<hitTime>1000</hitTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>50000</amount>
+				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14654" levels="1" name="Darkness Drain">
 		<!-- Glory Days confirmed -->
 		<!-- Monster heal. Power 1024. -->
-		<set name="icon" val="icon.skill1401" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="403" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="95" />
-		<set name="isMagic" val="1" />
-		<for>
+		<icon>icon.skill1401</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>403</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<magicLvl>95</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="Heal">
-				<param power="1024" />
+				<power>1024</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14655" levels="1" name="Barrier of Reflection">
 		<!-- Glory Days confirmed -->
 		<!-- Reflect damage 50% -->
-		<set name="icon" val="icon.skill0086" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="1000" />
-		<set name="effectPoint" val="379" />
-		<set name="abnormalType" val="DMG_SHIELD" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1200" />
-		<set name="isMagic" val="1" />
-		<for>
-			<effect name="Buff">
-				<add stat="reflectDam" val="50" />
+		<icon>icon.skill0086</icon>
+		<operateType>A2</operateType>
+		<hitTime>1000</hitTime>
+		<effectPoint>379</effectPoint>
+		<abnormalType>DMG_SHIELD</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1200</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageShield">
+				<amount>50</amount>
+				<mode>DIFF</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14656" levels="1" name="Corpse Lunacy">
 		<!-- Glory Days confirmed -->
 		<!-- Increases P. Atk., Critical rage/damage, and Atk. Spd. by 100%. -->
-		<set name="icon" val="icon.skill1068" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="1000" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="PA_UP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="isMagic" val="1" />
-		<for>
-			<effect name="Buff">
-				<mul stat="pAtk" val="2" />
-				<mul stat="rCrit" val="2" />
-				<mul stat="cAtk" val="2" />
-				<mul stat="pAtkSpd" val="2" />
+		<icon>icon.skill1068</icon>
+		<operateType>A2</operateType>
+		<hitTime>1000</hitTime>
+		<effectPoint>1</effectPoint>
+		<abnormalType>PA_UP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="1676" skillLevel="1" /> <!-- Crazy After-effect -->
+				<!-- Crazy After-effect -->
+				<skillId>1676</skillId>
+				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
 	<skill id="14657" levels="1" name="Lingering Lunacy">
 		<!-- Glory Days confirmed -->
 		<!-- Aftereffect of going insane. -->
-		<set name="icon" val="icon.skill1170" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="PA_UP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="95" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="trait" val="PARALYZE" />
-		<set name="abnormalVisualEffect" val="PARALYZE" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="Debuff">
-				<mul stat="pDef" val="0.5" />
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<abnormalType>PA_UP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>95</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<trait>PARALYZE</trait>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14658" levels="1" name="Spinning Slasher">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 36675. -->
-		<set name="icon" val="icon.skill0036" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AURA" />
-		<set name="hitTime" val="3000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="magicLvl" val="95" />
-		<set name="affectRange" val="150" />
-		<set name="affectLimit" val="6-12" />
-		<set name="reuseDelay" val="10000" />
-		<for>
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLvl>95</magicLvl>
+		<affectRange>150</affectRange>
+		<affectLimit>6-12</affectLimit>
+		<reuseDelay>10000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="36675" />
+				<power>36675</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14659" levels="1" name="Stun">
 		<!-- Glory Days confirmed -->
 		<!-- Stuns the enemy for 7 seconds. -->
-		<set name="icon" val="icon.skill0092" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="-1" />
-		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="95" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="7" />
-		<set name="trait" val="SHOCK" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill0092</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>300</coolTime>
+		<effectPoint>-1</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>95</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>7</abnormalTime>
+		<trait>SHOCK</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14660" levels="1" name="Blood Strike">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
-		<set name="icon" val="icon.skill0003" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="3000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="1000" />
-		<for>
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="50937" />
+				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14661" levels="1" name="Darkness Wave">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 49414. -->
-		<set name="icon" val="icon.skill0056" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="1000" />
-		<for>
+		<icon>icon.skill0056</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="49414" />
+				<power>49414</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14662" levels="1" name="Darkness Shiver">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
-		<set name="icon" val="icon.skill0056" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="1000" />
-		<for>
+		<icon>icon.skill0056</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>1000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="49414" />
+				<power>49414</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14663" levels="1" name="Guardian's Blow">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 45844. -->
-		<set name="icon" val="icon.skill0003" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="15000" />
-		<for>
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="45844" />
+				<power>45844</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14664" levels="1" name="Destruction Blow">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
-		<set name="icon" val="icon.skill0003" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="3000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="15000" />
-		<for>
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="50937" />
+				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14665" levels="1" name="Ferocious Charge">
 		<!-- Glory Days confirmed -->
 		<!-- Monster Rush -->
-		<set name="icon" val="icon.skill0493" />
-		<set name="operateType" val="DA1" />
-		<set name="targetType" val="AREA" />
-		<set name="flyType" val="CHARGE" />
-		<set name="castRange" val="400" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="600" />
-		<set name="magicLvl" val="95" />
-		<set name="affectRange" val="150" />
-		<set name="affectLimit" val="5-12" />
-		<set name="reuseDelay" val="15000" />
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="ANCIENTSWORD,RAPIER" />
-				<target mindistance="200" />
-			</and>
-		</cond>
-		<for>
+		<icon>icon.skill0493</icon>
+		<operateType>DA1</operateType>
+		<flyType>CHARGE</flyType>
+		<castRange>400</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>600</effectRange>
+		<magicLvl>95</magicLvl>
+		<affectRange>150</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<ANCIENTSWORD />
+				</weaponType>
+			</condition>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="50937" />
+				<power>50937</power>
 			</effect>
 			<effect name="EnemyCharge" />
-		</for>
+		</effects>
 	</skill>
 	<skill id="14666" levels="1" name="Penetrating Blow">
 		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
-		<set name="icon" val="icon.skill0056" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1400" />
-		<set name="magicLvl" val="95" />
-		<set name="reuseDelay" val="15000" />
-		<for>
+		<icon>icon.skill0056</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1400</effectRange>
+		<magicLvl>95</magicLvl>
+		<reuseDelay>15000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PhysicalAttack">
-				<param power="50937" />
+				<power>50937</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14667" levels="1" name="Flames of Judgment">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill1230" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="ONE" />
-		<set name="mpConsume" val="2" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="4000" />
-		<set name="reuseDelay" val="1200" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="4" />
-		<set name="effectRange" val="1400" />
-		<set name="magicLvl" val="95" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
-		<set name="isMagic" val="1" />
-		<for>
+		<icon>icon.skill1230</icon>
+		<operateType>A1</operateType>
+		<mpConsume>2</mpConsume>
+		<castRange>900</castRange>
+		<hitTime>4000</hitTime>
+		<reuseDelay>1200</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>4</hitCancelTime>
+		<effectRange>1400</effectRange>
+		<magicLvl>95</magicLvl>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="MagicalAttackRange">
-				<param power="318" />
-				<param powerRange="40" />
+				<power>318</power>
+				<powerRange>40</powerRange>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14668" levels="1" name="Firestorm of Judgment">
 		<!-- Glory Days confirmed -->
-		<set name="icon" val="icon.skill1296" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
-		<set name="mpConsume" val="2" />
-		<set name="castRange" val="500" />
-		<set name="hitTime" val="4000" />
-		<set name="reuseDelay" val="5000" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="4" />
-		<set name="effectRange" val="1000" />
-		<set name="magicLvl" val="95" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
-		<set name="affectRange" val="100" />
-		<set name="affectLimit" val="5-12" />
-		<set name="isMagic" val="1" />
-		<for>
+		<icon>icon.skill1296</icon>
+		<operateType>A1</operateType>
+		<mpConsume>2</mpConsume>
+		<castRange>500</castRange>
+		<hitTime>4000</hitTime>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>4</hitCancelTime>
+		<effectRange>1000</effectRange>
+		<magicLvl>95</magicLvl>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<affectRange>100</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
 			<effect name="MagicalAttack">
-				<param power="254" />
+				<power>254</power>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14669" levels="1" name="Earth Wyrm Feeler Strike">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0773" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="effectPoint" val="-686" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="2500" />
-		<set name="magicLvl" val="99" />
-		<set name="fanRange" val="0;0;2000;600" />
-		<set name="castRange" val="2000" />
+		<icon>icon.skill0773</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-686</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>2500</effectRange>
+		<magicLvl>99</magicLvl>
+		<fanRange>0;0;2000;600</fanRange>
+		<castRange>2000</castRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SQUARE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14670" levels="1" name="Earth Wyrm Feeler Strike">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0036" />
-		<set name="operateType" val="A1" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="99" />
-		<set name="affectRange" val="1200" />
-		<set name="fanRange" val="0;0;900;0" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>99</magicLvl>
+		<affectRange>1200</affectRange>
+		<fanRange>0;0;900;0</fanRange>
+		<targetType>SELF</targetType>
+		<affectScope>RING_RANGE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14671" levels="1" name="Earth Wyrm Feeler Strike">
 		<!-- AUTO GENERATED SKILL -->
-		<set name="icon" val="icon.skill0036" />
-		<set name="operateType" val="A1" />
-		<set name="effectPoint" val="-1" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="magicLvl" val="99" />
-		<set name="affectRange" val="900" />
-		<set name="targetType" val="SELF" />
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicLvl>99</magicLvl>
+		<affectRange>900</affectRange>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14672" levels="1" name="Bounce">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bounce status. -->
-		<set name="icon" val="icon.skill4107" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="effectPoint" val="-2" />
-		<set name="abnormalType" val="FLY_AWAY" />
-		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill4107</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-2</effectPoint>
+		<abnormalType>FLY_AWAY</abnormalType>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<magicLvl>99</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14673" levels="1" name="Cry of Destiny - Shield Charge">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses a shield to attack the selected target with 1500 power added to P. Atk. Also decreases P. Def. by 10% and physical evasion by 2. Increase incurred physical critical damage by 10%. -->
-		<set name="icon" val="icon.skill10008" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="800" />
-		<set name="coolTime" val="570" />
-		<set name="effectPoint" val="-689" />
-		<set name="abnormalType" val="SHIELD_ATTACK" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="0" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="irreplacableBuff" val="true" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10008</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>800</hitTime>
+		<coolTime>570</coolTime>
+		<effectPoint>-689</effectPoint>
+		<abnormalType>SHIELD_ATTACK</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<activateRate>0</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14674" levels="1" name="Cry of Destiny - Chain Strike">
 		<!-- Glory Days confirmed -->
 		<!-- Drags a target to the center. -->
-		<set name="icon" val="icon.skill10015" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
-		<set name="coolTime" val="1000" />
-		<set name="effectPoint" val="-2066" />
-		<set name="abnormalType" val="STUN" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="2" />
-		<set name="activateRate" val="140" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="trait" val="PULL" />
-		<set name="isDebuff" val="true" />
-		<for>
+		<icon>icon.skill10015</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<hitTime>500</hitTime>
+		<coolTime>1000</coolTime>
+		<effectPoint>-2066</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>2</lvlBonusRate>
+		<activateRate>140</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<trait>PULL</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
 			<effect name="PullBack">
-				<param speed="600" delay="600" />
+				<speed>600</speed>
+				<delay>600</delay>
 			</effect>
 			<effect name="BlockActions">
-				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14675" levels="1" name="Cry of Destiny - Last Judgment">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks with 2000 power added to P. Atk. Decreases Speed by 10%. -->
-		<set name="icon" val="icon.skill10009" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="470" />
-		<set name="effectPoint" val="-689" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="0" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10009</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>470</coolTime>
+		<effectPoint>-689</effectPoint>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<attributeType>DARK</attributeType>
+		<attributeValue>20</attributeValue>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14676" levels="1" name="Cry of Destiny - Armor Destruction">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the enemy with 1300 power added to P. Atk. Weakens P. Def. Additionally absorbs Momentum. -->
-		<set name="icon" val="icon.skill10258" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1090" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="PD_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="80" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="20" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10258</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>1090</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>PD_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<activateRate>80</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>4</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14677" levels="1" name="Cry of Destiny - Giant Punch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Strikes down at the ground with a fist to knock down nearby enemies for 3 seconds. Dualsword/two-handed sword/spear/blunt weapon must be equipped. -->
-		<set name="icon" val="icon.skill10266" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="lvlBonusRate" val="2" />
-		<set name="activateRate" val="50" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="affectRange" val="150" />
-		<set name="affectLimit" val="5-12" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10266</icon>
+		<operateType>A2</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>300</coolTime>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<lvlBonusRate>2</lvlBonusRate>
+		<activateRate>50</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<affectRange>150</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
+		<affectScope>POINT_BLANK</affectScope>
+		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14678" levels="1" name="Cry of Destiny - Power Bomber">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Powerfully strikes the target with 2000 Power added to P. Atk. to knock down for 2 seconds. -->
-		<set name="icon" val="icon.skill10262" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1490" />
-		<set name="coolTime" val="200" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="KNOCKDOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKDOWN" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10262</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>1490</hitTime>
+		<coolTime>200</coolTime>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14679" levels="1" name="Cry of Destiny - Heart Breaker">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful vital spot attack by striking the heart. Attack the target with 1700 Power added to P. Atk. Over-hit. Half-kill. -->
-		<set name="icon" val="icon.skill10509" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="830" />
-		<set name="coolTime" val="700" />
-		<set name="effectPoint" val="-687" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10509</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>830</hitTime>
+		<coolTime>700</coolTime>
+		<effectPoint>-687</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14680" levels="1" name="Cry of Destiny - Dark Paralysis">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Seals with the power of darkness. Causes the enemy's body to go completely rigid for 10 seconds and causes paralysis for 5 seconds. -->
-		<set name="icon" val="icon.skill10514" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="PARALYZE" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="80" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="trait" val="PARALYZE" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10514</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>1000</hitTime>
+		<coolTime>300</coolTime>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>PARALYZE</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>80</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<trait>PARALYZE</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14681" levels="1" name="Cry of Destiny - Throwing Sand">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Hurls poison sand at the target. Greatly decreases Accuracy for 5 seconds and lures to yourself. -->
-		<set name="icon" val="icon.skill10540" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="800" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="300" />
-		<set name="abnormalType" val="HIT_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="effectRange" val="900" />
-		<set name="activateRate" val="80" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="DERANGEMENT" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10540</icon>
+		<operateType>A2</operateType>
+		<castRange>800</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>300</coolTime>
+		<abnormalType>HIT_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effectRange>900</effectRange>
+		<activateRate>80</activateRate>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>DERANGEMENT</trait>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14682" levels="1" name="Cry of Destiny - Pinpoint Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the weak points of long-range enemies. Attack the target with 2700 Power added to P. Atk. Disregards 30% of P. Def. and attacks. -->
-		<set name="icon" val="icon.skill10763" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="700" />
-		<set name="hitTime" val="2200" />
-		<set name="effectPoint" val="-689" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1200" />
-		<set name="magicLvl" val="85" />
-		<set name="coolTime" val="850" />
+		<icon>icon.skill10763</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>2200</hitTime>
+		<effectPoint>-689</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1200</effectRange>
+		<magicLvl>85</magicLvl>
+		<coolTime>850</coolTime>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14683" levels="1" name="Cry of Destiny - Quick Fire">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Atk. Spd. by 50% when equipped with a bow or crossbow. -->
-		<set name="icon" val="icon.skill10779" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="800" />
-		<set name="effectPoint" val="2" />
-		<set name="abnormalType" val="REAL_TARGET" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalVisualEffect" val="REAL_TARGET" />
-		<set name="coolTime" val="200" />
+		<icon>icon.skill10779</icon>
+		<operateType>A2</operateType>
+		<hitTime>800</hitTime>
+		<effectPoint>2</effectPoint>
+		<abnormalType>REAL_TARGET</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<abnormalVisualEffect>REAL_TARGET</abnormalVisualEffect>
+		<coolTime>200</coolTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14684" levels="1" name="Cry of Destiny - Recoil Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots an arrow with 1200 power added to P. Atk. to the target to push out the enemy. Bow/crossbow required. Over-hit. Chance of canceling the opponent's target. -->
-		<set name="icon" val="icon.skill10770" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="2200" />
-		<set name="coolTime" val="450" />
-		<set name="effectPoint" val="-689" />
-		<set name="abnormalType" val="STUN" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1400" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill10770</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<hitTime>2200</hitTime>
+		<coolTime>450</coolTime>
+		<effectPoint>-689</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1400</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>2</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14685" levels="1" name="Cry of Destiny - Elemental Spike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts magic damage with 30 power on the selected target. Decreases Fire Resistance by 20. -->
-		<set name="icon" val="icon.skill11011" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="550" />
-		<set name="hitTime" val="2280" />
-		<set name="coolTime" val="300" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="ARMOR_UNHOLY" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="effectRange" val="800" />
-		<set name="activateRate" val="90" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="0" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11011</icon>
+		<operateType>A2</operateType>
+		<castRange>550</castRange>
+		<hitTime>2280</hitTime>
+		<coolTime>300</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>ARMOR_UNHOLY</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effectRange>800</effectRange>
+		<activateRate>90</activateRate>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>0</attributeValue>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14686" levels="1" name="Cry of Destiny - Elemental Crash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts magic damage on the enemy with 35 power. Also decreases Speed and inflicts fear. -->
-		<set name="icon" val="icon.skill11513" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="2780" />
-		<set name="coolTime" val="300" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0.8" />
-		<set name="effectRange" val="1100" />
-		<set name="activateRate" val="90" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
-		<set name="trait" val="DERANGEMENT" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="10" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11513</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<hitTime>2780</hitTime>
+		<coolTime>300</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0.8</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<activateRate>90</activateRate>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>3</abnormalTime>
+		<trait>DERANGEMENT</trait>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>10</attributeValue>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14687" levels="1" name="Cry of Destiny - Hell Binding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Floats the target into the air and stops him from moving for awhile. -->
-		<set name="icon" val="icon.skill11050" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-692" />
-		<set name="abnormalType" val="AIRBIND" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="1.5" />
-		<set name="effectRange" val="1400" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="trait" val="AIRBIND" />
-		<set name="abnormalVisualEffect" val="AIRBIND" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11050</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-692</effectPoint>
+		<abnormalType>AIRBIND</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>1.5</hitCancelTime>
+		<effectRange>1400</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<trait>AIRBIND</trait>
+		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14688" levels="2" name="Cry of Destiny - Mark of Weakness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 seconds, weakens the enemy. Decreases 40 HP per second and increases weakness to de-buff by 5%. -->
-		<set name="icon" val="icon.skill11259" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="MULTI_DEBUFF" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11259</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<hitTime>1200</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>MULTI_DEBUFF</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14689" levels="2" name="Cry of Destiny - Mark of Plague">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stigma that connects to the epidemic dimension. For 10 seconds, inflicts the plague in the enemy. Decreases 70 HP per second and block recovery. -->
-		<set name="icon" val="icon.skill11261" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-692" />
-		<set name="abnormalType" val="MULTI_DEBUFF_B" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="DOT_POISON" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11261</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-692</effectPoint>
+		<abnormalType>MULTI_DEBUFF_B</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14690" levels="1" name="Cry of Destiny - Exile">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Kicks out the target to another dimension. The exiled target becomes incapacitated and loses 167 HP per second. -->
-		<set name="icon" val="icon.skill11273" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="trait" val="TURN_STONE" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="DEPORT" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="1" />
-		<set name="effectRange" val="1100" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="DEPORT" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11273</icon>
+		<operateType>A2</operateType>
+		<trait>TURN_STONE</trait>
+		<castRange>600</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>DEPORT</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>1</hitCancelTime>
+		<effectRange>1100</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14691" levels="1" name="Cry of Destiny - Crippling Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with 1300 power added to P. Atk. For 5 seconds, decreases the enemy's P. Def./M. Def. by 30% and evasion by 10. -->
-		<set name="icon" val="icon.skill11509" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="910" />
-		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11509</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<hitTime>910</hitTime>
+		<coolTime>300</coolTime>
+		<effectPoint>-687</effectPoint>
+		<abnormalType>CRITICAL_PROB_DOWN</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14692" levels="1" name="Cry of Destiny - Death Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target with 1400 Power added to P. Atk. -->
-		<set name="icon" val="icon.skill11511" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="40" />
-		<set name="hitTime" val="1410" />
-		<set name="effectPoint" val="-692" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="400" />
-		<set name="magicLvl" val="85" />
-		<set name="coolTime" val="500" />
+		<icon>icon.skill11511</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1410</hitTime>
+		<effectPoint>-692</effectPoint>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>400</effectRange>
+		<magicLvl>85</magicLvl>
+		<coolTime>500</coolTime>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14693" levels="1" name="Cry of Destiny - Pipe Organ Melody">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes, increases Max HP by 2572, Max MP by 953, HP recovery by 20%, and MP recovery by 20%. -->
-		<set name="icon" val="icon.skill11519" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="700" />
-		<set name="effectPoint" val="687" />
-		<set name="abnormalType" val="MAX_HP_UP" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1800" />
-		<set name="affectRange" val="1000" />
-		<set name="isMagic" val="22" />
-		<set name="coolTime" val="300" />
+		<icon>icon.skill11519</icon>
+		<operateType>A2</operateType>
+		<hitTime>700</hitTime>
+		<effectPoint>687</effectPoint>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1800</abnormalTime>
+		<affectRange>1000</affectRange>
+		<isMagic>22</isMagic>
+		<coolTime>300</coolTime>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14694" levels="1" name="Cry of Destiny - Dark Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts no-type damage on the enemy with 31 power added to M. Atk. Decreases the enemy's attacking urge against yourself. -->
-		<set name="icon" val="icon.skill1175" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="-867" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="effectRange" val="1100" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill1175</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-867</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effectRange>1100</effectRange>
+		<isMagic>1</isMagic>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14695" levels="1" name="Cry of Destiny - Radiant Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores the target's HP with 1488 Power. Once HP is filled, the remaining effect stores CP. -->
-		<set name="icon" val="icon.skill11755" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="effectPoint" val="867" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="1" />
-		<set name="magicLvl" val="85" />
-		<set name="isMagic" val="1" />
+		<icon>icon.skill11755</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>867</effectPoint>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>1</hitCancelTime>
+		<magicLvl>85</magicLvl>
+		<isMagic>1</isMagic>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14696" levels="1" name="Cry of Destiny - Dark Force">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pushes and inflicts a magic attack. -->
-		<set name="icon" val="icon.skill0101" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="43" />
-		<set name="castRange" val="600" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="-867" />
-		<set name="abnormalType" val="STUN" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="effectRange" val="1100" />
-		<set name="lvlBonusRate" val="1" />
-		<set name="activateRate" val="90" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="trait" val="KNOCKDOWN" />
-		<set name="abnormalVisualEffect" val="KNOCKBACK" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill0101</icon>
+		<operateType>A2</operateType>
+		<mpConsume>43</mpConsume>
+		<castRange>600</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<isMagic>1</isMagic>
+		<effectPoint>-867</effectPoint>
+		<abnormalType>STUN</abnormalType>
+		<basicProperty>PHYSICAL</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effectRange>1100</effectRange>
+		<lvlBonusRate>1</lvlBonusRate>
+		<activateRate>90</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>1</abnormalTime>
+		<trait>KNOCKDOWN</trait>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14697" levels="1" name="Ghost's Hell Binding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Floats the target into the air and stops him from moving for awhile. -->
-		<set name="icon" val="icon.skill11050" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="castRange" val="900" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="120000" />
-		<set name="effectPoint" val="-692" />
-		<set name="abnormalType" val="AIRBIND" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="hitCancelTime" val="1.5" />
-		<set name="effectRange" val="1400" />
-		<set name="activateRate" val="99" />
-		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="20" />
-		<set name="trait" val="AIRBIND" />
-		<set name="abnormalVisualEffect" val="AIRBIND" />
-		<set name="isMagic" val="2" />
-		<set name="isDebuff" val="true" />
+		<icon>icon.skill11050</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>120000</reuseDelay>
+		<effectPoint>-692</effectPoint>
+		<abnormalType>AIRBIND</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>1.5</hitCancelTime>
+		<effectRange>1400</effectRange>
+		<activateRate>99</activateRate>
+		<magicLvl>85</magicLvl>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>20</abnormalTime>
+		<trait>AIRBIND</trait>
+		<abnormalVisualEffect>AIRBIND</abnormalVisualEffect>
+		<isMagic>2</isMagic>
+		<isDebuff>true</isDebuff>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14698" levels="1" name="Current Shock">
 		<!-- Zone Skill -->
 		<!-- Incurs a current shock. -->
-		<set name="icon" val="icon.skill1072" />
-		<set name="abnormalTime" val="3" />
-		<set name="effectPoint" val="-1" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
-		<set name="hitTime" val="3000" />
-		<set name="isDebuff" val="true" />
-		<set name="magicLvl" val="1" />
-		<set name="abnormalType" val="MULTI_DEBUFF_B" />
-		<set name="basicProperty" val="MAGIC" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="5" />
-		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="isMagic" val="1" />
-		<for>
-			<effect name="DamOverTime" ticks="2">
-				<param canKill="true" power="85" />
+		<icon>icon.skill1072</icon>
+		<abnormalTime>3</abnormalTime>
+		<effectPoint>-1</effectPoint>
+		<operateType>A2</operateType>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicLvl>1</magicLvl>
+		<abnormalType>MULTI_DEBUFF_B</abnormalType>
+		<basicProperty>MAGIC</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>5</abnormalLvl>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<canKill>true</canKill>
+				<power>85</power>
+				<ticks>2</ticks>
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="14699" levels="1" name="Illusion of Pain">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Translucent status. -->
-		<set name="icon" val="icon.skill0411" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="34" />
-		<set name="hitTime" val="2000" />
-		<set name="effectPoint" val="2" />
-		<set name="abnormalType" val="STEALTH" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="-5" />
-		<set name="specialLevel" val="-1" />
-		<set name="hitCancelTime" val="0" />
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="120" />
-		<set name="abnormalVisualEffect" val="STEALTH" />
-		<set name="reuseDelay" val="4000" />
+		<icon>icon.skill0411</icon>
+		<operateType>A2</operateType>
+		<mpConsume>34</mpConsume>
+		<hitTime>2000</hitTime>
+		<effectPoint>2</effectPoint>
+		<abnormalType>STEALTH</abnormalType>
+		<basicProperty>NONE</basicProperty>
+		<rideState>NONE</rideState>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<abnormalLvl>3</abnormalLvl>
+		<abnormalTime>120</abnormalTime>
+		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
+		<reuseDelay>4000</reuseDelay>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 </list>
