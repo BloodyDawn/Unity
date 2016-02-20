@@ -113,4 +113,12 @@ public class OneDayRewardDataHolder
 	{
 		return _handler != null ? _handler.getProgress(player) : OneDayRewardStatus.NOT_AVAILABLE.getClientId();
 	}
+	
+	public void reset()
+	{
+		if (_handler != null)
+		{
+			_handler.reset();
+		}
+	}
 }

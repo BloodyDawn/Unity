@@ -21,6 +21,7 @@ package org.l2junity.gameserver.handler;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -68,6 +69,24 @@ public abstract class AbstractOneDayRewardHandler extends ListenersContainer
 	{
 		final OneDayRewardPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
 		return entry != null ? entry.getProgress() : 0;
+	}
+	
+	public synchronized void reset()
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_daily_rewards WHERE rewardId = ?"))
+		{
+			ps.setInt(1, _holder.getId());
+			ps.execute();
+		}
+		catch (SQLException e)
+		{
+			LOGGER.warn("Error while clearing data for: {}", getClass().getSimpleName(), e);
+		}
+		finally
+		{
+			_entries.clear();
+		}
 	}
 	
 	public boolean requestReward(PlayerInstance player)

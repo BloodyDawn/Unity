@@ -45,6 +45,7 @@ import org.l2junity.gameserver.taskmanager.tasks.TaskDailySkillReuseClean;
 import org.l2junity.gameserver.taskmanager.tasks.TaskDailyWorldChatPointReset;
 import org.l2junity.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
 import org.l2junity.gameserver.taskmanager.tasks.TaskOlympiadSave;
+import org.l2junity.gameserver.taskmanager.tasks.TaskOneDayRewardsReset;
 import org.l2junity.gameserver.taskmanager.tasks.TaskRecom;
 import org.l2junity.gameserver.taskmanager.tasks.TaskRestart;
 import org.l2junity.gameserver.taskmanager.tasks.TaskScript;
@@ -193,6 +194,7 @@ public final class TaskManager
 		registerTask(new TaskDailyWorldChatPointReset());
 		registerTask(new TaskGlobalVariablesSave());
 		registerTask(new TaskOlympiadSave());
+		registerTask(new TaskOneDayRewardsReset());
 		registerTask(new TaskRecom());
 		registerTask(new TaskRestart());
 		registerTask(new TaskScript());

@@ -75,6 +75,12 @@ public class LevelOneDayRewardHandler extends AbstractOneDayRewardHandler
 		return false;
 	}
 	
+	@Override
+	public void reset()
+	{
+		// Level rewards doesn't reset daily
+	}
+	
 	private void onPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
 		final PlayerInstance player = event.getActiveChar();
