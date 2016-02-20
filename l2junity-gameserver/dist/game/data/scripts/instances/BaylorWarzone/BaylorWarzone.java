@@ -44,9 +44,8 @@ public final class BaylorWarzone extends AbstractInstance
 	private static final int PRISON_GUARD = 29104;
 	private static final int ENTRANCE_PORTAL = 33523;
 	private static final int INVISIBLE_NPC_1 = 29106;
-	// private static final int INVISIBLE_NPC_2 = 29107;
-	private static final int INVISIBLE_NPC_3 = 29108;
-	private static final int INVISIBLE_NPC_4 = 29109;
+	private static final int INVISIBLE_NPC_2 = 29108;
+	private static final int INVISIBLE_NPC_3 = 29109;
 	// Skills
 	private static final SkillHolder INVIS_NPC_SOCIAL_SKILL = new SkillHolder(5401, 1);
 	private static final SkillHolder BAYLOR_SOCIAL_SKILL = new SkillHolder(5402, 1);
@@ -216,7 +215,7 @@ public final class BaylorWarzone extends AbstractInstance
 				}
 				case "START_SCENE_15":
 				{
-					world.getAliveNpcs(INVISIBLE_NPC_4).forEach(invisNpc ->
+					world.getAliveNpcs(INVISIBLE_NPC_3).forEach(invisNpc ->
 					{
 						specialCamera(world, invisNpc, 500, 212, 0, 1500, 3000, 3000, 357, 15, 1, 0, 1);
 						getTimers().addTimer("START_SCENE_16", 1500, invisNpc, null);
@@ -270,7 +269,7 @@ public final class BaylorWarzone extends AbstractInstance
 		final Instance world = npc.getInstanceWorld();
 		if (isBylorInstance(world))
 		{
-			// myself->BroadcastScriptEvent(@SCE_CLEAR_NPC_DESPAWN, 0, 3000);
+			world.getAliveNpcs(INVISIBLE_NPC_1, INVISIBLE_NPC_2, INVISIBLE_NPC_3).forEach(Npc::deleteMe);
 			world.getAliveNpcs(PRISON_GUARD).forEach(guard -> guard.doDie(null));
 			npc.deleteMe();
 		}
