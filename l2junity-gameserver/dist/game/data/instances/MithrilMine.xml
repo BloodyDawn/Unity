@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Mithril Mine -->
-<instance id="138" maxWorlds="50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="138" maxWorlds="50" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<time duration="20" empty="0" />
 	<locations>
 		<enter type="FIXED">
@@ -14,7 +14,7 @@
 		</condition>
 	</conditions>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Kegor -->
 			<npc id="18846" x="185198" y="-184818" z="-3288" heading="6800" />
 			<!-- Mithril Millipede -->
@@ -40,7 +40,7 @@
 			<npc id="22766" x="187122" y="-183562" z="-3100" heading="0" />
 			<npc id="22766" x="185911" y="-182886" z="-3100" heading="0" />
 		</group>
-		<group name="attackers">
+		<group name="attackers" spawnByDefault="false">
 			<npc id="22766" x="185216" y="-184112" z="-3308" heading="-15396" />
 			<npc id="22766" x="185456" y="-184240" z="-3308" heading="-19668" />
 			<npc id="22766" x="185712" y="-184384" z="-3308" heading="-26696" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Sanctum of the Lords of Dawn -->
-<instance id="111" maxWorlds="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="111" maxWorlds="20" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<time duration="60" empty="10" />
 	<removeBuffs type="ALL" />
 	<locations>
@@ -18,7 +18,7 @@
 		<door id="17240006" />
 	</doorlist>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Darkness of Dawn -->
 			<npc id="32579" x="-75988" y="213411" z="-7124" heading="0" respawnTime="60sec" />
 			<!-- Identity Confirm Device -->
@@ -29,7 +29,7 @@
 			<!-- Shelf -->
 			<npc id="32580" x="-81393" y="205565" z="-7960" heading="0" respawnTime="60sec" />
 		</group>
-		<group name="high_priest_of_dawn">
+		<group name="high_priest_of_dawn" spawnByDefault="false">
 			<npc id="18828" x="-79229" y="205782" z="-7896" heading="28672" respawnTime="60sec" />
 			<npc id="18828" x="-79362" y="205706" z="-7896" heading="16383" respawnTime="60sec" />
 			<npc id="18828" x="-79495" y="205774" z="-7896" heading="4096" respawnTime="60sec" />
@@ -37,7 +37,7 @@
 			<npc id="18828" x="-79362" y="206012" z="-7896" heading="49152" respawnTime="60sec" />
 			<npc id="18828" x="-79230" y="205935" z="-7896" heading="36864" respawnTime="60sec" />
 		</group>
-		<group name="save_point1">
+		<group name="save_point1" spawnByDefault="false">
 			<npc id="18834" x="-75190" y="210176" z="-7418" heading="0" respawnTime="60sec" />
 			<npc id="18834" x="-74743" y="209820" z="-7418" heading="32768" respawnTime="60sec" />
 			<npc id="18835" x="-75650" y="212107" z="-7322" heading="0" respawnTime="60sec" />
@@ -50,7 +50,7 @@
 			<npc id="27351" x="-74619" y="209981" z="-7418" heading="30212" respawnTime="60sec" />
 			<npc id="27351" x="-75301" y="209980" z="-7418" heading="1722" respawnTime="60sec" />
 		</group>
-		<group name="save_point2">
+		<group name="save_point2" spawnByDefault="false">
 			<npc id="18834" x="-75559" y="207860" z="-7515" heading="16384" respawnTime="60sec" />
 			<npc id="18834" x="-74227" y="208290" z="-7520" heading="32768" respawnTime="60sec" />
 			<npc id="18834" x="-74522" y="207063" z="-7520" heading="0" respawnTime="60sec" />
@@ -69,7 +69,7 @@
 			<npc id="27351" x="-74558" y="206625" z="-7520" heading="65102" respawnTime="60sec" />
 			<npc id="27351" x="-75454" y="206740" z="-7520" heading="34645" respawnTime="60sec" />
 		</group>
-		<group name="save_point3">
+		<group name="save_point3" spawnByDefault="false">
 			<npc id="18834" x="-78921" y="206110" z="-7904" heading="7872" respawnTime="60sec" />
 			<npc id="18834" x="-78855" y="206443" z="-7896" heading="24784" respawnTime="60sec" />
 			<npc id="18834" x="-79357" y="206713" z="-7904" heading="49151" respawnTime="60sec" />
@@ -100,7 +100,7 @@
 			<npc id="27351" x="-79814" y="206277" z="-7904" heading="59013" respawnTime="60sec" />
 			<npc id="27351" x="-78891" y="206272" z="-7904" heading="59013" respawnTime="60sec" />
 		</group>
-		<group name="save_point4">
+		<group name="save_point4" spawnByDefault="false">
 			<npc id="27351" x="-81938" y="205856" z="-8000" heading="0" respawnTime="60sec" />
 			<npc id="27351" x="-81535" y="205503" z="-8000" heading="16384" respawnTime="60sec" />
 			<npc id="27351" x="-81536" y="206223" z="-8000" heading="49151" respawnTime="60sec" />

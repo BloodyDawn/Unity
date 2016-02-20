@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Chamber of Delusion (Great Seal) -->
-<instance id="131" maxWorlds="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="131" maxWorlds="20" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
 	<time duration="60" empty="1" />
 	<locations>
 		<enter type="NONE">
@@ -39,7 +39,7 @@
 		<reset hour="6" minute="30" />
 	</reenter>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Room 1 -->
 			<npc id="22719" x="-122630" y="-153717" z="-6688" heading="0" respawnTime="60sec" />	<!-- Nihil Invader Warrior -->
 			<npc id="22719" x="-122122" y="-153530" z="-6688" heading="0" respawnTime="60sec" />	<!-- Nihil Invader Warrior -->
@@ -109,7 +109,7 @@
 			<npc id="25694" x="-121555" y="-155000" z="-6688" heading="0" />	<!-- Aenkinel -->
 			<npc id="32692" x="-121440" y="-154672" z="-6688" heading="0" />	<!-- Delusion Manager -->
 		</group>
-		<group name="boxes">
+		<group name="boxes" spawnByDefault="false">
 			<npc id="18820" x="-121555" y="-155000" z="-6688" heading="0" />	<!-- Nihil Invader Treasure Chest -->
 			<npc id="18820" x="-121261" y="-154896" z="-6688" heading="0" />	<!-- Nihil Invader Treasure Chest -->
 			<npc id="18820" x="-121286" y="-154378" z="-6688" heading="0" />	<!-- Nihil Invader Treasure Chest -->

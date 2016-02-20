@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Istina Cavern -->
-<instance id="169" maxWorlds="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="169" maxWorlds="10" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<time duration="120" empty="5" />
 	<removeBuffs type="ALL" />
 	<locations>
@@ -37,11 +38,11 @@
 		</door>
 	</doorlist>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<npc id="29195" x="-177125" y="147856" z="-11384" heading="49140" /> <!-- Istina -->
 			<npc id="33293" x="-177120" y="143526" z="-11264" heading="49140" /> <!-- Rumiese -->
 		</group>
-		<group name="BALLISTA">
+		<group name="BALLISTA" spawnByDefault="false">
 			<npc id="19021" x="-177125" y="147856" z="-11370" heading="16198" /> <!-- Magical Power Ballista -->
 		</group>
 	</spawnlist>

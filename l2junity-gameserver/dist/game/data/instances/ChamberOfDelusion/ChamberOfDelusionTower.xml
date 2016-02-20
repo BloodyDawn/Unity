@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Chamber of Delusion (Tower of Seal) -->
-<instance id="132" maxWorlds="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="132" maxWorlds="20" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
 	<time duration="60" empty="20" />
 	<locations>
 		<enter type="NONE">
@@ -39,7 +39,7 @@
 		<reset hour="6" minute="30" />
 	</reenter>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Room 1 -->
 			<npc id="22730" x="-108896" y="-153769" z="-6688" heading="0" respawnTime="60sec" />	<!-- Mutant Warrior -->
 			<npc id="22730" x="-108890" y="-153234" z="-6688" heading="0" respawnTime="60sec" />	<!-- Mutant Warrior -->
@@ -128,7 +128,7 @@
 			<npc id="25695" x="-108205" y="-154318" z="-6688" heading="0" />	<!-- Aenkinel -->
 			<npc id="32701" x="-108048" y="-154672" z="-6688" heading="0" />	<!-- Delusion Manager -->
 		</group>
-		<group name="boxes">
+		<group name="boxes" spawnByDefault="false">
 			<npc id="18823" x="-108224" y="-154204" z="-6688" heading="0" />	<!-- Mutant Treasure Chest -->
 			<npc id="18823" x="-107894" y="-154923" z="-6688" heading="0" />	<!-- Mutant Treasure Chest -->
 			<npc id="18823" x="-107894" y="-154322" z="-6688" heading="0" />	<!-- Mutant Treasure Chest -->

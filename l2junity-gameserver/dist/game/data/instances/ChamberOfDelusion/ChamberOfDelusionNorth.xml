@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Chamber of Delusion (Northern Seal) -->
-<instance id="130" maxWorlds="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="130" maxWorlds="20" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
 	<time duration="40" empty="20" />
 	<locations>
 		<enter type="NONE">
@@ -31,7 +31,7 @@
 		<condition type="Distance" />
 	</conditions>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Room 1 -->
 			<npc id="22708" x="-109015" y="-207857" z="-6720" heading="0" respawnTime="25sec" />	<!-- Invader Warrior of Nightmare -->
 			<npc id="22709" x="-108800" y="-207773" z="-6720" heading="0" respawnTime="25sec" />	<!-- Invader Healer of Nightmare -->
@@ -67,7 +67,7 @@
 			<npc id="25693" x="-107883" y="-208714" z="-6720" heading="0" respawnTime="65sec" />	<!-- Aenkinel -->
 			<npc id="32683" x="-108048" y="-209120" z="-6720" heading="0" />	<!-- Delusion Manager -->
 		</group>
-		<group name="boxes">
+		<group name="boxes" spawnByDefault="false">
 			<npc id="18838" x="-107883" y="-208714" z="-6720" heading="0" />	<!-- Treasure Chest of Invader Soldier of Nightmare -->
 			<npc id="18838" x="-108208" y="-208893" z="-6720" heading="0" />	<!-- Treasure Chest of Invader Soldier of Nightmare -->
 			<npc id="18838" x="-108205" y="-209356" z="-6720" heading="0" />	<!-- Treasure Chest of Invader Soldier of Nightmare -->

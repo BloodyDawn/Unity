@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Museum Dungeon -->
-<instance id="182" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="182" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<time duration="20" empty="1" />
 	<locations>
 		<enter type="FIXED">
@@ -17,7 +17,7 @@
 		<!-- <quest id="10327" state="STARTED" /> -->
 	</conditions>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Desk -->
 			<npc id="33126" x="-113744" y="244686" z="-7952" heading="0" />
 			<npc id="33126" x="-114713" y="245760" z="-7952" heading="0" />
@@ -26,7 +26,7 @@
 			<!-- Toyron -->
 			<npc id="33004" x="-114707" y="245428" z="-7968" heading="0" />
 		</group>
-		<group name="thiefs">
+		<group name="thiefs" spawnByDefault="false">
 			<!-- Thief -->
 			<npc id="23121" x="-114865" y="244942" z="-7984" heading="0" />
 			<npc id="23121" x="-114576" y="244952" z="-7976" heading="0" />

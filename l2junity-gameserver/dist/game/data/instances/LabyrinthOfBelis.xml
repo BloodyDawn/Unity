@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Labyrinth of Belis -->
-<instance id="178" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="178" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<time duration="60" empty="0" />
 	<locations>
 		<enter type="FIXED">
@@ -29,7 +29,7 @@
 		<door id="16240008" />
 	</doorlist>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Belis Veritification System -->
 			<npc id="33215" x="-116507" y="212976" z="-8551" heading="0" />
 			<!-- Handyman -->
@@ -40,7 +40,7 @@
 			<!-- Infiltration Officer -->
 			<npc id="19155" x="-119045" y="211171" z="-8592" heading="32500" />
 		</group>
-		<group name="operatives">
+		<group name="operatives" spawnByDefault="false">
 			<!-- Operative -->
 			<npc id="22998" x="-118633" y="211144" z="-8602" heading="0" />
 			<npc id="22998" x="-118434" y="211432" z="-8602" heading="0" />

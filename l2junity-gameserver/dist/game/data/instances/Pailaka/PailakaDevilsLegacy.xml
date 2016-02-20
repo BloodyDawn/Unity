@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Pailaka (Devil's Isle) -->
-<instance id="44" maxWorlds="15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="44" maxWorlds="15" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
 	<time duration="90" empty="15" />
 	<locations>
 		<enter type="FIXED">
@@ -24,7 +24,7 @@
 		<door id="22110105" />
 	</doorlist>
 	<spawnlist>
-		<group name="general">
+		<group>
 			<!-- Devil's Isle Supporter -->
 			<npc id="32501" x="76958" y="-218983" z="-3752" heading="32768" />
 			<!-- Dwarf Adventurer -->
@@ -220,7 +220,7 @@
 			<npc id="18627" x="86115" y="-216700" z="-2464" heading="0" />
 			<npc id="18627" x="86259" y="-216616" z="-2464" heading="56967" />
 		</group>
-		<group name="followers">
+		<group name="followers" spawnByDefault="false">
 			<npc id="18634" x="85067" y="-208943" z="-3336" heading="20106" />
 			<npc id="18634" x="84904" y="-208944" z="-3336" heading="10904" />
 			<npc id="18634" x="85062" y="-208538" z="-3336" heading="44884" />

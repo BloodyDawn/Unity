@@ -112,10 +112,9 @@ public final class Instance implements IIdentifiable, INamable
 		setDuration(_template.getDuration());
 		setStatus(0);
 		spawnDoors();
-		if (isSpawnGroupExist("general"))
-		{
-			spawnGroup("general");
-		}
+		
+		// initialize instance spawns
+		_template.getSpawns().forEach(spawnTemplate -> spawnTemplate.spawnAll(this));
 		
 		if (!isDynamic())
 		{
@@ -434,6 +433,33 @@ public final class Instance implements IIdentifiable, INamable
 			LOGGER.warn("Unable to spawn group {} inside instance {} ({})", name, getName(), _id);
 		}
 		return npcs;
+	}
+	
+	/**
+	 * De-spawns NPCs from group (defined in XML template) from the instance world.
+	 * @param name of group which should be de-spawned
+	 */
+	public void despawnGroup(String name)
+	{
+		final List<SpawnGroup> spawns = _template.getSpawnGroup(name);
+		if (spawns == null)
+		{
+			LOGGER.warn("Spawn group {} doesn't exist for instance {} ({})!", name, getName(), _id);
+			return;
+		}
+		
+		try
+		{
+			for (SpawnGroup holder : spawns)
+			{
+				holder.getSpawns().forEach(spawn -> _npcs.removeAll(spawn.getSpawnedNpcs()));
+				holder.despawnAll();
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("Unable to spawn group {} inside instance {} ({})", name, getName(), _id);
+		}
 	}
 	
 	/**
