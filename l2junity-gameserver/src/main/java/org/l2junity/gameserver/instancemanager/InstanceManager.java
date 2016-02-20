@@ -36,8 +36,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
+import org.l2junity.gameserver.data.xml.impl.SpawnsData;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.enums.InstanceRemoveBuffType;
 import org.l2junity.gameserver.enums.InstanceTeleportType;
@@ -46,10 +48,10 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
-import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
 import org.l2junity.gameserver.model.instancezone.conditions.Condition;
+import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -105,18 +107,22 @@ public final class InstanceManager implements IGameXmlReader
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		forEach(doc, IXmlReader::isNode, listNode ->
 		{
-			final String nodeName = n.getNodeName();
-			if (nodeName.equals("list"))
+			switch (listNode.getNodeName())
 			{
-				parseInstanceName(n);
+				case "list":
+				{
+					parseInstanceName(listNode);
+					break;
+				}
+				case "instance":
+				{
+					parseInstanceTemplate(listNode, f);
+					break;
+				}
 			}
-			else if (nodeName.equals("instance"))
-			{
-				parseInstanceTemplate(n, f);
-			}
-		}
+		});
 	}
 	
 	/**
@@ -125,46 +131,44 @@ public final class InstanceManager implements IGameXmlReader
 	 */
 	private void parseInstanceName(Node n)
 	{
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		forEach(n, "instance", instanceNode ->
 		{
-			if (d.getNodeName().equals("instance"))
-			{
-				final NamedNodeMap attrs = d.getAttributes();
-				_instanceNames.put(parseInteger(attrs, "id"), parseString(attrs, "name"));
-			}
-		}
+			final NamedNodeMap attrs = instanceNode.getAttributes();
+			_instanceNames.put(parseInteger(attrs, "id"), parseString(attrs, "name"));
+		});
 	}
 	
 	/**
 	 * Parse instance template from XML file.
-	 * @param n start XML tag
+	 * @param instanceNode start XML tag
 	 * @param file currently parsed file
 	 */
-	private void parseInstanceTemplate(Node n, File file)
+	private void parseInstanceTemplate(Node instanceNode, File file)
 	{
-		final InstanceTemplate template = new InstanceTemplate();
-		
 		// Parse "instance" node
-		NamedNodeMap attrs = n.getAttributes();
-		final int id = parseInteger(attrs, "id");
+		final int id = parseInteger(instanceNode.getAttributes(), "id");
 		if (_instanceTemplates.containsKey(id))
 		{
 			LOGGER.warn("Instance template with ID {} already exists", id);
 			return;
 		}
 		
-		template.setId(id);
-		template.setName(parseString(attrs, "name", _instanceNames.get(id)));
-		template.setMaxWorlds(parseInteger(attrs, "maxWorlds", -1));
+		final InstanceTemplate template = new InstanceTemplate(new StatsSet(parseAttributes(instanceNode)));
+		
+		// Update name if wasn't provided
+		if (template.getName() == null)
+		{
+			template.setName(_instanceNames.get(id));
+		}
 		
 		// Parse "instance" node children
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		forEach(instanceNode, IXmlReader::isNode, innerNode ->
 		{
-			switch (d.getNodeName())
+			switch (innerNode.getNodeName())
 			{
 				case "time":
 				{
-					attrs = d.getAttributes();
+					final NamedNodeMap attrs = innerNode.getAttributes();
 					template.setDuration(parseInteger(attrs, "duration", -1));
 					template.setEmptyDestroyTime(parseInteger(attrs, "empty", -1));
 					template.setEjectTime(parseInteger(attrs, "eject", -1));
@@ -172,14 +176,14 @@ public final class InstanceManager implements IGameXmlReader
 				}
 				case "misc":
 				{
-					attrs = d.getAttributes();
+					final NamedNodeMap attrs = innerNode.getAttributes();
 					template.allowPlayerSummon(parseBoolean(attrs, "allowPlayerSummon", false));
 					template.setIsPvP(parseBoolean(attrs, "isPvP", false));
 					break;
 				}
 				case "rates":
 				{
-					attrs = d.getAttributes();
+					final NamedNodeMap attrs = innerNode.getAttributes();
 					template.setExpRate(parseFloat(attrs, "exp", Config.RATE_INSTANCE_XP));
 					template.setSPRate(parseFloat(attrs, "sp", Config.RATE_INSTANCE_SP));
 					template.setExpPartyRate(parseFloat(attrs, "partyExp", Config.RATE_INSTANCE_PARTY_XP));
@@ -188,79 +192,54 @@ public final class InstanceManager implements IGameXmlReader
 				}
 				case "locations":
 				{
-					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					forEach(innerNode, IXmlReader::isNode, locationsNode ->
 					{
-						if (e.getNodeName().equals("enter"))
+						switch (locationsNode.getNodeName())
 						{
-							final InstanceTeleportType type = parseEnum(e.getAttributes(), InstanceTeleportType.class, "type");
-							final List<Location> locations = new ArrayList<>();
-							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+							case "enter":
 							{
-								if (f.getNodeName().equals("location"))
-								{
-									locations.add(parseLocation(f));
-								}
-							}
-							template.setEnterLocation(type, locations);
-						}
-						else if (e.getNodeName().equals("exit"))
-						{
-							final InstanceTeleportType type = parseEnum(e.getAttributes(), InstanceTeleportType.class, "type");
-							if (type.equals(InstanceTeleportType.ORIGIN))
-							{
-								template.setExitLocation(type, null);
-							}
-							else
-							{
+								final InstanceTeleportType type = parseEnum(locationsNode.getAttributes(), InstanceTeleportType.class, "type");
 								final List<Location> locations = new ArrayList<>();
-								for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+								forEach(locationsNode, "location", locationNode -> locations.add(parseLocation(locationNode)));
+								template.setEnterLocation(type, locations);
+								break;
+							}
+							case "exit":
+							{
+								final InstanceTeleportType type = parseEnum(locationsNode.getAttributes(), InstanceTeleportType.class, "type");
+								if (type.equals(InstanceTeleportType.ORIGIN))
 								{
-									if (f.getNodeName().equals("location"))
-									{
-										locations.add(parseLocation(f));
-									}
-								}
-								if (locations.isEmpty())
-								{
-									LOGGER.warn("Missing exit location data for instance {} ({})!", template.getName(), template.getId());
+									template.setExitLocation(type, null);
 								}
 								else
 								{
-									template.setExitLocation(type, locations);
+									final List<Location> locations = new ArrayList<>();
+									forEach(locationsNode, "location", locationNode -> locations.add(parseLocation(locationNode)));
+									if (locations.isEmpty())
+									{
+										LOGGER.warn("Missing exit location data for instance {} ({})!", template.getName(), template.getId());
+									}
+									else
+									{
+										template.setExitLocation(type, locations);
+									}
 								}
+								break;
 							}
 						}
-					}
+					});
 					break;
 				}
 				case "spawnlist":
 				{
-					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
-					{
-						if (e.getNodeName().equals("group"))
-						{
-							final String groupName = parseString(e.getAttributes(), "name");
-							final List<SpawnHolder> group = new ArrayList<>();
-							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
-							{
-								if (f.getNodeName().equals("spawn"))
-								{
-									attrs = f.getAttributes();
-									final int npcId = parseInteger(attrs, "npcId");
-									final int respawn = parseInteger(attrs, "respawn", 0);
-									final Location spawnLoc = parseLocation(f);
-									final boolean spawnAnimation = parseBoolean(attrs, "spawnAnimation", false);
-									group.add(new SpawnHolder(npcId, spawnLoc, respawn, spawnAnimation));
-								}
-							}
-							template.addSpawnGroup(groupName, group);
-						}
-					}
+					final List<SpawnTemplate> spawns = new ArrayList<>();
+					SpawnsData.getInstance().parseSpawn(innerNode, file, spawns);
+					template.addSpawns(spawns);
 					break;
 				}
 				case "doorlist":
 				{
-					for (Node doorNode = d.getFirstChild(); doorNode != null; doorNode = doorNode.getNextSibling())
+					for (Node doorNode = innerNode.getFirstChild(); doorNode != null; doorNode = doorNode.getNextSibling())
 					{
 						if (doorNode.getNodeName().equals("door"))
 						{
@@ -292,9 +271,9 @@ public final class InstanceManager implements IGameXmlReader
 				}
 				case "removeBuffs":
 				{
-					final InstanceRemoveBuffType removeBuffType = parseEnum(d.getAttributes(), InstanceRemoveBuffType.class, "type");
+					final InstanceRemoveBuffType removeBuffType = parseEnum(innerNode.getAttributes(), InstanceRemoveBuffType.class, "type");
 					final List<Integer> exceptionBuffList = new ArrayList<>();
-					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					for (Node e = innerNode.getFirstChild(); e != null; e = e.getNextSibling())
 					{
 						if (e.getNodeName().equals("skill"))
 						{
@@ -306,13 +285,13 @@ public final class InstanceManager implements IGameXmlReader
 				}
 				case "reenter":
 				{
-					final InstanceReenterType type = parseEnum(d.getAttributes(), InstanceReenterType.class, "apply", InstanceReenterType.NONE);
+					final InstanceReenterType type = parseEnum(innerNode.getAttributes(), InstanceReenterType.class, "apply", InstanceReenterType.NONE);
 					final List<InstanceReenterTimeHolder> data = new ArrayList<>();
-					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					for (Node e = innerNode.getFirstChild(); e != null; e = e.getNextSibling())
 					{
 						if (e.getNodeName().equals("reset"))
 						{
-							attrs = e.getAttributes();
+							final NamedNodeMap attrs = e.getAttributes();
 							final int time = parseInteger(attrs, "time", -1);
 							if (time > 0)
 							{
@@ -331,22 +310,24 @@ public final class InstanceManager implements IGameXmlReader
 					break;
 				}
 				case "parameters":
-					template.setParameters(parseParameters(d));
+				{
+					template.setParameters(parseParameters(innerNode));
 					break;
+				}
 				case "conditions":
 				{
 					final List<Condition> conditions = new ArrayList<>();
-					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+					for (Node conditionNode = innerNode.getFirstChild(); conditionNode != null; conditionNode = conditionNode.getNextSibling())
 					{
-						if (e.getNodeName().equals("condition"))
+						if (conditionNode.getNodeName().equals("condition"))
 						{
-							attrs = e.getAttributes();
+							final NamedNodeMap attrs = conditionNode.getAttributes();
 							final String type = parseString(attrs, "type");
 							final boolean onlyLeader = parseBoolean(attrs, "onlyLeader", false);
 							final boolean showMessageAndHtml = parseBoolean(attrs, "showMessageAndHtml", false);
 							// Load parameters
 							StatsSet params = null;
-							for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+							for (Node f = conditionNode.getFirstChild(); f != null; f = f.getNextSibling())
 							{
 								if (f.getNodeName().equals("param"))
 								{
@@ -355,8 +336,7 @@ public final class InstanceManager implements IGameXmlReader
 										params = new StatsSet();
 									}
 									
-									attrs = f.getAttributes();
-									params.set(parseString(attrs, "name"), parseString(attrs, "value"));
+									params.set(parseString(f.getAttributes(), "name"), parseString(f.getAttributes(), "value"));
 								}
 							}
 							
@@ -383,10 +363,11 @@ public final class InstanceManager implements IGameXmlReader
 					break;
 				}
 			}
-		}
+		});
 		
 		// Save template
 		_instanceTemplates.put(id, template);
+		
 	}
 	
 	// --------------------------------------------------------------------
@@ -399,7 +380,7 @@ public final class InstanceManager implements IGameXmlReader
 	 */
 	public Instance createInstance()
 	{
-		return new Instance(getNewInstanceId(), new InstanceTemplate());
+		return new Instance(getNewInstanceId(), new InstanceTemplate(StatsSet.EMPTY_STATSET));
 	}
 	
 	/**

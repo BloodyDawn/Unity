@@ -110,7 +110,7 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 		
 		if (isNight)
 		{
-			_template.spawn();
+			_template.spawn(null);
 		}
 		else
 		{

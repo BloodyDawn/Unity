@@ -63,26 +63,17 @@ public class SpawnsData implements IGameXmlReader
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		forEach(doc, "list", listNode -> forEach(listNode, "spawn", spawnNode ->
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
+			try
 			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("spawn".equalsIgnoreCase(d.getNodeName()))
-					{
-						try
-						{
-							parseSpawn(d, f);
-						}
-						catch (Exception e)
-						{
-							LOGGER.warn("Error while processing spawn in file: {}", f.getAbsolutePath(), e);
-						}
-					}
-				}
+				parseSpawn(spawnNode, f, _spawns);
 			}
-		}
+			catch (Exception e)
+			{
+				LOGGER.warn("Error while processing spawn in file: {}", f.getAbsolutePath(), e);
+			}
+		}));
 	}
 	
 	/**
@@ -93,7 +84,7 @@ public class SpawnsData implements IGameXmlReader
 		LOGGER.info("Initializing spawns...");
 		_spawns.forEach(template ->
 		{
-			template.spawnAll();
+			template.spawnAll(null);
 			template.notifyActivate();
 		});
 		LOGGER.info("All spawns has been initialized!");
@@ -114,64 +105,42 @@ public class SpawnsData implements IGameXmlReader
 		return _spawns;
 	}
 	
-	private void parseSpawn(Node n, File f) throws Exception
+	public void parseSpawn(Node spawnsNode, File file, List<SpawnTemplate> spawns)
 	{
-		final StatsSet set = new StatsSet();
-		final NamedNodeMap attrs = n.getAttributes();
-		for (int i = 0; i < attrs.getLength(); i++)
+		final SpawnTemplate spawnTemplate = new SpawnTemplate(new StatsSet(parseAttributes(spawnsNode)), file);
+		SpawnGroup defaultGroup = null;
+		for (Node innerNode = spawnsNode.getFirstChild(); innerNode != null; innerNode = innerNode.getNextSibling())
 		{
-			final Node node = attrs.item(i);
-			set.set(node.getNodeName(), node.getNodeValue());
-		}
-		
-		final SpawnTemplate spawnTemplate = new SpawnTemplate(set, f);
-		SpawnGroup group = null;
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-		{
-			if ("group".equalsIgnoreCase(d.getNodeName()))
+			if ("group".equalsIgnoreCase(innerNode.getNodeName()))
 			{
-				parseGroup(d, spawnTemplate);
+				parseGroup(innerNode, spawnTemplate);
 			}
-			else if ("npc".equalsIgnoreCase(d.getNodeName()))
+			else if ("npc".equalsIgnoreCase(innerNode.getNodeName()))
 			{
-				if (group == null)
+				if (defaultGroup == null)
 				{
-					group = new SpawnGroup(StatsSet.EMPTY_STATSET);
+					defaultGroup = new SpawnGroup(StatsSet.EMPTY_STATSET);
 				}
-				parseNpc(d, spawnTemplate, group);
+				parseNpc(innerNode, spawnTemplate, defaultGroup);
 			}
-			else if ("parameters".equalsIgnoreCase(d.getNodeName()))
+			else if ("parameters".equalsIgnoreCase(innerNode.getNodeName()))
 			{
-				parseParameters(n, spawnTemplate);
+				parseParameters(spawnsNode, spawnTemplate);
 			}
 		}
 		
 		// One static group for all npcs outside group scope
-		if (group != null)
+		if (defaultGroup != null)
 		{
-			spawnTemplate.addGroup(group);
+			spawnTemplate.addGroup(defaultGroup);
 		}
-		_spawns.add(spawnTemplate);
+		spawns.add(spawnTemplate);
 	}
 	
-	private void parseGroup(Node n, SpawnTemplate spawnTemplate) throws Exception
+	private void parseGroup(Node n, SpawnTemplate spawnTemplate)
 	{
-		final StatsSet set = new StatsSet();
-		final NamedNodeMap attrs = n.getAttributes();
-		for (int i = 0; i < attrs.getLength(); i++)
-		{
-			final Node node = attrs.item(i);
-			set.set(node.getNodeName(), node.getNodeValue());
-		}
-		
-		final SpawnGroup group = new SpawnGroup(set);
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-		{
-			if ("npc".equalsIgnoreCase(d.getNodeName()))
-			{
-				parseNpc(d, spawnTemplate, group);
-			}
-		}
+		final SpawnGroup group = new SpawnGroup(new StatsSet(parseAttributes(n)));
+		forEach(n, "npc", npcNode -> parseNpc(npcNode, spawnTemplate, group));
 		spawnTemplate.addGroup(group);
 	}
 	
@@ -179,23 +148,14 @@ public class SpawnsData implements IGameXmlReader
 	 * @param n
 	 * @param spawnTemplate
 	 * @param group
-	 * @throws Exception
 	 */
-	private void parseNpc(Node n, SpawnTemplate spawnTemplate, SpawnGroup group) throws Exception
+	private void parseNpc(Node n, SpawnTemplate spawnTemplate, SpawnGroup group)
 	{
-		final StatsSet set = new StatsSet();
-		final NamedNodeMap attrs = n.getAttributes();
-		for (int i = 0; i < attrs.getLength(); i++)
-		{
-			final Node node = attrs.item(i);
-			set.set(node.getNodeName(), node.getNodeValue());
-		}
-		
-		final NpcSpawnTemplate npcTemplate = new NpcSpawnTemplate(spawnTemplate, group, set);
+		final NpcSpawnTemplate npcTemplate = new NpcSpawnTemplate(spawnTemplate, group, new StatsSet(parseAttributes(n)));
 		final L2NpcTemplate template = NpcData.getInstance().getTemplate(npcTemplate.getId());
 		if (template == null)
 		{
-			LOGGER.warn("Requested spawn for non existing npc: ", npcTemplate.getId());
+			LOGGER.warn("Requested spawn for non existing npc: {} in file: {}", npcTemplate.getId(), spawnTemplate.getFile().getName());
 			return;
 		}
 		

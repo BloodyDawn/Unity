@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:include schemaLocation="DoorData.xsd" />
+	<xs:include schemaLocation="shared.xsd" />
 
 	<xs:element name="instance">
 		<xs:complexType>
@@ -199,35 +199,12 @@
 				</xs:element>
 				<xs:element name="doorlist" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
-						<xs:sequence maxOccurs="1">
+						<xs:sequence>
 							<xs:element name="door" maxOccurs="unbounded" type="door" />
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="spawnlist" minOccurs="0" maxOccurs="1">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="group" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:sequence maxOccurs="1">
-										<xs:element name="spawn" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="heading" type="xs:integer" use="required" />
-												<xs:attribute name="npcId" type="xs:positiveInteger" use="required" />
-												<xs:attribute name="respawn" type="xs:nonNegativeInteger" />
-												<xs:attribute name="x" type="xs:integer" use="required" />
-												<xs:attribute name="y" type="xs:integer" use="required" />
-												<xs:attribute name="z" type="xs:integer" use="required" />
-												<xs:attribute name="spawnAnimation" type="xs:boolean" />
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-									<xs:attribute name="name" type="xs:normalizedString" use="required" />
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+				<xs:element name="spawnlist" minOccurs="0" maxOccurs="1" type="spawn" />
 			</xs:sequence>
 			<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 			<xs:attribute name="name" type="xs:normalizedString" />

@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.handler;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -33,31 +31,28 @@ import org.l2junity.gameserver.scripting.ScriptEngineManager;
  */
 public final class SkillConditionHandler
 {
-	private static final Path SKILL_CONDITION_HANDLER_FILE = Paths.get(ScriptEngineManager.SCRIPT_FOLDER.toString(), "handlers", "SkillConditionMasterHandler.java");
-
 	private final Map<String, Function<StatsSet, ISkillCondition>> _skillConditionHandlerFactories = new HashMap<>();
-
+	
 	public void registerHandler(String name, Function<StatsSet, ISkillCondition> handlerFactory)
 	{
 		_skillConditionHandlerFactories.put(name, handlerFactory);
 	}
-
+	
 	public Function<StatsSet, ISkillCondition> getHandlerFactory(String name)
 	{
 		return _skillConditionHandlerFactories.get(name);
 	}
-
+	
 	public int size()
 	{
 		return _skillConditionHandlerFactories.size();
 	}
-
+	
 	public void executeScript()
 	{
 		try
 		{
-
-			ScriptEngineManager.getInstance().executeScript(SKILL_CONDITION_HANDLER_FILE);
+			ScriptEngineManager.getInstance().executeConditionMasterHandler();
 		}
 		catch (Exception e)
 		{

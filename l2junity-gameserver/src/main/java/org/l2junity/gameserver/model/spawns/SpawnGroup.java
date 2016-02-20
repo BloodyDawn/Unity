@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.instancezone.Instance;
 
 /**
  * @author UnAfraid
@@ -64,9 +65,9 @@ public class SpawnGroup
 		return _spawns.stream().filter(spawn -> spawn.getId() == id).collect(Collectors.toList());
 	}
 	
-	public void spawnAll()
+	public void spawnAll(Instance instance)
 	{
-		_spawns.forEach(NpcSpawnTemplate::spawn);
+		_spawns.forEach(template -> template.spawn(instance));
 	}
 	
 	public void despawnAll()

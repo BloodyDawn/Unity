@@ -38,6 +38,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.MinionHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IParameterized;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.slf4j.Logger;
@@ -57,12 +58,13 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	private List<ChanceLocation> _locations;
 	private NpcSpawnTerritory _zone;
 	private StatsSet _parameters;
+	private boolean _spawnAnimation;
 	private List<MinionHolder> _minions;
 	private final SpawnTemplate _spawnTemplate;
 	private final SpawnGroup _group;
 	private final Set<Npc> _spawnedNpcs = ConcurrentHashMap.newKeySet();
 	
-	public NpcSpawnTemplate(SpawnTemplate spawnTemplate, SpawnGroup group, StatsSet set) throws Exception
+	public NpcSpawnTemplate(SpawnTemplate spawnTemplate, SpawnGroup group, StatsSet set)
 	{
 		_spawnTemplate = spawnTemplate;
 		_group = group;
@@ -70,6 +72,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		_count = set.getInt("count", 1);
 		_respawnTime = set.getDuration("respawnTime", null);
 		_respawnTimeRandom = set.getDuration("respawnRandom", null);
+		_spawnAnimation = set.getBoolean("spawnAnimation", false);
 		
 		final int x = set.getInt("x", Integer.MAX_VALUE);
 		final int y = set.getInt("y", Integer.MAX_VALUE);
@@ -170,6 +173,11 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		_parameters = parameters;
 	}
 	
+	public boolean hasSpawnAnimation()
+	{
+		return _spawnAnimation;
+	}
+	
 	public List<MinionHolder> getMinions()
 	{
 		return _minions != null ? _minions : Collections.emptyList();
@@ -214,7 +222,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		return null;
 	}
 	
-	public void spawn()
+	public void spawn(Instance instance)
 	{
 		try
 		{
@@ -229,6 +237,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 					return;
 				}
 				
+				spawn.setInstanceId(instance != null ? instance.getId() : 0);
 				spawn.setXYZ(loc);
 				spawn.setHeading(loc.getHeading());
 				spawn.setAmount(_count);
@@ -256,7 +265,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 				spawn.setSpawnTemplate(this);
 				for (int i = 0; i < spawn.getAmount(); i++)
 				{
-					final Npc npc = spawn.doSpawn();
+					final Npc npc = spawn.doSpawn(_spawnAnimation);
 					if (npc.isMonster() && (_minions != null))
 					{
 						((L2MonsterInstance) npc).getMinionList().spawnMinions(_minions);

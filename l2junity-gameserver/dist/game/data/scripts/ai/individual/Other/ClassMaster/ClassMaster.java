@@ -220,7 +220,7 @@ public final class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 	{
 		if (_spawnClassMasters)
 		{
-			template.spawnAllIncludingNotDefault();
+			template.spawnAllIncludingNotDefault(null);
 		}
 	}
 	

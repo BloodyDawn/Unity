@@ -1,76 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:complexType name="door">
-		<xs:sequence>
-			<xs:element name="nodes" minOccurs="0" maxOccurs="1">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="node" maxOccurs="4" minOccurs="4">
-							<xs:complexType>
-								<xs:attribute type="xs:int" name="x" use="required" />
-								<xs:attribute type="xs:int" name="y" use="required" />
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-					<xs:attribute type="xs:integer" name="nodeZ" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="location" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute type="xs:integer" name="x" use="required" />
-					<xs:attribute type="xs:integer" name="y" use="required" />
-					<xs:attribute type="xs:integer" name="z" use="required" />
-					<xs:attribute type="xs:integer" name="height" use="optional" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="stats" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute type="xs:integer" name="basePDef" use="optional" />
-					<xs:attribute type="xs:integer" name="baseMDef" use="optional" />
-					<xs:attribute type="xs:integer" name="baseHpMax" use="optional" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="status" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute type="xs:boolean" name="targetable" use="optional" />
-					<xs:attribute type="xs:boolean" name="attackable" use="optional" />
-					<xs:attribute type="xs:boolean" name="showHp" use="optional" />
-					<xs:attribute type="xs:boolean" name="isWall" use="optional" />
-					<xs:attribute type="xs:boolean" name="isStealth" use="optional" />
-					<xs:attribute type="xs:boolean" name="isCheckCollision" use="optional" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="openStatus" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute type="xs:string" name="openMethod" use="optional" />
-					<xs:attribute name="default" use="required">
-						<xs:simpleType>
-							<xs:restriction base="xs:token">
-								<xs:enumeration value="open" />
-								<xs:enumeration value="close" />
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-					<xs:attribute type="xs:integer" name="closeTime" use="optional" />
-					<xs:attribute type="xs:integer" name="openTime" use="optional" />
-					<xs:attribute type="xs:integer" name="randomTime" use="optional" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="event" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute type="xs:string" name="masterClose" use="optional" />
-					<xs:attribute type="xs:string" name="masterOpen" use="optional" />
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute type="xs:positiveInteger" name="id" use="required" />
-		<xs:attribute type="xs:positiveInteger" name="level" use="optional" />
-		<xs:attribute type="xs:string" name="name" use="optional" />
-		<xs:attribute type="xs:positiveInteger" name="emmiterId" use="optional" />
-		<xs:attribute type="xs:string" name="group" use="optional" />
-		<xs:attribute type="xs:positiveInteger" name="childId" use="optional" />
-	</xs:complexType>
-	
+	<xs:include schemaLocation="shared.xsd" />
+
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence>

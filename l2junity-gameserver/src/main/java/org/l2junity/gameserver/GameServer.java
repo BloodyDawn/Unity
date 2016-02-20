@@ -192,7 +192,6 @@ public class GameServer
 		MapRegionManager.getInstance();
 		ZoneManager.getInstance();
 		DoorData.getInstance();
-		InstanceManager.getInstance();
 		AnnouncementsTable.getInstance();
 		GlobalVariablesManager.getInstance();
 		
@@ -278,6 +277,9 @@ public class GameServer
 		GrandBossManager.getInstance();
 		EventDroplist.getInstance();
 		CommissionManager.getInstance();
+		
+		printSection("Instance");
+		InstanceManager.getInstance();
 		
 		printSection("Olympiad");
 		Olympiad.getInstance();

@@ -85,7 +85,7 @@ public final class AncientArcanCity extends AbstractNpcAI
 			
 			if (isCeremonyRunning)
 			{
-				_templates.stream().forEach(t -> t.spawn(g -> String.valueOf(g.getName()).equalsIgnoreCase("Ceremony")));
+				_templates.stream().forEach(t -> t.spawn(g -> String.valueOf(g.getName()).equalsIgnoreCase("Ceremony"), null));
 			}
 			else
 			{

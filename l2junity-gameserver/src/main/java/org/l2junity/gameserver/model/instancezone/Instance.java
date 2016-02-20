@@ -20,10 +20,10 @@ package org.l2junity.gameserver.model.instancezone;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -41,7 +41,6 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.enums.InstanceTeleportType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.TeleportWhereType;
@@ -59,10 +58,11 @@ import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
-import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
+import org.l2junity.gameserver.model.spawns.SpawnGroup;
+import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -403,7 +403,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public boolean isSpawnGroupExist(String name)
 	{
-		return _template.getSpawnGroup(name) != null;
+		return _template.getSpawns().stream().flatMap(group -> group.getGroups().stream()).anyMatch(group -> name.equalsIgnoreCase(group.getName()));
 	}
 	
 	/**
@@ -413,35 +413,20 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public List<Npc> spawnGroup(String name)
 	{
-		final List<SpawnHolder> spawns = _template.getSpawnGroup(name);
+		final List<SpawnGroup> spawns = _template.getSpawnGroup(name);
 		if (spawns == null)
 		{
 			LOGGER.warn("Spawn group {} doesn't exist for instance {} ({})!", name, getName(), _id);
 			return Collections.emptyList();
 		}
 		
-		final List<Npc> npcs = new ArrayList<>(spawns.size());
+		final List<Npc> npcs = new LinkedList<>();
 		try
 		{
-			for (SpawnHolder holder : spawns)
+			for (SpawnGroup holder : spawns)
 			{
-				final L2Spawn spawn = new L2Spawn(holder.getNpcId());
-				spawn.setX(holder.getX());
-				spawn.setY(holder.getY());
-				spawn.setZ(holder.getZ());
-				spawn.setHeading(holder.getHeading());
-				spawn.setAmount(1);
-				spawn.setRespawnDelay(holder.getRespawnDelay());
-				spawn.setInstanceId(_id);
-				if (holder.getRespawnDelay() > 0)
-				{
-					spawn.startRespawn();
-				}
-				else
-				{
-					spawn.stopRespawn();
-				}
-				npcs.add(spawn.doSpawn(holder.isSpawnAnimation()));
+				holder.spawnAll(this);
+				holder.getSpawns().forEach(spawn -> npcs.addAll(spawn.getSpawnedNpcs()));
 			}
 		}
 		catch (Exception e)
@@ -558,17 +543,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void removeNpcs()
 	{
-		for (Npc mob : _npcs)
-		{
-			if (mob != null)
-			{
-				if (mob.getSpawn() != null)
-				{
-					mob.getSpawn().stopRespawn();
-				}
-				mob.deleteMe();
-			}
-		}
+		_template.getSpawns().forEach(SpawnTemplate::despawnAll);
 		_npcs.clear();
 	}
 	

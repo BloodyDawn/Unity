@@ -44,7 +44,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.DoorTemplate;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
-import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.instancezone.conditions.Condition;
 import org.l2junity.gameserver.model.instancezone.conditions.ConditionCommandChannel;
 import org.l2junity.gameserver.model.instancezone.conditions.ConditionGroupMax;
@@ -53,6 +52,8 @@ import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.spawns.SpawnGroup;
+import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
 
 /**
@@ -76,7 +77,7 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	private float _spPartyRate = Config.RATE_INSTANCE_PARTY_SP;
 	private StatsSet _parameters = StatsSet.EMPTY_STATSET;
 	private final Map<Integer, DoorTemplate> _doors = new HashMap<>();
-	private final Map<String, List<SpawnHolder>> _spawns = new HashMap<>();
+	private final List<SpawnTemplate> _spawns = new ArrayList<>();
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
 	private List<Location> _enterLocations = null;
@@ -92,17 +93,19 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	private List<Condition> _conditions = Collections.emptyList();
 	private int _groupMask = GroupType.NONE.getMask();
 	
+	/**
+	 * @param set
+	 */
+	public InstanceTemplate(StatsSet set)
+	{
+		_templateId = set.getInt("id", 0);
+		_name = set.getString("name", null);
+		_maxWorldCount = set.getInt("maxWorlds", -1);
+	}
+	
 	// -------------------------------------------------------------
 	// Setters
 	// -------------------------------------------------------------
-	/**
-	 * Set template ID of instance world.
-	 * @param id instance template id
-	 */
-	public void setId(int id)
-	{
-		_templateId = id;
-	}
 	
 	/**
 	 * Set name of instance world.
@@ -196,12 +199,11 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	/**
 	 * Add new group of NPC spawns into instance world.<br>
 	 * Group with name "general" will be spawned on instance world create.
-	 * @param name name of group
 	 * @param spawns list of NPC spawn data
 	 */
-	public void addSpawnGroup(String name, List<SpawnHolder> spawns)
+	public void addSpawns(List<SpawnTemplate> spawns)
 	{
-		_spawns.put(name.toLowerCase(), spawns);
+		_spawns.addAll(spawns);
 	}
 	
 	/**
@@ -248,15 +250,6 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	{
 		_removeBuffType = type;
 		_removeBuffExceptions = exceptionList;
-	}
-	
-	/**
-	 * Set count of worlds which can run concurrently (with same template id).
-	 * @param val count
-	 */
-	public void setMaxWorlds(int val)
-	{
-		_maxWorldCount = val;
 	}
 	
 	/**
@@ -450,13 +443,23 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	}
 	
 	/**
+	 * @return list of all spawn templates
+	 */
+	public List<SpawnTemplate> getSpawns()
+	{
+		return _spawns;
+	}
+	
+	/**
 	 * Get spawn group by group name.
 	 * @param name name of group
 	 * @return list which contains spawn data from spawn group
 	 */
-	public List<SpawnHolder> getSpawnGroup(String name)
+	public List<SpawnGroup> getSpawnGroup(String name)
 	{
-		return _spawns.get(name.toLowerCase());
+		final List<SpawnGroup> spawns = new ArrayList<>();
+		_spawns.stream().forEach(spawnTemplate -> spawns.addAll(spawnTemplate.getGroupsByName(name)));
+		return spawns;
 	}
 	
 	/**

@@ -1,105 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:complexType name="npc">
-		<xs:sequence>
-			<xs:element name="parameters" minOccurs="0" maxOccurs="1" type="parameters" />
-			<xs:element name="minions" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="minion" maxOccurs="unbounded" minOccurs="0">
-							<xs:complexType>
-								<xs:attribute type="xs:positiveInteger" name="id" use="optional" />
-								<xs:attribute type="xs:byte" name="count" use="optional" />
-								<xs:attribute type="xs:string" name="respawnTime" use="optional" />
-								<xs:attribute type="xs:string" name="randomRespawn" use="optional" />
-								<xs:attribute type="xs:nonNegativeInteger" name="weightpoint" use="optional" />
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="locations" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="location" maxOccurs="unbounded" minOccurs="0">
-							<xs:complexType>
-								<xs:attribute type="xs:integer" name="x" use="required" />
-								<xs:attribute type="xs:integer" name="y" use="required" />
-								<xs:attribute type="xs:integer" name="z" use="required" />
-								<xs:attribute type="xs:integer" name="heading" use="optional" />
-								<xs:attribute type="xs:double" name="chance" use="required" />
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute type="xs:positiveInteger" name="id" use="optional" />
-		<xs:attribute type="xs:string" name="zone" use="optional" />
-		<xs:attribute type="xs:positiveInteger" name="count" use="optional" />
-		<xs:attribute type="xs:string" name="respawnTime" use="optional" />
-		<xs:attribute type="xs:string" name="respawnRandom" use="optional" />
-		<xs:attribute type="xs:integer" name="x" use="optional" />
-		<xs:attribute type="xs:integer" name="y" use="optional" />
-		<xs:attribute type="xs:integer" name="z" use="optional" />
-		<xs:attribute type="xs:integer" name="heading" use="optional" />
-	</xs:complexType>
-
-	<xs:complexType name="parameters">
-		<xs:choice minOccurs="1" maxOccurs="unbounded">
-			<xs:element name="param">
-				<xs:complexType>
-					<xs:attribute name="name" type="xs:token" use="required" />
-					<xs:attribute name="value" type="xs:string" use="required" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="skill">
-				<xs:complexType>
-					<xs:attribute name="name" type="xs:token" use="required" />
-					<xs:attribute name="id" type="xs:positiveInteger" use="required" />
-					<xs:attribute name="level" type="xs:positiveInteger" use="required" />
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="minions">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="npc" minOccurs="1" maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:attribute name="id" type="xs:positiveInteger" use="required" />
-								<xs:attribute name="count" type="xs:positiveInteger" use="required" />
-								<xs:attribute name="respawnTime" type="xs:nonNegativeInteger" use="required" />
-								<xs:attribute name="weightPoint" type="xs:integer" use="required" />
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-					<xs:attribute name="name" type="xs:token" use="required" />
-				</xs:complexType>
-			</xs:element>
-		</xs:choice>
-	</xs:complexType>
-
+	<xs:include schemaLocation="shared.xsd" />
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="spawn" maxOccurs="unbounded" minOccurs="0">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="parameters" minOccurs="0" maxOccurs="1" type="parameters" />
-							<xs:element name="npc" minOccurs="0" maxOccurs="unbounded" type="npc" />
-							<xs:element name="group" minOccurs="0" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="npc" maxOccurs="unbounded" minOccurs="0" type="npc" />
-									</xs:sequence>
-									<xs:attribute type="xs:string" name="name" use="optional" />
-									<xs:attribute type="xs:string" name="spawnByDefault" use="optional" />
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-						<xs:attribute type="xs:string" name="name" use="optional" />
-						<xs:attribute type="xs:string" name="ai" use="optional" />
-					</xs:complexType>
-				</xs:element>
+				<xs:element name="spawn" type="spawn" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

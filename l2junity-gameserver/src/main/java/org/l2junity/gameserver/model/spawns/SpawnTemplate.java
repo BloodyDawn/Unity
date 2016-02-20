@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IParameterized;
 import org.l2junity.gameserver.model.quest.Quest;
 
@@ -102,14 +103,14 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 		}
 	}
 	
-	public void spawn(Predicate<SpawnGroup> groupFilter)
+	public void spawn(Predicate<SpawnGroup> groupFilter, Instance instance)
 	{
-		_groups.stream().filter(groupFilter).forEach(SpawnGroup::spawnAll);
+		_groups.stream().filter(groupFilter).forEach(group -> group.spawnAll(instance));
 	}
 	
-	public void spawnAll()
+	public void spawnAll(Instance instance)
 	{
-		spawn(SpawnGroup::isSpawningByDefault);
+		spawn(SpawnGroup::isSpawningByDefault, instance);
 	}
 	
 	public void notifyActivate()
@@ -117,9 +118,9 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 		notifyEvent(script -> script.onSpawnActivate(this));
 	}
 	
-	public void spawnAllIncludingNotDefault()
+	public void spawnAllIncludingNotDefault(Instance instance)
 	{
-		_groups.forEach(SpawnGroup::spawnAll);
+		_groups.forEach(group -> group.spawnAll(instance));
 	}
 	
 	public void despawn(Predicate<SpawnGroup> groupFilter)
