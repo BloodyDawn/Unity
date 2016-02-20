@@ -537,7 +537,7 @@ public class SkillData implements IGameXmlReader
 		return list;
 	}
 	
-	private Object parseValue(Node node, boolean blockValue, boolean parseAttributes, Map<String, Double> variables)
+	Object parseValue(Node node, boolean blockValue, boolean parseAttributes, Map<String, Double> variables)
 	{
 		StatsSet statsSet = null;
 		List<Object> list = null;

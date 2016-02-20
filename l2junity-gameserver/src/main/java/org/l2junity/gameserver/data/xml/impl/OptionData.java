@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,7 +77,7 @@ public class OptionData implements IGameXmlReader
 							final StatsSet params = new StatsSet();
 							forEach(effectNode, IXmlReader::isNode, paramNode ->
 							{
-								params.set(paramNode.getNodeName(), paramNode.getTextContent());
+								params.set(paramNode.getNodeName(), SkillData.getInstance().parseValue(paramNode, true, false, Collections.emptyMap()));
 							});
 							option.addEffect(EffectHandler.getInstance().getHandlerFactory(name).apply(params));
 						});
