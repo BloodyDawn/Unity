@@ -272,7 +272,7 @@ public final class Skill implements IIdentifiable
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
-		_targetType = set.getEnum("targetType", TargetType.class, TargetType.NONE);
+		_targetType = set.getEnum("targetType", TargetType.class, TargetType.SELF);
 		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.SINGLE);
 		_affectObject = set.getEnum("affectObject", AffectObject.class, AffectObject.ALL);
 		_affectRange = set.getInt("affectRange", 0);
