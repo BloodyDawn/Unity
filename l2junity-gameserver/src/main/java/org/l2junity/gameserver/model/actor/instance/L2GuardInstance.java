@@ -58,13 +58,15 @@ public class L2GuardInstance extends Attackable
 		setInstanceType(InstanceType.L2GuardInstance);
 	}
 	
-	/**
-	 * Return True if hte attacker is a L2MonsterInstance.
-	 */
 	@Override
 	public boolean isAutoAttackable(Creature attacker)
 	{
-		return attacker instanceof L2MonsterInstance;
+		if (attacker.isMonster())
+		{
+			return true;
+		}
+		
+		return super.isAutoAttackable(attacker);
 	}
 	
 	/**

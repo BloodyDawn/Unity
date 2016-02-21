@@ -22,6 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -40,6 +41,17 @@ public class L2MerchantInstance extends L2NpcInstance
 	{
 		super(template);
 		setInstanceType(InstanceType.L2MerchantInstance);
+	}
+	
+	@Override
+	public boolean isAutoAttackable(Creature attacker)
+	{
+		if (attacker.isMonster())
+		{
+			return true;
+		}
+		
+		return super.isAutoAttackable(attacker);
 	}
 	
 	@Override

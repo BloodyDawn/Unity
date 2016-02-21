@@ -75,6 +75,11 @@ public class L2MonsterInstance extends Attackable
 			return true;
 		}
 		
+		if (attacker.isMonster())
+		{
+			return false;
+		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	

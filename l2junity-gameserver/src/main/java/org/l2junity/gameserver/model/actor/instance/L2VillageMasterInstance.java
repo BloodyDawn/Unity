@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Clan.SubPledge;
 import org.l2junity.gameserver.model.SkillLearn;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -63,6 +64,17 @@ public class L2VillageMasterInstance extends L2NpcInstance
 	{
 		super(template);
 		setInstanceType(InstanceType.L2VillageMasterInstance);
+	}
+	
+	@Override
+	public boolean isAutoAttackable(Creature attacker)
+	{
+		if (attacker.isMonster())
+		{
+			return true;
+		}
+		
+		return super.isAutoAttackable(attacker);
 	}
 	
 	@Override

@@ -31,6 +31,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.model.L2TeleportLocation;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -58,6 +59,17 @@ public final class L2TeleporterInstance extends Npc
 	{
 		super(template);
 		setInstanceType(InstanceType.L2TeleporterInstance);
+	}
+	
+	@Override
+	public boolean isAutoAttackable(Creature attacker)
+	{
+		if (attacker.isMonster())
+		{
+			return true;
+		}
+		
+		return super.isAutoAttackable(attacker);
 	}
 	
 	@Override

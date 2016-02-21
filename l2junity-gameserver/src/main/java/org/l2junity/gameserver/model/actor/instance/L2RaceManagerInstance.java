@@ -25,6 +25,7 @@ import org.l2junity.gameserver.MonsterRace;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.idfactory.IdFactory;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -126,6 +127,17 @@ public class L2RaceManagerInstance extends Npc
 		_managers.add(this);
 	}
 	
+	@Override
+	public boolean isAutoAttackable(Creature attacker)
+	{
+		if (attacker.isMonster())
+		{
+			return true;
+		}
+		
+		return super.isAutoAttackable(attacker);
+	}
+	
 	class Announcement implements Runnable
 	{
 		private final SystemMessageId _type;
@@ -153,7 +165,7 @@ public class L2RaceManagerInstance extends Npc
 				{// LOGGER.info("Race Initializing");
 					_state = ACCEPTING_BETS;
 					startRace();
-				}// else{LOGGER.info("Race open");}
+				} // else{LOGGER.info("Race open");}
 				sm.addInt(_raceNumber);
 				break;
 			case 818: // SystemMessageId.TICKET_SALES_FOR_THE_MONSTER_RACE_WILL_END_IN_S1_MINUTE_S

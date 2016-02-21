@@ -24,6 +24,7 @@ import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.L2TeleportLocation;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
@@ -38,6 +39,17 @@ public class L2DoormenInstance extends L2NpcInstance
 	{
 		super(template);
 		setInstanceType(InstanceType.L2DoormenInstance);
+	}
+	
+	@Override
+	public boolean isAutoAttackable(Creature attacker)
+	{
+		if (attacker.isMonster())
+		{
+			return true;
+		}
+		
+		return super.isAutoAttackable(attacker);
 	}
 	
 	@Override

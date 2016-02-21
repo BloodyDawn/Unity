@@ -22,9 +22,6 @@ import org.l2junity.gameserver.handler.IAffectObjectHandler;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
-import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.targets.AffectObject;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -122,22 +119,6 @@ public class Friend implements IAffectObjectHandler
 			
 			// By default any npc that isnt mob is considered friend.
 			return !target.isMonster() && !target.isAutoAttackable(player);
-		}
-		else if (activeChar.isMonster())
-		{
-			// Monsters consider any other monsters or non-folk NPCs as friends
-			if (target.isMonster() || (target.isNpc() && !(target instanceof L2NpcInstance) && !(target instanceof L2GuardInstance) && !(target instanceof L2DefenderInstance)))
-			{
-				return true;
-			}
-		}
-		else if (activeChar.isNpc())
-		{
-			// Non-folk, non-monster aka neutral NPCs consider everything friendly.
-			if (!(activeChar instanceof L2NpcInstance) && !(activeChar instanceof L2GuardInstance) && !(activeChar instanceof L2DefenderInstance))
-			{
-				return true;
-			}
 		}
 		
 		return !target.isAutoAttackable(activeChar);
