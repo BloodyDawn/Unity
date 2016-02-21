@@ -80,6 +80,12 @@ public class L2MonsterInstance extends Attackable
 			return false;
 		}
 		
+		// Anything considers monsters friendly except Attackables (Guards, Friendly NPC), Traps and EffectPoints.
+		if (!attacker.isAttackable() && !(attacker instanceof L2TrapInstance) && !(attacker instanceof L2EffectPointInstance))
+		{
+			return false;
+		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	
