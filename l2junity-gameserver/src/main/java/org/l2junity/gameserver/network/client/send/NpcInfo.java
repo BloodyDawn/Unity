@@ -281,7 +281,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		OutgoingPackets.NPC_INFO.writeId(packet);
 		
 		packet.writeD(_npc.getObjectId());
-		packet.writeC(0x00); // // 0=teleported 1=default 2=summoned
+		packet.writeC(_npc.isShowSummonAnimation() ? 0x02 : 0x00); // // 0=teleported 1=default 2=summoned
 		packet.writeH(37); // mask_bits_37
 		packet.writeB(_masks);
 		
@@ -396,7 +396,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.SUMMONED))
 		{
-			packet.writeC(_npc.isShowSummonAnimation() ? 0x02 : 0x00); // 2 - do some animation on spawn
+			packet.writeC(0x00); // 2 - do some animation on spawn
 		}
 		if (containsMask(NpcInfoType.UNKNOWN12))
 		{
