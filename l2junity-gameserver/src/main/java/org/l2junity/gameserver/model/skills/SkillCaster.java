@@ -27,7 +27,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -92,6 +91,7 @@ public class SkillCaster implements Runnable
 	private final SkillCastingType _castingType;
 	
 	private Creature _target; // Main target of the skill casting, when casting finished, any AOE effects will be applied.
+	private WorldObject[] _targets; // Array of affected targets, including main target.
 	private Skill _skill;
 	private ItemInstance _item; // Referenced item either for consumption or something else.
 	private boolean _ctrlPressed;
@@ -99,10 +99,10 @@ public class SkillCaster implements Runnable
 	
 	private int _castTime;
 	private int _reuseDelay;
-	private int _castInterruptTime;
 	private boolean _skillMastery;
 	
 	private volatile ScheduledFuture<?> _task = null;
+	private final AtomicBoolean _skillLaunched;
 	private final AtomicBoolean _isCasting;
 	
 	public SkillCaster(Creature caster, SkillCastingType castingType)
@@ -112,6 +112,7 @@ public class SkillCaster implements Runnable
 		
 		_caster = caster;
 		_castingType = castingType;
+		_skillLaunched = new AtomicBoolean();
 		_isCasting = new AtomicBoolean();
 	}
 	
@@ -164,8 +165,7 @@ public class SkillCaster implements Runnable
 		_castTime = getCastTime(_caster, skill, item);
 		_reuseDelay = _caster.getStat().getReuseTime(skill);
 		_skillMastery = Formulas.calcSkillMastery(_caster, skill);
-		_castInterruptTime = -2 + GameTimeController.getInstance().getGameTicks() + (_castTime / GameTimeController.MILLIS_IN_TICK);
-		
+		_skillLaunched.set(_castTime < CASTING_TIME_CAP);
 		return true;
 	}
 	
@@ -305,31 +305,33 @@ public class SkillCaster implements Runnable
 		}
 		
 		Creature target = _target;
+		final WorldObject[] targets;
 		Skill skill = _skill;
 		ItemInstance item = _item;
-		int castTime = _castTime;
 		
 		try
 		{
-			WorldObject[] targets = skill.getTargetsAffected(_caster, target).toArray(new WorldObject[0]);
-			
-			// Finish flying by setting the target location after picking targets.
-			if (skill.getFlyType() != null)
+			// If skill is not launched, pick targets, launch the skill and reschedule skill cast finish.
+			if (!_skillLaunched.get())
 			{
-				_caster.setXYZ(_target.getX(), _target.getY(), _target.getZ());
+				_targets = skill.getTargetsAffected(_caster, target).toArray(new WorldObject[0]);
+				
+				// Finish flying by setting the target location after picking targets.
+				if (skill.getFlyType() != null)
+				{
+					_caster.setXYZ(target.getX(), target.getY(), target.getZ());
+				}
+				
+				_caster.broadcastPacket(new MagicSkillLaunched(_caster, skill.getDisplayId(), skill.getDisplayLevel(), _castingType, _targets));
+				_skillLaunched.set(true);
+				
+				// Reschedule cast finish and wait.
+				_task = ThreadPoolManager.getInstance().scheduleEffect(this, CASTING_TIME_CAP);
+				return;
 			}
 			
-			// MagicSkillLaunched packet is only broadcasted for skills that are above the casting time cap. Instant cast skills never broadcast this packet.
-			if (!skill.isToggle() && (castTime >= CASTING_TIME_CAP))
-			{
-				_caster.broadcastPacket(new MagicSkillLaunched(_caster, skill.getDisplayId(), skill.getDisplayLevel(), _castingType, targets));
-			}
-			
-			// Skill has been launched, 500ms (or lower for instant skills) prematurely. Wait this time so casting is fully finished.
-			if (castTime > 0)
-			{
-				Thread.sleep((castTime >= CASTING_TIME_CAP) ? CASTING_TIME_CAP : castTime);
-			}
+			// Check if targets have been cached when skill was launched, otherwise pick the list.
+			targets = _targets != null ? _targets : skill.getTargetsAffected(_caster, target).toArray(new WorldObject[0]);
 			
 			// Recharge shots
 			_caster.rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
@@ -616,8 +618,8 @@ public class SkillCaster implements Runnable
 		_shiftPressed = false;
 		_castTime = 0;
 		_reuseDelay = 0;
-		_castInterruptTime = 0;
 		_skillMastery = false;
+		_skillLaunched.set(false);
 		
 		if (!_isCasting.compareAndSet(true, false))
 		{
@@ -678,7 +680,7 @@ public class SkillCaster implements Runnable
 	 */
 	public boolean canAbortCast()
 	{
-		return _castInterruptTime > GameTimeController.getInstance().getGameTicks();
+		return !_skillLaunched.get();
 	}
 	
 	/**
@@ -717,11 +719,6 @@ public class SkillCaster implements Runnable
 	public void setReuseDelay(int reuseDelay)
 	{
 		_reuseDelay = reuseDelay;
-	}
-	
-	public void setCastInterruptTime(int castInterruptTime)
-	{
-		_castInterruptTime = castInterruptTime;
 	}
 	
 	public void setSkillMastery(boolean skillMastery)
