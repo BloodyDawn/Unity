@@ -30,6 +30,7 @@ public class SkillConditionMasterHandler
 	public static void main(String[] args)
 	{
 		SkillConditionHandler.getInstance().registerHandler("EquipWeapon", EquipWeaponSkillCondition::new);
+		SkillConditionHandler.getInstance().registerHandler("EquipArmor", EquipArmorSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("EquipShield", EquipShieldSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("PossessHolything", PossessHolythingSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpSkillAcquire", OpSkillAcquireSkillCondition::new);
@@ -38,6 +39,7 @@ public class SkillConditionMasterHandler
 		SkillConditionHandler.getInstance().registerHandler("CanSummon", CanSummonSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("BuildCamp", BuildCampSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("NotInUnderwater", NotInUnderwaterSkillCondition::new);
+		SkillConditionHandler.getInstance().registerHandler("OpNotOlympiad", OpNotOlympiadSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpUnlock", OpUnlockSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("OpEnergyMax", OpEnergyMaxSkillCondition::new);
 		SkillConditionHandler.getInstance().registerHandler("RemainHpPer", RemainHpPerSkillCondition::new);

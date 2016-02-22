@@ -2315,6 +2315,11 @@
 		<magicLvl>78</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="TargetMyParty">
+				<includeMe>true</includeMe>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>-10</amount>

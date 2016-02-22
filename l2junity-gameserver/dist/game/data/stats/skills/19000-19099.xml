@@ -721,9 +721,12 @@
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113">
-			<player chaotic="false" />
-		</cond>
+		<passiveConditions>
+			<condition name="OpAlignment">
+				<alignment>LAWFUL</alignment>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="MaxCp">
 				<amount>3000</amount>
@@ -851,24 +854,18 @@
 		</effects>
 	</skill>
 	<skill id="19037" levels="1" name="Cloak of Radiant Light">
-		<!-- TODO: Confirm me -->
 		<!-- STR/MEN/DEX/CON/INT/WIT + 3, decreased damage received during PvP by 15%. Ineffective in Chaotic state. -->
 		<icon>icon.amor_goodness_cloak</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113">
-			<player chaotic="false" />
-		</cond>
+		<passiveConditions>
+			<condition name="OpAlignment">
+				<alignment>LAWFUL</alignment>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
-			<effect name="MagicalDefence">
-				<amount>80.0</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>100.0</amount>
-				<mode>DIFF</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -908,21 +905,12 @@
 		</effects>
 	</skill>
 	<skill id="19038" levels="1" name="Cold Cloak of Darkness">
-		<!-- TODO: Confirm me -->
 		<!-- STR/MEN/DEX/CON/INT/WIT + 3, decreased damage received during PvP by 15%. -->
 		<icon>icon.amor_evilness_cloak</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="MagicalDefence">
-				<amount>80.0</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>100.0</amount>
-				<mode>DIFF</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
 				<amount>15</amount>
 				<mode>PER</mode>
@@ -962,21 +950,18 @@
 		</effects>
 	</skill>
 	<skill id="19039" levels="1" name="Cloak of Light">
-		<!-- TODO: Confirm me -->
 		<!-- STR/MEN/DEX/CON/INT/WIT + 2, decreased damage received during PvP by 5%. Ineffective in Chaotic state. -->
 		<icon>icon.amor_goodness_cloak</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="OpAlignment">
+				<alignment>LAWFUL</alignment>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
-			<effect name="MagicalDefence">
-				<amount>40.0</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>50.0</amount>
-				<mode>DIFF</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>
@@ -1016,21 +1001,12 @@
 		</effects>
 	</skill>
 	<skill id="19040" levels="1" name="Cloak of Darkness">
-		<!-- TODO: Confirm me -->
 		<!-- STR/MEN/DEX/CON/INT/WIT + 2, decreased damage received during PvP by 5%. -->
 		<icon>icon.amor_evilness_cloak</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="MagicalDefence">
-				<amount>40.0</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>50.0</amount>
-				<mode>DIFF</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
 				<amount>5</amount>
 				<mode>PER</mode>

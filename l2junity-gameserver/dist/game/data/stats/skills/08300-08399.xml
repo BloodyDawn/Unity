@@ -517,9 +517,13 @@
 		<magicLvl>10</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="1;19" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>19</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>10</amount>
@@ -533,9 +537,13 @@
 		<magicLvl>20</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="20;39" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>20</minLevel>
+				<maxLevel>39</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>90</amount>
@@ -561,9 +569,13 @@
 		<magicLvl>30</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="40;51" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>40</minLevel>
+				<maxLevel>51</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>200</amount>
@@ -589,9 +601,13 @@
 		<magicLvl>40</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="52;60" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>52</minLevel>
+				<maxLevel>60</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>300</amount>
@@ -617,9 +633,13 @@
 		<magicLvl>50</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="61;74" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>61</minLevel>
+				<maxLevel>74</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>400</amount>
@@ -645,9 +665,13 @@
 		<magicLvl>60</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="75;79" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>75</minLevel>
+				<maxLevel>79</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>500</amount>
@@ -673,9 +697,13 @@
 		<magicLvl>70</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="80;81" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>80</minLevel>
+				<maxLevel>81</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>500</amount>
@@ -701,9 +729,13 @@
 		<magicLvl>80</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<cond msgId="113" addName="1">
-			<player levelRange="82;85" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>82</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>500</amount>

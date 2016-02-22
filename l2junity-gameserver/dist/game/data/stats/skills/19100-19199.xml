@@ -119,9 +119,13 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
-		<cond msgId="113" addName="1">
-			<player levelRange="1;84" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="Speed">
 				<amount>13</amount>
@@ -145,9 +149,13 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 		<isDebuff>false</isDebuff>
-		<cond msgId="113" addName="1">
-			<player levelRange="1;84" />
-		</cond>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>84</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="Speed">
 				<amount>15</amount>

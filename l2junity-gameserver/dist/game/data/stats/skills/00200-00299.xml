@@ -54,6 +54,14 @@
 		</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="45">
 				<!-- Blunt Mastery -->

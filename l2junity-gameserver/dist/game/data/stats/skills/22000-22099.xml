@@ -1255,7 +1255,6 @@
 	</skill>
 	<skill id="22041" levels="2" name="Rune of Crystal (Lv. 3)">
 		<!-- Confirmed CT2.5 -->
-		<table name="#bonus"> 3 5 </table>
 		<icon>
 			<value level="1">br_cashtex.skill.br_cash_rune_of_rp_buff_3</value>
 			<value level="2">br_cashtex.skill.br_cash_rune_of_rp_buff_5</value>
@@ -1263,6 +1262,9 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="OpNotOlympiad" />
+		</passiveConditions>
 		<effects>
 			<effect name="CrystalGradeModify">
 				<grade>

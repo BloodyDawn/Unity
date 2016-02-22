@@ -8,6 +8,14 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+			<condition name="OpNotOlympiad" />
+		</passiveConditions>
 	</skill>
 	<skill id="22701" levels="1" name="Harp's Sealed Rune of Power_Trigger">
 		<!-- AUTO GENERATED SKILL -->
@@ -18,6 +26,9 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
+		<passiveConditions>
+			<condition name="OpNotOlympiad" />
+		</passiveConditions>
 	</skill>
 	<skill id="22702" levels="1" name="Harp's Sealed Rune of Magic_Trigger_Decrease Defense">
 		<!-- AUTO GENERATED SKILL -->

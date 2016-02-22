@@ -1311,7 +1311,6 @@
 	</skill>
 	<skill id="26048" levels="5" name="Rune of Crystal (Lv. 1)">
 		<!-- Confirmed CT2.5 -->
-		<table name="#bonus"> 1 2 3 4 5 </table>
 		<icon>
 			<value level="1">br_cashtex.skill.br_cash_rune_of_rp_buff_1</value>
 			<value level="2">br_cashtex.skill.br_cash_rune_of_rp_buff_2</value>
@@ -1322,6 +1321,9 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="OpNotOlympiad" />
+		</passiveConditions>
 		<effects>
 			<effect name="CrystalGradeModify">
 				<grade>
@@ -1339,6 +1341,9 @@
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="OpNotOlympiad" />
+		</passiveConditions>
 	</skill>
 	<skill id="26050" levels="1" name="Blessed Spiritshot (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->

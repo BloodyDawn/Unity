@@ -1369,6 +1369,13 @@
 		<magicLvl>81</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>81</minLevel>
+				<maxLevel>85</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="PAtk">
 				<amount>87.5</amount>
@@ -5118,8 +5125,6 @@
 	</skill>
 	<skill id="992" levels="8" name="Sonic Mastery">
 		<!-- High Five Skill -->
-		<table name="#maxMomentum"> 1 2 3 4 5 6 7 8 </table>
-		<table name="#skillLevel"> 1 2 3 4 5 6 7 8 </table>
 		<icon>icon.skill0992</icon>
 		<magicLvl>
 			<value level="1">40</value>
@@ -5133,6 +5138,15 @@
 		</magicLvl>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DUAL />
+					<SWORD />
+					<BLUNT />
+				</weaponType>
+			</condition>
+		</passiveConditions>
 		<effects>
 			<effect name="FocusEnergy">
 				<amount>
