@@ -74,9 +74,10 @@ public abstract class AbstractOneDayRewardHandler extends ListenersContainer
 	public synchronized void reset()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM character_daily_rewards WHERE rewardId = ?"))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_daily_rewards WHERE rewardId = ? AND status = ?"))
 		{
 			ps.setInt(1, _holder.getId());
+			ps.setInt(2, OneDayRewardStatus.COMPLETED.getClientId());
 			ps.execute();
 		}
 		catch (SQLException e)
