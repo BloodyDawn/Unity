@@ -51,7 +51,6 @@ public class TaskOlympiadSave extends Task
 	@Override
 	public void initializate()
 	{
-		super.initializate();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_FIXED_SHEDULED, "900000", "1800000", "");
 	}
 }

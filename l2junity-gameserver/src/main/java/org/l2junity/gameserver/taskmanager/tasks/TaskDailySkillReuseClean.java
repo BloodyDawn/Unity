@@ -67,7 +67,6 @@ public class TaskDailySkillReuseClean extends Task
 	@Override
 	public void initializate()
 	{
-		super.initializate();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "06:30:00", "");
 	}
 }

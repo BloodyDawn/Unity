@@ -21,7 +21,9 @@ package org.l2junity.gameserver.taskmanager.tasks;
 import org.l2junity.gameserver.data.xml.impl.OneDayRewardData;
 import org.l2junity.gameserver.model.OneDayRewardDataHolder;
 import org.l2junity.gameserver.taskmanager.Task;
+import org.l2junity.gameserver.taskmanager.TaskManager;
 import org.l2junity.gameserver.taskmanager.TaskManager.ExecutedTask;
+import org.l2junity.gameserver.taskmanager.TaskTypes;
 
 /**
  * @author UnAfraid
@@ -40,5 +42,11 @@ public final class TaskOneDayRewardsReset extends Task
 	public void onTimeElapsed(ExecutedTask task)
 	{
 		OneDayRewardData.getInstance().getOneDayRewardData().forEach(OneDayRewardDataHolder::reset);
+	}
+	
+	@Override
+	public void initializate()
+	{
+		TaskManager.addUniqueTask(getName(), TaskTypes.TYPE_GLOBAL_TASK, "1", "06:30:00", "");
 	}
 }
