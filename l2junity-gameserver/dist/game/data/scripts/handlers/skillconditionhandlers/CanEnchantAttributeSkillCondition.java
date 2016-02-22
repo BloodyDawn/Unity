@@ -25,18 +25,19 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author
  */
 public class CanEnchantAttributeSkillCondition implements ISkillCondition
 {
 	public CanEnchantAttributeSkillCondition(StatsSet params)
 	{
-
+	
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return false;
+		// TODO !
+		return true;
 	}
 }
