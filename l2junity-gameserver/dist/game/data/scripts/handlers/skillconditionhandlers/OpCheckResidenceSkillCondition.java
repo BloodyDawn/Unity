@@ -18,24 +18,46 @@
  */
 package handlers.skillconditionhandlers;
 
+import java.util.List;
+
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author UnAfraid
+ * @author Sdw
  */
 public class OpCheckResidenceSkillCondition implements ISkillCondition
 {
+	private final List<Integer> _residencesId;
+	private final boolean _isWithin;
+	
 	public OpCheckResidenceSkillCondition(StatsSet params)
 	{
+		_residencesId = params.getList("residencesId", Integer.class);
+		_isWithin = params.getBoolean("isWithin");
 	}
 	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return caster.isPlayer() && !caster.getActingPlayer().isCursedWeaponEquipped();
+		if (caster.isPlayer())
+		{
+			final L2Clan clan = caster.getActingPlayer().getClan();
+			if (clan != null)
+			{
+				final ClanHall clanHall = ClanHallData.getInstance().getClanHallByClan(clan);
+				if (clanHall != null)
+				{
+					return _isWithin ? _residencesId.contains(clanHall.getResidenceId()) : !_residencesId.contains(clanHall.getResidenceId());
+				}
+			}
+		}
+		return false;
 	}
 }
