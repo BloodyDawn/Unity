@@ -23,6 +23,7 @@ package org.l2junity.gameserver.enums;
  */
 public enum SkillConditionAffectType
 {
+	BOTH,
 	CASTER,
 	TARGET
 }

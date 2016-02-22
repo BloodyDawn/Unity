@@ -2151,6 +2151,10 @@
 			<condition name="TargetMyParty">
 				<includeMe>false</includeMe>
 			</condition>
+			<condition name="OpEquipItem">
+				<itemId>20594</itemId>
+				<affectType>BOTH</affectType>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="CallPc">
@@ -2331,6 +2335,10 @@
 			<condition name="OpCallPc" />
 			<condition name="TargetMyParty">
 				<includeMe>false</includeMe>
+			</condition>
+			<condition name="OpEquipItem">
+				<itemId>20628</itemId>
+				<affectType>BOTH</affectType>
 			</condition>
 		</conditions>
 		<effects>

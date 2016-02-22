@@ -1289,6 +1289,10 @@
 			<condition name="TargetMyParty">
 				<includeMe>false</includeMe>
 			</condition>
+			<condition name="OpEquipItem">
+				<itemId>22237</itemId>
+				<affectType>BOTH</affectType>
+			</condition>
 		</conditions>
 	</skill>
 	<skill id="21265" levels="1" name="Summon Friend">
@@ -1309,6 +1313,10 @@
 			<condition name="OpCallPc" />
 			<condition name="TargetMyParty">
 				<includeMe>false</includeMe>
+			</condition>
+			<condition name="OpEquipItem">
+				<itemId>22254</itemId>
+				<affectType>BOTH</affectType>
 			</condition>
 		</conditions>
 	</skill>
