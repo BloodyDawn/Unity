@@ -725,7 +725,6 @@
 	</skill>
 	<skill id="7" levels="44" name="Sonic Storm">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#power"> 141 148 156 165 172 180 189 198 208 218 228 237 248 258 269 280 291 301 313 325 335 347 358 370 382 392 405 416 427 451 473 496 520 15024 15542 16580 17618 18656 19695 20732 21771 23352 24490 25628 </table> <!-- Confirmed -->
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
@@ -945,7 +944,6 @@
 	</skill>
 	<skill id="8" levels="8" name="Sonic Focus">
 		<!-- Confirmed CT2.5 -->
-		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
 		<effectPoint>200</effectPoint>
 		<hitTime>900</hitTime>
 		<hpConsume>25</hpConsume>
@@ -1004,7 +1002,6 @@
 		</effects>
 	</skill>
 	<skill id="9" levels="34" name="Sonic Buster">
-		<table name="#power"> 111 118 124 132 139 147 155 163 172 181 190 199 209 219 229 240 251 262 273 284 296 308 320 332 344 357 369 382 394 407 420 432 445 457 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>40</castRange>
@@ -1186,7 +1183,6 @@
 	</skill>
 	<skill id="10" levels="8" name="Summon Storm Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 </table>
 		<hitTime>6000</hitTime>
 		<icon>icon.skill0010</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1421,7 +1417,6 @@
 	</skill>
 	<skill id="15" levels="52" name="Charm">
 		<!-- Confirmed CT2.5 -->
-		<table name="#power"> -132 -137 -143 -153 -159 -164 -176 -182 -188 -200 -206 -213 -225 -232 -239 -252 -259 -266 -272 -279 -286 -293 -300 -307 -313 -320 -327 -334 -340 -347 -353 -360 -366 -373 -379 -385 -391 -396 -402 -407 -413 -418 -423 -428 -432 -437 -441 -445 -449 -452 -455 -458 </table>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
@@ -1657,7 +1652,6 @@
 		</effects>
 	</skill>
 	<skill id="16" levels="24" name="Mortal Blow">
-		<table name="#power"> 73 80 88 115 126 137 178 193 210 268 291 314 367 396 427 494 531 571 656 703 752 859 916 977 </table>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>
@@ -1789,7 +1783,6 @@
 		</effects>
 	</skill>
 	<skill id="17" levels="34" name="Force Burst">
-		<table name="#power"> 129 137 145 153 162 171 181 190 200 211 222 233 244 256 268 280 293 305 318 332 345 359 373 387 402 416 431 445 460 475 489 504 519 533 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>40</castRange>
@@ -2108,7 +2101,6 @@
 		</effects>
 	</skill>
 	<skill id="19" levels="37" name="Double Shot">
-		<table name="#power"> 984 1046 1110 1178 1249 1322 1399 1479 1562 1647 1736 1828 1923 2021 2123 2227 2333 2443 2555 2670 2788 2908 3030 3154 3280 3408 3537 3668 3800 3933 4067 4201 4336 4470 4604 4738 4870 </table>
 		<castRange>900</castRange>
 		<coolTime>1000</coolTime>
 		<effectPoint>
@@ -2291,7 +2283,6 @@
 		</effects>
 	</skill>
 	<skill id="21" levels="3" name="Poison Recovery">
-		<table name="#dispelAbnormals"> POISON,3 POISON,7 POISON,9 </table>
 		<effectPoint>
 			<value level="1">204</value>
 			<value level="2">379</value>
@@ -2333,7 +2324,6 @@
 	</skill>
 	<skill id="22" levels="7" name="Summon Vampiric Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicLvl"> 1 2 3 4 5 6 7 </table>
 		<hitTime>6000</hitTime>
 		<icon>icon.skill0022</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2399,7 +2389,6 @@
 		</effects>
 	</skill>
 	<skill id="24" levels="31" name="Burst Shot">
-		<table name="#power"> 350 370 391 412 434 457 481 506 531 557 584 611 639 668 697 727 758 789 820 852 885 917 950 984 1017 1051 1084 1118 1151 1185 1218 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
@@ -2560,8 +2549,6 @@
 		</effects>
 	</skill>
 	<skill id="25" levels="9" name="Summon Mechanic Golem">
-		<table name="#itemConsumeCountOT"> 4 4 1 2 2 3 3 4 4 </table>
-		<table name="#npcIds"> 14663 14664 14665 14666 14667 14668 14669 14670 14671 </table>
 		<hitTime>15000</hitTime>
 		<icon>icon.skill0025</icon>
 		<itemConsumeCount>
@@ -2648,7 +2635,6 @@
 		</effects>
 	</skill>
 	<skill id="27" levels="14" name="Unlock">
-		<table name="#chance"> 30 50 75 100 100 100 100 100 100 100 100 100 100 100 </table>
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-1</value>
@@ -2976,7 +2962,6 @@
 		</effects>
 	</skill>
 	<skill id="29" levels="24" name="Iron Punch">
-		<table name="#power"> 34 38 41 54 59 64 83 91 98 125 136 147 171 185 199 231 248 267 307 328 351 401 428 456 </table>
 		<castRange>40</castRange>
 		<coolTime>296</coolTime>
 		<effectPoint>
@@ -3082,8 +3067,6 @@
 	</skill>
 	<skill id="30" levels="37" name="Backstab">
 		<!-- Confirmed CT2.5 -->
-		<table name="#baseCritLethal"> 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 10 10 10 10 10 10 10 10 10 10 15 15 15 15 </table>
-		<table name="#power"> 1107 1176 1249 1325 1405 1488 1574 1664 1757 1853 1953 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 </table>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>
@@ -3349,7 +3332,6 @@
 	</skill>
 	<skill id="33" levels="8" name="Summon Phantom Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 </table>
 		<hitTime>6000</hitTime>
 		<icon>icon.skill0033</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3420,7 +3402,6 @@
 		</effects>
 	</skill>
 	<skill id="34" levels="3" name="Bandage">
-		<table name="#dispelAbnormals"> BLEEDING,3 BLEEDING,7 BLEEDING,9 </table>
 		<effectPoint>
 			<value level="1">204</value>
 			<value level="2">438</value>
@@ -3456,9 +3437,6 @@
 	</skill>
 	<skill id="35" levels="44" name="Force Storm">
 		<!-- Confirmed CT2.5 and Updated to IO -->
-		<!-- Confirmed -->
-		<!-- Confirmed -->
-		<table name="#power"> 141 148 156 165 172 180 189 198 208 218 228 237 248 258 269 280 291 301 313 325 335 347 358 370 382 392 405 416 427 451 473 496 520 15024 15542 16580 17618 18656 19695 20732 21771 23352 24490 25628 </table> <!-- Confirmed -->
 		<affectLimit>5-12</affectLimit>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
@@ -3675,7 +3653,6 @@
 		</effects>
 	</skill>
 	<skill id="36" levels="37" name="Spinning Slasher">
-		<table name="#power"> 554 588 625 663 703 744 787 832 879 927 977 1029 1082 1137 1194 1253 1313 1374 1438 1502 1568 1636 1704 1774 1845 1917 1990 2064 2138 2213 2288 2363 2439 2515 2590 2665 2740 </table>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>150</affectRange>
 		<coolTime>733</coolTime>
@@ -3884,7 +3861,6 @@
 		</effects>
 	</skill>
 	<skill id="44" levels="3" name="Remedy">
-		<table name="#dispelAbnormals"> BLEEDING,3 BLEEDING,7 BLEEDING,9 </table>
 		<effectPoint>
 			<value level="1">379</value>
 			<value level="2">467</value>
@@ -3925,7 +3901,6 @@
 		</effects>
 	</skill>
 	<skill id="45" levels="9" name="Divine Heal">
-		<table name="#amount"> 143 150 157 172 179 187 203 211 219 </table>
 		<effectPoint>
 			<value level="1">204</value>
 			<value level="2">214</value>
@@ -3996,7 +3971,6 @@
 		</effects>
 	</skill>
 	<skill id="46" levels="15" name="Life Scavenge">
-		<table name="#drain"> 105 113 122 131 140 150 159 169 180 190 201 211 222 232 243 </table>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<hitTime>1500</hitTime>
@@ -4087,8 +4061,6 @@
 	</skill>
 	<skill id="48" levels="49" name="Thunder Storm">
 		<!-- Confirmed CT2.5 and Updated to IO -->
-		<!-- Guessed -->
-		<table name="#power"> 421 447 475 504 534 566 598 632 668 705 743 782 823 864 908 952 998 1045 1093 1142 1192 1243 1296 1349 1403 1457 1513 1569 1625 1682 1739 1796 1854 1911 1969 2026 2082 2140 2200 2260 2320 2380 26003 30494 35883 37680 39349 40997 42645 </table> <!-- Confirmed -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -4331,7 +4303,6 @@
 		</effects>
 	</skill>
 	<skill id="49" levels="26" name="Holy Strike">
-		<table name="#power"> 47 49 51 53 55 57 59 61 63 66 67 68 70 71 72 74 75 77 78 79 80 82 83 84 85 87 </table>
 		<castRange>400</castRange>
 		<effectPoint>
 			<value level="1">-418</value>
@@ -4497,7 +4468,6 @@
 	</skill>
 	<skill id="50" levels="8" name="Focus Force">
 		<!-- Confirmed CT2.5 -->
-		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
 		<effectPoint>150</effectPoint>
 		<hitTime>900</hitTime>
 		<hpConsume>20</hpConsume>
@@ -4574,7 +4544,6 @@
 		</effects>
 	</skill>
 	<skill id="54" levels="49" name="Force Blaster">
-		<table name="#power"> 143 154 166 193 207 222 256 274 293 334 357 380 431 458 486 516 547 579 612 647 683 721 760 800 842 885 929 974 1021 1069 1118 1169 1220 1272 1326 1380 1435 1491 1548 1605 1663 1721 1780 1838 1897 1956 2015 2073 2131 </table>
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">-130</value>
@@ -4806,7 +4775,6 @@
 		</effects>
 	</skill>
 	<skill id="56" levels="24" name="Power Shot">
-		<table name="#power"> 65 71 78 102 112 122 158 172 187 239 258 279 326 352 379 440 472 507 584 625 669 763 814 868 </table>
 		<castRange>700</castRange>
 		<coolTime>800</coolTime>
 		<effectPoint>
@@ -4936,7 +4904,6 @@
 		</effects>
 	</skill>
 	<skill id="58" levels="55" name="Elemental Heal">
-		<table name="#amount"> 71 75 80 95 100 106 118 124 130 143 150 157 172 179 187 203 211 219 236 245 254 262 271 281 290 299 308 318 327 337 346 356 365 375 384 393 403 412 421 430 439 448 457 466 474 482 490 498 506 513 520 527 534 540 546 </table>
 		<effectPoint>
 			<value level="1">101</value>
 			<value level="2">107</value>
@@ -5252,7 +5219,6 @@
 		</effects>
 	</skill>
 	<skill id="61" levels="3" name="Cure Bleeding">
-		<table name="#dispelAbnormals"> BLEEDING,3 BLEEDING,7 BLEEDING,9 </table>
 		<effectPoint>
 			<value level="1">235</value>
 			<value level="2">438</value>
@@ -5380,7 +5346,6 @@
 	</skill>
 	<skill id="67" levels="7" name="Summon Life Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicLvl"> 1 2 3 4 5 6 7 </table>
 		<hitTime>6000</hitTime>
 		<icon>icon.skill0067</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -5447,10 +5412,6 @@
 	</skill>
 	<skill id="69" levels="37" name="Sacrifice">
 		<!-- Confirmed CT2.5 and Updated to IO -->
-		<table name="#amount"> 350 412 474 536 598 660 722 784 846 908 970 1032 1094 1156 1218 1280 1342 1404 1466 1528 1590 1652 1714 1776 1838 1962 2024 2086 2148 2210 2272 2334 2396 2458 2520 2582 2644 </table> <!-- Confirmed -->
-		<!-- Confirmed -->
-		<!-- Confirmed -->
-		<!-- Confirmed -->
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">494</value>
@@ -5624,7 +5585,6 @@
 		</effects>
 	</skill>
 	<skill id="70" levels="53" name="Drain Energy">
-		<table name="#power"> 20 22 24 26 28 29 31 33 34 35 38 39 40 43 44 46 49 50 52 53 55 57 58 60 61 63 65 66 68 70 72 73 75 77 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">-78</value>
@@ -5922,7 +5882,6 @@
 	<skill id="72" levels="3" name="Iron Will">
 		<!-- Confirmed CT2.5 -->
 		<!-- NOTE: Enchant 2 in client says "Decreases MP consumption" in some levels, but is client typo -->
-		<table name="#mDef"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6038,7 +5997,6 @@
 		</effects>
 	</skill>
 	<skill id="77" levels="2" name="Attack Aura">
-		<table name="#rate"> 1.08 1.12 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6082,7 +6040,6 @@
 		</effects>
 	</skill>
 	<skill id="78" levels="2" name="War Cry">
-		<table name="#pAtk"> 1.2 1.25 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6143,7 +6100,6 @@
 		</effects>
 	</skill>
 	<skill id="81" levels="3" name="Punch of Doom">
-		<table name="#power"> 4580 6332 9132 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
@@ -6198,8 +6154,6 @@
 	</skill>
 	<skill id="82" levels="3" name="Majesty">
 		<!-- Confirmed CT2.5 -->
-		<table name="#pDef"> 1.07 1.11 1.15 </table>
-		<table name="#rEvas"> 2 4 6 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6288,7 +6242,6 @@
 		</effects>
 	</skill>
 	<skill id="84" levels="3" name="Poison Blade Dance">
-		<table name="#dot"> 50 58 63 </table>
 		<abnormalLvl>
 			<value level="1">6</value>
 			<value level="2">7</value>
@@ -6352,7 +6305,6 @@
 		</effects>
 	</skill>
 	<skill id="86" levels="3" name="Reflect Damage">
-		<table name="#reflectDam"> 10 15 20 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6445,7 +6397,6 @@
 		</effects>
 	</skill>
 	<skill id="91" levels="2" name="Defense Aura">
-		<table name="#rate"> 1.08 1.12 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6490,7 +6441,6 @@
 	</skill>
 	<skill id="92" levels="52" name="Shield Stun">
 		<!-- Confirmed CT2.5 -->
-		<table name="#Vuln"> 2 4 5 7 9 10 12 14 15 17 18 20 22 23 25 27 28 30 32 33 35 36 38 40 41 43 45 46 48 50 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -6685,10 +6635,6 @@
 	</skill>
 	<skill id="94" levels="7" name="Rage">
 		<!-- Confirmed CT2.5 and Updated to IO -->
-		<!-- Guessed -->
-		<table name="#additional"> 1 1.02 1.03 1.04 1.05 1.10 1.15 </table> <!-- Confirmed -->
-		<!-- Confirmed -->
-		<!-- Confirmed -->
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -6788,7 +6734,6 @@
 	</skill>
 	<skill id="95" levels="20" name="Cripple">
 		<!-- Confirmed CT2.5 -->
-		<table name="#runSpd"> 0.8 0.8 0.8 0.8 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<abnormalLvl>
 			<value level="1">2</value>
 			<value level="2">2</value>
@@ -6930,7 +6875,6 @@
 		</effects>
 	</skill>
 	<skill id="96" levels="6" name="Bleed">
-		<table name="#dot"> 25 34 44 54 62 67 </table>
 		<abnormalLvl>
 			<value level="1">3</value>
 			<value level="2">4</value>
@@ -7076,7 +7020,6 @@
 	</skill>
 	<skill id="98" levels="5" name="Sword Symphony">
 		<!-- Glory Days Confirmed -->
-		<table name="#power"> 825 1023 1194 1373 1554 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>SILENCE</abnormalType>
@@ -7133,7 +7076,6 @@
 		</effects>
 	</skill>
 	<skill id="99" levels="2" name="Rapid Shot">
-		<table name="#rate"> 1.08 1.12 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
