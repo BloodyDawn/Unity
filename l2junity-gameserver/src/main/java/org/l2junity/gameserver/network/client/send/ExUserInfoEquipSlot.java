@@ -62,11 +62,6 @@ public class ExUserInfoEquipSlot extends AbstractMaskPacket<InventorySlot>
 	}
 	
 	@Override
-	protected void onNewMaskAdded(InventorySlot component)
-	{
-	}
-	
-	@Override
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.EX_USER_INFO_EQUIP_SLOT.writeId(packet);

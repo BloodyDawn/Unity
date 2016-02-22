@@ -40,10 +40,13 @@ public abstract class AbstractMaskPacket<T extends IUpdateTypeComponent> impleme
 	
 	protected abstract byte[] getMasks();
 	
-	protected abstract void onNewMaskAdded(T component);
+	protected void onNewMaskAdded(T component)
+	{
 	
-	@SuppressWarnings("unchecked")
-	public void addComponentType(T... updateComponents)
+	}
+	
+	@SafeVarargs
+	public final void addComponentType(T... updateComponents)
 	{
 		for (T component : updateComponents)
 		{

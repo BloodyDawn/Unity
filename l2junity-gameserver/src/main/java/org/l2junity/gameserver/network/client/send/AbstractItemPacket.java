@@ -44,11 +44,6 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		return MASKS;
 	}
 	
-	@Override
-	protected void onNewMaskAdded(ItemListType component)
-	{
-	}
-	
 	protected void writeItem(PacketWriter packet, TradeItem item)
 	{
 		writeItem(packet, new ItemInfo(item));

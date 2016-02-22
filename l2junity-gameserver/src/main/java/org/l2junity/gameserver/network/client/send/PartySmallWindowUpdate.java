@@ -103,11 +103,6 @@ public final class PartySmallWindowUpdate extends AbstractMaskPacket<PartySmallW
 	}
 	
 	@Override
-	protected void onNewMaskAdded(PartySmallWindowUpdateType component)
-	{
-	}
-	
-	@Override
 	protected byte[] getMasks()
 	{
 		return new byte[0];
