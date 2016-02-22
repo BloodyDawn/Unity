@@ -1826,6 +1826,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpHome">
+				<type>AGIT</type>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1848,6 +1851,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpHome">
+				<type>CASTLE</type>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Escape">

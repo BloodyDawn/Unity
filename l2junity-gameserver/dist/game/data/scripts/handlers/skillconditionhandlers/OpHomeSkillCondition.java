@@ -18,6 +18,11 @@
  */
 package handlers.skillconditionhandlers;
 
+import org.l2junity.gameserver.data.xml.impl.ClanHallData;
+import org.l2junity.gameserver.enums.ResidenceType;
+import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.instancemanager.FortManager;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -25,18 +30,43 @@ import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * @author 
+ * @author Sdw
  */
 public class OpHomeSkillCondition implements ISkillCondition
 {
+	private final ResidenceType _type;
+	
 	public OpHomeSkillCondition(StatsSet params)
 	{
-
+		_type = params.getEnum("type", ResidenceType.class);
 	}
-
+	
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
+		if (caster.isPlayer())
+		{
+			final L2Clan clan = caster.getActingPlayer().getClan();
+			if (clan != null)
+			{
+				switch (_type)
+				{
+					case CASTLE:
+					{
+						return CastleManager.getInstance().getCastleByOwner(clan) != null;
+					}
+					case FORTRESS:
+					{
+						return FortManager.getInstance().getFortByOwner(clan) != null;
+					}
+					case CLANHALL:
+					{
+						return ClanHallData.getInstance().getClanHallByClan(clan) != null;
+					}
+				}
+			}
+		}
+		
 		return false;
 	}
 }
