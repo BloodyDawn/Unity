@@ -139,6 +139,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("Grow", Grow::new);
 		EffectHandler.getInstance().registerHandler("HairAccessorySet", HairAccessorySet::new);
 		EffectHandler.getInstance().registerHandler("Harvesting", Harvesting::new);
+		EffectHandler.getInstance().registerHandler("HateAttack", HateAttack::new);
 		EffectHandler.getInstance().registerHandler("HeadquarterCreate", HeadquarterCreate::new);
 		EffectHandler.getInstance().registerHandler("Heal", Heal::new);
 		EffectHandler.getInstance().registerHandler("HealEffect", HealEffect::new);

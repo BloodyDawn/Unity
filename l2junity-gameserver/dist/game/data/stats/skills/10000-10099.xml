@@ -6,12 +6,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
@@ -79,6 +79,14 @@
 					<value level="10">1945</value>
 				</amount>
 				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item> BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="HateAttack">
+				<amount>60</amount>
+				<mode>PER</mode>
 				<weaponType>
 					<item>SWORD</item>
 					<item> BLUNT</item>
@@ -2040,7 +2048,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<toggleGroupId>4</toggleGroupId>
 		<effects>
-			<!-- TODO: p_hate_attack;{sword;blunt};200;per -->
+			<effect name="HateAttack">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 			<effect name="CallSkillOnActionTime">
 				<!-- Challenge Aura -->
 				<skillId>10031</skillId>
@@ -3609,12 +3624,17 @@
 		<rideState>NONE</rideState>
 		<hitCancelTime>0</hitCancelTime>
 		<magicLvl>99</magicLvl>
-		<!-- TODO: Check with our crappy targeting -->
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="TargetMe" />
-			<effect name="GetAgro" />
+			<effect name="HateAttack">
+				<amount>500</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10061" levels="1" name="Price of Summoning">
@@ -3641,7 +3661,14 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<!-- TODO: {p_hate_attack;{sword;blunt};-60;per} -->
+			<effect name="HateAttack">
+				<amount>-60</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
 			<effect name="PhysicalDefence">
 				<amount>-30</amount>
 				<mode>PER</mode>
