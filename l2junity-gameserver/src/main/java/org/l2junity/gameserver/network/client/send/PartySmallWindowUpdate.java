@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
-public final class PartySmallWindowUpdate implements IClientOutgoingPacket
+public final class PartySmallWindowUpdate extends AbstractMaskPacket<PartySmallWindowUpdateType>
 {
 	private final PlayerInstance _member;
 	private int _flags = 0;
@@ -35,14 +35,9 @@ public final class PartySmallWindowUpdate implements IClientOutgoingPacket
 		{
 			for (PartySmallWindowUpdateType type : PartySmallWindowUpdateType.values())
 			{
-				addUpdateType(type);
+				addComponentType(type);
 			}
 		}
-	}
-	
-	public void addUpdateType(PartySmallWindowUpdateType type)
-	{
-		_flags |= type.getMask();
 	}
 	
 	@Override
@@ -52,46 +47,69 @@ public final class PartySmallWindowUpdate implements IClientOutgoingPacket
 		
 		packet.writeD(_member.getObjectId());
 		packet.writeH(_flags);
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.CURRENT_CP))
+		if (containsMask(PartySmallWindowUpdateType.CURRENT_CP))
 		{
 			packet.writeD((int) _member.getCurrentCp()); // c4
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.MAX_CP))
+		if (containsMask(PartySmallWindowUpdateType.MAX_CP))
 		{
 			packet.writeD(_member.getMaxCp()); // c4
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.CURRENT_HP))
+		if (containsMask(PartySmallWindowUpdateType.CURRENT_HP))
 		{
 			packet.writeD((int) _member.getCurrentHp());
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.MAX_HP))
+		if (containsMask(PartySmallWindowUpdateType.MAX_HP))
 		{
 			packet.writeD(_member.getMaxHp());
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.CURRENT_MP))
+		if (containsMask(PartySmallWindowUpdateType.CURRENT_MP))
 		{
 			packet.writeD((int) _member.getCurrentMp());
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.MAX_MP))
+		if (containsMask(PartySmallWindowUpdateType.MAX_MP))
 		{
 			packet.writeD(_member.getMaxMp());
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.LEVEL))
+		if (containsMask(PartySmallWindowUpdateType.LEVEL))
 		{
 			packet.writeC(_member.getLevel());
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.CLASS_ID))
+		if (containsMask(PartySmallWindowUpdateType.CLASS_ID))
 		{
 			packet.writeH(_member.getClassId().getId());
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.PARTY_SUBSTITUTE))
+		if (containsMask(PartySmallWindowUpdateType.PARTY_SUBSTITUTE))
 		{
 			packet.writeC(0x00);
 		}
-		if (IClientOutgoingPacket.containsMask(_flags, PartySmallWindowUpdateType.VITALITY_POINTS))
+		if (containsMask(PartySmallWindowUpdateType.VITALITY_POINTS))
 		{
 			packet.writeD(_member.getVitalityPoints());
 		}
 		return true;
+	}
+	
+	@Override
+	protected void addMask(int mask)
+	{
+		_flags |= mask;
+	}
+	
+	@Override
+	public boolean containsMask(PartySmallWindowUpdateType component)
+	{
+		return containsMask(_flags, component);
+	}
+	
+	@Override
+	protected void onNewMaskAdded(PartySmallWindowUpdateType component)
+	{
+	}
+	
+	@Override
+	protected byte[] getMasks()
+	{
+		return new byte[0];
 	}
 }

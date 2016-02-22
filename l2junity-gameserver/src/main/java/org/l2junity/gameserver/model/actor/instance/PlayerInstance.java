@@ -4124,26 +4124,28 @@ public final class PlayerInstance extends Playable
 		final boolean needHpUpdate = needHpUpdate();
 		final boolean needMpUpdate = needMpUpdate();
 		
+		final Party party = getParty();
+		
 		// Check if a party is in progress and party window update is usefull
-		if (isInParty() && (needCpUpdate || needHpUpdate || needMpUpdate))
+		if ((party != null) && (needCpUpdate || needHpUpdate || needMpUpdate))
 		{
 			final PartySmallWindowUpdate partyWindow = new PartySmallWindowUpdate(this, false);
 			if (needCpUpdate)
 			{
-				partyWindow.addUpdateType(PartySmallWindowUpdateType.CURRENT_CP);
-				partyWindow.addUpdateType(PartySmallWindowUpdateType.MAX_CP);
+				partyWindow.addComponentType(PartySmallWindowUpdateType.CURRENT_CP);
+				partyWindow.addComponentType(PartySmallWindowUpdateType.MAX_CP);
 			}
 			if (needHpUpdate)
 			{
-				partyWindow.addUpdateType(PartySmallWindowUpdateType.CURRENT_HP);
-				partyWindow.addUpdateType(PartySmallWindowUpdateType.MAX_HP);
+				partyWindow.addComponentType(PartySmallWindowUpdateType.CURRENT_HP);
+				partyWindow.addComponentType(PartySmallWindowUpdateType.MAX_HP);
 			}
 			if (needMpUpdate)
 			{
-				partyWindow.addUpdateType(PartySmallWindowUpdateType.CURRENT_MP);
-				partyWindow.addUpdateType(PartySmallWindowUpdateType.MAX_MP);
+				partyWindow.addComponentType(PartySmallWindowUpdateType.CURRENT_MP);
+				partyWindow.addComponentType(PartySmallWindowUpdateType.MAX_MP);
 			}
-			getParty().broadcastToPartyMembers(this, partyWindow);
+			party.broadcastToPartyMembers(this, partyWindow);
 		}
 		
 		if (isInOlympiadMode() && isOlympiadStart() && (needCpUpdate || needHpUpdate))

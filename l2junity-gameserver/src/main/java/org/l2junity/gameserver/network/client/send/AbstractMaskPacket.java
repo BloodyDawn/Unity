@@ -49,10 +49,15 @@ public abstract class AbstractMaskPacket<T extends IUpdateTypeComponent> impleme
 		{
 			if (!containsMask(component))
 			{
-				getMasks()[component.getMask() >> 3] |= DEFAULT_FLAG_ARRAY[component.getMask() & 7];
+				addMask(component.getMask());
 				onNewMaskAdded(component);
 			}
 		}
+	}
+	
+	protected void addMask(int mask)
+	{
+		getMasks()[mask >> 3] |= DEFAULT_FLAG_ARRAY[mask & 7];
 	}
 	
 	public boolean containsMask(T component)

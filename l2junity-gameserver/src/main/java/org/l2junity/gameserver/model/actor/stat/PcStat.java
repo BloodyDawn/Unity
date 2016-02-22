@@ -24,6 +24,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
 import org.l2junity.gameserver.enums.UserInfoType;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -560,11 +561,12 @@ public class PcStat extends PlayableStat
 		final PlayerInstance player = getActiveChar();
 		player.sendPacket(new ExVitalityPointInfo(getVitalityPoints()));
 		player.broadcastUserInfo(UserInfoType.VITA_FAME);
-		if (player.isInParty())
+		final Party party = player.getParty();
+		if (party != null)
 		{
 			final PartySmallWindowUpdate partyWindow = new PartySmallWindowUpdate(player, false);
-			partyWindow.addUpdateType(PartySmallWindowUpdateType.VITALITY_POINTS);
-			player.getParty().broadcastToPartyMembers(player, partyWindow);
+			partyWindow.addComponentType(PartySmallWindowUpdateType.VITALITY_POINTS);
+			party.broadcastToPartyMembers(player, partyWindow);
 		}
 	}
 	
