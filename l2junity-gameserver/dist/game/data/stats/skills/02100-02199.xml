@@ -1870,11 +1870,11 @@
 		<coolTime>500</coolTime>
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player canResurrect="true" />
-		</cond>
 		<conditions>
 			<condition name="OpResurrection" />
+			<condition name="OpCompanion">
+				<type>PET</type>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Resurrection">

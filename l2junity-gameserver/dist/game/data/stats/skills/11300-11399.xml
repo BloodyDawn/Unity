@@ -118,9 +118,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond>
-			<player hasSummon="true" />
-		</cond>
+		<conditions>
+			<condition name="OpCompanion">
+				<type>MY_SUMMON</type>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>
