@@ -63,6 +63,7 @@ public enum AbnormalVisualEffect
 	CHANGE_HAIR_G(37), // Gold Afro
 	CHANGE_HAIR_P(38), // Pink Afro
 	CHANGE_HAIR_B(39), // Black Afro
+	UNKNOWN_40(40),
 	STIGMA_OF_SILEN(41),
 	SPEED_DOWN(42),
 	FROZEN_PILLAR(43),
