@@ -87,6 +87,7 @@ public final class AreaSkillNpc extends AbstractNpcAI
 		13265, // Virtual Image
 		13266, // Virtual Image
 		13267, // Virtual Image
+		13328, // Decoy
 	};
 	
 	private AreaSkillNpc()
