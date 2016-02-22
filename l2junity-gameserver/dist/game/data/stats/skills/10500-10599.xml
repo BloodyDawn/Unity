@@ -3330,9 +3330,14 @@
 		<coolTime>500</coolTime>
 		<effectPoint>673</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<!-- Elusive Mirage -->
@@ -3383,9 +3388,14 @@
 		<coolTime>500</coolTime>
 		<effectPoint>549</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="FatalBlowRate">
 				<amount>-1.1</amount>
@@ -3460,9 +3470,14 @@
 		<hitTime>2000</hitTime>
 		<effectPoint>669</effectPoint>
 		<reuseDelay>30000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<DAGGER />
+					<DUALDAGGER />
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CriticalDamagePosition">
 				<amount>-30</amount>
