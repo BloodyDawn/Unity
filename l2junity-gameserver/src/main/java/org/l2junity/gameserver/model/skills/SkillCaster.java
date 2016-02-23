@@ -612,6 +612,7 @@ public class SkillCaster implements Runnable
 		
 		// Cleanup values and allow this SkillCaster to be used again.
 		_target = null;
+		_targets = null;
 		_skill = null;
 		_item = null;
 		_ctrlPressed = false;
