@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="4700" levels="13" name="Gift of Queen">
+	<skill id="4700" toLevel="13" name="Gift of Queen">
 		<table name="#accCombat"> 2 2 3 3 3 3 3 3 3 3 3 3 3 </table>
 		<table name="#pAtk"> 1.06 1.08 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 </table>
 		<table name="#time"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
@@ -131,7 +131,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4701" levels="13" name="Cure of Queen">
+	<skill id="4701" toLevel="13" name="Cure of Queen">
 		<table name="#power"> 40 45 50 55 60 65 70 75 80 85 90 95 100 </table> <!-- Base Land Rate -->
 		<affectRange>1000</affectRange>
 		<effectPoint>
@@ -209,7 +209,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4702" levels="13" name="Blessing of Seraphim">
+	<skill id="4702" toLevel="13" name="Blessing of Seraphim">
 		<table name="#regMp"> 1.3 1.32 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
 		<table name="#time"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<abnormalLvl>
@@ -321,7 +321,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4703" levels="13" name="Gift of Seraphim">
+	<skill id="4703" toLevel="13" name="Gift of Seraphim">
 		<table name="#mReuse"> 0.7 0.68 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 0.65 </table>
 		<table name="#time"> 120 120 120 150 165 180 195 210 225 240 255 270 285 </table>
 		<abnormalLvl>
@@ -434,7 +434,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4704" levels="13" name="Cure of Seraphim">
+	<skill id="4704" toLevel="13" name="Cure of Seraphim">
 		<table name="#power"> 40 45 50 55 60 65 70 75 80 85 90 95 100 </table> <!-- Base Land Rate -->
 		<affectRange>1000</affectRange>
 		<effectPoint>
@@ -512,7 +512,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4705" levels="13" name="Curse of Shade">
+	<skill id="4705" toLevel="13" name="Curse of Shade">
 		<!-- Confirmed CT2.5 -->
 		<!-- Summon Nightshade Skill -->
 		<table name="#mpDef"> 0.94 0.92 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 </table>
@@ -666,7 +666,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4706" levels="13" name="Mass Curse of Shade">
+	<skill id="4706" toLevel="13" name="Mass Curse of Shade">
 		<!-- Confirmed CT2.5 -->
 		<!-- Summon Nightshade Skill -->
 		<table name="#mpDef"> 0.94 0.92 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 </table>
@@ -822,7 +822,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4707" levels="13" name="Shade Sacrifice">
+	<skill id="4707" toLevel="13" name="Shade Sacrifice">
 		<!-- Confirmed CT2.5 -->
 		<!-- Summon Nightshade Skill -->
 		<table name="#amount"> 541 611 659 666 669 673 676 679 681 684 687 689 692 </table>
@@ -902,7 +902,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4708" levels="17" name="Cursed Strike">
+	<skill id="4708" toLevel="17" name="Cursed Strike">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Guessed -->
 		<!-- Guessed -->
@@ -1008,7 +1008,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4709" levels="17" name="Cursed Blow">
+	<skill id="4709" toLevel="17" name="Cursed Blow">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Guessed -->
 		<!-- Guessed -->
@@ -1105,7 +1105,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4710" levels="12" name="Wild Stun">
+	<skill id="4710" toLevel="12" name="Wild Stun">
 		<table name="#power"> 16 35 73 138 238 375 537 619 697 766 821 864 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -1189,7 +1189,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4711" levels="12" name="Wild Defense">
+	<skill id="4711" toLevel="12" name="Wild Defense">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_BUFF</abnormalType>
@@ -1280,7 +1280,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4712" levels="12" name="Bright Burst">
+	<skill id="4712" toLevel="12" name="Bright Burst">
 		<table name="#power"> 6 9 13 17 23 28 34 36 39 41 42 43 </table>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -1355,7 +1355,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4713" levels="12" name="Bright Heal">
+	<skill id="4713" toLevel="12" name="Bright Heal">
 		<table name="#amount"> 33 61 98 145 198 251 298 316 330 338 341 342 </table>
 		<coolTime>1000</coolTime>
 		<effectPoint>
@@ -1429,28 +1429,28 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4714" levels="1" name="Twilight Dragon">
+	<skill id="4714" toLevel="1" name="Twilight Dragon">
 		<!-- This Skill Is Only For Description In The Client -->
 		<icon>icon.skill1373</icon>
 		<magicLvl>35</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4715" levels="1" name="Wind Dragon">
+	<skill id="4715" toLevel="1" name="Wind Dragon">
 		<!-- This Skill Is Only For Description In The Client -->
 		<icon>icon.skill1373</icon>
 		<magicLvl>35</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4716" levels="1" name="Star Dragon">
+	<skill id="4716" toLevel="1" name="Star Dragon">
 		<!-- This Skill Is Only For Description In The Client -->
 		<icon>icon.skill1373</icon>
 		<magicLvl>35</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4717" levels="12" name="Heal Trick">
+	<skill id="4717" toLevel="12" name="Heal Trick">
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">9</value>
@@ -1510,7 +1510,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4718" levels="12" name="Greater Heal Trick">
+	<skill id="4718" toLevel="12" name="Greater Heal Trick">
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">62</value>
@@ -1570,7 +1570,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4719" levels="12" name="Power Strike">
+	<skill id="4719" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 112 302 834 2177 5631 11008 17044 20119 23243 26363 29567 32796 </table>
 		<castRange>40</castRange>
@@ -1630,7 +1630,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4720" levels="12" name="Power Strike">
+	<skill id="4720" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 95 255 705 1840 4754 9291 14390 16978 19710 22699 25871 28860 </table>
 		<castRange>40</castRange>
@@ -1690,7 +1690,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4721" levels="12" name="Power Strike">
+	<skill id="4721" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 51 136 375 982 2536 4958 7667 9037 10483 12074 13778 15349 </table>
 		<castRange>40</castRange>
@@ -1750,7 +1750,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4722" levels="12" name="Power Strike">
+	<skill id="4722" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 48 128 352 922 2377 4651 7195 8489 9855 11363 12921 14430 </table>
 		<castRange>40</castRange>
@@ -1810,7 +1810,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4723" levels="12" name="Power Strike">
+	<skill id="4723" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 45 120 330 858 2218 4344 6724 7942 9228 10625 12093 13512 </table>
 		<castRange>40</castRange>
@@ -1870,7 +1870,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4724" levels="12" name="Stun">
+	<skill id="4724" toLevel="12" name="Stun">
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -1952,7 +1952,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4725" levels="12" name="Stun">
+	<skill id="4725" toLevel="12" name="Stun">
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -2034,7 +2034,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4726" levels="12" name="Stun">
+	<skill id="4726" toLevel="12" name="Stun">
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -2116,7 +2116,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4727" levels="12" name="Stun">
+	<skill id="4727" toLevel="12" name="Stun">
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -2198,7 +2198,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4728" levels="12" name="Stun">
+	<skill id="4728" toLevel="12" name="Stun">
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -2280,7 +2280,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4729" levels="12" name="Mortal Blow">
+	<skill id="4729" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 168 453 1251 3265 7446 16511 25566 30178 34864 39544 44350 49193 </table>
 		<castRange>40</castRange>
@@ -2341,7 +2341,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4730" levels="12" name="Mortal Blow">
+	<skill id="4730" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 142 382 1056 2760 7131 13935 21585 25467 29565 34048 38806 43290 </table>
 		<castRange>40</castRange>
@@ -2402,7 +2402,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4731" levels="12" name="Mortal Blow">
+	<skill id="4731" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 76 204 563 1473 3804 7437 11500 13555 15724 18112 20667 23023 </table>
 		<castRange>40</castRange>
@@ -2463,7 +2463,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4732" levels="12" name="Mortal Blow">
+	<skill id="4732" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 71 191 528 1382 3566 6977 10793 12734 14783 17044 19381 21645 </table>
 		<castRange>40</castRange>
@@ -2524,7 +2524,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4733" levels="12" name="Mortal Blow">
+	<skill id="4733" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 67 179 494 1287 3327 6516 10085 11913 13841 15937 18140 20268 </table>
 		<castRange>40</castRange>
@@ -2585,7 +2585,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4734" levels="12" name="Spinning Slasher">
+	<skill id="4734" toLevel="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
 		<affectRange>200</affectRange>
@@ -2645,7 +2645,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4735" levels="12" name="Spinning Slasher">
+	<skill id="4735" toLevel="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
 		<affectRange>200</affectRange>
@@ -2705,7 +2705,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4736" levels="12" name="Spinning Slasher">
+	<skill id="4736" toLevel="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
 		<affectRange>200</affectRange>
@@ -2765,7 +2765,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4737" levels="12" name="Spinning Slasher">
+	<skill id="4737" toLevel="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
 		<affectRange>200</affectRange>
@@ -2825,7 +2825,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4738" levels="12" name="Spinning Slasher">
+	<skill id="4738" toLevel="12" name="Spinning Slasher">
 		<!-- Boss Skill -->
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
 		<affectRange>200</affectRange>
@@ -2885,7 +2885,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4739" levels="12" name="Power Strike">
+	<skill id="4739" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 112 302 834 2177 5631 11008 17044 20119 23243 26363 29567 32796 </table>
 		<castRange>40</castRange>
@@ -2945,7 +2945,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4740" levels="12" name="Power Strike">
+	<skill id="4740" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 95 255 705 1840 4754 9291 14390 16978 19710 22699 25871 28860 </table>
 		<castRange>40</castRange>
@@ -3005,7 +3005,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4741" levels="12" name="Power Strike">
+	<skill id="4741" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 51 136 375 982 2536 4958 7667 9037 10483 12074 13778 15349 </table>
 		<castRange>40</castRange>
@@ -3065,7 +3065,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4742" levels="12" name="Power Strike">
+	<skill id="4742" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 48 128 352 922 2377 4651 7195 8489 9855 11363 12921 14430 </table>
 		<castRange>40</castRange>
@@ -3125,7 +3125,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4743" levels="12" name="Power Strike">
+	<skill id="4743" toLevel="12" name="Power Strike">
 		<!-- Boss Skill -->
 		<table name="#power"> 45 120 330 858 2218 4344 6724 7942 9228 10625 12093 13512 </table>
 		<castRange>40</castRange>
@@ -3185,7 +3185,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4744" levels="12" name="Stun">
+	<skill id="4744" toLevel="12" name="Stun">
 		<table name="#power"> 56 151 417 1089 2816 5504 8522 10060 11622 13182 14784 16398 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -3267,7 +3267,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4745" levels="12" name="Stun">
+	<skill id="4745" toLevel="12" name="Stun">
 		<table name="#power"> 48 128 352 920 2377 4645 7195 8490 9855 11350 12936 14430 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -3349,7 +3349,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4746" levels="12" name="Stun">
+	<skill id="4746" toLevel="12" name="Stun">
 		<table name="#power"> 26 68 188 491 1268 2479 3834 4519 5242 6037 6889 7675 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -3431,7 +3431,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4747" levels="12" name="Stun">
+	<skill id="4747" toLevel="12" name="Stun">
 		<table name="#power"> 24 64 176 461 1189 2326 3598 4245 4928 5682 6461 7215 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -3513,7 +3513,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4748" levels="12" name="Stun">
+	<skill id="4748" toLevel="12" name="Stun">
 		<table name="#power"> 23 60 165 429 1109 2172 3362 3971 4614 5313 6047 6756 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -3595,7 +3595,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4749" levels="12" name="Mortal Blow">
+	<skill id="4749" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 280 755 2084 5441 14076 27518 42610 50296 58107 65907 73917 81989 </table>
 		<castRange>40</castRange>
@@ -3656,7 +3656,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4750" levels="12" name="Mortal Blow">
+	<skill id="4750" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 236 637 1761 4600 11884 23226 35974 42445 49275 56746 64677 72150 </table>
 		<castRange>40</castRange>
@@ -3717,7 +3717,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4751" levels="12" name="Mortal Blow">
+	<skill id="4751" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 126 339 937 2455 6339 12395 19166 22591 26206 30185 34445 38371 </table>
 		<castRange>40</castRange>
@@ -3778,7 +3778,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4752" levels="12" name="Mortal Blow">
+	<skill id="4752" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 118 319 879 2303 5942 11627 17987 21223 24638 28406 32302 36075 </table>
 		<castRange>40</castRange>
@@ -3839,7 +3839,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4753" levels="12" name="Mortal Blow">
+	<skill id="4753" toLevel="12" name="Mortal Blow">
 		<!-- Boss Skill -->
 		<table name="#power"> 111 298 824 2145 5545 10860 16808 19855 23069 26561 30232 33780 </table>
 		<castRange>40</castRange>
@@ -3900,7 +3900,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4754" levels="12" name="Power Shot">
+	<skill id="4754" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 327 882 2435 6357 16445 32150 49783 58763 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -3959,7 +3959,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4755" levels="12" name="Power Shot">
+	<skill id="4755" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 275 744 2057 5374 13885 27135 42030 49590 57569 66298 75565 84295 </table>
 		<castRange>900</castRange>
@@ -4018,7 +4018,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4756" levels="12" name="Power Shot">
+	<skill id="4756" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 147 396 1095 2868 7407 14481 22392 26393 30618 35267 40244 44830 </table>
 		<castRange>900</castRange>
@@ -4077,7 +4077,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4757" levels="12" name="Power Shot">
+	<skill id="4757" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 138 372 1027 2691 6943 13584 21015 24795 28785 33188 37739 42148 </table>
 		<castRange>900</castRange>
@@ -4136,7 +4136,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4758" levels="12" name="Power Shot">
+	<skill id="4758" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 129 348 962 2506 6479 12688 19638 23198 26952 31032 35321 39466 </table>
 		<castRange>900</castRange>
@@ -4195,7 +4195,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4759" levels="12" name="Stun">
+	<skill id="4759" toLevel="12" name="Stun">
 		<table name="#power"> 164 441 1218 3179 8223 16075 24892 29382 33944 38501 43180 47895 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -4276,7 +4276,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4760" levels="12" name="Stun">
+	<skill id="4760" toLevel="12" name="Stun">
 		<table name="#power"> 138 372 1029 2687 6943 13568 21015 24795 28785 33149 37783 42148 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -4357,7 +4357,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4761" levels="12" name="Stun">
+	<skill id="4761" toLevel="12" name="Stun">
 		<table name="#power"> 74 198 548 1434 3704 7241 11196 13197 15309 17634 20122 22415 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -4438,7 +4438,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4762" levels="12" name="Stun">
+	<skill id="4762" toLevel="12" name="Stun">
 		<table name="#power"> 69 186 514 1346 3472 6792 10508 12398 14393 16594 18870 21074 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -4519,7 +4519,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4763" levels="12" name="Stun">
+	<skill id="4763" toLevel="12" name="Stun">
 		<table name="#power"> 65 174 481 1253 3240 6344 9819 11599 13476 15516 17661 19733 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -4600,7 +4600,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4764" levels="12" name="Power Shot">
+	<skill id="4764" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 327 882 2435 6357 16445 32150 49783 58763 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -4659,7 +4659,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4765" levels="12" name="Power Shot">
+	<skill id="4765" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 275 744 2057 5374 13885 27135 42030 49590 57569 66298 75565 84295 </table>
 		<castRange>900</castRange>
@@ -4718,7 +4718,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4766" levels="12" name="Power Shot">
+	<skill id="4766" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 147 396 1095 2868 7407 14481 22392 26393 30618 35267 40244 44830 </table>
 		<castRange>900</castRange>
@@ -4777,7 +4777,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4767" levels="12" name="Power Shot">
+	<skill id="4767" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 138 372 1027 2691 6943 13584 21015 24795 28785 33188 37739 42148 </table>
 		<castRange>900</castRange>
@@ -4836,7 +4836,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4768" levels="12" name="Power Shot">
+	<skill id="4768" toLevel="12" name="Power Shot">
 		<!-- Boss Skill -->
 		<table name="#power"> 129 348 962 2506 6479 12688 19638 23198 26952 31032 35321 39466 </table>
 		<castRange>900</castRange>
@@ -4895,7 +4895,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4769" levels="12" name="Stun">
+	<skill id="4769" toLevel="12" name="Stun">
 		<table name="#power"> 164 441 1218 3179 8223 16075 24892 29382 33944 38501 43180 47895 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -4976,7 +4976,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4770" levels="12" name="Stun">
+	<skill id="4770" toLevel="12" name="Stun">
 		<table name="#power"> 138 372 1029 2687 6943 13568 21015 24795 28785 33149 37783 42148 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -5057,7 +5057,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4771" levels="12" name="Stun">
+	<skill id="4771" toLevel="12" name="Stun">
 		<table name="#power"> 74 198 548 1434 3704 7241 11196 13197 15309 17634 20122 22415 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -5138,7 +5138,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4772" levels="12" name="Stun">
+	<skill id="4772" toLevel="12" name="Stun">
 		<table name="#power"> 69 186 514 1346 3472 6792 10508 12398 14393 16594 18870 21074 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -5219,7 +5219,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4773" levels="12" name="Stun">
+	<skill id="4773" toLevel="12" name="Stun">
 		<table name="#power"> 65 174 481 1253 3240 6344 9819 11599 13476 15516 17661 19733 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>
@@ -5300,7 +5300,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4774" levels="12" name="Spear Attack">
+	<skill id="4774" toLevel="12" name="Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -5359,7 +5359,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4775" levels="12" name="Spear Attack">
+	<skill id="4775" toLevel="12" name="Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -5418,7 +5418,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4776" levels="12" name="Spear Attack">
+	<skill id="4776" toLevel="12" name="Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -5477,7 +5477,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4777" levels="12" name="Spear Attack">
+	<skill id="4777" toLevel="12" name="Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -5536,7 +5536,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4778" levels="12" name="Spear Attack">
+	<skill id="4778" toLevel="12" name="Spear Attack">
 		<!-- Boss Skill -->
 		<table name="#power"> 352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790 </table>
 		<castRange>900</castRange>
@@ -5595,7 +5595,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4779" levels="12" name="Heal">
+	<skill id="4779" toLevel="12" name="Heal">
 		<!-- Boss Skill -->
 		<table name="#amount"> 1640 2824 4501 6612 9334 11649 12865 13406 13624 13544 13303 13157 </table>
 		<castRange>700</castRange>
@@ -5655,7 +5655,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4780" levels="12" name="Heal">
+	<skill id="4780" toLevel="12" name="Heal">
 		<!-- Boss Skill -->
 		<table name="#amount"> 1382 2381 3802 5590 7881 9832 10862 11314 11553 11661 11640 11578 </table>
 		<castRange>700</castRange>
@@ -5715,7 +5715,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4781" levels="12" name="Heal">
+	<skill id="4781" toLevel="12" name="Heal">
 		<!-- Boss Skill -->
 		<table name="#amount"> 736 1267 2024 2983 4204 5247 5787 6022 6144 6203 6199 6158 </table>
 		<castRange>700</castRange>
@@ -5775,7 +5775,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4782" levels="12" name="Heal">
+	<skill id="4782" toLevel="12" name="Heal">
 		<!-- Boss Skill -->
 		<table name="#amount"> 691 1191 1899 2799 3941 4922 5431 5657 5777 5838 5813 5789 </table>
 		<castRange>700</castRange>
@@ -5835,7 +5835,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4783" levels="12" name="Heal">
+	<skill id="4783" toLevel="12" name="Heal">
 		<!-- Boss Skill -->
 		<table name="#amount"> 647 1115 1778 2607 3677 4597 5075 5293 5409 5458 5441 5421 </table>
 		<castRange>700</castRange>
@@ -5895,7 +5895,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4784" levels="12" name="Chant of Life">
+	<skill id="4784" toLevel="12" name="Chant of Life">
 		<!-- Boss Skill -->
 		<table name="#hot"> 167 210 315 507 784 1026 1195 1283 1358 1427 951 940 </table>
 		<abnormalLvl>
@@ -5975,7 +5975,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4785" levels="12" name="Chant of Life">
+	<skill id="4785" toLevel="12" name="Chant of Life">
 		<!-- Boss Skill -->
 		<table name="#hot"> 141 177 266 428 662 866 1009 1083 1152 1229 832 827 </table>
 		<abnormalLvl>
@@ -6055,7 +6055,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4786" levels="12" name="Chant of Life">
+	<skill id="4786" toLevel="12" name="Chant of Life">
 		<!-- Boss Skill -->
 		<table name="#hot"> 75 94 142 229 353 463 538 576 613 654 443 440 </table>
 		<abnormalLvl>
@@ -6135,7 +6135,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4787" levels="12" name="Chant of Life">
+	<skill id="4787" toLevel="12" name="Chant of Life">
 		<!-- Boss Skill -->
 		<table name="#hot"> 71 89 133 215 331 434 505 542 576 615 416 414 </table>
 		<abnormalLvl>
@@ -6215,7 +6215,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4788" levels="12" name="Chant of Life">
+	<skill id="4788" toLevel="12" name="Chant of Life">
 		<!-- Boss Skill -->
 		<table name="#hot"> 66 83 125 200 309 405 472 507 539 576 389 388 </table>
 		<abnormalLvl>
@@ -6295,7 +6295,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4789" levels="10" name="High Lv.">
+	<skill id="4789" toLevel="10" name="High Lv.">
 		<table name="#mDef"> 1.03 1.06 1.09 1.12 1.15 1.18 1.21 1.24 1.27 1.3 </table>
 		<table name="#rEvas"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<magicLvl>1</magicLvl>
@@ -6334,70 +6334,70 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4790" levels="1" name="Raid Boss (Lv. 23)">
+	<skill id="4790" toLevel="1" name="Raid Boss (Lv. 23)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4791" levels="1" name="Raid Boss (Lv. 30)">
+	<skill id="4791" toLevel="1" name="Raid Boss (Lv. 30)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4792" levels="1" name="Raid Boss (Lv. 42)">
+	<skill id="4792" toLevel="1" name="Raid Boss (Lv. 42)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4793" levels="1" name="Raid Boss (Lv. 55)">
+	<skill id="4793" toLevel="1" name="Raid Boss (Lv. 55)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4794" levels="1" name="Raid Boss (Lv. 50)">
+	<skill id="4794" toLevel="1" name="Raid Boss (Lv. 50)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4795" levels="1" name="Raid Boss (Lv. 60)">
+	<skill id="4795" toLevel="1" name="Raid Boss (Lv. 60)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4796" levels="1" name="Raid Boss (Lv. 25)">
+	<skill id="4796" toLevel="1" name="Raid Boss (Lv. 25)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4797" levels="1" name="Raid Boss (Lv. 34)">
+	<skill id="4797" toLevel="1" name="Raid Boss (Lv. 34)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4798" levels="1" name="Raid Boss (Lv. 34)">
+	<skill id="4798" toLevel="1" name="Raid Boss (Lv. 34)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4799" levels="1" name="Raid Boss (Lv. 49)">
+	<skill id="4799" toLevel="1" name="Raid Boss (Lv. 49)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>

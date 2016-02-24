@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="23600" levels="1" name="P. Atk. Boost">
+	<skill id="23600" toLevel="1" name="P. Atk. Boost">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. + 50%. -->
 		<icon>icon.skill1068</icon>
@@ -10,7 +10,7 @@
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23601" levels="1" name="P. Atk. Decrease">
+	<skill id="23601" toLevel="1" name="P. Atk. Decrease">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. - 50%. -->
 		<icon>icon.skill0115</icon>
@@ -21,7 +21,7 @@
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23602" levels="1" name="P. Def. Boost">
+	<skill id="23602" toLevel="1" name="P. Def. Boost">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 sec., P. Def. and M. Def. x 2. -->
 		<icon>icon.skill1040</icon>
@@ -31,7 +31,7 @@
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23603" levels="1" name="Stun Attack">
+	<skill id="23603" toLevel="1" name="Stun Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Stun for 5 seconds. -->
 		<icon>icon.skill0100</icon>
@@ -42,7 +42,7 @@
 		<effectPoint>-10000</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23604" levels="1" name="Heal">
+	<skill id="23604" toLevel="1" name="Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers HP by 2%. -->
 		<icon>icon.skill1401</icon>
@@ -53,7 +53,7 @@
 		<effectPoint>403</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23605" levels="1" name="Katura's Blood Seal">
+	<skill id="23605" toLevel="1" name="Katura's Blood Seal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Engages the target in 1:1 combat. Ignores all normal attacks, skills, and debuffs, except those of the opponent. -->
 		<icon>icon.skll10319</icon>
@@ -64,7 +64,7 @@
 		<effectPoint>-500</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23606" levels="1" name="Flame Launch">
+	<skill id="23606" toLevel="1" name="Flame Launch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lights target and nearby enemies on fire, causing magic damage, and inflicts a damage of 1500 HP per second for 10sec. -->
 		<icon>icon.skill4279_new</icon>
@@ -77,7 +77,7 @@
 		<effectPoint>-1000</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23607" levels="1" name="Heal">
+	<skill id="23607" toLevel="1" name="Heal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores 5% HP. -->
 		<icon>icon.skill1401</icon>
@@ -88,7 +88,7 @@
 		<effectPoint>403</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23608" levels="1" name="Dimensional Guard's Blessing">
+	<skill id="23608" toLevel="1" name="Dimensional Guard's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores you from death to full health. Buffs/debuffs remain after death, except for Noblesse Blessing and Lucky Charm. Infernal/Lunatic Kamaloka only. -->
 		<icon>icon.skill5873</icon>
@@ -98,7 +98,7 @@
 		<effectPoint>687</effectPoint>
 		<hitTime>1000</hitTime>
 	</skill>
-	<skill id="23609" levels="1" name="Slow Insanity">
+	<skill id="23609" toLevel="1" name="Slow Insanity">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls enemies around you to slow them down. -->
 		<icon>icon.skill10016</icon>
@@ -110,7 +110,7 @@
 		<effectPoint>-1000</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23610" levels="1" name="Bloody Sacrifice">
+	<skill id="23610" toLevel="1" name="Bloody Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sacrificed to your Bloody Katura. -->
 		<icon>icon.skill0127</icon>
@@ -121,21 +121,21 @@
 		<effectPoint>-2</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23611" levels="1" name="Hardy Armor">
+	<skill id="23611" toLevel="1" name="Hardy Armor">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. is maximized. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
 		<effectPoint>500</effectPoint>
 	</skill>
-	<skill id="23612" levels="1" name="Elusive Robes">
+	<skill id="23612" toLevel="1" name="Elusive Robes">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Def. is maximized. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
 		<effectPoint>500</effectPoint>
 	</skill>
-	<skill id="23613" levels="3" name="Crackling Timber">
+	<skill id="23613" toLevel="3" name="Crackling Timber">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Crackling fire burns the enemy for 10sec. If stacked to Lv. 2 or above, an explosion adds more damage after the duration is up. -->
 		<icon>icon.skill1101</icon>
@@ -149,7 +149,7 @@
 		<abnormalTime>10</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23614" levels="1" name="Timber Burst">
+	<skill id="23614" toLevel="1" name="Timber Burst">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Lights the target and nearby enemies on fire for continuous HP damage for 10sec. -->
 		<icon>icon.skill4279_new</icon>
@@ -159,14 +159,14 @@
 		<effectPoint>100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23615" levels="1" name="Ready Burst">
+	<skill id="23615" toLevel="1" name="Ready Burst">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1401</icon>
 		<operateType>A1</operateType>
 		<effectPoint>403</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23616" levels="3" name="Frost Shard">
+	<skill id="23616" toLevel="3" name="Frost Shard">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Freezes the air and slows the enemy's Speed by 50. If stacked to Lv. 2 or above, a burst of coldness adds more damage after the duration is up. -->
 		<icon>icon.skill1184</icon>
@@ -179,7 +179,7 @@
 		<effectPoint>-106</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23617" levels="1" name="Frost Burst">
+	<skill id="23617" toLevel="1" name="Frost Burst">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Frozen solid for 7sec., rendering all action impossible. -->
 		<icon>icon.skill6274</icon>
@@ -187,7 +187,7 @@
 		<effectPoint>100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23619" levels="3" name="Silence Bomb">
+	<skill id="23619" toLevel="3" name="Silence Bomb">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Katura's darkness seeps in to inflict Silence and magic damage for 7sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up. -->
 		<icon>icon.skill1064</icon>
@@ -204,7 +204,7 @@
 		</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23620" levels="1" name="Soul Burn">
+	<skill id="23620" toLevel="1" name="Soul Burn">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- An explosion inflicts Mana Burn on multiple targets. -->
 		<icon>icon.skill1398</icon>
@@ -213,14 +213,14 @@
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23621" levels="1" name="Ready Burst">
+	<skill id="23621" toLevel="1" name="Ready Burst">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1401</icon>
 		<operateType>A1</operateType>
 		<effectPoint>403</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23622" levels="3" name="Quaking Earth">
+	<skill id="23622" toLevel="3" name="Quaking Earth">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The wrath of the earth inflicts Stun for 5sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up. -->
 		<icon>icon.skill0100</icon>
@@ -236,7 +236,7 @@
 		</abnormalTime>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23623" levels="1" name="Sweeping Quake">
+	<skill id="23623" toLevel="1" name="Sweeping Quake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knocked Back with nearby targets due to an earthquake. -->
 		<icon>icon.skill0036</icon>
@@ -244,14 +244,14 @@
 		<effectPoint>100</effectPoint>
 		<mpConsume>10</mpConsume>
 	</skill>
-	<skill id="23624" levels="1" name="Ready Burst">
+	<skill id="23624" toLevel="1" name="Ready Burst">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill1401</icon>
 		<operateType>A1</operateType>
 		<effectPoint>403</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23625" levels="1" name="Fire Altar's Blessing">
+	<skill id="23625" toLevel="1" name="Fire Altar's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5min., entire party's M. Atk. + 50%. -->
 		<icon>icon.skill0337</icon>
@@ -260,7 +260,7 @@
 		<effectPoint>500</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23626" levels="1" name="Water Altar's Blessing">
+	<skill id="23626" toLevel="1" name="Water Altar's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5min., entire party's M. Skill MP Consumption - 30%. -->
 		<icon>icon.skill1397</icon>
@@ -268,7 +268,7 @@
 		<effectPoint>500</effectPoint>
 		<castRange>2500</castRange>
 	</skill>
-	<skill id="23627" levels="1" name="Dark Altar's Blessing">
+	<skill id="23627" toLevel="1" name="Dark Altar's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5min., entire party's P. Atk. and Atk. Spd. + 25%. -->
 		<icon>icon.skill1068</icon>
@@ -277,7 +277,7 @@
 		<effectPoint>500</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23628" levels="1" name="Earth Altar's Blessing">
+	<skill id="23628" toLevel="1" name="Earth Altar's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5min., entire party's HP + 50%. -->
 		<icon>icon.skill1045</icon>
@@ -286,7 +286,7 @@
 		<effectPoint>500</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23629" levels="1" name="Protected Altar">
+	<skill id="23629" toLevel="1" name="Protected Altar">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Invincible against normal hits, buffs, and debuffs. HP fully restored. -->
 		<icon>icon.skill1427</icon>
@@ -294,7 +294,7 @@
 		<effectPoint>100</effectPoint>
 		<reuseDelay>6000</reuseDelay>
 	</skill>
-	<skill id="23630" levels="1" name="Swirling Poison">
+	<skill id="23630" toLevel="1" name="Swirling Poison">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10sec., a powerful poison cloud inflicts Poison and inflicts damage of 3000 HP per second to nearby enemies and slows them. -->
 		<icon>icon.skill1167</icon>
@@ -303,7 +303,7 @@
 		<effectPoint>-1</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23631" levels="1" name="Agathion's Blessing: Dash">
+	<skill id="23631" toLevel="1" name="Agathion's Blessing: Dash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10sec., a dragon's power boosts Speed by 100%. Cooldown is 10min. -->
 		<icon>icon.skill_transform_buff</icon>
@@ -312,7 +312,7 @@
 		<effectPoint>689</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23632" levels="1" name="Agathion's Blessing: Meditation">
+	<skill id="23632" toLevel="1" name="Agathion's Blessing: Meditation">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30sec., P. Def. - 90% and restores MP by 134 per second. Effect removed when hit. Cooldown is 30min. -->
 		<icon>icon.skill1430</icon>
@@ -322,13 +322,13 @@
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23633" levels="1" name="Agathion's Blessing: Featherweight">
+	<skill id="23633" toLevel="1" name="Agathion's Blessing: Featherweight">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Weight Limit + 9000, and Inventory Slots + 9. -->
 		<icon>icon.skill0332</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="23634" levels="1" name="Dimensional Weakening">
+	<skill id="23634" toLevel="1" name="Dimensional Weakening">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- for 7sec., P. Def. and M. Def. - 50%. -->
 		<icon>icon.skill1170</icon>
@@ -336,14 +336,14 @@
 		<effectPoint>1</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23635" levels="1" name="Dimensional Backpedal">
+	<skill id="23635" toLevel="1" name="Dimensional Backpedal">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- After failing to retreat, Kamaloka's boss will remain alive for at least 18sec., with HP that doesn't drop past 1. -->
 		<icon>icon.skill23635</icon>
 		<operateType>A2</operateType>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23636" levels="1" name="Stun Crush">
+	<skill id="23636" toLevel="1" name="Stun Crush">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby enemies and stuns them for 5 seconds. -->
 		<icon>icon.skill10554</icon>
@@ -356,7 +356,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23637" levels="1" name="Dark Provoke">
+	<skill id="23637" toLevel="1" name="Dark Provoke">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes selected target and makes them re-target to you, and reduces their P. Atk. and Atk. Spd by 35% for 15 seconds. -->
 		<icon>icon.skill11868</icon>
@@ -369,7 +369,7 @@
 		<effectPoint>-1</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23638" levels="1" name="Bloody Strike">
+	<skill id="23638" toLevel="1" name="Bloody Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to a single target and makes them bleed for 10 seconds. -->
 		<icon>icon.skill1539</icon>
@@ -382,7 +382,7 @@
 		<effectPoint>-111</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23639" levels="1" name="Rush Assault">
+	<skill id="23639" toLevel="1" name="Rush Assault">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rush towards a single target and knocks them back. -->
 		<icon>icon.skill0230</icon>
@@ -394,7 +394,7 @@
 		<effectPoint>-1</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23640" levels="1" name="Thirst of Blood">
+	<skill id="23640" toLevel="1" name="Thirst of Blood">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on enemy. Recovers 40% of Damage as HP. -->
 		<icon>icon.skill1507</icon>
@@ -406,7 +406,7 @@
 		<effectPoint>-360</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23641" levels="1" name="Embryo Haste">
+	<skill id="23641" toLevel="1" name="Embryo Haste">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. And Atk. Spd. by 50% for 10 seconds. -->
 		<icon>icon.skill10102</icon>
@@ -416,7 +416,7 @@
 		<effectPoint>418</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23642" levels="1" name="Crack of Air">
+	<skill id="23642" toLevel="1" name="Crack of Air">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pull those within range of the target and reduces Speed and Atk. Spd. by 50% for 10 seconds. -->
 		<icon>icon.skill4454</icon>
@@ -429,7 +429,7 @@
 		<effectPoint>-2093</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23643" levels="1" name="Vampiric Force">
+	<skill id="23643" toLevel="1" name="Vampiric Force">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts HP Drain to those within range of the target and inflicts Vampiric Rage for 10 seconds. -->
 		<icon>icon.skill1507</icon>
@@ -442,7 +442,7 @@
 		<effectPoint>-679</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23644" levels="1" name="Road of Embryo">
+	<skill id="23644" toLevel="1" name="Road of Embryo">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., recover 80% of P. Damage inflicted to enemy as HP at a set rate. -->
 		<icon>icon.skill1507</icon>
@@ -454,7 +454,7 @@
 		<effectPoint>679</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23645" levels="1" name="Curse of Silence">
+	<skill id="23645" toLevel="1" name="Curse of Silence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks surrounding enemies with 550 Power added to M. Atk. and blocks P./M. Skills for 10 seconds. -->
 		<icon>icon.skill6320</icon>
@@ -467,7 +467,7 @@
 		<effectPoint>-200</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23646" levels="1" name="Blessing of Darkness">
+	<skill id="23646" toLevel="1" name="Blessing of Darkness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers 30% of total HP. -->
 		<icon>icon.skill1430</icon>
@@ -477,7 +477,7 @@
 		<effectPoint>200</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23647" levels="1" name="Absolute Black">
+	<skill id="23647" toLevel="1" name="Absolute Black">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby enemies and stuns them for 5 seconds. -->
 		<icon>icon.skill1399</icon>
@@ -491,7 +491,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23648" levels="1" name="Blessing of Atelia">
+	<skill id="23648" toLevel="1" name="Blessing of Atelia">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Recovers 50% of HP of ally NPCs within the range of the target. -->
 		<icon>icon.skill1505</icon>
@@ -502,7 +502,7 @@
 		<effectPoint>200</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23649" levels="1" name="Curse of Blaze">
+	<skill id="23649" toLevel="1" name="Curse of Blaze">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to a single target and makes them burn for 10 seconds. -->
 		<icon>icon.skill1451</icon>
@@ -515,7 +515,7 @@
 		<effectPoint>-200</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23650" levels="1" name="Meteor Hurricane">
+	<skill id="23650" toLevel="1" name="Meteor Hurricane">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to those within the range of the target. -->
 		<icon>icon.skill1339</icon>
@@ -528,7 +528,7 @@
 		<effectPoint>-200</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23651" levels="1" name="Absolute Crimson">
+	<skill id="23651" toLevel="1" name="Absolute Crimson">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage with HP Drain to enemies within range. -->
 		<icon>icon.skill1519</icon>
@@ -540,7 +540,7 @@
 		<effectPoint>-200</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23652" levels="1" name="Rage of Embryo">
+	<skill id="23652" toLevel="1" name="Rage of Embryo">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to a single target and paralyzes them for 5 seconds. -->
 		<icon>icon.skill0116</icon>
@@ -554,7 +554,7 @@
 		<effectPoint>-828</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23653" levels="4" name="Poisonous Atelia">
+	<skill id="23653" toLevel="4" name="Poisonous Atelia">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases target's P./M. Atk. by 20%, and decreases M. Def. by 20%. The effects increase by 5% each time the skill level increases by 1, and the duration increases by 30 seconds. -->
 		<icon>Icon.etc_dark_astatine</icon>
@@ -568,7 +568,7 @@
 		<abnormalTime>15</abnormalTime>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23654" levels="1" name="Earth Breaker">
+	<skill id="23654" toLevel="1" name="Earth Breaker">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to a single target and knocks back by 100 grids. -->
 		<icon>icon.skill0107</icon>
@@ -581,7 +581,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23655" levels="1" name="Gravity Slam">
+	<skill id="23655" toLevel="1" name="Gravity Slam">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to enemies within range and stuns them for 5 seconds. -->
 		<icon>icon.skill1558</icon>
@@ -594,7 +594,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23656" levels="1" name="Oath of Keeper">
+	<skill id="23656" toLevel="1" name="Oath of Keeper">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You won't die for 30 seconds. -->
 		<icon>icon.skill1492</icon>
@@ -604,7 +604,7 @@
 		<effectPoint>1</effectPoint>
 		<reuseDelay>300000</reuseDelay>
 	</skill>
-	<skill id="23657" levels="1" name="Wind Aura Spike">
+	<skill id="23657" toLevel="1" name="Wind Aura Spike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -616,7 +616,7 @@
 		<effectPoint>-115</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23658" levels="1" name="Earth Aura Spike">
+	<skill id="23658" toLevel="1" name="Earth Aura Spike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -628,7 +628,7 @@
 		<effectPoint>-115</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23659" levels="1" name="Wind Fatal Strike">
+	<skill id="23659" toLevel="1" name="Wind Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -638,7 +638,7 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>800</reuseDelay>
 	</skill>
-	<skill id="23660" levels="1" name="Holy  Fatal Strike">
+	<skill id="23660" toLevel="1" name="Holy  Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -648,7 +648,7 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>800</reuseDelay>
 	</skill>
-	<skill id="23661" levels="1" name="Earth  Fatal Strike">
+	<skill id="23661" toLevel="1" name="Earth  Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -658,7 +658,7 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>800</reuseDelay>
 	</skill>
-	<skill id="23662" levels="1" name="Dark  Fatal Strike">
+	<skill id="23662" toLevel="1" name="Dark  Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -668,7 +668,7 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>800</reuseDelay>
 	</skill>
-	<skill id="23663" levels="1" name="Wind Blast">
+	<skill id="23663" toLevel="1" name="Wind Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -680,7 +680,7 @@
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23664" levels="1" name="Holy Blast">
+	<skill id="23664" toLevel="1" name="Holy Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -692,7 +692,7 @@
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23665" levels="1" name="Earth Blast">
+	<skill id="23665" toLevel="1" name="Earth Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -704,7 +704,7 @@
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23666" levels="1" name="Darkness Blast">
+	<skill id="23666" toLevel="1" name="Darkness Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -716,7 +716,7 @@
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23667" levels="1" name="Mass Air Binding">
+	<skill id="23667" toLevel="1" name="Mass Air Binding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Thrusts nearby enemies into the air and immobilizes them for 10 seconds. -->
 		<icon>icon.skill11276</icon>
@@ -730,7 +730,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23668" levels="1" name="Mass Power Slam">
+	<skill id="23668" toLevel="1" name="Mass Power Slam">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals a powerful blow and knocks back the enemy. -->
 		<icon>icon.skill10262</icon>
@@ -743,7 +743,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23669" levels="1" name="Wind Defense Down">
+	<skill id="23669" toLevel="1" name="Wind Defense Down">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases Wind Resistance. -->
 		<icon>icon.skill4281_new</icon>
@@ -753,7 +753,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23670" levels="1" name="Holy Defense Down">
+	<skill id="23670" toLevel="1" name="Holy Defense Down">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases Holly Resistance. -->
 		<icon>icon.skill4275_new</icon>
@@ -763,7 +763,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23671" levels="1" name="Earth Defense Down">
+	<skill id="23671" toLevel="1" name="Earth Defense Down">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases Earth Resistance. -->
 		<icon>icon.skill4282_new</icon>
@@ -773,7 +773,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23672" levels="1" name="Dark Defense Down">
+	<skill id="23672" toLevel="1" name="Dark Defense Down">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases Dark Resistance. -->
 		<icon>icon.skill4336_new</icon>
@@ -783,7 +783,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23673" levels="1" name="Isabella Mass Fear">
+	<skill id="23673" toLevel="1" name="Isabella Mass Fear">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicted with Isabella Mass Fear and moves against own will momentarily. -->
 		<icon>icon.skill1092</icon>
@@ -796,7 +796,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23674" levels="1" name="Isabella Bleeding Range">
+	<skill id="23674" toLevel="1" name="Isabella Bleeding Range">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicted with Isabella Bleeding Range and receives damage with bleeding. -->
 		<icon>icon.skill0096</icon>
@@ -809,7 +809,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23675" levels="1" name="Isabella Mass Fear">
+	<skill id="23675" toLevel="1" name="Isabella Mass Fear">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicted with Isabella Mass Fear and moves against own will momentarily. -->
 		<icon>icon.skill1092</icon>
@@ -819,7 +819,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23676" levels="1" name="Isabella Bleeding Range">
+	<skill id="23676" toLevel="1" name="Isabella Bleeding Range">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicted with Isabella Bleeding Range and receives damage with bleeding. -->
 		<icon>icon.skill0096</icon>
@@ -829,7 +829,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23677" levels="1" name="Spirit's Evil Thoughts">
+	<skill id="23677" toLevel="1" name="Spirit's Evil Thoughts">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Presentation AI. Summon NPC. -->
 		<icon>icon.skill15283</icon>
@@ -837,7 +837,7 @@
 		<mpConsume>10</mpConsume>
 		<hitTime>2000</hitTime>
 	</skill>
-	<skill id="23678" levels="1" name="Summon Friends">
+	<skill id="23678" toLevel="1" name="Summon Friends">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Harpe petrifies itself for defense, and recovers HP. -->
 		<icon>icon.skill11539</icon>
@@ -846,7 +846,7 @@
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23679" levels="1" name="Harpe Recovery">
+	<skill id="23679" toLevel="1" name="Harpe Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -854,7 +854,7 @@
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23680" levels="1" name="Kelbim's Blessing">
+	<skill id="23680" toLevel="1" name="Kelbim's Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Def. and M. Def. by 50% for 1 minute and reflects damage. 35% of damage received is reflected. -->
 		<icon>icon.skill1383</icon>
@@ -864,7 +864,7 @@
 		<effectPoint>100</effectPoint>
 		<reuseDelay>60000</reuseDelay>
 	</skill>
-	<skill id="23681" levels="1" name="Harpe Stone Cancel">
+	<skill id="23681" toLevel="1" name="Harpe Stone Cancel">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful blow on a single target. -->
 		<icon>icon.skill0000</icon>
@@ -876,7 +876,7 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23682" levels="1" name="Fatal Strike">
+	<skill id="23682" toLevel="1" name="Fatal Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to enemies within range. -->
 		<icon>icon.skill0000</icon>
@@ -889,7 +889,7 @@
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23683" levels="1" name="Dark Cloud">
+	<skill id="23683" toLevel="1" name="Dark Cloud">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to enemies within range and makes them bleed for 10 seconds. -->
 		<icon>icon.skill0096</icon>
@@ -902,7 +902,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23684" levels="1" name="Dancing Blade">
+	<skill id="23684" toLevel="1" name="Dancing Blade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Fear to enemies within range for 10 seconds. -->
 		<icon>icon.skill1092</icon>
@@ -915,7 +915,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23685" levels="1" name="Exploration Fear">
+	<skill id="23685" toLevel="1" name="Exploration Fear">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knocks Down enemies within range for 10 seconds. -->
 		<icon>icon.skill0922</icon>
@@ -928,7 +928,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23686" levels="1" name="Seismic Wave">
+	<skill id="23686" toLevel="1" name="Seismic Wave">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases MP by 60% of enemies within a certain range of Kelim by, and decreases Spdd by 50% for 10 seconds. -->
 		<icon>icon.skll10094</icon>
@@ -940,7 +940,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23687" levels="1" name="Freezing Storm">
+	<skill id="23687" toLevel="1" name="Freezing Storm">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gains Damage Reflect effect. -->
 		<icon>icon.kelbim_reflection_armor</icon>
@@ -950,7 +950,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23688" levels="1" name="Reflection Armor">
+	<skill id="23688" toLevel="1" name="Reflection Armor">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P./M. Atk. And Atk. Spd. by 50%. -->
 		<icon>icon.kelbim_buff_fury</icon>
@@ -960,7 +960,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23689" levels="1" name="Fury of Kelbim">
+	<skill id="23689" toLevel="1" name="Fury of Kelbim">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Def. -->
 		<icon>icon.kelbim_buff_pd_up</icon>
@@ -970,7 +970,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23690" levels="1" name="Kelbim Physical Protection">
+	<skill id="23690" toLevel="1" name="Kelbim Physical Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases M. Def. -->
 		<icon>icon.kelbim_buff_md_up</icon>
@@ -980,7 +980,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23691" levels="1" name="Kelbim Magic Protection">
+	<skill id="23691" toLevel="1" name="Kelbim Magic Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Gains resistance to all damage. -->
 		<icon>icon.kelbim_buff_ad_up</icon>
@@ -990,7 +990,7 @@
 		<effectPoint>2</effectPoint>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="23692" levels="1" name="Kelbim Ultimate Protection">
+	<skill id="23692" toLevel="1" name="Kelbim Ultimate Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to enemies within range. -->
 		<icon>icon.skill0000</icon>
@@ -1001,7 +1001,7 @@
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="23693" levels="1" name="Meteor Crash">
+	<skill id="23693" toLevel="1" name="Meteor Crash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts Aerial Yoke to enemies within range for 5 seconds. -->
 		<icon>icon.skill1042</icon>
@@ -1013,7 +1013,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23694" levels="1" name="Water Drop Shackle">
+	<skill id="23694" toLevel="1" name="Water Drop Shackle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to enemies within range and blows them away. -->
 		<icon>icon.skill10015</icon>
@@ -1025,7 +1025,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23695" levels="1" name="Tornado Shackle">
+	<skill id="23695" toLevel="1" name="Tornado Shackle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to a single target and stuns them for 5 seconds. -->
 		<icon>icon.skill23695</icon>
@@ -1038,7 +1038,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23696" levels="1" name="Stun Crash">
+	<skill id="23696" toLevel="1" name="Stun Crash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls in enemies within range and stuns them for 10 seconds. -->
 		<icon>icon.skill10015</icon>
@@ -1050,7 +1050,7 @@
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23697" levels="1" name="Chain Snake">
+	<skill id="23697" toLevel="1" name="Chain Snake">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great damage to a single target and silences them for 5 seconds. -->
 		<icon>icon.skill19187</icon>
@@ -1064,7 +1064,7 @@
 		<effectPoint>-379</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23698" levels="1" name="Curse of Silence">
+	<skill id="23698" toLevel="1" name="Curse of Silence">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Infllicts great damage to enemies within range and blows them away. -->
 		<icon>icon.skill0922</icon>
@@ -1075,7 +1075,7 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="23699" levels="1" name="Storm Rage">
+	<skill id="23699" toLevel="1" name="Storm Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts great magic damage to enemies within range and burns them for 5 seconds. -->
 		<icon>icon.skill11066</icon>

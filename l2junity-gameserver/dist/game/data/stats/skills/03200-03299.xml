@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="3200" levels="3" name="Item Skill: Spell Refresh">
+	<skill id="3200" toLevel="3" name="Item Skill: Spell Refresh">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -43,7 +43,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3201" levels="3" name="Item Skill: Music Refresh">
+	<skill id="3201" toLevel="3" name="Item Skill: Music Refresh">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -86,7 +86,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3202" levels="3" name="Item Skill: Refresh">
+	<skill id="3202" toLevel="3" name="Item Skill: Refresh">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -139,7 +139,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3203" levels="1" name="Item Skill: Mystery Skill">
+	<skill id="3203" toLevel="1" name="Item Skill: Mystery Skill">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>0</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
@@ -160,7 +160,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="3204" levels="3" name="Item Skill: Reflect Damage">
+	<skill id="3204" toLevel="3" name="Item Skill: Reflect Damage">
 		<!-- Confirmed CT2.5 -->
 		<table name="#reflectDam"> 10 15 20 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -207,7 +207,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3205" levels="2" name="Item Skill: Party Recall">
+	<skill id="3205" toLevel="2" name="Item Skill: Party Recall">
 		<!-- Confirmed CT2.5 -->
 		<affectRange>1000</affectRange>
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -245,7 +245,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3206" levels="10" name="Item Skill: Music">
+	<skill id="3206" toLevel="10" name="Item Skill: Music">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3123</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -269,7 +269,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="3207" levels="10" name="Item Skill: Heal">
+	<skill id="3207" toLevel="10" name="Item Skill: Heal">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -312,7 +312,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3208" levels="10" name="Item Skill: Blessed Body">
+	<skill id="3208" toLevel="10" name="Item Skill: Blessed Body">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -355,7 +355,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3209" levels="10" name="Item Skill: Prayer">
+	<skill id="3209" toLevel="10" name="Item Skill: Prayer">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -398,7 +398,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3210" levels="10" name="Item Skill: Recharge">
+	<skill id="3210" toLevel="10" name="Item Skill: Recharge">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -441,7 +441,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3211" levels="10" name="Item Skill: Blessed Soul">
+	<skill id="3211" toLevel="10" name="Item Skill: Blessed Soul">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -484,7 +484,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3212" levels="15" name="Item Skill: Mana Gain">
+	<skill id="3212" toLevel="15" name="Item Skill: Mana Gain">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -537,7 +537,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3213" levels="10" name="Item Skill: Ritual">
+	<skill id="3213" toLevel="10" name="Item Skill: Ritual">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -580,7 +580,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3214" levels="10" name="Item Skill: Cheer">
+	<skill id="3214" toLevel="10" name="Item Skill: Cheer">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -623,7 +623,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3215" levels="15" name="Item Skill: Might">
+	<skill id="3215" toLevel="15" name="Item Skill: Might">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -676,7 +676,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3216" levels="15" name="Item Skill: Empower">
+	<skill id="3216" toLevel="15" name="Item Skill: Empower">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -729,7 +729,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3217" levels="10" name="Item Skill: Duel Might">
+	<skill id="3217" toLevel="10" name="Item Skill: Duel Might">
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
 		<magicLvl>
@@ -771,7 +771,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3218" levels="15" name="Item Skill: Shield">
+	<skill id="3218" toLevel="15" name="Item Skill: Shield">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -824,7 +824,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3219" levels="15" name="Item Skill: Magic Barrier">
+	<skill id="3219" toLevel="15" name="Item Skill: Magic Barrier">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -877,7 +877,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3220" levels="10" name="Item Skill: Duel Weakness">
+	<skill id="3220" toLevel="10" name="Item Skill: Duel Weakness">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -920,7 +920,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3221" levels="15" name="Item Skill: Agility">
+	<skill id="3221" toLevel="15" name="Item Skill: Agility">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -973,7 +973,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3222" levels="15" name="Item Skill: Guidance">
+	<skill id="3222" toLevel="15" name="Item Skill: Guidance">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -1026,7 +1026,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3223" levels="10" name="Item Skill: Focus">
+	<skill id="3223" toLevel="10" name="Item Skill: Focus">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1069,7 +1069,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3224" levels="10" name="Item Skill: Wild Magic">
+	<skill id="3224" toLevel="10" name="Item Skill: Wild Magic">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1112,7 +1112,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3225" levels="15" name="Item Skill: Charm">
+	<skill id="3225" toLevel="15" name="Item Skill: Charm">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -1165,7 +1165,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3226" levels="15" name="Item Skill: Slow">
+	<skill id="3226" toLevel="15" name="Item Skill: Slow">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -1218,7 +1218,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3227" levels="15" name="Item Skill: Winter">
+	<skill id="3227" toLevel="15" name="Item Skill: Winter">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -1271,7 +1271,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3228" levels="10" name="Item Skill: Stun">
+	<skill id="3228" toLevel="10" name="Item Skill: Stun">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1314,7 +1314,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3229" levels="10" name="Item Skill: Hold">
+	<skill id="3229" toLevel="10" name="Item Skill: Hold">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1357,7 +1357,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3230" levels="10" name="Item Skill: Sleep">
+	<skill id="3230" toLevel="10" name="Item Skill: Sleep">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1400,7 +1400,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3231" levels="10" name="Item Skill: Paralyze">
+	<skill id="3231" toLevel="10" name="Item Skill: Paralyze">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1443,7 +1443,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3232" levels="10" name="Item Skill: Medusa">
+	<skill id="3232" toLevel="10" name="Item Skill: Medusa">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1486,7 +1486,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3233" levels="10" name="Item Skill: Fear">
+	<skill id="3233" toLevel="10" name="Item Skill: Fear">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1529,7 +1529,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3234" levels="15" name="Item Skill: Poison">
+	<skill id="3234" toLevel="15" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -1582,7 +1582,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3235" levels="15" name="Item Skill: Bleed">
+	<skill id="3235" toLevel="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 </table>
 		<icon>icon.skill3080</icon>
@@ -1635,7 +1635,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3236" levels="10" name="Item Skill: Silence">
+	<skill id="3236" toLevel="10" name="Item Skill: Silence">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1678,7 +1678,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3237" levels="10" name="Item Skill: Doom">
+	<skill id="3237" toLevel="10" name="Item Skill: Doom">
 		<!-- Confirmed CT2.5 -->
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<icon>icon.skill3080</icon>
@@ -1721,7 +1721,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3238" levels="10" name="Item Skill: Prayer">
+	<skill id="3238" toLevel="10" name="Item Skill: Prayer">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -1745,7 +1745,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3239" levels="15" name="Item Skill: Mana Gain">
+	<skill id="3239" toLevel="15" name="Item Skill: Mana Gain">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -1774,7 +1774,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3240" levels="15" name="Item Skill: Might">
+	<skill id="3240" toLevel="15" name="Item Skill: Might">
 		<!-- Confirmed CT2.5 -->
 		<table name="#pAtk"> 10.26 11.22 11.94 12.94 13.55 14.44 14.85 15.92 16.68 17.84 17.84 17.84 17.84 17.84 17.84 </table>
 		<icon>icon.skill3238</icon>
@@ -1820,7 +1820,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3241" levels="15" name="Item Skill: Empower">
+	<skill id="3241" toLevel="15" name="Item Skill: Empower">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -1849,7 +1849,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3243" levels="10" name="Item Skill: Duel Might">
+	<skill id="3243" toLevel="10" name="Item Skill: Duel Might">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -1877,7 +1877,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3244" levels="15" name="Item Skill: Shield">
+	<skill id="3244" toLevel="15" name="Item Skill: Shield">
 		<!-- Confirmed CT2.5 -->
 		<table name="#pDef"> 12.78 13.73 14.14 15.13 16.46 17.43 17.69 18.63 19.77 20.3 20.3 20.3 20.3 20.3 20.3 </table>
 		<icon>icon.skill3238</icon>
@@ -1923,7 +1923,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3245" levels="15" name="Item Skill: Magic Barrier">
+	<skill id="3245" toLevel="15" name="Item Skill: Magic Barrier">
 		<!-- Confirmed CT2.5 -->
 		<table name="#mDef"> 10.8 11.62 11.96 12.66 13.01 13.08 14 14.99 15.88 16.32 16.32 16.32 16.32 16.32 16.32 </table>
 		<icon>icon.skill3238</icon>
@@ -1969,7 +1969,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3246" levels="10" name="Item Skill: Heal Empower">
+	<skill id="3246" toLevel="10" name="Item Skill: Heal Empower">
 		<!-- Confirmed CT2.5 -->
 		<table name="#healEffect"> 10 11 12 13 14 16 17 18 19 20 </table>
 		<icon>icon.skill3238</icon>
@@ -2005,7 +2005,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3247" levels="15" name="Item Skill: Agility">
+	<skill id="3247" toLevel="15" name="Item Skill: Agility">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2034,7 +2034,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3248" levels="15" name="Item Skill: Guidance">
+	<skill id="3248" toLevel="15" name="Item Skill: Guidance">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2063,7 +2063,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3249" levels="10" name="Item Skill: Focus">
+	<skill id="3249" toLevel="10" name="Item Skill: Focus">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2087,7 +2087,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3250" levels="10" name="Item Skill: Wild Magic">
+	<skill id="3250" toLevel="10" name="Item Skill: Wild Magic">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2111,7 +2111,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3251" levels="10" name="Item Skill: Weight Limit">
+	<skill id="3251" toLevel="10" name="Item Skill: Weight Limit">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2135,7 +2135,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3252" levels="10" name="Item Skill: Kiss of Eva">
+	<skill id="3252" toLevel="10" name="Item Skill: Kiss of Eva">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2159,7 +2159,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3253" levels="10" name="Item Skill: Acrobatics">
+	<skill id="3253" toLevel="10" name="Item Skill: Acrobatics">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2183,7 +2183,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3254" levels="15" name="Item Skill: Iron Body">
+	<skill id="3254" toLevel="15" name="Item Skill: Iron Body">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill3238</icon>
 		<magicLvl>
@@ -2212,7 +2212,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3255" levels="8" name="Item Skill: Skill Clarity">
+	<skill id="3255" toLevel="8" name="Item Skill: Skill Clarity">
 		<!-- Confirmed CT2.5 -->
 		<table name="#PhysicalMpConsumeRate"> 0.96 0.93 0.9 0.9 0.9 0.9 0.9 0.9 </table>
 		<icon>icon.skill3238</icon>
@@ -2245,7 +2245,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3256" levels="8" name="Item Skill: Spell Clarity">
+	<skill id="3256" toLevel="8" name="Item Skill: Spell Clarity">
 		<!-- Confirmed CT2.5 -->
 		<table name="#MagicalMpConsumeRate"> 0.9 0.85 0.8 0.8 0.8 0.8 0.8 0.8 </table>
 		<icon>icon.skill3238</icon>
@@ -2278,7 +2278,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3257" levels="3" name="Item Skill: Music Clarity">
+	<skill id="3257" toLevel="3" name="Item Skill: Music Clarity">
 		<!-- Confirmed CT2.5 -->
 		<table name="#DanceMpConsumeRate"> 0.96 0.93 0.9 </table>
 		<icon>icon.skill3238</icon>
@@ -2301,7 +2301,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3258" levels="3" name="Item Skill: Clarity">
+	<skill id="3258" toLevel="3" name="Item Skill: Clarity">
 		<!-- Confirmed CT2.5 -->
 		<table name="#MagicalMpConsumeRate"> 0.96 0.93 0.9 </table>
 		<table name="#PhysicalMpConsumeRate"> 0.9 0.85 0.8 </table>
@@ -2339,7 +2339,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3259" levels="3" name="Item Skill: Reflect Damage">
+	<skill id="3259" toLevel="3" name="Item Skill: Reflect Damage">
 		<!-- Confirmed CT2.5 -->
 		<table name="#reflectDam"> 10 15 20 </table>
 		<icon>icon.skill3238</icon>
@@ -2361,7 +2361,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3260" levels="1" name="Forgiveness">
+	<skill id="3260" toLevel="1" name="Forgiveness">
 		<!-- Confirmed CT2.5 -->
 		<castRange>500</castRange>
 		<coolTime>800</coolTime>
@@ -2401,7 +2401,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3261" levels="1" name="Forgiveness">
+	<skill id="3261" toLevel="1" name="Forgiveness">
 		<!-- Confirmed CT2.5 -->
 		<castRange>500</castRange>
 		<coolTime>800</coolTime>
@@ -2420,7 +2420,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="3262" levels="1" name="Pardon">
+	<skill id="3262" toLevel="1" name="Pardon">
 		<!-- Confirmed CT2.5 -->
 		<castRange>500</castRange>
 		<coolTime>800</coolTime>
@@ -2460,7 +2460,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3263" levels="1" name="Blessed Resurrection">
+	<skill id="3263" toLevel="1" name="Blessed Resurrection">
 		<!-- Allows the use of Blessed Resurrection. -->
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>400</castRange>
@@ -2486,7 +2486,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3264" levels="1" name="Blessed Escape">
+	<skill id="3264" toLevel="1" name="Blessed Escape">
 		<!-- Allows the use of Blessed Escape. -->
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<hitTime>200</hitTime>
@@ -2510,7 +2510,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3265" levels="1" name="Mysterious Ability">
+	<skill id="3265" toLevel="1" name="Mysterious Ability">
 		<abnormalLvl>0</abnormalLvl>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>BIG_HEAD</abnormalType>
@@ -2528,7 +2528,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="3266" levels="1" name="Large Firecracker's Ability">
+	<skill id="3266" toLevel="1" name="Large Firecracker's Ability">
 		<!-- Allows the use of Large Fireworks. -->
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2543,7 +2543,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="3267" levels="1" name="Seal Agathion">
+	<skill id="3267" toLevel="1" name="Seal Agathion">
 		<!-- Confirmed CT2.5 -->
 		<hitTime>3000</hitTime>
 		<icon>icon.etc_unsummon_aga_agit_i01</icon>
@@ -2559,7 +2559,7 @@
 			<effect name="UnsummonAgathion" />
 		</effects>
 	</skill>
-	<skill id="3268" levels="1" name="Release Agathion's Seal - Castle">
+	<skill id="3268" toLevel="1" name="Release Agathion's Seal - Castle">
 		<!-- Confirmed CT2.5 -->
 		<hitTime>3000</hitTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
@@ -2577,7 +2577,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3269" levels="1" name="Release Agathion's Seal - Rainbow Clan Hall">
+	<skill id="3269" toLevel="1" name="Release Agathion's Seal - Rainbow Clan Hall">
 		<!-- Confirmed CT2.5 -->
 		<hitTime>3000</hitTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
@@ -2595,7 +2595,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3270" levels="1" name="Release Agathion's Seal - Beast Farm">
+	<skill id="3270" toLevel="1" name="Release Agathion's Seal - Beast Farm">
 		<!-- Confirmed CT2.5 -->
 		<hitTime>3000</hitTime>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
@@ -2613,7 +2613,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3271" levels="1" name="Blue Talisman - P. Atk.">
+	<skill id="3271" toLevel="1" name="Blue Talisman - P. Atk.">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2640,7 +2640,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3272" levels="1" name="Blue Talisman - P. Def.">
+	<skill id="3272" toLevel="1" name="Blue Talisman - P. Def.">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2667,7 +2667,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3273" levels="1" name="Red Talisman - HP/CP Recovery">
+	<skill id="3273" toLevel="1" name="Red Talisman - HP/CP Recovery">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -2692,7 +2692,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3274" levels="1" name="Blue Talisman - Shield Defense">
+	<skill id="3274" toLevel="1" name="Blue Talisman - Shield Defense">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2719,7 +2719,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3275" levels="1" name="Blue Talisman - Shield Defense">
+	<skill id="3275" toLevel="1" name="Blue Talisman - Shield Defense">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2746,7 +2746,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3276" levels="1" name="Blue Talisman - M. Def.">
+	<skill id="3276" toLevel="1" name="Blue Talisman - M. Def.">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2773,7 +2773,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3277" levels="1" name="Blue Talisman - M. Critical Rate">
+	<skill id="3277" toLevel="1" name="Blue Talisman - M. Critical Rate">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2800,7 +2800,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3278" levels="1" name="Red Talisman - Mental Regeneration">
+	<skill id="3278" toLevel="1" name="Red Talisman - Mental Regeneration">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2827,7 +2827,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3279" levels="1" name="Red Talisman - Meditation">
+	<skill id="3279" toLevel="1" name="Red Talisman - Meditation">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -2861,7 +2861,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3280" levels="1" name="Blue Talisman - Invisibility">
+	<skill id="3280" toLevel="1" name="Blue Talisman - Invisibility">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2891,7 +2891,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3281" levels="1" name="Red Talisman - Clarity">
+	<skill id="3281" toLevel="1" name="Red Talisman - Clarity">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
@@ -2929,7 +2929,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3282" levels="1" name="Red Talisman - Maximum Clarity">
+	<skill id="3282" toLevel="1" name="Red Talisman - Maximum Clarity">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>90</abnormalTime>
@@ -2967,7 +2967,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3283" levels="1" name="Blue Talisman - Healing">
+	<skill id="3283" toLevel="1" name="Blue Talisman - Healing">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2994,7 +2994,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3284" levels="1" name="Blue Talisman - Divine Protection">
+	<skill id="3284" toLevel="1" name="Blue Talisman - Divine Protection">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
@@ -3025,7 +3025,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3285" levels="1" name="Blue Talisman - Berserker">
+	<skill id="3285" toLevel="1" name="Blue Talisman - Berserker">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -3080,7 +3080,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3286" levels="1" name="Black Talisman - Mending">
+	<skill id="3286" toLevel="1" name="Black Talisman - Mending">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3102,7 +3102,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3287" levels="1" name="Black Talisman - Physical Freedom">
+	<skill id="3287" toLevel="1" name="Black Talisman - Physical Freedom">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3124,7 +3124,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3288" levels="1" name="Black Talisman - Arcane Freedom">
+	<skill id="3288" toLevel="1" name="Black Talisman - Arcane Freedom">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3146,7 +3146,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3289" levels="1" name="Black Talisman - Escape">
+	<skill id="3289" toLevel="1" name="Black Talisman - Escape">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3168,7 +3168,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3290" levels="1" name="Black Talisman - Rescue">
+	<skill id="3290" toLevel="1" name="Black Talisman - Rescue">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3190,7 +3190,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3291" levels="1" name="Black Talisman - Vocalization">
+	<skill id="3291" toLevel="1" name="Black Talisman - Vocalization">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3212,7 +3212,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3292" levels="1" name="Black Talisman - Free Speech">
+	<skill id="3292" toLevel="1" name="Black Talisman - Free Speech">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>532</effectPoint>
 		<hitTime>1200</hitTime>
@@ -3234,7 +3234,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3293" levels="1" name="Yellow Talisman - P. Atk.">
+	<skill id="3293" toLevel="1" name="Yellow Talisman - P. Atk.">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>
@@ -3247,7 +3247,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3294" levels="1" name="Yellow Talisman - M. Atk.">
+	<skill id="3294" toLevel="1" name="Yellow Talisman - M. Atk.">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>
@@ -3260,7 +3260,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3295" levels="1" name="Yellow Talisman - P. Def.">
+	<skill id="3295" toLevel="1" name="Yellow Talisman - P. Def.">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>
@@ -3273,7 +3273,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3296" levels="1" name="Yellow Talisman - M. Def.">
+	<skill id="3296" toLevel="1" name="Yellow Talisman - M. Def.">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>
@@ -3286,7 +3286,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3297" levels="1" name="Yellow Talisman - Accuracy">
+	<skill id="3297" toLevel="1" name="Yellow Talisman - Accuracy">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>
@@ -3299,7 +3299,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3298" levels="1" name="Yellow Talisman - Evasion">
+	<skill id="3298" toLevel="1" name="Yellow Talisman - Evasion">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>
@@ -3312,7 +3312,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3299" levels="1" name="Yellow Talisman - Critical Damage">
+	<skill id="3299" toLevel="1" name="Yellow Talisman - Critical Damage">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.etc_talisman_i02</icon>
 		<magicLvl>55</magicLvl>

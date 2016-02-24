@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="19001" levels="1" name="Test Bleed">
+	<skill id="19001" toLevel="1" name="Test Bleed">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Race confirm -->
 		<icon>icon.skill0010509</icon>
@@ -26,7 +26,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19002" levels="1" name="Anchor">
+	<skill id="19002" toLevel="1" name="Anchor">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Action prevent item skill confirm -->
 		<icon>icon.skill10510</icon>
@@ -51,7 +51,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19003" levels="5" name="Clan Resistance Hall">
+	<skill id="19003" toLevel="5" name="Clan Resistance Hall">
 		<!-- Updated to Ertheia -->
 		<!-- Only 4 level are in use -->
 		<table name="#res"> 3 4 5 6 7 </table> <!-- Confirmed -->
@@ -82,7 +82,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19004" levels="5" name="Clan De-Buff Control">
+	<skill id="19004" toLevel="5" name="Clan De-Buff Control">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases clan members' Debuff Resistance by 3%. Applies after the elder stage. -->
 		<icon>icon.skill19004</icon>
@@ -90,7 +90,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 	</skill>
-	<skill id="19005" levels="5" name="Clan Muzzle Control">
+	<skill id="19005" toLevel="5" name="Clan Muzzle Control">
 		<!-- Updated to Ertheia -->
 		<table name="#trait_paralyze"> 12 13 14 15 16 </table> <!-- Confirmed -->
 		<icon>icon.skill19005</icon>
@@ -109,7 +109,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19006" levels="5" name="Clan Mental Control">
+	<skill id="19006" toLevel="5" name="Clan Mental Control">
 		<!-- Updated to Ertheia -->
 		<table name="#trait_derangement"> 12 13 14 15 16 </table> <!-- Confirmed -->
 		<icon>icon.skill19006</icon>
@@ -128,7 +128,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19007" levels="1" name="Clan Summon">
+	<skill id="19007" toLevel="1" name="Clan Summon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a clan member. Consumes 5 Spirit Ores. Consumes 900 Individual Fame. Applies after the viscount stage. -->
 		<icon>icon.skill19007</icon>
@@ -149,7 +149,7 @@
 			<condition name="TargetMyPledge" />
 		</conditions>
 	</skill>
-	<skill id="19008" levels="1" name="Clan Guardian">
+	<skill id="19008" toLevel="1" name="Clan Guardian">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses the clan guardian's power to restore nearby clan members' HP/MP/CP. Consumes 100 Spirit Ores. Consumes 1000 Clan Reputation. Distinguished King or above only. -->
 		<icon>icon.skill19008</icon>
@@ -168,7 +168,7 @@
 			<condition name="CanUseInBattlefield" />
 		</conditions>
 	</skill>
-	<skill id="19009" levels="1" name="Clan Advent">
+	<skill id="19009" toLevel="1" name="Clan Advent">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- When the clan leader logs in, clan members' P. Atk., P. Def., and M. Def. + 5%, M. Atk. + 6%, and HP/MP recovery bonus + 5. -->
 		<icon>icon.skill19009</icon>
@@ -192,7 +192,7 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19010" levels="1" name="Clan Copy">
+	<skill id="19010" toLevel="1" name="Clan Copy">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a copy of yourself to cause confusion among the enemy. Consumes 50 Spirit Ores. Consumes 1500 Individual Fame. Marquis or above only. -->
 		<icon>icon.skill19010</icon>
@@ -206,7 +206,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19011" levels="1" name="Clan Legend">
+	<skill id="19011" toLevel="1" name="Clan Legend">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. and P. Def. when HP is below 30%. Applies after the lord stage. -->
 		<icon>icon.skill19011</icon>
@@ -214,7 +214,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 	</skill>
-	<skill id="19012" levels="1" name="Clan Hide">
+	<skill id="19012" toLevel="1" name="Clan Hide">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Hides nearby clan members. Decreases Speed by 50% when hidden. Consumes 150 Soulstones. Consumes 1000 Clan Reputation. Applies after the lord stage. -->
 		<icon>icon.skill19012</icon>
@@ -239,7 +239,7 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19013" levels="1" name="Clan Un-debuff">
+	<skill id="19013" toLevel="1" name="Clan Un-debuff">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels all debuffs of nearby clan members. Consumes 30 Spirit Ore. Consumes 1500 Individual Fame. Applies after the marquis stage. -->
 		<icon>icon.skill19013</icon>
@@ -259,7 +259,7 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19014" levels="1" name="Clan Defense">
+	<skill id="19014" toLevel="1" name="Clan Defense">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Makes nearby clan members invincible. Consumes 30 Spirit Ore. Consumes 1000 Clan Reputation. Applies after the distinguished king stage. -->
 		<icon>icon.SKILL19014</icon>
@@ -283,7 +283,7 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19015" levels="1" name="Clan Friendly">
+	<skill id="19015" toLevel="1" name="Clan Friendly">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases nearby clan members' P. Critical Rate by 3% and M. Critical Rate by 20. Consumes 50 Spirit Ore. Consumes 3500 Individual Fame. Applies after the marquis stage. -->
 		<icon>icon.skill19015</icon>
@@ -306,7 +306,7 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19016" levels="1" name="Clan Boundary">
+	<skill id="19016" toLevel="1" name="Clan Boundary">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases nearby clan members' P. Atk. by 3% and P. Def. by 3%. Consumes 50 Spirit Ore. Consumes 3000 Individual Fame. Applies after the count stage. -->
 		<icon>icon.skill19016</icon>
@@ -329,7 +329,7 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19017" levels="1" name="Clan Prison">
+	<skill id="19017" toLevel="1" name="Clan Prison">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., Speed of nearby enemies - 23% and stops them from escaping. Consumes 30 Spirit Ore. Consumes 3000 Individual Fame. Applies after the duke stage. -->
 		<icon>icon.skill19017</icon>
@@ -356,7 +356,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="19018" levels="1" name="Clan Guardian Recovery">
+	<skill id="19018" toLevel="1" name="Clan Guardian Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores HP/MP/CP. -->
 		<icon>icon.skill19008</icon>
@@ -374,7 +374,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="19019" levels="1" name="Revolution Blade">
+	<skill id="19019" toLevel="1" name="Revolution Blade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts physical damage on target. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10013</icon>
@@ -399,7 +399,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19020" levels="1" name="Revolution Eruption">
+	<skill id="19020" toLevel="1" name="Revolution Eruption">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks frontal targets to inflict physical damage. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10265</icon>
@@ -427,7 +427,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19021" levels="1" name="Revolution Strike">
+	<skill id="19021" toLevel="1" name="Revolution Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts powerful physical damage on target. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10260</icon>
@@ -452,7 +452,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19022" levels="1" name="Revolution Shot">
+	<skill id="19022" toLevel="1" name="Revolution Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks distant enemies. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10762</icon>
@@ -477,7 +477,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19023" levels="1" name="Revolution Multi-Shot">
+	<skill id="19023" toLevel="1" name="Revolution Multi-Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Does ranged attacks centered on frontal target. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10771</icon>
@@ -505,7 +505,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19024" levels="1" name="Revolution Tornado Shot">
+	<skill id="19024" toLevel="1" name="Revolution Tornado Shot">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a penetrating attack on enemies at the front. Requires a bow or crossbow to be equipped. Over-hit. Critical. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill10760</icon>
@@ -530,7 +530,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19025" levels="1" name="Revolution Spike">
+	<skill id="19025" toLevel="1" name="Revolution Spike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a magic attack on target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11011</icon>
@@ -555,7 +555,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19026" levels="1" name="Revolution Blast">
+	<skill id="19026" toLevel="1" name="Revolution Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a magic attack on target and enemies near target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11034</icon>
@@ -583,7 +583,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19027" levels="1" name="Revolution Destruction">
+	<skill id="19027" toLevel="1" name="Revolution Destruction">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful magic attack on target. Over-hit. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11023</icon>
@@ -608,7 +608,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19028" levels="2" name="Revolution Spirit">
+	<skill id="19028" toLevel="2" name="Revolution Spirit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Max CP by 10000, P. Def. by 1000, and M. Def. by 1000 for 5 minutes. Can only be used in a castle siege area by characters between lv 40 - 84. Soulshots and Spiritshots are not consumed. -->
 		<icon>BranchSys2.icon.skill20006</icon>
@@ -641,7 +641,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19029" levels="1" name="Revolution Self CP Recovery">
+	<skill id="19029" toLevel="1" name="Revolution Self CP Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases combat spirit to recover your own CP by 2000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill0440</icon>
@@ -664,7 +664,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19030" levels="1" name="Revolution CP Recovery">
+	<skill id="19030" toLevel="1" name="Revolution CP Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases combat spirit to recover target's CP by 1000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11755</icon>
@@ -689,7 +689,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19031" levels="1" name="Revolution Party CP Recovery">
+	<skill id="19031" toLevel="1" name="Revolution Party CP Recovery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases combat spirit to recover a party member's CP by 1000. Can only be used by characters between lv 40-84 within the castle siege area. Soulshots and Spiritshots are not consumed. -->
 		<icon>icon.skill11757</icon>
@@ -714,7 +714,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19032" levels="1" name="Ability of Light">
+	<skill id="19032" toLevel="1" name="Ability of Light">
 		<!-- TODO: confirm me -->
 		<!-- Imbued with the Ability of Light. Increases Max CP by 3000 and damage inflicted during PvP by 10%. Effects do not apply when in Chaotic state. Can be used by a Marquis or higher. -->
 		<icon>icon.skill19008</icon>
@@ -746,7 +746,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19033" levels="1" name="Ability of Darkness">
+	<skill id="19033" toLevel="1" name="Ability of Darkness">
 		<!-- TODO: confirm me -->
 		<!-- Imbued with the Ability of Darkness. Increases Max CP by 3000 and damage inflicted during PvP by 10%. Can be used by a Marquis or higher. -->
 		<icon>icon.skill19008</icon>
@@ -772,7 +772,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19034" levels="1" name="Imprint of Light">
+	<skill id="19034" toLevel="1" name="Imprint of Light">
 		<!-- Engraves the Imprint of Light on the ancient relic that guards the castle. -->
 		<castRange>85</castRange>
 		<effectRange>400</effectRange>
@@ -798,7 +798,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19035" levels="1" name="Imprint of Darkness">
+	<skill id="19035" toLevel="1" name="Imprint of Darkness">
 		<!-- Engraves the Imprint of Darkness on the ancient relic that guards the castle. -->
 		<castRange>85</castRange>
 		<effectRange>400</effectRange>
@@ -824,7 +824,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19036" levels="1" name="Blessing of Light">
+	<skill id="19036" toLevel="1" name="Blessing of Light">
 		<!-- TODO: Confir me -->
 		<!-- Acquires 3% additional XP and SP through the blessing of the Guardian of Light. -->
 		<icon>icon.etc_pi_gift_box_i04</icon>
@@ -853,7 +853,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19037" levels="1" name="Cloak of Radiant Light">
+	<skill id="19037" toLevel="1" name="Cloak of Radiant Light">
 		<!-- STR/MEN/DEX/CON/INT/WIT + 3, decreased damage received during PvP by 15%. Ineffective in Chaotic state. -->
 		<icon>icon.amor_goodness_cloak</icon>
 		<magicLvl>1</magicLvl>
@@ -904,7 +904,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19038" levels="1" name="Cold Cloak of Darkness">
+	<skill id="19038" toLevel="1" name="Cold Cloak of Darkness">
 		<!-- STR/MEN/DEX/CON/INT/WIT + 3, decreased damage received during PvP by 15%. -->
 		<icon>icon.amor_evilness_cloak</icon>
 		<magicLvl>1</magicLvl>
@@ -949,7 +949,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19039" levels="1" name="Cloak of Light">
+	<skill id="19039" toLevel="1" name="Cloak of Light">
 		<!-- STR/MEN/DEX/CON/INT/WIT + 2, decreased damage received during PvP by 5%. Ineffective in Chaotic state. -->
 		<icon>icon.amor_goodness_cloak</icon>
 		<magicLvl>1</magicLvl>
@@ -1000,7 +1000,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19040" levels="1" name="Cloak of Darkness">
+	<skill id="19040" toLevel="1" name="Cloak of Darkness">
 		<!-- STR/MEN/DEX/CON/INT/WIT + 2, decreased damage received during PvP by 5%. -->
 		<icon>icon.amor_evilness_cloak</icon>
 		<magicLvl>1</magicLvl>
@@ -1045,7 +1045,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19041" levels="1" name="Escape: Castle">
+	<skill id="19041" toLevel="1" name="Escape: Castle">
 		<!-- TODO: Confirm me -->
 		<!-- Return to Castle. -->
 		<hitTime>20000</hitTime>
@@ -1067,7 +1067,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19042" levels="1" name="Blessed Scroll of Escape: Castle">
+	<skill id="19042" toLevel="1" name="Blessed Scroll of Escape: Castle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Return to Castle. -->
 		<icon>icon.vesper_cloack_i00</icon>
@@ -1088,7 +1088,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19074" levels="2" name="Academy Precept">
+	<skill id="19074" toLevel="2" name="Academy Precept">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 minutes, increases academy members' P. Atk. by 10%, M. Atk. by 10%, Critical Rate by 10%, and M. Critical Rate by 10%. -->
 		<icon>icon.skill19008</icon>
@@ -1119,14 +1119,14 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19075" levels="1" name="Clan Relation">
+	<skill id="19075" toLevel="1" name="Clan Relation">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill19008</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 	</skill>
-	<skill id="19076" levels="1" name="Clan Academy Reward">
+	<skill id="19076" toLevel="1" name="Clan Academy Reward">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1150,7 +1150,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="19080" levels="1" name="Sigel Ixion">
+	<skill id="19080" toLevel="1" name="Sigel Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1175,7 +1175,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19081" levels="1" name="Tyrr Ixion">
+	<skill id="19081" toLevel="1" name="Tyrr Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1200,7 +1200,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19082" levels="1" name="Othell Ixion">
+	<skill id="19082" toLevel="1" name="Othell Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1225,7 +1225,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19083" levels="1" name="Yul Ixion">
+	<skill id="19083" toLevel="1" name="Yul Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1250,7 +1250,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19084" levels="1" name="Feoh Ixion">
+	<skill id="19084" toLevel="1" name="Feoh Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1275,7 +1275,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19085" levels="1" name="Iss Ixion">
+	<skill id="19085" toLevel="1" name="Iss Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1300,7 +1300,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19086" levels="1" name="Wynn Ixion">
+	<skill id="19086" toLevel="1" name="Wynn Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1325,7 +1325,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19087" levels="1" name="Aeore Ixion">
+	<skill id="19087" toLevel="1" name="Aeore Ixion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms into Ixion. -->
 		<icon>icon.skilltransform3</icon>
@@ -1350,7 +1350,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="19088" levels="4" name="Summon Siege Golem">
+	<skill id="19088" toLevel="4" name="Summon Siege Golem">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a siege weapon. Requires 400 R-grade Crystals. Automatically acquired by dwarves at level 85. -->
 		<icon>icon.skill0013</icon>
@@ -1374,7 +1374,7 @@
 			<condition name="CanSummon" />
 		</conditions>
 	</skill>
-	<skill id="19089" levels="4" name="Summon Wild Hog Cannon">
+	<skill id="19089" toLevel="4" name="Summon Wild Hog Cannon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a siege weapon. Can only move in normal mode. During siege mode, it cannot move, and it can inflict ranged attacks. Switching modes takes 30 seconds. Requires 100 R-grade Crystals. Automatically acquired by Maestro class at level 85. -->
 		<icon>icon.skill0299</icon>
@@ -1398,7 +1398,7 @@
 			<condition name="CanSummon" />
 		</conditions>
 	</skill>
-	<skill id="19090" levels="4" name="Summon Swoop Cannon">
+	<skill id="19090" toLevel="4" name="Summon Swoop Cannon">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Swoop Cannon. Requires 500 R-grade Crystals. Automatically acquired by dwarves at level 85. -->
 		<icon>icon.skill0448</icon>
@@ -1423,7 +1423,7 @@
 			<condition name="CanSummon" />
 		</conditions>
 	</skill>
-	<skill id="19091" levels="1" name="Increase Item Drop Rate">
+	<skill id="19091" toLevel="1" name="Increase Item Drop Rate">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Item Drop Rate upon PK. -->
 		<icon>icon.skill1170</icon>
@@ -1449,7 +1449,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19092" levels="2" name="Chat Prohibited">
+	<skill id="19092" toLevel="2" name="Chat Prohibited">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Chatting is restricted. -->
 		<icon>
@@ -1507,7 +1507,7 @@
 			<condition name="OpCanEscape" />
 		</conditions>
 	</skill>
-	<skill id="19093" levels="1" name="Added Blow Quiver">
+	<skill id="19093" toLevel="1" name="Added Blow Quiver">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Chance of inflicting damage again upon shooting. -->
 		<icon>icon.skill0256</icon>
@@ -1520,7 +1520,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>NONE</targetType>
 	</skill>
-	<skill id="19094" levels="1" name="Increased Damage Quiver">
+	<skill id="19094" toLevel="1" name="Increased Damage Quiver">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Great damage occurs if critical occurs while shooting. -->
 		<icon>icon.skill0256</icon>
@@ -1533,7 +1533,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>NONE</targetType>
 	</skill>
-	<skill id="19095" levels="1" name="Added Bleed Quiver">
+	<skill id="19095" toLevel="1" name="Added Bleed Quiver">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Chance of inflicting bleed if critical occurs while shooting. -->
 		<icon>icon.skill0256</icon>
@@ -1546,7 +1546,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<targetType>NONE</targetType>
 	</skill>
-	<skill id="19096" levels="1" name="Added Blow">
+	<skill id="19096" toLevel="1" name="Added Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1560,7 +1560,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19097" levels="1" name="Critical Target">
+	<skill id="19097" toLevel="1" name="Critical Target">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1575,7 +1575,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19098" levels="1" name="Bleed Target">
+	<skill id="19098" toLevel="1" name="Bleed Target">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Consumes 100 HP per second for 15 seconds. -->
 		<icon>icon.skill0096</icon>
@@ -1599,7 +1599,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="19099" levels="1" name="GM's Authority">
+	<skill id="19099" toLevel="1" name="GM's Authority">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts petrification on target for 60 minutes. -->
 		<icon>icon.skill0367</icon>

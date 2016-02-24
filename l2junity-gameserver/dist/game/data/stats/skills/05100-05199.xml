@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="5100" levels="1" name="Cancel Capture B">
+	<skill id="5100" toLevel="1" name="Cancel Capture B">
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -12,7 +12,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5101" levels="1" name="Cancel Capture C">
+	<skill id="5101" toLevel="1" name="Cancel Capture C">
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -24,7 +24,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5102" levels="1" name="Cancel All Capture">
+	<skill id="5102" toLevel="1" name="Cancel All Capture">
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -36,7 +36,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5103" levels="1" name="Production - Clan / Transfer">
+	<skill id="5103" toLevel="1" name="Production - Clan / Transfer">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -50,7 +50,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5104" levels="3" name="Battle Force">
+	<skill id="5104" toLevel="3" name="Battle Force">
 		<!-- Not Used Anymore -->
 		<table name="#pAtk"> 1.05 1.10 1.15 </table>
 		<abnormalLvl>
@@ -83,7 +83,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5105" levels="3" name="Spell Force">
+	<skill id="5105" toLevel="3" name="Spell Force">
 		<!-- Not Used Anymore -->
 		<table name="#mAtk"> 1.05 1.10 1.15 </table>
 		<abnormalLvl>
@@ -116,7 +116,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5106" levels="4" name="Capture A State">
+	<skill id="5106" toLevel="4" name="Capture A State">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -138,7 +138,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5107" levels="4" name="Capture B State">
+	<skill id="5107" toLevel="4" name="Capture B State">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -160,7 +160,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5108" levels="4" name="Capture C State">
+	<skill id="5108" toLevel="4" name="Capture C State">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -182,7 +182,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5109" levels="1" name="Presentation -  Clan Gate">
+	<skill id="5109" toLevel="1" name="Presentation -  Clan Gate">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -197,7 +197,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5110" levels="1" name="Cannon Fodder">
+	<skill id="5110" toLevel="1" name="Cannon Fodder">
 		<!-- Confirmed CT2.5 -->
 		<!-- Swoop Cannon Skill -->
 		<affectRange>200</affectRange>
@@ -223,7 +223,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5111" levels="1" name="Big Bang">
+	<skill id="5111" toLevel="1" name="Big Bang">
 		<!-- Confirmed CT2.5 -->
 		<!-- Swoop Cannon Skill -->
 		<affectRange>200</affectRange>
@@ -249,7 +249,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5112" levels="12" name="Stun">
+	<skill id="5112" toLevel="12" name="Stun">
 		<!-- Lvl 1-12 - Temporarily Immobilized and in a state of shock. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -304,7 +304,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5113" levels="12" name="Buff Dispel">
+	<skill id="5113" toLevel="12" name="Buff Dispel">
 		<!-- CT2.5 retail confirmed -->
 		<affectRange>150</affectRange>
 		<effectPoint>100</effectPoint>
@@ -353,7 +353,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5114" levels="12" name="Hold">
+	<skill id="5114" toLevel="12" name="Hold">
 		<!-- Lvl 1-12 - Temporarily Immobilized. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -423,7 +423,7 @@
 			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="5115" levels="12" name="Cubic Hate">
+	<skill id="5115" toLevel="12" name="Cubic Hate">
 		<!-- Summon Attractive Cubic Skill -->
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>
@@ -467,7 +467,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5116" levels="12" name="Hold">
+	<skill id="5116" toLevel="12" name="Hold">
 		<!-- Summon Attractive Cubic Skill -->
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
@@ -508,7 +508,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5117" levels="1" name="Stun">
+	<skill id="5117" toLevel="1" name="Stun">
 		<!-- CT2.5 retail confirmed -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -541,7 +541,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5118" levels="1" name="Cancel Sairen Use">
+	<skill id="5118" toLevel="1" name="Cancel Sairen Use">
 		<!-- CT2.5 retail confirmed -->
 		<affectRange>300</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -564,7 +564,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5119" levels="1" name="Bleed">
+	<skill id="5119" toLevel="1" name="Bleed">
 		<!-- CT2.5 retail confirmed -->
 		<affectRange>80</affectRange>
 		<castRange>40</castRange>
@@ -590,7 +590,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5120" levels="1" name="Stun">
+	<skill id="5120" toLevel="1" name="Stun">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -622,7 +622,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5121" levels="1" name="Presentation -  Corpse Revival">
+	<skill id="5121" toLevel="1" name="Presentation -  Corpse Revival">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -633,7 +633,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5122" levels="1" name="Sailren Use Might">
+	<skill id="5122" toLevel="1" name="Sailren Use Might">
 		<!-- CT2.5 retail confirmed -->
 		<abnormalLvl>99</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
@@ -656,7 +656,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5123" levels="1" name="Maximum Defense">
+	<skill id="5123" toLevel="1" name="Maximum Defense">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
@@ -689,7 +689,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5124" levels="1" name="Anti-music">
+	<skill id="5124" toLevel="1" name="Anti-music">
 		<!-- Confirmed CT2.5 -->
 		<affectRange>200</affectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -708,7 +708,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5125" levels="1" name="Maximum Resist Status">
+	<skill id="5125" toLevel="1" name="Maximum Resist Status">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
@@ -733,7 +733,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5126" levels="1" name="Maximum Recovery">
+	<skill id="5126" toLevel="1" name="Maximum Recovery">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
@@ -762,7 +762,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5127" levels="1" name="Recover Momentum">
+	<skill id="5127" toLevel="1" name="Recover Momentum">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
@@ -790,7 +790,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5128" levels="1" name="Maximize long-range weapon use">
+	<skill id="5128" toLevel="1" name="Maximize long-range weapon use">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
@@ -827,7 +827,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5129" levels="1" name="Smokescreen">
+	<skill id="5129" toLevel="1" name="Smokescreen">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7</abnormalTime>
@@ -856,7 +856,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5130" levels="1" name="Volcano">
+	<skill id="5130" toLevel="1" name="Volcano">
 		<affectRange>300</affectRange>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
@@ -877,7 +877,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5131" levels="1" name="Tsunami">
+	<skill id="5131" toLevel="1" name="Tsunami">
 		<affectRange>300</affectRange>
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
@@ -898,7 +898,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5132" levels="1" name="Cyclone">
+	<skill id="5132" toLevel="1" name="Cyclone">
 		<affectRange>300</affectRange>
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
@@ -919,7 +919,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5133" levels="1" name="Gehenna">
+	<skill id="5133" toLevel="1" name="Gehenna">
 		<affectRange>300</affectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
@@ -940,7 +940,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5134" levels="1" name="Anti-summoning Field">
+	<skill id="5134" toLevel="1" name="Anti-summoning Field">
 		<!-- Glory Days Confirmed -->
 		<abnormalTime>15</abnormalTime>
 		<affectRange>200</affectRange>
@@ -979,7 +979,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5135" levels="1" name="Slash">
+	<skill id="5135" toLevel="1" name="Slash">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Feline King Skill -->
 		<castRange>40</castRange>
@@ -1003,7 +1003,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5136" levels="1" name="Spin Slash">
+	<skill id="5136" toLevel="1" name="Spin Slash">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Feline King Skill -->
 		<affectRange>150</affectRange>
@@ -1026,7 +1026,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5137" levels="1" name="Grip of the Cat">
+	<skill id="5137" toLevel="1" name="Grip of the Cat">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Feline King Skill -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1060,7 +1060,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5138" levels="1" name="Whiplash">
+	<skill id="5138" toLevel="1" name="Whiplash">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Magnus the Unicorn Skill -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1095,7 +1095,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5139" levels="1" name="Tidal Wave">
+	<skill id="5139" toLevel="1" name="Tidal Wave">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Magnus the Unicorn Skill -->
 		<affectLimit>10-10</affectLimit>
@@ -1124,7 +1124,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5140" levels="1" name="Dark Curse">
+	<skill id="5140" toLevel="1" name="Dark Curse">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Spectral Lord Skill -->
 		<abnormalLvl>3</abnormalLvl>
@@ -1160,7 +1160,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5141" levels="1" name="Dicing Death">
+	<skill id="5141" toLevel="1" name="Dicing Death">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Spectral Lord Skill -->
 		<castRange>40</castRange>
@@ -1183,7 +1183,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5142" levels="1" name="Corpse Burst">
+	<skill id="5142" toLevel="1" name="Corpse Burst">
 		<!-- CT2.5 retail confirmed -->
 		<!-- Summon Spectral Lord Skill -->
 		<affectRange>150</affectRange>
@@ -1212,7 +1212,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5143" levels="1" name="Sailren Use Blow">
+	<skill id="5143" toLevel="1" name="Sailren Use Blow">
 		<!-- Confirmed CT2.5 -->
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -1233,7 +1233,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5144" levels="1" name="Mirage">
+	<skill id="5144" toLevel="1" name="Mirage">
 		<!-- Confirmed CT2.5 -->
 		<castRange>900</castRange>
 		<effectRange>1400</effectRange>
@@ -1249,7 +1249,7 @@
 			<effect name="TargetCancel" />
 		</effects>
 	</skill>
-	<skill id="5145" levels="1" name="Day of Doom">
+	<skill id="5145" toLevel="1" name="Day of Doom">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>MULTI_DEBUFF</abnormalType>
@@ -1319,7 +1319,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5146" levels="10" name="Heal">
+	<skill id="5146" toLevel="10" name="Heal">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#amount"> 308 337 365 393 421 448 474 498 520 552 </table>
@@ -1362,7 +1362,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5147" levels="10" name="Blessed Body">
+	<skill id="5147" toLevel="10" name="Blessed Body">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#maxHp"> 24 48 72 96 120 144 168 192 216 240 </table>
@@ -1410,7 +1410,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5148" levels="10" name="Prayer">
+	<skill id="5148" toLevel="10" name="Prayer">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#healEffect"> 1.04 1.04 1.04 1.05 1.05 1.05 1.06 1.06 1.06 1.07 </table>
@@ -1458,7 +1458,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5149" levels="10" name="Recharge">
+	<skill id="5149" toLevel="10" name="Recharge">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#amount"> 33 35 38 40 43 45 48 50 52 55 </table>
@@ -1501,7 +1501,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5150" levels="10" name="Blessed Soul">
+	<skill id="5150" toLevel="10" name="Blessed Soul">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#maxMp"> 16 32 48 68 80 96 112 128 144 160 </table>
@@ -1549,7 +1549,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5151" levels="15" name="Mana Gain">
+	<skill id="5151" toLevel="15" name="Mana Gain">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -1591,7 +1591,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5152" levels="10" name="Ritual">
+	<skill id="5152" toLevel="10" name="Ritual">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#amount"> 264 289 313 337 361 384 406 427 446 473 </table>
@@ -1634,7 +1634,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5153" levels="10" name="Cheer">
+	<skill id="5153" toLevel="10" name="Cheer">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#maxCp"> 24 48 72 96 120 144 168 192 216 240 </table>
@@ -1682,7 +1682,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5154" levels="15" name="Might">
+	<skill id="5154" toLevel="15" name="Might">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -1741,7 +1741,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5156" levels="15" name="Empower">
+	<skill id="5156" toLevel="15" name="Empower">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -1800,7 +1800,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5157" levels="10" name="Duel Might">
+	<skill id="5157" toLevel="10" name="Duel Might">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1840,7 +1840,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5158" levels="15" name="Shield">
+	<skill id="5158" toLevel="15" name="Shield">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -1899,7 +1899,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5159" levels="15" name="Magic Barrier">
+	<skill id="5159" toLevel="15" name="Magic Barrier">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -1958,7 +1958,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5160" levels="10" name="Duel Weakness">
+	<skill id="5160" toLevel="10" name="Duel Weakness">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2003,7 +2003,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5161" levels="15" name="Agility">
+	<skill id="5161" toLevel="15" name="Agility">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#rEvas"> 1 1 1 2 2 2 3 3 3 4 4 5 5 6 7</table> <!-- Guesssed -->
@@ -2062,7 +2062,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5162" levels="15" name="Guidance">
+	<skill id="5162" toLevel="15" name="Guidance">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#accCombat"> 1 1 1 2 2 2 3 3 3 4 4 5 5 6 7</table> <!-- Guesssed -->
@@ -2121,7 +2121,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5163" levels="10" name="Focus">
+	<skill id="5163" toLevel="10" name="Focus">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#rCrit"> 0.05 0.05 0.05 0.1 0.1 0.1 0.15 0.15 0.15 0.2 </table>
@@ -2169,7 +2169,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5164" levels="10" name="Wild Magic">
+	<skill id="5164" toLevel="10" name="Wild Magic">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<table name="#mCritRate"> 1 1 1 2 2 2 3 3 3 4 </table>
@@ -2217,7 +2217,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5165" levels="15" name="Charm">
+	<skill id="5165" toLevel="15" name="Charm">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -2274,7 +2274,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5166" levels="15" name="Decrease Speed">
+	<skill id="5166" toLevel="15" name="Decrease Speed">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -2321,7 +2321,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5167" levels="15" name="Winter">
+	<skill id="5167" toLevel="15" name="Winter">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -2368,7 +2368,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5168" levels="10" name="Stun">
+	<skill id="5168" toLevel="10" name="Stun">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2408,7 +2408,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5169" levels="10" name="Hold">
+	<skill id="5169" toLevel="10" name="Hold">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2451,7 +2451,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5170" levels="10" name="Sleep">
+	<skill id="5170" toLevel="10" name="Sleep">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2494,7 +2494,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5171" levels="10" name="Paralyze">
+	<skill id="5171" toLevel="10" name="Paralyze">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2534,7 +2534,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5172" levels="10" name="Medusa">
+	<skill id="5172" toLevel="10" name="Medusa">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2575,7 +2575,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5173" levels="10" name="Fear">
+	<skill id="5173" toLevel="10" name="Fear">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2617,7 +2617,7 @@
 			<!-- FIXME: We need an instant effect that will work only vs monsters and fear them with 40% chance for 20 seconds here -->
 		</effects>
 	</skill>
-	<skill id="5174" levels="15" name="Poison">
+	<skill id="5174" toLevel="15" name="Poison">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -2700,7 +2700,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5175" levels="15" name="Bleed">
+	<skill id="5175" toLevel="15" name="Bleed">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
 		<!-- Guessed -->
@@ -2784,7 +2784,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5176" levels="10" name="Silence">
+	<skill id="5176" toLevel="10" name="Silence">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2824,7 +2824,7 @@
 			<effect name="Mute" />
 		</effects>
 	</skill>
-	<skill id="5177" levels="10" name="Doom">
+	<skill id="5177" toLevel="10" name="Doom">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2865,7 +2865,7 @@
 			<effect name="PhysicalMute" />
 		</effects>
 	</skill>
-	<skill id="5178" levels="1" name="NPC Burn">
+	<skill id="5178" toLevel="1" name="NPC Burn">
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2000</hitTime>
@@ -2887,28 +2887,28 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5179" levels="1" name="Raid Boss (Lv. 80)">
+	<skill id="5179" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5180" levels="1" name="Raid Boss (Lv. 80)">
+	<skill id="5180" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5181" levels="1" name="Raid Boss (Lv. 80)">
+	<skill id="5181" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skillraid</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5182" levels="1" name="Blessing of Protection">
+	<skill id="5182" toLevel="1" name="Blessing of Protection">
 		<!-- Newbie Guide Buff -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7200</abnormalTime>
@@ -2931,7 +2931,7 @@
 			<effect name="ProtectionBlessing" />
 		</effects>
 	</skill>
-	<skill id="5183" levels="1" name="Production: Dimensional Stun">
+	<skill id="5183" toLevel="1" name="Production: Dimensional Stun">
 		<!-- Confirmed CT2.5 -->
 		<affectRange>300</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -2951,7 +2951,7 @@
 			<effect name="ThrowUp" />
 		</effects>
 	</skill>
-	<skill id="5184" levels="1" name="Production: Valakas Dragon Breath">
+	<skill id="5184" toLevel="1" name="Production: Valakas Dragon Breath">
 		<!-- Confirmed CT2.5 -->
 		<affectRange>1200</affectRange>
 		<castRange>600</castRange>
@@ -2969,7 +2969,7 @@
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5185" levels="1" name="Production: Magic-type Guard">
+	<skill id="5185" toLevel="1" name="Production: Magic-type Guard">
 		<!-- Confirmed CT2.5 -->
 		<castRange>900</castRange>
 		<effectPoint>-655</effectPoint>
@@ -2990,7 +2990,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5186" levels="2" name="Pet Haste">
+	<skill id="5186" toLevel="2" name="Pet Haste">
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3033,7 +3033,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5187" levels="4" name="Pet Vampiric Rage">
+	<skill id="5187" toLevel="4" name="Pet Vampiric Rage">
 		<table name="#absorbDam"> 6 7 8 9 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3086,7 +3086,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5188" levels="3" name="Pet Regeneration">
+	<skill id="5188" toLevel="3" name="Pet Regeneration">
 		<table name="#rate"> 1.1 1.15 1.2 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3138,7 +3138,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5189" levels="6" name="Pet Blessed Body">
+	<skill id="5189" toLevel="6" name="Pet Blessed Body">
 		<table name="#maxHp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3208,7 +3208,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5190" levels="6" name="Pet Blessed Soul">
+	<skill id="5190" toLevel="6" name="Pet Blessed Soul">
 		<table name="#maxMp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3278,7 +3278,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5191" levels="3" name="Pet Guidance">
+	<skill id="5191" toLevel="3" name="Pet Guidance">
 		<table name="#accCombat"> 2 3 4 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3330,7 +3330,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5192" levels="2" name="Pet Wind Walk">
+	<skill id="5192" toLevel="2" name="Pet Wind Walk">
 		<table name="#runSpd"> 20 33 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3376,7 +3376,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5193" levels="3" name="Pet Acumen">
+	<skill id="5193" toLevel="3" name="Pet Acumen">
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3428,7 +3428,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5194" levels="3" name="Pet Empower">
+	<skill id="5194" toLevel="3" name="Pet Empower">
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3480,7 +3480,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5195" levels="12" name="Pet Greater Heal">
+	<skill id="5195" toLevel="12" name="Pet Greater Heal">
 		<table name="#amount"> 58 92 148 219 299 380 450 477 500 525 542 550 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3586,7 +3586,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5196" levels="3" name="Pet Wind Shackle">
+	<skill id="5196" toLevel="3" name="Pet Wind Shackle">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
@@ -3632,7 +3632,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5197" levels="3" name="Pet Hex">
+	<skill id="5197" toLevel="3" name="Pet Hex">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
@@ -3678,7 +3678,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5198" levels="3" name="Pet Slow">
+	<skill id="5198" toLevel="3" name="Pet Slow">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
@@ -3724,7 +3724,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5199" levels="3" name="Pet Curse Gloom">
+	<skill id="5199" toLevel="3" name="Pet Curse Gloom">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MD_DOWN</abnormalType>

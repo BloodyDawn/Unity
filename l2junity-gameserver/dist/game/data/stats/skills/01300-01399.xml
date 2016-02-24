@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="1300" levels="3" name="Servitor Cure">
+	<skill id="1300" toLevel="3" name="Servitor Cure">
 		<table name="#dispelAbnormals"> POISON,3;BLEEDING,3 POISON,7;BLEEDING,7 POISON,9;BLEEDING,9 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -43,7 +43,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1301" levels="1" name="Servitor Blessing">
+	<skill id="1301" toLevel="1" name="Servitor Blessing">
 		<castRange>600</castRange>
 		<effectPoint>582</effectPoint>
 		<effectRange>1100</effectRange>
@@ -65,7 +65,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1303" levels="2" name="Wild Magic">
+	<skill id="1303" toLevel="2" name="Wild Magic">
 		<table name="#mCritRate"> 1 2 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -111,7 +111,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1304" levels="3" name="Advanced Block">
+	<skill id="1304" toLevel="3" name="Advanced Block">
 		<table name="#sDef"> 1.3 1.4 1.5 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -163,7 +163,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1305" levels="5" name="The Honor of Pa'agrio">
+	<skill id="1305" toLevel="5" name="The Honor of Pa'agrio">
 		<table name="#amount"> 616 636 654 671 687 </table>
 		<affectLimit>50-50</affectLimit>
 		<affectRange>1000</affectRange>
@@ -217,7 +217,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1306" levels="6" name="Ritual of Life">
+	<skill id="1306" toLevel="6" name="Ritual of Life">
 		<table name="#amount"> 745 770 795 817 839 858 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -275,7 +275,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1307" levels="3" name="Prayer">
+	<skill id="1307" toLevel="3" name="Prayer">
 		<table name="#healEffect"> 1.08 1.1 1.12 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -327,7 +327,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1308" levels="3" name="Chant of Predator">
+	<skill id="1308" toLevel="3" name="Chant of Predator">
 		<table name="#rCrit"> 0.2 0.25 0.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -379,7 +379,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1309" levels="3" name="Chant of Eagle">
+	<skill id="1309" toLevel="3" name="Chant of Eagle">
 		<table name="#accCombat"> 2 3 4 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -431,7 +431,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1310" levels="4" name="Chant of Vampire">
+	<skill id="1310" toLevel="4" name="Chant of Vampire">
 		<table name="#absorbDam"> 6 7 8 9 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -489,7 +489,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1311" levels="6" name="Body of Avatar">
+	<skill id="1311" toLevel="6" name="Body of Avatar">
 		<table name="#amount"> 10 15 20 25 30 35 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -560,7 +560,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1312" levels="1" name="Unused Fishing">
+	<skill id="1312" toLevel="1" name="Unused Fishing">
 		<icon>icon.skill1312</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -580,7 +580,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="1313" levels="27" name="Unused Pumping">
+	<skill id="1313" toLevel="27" name="Unused Pumping">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill1313</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -602,7 +602,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="1314" levels="27" name="Unused Reeling">
+	<skill id="1314" toLevel="27" name="Unused Reeling">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill1314</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -624,42 +624,42 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="1315" levels="27" name="Unused Fishing Expertise">
+	<skill id="1315" toLevel="27" name="Unused Fishing Expertise">
 		<table name="#power"> 0.66 0.9375 1.26 1.55 1.7 1.85 2 2.15 2.3 2.45 2.6 2.75 2.9 3.05 3.2 3.35 3.5 3.65 3.8 3.95 4.1 4.25 4.4 4.55 4.7 4.85 5 </table>
 		<icon>icon.skill1315</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1316" levels="1" name="Fishing Expertise: C Grade">
+	<skill id="1316" toLevel="1" name="Fishing Expertise: C Grade">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill1316</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1317" levels="1" name="Fishing Expertise: B Grade">
+	<skill id="1317" toLevel="1" name="Fishing Expertise: B Grade">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill1317</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1318" levels="1" name="Fishing Expertise: A-Grade">
+	<skill id="1318" toLevel="1" name="Fishing Expertise: A-Grade">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill1318</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1319" levels="1" name="Fishing Expertise: S-Grade">
+	<skill id="1319" toLevel="1" name="Fishing Expertise: S-Grade">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill1319</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1320" levels="10" name="Create Common Item">
+	<skill id="1320" toLevel="10" name="Create Common Item">
 		<icon>icon.skill0172</icon>
 		<magicLvl>
 			<value level="1">5</value>
@@ -676,7 +676,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1321" levels="1" name="Dwarven Craft">
+	<skill id="1321" toLevel="1" name="Dwarven Craft">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill0172</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -691,7 +691,7 @@
 			<effect name="OpenDwarfRecipeBook" />
 		</effects>
 	</skill>
-	<skill id="1322" levels="1" name="Common Craft">
+	<skill id="1322" toLevel="1" name="Common Craft">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill0172</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -706,7 +706,7 @@
 			<effect name="OpenCommonRecipeBook" />
 		</effects>
 	</skill>
-	<skill id="1323" levels="1" name="Noblesse Blessing">
+	<skill id="1323" toLevel="1" name="Noblesse Blessing">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
@@ -733,7 +733,7 @@
 			<effect name="NoblesseBless" />
 		</effects>
 	</skill>
-	<skill id="1324" levels="2" name="Summon CP Potion">
+	<skill id="1324" toLevel="2" name="Summon CP Potion">
 		<!-- Confirmed CT2.5 and updated to IO -->
 		<table name="#reuseDelay"> 600000 3600000 </table>
 		<hitTime>20000</hitTime>
@@ -770,7 +770,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1325" levels="1" name="Noblesse Fortune">
+	<skill id="1325" toLevel="1" name="Noblesse Fortune">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>6</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
@@ -802,7 +802,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1326" levels="1" name="Noblesse Harmony">
+	<skill id="1326" toLevel="1" name="Noblesse Harmony">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -863,7 +863,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1327" levels="1" name="Noblesse Symphony">
+	<skill id="1327" toLevel="1" name="Noblesse Symphony">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -924,7 +924,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1328" levels="8" name="Mass Summon Storm Cubic">
+	<skill id="1328" toLevel="8" name="Mass Summon Storm Cubic">
 		<!-- Confirmed CT2.5 -->
 		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 </table>
 		<affectRange>1000</affectRange>
@@ -998,7 +998,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1329" levels="9" name="Mass Summon Aqua Cubic">
+	<skill id="1329" toLevel="9" name="Mass Summon Aqua Cubic">
 		<!-- Confirmed CT2.5 -->
 		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 9 </table>
 		<affectRange>1000</affectRange>
@@ -1077,7 +1077,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1330" levels="8" name="Mass Summon Phantom Cubic">
+	<skill id="1330" toLevel="8" name="Mass Summon Phantom Cubic">
 		<!-- Confirmed CT2.5 -->
 		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 </table>
 		<affectRange>1000</affectRange>
@@ -1152,7 +1152,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1331" levels="10" name="Summon Feline Queen">
+	<skill id="1331" toLevel="10" name="Summon Feline Queen">
 		<table name="#itemConsumeCountOT"> 2 2 2 2 2 4 4 4 6 6 </table>
 		<table name="#npcIds"> 14251 14252 14253 14254 14255 14256 14257 14258 14259 14260 14261 14262 14263 14264 </table>
 		<icon>icon.skill1331</icon>
@@ -1252,7 +1252,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1332" levels="10" name="Summon Seraphim the Unicorn">
+	<skill id="1332" toLevel="10" name="Summon Seraphim the Unicorn">
 		<table name="#itemConsumeCountOT"> 2 2 2 2 2 4 4 4 6 6 </table>
 		<table name="#npcIds"> 14435 14436 14437 14438 14439 14440 14441 14442 14443 14444 14445 14446 14447 14448 </table>
 		<icon>icon.skill1332</icon>
@@ -1352,7 +1352,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1333" levels="10" name="Summon Nightshade">
+	<skill id="1333" toLevel="10" name="Summon Nightshade">
 		<table name="#itemConsumeCountOT"> 2 2 2 2 2 4 4 4 6 6 </table>
 		<table name="#npcIds"> 14619 14620 14621 14622 14623 14624 14625 14626 14627 14628 14629 14630 14631 14632 </table>
 		<icon>icon.skill1333</icon>
@@ -1452,7 +1452,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1334" levels="16" name="Summon Cursed Man">
+	<skill id="1334" toLevel="16" name="Summon Cursed Man">
 		<table name="#itemConsumeCountOT"> 1 1 1 2 2 2 2 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#npcIds"> 14074 14075 14076 14077 14078 14079 14080 15142 15143 15144 15145 15146 15147 15194 15195 15196 </table>
 		<icon>icon.skill1334</icon>
@@ -1585,7 +1585,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1335" levels="1" name="Balance Life">
+	<skill id="1335" toLevel="1" name="Balance Life">
 		<!-- Confirmed CT2.5 -->
 		<affectRange>1000</affectRange>
 		<effectPoint>398</effectPoint>
@@ -1606,7 +1606,7 @@
 			<effect name="RebalanceHP" />
 		</effects>
 	</skill>
-	<skill id="1336" levels="1" name="Curse of Doom">
+	<skill id="1336" toLevel="1" name="Curse of Doom">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>SILENCE_ALL</abnormalType>
@@ -1636,7 +1636,7 @@
 			<effect name="PhysicalMute" />
 		</effects>
 	</skill>
-	<skill id="1337" levels="1" name="Curse of Abyss">
+	<skill id="1337" toLevel="1" name="Curse of Abyss">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
@@ -1687,7 +1687,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1338" levels="1" name="Arcane Chaos">
+	<skill id="1338" toLevel="1" name="Arcane Chaos">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF</abnormalType>
@@ -1736,7 +1736,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1339" levels="1" name="Fire Vortex">
+	<skill id="1339" toLevel="1" name="Fire Vortex">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_FIRE</abnormalType>
@@ -1788,7 +1788,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1340" levels="1" name="Ice Vortex">
+	<skill id="1340" toLevel="1" name="Ice Vortex">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_WATER</abnormalType>
@@ -1840,7 +1840,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1341" levels="1" name="Wind Vortex">
+	<skill id="1341" toLevel="1" name="Wind Vortex">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_WIND</abnormalType>
@@ -1892,7 +1892,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1342" levels="1" name="Light Vortex">
+	<skill id="1342" toLevel="1" name="Light Vortex">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_HOLY</abnormalType>
@@ -1935,7 +1935,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1343" levels="1" name="Dark Vortex">
+	<skill id="1343" toLevel="1" name="Dark Vortex">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_UNHOLY</abnormalType>
@@ -1975,7 +1975,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1344" levels="1" name="Mass Warrior Bane">
+	<skill id="1344" toLevel="1" name="Mass Warrior Bane">
 		<!-- Confirmed CT2.5 -->
 		<affectLimit>10-10</affectLimit>
 		<affectRange>200</affectRange>
@@ -2000,7 +2000,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1345" levels="1" name="Mass Mage Bane">
+	<skill id="1345" toLevel="1" name="Mass Mage Bane">
 		<!-- Confirmed CT2.5 -->
 		<affectLimit>10-10</affectLimit>
 		<affectRange>200</affectRange>
@@ -2025,7 +2025,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1346" levels="1" name="Warrior Servitor">
+	<skill id="1346" toLevel="1" name="Warrior Servitor">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2082,7 +2082,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1347" levels="1" name="Wizard Servitor">
+	<skill id="1347" toLevel="1" name="Wizard Servitor">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2135,7 +2135,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1348" levels="1" name="Assassin Servitor">
+	<skill id="1348" toLevel="1" name="Assassin Servitor">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2190,7 +2190,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1349" levels="1" name="Final Servitor">
+	<skill id="1349" toLevel="1" name="Final Servitor">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2264,7 +2264,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1350" levels="1" name="Warrior Bane">
+	<skill id="1350" toLevel="1" name="Warrior Bane">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>-662</effectPoint>
@@ -2288,7 +2288,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1351" levels="1" name="Mage Bane">
+	<skill id="1351" toLevel="1" name="Mage Bane">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>-666</effectPoint>
@@ -2312,7 +2312,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1352" levels="1" name="Elemental Resistance">
+	<skill id="1352" toLevel="1" name="Elemental Resistance">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>MD_UP_ATTR</abnormalType>
@@ -2351,7 +2351,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1353" levels="1" name="Holy Attack Resistance">
+	<skill id="1353" toLevel="1" name="Holy Attack Resistance">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>RESIST_HOLY_UNHOLY</abnormalType>
@@ -2382,7 +2382,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1354" levels="1" name="Arcane Protection">
+	<skill id="1354" toLevel="1" name="Arcane Protection">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>RESIST_DEBUFF_DISPEL</abnormalType>
@@ -2413,7 +2413,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1355" levels="1" name="Prophecy of Water">
+	<skill id="1355" toLevel="1" name="Prophecy of Water">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
@@ -2499,7 +2499,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1356" levels="1" name="Prophecy of Fire">
+	<skill id="1356" toLevel="1" name="Prophecy of Fire">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2581,7 +2581,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1357" levels="1" name="Prophecy of Wind">
+	<skill id="1357" toLevel="1" name="Prophecy of Wind">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2659,7 +2659,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1358" levels="1" name="Block Shield">
+	<skill id="1358" toLevel="1" name="Block Shield">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2697,7 +2697,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1359" levels="1" name="Block Wind Walk">
+	<skill id="1359" toLevel="1" name="Block Wind Walk">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2735,7 +2735,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1360" levels="1" name="Mass Block Shield">
+	<skill id="1360" toLevel="1" name="Mass Block Shield">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2774,7 +2774,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1361" levels="1" name="Mass Block Wind Walk">
+	<skill id="1361" toLevel="1" name="Mass Block Wind Walk">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -2813,7 +2813,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1362" levels="1" name="Chant of Spirit">
+	<skill id="1362" toLevel="1" name="Chant of Spirit">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>RESIST_DEBUFF_DISPEL</abnormalType>
@@ -2844,7 +2844,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1363" levels="1" name="Chant of Victory">
+	<skill id="1363" toLevel="1" name="Chant of Victory">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -2918,7 +2918,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1364" levels="1" name="Eye of Pa'agrio">
+	<skill id="1364" toLevel="1" name="Eye of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
@@ -2957,7 +2957,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1365" levels="1" name="Soul of Pa'agrio">
+	<skill id="1365" toLevel="1" name="Soul of Pa'agrio">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
@@ -2996,7 +2996,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1366" levels="1" name="Seal of Despair">
+	<skill id="1366" toLevel="1" name="Seal of Despair">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
@@ -3052,7 +3052,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1367" levels="1" name="Seal of Disease">
+	<skill id="1367" toLevel="1" name="Seal of Disease">
 		<!-- FIXME: SHOULD AFFECT ONLY ENEMY CLAN -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -3085,7 +3085,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1368" levels="8" name="Expand Dwarven Craft">
+	<skill id="1368" toLevel="8" name="Expand Dwarven Craft">
 		<icon>icon.skill1368</icon>
 		<magicLvl>
 			<value level="1">10</value>
@@ -3116,7 +3116,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1369" levels="8" name="Expand Common Craft">
+	<skill id="1369" toLevel="8" name="Expand Common Craft">
 		<icon>icon.skill1369</icon>
 		<magicLvl>
 			<value level="1">10</value>
@@ -3147,7 +3147,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1370" levels="8" name="Expand Trade">
+	<skill id="1370" toLevel="8" name="Expand Trade">
 		<icon>icon.skill1370</icon>
 		<magicLvl>
 			<value level="1">40</value>
@@ -3192,7 +3192,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1371" levels="8" name="Expand Warehouse">
+	<skill id="1371" toLevel="8" name="Expand Warehouse">
 		<icon>icon.skill0333</icon>
 		<magicLvl>
 			<value level="1">10</value>
@@ -3223,7 +3223,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1372" levels="8" name="Expand Inventory">
+	<skill id="1372" toLevel="8" name="Expand Inventory">
 		<icon>icon.skill0332</icon>
 		<magicLvl>
 			<value level="1">10</value>
@@ -3253,7 +3253,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1373" levels="1" name="Strider Mastery">
+	<skill id="1373" toLevel="1" name="Strider Mastery">
 		<icon>icon.skill1373</icon>
 		<magicLvl>55</magicLvl>
 		<operateType>P</operateType>
@@ -3269,7 +3269,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1374" levels="1" name="Heroic Valor">
+	<skill id="1374" toLevel="1" name="Heroic Valor">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -3311,7 +3311,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1375" levels="1" name="Heroic Grandeur">
+	<skill id="1375" toLevel="1" name="Heroic Grandeur">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -3369,7 +3369,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1376" levels="1" name="Heroic Dread">
+	<skill id="1376" toLevel="1" name="Heroic Dread">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -3412,25 +3412,25 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1377" levels="1" name="none">
+	<skill id="1377" toLevel="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1378" levels="1" name="none">
+	<skill id="1378" toLevel="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1379" levels="1" name="none">
+	<skill id="1379" toLevel="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
-	<skill id="1380" levels="10" name="Betray">
+	<skill id="1380" toLevel="10" name="Betray">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>DERANGEMENT</abnormalType>
@@ -3503,7 +3503,7 @@
 			<effect name="Betray" />
 		</effects>
 	</skill>
-	<skill id="1381" levels="5" name="Mass Curse Fear">
+	<skill id="1381" toLevel="5" name="Mass Curse Fear">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -3561,7 +3561,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="1382" levels="5" name="Mass Curse Gloom">
+	<skill id="1382" toLevel="5" name="Mass Curse Gloom">
 		<table name="#power"> 33 36 39 41 44 </table>
 		<table name="#vuln"> 5 10 15 20 25 </table>
 		<abnormalLvl>3</abnormalLvl>
@@ -3684,7 +3684,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1383" levels="5" name="Mass Surrender to Fire">
+	<skill id="1383" toLevel="5" name="Mass Surrender to Fire">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ARMOR_FIRE</abnormalType>
@@ -3748,7 +3748,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1384" levels="5" name="Mass Surrender to Water">
+	<skill id="1384" toLevel="5" name="Mass Surrender to Water">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ARMOR_WATER</abnormalType>
@@ -3812,7 +3812,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1385" levels="5" name="Mass Surrender to Wind">
+	<skill id="1385" toLevel="5" name="Mass Surrender to Wind">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ARMOR_WIND</abnormalType>
@@ -3876,7 +3876,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1386" levels="10" name="Arcane Disruption">
+	<skill id="1386" toLevel="10" name="Arcane Disruption">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>CASTING_TIME_UP</abnormalType>
@@ -3938,7 +3938,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1387" levels="3" name="Summon Cursed Bones">
+	<skill id="1387" toLevel="3" name="Summon Cursed Bones">
 		<!-- Confirmed CT2.5 -->
 		<!-- Not Used Anymore -->
 		<hitTime>10000</hitTime>
@@ -4012,7 +4012,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1388" levels="3" name="Greater Might">
+	<skill id="1388" toLevel="3" name="Greater Might">
 		<table name="#pAtk"> 1.04 1.07 1.1 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4065,7 +4065,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1389" levels="3" name="Greater Shield">
+	<skill id="1389" toLevel="3" name="Greater Shield">
 		<table name="#pDef"> 1.05 1.1 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4118,7 +4118,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1390" levels="3" name="War Chant">
+	<skill id="1390" toLevel="3" name="War Chant">
 		<table name="#pAtk"> 1.04 1.07 1.1 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4171,7 +4171,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1391" levels="3" name="Chant of Earth">
+	<skill id="1391" toLevel="3" name="Chant of Earth">
 		<table name="#pDef"> 1.05 1.1 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4224,7 +4224,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1392" levels="3" name="Holy Attack Resistance">
+	<skill id="1392" toLevel="3" name="Holy Attack Resistance">
 		<table name="#holyRes"> 15 23 30 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4271,7 +4271,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1393" levels="3" name="Dark Attack Resistance">
+	<skill id="1393" toLevel="3" name="Dark Attack Resistance">
 		<table name="#darkRes"> 15 23 30 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4318,7 +4318,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1394" levels="10" name="Trance">
+	<skill id="1394" toLevel="10" name="Trance">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -4396,7 +4396,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1395" levels="10" name="Erase">
+	<skill id="1395" toLevel="10" name="Erase">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>
@@ -4477,7 +4477,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1396" levels="10" name="Magical Backfire">
+	<skill id="1396" toLevel="10" name="Magical Backfire">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -4563,7 +4563,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1397" levels="3" name="Clarity">
+	<skill id="1397" toLevel="3" name="Clarity">
 		<table name="#MagicalMpConsumeRate"> 0.96 0.93 0.9 </table>
 		<table name="#MpConsumeRate"> 0.9 0.85 0.8 </table>
 		<abnormalLvl>
@@ -4636,7 +4636,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1398" levels="10" name="Mana Burn">
+	<skill id="1398" toLevel="10" name="Mana Burn">
 		<table name="#power"> 117 123 128 133 138 143 148 153 157 162 </table>
 		<castRange>900</castRange>
 		<effectPoint>
@@ -4702,7 +4702,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1399" levels="5" name="Mana Storm">
+	<skill id="1399" toLevel="5" name="Mana Storm">
 		<table name="#power"> 62 67 72 77 81 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>200</affectRange>

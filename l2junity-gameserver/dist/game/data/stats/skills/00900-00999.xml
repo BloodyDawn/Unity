@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="900" levels="6" name="Energy Blast">
+	<skill id="900" toLevel="6" name="Energy Blast">
 		<table name="#pvePower"> 15838 16170 16494 16807 17110 17400 </table>
 		<table name="#pvpPower"> 5280 5390 5498 5603 5704 5800 </table>
 		<affectLimit>6-12</affectLimit>
@@ -64,7 +64,7 @@
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="901" levels="6" name="Dark Strike">
+	<skill id="901" toLevel="6" name="Dark Strike">
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
 		<table name="#pvpPower"> 3168 3234 3299 3362 3422 3480 </table>
 		<castRange>40</castRange>
@@ -127,7 +127,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="902" levels="6" name="Bursting Flame">
+	<skill id="902" toLevel="6" name="Bursting Flame">
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
 		<table name="#pvpPower"> 3168 3234 3299 3362 3422 3480 </table>
 		<castRange>900</castRange>
@@ -189,7 +189,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="903" levels="6" name="Stratum Explosion">
+	<skill id="903" toLevel="6" name="Stratum Explosion">
 		<table name="#pvePower"> 5068 5175 5278 5379 5475 5568 </table>
 		<table name="#pvpPower"> 1690 1725 1760 1793 1825 1856 </table>
 		<affectLimit>6-12</affectLimit>
@@ -252,7 +252,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="904" levels="6" name="Corpse Burst">
+	<skill id="904" toLevel="6" name="Corpse Burst">
 		<table name="#pvePower"> 348 351 355 358 361 364 </table>
 		<table name="#pvpPower"> 116 117 119 120 121 122 </table>
 		<abnormalLvl>8</abnormalLvl>
@@ -337,7 +337,7 @@
 			</effect>
 		</pvpEffects>
 	</skill>
-	<skill id="905" levels="6" name="Dark Detonation">
+	<skill id="905" toLevel="6" name="Dark Detonation">
 		<table name="#pvePower"> 12670 12936 13195 13446 13688 13920 </table>
 		<table name="#pvpPower"> 4224 4312 4399 4482 4563 4640 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -413,7 +413,7 @@
 			</effect>
 		</pvpEffects>
 	</skill>
-	<skill id="906" levels="6" name="Lance Step">
+	<skill id="906" toLevel="6" name="Lance Step">
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
 		<table name="#pvpPower"> 3168 3234 3299 3362 3422 3480 </table>
 		<affectLimit>6-12</affectLimit>
@@ -477,7 +477,7 @@
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="907" levels="6" name="Aqua Blast">
+	<skill id="907" toLevel="6" name="Aqua Blast">
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
 		<table name="#pvpPower"> 3168 3234 3299 3362 3422 3480 </table>
 		<castRange>900</castRange>
@@ -541,7 +541,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="908" levels="6" name="Spin Slash">
+	<skill id="908" toLevel="6" name="Spin Slash">
 		<table name="#pvePower"> 5068 5175 5278 5379 5475 5568 </table>
 		<table name="#pvpPower"> 1690 1725 1760 1793 1825 1856 </table>
 		<affectLimit>6-12</affectLimit>
@@ -604,7 +604,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="909" levels="6" name="Ice Fog">
+	<skill id="909" toLevel="6" name="Ice Fog">
 		<table name="#pvePower"> 348 351 355 358 361 364 </table>
 		<table name="#pvpPower"> 116 117 119 120 121 122 </table>
 		<abnormalLvl>8</abnormalLvl>
@@ -696,7 +696,7 @@
 			</effect>
 		</pvpEffects>
 	</skill>
-	<skill id="910" levels="6" name="Water Jet">
+	<skill id="910" toLevel="6" name="Water Jet">
 		<table name="#pvePower"> 12670 12936 13195 13446 13688 13920 </table>
 		<table name="#pvpPower"> 4224 4312 4399 4482 4563 4640 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -770,7 +770,7 @@
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="911" levels="11" name="Energy Burst">
+	<skill id="911" toLevel="11" name="Energy Burst">
 		<!-- Aurabird Falcon and Owl -->
 		<table name="#power"> 469 482 494 505 517 528 539 550 561 571 580 </table>
 		<affectLimit>6-12</affectLimit>
@@ -841,7 +841,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="912" levels="1" name="Summon Imperial Phoenix">
+	<skill id="912" toLevel="1" name="Summon Imperial Phoenix">
 		<hitTime>15000</hitTime>
 		<icon>icon.skill0912</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -867,7 +867,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="913" levels="1" name="Deflect Magic">
+	<skill id="913" toLevel="1" name="Deflect Magic">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>DD_RESIST</abnormalType>
@@ -890,7 +890,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="914" levels="1" name="Song of Purification">
+	<skill id="914" toLevel="1" name="Song of Purification">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -926,7 +926,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="915" levels="1" name="Dance of Berserker">
+	<skill id="915" toLevel="1" name="Dance of Berserker">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -989,7 +989,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="916" levels="4" name="Shield Deflect Magic">
+	<skill id="916" toLevel="4" name="Shield Deflect Magic">
 		<!-- Confirmed CT2.5 -->
 		<table name="#vengeanceMdam"> 20 30 40 50 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -1031,7 +1031,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="917" levels="1" name="Final Secret">
+	<skill id="917" toLevel="1" name="Final Secret">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -1059,7 +1059,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="918" levels="1" name="Maximum Force Focus">
+	<skill id="918" toLevel="1" name="Maximum Force Focus">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>150</effectPoint>
 		<hitTime>900</hitTime>
@@ -1087,7 +1087,7 @@
 			<effect name="FocusMaxMomentum" />
 		</effects>
 	</skill>
-	<skill id="919" levels="1" name="Maximum Sonic Focus">
+	<skill id="919" toLevel="1" name="Maximum Sonic Focus">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>150</effectPoint>
 		<hitTime>900</hitTime>
@@ -1116,7 +1116,7 @@
 			<effect name="FocusMaxMomentum" />
 		</effects>
 	</skill>
-	<skill id="920" levels="37" name="Power Crush">
+	<skill id="920" toLevel="37" name="Power Crush">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 664 706 750 795 843 893 945 998 1054 1112 1172 1234 1298 1365 1433 1503 1575 1649 1725 1803 1882 1963 2045 2129 2214 2301 2388 2476 2565 2655 2745 2836 2927 3018 3108 3198 3288 </table>
 		<castRange>80</castRange>
@@ -1301,7 +1301,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="921" levels="1" name="Cursed Pierce">
+	<skill id="921" toLevel="1" name="Cursed Pierce">
 		<!-- Confirmed CT2.5 -->
 		<castRange>80</castRange>
 		<coolTime>720</coolTime>
@@ -1334,7 +1334,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="922" levels="1" name="Hide">
+	<skill id="922" toLevel="1" name="Hide">
 		<!-- Confirmed CT2.5 -->
 		<!-- NOTE: Description says "Increases Speed" but is client typo, it "Decrease Speed" -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1363,7 +1363,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="923" levels="1" name="Dual Dagger Mastery">
+	<skill id="923" toLevel="1" name="Dual Dagger Mastery">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill0923</icon>
 		<magicLvl>81</magicLvl>
@@ -1390,7 +1390,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="924" levels="1" name="Seven Arrow">
+	<skill id="924" toLevel="1" name="Seven Arrow">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<castRange>900</castRange>
 		<effectPoint>-1022</effectPoint>
@@ -1421,7 +1421,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="925" levels="1" name="Sigil Mastery">
+	<skill id="925" toLevel="1" name="Sigil Mastery">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill0925</icon>
 		<magicLvl>76</magicLvl>
@@ -1444,7 +1444,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="926" levels="1" name="Sigil Mastery">
+	<skill id="926" toLevel="1" name="Sigil Mastery">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill0925</icon>
 		<magicLvl>76</magicLvl>
@@ -1467,7 +1467,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="927" levels="14" name="Burning Chop">
+	<skill id="927" toLevel="14" name="Burning Chop">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<table name="#dot"> 43 43 43 53 53 53 61 61 61 61 61 66 66 66 </table>
 		<table name="#power"> 167 210 261 319 384 419 455 492 531 570 610 651 691 731 </table>
@@ -1597,7 +1597,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="928" levels="1" name="Dual Blow">
+	<skill id="928" toLevel="1" name="Dual Blow">
 		<!-- High Five Skill -->
 		<castRange>40</castRange>
 		<effectPoint>-337</effectPoint>
@@ -1635,7 +1635,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="929" levels="1" name="Spirit of the Cat">
+	<skill id="929" toLevel="1" name="Spirit of the Cat">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1687,7 +1687,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="930" levels="1" name="Spirit of the Phantom">
+	<skill id="930" toLevel="1" name="Spirit of the Phantom">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1739,7 +1739,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="931" levels="1" name="Spirit of the Unicorn">
+	<skill id="931" toLevel="1" name="Spirit of the Unicorn">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1791,7 +1791,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="932" levels="9" name="Star Stone Gathering">
+	<skill id="932" toLevel="9" name="Star Stone Gathering">
 		<castRange>100</castRange>
 		<effectRange>400</effectRange>
 		<hitTime>6000</hitTime>
@@ -1819,7 +1819,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="933" levels="1" name="Detection">
+	<skill id="933" toLevel="1" name="Detection">
 		<!-- Confirmed CT2.5 -->
 		<affectRange>300</affectRange>
 		<effectPoint>-1</effectPoint>
@@ -1838,7 +1838,7 @@
 			<effect name="Detection" />
 		</effects>
 	</skill>
-	<skill id="934" levels="1" name="Sigil Mastery">
+	<skill id="934" toLevel="1" name="Sigil Mastery">
 		<icon>icon.skill0925</icon>
 		<magicLvl>76</magicLvl>
 		<operateType>P</operateType>
@@ -1860,7 +1860,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="935" levels="1" name="Sigil Mastery">
+	<skill id="935" toLevel="1" name="Sigil Mastery">
 		<icon>icon.skill0925</icon>
 		<magicLvl>76</magicLvl>
 		<operateType>P</operateType>
@@ -1882,7 +1882,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="936" levels="47" name="Ordinary Mercenary">
+	<skill id="936" toLevel="47" name="Ordinary Mercenary">
 		<!-- Confirmed CT2.5 -->
 		<table name="#mAtk"> 707.24 718.68 729.65 740.16 750.2 759.76 768.84 777.44 785.56 793.2 800.37 807.06 813.29 819.06 824.38 829.26 833.72 837.78 841.44 844.73 847.67 850.28 852.58 854.61 856.4 857.97 859.35 860.59 861.71 862.76 863.77 864.79 865.85 867.01 868.3 869.77 868.34 862.19 850.88 829.58 806.11 702.08 737.18 774.04 812.74 857.44 0.0 </table>
 		<table name="#mDef"> 549.56 549.89 549.87 549.5 548.78 547.72 546.33 544.61 542.56 540.2 537.53 534.55 531.26 527.69 523.83 519.68 515.27 510.58 505.64 500.45 495.02 489.35 483.46 477.35 471.04 464.53 457.83 450.96 443.92 436.73 429.39 421.92 414.34 406.64 398.85 390.98 379.99 364.12 342.98 311.93 278.52 291.7 305.68 320.53 336.29 354.71 0.0 </table>
@@ -2175,7 +2175,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="937" levels="47" name="Elite Mercenary">
+	<skill id="937" toLevel="47" name="Elite Mercenary">
 		<!-- Confirmed CT2.5 -->
 		<table name="#mAtk"> 732.77 744.85 756.46 767.61 778.28 788.48 798.2 807.44 816.2 824.48 832.28 839.61 846.48 852.89 858.85 864.37 869.47 874.16 878.46 882.39 885.96 889.21 892.16 894.83 897.25 899.46 901.48 903.35 905.11 906.8 908.45 910.11 911.81 913.6 915.53 917.64 916.85 911.34 900.67 880.0 857.17 802.38 842.49 884.62 928.85 979.94 0.0 </table>
 		<table name="#mDef"> 574.06 574.7 574.97 574.9 574.47 573.71 572.6 571.17 569.4 567.32 564.92 562.21 559.2 555.89 552.29 548.41 544.26 539.83 535.15 530.21 525.02 519.61 513.96 508.1 502.03 495.76 489.3 482.67 475.86 468.91 461.8 454.57 447.21 439.74 432.18 424.53 413.76 398.11 377.2 346.37 313.17 327.99 343.71 360.4 378.13 398.84 0.0 </table>
@@ -2475,7 +2475,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="938" levels="47" name="Exalted Mercenary">
+	<skill id="938" toLevel="47" name="Exalted Mercenary">
 		<!-- Confirmed CT2.5 -->
 		<table name="#mAtk"> 781.79 795.09 807.93 820.3 832.2 843.63 854.57 865.04 875.02 884.53 893.55 902.11 910.2 917.84 925.02 931.77 938.09 944.01 949.54 954.69 959.49 963.96 968.14 972.03 975.68 979.11 982.36 985.46 988.45 991.36 994.23 997.11 1000.04 1003.06 1006.22 1009.55 1009.99 1005.7 996.25 976.81 955.21 1002.97 1053.12 1105.77 1161.06 1224.92 0.0 </table>
 		<table name="#mDef"> 621.1 622.32 623.18 623.67 623.81 623.6 623.05 622.16 620.93 619.38 617.51 615.33 612.83 610.04 606.95 603.57 599.91 595.98 591.79 587.34 582.64 577.7 572.53 567.13 561.53 555.72 549.73 543.55 537.2 530.69 524.03 517.24 510.32 503.29 496.16 488.94 478.6 463.38 442.89 412.47 379.69 397.66 416.73 436.96 458.45 483.57 0.0 </table>
@@ -2768,7 +2768,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="939" levels="1" name="Soul Rage">
+	<skill id="939" toLevel="1" name="Soul Rage">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>-340</effectPoint>
@@ -2796,7 +2796,7 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="940" levels="1" name="Fake Attack">
+	<skill id="940" toLevel="1" name="Fake Attack">
 		<hitTime>1000</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
 		<magicLvl>80</magicLvl>
@@ -2806,7 +2806,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="941" levels="1" name="Special Motion">
+	<skill id="941" toLevel="1" name="Special Motion">
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -2819,7 +2819,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="942" levels="1" name="Special Motion">
+	<skill id="942" toLevel="1" name="Special Motion">
 		<effectPoint>100</effectPoint>
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
@@ -2830,7 +2830,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="943" levels="1" name="Special Motion">
+	<skill id="943" toLevel="1" name="Special Motion">
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -2843,7 +2843,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="944" levels="1" name="Special Motion">
+	<skill id="944" toLevel="1" name="Special Motion">
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -2856,7 +2856,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="945" levels="1" name="Magician's Will">
+	<skill id="945" toLevel="1" name="Magician's Will">
 		<icon>icon.skill0945</icon>
 		<magicLvl>81</magicLvl>
 		<operateType>P</operateType>
@@ -2881,7 +2881,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="946" levels="1" name="Silent Mind">
+	<skill id="946" toLevel="1" name="Silent Mind">
 		<icon>icon.skill0946</icon>
 		<magicLvl>81</magicLvl>
 		<operateType>P</operateType>
@@ -2890,7 +2890,7 @@
 			<effect name="CheapShot" />
 		</effects>
 	</skill>
-	<skill id="947" levels="1" name="Lucky Strike">
+	<skill id="947" toLevel="1" name="Lucky Strike">
 		<!-- Confirmed CT2.5 -->
 		<affectLimit>3-6</affectLimit>
 		<affectRange>150</affectRange>
@@ -2926,7 +2926,7 @@
 			<effect name="Spoil" />
 		</effects>
 	</skill>
-	<skill id="948" levels="1" name="Eye for Eye">
+	<skill id="948" toLevel="1" name="Eye for Eye">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>COUNTER_SKILL</abnormalType>
@@ -2951,7 +2951,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="949" levels="1" name="Onslaught of Pa'agrio">
+	<skill id="949" toLevel="1" name="Onslaught of Pa'agrio">
 		<abnormalLvl>9</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>DOT_ATTR</abnormalType>
@@ -2998,7 +2998,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="950" levels="7" name="Nail Attack">
+	<skill id="950" toLevel="7" name="Nail Attack">
 		<!-- Confirmed CT2.5 -->
 		<!-- Kamael Final Form Skill -->
 		<table name="#power"> 2583 2640 2695 2749 2802 2852 2900 </table>
@@ -3047,7 +3047,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="951" levels="7" name="Wing Assault">
+	<skill id="951" toLevel="7" name="Wing Assault">
 		<!-- Confirmed CT2.5 -->
 		<!-- Kamael Final Form Skill -->
 		<table name="#power"> 2067 2112 2156 2200 2241 2282 2320 </table>
@@ -3104,7 +3104,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="952" levels="5" name="Collector's Experience">
+	<skill id="952" toLevel="5" name="Collector's Experience">
 		<!-- Confirmed CT2.5 -->
 		<table name="#pAtk"> 72.7 86.1 100.2 114.8 129.3 </table>
 		<table name="#rShld"> 1.1 1.15 1.2 1.25 1.3 </table>
@@ -3154,7 +3154,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="953" levels="1" name="Life to Soul">
+	<skill id="953" toLevel="1" name="Life to Soul">
 		<!-- Confirmed CT2.5 -->
 		<effectPoint>150</effectPoint>
 		<hitTime>900</hitTime>
@@ -3176,7 +3176,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="954" levels="1" name="Strider Bite">
+	<skill id="954" toLevel="1" name="Strider Bite">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>6</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
@@ -3213,7 +3213,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="955" levels="1" name="Strider Dash">
+	<skill id="955" toLevel="1" name="Strider Dash">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -3237,7 +3237,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="956" levels="3" name="Boost Morale">
+	<skill id="956" toLevel="3" name="Boost Morale">
 		<!-- Confirmed CT2.5 -->
 		<!-- Vanguard Stance Skill -->
 		<table name="#accCombat"> 4 6 8 </table>
@@ -3304,7 +3304,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="957" levels="37" name="Guillotine Attack">
+	<skill id="957" toLevel="37" name="Guillotine Attack">
 		<!-- Confirmed CT2.5 -->
 		<!-- Vanguard Stance Skill -->
 		<table name="#power"> 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 5627 5773 5918 6060 6199 6335 6468 6598 6723 6844 6960 </table>
@@ -3492,7 +3492,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="958" levels="37" name="Triple Blade Slash">
+	<skill id="958" toLevel="37" name="Triple Blade Slash">
 		<!-- Confirmed CT2.5 -->
 		<!-- Vanguard Stance Skill -->
 		<table name="#power"> 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 5627 5773 5918 6060 6199 6335 6468 6598 6723 6844 6960 </table>
@@ -3680,7 +3680,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="959" levels="1" name="Frog Jump">
+	<skill id="959" toLevel="1" name="Frog Jump">
 		<!-- Increases one's own moving speed by 33 for 15 seconds. -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -3705,7 +3705,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="960" levels="1" name="Race Running">
+	<skill id="960" toLevel="1" name="Race Running">
 		<!-- Increases one's own moving speed by 33 for 15 seconds. -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -3730,7 +3730,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="961" levels="1" name="Swift Dash">
+	<skill id="961" toLevel="1" name="Swift Dash">
 		<!-- Increases one's own moving speed by 33 for 15 seconds. -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -3755,7 +3755,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="962" levels="1" name="Guard's March">
+	<skill id="962" toLevel="1" name="Guard's March">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -3781,7 +3781,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="963" levels="1" name="Guard's Ambush">
+	<skill id="963" toLevel="1" name="Guard's Ambush">
 		<!-- NOTE: Description says "Increases Speed" but is client typo, it "Decrease Speed" -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
@@ -3809,7 +3809,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="964" levels="1" name="Children of Shilen">
+	<skill id="964" toLevel="1" name="Children of Shilen">
 		<icon>icon.skill0294</icon>
 		<magicLvl>14</magicLvl>
 		<operateType>P</operateType>
@@ -3825,7 +3825,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="965" levels="1" name="Fake Attack">
+	<skill id="965" toLevel="1" name="Fake Attack">
 		<!-- Confirmed CT2.5 -->
 		<hitTime>1000</hitTime>
 		<icon>icon.skill_transform_s_attack</icon>
@@ -3836,7 +3836,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="966" levels="1" name="Special Motion">
+	<skill id="966" toLevel="1" name="Special Motion">
 		<!-- Confirmed CT2.5 -->
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -3850,7 +3850,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="967" levels="1" name="Cursed Body">
+	<skill id="967" toLevel="1" name="Cursed Body">
 		<!-- Cursed body. Recovery is not possible. -->
 		<icon>icon.skill0967</icon>
 		<magicLvl>85</magicLvl>
@@ -3858,7 +3858,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<!-- TODO: Implement and use proper effects. -->
 	</skill>
-	<skill id="968" levels="1" name="Treykan Claw">
+	<skill id="968" toLevel="1" name="Treykan Claw">
 		<!-- Confirmed CT2.5 -->
 		<castRange>20</castRange>
 		<coolTime>167</coolTime>
@@ -3882,7 +3882,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="969" levels="1" name="Treykan Dash">
+	<skill id="969" toLevel="1" name="Treykan Dash">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -3908,7 +3908,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="970" levels="1" name="Dash">
+	<skill id="970" toLevel="1" name="Dash">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -3934,7 +3934,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="971" levels="1" name="Acumen">
+	<skill id="971" toLevel="1" name="Acumen">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
@@ -3962,7 +3962,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="972" levels="1" name="Snipe">
+	<skill id="972" toLevel="1" name="Snipe">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>8</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
@@ -4012,7 +4012,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="973" levels="8" name="Stun Attack">
+	<skill id="973" toLevel="8" name="Stun Attack">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 455 651 845 863 880 897 913 928 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -4082,7 +4082,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="974" levels="7" name="Stun Shot">
+	<skill id="974" toLevel="7" name="Stun Shot">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 1951 2534 2588 2639 2690 2738 2784 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -4142,7 +4142,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="975" levels="7" name="Aqua Swirl">
+	<skill id="975" toLevel="7" name="Aqua Swirl">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 102 116 117 119 120 121 122 </table>
 		<castRange>750</castRange>
@@ -4209,7 +4209,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="976" levels="7" name="Wind Strike">
+	<skill id="976" toLevel="7" name="Wind Strike">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 102 116 117 119 120 121 122 </table>
 		<castRange>600</castRange>
@@ -4275,7 +4275,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="977" levels="6" name="Ice Bolt">
+	<skill id="977" toLevel="6" name="Ice Bolt">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 93 94 95 96 97 98 </table>
 		<abnormalLvl>2</abnormalLvl>
@@ -4348,7 +4348,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="978" levels="7" name="Shoulder Charge">
+	<skill id="978" toLevel="7" name="Shoulder Charge">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -4413,7 +4413,7 @@
 			<effect name="EnemyCharge" />
 		</effects>
 	</skill>
-	<skill id="979" levels="6" name="Aggression">
+	<skill id="979" toLevel="6" name="Aggression">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
@@ -4453,7 +4453,7 @@
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
-	<skill id="980" levels="6" name="Aggression Aura">
+	<skill id="980" toLevel="6" name="Aggression Aura">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
@@ -4501,7 +4501,7 @@
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
-	<skill id="981" levels="6" name="Sleep">
+	<skill id="981" toLevel="6" name="Sleep">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -4556,7 +4556,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="982" levels="3" name="Combat Aura">
+	<skill id="982" toLevel="3" name="Combat Aura">
 		<table name="#amount"> 1.03 1.04 1.05 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4610,7 +4610,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="983" levels="1" name="Patience">
+	<skill id="983" toLevel="1" name="Patience">
 		<!-- Confirmed CT2.5 -->
 		<icon>icon.skill0983</icon>
 		<magicLvl>60</magicLvl>
@@ -4630,7 +4630,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="984" levels="25" name="Shield Strike">
+	<skill id="984" toLevel="25" name="Shield Strike">
 		<!-- Glory Days confirmed -->
 		<table name="#power"> 833 992 1171 1371 1592 1832 2091 2272 2460 2653 2850 3050 3252 3453 3653 3849 3945 4040 4133 4224 4312 4399 4482 4563 4640 </table>
 		<castRange>40</castRange>
@@ -4762,7 +4762,7 @@
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
-	<skill id="985" levels="1" name="Challenge for Fate">
+	<skill id="985" toLevel="1" name="Challenge for Fate">
 		<!-- Glory Days confirmed -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -4800,7 +4800,7 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="986" levels="25" name="Deadly Strike">
+	<skill id="986" toLevel="25" name="Deadly Strike">
 		<!-- High Five Skill -->
 		<table name="#power"> 833 992 1171 1371 1592 1832 2091 2272 2460 2653 2850 3050 3252 3453 3653 3849 3945 4040 4133 4224 4312 4399 4482 4563 4640 </table>
 		<castRange>40</castRange>
@@ -4915,7 +4915,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="987" levels="1" name="Multiple Shot">
+	<skill id="987" toLevel="1" name="Multiple Shot">
 		<!-- Glory Days confirmed -->
 		<affectLimit>8-0-1</affectLimit>
 		<affectRange>900</affectRange>
@@ -4954,7 +4954,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="988" levels="3" name="Battle Whisper">
+	<skill id="988" toLevel="3" name="Battle Whisper">
 		<!-- High Five Skill -->
 		<table name="#amount"> 1.05 1.07 1.1 </table>
 		<table name="#pAtk"> 1.05 1.1 1.15 </table>
@@ -5013,7 +5013,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="989" levels="1" name="Defense Motion">
+	<skill id="989" toLevel="1" name="Defense Motion">
 		<!-- High Five Skill -->
 		<abnormalTime>120</abnormalTime>
 		<effectPoint>1</effectPoint>
@@ -5046,7 +5046,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="990" levels="1" name="Death Sting">
+	<skill id="990" toLevel="1" name="Death Sting">
 		<!-- High Five Skill -->
 		<castRange>900</castRange>
 		<effectPoint>-1387</effectPoint>
@@ -5080,7 +5080,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="991" levels="1" name="Throwing Dagger">
+	<skill id="991" toLevel="1" name="Throwing Dagger">
 		<!-- Glory Days confirmed -->
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
@@ -5123,7 +5123,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="992" levels="8" name="Sonic Mastery">
+	<skill id="992" toLevel="8" name="Sonic Mastery">
 		<!-- High Five Skill -->
 		<icon>icon.skill0992</icon>
 		<magicLvl>
@@ -5206,7 +5206,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="993" levels="8" name="Force Mastery">
+	<skill id="993" toLevel="8" name="Force Mastery">
 		<!-- High Five Skill -->
 		<table name="#maxMomentum"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#skillLevel"> 1 2 3 4 5 6 7 8 </table>
@@ -5282,7 +5282,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="994" levels="1" name="Rush">
+	<skill id="994" toLevel="1" name="Rush">
 		<!-- High Five Skill -->
 		<castRange>400</castRange>
 		<coolTime>200</coolTime>
@@ -5321,7 +5321,7 @@
 			<effect name="EnemyCharge" />
 		</effects>
 	</skill>
-	<skill id="995" levels="1" name="Rush Impact">
+	<skill id="995" toLevel="1" name="Rush Impact">
 		<!-- High Five Skill -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -5376,7 +5376,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="996" levels="1" name="Disarm">
+	<skill id="996" toLevel="1" name="Disarm">
 		<!-- High Five Skill -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
@@ -5417,7 +5417,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="997" levels="25" name="Crushing Strike">
+	<skill id="997" toLevel="25" name="Crushing Strike">
 		<!-- High Five Skill -->
 		<table name="#power"> 1041 1240 1464 1714 1990 2290 2614 2840 3075 3316 3563 3813 4065 4316 4566 4689 4811 4931 5050 5166 5280 5390 5498 5603 5704 </table>
 		<abnormalTime>3</abnormalTime>
@@ -5542,7 +5542,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="998" levels="1" name="Blazing Boost">
+	<skill id="998" toLevel="1" name="Blazing Boost">
 		<!-- Glory Days confirmed -->
 		<castRange>400</castRange>
 		<coolTime>200</coolTime>

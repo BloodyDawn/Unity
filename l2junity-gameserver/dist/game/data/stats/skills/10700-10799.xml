@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="10700" levels="7" name="Mug">
+	<skill id="10700" toLevel="7" name="Mug">
 		<!-- Inflicts 11903 damage onto nearby enemies and steals their item. Requires a dagger or dual dagger. -->
 		<table name="#power"> 11903 13957 15601 17244 21855 22921 23987 </table>
 		<affectLimit>9-10</affectLimit>
@@ -59,7 +59,7 @@
 			<effect name="Plunder" />
 		</effects>
 	</skill>
-	<skill id="10701" levels="4" name="Superior Vitality">
+	<skill id="10701" toLevel="4" name="Superior Vitality">
 		<!-- Max HP and CP + 5%. P. Atk. + 5%. Increases damage inflicted on an NPC by 30%. -->
 		<table name="#inc"> 1.05 1.07 1.1 1.15 </table>
 		<icon>icon.skill0211</icon>
@@ -112,7 +112,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10702" levels="7" name="Plunder">
+	<skill id="10702" toLevel="7" name="Plunder">
 		<!-- Inflicts 13580 damage onto target and steals their item. Requires a dagger or dual dagger. -->
 		<table name="#power"> 13580 15946 18311 20204 27142 28466 29790 </table>
 		<icon>icon.skill10548</icon>
@@ -167,7 +167,7 @@
 			<effect name="Plunder" />
 		</effects>
 	</skill>
-	<skill id="10703" levels="3" name="Armor Breaker">
+	<skill id="10703" toLevel="3" name="Armor Breaker">
 		<!-- Updated to IO -->
 		<!-- Cancels target's armor for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<icon>icon.skill10703</icon>
@@ -195,7 +195,7 @@
 			<effect name="Disarmor" />
 		</effects>
 	</skill>
-	<skill id="10704" levels="3" name="Mass Power Bluff">
+	<skill id="10704" toLevel="3" name="Mass Power Bluff">
 		<!-- Reveals the enemy's back and inflicts Stun for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<icon>icon.skill10704</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -239,7 +239,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="10705" levels="1" name="Shadow Walking">
+	<skill id="10705" toLevel="1" name="Shadow Walking">
 		<!-- Updated to IO -->
 		<!-- Front Critical Rate - 10%, Side Critical Rate + 10%, Critical Damage + 10%, Rear Critical Rate + 20%, Critical Damage + 20%. -->
 		<icon>icon.skill10705</icon>
@@ -275,14 +275,14 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10747" levels="1" name="Rogue - Individual Passive">
+	<skill id="10747" toLevel="1" name="Rogue - Individual Passive">
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill0217</icon>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="10748" levels="1" name="Rogue - Individual">
+	<skill id="10748" toLevel="1" name="Rogue - Individual">
 		<!-- Glory Days confirmed -->
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
 		<abnormalLvl>1</abnormalLvl>
@@ -333,7 +333,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10749" levels="1" name="Heavy Hit">
+	<skill id="10749" toLevel="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<icon>icon.skill10317</icon>
@@ -365,7 +365,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10750" levels="1" name="Heavy Hit">
+	<skill id="10750" toLevel="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- IO Retail: 1128 p.atk vs 2265 p.def = 1883 damage -->
 		<!-- Inflicts a powerful blow on target. -->
@@ -399,7 +399,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10751" levels="10" name="Superior Bow/Crossbow Mastery">
+	<skill id="10751" toLevel="10" name="Superior Bow/Crossbow Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 10%, Additional P. Atk. + 1663, Atk. Sp.d + 15%, P. Accuracy + 8 when using a bow or crossbow. STR + 2. Depending on your STR, the Cooldown resets or the abnormal status duration increases + 2 times. -->
 		<table name="#pAtk"> 1663 1928 2235 2515 2850 3023 3208 3403 3610 3830 </table>
@@ -475,7 +475,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10752" levels="10" name="Superior Light Armor Mastery">
+	<skill id="10752" toLevel="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4783, P. Def. + 1506, P. Evasion + 14, MP recovery bonus + 6, and chance of receiving critical attacks - 35% when equipped with Light Armor. Spd. and P. Skill Critical Rate change depending on DEX. STR + 2. -->
 		<table name="#pDef"> 1506 1645 1817 1959 2196 2279 2365 2455 2558 2655 </table>
@@ -553,7 +553,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10753" levels="1" name="Superior Hawkeye Mastery">
+	<skill id="10753" toLevel="1" name="Superior Hawkeye Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- When using a bow/crossbow, increases range by 500 and Max MP by 25%, and decreases MP consumption upon skill use by 30%. -->
 		<icon>icon.skill0113</icon>
@@ -591,7 +591,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10754" levels="10" name="Superior Survival Ability">
+	<skill id="10754" toLevel="10" name="Superior Survival Ability">
 		<!-- Glory Days confirmed -->
 		<!-- Speed + 17, Weight Limit + 51%, and Terrain Damage - 30%. STR + 2. When inflicting a critical during, Survival Movement is triggered. -->
 		<table name="#runSpd"> 17 18 19 20 22 23 24 25 26 27 </table>
@@ -650,7 +650,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10755" levels="10" name="Superior Mental Attack Resistance">
+	<skill id="10755" toLevel="10" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- Resistance + 20% to Hold/Sleep/Paralysis/Mental Attacks/Poison/Bleed/Stun. STR + 2. In addition, has a 10% chance of reflecting P./M. abnormal states back to the attacker. -->
 		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
@@ -771,7 +771,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10756" levels="10" name="Superior Critical Arrow">
+	<skill id="10756" toLevel="10" name="Superior Critical Arrow">
 		<!-- Glory Days confirmed -->
 		<!-- p. Critical Rate + 25%, and P. Critical Damage + 5%, Skill Mastery rate + 1000%. STR + 2. -->
 		<table name="#cAtk"> 1.05 1.06 1.07 1.08 1.1 1.12 1.14 1.16 1.18 1.20 </table>
@@ -820,7 +820,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10757" levels="4" name="Dead Eye Stance">
+	<skill id="10757" toLevel="4" name="Dead Eye Stance">
 		<!-- Can't be Glory Days confirmed, was toggle -->
 		<!-- For 30 min., P. Atk. + 10%, and skill power + 5% when equipped with a bow or crossbow. -->
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
@@ -881,7 +881,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10758" levels="4" name="Rapid Fire Stance">
+	<skill id="10758" toLevel="4" name="Rapid Fire Stance">
 		<!-- Can't be Glory Days confirmed, was toggle -->
 		<!-- For 30 min., P. Atk. + 10% and P. Skill Cooldown - 5% when a bow or crossbow is equipped. -->
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
@@ -943,7 +943,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10759" levels="4" name="Sniper Stance">
+	<skill id="10759" toLevel="4" name="Sniper Stance">
 		<!-- Can't be Glory Days confirmed, was toggle -->
 		<!-- For 30 min., P. Atk. + 10% and Atk. Spd. + 5% when a bow or crossbow is equipped. -->
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
@@ -1004,7 +1004,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10760" levels="11" name="Tornado Shot">
+	<skill id="10760" toLevel="11" name="Tornado Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 20814 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 20814 21546 23011 24476 25941 27406 28871 30336 33258 34786 36314 </table>
@@ -1107,7 +1107,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10761" levels="11" name="Bow Strike">
+	<skill id="10761" toLevel="11" name="Bow Strike">
 		<!-- Glory Days confirmed -->
 		<!-- Knocks back frontal enemies. Attacks target with 2681 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 2681 2771 2952 3133 3313 3494 3675 3855 4063 4239 4415 </table>
@@ -1212,7 +1212,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="10762" levels="11" name="Quick Shot">
+	<skill id="10762" toLevel="11" name="Quick Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 19477 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 22183 24401 26619 28837 31055 33273 35491 37709 39249 41163 43077 </table>
@@ -1298,7 +1298,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10763" levels="11" name="Pinpoint Shot">
+	<skill id="10763" toLevel="11" name="Pinpoint Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Aims for target's weak points to attack with 32463 Power added to P. Atk. Disregards 30% of target's P. Def. Requires a bow or crossbow to be equipped. Over-hit. Critical. Half-kill. -->
 		<table name="#power"> 32463 34086 37332 40578 43824 47070 50316 53562 56259 59003 61747 </table>
@@ -1386,7 +1386,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10764" levels="1" name="Knock Back">
+	<skill id="10764" toLevel="1" name="Knock Back">
 		<!-- Glory Days confirmed -->
 		<!-- Knock Back -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1414,7 +1414,7 @@
 			<effect name="TargetCancel" />
 		</effects>
 	</skill>
-	<skill id="10765" levels="1" name="Knock Back">
+	<skill id="10765" toLevel="1" name="Knock Back">
 		<!-- Glory Days confirmed -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>2</abnormalTime>
@@ -1444,7 +1444,7 @@
 			<effect name="TargetCancel" />
 		</effects>
 	</skill>
-	<skill id="10766" levels="1" name="Additional Effect">
+	<skill id="10766" toLevel="1" name="Additional Effect">
 		<!-- Glory Days confirmed -->
 		<!-- Critical Exposure -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1470,7 +1470,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10767" levels="1" name="Half-kill">
+	<skill id="10767" toLevel="1" name="Half-kill">
 		<!-- Glory Days confirmed -->
 		<!-- Half-kill. -->
 		<castRange>1100</castRange>
@@ -1488,7 +1488,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10768" levels="1" name="Blink">
+	<skill id="10768" toLevel="1" name="Blink">
 		<!-- Glory Days confirmed -->
 		<!-- Evasion -->
 		<affectRange>150</affectRange>
@@ -1526,7 +1526,7 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="10769" levels="9" name="Impact Shot">
+	<skill id="10769" toLevel="9" name="Impact Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Fires an arrow at the enemy with 19867 Power added to P. Atk. Stuns the enemy for 5 seconds. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<table name="#power"> 24834 28557 32280 36003 39726 42208 43724 45734 47744 </table>
@@ -1613,7 +1613,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10770" levels="11" name="Recoil Shot">
+	<skill id="10770" toLevel="11" name="Recoil Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Shoots an arrow with 24888 Power added to P. Atk. to Knock Back target. Requires a bow or crossbow to be equipped. Over-hit. Critical. Chance of canceling the enemy's target. -->
 		<table name="#power"> 25808 28388 30968 33548 36128 38708 41288 43868 45432 47520 49608 </table>
@@ -1713,7 +1713,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10771" levels="11" name="Multiple Arrow">
+	<skill id="10771" toLevel="11" name="Multiple Arrow">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks frontal enemies with 23391 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 23391 25018 26645 28272 29900 31527 33154 34781 35966 37720 39474 </table>
@@ -1802,7 +1802,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10772" levels="11" name="Heavy Arrow Rain">
+	<skill id="10772" toLevel="11" name="Heavy Arrow Rain">
 		<!-- Glory Days confirmed -->
 		<!-- Showers the enemy and nearby enemies with a rain of arrows, to inflict damage with 22526 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 22526 23310 24879 26448 28017 29586 31155 32724 33772 35526 37280 </table>
@@ -1889,7 +1889,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10773" levels="1" name="Not in Use">
+	<skill id="10773" toLevel="1" name="Not in Use">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Not in use -->
 		<icon>icon.skill0773</icon>
@@ -1919,7 +1919,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="10774" levels="4" name="Quick Evasion">
+	<skill id="10774" toLevel="4" name="Quick Evasion">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily teleports 300 backward. -->
 		<table name="#range"> 300 350 400 450 </table>
@@ -1984,7 +1984,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10775" levels="6" name="Confusion Decoy">
+	<skill id="10775" toLevel="6" name="Confusion Decoy">
 		<!-- Glory Days confirmed -->
 		<!-- Summons a decoy that receives attacks for you. -->
 		<icon>icon.skill10775</icon>
@@ -2019,7 +2019,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10776" levels="4" name="Final Ultimate Escape">
+	<skill id="10776" toLevel="4" name="Final Ultimate Escape">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., P. Evasion + 60, M. Evasion + 60, M. Def. + 20%, Debuff Resistance + 95%, and P. Skill Evasion Rate + 80%. -->
 		<table name="#evas"> 60 70 80 90 </table>
@@ -2089,7 +2089,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10777" levels="4" name="Lure Shot">
+	<skill id="10777" toLevel="4" name="Lure Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Draws in the enemy's attention. -->
 		<icon>icon.skill10777</icon>
@@ -2133,7 +2133,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10778" levels="1" name="Diversion">
+	<skill id="10778" toLevel="1" name="Diversion">
 		<!-- Glory Days confirmed -->
 		<!-- Transfer the aggression of nearby enemies around target to another party member. -->
 		<affectRange>1000</affectRange>
@@ -2161,7 +2161,7 @@
 			<effect name="TransferHate" />
 		</effects>
 	</skill>
-	<skill id="10779" levels="4" name="Quick Fire">
+	<skill id="10779" toLevel="4" name="Quick Fire">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., Atk. Spd. + 20% when equipped with a bow/crossbow. -->
 		<table name="#pAtkSpd"> 1.2 1.3 1.4 1.5 </table>
@@ -2209,7 +2209,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10780" levels="9" name="Slow Shot">
+	<skill id="10780" toLevel="9" name="Slow Shot">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 9338 Power added to P. Atk. For 10 sec., Speed - 70. Requires a bow or crossbow to be equipped. -->
 		<table name="#power"> 23860 25053 28632 32211 35790 39369 42001 43930 45960 </table>
@@ -2295,7 +2295,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10781" levels="4" name="Phoenix Arrow">
+	<skill id="10781" toLevel="4" name="Phoenix Arrow">
 		<!-- Glory Days confirmed -->
 		<!-- Shoots a magical arrow to obliterate an area. Attacks targets within the skill's range with 45215 power. -->
 		<table name="#power"> 45215 56558 59316 62074 </table>
@@ -2344,7 +2344,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10782" levels="1" name="Deadly Move 2">
+	<skill id="10782" toLevel="1" name="Deadly Move 2">
 		<!-- Glory Days confirmed -->
 		<!-- Death blow! Please do not use. -->
 		<affectLimit>5-12</affectLimit>
@@ -2382,7 +2382,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10783" levels="4" name="Mind's Eye">
+	<skill id="10783" toLevel="4" name="Mind's Eye">
 		<!-- Glory Days confirmed -->
 		<!-- For 1 minute, opens the eye of infinity to increase Accuracy + 25, Critical Rate + 200, and Critical Damage + 70%. -->
 		<table name="#accCombat"> 25 30 35 40 </table>
@@ -2446,7 +2446,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10784" levels="1" name="Camouflage">
+	<skill id="10784" toLevel="1" name="Camouflage">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., blends into the environment and hides. Decreases Speed by 30%. -->
 		<icon>icon.skill10784</icon>
@@ -2478,7 +2478,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10785" levels="5" name="Flare">
+	<skill id="10785" toLevel="5" name="Flare">
 		<!-- Glory Days confirmed -->
 		<!-- Fires a Flare to reveal nearby hiding enemies or traps. Requires a bow or crossbow to be equipped. -->
 		<table name="#slot"> NONE NONE HIDE HIDE HIDE </table>
@@ -2540,7 +2540,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10786" levels="6" name="Time Bomb">
+	<skill id="10786" toLevel="6" name="Time Bomb">
 		<!-- Glory Days confirmed -->
 		<!-- Plants a bomb on target that detonates after 10 seconds to inflict damage with 30000 power. While the bomb is being installed, target's P. Accuracy decreases by 10. -->
 		<table name="#triggerLvl"> 1 1 1 2 3 4 </table>
@@ -2606,7 +2606,7 @@
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="10787" levels="8" name="Summon Thunder Hawk">
+	<skill id="10787" toLevel="8" name="Summon Thunder Hawk">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Summons a Thunder Hawk. -->
@@ -2660,7 +2660,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10788" levels="1" name="Remote Control">
+	<skill id="10788" toLevel="1" name="Remote Control">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Remotely controls a trap to set it off. -->
 		<icon>icon.skill10788</icon>
@@ -2677,7 +2677,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>INVISIBLE</affectObject>
 	</skill>
-	<skill id="10789" levels="1" name="Flash Trap">
+	<skill id="10789" toLevel="1" name="Flash Trap">
 		<!-- Glory Days confirmed -->
 		<!-- Flash Trap -->
 		<icon>icon.skill0517</icon>
@@ -2708,7 +2708,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10790" levels="1" name="Explosion Trap">
+	<skill id="10790" toLevel="1" name="Explosion Trap">
 		<!-- Glory Days confirmed -->
 		<!-- Damage Trap -->
 		<icon>icon.skill0514</icon>
@@ -2739,7 +2739,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10791" levels="4" name="Frost Trap">
+	<skill id="10791" toLevel="4" name="Frost Trap">
 		<!-- Glory Days confirmed -->
 		<!-- Plants a Frost Trap, decreasing the enemy's Speed, Atk. Spd. and Casting Spd. -->
 		<!-- TODO: Find npcId for additional level -->
@@ -2776,7 +2776,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10792" levels="4" name="Gravity Trap">
+	<skill id="10792" toLevel="4" name="Gravity Trap">
 		<!-- Glory Days confirmed -->
 		<!-- Plants a Gravity Trap, immobilizing the enemy. -->
 		<!-- TODO: Find npcId for additional level -->
@@ -2807,7 +2807,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10793" levels="1" name="Flash">
+	<skill id="10793" toLevel="1" name="Flash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels targets of nearby enemies. Increases Speed + 50 for 5 seconds and prevents enemies from targeting you. -->
 		<icon>icon.skill10793</icon>
@@ -2830,7 +2830,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="10794" levels="8" name="Thunder Flight">
+	<skill id="10794" toLevel="8" name="Thunder Flight">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Flies straight into the enemy. -->
@@ -2876,7 +2876,7 @@
 			<effect name="EnemyCharge" />
 		</effects>
 	</skill>
-	<skill id="10795" levels="1" name="Thunder Purity">
+	<skill id="10795" toLevel="1" name="Thunder Purity">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Purifies the master. -->
@@ -2902,7 +2902,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10796" levels="1" name="Hawk Gust">
+	<skill id="10796" toLevel="1" name="Hawk Gust">
 		<!-- Glory Days confirmed -->
 		<!-- Pushes the enemies around the master. -->
 		<abnormalLvl>1</abnormalLvl>
@@ -2947,7 +2947,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="10797" levels="8" name="Thunder Feather Blast">
+	<skill id="10797" toLevel="8" name="Thunder Feather Blast">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Hurls feathers toward the enemy. -->
@@ -3010,7 +3010,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10798" levels="8" name="Thunder Sharp Claw">
+	<skill id="10798" toLevel="8" name="Thunder Sharp Claw">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with sharp talon to inflict bleed. -->
@@ -3095,7 +3095,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10799" levels="10" name="Superior M. Def.">
+	<skill id="10799" toLevel="10" name="Superior M. Def.">
 		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776, and M. Def. + 25%. STR + 2. -->
 		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 1434 1507 1583 </table>

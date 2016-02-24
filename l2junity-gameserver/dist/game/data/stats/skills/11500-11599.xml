@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="11500" levels="1" name="Heavy Hit">
+	<skill id="11500" toLevel="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<icon>icon.skill10317</icon>
@@ -31,7 +31,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11501" levels="10" name="Superior Dual Weapon Mastery">
+	<skill id="11501" toLevel="10" name="Superior Dual Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a dualsword/dualblunt is equipped. Normal hit damage to monsters + 20%. Chance to activate Physical Pose during a normal attack. Depending on your STR can reset cooldown or double skill effect duration. -->
 		<table name="#pAtk"> 1027 1191 1381 1554 1761 1869 1982 2103 2231 2367 </table>
@@ -112,7 +112,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11502" levels="10" name="Superior Robe Mastery">
+	<skill id="11502" toLevel="10" name="Superior Robe Mastery">
 		<!-- Glory Days confirmed -->
 		<!--Max HP + 4636, P. Def. + 969 when equipped with a Robe. -->
 		<table name="#pDef"> 969 1064 1169 1261 1413 1467 1522 1580 1646 1709 </table>
@@ -163,7 +163,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11503" levels="10" name="Superior Light Armor Mastery">
+	<skill id="11503" toLevel="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4636, P. Def. + 1355 when equipped with Light Armor. -->
 		<table name="#pDef"> 1355 1488 1635 1763 1976 2051 2128 2209 2302 2389 </table>
@@ -214,7 +214,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11504" levels="10" name="Superior Heavy Armor Mastery">
+	<skill id="11504" toLevel="10" name="Superior Heavy Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4636, P. Def. + 1558 when equipped with Heavy Armor. -->
 		<table name="#pDef"> 1558 1711 1880 2027 2271 2357 2446 2539 2646 2746 </table>
@@ -265,7 +265,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11505" levels="10" name="Superior Anti Magic">
+	<skill id="11505" toLevel="10" name="Superior Anti Magic">
 		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776 and Attack M. Def. Rate + 35%. -->
 		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 1434 1507 1583 </table>
@@ -306,7 +306,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11506" levels="10" name="Superior HP Boost">
+	<skill id="11506" toLevel="10" name="Superior HP Boost">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Max HP + 366. -->
 		<table name="#maxHp"> 513 574 635 717 766 835 904 973 1042 1111 </table>
@@ -347,7 +347,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11507" levels="10" name="Superior MP Boost">
+	<skill id="11507" toLevel="10" name="Superior MP Boost">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Max MP + 313. -->
 		<table name="#maxMp"> 313 374 435 517 566 635 704 773 842 911 </table>
@@ -388,7 +388,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11508" levels="9" name="Assault Rush">
+	<skill id="11508" toLevel="9" name="Assault Rush">
 		<!-- Glory Days confirmed -->
 		<!-- Rushes the enemy to inflict Stun for 1 second. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<icon>icon.skill11508</icon>
@@ -466,7 +466,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11509" levels="11" name="Crippling Attack">
+	<skill id="11509" toLevel="11" name="Crippling Attack">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Def. and M. Def. - 40% and P. Evasion - 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 14608 15192 16360 17528 18696 19864 21032 22200 26008 27138 28268 </table>
@@ -574,7 +574,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11510" levels="11" name="Shadow Blade">
+	<skill id="11510" toLevel="11" name="Shadow Blade">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Atk. and M. Atk. - 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 14608 15776 16944 18112 19280 20448 21616 22784 28162 29386 30610 </table>
@@ -673,7 +673,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11511" levels="11" name="Death Strike">
+	<skill id="11511" toLevel="11" name="Death Strike">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 21642 Power added to P. Atk. Requires a sword, blunt, dualsword, or dual blunt weapon. Over-hit. Critical. -->
 		<table name="#power"> 21642 22507 24237 25967 27697 29427 31157 32887 40673 42657 44641 </table>
@@ -758,7 +758,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11513" levels="11" name="Mass Crippling Attack">
+	<skill id="11513" toLevel="11" name="Mass Crippling Attack">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target and nearby enemies with 10263 Power added to P. Atk. For 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 10263 10616 11322 12027 12733 13438 14144 14849 19113 20045 20977 </table>
@@ -865,7 +865,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11514" levels="11" name="Mass Shadow Blade">
+	<skill id="11514" toLevel="11" name="Mass Shadow Blade">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target and nearby enemies with 11722 Power added to P. Atk. For 20 seconds, decreases P. Atk. and M. Atk. by 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#power"> 11722 12525 13327 14130 14933 15736 16539 17342 21340 22380 23420 </table>
@@ -967,7 +967,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11515" levels="5" name="Confusion Bomber">
+	<skill id="11515" toLevel="5" name="Confusion Bomber">
 		<!-- Glory Days confirmed -->
 		<!-- Curses target with darkness. For 5 seconds, decreases Speed and Atk. Spd. by 5%. After 5 seconds, detonates target to inflict damage nearby. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<table name="#skillLevel"> 1 2 3 4 5 </table>
@@ -1038,7 +1038,7 @@
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="11516" levels="15" name="Curse Explosion">
+	<skill id="11516" toLevel="15" name="Curse Explosion">
 		<!-- Glory Days confirmed -->
 		<table name="#power"> 8805 9717 10630 11542 12454 13366 13670 13974 14278 14582 14886 15190 15494 15799 16103 </table>
 		<icon>icon.skill1170</icon>
@@ -1107,7 +1107,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11517" levels="4" name="Horn Melody">
+	<skill id="11517" toLevel="4" name="Horn Melody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, all party members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<table name="#pAtk"> 1.17 1.19 1.21 1.23 </table>
@@ -1216,7 +1216,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11518" levels="4" name="Drum Melody">
+	<skill id="11518" toLevel="4" name="Drum Melody">
 		<!-- For 30 minutes, party members' Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from critical attacks - 30% and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
 		<!-- Glory Days confirmed -->
 		<table name="#runSpd"> 0.85 0.90 0.95 1.0 </table>
@@ -1354,7 +1354,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11519" levels="4" name="Pipe Organ Melody">
+	<skill id="11519" toLevel="4" name="Pipe Organ Melody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' Max HP + 37%, Max MP + 37%, Max CP + 37%, and HP Recovery Bonus + 20%. -->
 		<table name="#maxHp"> 1.37 1.39 1.41 1.43 </table>
@@ -1457,7 +1457,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11520" levels="4" name="Guitar Melody">
+	<skill id="11520" toLevel="4" name="Guitar Melody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20 , and MP Consumption - 20% for physical skills and - 10% for magic skills. Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 		<table name="#rCrit"> 0.32 0.34 0.36 0.38 </table>
@@ -1549,7 +1549,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11521" levels="4" name="Harp Melody">
+	<skill id="11521" toLevel="4" name="Harp Melody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34 and received Critical Damage - 30%. -->
 		<table name="#accCombat"> 5 6 7 8 </table>
@@ -1657,7 +1657,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11522" levels="4" name="Lute Melody">
+	<skill id="11522" toLevel="4" name="Lute Melody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' Atk. Spd. + 34% and Casting Spd. + 31%. Also has a chance of triggering a 9% Vampiric Rage effect during a normal attack. -->
 		<table name="#pAtkSpd"> 1.34 1.35 1.36 1.37 </table>
@@ -1745,7 +1745,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11523" levels="1" name="Knight's Harmony">
+	<skill id="11523" toLevel="1" name="Knight's Harmony">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, the selected party member's P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30% and Shield Defense + 50%. -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1807,7 +1807,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11524" levels="1" name="Warrior's Harmony">
+	<skill id="11524" toLevel="1" name="Warrior's Harmony">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, the selected party member's P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8% and Speed + 8. -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1873,7 +1873,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11525" levels="1" name="Wizard's Harmony">
+	<skill id="11525" toLevel="1" name="Wizard's Harmony">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, the selected party member's M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption for magic skills - 15% and physical skills -5%, and Cooldown - 20%. -->
 		<abnormalLvl>1</abnormalLvl>
@@ -1968,7 +1968,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11526" levels="10" name="Superior Sword/Blunt Weapon Mastery">
+	<skill id="11526" toLevel="10" name="Superior Sword/Blunt Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a sword or blunt weapon is equipped. -->
 		<table name="#pAtk"> 1027 1191 1381 1554 1761 1869 1982 2103 2231 2367 </table>
@@ -2029,7 +2029,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11529" levels="1" name="Prevailing Sonata">
+	<skill id="11529" toLevel="1" name="Prevailing Sonata">
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate for 5 minutes. -->
 		<affectRange>1000</affectRange>
@@ -2088,7 +2088,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11530" levels="1" name="Daring Sonata">
+	<skill id="11530" toLevel="1" name="Daring Sonata">
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4 for 5 minutes. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<affectRange>1000</affectRange>
@@ -2158,7 +2158,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11532" levels="1" name="Refreshing Sonata">
+	<skill id="11532" toLevel="1" name="Refreshing Sonata">
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 		<affectRange>1000</affectRange>
@@ -2228,7 +2228,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11533" levels="1" name="Blood Requiem">
+	<skill id="11533" toLevel="1" name="Blood Requiem">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Party members receives 80% Vampiric Rage effect for 15 seconds. -->
@@ -2262,7 +2262,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11534" levels="6" name="Angel's Touch">
+	<skill id="11534" toLevel="6" name="Angel's Touch">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 7 seconds, renders target immune to debuffs. -->
@@ -2322,7 +2322,7 @@
 			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
-	<skill id="11536" levels="9" name="Divine Cancel">
+	<skill id="11536" toLevel="9" name="Divine Cancel">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of canceling up to 2 of the buff effects on target. -->
@@ -2381,7 +2381,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11537" levels="10" name="Transform">
+	<skill id="11537" toLevel="10" name="Transform">
 		<!-- Glory Days confirmed -->
 		<!-- Transforms target into a harmless creature and decrease its Speed by 20% for 15 seconds. The effect is canceled if the transformed target is attacked. -->
 		<table name="#runSpd"> 0.80 0.70 0.60 0.50 0.40 0.30 0.20 0.20 0.20 0.20 </table>
@@ -2477,7 +2477,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11538" levels="7" name="Mass Giant Root">
+	<skill id="11538" toLevel="7" name="Mass Giant Root">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts Hold on nearby enemies for 15 seconds. -->
@@ -2531,7 +2531,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11539" levels="11" name="Petrify">
+	<skill id="11539" toLevel="11" name="Petrify">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Petrifies target for 15 seconds. -->
@@ -2592,7 +2592,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11540" levels="7" name="Quick Escape">
+	<skill id="11540" toLevel="7" name="Quick Escape">
 		<!-- Glory Days confirmed -->
 		<!-- Transforms yourself into a cute pig for 15 seconds. P. Def. and M. Def. + 3000, and Speed + 30%. -->
 		<table name="#def"> 3000 3500 4000 4500 5000 5500 6000 </table>
@@ -2676,7 +2676,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11541" levels="1" name="Polymorph">
+	<skill id="11541" toLevel="1" name="Polymorph">
 		<!-- Glory Days confirmed -->
 		<!-- Transforms yourself into a stone for 15 seconds to eliminate nearby enemies' aggression and keep them from targeting you. Greatly decreases Speed while transformed. Cannot be used while Disparition is active. -->
 		<icon>icon.skill11541</icon>
@@ -2712,7 +2712,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11543" levels="6" name="Disperse">
+	<skill id="11543" toLevel="6" name="Disperse">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., transforms yourself and nearby party members to increase P. Def. and M. Def. + 2000 and Speed + 44. Decreases P. Atk. and M. Atk. + 80%. -->
 		<table name="#def"> 2000 3000 4000 4500 5000 5500 </table>
@@ -2815,7 +2815,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11544" levels="1" name="Battle Rhapsody">
+	<skill id="11544" toLevel="1" name="Battle Rhapsody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., doubles all party members' P. Atk., M. Atk., Atk. Spd. and Casting Spd. -->
 		<icon>icon.skill11544</icon>
@@ -2856,7 +2856,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11545" levels="1" name="Crazy Nocturne">
+	<skill id="11545" toLevel="1" name="Crazy Nocturne">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 sec., decreases standard attack and M. Skill's Critical Rate targeting party members by 50%. -->
 		<icon>icon.skill11545</icon>
@@ -2889,7 +2889,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11546" levels="4" name="Chaos Symphony">
+	<skill id="11546" toLevel="4" name="Chaos Symphony">
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts 38826 damage on target and nearby enemies. Decreases nearby enemies' P. Atk., P. Def., M. Atk., M. Def. and Speed by 50% for 10 seconds. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#magicLvl"> 99 101 103 105 </table>
@@ -2961,7 +2961,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11547" levels="10" name="Superior HP Recovery">
+	<skill id="11547" toLevel="10" name="Superior HP Recovery">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and HP Recovery Bonus + 2.8. -->
 		<table name="#regHp"> 2.8 3.4 4 4.6 5.4 6.2 7 7.8 8.6 9.4 </table>
@@ -3002,7 +3002,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11548" levels="1" name="Superior Quick Recovery">
+	<skill id="11548" toLevel="1" name="Superior Quick Recovery">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Cooldown for magic skills - 25%. -->
 		<icon>icon.skill11004</icon>
@@ -3021,7 +3021,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11549" levels="1" name="Superior Mana Steal">
+	<skill id="11549" toLevel="1" name="Superior Mana Steal">
 		<!-- Glory Days confirmed -->
 		<!-- Has a chance of recovering MP during a normal attack when equipped with a sword, blunt, dualsword, or dual blunt weapon. -->
 		<icon>icon.skill11505</icon>
@@ -3044,7 +3044,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11550" levels="1" name="Superior Mana Steal">
+	<skill id="11550" toLevel="1" name="Superior Mana Steal">
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill11505</icon>
 		<operateType>A1</operateType>
@@ -3061,7 +3061,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11551" levels="1" name="Superior Mental Attack Resistance">
+	<skill id="11551" toLevel="1" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<operateType>P</operateType>
@@ -3082,7 +3082,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11552" levels="4" name="Superior Divine Lore">
+	<skill id="11552" toLevel="4" name="Superior Divine Lore">
 		<!-- Glory Days confirmed -->
 		<!-- MP Consumption for skills is decreased by 6%. -->
 		<table name="#mpConsumes"> 0.94 0.91 0.88 0.85 </table>
@@ -3123,7 +3123,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11553" levels="1" name="Superior Focus Mind">
+	<skill id="11553" toLevel="1" name="Superior Focus Mind">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and increases MP recovery bonus by 8.4. -->
 		<operateType>P</operateType>
@@ -3141,7 +3141,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11554" levels="1" name="Superior Sixth Sense">
+	<skill id="11554" toLevel="1" name="Superior Sixth Sense">
 		<!-- Glory Days confirmed -->
 		<!--When HP is below 30%, increases P. Evasion by 17. STR + 2. -->
 		<operateType>P</operateType>
@@ -3160,7 +3160,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11555" levels="1" name="Superior Fast Spell Casting">
+	<skill id="11555" toLevel="1" name="Superior Fast Spell Casting">
 		<!-- Glory Days confirmed -->
 		<!-- Increases Casting Spd. by 15%. -->
 		<operateType>P</operateType>
@@ -3174,7 +3174,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11556" levels="1" name="Cancel Transform">
+	<skill id="11556" toLevel="1" name="Cancel Transform">
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill01703</icon>
 		<operateType>A1</operateType>
@@ -3192,7 +3192,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11557" levels="1" name="Ultimate Scourge">
+	<skill id="11557" toLevel="1" name="Ultimate Scourge">
 		<!-- Glory Days confirmed -->
 		<!-- Disables nearby enemies' natural HP Recovery for 2 minutes. -->
 		<icon>icon.skill11557</icon>
@@ -3225,7 +3225,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11558" levels="1" name="Ultimate Oblivion">
+	<skill id="11558" toLevel="1" name="Ultimate Oblivion">
 		<!-- Glory Days confirmed -->
 		<!-- Cancels nearby enemies' targets. -->
 		<icon>icon.skill11558</icon>
@@ -3250,7 +3250,7 @@
 			<effect name="TargetCancel" />
 		</effects>
 	</skill>
-	<skill id="11559" levels="1" name="Ultimate Suspension">
+	<skill id="11559" toLevel="1" name="Ultimate Suspension">
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Increases nearby enemies' physical/magic skill Cooldown by 200% for 2 minutes. -->
@@ -3290,7 +3290,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11560" levels="2" name="Celestial Aegis">
+	<skill id="11560" toLevel="2" name="Celestial Aegis">
 		<!--Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Makes all party members invincible for 30 seconds. -->
@@ -3335,7 +3335,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11561" levels="7" name="Giant Root">
+	<skill id="11561" toLevel="7" name="Giant Root">
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts Hold on the enemy for 15 seconds. -->
@@ -3393,7 +3393,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11562" levels="1" name="Devil's Movement">
+	<skill id="11562" toLevel="1" name="Devil's Movement">
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Prevents all party members from being attacked preemptively by monsters for 2 minutes. But if any party member initiates an attack, the effect will be canceled. -->
@@ -3455,7 +3455,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11563" levels="1" name="Quick Return">
+	<skill id="11563" toLevel="1" name="Quick Return">
 		<!-- Glory Days confirmed -->
 		<!-- Copy-Pasted from Return Skill -->
 		<!-- Teleports to a town. Cannot be used in a specially designated place such as the GM Consultation Service. -->
@@ -3480,7 +3480,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11564" levels="4" name="Angel's Resurrection">
+	<skill id="11564" toLevel="4" name="Angel's Resurrection">
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Resurrects a dead target and restores 40% of the XP lost. -->
@@ -3521,7 +3521,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11565" levels="1" name="Elemental Resistance">
+	<skill id="11565" toLevel="1" name="Elemental Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Fire/Water/Wind/Earth Resistance by 30 for 30 minutes. -->
 		<affectRange>1000</affectRange>
@@ -3575,7 +3575,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11566" levels="1" name="Holy Attack Resistance">
+	<skill id="11566" toLevel="1" name="Holy Attack Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Holy/Dark Attack Resistance by 30, and Poison/Bleed Resistance by 50% for 30 minutes. -->
 		<affectRange>1000</affectRange>
@@ -3625,7 +3625,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11567" levels="1" name="Mental Attack Resistance">
+	<skill id="11567" toLevel="1" name="Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Hold/Sleep/Mental Attack Resistance by 50, Buff-canceling Attack Resistance by 30 and Debuff Resistance by 20 for 30 minutes. -->
 		<affectRange>1000</affectRange>
@@ -3675,7 +3675,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11569" levels="1" name="Critical Damage Increase">
+	<skill id="11569" toLevel="1" name="Critical Damage Increase">
 		<!-- Glory Days confirmed -->
 		<!-- Critical Damage is greatly increased through Poem of Drum. -->
 		<abnormalLvl>1</abnormalLvl>
@@ -3714,7 +3714,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11570" levels="1" name="Healing Melody">
+	<skill id="11570" toLevel="1" name="Healing Melody">
 		<!-- Heals target and the 10 most injured allies around target by up to 35% of their Max HP. The recovery amount decreases starting from the most injured person. -->
 		<icon>icon.skill11570</icon>
 		<affectLimit>9-0</affectLimit>
@@ -3739,7 +3739,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11571" levels="1" name="Recovery Melody">
+	<skill id="11571" toLevel="1" name="Recovery Melody">
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Restores target's CP by 1000. -->
@@ -3763,7 +3763,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11580" levels="7" name="Mass Transform">
+	<skill id="11580" toLevel="7" name="Mass Transform">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., mutates enemies to reduce their Speed by 20% and render them unable to attack. Mutated enemies return to normal when inflicted with damage. -->
 		<icon>icon.skill11580</icon>
@@ -3813,7 +3813,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11581" levels="4" name="Superior Advantage">
+	<skill id="11581" toLevel="4" name="Superior Advantage">
 		<!-- Skill Cooldown - 5%, Skill Power + 5%, MP Recovery Rate + 5, and Max HP, MP, and CP + 5%. Skill mastery effect + 10%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#reuse"> 0.95 0.94 0.93 0.90 </table>
@@ -3895,7 +3895,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11582" levels="4" name="Mass Song of Silence">
+	<skill id="11582" toLevel="4" name="Mass Song of Silence">
 		<!-- Updated to IO -->
 		<!-- Plays the Song of Silence. For 10 sec., enemies' P. Skills and M. Skills are locked. -->
 		<table name="#abnormalLvl"> 4 5 6 7 </table>
@@ -3935,7 +3935,7 @@
 			<effect name="PhysicalMute" />
 		</effects>
 	</skill>
-	<skill id="11583" levels="4" name="Superior Song of Mastery">
+	<skill id="11583" toLevel="4" name="Superior Song of Mastery">
 		<!-- Updated to IO -->
 		<!-- P. Def./ M. Def. + 5%. Skill Power + 5%. -->
 		<table name="#defence"> 1.05 1.07 1.10 1.15 </table>
@@ -3972,7 +3972,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11584" levels="4" name="Mass Medusa's Dance">
+	<skill id="11584" toLevel="4" name="Mass Medusa's Dance">
 		<!-- Updated to IO -->
 		<!-- Performs that evokes the mirage of a Medusa. For 10 sec., Petrifies nearby enemies. -->
 		<icon>icon.skill11840</icon>
@@ -4012,7 +4012,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="11585" levels="4" name="Superior Dance of Mastery">
+	<skill id="11585" toLevel="4" name="Superior Dance of Mastery">
 		<!-- Updated to IO -->
 		<!-- P. Atk./ M. Atk. + 5%. Skill Power + 5%. -->
 		<table name="#attack"> 1.05 1.07 1.10 1.15 </table>
@@ -4043,7 +4043,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11586" levels="4" name="Pa'agrio's Bravery">
+	<skill id="11586" toLevel="4" name="Pa'agrio's Bravery">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., restores clan members' Max CP and increases it by 5%. -->
 		<table name="#maxCp"> 1.05 1.06 1.07 1.10 </table>
@@ -4087,7 +4087,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11587" levels="4" name="Mass Blockade">
+	<skill id="11587" toLevel="4" name="Mass Blockade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., locks target and nearby enemies' standard attacks during PvP. -->
 		<icon>icon.skill11587</icon>
@@ -4109,7 +4109,7 @@
 			<effect name="PhysicalAttackMute" /> <!-- TODO: Only during pvp? -->
 		</effects>
 	</skill>
-	<skill id="11588" levels="4" name="Superior Wizard Mastery">
+	<skill id="11588" toLevel="4" name="Superior Wizard Mastery">
 		<!-- Updated to IO -->
 		<!-- Max MP + 10%. -->
 		<table name="#maxMp"> 1.10 1.12 1.15 1.20 </table>
@@ -4127,7 +4127,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11589" levels="4" name="Horn Frenzy">
+	<skill id="11589" toLevel="4" name="Horn Frenzy">
 		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<table name="#pAtk"> 1.17 1.19 1.21 1.23 </table>
@@ -4223,7 +4223,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11590" levels="4" name="Drum Frenzy">
+	<skill id="11590" toLevel="4" name="Drum Frenzy">
 		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' Max MP + 20%, HP Recovery Bonus + 20%, and M. Critical Rate + 20. During a standard attack, P. Atk. and Debuff Resistance + 10%, and Critical Damage, P. Def., Atk. Spd., M. Atk., M. Def., and Casting Spd. + 20%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. -->
 		<table name="#runSpd"> 0.85 0.90 0.95 1.0 </table>
@@ -4349,7 +4349,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11591" levels="4" name="Pipe Organ Frenzy">
+	<skill id="11591" toLevel="4" name="Pipe Organ Frenzy">
 		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
 		<table name="#maxHp"> 1.37 1.39 1.41 1.43 </table>
@@ -4439,7 +4439,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11592" levels="4" name="Guitar Frenzy">
+	<skill id="11592" toLevel="4" name="Guitar Frenzy">
 		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -4519,7 +4519,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11593" levels="4" name="Harp Frenzy">
+	<skill id="11593" toLevel="4" name="Harp Frenzy">
 		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' P. Accuracy and P. Evasion/ M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
 		<table name="#accCombat"> 5 6 7 8 </table>
@@ -4615,7 +4615,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11594" levels="4" name="Lute Frenzy">
+	<skill id="11594" toLevel="4" name="Lute Frenzy">
 		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' Atk. Spd. + 34% and Casting Spd. + 31%. Has a chance of applying 9% Vampiric Rage effect. -->
 		<table name="#pAtkSpd"> 1.34 1.35 1.36 1.37 </table>
@@ -4690,7 +4690,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11595" levels="1" name="Knight's Frenzied Harmony">
+	<skill id="11595" toLevel="1" name="Knight's Frenzied Harmony">
 		<!-- Updated to IO -->
 		<!-- For 30 minutes, increases clan members' P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 		<icon>icon.skill11596</icon>
@@ -4744,7 +4744,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11596" levels="1" name="Warrior's Frenzied Harmony">
+	<skill id="11596" toLevel="1" name="Warrior's Frenzied Harmony">
 		<!-- Updated to IO -->
 		<!-- For 30 minutes, increases clan members' P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, and Spd. + 8. -->
 		<icon>icon.skill11595</icon>
@@ -4803,7 +4803,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11597" levels="1" name="Wizard's Frenzied Harmony">
+	<skill id="11597" toLevel="1" name="Wizard's Frenzied Harmony">
 		<!-- Updated to IO -->
 		<!-- For 30 minutes, increases clan members' M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Spd. + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. Decreases magic skill MP Consumption - 15%, physical skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 		<icon>icon.skill11597</icon>
@@ -4890,7 +4890,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11598" levels="4" name="Greater Freezing Flame">
+	<skill id="11598" toLevel="4" name="Greater Freezing Flame">
 		<!-- Updated to IO -->
 		<!-- A powerful cold flame. For 10 sec., decreases enemy's HP by 326. -->
 		<table name="#dot"> 326 343 359 375 </table>
@@ -4931,7 +4931,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11599" levels="4" name="Combat Cry">
+	<skill id="11599" toLevel="4" name="Combat Cry">
 		<!-- Updated to IO -->
 		<!-- P. Atk./P. Def., M. Atk./M. Def. + 5%, and Skill Power + 5%. MP drains consistently depending on level. -->
 		<table name="#attackDefense"> 1.05 1.07 1.10 1.15 </table>

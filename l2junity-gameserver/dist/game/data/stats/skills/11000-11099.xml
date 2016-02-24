@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="11000" levels="1" name="Heavy Hit">
+	<skill id="11000" toLevel="1" name="Heavy Hit">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<icon>icon.skill10317</icon>
@@ -37,7 +37,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11001" levels="10" name="Superior Weapon Mastery">
+	<skill id="11001" toLevel="10" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
 		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
 		<magicLvl>
@@ -84,7 +84,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11002" levels="10" name="Superior Robe Mastery">
+	<skill id="11002" toLevel="10" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
 		<magicLvl>
@@ -137,7 +137,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11003" levels="10" name="Superior Anti Magic">
+	<skill id="11003" toLevel="10" name="Superior Anti Magic">
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
 		<magicLvl>
@@ -181,7 +181,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11004" levels="1" name="Superior Sigil Mastery">
+	<skill id="11004" toLevel="1" name="Superior Sigil Mastery">
 		<!-- When a Sigil is equipped, increases M. Atk. by 5% and MP Recovery Bonus by 20%. -->
 		<magicLvl>85</magicLvl>
 		<icon>icon.skill11791</icon>
@@ -204,7 +204,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11005" levels="1" name="Superior Wizard Mastery">
+	<skill id="11005" toLevel="1" name="Superior Wizard Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases M. Atk., Casting Spd., and M. Critical Rate + 6%. Decreases skill MP Consumption by 6%. -->
 		<magicLvl>90</magicLvl>
@@ -235,7 +235,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11006" levels="1" name="Superior Mental Attack Resistance">
+	<skill id="11006" toLevel="1" name="Superior Mental Attack Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<magicLvl>95</magicLvl>
@@ -255,7 +255,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11007" levels="1" name="Fire Stance">
+	<skill id="11007" toLevel="1" name="Fire Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Fire to magic spells cast. -->
 		<icon>icon.skill10305</icon>
@@ -267,7 +267,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="11008" levels="1" name="Water Stance">
+	<skill id="11008" toLevel="1" name="Water Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Water to magic spells cast. -->
 		<icon>icon.skill10306</icon>
@@ -279,7 +279,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="11009" levels="1" name="Wind Stance">
+	<skill id="11009" toLevel="1" name="Wind Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Wind to magic spells cast. -->
 		<icon>icon.skill10307</icon>
@@ -291,7 +291,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="11010" levels="1" name="Earth Stance">
+	<skill id="11010" toLevel="1" name="Earth Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Earth to magic spells cast. -->
 		<icon>icon.skill10304</icon>
@@ -303,7 +303,7 @@
 		<magicLvl>85</magicLvl>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="11011" levels="11" name="Elemental Spike">
+	<skill id="11011" toLevel="11" name="Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
@@ -403,7 +403,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11012" levels="11" name="Elemental Spike (Fire)">
+	<skill id="11012" toLevel="11" name="Elemental Spike (Fire)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
@@ -480,7 +480,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11013" levels="11" name="Elemental Spike (Water)">
+	<skill id="11013" toLevel="11" name="Elemental Spike (Water)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
@@ -557,7 +557,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11014" levels="11" name="Elemental Spike (Wind)">
+	<skill id="11014" toLevel="11" name="Elemental Spike (Wind)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
@@ -634,7 +634,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11015" levels="11" name="Elemental Spike (Earth)">
+	<skill id="11015" toLevel="11" name="Elemental Spike (Earth)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
@@ -711,7 +711,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11016" levels="11" name="Elemental Spike (4 Elements)">
+	<skill id="11016" toLevel="11" name="Elemental Spike (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
@@ -787,7 +787,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11017" levels="11" name="Elemental Crash">
+	<skill id="11017" toLevel="11" name="Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
@@ -884,7 +884,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11018" levels="11" name="Elemental Crash (Fire)">
+	<skill id="11018" toLevel="11" name="Elemental Crash (Fire)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
@@ -962,7 +962,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11019" levels="11" name="Elemental Crash (Water)">
+	<skill id="11019" toLevel="11" name="Elemental Crash (Water)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
@@ -1040,7 +1040,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11020" levels="11" name="Elemental Crash (Wind)">
+	<skill id="11020" toLevel="11" name="Elemental Crash (Wind)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
@@ -1118,7 +1118,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11021" levels="11" name="Elemental Crash (Earth)">
+	<skill id="11021" toLevel="11" name="Elemental Crash (Earth)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
@@ -1196,7 +1196,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11022" levels="11" name="Elemental Crash (4 Elements)">
+	<skill id="11022" toLevel="11" name="Elemental Crash (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
@@ -1274,7 +1274,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11023" levels="11" name="Elemental Destruction">
+	<skill id="11023" toLevel="11" name="Elemental Destruction">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
@@ -1371,7 +1371,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11024" levels="11" name="Elemental Destruction (Fire)">
+	<skill id="11024" toLevel="11" name="Elemental Destruction (Fire)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
@@ -1448,7 +1448,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11025" levels="11" name="Elemental Destruction (Water)">
+	<skill id="11025" toLevel="11" name="Elemental Destruction (Water)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
@@ -1525,7 +1525,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11026" levels="11" name="Elemental Destruction (Wind)">
+	<skill id="11026" toLevel="11" name="Elemental Destruction (Wind)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
@@ -1602,7 +1602,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11027" levels="11" name="Elemental Destruction (Earth)">
+	<skill id="11027" toLevel="11" name="Elemental Destruction (Earth)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
@@ -1679,7 +1679,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11028" levels="11" name="Elemental Destruction (4 Elements)">
+	<skill id="11028" toLevel="11" name="Elemental Destruction (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
@@ -1758,7 +1758,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11029" levels="5" name="Death Breath">
+	<skill id="11029" toLevel="5" name="Death Breath">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, decreases target's HP by 480 per second. -->
@@ -1815,7 +1815,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11030" levels="4" name="Death Lord">
+	<skill id="11030" toLevel="4" name="Death Lord">
 		<!-- Updated to IO -->
 		<!-- For 10 seconds, drains target's life with 25 Power per second. Absorbs 100% of the damage inflicted as HP. -->
 		<table name="#power"> 25 50 75 100 </table>
@@ -1865,7 +1865,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="11032" levels="7" name="Death Howl">
+	<skill id="11032" toLevel="7" name="Death Howl">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 157 Power and pushes them back. Over-hit. -->
@@ -1937,7 +1937,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="11033" levels="3" name="Damaged Area">
+	<skill id="11033" toLevel="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
@@ -1979,7 +1979,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11034" levels="8" name="Elemental Blast">
+	<skill id="11034" toLevel="8" name="Elemental Blast">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
@@ -2070,7 +2070,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11035" levels="8" name="Elemental Blast (Fire)">
+	<skill id="11035" toLevel="8" name="Elemental Blast (Fire)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
@@ -2138,7 +2138,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11036" levels="8" name="Elemental Blast (Water)">
+	<skill id="11036" toLevel="8" name="Elemental Blast (Water)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
@@ -2206,7 +2206,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11037" levels="8" name="Elemental Blast (Wind)">
+	<skill id="11037" toLevel="8" name="Elemental Blast (Wind)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
@@ -2273,7 +2273,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11038" levels="8" name="Elemental Blast (Earth)">
+	<skill id="11038" toLevel="8" name="Elemental Blast (Earth)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
@@ -2341,7 +2341,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11039" levels="8" name="Elemental Blast (4 Elements)">
+	<skill id="11039" toLevel="8" name="Elemental Blast (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
@@ -2410,7 +2410,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11040" levels="8" name="Elemental Storm">
+	<skill id="11040" toLevel="8" name="Elemental Storm">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
@@ -2501,7 +2501,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11041" levels="8" name="Elemental Storm (Fire)">
+	<skill id="11041" toLevel="8" name="Elemental Storm (Fire)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
@@ -2569,7 +2569,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11042" levels="8" name="Elemental Storm (Water)">
+	<skill id="11042" toLevel="8" name="Elemental Storm (Water)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
@@ -2637,7 +2637,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11043" levels="8" name="Elemental Storm (Wind)">
+	<skill id="11043" toLevel="8" name="Elemental Storm (Wind)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
@@ -2705,7 +2705,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11044" levels="8" name="Elemental Storm (Earth)">
+	<skill id="11044" toLevel="8" name="Elemental Storm (Earth)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
@@ -2773,7 +2773,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
+	<skill id="11045" toLevel="8" name="Elemental Storm (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
@@ -2842,7 +2842,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11046" levels="2" name="Wizard Spirit">
+	<skill id="11046" toLevel="2" name="Wizard Spirit">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., M. Atk. + 20%, M. Critical Rate + 50%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 50%. When attacked, has a chance of inflicting magic damage on the attacking target. -->
@@ -2921,7 +2921,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11047" levels="9" name="Devil's Curse">
+	<skill id="11047" toLevel="9" name="Devil's Curse">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
@@ -3036,7 +3036,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11048" levels="9" name="Mass Devil's Curse">
+	<skill id="11048" toLevel="9" name="Mass Devil's Curse">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target and surrounding enemies with 125 power and absorbs 25% of the damage inflicted as HP. Additionally, for 10 seconds, target's M. Atk. and M. Def. - 30%; P. Def., M. Atk., Casting Spd., M. Def., P. Critical Rate, M. Critical Rate, and Speed - 8%; and Accuracy - 12. -->
@@ -3144,7 +3144,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11049" levels="5" name="Ignore Divinity">
+	<skill id="11049" toLevel="5" name="Ignore Divinity">
 		<!-- Glory Days confirmed -->
 		<!-- Cancels one of target's buffs. -->
 		<table name="#buffCount"> 1 2 2 2 2 </table>
@@ -3195,7 +3195,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11050" levels="7" name="Hell Binding">
+	<skill id="11050" toLevel="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target midair. -->
 		<icon>icon.skill11050</icon>
@@ -3264,7 +3264,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11051" levels="7" name="Hell Binding">
+	<skill id="11051" toLevel="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target midair. -->
 		<icon>icon.skill11050</icon>
@@ -3333,7 +3333,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11052" levels="7" name="Mass Hell Binding">
+	<skill id="11052" toLevel="7" name="Mass Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<icon>icon.skill11052</icon>
@@ -3384,7 +3384,7 @@
 			<condition name="OpCheckCrtEffect" />
 		</conditions>
 	</skill>
-	<skill id="11053" levels="7" name="Mass Hell Binding">
+	<skill id="11053" toLevel="7" name="Mass Hell Binding">
 		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<icon>icon.skill1042</icon>
@@ -3435,7 +3435,7 @@
 			<condition name="OpCheckCrtEffect" />
 		</conditions>
 	</skill>
-	<skill id="11054" levels="1" name="Yoke Status">
+	<skill id="11054" toLevel="1" name="Yoke Status">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<icon>icon.skill1042</icon>
@@ -3480,7 +3480,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11055" levels="10" name="Death Fear">
+	<skill id="11055" toLevel="10" name="Death Fear">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, inflicts Fear on target and decreases Speed by 40%. -->
@@ -3572,7 +3572,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11056" levels="11" name="Mass Death Fear">
+	<skill id="11056" toLevel="11" name="Mass Death Fear">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, inflicts Fear on target and nearby enemies and decreases Speed by 25%. -->
@@ -3671,7 +3671,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11057" levels="9" name="Magical Evasion">
+	<skill id="11057" toLevel="9" name="Magical Evasion">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the back. -->
@@ -3761,7 +3761,7 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="11058" levels="6" name="Shadow Snare">
+	<skill id="11058" toLevel="6" name="Shadow Snare">
 		<!-- Glory Days confirmed -->
 		<!-- Pulls enemies in a selected area to the center. -->
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
@@ -3816,7 +3816,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11059" levels="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
+	<skill id="11059" toLevel="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
 		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
 		<icon>icon.skill1469</icon>
@@ -3853,7 +3853,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11062" levels="4" name="Air Rider">
+	<skill id="11062" toLevel="4" name="Air Rider">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, increases Speed by 60. The effect disappears when attacked. -->
@@ -3912,7 +3912,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11063" levels="1" name="Floating Blow">
+	<skill id="11063" toLevel="1" name="Floating Blow">
 		<!-- Glory Days confirmed -->
 		<icon>icon.skill01702</icon>
 		<operateType>A1</operateType>
@@ -3929,7 +3929,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11064" levels="11" name="Ultimate Body To Mind">
+	<skill id="11064" toLevel="11" name="Ultimate Body To Mind">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Sacrifices 384 HP to recover 400 MP. -->
@@ -4001,7 +4001,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11065" levels="1" name="Arcane Barrier">
+	<skill id="11065" toLevel="1" name="Arcane Barrier">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 20 seconds, decreases incoming damage - 90% and defends against the rest by consuming MP. When attacked, reflects 10% of incoming damage. Ineffective when MP drops to 0. -->
@@ -4033,7 +4033,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11066" levels="4" name="Unleash Hell">
+	<skill id="11066" toLevel="4" name="Unleash Hell">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts magical damage on target with 620 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit. -->
@@ -4093,7 +4093,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11067" levels="4" name="Death Mass Unleash Hell">
+	<skill id="11067" toLevel="4" name="Death Mass Unleash Hell">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts magical damage on target and nearby enemies with 620 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit. -->
@@ -4155,7 +4155,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11068" levels="4" name="Double Casting">
+	<skill id="11068" toLevel="4" name="Double Casting">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 50% and magic skill Cooldown by 5%.ﾠEliminates magic cancel during magic use. -->
 		<table name="#mReuse"> 0.95 0.9 0.85 0.8 </table>
@@ -4225,7 +4225,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11072" levels="1" name="Fire - Elemental Spike">
+	<skill id="11072" toLevel="1" name="Fire - Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target's Fire resistance is decreased. -->
@@ -4246,7 +4246,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11073" levels="1" name="Water - Elemental Spike">
+	<skill id="11073" toLevel="1" name="Water - Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target's Water resistance is decreased. -->
@@ -4267,7 +4267,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11074" levels="1" name="Wind - Elemental Spike">
+	<skill id="11074" toLevel="1" name="Wind - Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target's Wind resistance is decreased. -->
@@ -4288,7 +4288,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11075" levels="1" name="Earth - Elemental Spike">
+	<skill id="11075" toLevel="1" name="Earth - Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target's Earth resistance is decreased. -->
@@ -4309,7 +4309,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11076" levels="1" name="Double Casting - Elemental Spike">
+	<skill id="11076" toLevel="1" name="Double Casting - Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target's Fire/Water/Wind/Earth resistances are decreased. -->
@@ -4330,7 +4330,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11077" levels="3" name="Decrease Fire Resistance">
+	<skill id="11077" toLevel="3" name="Decrease Fire Resistance">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Fire resistance by 20 for 3 seconds. -->
@@ -4370,7 +4370,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11078" levels="3" name="Decrease Water Resistance">
+	<skill id="11078" toLevel="3" name="Decrease Water Resistance">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Water resistance by 20 for 3 seconds. -->
@@ -4410,7 +4410,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11079" levels="3" name="Decrease Wind Resistance">
+	<skill id="11079" toLevel="3" name="Decrease Wind Resistance">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Wind resistance by 20 for 3 seconds. -->
@@ -4450,7 +4450,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11080" levels="3" name="Decrease Earth Resistance">
+	<skill id="11080" toLevel="3" name="Decrease Earth Resistance">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Earth resistance by 20 for 3 seconds. -->
@@ -4488,7 +4488,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
+	<skill id="11081" toLevel="3" name="Decrease Fire/Water/Wind/Earth Resistances">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Fire/Water/Wind/Earth resistances by 20 for 3 seconds. -->
@@ -4550,7 +4550,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11082" levels="1" name="Fire - Elemental Crash">
+	<skill id="11082" toLevel="1" name="Fire - Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target is inflicted with Fear. -->
@@ -4572,7 +4572,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11083" levels="1" name="Water - Elemental Crash">
+	<skill id="11083" toLevel="1" name="Water - Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target's Speed is reduced. -->
@@ -4594,7 +4594,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11084" levels="1" name="Wind - Elemental Crash">
+	<skill id="11084" toLevel="1" name="Wind - Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target is Knocked Back. -->
@@ -4616,7 +4616,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11085" levels="1" name="Earth - Elemental Crash">
+	<skill id="11085" toLevel="1" name="Earth - Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target is inflicted with Hold. -->
@@ -4638,7 +4638,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11086" levels="1" name="Double Casting - Elemental Crash">
+	<skill id="11086" toLevel="1" name="Double Casting - Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- target is inflicted with Stun. -->
@@ -4660,7 +4660,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11087" levels="3" name="Elemental Crash (Fire)">
+	<skill id="11087" toLevel="3" name="Elemental Crash (Fire)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts fear and hold on target. -->
@@ -4707,7 +4707,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11088" levels="3" name="Elemental Crash (Water)">
+	<skill id="11088" toLevel="3" name="Elemental Crash (Water)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases target's Speed. -->
@@ -4743,7 +4743,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11089" levels="3" name="Elemental Crash (Wind)">
+	<skill id="11089" toLevel="3" name="Elemental Crash (Wind)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Knock Back target. -->
@@ -4771,7 +4771,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11090" levels="3" name="Elemental Crash (Earth)">
+	<skill id="11090" toLevel="3" name="Elemental Crash (Earth)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts hold on target. -->
@@ -4800,7 +4800,7 @@
 			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="11091" levels="3" name="Elemental Crash (4 Elements)">
+	<skill id="11091" toLevel="3" name="Elemental Crash (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts stun on target. -->
@@ -4829,7 +4829,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="11092" levels="3" name="Damaged Area">
+	<skill id="11092" toLevel="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
@@ -4871,7 +4871,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11093" levels="1" name="Crystal Form">
+	<skill id="11093" toLevel="1" name="Crystal Form">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Cancels Poison/Bleed/Hold/Stun effect. Becomes invincible for 10 seconds and rapidly recovers HP and MP. -->
@@ -4914,7 +4914,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11094" levels="9" name="Magical Charge">
+	<skill id="11094" toLevel="9" name="Magical Charge">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
@@ -5004,7 +5004,7 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="11095" levels="1" name="Devil's Sway">
+	<skill id="11095" toLevel="1" name="Devil's Sway">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Resets the duration of target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm. -->
@@ -5028,7 +5028,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11096" levels="1" name="Elemental Destruction: Fire">
+	<skill id="11096" toLevel="1" name="Elemental Destruction: Fire">
 		<!-- Updated to IO -->
 		<!-- Fire Attribute -->
 		<icon>icon.skill11017</icon>
@@ -5044,7 +5044,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11097" levels="1" name="Elemental Destruction: Water">
+	<skill id="11097" toLevel="1" name="Elemental Destruction: Water">
 		<!-- Updated to IO -->
 		<!-- Water Attribute -->
 		<icon>icon.skill11017</icon>
@@ -5060,7 +5060,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11098" levels="1" name="Elemental Destruction: Wind">
+	<skill id="11098" toLevel="1" name="Elemental Destruction: Wind">
 		<!-- Updated to IO -->
 		<!-- Wind Attribute -->
 		<icon>icon.skill11017</icon>
@@ -5076,7 +5076,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11099" levels="1" name="Elemental Destruction: Earth">
+	<skill id="11099" toLevel="1" name="Elemental Destruction: Earth">
 		<!-- Updated to IO -->
 		<!-- Earth Attribute -->
 		<icon>icon.skill11017</icon>

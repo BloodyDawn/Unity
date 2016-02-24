@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="1100" levels="2" name="Chill Flame">
+	<skill id="1100" toLevel="2" name="Chill Flame">
 		<table name="#dot"> 27 40 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -52,7 +52,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1101" levels="2" name="Blaze Quake">
+	<skill id="1101" toLevel="2" name="Blaze Quake">
 		<table name="#dot"> 58 79 </table>
 		<abnormalLvl>
 			<value level="1">3</value>
@@ -105,7 +105,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1102" levels="6" name="Aura Sink">
+	<skill id="1102" toLevel="6" name="Aura Sink">
 		<table name="#mdot"> 8 10 13 16 20 22 </table>
 		<table name="#power"> 16 22 29 36 46 51 </table>
 		<abnormalLvl>
@@ -190,7 +190,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1104" levels="14" name="Seal of Winter">
+	<skill id="1104" toLevel="14" name="Seal of Winter">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
@@ -281,7 +281,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1105" levels="18" name="Madness">
+	<skill id="1105" toLevel="18" name="Madness">
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">-204</value>
@@ -380,7 +380,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1107" levels="2" name="Frost Flame">
+	<skill id="1107" toLevel="2" name="Frost Flame">
 		<table name="#dot"> 58 79 </table>
 		<abnormalLvl>
 			<value level="1">3</value>
@@ -432,7 +432,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1108" levels="4" name="Seal of Flame">
+	<skill id="1108" toLevel="4" name="Seal of Flame">
 		<table name="#dot"> 60 73 84 92 </table>
 		<table name="#magicLvl"> 48 56 68 74 </table>
 		<table name="#mpInitialConsume"> 20 23 29 31 </table>
@@ -493,7 +493,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1111" levels="18" name="Summon Kat the Cat">
+	<skill id="1111" toLevel="18" name="Summon Kat the Cat">
 		<icon>icon.skill1111</icon>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<table name="#itemConsumeCountOT"> 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 </table>
@@ -694,7 +694,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1126" levels="34" name="Servitor Recharge">
+	<skill id="1126" toLevel="34" name="Servitor Recharge">
 		<table name="#amount"> 41 44 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 </table>
 		<castRange>400</castRange>
 		<effectPoint>
@@ -892,7 +892,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1127" levels="45" name="Servitor Heal">
+	<skill id="1127" toLevel="45" name="Servitor Heal">
 		<!-- Confirmed CT2.5 -->
 		<table name="#amount"> 169 189 211 247 259 272 313 328 343 389 405 421 472 489 507 542 561 579 616 635 654 692 711 730 768 786 805 824 842 860 878 896 913 931 947 964 980 996 1011 1026 1040 1054 1067 1080 1092 </table>
 		<castRange>600</castRange>
@@ -1146,7 +1146,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1128" levels="18" name="Summon Shadow">
+	<skill id="1128" toLevel="18" name="Summon Shadow">
 		<icon>icon.skill1128</icon>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<!-- H5 hitTime -->
@@ -1348,7 +1348,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1129" levels="16" name="Summon Reanimated Man">
+	<skill id="1129" toLevel="16" name="Summon Reanimated Man">
 		<table name="#itemConsumeCountOT"> 0 0 1 1 1 2 2 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#itemConsumeSteps"> 0 0 14 14 14 14 14 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#npcIds"> 14001 14002 14003 14004 14005 14006 14007 15148 15149 15150 15151 15152 15153 15197 15198 15199 </table>
@@ -1482,7 +1482,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1139" levels="2" name="Servitor Magic Shield">
+	<skill id="1139" toLevel="2" name="Servitor Magic Shield">
 		<table name="#mDef"> 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">2</value>
@@ -1528,7 +1528,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1140" levels="3" name="Servitor Physical Shield">
+	<skill id="1140" toLevel="3" name="Servitor Physical Shield">
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1580,7 +1580,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1141" levels="2" name="Servitor Haste">
+	<skill id="1141" toLevel="2" name="Servitor Haste">
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1626,7 +1626,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1144" levels="2" name="Servitor Wind Walk">
+	<skill id="1144" toLevel="2" name="Servitor Wind Walk">
 		<table name="#runSpd"> 20 33 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1672,7 +1672,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1145" levels="3" name="Servitor Magic Boost">
+	<skill id="1145" toLevel="3" name="Servitor Magic Boost">
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1724,7 +1724,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1146" levels="3" name="Mighty Servitor">
+	<skill id="1146" toLevel="3" name="Mighty Servitor">
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1776,7 +1776,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1147" levels="6" name="Vampiric Touch">
+	<skill id="1147" toLevel="6" name="Vampiric Touch">
 		<table name="#power"> 18 21 23 26 29 32 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -1837,7 +1837,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1148" levels="13" name="Death Spike">
+	<skill id="1148" toLevel="13" name="Death Spike">
 		<table name="#power"> 58 65 72 78 82 85 89 92 96 99 102 105 108 </table>
 		<castRange>900</castRange>
 		<effectPoint>
@@ -1933,7 +1933,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1151" levels="16" name="Corpse Life Drain">
+	<skill id="1151" toLevel="16" name="Corpse Life Drain">
 		<table name="#drain"> 260 299 347 384 426 467 509 529 550 571 590 609 628 645 662 678 </table>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
@@ -2027,7 +2027,7 @@
 			<effect name="ConsumeBody" />
 		</effects>
 	</skill>
-	<skill id="1154" levels="6" name="Summon Corrupted Man">
+	<skill id="1154" toLevel="6" name="Summon Corrupted Man">
 		<table name="#itemConsumeCount"> 3 3 3 3 3 3 </table>
 		<table name="#npcIds"> 14038 14039 14040 14041 14042 14043 </table>
 		<icon>icon.skill1154</icon>
@@ -2087,7 +2087,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1155" levels="15" name="Corpse Burst">
+	<skill id="1155" toLevel="15" name="Corpse Burst">
 		<table name="#power"> 61 65 68 72 75 78 82 85 89 92 96 99 102 105 108 </table>
 		<affectRange>150</affectRange>
 		<castRange>400</castRange>
@@ -2198,7 +2198,7 @@
 			<effect name="ConsumeBody" />
 		</effects>
 	</skill>
-	<skill id="1156" levels="13" name="Forget">
+	<skill id="1156" toLevel="13" name="Forget">
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<hitTime>1500</hitTime>
@@ -2262,7 +2262,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1157" levels="5" name="Body To Mind">
+	<skill id="1157" toLevel="5" name="Body To Mind">
 		<table name="#amount"> 22 35 47 53 61 </table>
 		<effectPoint>
 			<value level="1">243</value>
@@ -2306,7 +2306,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1159" levels="22" name="Curse Death Link">
+	<skill id="1159" toLevel="22" name="Curse Death Link">
 		<table name="#power"> 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
 		<castRange>900</castRange>
 		<effectPoint>
@@ -2446,7 +2446,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1160" levels="15" name="Decrease Speed">
+	<skill id="1160" toLevel="15" name="Decrease Speed">
 		<table name="#runSpd"> 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<abnormalLvl>
 			<value level="1">2</value>
@@ -2573,7 +2573,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1163" levels="14" name="Curse Discord">
+	<skill id="1163" toLevel="14" name="Curse Discord">
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">-379</value>
@@ -2657,7 +2657,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1164" levels="19" name="Curse: Weakness">
+	<skill id="1164" toLevel="19" name="Curse: Weakness">
 		<table name="#pAtk"> 0.83 0.8 0.8 0.8 0.8 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 0.77 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2808,7 +2808,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1167" levels="6" name="Poisonous Cloud">
+	<skill id="1167" toLevel="6" name="Poisonous Cloud">
 		<table name="#dot"> 24 32 41 50 58 63 </table>
 		<abnormalLvl>
 			<value level="1">3</value>
@@ -2886,7 +2886,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1168" levels="7" name="Curse: Poison">
+	<skill id="1168" toLevel="7" name="Curse: Poison">
 		<table name="#dot"> 11 24 32 41 50 58 63 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2967,7 +2967,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1169" levels="14" name="Curse Fear">
+	<skill id="1169" toLevel="14" name="Curse Fear">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
@@ -3057,7 +3057,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="1170" levels="13" name="Anchor">
+	<skill id="1170" toLevel="13" name="Anchor">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<abnormalTime>5</abnormalTime>
 		<activateRate>100</activateRate>
@@ -3159,7 +3159,7 @@
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="1171" levels="19" name="Blazing Circle">
+	<skill id="1171" toLevel="19" name="Blazing Circle">
 		<table name="#power"> 29 30 32 34 36 38 40 42 44 46 48 50 52 55 57 58 60 62 64 </table>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -3285,7 +3285,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1172" levels="8" name="Aura Burn">
+	<skill id="1172" toLevel="8" name="Aura Burn">
 		<table name="#power"> 19 21 24 25 28 30 33 36 </table>
 		<castRange>150</castRange>
 		<effectPoint>
@@ -3353,7 +3353,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1174" levels="22" name="Frost Wall">
+	<skill id="1174" toLevel="22" name="Frost Wall">
 		<table name="#power"> 48 50 53 55 56 57 59 60 61 62 63 65 66 67 68 69 70 72 73 74 75 76 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -3497,7 +3497,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1175" levels="8" name="Aqua Swirl">
+	<skill id="1175" toLevel="8" name="Aqua Swirl">
 		<table name="#power"> 23 26 29 32 35 38 42 44 </table>
 		<castRange>750</castRange>
 		<effectPoint>
@@ -3568,7 +3568,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1176" levels="15" name="Tempest">
+	<skill id="1176" toLevel="15" name="Tempest">
 		<table name="#power"> 31 33 34 36 38 39 41 43 45 46 48 50 51 53 54 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -3676,7 +3676,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1177" levels="5" name="Wind Strike">
+	<skill id="1177" toLevel="5" name="Wind Strike">
 		<table name="#power"> 12 13 15 18 21 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -3737,7 +3737,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1178" levels="8" name="Twister">
+	<skill id="1178" toLevel="8" name="Twister">
 		<table name="#power"> 23 26 29 32 35 38 42 44 </table>
 		<castRange>750</castRange>
 		<effectPoint>
@@ -3807,7 +3807,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1181" levels="3" name="Flame Strike">
+	<skill id="1181" toLevel="3" name="Flame Strike">
 		<table name="#power"> 13 16 19 </table>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -3855,7 +3855,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1182" levels="3" name="Water Resistance">
+	<skill id="1182" toLevel="3" name="Water Resistance">
 		<table name="#vuln"> 10 15 20 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3907,7 +3907,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1183" levels="4" name="Freezing Shackle">
+	<skill id="1183" toLevel="4" name="Freezing Shackle">
 		<table name="#dot"> 102 125 144 157 </table>
 		<abnormalLvl>
 			<value level="1">5</value>
@@ -3971,7 +3971,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1184" levels="6" name="Ice Bolt">
+	<skill id="1184" toLevel="6" name="Ice Bolt">
 		<table name="#power"> 8 9 11 13 14 16 </table>
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -4043,7 +4043,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1189" levels="3" name="Wind Resistance">
+	<skill id="1189" toLevel="3" name="Wind Resistance">
 		<table name="#vuln"> 10 15 20 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4095,7 +4095,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1191" levels="3" name="Fire Resistance">
+	<skill id="1191" toLevel="3" name="Fire Resistance">
 		<table name="#vuln"> 10 15 20 </table>
 		<abnormalLvl>
 			<value level="1">1</value>

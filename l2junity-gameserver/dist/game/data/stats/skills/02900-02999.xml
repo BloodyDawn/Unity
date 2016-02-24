@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="2900" levels="1" name="Ancient Herb - Slayer">
+	<skill id="2900" toLevel="1" name="Ancient Herb - Slayer">
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -25,7 +25,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="2901" levels="1" name="Ancient Herb - Immortal">
+	<skill id="2901" toLevel="1" name="Ancient Herb - Immortal">
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -53,7 +53,7 @@
 			<effect name="Invincible" />
 		</effects>
 	</skill>
-	<skill id="2902" levels="1" name="Ancient Herb - Terminator">
+	<skill id="2902" toLevel="1" name="Ancient Herb - Terminator">
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -84,7 +84,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2903" levels="1" name="Ancient Herb - Guide">
+	<skill id="2903" toLevel="1" name="Ancient Herb - Guide">
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -115,7 +115,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2904" levels="1" name="Guardian Spirit's Divine Protection">
+	<skill id="2904" toLevel="1" name="Guardian Spirit's Divine Protection">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -131,7 +131,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2905" levels="1" name="Growth Accelerator">
+	<skill id="2905" toLevel="1" name="Growth Accelerator">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isDebuff>true</isDebuff>
@@ -160,7 +160,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="2906" levels="1" name="Incubation Accelerator">
+	<skill id="2906" toLevel="1" name="Incubation Accelerator">
 		<effectPoint>100</effectPoint>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>85</magicLvl>
@@ -172,7 +172,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2907" levels="5" name="Battlefield Use Secret Medicine of Life">
+	<skill id="2907" toLevel="5" name="Battlefield Use Secret Medicine of Life">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -195,7 +195,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2908" levels="5" name="Battlefield Use Secret Medicine of Mind">
+	<skill id="2908" toLevel="5" name="Battlefield Use Secret Medicine of Mind">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -218,7 +218,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2909" levels="5" name="Battlefield Use Secret Medicine of Will">
+	<skill id="2909" toLevel="5" name="Battlefield Use Secret Medicine of Will">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -241,7 +241,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2910" levels="1" name="Skull Key of Suffering">
+	<skill id="2910" toLevel="1" name="Skull Key of Suffering">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14820</itemConsumeId> <!-- Skull Key of Suffering -->
@@ -253,7 +253,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2911" levels="1" name="Skull Key of Erosion">
+	<skill id="2911" toLevel="1" name="Skull Key of Erosion">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14821</itemConsumeId> <!-- Skull Key of Erosion -->
@@ -265,7 +265,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2912" levels="1" name="Skull Key of the Heart">
+	<skill id="2912" toLevel="1" name="Skull Key of the Heart">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>14822</itemConsumeId> <!-- Skull Key of the Heart -->
@@ -277,7 +277,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2913" levels="1" name="Soul Extraction">
+	<skill id="2913" toLevel="1" name="Soul Extraction">
 		<effectPoint>-100</effectPoint>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -294,7 +294,7 @@
 			<condition name="ConsumeBody" />
 		</conditions>
 	</skill>
-	<skill id="2914" levels="3" name="Equipment Set Pack (10-day)">
+	<skill id="2914" toLevel="3" name="Equipment Set Pack (10-day)">
 		<!-- Confirmed CT2.5 -->
 		<table name="#npcId"> 32702 32703 13284 </table>
 		<icon>icon.etc_summon_aga_agit_i00</icon>
@@ -343,7 +343,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2915" levels="1" name="Multi-colored Jewel">
+	<skill id="2915" toLevel="1" name="Multi-colored Jewel">
 		<!-- Confirmed CT2.5 -->
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -367,7 +367,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2916" levels="1" name="Enriched Pet Food">
+	<skill id="2916" toLevel="1" name="Enriched Pet Food">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -386,7 +386,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2917" levels="1" name="Large Stakato Cocoon">
+	<skill id="2917" toLevel="1" name="Large Stakato Cocoon">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -468,7 +468,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2918" levels="1" name="Small Stakato Cocoon">
+	<skill id="2918" toLevel="1" name="Small Stakato Cocoon">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -550,7 +550,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2919" levels="1" name="Ancient Parchment">
+	<skill id="2919" toLevel="1" name="Ancient Parchment">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -596,7 +596,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2920" levels="1" name="Titan's Ancient Book">
+	<skill id="2920" toLevel="1" name="Titan's Ancient Book">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -642,7 +642,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2921" levels="1" name="Gludio Supply Box - magic pin">
+	<skill id="2921" toLevel="1" name="Gludio Supply Box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -673,7 +673,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2922" levels="1" name="Dion supply box - magic pin">
+	<skill id="2922" toLevel="1" name="Dion supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -704,7 +704,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2923" levels="1" name="Giran supply box - magic pin">
+	<skill id="2923" toLevel="1" name="Giran supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -735,7 +735,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2924" levels="1" name="Oren supply box - magic pin">
+	<skill id="2924" toLevel="1" name="Oren supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -766,7 +766,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2925" levels="1" name="Aden supply box - magic pin">
+	<skill id="2925" toLevel="1" name="Aden supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -797,7 +797,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2926" levels="1" name="Innadril supply box - magic pin">
+	<skill id="2926" toLevel="1" name="Innadril supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -828,7 +828,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2927" levels="1" name="Goddard Supply Box: magic pin">
+	<skill id="2927" toLevel="1" name="Goddard Supply Box: magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -859,7 +859,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2928" levels="1" name="Rune supply box - magic pin">
+	<skill id="2928" toLevel="1" name="Rune supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -890,7 +890,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2929" levels="1" name="Schuttgart supply box - magic pin">
+	<skill id="2929" toLevel="1" name="Schuttgart supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -921,7 +921,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2930" levels="1" name="Gludio supply box - magic pouch">
+	<skill id="2930" toLevel="1" name="Gludio supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -952,7 +952,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2931" levels="1" name="Dion supply box - magic pouch">
+	<skill id="2931" toLevel="1" name="Dion supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -983,7 +983,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2932" levels="1" name="Giran supply box - magic pouch">
+	<skill id="2932" toLevel="1" name="Giran supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1014,7 +1014,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2933" levels="1" name="Oren supply box - magic pouch">
+	<skill id="2933" toLevel="1" name="Oren supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1045,7 +1045,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2934" levels="1" name="Aden supply box - magic pouch">
+	<skill id="2934" toLevel="1" name="Aden supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1076,7 +1076,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2935" levels="1" name="Innadril supply box - magic pouch">
+	<skill id="2935" toLevel="1" name="Innadril supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1107,7 +1107,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2936" levels="1" name="Goddard Supply Box: magic pouch">
+	<skill id="2936" toLevel="1" name="Goddard Supply Box: magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1138,7 +1138,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2937" levels="1" name="Rune supply box - magic pouch">
+	<skill id="2937" toLevel="1" name="Rune supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1169,7 +1169,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2938" levels="1" name="Schuttgart supply box - magic pouch">
+	<skill id="2938" toLevel="1" name="Schuttgart supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1200,7 +1200,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2939" levels="1" name="Gludio supply box - belt">
+	<skill id="2939" toLevel="1" name="Gludio supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1231,7 +1231,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2940" levels="1" name="Dion supply box - belt">
+	<skill id="2940" toLevel="1" name="Dion supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1262,7 +1262,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2941" levels="1" name="Giran supply box - belt">
+	<skill id="2941" toLevel="1" name="Giran supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1293,7 +1293,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2942" levels="1" name="Oren supply box - belt">
+	<skill id="2942" toLevel="1" name="Oren supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1324,7 +1324,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2943" levels="1" name="Aden supply box - belt">
+	<skill id="2943" toLevel="1" name="Aden supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1355,7 +1355,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2944" levels="1" name="Innadril supply box - belt">
+	<skill id="2944" toLevel="1" name="Innadril supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1386,7 +1386,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2945" levels="1" name="Goddard Supply Box: belt">
+	<skill id="2945" toLevel="1" name="Goddard Supply Box: belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1417,7 +1417,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2946" levels="1" name="Rune supply box - belt">
+	<skill id="2946" toLevel="1" name="Rune supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1448,7 +1448,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2947" levels="1" name="Schuttgart supply box - belt">
+	<skill id="2947" toLevel="1" name="Schuttgart supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1479,7 +1479,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2948" levels="1" name="Gludio Supply Box - magic pin">
+	<skill id="2948" toLevel="1" name="Gludio Supply Box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1510,7 +1510,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2949" levels="1" name="Dion supply box - magic pin">
+	<skill id="2949" toLevel="1" name="Dion supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1541,7 +1541,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2950" levels="1" name="Giran supply box - magic pin">
+	<skill id="2950" toLevel="1" name="Giran supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1572,7 +1572,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2951" levels="1" name="Oren supply box - magic pin">
+	<skill id="2951" toLevel="1" name="Oren supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1603,7 +1603,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2952" levels="1" name="Aden supply box - magic pin">
+	<skill id="2952" toLevel="1" name="Aden supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1634,7 +1634,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2953" levels="1" name="Innadril supply box - magic pin">
+	<skill id="2953" toLevel="1" name="Innadril supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1665,7 +1665,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2954" levels="1" name="Goddard Supply Box: magic pin">
+	<skill id="2954" toLevel="1" name="Goddard Supply Box: magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1696,7 +1696,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2955" levels="1" name="Rune supply box - magic pin">
+	<skill id="2955" toLevel="1" name="Rune supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1727,7 +1727,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2956" levels="1" name="Schuttgart supply box - magic pin">
+	<skill id="2956" toLevel="1" name="Schuttgart supply box - magic pin">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1758,7 +1758,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2957" levels="1" name="Gludio supply box - magic pouch">
+	<skill id="2957" toLevel="1" name="Gludio supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1789,7 +1789,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2958" levels="1" name="Dion supply box - magic pouch">
+	<skill id="2958" toLevel="1" name="Dion supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1820,7 +1820,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2959" levels="1" name="Giran supply box - magic pouch">
+	<skill id="2959" toLevel="1" name="Giran supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1851,7 +1851,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2960" levels="1" name="Oren supply box - magic pouch">
+	<skill id="2960" toLevel="1" name="Oren supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1882,7 +1882,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2961" levels="1" name="Aden supply box - magic pouch">
+	<skill id="2961" toLevel="1" name="Aden supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1913,7 +1913,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2962" levels="1" name="Innadril supply box - magic pouch">
+	<skill id="2962" toLevel="1" name="Innadril supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1944,7 +1944,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2963" levels="1" name="Goddard Supply Box: magic pouch">
+	<skill id="2963" toLevel="1" name="Goddard Supply Box: magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1975,7 +1975,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2964" levels="1" name="Rune supply box - magic pouch">
+	<skill id="2964" toLevel="1" name="Rune supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2006,7 +2006,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2965" levels="1" name="Schuttgart supply box - magic pouch">
+	<skill id="2965" toLevel="1" name="Schuttgart supply box - magic pouch">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2037,7 +2037,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2966" levels="1" name="Gludio supply box - belt">
+	<skill id="2966" toLevel="1" name="Gludio supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2068,7 +2068,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2967" levels="1" name="Dion supply box - belt">
+	<skill id="2967" toLevel="1" name="Dion supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2099,7 +2099,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2968" levels="1" name="Giran supply box - belt">
+	<skill id="2968" toLevel="1" name="Giran supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2130,7 +2130,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2969" levels="1" name="Oren supply box - belt">
+	<skill id="2969" toLevel="1" name="Oren supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2161,7 +2161,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2970" levels="1" name="Aden supply box - belt">
+	<skill id="2970" toLevel="1" name="Aden supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2192,7 +2192,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2971" levels="1" name="Innadril supply box - belt">
+	<skill id="2971" toLevel="1" name="Innadril supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2223,7 +2223,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2972" levels="1" name="Goddard Supply Box: belt">
+	<skill id="2972" toLevel="1" name="Goddard Supply Box: belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2254,7 +2254,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2973" levels="1" name="Rune supply box - belt">
+	<skill id="2973" toLevel="1" name="Rune supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2285,7 +2285,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2974" levels="1" name="Schuttgart supply box - belt">
+	<skill id="2974" toLevel="1" name="Schuttgart supply box - belt">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2316,7 +2316,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2975" levels="1" name="Gludio supply box - magic rune clip">
+	<skill id="2975" toLevel="1" name="Gludio supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2347,7 +2347,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2976" levels="1" name="Dion supply box - magic rune clip">
+	<skill id="2976" toLevel="1" name="Dion supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2378,7 +2378,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2977" levels="1" name="Giran supply box - magic rune clip">
+	<skill id="2977" toLevel="1" name="Giran supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2409,7 +2409,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2978" levels="1" name="Oren supply box - magic rune clip">
+	<skill id="2978" toLevel="1" name="Oren supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2440,7 +2440,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2979" levels="1" name="Aden supply box - magic rune clip">
+	<skill id="2979" toLevel="1" name="Aden supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2471,7 +2471,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2980" levels="1" name="Innadril supply box - magic rune clip">
+	<skill id="2980" toLevel="1" name="Innadril supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2502,7 +2502,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2981" levels="1" name="Goddard Supply Box: magic rune clip">
+	<skill id="2981" toLevel="1" name="Goddard Supply Box: magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2533,7 +2533,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2982" levels="1" name="Rune supply box - magic rune clip">
+	<skill id="2982" toLevel="1" name="Rune supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2564,7 +2564,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2983" levels="1" name="Schuttgart supply box - magic rune clip">
+	<skill id="2983" toLevel="1" name="Schuttgart supply box - magic rune clip">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2595,7 +2595,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2984" levels="1" name="Gludio supply box - magic ornament">
+	<skill id="2984" toLevel="1" name="Gludio supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2626,7 +2626,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2985" levels="1" name="Dion supply box - magic ornament">
+	<skill id="2985" toLevel="1" name="Dion supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2657,7 +2657,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2986" levels="1" name="Giran supply box - magic ornament">
+	<skill id="2986" toLevel="1" name="Giran supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2688,7 +2688,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2987" levels="1" name="Oren supply box - magic ornament">
+	<skill id="2987" toLevel="1" name="Oren supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2719,7 +2719,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2988" levels="1" name="Aden supply box - magic ornament">
+	<skill id="2988" toLevel="1" name="Aden supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2750,7 +2750,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2989" levels="1" name="Innadril supply box - magic ornament">
+	<skill id="2989" toLevel="1" name="Innadril supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2781,7 +2781,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2990" levels="1" name="Goddard Supply Box: magic ornament">
+	<skill id="2990" toLevel="1" name="Goddard Supply Box: magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2812,7 +2812,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2991" levels="1" name="Rune supply box - magic ornament">
+	<skill id="2991" toLevel="1" name="Rune supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2843,7 +2843,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2992" levels="1" name="Schuttgart supply box - magic ornament">
+	<skill id="2992" toLevel="1" name="Schuttgart supply box - magic ornament">
 		<!-- Confirmed CT2.5 -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -2874,7 +2874,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2993" levels="1" name="Ancient herb - Deceiver">
+	<skill id="2993" toLevel="1" name="Ancient herb - Deceiver">
 		<abnormalLvl>9</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>POISON</abnormalType>
@@ -2900,7 +2900,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="2994" levels="1" name="Transformation Harp: Aqua Elf">
+	<skill id="2994" toLevel="1" name="Transformation Harp: Aqua Elf">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -2928,7 +2928,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2995" levels="1" name="Player Commendation - Scroll: Enchant Weapon (D-grade)">
+	<skill id="2995" toLevel="1" name="Player Commendation - Scroll: Enchant Weapon (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2938,7 +2938,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2996" levels="1" name="Player Commendation - Scroll: Enchant Weapon (C-grade)">
+	<skill id="2996" toLevel="1" name="Player Commendation - Scroll: Enchant Weapon (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2948,7 +2948,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2997" levels="1" name="Player Commendation - Scroll: Enchant Weapon (B-grade)">
+	<skill id="2997" toLevel="1" name="Player Commendation - Scroll: Enchant Weapon (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2958,7 +2958,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2998" levels="1" name="Player Commendation - Scroll: Enchant Weapon (A-grade)">
+	<skill id="2998" toLevel="1" name="Player Commendation - Scroll: Enchant Weapon (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -2968,7 +2968,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2999" levels="1" name="Player Commendation - Scroll: Enchant Weapon (S-grade)">
+	<skill id="2999" toLevel="1" name="Player Commendation - Scroll: Enchant Weapon (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>

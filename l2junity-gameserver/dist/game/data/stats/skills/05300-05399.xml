@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="5300" levels="9" name="Burst Shot">
+	<skill id="5300" toLevel="9" name="Burst Shot">
 		<!-- CT2.5 retail confirmed -->
 		<table name="#power"> 8711 12027 12324 12415 12497 12563 12606 12606 12606 </table>
 		<affectRange>150</affectRange>
@@ -55,7 +55,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5301" levels="9" name="Stun">
+	<skill id="5301" toLevel="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -118,7 +118,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5302" levels="9" name="Poison">
+	<skill id="5302" toLevel="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
 		<table name="#dot"> 286 286 314 314 314 338 338 338 338 </table>
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
@@ -204,7 +204,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5303" levels="9" name="Bleed">
+	<skill id="5303" toLevel="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
 		<table name="#dot"> 145 145 157 157 157 168 168 168 168 </table>
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
@@ -290,7 +290,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5304" levels="9" name="Paralysis">
+	<skill id="5304" toLevel="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -355,7 +355,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5305" levels="9" name="Poison">
+	<skill id="5305" toLevel="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
 		<table name="#dot"> 381 381 418 418 418 450 450 450 450 </table>
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
@@ -431,7 +431,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5306" levels="9" name="Paralysis">
+	<skill id="5306" toLevel="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -495,7 +495,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5307" levels="9" name="Stun">
+	<skill id="5307" toLevel="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -557,7 +557,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5308" levels="9" name="Poison">
+	<skill id="5308" toLevel="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
 		<table name="#dot"> 286 286 314 314 314 338 338 338 338 </table>
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
@@ -642,7 +642,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5309" levels="9" name="Bleed">
+	<skill id="5309" toLevel="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
 		<table name="#dot"> 145 145 157 157 157 168 168 168 168 </table>
 		<table name="#power"> 13066 18040 18486 18623 18745 18844 18909 18909 18909 </table>
@@ -727,7 +727,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5310" levels="9" name="Aura Burn">
+	<skill id="5310" toLevel="9" name="Aura Burn">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
@@ -788,7 +788,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5311" levels="9" name="Aura Flare">
+	<skill id="5311" toLevel="9" name="Aura Flare">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -850,7 +850,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5312" levels="9" name="Blaze">
+	<skill id="5312" toLevel="9" name="Blaze">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
@@ -914,7 +914,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5313" levels="9" name="Flame Strike">
+	<skill id="5313" toLevel="9" name="Flame Strike">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -979,7 +979,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5314" levels="9" name="Blazing Circle">
+	<skill id="5314" toLevel="9" name="Blazing Circle">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -1043,7 +1043,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5315" levels="9" name="Blazing Circle">
+	<skill id="5315" toLevel="9" name="Blazing Circle">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -1083,7 +1083,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5316" levels="9" name="Hydro Blast">
+	<skill id="5316" toLevel="9" name="Hydro Blast">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
@@ -1147,7 +1147,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5317" levels="9" name="Mass Hydro Blast">
+	<skill id="5317" toLevel="9" name="Mass Hydro Blast">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -1212,7 +1212,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5318" levels="9" name="Frost Wall">
+	<skill id="5318" toLevel="9" name="Frost Wall">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -1276,7 +1276,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5319" levels="9" name="Hurricane">
+	<skill id="5319" toLevel="9" name="Hurricane">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1301,7 +1301,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5320" levels="9" name="Tempest">
+	<skill id="5320" toLevel="9" name="Tempest">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1328,7 +1328,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5321" levels="9" name="Tempest">
+	<skill id="5321" toLevel="9" name="Tempest">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1354,7 +1354,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5322" levels="9" name="Rock Strike">
+	<skill id="5322" toLevel="9" name="Rock Strike">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1379,7 +1379,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5323" levels="9" name="Earthquake">
+	<skill id="5323" toLevel="9" name="Earthquake">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1406,7 +1406,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5324" levels="9" name="Earthquake">
+	<skill id="5324" toLevel="9" name="Earthquake">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1432,7 +1432,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5325" levels="9" name="Holy Strike">
+	<skill id="5325" toLevel="9" name="Holy Strike">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1457,7 +1457,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5326" levels="9" name="Holy Blast">
+	<skill id="5326" toLevel="9" name="Holy Blast">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1484,7 +1484,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5327" levels="9" name="Holy Circle">
+	<skill id="5327" toLevel="9" name="Holy Circle">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1510,7 +1510,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5328" levels="9" name="Unholy Strike">
+	<skill id="5328" toLevel="9" name="Unholy Strike">
 		<table name="#power"> 124 128 131 133 135 137 138 138 138 </table>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
@@ -1574,7 +1574,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5329" levels="9" name="Unholy Blast">
+	<skill id="5329" toLevel="9" name="Unholy Blast">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -1639,7 +1639,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5330" levels="9" name="Unholy Circle">
+	<skill id="5330" toLevel="9" name="Unholy Circle">
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -1703,7 +1703,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5331" levels="9" name="Drain Energy">
+	<skill id="5331" toLevel="9" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>DARK</attributeType>
@@ -1744,7 +1744,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5332" levels="9" name="Mana Burn">
+	<skill id="5332" toLevel="9" name="Mana Burn">
 		<table name="#power"> 186 192 196 199 202 205 207 207 207 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1807,7 +1807,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5333" levels="9" name="Poison">
+	<skill id="5333" toLevel="9" name="Poison">
 		<!-- TODO: Need to be Checked in Retail -->
 		<table name="#mpConsume"> 55 57 58 60 61 61 62 62 63 </table>
 		<table name="#power"> 75 77 79 80 81 82 83 83 83 </table>
@@ -1894,7 +1894,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5334" levels="9" name="Power Strike">
+	<skill id="5334" toLevel="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -1944,7 +1944,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5335" levels="9" name="Power Shot">
+	<skill id="5335" toLevel="9" name="Power Shot">
 		<table name="#power"> 34070 47031 48135 48433 48691 48886 49012 49012 49012 </table>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1993,7 +1993,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5336" levels="9" name="Spinning Slasher">
+	<skill id="5336" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2032,7 +2032,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5337" levels="9" name="Burst Shot">
+	<skill id="5337" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2057,7 +2057,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5338" levels="9" name="Power Strike">
+	<skill id="5338" toLevel="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -2109,7 +2109,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5339" levels="9" name="Power Shot">
+	<skill id="5339" toLevel="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLvl>
@@ -2133,7 +2133,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5340" levels="9" name="Spinning Slasher">
+	<skill id="5340" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2175,7 +2175,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5341" levels="9" name="Burst Shot">
+	<skill id="5341" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2202,7 +2202,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5342" levels="9" name="Power Strike">
+	<skill id="5342" toLevel="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -2254,7 +2254,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5343" levels="9" name="Power Shot">
+	<skill id="5343" toLevel="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLvl>
@@ -2278,7 +2278,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5344" levels="9" name="Spinning Slasher">
+	<skill id="5344" toLevel="9" name="Spinning Slasher">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -2303,7 +2303,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5345" levels="9" name="Burst Shot">
+	<skill id="5345" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2330,7 +2330,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5346" levels="9" name="Power Strike">
+	<skill id="5346" toLevel="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -2382,7 +2382,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5347" levels="9" name="Power Shot">
+	<skill id="5347" toLevel="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLvl>
@@ -2406,7 +2406,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5348" levels="9" name="Spinning Slasher">
+	<skill id="5348" toLevel="9" name="Spinning Slasher">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -2431,7 +2431,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5349" levels="9" name="Burst Shot">
+	<skill id="5349" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2458,7 +2458,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5350" levels="9" name="Power Strike">
+	<skill id="5350" toLevel="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -2510,7 +2510,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5351" levels="9" name="Power Shot">
+	<skill id="5351" toLevel="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLvl>
@@ -2534,7 +2534,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5352" levels="9" name="Spinning Slasher">
+	<skill id="5352" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2575,7 +2575,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5353" levels="9" name="Burst Shot">
+	<skill id="5353" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2602,7 +2602,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5354" levels="9" name="Power Strike">
+	<skill id="5354" toLevel="9" name="Power Strike">
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>830</hitTime>
@@ -2627,7 +2627,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5355" levels="9" name="Power Shot">
+	<skill id="5355" toLevel="9" name="Power Shot">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLvl>
@@ -2651,7 +2651,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5356" levels="9" name="Spinning Slasher">
+	<skill id="5356" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2692,7 +2692,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5357" levels="9" name="Burst Shot">
+	<skill id="5357" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2719,7 +2719,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5358" levels="9" name="Power Strike">
+	<skill id="5358" toLevel="9" name="Power Strike">
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
@@ -2771,7 +2771,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5359" levels="9" name="Power Shot">
+	<skill id="5359" toLevel="9" name="Power Shot">
 		<table name="#power"> 34070 47031 48135 48433 48691 48886 49012 49012 49012 </table>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -2822,7 +2822,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5360" levels="9" name="Spinning Slasher">
+	<skill id="5360" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2863,7 +2863,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5361" levels="9" name="Burst Shot">
+	<skill id="5361" toLevel="9" name="Burst Shot">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2890,7 +2890,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5362" levels="9" name="Stun">
+	<skill id="5362" toLevel="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
 		<abnormalLvl>1</abnormalLvl>
@@ -2953,7 +2953,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5363" levels="9" name="Poison">
+	<skill id="5363" toLevel="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
 		<table name="#dot"> 286 286 314 314 314 338 338 338 338 </table>
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -3039,7 +3039,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5364" levels="9" name="Bleed">
+	<skill id="5364" toLevel="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
 		<table name="#dot"> 145 145 157 157 157 168 168 168 168 </table>
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -3125,7 +3125,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5365" levels="9" name="Paralysis">
+	<skill id="5365" toLevel="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
 		<table name="#mpConsume"> 76 78 80 82 84 84 85 86 87 </table>
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -3168,7 +3168,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5366" levels="9" name="Poison">
+	<skill id="5366" toLevel="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
 		<table name="#dot"> 381 381 418 418 418 450 450 450 450 </table>
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -3244,7 +3244,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5367" levels="9" name="Paralysis">
+	<skill id="5367" toLevel="9" name="Paralysis">
 		<!-- A temporary paralysis which prevents movement. -->
 		<table name="#mpConsume"> 76 78 80 82 84 84 85 86 87 </table>
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -3287,7 +3287,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="5368" levels="9" name="Stun">
+	<skill id="5368" toLevel="9" name="Stun">
 		<!-- Temporarily gets thrown into a state of shock and immobilized. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
@@ -3321,7 +3321,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5369" levels="9" name="Poison">
+	<skill id="5369" toLevel="9" name="Poison">
 		<!-- Condition causing target to instantly decrease HP by poison. Effect 8-10. -->
 		<table name="#dot"> 286 286 314 314 314 338 338 338 338 </table>
 		<table name="#power"> 12777 17637 18051 18163 18259 18333 18380 18380 18380 </table>
@@ -3406,7 +3406,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5370" levels="9" name="Bleed">
+	<skill id="5370" toLevel="9" name="Bleed">
 		<!-- Condition causing target to instantly decrease HP by bleeding. Effect 8-10. -->
 		<abnormalLvl>
 			<value level="1">8</value>
@@ -3449,7 +3449,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5371" levels="9" name="Aura Burn">
+	<skill id="5371" toLevel="9" name="Aura Burn">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
@@ -3510,7 +3510,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5372" levels="9" name="Aura Flare">
+	<skill id="5372" toLevel="9" name="Aura Flare">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -3571,7 +3571,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5373" levels="9" name="Blaze">
+	<skill id="5373" toLevel="9" name="Blaze">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3596,7 +3596,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5374" levels="9" name="Flame Strike">
+	<skill id="5374" toLevel="9" name="Flame Strike">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -3661,7 +3661,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5375" levels="9" name="Blazing Circle">
+	<skill id="5375" toLevel="9" name="Blazing Circle">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3687,7 +3687,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5376" levels="9" name="Blazing Circle">
+	<skill id="5376" toLevel="9" name="Blazing Circle">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<affectRange>200</affectRange>
@@ -3729,7 +3729,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5377" levels="9" name="Hydro Blast">
+	<skill id="5377" toLevel="9" name="Hydro Blast">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3754,7 +3754,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5378" levels="9" name="Mass Hydro Blast">
+	<skill id="5378" toLevel="9" name="Mass Hydro Blast">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3781,7 +3781,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5379" levels="9" name="Frost Wall">
+	<skill id="5379" toLevel="9" name="Frost Wall">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3807,7 +3807,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5380" levels="9" name="Hurricane">
+	<skill id="5380" toLevel="9" name="Hurricane">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
@@ -3859,7 +3859,7 @@
 			<effect name="MagicalAttack" />
 		</effects>
 	</skill>
-	<skill id="5381" levels="9" name="Tempest">
+	<skill id="5381" toLevel="9" name="Tempest">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3886,7 +3886,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5382" levels="9" name="Tempest">
+	<skill id="5382" toLevel="9" name="Tempest">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -3938,7 +3938,7 @@
 			<effect name="MagicalAttack" />
 		</effects>
 	</skill>
-	<skill id="5383" levels="9" name="Rock Strike">
+	<skill id="5383" toLevel="9" name="Rock Strike">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
@@ -3990,7 +3990,7 @@
 			<effect name="MagicalAttack" />
 		</effects>
 	</skill>
-	<skill id="5384" levels="9" name="Earthquake">
+	<skill id="5384" toLevel="9" name="Earthquake">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4017,7 +4017,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5385" levels="9" name="Earthquake">
+	<skill id="5385" toLevel="9" name="Earthquake">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4043,7 +4043,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5386" levels="9" name="Holy Strike">
+	<skill id="5386" toLevel="9" name="Holy Strike">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4068,7 +4068,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5387" levels="9" name="Holy Blast">
+	<skill id="5387" toLevel="9" name="Holy Blast">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4095,7 +4095,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5388" levels="9" name="Holy Circle">
+	<skill id="5388" toLevel="9" name="Holy Circle">
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4121,7 +4121,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5389" levels="9" name="Unholy Strike">
+	<skill id="5389" toLevel="9" name="Unholy Strike">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
@@ -4173,7 +4173,7 @@
 			<effect name="MagicalAttack" />
 		</effects>
 	</skill>
-	<skill id="5390" levels="9" name="Unholy Blast">
+	<skill id="5390" toLevel="9" name="Unholy Blast">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -4238,7 +4238,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5391" levels="9" name="Unholy Circle">
+	<skill id="5391" toLevel="9" name="Unholy Circle">
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
@@ -4302,7 +4302,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5392" levels="9" name="Drain Energy">
+	<skill id="5392" toLevel="9" name="Drain Energy">
 		<table name="#power"> 160 165 169 171 174 176 178 178 178 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4366,7 +4366,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5393" levels="9" name="Mana Burn">
+	<skill id="5393" toLevel="9" name="Mana Burn">
 		<table name="#power"> 240 247 253 256 260 264 267 267 267 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4417,7 +4417,7 @@
 			<effect name="MagicalAttackMp" />
 		</effects>
 	</skill>
-	<skill id="5394" levels="9" name="Poison">
+	<skill id="5394" toLevel="9" name="Poison">
 		<!-- TODO: Need to be Checked in Retail -->
 		<table name="#power"> 96 99 101 103 104 106 107 107 107 </table>
 		<abnormalLvl>
@@ -4503,7 +4503,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5395" levels="3" name="Super Might Haste">
+	<skill id="5395" toLevel="3" name="Super Might Haste">
 		<table name="#magicLvl"> 20 40 70 </table>
 		<table name="#pAtk"> 1.5 2.0 3.0 </table>
 		<table name="#pAtkSpd"> 1.33 1.33 1.5 </table>
@@ -4563,7 +4563,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5396" levels="1" name="Spell Stance">
+	<skill id="5396" toLevel="1" name="Spell Stance">
 		<castRange>400</castRange>
 		<channelingSkillId>5397</channelingSkillId>
 		<channelingTickInterval>2000</channelingTickInterval>
@@ -4579,7 +4579,7 @@
 		<targetType>OTHERS</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5397" levels="3" name="Spell Force">
+	<skill id="5397" toLevel="3" name="Spell Force">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -4599,7 +4599,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5398" levels="1" name="Final Burn">
+	<skill id="5398" toLevel="1" name="Final Burn">
 		<affectRange>300</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4623,7 +4623,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5399" levels="1" name="Heat of Desert">
+	<skill id="5399" toLevel="1" name="Heat of Desert">
 		<!-- Confirmed CT2.5 -->
 		<!-- Zone Skill -->
 		<abnormalLvl>1</abnormalLvl>

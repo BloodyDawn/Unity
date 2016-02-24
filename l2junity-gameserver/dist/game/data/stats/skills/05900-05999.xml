@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="5900" levels="1" name="Burst of Oblivion">
+	<skill id="5900" toLevel="1" name="Burst of Oblivion">
 		<abnormalLvl>8</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>OBLIVION</abnormalType>
@@ -41,7 +41,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5901" levels="2" name="Mist of Oblivion">
+	<skill id="5901" toLevel="2" name="Mist of Oblivion">
 		<abnormalLvl>8</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>OBLIVION</abnormalType>
@@ -83,7 +83,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5902" levels="1" name="Cancel NPC Trigger Target">
+	<skill id="5902" toLevel="1" name="Cancel NPC Trigger Target">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<isTriggeredSkill>true</isTriggeredSkill>
@@ -98,7 +98,7 @@
 			<effect name="TargetCancel" />
 		</effects>
 	</skill>
-	<skill id="5903" levels="1" name="Burst of Misplace">
+	<skill id="5903" toLevel="1" name="Burst of Misplace">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>DISARM</abnormalType>
@@ -129,7 +129,7 @@
 			<effect name="Disarm" />
 		</effects>
 	</skill>
-	<skill id="5904" levels="3" name="Mist of Souleater">
+	<skill id="5904" toLevel="3" name="Mist of Souleater">
 		<table name="#power"> 112 117 120 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>300</affectRange>
@@ -176,7 +176,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5905" levels="1" name="Confusing Nuph">
+	<skill id="5905" toLevel="1" name="Confusing Nuph">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>SILENCE_ALL</abnormalType>
@@ -200,7 +200,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5906" levels="1" name="Ritual of Revive">
+	<skill id="5906" toLevel="1" name="Ritual of Revive">
 		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLvl>85</magicLvl>
@@ -212,7 +212,7 @@
 		<targetType>PC_BODY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5907" levels="2" name="Ritual of Entombment">
+	<skill id="5907" toLevel="2" name="Ritual of Entombment">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -244,7 +244,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5908" levels="2" name="Ritual of Entombment">
+	<skill id="5908" toLevel="2" name="Ritual of Entombment">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -276,7 +276,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5909" levels="1" name="Stronghold Attack">
+	<skill id="5909" toLevel="1" name="Stronghold Attack">
 		<castRange>40</castRange>
 		<effectRange>400</effectRange>
 		<hitTime>1000</hitTime>
@@ -295,7 +295,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5910" levels="1" name="Stronghold Attack">
+	<skill id="5910" toLevel="1" name="Stronghold Attack">
 		<castRange>300</castRange>
 		<effectRange>600</effectRange>
 		<hitTime>1000</hitTime>
@@ -314,12 +314,12 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5911" levels="1" name="Pestilence Cleanse">
+	<skill id="5911" toLevel="1" name="Pestilence Cleanse">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5912" levels="1" name="Pestilence Cleanse">
+	<skill id="5912" toLevel="1" name="Pestilence Cleanse">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_D</abnormalType>
@@ -339,7 +339,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5913" levels="1" name="Putrefaction Cleanse">
+	<skill id="5913" toLevel="1" name="Putrefaction Cleanse">
 		<magicLvl>83</magicLvl>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -359,7 +359,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5914" levels="1" name="Putrefaction Cleanse">
+	<skill id="5914" toLevel="1" name="Putrefaction Cleanse">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_E</abnormalType>
@@ -381,7 +381,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5915" levels="9" name="Mummifying Aura">
+	<skill id="5915" toLevel="9" name="Mummifying Aura">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -407,7 +407,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5916" levels="9" name="Cruising Aura">
+	<skill id="5916" toLevel="9" name="Cruising Aura">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -433,7 +433,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5917" levels="9" name="Shrouding Aura">
+	<skill id="5917" toLevel="9" name="Shrouding Aura">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -459,7 +459,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5918" levels="10" name="Physical Root Vulnerability">
+	<skill id="5918" toLevel="10" name="Physical Root Vulnerability">
 		<table name="#trait_root_physically"> -10 -20 -30 -40 -50 -60 -70 -80 -90 -99 </table>
 		<magicLvl>
 			<value level="1">10</value>
@@ -492,7 +492,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5919" levels="1" name="Obey">
+	<skill id="5919" toLevel="1" name="Obey">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<abnormalLvl>1</abnormalLvl>
@@ -520,7 +520,7 @@
 			<effect name="BlockResurrection" />
 		</effects>
 	</skill>
-	<skill id="5920" levels="1" name="Tentacle of Agony">
+	<skill id="5920" toLevel="1" name="Tentacle of Agony">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<affectRange>300</affectRange>
@@ -545,7 +545,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5921" levels="1" name="Inhale">
+	<skill id="5921" toLevel="1" name="Inhale">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<abnormalLvl>1</abnormalLvl>
@@ -605,7 +605,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5922" levels="1" name="Exhale">
+	<skill id="5922" toLevel="1" name="Exhale">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<abnormalLvl>1</abnormalLvl>
@@ -655,7 +655,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5923" levels="1" name="Soul Retain">
+	<skill id="5923" toLevel="1" name="Soul Retain">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10800</abnormalTime>
@@ -692,7 +692,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5924" levels="1" name="Devour Soul">
+	<skill id="5924" toLevel="1" name="Devour Soul">
 		<effectPoint>-100</effectPoint>
 		<hitTime>5000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -705,7 +705,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5925" levels="1" name="Goring Charge">
+	<skill id="5925" toLevel="1" name="Goring Charge">
 		<effectPoint>-100</effectPoint>
 		<hitTime>800</hitTime>
 		<magicLvl>85</magicLvl>
@@ -722,7 +722,7 @@
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="5926" levels="1" name="Breath Corruption">
+	<skill id="5926" toLevel="1" name="Breath Corruption">
 		<affectLimit>5-15</affectLimit>
 		<effectPoint>-100</effectPoint>
 		<fanRange>0;0;300;90</fanRange>
@@ -738,7 +738,7 @@
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5927" levels="4" name="Immortal Frenzy">
+	<skill id="5927" toLevel="4" name="Immortal Frenzy">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -758,7 +758,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5928" levels="4" name="Immortal Resilience">
+	<skill id="5928" toLevel="4" name="Immortal Resilience">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -778,7 +778,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5929" levels="1" name="Pairing of the Lost">
+	<skill id="5929" toLevel="1" name="Pairing of the Lost">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>COUNTER_SKILL</abnormalType>
@@ -793,7 +793,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5930" levels="1" name="Shielding of the Lost">
+	<skill id="5930" toLevel="1" name="Shielding of the Lost">
 		<!-- TODO: Implement me! -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3600</abnormalTime>
@@ -815,7 +815,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5931" levels="1" name="Ultimate Shield">
+	<skill id="5931" toLevel="1" name="Ultimate Shield">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<magicLvl>85</magicLvl>
@@ -828,7 +828,7 @@
 			<effect name="Invincible" />
 		</effects>
 	</skill>
-	<skill id="5932" levels="1" name="Dark Blade">
+	<skill id="5932" toLevel="1" name="Dark Blade">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<affectLimit>5-15</affectLimit>
@@ -855,7 +855,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5933" levels="1" name="Dark Blade">
+	<skill id="5933" toLevel="1" name="Dark Blade">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<affectLimit>5-15</affectLimit>
@@ -882,7 +882,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5934" levels="1" name="Meet the soul of darkness and fight against it.">
+	<skill id="5934" toLevel="1" name="Meet the soul of darkness and fight against it.">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ARMOR_EARTH</abnormalType>
@@ -901,7 +901,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5935" levels="1" name="Dark Ring">
+	<skill id="5935" toLevel="1" name="Dark Ring">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<affectLimit>5-15</affectLimit>
@@ -927,7 +927,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5936" levels="1" name="Earth Ring">
+	<skill id="5936" toLevel="1" name="Earth Ring">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<affectLimit>5-15</affectLimit>
@@ -953,7 +953,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5937" levels="1" name="Self Stun">
+	<skill id="5937" toLevel="1" name="Self Stun">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -969,7 +969,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5938" levels="5" name="P. Atk. Up">
+	<skill id="5938" toLevel="5" name="P. Atk. Up">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -985,7 +985,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5939" levels="5" name="Defense Ability Up">
+	<skill id="5939" toLevel="5" name="Defense Ability Up">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
@@ -1001,7 +1001,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5940" levels="12" name="Energy of Generation">
+	<skill id="5940" toLevel="12" name="Energy of Generation">
 		<abnormalLvl>
 			<value level="1">3</value>
 			<value level="2">4</value>
@@ -1044,7 +1044,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5941" levels="1" name="Energy of Erosion">
+	<skill id="5941" toLevel="1" name="Energy of Erosion">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MAX_HP_DOWN</abnormalType>
@@ -1061,7 +1061,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5942" levels="1" name="Energy of Pollution">
+	<skill id="5942" toLevel="1" name="Energy of Pollution">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>HEAL_EFFECT_DOWN</abnormalType>
@@ -1078,7 +1078,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5943" levels="1" name="Energy of Contamination">
+	<skill id="5943" toLevel="1" name="Energy of Contamination">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MP_COST_UP</abnormalType>
@@ -1095,7 +1095,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5944" levels="1" name="Energy of Oblivion">
+	<skill id="5944" toLevel="1" name="Energy of Oblivion">
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>HIT_DOWN</abnormalType>
@@ -1112,7 +1112,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5945" levels="1" name="Region2 Rotation5">
+	<skill id="5945" toLevel="1" name="Region2 Rotation5">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MAX_MP_UP</abnormalType>
@@ -1128,7 +1128,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5946" levels="1" name="Large Firecracker">
+	<skill id="5946" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1141,7 +1141,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5947" levels="1" name="Large Firecracker">
+	<skill id="5947" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1154,7 +1154,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5948" levels="1" name="Large Firecracker">
+	<skill id="5948" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1167,7 +1167,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5949" levels="1" name="Large Firecracker">
+	<skill id="5949" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1180,7 +1180,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5950" levels="1" name="Birthday Gift">
+	<skill id="5950" toLevel="1" name="Birthday Gift">
 		<!-- Confirmed CT2.5 -->
 		<!-- Birthday Skill -->
 		<abnormalLvl>9</abnormalLvl>
@@ -1213,7 +1213,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5951" levels="1" name="Agathion's Blessing">
+	<skill id="5951" toLevel="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1228,7 +1228,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5952" levels="1" name="Agathion's Blessing">
+	<skill id="5952" toLevel="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1243,7 +1243,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5953" levels="1" name="Agathion's Blessing">
+	<skill id="5953" toLevel="1" name="Agathion's Blessing">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1258,7 +1258,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5954" levels="1" name="Agathion Cute Trick - Tinplate Golem">
+	<skill id="5954" toLevel="1" name="Agathion Cute Trick - Tinplate Golem">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1273,7 +1273,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5955" levels="1" name="Agathion Cute Trick - Joy">
+	<skill id="5955" toLevel="1" name="Agathion Cute Trick - Joy">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1288,7 +1288,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5956" levels="1" name="Agathion Cute Trick - Angry Devil">
+	<skill id="5956" toLevel="1" name="Agathion Cute Trick - Angry Devil">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1303,7 +1303,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5957" levels="1" name="Agathion Cute Trick - Sorrow">
+	<skill id="5957" toLevel="1" name="Agathion Cute Trick - Sorrow">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1318,7 +1318,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5958" levels="1" name="Agathion Cute Trick - Teddy Boy">
+	<skill id="5958" toLevel="1" name="Agathion Cute Trick - Teddy Boy">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1333,7 +1333,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5959" levels="1" name="Agathion Cute Trick - Teddy Girl">
+	<skill id="5959" toLevel="1" name="Agathion Cute Trick - Teddy Girl">
 		<hitTime>3000</hitTime>
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1348,7 +1348,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="5960" levels="1" name="Stronghold Reactivate">
+	<skill id="5960" toLevel="1" name="Stronghold Reactivate">
 		<abnormalLvl>2</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>POISON</abnormalType>
@@ -1368,7 +1368,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5961" levels="1" name="Barrier Thunder Storm">
+	<skill id="5961" toLevel="1" name="Barrier Thunder Storm">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1393,7 +1393,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5962" levels="1" name="Air Defense Cannon">
+	<skill id="5962" toLevel="1" name="Air Defense Cannon">
 		<effectPoint>-100</effectPoint>
 		<hitTime>7000</hitTime>
 		<magicLvl>99</magicLvl>
@@ -1405,7 +1405,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5963" levels="1" name="Emery Conversion">
+	<skill id="5963" toLevel="1" name="Emery Conversion">
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicLvl>99</magicLvl>
@@ -1418,7 +1418,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5964" levels="1" name="Star Shard">
+	<skill id="5964" toLevel="1" name="Star Shard">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1431,7 +1431,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5965" levels="1" name="Fireworks">
+	<skill id="5965" toLevel="1" name="Fireworks">
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -1445,7 +1445,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5966" levels="1" name="Large Firecracker">
+	<skill id="5966" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -1458,7 +1458,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5967" levels="2" name="Aggression Aura">
+	<skill id="5967" toLevel="2" name="Aggression Aura">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>TARGET_LOCK</abnormalType>
@@ -1480,7 +1480,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5968" levels="2" name="Rapid Shot">
+	<skill id="5968" toLevel="2" name="Rapid Shot">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1506,7 +1506,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5969" levels="2" name="Punch of Doom">
+	<skill id="5969" toLevel="2" name="Punch of Doom">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1546,7 +1546,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5970" levels="1" name="Seduced Knight's Help">
+	<skill id="5970" toLevel="1" name="Seduced Knight's Help">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1566,7 +1566,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5971" levels="1" name="Seduced Ranger's Help">
+	<skill id="5971" toLevel="1" name="Seduced Ranger's Help">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1586,7 +1586,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5972" levels="1" name="Seduced Wizard's Help">
+	<skill id="5972" toLevel="1" name="Seduced Wizard's Help">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1606,7 +1606,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5973" levels="1" name="Seduced Warrior's Help">
+	<skill id="5973" toLevel="1" name="Seduced Warrior's Help">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1626,7 +1626,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5974" levels="1" name="Tiat Transformation">
+	<skill id="5974" toLevel="1" name="Tiat Transformation">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>7800</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1643,7 +1643,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5975" levels="3" name="Dark Attack">
+	<skill id="5975" toLevel="3" name="Dark Attack">
 		<table name="#power"> 1515 2365 6059 </table>
 		<castRange>40</castRange>
 		<effectPoint>
@@ -1679,7 +1679,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5976" levels="3" name="Dark Storm">
+	<skill id="5976" toLevel="3" name="Dark Storm">
 		<table name="#power"> 757 1182 4039 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>100</affectRange>
@@ -1716,7 +1716,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5977" levels="3" name="Dark Strike">
+	<skill id="5977" toLevel="3" name="Dark Strike">
 		<effectPoint>
 			<value level="1">-484</value>
 			<value level="2">-572</value>
@@ -1737,7 +1737,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5978" levels="1" name="Devil Strike">
+	<skill id="5978" toLevel="1" name="Devil Strike">
 		<effectPoint>-653</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLvl>85</magicLvl>
@@ -1750,7 +1750,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5979" levels="1" name="Forced Teleport">
+	<skill id="5979" toLevel="1" name="Forced Teleport">
 		<hitTime>2500</hitTime>
 		<magicLvl>85</magicLvl>
 		<operateType>A1</operateType>
@@ -1762,7 +1762,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5980" levels="3" name="Seal Isolation">
+	<skill id="5980" toLevel="3" name="Seal Isolation">
 		<!-- Confirmed CT2.5 -->
 		<table name="#power"> 2273 3547 6059 </table>
 		<affectLimit>10-10</affectLimit>
@@ -1800,7 +1800,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5981" levels="3" name="Lilith's Curse">
+	<skill id="5981" toLevel="3" name="Lilith's Curse">
 		<abnormalLvl>3</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
@@ -1820,7 +1820,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5982" levels="1" name="Aura Bird - Falcon">
+	<skill id="5982" toLevel="1" name="Aura Bird - Falcon">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1868,7 +1868,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5983" levels="1" name="Aura Bird - Owl">
+	<skill id="5983" toLevel="1" name="Aura Bird - Owl">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>-1</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1916,7 +1916,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5984" levels="1" name="Hand of Death">
+	<skill id="5984" toLevel="1" name="Hand of Death">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>MD_DOWN</abnormalType>
@@ -1935,7 +1935,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5985" levels="9" name="Decaying Aura">
+	<skill id="5985" toLevel="9" name="Decaying Aura">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1960,7 +1960,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5986" levels="9" name="Vampiric Aura">
+	<skill id="5986" toLevel="9" name="Vampiric Aura">
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1985,7 +1985,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5987" levels="1" name="Weapon Maintenance">
+	<skill id="5987" toLevel="1" name="Weapon Maintenance">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>600</abnormalTime>
@@ -2050,7 +2050,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5988" levels="1" name="Armor Maintenance">
+	<skill id="5988" toLevel="1" name="Armor Maintenance">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>600</abnormalTime>
@@ -2108,7 +2108,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5989" levels="1" name="Invincibility">
+	<skill id="5989" toLevel="1" name="Invincibility">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -2125,7 +2125,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5990" levels="3" name="Lesser Heal">
+	<skill id="5990" toLevel="3" name="Lesser Heal">
 		<effectPoint>
 			<value level="1">595</value>
 			<value level="2">610</value>
@@ -2145,7 +2145,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5991" levels="1" name="Presentation - Summon Tiat">
+	<skill id="5991" toLevel="1" name="Presentation - Summon Tiat">
 		<hitTime>11760</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>85</magicLvl>
@@ -2156,7 +2156,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5992" levels="12" name="Aggression">
+	<skill id="5992" toLevel="12" name="Aggression">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>TARGET_LOCK</abnormalType>
@@ -2202,7 +2202,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5993" levels="1" name="Command of Anchor">
+	<skill id="5993" toLevel="1" name="Command of Anchor">
 		<!-- Confirmed CT2.5 -->
 		<!-- Ekimus Skills -->
 		<abnormalLvl>8</abnormalLvl>
@@ -2248,7 +2248,7 @@
 			<effect name="PhysicalMute" />
 		</effects>
 	</skill>
-	<skill id="5994" levels="1" name="Mysterious Effect">
+	<skill id="5994" toLevel="1" name="Mysterious Effect">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>BIG_HEAD</abnormalType>
@@ -2270,27 +2270,27 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5995" levels="1" name="not_used">
+	<skill id="5995" toLevel="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5996" levels="1" name="not_used">
+	<skill id="5996" toLevel="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5997" levels="1" name="not_used">
+	<skill id="5997" toLevel="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5998" levels="1" name="not_used">
+	<skill id="5998" toLevel="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="5999" levels="1" name="not_used">
+	<skill id="5999" toLevel="1" name="not_used">
 		<magicLvl>83</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>

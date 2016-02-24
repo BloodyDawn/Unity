@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="1001" levels="15" name="Soul Cry">
+	<skill id="1001" toLevel="15" name="Soul Cry">
 		<!-- Confirmed CT2.5 and updated to IO -->
 		<table name="#mdot"> 0 0 1 2 2 2 3 3 4 4 5 5 6 6 7 </table> <!-- Guessed -->
 		<table name="#mAtk"> 0 0 0 0 0 0 1.05 1.05 1.07 1.1 1.12 1.14 1.16 1.18 1.2 </table>
@@ -154,7 +154,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1002" levels="3" name="Chant of Flame">
+	<skill id="1002" toLevel="3" name="Chant of Flame">
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -206,7 +206,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1003" levels="3" name="Pa'agrian Gift">
+	<skill id="1003" toLevel="3" name="Pa'agrian Gift">
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -259,7 +259,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1004" levels="3" name="The Wisdom of Pa'agrio">
+	<skill id="1004" toLevel="3" name="The Wisdom of Pa'agrio">
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -312,7 +312,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1005" levels="3" name="Blessings of Pa'agrio">
+	<skill id="1005" toLevel="3" name="Blessings of Pa'agrio">
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -365,7 +365,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1006" levels="3" name="Chant of Fire">
+	<skill id="1006" toLevel="3" name="Chant of Fire">
 		<table name="#mDef"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -417,7 +417,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1007" levels="3" name="Chant of Battle">
+	<skill id="1007" toLevel="3" name="Chant of Battle">
 		<table name="#pAtk"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -469,7 +469,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1008" levels="3" name="The Glory of Pa'agrio">
+	<skill id="1008" toLevel="3" name="The Glory of Pa'agrio">
 		<table name="#mDef"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -522,7 +522,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1009" levels="3" name="Chant of Shielding">
+	<skill id="1009" toLevel="3" name="Chant of Shielding">
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -574,7 +574,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1010" levels="3" name="Soul Shield">
+	<skill id="1010" toLevel="3" name="Soul Shield">
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -626,7 +626,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1011" levels="18" name="Heal">
+	<skill id="1011" toLevel="18" name="Heal">
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">50</value>
@@ -724,7 +724,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1012" levels="3" name="Cure Poison">
+	<skill id="1012" toLevel="3" name="Cure Poison">
 		<table name="#dispelAbnormals"> POISON,3 POISON,7 POISON,9 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -767,7 +767,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1013" levels="32" name="Recharge">
+	<skill id="1013" toLevel="32" name="Recharge">
 		<table name="#amount"> 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 </table>
 		<castRange>400</castRange>
 		<effectPoint>
@@ -961,7 +961,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1015" levels="15" name="Battle Heal">
+	<skill id="1015" toLevel="15" name="Battle Heal">
 		<table name="#amount"> 83 95 107 121 135 151 176 185 195 224 234 245 278 289 301 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -1064,7 +1064,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1016" levels="9" name="Resurrection">
+	<skill id="1016" toLevel="9" name="Resurrection">
 		<table name="#power"> 0 20 30 40 50 55 60 65 70 </table>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>400</castRange>
@@ -1143,7 +1143,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1018" levels="3" name="Purify">
+	<skill id="1018" toLevel="3" name="Purify">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<table name="#dispelAbnormals"> POISON,3;BLEEDING,3;PARALYZE,1 POISON,7;BLEEDING,7;PARALYZE,1;TURN_STONE,2 POISON,9;BLEEDING,9;PARALYZE,1;TURN_STONE,2 </table>
 		<castRange>600</castRange>
@@ -1187,7 +1187,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1020" levels="27" name="Vitalize">
+	<skill id="1020" toLevel="27" name="Vitalize">
 		<table name="#amount"> 440 454 467 494 508 521 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
 		<table name="#dispelAbnormals"> POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,3;BLEEDING,3 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,7;BLEEDING,7 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 POISON,9;BLEEDING,9 </table>
 		<castRange>600</castRange>
@@ -1382,7 +1382,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1027" levels="15" name="Group Heal">
+	<skill id="1027" toLevel="15" name="Group Heal">
 		<table name="#power"> 66 76 86 97 108 121 141 148 156 179 188 196 222 231 241 </table>
 		<affectRange>1000</affectRange>
 		<effectPoint>
@@ -1485,7 +1485,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1028" levels="19" name="Might of Heaven">
+	<skill id="1028" toLevel="19" name="Might of Heaven">
 		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 66 68 71 74 77 79 82 84 87 </table>
 		<castRange>400</castRange>
 		<effectPoint>
@@ -1615,7 +1615,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1031" levels="8" name="Disrupt Undead">
+	<skill id="1031" toLevel="8" name="Disrupt Undead">
 		<table name="#power"> 19 21 24 25 28 30 33 36 </table>
 		<castRange>400</castRange>
 		<effectPoint>
@@ -1690,7 +1690,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1032" levels="3" name="Invigor">
+	<skill id="1032" toLevel="3" name="Invigor">
 		<table name="#mpInitialConsume"> 7 9 11 </table>
 		<table name="#trait_bleed"> 30 40 50 </table>
 		<abnormalLvl>
@@ -1737,7 +1737,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1033" levels="3" name="Poison Resistance">
+	<skill id="1033" toLevel="3" name="Poison Resistance">
 		<table name="#trait_poison"> 30 40 50 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1788,7 +1788,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1034" levels="13" name="Repose">
+	<skill id="1034" toLevel="13" name="Repose">
 		<affectLimit>10-10</affectLimit>
 		<affectRange>200</affectRange>
 		<hitTime>1500</hitTime>
@@ -1853,7 +1853,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1035" levels="4" name="Mental Shield">
+	<skill id="1035" toLevel="4" name="Mental Shield">
 		<table name="#traits"> 20 30 40 50 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1922,7 +1922,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1036" levels="2" name="Magic Barrier">
+	<skill id="1036" toLevel="2" name="Magic Barrier">
 		<table name="#mDef"> 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">2</value>
@@ -1968,7 +1968,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1040" levels="3" name="Shield">
+	<skill id="1040" toLevel="3" name="Shield">
 		<table name="#rate"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2020,7 +2020,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1042" levels="12" name="Hold Undead">
+	<skill id="1042" toLevel="12" name="Hold Undead">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
@@ -2106,7 +2106,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="1043" levels="1" name="Holy Weapon">
+	<skill id="1043" toLevel="1" name="Holy Weapon">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>HOLY_ATTACK</abnormalType>
@@ -2139,7 +2139,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1044" levels="3" name="Regeneration">
+	<skill id="1044" toLevel="3" name="Regeneration">
 		<table name="#rate"> 1.1 1.15 1.2 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2191,7 +2191,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1045" levels="6" name="Blessed Body">
+	<skill id="1045" toLevel="6" name="Blessed Body">
 		<table name="#maxHp"> 10 15 20 25 30 35 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2262,7 +2262,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1047" levels="4" name="Mana Regeneration">
+	<skill id="1047" toLevel="4" name="Mana Regeneration">
 		<table name="#regMp"> 1.72 2.16 2.74 3.09 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2325,7 +2325,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1048" levels="6" name="Blessed Soul">
+	<skill id="1048" toLevel="6" name="Blessed Soul">
 		<table name="#maxMp"> 1.1 1.15 1.2 1.25 1.3 1.35 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2395,7 +2395,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1049" levels="14" name="Requiem">
+	<skill id="1049" toLevel="14" name="Requiem">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>TURN_PASSIVE</abnormalType>
@@ -2468,7 +2468,7 @@
 			<effect name="Passive" />
 		</effects>
 	</skill>
-	<skill id="1050" levels="2" name="Return">
+	<skill id="1050" toLevel="2" name="Return">
 		<!-- Confirmed CT2.5 -->
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<hitTime>
@@ -2504,7 +2504,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1056" levels="12" name="Cancellation">
+	<skill id="1056" toLevel="12" name="Cancellation">
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">-455</value>
@@ -2580,7 +2580,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1059" levels="3" name="Empower">
+	<skill id="1059" toLevel="3" name="Empower">
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2632,7 +2632,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1062" levels="2" name="Berserker Spirit">
+	<skill id="1062" toLevel="2" name="Berserker Spirit">
 		<table name="#mAtk"> 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
@@ -2739,7 +2739,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1064" levels="14" name="Silence">
+	<skill id="1064" toLevel="14" name="Silence">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>SILENCE</abnormalType>
@@ -2828,7 +2828,7 @@
 			<effect name="Mute" />
 		</effects>
 	</skill>
-	<skill id="1068" levels="3" name="Might">
+	<skill id="1068" toLevel="3" name="Might">
 		<table name="#rate"> 1.08 1.12 1.15 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -2880,7 +2880,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1069" levels="42" name="Sleep">
+	<skill id="1069" toLevel="42" name="Sleep">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>SLEEP</abnormalType>
@@ -3085,7 +3085,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1071" levels="14" name="Surrender to Water">
+	<skill id="1071" toLevel="14" name="Surrender to Water">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -3182,7 +3182,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1072" levels="5" name="Sleeping Cloud">
+	<skill id="1072" toLevel="5" name="Sleeping Cloud">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>SLEEP</abnormalType>
@@ -3242,7 +3242,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1073" levels="2" name="Eva's Kiss">
+	<skill id="1073" toLevel="2" name="Eva's Kiss">
 		<table name="#breath"> 5 7 </table>
 		<abnormalLvl>
 			<value level="1">2</value>
@@ -3284,7 +3284,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1074" levels="14" name="Surrender to Wind">
+	<skill id="1074" toLevel="14" name="Surrender to Wind">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>4</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
@@ -3381,7 +3381,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1075" levels="15" name="Peace">
+	<skill id="1075" toLevel="15" name="Peace">
 		<table name="#mpInitialConsume"> 6 7 8 9 10 11 11 11 12 12 13 13 13 14 14 </table>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
@@ -3435,7 +3435,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1077" levels="3" name="Focus">
+	<skill id="1077" toLevel="3" name="Focus">
 		<table name="#rCrit"> 0.2 0.25 0.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3487,7 +3487,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1078" levels="6" name="Concentration">
+	<skill id="1078" toLevel="6" name="Concentration">
 		<table name="#cancel"> 18 25 36 42 48 53 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3557,7 +3557,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1083" levels="17" name="Surrender to Fire">
+	<skill id="1083" toLevel="17" name="Surrender to Fire">
 		<!-- Confirmed CT2.5 -->
 		<abnormalLvl>
 			<value level="1">3</value>
@@ -3720,7 +3720,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1085" levels="3" name="Acumen">
+	<skill id="1085" toLevel="3" name="Acumen">
 		<table name="#mAtkSpd"> 1.15 1.23 1.3 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3772,7 +3772,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1086" levels="2" name="Haste">
+	<skill id="1086" toLevel="2" name="Haste">
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3818,7 +3818,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1087" levels="3" name="Agility">
+	<skill id="1087" toLevel="3" name="Agility">
 		<table name="#rEvas"> 2 3 4 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -3870,7 +3870,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1090" levels="6" name="Life Drain">
+	<skill id="1090" toLevel="6" name="Life Drain">
 		<table name="#power"> 15 21 26 32 38 44 </table>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -3929,7 +3929,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1092" levels="19" name="Fear">
+	<skill id="1092" toLevel="19" name="Fear">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
@@ -4039,7 +4039,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="1095" levels="5" name="Venom">
+	<skill id="1095" toLevel="5" name="Venom">
 		<table name="#dot"> 11 16 24 41 50 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -4108,7 +4108,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1096" levels="16" name="Seal of Chaos">
+	<skill id="1096" toLevel="16" name="Seal of Chaos">
 		<table name="#Acc"> 9 9 12 12 12 12 12 12 12 12 12 12 12 12 12 12 </table>
 		<abnormalLvl>
 			<value level="1">2</value>
@@ -4242,7 +4242,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1097" levels="20" name="Dreaming Spirit">
+	<skill id="1097" toLevel="20" name="Dreaming Spirit">
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>SLEEP</abnormalType>
@@ -4359,7 +4359,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1099" levels="15" name="Seal of Slow">
+	<skill id="1099" toLevel="15" name="Seal of Slow">
 		<table name="#runSpd"> 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<abnormalLvl>
 			<value level="1">2</value>

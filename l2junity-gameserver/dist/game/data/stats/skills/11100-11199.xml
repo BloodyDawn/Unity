@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="11100" levels="1" name="Elemental Destruction: Double Casting">
+	<skill id="11100" toLevel="1" name="Elemental Destruction: Double Casting">
 		<!-- Updated to IO -->
 		<!-- 4 Elements -->
 		<icon>icon.skill11017</icon>
@@ -17,7 +17,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11101" levels="1" name="Elemental Destruction: Fire">
+	<skill id="11101" toLevel="1" name="Elemental Destruction: Fire">
 		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<icon>icon.skill11866</icon>
@@ -31,22 +31,7 @@
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="11102" levels="1" name="Elemental Destruction: Water">
-		<!-- Updated to IO -->
-		<!-- Body is destroyed. -->
-		<icon>icon.skill11866</icon>
-		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>BODY_DESTRUCTION</abnormalType>
-		<activateRate>-1</activateRate>
-		<operateType>A2</operateType>
-		<magicLvl>85</magicLvl>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<isMagic>4</isMagic>
-		<isDebuff>true</isDebuff>
-	</skill>
-	<skill id="11103" levels="1" name="Elemental Destruction: Wind">
+	<skill id="11102" toLevel="1" name="Elemental Destruction: Water">
 		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<icon>icon.skill11866</icon>
@@ -61,7 +46,7 @@
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="11104" levels="1" name="Elemental Destruction: Earth">
+	<skill id="11103" toLevel="1" name="Elemental Destruction: Wind">
 		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<icon>icon.skill11866</icon>
@@ -76,7 +61,7 @@
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="11105" levels="1" name="Elemental Destruction: 4 Attributes">
+	<skill id="11104" toLevel="1" name="Elemental Destruction: Earth">
 		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<icon>icon.skill11866</icon>
@@ -91,7 +76,22 @@
 		<isMagic>4</isMagic>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="11106" levels="7" name="Elemental Mass Burst">
+	<skill id="11105" toLevel="1" name="Elemental Destruction: 4 Attributes">
+		<!-- Updated to IO -->
+		<!-- Body is destroyed. -->
+		<icon>icon.skill11866</icon>
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>BODY_DESTRUCTION</abnormalType>
+		<activateRate>-1</activateRate>
+		<operateType>A2</operateType>
+		<magicLvl>85</magicLvl>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="11106" toLevel="7" name="Elemental Mass Burst">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
@@ -169,7 +169,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11107" levels="7" name="Elemental Mass Burst: Fire">
+	<skill id="11107" toLevel="7" name="Elemental Mass Burst: Fire">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
@@ -244,7 +244,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11108" levels="7" name="Elemental Mass Burst: Water">
+	<skill id="11108" toLevel="7" name="Elemental Mass Burst: Water">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
@@ -319,7 +319,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11109" levels="7" name="Elemental Mass Burst: Wind">
+	<skill id="11109" toLevel="7" name="Elemental Mass Burst: Wind">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
@@ -394,7 +394,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11110" levels="7" name="Elemental Mass Burst: Earth">
+	<skill id="11110" toLevel="7" name="Elemental Mass Burst: Earth">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
@@ -469,7 +469,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11111" levels="7" name="Elemental Mass Burst: 4 Attributes">
+	<skill id="11111" toLevel="7" name="Elemental Mass Burst: 4 Attributes">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
@@ -542,7 +542,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11112" levels="7" name="Elemental Speed Burst">
+	<skill id="11112" toLevel="7" name="Elemental Speed Burst">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
@@ -603,7 +603,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11113" levels="7" name="Elemental Speed Burst: Fire">
+	<skill id="11113" toLevel="7" name="Elemental Speed Burst: Fire">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
@@ -661,7 +661,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11114" levels="7" name="Elemental Speed Burst: Water">
+	<skill id="11114" toLevel="7" name="Elemental Speed Burst: Water">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
@@ -719,7 +719,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11115" levels="7" name="Elemental Speed Burst: Wind">
+	<skill id="11115" toLevel="7" name="Elemental Speed Burst: Wind">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
@@ -777,7 +777,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11116" levels="7" name="Elemental Speed Burst: Earth">
+	<skill id="11116" toLevel="7" name="Elemental Speed Burst: Earth">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
@@ -835,7 +835,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11117" levels="7" name="Elemental Speed Burst: 4 Attributes">
+	<skill id="11117" toLevel="7" name="Elemental Speed Burst: 4 Attributes">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
@@ -891,7 +891,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11118" levels="7" name="Elemental Power Burst">
+	<skill id="11118" toLevel="7" name="Elemental Power Burst">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
@@ -952,7 +952,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11119" levels="7" name="Elemental Power Burst: Fire">
+	<skill id="11119" toLevel="7" name="Elemental Power Burst: Fire">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
@@ -1010,7 +1010,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11120" levels="7" name="Elemental Power Burst: Water">
+	<skill id="11120" toLevel="7" name="Elemental Power Burst: Water">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
@@ -1068,7 +1068,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11121" levels="7" name="Elemental Power Burst: Wind">
+	<skill id="11121" toLevel="7" name="Elemental Power Burst: Wind">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
@@ -1126,7 +1126,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11122" levels="7" name="Elemental Power Burst: Earth">
+	<skill id="11122" toLevel="7" name="Elemental Power Burst: Earth">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
@@ -1184,7 +1184,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11123" levels="7" name="Elemental Power Burst: 4 Attributes">
+	<skill id="11123" toLevel="7" name="Elemental Power Burst: 4 Attributes">
 		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
@@ -1240,7 +1240,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11124" levels="4" name="Superior Wizardry">
+	<skill id="11124" toLevel="4" name="Superior Wizardry">
 		<!-- M. Atk. + 5%, Max MP, MP Recovery + 5%, and debuff resistance + 10%. -->
 		<table name="#mAtkMaxMp"> 1.05 1.06 1.07 1.10 </table>
 		<table name="#regMp"> 1.05 1.07 1.10 1.15 </table>
@@ -1286,7 +1286,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11125" levels="4" name="Superior Wizardry">
+	<skill id="11125" toLevel="4" name="Superior Wizardry">
 		<!-- M. Atk. + 10%. -->
 		<table name="#mAtk"> 1.10 1.12 1.15 1.20 </table>
 		<icon>icon.skill0945</icon>
@@ -1309,7 +1309,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11126" levels="3" name="Fire Destruction">
+	<skill id="11126" toLevel="3" name="Fire Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and inflicts Fear. Over-hit. -->
 		<table name="#power"> 620 657 695 </table>
@@ -1351,7 +1351,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="11127" levels="3" name="Dark Destruction">
+	<skill id="11127" toLevel="3" name="Dark Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts 713 magical damage on target. Over-hit. -->
 		<table name="#power"> 713 755 799 </table>
@@ -1383,7 +1383,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11128" levels="3" name="Water Destruction">
+	<skill id="11128" toLevel="3" name="Water Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and decreases their Speed by 130. Over-hit. -->
 		<table name="#power"> 620 657 695 </table>
@@ -1429,7 +1429,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11129" levels="3" name="Wind Destruction">
+	<skill id="11129" toLevel="3" name="Wind Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and inflicts Knock Back. Over-hit. -->
 		<table name="#power"> 620 657 695 </table>
@@ -1474,7 +1474,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11130" levels="3" name="Soul Destruction">
+	<skill id="11130" toLevel="3" name="Soul Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and inflicts Hold. Over-hit. -->
 		<table name="#power"> 620 657 695 </table>
@@ -1513,7 +1513,7 @@
 			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="11131" levels="3" name="Life Straw">
+	<skill id="11131" toLevel="3" name="Life Straw">
 		<!-- Updated to IO -->
 		<!-- For 10 sec., attacks target with 115 Power per second and recovers HP equivalent to 100% of damage inflicted. -->
 		<table name="#power"> 115 225 300 </table>
@@ -1551,7 +1551,7 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11132" levels="3" name="Lightning Shield">
+	<skill id="11132" toLevel="3" name="Lightning Shield">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., creates a shield of lightning and Paralyzes those that attack you. -->
 		<table name="#triggerLevel"> 1 2 3 </table>
@@ -1592,7 +1592,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11133" levels="3" name="Lightning Shield: Paralyze">
+	<skill id="11133" toLevel="3" name="Lightning Shield: Paralyze">
 		<!-- Updated to IO -->
 		<!-- Momentarily stiffened. -->
 		<icon>icon.skill1515</icon>
@@ -1620,7 +1620,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="11134" levels="1" name="Meteor">
+	<skill id="11134" toLevel="1" name="Meteor">
 		<!-- Updated to IO -->
 		<!-- Drops meteors to attack surrounding enemies and deals great damage. Inflicts abnormal state and deals continuous damage. The higher the level of the abnormal state, the greater the damage. Consumes 5 Spirit Ores. -->
 		<icon>icon.skill11134</icon>
@@ -1653,7 +1653,7 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11135" levels="1" name="Black Pool">
+	<skill id="11135" toLevel="1" name="Black Pool">
 		<!-- Updated to IO -->
 		<!-- Creates a black swamp in the selected location, dealing great damage, and receiving 50% of the target's damage as HP. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Shocks the target. Consumes 5 Spirit Ores. -->
 		<icon>icon.skill11135</icon>
@@ -1688,7 +1688,7 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11136" levels="1" name="Snow Storm">
+	<skill id="11136" toLevel="1" name="Snow Storm">
 		<!-- Updated to IO -->
 		<!-- Hits 8 times -->
 		<!-- Creates an ice storm in the selected location, dealing continuous damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Freezes the target. Consumes 5 Spirit Ores. -->
@@ -1725,7 +1725,7 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11137" levels="1" name="Tornado">
+	<skill id="11137" toLevel="1" name="Tornado">
 		<!-- Updated to IO -->
 		<!-- Creates a tornado in the selected location, dealing great damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, locks the target in an Aerial Yoke. Consumes 5 Spirit Ores. -->
 		<icon>icon.skill11137</icon>
@@ -1759,7 +1759,7 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11138" levels="1" name="Soul Barrage">
+	<skill id="11138" toLevel="1" name="Soul Barrage">
 		<!-- Updated to IO -->
 		<!-- Detonates the soul in the selected location to attack surrounding enemies. Inflicts abnormal state and increases PvP Damage. The effect increases as the level of the abnormal state increases. Consumes 5 Spirit Ores. -->
 		<icon>icon.skill11138</icon>
@@ -1791,7 +1791,7 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11139" levels="3" name="Ignite">
+	<skill id="11139" toLevel="3" name="Ignite">
 		<!-- Updated to IO -->
 		<!-- Engulfed in flames. -->
 		<table name="#dot"> 431 503 720 </table>
@@ -1824,7 +1824,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11140" levels="5" name="Black Shackle">
+	<skill id="11140" toLevel="5" name="Black Shackle">
 		<!-- Updated to IO -->
 		<!-- Bound to dark power. -->
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Stun Target at Lv5 -->
@@ -1860,7 +1860,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11141" levels="5" name="Freezing Slow">
+	<skill id="11141" toLevel="5" name="Freezing Slow">
 		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Freeze Target at Lv5 -->
@@ -1903,7 +1903,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11142" levels="3" name="Damaged Area">
+	<skill id="11142" toLevel="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
@@ -1945,7 +1945,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11143" levels="3" name="Damaged Area">
+	<skill id="11143" toLevel="3" name="Damaged Area">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
 		<table name="#runSpd"> 0.6 0.4 0.2 </table>
@@ -1987,7 +1987,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11144" levels="5" name="Wind Binding">
+	<skill id="11144" toLevel="5" name="Wind Binding">
 		<!-- Updated to IO -->
 		<!-- Speed has decreased due to the gust. -->
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Air Bind Target at Lv5 -->
@@ -2030,7 +2030,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11145" levels="5" name="Soul Weakness">
+	<skill id="11145" toLevel="5" name="Soul Weakness">
 		<!-- Updated to IO -->
 		<!-- Cursed by a soul. -->
 		<table name="#pvpDef"> 0.90 0.80 0.70 0.60 0.50 </table> <!-- Guessed -->
@@ -2083,7 +2083,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11150" levels="1" name="Dark Curse">
+	<skill id="11150" toLevel="1" name="Dark Curse">
 		<!-- Updated to IO -->
 		<!-- For 10 sec., decreases target's M. Def. by 50% and Attribute Resistance by 50. -->
 		<icon>icon.skill11867</icon>
@@ -2137,7 +2137,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11151" levels="4" name="Superior Wizardry">
+	<skill id="11151" toLevel="4" name="Superior Wizardry">
 		<!-- M. Atk., Max MP, and MP Recovery Rate + 5%. -->
 		<table name="#values"> 1.05 1.06 1.07 1.10 </table>
 		<icon>icon.skill0945</icon>
@@ -2178,7 +2178,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11152" levels="1" name="Sacrificial Soul">
+	<skill id="11152" toLevel="1" name="Sacrificial Soul">
 		<!-- Updated to IO -->
 		<!-- Sacrifice your servitor to become immune to debuffs for 3 sec. -->
 		<icon>icon.skill1395</icon>
@@ -2204,7 +2204,7 @@
 			<effect name="DebuffBlock" />
 		</selfEffects>
 	</skill>
-	<skill id="11174" levels="5" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 5 -->
+	<skill id="11174" toLevel="5" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 5 -->
 		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
 		<icon>icon.skill1469</icon>
@@ -2242,7 +2242,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11175" levels="6" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 6 -->
+	<skill id="11175" toLevel="6" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 6 -->
 		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
 		<icon>icon.skill1469</icon>
@@ -2281,7 +2281,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11176" levels="4" name="Superior Wizardry">
+	<skill id="11176" toLevel="4" name="Superior Wizardry">
 		<!-- M. Skill cooldown - 5%. -->
 		<table name="#mReuse"> 0.95 0.94 0.93 0.90 </table>
 		<icon>icon.skill0945</icon>
@@ -2305,7 +2305,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11177" levels="7" name="Aqua Crash">
+	<skill id="11177" toLevel="7" name="Aqua Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
@@ -2355,7 +2355,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11178" levels="1" name="Aqua Crash - Speed Decrease">
+	<skill id="11178" toLevel="1" name="Aqua Crash - Speed Decrease">
 		<!-- Updated to IO -->
 		<!-- Use Aqua Crash to decrease target's Speed. -->
 		<icon>icon.skill11011</icon>
@@ -2373,7 +2373,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11179" levels="1" name="Yoke Status">
+	<skill id="11179" toLevel="1" name="Yoke Status">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<icon>icon.skill1042</icon>
@@ -2418,7 +2418,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11180" levels="1" name="Yoke Status">
+	<skill id="11180" toLevel="1" name="Yoke Status">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<icon>icon.skill1042</icon>
@@ -2463,7 +2463,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11181" levels="1" name="Yoke Status">
+	<skill id="11181" toLevel="1" name="Yoke Status">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<icon>icon.skill1042</icon>
@@ -2508,7 +2508,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11182" levels="4" name="Yoke Status">
+	<skill id="11182" toLevel="4" name="Yoke Status">
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
@@ -2554,7 +2554,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11183" levels="1" name="Superior Quick Recovery">
+	<skill id="11183" toLevel="1" name="Superior Quick Recovery">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Cooldown - 25% for magic skills. -->
 		<icon>icon.skill11004</icon>
@@ -2573,7 +2573,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11184" levels="1" name="Superior Arcane Lore">
+	<skill id="11184" toLevel="1" name="Superior Arcane Lore">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases Fire/Water/Wind/Earth Resistance by 20 and M. Def. by 5%. -->
 		<icon>icon.skill10044</icon>
@@ -2607,7 +2607,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11185" levels="10" name="Superior MP Boost">
+	<skill id="11185" toLevel="10" name="Superior MP Boost">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases Max MP by 313. -->
 		<table name="#maxMp"> 313 374 435 517 566 635 704 773 842 911 </table>
@@ -2648,7 +2648,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11186" levels="10" name="Superior Fast MP Recovery">
+	<skill id="11186" toLevel="10" name="Superior Fast MP Recovery">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases MP Recovery Bonus by 3.6. -->
 		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7.0 7.8 8.6 9.4 10.2 </table>
@@ -2689,7 +2689,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11187" levels="10" name="Superior Clear Mind">
+	<skill id="11187" toLevel="10" name="Superior Clear Mind">
 		<!-- Glory Days confirmed -->
 		<!-- INT + 2, increases MP Recovery Bonus by 5.1 while standing and by 6.5 while walking. -->
 		<table name="#regMpStand"> 5.1 5.7 6.3 6.9 7.7 8.5 9.3 10.1 10.9 11.7 </table>
@@ -2748,7 +2748,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11188" levels="5" name="Frozen">
+	<skill id="11188" toLevel="5" name="Frozen">
 		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Totally Guessed, TODO Freeze target at level 5 -->
@@ -2781,7 +2781,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11189" levels="7" name="Aqua Crash">
+	<skill id="11189" toLevel="7" name="Aqua Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
@@ -2830,37 +2830,37 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11190" levels="1" name="Elemental Destruction: Fire">
+	<skill id="11190" toLevel="1" name="Elemental Destruction: Fire">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fire Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="11191" levels="1" name="Elemental Destruction: Water">
+	<skill id="11191" toLevel="1" name="Elemental Destruction: Water">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Water Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="11192" levels="1" name="Elemental Destruction: Wind">
+	<skill id="11192" toLevel="1" name="Elemental Destruction: Wind">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Wind Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="11193" levels="1" name="Elemental Destruction: Earth">
+	<skill id="11193" toLevel="1" name="Elemental Destruction: Earth">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Earth Attribute -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="11194" levels="1" name="Elemental Destruction: Double Casting">
+	<skill id="11194" toLevel="1" name="Elemental Destruction: Double Casting">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- 4 Elements -->
 		<icon>icon.skill11017</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="11195" levels="1" name="Aqua Crash - Freeze">
+	<skill id="11195" toLevel="1" name="Aqua Crash - Freeze">
 		<!-- Updated to IO -->
 		<!-- Use Aqua Crash to freeze target. -->
 		<icon>icon.skill11011</icon>
@@ -2878,7 +2878,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11196" levels="1" name="Frozen">
+	<skill id="11196" toLevel="1" name="Frozen">
 		<!-- Updated to IO -->
 		<!-- Frozen. -->
 		<icon>icon.skill11017</icon>
@@ -2897,7 +2897,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="11199" levels="1" name="Elemental Destruction: Fire">
+	<skill id="11199" toLevel="1" name="Elemental Destruction: Fire">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fire Attribute -->
 		<icon>icon.skill11017</icon>

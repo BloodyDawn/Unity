@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="10903" levels="4" name="Hawk Eye">
+	<skill id="10903" toLevel="4" name="Hawk Eye">
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, Skill Power + 5%, and received M. Critical Damage - 5%. -->
 		<table name="#defCritRate"> 0.95 0.93 0.9 0.85 </table>
 		<table name="#power"> 1.05 1.06 1.07 1.1 </table>
@@ -74,7 +74,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10904" levels="4" name="Superior Skill Mastery">
+	<skill id="10904" toLevel="4" name="Superior Skill Mastery">
 		<!-- Skill power + 5%. -->
 		<table name="#physicalSkillPower"> 1.05 1.06 1.07 1.1 </table>
 		<icon>icon.skill11874</icon>
@@ -97,7 +97,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10905" levels="3" name="Fatal Arrow">
+	<skill id="10905" toLevel="3" name="Fatal Arrow">
 		<!-- Attacks target with 29176 Power added to P. Atk. Damage increases as your HP decreases. Requires a bow. Over-hit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -132,7 +132,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10950" levels="4" name="Vengeful Sniper">
+	<skill id="10950" toLevel="4" name="Vengeful Sniper">
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, PvP damage + 5%, received magic skill damage during PvP - 5%. -->
 		<table name="#power"> 1.05 1.06 1.07 1.10 </table>
 		<abnormalLvl>
@@ -231,7 +231,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10951" levels="4" name="Superior Instinct Mastery">
+	<skill id="10951" toLevel="4" name="Superior Instinct Mastery">
 		<!-- PvP damage + 5%, and P. Atk. + 5% when equipped with a crossbow. -->
 		<table name="#power"> 1.05 1.07 1.1 1.15 </table>
 		<icon>icon.skill10951</icon>
@@ -293,7 +293,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10952" levels="1" name="Survival Instinct">
+	<skill id="10952" toLevel="1" name="Survival Instinct">
 		<!-- For 60 sec., increases P. Atk. by 40%, P. Def/M. Def. by 20%, and increases Max HP/CP by 20%. Consumes 5 Soulstones. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -332,7 +332,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10953" levels="1" name="Hunting Instinct">
+	<skill id="10953" toLevel="1" name="Hunting Instinct">
 		<!-- For 60 sec., increases Atk. Spd. by 20%, Skill Power by 20%, P. Skill Critical Rate by 40%, and Skill Critical Damage by 20%. Consumes 5 Soulstones. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -359,7 +359,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10954" levels="1" name="Counter Instinct">
+	<skill id="10954" toLevel="1" name="Counter Instinct">
 		<!-- For 60 sec., increases Skill Power by 40%, P. Skill Critical Rate by 20%, and Skill Critical Damage by 40%. Consumes 5 Soulstones. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -382,7 +382,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10955" levels="1" name="Bloody Instinct">
+	<skill id="10955" toLevel="1" name="Bloody Instinct">
 		<!-- For 60 sec., increases PvP Damage by 20%, and Skill Power by 20%. Consumes 5 Soulstones. -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
@@ -417,7 +417,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10956" levels="1" name="Divine Expansion">
+	<skill id="10956" toLevel="1" name="Divine Expansion">
 		<!-- Increases the number of buffs an individual can receive by 1. -->
 		<icon>icon.skillexofdiv</icon>
 		<magicLvl>100</magicLvl>
@@ -428,14 +428,14 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="10997" levels="1" name="Archer - Individual Passive">
+	<skill id="10997" toLevel="1" name="Archer - Individual Passive">
 		<!-- AUTO GENERATED SKILL -->
 		<icon>icon.skill0217</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
 	</skill>
-	<skill id="10998" levels="1" name="Archer - Individual">
+	<skill id="10998" toLevel="1" name="Archer - Individual">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Atk. Spd. + 30% for 5 seconds. -->
 		<icon>icon.skill1543</icon>
@@ -456,7 +456,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="10999" levels="1" name="Heavy Hit">
+	<skill id="10999" toLevel="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<icon>icon.skill10317</icon>

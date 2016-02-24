@@ -303,8 +303,10 @@ public class SkillData implements IGameXmlReader
 							}
 						}
 						
-						final int skillLevels = generalSkillInfo.getInt(".levels", 0);
-						for (int i = 1; i <= skillLevels; i++)
+						final int fromLevel = generalSkillInfo.getInt(".fromLevel", 1);
+						final int toLevel = generalSkillInfo.getInt(".toLevel", 0);
+						
+						for (int i = fromLevel; i <= toLevel; i++)
 						{
 							levels.computeIfAbsent(i, k -> new HashSet<>()).add(0);
 						}
