@@ -30,7 +30,6 @@ public enum EffectScope
 	GENERAL("effects"),
 	START("startEffects"),
 	SELF("selfEffects"),
-	PASSIVE("passiveEffects"),
 	CHANNELING("channelingEffects"),
 	PVP("pvpEffects"),
 	PVE("pveEffects"),

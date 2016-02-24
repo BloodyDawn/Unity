@@ -1353,7 +1353,7 @@ public final class Skill implements IIdentifiable
 		if (passive)
 		{
 			final BuffInfo info = new BuffInfo(effector, effector, this, true, item, null);
-			applyEffectScope(EffectScope.PASSIVE, info, false, true);
+			applyEffectScope(EffectScope.GENERAL, info, false, true);
 			effector.getEffectList().add(info);
 		}
 	}
