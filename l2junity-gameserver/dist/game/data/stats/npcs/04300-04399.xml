@@ -1019,7 +1019,7 @@
 	</npc>
 	<npc id="4330" level="99" type="L2Npc" name="Seira" title="Exorcist">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DWARF</race>
 		<sex>FEMALE</sex>
 		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1048,7 +1048,7 @@
 	</npc>
 	<npc id="4331" level="99" type="L2Npc" name="Einhasad Priest" title="Exorcist">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2343,15 +2343,17 @@
 	</npc>
 	<npc id="4378" level="99" type="L2Npc" name="Manager" title="Royal Training Camp">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="0.099989796959494" sp="980" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="2444" hpRegen="10.5" mp="1345.8" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>

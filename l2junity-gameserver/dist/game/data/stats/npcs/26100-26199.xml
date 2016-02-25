@@ -2,14 +2,20 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="26100" level="99" type="L2Monster" name="Sirra's Knight" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356248" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="20" />
 				<run ground="200" />
 			</speed>
+			<attack physical="47220.368807127" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3680.1242236025" magical="2133.4167247834" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -27,14 +33,20 @@
 	</npc>
 	<npc id="26101" level="99" type="L2Monster" name="Sirra's Ice Golem" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356248" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="200" />
 			</speed>
+			<attack physical="47220.557386874" magical="8304.9267439379" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3680.1242236025" magical="2133.4167247834" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -52,15 +64,21 @@
 	</npc>
 	<npc id="26102" level="99" type="L2Monster" name="Dark Rider" title="Betrayed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DRAGON</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="114436" sp="1794539" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="3334120" hpRegen="10.5" mp="47100" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
 				<run ground="200" />
 			</speed>
+			<attack physical="47220.231122922" magical="8304.9036091231" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3680.3191489362" magical="2133.5047930793" />
+			<attribute>
+				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="FIRE" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -76,14 +94,20 @@
 	</npc>
 	<npc id="26103" level="99" type="L2Monster" name="Berserk Dragon Warrior" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DRAGON</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356248" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="100" />
 				<run ground="200" />
 			</speed>
+			<attack physical="47220.368807127" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3680.1242236025" magical="2133.4167247834" />
+			<attribute>
+				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="FIRE" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -101,14 +125,20 @@
 	</npc>
 	<npc id="26104" level="99" type="L2Monster" name="Berserk Dragon Wizard" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DRAGON</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356248" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="92" />
 				<run ground="200" />
 			</speed>
+			<attack physical="47220.557386874" magical="8304.9267439379" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3680.1242236025" magical="2133.4167247834" />
+			<attribute>
+				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="FIRE" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -126,15 +156,21 @@
 	</npc>
 	<npc id="26105" level="98" type="L2Monster" name="Veridan" title="Armed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="24388" sp="56213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="3101045" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -158,15 +194,21 @@
 	</npc>
 	<npc id="26106" level="98" type="L2Monster" name="Veridan" title="Wealthy">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="24388" sp="56213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1362072" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -190,15 +232,21 @@
 	</npc>
 	<npc id="26107" level="98" type="L2Monster" name="Veridan" title="Wise">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="24388" sp="56213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1816096" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -222,15 +270,21 @@
 	</npc>
 	<npc id="26108" level="98" type="L2Monster" name="Veridan" title="Armed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="24388" sp="56213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="3101045" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -254,15 +308,21 @@
 	</npc>
 	<npc id="26109" level="98" type="L2Monster" name="Veridan" title="Wealthy">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="24388" sp="56213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1362072" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -286,15 +346,21 @@
 	</npc>
 	<npc id="26110" level="98" type="L2Monster" name="Veridan" title="Wise">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="24388" sp="56213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1816096" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="WATER" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -318,15 +384,21 @@
 	</npc>
 	<npc id="26111" level="98" type="L2Monster" name="Kechi" title="Armed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48776" sp="112426" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="2996558" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="26" />
 				<run ground="270" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="4329.4117647059" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="FIRE" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -352,15 +424,21 @@
 	</npc>
 	<npc id="26112" level="98" type="L2Monster" name="Kechi" title="Wealthy">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48776" sp="112426" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1225864" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="26" />
 				<run ground="270" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="4329.4117647059" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="FIRE" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -386,15 +464,21 @@
 	</npc>
 	<npc id="26113" level="98" type="L2Monster" name="Kechi" title="Wise">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48776" sp="112426" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1634486" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="26" />
 				<run ground="270" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="4329.4117647059" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
+				<attack type="FIRE" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -420,15 +504,21 @@
 	</npc>
 	<npc id="26114" level="98" type="L2Monster" name="Michaela" title="Armed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48776" sp="112426" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="2996558" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
+				<attack type="DARK" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -451,15 +541,21 @@
 	</npc>
 	<npc id="26115" level="98" type="L2Monster" name="Michaela" title="Wealthy">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48776" sp="112426" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1225864" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
+				<attack type="DARK" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -482,15 +578,21 @@
 	</npc>
 	<npc id="26116" level="98" type="L2Monster" name="Michaela" title="Wise">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48776" sp="112426" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1634486" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<attack physical="45027.441020481" magical="7933.4098458327" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.6082313409" />
+			<attribute>
+				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
+				<attack type="DARK" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -513,14 +615,20 @@
 	</npc>
 	<npc id="26120" level="98" type="L2Monster" name="Michaela" title="Armed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="2996558" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<attack physical="45027.610073614" magical="7933.4451512287" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.5022678738" />
+			<attribute>
+				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
+				<attack type="DARK" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -541,14 +649,20 @@
 	</npc>
 	<npc id="26121" level="98" type="L2Monster" name="Michaela" title="Wealthy">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1225864" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<attack physical="45027.610073614" magical="7933.4451512287" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.5022678738" />
+			<attribute>
+				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
+				<attack type="DARK" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -569,14 +683,20 @@
 	</npc>
 	<npc id="26122" level="98" type="L2Monster" name="Michaela" title="Wise">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1634486" hpRegen="10.5" mp="22800" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<attack physical="45027.610073614" magical="7933.4451512287" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3608.0213903743" magical="2081.5022678738" />
+			<attribute>
+				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
+				<attack type="DARK" value="430" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -597,15 +717,17 @@
 	</npc>
 	<npc id="26123" level="99" type="L2Monster" name="Golden Pig" title="Dimensional Vagabond">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="114436" sp="1794539" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="6696028" hpRegen="10.5" mp="47100" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
 				<run ground="270" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="3680.3191489362" magical="2133.6282564427" />
 		</stats>
 		<status attackable="false" />
 		<collision>

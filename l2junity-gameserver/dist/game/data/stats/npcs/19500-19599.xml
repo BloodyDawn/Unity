@@ -2,14 +2,16 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="19500" level="99" type="L2Npc" name="Bundle" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -19,14 +21,16 @@
 	</npc>
 	<npc id="19501" level="99" type="L2Npc" name="Beleth" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -36,14 +40,16 @@
 	</npc>
 	<npc id="19502" level="99" type="L2Npc" name="Darion" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -53,14 +59,20 @@
 	</npc>
 	<npc id="19503" level="99" type="L2Monster" name="Bridget" title="Fire Slave">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="209110" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="46" />
 				<run ground="160" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -92,15 +104,21 @@
 	</npc>
 	<npc id="19504" level="99" type="L2Monster" name="Deathmoz" title="Disciplined">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2219.7199265381" sp="52213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="223050" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
 				<run ground="155" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -133,15 +151,21 @@
 	</npc>
 	<npc id="19505" level="99" type="L2Monster" name="Deathmoz" title="Magical">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2219.7199265381" sp="52213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="223050" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
 				<run ground="155" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -174,15 +198,21 @@
 	</npc>
 	<npc id="19506" level="99" type="L2Monster" name="Flox Golem" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2080.9799000102" sp="48949" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="209110" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="13" />
 				<run ground="60" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -196,15 +226,21 @@
 	</npc>
 	<npc id="19507" level="99" type="L2Monster" name="Floxis" title="Disciplined">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2219.7199265381" sp="52213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="223050" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="13" />
 				<run ground="60" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -219,15 +255,21 @@
 	</npc>
 	<npc id="19508" level="99" type="L2Monster" name="Floxis" title="Magical">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2219.7199265381" sp="52213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="223050" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="13" />
 				<run ground="60" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -241,15 +283,21 @@
 	</npc>
 	<npc id="19509" level="99" type="L2Monster" name="Edan" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2080.9799000102" sp="48949" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="209110" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="38" />
 				<run ground="170" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -264,15 +312,21 @@
 	</npc>
 	<npc id="19510" level="99" type="L2Monster" name="Belika" title="Disciplined">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2219.7199265381" sp="52213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="223050" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="38" />
 				<run ground="170" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -286,15 +340,21 @@
 	</npc>
 	<npc id="19511" level="99" type="L2Monster" name="Belika" title="Magical">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2219.7199265381" sp="52213" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="223050" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="38" />
 				<run ground="170" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -309,15 +369,21 @@
 	</npc>
 	<npc id="19512" level="99" type="L2Monster" name="Deathmoz" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="416.19732680339" sp="9789" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="139406" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
 				<run ground="155" />
 			</speed>
+			<attack physical="47220.241292647" magical="8304.9567060447" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -353,15 +419,21 @@
 	</npc>
 	<npc id="19513" level="99" type="L2Monster" name="Tanya" title="Disciplined">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2497.1799816345" sp="58739" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="250932" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
 				<run ground="160" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -399,15 +471,21 @@
 	</npc>
 	<npc id="19514" level="99" type="L2Monster" name="Scarlett" title="Magical">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2497.1799816345" sp="58739" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="250932" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -442,14 +520,20 @@
 	</npc>
 	<npc id="19515" level="99" type="L2Monster" name="Bridget" title="Fire Slave">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="209110" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="46" />
 				<run ground="160" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -463,15 +547,21 @@
 	</npc>
 	<npc id="19516" level="99" type="L2Monster" name="Tanya" title="Disciplined">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2497.1799816345" sp="58739" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="250932" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
 				<run ground="160" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -509,15 +599,21 @@
 	</npc>
 	<npc id="19517" level="99" type="L2Monster" name="Scarlett" title="Magical">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2497.1799816345" sp="58739" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="250932" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -552,14 +648,16 @@
 	</npc>
 	<npc id="19518" level="99" type="L2Npc" name="Wormhole" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -569,14 +667,16 @@
 	</npc>
 	<npc id="19519" level="99" type="L2Npc" name="" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -586,14 +686,20 @@
 	</npc>
 	<npc id="19520" level="99" type="L2Monster" name="Doom Shrieker" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="158417" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="120" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="250" wind="200" earth="250" holy="250" dark="250" />
+				<attack type="EARTH" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -609,14 +715,20 @@
 	</npc>
 	<npc id="19521" level="99" type="L2Monster" name="Jabberwok" title="Clone">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>BEAST</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="158417" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
 				<run ground="180" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="250" wind="200" earth="250" holy="250" dark="250" />
+				<attack type="EARTH" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -635,14 +747,16 @@
 	</npc>
 	<npc id="19543" level="99" type="L2Npc" name="Invisible Kekropus NPC" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" targetable="false" talkable="false" showName="false" />
 		<collision>
@@ -652,14 +766,16 @@
 	</npc>
 	<npc id="19544" level="99" type="L2Npc" name="Invisible Anghel Waterfall NPC" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" targetable="false" talkable="false" showName="false" />
 		<skill_list>
@@ -672,14 +788,16 @@
 	</npc>
 	<npc id="19545" level="99" type="L2Npc" name="Warming Fire" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -692,15 +810,12 @@
 	</npc>
 	<npc id="19546" level="4" type="L2Monster" name="Dummy" title="Training">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="68" hpRegen="2" mp="62" mpRegen="0.9" />
 			<attack physical="10.24492" magical="6.99595" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="47.91652" magical="35.06323" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
@@ -720,14 +835,16 @@
 	</npc>
 	<npc id="19547" level="4" type="L2Monster" name="Dummy" title="Magical">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="68" hpRegen="2" mp="62" mpRegen="0.9" />
 			<speed>
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<attack physical="11.648745519713" magical="8.514314417976" critical="4" attackSpeed="253" range="40" />
+			<defence physical="50.537634408602" magical="36.627161656594" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -740,14 +857,16 @@
 	</npc>
 	<npc id="19548" level="76" type="L2Npc" name="Dark Grave" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="5384" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="50" />
 			</speed>
+			<attack physical="824.74747474747" magical="563.15561375588" critical="4" attackSpeed="253" range="40" />
+			<defence physical="324.24242424242" magical="237.41060237411" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -757,14 +876,16 @@
 	</npc>
 	<npc id="19549" level="76" type="L2Npc" name="Whirling Vortex" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="5384" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="270" />
 			</speed>
+			<attack physical="824.74747474747" magical="563.15561375588" critical="4" attackSpeed="253" range="40" />
+			<defence physical="324.24242424242" magical="237.41060237411" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -774,14 +895,16 @@
 	</npc>
 	<npc id="19550" level="76" type="L2Npc" name="Whirling Vortex" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="5384" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="270" />
 			</speed>
+			<attack physical="824.74747474747" magical="563.15561375588" critical="4" attackSpeed="253" range="40" />
+			<defence physical="324.24242424242" magical="237.41060237411" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -791,14 +914,16 @@
 	</npc>
 	<npc id="19551" level="76" type="L2Npc" name="Fire Bolt" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="5384" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="50" />
 			</speed>
+			<attack physical="824.85342678078" magical="563.13241655102" critical="4" attackSpeed="253" range="40" />
+			<defence physical="324.24242424242" magical="237.22372237224" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -808,14 +933,16 @@
 	</npc>
 	<npc id="19552" level="20" type="L2Npc" name="Ricky" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="342" hpRegen="2.5" mp="192" mpRegen="1.2" />
 			<speed>
 				<walk ground="50" />
 				<run ground="200" />
 			</speed>
+			<attack physical="44.34250764526" magical="30.990785877062" critical="4" attackSpeed="253" range="40" />
+			<defence physical="87.155963302752" magical="63.989523575675" />
 		</stats>
 		<status attackable="false" talkable="false" />
 		<collision>
@@ -825,15 +952,17 @@
 	</npc>
 	<npc id="19553" level="99" type="L2Monster" name="Dimensional Imp" title="Treasure Guard">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="4272" sp="150731" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="87826" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -861,15 +990,17 @@
 	</npc>
 	<npc id="19554" level="99" type="L2Monster" name="Unworldly Imp" title="Treasure Guard">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="4272" sp="150731" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="87826" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -900,15 +1031,17 @@
 	</npc>
 	<npc id="19555" level="99" type="L2Monster" name="Abyssal Imp" title="Treasure Guard">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="4272" sp="150731" />
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="87826" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="39" />
 				<run ground="120" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -939,14 +1072,16 @@
 	</npc>
 	<npc id="19556" level="99" type="L2Npc" name="Dimensional Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -956,14 +1091,16 @@
 	</npc>
 	<npc id="19557" level="99" type="L2Npc" name="Dimensional Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -973,14 +1110,16 @@
 	</npc>
 	<npc id="19558" level="99" type="L2Npc" name="Dimensional Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -990,14 +1129,16 @@
 	</npc>
 	<npc id="19559" level="99" type="L2Npc" name="Dimensional Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1007,14 +1148,16 @@
 	</npc>
 	<npc id="19560" level="99" type="L2Npc" name="Dimensional Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1024,14 +1167,16 @@
 	</npc>
 	<npc id="19561" level="99" type="L2Npc" name="Dimensional Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1041,14 +1186,16 @@
 	</npc>
 	<npc id="19562" level="99" type="L2Npc" name="Dimensional Light" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="47220.557386874" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1058,14 +1205,16 @@
 	</npc>
 	<npc id="19563" level="99" type="L2Npc" name="" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1075,14 +1224,16 @@
 	</npc>
 	<npc id="19564" level="99" type="L2Npc" name="Invisible Dimensional Fragment NPC" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1092,14 +1243,16 @@
 	</npc>
 	<npc id="19565" level="99" type="L2Npc" name="Invisible Turek Orc Quest NPC" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="1" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1109,14 +1262,16 @@
 	</npc>
 	<npc id="19566" level="76" type="L2Monster" name="Von Hellmann" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="5384" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<speed>
 				<walk ground="46" />
 				<run ground="210" />
 			</speed>
+			<attack physical="824.85342678078" magical="563.13241655102" critical="4" attackSpeed="253" range="40" />
+			<defence physical="324.24242424242" magical="237.22372237224" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1129,14 +1284,16 @@
 	</npc>
 	<npc id="19567" level="76" type="L2Monster" name="Vampiric Soldier" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="5384" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
 			</speed>
+			<attack physical="824.85342678078" magical="563.13241655102" critical="4" attackSpeed="253" range="40" />
+			<defence physical="324.24242424242" magical="237.22372237224" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1149,14 +1306,16 @@
 	</npc>
 	<npc id="19568" level="85" type="L2Monster" name="Sacred Wizard" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="13188" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
 				<walk ground="50" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
+			<defence physical="362.06896551724" magical="264.78509919958" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1169,14 +1328,16 @@
 	</npc>
 	<npc id="19569" level="85" type="L2Monster" name="Sacred Soldier" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="13188" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
 				<walk ground="65" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
+			<defence physical="362.06896551724" magical="264.78509919958" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1189,14 +1350,16 @@
 	</npc>
 	<npc id="19570" level="85" type="L2Monster" name="Sacred Slayer" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="13188" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
 				<walk ground="65" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
+			<defence physical="362.06896551724" magical="264.78509919958" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1209,14 +1372,16 @@
 	</npc>
 	<npc id="19571" level="85" type="L2Npc" name="Makkum" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="13188" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
+			<defence physical="36100" magical="26400.364174348" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1229,14 +1394,16 @@
 	</npc>
 	<npc id="19572" level="85" type="L2Monster" name="Abyssal Shadow" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="13188" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
+			<defence physical="362.06896551724" magical="264.78509919958" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1249,14 +1416,16 @@
 	</npc>
 	<npc id="19573" level="85" type="L2Monster" name="Secluded Shadow" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="13188" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
+			<defence physical="362.06896551724" magical="264.78509919958" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1269,14 +1438,20 @@
 	</npc>
 	<npc id="19574" level="99" type="L2Monster" name="Cowing" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="37639" hpRegen="10.5" mp="23550" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1950.2356931185" magical="1331.9794990323" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+			<attribute>
+				<defence fire="250" water="250" wind="200" earth="250" holy="250" dark="250" />
+				<attack type="EARTH" value="330" />
+			</attribute>
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1292,14 +1467,16 @@
 	</npc>
 	<npc id="19575" level="99" type="L2Npc" name="" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="64" />
 				<run ground="210" />
 			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1309,14 +1486,16 @@
 	</npc>
 	<npc id="19576" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1326,14 +1505,16 @@
 	</npc>
 	<npc id="19577" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1343,14 +1524,16 @@
 	</npc>
 	<npc id="19578" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1360,14 +1543,16 @@
 	</npc>
 	<npc id="19579" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1377,14 +1562,16 @@
 	</npc>
 	<npc id="19580" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1394,14 +1581,16 @@
 	</npc>
 	<npc id="19581" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1411,14 +1600,16 @@
 	</npc>
 	<npc id="19582" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1428,14 +1619,16 @@
 	</npc>
 	<npc id="19583" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1445,14 +1638,16 @@
 	</npc>
 	<npc id="19584" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1462,14 +1657,16 @@
 	</npc>
 	<npc id="19585" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1479,14 +1676,16 @@
 	</npc>
 	<npc id="19586" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1496,14 +1695,16 @@
 	</npc>
 	<npc id="19587" level="98" type="L2Monster" name="Tainted Dimensional Treasure Chest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
+		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="70" int="28" dex="40" wit="65" con="74" men="20">
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="356012" hpRegen="10.5" mp="23174" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
 				<run ground="180" />
 			</speed>
+			<attack physical="1880.5770168435" magical="1284.1491759191" critical="4" attackSpeed="253" range="40" />
+			<defence physical="403.74331550802" magical="295.44130883677" />
 		</stats>
 		<status attackable="false" />
 		<collision>
