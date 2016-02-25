@@ -511,7 +511,7 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceCriticalDamage">
-				<amount>30</amount>
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistAbnormalByCategory">
@@ -602,9 +602,24 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicMpCost">
-				<amount>10</amount>
+				<amount>-10</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>
@@ -648,7 +663,7 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="DefenceCriticalDamage">
-				<amount>30</amount>
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -677,9 +692,8 @@
 				<dispel>IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN</dispel>
 			</effect>
 			<effect name="VampiricAttack">
-				<!-- Chance guessed from Clan Hall buff -->
 				<amount>9</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>34</amount>
@@ -858,6 +872,11 @@
 				<mode>PER</mode>
 				<magicType>0</magicType>
 			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
 			<effect name="Reuse">
 				<amount>-20</amount>
 				<mode>PER</mode>
@@ -867,11 +886,6 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
-			</effect>
-			<effect name="Reuse">
-				<amount>-20</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
