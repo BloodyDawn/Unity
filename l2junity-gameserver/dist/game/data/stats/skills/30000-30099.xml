@@ -792,9 +792,11 @@
 	<skill id="30012" toLevel="25" name="Air Rush">
 		<!-- Updated to IO -->
 		<!-- Knocks down target and attacks with 57 Power added to M. Atk. 10% more damage if target is debuffed. If target has Storm Sign, eliminates it and inflicts additional damage. Requires a sword or blunt weapon. -->
-		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 535 545 555 </table>
 		<icon>icon.skill30012</icon>
+		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>1</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
 		<operateType>DA1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -825,7 +827,7 @@
 			<value level="24">72</value>
 			<value level="25">73</value>
 		</mpConsume>
-		<effectPoint>-696</effectPoint> <!-- Unconfirmed -->
+		<effectPoint>-696</effectPoint>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
@@ -834,9 +836,17 @@
 		<flyType>CHARGE</flyType>
 		<isMagic>1</isMagic>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EnemyCharge">
 				<animationSpeed>333</animationSpeed>
@@ -873,6 +883,14 @@
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>STORM_SIGN,3</dispel>
+			</effect>
+			<effect name="KnockBack"> <!-- Value are guessed -->
+				<distance>50</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
