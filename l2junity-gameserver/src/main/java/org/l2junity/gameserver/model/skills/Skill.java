@@ -1336,8 +1336,7 @@ public final class Skill implements IIdentifiable
 			
 			applyEffectScope(EffectScope.SELF, info, instant, addContinuousEffects);
 			
-			// TODO : Need to be done better after skill rework
-			if (addContinuousEffects && hasEffectType(EffectScope.SELF, L2EffectType.BUFF))
+			if (addContinuousEffects)
 			{
 				info.getEffector().getEffectList().add(info);
 			}

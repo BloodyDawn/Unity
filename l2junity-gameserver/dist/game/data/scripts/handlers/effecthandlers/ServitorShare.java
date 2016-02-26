@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
@@ -61,12 +60,6 @@ public final class ServitorShare extends AbstractEffect
 	public int getEffectFlags()
 	{
 		return EffectFlag.SERVITOR_SHARE.getMask();
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.BUFF;
 	}
 	
 	@Override

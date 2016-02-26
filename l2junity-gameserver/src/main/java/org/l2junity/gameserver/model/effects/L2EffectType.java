@@ -25,7 +25,6 @@ package org.l2junity.gameserver.model.effects;
 public enum L2EffectType
 {
 	AGGRESSION,
-	BUFF,
 	CHARM_OF_LUCK,
 	CHAT_BLOCK,
 	CPHEAL,
