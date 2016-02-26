@@ -151,6 +151,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("HpCpHeal", HpCpHeal::new);
 		EffectHandler.getInstance().registerHandler("HpRegen", HpRegen::new);
 		EffectHandler.getInstance().registerHandler("HpDrain", HpDrain::new);
+		EffectHandler.getInstance().registerHandler("HpToOwner", HpToOwner::new);
 		EffectHandler.getInstance().registerHandler("BlockMove", BlockMove::new);
 		EffectHandler.getInstance().registerHandler("ImmobilePetBuff", ImmobilePetBuff::new);
 		EffectHandler.getInstance().registerHandler("IgnoreDeath", IgnoreDeath::new);

@@ -562,6 +562,7 @@
 		</effects>
 	</skill>
 	<skill id="11254" toLevel="4" name="Superior Summon Mastery">
+		<!-- TODO : Check me -->
 		<!-- INT + 2. Can summon a servitor within 4 summon points. Use Rage to transfer the effects onto your servitor. -->
 		<icon>icon.skill11254</icon>
 		<magicLvl>
@@ -577,28 +578,22 @@
 				<cubicCount>3</cubicCount>
 			</effect>
 			<effect name="TriggerSkillBySkillAttack">
-				<!-- Arcane Rage -->
-				<!-- Arcane Link -->
-				<skillId>11351</skillId>
+				<skillId>11351</skillId> <!-- Arcane Rage -->
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>5</skillLevelScaleTo>
-				<attackSkillId>11350</attackSkillId>
+				<attackSkillId>11350</attackSkillId> <!-- Arcane Link -->
 			</effect>
 			<effect name="TriggerSkillBySkillAttack">
-				<!-- Elemental Rage -->
-				<!-- Elemental Link -->
-				<skillId>11354</skillId>
+				<skillId>11354</skillId> <!-- Elemental Rage -->
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>5</skillLevelScaleTo>
-				<attackSkillId>11353</attackSkillId>
+				<attackSkillId>11353</attackSkillId> <!-- Elemental Link -->
 			</effect>
 			<effect name="TriggerSkillBySkillAttack">
-				<!-- Spectral Rage -->
-				<!-- Spectral Link -->
-				<skillId>11357</skillId>
+				<skillId>11357</skillId> <!-- Spectral Rage -->
 				<skillLevel>1</skillLevel>
 				<skillLevelScaleTo>5</skillLevelScaleTo>
-				<attackSkillId>11356</attackSkillId>
+				<attackSkillId>11356</attackSkillId> <!-- Spectral Link -->
 			</effect>
 			<effect name="StatUp">
 				<amount>2</amount>
@@ -806,7 +801,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 10 sec., inflict damage with 85 Power added to M. Atk. Additionally, decrease target's P. Def./M. Def. -->
-		<table name="#power"> 85 89 93 97 101 105 109 113 117 121 125 </table>
 		<icon>icon.skill11259</icon>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -913,9 +907,6 @@
 	<skill id="11260" toLevel="8" name="Mark of Void">
 		<!-- Updated to IO -->
 		<!-- Carves a mark linked to the Void Dimension onto target and steals their life force. For 10 seconds, decreases HP by 326 every second and absorbs 50% of the damage inflicted as HP/MP for yourself and your servitor(s). Absorbs 25% of the inflicted damage during PvP. -->
-		<table name="#power"> 85 91 97 103 109 117 121 125 </table>
-		<table name="#heal"> 213 213 213 213 213 213 213 213 </table> <!-- TODO Only first level is retail-like -->
-		<table name="#manaheal"> 47 47 47 47 47 47 47 47 </table> <!-- TODO Only first level is retail-like -->
 		<icon>icon.skill11260</icon>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -990,38 +981,10 @@
 				<ticks>1</ticks>
 			</effect>
 		</effects>
-		<selfEffects>
-			<effect name="Heal">
-				<power>
-					<value level="1">213</value>
-					<value level="2">213</value>
-					<value level="3">213</value>
-					<value level="4">213</value>
-					<value level="5">213</value>
-					<value level="6">213</value>
-					<value level="7">213</value>
-					<value level="8">213</value>
-				</power>
-			</effect>
-			<effect name="ManaHeal">
-				<power>
-					<value level="1">47</value>
-					<value level="2">47</value>
-					<value level="3">47</value>
-					<value level="4">47</value>
-					<value level="5">47</value>
-					<value level="6">47</value>
-					<value level="7">47</value>
-					<value level="8">47</value>
-				</power>
-			</effect>
-		</selfEffects>
 	</skill>
 	<skill id="11261" toLevel="9" name="Mark of Plague">
 		<!-- Updated to IO -->
 		<!-- Carves a mark linked to the cursed dimension on target. For 10 seconds, decreases HP by 326 every second and decreases the power of incoming Heals. -->
-		<table name="#power"> 85 89 95 101 107 113 117 121 125 </table>
-		<table name="#healEffect"> 0.95 0.90 0.85 0.80 0.75 0.70 0.65 0.60 0.55 </table> <!-- TODO Guessed except level 2 -->
 		<icon>icon.skill11261</icon>
 		<abnormalLvl>
 			<value level="1">1</value>
@@ -1087,20 +1050,21 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDamOverTime">
+				<power>
+					<value level="1">85</value>
+					<value level="2">91</value>
+					<value level="3">97</value>
+					<value level="4">103</value>
+					<value level="5">109</value>
+					<value level="6">111</value>
+					<value level="7">117</value>
+					<value level="8">121</value>
+					<value level="9">125</value>
+				</power>
 				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-					<value level="3">-15</value>
-					<value level="4">-20</value>
-					<value level="5">-25</value>
-					<value level="6">-30</value>
-					<value level="7">-35</value>
-					<value level="8">-40</value>
-					<value level="9">-45</value>
-				</amount>
+				<amount>-10</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1611,6 +1575,7 @@
 	</skill>
 	<skill id="11271" toLevel="11" name="Mark Retriever">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Retrieves any Mark of Weakness, Mark of Plague, or Mark of Trick from target. Inflicts damage according to the number of retrieved marks. -->
 		<table name="#power">85 89 93 97 101 105 109 113 117 121 125 </table>
 		<table name="#power"> 204 214 223 233 242 252 262 271 281 290 300 </table> <!-- TODO Taken from Mark of Weakness x2.4 (because level 2 power calculated in retail seems to be 214) -->
@@ -1668,51 +1633,51 @@
 		<effects>
 			<effect name="MagicalAbnormalDispelAttack">
 				<power>
-					<value level="1">85</value>
-					<value level="2">89</value>
-					<value level="3">93</value>
-					<value level="4">97</value>
-					<value level="5">101</value>
-					<value level="6">105</value>
-					<value level="7">109</value>
-					<value level="8">113</value>
-					<value level="9">117</value>
-					<value level="10">121</value>
-					<value level="11">125</value>
+					<value level="1">188</value>
+					<value level="2">191</value>
+					<value level="3">196</value>
+					<value level="4">201</value>
+					<value level="5">207</value>
+					<value level="6">212</value>
+					<value level="7">218</value>
+					<value level="8">223</value>
+					<value level="9">228</value> <!-- Guessed -->
+					<value level="10">233</value> <!-- Guessed -->
+					<value level="11">238</value> <!-- Guessed -->
 				</power>
-				<abnormalType>MARK_OF_WEAKNESS</abnormalType>
+				<abnormalType>MARK_DEBUF_B</abnormalType>
 			</effect>
 			<effect name="MagicalAbnormalDispelAttack">
 				<power>
-					<value level="1">85</value>
-					<value level="2">89</value>
-					<value level="3">93</value>
-					<value level="4">97</value>
-					<value level="5">101</value>
-					<value level="6">105</value>
-					<value level="7">109</value>
-					<value level="8">113</value>
-					<value level="9">117</value>
-					<value level="10">121</value>
-					<value level="11">125</value>
+					<value level="1">236</value>
+					<value level="2">239</value>
+					<value level="3">246</value>
+					<value level="4">253</value>
+					<value level="5">260</value>
+					<value level="6">266</value>
+					<value level="7">273</value>
+					<value level="8">280</value>
+					<value level="9">287</value> <!-- Guessed -->
+					<value level="10">294</value> <!-- Guessed -->
+					<value level="11">300</value> <!-- Guessed -->
 				</power>
-				<abnormalType>MARK_OF_PLAGUE</abnormalType>
+				<abnormalType>MARK_DEBUF_C</abnormalType>
 			</effect>
 			<effect name="MagicalAbnormalDispelAttack">
 				<power>
-					<value level="1">85</value>
-					<value level="2">89</value>
-					<value level="3">93</value>
-					<value level="4">97</value>
-					<value level="5">101</value>
-					<value level="6">105</value>
-					<value level="7">109</value>
-					<value level="8">113</value>
-					<value level="9">117</value>
-					<value level="10">121</value>
-					<value level="11">125</value>
+					<value level="1">204</value>
+					<value level="2">207</value>
+					<value level="3">213</value>
+					<value level="4">219</value>
+					<value level="5">224</value>
+					<value level="6">230</value>
+					<value level="7">236</value>
+					<value level="8">242</value>
+					<value level="9">248</value> <!-- Guessed -->
+					<value level="10">254</value> <!-- Guessed -->
+					<value level="11">260</value> <!-- Guessed -->
 				</power>
-				<abnormalType>MARK_OF_TRICK</abnormalType>
+				<abnormalType>MARK_DEBUF_D</abnormalType>
 			</effect>
 		</effects>
 	</skill>
@@ -1967,10 +1932,6 @@
 	<skill id="11277" toLevel="4" name="Sense of Loyalty">
 		<!-- Glory Days confirmed -->
 		<!-- Servitor's Fury. P. Atk. + 35%, M. Atk. + 75%, P. Critical Rate + 30%, and P. Critical Damage by 35%. -->
-		<table name="#pAtk"> 1.35 1.35 1.40 1.40 </table>
-		<table name="#mAtk"> 1.75 1.75 1.85 1.85 </table>
-		<table name="#rCrit"> 0.3 0.35 0.35 0.4 </table>
-		<table name="#cAtk"> 1.35 1.40 1.40 1.45 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
