@@ -218,6 +218,7 @@ import handlers.targethandlers.HolyThing;
 import handlers.targethandlers.Item;
 import handlers.targethandlers.MyMentor;
 import handlers.targethandlers.MyParty;
+import handlers.targethandlers.None;
 import handlers.targethandlers.NpcBody;
 import handlers.targethandlers.Others;
 import handlers.targethandlers.PcBody;
@@ -537,6 +538,7 @@ public class MasterHandler
 			Item.class,
 			MyMentor.class,
 			MyParty.class,
+			None.class,
 			NpcBody.class,
 			Others.class,
 			PcBody.class,
