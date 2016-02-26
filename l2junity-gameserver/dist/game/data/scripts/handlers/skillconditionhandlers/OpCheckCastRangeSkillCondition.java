@@ -33,7 +33,7 @@ public class OpCheckCastRangeSkillCondition implements ISkillCondition
 	
 	public OpCheckCastRangeSkillCondition(StatsSet params)
 	{
-		_distance = params.getInt("distance");
+		_distance = params.getInt("distance") * params.getInt("distance");
 	}
 	
 	@Override
