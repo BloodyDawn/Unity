@@ -1018,23 +1018,6 @@ public class Npc extends Creature
 			setHeading(getHeading());
 		}
 		
-		if (isAttackable())
-		{
-			((Attackable) this).setChampion(false);
-		}
-		
-		if (Config.L2JMOD_CHAMPION_ENABLE)
-		{
-			// Set champion on next spawn
-			if (isMonster() && !getTemplate().isUndying() && !isRaid() && !isRaidMinion() && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
-			{
-				if (Rnd.get(100) < Config.L2JMOD_CHAMPION_FREQUENCY)
-				{
-					((Attackable) this).setChampion(true);
-				}
-			}
-		}
-		
 		// Reset targetable state
 		setTargetable(getTemplate().isTargetable());
 		
