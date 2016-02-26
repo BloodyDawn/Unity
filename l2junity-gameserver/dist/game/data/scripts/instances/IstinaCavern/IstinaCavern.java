@@ -321,7 +321,7 @@ public final class IstinaCavern extends AbstractInstance
 						istina.teleToLocation(DEFEAT_ISTINA_LOC);
 						istina.setInvisible(false);
 						istina.setUndying(false);
-						istina.reduceCurrentHp(1000000, istina.getVariables().getObject("REWARD_PLAYER", PlayerInstance.class), false, false, null);
+						istina.reduceCurrentHp(istina.getVariables().getInt("REWARD_DAMAGE", 1000000), istina.getVariables().getObject("REWARD_PLAYER", PlayerInstance.class), false, false, null);
 					});
 					break;
 				}
@@ -531,8 +531,8 @@ public final class IstinaCavern extends AbstractInstance
 					{
 						if (npc.getCurrentHpPercent() < 0.01)
 						{
+							setPlayerRewardInfo(npc);
 							npcVars.set("ISTINA_STAGE", 6);
-							npcVars.set("REWARD_PLAYER", getRewardPlayer(npc));
 							getTimers().cancelTimer("DEATH_TIMER", npc, null);
 							getTimers().cancelTimer("DEATH_CHECK_TIMER", npc, null);
 							getTimers().cancelTimer("REFLECT_TIMER", npc, null);
@@ -645,11 +645,13 @@ public final class IstinaCavern extends AbstractInstance
 		return charged;
 	}
 	
-	private PlayerInstance getRewardPlayer(Npc npc)
+	private PlayerInstance setPlayerRewardInfo(Npc npc)
 	{
 		final Map<PlayerInstance, DamageDoneInfo> rewards = new ConcurrentHashMap<>();
+		final StatsSet npcVars = npc.getVariables();
 		PlayerInstance maxDealer = null;
 		int maxDamage = 0;
+		int totalDamage = 0;
 		
 		for (AggroInfo info : ((Attackable) npc).getAggroList().values())
 		{
@@ -677,9 +679,13 @@ public final class IstinaCavern extends AbstractInstance
 						maxDealer = attacker;
 						maxDamage = reward.getDamage();
 					}
+					totalDamage += damage;
 				}
 			}
 		}
+		
+		npcVars.set("REWARD_PLAYER", maxDealer);
+		npcVars.set("REWARD_DAMAGE", totalDamage);
 		return maxDealer;
 	}
 	
