@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.spawns;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -29,16 +30,21 @@ import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IParameterized;
+import org.l2junity.gameserver.model.interfaces.ITerritorized;
 import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.zone.type.BannedSpawnTerritory;
+import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 
 /**
  * @author UnAfraid
  */
-public class SpawnTemplate implements IParameterized<StatsSet>
+public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
 {
 	private final String _name;
 	private final String _ai;
 	private final File _file;
+	private List<SpawnTerritory> _territories;
+	private List<BannedSpawnTerritory> _bannedTerritories;
 	private final List<SpawnGroup> _groups = new ArrayList<>();
 	private StatsSet _parameters;
 	
@@ -62,6 +68,38 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 	public File getFile()
 	{
 		return _file;
+	}
+	
+	@Override
+	public void addTerritory(SpawnTerritory territory)
+	{
+		if (_territories == null)
+		{
+			_territories = new ArrayList<>();
+		}
+		_territories.add(territory);
+	}
+	
+	@Override
+	public List<SpawnTerritory> getTerritories()
+	{
+		return _territories != null ? _territories : Collections.emptyList();
+	}
+	
+	@Override
+	public void addBannedTerritory(BannedSpawnTerritory territory)
+	{
+		if (_bannedTerritories == null)
+		{
+			_bannedTerritories = new ArrayList<>();
+		}
+		_bannedTerritories.add(territory);
+	}
+	
+	@Override
+	public List<BannedSpawnTerritory> getBannedTerritories()
+	{
+		return _bannedTerritories != null ? _bannedTerritories : Collections.emptyList();
 	}
 	
 	public void addGroup(SpawnGroup group)

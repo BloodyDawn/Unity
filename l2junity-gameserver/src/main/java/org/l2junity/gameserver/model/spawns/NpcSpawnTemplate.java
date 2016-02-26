@@ -40,7 +40,7 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IParameterized;
-import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
+import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,9 +56,9 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	private final Duration _respawnTime;
 	private final Duration _respawnTimeRandom;
 	private List<ChanceLocation> _locations;
-	private NpcSpawnTerritory _zone;
+	private SpawnTerritory _zone;
 	private StatsSet _parameters;
-	private boolean _spawnAnimation;
+	private final boolean _spawnAnimation;
 	private List<MinionHolder> _minions;
 	private final SpawnTemplate _spawnTemplate;
 	private final SpawnGroup _group;
@@ -93,17 +93,15 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 			}
 			
 			final String zoneName = set.getString("zone", null);
-			if (zoneName == null)
+			if (zoneName != null)
 			{
-				return;
+				final SpawnTerritory zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
+				if (zone == null)
+				{
+					throw new NullPointerException("Spawn with non existing zone requested " + zoneName);
+				}
+				_zone = zone;
 			}
-			
-			final NpcSpawnTerritory zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
-			if (zone == null)
-			{
-				throw new NullPointerException("Spawn with non existing zone requested " + zoneName);
-			}
-			_zone = zone;
 		}
 	}
 	
@@ -156,7 +154,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		return _locations;
 	}
 	
-	public NpcSpawnTerritory getZone()
+	public SpawnTerritory getZone()
 	{
 		return _zone;
 	}
@@ -218,6 +216,30 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 			final Location loc = _zone.getRandomPoint();
 			loc.setHeading(Rnd.get(65535));
 			return loc;
+		}
+		else if (!_group.getTerritories().isEmpty())
+		{
+			final SpawnTerritory territory = _group.getTerritories().get(Rnd.get(_group.getTerritories().size()));
+			for (int i = 0; i < 100; i++)
+			{
+				final Location loc = territory.getRandomPoint();
+				if (_group.getBannedTerritories().isEmpty() || _group.getBannedTerritories().stream().allMatch(bannedTerritory -> !bannedTerritory.isInsideZone(loc.getX(), loc.getY(), loc.getZ())))
+				{
+					return loc;
+				}
+			}
+		}
+		else if (!_spawnTemplate.getTerritories().isEmpty())
+		{
+			final SpawnTerritory territory = _spawnTemplate.getTerritories().get(Rnd.get(_spawnTemplate.getTerritories().size()));
+			for (int i = 0; i < 100; i++)
+			{
+				final Location loc = territory.getRandomPoint();
+				if (_spawnTemplate.getBannedTerritories().isEmpty() || _spawnTemplate.getBannedTerritories().stream().allMatch(bannedTerritory -> !bannedTerritory.isInsideZone(loc.getX(), loc.getY(), loc.getZ())))
+				{
+					return loc;
+				}
+			}
 		}
 		return null;
 	}

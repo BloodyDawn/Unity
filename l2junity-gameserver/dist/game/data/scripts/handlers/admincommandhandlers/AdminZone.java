@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
+import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 /**
@@ -88,7 +88,7 @@ public class AdminZone implements IAdminCommandHandler
 				{
 					zone.visualizeZone(activeChar.getZ());
 				}
-				for (NpcSpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar))
+				for (SpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar))
 				{
 					territory.visualizeZone(activeChar.getZ());
 				}
@@ -153,7 +153,7 @@ public class AdminZone implements IAdminCommandHandler
 				zones.append(" ");
 			}
 		}
-		for (NpcSpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar))
+		for (SpawnTerritory territory : ZoneManager.getInstance().getSpawnTerritories(activeChar))
 		{
 			zones.append(territory.getName());
 			zones.append("<br1>");

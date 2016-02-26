@@ -18,23 +18,19 @@
  */
 package org.l2junity.gameserver.model.zone.type;
 
-import java.util.List;
-
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
 
 /**
  * Just dummy zone, needs only for geometry calculations
- * @author GKR
+ * @author UnAfraid
  */
-public class NpcSpawnTerritory
+public class BannedSpawnTerritory
 {
 	private final String _name;
 	private final L2ZoneForm _territory;
-	@SuppressWarnings("unused")
-	private List<L2ZoneForm> _bannedTerritories; // TODO: Implement it
 	
-	public NpcSpawnTerritory(String name, L2ZoneForm territory)
+	public BannedSpawnTerritory(String name, L2ZoneForm territory)
 	{
 		_name = name;
 		_territory = territory;

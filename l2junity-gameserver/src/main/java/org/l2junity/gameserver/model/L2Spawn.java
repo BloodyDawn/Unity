@@ -25,12 +25,10 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -554,71 +552,11 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			newlocz = GeoData.getInstance().getSpawnHeight(newlocx, newlocy, newlocz);
 		}
 		
-		// Stop all effects
-		npc.stopAllEffects();
-		
-		// Make it alive
-		npc.setIsDead(false);
-		
-		// Reset decay info
-		npc.setDecayed(false);
-		
-		// Recalculate npcs stats
-		npc.getStat().recalculateStats(true);
-		
-		// Set the HP and MP of the L2NpcInstance to the max
-		npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
-		
-		// Clear script variables
-		if (npc.hasVariables())
-		{
-			npc.getVariables().getSet().clear();
-		}
-		
 		// Set is not random walk default value
 		npc.setRandomWalking(getRandomWalking());
 		
-		// Set the heading of the L2NpcInstance (random heading if not defined)
-		if (getHeading() == -1)
-		{
-			npc.setHeading(Rnd.nextInt(61794));
-		}
-		else
-		{
-			npc.setHeading(getHeading());
-		}
-		
-		if (npc.isAttackable())
-		{
-			((Attackable) npc).setChampion(false);
-		}
-		
-		if (Config.L2JMOD_CHAMPION_ENABLE)
-		{
-			// Set champion on next spawn
-			if (npc.isMonster() && !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
-			{
-				if (Rnd.get(100) < Config.L2JMOD_CHAMPION_FREQUENCY)
-				{
-					((Attackable) npc).setChampion(true);
-				}
-			}
-		}
-		
-		// Reset targetable state
-		npc.setTargetable(npc.getTemplate().isTargetable());
-		
-		// Reset summoner
-		npc.setSummoner(null);
-		
-		// Reset summoned list
-		npc.resetSummonedNpcs();
-		
-		// Reset NpcStringId for name
-		npc.setNameString(null);
-		
-		// Reset NpcStringId for title
-		npc.setTitleString(null);
+		// Reset some variables
+		npc.onRespawn();
 		
 		// Link the L2NpcInstance to this L2Spawn
 		npc.setSpawn(this);

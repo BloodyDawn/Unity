@@ -19,19 +19,25 @@
 package org.l2junity.gameserver.model.spawns;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.interfaces.ITerritorized;
+import org.l2junity.gameserver.model.zone.type.BannedSpawnTerritory;
+import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 
 /**
  * @author UnAfraid
  */
-public class SpawnGroup
+public class SpawnGroup implements ITerritorized
 {
 	private final String _name;
 	private final boolean _spawnByDefault;
+	private List<SpawnTerritory> _territories;
+	private List<BannedSpawnTerritory> _bannedTerritories;
 	private final List<NpcSpawnTemplate> _spawns = new ArrayList<>();
 	
 	public SpawnGroup(StatsSet set)
@@ -58,6 +64,38 @@ public class SpawnGroup
 	public List<NpcSpawnTemplate> getSpawns()
 	{
 		return _spawns;
+	}
+	
+	@Override
+	public void addTerritory(SpawnTerritory territory)
+	{
+		if (_territories == null)
+		{
+			_territories = new ArrayList<>();
+		}
+		_territories.add(territory);
+	}
+	
+	@Override
+	public List<SpawnTerritory> getTerritories()
+	{
+		return _territories != null ? _territories : Collections.emptyList();
+	}
+	
+	@Override
+	public void addBannedTerritory(BannedSpawnTerritory territory)
+	{
+		if (_bannedTerritories == null)
+		{
+			_bannedTerritories = new ArrayList<>();
+		}
+		_bannedTerritories.add(territory);
+	}
+	
+	@Override
+	public List<BannedSpawnTerritory> getBannedTerritories()
+	{
+		return _bannedTerritories != null ? _bannedTerritories : Collections.emptyList();
 	}
 	
 	public List<NpcSpawnTemplate> getSpawnsById(int id)

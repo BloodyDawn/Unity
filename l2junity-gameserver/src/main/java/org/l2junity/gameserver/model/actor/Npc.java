@@ -141,6 +141,8 @@ public class Npc extends Creature
 	private NpcStringId _titleString;
 	private NpcStringId _nameString;
 	
+	private StatsSet _params;
+	
 	/**
 	 * Constructor of L2NpcInstance (use L2Character constructor).<br>
 	 * <B><U>Actions</U>:</B>
@@ -981,6 +983,78 @@ public class Npc extends Creature
 	}
 	
 	/**
+	 * Invoked when the NPC is re-spawned to reset the instance variables
+	 */
+	public void onRespawn()
+	{
+		// Stop all effects
+		stopAllEffects();
+		
+		// Make it alive
+		setIsDead(false);
+		
+		// Reset decay info
+		setDecayed(false);
+		
+		// Recalculate npcs stats
+		getStat().recalculateStats(true);
+		
+		// Set the HP and MP of the L2NpcInstance to the max
+		setCurrentHpMp(getMaxHp(), getMaxMp());
+		
+		// Clear script variables
+		if (hasVariables())
+		{
+			getVariables().getSet().clear();
+		}
+		
+		// Set the heading of the L2NpcInstance (random heading if not defined)
+		if (getHeading() == -1)
+		{
+			setHeading(Rnd.nextInt(61794));
+		}
+		else
+		{
+			setHeading(getHeading());
+		}
+		
+		if (isAttackable())
+		{
+			((Attackable) this).setChampion(false);
+		}
+		
+		if (Config.L2JMOD_CHAMPION_ENABLE)
+		{
+			// Set champion on next spawn
+			if (isMonster() && !getTemplate().isUndying() && !isRaid() && !isRaidMinion() && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
+			{
+				if (Rnd.get(100) < Config.L2JMOD_CHAMPION_FREQUENCY)
+				{
+					((Attackable) this).setChampion(true);
+				}
+			}
+		}
+		
+		// Reset targetable state
+		setTargetable(getTemplate().isTargetable());
+		
+		// Reset summoner
+		setSummoner(null);
+		
+		// Reset summoned list
+		resetSummonedNpcs();
+		
+		// Reset NpcStringId for name
+		_nameString = null;
+		
+		// Reset NpcStringId for title
+		_titleString = null;
+		
+		// Reset parameters
+		_params = null;
+	}
+	
+	/**
 	 * Remove the L2NpcInstance from the world and update its spawn object (for a complete removal use the deleteMe method).<br>
 	 * <B><U>Actions</U>:</B>
 	 * <ul>
@@ -988,7 +1062,8 @@ public class Npc extends Creature
 	 * <li>Decrease its spawn counter</li>
 	 * <li>Manage Siege task (killFlag, killCT)</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	@Override
 	public void onDecay()
@@ -1030,7 +1105,8 @@ public class Npc extends Creature
 	 * <li>Remove all L2Object from _knownObjects and _knownPlayer of the L2NpcInstance then cancel Attack or Cast and notify AI</li>
 	 * <li>Remove L2Object object from _allObjects of L2World</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND Server->Client packets to players</B></FONT><br> UnAfraid: TODO: Add Listener here
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND Server->Client packets to players</B></FONT><br>
+	 * UnAfraid: TODO: Add Listener here
 	 */
 	@Override
 	public boolean deleteMe()
@@ -1607,16 +1683,32 @@ public class Npc extends Creature
 	 */
 	public StatsSet getParameters()
 	{
+		if (_params != null)
+		{
+			return _params;
+		}
+		
 		final L2Spawn spawn = getSpawn();
 		if (spawn != null) // Minions doesn't have L2Spawn object bound
 		{
 			final NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
 			if ((npcSpawnTemplate != null) && (npcSpawnTemplate.getParameters() != null) && !npcSpawnTemplate.getParameters().isEmpty())
 			{
-				return npcSpawnTemplate.getParameters();
+				final StatsSet params = getTemplate().getParameters();
+				if ((params != null) && !params.getSet().isEmpty())
+				{
+					final StatsSet set = new StatsSet();
+					set.merge(params);
+					set.merge(npcSpawnTemplate.getParameters());
+					_params = set;
+					return set;
+				}
+				_params = npcSpawnTemplate.getParameters();
+				return _params;
 			}
 		}
-		return getTemplate().getParameters();
+		_params = getTemplate().getParameters();
+		return _params;
 	}
 	
 	public List<Skill> getLongRangeSkills()

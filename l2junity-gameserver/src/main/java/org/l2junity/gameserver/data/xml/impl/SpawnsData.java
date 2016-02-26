@@ -19,20 +19,26 @@
 package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.ChanceLocation;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.interfaces.IParameterized;
+import org.l2junity.gameserver.model.interfaces.ITerritorized;
 import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.model.spawns.SpawnGroup;
 import org.l2junity.gameserver.model.spawns.SpawnTemplate;
+import org.l2junity.gameserver.model.zone.form.ZoneNPoly;
+import org.l2junity.gameserver.model.zone.type.BannedSpawnTerritory;
+import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -111,7 +117,11 @@ public class SpawnsData implements IGameXmlReader
 		SpawnGroup defaultGroup = null;
 		for (Node innerNode = spawnsNode.getFirstChild(); innerNode != null; innerNode = innerNode.getNextSibling())
 		{
-			if ("group".equalsIgnoreCase(innerNode.getNodeName()))
+			if ("territories".equalsIgnoreCase(innerNode.getNodeName()))
+			{
+				parseTerritories(innerNode, spawnTemplate.getFile(), spawnTemplate);
+			}
+			else if ("group".equalsIgnoreCase(innerNode.getNodeName()))
 			{
 				parseGroup(innerNode, spawnTemplate);
 			}
@@ -137,10 +147,64 @@ public class SpawnsData implements IGameXmlReader
 		spawns.add(spawnTemplate);
 	}
 	
+	/**
+	 * @param innerNode
+	 * @param file
+	 * @param spawnTemplate
+	 */
+	private void parseTerritories(Node innerNode, File file, ITerritorized spawnTemplate)
+	{
+		forEach(innerNode, IXmlReader::isNode, territoryNode ->
+		{
+			final String name = parseString(territoryNode.getAttributes(), "name", file.getName() + "_" + (spawnTemplate.getTerritories().size() + 1));
+			final int minZ = parseInteger(territoryNode.getAttributes(), "minZ");
+			final int maxZ = parseInteger(territoryNode.getAttributes(), "maxZ");
+			
+			final List<Integer> xNodes = new ArrayList<>();
+			final List<Integer> yNodes = new ArrayList<>();
+			forEach(territoryNode, "node", node ->
+			{
+				xNodes.add(parseInteger(node.getAttributes(), "x"));
+				yNodes.add(parseInteger(node.getAttributes(), "y"));
+			});
+			final int[] x = xNodes.stream().mapToInt(Integer::valueOf).toArray();
+			final int[] y = yNodes.stream().mapToInt(Integer::valueOf).toArray();
+			
+			switch (territoryNode.getNodeName())
+			{
+				case "territory":
+				{
+					spawnTemplate.addTerritory(new SpawnTerritory(name, new ZoneNPoly(x, y, minZ, maxZ)));
+					break;
+				}
+				case "banned_territory":
+				{
+					spawnTemplate.addBannedTerritory(new BannedSpawnTerritory(name, new ZoneNPoly(x, y, minZ, maxZ)));
+					break;
+				}
+			}
+		});
+	}
+	
 	private void parseGroup(Node n, SpawnTemplate spawnTemplate)
 	{
 		final SpawnGroup group = new SpawnGroup(new StatsSet(parseAttributes(n)));
-		forEach(n, "npc", npcNode -> parseNpc(npcNode, spawnTemplate, group));
+		forEach(n, IXmlReader::isNode, npcNode ->
+		{
+			switch (npcNode.getNodeName())
+			{
+				case "territories":
+				{
+					parseTerritories(npcNode, spawnTemplate.getFile(), group);
+					break;
+				}
+				case "npc":
+				{
+					parseNpc(npcNode, spawnTemplate, group);
+					break;
+				}
+			}
+		});
 		spawnTemplate.addGroup(group);
 	}
 	

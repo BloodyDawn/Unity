@@ -43,7 +43,7 @@ import org.l2junity.gameserver.model.zone.form.ZoneCuboid;
 import org.l2junity.gameserver.model.zone.form.ZoneCylinder;
 import org.l2junity.gameserver.model.zone.form.ZoneNPoly;
 import org.l2junity.gameserver.model.zone.type.ArenaZone;
-import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
+import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.slf4j.Logger;
@@ -67,7 +67,7 @@ public final class ZoneManager implements IGameXmlReader
 	public static final int OFFSET_Y = Math.abs(World.MAP_MIN_Y >> SHIFT_BY);
 	
 	private final Map<Class<? extends ZoneType>, Map<Integer, ? extends ZoneType>> _classZones = new HashMap<>();
-	private final Map<String, NpcSpawnTerritory> _spawnTerritories = new HashMap<>();
+	private final Map<String, SpawnTerritory> _spawnTerritories = new HashMap<>();
 	private int _lastDynamicId = 300000;
 	private List<ItemInstance> _debugItems;
 	
@@ -308,7 +308,7 @@ public final class ZoneManager implements IGameXmlReader
 						// No further parameters needed, if NpcSpawnTerritory is loading
 						if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
 						{
-							_spawnTerritories.put(zoneName, new NpcSpawnTerritory(zoneName, zoneForm));
+							_spawnTerritories.put(zoneName, new SpawnTerritory(zoneName, zoneForm));
 							continue;
 						}
 						
@@ -596,7 +596,7 @@ public final class ZoneManager implements IGameXmlReader
 	 * @param name name of territory to search
 	 * @return link to zone form
 	 */
-	public NpcSpawnTerritory getSpawnTerritory(String name)
+	public SpawnTerritory getSpawnTerritory(String name)
 	{
 		return _spawnTerritories.containsKey(name) ? _spawnTerritories.get(name) : null;
 	}
@@ -606,10 +606,10 @@ public final class ZoneManager implements IGameXmlReader
 	 * @param object
 	 * @return zones
 	 */
-	public List<NpcSpawnTerritory> getSpawnTerritories(WorldObject object)
+	public List<SpawnTerritory> getSpawnTerritories(WorldObject object)
 	{
-		List<NpcSpawnTerritory> temp = new ArrayList<>();
-		for (NpcSpawnTerritory territory : _spawnTerritories.values())
+		List<SpawnTerritory> temp = new ArrayList<>();
+		for (SpawnTerritory territory : _spawnTerritories.values())
 		{
 			if (territory.isInsideZone(object.getX(), object.getY(), object.getZ()))
 			{

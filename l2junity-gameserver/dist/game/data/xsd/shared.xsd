@@ -152,13 +152,36 @@
 		</xs:choice>
 	</xs:complexType>
 
+	<xs:complexType name="territories">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="territory" type="territory" />
+			<xs:element name="banned_territory" type="territory" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="territory">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="node">
+				<xs:complexType>
+					<xs:attribute name="x" type="xs:integer" use="required" />
+					<xs:attribute name="y" type="xs:integer" use="required" />
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" />
+		<xs:attribute name="minZ" type="xs:integer" use="required" />
+		<xs:attribute name="maxZ" type="xs:integer" use="required" />
+	</xs:complexType>
+
 	<xs:complexType name="spawn">
 		<xs:sequence>
+			<xs:element name="territories" minOccurs="0" maxOccurs="1" type="territories" />
 			<xs:element name="parameters" minOccurs="0" maxOccurs="1" type="parameters" />
 			<xs:element name="npc" minOccurs="0" maxOccurs="unbounded" type="npc" />
 			<xs:element name="group" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element name="territories" minOccurs="0" maxOccurs="1" type="territories" />
 						<xs:element name="npc" maxOccurs="unbounded" minOccurs="0" type="npc" />
 					</xs:sequence>
 					<xs:attribute type="xs:string" name="name" />
