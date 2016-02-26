@@ -24,6 +24,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
+import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -48,18 +51,31 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 		{
 			_log.warn("Duplicate effect condition holder old effected: {} old skill: {},  new effected: {} new skill: {}", oldHolder.getEffected(), oldHolder.getSkill(), effected, skill, new IllegalStateException());
 		}
+		else
+		{
+			// Register listeners
+			registerCondition(effector, effected, skill);
+			
+			// Register OnPlayerLogout listener to remove holder because effects are not stopped when player logs out
+			if (effected.isPlayer())
+			{
+				effected.addListener(new ConsumerEventListener(effected, EventType.ON_PLAYER_LOGOUT, (OnPlayerLogout event) ->
+				{
+					_holders.remove(effected.getObjectId());
+				} , this));
+			}
+		}
 	}
 	
 	@Override
 	public final void onExit(BuffInfo info)
 	{
-		unregisterCondition(info);
+		unregisterCondition(info.getEffector(), info.getEffected(), info.getSkill());
 		final EffectedConditionHolder oldHolder = _holders.remove(info.getEffected().getObjectId());
 		if (oldHolder == null)
 		{
 			_log.warn("Failed onExit condition holder new effected: {} new skill: {}", info.getEffected(), info.getSkill(), new IllegalStateException());
 		}
-		
 	}
 	
 	protected final EffectedConditionHolder getHolder(int objectId)
@@ -67,9 +83,9 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 		return _holders.get(objectId);
 	}
 	
-	protected abstract void registerCondition(BuffInfo info);
+	protected abstract void registerCondition(Creature effector, Creature effected, Skill skill);
 	
-	protected abstract void unregisterCondition(BuffInfo info);
+	protected abstract void unregisterCondition(Creature effector, Creature effected, Skill skill);
 	
 	protected final void update(int objectId)
 	{

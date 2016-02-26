@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -42,19 +41,19 @@ public abstract class AbstractConditionalHpEffect extends AbstractConditionalEff
 	}
 	
 	@Override
-	protected void registerCondition(BuffInfo info)
+	protected void registerCondition(Creature effector, Creature effected, Skill skill)
 	{
 		if (_hpPercent > 0)
 		{
-			final ListenersContainer container = info.getEffected();
+			final ListenersContainer container = effected;
 			container.addListener(new ConsumerEventListener(container, EventType.ON_CREATURE_HP_CHANGE, (OnCreatureHpChange event) -> onHpChange(event), this));
 		}
 	}
 	
 	@Override
-	protected void unregisterCondition(BuffInfo info)
+	protected void unregisterCondition(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().removeListenerIf(listener -> listener.getOwner() == this);
+		effected.removeListenerIf(listener -> listener.getOwner() == this);
 	}
 	
 	@Override
