@@ -206,7 +206,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Consume the required items.
-		if (_skill.getItemConsumeId() > 0)
+		if ((_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0))
 		{
 			if (!_caster.destroyItemByItemId("Consume", _skill.getItemConsumeId(), _skill.getItemConsumeCount(), null, true))
 			{
@@ -848,10 +848,10 @@ public class SkillCaster implements Runnable
 		
 		// Check if the spell consumes an Item
 		// TODO: combine check and consume
-		if ((skill.getItemConsumeId() > 0) && (caster.getInventory() != null))
+		if ((skill.getItemConsumeId() > 0) && (skill.getItemConsumeCount() > 0) && (caster.getInventory() != null))
 		{
 			// Get the L2ItemInstance consumed by the spell
-			ItemInstance requiredItems = caster.getInventory().getItemByItemId(skill.getItemConsumeId());
+			final ItemInstance requiredItems = caster.getInventory().getItemByItemId(skill.getItemConsumeId());
 			
 			// Check if the caster owns enough consumed Item to cast
 			if ((requiredItems == null) || (requiredItems.getCount() < skill.getItemConsumeCount()))
