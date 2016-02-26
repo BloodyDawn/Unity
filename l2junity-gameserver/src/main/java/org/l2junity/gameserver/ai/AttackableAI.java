@@ -293,10 +293,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	protected void thinkCast()
 	{
-		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
+		final WorldObject target = _skill.getTarget(_actor, _actor.getTarget(), _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
-			getActiveChar().setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
