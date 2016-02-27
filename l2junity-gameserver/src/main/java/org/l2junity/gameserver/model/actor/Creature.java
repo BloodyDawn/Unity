@@ -2008,6 +2008,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			getSummoner().removeSummonedNpc(getObjectId());
 		}
 		
+		// Remove all effects
+		_effectList.stopAllEffects();
+		_effectList.stopAllPassives(false);
+		_effectList.stopAllOptions(false);
+		
 		// Cancel all timers related to this Creature
 		TimersManager.getInstance().cancelTimers(getObjectId());
 		return true;

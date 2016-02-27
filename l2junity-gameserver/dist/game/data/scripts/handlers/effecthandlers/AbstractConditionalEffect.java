@@ -24,9 +24,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
-import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -46,6 +43,12 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 	@Override
 	public final void onStart(Creature effector, Creature effected, Skill skill)
 	{
+		// Augmentation option
+		if (skill == null)
+		{
+			return;
+		}
+		
 		final EffectedConditionHolder oldHolder = _holders.putIfAbsent(effected.getObjectId(), new EffectedConditionHolder(effector, effected, skill, canPump(effector, effected, skill)));
 		if (oldHolder != null)
 		{
@@ -55,21 +58,18 @@ public abstract class AbstractConditionalEffect extends AbstractStatEffect
 		{
 			// Register listeners
 			registerCondition(effector, effected, skill);
-			
-			// Register OnPlayerLogout listener to remove holder because effects are not stopped when player logs out
-			if (effected.isPlayer())
-			{
-				effected.addListener(new ConsumerEventListener(effected, EventType.ON_PLAYER_LOGOUT, (OnPlayerLogout event) ->
-				{
-					_holders.remove(effected.getObjectId());
-				} , this));
-			}
 		}
 	}
 	
 	@Override
 	public final void onExit(BuffInfo info)
 	{
+		// Augmentation option
+		if (info.getSkill() == null)
+		{
+			return;
+		}
+		
 		unregisterCondition(info.getEffector(), info.getEffected(), info.getSkill());
 		final EffectedConditionHolder oldHolder = _holders.remove(info.getEffected().getObjectId());
 		if (oldHolder == null)

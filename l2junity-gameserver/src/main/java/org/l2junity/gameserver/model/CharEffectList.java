@@ -935,6 +935,34 @@ public final class CharEffectList
 	}
 	
 	/**
+	 * Stops all active dances/songs skills.
+	 * @param update set to true to update the effect flags and icons
+	 */
+	public void stopAllPassives(boolean update)
+	{
+		if (hasPassives())
+		{
+			getPassives().forEach(b -> stopAndRemove(b, getPassives()));
+			// Update effect flags and icons.
+			updateEffectList(update);
+		}
+	}
+	
+	/**
+	 * Stops all active dances/songs skills.
+	 * @param update set to true to update the effect flags and icons
+	 */
+	public void stopAllOptions(boolean update)
+	{
+		if (hasOptions())
+		{
+			getOptions().forEach(b -> stopAndRemove(b, getOptions()));
+			// Update effect flags and icons.
+			updateEffectList(update);
+		}
+	}
+	
+	/**
 	 * Exit all effects having a specified type.<br>
 	 * TODO: Remove after all effect types are replaced by abnormal skill types.
 	 * @param type the type of the effect to stop
