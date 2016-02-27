@@ -42,7 +42,6 @@ import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
@@ -283,20 +282,10 @@ public class SpawnsData implements IGameXmlReader
 	 */
 	private void parseMinions(Node n, NpcSpawnTemplate npcTemplate)
 	{
-		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		forEach(n, "minion", minionNode ->
 		{
-			if ("minion".equalsIgnoreCase(d.getNodeName()))
-			{
-				final StatsSet set = new StatsSet();
-				final NamedNodeMap attrs = n.getAttributes();
-				for (int i = 0; i < attrs.getLength(); i++)
-				{
-					final Node node = attrs.item(i);
-					set.set(node.getNodeName(), node.getNodeValue());
-				}
-				npcTemplate.addMinion(new MinionHolder(set));
-			}
-		}
+			npcTemplate.addMinion(new MinionHolder(new StatsSet(parseAttributes(minionNode))));
+		});
 	}
 	
 	/**
