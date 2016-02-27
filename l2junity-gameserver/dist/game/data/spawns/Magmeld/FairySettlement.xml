@@ -1,18 +1,1365 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
-	<spawn name="FairySettlement" ai="DayNightSpawns">
-		<group>
-			<npc id="30370" x="215664" y="80870" z="824" heading="33960" respawnTime="60sec" /> <!-- Nerupa -->
-			<npc id="32921" x="214508" y="79668" z="824" heading="14514" respawnTime="60sec" /> <!-- Fairy Citizen -->
-			<npc id="33566" x="214341" y="79639" z="824" heading="7699" respawnTime="60sec" /> <!-- Hermuncus' Minion -->
-			<npc id="32916" x="215136" y="80267" z="816" heading="2859" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="214813" y="80620" z="816" heading="42137" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="214881" y="80682" z="816" heading="31316" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="214666" y="80261" z="816" heading="23345" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="215129" y="80493" z="848" heading="49371" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="215040" y="80404" z="816" heading="22056" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="215148" y="80270" z="816" heading="55344" respawnTime="60sec" /> <!-- Large Wisp -->
-			<npc id="32916" x="215116" y="80431" z="816" heading="9461" respawnTime="60sec" /> <!-- Large Wisp -->			
-		</group>
+	<spawn name="magmeld02_2620_14_nm1">
+		<territories>
+			<territory name="magmeld02_2620_14_n" minZ="176" maxZ="676">
+				<node x="205684" y="74952" />
+				<node x="206120" y="74920" />
+				<node x="206544" y="75572" />
+				<node x="205804" y="75620" />
+			</territory>
+		</territories>
+		<npc id="32919" x="206208" y="75328" z="356" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="205904" y="75088" z="336" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_26_nm1">
+		<territories>
+			<territory name="magmeld02_2620_26_n" minZ="36" maxZ="536">
+				<node x="203220" y="73808" />
+				<node x="203160" y="74272" />
+				<node x="202816" y="74248" />
+				<node x="202740" y="73916" />
+				<node x="202996" y="73744" />
+			</territory>
+		</territories>
+		<npc id="32919" x="202944" y="74000" z="256" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_14_km1">
+		<territories>
+			<territory name="magmeld02_2620_14_k" minZ="1300" maxZ="1800">
+				<node x="217396" y="69832" />
+				<node x="218216" y="70160" />
+				<node x="218528" y="70936" />
+				<node x="217900" y="70436" />
+				<node x="217200" y="70096" />
+			</territory>
+		</territories>
+		<npc id="32920" x="218048" y="70256" z="1392" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="217456" y="70032" z="1392" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_02_nm1">
+		<territories>
+			<territory name="magmeld02_2620_02_n" minZ="332" maxZ="832">
+				<node x="204052" y="78676" />
+				<node x="204448" y="78776" />
+				<node x="204052" y="79192" />
+				<node x="203852" y="79252" />
+				<node x="203420" y="79156" />
+				<node x="203300" y="78716" />
+				<node x="203620" y="78868" />
+			</territory>
+		</territories>
+		<npc id="22863" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22895" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+	</spawn>
+	<spawn name="magmeld02_2620_26_km1">
+		<territories>
+			<territory name="magmeld02_2620_26_k" minZ="868" maxZ="1368">
+				<node x="224952" y="82368" />
+				<node x="224840" y="82908" />
+				<node x="224404" y="83712" />
+				<node x="224092" y="83948" />
+				<node x="224204" y="83540" />
+				<node x="224204" y="82712" />
+			</territory>
+		</territories>
+		<npc id="32920" x="224368" y="83296" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224368" y="82880" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224704" y="82688" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_02_km1">
+		<territories>
+			<territory name="magmeld02_2620_02_k" minZ="976" maxZ="1476">
+				<node x="217964" y="76996" />
+				<node x="218640" y="77032" />
+				<node x="218536" y="77752" />
+				<node x="217852" y="78592" />
+				<node x="217528" y="78228" />
+			</territory>
+		</territories>
+		<npc id="32920" x="218032" y="77952" z="1136" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_14_sm1">
+		<territories>
+			<territory name="magmeld02_2620_14_s" minZ="332" maxZ="832">
+				<node x="219088" y="90220" />
+				<node x="219428" y="90012" />
+				<node x="219636" y="91008" />
+				<node x="219216" y="91076" />
+			</territory>
+		</territories>
+		<npc id="32919" x="219344" y="90368" z="480" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_20_nm1">
+		<territories>
+			<territory name="magmeld02_2620_20_n" minZ="160" maxZ="660">
+				<node x="203276" y="77648" />
+				<node x="203716" y="77676" />
+				<node x="203744" y="78012" />
+				<node x="203384" y="78240" />
+				<node x="202980" y="77972" />
+			</territory>
+		</territories>
+		<npc id="32919" x="203488" y="77968" z="320" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_07_sm1">
+		<territories>
+			<territory name="magmeld02_2620_07_s" minZ="448" maxZ="948">
+				<node x="216112" y="88140" />
+				<node x="216744" y="87844" />
+				<node x="217288" y="88656" />
+				<node x="217424" y="89216" />
+				<node x="216416" y="89404" />
+				<node x="216480" y="88696" />
+			</territory>
+		</territories>
+		<npc id="32919" x="216576" y="88336" z="688" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="216640" y="89152" z="528" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217008" y="88768" z="560" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_19_sm1">
+		<territories>
+			<territory name="magmeld02_2620_19_s" minZ="460" maxZ="960">
+				<node x="220880" y="88844" />
+				<node x="221480" y="88816" />
+				<node x="221476" y="89220" />
+				<node x="221400" y="89972" />
+				<node x="220832" y="89104" />
+			</territory>
+		</territories>
+		<npc id="32919" x="221264" y="89264" z="656" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="18974" respawnTime="300sec" /> <!-- Centaur Archer -->
+	</spawn>
+	<spawn name="magmeld02_2620_19_km1">
+		<territories>
+			<territory name="magmeld02_2620_19_k" minZ="1128" maxZ="1628">
+				<node x="222040" y="73040" />
+				<node x="222520" y="73164" />
+				<node x="222564" y="73896" />
+				<node x="221896" y="74464" />
+				<node x="221392" y="73660" />
+				<node x="221692" y="73264" />
+			</territory>
+		</territories>
+		<npc id="32920" x="221744" y="73676" z="1216" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="222192" y="73280" z="1248" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="222240" y="73840" z="1264" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18973" respawnTime="300sec" respawnRandom="30sec" /> <!-- Treekin Defender -->
+	</spawn>
+	<spawn name="magmeld02_2620_07_nm1">
+		<territories>
+			<territory name="magmeld02_2620_07_n" minZ="696" maxZ="1196">
+				<node x="210844" y="76948" />
+				<node x="212152" y="76976" />
+				<node x="211428" y="77684" />
+				<node x="211056" y="77560" />
+				<node x="210368" y="77844" />
+			</territory>
+		</territories>
+		<npc id="22895" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+		<npc id="22871" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="32919" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_20_km1">
+		<territories>
+			<territory name="magmeld02_2620_20_k" minZ="836" maxZ="1336">
+				<node x="223836" y="79368" />
+				<node x="223784" y="79904" />
+				<node x="223556" y="80244" />
+				<node x="222948" y="80168" />
+				<node x="222912" y="79848" />
+				<node x="223356" y="79352" />
+			</territory>
+		</territories>
+		<npc id="32920" x="223168" y="80000" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223548" y="79532" z="912" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18975" respawnTime="300sec" /> <!-- Centaur Archer -->
+	</spawn>
+	<spawn name="magmeld02_2620_32_km1">
+		<territories>
+			<territory name="magmeld02_2620_32_k" minZ="860" maxZ="1360">
+				<node x="227480" y="76708" />
+				<node x="227984" y="76744" />
+				<node x="228064" y="77200" />
+				<node x="227472" y="77212" />
+			</territory>
+		</territories>
+		<npc id="32920" x="227744" y="76992" z="912" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_19_nm1">
+		<territories>
+			<territory name="magmeld02_2620_19_n" minZ="-56" maxZ="444">
+				<node x="201540" y="77100" />
+				<node x="202664" y="77076" />
+				<node x="202168" y="77868" />
+				<node x="201756" y="78092" />
+				<node x="201756" y="77532" />
+			</territory>
+		</territories>
+		<npc id="32919" x="202320" y="77296" z="96" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="201840" y="77304" z="80" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_07_km1">
+		<territories>
+			<territory name="magmeld02_2620_07_k" minZ="900" maxZ="1400">
+				<node x="218708" y="74612" />
+				<node x="221060" y="74844" />
+				<node x="220784" y="75372" />
+				<node x="219836" y="75356" />
+				<node x="218712" y="74824" />
+			</territory>
+		</territories>
+		<npc id="32920" x="220620" y="75012" z="968" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="219652" y="74836" z="976" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld01_2620_033m1">
+		<territories>
+			<territory name="magmeld01_2620_033" minZ="729" maxZ="1229">
+				<node x="216151" y="80891" />
+				<node x="215176" y="81678" />
+				<node x="214504" y="81668" />
+				<node x="213748" y="80423" />
+				<node x="213977" y="79656" />
+				<node x="214668" y="79276" />
+				<node x="215544" y="79772" />
+				<node x="215544" y="79772" />
+			</territory>
+		</territories>
+		<npc id="30370" x="215664" y="80870" z="824" heading="33960" respawnTime="60sec" /> <!-- Nerupa -->
+		<npc id="32921" x="214508" y="79668" z="824" heading="14514" respawnTime="60sec" /> <!-- Fairy Citizen -->
+	</spawn>
+	<spawn name="magmeld02_2620_21_km1">
+		<territories>
+			<territory name="magmeld02_2620_21_k" minZ="856" maxZ="1356">
+				<node x="224796" y="78740" />
+				<node x="224996" y="78920" />
+				<node x="225020" y="79844" />
+				<node x="224748" y="80120" />
+				<node x="224304" y="80224" />
+				<node x="224264" y="79288" />
+			</territory>
+		</territories>
+		<npc id="32920" x="224624" y="79792" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224432" y="79392" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224752" y="79216" z="992" respawnTime="300sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_21_nm1">
+		<territories>
+			<territory name="magmeld02_2620_21_n" minZ="100" maxZ="600">
+				<node x="201932" y="74240" />
+				<node x="202768" y="74208" />
+				<node x="202404" y="74924" />
+				<node x="201936" y="74828" />
+			</territory>
+		</territories>
+		<npc id="32919" x="202448" y="74352" z="208" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="202288" y="74704" z="192" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_08_km1">
+		<territories>
+			<territory name="magmeld02_2620_08_k" minZ="924" maxZ="1424">
+				<node x="217512" y="75300" />
+				<node x="218588" y="74976" />
+				<node x="218528" y="75408" />
+				<node x="217816" y="75876" />
+			</territory>
+		</territories>
+		<npc id="32920" x="217792" y="75504" z="976" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_08_nm1">
+		<territories>
+			<territory name="magmeld02_2620_08_n" minZ="684" maxZ="1184">
+				<node x="209380" y="76364" />
+				<node x="210052" y="76540" />
+				<node x="210180" y="76808" />
+				<node x="209676" y="77484" />
+			</territory>
+		</territories>
+		<npc id="22863" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22863" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="32919" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_08_sm1">
+		<territories>
+			<territory name="magmeld02_2620_08_s" minZ="396" maxZ="896">
+				<node x="219128" y="88112" />
+				<node x="219412" y="88676" />
+				<node x="218660" y="88696" />
+				<node x="218436" y="89256" />
+				<node x="217572" y="89612" />
+				<node x="217924" y="88220" />
+				<node x="218568" y="88036" />
+			</territory>
+		</territories>
+		<npc id="32919" x="217840" y="89296" z="496" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="218432" y="88704" z="704" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="218656" y="88304" z="768" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld01_2620_03_2m1">
+		<territories>
+			<territory name="magmeld01_2620_03_2" minZ="776" maxZ="976">
+				<node x="215124" y="80172" />
+				<node x="215256" y="80524" />
+				<node x="214960" y="80812" />
+				<node x="214592" y="80704" />
+				<node x="214500" y="80400" />
+				<node x="214748" y="80108" />
+			</territory>
+		</territories>
+		<npc id="32916" respawnTime="60sec" /> <!-- Large Wisp -->
+	</spawn>
+	<spawn name="magmeld02_2620_18_sm1">
+		<territories>
+			<territory name="magmeld02_2620_18_s" minZ="656" maxZ="856">
+				<node x="219500" y="88884" />
+				<node x="220644" y="89088" />
+				<node x="220596" y="89316" />
+				<node x="219428" y="89348" />
+			</territory>
+		</territories>
+		<npc id="32919" x="219744" y="89104" z="760" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_31_km1">
+		<territories>
+			<territory name="magmeld02_2620_31_k" minZ="804" maxZ="1304">
+				<node x="227480" y="77916" />
+				<node x="228064" y="77864" />
+				<node x="228008" y="78240" />
+				<node x="227368" y="78324" />
+			</territory>
+		</territories>
+		<npc id="32920" x="227696" y="78048" z="896" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_06_sm1">
+		<territories>
+			<territory name="magmeld02_2620_06_s" minZ="488" maxZ="988">
+				<node x="216252" y="87084" />
+				<node x="217376" y="86728" />
+				<node x="217548" y="87368" />
+				<node x="216224" y="87872" />
+			</territory>
+		</territories>
+		<npc id="32919" x="217248" y="87120" z="736" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="216644" y="87436" z="888" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_18_km1">
+		<territories>
+			<territory name="magmeld02_2620_18_k" minZ="1356" maxZ="1856">
+				<node x="218784" y="69936" />
+				<node x="219832" y="70204" />
+				<node x="219844" y="70548" />
+				<node x="218904" y="70296" />
+			</territory>
+		</territories>
+		<npc id="32920" x="219360" y="70208" z="1472" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_06_nm1">
+		<territories>
+			<territory name="magmeld02_2620_06_n" minZ="588" maxZ="1088">
+				<node x="208244" y="78844" />
+				<node x="208780" y="78864" />
+				<node x="208512" y="79472" />
+				<node x="208092" y="79500" />
+				<node x="208152" y="79296" />
+			</territory>
+		</territories>
+		<npc id="22879" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Knight -->
+		<npc id="22895" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+	</spawn>
+	<spawn name="magmeld02_2620_18_nm1">
+		<territories>
+			<territory name="magmeld02_2620_18_n" minZ="-96" maxZ="404">
+				<node x="202524" y="75612" />
+				<node x="202952" y="75576" />
+				<node x="202932" y="76300" />
+				<node x="202524" y="76624" />
+				<node x="201812" y="76068" />
+				<node x="201556" y="75688" />
+			</territory>
+		</territories>
+		<npc id="32919" x="201952" y="75892" z="80" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="202576" y="75808" z="128" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="202800" y="76224" z="80" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_06_km1">
+		<territories>
+			<territory name="magmeld02_2620_06_k" minZ="924" maxZ="1424">
+				<node x="219768" y="75504" />
+				<node x="220628" y="75648" />
+				<node x="220772" y="76256" />
+				<node x="220300" y="76844" />
+			</territory>
+		</territories>
+		<npc id="32920" x="220384" y="76496" z="1120" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="220276" y="75892" z="1040" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_20_sm1">
+		<territories>
+			<territory name="magmeld02_2620_20_s" minZ="472" maxZ="972">
+				<node x="221556" y="89752" />
+				<node x="222052" y="89548" />
+				<node x="222192" y="89840" />
+				<node x="222036" y="90024" />
+			</territory>
+		</territories>
+		<npc id="32919" x="221920" y="89776" z="672" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_01_sm1">
+		<territories>
+			<territory name="magmeld02_2620_01_s" minZ="444" maxZ="944">
+				<node x="216328" y="83940" />
+				<node x="216368" y="84568" />
+				<node x="215616" y="85268" />
+				<node x="214352" y="84368" />
+				<node x="215152" y="83936" />
+				<node x="215732" y="83644" />
+			</territory>
+		</territories>
+		<npc id="22863" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22871" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22903" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Witch -->
+		<npc id="32919" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_13_sm1">
+		<territories>
+			<territory name="magmeld02_2620_13_s" minZ="228" maxZ="728">
+				<node x="219688" y="91012" />
+				<node x="220356" y="91320" />
+				<node x="219932" y="92732" />
+				<node x="219376" y="92352" />
+				<node x="219652" y="91624" />
+			</territory>
+		</territories>
+		<npc id="32919" x="219808" y="92448" z="352" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="219968" y="91376" z="400" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_25_km1">
+		<territories>
+			<territory name="magmeld02_2620_25_k" minZ="836" maxZ="1336">
+				<node x="223084" y="83180" />
+				<node x="223900" y="83104" />
+				<node x="223896" y="84236" />
+				<node x="223084" y="84052" />
+				<node x="222336" y="83264" />
+				<node x="222620" y="82964" />
+			</territory>
+		</territories>
+		<npc id="32920" x="222688" y="83248" z="896" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223216" y="83328" z="928" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223184" y="83776" z="896" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223648" y="83616" z="912" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18975" respawnTime="300sec" respawnRandom="30sec" /> <!-- Centaur Archer -->
+	</spawn>
+	<spawn name="magmeld02_2620_13_nm1">
+		<territories>
+			<territory name="magmeld02_2620_13_n" minZ="392" maxZ="892">
+				<node x="207272" y="74636" />
+				<node x="207560" y="75116" />
+				<node x="208160" y="76068" />
+				<node x="207084" y="76060" />
+				<node x="206732" y="75728" />
+				<node x="206952" y="75412" />
+				<node x="206952" y="75412" />
+				<node x="206956" y="75068" />
+			</territory>
+		</territories>
+		<npc id="32919" x="207140" y="75676" z="548" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="207412" y="75296" z="596" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="207320" y="75992" z="672" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_25_nm1">
+		<territories>
+			<territory name="magmeld02_2620_25_n" minZ="468" maxZ="968">
+				<node x="205116" y="72380" />
+				<node x="205304" y="72900" />
+				<node x="205024" y="73416" />
+				<node x="204564" y="72864" />
+			</territory>
+		</territories>
+		<npc id="32919" x="204724" y="72864" z="656" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="205112" y="72864" z="880" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="dimension_2620_fairym1">
+		<territories>
+			<territory name="dimension_2620_fairy" minZ="774" maxZ="974">
+				<node x="213983" y="79721" />
+				<node x="214538" y="79316" />
+				<node x="214790" y="79689" />
+				<node x="214251" y="80086" />
+			</territory>
+		</territories>
+		<npc id="33566" x="214341" y="79639" z="824" heading="7699" respawnTime="1sec" /> <!-- Hermuncus' Minion -->
+	</spawn>
+	<spawn name="magmeld02_2620_37_km1">
+		<territories>
+			<territory name="magmeld02_2620_37_k" minZ="1000" maxZ="1500">
+				<node x="225196" y="77584" />
+				<node x="226292" y="77408" />
+				<node x="226292" y="78268" />
+				<node x="225212" y="77892" />
+			</territory>
+		</territories>
+		<npc id="32920" x="225472" y="77728" z="1120" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="226016" y="77600" z="1104" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="226064" y="77968" z="1136" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_01_km1">
+		<territories>
+			<territory name="magmeld02_2620_01_k" minZ="888" maxZ="1388">
+				<node x="216952" y="76008" />
+				<node x="217360" y="76128" />
+				<node x="217720" y="76976" />
+				<node x="217464" y="77996" />
+				<node x="217304" y="77652" />
+				<node x="216944" y="77172" />
+			</territory>
+		</territories>
+		<npc id="32920" x="217160" y="76552" z="952" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="217392" y="77472" z="1040" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_13_km1">
+		<territories>
+			<territory name="magmeld02_2620_13_k" minZ="1200" maxZ="1700">
+				<node x="214896" y="70564" />
+				<node x="215556" y="70612" />
+				<node x="215732" y="70944" />
+				<node x="215280" y="71424" />
+				<node x="214828" y="71316" />
+				<node x="214652" y="70896" />
+			</territory>
+		</territories>
+		<npc id="32920" x="215420" y="70908" z="1296" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="214944" y="70912" z="1312" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18973" respawnTime="300sec" respawnRandom="30sec" /> <!-- Treekin Defender -->
+	</spawn>
+	<spawn name="magmeld02_2620_01_nm1">
+		<territories>
+			<territory name="magmeld02_2620_01_n" minZ="272" maxZ="872">
+				<node x="202932" y="78524" />
+				<node x="203172" y="78740" />
+				<node x="203364" y="79184" />
+				<node x="202692" y="79064" />
+				<node x="202640" y="78880" />
+				<node x="202640" y="78880" />
+				<node x="202452" y="78764" />
+				<node x="202528" y="78624" />
+			</territory>
+		</territories>
+		<npc id="18974" respawnTime="300sec" respawnRandom="105sec" /> <!-- Centaur Archer -->
+	</spawn>
+	<spawn name="magmeld02_2620_guard_km1">
+		<territories>
+			<territory name="magmeld02_2620_guard_k" minZ="1548" maxZ="2048">
+				<node x="222736" y="70288" />
+				<node x="224516" y="70588" />
+				<node x="224840" y="72752" />
+				<node x="222736" y="71996" />
+			</territory>
+		</territories>
+		<npc id="32920" x="224156" y="71105" z="1648" heading="-2896" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224072" y="70994" z="1664" heading="24280" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224209" y="70874" z="1664" heading="-21012" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224210" y="71284" z="1664" heading="2388" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223840" y="71212" z="1680" heading="16936" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224405" y="71156" z="1664" heading="-12788" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223900" y="70824" z="1664" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224043" y="71219" z="1664" heading="16436" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223925" y="71070" z="1660" heading="5836" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224368" y="70848" z="1664" heading="-8284" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223752" y="71041" z="1644" heading="13316" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223744" y="70840" z="1664" heading="-28660" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224293" y="71033" z="1664" heading="28800" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224223" y="70727" z="1680" heading="4156" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224394" y="71304" z="1680" heading="14780" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224068" y="70804" z="1664" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="22891" x="223460" y="71092" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22907" x="223732" y="70540" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22883" x="223508" y="71428" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22891" x="224196" y="71584" z="1668" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22867" x="223680" y="71668" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22899" x="223928" y="71564" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22883" x="223692" y="71736" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22891" x="223724" y="71692" z="1668" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22907" x="223516" y="71092" z="1668" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22867" x="223468" y="70676" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="223492" y="71056" z="1672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22907" x="223884" y="71564" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22867" x="223724" y="70612" z="1680" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22899" x="223476" y="70740" z="1680" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22867" x="224148" y="71560" z="1680" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22907" x="223548" y="71404" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22891" x="224152" y="71596" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22907" x="223440" y="70708" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22867" x="223904" y="71540" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="223544" y="71444" z="1660" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22867" x="223784" y="70572" z="1680" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22899" x="224504" y="71524" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22867" x="224536" y="71560" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22907" x="224472" y="71568" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22891" x="224512" y="71344" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="224572" y="71336" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22883" x="224532" y="71292" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22891" x="223412" y="71280" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="223356" y="71280" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22899" x="223384" y="71228" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22907" x="223316" y="70908" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22883" x="223380" y="70912" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22899" x="223356" y="70868" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22867" x="224340" y="71720" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="224392" y="71716" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="224360" y="71688" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22899" x="224552" y="71060" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22867" x="224508" y="71092" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="224520" y="71032" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22907" x="224468" y="70836" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22867" x="224456" y="70892" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="224492" y="70876" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="224412" y="70660" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22899" x="224364" y="70604" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22875" x="224400" y="70620" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22907" x="224048" y="70568" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22891" x="224072" y="70600" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="224016" y="70588" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22867" x="224080" y="71748" z="1648" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22899" x="224020" y="71756" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22875" x="224052" y="71720" z="1664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="23041" x="223710" y="71434" z="1712" heading="21404" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+		<npc id="23041" x="224400" y="71472" z="1708" heading="19416" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+		<npc id="23041" x="223604" y="70671" z="1708" heading="-30508" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+		<npc id="22867" x="224508" y="71092" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="224520" y="71032" z="1664" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22907" x="224468" y="70836" z="1664" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22867" x="224456" y="70892" z="1664" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22891" x="224492" y="70876" z="1664" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="224412" y="70660" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22899" x="224364" y="70604" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22875" x="224400" y="70620" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22907" x="224048" y="70568" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22891" x="224072" y="70600" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22875" x="224016" y="70588" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22867" x="224080" y="71748" z="1648" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22899" x="224020" y="71756" z="1664" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22875" x="224052" y="71720" z="1664" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="23041" x="223710" y="71434" z="1712" heading="21404" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+		<npc id="23041" x="224400" y="71472" z="1708" heading="19416" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+		<npc id="23041" x="223604" y="70671" z="1708" heading="-30508" respawnTime="3300sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+	</spawn>
+	<spawn name="2620_fieldraid_omega_golemm2">
+		<territories>
+			<territory name="2620_fieldraid_omega_golem" minZ="-221" maxZ="279">
+				<node x="199287" y="84317" />
+				<node x="199792" y="84249" />
+				<node x="199883" y="84774" />
+				<node x="199362" y="84894" />
+			</territory>
+		</territories>
+		<npc id="18919" respawnTime="60sec" /> <!--  -->
+	</spawn>
+	<spawn name="magmeld02_2620_11_sm1">
+		<territories>
+			<territory name="magmeld02_2620_11_s" minZ="132" maxZ="632">
+				<node x="217356" y="91420" />
+				<node x="217704" y="91688" />
+				<node x="217748" y="92492" />
+				<node x="217356" y="92580" />
+				<node x="216900" y="91972" />
+			</territory>
+		</territories>
+		<npc id="32919" x="217404" y="92264" z="316" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217536" y="91776" z="208" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_23_nm1">
+		<territories>
+			<territory name="magmeld02_2620_23_n" minZ="528" maxZ="1028">
+				<node x="202484" y="71508" />
+				<node x="203200" y="71104" />
+				<node x="203540" y="71780" />
+				<node x="203184" y="71968" />
+			</territory>
+		</territories>
+		<npc id="32919" x="203012" y="71564" z="656" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="203190" y="71180" z="696" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_35_km1">
+		<territories>
+			<territory name="magmeld02_2620_35_k" minZ="1052" maxZ="1552">
+				<node x="225776" y="74444" />
+				<node x="226312" y="74672" />
+				<node x="226188" y="75620" />
+				<node x="225612" y="75740" />
+				<node x="225748" y="74984" />
+			</territory>
+		</territories>
+		<npc id="32920" x="225904" y="75392" z="1168" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="226000" y="74928" z="1216" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_11_km1">
+		<territories>
+			<territory name="magmeld02_2620_11_k" minZ="936" maxZ="1436">
+				<node x="214264" y="73644" />
+				<node x="214612" y="73172" />
+				<node x="214952" y="73748" />
+				<node x="214296" y="74048" />
+			</territory>
+		</territories>
+		<npc id="32920" x="214496" y="73648" z="992" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18973" respawnTime="300sec" /> <!-- Treekin Defender -->
+	</spawn>
+	<spawn name="magmeld02_2620_23_km1">
+		<territories>
+			<territory name="magmeld02_2620_23_k" minZ="936" maxZ="1436">
+				<node x="222956" y="80612" />
+				<node x="223452" y="80780" />
+				<node x="223528" y="81492" />
+				<node x="222956" y="82024" />
+				<node x="222656" y="81300" />
+			</territory>
+		</territories>
+		<npc id="32920" x="223296" y="81376" z="992" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223248" y="80976" z="1040" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="222976" y="80880" z="1104" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="222896" y="81280" z="1040" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18975" respawnTime="300sec" respawnRandom="30sec" /> <!-- Centaur Archer -->
+	</spawn>
+	<spawn name="magmeld02_2620_11_nm1">
+		<territories>
+			<territory name="magmeld02_2620_11_n" minZ="420" maxZ="1020">
+				<node x="206608" y="76176" />
+				<node x="207876" y="76328" />
+				<node x="207056" y="77340" />
+				<node x="206468" y="76924" />
+				<node x="206312" y="76660" />
+			</territory>
+		</territories>
+		<npc id="32919" x="206948" y="76916" z="736" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="206784" y="76384" z="672" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="207324" y="76496" z="784" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="206560" y="76688" z="620" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_24_nm1">
+		<territories>
+			<territory name="magmeld02_2620_24_n" minZ="356" maxZ="856">
+				<node x="203860" y="70988" />
+				<node x="204420" y="71368" />
+				<node x="205040" y="72600" />
+				<node x="203856" y="73500" />
+				<node x="203452" y="72424" />
+				<node x="203524" y="71548" />
+			</territory>
+		</territories>
+		<npc id="32919" x="204084" y="71876" z="624" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204250" y="72125" z="636" heading="12096" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204130" y="72101" z="588" heading="3920" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204274" y="72007" z="624" heading="-20288" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204152" y="72002" z="624" heading="-20116" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204054" y="71957" z="612" heading="12532" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204352" y="72048" z="624" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204304" y="72192" z="592" heading="-7692" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204352" y="71888" z="640" heading="-2556" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204224" y="71872" z="624" heading="18816" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="203992" y="72084" z="600" heading="17352" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204240" y="71760" z="640" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204384" y="71776" z="656" heading="-13836" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="22881" x="204032" y="72256" z="560" heading="15220" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22889" x="204096" y="72336" z="560" heading="7192" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Wizard -->
+		<npc id="22865" x="204160" y="72272" z="576" heading="17500" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22873" x="204256" y="72384" z="560" heading="20324" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22897" x="203936" y="72256" z="560" heading="23004" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Summoner -->
+		<npc id="22873" x="203856" y="72208" z="560" heading="27364" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22881" x="203794" y="72074" z="560" heading="-20184" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22865" x="203648" y="71964" z="576" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22865" x="203660" y="71936" z="576" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22905" x="203779" y="71808" z="584" heading="-15960" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22865" x="203891" y="71784" z="604" heading="-15848" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22897" x="204032" y="71680" z="624" heading="-16208" respawnTime="1620sec" respawnRandom="199sec" /> <!-- Satyr Summoner -->
+		<npc id="22881" x="204144" y="71616" z="640" heading="-10376" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22881" x="204272" y="71584" z="656" heading="-4052" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22865" x="204368" y="71600" z="672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22905" x="204448" y="71680" z="688" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22905" x="204496" y="71824" z="672" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="22865" x="204512" y="71936" z="656" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22873" x="204480" y="72064" z="640" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="22881" x="204448" y="72192" z="608" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Knight -->
+		<npc id="22873" x="204368" y="72304" z="592" heading="10764" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Rogue -->
+		<npc id="33141" x="203752" y="72036" z="572" heading="-14324" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203744" y="72008" z="576" heading="8292" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203772" y="72032" z="584" heading="-31544" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203776" y="71980" z="576" heading="-8700" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203760" y="71936" z="576" heading="18204" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203721" y="72028" z="568" heading="-10780" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203809" y="72020" z="568" heading="9540" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203807" y="71986" z="576" heading="4596" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="203740" y="71968" z="576" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="22865" x="203656" y="72108" z="560" heading="23964" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Fairy Warrior -->
+		<npc id="22905" x="203688" y="72128" z="560" heading="12284" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Satyr Witch -->
+		<npc id="23041" x="203904" y="71936" z="640" heading="22664" respawnTime="1620sec" respawnRandom="200sec" /> <!-- Pan Direm -->
+	</spawn>
+	<spawn name="magmeld02_2620_12_sm1">
+		<territories>
+			<territory name="magmeld02_2620_12_s" minZ="124" maxZ="624">
+				<node x="218732" y="92312" />
+				<node x="219264" y="92384" />
+				<node x="219604" y="92676" />
+				<node x="219404" y="93108" />
+				<node x="218476" y="92664" />
+			</territory>
+		</territories>
+		<npc id="32919" x="218832" y="92608" z="288" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_24_km1">
+		<territories>
+			<territory name="magmeld02_2620_24_k" minZ="868" maxZ="1368">
+				<node x="222576" y="81452" />
+				<node x="222876" y="82104" />
+				<node x="222600" y="82832" />
+				<node x="222316" y="82884" />
+				<node x="222136" y="82224" />
+			</territory>
+		</territories>
+		<npc id="32920" x="222544" y="81840" z="1008" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="222416" y="82336" z="976" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_36_km1">
+		<territories>
+			<territory name="magmeld02_2620_36_k" minZ="1000" maxZ="1500">
+				<node x="225204" y="76248" />
+				<node x="226048" y="76412" />
+				<node x="226084" y="77252" />
+				<node x="225004" y="77352" />
+			</territory>
+		</territories>
+		<npc id="32920" x="225360" y="76544" z="1072" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="225352" y="77100" z="1088" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="225808" y="76880" z="1072" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18977" respawnTime="300sec" respawnRandom="30sec" /> <!-- Beorning Berserker -->
+	</spawn>
+	<spawn name="magmeld02_2620_12_nm1">
+		<territories>
+			<territory name="magmeld02_2620_12_n" minZ="228" maxZ="728">
+				<node x="205672" y="76004" />
+				<node x="206528" y="76224" />
+				<node x="205988" y="76804" />
+				<node x="205608" y="76460" />
+			</territory>
+		</territories>
+		<npc id="32919" x="205744" y="76400" z="336" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="206244" y="76240" z="464" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_12_km1">
+		<territories>
+			<territory name="magmeld02_2620_12_k" minZ="1188" maxZ="1688">
+				<node x="214024" y="70520" />
+				<node x="214492" y="71108" />
+				<node x="214408" y="71492" />
+				<node x="213628" y="71872" />
+				<node x="213404" y="71016" />
+			</territory>
+		</territories>
+		<npc id="32920" x="214032" y="70944" z="1360" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="213748" y="71448" z="1312" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_17_sm1">
+		<territories>
+			<territory name="magmeld02_2620_17_s" minZ="304" maxZ="804">
+				<node x="221648" y="91024" />
+				<node x="222176" y="91024" />
+				<node x="222064" y="91504" />
+				<node x="221756" y="91484" />
+			</territory>
+		</territories>
+		<npc id="32919" x="221952" y="91280" z="464" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_30_km1">
+		<territories>
+			<territory name="magmeld02_2620_30_k" minZ="812" maxZ="1312">
+				<node x="227284" y="78556" />
+				<node x="227592" y="78708" />
+				<node x="227132" y="79508" />
+				<node x="226868" y="79404" />
+			</territory>
+		</territories>
+		<npc id="32920" x="227460" y="78744" z="880" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="227088" y="79312" z="864" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_29_km1">
+		<territories>
+			<territory name="magmeld02_2620_29_k" minZ="776" maxZ="1276">
+				<node x="226772" y="79480" />
+				<node x="226984" y="79720" />
+				<node x="226660" y="80664" />
+				<node x="225968" y="80572" />
+			</territory>
+		</territories>
+		<npc id="32920" x="226592" y="80488" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_17_nm1">
+		<territories>
+			<territory name="magmeld02_2620_17_n" minZ="100" maxZ="600">
+				<node x="203348" y="74916" />
+				<node x="204360" y="74920" />
+				<node x="204164" y="75208" />
+				<node x="203208" y="75564" />
+				<node x="202932" y="74328" />
+			</territory>
+		</territories>
+		<npc id="32919" x="203472" y="75184" z="224" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="203940" y="75055" z="216" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_05_sm1">
+		<territories>
+			<territory name="magmeld02_2620_05_s" minZ="652" maxZ="1152">
+				<node x="217904" y="85552" />
+				<node x="218028" y="86116" />
+				<node x="217880" y="86456" />
+				<node x="216728" y="86804" />
+				<node x="216644" y="86028" />
+				<node x="217392" y="85936" />
+				<node x="217392" y="85348" />
+			</territory>
+		</territories>
+		<npc id="18972" respawnTime="300sec" /> <!-- Treekin Defender -->
+	</spawn>
+	<spawn name="magmeld02_2620_29_nm1">
+		<territories>
+			<territory name="magmeld02_2620_29_n" minZ="524" maxZ="1024">
+				<node x="208040" y="73480" />
+				<node x="208244" y="73832" />
+				<node x="208804" y="74308" />
+				<node x="208384" y="74356" />
+				<node x="208132" y="74144" />
+				<node x="207632" y="73952" />
+			</territory>
+		</territories>
+		<npc id="32919" x="208160" y="74016" z="640" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="207952" y="73712" z="592" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_05_km1">
+		<territories>
+			<territory name="magmeld02_2620_05_k" minZ="1044" maxZ="1544">
+				<node x="221376" y="76088" />
+				<node x="221860" y="76960" />
+				<node x="221960" y="77688" />
+				<node x="221612" y="78300" />
+				<node x="221076" y="77328" />
+				<node x="220828" y="76816" />
+			</territory>
+		</territories>
+		<npc id="32920" x="221536" y="77664" z="1388" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="221328" y="76784" z="1232" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_17_km1">
+		<territories>
+			<territory name="magmeld02_2620_17_k" minZ="1116" maxZ="1616">
+				<node x="220348" y="70488" />
+				<node x="220612" y="70320" />
+				<node x="220616" y="71088" />
+				<node x="220124" y="71172" />
+				<node x="220140" y="70896" />
+			</territory>
+		</territories>
+		<npc id="32920" x="220464" y="70880" z="1184" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_05_nm1">
+		<territories>
+			<territory name="magmeld02_2620_05_n" minZ="468" maxZ="968">
+				<node x="209736" y="77676" />
+				<node x="209756" y="78436" />
+				<node x="209300" y="78760" />
+				<node x="208360" y="78692" />
+				<node x="208272" y="78316" />
+				<node x="208596" y="77864" />
+				<node x="208828" y="77548" />
+			</territory>
+		</territories>
+		<npc id="22871" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22863" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22895" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+		<npc id="32919" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_10_sm1">
+		<territories>
+			<territory name="magmeld02_2620_10_s" minZ="252" maxZ="752">
+				<node x="216456" y="90108" />
+				<node x="217036" y="90636" />
+				<node x="217276" y="91328" />
+				<node x="216640" y="91892" />
+				<node x="216408" y="91224" />
+				<node x="216020" y="90636" />
+				<node x="215924" y="90380" />
+			</territory>
+		</territories>
+		<npc id="32919" x="216784" y="91488" z="464" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="216576" y="91056" z="512" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="216288" y="90576" z="528" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_34_km1">
+		<territories>
+			<territory name="magmeld02_2620_34_k" minZ="912" maxZ="1412">
+				<node x="226616" y="74880" />
+				<node x="227452" y="75344" />
+				<node x="227300" y="75556" />
+				<node x="226424" y="75300" />
+			</territory>
+		</territories>
+		<npc id="32920" x="226736" y="75152" z="1088" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="227136" y="75296" z="1024" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_10_nm1">
+		<territories>
+			<territory name="magmeld02_2620_10_n" minZ="352" maxZ="852">
+				<node x="206156" y="76924" />
+				<node x="206596" y="77280" />
+				<node x="206696" y="77844" />
+				<node x="205760" y="78084" />
+				<node x="205696" y="76868" />
+			</territory>
+		</territories>
+		<npc id="32919" x="205948" y="77748" z="544" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="206002" y="77355" z="504" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="18974" respawnTime="300sec" respawnRandom="105sec" /> <!-- Centaur Archer -->
+	</spawn>
+	<spawn name="magmeld02_2620_22_nm1">
+		<territories>
+			<territory name="magmeld02_2620_22_n" minZ="368" maxZ="868">
+				<node x="202236" y="72108" />
+				<node x="202788" y="71704" />
+				<node x="202964" y="72924" />
+				<node x="202612" y="73188" />
+				<node x="202108" y="72748" />
+			</territory>
+		</territories>
+		<npc id="32919" x="202724" y="72888" z="636" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="202400" y="72224" z="640" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="202688" y="72052" z="624" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="18972" respawnTime="300sec" respawnRandom="105sec" /> <!-- Treekin Defender -->
+	</spawn>
+	<spawn name="magmeld02_2620_09_sm1">
+		<territories>
+			<territory name="magmeld02_2620_09_s" minZ="204" maxZ="704">
+				<node x="218452" y="90020" />
+				<node x="218996" y="90272" />
+				<node x="218468" y="91284" />
+				<node x="217784" y="91488" />
+				<node x="217180" y="90776" />
+				<node x="217716" y="89852" />
+				<node x="217716" y="89852" />
+			</territory>
+		</territories>
+		<npc id="32919" x="217860" y="90696" z="480" heading="16736" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217943" y="90787" z="432" heading="-8512" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="218089" y="90794" z="368" heading="7044" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="218048" y="90912" z="372" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217882" y="90912" z="352" heading="-25076" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="218068" y="90656" z="464" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217904" y="90624" z="432" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217727" y="90810" z="384" heading="-9788" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217728" y="90624" z="464" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="218000" y="90512" z="416" heading="20352" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217728" y="90960" z="368" heading="9540" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="32919" x="217600" y="90816" z="432" heading="-11680" respawnTime="1800sec" respawnRandom="200sec" /> <!-- Cocoon -->
+		<npc id="33141" x="218352" y="90752" z="376" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218336" y="90784" z="368" heading="21876" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218320" y="90752" z="376" heading="-20876" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218304" y="90784" z="364" heading="-6864" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218272" y="90800" z="360" heading="-21460" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218320" y="90816" z="360" heading="-11792" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218288" y="90736" z="372" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218272" y="90768" z="368" heading="-4548" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="33141" x="218288" y="90832" z="352" heading="13636" respawnTime="1800sec" respawnRandom="30sec" /> <!-- Fairy Citizen -->
+		<npc id="22889" x="218416" y="90544" z="400" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Wizard -->
+		<npc id="22865" x="218128" y="90448" z="416" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22873" x="218184" y="90536" z="416" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22905" x="218048" y="90272" z="448" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Witch -->
+		<npc id="22873" x="217952" y="90384" z="448" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22881" x="217840" y="90288" z="464" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Knight -->
+		<npc id="22865" x="217776" y="90368" z="480" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22865" x="217680" y="90320" z="464" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22873" x="217600" y="90576" z="480" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22897" x="217444" y="90600" z="476" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+		<npc id="22881" x="217472" y="90736" z="448" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Knight -->
+		<npc id="22897" x="217472" y="90848" z="432" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+		<npc id="22873" x="217584" y="90976" z="368" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22889" x="217636" y="91060" z="344" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Wizard -->
+		<npc id="22873" x="217888" y="91092" z="320" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22865" x="217948" y="91072" z="320" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="22905" x="218176" y="91044" z="336" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Witch -->
+		<npc id="22873" x="218192" y="90864" z="352" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22905" x="218120" y="91064" z="320" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Witch -->
+		<npc id="22897" x="218336" y="90928" z="352" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+		<npc id="22889" x="218464" y="90800" z="384" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Wizard -->
+		<npc id="22873" x="218488" y="90752" z="384" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22897" x="218368" y="90528" z="400" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Satyr Summoner -->
+		<npc id="23041" x="218089" y="90794" z="360" heading="7044" respawnTime="1620sec" respawnRandom="30sec" /> <!-- Pan Direm -->
+	</spawn>
+	<spawn name="magmeld02_2620_15_km1">
+		<territories>
+			<territory name="magmeld02_2620_15_k" minZ="984" maxZ="1484">
+				<node x="217888" y="71392" />
+				<node x="219276" y="71368" />
+				<node x="218924" y="71632" />
+				<node x="218204" y="71796" />
+				<node x="217808" y="71800" />
+			</territory>
+		</territories>
+		<npc id="32920" x="218016" y="71520" z="1060" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="218624" y="71584" z="1168" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_03_nm1">
+		<territories>
+			<territory name="magmeld02_2620_03_n" minZ="360" maxZ="860">
+				<node x="205072" y="78576" />
+				<node x="205468" y="78844" />
+				<node x="205892" y="79184" />
+				<node x="204828" y="79644" />
+				<node x="204404" y="79260" />
+				<node x="204664" y="78708" />
+			</territory>
+		</territories>
+		<npc id="22871" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Rogue -->
+		<npc id="22879" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Knight -->
+	</spawn>
+	<spawn name="magmeld02_2620_27_km1">
+		<territories>
+			<territory name="magmeld02_2620_27_k" minZ="860" maxZ="1360">
+				<node x="225220" y="82752" />
+				<node x="225464" y="82852" />
+				<node x="225204" y="83644" />
+				<node x="224956" y="83428" />
+			</territory>
+		</territories>
+		<npc id="32920" x="225200" y="83136" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_15_nm1">
+		<territories>
+			<territory name="magmeld02_2620_15_n" minZ="200" maxZ="500">
+				<node x="204372" y="75224" />
+				<node x="205496" y="75388" />
+				<node x="205288" y="75868" />
+				<node x="204416" y="75608" />
+			</territory>
+		</territories>
+		<npc id="32919" x="205144" y="75568" z="304" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204632" y="75452" z="288" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_03_km1">
+		<territories>
+			<territory name="magmeld02_2620_03_k" minZ="904" maxZ="1404">
+				<node x="218836" y="77980" />
+				<node x="219936" y="77720" />
+				<node x="219816" y="79052" />
+				<node x="218604" y="79224" />
+				<node x="218324" y="78640" />
+			</territory>
+		</territories>
+		<npc id="32920" x="218800" y="78832" z="992" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="219472" y="78800" z="976" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="219520" y="78096" z="1040" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="18977" respawnTime="300sec" /> <!-- Beorning Berserker -->
+	</spawn>
+	<spawn name="magmeld02_2620_27_nm1">
+		<territories>
+			<territory name="magmeld02_2620_27_n" minZ="364" maxZ="864">
+				<node x="203140" y="72632" />
+				<node x="203620" y="72484" />
+				<node x="203620" y="73364" />
+				<node x="203380" y="73312" />
+			</territory>
+		</territories>
+		<npc id="32919" x="203408" y="73008" z="480" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_15_sm1">
+		<territories>
+			<territory name="magmeld02_2620_15_s" minZ="144" maxZ="644">
+				<node x="220940" y="90880" />
+				<node x="220896" y="92136" />
+				<node x="220948" y="93040" />
+				<node x="220388" y="92132" />
+				<node x="220508" y="91296" />
+			</territory>
+		</territories>
+		<npc id="32919" x="220688" y="92112" z="464" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="220720" y="91568" z="440" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_04_km1">
+		<territories>
+			<territory name="magmeld02_2620_04_k" minZ="916" maxZ="1416">
+				<node x="220248" y="78128" />
+				<node x="221052" y="78968" />
+				<node x="220960" y="79316" />
+				<node x="220104" y="79476" />
+				<node x="220384" y="78892" />
+			</territory>
+		</territories>
+		<npc id="32920" x="220584" y="78728" z="1008" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="220576" y="79136" z="1008" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_16_km1">
+		<territories>
+			<territory name="magmeld02_2620_16_k" minZ="1220" maxZ="1720">
+				<node x="218836" y="70528" />
+				<node x="219524" y="70800" />
+				<node x="219524" y="71100" />
+				<node x="218940" y="70876" />
+			</territory>
+		</territories>
+		<npc id="32920" x="219248" y="70864" z="1360" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_04_sm1">
+		<territories>
+			<territory name="magmeld02_2620_04_s" minZ="528" maxZ="1028">
+				<node x="216336" y="84848" />
+				<node x="216776" y="84504" />
+				<node x="217272" y="85568" />
+				<node x="216276" y="85720" />
+			</territory>
+		</territories>
+		<npc id="22903" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Witch -->
+		<npc id="22863" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Warrior -->
+		<npc id="32919" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_28_nm1">
+		<territories>
+			<territory name="magmeld02_2620_28_n" minZ="484" maxZ="984">
+				<node x="206836" y="73380" />
+				<node x="207356" y="73832" />
+				<node x="207856" y="74144" />
+				<node x="207164" y="74632" />
+				<node x="206904" y="74188" />
+			</territory>
+		</territories>
+		<npc id="32919" x="207456" y="74068" z="624" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="207072" y="73872" z="672" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_16_sm1">
+		<territories>
+			<territory name="magmeld02_2620_16_s" minZ="344" maxZ="844">
+				<node x="220520" y="90016" />
+				<node x="221984" y="90448" />
+				<node x="221912" y="90832" />
+				<node x="221180" y="91016" />
+			</territory>
+		</territories>
+		<npc id="32919" x="221680" y="90592" z="448" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="221328" y="90752" z="432" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_28_km1">
+		<territories>
+			<territory name="magmeld02_2620_28_k" minZ="804" maxZ="1304">
+				<node x="226392" y="81192" />
+				<node x="226060" y="81720" />
+				<node x="225476" y="82012" />
+				<node x="224896" y="82076" />
+				<node x="224992" y="81416" />
+				<node x="225460" y="81052" />
+			</territory>
+		</territories>
+		<npc id="32920" x="225984" y="81328" z="864" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="225760" y="81648" z="864" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="225424" y="81440" z="864" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="225060" y="81588" z="992" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="225344" y="81856" z="896" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_04_nm1">
+		<territories>
+			<territory name="magmeld02_2620_04_n" minZ="468" maxZ="1068">
+				<node x="208176" y="78404" />
+				<node x="208112" y="78820" />
+				<node x="207372" y="79268" />
+				<node x="206700" y="78856" />
+				<node x="207348" y="78516" />
+				<node x="207452" y="78116" />
+			</territory>
+		</territories>
+		<npc id="22879" respawnTime="90sec" respawnRandom="30sec" /> <!-- Fairy Knight -->
+		<npc id="22903" respawnTime="90sec" respawnRandom="30sec" /> <!-- Satyr Witch -->
+	</spawn>
+	<spawn name="magmeld02_2620_16_nm1">
+		<territories>
+			<territory name="magmeld02_2620_16_n" minZ="340" maxZ="940">
+				<node x="204608" y="73636" />
+				<node x="205904" y="74112" />
+				<node x="205604" y="74712" />
+				<node x="205060" y="74892" />
+				<node x="204316" y="74536" />
+			</territory>
+		</territories>
+		<npc id="32919" x="204604" y="74440" z="664" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="204752" y="73952" z="640" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="205200" y="74592" z="640" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="18972" respawnTime="300sec" respawnRandom="105sec" /> <!-- Treekin Defender -->
+	</spawn>
+	<spawn name="magmeld02_2620_09_km1">
+		<territories>
+			<territory name="magmeld02_2620_09_k" minZ="860" maxZ="1360">
+				<node x="217256" y="71888" />
+				<node x="217604" y="71892" />
+				<node x="217852" y="72764" />
+				<node x="216868" y="73232" />
+				<node x="216904" y="72456" />
+				<node x="217320" y="72300" />
+			</territory>
+		</territories>
+		<npc id="32920" x="217088" y="72784" z="992" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="217632" y="72700" z="1024" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="217568" y="72064" z="1040" respawnTime="300sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_10_km1">
+		<territories>
+			<territory name="magmeld02_2620_10_k" minZ="872" maxZ="1372">
+				<node x="215884" y="72724" />
+				<node x="216724" y="72828" />
+				<node x="216792" y="73300" />
+				<node x="215860" y="73420" />
+				<node x="215020" y="73628" />
+				<node x="214756" y="73096" />
+			</territory>
+		</territories>
+		<npc id="32920" x="215264" y="73248" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="215760" y="73216" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="216384" y="73072" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_22_km1">
+		<territories>
+			<territory name="magmeld02_2620_22_k" minZ="820" maxZ="1320">
+				<node x="224124" y="80336" />
+				<node x="224592" y="80420" />
+				<node x="224604" y="81900" />
+				<node x="223772" y="81696" />
+				<node x="223640" y="81040" />
+			</territory>
+		</territories>
+		<npc id="32920" x="224352" y="81568" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223936" y="81440" z="960" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="223792" y="80976" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224240" y="81056" z="944" respawnTime="90sec" respawnRandom="30sec" /> <!-- Large Cocoon -->
+		<npc id="32920" x="224128" y="80576" z="912" respawnTime="300sec" /> <!-- Large Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_09_nm1">
+		<territories>
+			<territory name="magmeld02_2620_09_n" minZ="796" maxZ="1296">
+				<node x="208156" y="76276" />
+				<node x="208860" y="76580" />
+				<node x="209076" y="77164" />
+				<node x="208156" y="77128" />
+				<node x="207912" y="76736" />
+			</territory>
+		</territories>
+		<npc id="32919" x="208897" y="76977" z="1104" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="208340" y="76928" z="996" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="208144" y="76580" z="928" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+	</spawn>
+	<spawn name="magmeld02_2620_25_2_nm1">
+		<territories>
+			<territory name="magmeld02_2620_25_2_n" minZ="652" maxZ="1152">
+				<node x="205364" y="72064" />
+				<node x="205952" y="71776" />
+				<node x="206432" y="72836" />
+				<node x="205484" y="72864" />
+			</territory>
+		</territories>
+		<npc id="32919" x="205984" y="72524" z="768" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="205632" y="72368" z="800" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="32919" x="205584" y="72704" z="784" respawnTime="60sec" respawnRandom="30sec" /> <!-- Cocoon -->
+		<npc id="18974" respawnTime="300sec" respawnRandom="105sec" /> <!-- Centaur Archer -->
 	</spawn>
 </list>
