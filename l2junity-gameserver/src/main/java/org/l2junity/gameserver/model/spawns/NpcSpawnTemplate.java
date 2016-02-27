@@ -253,6 +253,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 			{
 				if (npcTemplate.isType("L2Defender"))
 				{
+					LOGGER.warn("Attempting to spawn npc id: {} type: {} file: {} spawn: {} group: {}", _id, npcTemplate.getType(), _spawnTemplate.getFile().getName(), _spawnTemplate.getName(), _group.getName());
 					return;
 				}
 				
