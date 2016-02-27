@@ -555,6 +555,16 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		// Set is not random walk default value
 		npc.setRandomWalking(getRandomWalking());
 		
+		// Set the heading of the L2NpcInstance (random heading if not defined)
+		if (getHeading() == -1)
+		{
+			npc.setHeading(Rnd.nextInt(61794));
+		}
+		else
+		{
+			npc.setHeading(getHeading());
+		}
+		
 		// Reset some variables
 		npc.onRespawn();
 		

@@ -1008,16 +1008,6 @@ public class Npc extends Creature
 			getVariables().getSet().clear();
 		}
 		
-		// Set the heading of the L2NpcInstance (random heading if not defined)
-		if (getHeading() == -1)
-		{
-			setHeading(Rnd.nextInt(61794));
-		}
-		else
-		{
-			setHeading(getHeading());
-		}
-		
 		// Reset targetable state
 		setTargetable(getTemplate().isTargetable());
 		
