@@ -10784,6 +10784,11 @@ public final class PlayerInstance extends Playable
 	{
 		cleanup();
 		storeMe();
+		
+		// Stop all passives and augment options
+		getEffectList().stopAllPassives(false);
+		getEffectList().stopAllOptions(false);
+		
 		return super.deleteMe();
 	}
 	
