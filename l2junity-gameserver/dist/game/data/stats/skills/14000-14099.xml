@@ -2267,7 +2267,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14068" toLevel="6" name="Garden Inducement">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1239</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -2308,9 +2308,19 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<value level="1">616</value>
+				<value level="2">143</value>
+				<value level="3">147</value>
+				<value level="4">151</value>
+				<value level="5">156</value>
+				<value level="6">156</value>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14069" toLevel="6" name="Garden Dark Magic">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd./Casting Spd./Speed are decreased. -->
 		<icon>icon.skill0279</icon>
 		<operateType>A2</operateType>
@@ -2358,9 +2368,31 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<value level="1">410</value>
+				<value level="2">143</value>
+				<value level="3">147</value>
+				<value level="4">151</value>
+				<value level="5">156</value>
+				<value level="6">156</value>
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14070" toLevel="6" name="Branch Straightening">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -2408,9 +2440,22 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">200</value>
+					<value level="2">300</value>
+					<value level="3">320</value>
+					<value level="4">320</value>
+					<value level="5">360</value>
+					<value level="6">400</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14071" toLevel="6" name="Destroyer's Friction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
 		<mpConsume>77</mpConsume>
@@ -2433,6 +2478,15 @@
 		<conditions>
 			<condition name="OpCheckCrtEffect" />
 		</conditions>
+		<effects>
+			<effect name="PullBack">
+				<speed>900</speed>
+				<delay>900</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14072" toLevel="6" name="Gardener Blow">
 		<!-- AUTO GENERATED SKILL -->
@@ -2475,9 +2529,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>143015</power>
+			</effect>
+			<effect name="PAtk">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14073" toLevel="6" name="Garden Destroyer Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -2513,9 +2576,17 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">123162</value>
+					<value fromLevel="2" toLevel="6">36227</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14074" toLevel="1" name="Garden Destroyer Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill0048</icon>
 		<operateType>A2</operateType>
@@ -2537,9 +2608,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="PullBack">
+				<speed>900</speed>
+				<delay>900</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14075" toLevel="1" name="Harmful Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed is decreased. -->
 		<icon>icon.skill0127</icon>
 		<operateType>A2</operateType>
@@ -2559,9 +2639,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14076" toLevel="1" name="Harmful Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed is decreased. -->
 		<icon>icon.skill1206</icon>
 		<operateType>A2</operateType>
@@ -2581,9 +2667,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14077" toLevel="6" name="Gardener Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0070</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -2624,9 +2716,22 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HpDrain">
+				<power>
+					<value level="1">250</value>
+					<value level="2">127</value>
+					<value level="3">127</value>
+					<value level="4">128</value>
+					<value level="5">170</value>
+					<value level="6">129</value>
+				</power>
+				<percentage>15</percentage>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14078" toLevel="6" name="Pirate Gardener Shock">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill0048</icon>
 		<operateType>A2</operateType>
@@ -2674,9 +2779,24 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">7461</value>
+					<value level="2">7544</value>
+					<value level="3">7619</value>
+					<value level="4">48706</value>
+					<value level="5">7772</value>
+					<value level="6">7772</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14079" toLevel="1" name="Garden Reflect">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Reflects 25% of incurred damage. -->
 		<icon>icon.skill4095</icon>
 		<operateType>A2</operateType>
@@ -2694,6 +2814,11 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageShield">
+				<amount>25</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14080" toLevel="1" name="Self Defense">
 		<!-- AUTO GENERATED SKILL -->
@@ -2715,9 +2840,15 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14081" toLevel="6" name="Garden Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -2753,9 +2884,14 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>182082</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14082" toLevel="6" name="Gardener's Wrath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -2791,9 +2927,14 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>253527</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14083" toLevel="1" name="Garden Elixir">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Petrify status. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A2</operateType>
@@ -2812,9 +2953,19 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="Invincible" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14084" toLevel="6" name="Garden Range Bleed">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -2862,9 +3013,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>442</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14085" toLevel="1" name="Protection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
 		<mpConsume>77</mpConsume>
@@ -2882,9 +3039,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HpDrain">
+				<power>1018</power>
+				<percentage>50</percentage>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14086" toLevel="1" name="Apherus Gate Key Discovery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
@@ -2898,7 +3061,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14087" toLevel="6" name="Apherus' Binding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -2935,9 +3098,40 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>126482</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- NPC Hex -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14088" toLevel="1" name="Garden Apherus Recovery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -2956,9 +3150,15 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>10</amount>
+				<chance>30</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14089" toLevel="5" name="Reflect">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -2994,9 +3194,21 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HpDrain">
+				<power>
+					<value level="1">126</value>
+					<value level="2">127</value>
+					<value level="3">127</value>
+					<value level="4">128</value>
+					<value level="5">129</value>
+				</power>
+				<percentage>20</percentage>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14090" toLevel="6" name="Apherus Paralysis">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Paralysis status. -->
 		<icon>icon.skill014090</icon>
 		<operateType>A2</operateType>
@@ -3037,9 +3249,24 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">7461</value>
+					<value level="2">7544</value>
+					<value level="3">46622</value>
+					<value level="4">7695</value>
+					<value level="5">7772</value>
+					<value level="6">7772</value>
+				</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14091" toLevel="6" name="Rose Poison">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poisoned by a rose. P. Def. and Stun Resistance are decreased. -->
 		<icon>icon.skill1069</icon>
 		<operateType>A2</operateType>
@@ -3076,9 +3303,21 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<SHOCK>100</SHOCK>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14092" toLevel="6" name="Entangle">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Plants envelope the body to decrease physical Atk. Spd. and Hold Resistance. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
@@ -3122,6 +3361,16 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="BlockMove" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14093" toLevel="5" name="Sakum Follower Blow">
 		<!-- Glory Days Confimed -->
