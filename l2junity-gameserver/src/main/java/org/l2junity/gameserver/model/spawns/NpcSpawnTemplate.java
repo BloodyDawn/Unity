@@ -251,6 +251,11 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 			final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_id);
 			if (npcTemplate != null)
 			{
+				if (npcTemplate.isType("L2Defender"))
+				{
+					return;
+				}
+				
 				final L2Spawn spawn = new L2Spawn(npcTemplate);
 				final Location loc = getSpawnLocation();
 				if (loc == null)

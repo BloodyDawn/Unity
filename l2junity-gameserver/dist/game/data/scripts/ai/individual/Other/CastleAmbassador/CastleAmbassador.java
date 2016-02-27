@@ -148,8 +148,15 @@ public final class CastleAmbassador extends AbstractNpcAI
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		final Castle castle = npc.getFort().getCastleByAmbassador(npc.getId());
-		if (castle.getOwnerId() == 0)
+		final Fort fort = npc.getFort();
+		if (fort == null)
+		{
+			npc.deleteMe();
+			return null;
+		}
+		
+		final Castle castle = fort.getCastleByAmbassador(npc.getId());
+		if ((castle == null) || (castle.getOwnerId() == 0))
 		{
 			npc.deleteMe();
 		}
