@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.spawns.SpawnGroup;
 import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.model.zone.type.PeaceZone;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
@@ -51,7 +50,7 @@ public final class AncientArcanCity extends AbstractNpcAI
 	private static final Location ANCIENT_ARCAN_CITY = new Location(207559, 86429, -1000);
 	private static final Location EARTHQUAKE = new Location(207088, 88720, -1128);
 	// Zones
-	private static final PeaceZone TOWN_ZONE = ZoneManager.getInstance().getZoneById(23600, PeaceZone.class); // Ancient Arcan City zone
+	private static final ScriptZone BROADCAST_ZONE = ZoneManager.getInstance().getZoneById(23600, ScriptZone.class); // Ancient Arcan City zone
 	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12015, ScriptZone.class); // Anghel Waterfall teleport zone
 	// Misc
 	private static final int CHANGE_STATE_TIME = 1800000; // 30min
@@ -60,7 +59,7 @@ public final class AncientArcanCity extends AbstractNpcAI
 	
 	private AncientArcanCity()
 	{
-		addEnterZoneId(TOWN_ZONE.getId(), TELEPORT_ZONE.getId());
+		addEnterZoneId(BROADCAST_ZONE.getId(), TELEPORT_ZONE.getId());
 		startQuestTimer("CHANGE_STATE", CHANGE_STATE_TIME, null, null, true);
 	}
 	
@@ -71,7 +70,7 @@ public final class AncientArcanCity extends AbstractNpcAI
 		{
 			isCeremonyRunning = !isCeremonyRunning;
 			
-			for (PlayerInstance temp : TOWN_ZONE.getPlayersInside())
+			for (PlayerInstance temp : BROADCAST_ZONE.getPlayersInside())
 			{
 				temp.sendPacket(new OnEventTrigger(262001, !isCeremonyRunning));
 				temp.sendPacket(new OnEventTrigger(262003, isCeremonyRunning));
