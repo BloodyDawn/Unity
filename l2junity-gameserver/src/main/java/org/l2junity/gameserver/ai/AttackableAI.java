@@ -774,14 +774,17 @@ public class AttackableAI extends CharacterAI implements Runnable
 				final Skill healSkill = npc.getTemplate().getAISkills(AISkillScope.HEAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.HEAL).size()));
 				if (SkillCaster.checkUseConditions(npc, healSkill))
 				{
-					Creature healTarget = skillTargetReconsider(healSkill, false);
-					double healChance = (100 - healTarget.getCurrentHpPercent()) * 1.5; // Ensure heal chance is always 100% if HP is below 33%.
-					if ((Rnd.get(100) < healChance) && checkSkillTarget(healSkill, healTarget))
+					final Creature healTarget = skillTargetReconsider(healSkill, false);
+					if (healTarget != null)
 					{
-						npc.setTarget(healTarget);
-						npc.doCast(healSkill);
-						LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, npc.getTarget());
-						return;
+						double healChance = (100 - healTarget.getCurrentHpPercent()) * 1.5; // Ensure heal chance is always 100% if HP is below 33%.
+						if ((Rnd.get(100) < healChance) && checkSkillTarget(healSkill, healTarget))
+						{
+							npc.setTarget(healTarget);
+							npc.doCast(healSkill);
+							LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, npc.getTarget());
+							return;
+						}
 					}
 				}
 			}
