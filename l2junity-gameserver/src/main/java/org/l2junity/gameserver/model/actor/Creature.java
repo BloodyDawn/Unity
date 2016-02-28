@@ -3435,16 +3435,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			object = null;
 		}
 		
-		if (isAttackable() && (object != _target))
-		{
-			PlayerInstance player = World.getInstance().getPlayer("Feoh");
-			if ((player != null) && Util.checkIfInRange(5000, this, player, false))
-			{
-				setTitle(String.valueOf(object));
-				broadcastInfo();
-			}
-		}
-		
 		_target = object;
 	}
 	

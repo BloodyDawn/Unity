@@ -755,6 +755,7 @@ public class CharacterAI extends AbstractAI
 		if (target == object)
 		{
 			getActor().setTarget(null);
+			getActor().abortCast(sc -> sc.getTarget() == object);
 			
 			if (isFollowing())
 			{
@@ -776,6 +777,7 @@ public class CharacterAI extends AbstractAI
 		{
 			// Cancel AI target
 			getActor().setTarget(null);
+			getActor().abortCast(sc -> sc.getTarget() == object);
 			
 			// Stop an AI Follow Task
 			stopFollow();

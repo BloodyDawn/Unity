@@ -165,7 +165,7 @@ public class SkillCaster implements Runnable
 		_castTime = getCastTime(_caster, skill, item);
 		_reuseDelay = _caster.getStat().getReuseTime(skill);
 		_skillMastery = Formulas.calcSkillMastery(_caster, skill);
-		_skillLaunched.set(_castTime < CASTING_TIME_CAP);
+		_skillLaunched.set(false);
 		return true;
 	}
 	
@@ -637,6 +637,14 @@ public class SkillCaster implements Runnable
 	}
 	
 	/**
+	 * @return the target this skill is being cast on.
+	 */
+	public WorldObject getTarget()
+	{
+		return _target;
+	}
+	
+	/**
 	 * @return the item that has been used in this casting.
 	 */
 	public ItemInstance getItem()
@@ -937,8 +945,8 @@ public class SkillCaster implements Runnable
 			}
 		}
 		
-		// Client have casting time cap for skills that is 500ms. Skills cannot go lower than 500ms cast time, unless their original cast time is such.
-		if (skill.getHitTime() > CASTING_TIME_CAP)
+		// Client have casting time cap for skills that is 500ms. Abnormal instant skills are excluded.
+		if (!skill.isAbnormalInstant())
 		{
 			skillTime = Math.max(CASTING_TIME_CAP, skillTime);
 		}
