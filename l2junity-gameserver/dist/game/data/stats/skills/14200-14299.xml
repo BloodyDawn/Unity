@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14200" toLevel="1" name="Blessing of Garden">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Critical P. Atk. is increased by 40%. -->
 		<icon>icon.skill1253</icon>
 		<operateType>A2</operateType>
@@ -20,6 +20,16 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14201" toLevel="1" name="Apherus Invincibility">
 		<!-- AUTO GENERATED SKILL -->
@@ -39,6 +49,9 @@
 		<hitTime>500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Invincible" />
+		</effects>
 	</skill>
 	<skill id="14202" toLevel="1" name="Garden Malice">
 		<!-- AUTO GENERATED SKILL -->
