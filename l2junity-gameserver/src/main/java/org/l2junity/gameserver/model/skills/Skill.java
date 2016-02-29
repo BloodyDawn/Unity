@@ -1143,7 +1143,10 @@ public final class Skill implements IIdentifiable
 				_log.warn("Exception in Skill.forEachTargetAffected(): " + e.getMessage(), e);
 			}
 		}
-		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+		else
+		{
+			activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+		}
 	}
 	
 	/**

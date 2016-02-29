@@ -922,7 +922,7 @@
 		<abnormalType>MARK_DEBUF_A</abnormalType>
 		<activateRate>90</activateRate>
 		<basicProperty>NONE</basicProperty>
-		<operateType>A2</operateType>
+		<operateType>A3</operateType>
 		<magicLvl>
 			<value level="1">85</value>
 			<value level="2">88</value>
@@ -966,6 +966,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<selfEffects>
+			<effect name="HealPercent">
+				<power>3</power>
+			</effect>
+			<effect name="ManaHealPercent">
+				<power>3</power>
+			</effect>
+		</selfEffects>
 		<effects>
 			<effect name="MagicalDamOverTime">
 				<power>
