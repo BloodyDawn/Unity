@@ -260,7 +260,7 @@ public final class Skill implements IIdentifiable
 		{
 			if (Config.DEBUG)
 			{
-				_log.info("*** Skill " + _name + " (" + _level + ") changed reuse from " + set.getInt("reuseDelay", 0) + " to " + Config.SKILL_REUSE_LIST.get(_id) + " seconds.");
+				_log.info("*** Skill {} ({}) changed reuse from {} to {} seconds.", _name, _level, set.getInt("reuseDelay", 0), Config.SKILL_REUSE_LIST.get(_id));
 			}
 			_reuseDelay = Config.SKILL_REUSE_LIST.get(_id);
 		}
@@ -292,7 +292,7 @@ public final class Skill implements IIdentifiable
 					}
 					catch (Exception e)
 					{
-						_log.warn("Bad data in rideState for skill " + this + " !\n" + e);
+						_log.warn("Bad data in rideState for skill {}!", this, e);
 					}
 				}
 			}
@@ -1080,10 +1080,10 @@ public final class Skill implements IIdentifiable
 			}
 			catch (Exception e)
 			{
-				_log.warn("Exception in Skill.getTarget(): " + e.getMessage(), e);
+				_log.warn("Exception in Skill.getTarget(): {}", e.getMessage(), e);
 			}
 		}
-		activeChar.sendMessage("Target type of skill is not currently handled.");
+		activeChar.sendMessage("Target type of skill " + this + " is not currently handled.");
 		return null;
 	}
 	
@@ -1112,10 +1112,10 @@ public final class Skill implements IIdentifiable
 			}
 			catch (Exception e)
 			{
-				_log.warn("Exception in Skill.getTargetsAffected(): " + e.getMessage(), e);
+				_log.warn("Exception in Skill.getTargetsAffected(): {}", e.getMessage(), e);
 			}
 		}
-		activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+		activeChar.sendMessage("Target affect scope of skill " + this + " is not currently handled.");
 		return null;
 	}
 	
@@ -1140,12 +1140,12 @@ public final class Skill implements IIdentifiable
 			}
 			catch (Exception e)
 			{
-				_log.warn("Exception in Skill.forEachTargetAffected(): " + e.getMessage(), e);
+				_log.warn("Exception in Skill.forEachTargetAffected(): {}", e.getMessage(), e);
 			}
 		}
 		else
 		{
-			activeChar.sendMessage("Target affect scope of skill is not currently handled.");
+			activeChar.sendMessage("Target affect scope of skill " + this + " is not currently handled.");
 		}
 	}
 	
@@ -1581,7 +1581,7 @@ public final class Skill implements IIdentifiable
 				}
 				else
 				{
-					_log.warn("Invalid AbnormalVisualEffect(" + aveString + ") found for Skill(" + this + ")");
+					_log.warn("Invalid AbnormalVisualEffect({}) found for Skill({})", aveString, this);
 				}
 			}
 			
