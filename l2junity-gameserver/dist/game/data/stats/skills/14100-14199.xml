@@ -2465,7 +2465,7 @@
 		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14199" toLevel="6" name="Garden Voltage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -2485,5 +2485,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 </list>

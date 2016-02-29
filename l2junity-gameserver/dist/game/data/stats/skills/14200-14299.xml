@@ -32,7 +32,7 @@
 		</effects>
 	</skill>
 	<skill id="14201" toLevel="1" name="Apherus Invincibility">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Invincible status. -->
 		<icon>icon.skill0442</icon>
 		<operateType>A2</operateType>
@@ -54,7 +54,7 @@
 		</effects>
 	</skill>
 	<skill id="14202" toLevel="1" name="Garden Malice">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
@@ -79,9 +79,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>150000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>300</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14203" toLevel="1" name="Hold">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hold status. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
@@ -106,6 +115,9 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockMove" />
+		</effects>
 	</skill>
 	<skill id="14204" toLevel="1" name="Hold">
 		<!-- AUTO GENERATED SKILL -->
