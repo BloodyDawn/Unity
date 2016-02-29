@@ -86,7 +86,8 @@ public class PageBuilder<T>
 	{
 		Objects.requireNonNull(_bodyHandler, "Body was not set!");
 		
-		final int pages = (_elements.size() / _elementsPerPage) - ((_elements.size() % _elementsPerPage) > 0 ? 0 : 1);
+		final int pages = (_elements.size() / _elementsPerPage) + ((_elements.size() % _elementsPerPage) > 0 ? 1 : 0);
+		System.out.println(pages);
 		final StringBuilder pagerTemplate = new StringBuilder();
 		if (pages > 1)
 		{
