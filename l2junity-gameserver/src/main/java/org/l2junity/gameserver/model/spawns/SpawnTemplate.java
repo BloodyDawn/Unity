@@ -42,6 +42,7 @@ public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
 {
 	private final String _name;
 	private final String _ai;
+	private final boolean _spawnByDefault;
 	private final File _file;
 	private List<SpawnTerritory> _territories;
 	private List<BannedSpawnTerritory> _bannedTerritories;
@@ -52,6 +53,7 @@ public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
 	{
 		_name = set.getString("name", null);
 		_ai = set.getString("ai", null);
+		_spawnByDefault = set.getBoolean("spawnByDefault", true);
 		_file = f;
 	}
 	
@@ -63,6 +65,11 @@ public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
 	public String getAI()
 	{
 		return _ai;
+	}
+	
+	public boolean isSpawningByDefault()
+	{
+		return _spawnByDefault;
 	}
 	
 	public File getFile()

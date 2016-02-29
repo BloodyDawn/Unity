@@ -114,7 +114,7 @@ public final class Instance implements IIdentifiable, INamable
 		spawnDoors();
 		
 		// initialize instance spawns
-		_template.getSpawns().forEach(spawnTemplate -> spawnTemplate.spawnAll(this));
+		_template.getSpawns().stream().filter(SpawnTemplate::isSpawningByDefault).forEach(spawnTemplate -> spawnTemplate.spawnAll(this));
 		
 		if (!isDynamic())
 		{

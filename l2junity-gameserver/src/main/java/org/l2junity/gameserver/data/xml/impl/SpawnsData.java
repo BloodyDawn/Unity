@@ -87,7 +87,7 @@ public class SpawnsData implements IGameXmlReader
 	public void init()
 	{
 		LOGGER.info("Initializing spawns...");
-		_spawns.forEach(template ->
+		_spawns.stream().filter(SpawnTemplate::isSpawningByDefault).forEach(template ->
 		{
 			template.spawnAll(null);
 			template.notifyActivate();
