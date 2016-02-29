@@ -40,6 +40,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillConditionScope;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -755,7 +756,7 @@ public class CharStat
 			
 			// Collect all necessary effects
 			final CharEffectList effectList = _activeChar.getEffectList();
-			final Stream<BuffInfo> passives = effectList.hasPassives() ? effectList.getPassives().stream() : null;
+			final Stream<BuffInfo> passives = effectList.hasPassives() ? effectList.getPassives().stream().filter(info -> info.getSkill().checkConditions(SkillConditionScope.PASSIVE, _activeChar, _activeChar)) : null;
 			final Stream<BuffInfo> options = effectList.hasOptions() ? effectList.getOptions().stream() : null;
 			final Stream<BuffInfo> effectsStream = Stream.concat(effectList.getEffects().stream(), Stream.concat(passives != null ? passives : Stream.empty(), options != null ? options : Stream.empty()));
 			
