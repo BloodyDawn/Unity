@@ -91,7 +91,7 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 		handleBoss(GameTimeController.getInstance().isNight());
 	}
 	
-	@RegisterEvent(EventType.ON_DAY_NIGHT_CHNAGE)
+	@RegisterEvent(EventType.ON_DAY_NIGHT_CHANGE)
 	@RegisterType(ListenerRegisterType.GLOBAL)
 	public void onDayNightChange(OnDayNightChange event)
 	{

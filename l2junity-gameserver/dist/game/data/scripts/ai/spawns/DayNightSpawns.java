@@ -59,7 +59,7 @@ public final class DayNightSpawns extends AbstractNpcAI
 		_templates.remove(template);
 	}
 	
-	@RegisterEvent(EventType.ON_DAY_NIGHT_CHNAGE)
+	@RegisterEvent(EventType.ON_DAY_NIGHT_CHANGE)
 	@RegisterType(ListenerRegisterType.GLOBAL)
 	public void onDayNightChange(OnDayNightChange event)
 	{

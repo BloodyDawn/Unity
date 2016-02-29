@@ -40,6 +40,6 @@ public class OnDayNightChange implements IBaseEvent
 	@Override
 	public EventType getType()
 	{
-		return EventType.ON_DAY_NIGHT_CHNAGE;
+		return EventType.ON_DAY_NIGHT_CHANGE;
 	}
 }

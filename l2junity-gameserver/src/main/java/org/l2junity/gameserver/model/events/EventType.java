@@ -266,7 +266,7 @@ public enum EventType
 	// Trap events
 	ON_TRAP_ACTION(OnTrapAction.class, void.class),
 	
-	ON_DAY_NIGHT_CHNAGE(OnDayNightChange.class, void.class),
+	ON_DAY_NIGHT_CHANGE(OnDayNightChange.class, void.class),
 	
 	ON_PACKET_RECEIVED(OnPacketReceived.class, void.class),
 	ON_PACKET_SENT(OnPacketSent.class, void.class),
