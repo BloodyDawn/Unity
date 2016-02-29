@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Formulas;
 
@@ -38,12 +37,6 @@ public final class SkillTurningOverTime extends AbstractEffect
 		_chance = params.getInt("chance", 100);
 		_staticChance = params.getBoolean("staticChance", false);
 		setTicks(params.getInt("ticks"));
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.DEBUFF;
 	}
 	
 	@Override
