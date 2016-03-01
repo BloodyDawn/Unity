@@ -242,6 +242,7 @@ public class AdminEffects implements IAdminCommandHandler
 					player.startAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
 					player.setBlockActions(true);
 					player.startParalyze();
+					player.broadcastInfo();
 				}
 			});
 		}
@@ -251,6 +252,7 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				player.stopAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
 				player.setBlockActions(false);
+				player.broadcastInfo();
 				
 			});
 		}
@@ -281,6 +283,7 @@ public class AdminEffects implements IAdminCommandHandler
 					}
 					player.setBlockActions(true);
 					player.startParalyze();
+					player.broadcastInfo();
 				}
 			}
 			catch (Exception e)
@@ -313,6 +316,7 @@ public class AdminEffects implements IAdminCommandHandler
 						player.stopAbnormalVisualEffect(AbnormalVisualEffect.FLESH_STONE);
 					}
 					player.setBlockActions(false);
+					player.broadcastInfo();
 				}
 			}
 			catch (Exception e)

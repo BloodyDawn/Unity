@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -107,32 +108,25 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 			damage *= 2;
 		}
 		
-		if (damage > 0)
+		// Check if damage should be reflected
+		Formulas.calcDamageReflected(effector, effected, skill, crit);
+		
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
+		if (damageCap > 0)
 		{
-			// Check if damage should be reflected
-			Formulas.calcDamageReflected(effector, effected, skill, crit);
-			
-			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
-			if (damageCap > 0)
-			{
-				damage = Math.min(damage, damageCap);
-			}
-			
-			final double minHp = (effected.getMaxHp() * _saveHp) / 100;
-			
-			if ((effected.getCurrentHp() - damage) < minHp)
-			{
-				damage = effected.getCurrentHp() - minHp;
-			}
-			
-			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
-			effected.reduceCurrentHp(damage, effector, skill);
-			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+			damage = Math.min(damage, damageCap);
 		}
-		else
+		
+		final double minHp = (effected.getMaxHp() * _saveHp) / 100;
+		
+		if ((effected.getCurrentHp() - damage) < minHp)
 		{
-			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+			damage = effected.getCurrentHp() - minHp;
 		}
+		
+		damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
+		effected.reduceCurrentHp(damage, effector, skill);
+		effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 		
 		if (skill.isSuicideAttack())
 		{
@@ -142,6 +136,12 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 	
 	public final double calcPhysDam(Creature effector, Creature effected, Skill skill)
 	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill.getTraitType() != TraitType.NONE) && effected.getStat().isTraitInvul(skill.getTraitType()))
+		{
+			return 0;
+		}
+		
 		final boolean isPvP = effector.isPlayable() && effected.isPlayable();
 		double damage = effector.getPAtk();
 		double defence = effected.getPDef();

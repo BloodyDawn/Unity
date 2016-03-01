@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * An effect implementing regular attack (like autoattack with sword)
@@ -77,43 +76,36 @@ public final class RegularAttack extends AbstractEffect
 		damage *= _pAtkMod; // TODO needs better integration within formula
 		damage /= _pDefMod; // TODO needs better integration within formula
 		
-		if (damage > 0)
+		damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
+		effected.reduceCurrentHp(damage, effector, skill);
+		effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+		
+		Weapon weapon = effector.getActiveWeaponItem();
+		boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
+		if (!isBow && !effected.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
 		{
-			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
-			effected.reduceCurrentHp(damage, effector, skill);
-			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
-			
-			Weapon weapon = effector.getActiveWeaponItem();
-			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
-			if (!isBow && !effected.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
+			// quick fix for no drop from raid if boss attack high-level char with damage reflection
+			if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))
 			{
-				// quick fix for no drop from raid if boss attack high-level char with damage reflection
-				if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))
+				// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
+				double reflectPercent = effected.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0) - effector.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT_DEFENSE, 0);
+				
+				if (reflectPercent > 0)
 				{
-					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = effected.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0) - effector.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT_DEFENSE, 0);
+					int reflectedDamage = (int) ((reflectPercent / 100.) * damage);
 					
-					if (reflectPercent > 0)
+					if (reflectedDamage > effected.getMaxHp())
 					{
-						int reflectedDamage = (int) ((reflectPercent / 100.) * damage);
-						
-						if (reflectedDamage > effected.getMaxHp())
-						{
-							reflectedDamage = effected.getMaxHp();
-						}
-						
-						if (reflectedDamage > 0)
-						{
-							damage = effector.notifyDamageReceived(reflectedDamage, effected, null, crit, false, true);
-							effector.reduceCurrentHp(reflectedDamage, effected, true, false, null);
-						}
+						reflectedDamage = effected.getMaxHp();
+					}
+					
+					if (reflectedDamage > 0)
+					{
+						damage = effector.notifyDamageReceived(reflectedDamage, effected, null, crit, false, true);
+						effector.reduceCurrentHp(reflectedDamage, effected, true, false, null);
 					}
 				}
 			}
-		}
-		else
-		{
-			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 		}
 		
 		if (skill.isSuicideAttack())

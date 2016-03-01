@@ -112,24 +112,17 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			damage *= 2;
 		}
 		
-		if (damage > 0)
+		// Check if damage should be reflected
+		Formulas.calcDamageReflected(effector, effected, skill, crit);
+		
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
+		if (damageCap > 0)
 		{
-			// Check if damage should be reflected
-			Formulas.calcDamageReflected(effector, effected, skill, crit);
-			
-			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
-			if (damageCap > 0)
-			{
-				damage = Math.min(damage, damageCap);
-			}
-			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
-			effected.reduceCurrentHp(damage, effector, skill);
-			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+			damage = Math.min(damage, damageCap);
 		}
-		else
-		{
-			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
-		}
+		damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
+		effected.reduceCurrentHp(damage, effector, skill);
+		effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 		
 		if (skill.isSuicideAttack())
 		{

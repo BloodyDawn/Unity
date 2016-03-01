@@ -359,6 +359,12 @@ public final class Formulas
 	
 	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
 	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
+		{
+			return 0;
+		}
+		
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
@@ -443,6 +449,12 @@ public final class Formulas
 	
 	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
 	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
+		{
+			return 0;
+		}
+		
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
@@ -535,6 +547,12 @@ public final class Formulas
 	 */
 	public static double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
 	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill != null) && (skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
+		{
+			return 0;
+		}
+		
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		double damage = attacker.getPAtk();
 		double defence = target.getPDef();
@@ -659,6 +677,12 @@ public final class Formulas
 	
 	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
+		{
+			return 0;
+		}
+		
 		final double distance = attacker.calculateDistance(target, true, false);
 		
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
@@ -776,6 +800,12 @@ public final class Formulas
 	
 	public static double calcMagicDam(CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
+		{
+			return 0;
+		}
+		
 		int mDef = target.getMDef();
 		switch (shld)
 		{

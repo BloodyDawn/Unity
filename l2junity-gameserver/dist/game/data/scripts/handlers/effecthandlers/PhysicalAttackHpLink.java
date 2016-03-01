@@ -93,23 +93,16 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
 		double damage = Formulas.calcPhysDam(effector, effected, skill, _power * (-((effected.getCurrentHp() * 2) / effected.getMaxHp()) + 2), shld, false, ss);
 		
-		if (damage > 0)
+		// Check if damage should be reflected.
+		Formulas.calcDamageReflected(effector, effected, skill, crit);
+		
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
+		if (damageCap > 0)
 		{
-			// Check if damage should be reflected.
-			Formulas.calcDamageReflected(effector, effected, skill, crit);
-			
-			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
-			if (damageCap > 0)
-			{
-				damage = Math.min(damage, damageCap);
-			}
-			damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
-			effected.reduceCurrentHp(damage, effector, skill);
-			effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+			damage = Math.min(damage, damageCap);
 		}
-		else
-		{
-			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
-		}
+		damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
+		effected.reduceCurrentHp(damage, effector, skill);
+		effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
 	}
 }

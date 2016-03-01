@@ -90,27 +90,24 @@ public final class MagicalAttack extends AbstractEffect
 			damage *= _debuffModifier;
 		}
 		
-		if (damage > 0)
+		// Manage attack or cast break of the target (calculating rate, sending message...)
+		if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))
 		{
-			// Manage attack or cast break of the target (calculating rate, sending message...)
-			if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))
-			{
-				effected.breakAttack();
-				effected.breakCast();
-			}
-			
-			// Shield Deflect Magic: Reflect all damage on caster.
-			if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
-			{
-				damage = effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);
-				effector.reduceCurrentHp(damage, effected, skill);
-			}
-			else
-			{
-				damage = effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-				effected.reduceCurrentHp(damage, effector, skill);
-				effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
-			}
+			effected.breakAttack();
+			effected.breakCast();
+		}
+		
+		// Shield Deflect Magic: Reflect all damage on caster.
+		if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
+		{
+			damage = effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);
+			effector.reduceCurrentHp(damage, effected, skill);
+		}
+		else
+		{
+			damage = effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
+			effected.reduceCurrentHp(damage, effector, skill);
+			effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 		}
 	}
 }
