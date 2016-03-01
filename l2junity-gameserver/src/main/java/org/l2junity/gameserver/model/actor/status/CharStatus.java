@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor.status;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -54,6 +55,8 @@ public class CharStatus
 	protected static final byte REGEN_FLAG_CP = 4;
 	private static final byte REGEN_FLAG_HP = 1;
 	private static final byte REGEN_FLAG_MP = 2;
+	
+	private final AtomicInteger _previousHpPercent = new AtomicInteger();
 	
 	public CharStatus(Creature activeChar)
 	{
@@ -312,9 +315,27 @@ public class CharStatus
 		boolean hpWasChanged = currentHp != _currentHp;
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (hpWasChanged && broadcastPacket)
+		if (hpWasChanged)
 		{
-			getActiveChar().broadcastStatusUpdate();
+			final int lastHpPercent = _previousHpPercent.get();
+			final int currentHpPercent = (int) ((_currentHp * 100) / maxHp);
+			//@formatter:off
+			if (((lastHpPercent >= 60) && (currentHpPercent <= 60))
+				|| ((currentHpPercent >= 60) && (lastHpPercent <= 60))
+				|| ((lastHpPercent >= 30) && (currentHpPercent <= 30))
+				|| ((currentHpPercent >= 30) && (lastHpPercent <= 30)))
+			//@formatter:on
+			{
+				if (_previousHpPercent.compareAndSet(lastHpPercent, currentHpPercent))
+				{
+					_activeChar.getStat().recalculateStats(true);
+				}
+			}
+			
+			if (broadcastPacket)
+			{
+				getActiveChar().broadcastStatusUpdate();
+			}
 		}
 		
 		return hpWasChanged;

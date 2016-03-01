@@ -20,17 +20,13 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.ListenersContainer;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
-import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author UnAfraid
  */
-public abstract class AbstractConditionalHpEffect extends AbstractConditionalEffect
+public abstract class AbstractConditionalHpEffect extends AbstractStatEffect
 {
 	private final int _hpPercent;
 	
@@ -41,34 +37,8 @@ public abstract class AbstractConditionalHpEffect extends AbstractConditionalEff
 	}
 	
 	@Override
-	protected void registerCondition(Creature effector, Creature effected, Skill skill)
-	{
-		if (_hpPercent > 0)
-		{
-			final ListenersContainer container = effected;
-			container.addListener(new ConsumerEventListener(container, EventType.ON_CREATURE_HP_CHANGE, (OnCreatureHpChange event) -> onHpChange(event), this));
-		}
-	}
-	
-	@Override
-	protected void unregisterCondition(Creature effector, Creature effected, Skill skill)
-	{
-		effected.removeListenerIf(listener -> listener.getOwner() == this);
-	}
-	
-	@Override
 	public boolean canPump(Creature effector, Creature effected, Skill skill)
 	{
-		return (_hpPercent <= 0) || (effected.getCurrentHpPercent() <= _hpPercent);
-	}
-	
-	private void onHpChange(OnCreatureHpChange event)
-	{
-		final boolean condStatus = canPump(null, event.getCreature(), null);
-		final EffectedConditionHolder holder = getHolder(event.getCreature().getObjectId());
-		if (holder.getLastConditionStatus().compareAndSet(!condStatus, condStatus))
-		{
-			update(event.getCreature().getObjectId());
-		}
+		return ((_hpPercent <= 0) || (effected.getCurrentHpPercent() <= _hpPercent));
 	}
 }
