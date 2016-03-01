@@ -406,9 +406,9 @@ public class SkillData implements IGameXmlReader
 		{
 			namedParamInfos.forEach(namedParamInfo ->
 			{
-				if (((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) || ((namedParamInfo.getFromLevel() >= level) && (namedParamInfo.getToLevel() <= level)))
+				if (((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) || ((namedParamInfo.getFromLevel() <= level) && (namedParamInfo.getToLevel() >= level)))
 				{
-					if (((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) || ((namedParamInfo.getFromSubLevel() >= subLevel) && (namedParamInfo.getToSubLevel() <= subLevel)))
+					if (((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) || ((namedParamInfo.getFromSubLevel() <= subLevel) && (namedParamInfo.getToSubLevel() >= subLevel)))
 					{
 						final StatsSet params = Optional.ofNullable(namedParamInfo.getInfo().getOrDefault(level, Collections.emptyMap()).get(subLevel)).orElseGet(() -> new StatsSet());
 						namedParamInfo.getGeneralInfo().getSet().forEach((k, v) -> params.getSet().putIfAbsent(k, v));
