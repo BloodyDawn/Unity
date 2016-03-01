@@ -39,6 +39,7 @@ import org.l2junity.gameserver.network.client.recv.appearance.RequestExCancelSha
 import org.l2junity.gameserver.network.client.recv.appearance.RequestExTryToPutShapeShiftingEnchantSupportItem;
 import org.l2junity.gameserver.network.client.recv.appearance.RequestExTryToPutShapeShiftingTargetItem;
 import org.l2junity.gameserver.network.client.recv.appearance.RequestShapeShiftingItem;
+import org.l2junity.gameserver.network.client.recv.awakening.RequestCallToChangeClass;
 import org.l2junity.gameserver.network.client.recv.ceremonyofchaos.RequestCancelCuriousHouse;
 import org.l2junity.gameserver.network.client.recv.ceremonyofchaos.RequestCuriousHouseHtml;
 import org.l2junity.gameserver.network.client.recv.ceremonyofchaos.RequestJoinCuriousHouse;
@@ -253,7 +254,7 @@ public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 	REQUEST_COMMISSION_BUY_INFO(0x9E, RequestCommissionBuyInfo::new, ConnectionState.IN_GAME),
 	REQUEST_COMMISSION_BUY_ITEM(0x9F, RequestCommissionBuyItem::new, ConnectionState.IN_GAME),
 	REQUEST_COMMISSION_REGISTERED_ITEM(0xA0, RequestCommissionRegisteredItem::new, ConnectionState.IN_GAME),
-	REQUEST_CALL_TO_CHANGE_CLASS(0xA1, null, ConnectionState.IN_GAME),
+	REQUEST_CALL_TO_CHANGE_CLASS(0xA1, RequestCallToChangeClass::new, ConnectionState.IN_GAME),
 	REQUEST_CHANGE_TO_AWAKENED_CLASS(0xA2, RequestChangeToAwakenedClass::new, ConnectionState.IN_GAME),
 	REQUEST_WORLD_STATISTICS(0xA3, null, ConnectionState.IN_GAME),
 	REQUEST_USER_STATISTICS(0xA4, null, ConnectionState.IN_GAME),

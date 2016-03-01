@@ -58,6 +58,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcTeleport;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayableExpChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerAugment;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCallToChangeClass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChangeToAwakenedClass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChat;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanCreate;
@@ -207,6 +208,7 @@ public enum EventType
 	// Player events
 	ON_PLAYER_AUGMENT(OnPlayerAugment.class, void.class),
 	ON_PLAYER_BYPASS(OnPlayerBypass.class, void.class, TerminateReturn.class),
+	ON_PLAYER_CALL_TO_CHANGE_CLASS(OnPlayerCallToChangeClass.class, void.class),
 	ON_PLAYER_CHAT(OnPlayerChat.class, void.class, ChatFilterReturn.class),
 	// Clan events
 	ON_PLAYER_CLAN_CREATE(OnPlayerClanCreate.class, void.class),
