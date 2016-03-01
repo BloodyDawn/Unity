@@ -52,6 +52,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableFactionCall;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
@@ -258,6 +259,15 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		// If not idle - create an AI task (schedule onEvtThink repeatedly)
 		startAITask();
+	}
+	
+	@Override
+	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
+	{
+		// Set the AI cast target
+		_actor.setTarget(target);
+		
+		super.changeIntentionToCast(skill, target, item, forceUse, dontMove);
 	}
 	
 	/**

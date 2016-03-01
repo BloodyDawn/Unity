@@ -321,12 +321,6 @@ public class CharacterAI extends AbstractAI
 	
 	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
-		// Set the AI cast target
-		if (!_actor.isPlayable())
-		{
-			_actor.setTarget(target);
-		}
-		
 		// Set the AI skill used by INTENTION_CAST
 		_skill = skill;
 		
