@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
-import org.l2junity.gameserver.model.events.annotations.Id;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
@@ -98,6 +97,8 @@ public class MemoryOfDisaster extends AbstractInstance
 	{
 		addInstanceCreatedId(TEMPLATE_ID);
 		addMoveFinishedId(ROGIN);
+		setCreatureKillId(this::onCreatureKill, BRONK);
+		setCreatureAttackedId(this::onCreatureAttacked, BRONK);
 	}
 	
 	@Override
@@ -241,10 +242,7 @@ public class MemoryOfDisaster extends AbstractInstance
 		}
 	}
 	
-	@RegisterEvent(EventType.ON_CREATURE_ATTACKED)
-	@RegisterType(ListenerRegisterType.NPC)
-	@Id(BRONK)
-	public void OnCreatureAttacked(OnCreatureAttacked event)
+	private void onCreatureAttacked(OnCreatureAttacked event)
 	{
 		if (!event.getAttacker().isPlayable())
 		{
@@ -252,10 +250,7 @@ public class MemoryOfDisaster extends AbstractInstance
 		}
 	}
 	
-	@RegisterEvent(EventType.ON_CREATURE_KILL)
-	@RegisterType(ListenerRegisterType.NPC)
-	@Id(BRONK)
-	public void onCreatureKill(OnCreatureKill event)
+	private void onCreatureKill(OnCreatureKill event)
 	{
 		final Npc bronk = ((Npc) event.getTarget());
 		for (Npc dwarf : bronk.getInstanceWorld().getNpcs(DWARVES))
