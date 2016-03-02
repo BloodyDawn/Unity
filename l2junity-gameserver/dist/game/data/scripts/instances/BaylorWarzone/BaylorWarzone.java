@@ -286,17 +286,6 @@ public final class BaylorWarzone extends AbstractInstance
 		});
 	}
 	
-	@Override
-	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
-	{
-		final Instance world = npc.getInstanceWorld();
-		if (isBylorInstance(world))
-		{
-		
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
 	public void onBossKill(OnCreatureKill event)
 	{
 		final Npc npc = (Npc) event.getTarget();
@@ -315,23 +304,13 @@ public final class BaylorWarzone extends AbstractInstance
 		}
 	}
 	
-	@Override
-	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
-	{
-		final Instance world = npc.getInstanceWorld();
-		if (isBylorInstance(world))
-		{
-		
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
 	public void onCreatureSee(OnCreatureSee event)
 	{
 		final Creature creature = event.getSeen();
 		final Npc npc = (Npc) event.getSeer();
+		final Instance world = npc.getInstanceWorld();
 		
-		if (creature.isPlayer() && npc.isScriptValue(0))
+		if ((world != null) && creature.isPlayer() && npc.isScriptValue(0))
 		{
 			npc.setScriptValue(1);
 			getTimers().addTimer("START_SCENE_01", 5000, npc, null);
