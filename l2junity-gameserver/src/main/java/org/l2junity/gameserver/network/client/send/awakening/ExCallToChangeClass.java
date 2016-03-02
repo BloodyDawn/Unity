@@ -39,10 +39,10 @@ public class ExCallToChangeClass implements IClientOutgoingPacket
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		OutgoingPackets.EX_CHANGE_TO_AWAKENED_CLASS.writeId(packet);
+		OutgoingPackets.EX_CALL_TO_CHANGE_CLASS.writeId(packet);
 		packet.writeD(_classId);
 		packet.writeD(_showMessage ? 1 : 0);
-		packet.writeD(0); // Find me
+		packet.writeD(1); // Force - 0 you have to do it; 1 it's optional
 		return true;
 	}
 }

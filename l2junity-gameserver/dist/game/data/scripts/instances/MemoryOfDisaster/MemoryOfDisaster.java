@@ -18,7 +18,13 @@
  */
 package instances.MemoryOfDisaster;
 
+import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.events.EventType;
@@ -28,7 +34,12 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCallToChangeClass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.network.client.send.Earthquake;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.OnEventTrigger;
 import org.l2junity.gameserver.network.client.send.awakening.ExCallToChangeClass;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import instances.AbstractInstance;
 
@@ -38,8 +49,164 @@ import instances.AbstractInstance;
  */
 public class MemoryOfDisaster extends AbstractInstance
 {
+	// NPCs
+	private static final int BRONK = 19192;
+	private static final int ROGIN = 19193;
+	private static final int TOROCCO = 19198;
+	// Locations
+	private static final Location BATTLE_PORT = new Location(116063, -183167, -1460, 64960);
+	private static final Location ROGIN_MOVE = new Location(116400, -183069, -1600);
 	// Misc
+	private static final int FIRE_IN_DWARVEN_VILLAGE = 23120700;
 	private static final int TEMPLATE_ID = 200;
+	
+	public MemoryOfDisaster()
+	{
+		addInstanceCreatedId(TEMPLATE_ID);
+		addMoveFinishedId(ROGIN);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		switch (event)
+		{
+			case "EARTHQUAKE":
+			{
+				player.sendPacket(new Earthquake(player.getLocation(), 50, 4));
+				getTimers().addTimer("EARTHQUAKE", 10000, null, player);
+				break;
+			}
+			case "END_OF_OPENING_SCENE":
+			{
+				player.teleToLocation(BATTLE_PORT);
+				getTimers().addTimer("SPAWN_ROGIN", 10000, null, player);
+				break;
+			}
+			case "SPAWN_ROGIN":
+			{
+				showOnScreenMsg(player, NpcStringId.WATCH_THE_DWARVEN_VILLAGE_LAST_STAND, ExShowScreenMessage.TOP_CENTER, 5000);
+				player.getInstanceWorld().spawnGroup("ROGIN").forEach(n ->
+				{
+					n.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, ROGIN_MOVE);
+					n.setIsRunning(true);
+				});
+				break;
+			}
+			case "ROGIN_TALK":
+			{
+				switch (npc.getVariables().getInt("talkId", 0))
+				{
+					case 0:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.CHIEF_REPORTING_IN);
+						npc.getVariables().set("talkId", 1);
+						getTimers().addTimer("ROGIN_TALK", 2000, npc, null);
+						// myself->BroadcastScriptEvent(@SCE_AWAKENING_LOOKATME, gg->GetIndexFromCreature(myself->sm), 2000);
+						break;
+					}
+					case 1:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENEMIES_ARE_APPROACHING_FORM_THE_SOUTH);
+						npc.getVariables().set("talkId", 2);
+						getTimers().addTimer("ROGIN_TALK", 2000, npc, null);
+						// From SCE_AWAKENING_LOOKATME events
+						npc.getInstanceWorld().getNpc(TOROCCO).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ROGIN_I_M_HERE);
+						npc.getInstanceWorld().getNpc(BRONK).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MM_I_SEE);
+						break;
+					}
+					case 2:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_ELDERS_HAVEN_T_BEEN_MOVED_TO_SAFETY);
+						npc.getVariables().set("talkId", 3);
+						getTimers().addTimer("ROGIN_TALK", 2000, npc, null);
+						break;
+					}
+					case 3:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MANY_RESIDENTS_STILL_HAVEN_T_LEFT_THEIR_HOMES);
+						// myself->BroadcastScriptEvent(@SCE_AWAKENING_MS_FIN, 0, 2000);
+						getTimers().addTimer("BRONK_TALK", 2000, npc.getInstanceWorld().getNpc(BRONK), null);
+						break;
+					}
+				}
+				break;
+			}
+			case "BRONK_TALK":
+			{
+				switch (npc.getVariables().getInt("talkId", 0))
+				{
+					case 0:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THANK_YOU_FOR_THE_REPORT_ROGIN);
+						npc.getVariables().set("talkId", 1);
+						getTimers().addTimer("BRONK_TALK", 2000, npc, null);
+						// myself->ChangeDir(myself->sm, 0, 17036);
+						break;
+					}
+					case 1:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SOLDIERS_WE_RE_FIGHTING_A_BATTLE_THAT_CAN_T_BE_WON);
+						npc.getVariables().set("talkId", 2);
+						getTimers().addTimer("BRONK_TALK", 2000, npc, null);
+						// myself->ChangeDir(myself->sm, 0, 17036);
+						break;
+					}
+					case 2:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BUT_WE_HAVE_TO_DEFEND_OUR_VILLAGE_SO_WE_RE_FIGHTING);
+						npc.getVariables().set("talkId", 3);
+						getTimers().addTimer("BRONK_TALK", 2000, npc, null);
+						break;
+					}
+					case 3:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.FOR_THE_FINE_WINES_AND_TREASURES_OF_ADEN);
+						npc.getVariables().set("talkId", 4);
+						getTimers().addTimer("BRONK_TALK", 2000, npc, null);
+						break;
+					}
+					case 4:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_M_PROUD_OF_EVERY_ONE_OF);
+						npc.getVariables().set("talkId", 5);
+						getTimers().addTimer("BRONK_TALK", 2000, npc, null);
+						break;
+					}
+					case 5:
+					{
+						npc.getInstanceWorld().spawnGroup("TENTACLE");
+						break;
+					}
+				}
+				break;
+			}
+		}
+	}
+	
+	@Override
+	public void onInstanceCreated(Instance instance)
+	{
+		getTimers().addTimer("OPENING_SCENE", 500, e ->
+		{
+			instance.getPlayers().forEach(p ->
+			{
+				p.sendPacket(new OnEventTrigger(FIRE_IN_DWARVEN_VILLAGE, true));
+				playMovie(p, Movie.SC_AWAKENING_OPENING);
+				getTimers().addTimer("EARTHQUAKE", 10000, null, p);
+				getTimers().addTimer("END_OF_OPENING_SCENE", 32000, null, p);
+			});
+		});
+	}
+	
+	@Override
+	public void onMoveFinished(Npc npc)
+	{
+		if ((npc.getId() == ROGIN) && ((npc.getX() == ROGIN_MOVE.getX()) && (npc.getY() == ROGIN_MOVE.getY())))
+		{
+			getTimers().addTimer("ROGIN_TALK", 3000, npc, null);
+		}
+	}
 	
 	@RegisterEvent(EventType.ON_PLAYER_CALL_TO_CHANGE_CLASS)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
@@ -58,6 +225,7 @@ public class MemoryOfDisaster extends AbstractInstance
 			for (ClassId newClass : player.getClassId().getNextClassIds())
 			{
 				player.sendPacket(new ExCallToChangeClass(newClass.getId(), false));
+				showOnScreenMsg(player, NpcStringId.FREE_THE_GIANT_FROM_HIS_IMPRISONMENT_AND_AWAKEN_YOUR_TRUE_POWER, ExShowScreenMessage.TOP_CENTER, 5000);
 			}
 		}
 	}
@@ -72,6 +240,7 @@ public class MemoryOfDisaster extends AbstractInstance
 			for (ClassId newClass : player.getClassId().getNextClassIds())
 			{
 				player.sendPacket(new ExCallToChangeClass(newClass.getId(), false));
+				showOnScreenMsg(player, NpcStringId.FREE_THE_GIANT_FROM_HIS_IMPRISONMENT_AND_AWAKEN_YOUR_TRUE_POWER, ExShowScreenMessage.TOP_CENTER, 5000);
 			}
 		}
 	}
