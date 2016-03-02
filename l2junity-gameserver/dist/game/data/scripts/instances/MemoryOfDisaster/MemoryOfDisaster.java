@@ -18,6 +18,7 @@
  */
 package instances.MemoryOfDisaster;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
@@ -29,8 +30,11 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.Id;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCallToChangeClass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
@@ -53,12 +57,42 @@ public class MemoryOfDisaster extends AbstractInstance
 	private static final int BRONK = 19192;
 	private static final int ROGIN = 19193;
 	private static final int TOROCCO = 19198;
+	private static final int[] DWARVES =
+	{
+		19192,
+		19193,
+		19198,
+		19199,
+		19200,
+		19201,
+		19202,
+		19203,
+		19204,
+		19205,
+		19206,
+		19207,
+		19208,
+		19209,
+		19210,
+		19211,
+		19212,
+		19213,
+		19214,
+		19215
+	};
 	// Locations
 	private static final Location BATTLE_PORT = new Location(116063, -183167, -1460, 64960);
 	private static final Location ROGIN_MOVE = new Location(116400, -183069, -1600);
 	// Misc
 	private static final int FIRE_IN_DWARVEN_VILLAGE = 23120700;
 	private static final int TEMPLATE_ID = 200;
+	private static final NpcStringId[] SHOUT1 =
+	{
+		NpcStringId.BRONK,
+		NpcStringId.CHIEF,
+		NpcStringId.BRONK2,
+		NpcStringId.NO_WAY3
+	};
 	
 	public MemoryOfDisaster()
 	{
@@ -74,7 +108,6 @@ public class MemoryOfDisaster extends AbstractInstance
 			case "EARTHQUAKE":
 			{
 				player.sendPacket(new Earthquake(player.getLocation(), 50, 4));
-				getTimers().addTimer("EARTHQUAKE", 10000, null, player);
 				break;
 			}
 			case "END_OF_OPENING_SCENE":
@@ -175,7 +208,7 @@ public class MemoryOfDisaster extends AbstractInstance
 					}
 					case 5:
 					{
-						npc.getInstanceWorld().spawnGroup("TENTACLE");
+						npc.getInstanceWorld().spawnGroup("TENTACLE").forEach(n -> addAttackDesire(n, npc));
 						break;
 					}
 				}
@@ -193,7 +226,7 @@ public class MemoryOfDisaster extends AbstractInstance
 			{
 				p.sendPacket(new OnEventTrigger(FIRE_IN_DWARVEN_VILLAGE, true));
 				playMovie(p, Movie.SC_AWAKENING_OPENING);
-				getTimers().addTimer("EARTHQUAKE", 10000, null, p);
+				getTimers().addRepeatingTimer("EARTHQUAKE", 10000, null, p);
 				getTimers().addTimer("END_OF_OPENING_SCENE", 32000, null, p);
 			});
 		});
@@ -206,6 +239,37 @@ public class MemoryOfDisaster extends AbstractInstance
 		{
 			getTimers().addTimer("ROGIN_TALK", 3000, npc, null);
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_CREATURE_ATTACKED)
+	@RegisterType(ListenerRegisterType.NPC)
+	@Id(BRONK)
+	public void OnCreatureAttacked(OnCreatureAttacked event)
+	{
+		if (!event.getAttacker().isPlayable())
+		{
+			event.getTarget().doDie(event.getTarget());
+		}
+	}
+	
+	@RegisterEvent(EventType.ON_CREATURE_KILL)
+	@RegisterType(ListenerRegisterType.NPC)
+	@Id(BRONK)
+	public void onCreatureKill(OnCreatureKill event)
+	{
+		final Npc bronk = ((Npc) event.getTarget());
+		for (Npc dwarf : bronk.getInstanceWorld().getNpcs(DWARVES))
+		{
+			if (dwarf.getId() == ROGIN)
+			{
+				dwarf.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.CHIEF2);
+			}
+			else
+			{
+				dwarf.broadcastSay(ChatType.NPC_GENERAL, SHOUT1[Rnd.get(SHOUT1.length)]);
+			}
+		}
+		bronk.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.UGH_IF_I_SEE_YOU_IN_THE_SPIRIT_WORLD_FIRST_ROUND_IS_ON_ME);
 	}
 	
 	@RegisterEvent(EventType.ON_PLAYER_CALL_TO_CHANGE_CLASS)
