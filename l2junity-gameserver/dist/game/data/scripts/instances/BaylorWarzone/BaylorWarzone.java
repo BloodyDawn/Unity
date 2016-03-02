@@ -310,7 +310,7 @@ public final class BaylorWarzone extends AbstractInstance
 		final Npc npc = (Npc) event.getSeer();
 		final Instance world = npc.getInstanceWorld();
 		
-		if ((world != null) && creature.isPlayer() && npc.isScriptValue(0))
+		if (isBylorInstance(world) && creature.isPlayer() && npc.isScriptValue(0))
 		{
 			npc.setScriptValue(1);
 			getTimers().addTimer("START_SCENE_01", 5000, npc, null);
