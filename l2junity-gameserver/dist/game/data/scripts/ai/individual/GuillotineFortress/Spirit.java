@@ -86,7 +86,6 @@ public final class Spirit extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		
 		switch (event)
 		{
 			case "SPAM_TEXT1":
