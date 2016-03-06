@@ -33,8 +33,11 @@ public final class Zofan extends AbstractNpcAI
 	// NPCs
 	private static final int[] ZOFAN =
 	{
-		23215,
-		23216,
+		23215, // Zofan
+		23216, // Zofan
+		23227, // Beggar Zofan
+		23229, // Zofan
+		23237, // Engineer Zofan
 	};
 	// Misc
 	private static final String[] MINION_PARAMS =
