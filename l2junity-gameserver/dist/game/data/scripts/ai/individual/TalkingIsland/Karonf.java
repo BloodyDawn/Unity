@@ -19,40 +19,22 @@
 package ai.individual.TalkingIsland;
 
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
 import ai.AbstractNpcAI;
 
 /**
  * Karonf AI.
- * @author Gladicek
+ * @author St3eT
  */
 public final class Karonf extends AbstractNpcAI
 {
 	// NPC
 	private static final int KARONF = 33242;
-	// Misc
-	private static final NpcStringId[] KARONF_SHOUT =
-	{
-		NpcStringId.WHEN_YOU_GO_TO_THE_MUSEUM_SPEAK_TO_PANTHEON,
-		NpcStringId.SOME_FOLKS_DON_T_KNOW_WHAT_THEY_ARE_DOING
-	};
-	private final static Location[] KARONF_LOC =
-	{
-		new Location(-113984, 259782, -1203),
-		new Location(-113786, 259475, -1203),
-		new Location(-113977, 259035, -1203),
-		new Location(-114012, 259290, -1203),
-		new Location(-113812, 259522, -1203),
-		new Location(-113621, 259281, -1203),
-		new Location(-114354, 259048, -1193),
-		new Location(-113864, 259293, -1203),
-		new Location(-114052, 259351, -1203),
-		new Location(-114175, 259243, -1203),
-	};
 	
 	private Karonf()
 	{
@@ -60,27 +42,36 @@ public final class Karonf extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		if (event.equalsIgnoreCase("npc_move") && (npc != null))
+		if (event.equals("NPC_MOVE"))
 		{
-			if (getRandom(100) > 40)
+			if (getRandom(2) == 0)
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, KARONF_SHOUT[getRandom(2)], 1000);
-				addMoveToDesire(npc, KARONF_LOC[getRandom(10)], 0);
+				addMoveToDesire(npc, Util.getRandomPosition(npc.getSpawn().getLocation(), 0, 500), 23);
 			}
-			else
-			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, KARONF_SHOUT[getRandom(2)]);
-			}
+			getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
 		}
-		return null;
+		else if (event.equals("NPC_SHOUT"))
+		{
+			final int rand = getRandom(3);
+			if (rand == 0)
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHEN_YOU_GO_TO_THE_MUSEUM_SPEAK_TO_PANTHEON);
+			}
+			else if (rand == 1)
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SOME_FOLKS_DON_T_KNOW_WHAT_THEY_ARE_DOING);
+			}
+			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		}
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		startQuestTimer("npc_move", 8000, npc, null, true);
+		getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
+		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 		return super.onSpawn(npc);
 	}
 	

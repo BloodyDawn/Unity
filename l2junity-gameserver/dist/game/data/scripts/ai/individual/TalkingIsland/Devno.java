@@ -19,41 +19,22 @@
 package ai.individual.TalkingIsland;
 
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
 import ai.AbstractNpcAI;
 
 /**
  * Devno AI.
- * @author Gladicek
+ * @author St3eT
  */
 public final class Devno extends AbstractNpcAI
 {
 	// NPC
 	private static final int DEVNO = 33241;
-	// Misc
-	private static final NpcStringId[] DEVNO_SHOUT =
-	{
-		NpcStringId.CARRY_OUT_YOUR_QUESTS_FAITHFULLY_IN_TALKING_ISLAND_AND_YOU_LL_GET_TO_THE_1ST_CLASS_TRANSFER_IN_NO_TIME,
-		NpcStringId.I_SEE_THAT_ADVENTURERS_ARE_RETURNING_TO_TALKING_ISLAND_FOR_THE_AWAKENING,
-		NpcStringId.YOU_CAN_SEE_VARIOUS_STATISTICS_IN_THE_MUSEUM_STATS_IN_THE_MAIN_MENU
-	};
-	private final static Location[] DEVNO_LOC =
-	{
-		new Location(-114448, 259106, -1203),
-		new Location(-114565, 258686, -1203),
-		new Location(-115047, 258883, -1204),
-		new Location(-114904, 259038, -1203),
-		new Location(-114673, 258981, -1203),
-		new Location(-114595, 259277, -1203),
-		new Location(-114866, 259350, -1203),
-		new Location(-114601, 258926, -1203),
-		new Location(-114702, 259080, -1203),
-		new Location(-114973, 259306, -1203),
-	};
 	
 	private Devno()
 	{
@@ -61,27 +42,39 @@ public final class Devno extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		if (event.equalsIgnoreCase("npc_move") && (npc != null))
+		if (event.equals("NPC_MOVE"))
 		{
-			if (getRandom(100) > 40)
+			if (getRandom(2) == 0)
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, DEVNO_SHOUT[getRandom(3)], 1000);
-				addMoveToDesire(npc, DEVNO_LOC[getRandom(10)], 0);
+				addMoveToDesire(npc, Util.getRandomPosition(npc.getSpawn().getLocation(), 0, 500), 23);
 			}
-			else
-			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, DEVNO_SHOUT[getRandom(3)], 1000);
-			}
+			getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
 		}
-		return null;
+		else if (event.equals("NPC_SHOUT"))
+		{
+			switch (getRandom(4))
+			{
+				case 0:
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.CARRY_OUT_YOUR_QUESTS_FAITHFULLY_IN_TALKING_ISLAND_AND_YOU_LL_GET_TO_THE_1ST_CLASS_TRANSFER_IN_NO_TIME);
+					break;
+				case 1:
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_SEE_THAT_ADVENTURERS_ARE_RETURNING_TO_TALKING_ISLAND_FOR_THE_AWAKENING);
+					break;
+				case 2:
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_CAN_SEE_VARIOUS_STATISTICS_IN_THE_MUSEUM_STATS_IN_THE_MAIN_MENU);
+					break;
+			}
+			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		}
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		startQuestTimer("npc_move", 10000, npc, null, true);
+		getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
+		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 		return super.onSpawn(npc);
 	}
 	
