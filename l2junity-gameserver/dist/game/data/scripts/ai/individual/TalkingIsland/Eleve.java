@@ -19,40 +19,22 @@
 package ai.individual.TalkingIsland;
 
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
 import ai.AbstractNpcAI;
 
 /**
  * Eleve AI.
- * @author Gladicek
+ * @author St3eT
  */
 public final class Eleve extends AbstractNpcAI
 {
 	// NPC
 	private static final int ELEVE = 33246;
-	// Misc
-	private static final NpcStringId[] ELEVE_SHOUT =
-	{
-		NpcStringId.DON_T_KNOW_WHAT_TO_DO_LOOK_AT_THE_MAP,
-		NpcStringId.DO_YOU_SEE_A_SCROLL_ICON_GO_THAT_LOCATION
-	};
-	private final static Location[] ELEVE_LOC =
-	{
-		new Location(-114936, 259918, -1203),
-		new Location(-114687, 259872, -1203),
-		new Location(-114552, 259699, -1203),
-		new Location(-114689, 259453, -1203),
-		new Location(-114990, 259335, -1203),
-		new Location(-115142, 259523, -1203),
-		new Location(-114894, 259137, -1203),
-		new Location(-114832, 259363, -1203),
-		new Location(-114809, 259260, -1203),
-		new Location(-115036, 260006, -1203),
-	};
 	
 	private Eleve()
 	{
@@ -60,27 +42,36 @@ public final class Eleve extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		if (event.equalsIgnoreCase("npc_move") && (npc != null))
+		if (event.equals("NPC_MOVE"))
 		{
-			if (getRandom(100) > 40)
+			if (getRandom(2) == 0)
 			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, ELEVE_SHOUT[getRandom(2)], 1000);
-				addMoveToDesire(npc, ELEVE_LOC[getRandom(10)], 0);
+				addMoveToDesire(npc, Util.getRandomPosition(npc.getSpawn().getLocation(), 0, 500), 23);
 			}
-			else
-			{
-				npc.broadcastSay(ChatType.NPC_GENERAL, ELEVE_SHOUT[getRandom(2)], 1000);
-			}
+			getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
 		}
-		return null;
+		else if (event.equals("NPC_SHOUT"))
+		{
+			final int rand = getRandom(3);
+			if (rand == 0)
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.DON_T_KNOW_WHAT_TO_DO_LOOK_AT_THE_MAP);
+			}
+			else if (rand == 1)
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.DO_YOU_SEE_A_SCROLL_ICON_GO_THAT_LOCATION);
+			}
+			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		}
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		startQuestTimer("npc_move", 6000, npc, null, true);
+		getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
+		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 		return super.onSpawn(npc);
 	}
 	
