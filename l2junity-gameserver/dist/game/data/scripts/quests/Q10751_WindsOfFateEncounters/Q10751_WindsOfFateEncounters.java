@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -21,8 +21,10 @@ package quests.Q10751_WindsOfFateEncounters;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -47,6 +49,7 @@ import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 
 /**
  * Winds of Fate: Encounters (10751)
@@ -81,11 +84,12 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 	{
 		super(10751);
 		addStartNpc(NAVARI);
-		addFirstTalkId(TELESHA, MYSTERIOUS_WIZARD);
+		addFirstTalkId(TELESHA);
 		addTalkId(NAVARI, AYANTHE, KATALIN, RAYMOND, TELESHA, MYSTERIOUS_WIZARD);
 		addKillId(MONSTERS);
 		
 		addCondRace(Race.ERTHEIA, "");
+		addCondInCategory(CategoryType.FIRST_CLASS_GROUP, "");
 		addCondMinLevel(MIN_LEVEL, "33931-00.htm");
 		registerQuestItems(WIND_SPIRIT_REALMS_RELIC);
 	}
@@ -170,7 +174,7 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 				htmltext = null;
 				break;
 			}
-			case "33980-02.html":
+			case "33980-06.html":
 			{
 				if (qs.isCond(6))
 				{
@@ -241,22 +245,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 		if (npc.getId() == TELESHA)
 		{
 			htmltext = "33981-01.html";
-		}
-		else
-		{
-			final QuestState qs = getQuestState(player, false);
-			if (qs == null)
-			{
-				return htmltext;
-			}
-			if (qs.isCond(6))
-			{
-				htmltext = "33980-01.html";
-			}
-			else if (qs.isCond(7))
-			{
-				htmltext = "33980-03.html";
-			}
 		}
 		return htmltext;
 	}
@@ -448,14 +436,34 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 			if (command.equals("Q10751_teleport"))
 			{
 				player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
-				if (!player.isInCombat())
+				
+				if (CastleManager.getInstance().getCastles().stream().anyMatch(c -> c.getSiege().isInProgress()))
 				{
-					player.teleToLocation(TELEPORT_LOC);
+					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_IN_MIDDLE_OF_A_SIEGE, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isInParty())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_PARTY_STATUS, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isInInstance())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_WHILE_USING_INSTANCE_ZONE, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isTransformed())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_WHILE_IN_A_TRANSFORMED_STATE, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isDead())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_WHILE_YOU_ARE_DEAD, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
 				else
 				{
-					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
-					player.sendPacket(new TutorialShowQuestionMark(getId()));
+					player.teleToLocation(TELEPORT_LOC);
 				}
 				player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 			}
@@ -477,7 +485,7 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 		final int oldLevel = event.getOldLevel();
 		final int newLevel = event.getNewLevel();
 		
-		if ((st == null) && (player.getRace().equals(Race.ERTHEIA)) && (oldLevel < newLevel) && (newLevel >= MIN_LEVEL))
+		if ((st == null) && (player.getRace().equals(Race.ERTHEIA)) && (oldLevel < newLevel) && (newLevel >= MIN_LEVEL) && (player.isInCategory(CategoryType.FIRST_CLASS_GROUP)))
 		{
 			showOnScreenMsg(player, NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
@@ -491,7 +499,7 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if ((st == null) && player.getRace().equals(Race.ERTHEIA) && (player.getLevel() >= MIN_LEVEL))
+		if ((st == null) && player.getRace().equals(Race.ERTHEIA) && (player.getLevel() >= MIN_LEVEL) && (player.isInCategory(CategoryType.FIRST_CLASS_GROUP)))
 		{
 			showOnScreenMsg(player, NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));

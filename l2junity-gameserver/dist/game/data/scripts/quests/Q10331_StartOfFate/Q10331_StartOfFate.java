@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J Unity
  * 
- * This file is part of L2J DataPack.
+ * This file is part of L2J Unity.
  * 
- * L2J DataPack is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J DataPack is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -70,6 +71,7 @@ public final class Q10331_StartOfFate extends Quest
 		super(10331);
 		addStartNpc(FRANCO, RIVIAN, DEVON, TOOK, MOKA, VALFAR);
 		addTalkId(FRANCO, RIVIAN, DEVON, TOOK, MOKA, VALFAR, SEBION, LAKCIS, PANTHEON);
+		addCondInCategory(CategoryType.FIRST_CLASS_GROUP, "");
 		registerQuestItems(SARIL_NECKLACE);
 	}
 	
@@ -744,13 +746,26 @@ public final class Q10331_StartOfFate extends Quest
 	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
 		final PlayerInstance player = event.getActiveChar();
+		final QuestState qs = getQuestState(player, false);
 		final int oldLevel = event.getOldLevel();
 		final int newLevel = event.getNewLevel();
 		
-		if ((oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA) && (player.isInCategory(CategoryType.FIRST_CLASS_GROUP)))
+		if ((qs == null) && (oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA) && (player.isInCategory(CategoryType.FIRST_CLASS_GROUP)))
 		{
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
-			
+		}
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void OnPlayerLogin(OnPlayerLogin event)
+	{
+		final PlayerInstance player = event.getActiveChar();
+		final QuestState qs = getQuestState(player, false);
+		
+		if ((qs == null) && (player.getRace() != Race.ERTHEIA) && (player.getLevel() >= MIN_LEVEL) && (player.isInCategory(CategoryType.FIRST_CLASS_GROUP)))
+		{
+			player.sendPacket(new TutorialShowQuestionMark(getId()));
 		}
 	}
 }
