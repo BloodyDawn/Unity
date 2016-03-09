@@ -242,6 +242,7 @@ public final class Q10752_WindsOfFateAPromise extends Quest
 					addExpAndSp(player, 2_050_000, 0);
 					qs.exitQuest(false, true);
 				}
+				break;
 			}
 		}
 		return htmltext;
