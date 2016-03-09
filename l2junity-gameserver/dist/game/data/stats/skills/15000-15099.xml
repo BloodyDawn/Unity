@@ -226,7 +226,7 @@
 		<affectScope>SQUARE</affectScope>
 	</skill>
 	<skill id="15012" toLevel="1" name="Bat Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hit with a bat. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -240,9 +240,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>180000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15013" toLevel="1" name="Goods Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -261,9 +266,40 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15014" toLevel="1" name="Vernier Calipers Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -282,9 +318,40 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>230000</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15015" toLevel="1" name="Spear Bash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A2</operateType>
@@ -306,9 +373,40 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15016" toLevel="1" name="Powerful Bash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -329,9 +427,44 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15017" toLevel="1" name="Stone Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Throw a stone and inflict poison. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -352,9 +485,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15018" toLevel="1" name="Goods Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Goods Throw. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -368,9 +510,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15019" toLevel="1" name="Goods Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Throw an item and inflict bleeding. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -392,9 +539,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15020" toLevel="1" name="Spanner Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Spanner throw. When hit with the hard part, it causes the mind to go blank. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -416,9 +572,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15021" toLevel="1" name="Battle Hammer Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Battle hammer throw. When hit with the head, it causes the mind to go blank. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -440,9 +604,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15022" toLevel="1" name="Battle Axe Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Battle axe throw. When hit with the edge, it causes bleeding. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -464,9 +636,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15023" toLevel="1" name="Javelin Throw">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Javelin throw. When hit, it has a chance of causing bleeding. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -488,9 +669,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15024" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses your HP to increase P. Atk. by 20%. But decreases HP by 50%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -508,9 +698,20 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="HealPercent">
+				<power>-50</power>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="15025" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses your HP to increase P. Atk. by 20%. Atk. Spd. is decreased by 20%. Also decreases HP by 30%. -->
 		<icon>icon.skill1388</icon>
 		<operateType>A2</operateType>
@@ -528,9 +729,24 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="HealPercent">
+				<power>-30</power>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="15026" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses your HP to restore the target's HP by 50%) But decreases HP by 40%. -->
 		<icon>icon.skill10274</icon>
 		<operateType>A1</operateType>
@@ -545,9 +761,19 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>50</power>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="HealPercent">
+				<power>-40</power>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="15027" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Raises your abilities. Increases P. Def. by 20% and M. Def. by 20%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -565,9 +791,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15028" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Raises your abilities. Increases P. Def. by 30% and M. Def. by 30%. -->
 		<icon>icon.skill1388</icon>
 		<operateType>A2</operateType>
@@ -585,9 +821,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15029" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Raises your abilities. Increases P. Atk. by 30% and Atk. Spd. by 30%. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -605,9 +851,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15030" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Raises your abilities. Increases P. Atk. by 50% and Atk. Spd. by 50%. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -625,9 +881,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15031" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Raises your abilities. Increases M. Atk. by 30% and Casting Spd. by 30%. -->
 		<icon>icon.skill0337</icon>
 		<operateType>A2</operateType>
@@ -645,9 +911,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15032" toLevel="1" name="Use Petra">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases your HP to raise the HP of nearby allies. -->
 		<icon>icon.skill0337</icon>
 		<operateType>A1</operateType>
@@ -664,9 +940,19 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>CLAN</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>10</power>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="HealPercent">
+				<power>-1</power>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="15033" toLevel="1" name="Aggression Chain Strike - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Turns an enemy's target to yourself and pulls it toward you. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
@@ -687,9 +973,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="GetAgro" />
+		</effects>
 	</skill>
 	<skill id="15034" toLevel="1" name="Aggression Chain Strike - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Turns an enemy's target to yourself and pulls it toward you. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
@@ -710,9 +1006,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="GetAgro" />
+		</effects>
 	</skill>
 	<skill id="15035" toLevel="1" name="Shield Strike - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Targets the enemy and uses the shield on enemies nearby to bring them down. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -737,9 +1043,29 @@
 		<targetType>TARGET</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15036" toLevel="1" name="Armor Break - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. is decreased by 50%. -->
 		<icon>icon.skill10258</icon>
 		<operateType>A2</operateType>
@@ -759,9 +1085,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15037" toLevel="1" name="Leg Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Strikes the legs of nearby enemies to inflict damage and bring them down. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -785,9 +1120,29 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>170000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15038" toLevel="1" name="Stab">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stabs an enemy powerfully with both arms. Momentarily inflicts paralysis and strong bleeding. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -809,9 +1164,21 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15039" toLevel="1" name="Flame Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses an axe to throw flames at the enemies at the front and to bring them down. Low chance of inflicting fear. -->
 		<icon>icon.skill11056</icon>
 		<operateType>A2</operateType>
@@ -839,9 +1206,30 @@
 		<targetType>TARGET</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>230</power>
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1703</skillId> <!-- Cancel Fear -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15040" toLevel="1" name="Fire Magic">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Targets an enemy and inflicts damage on nearby enemies with fire magic. chance of inflicting fear. -->
 		<icon>icon.skill11056</icon>
 		<operateType>A2</operateType>
@@ -869,9 +1257,30 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>230</power>
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1703</skillId> <!-- Cancel Fear -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15041" toLevel="1" name="Fire Magic">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Targets an enemy and inflicts damage on nearby enemies with fire magic. chance of inflicting fear. -->
 		<icon>icon.skill11056</icon>
 		<operateType>A2</operateType>
@@ -899,6 +1308,27 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>230</power>
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1703</skillId> <!-- Cancel Fear -->
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="Speed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15042" toLevel="1" name="Tauti Push">
 		<!-- AUTO GENERATED SKILL -->
