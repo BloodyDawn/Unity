@@ -25,6 +25,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
@@ -34,9 +35,11 @@ import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCallToChangeClass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
@@ -53,9 +56,15 @@ import instances.AbstractInstance;
 public class MemoryOfDisaster extends AbstractInstance
 {
 	// NPCs
+	private static final int INVISIBLE_NPC = 18919;
 	private static final int BRONK = 19192;
 	private static final int ROGIN = 19193;
 	private static final int TOROCCO = 19198;
+	private static final int TENTACLE = 19171;
+	private static final int TEREDOR = 19172;
+	private static final int SOLDIER = 19196;
+	private static final int SOLDIER2 = 19197;
+	private static final int SIEGE_GOLEM = 19189;
 	private static final int[] DWARVES =
 	{
 		19192,
@@ -82,6 +91,8 @@ public class MemoryOfDisaster extends AbstractInstance
 	// Locations
 	private static final Location BATTLE_PORT = new Location(116063, -183167, -1460, 64960);
 	private static final Location ROGIN_MOVE = new Location(116400, -183069, -1600);
+	// Skills
+	private static final SkillHolder SIEGE_GOLEM_SKILL_2 = new SkillHolder(16024, 1);
 	// Misc
 	private static final int FIRE_IN_DWARVEN_VILLAGE = 23120700;
 	private static final int TEMPLATE_ID = 200;
@@ -96,9 +107,105 @@ public class MemoryOfDisaster extends AbstractInstance
 	public MemoryOfDisaster()
 	{
 		addInstanceCreatedId(TEMPLATE_ID);
+		addSpawnId(INVISIBLE_NPC, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, SIEGE_GOLEM);
 		addMoveFinishedId(ROGIN);
 		setCreatureKillId(this::onCreatureKill, BRONK);
-		setCreatureAttackedId(this::onCreatureAttacked, BRONK);
+		setCreatureAttackedId(this::onCreatureAttacked, BRONK, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, SIEGE_GOLEM);
+		setCreatureSeeId(this::onCreatureSee, TENTACLE, SOLDIER, SOLDIER2, TEREDOR);
+	}
+	
+	@Override
+	public String onSpawn(Npc npc)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isMoDInstance(instance))
+		{
+			if (npc.getId() == INVISIBLE_NPC)
+			{
+				switch (npc.getParameters().getString("type", ""))
+				{
+					case "Fight":
+					{
+						addSpawn(npc, npc.getParameters().getInt("npcId"), npc.getLocation(), true, instance.getId());
+						switch (Rnd.get(3))
+						{
+							case 0:
+							{
+								addSpawn(npc, SOLDIER, npc.getLocation(), true, instance.getId());
+								break;
+							}
+							case 1:
+							{
+								addSpawn(npc, SOLDIER, npc.getLocation(), true, instance.getId());
+								addSpawn(npc, SOLDIER2, npc.getLocation(), true, instance.getId());
+								break;
+							}
+							case 2:
+							{
+								addSpawn(npc, SOLDIER, npc.getLocation(), true, instance.getId());
+								addSpawn(npc, SOLDIER2, npc.getLocation(), true, instance.getId());
+								addSpawn(npc, SOLDIER2, npc.getLocation(), true, instance.getId());
+								break;
+							}
+						}
+						break;
+					}
+					case "EventC":
+					{
+						addSpawn(npc, SIEGE_GOLEM, npc.getLocation(), true, instance.getId());
+						break;
+					}
+				}
+			}
+			else if ((npc.getId() == TENTACLE) || (npc.getId() == TEREDOR) || (npc.getId() == SOLDIER) || (npc.getId() == SOLDIER2))
+			{
+				npc.initSeenCreatures();
+			}
+			else if (npc.getId() == SIEGE_GOLEM)
+			{
+				Npc teredor = addSpawn(TEREDOR, 117100, -181088, -1272, 19956, false, 0, false, npc.getInstanceId());
+				addAttackDesire(teredor, npc);
+				teredor.setScriptValue(1);
+				teredor = addSpawn(TEREDOR, 116925, -180420, -1200, 46585, false, 0, false, npc.getInstanceId());
+				addAttackDesire(teredor, npc);
+				teredor.setScriptValue(1);
+				teredor = addSpawn(TEREDOR, 116656, -180461, -1240, 56363, false, 0, false, npc.getInstanceId());
+				addAttackDesire(teredor, npc);
+				teredor.setScriptValue(1);
+			}
+		}
+		return super.onSpawn(npc);
+	}
+	
+	public void onCreatureSee(OnCreatureSee event)
+	{
+		final Creature creature = event.getSeen();
+		final Npc npc = (Npc) event.getSeer();
+		final Instance world = npc.getInstanceWorld();
+		if (isMoDInstance(world) && creature.isNpc())
+		{
+			switch (npc.getId())
+			{
+				case SOLDIER:
+				case SOLDIER2:
+				{
+					if ((creature.getId() == TENTACLE) || (creature.getId() == TEREDOR))
+					{
+						addAttackDesire(npc, creature);
+					}
+					break;
+				}
+				case TENTACLE:
+				case TEREDOR:
+				{
+					if ((creature.getId() == SOLDIER) || (creature.getId() == SOLDIER2))
+					{
+						addAttackDesire(npc, creature);
+					}
+					break;
+				}
+			}
+		}
 	}
 	
 	@Override
@@ -136,7 +243,6 @@ public class MemoryOfDisaster extends AbstractInstance
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.CHIEF_REPORTING_IN);
 						npc.getVariables().set("talkId", 1);
 						getTimers().addTimer("ROGIN_TALK", 2000, npc, null);
-						// myself->BroadcastScriptEvent(@SCE_AWAKENING_LOOKATME, gg->GetIndexFromCreature(myself->sm), 2000);
 						break;
 					}
 					case 1:
@@ -144,7 +250,6 @@ public class MemoryOfDisaster extends AbstractInstance
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENEMIES_ARE_APPROACHING_FORM_THE_SOUTH);
 						npc.getVariables().set("talkId", 2);
 						getTimers().addTimer("ROGIN_TALK", 2000, npc, null);
-						// From SCE_AWAKENING_LOOKATME events
 						npc.getInstanceWorld().getNpc(TOROCCO).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ROGIN_I_M_HERE);
 						npc.getInstanceWorld().getNpc(BRONK).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MM_I_SEE);
 						break;
@@ -159,7 +264,6 @@ public class MemoryOfDisaster extends AbstractInstance
 					case 3:
 					{
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MANY_RESIDENTS_STILL_HAVEN_T_LEFT_THEIR_HOMES);
-						// myself->BroadcastScriptEvent(@SCE_AWAKENING_MS_FIN, 0, 2000);
 						getTimers().addTimer("BRONK_TALK", 2000, npc.getInstanceWorld().getNpc(BRONK), null);
 						break;
 					}
@@ -244,9 +348,65 @@ public class MemoryOfDisaster extends AbstractInstance
 	
 	private void onCreatureAttacked(OnCreatureAttacked event)
 	{
-		if (!event.getAttacker().isPlayable())
+		final Instance world = event.getTarget().getInstanceWorld();
+		if (isMoDInstance(world))
 		{
-			event.getTarget().doDie(event.getTarget());
+			if (!event.getAttacker().isPlayable())
+			{
+				final Npc npc = (Npc) event.getTarget();
+				final Npc attacker = (Npc) event.getAttacker();
+				switch (npc.getId())
+				{
+					case BRONK:
+					{
+						npc.doDie(attacker);
+						// hEre SCE_AWAKENING_BU_START
+						break;
+					}
+					case SOLDIER:
+					case SOLDIER2:
+					{
+						final int attackCount = npc.getVariables().getInt("attackCount", 0) + 1;
+						if (attackCount == 10)
+						{
+							npc.doDie(attacker);
+							addSpawn((Npc) npc.getSummoner(), SOLDIER, npc.getLocation(), true, world.getId());
+						}
+						else
+						{
+							npc.getVariables().set("attackCount", attackCount);
+						}
+						break;
+					}
+					case TENTACLE:
+					case TEREDOR:
+					{
+						if (!npc.isScriptValue(1))
+						{
+							final int attackCount = npc.getVariables().getInt("attackCount", 0) + 1;
+							if (attackCount == 20)
+							{
+								npc.doDie(attacker);
+								addSpawn((Npc) npc.getSummoner(), npc.getId(), npc.getLocation(), true, world.getId());
+							}
+							else
+							{
+								npc.getVariables().set("attackCount", attackCount);
+								addAttackDesire(npc, attacker);
+							}
+						}
+						break;
+					}
+					case SIEGE_GOLEM:
+					{
+						if (npc.isScriptValue(0))
+						{
+							addSkillCastDesire(npc, attacker, SIEGE_GOLEM_SKILL_2, 1000000);
+						}
+						break;
+					}
+				}
+			}
 		}
 	}
 	
@@ -302,6 +462,11 @@ public class MemoryOfDisaster extends AbstractInstance
 				showOnScreenMsg(player, NpcStringId.FREE_THE_GIANT_FROM_HIS_IMPRISONMENT_AND_AWAKEN_YOUR_TRUE_POWER, ExShowScreenMessage.TOP_CENTER, 5000);
 			}
 		}
+	}
+	
+	private boolean isMoDInstance(Instance instance)
+	{
+		return (instance != null) && (instance.getTemplateId() == TEMPLATE_ID);
 	}
 	
 	public static void main(String[] args)

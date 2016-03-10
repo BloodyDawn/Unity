@@ -78,10 +78,26 @@
 			</territories>
 			<npc id="19188" x="117123" y="-179731" z="-1072" heading="24769" /> <!-- Toma -->
 			<npc id="18919" x="115823" y="-183301" z="-1480" /> <!-- -->
-			<npc id="18919" x="115823" y="-183301" z="-1480" /> <!-- -->
-			<npc id="18919" x="115880" y="-181700" z="-1496" /> <!-- -->
-			<npc id="18919" x="116123" y="-181103" z="-1576" /> <!-- -->
-			<npc id="18919" x="116364" y="-184073" z="-1552" /> <!-- -->
+			<npc id="18919" x="115823" y="-183301" z="-1480"> <!-- -->
+				<parameters>
+					<param name="type" value="EventA" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115880" y="-181700" z="-1496"> <!-- -->
+				<parameters>
+					<param name="type" value="EventB" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="116123" y="-181103" z="-1576"> <!-- -->
+				<parameters>
+					<param name="type" value="EventC" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="116364" y="-184073" z="-1552"> <!-- -->
+				<parameters>
+					<param name="type" value="Reinforce" />
+				</parameters>
+			</npc>
 			<npc id="19192" x="116557" y="-183170" z="-1607" heading="17036" /> <!-- Bronk -->
 			<npc id="19198" x="116685" y="-183032" z="-1629" heading="-24932" /> <!-- Torocco -->
 			<npc id="19199" x="116620" y="-183006" z="-1629" heading="-21716" /> <!-- Murdoc -->
@@ -102,26 +118,126 @@
 			<npc id="19214" x="116367" y="-182941" z="-1601" heading="-8528" /> <!-- Rant -->
 			<npc id="19215" x="116753" y="-183066" z="-1629" heading="-28108" /> <!-- Rolfe -->
 			<npc id="19191" x="116785" y="-183034" z="-1613" heading="-26100" /> <!-- Croto -->
-			<npc id="18919" x="116624" y="-182576" z="-1552" /> <!-- -->
-			<npc id="18919" x="117479" y="-182372" z="-1531" /> <!-- -->
-			<npc id="18919" x="117152" y="-182944" z="-1504" /> <!-- -->
-			<npc id="18919" x="115600" y="-182720" z="-1440" /> <!-- -->
-			<npc id="18919" x="116322" y="-183783" z="-1552" /> <!-- -->
-			<npc id="18919" x="117216" y="-179456" z="-1120" /> <!-- -->
-			<npc id="18919" x="115712" y="-177840" z="-896" /> <!-- -->
-			<npc id="18919" x="115088" y="-178256" z="-912" /> <!-- -->
-			<npc id="18919" x="117120" y="-179184" z="-1120" /> <!-- -->
-			<npc id="18919" x="116256" y="-179408" z="-1104" /> <!-- -->
-			<npc id="18919" x="115088" y="-178752" z="-880" /> <!-- -->
-			<npc id="18919" x="115504" y="-179408" z="-912" /> <!-- -->
-			<npc id="18919" x="115648" y="-178576" z="-1072" /> <!-- -->
-			<npc id="18919" x="115984" y="-178192" z="-1056" /> <!-- -->
-			<npc id="18919" x="115840" y="-179280" z="-1008" /> <!-- -->
-			<npc id="18919" x="115568" y="-177792" z="-896" /> <!-- -->
-			<npc id="18919" x="116816" y="-179488" z="-1120" /> <!-- -->
-			<npc id="18919" x="115216" y="-178464" z="-912" /> <!-- -->
-			<npc id="18919" x="116000" y="-178576" z="-1136" /> <!-- -->
-			<npc id="18919" x="115120" y="-179072" z="-896" /> <!-- -->
+			<npc id="18919" x="116624" y="-182576" z="-1552"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="117479" y="-182372" z="-1531"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="117152" y="-182944" z="-1504"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115600" y="-182720" z="-1440"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="116322" y="-183783" z="-1552"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="117216" y="-179456" z="-1120"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115712" y="-177840" z="-896"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115088" y="-178256" z="-912"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="117120" y="-179184" z="-1120"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="116256" y="-179408" z="-1104"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115088" y="-178752" z="-880"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115504" y="-179408" z="-912"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115648" y="-178576" z="-1072"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115984" y="-178192" z="-1056"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115840" y="-179280" z="-1008"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115568" y="-177792" z="-896"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="116816" y="-179488" z="-1120"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19171" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115216" y="-178464" z="-912"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19172" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="116000" y="-178576" z="-1136"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19172" />
+				</parameters>
+			</npc>
+			<npc id="18919" x="115120" y="-179072" z="-896"> <!-- -->
+				<parameters>
+					<param name="type" value="Fight" />
+					<param name="npcId" value="19172" />
+				</parameters>
+			</npc>
 			<npc id="19190" x="117221" y="-182221" z="-1440" heading="16628" /> <!-- Swoop Cannon -->
 			<npc id="19183" x="117083" y="-182215" z="-1487" heading="17716" /> <!-- Corpse -->
 			<npc id="19190" x="116912" y="-182201" z="-1517" heading="17008" /> <!-- Swoop Cannon -->
