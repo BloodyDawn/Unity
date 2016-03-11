@@ -32,7 +32,7 @@
 		</effects>
 	</skill>
 	<skill id="12001" toLevel="1" name="Glimmer Crystal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
@@ -44,9 +44,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>ALL</affectObject>
+		<itemConsume>17604</itemConsume>
+		<itemConsumeCount>1</itemConsumeCount>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>12011</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="12002" toLevel="1" name="Glimmer">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>150</castRange>
@@ -78,9 +86,14 @@
 				</npcIds>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="Heal">
+				<power>2730</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="12003" toLevel="1" name="Stronghold Fragment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bestows the authority to control the stronghold. -->
 		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A2</operateType>
@@ -103,7 +116,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="12004" toLevel="1" name="Summon Detector">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Detect the relic. -->
 		<icon>icon.skill0324</icon>
 		<operateType>A1</operateType>
@@ -116,9 +129,20 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SummonNpc">
+				<npcId>33156</npcId>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="12005" toLevel="1" name="Spray Insecticide">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sprays medicine. -->
 		<icon>icon.bug_spray_a</icon>
 		<operateType>A2</operateType>
@@ -142,7 +166,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="12006" toLevel="1" name="Spray Insecticide">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sprays medicine. -->
 		<icon>icon.bug_spray_b</icon>
 		<operateType>A2</operateType>
@@ -166,7 +190,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="12007" toLevel="1" name="Spray Insecticide">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sprays medicine. -->
 		<icon>icon.bug_spray_c</icon>
 		<operateType>A2</operateType>
@@ -224,9 +248,12 @@
 				<isWithin>true</isWithin>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
 	</skill>
 	<skill id="12009" toLevel="1" name="Teredor Antidote">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Invincible against a terrible abnormal status. -->
 		<icon>icon.grima_poison</icon>
 		<operateType>A2</operateType>
@@ -242,6 +269,12 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>POISON,7</dispel>
+			</effect>
+			<effect name="DebuffBlock" />
+		</effects>
 	</skill>
 	<skill id="12010" toLevel="1" name="Bonus Hall Key">
 		<!-- AUTO GENERATED SKILL -->

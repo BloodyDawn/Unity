@@ -2693,7 +2693,7 @@
 		</effects>
 	</skill>
 	<skill id="10547" toLevel="1" name="Shadow Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Not in use. -->
 		<icon>icon.skill0263</icon>
 		<operateType>A2</operateType>
@@ -2725,9 +2725,20 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="TeleportToTarget" />
+			<effect name="TargetCancel" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="FatalBlow">
+				<power>8875</power>
+				<chance>30</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="10548" toLevel="8" name="Plunder">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Steals an item from the enemy. -->
 		<icon>icon.skill10548</icon>
 		<operateType>A1</operateType>
@@ -2763,6 +2774,9 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="Plunder" />
+			<effect name="PhysicalAttack">
+				<power>200</power>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10549" toLevel="8" name="Kick">
@@ -2846,7 +2860,7 @@
 		</effects>
 	</skill>
 	<skill id="10550" toLevel="7" name="Illusion Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful vital spot attack and decreases speed by 23% for 7 seconds. -->
 		<table name="#power"> 21344 22083 23560 25039 26516 27993 29472 </table> <!-- Guessed from Heart Breaker -->
 		<icon>icon.skill10550</icon>
@@ -2914,7 +2928,7 @@
 		</effects>
 	</skill>
 	<skill id="10551" toLevel="7" name="Illusion Trick">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels the enemy's target and stops him from targeting for 1 second. -->
 		<icon>icon.skill10551</icon>
 		<abnormalLvl>1</abnormalLvl>
@@ -2963,6 +2977,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
+			<effect name="TargetCancel" />
 			<effect name="DisableTargeting" />
 		</effects>
 	</skill>
