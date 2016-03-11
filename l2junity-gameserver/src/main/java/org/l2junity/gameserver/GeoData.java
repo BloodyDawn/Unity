@@ -504,6 +504,11 @@ public class GeoData
 		return new Location(tx, ty, tz);
 	}
 	
+	public Location moveCheck(Location startLoc, Location endLoc, Instance instance)
+	{
+		return moveCheck(startLoc.getX(), startLoc.getY(), startLoc.getZ(), endLoc.getX(), endLoc.getY(), endLoc.getZ(), instance);
+	}
+	
 	/**
 	 * Checks if its possible to move from one location to another.
 	 * @param fromX the X coordinate to start checking from
