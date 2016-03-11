@@ -71,6 +71,10 @@ public class MemoryOfDisaster extends AbstractInstance
 	private static final int SOLDIER = 19196;
 	private static final int SOLDIER2 = 19197;
 	private static final int SIEGE_GOLEM = 19189;
+	private static final int TEREDOR_TRANSPARENT = 18998;
+	private static final int SILVERA = 19194;
+	private static final int WIRPHY = 19195;
+	private static final int EARTH_WYRM_TRASKEN = 19217;
 	private static final int[] DWARVES =
 	{
 		19191,
@@ -113,9 +117,17 @@ public class MemoryOfDisaster extends AbstractInstance
 		new Location(115959, -178311, -1064)
 	};
 	private static final Location GOLEM_MOVE = new Location(116608, -179205, -1176);
+	private static final Location PULLER_TELEPORT = new Location(115899, -181931, -1424, 0);
+	private static final Location WIRPHY_MOVE = new Location(116639, -179990, -1160);
+	private static final Location SILVERA_MOVE = new Location(116880, -179821, -1144);
 	// Skills
 	private static final SkillHolder SIEGE_GOLEM_SKILL_1 = new SkillHolder(16022, 1);
 	private static final SkillHolder SIEGE_GOLEM_SKILL_2 = new SkillHolder(16024, 1);
+	private static final SkillHolder PULLER_SKILL = new SkillHolder(16031, 1);
+	private static final SkillHolder TEREDOR_TRANSPARENT_SKILL = new SkillHolder(16021, 1);
+	private static final SkillHolder TRASKEN_SKILL_1 = new SkillHolder(14505, 1);
+	// Items
+	private static final int TRANSPARENT_1HS = 15280;
 	// Misc
 	private static final int FIRE_IN_DWARVEN_VILLAGE = 23120700;
 	private static final int TEMPLATE_ID = 200;
@@ -134,16 +146,24 @@ public class MemoryOfDisaster extends AbstractInstance
 		NpcStringId.WHOAAAAAA,
 		NpcStringId.FIGHT
 	};
+	private static final NpcStringId[] SHOUT_SILVERA_DEATH =
+	{
+		NpcStringId.SILVERA,
+		NpcStringId.WE_CAN_T_TAKE_ANY_MORE_LOSSES,
+		NpcStringId.TOO_LATE3,
+		NpcStringId.NO_WAY4,
+		NpcStringId.ANOTHER_ONE_OVER_THERE
+	};
 	
 	public MemoryOfDisaster()
 	{
 		addInstanceCreatedId(TEMPLATE_ID);
-		addSpawnId(INVISIBLE_NPC, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, SIEGE_GOLEM);
-		addMoveFinishedId(ROGIN, SOLDIER);
+		addSpawnId(INVISIBLE_NPC, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, SIEGE_GOLEM, WIRPHY, SILVERA, TEREDOR_TRANSPARENT, EARTH_WYRM_TRASKEN);
+		addMoveFinishedId(ROGIN, SOLDIER, WIRPHY, SILVERA);
 		addMoveFinishedId(DWARVES);
-		addSpellFinishedId(SIEGE_GOLEM);
-		setCreatureKillId(this::onCreatureKill, BRONK);
-		setCreatureAttackedId(this::onCreatureAttacked, BRONK, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, SIEGE_GOLEM);
+		addSpellFinishedId(SIEGE_GOLEM, INVISIBLE_NPC, TEREDOR_TRANSPARENT);
+		setCreatureKillId(this::onCreatureKill, BRONK, SILVERA);
+		setCreatureAttackedId(this::onCreatureAttacked, BRONK, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, SIEGE_GOLEM, WIRPHY, SILVERA);
 		setCreatureSeeId(this::onCreatureSee, TENTACLE, SOLDIER, SOLDIER2, TEREDOR, INVISIBLE_NPC);
 	}
 	
@@ -185,14 +205,29 @@ public class MemoryOfDisaster extends AbstractInstance
 							}
 							break;
 						}
+						case "EVENT_B":
+						{
+							getTimers().addTimer("WARNING_TIME", 180000, npc, null);
+							break;
+						}
 						case "EVENT_C":
 						{
-							addSpawn(npc, SIEGE_GOLEM, 116881, -180742, -1248, 1843, false, 0, false, instance.getId());
+							// Rework me plz, I'm dying
+							final Npc golem = addSpawn(npc, SIEGE_GOLEM, 116881, -180742, -1248, 1843, false, 0, false, instance.getId());
+							golem.setIsInvul(true);
 							break;
 						}
 						case "REINFORCE":
 						{
 							getTimers().addTimer("REINFORCE_SPAWN", 30000, npc, null);
+							break;
+						}
+						default:
+						{
+							if (npc.getVariables().getString("type", "").equals("PULLER"))
+							{
+								addSkillCastDesire(npc, instance.getFirstPlayer(), PULLER_SKILL, 100000000);
+							}
 							break;
 						}
 					}
@@ -217,24 +252,61 @@ public class MemoryOfDisaster extends AbstractInstance
 					break;
 				}
 				case TENTACLE:
-				case TEREDOR:
 				case SOLDIER2:
 				{
 					npc.initSeenCreatures();
 					break;
 				}
+				case TEREDOR:
+				{
+					npc.initSeenCreatures();
+					if (npc.isScriptValue(2))
+					{
+						addSpawn(WIRPHY, 116361, -179760, -1128, 57533, false, 0, false, instance.getId());
+						addSpawn(SILVERA, 116361, -179760, -1128, 57533, false, 0, false, instance.getId());
+					}
+					break;
+				}
 				case SIEGE_GOLEM:
 				{
 					npc.initSeenCreatures();
-					Npc teredor = addSpawn(TEREDOR, 117100, -181088, -1272, 19956, false, 0, false, npc.getInstanceId());
+					Npc teredor = addSpawn(TEREDOR, 117100, -181088, -1272, 19956, false, 0, false, instance.getId());
 					addAttackDesire(teredor, npc);
 					teredor.setScriptValue(1);
-					teredor = addSpawn(TEREDOR, 116925, -180420, -1200, 46585, false, 0, false, npc.getInstanceId());
+					teredor = addSpawn(TEREDOR, 116925, -180420, -1200, 46585, false, 0, false, instance.getId());
 					addAttackDesire(teredor, npc);
 					teredor.setScriptValue(1);
-					teredor = addSpawn(TEREDOR, 116656, -180461, -1240, 56363, false, 0, false, npc.getInstanceId());
+					teredor = addSpawn(TEREDOR, 116656, -180461, -1240, 56363, false, 0, false, instance.getId());
 					addAttackDesire(teredor, npc);
 					teredor.setScriptValue(1);
+					break;
+				}
+				case WIRPHY:
+				{
+					npc.setIsRunning(true);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, WIRPHY_MOVE);
+					npc.getInstanceWorld().getAliveNpcs(TEREDOR).stream().filter(n -> n.isScriptValue(2)).forEach(n -> addAttackDesire(n, npc));
+					break;
+				}
+				case SILVERA:
+				{
+					npc.setIsRunning(true);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, SILVERA_MOVE);
+					break;
+				}
+				case TEREDOR_TRANSPARENT:
+				{
+					// TODO: Check why the first doesn't work :(
+					addSkillCastDesire(npc, npc, TEREDOR_TRANSPARENT_SKILL, 1000000);
+					npc.setTarget(npc);
+					npc.doCast(TEREDOR_TRANSPARENT_SKILL.getSkill());
+					break;
+				}
+				case EARTH_WYRM_TRASKEN:
+				{
+					npc.setLHandId(TRANSPARENT_1HS);
+					npc.broadcastInfo();
+					getTimers().addTimer("ENTER_EVENT", 5000, npc, null);
 					break;
 				}
 			}
@@ -256,18 +328,28 @@ public class MemoryOfDisaster extends AbstractInstance
 					case SOLDIER:
 					case SOLDIER2:
 					{
-						if ((creature.getId() == TENTACLE) || (creature.getId() == TEREDOR))
+						if ((creature.getId() == TENTACLE) || ((creature.getId() == TEREDOR) && !((Npc) creature).isScriptValue(2)))
 						{
 							addAttackDesire(npc, creature);
 						}
 						break;
 					}
 					case TENTACLE:
-					case TEREDOR:
 					{
 						if ((creature.getId() == SOLDIER) || (creature.getId() == SOLDIER2))
 						{
 							addAttackDesire(npc, creature);
+						}
+						break;
+					}
+					case TEREDOR:
+					{
+						if (!npc.isScriptValue(2))
+						{
+							if ((creature.getId() == SOLDIER) || (creature.getId() == SOLDIER2))
+							{
+								addAttackDesire(npc, creature);
+							}
 						}
 						break;
 					}
@@ -279,12 +361,27 @@ public class MemoryOfDisaster extends AbstractInstance
 				{
 					case INVISIBLE_NPC:
 					{
-						if (npc.getParameters().getString("type", "").equals("EVENT_C") && npc.isScriptValue(0))
+						if (npc.getParameters().getString("type", "").equals("EVENT_C"))
 						{
-							npc.setScriptValue(1);
 							final Npc siegeGolem = npc.getInstanceWorld().getNpc(SIEGE_GOLEM);
-							addSkillCastDesire(siegeGolem, siegeGolem, SIEGE_GOLEM_SKILL_1, 1000000);
-							npc.getInstanceWorld().getAliveNpcs(TEREDOR).stream().filter(n -> n.isScriptValue(1)).forEach(n -> getTimers().addTimer("TEREDOR_SUICIDE", 10000, e -> n.doDie(npc)));
+							if (siegeGolem.isScriptValue(0))
+							{
+								siegeGolem.setScriptValue(1);
+								siegeGolem.abortAttack();
+								siegeGolem.abortCast();
+								addSkillCastDesire(siegeGolem, siegeGolem, SIEGE_GOLEM_SKILL_1, 1000000);
+								world.getAliveNpcs(TEREDOR).stream().filter(n -> n.isScriptValue(1)).forEach(n -> getTimers().addTimer("TEREDOR_SUICIDE", 10000, n, null));
+								getTimers().addTimer("CHASING_TRAJAN_TIME", 5000, npc, null);
+								getTimers().addTimer("EARTHWORM_TIME", 15000, npc, null);
+							}
+						}
+						else if (npc.getParameters().getString("type", "").equals("EVENT_B"))
+						{
+							getTimers().cancelTimers("WARNING_TIME");
+						}
+						else if (npc.getVariables().getString("type", "").equals("PULLER"))
+						{
+							showOnScreenMsg(creature.getActingPlayer(), NpcStringId.WATCH_THE_DWARVEN_VILLAGE_LAST_STAND, ExShowScreenMessage.TOP_CENTER, 5000);
 						}
 						break;
 					}
@@ -418,11 +515,63 @@ public class MemoryOfDisaster extends AbstractInstance
 				getTimers().addTimer("REINFORCE_SPAWN", 40000, npc, null);
 				break;
 			}
+			case "ATTACK_TIME":
+			{
+				final List<Npc> tentacles = npc.getInstanceWorld().getAliveNpcs(TENTACLE).stream().filter(n -> n.getVariables().getBoolean("isLeaderKiller", false)).collect(Collectors.toList());
+				addAttackDesire(npc, tentacles.get(Rnd.get(tentacles.size())));
+				break;
+			}
 			case "RUN_TIME":
 			{
 				npc.broadcastSay(ChatType.NPC_GENERAL, SHOUT_RUN[Rnd.get(SHOUT_RUN.length)]);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, DWARVES_MOVE_1);
 				npc.setIsRunning(true);
+				break;
+			}
+			case "TEREDOR_SUICIDE":
+			{
+				npc.doDie(null);
+				break;
+			}
+			case "WARNING_TIME":
+			{
+				final Npc invisibleNpc = addSpawn(INVISIBLE_NPC, 117100, -181088, -1272, 19956, false, 0, false, npc.getInstanceId());
+				invisibleNpc.getVariables().set("type", "PULLER");
+				break;
+			}
+			case "SECOND_PULL":
+			{
+				addSkillCastDesire(npc, npc.getInstanceWorld().getFirstPlayer(), PULLER_SKILL, 100000000);
+				getTimers().addTimer("DESPAWNER_PULLER", 3000, npc, null);
+				break;
+			}
+			case "DESPAWNER_PULLER":
+			{
+				npc.deleteMe();
+				break;
+			}
+			case "CHASING_TRAJAN_TIME":
+			{
+				final Npc teredor = addSpawn(npc, TEREDOR, 116016, -179503, -1040, 58208, false, 0, false, npc.getInstanceId());
+				teredor.setScriptValue(2);
+				break;
+			}
+			case "EARTHWORM_TIME":
+			{
+				addSpawn(npc, TEREDOR_TRANSPARENT, 116016, -179503, -1040, 58208, false, 0, false, npc.getInstanceId());
+				break;
+			}
+			case "ENTER_EVENT":
+			{
+				addSkillCastDesire(npc, npc, TRASKEN_SKILL_1, 100000000);
+				npc.getInstanceWorld().getFirstPlayer().sendPacket(new Earthquake(npc.getLocation(), 50, 4));
+				getTimers().addTimer("TRASKEN_UNEQUIP", 2000, npc, null);
+				break;
+			}
+			case "TRASKEN_UNEQUIP":
+			{
+				npc.setLHandId(0);
+				npc.broadcastInfo();
 				break;
 			}
 		}
@@ -502,6 +651,16 @@ public class MemoryOfDisaster extends AbstractInstance
 				}
 				break;
 			}
+			case WIRPHY:
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HELP_ME3);
+				break;
+			}
+			case SILVERA:
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_VE_GOT_A_MONSTER_ON_MY_TAIL);
+				break;
+			}
 		}
 	}
 	
@@ -549,13 +708,31 @@ public class MemoryOfDisaster extends AbstractInstance
 						break;
 					}
 					case TENTACLE:
+					{
+						final int attackCount = npc.getVariables().getInt("attackCount", 0) + 1;
+						final boolean isBronKiller = npc.getVariables().getBoolean("isLeaderKiller", false);
+						final int killCount = isBronKiller ? 5 : 20;
+						if (attackCount == killCount)
+						{
+							npc.doDie(attacker);
+							if (!isBronKiller)
+							{
+								addSpawn((Npc) npc.getSummoner(), npc.getId(), npc.getLocation(), true, world.getId());
+							}
+						}
+						else
+						{
+							npc.getVariables().set("attackCount", attackCount);
+							addAttackDesire(npc, attacker);
+						}
+						break;
+					}
 					case TEREDOR:
 					{
-						if (!npc.isScriptValue(1))
+						if (npc.isScriptValue(0))
 						{
 							final int attackCount = npc.getVariables().getInt("attackCount", 0) + 1;
-							final int killCount = npc.getVariables().getBoolean("isLeaderKiller", false) ? 5 : 20;
-							if (attackCount == killCount)
+							if (attackCount == 20)
 							{
 								npc.doDie(attacker);
 								addSpawn((Npc) npc.getSummoner(), npc.getId(), npc.getLocation(), true, world.getId());
@@ -565,6 +742,15 @@ public class MemoryOfDisaster extends AbstractInstance
 								npc.getVariables().set("attackCount", attackCount);
 								addAttackDesire(npc, attacker);
 							}
+						}
+						else if (npc.isScriptValue(2))
+						{
+							final int attackCount = npc.getVariables().getInt("attackCount", 0) + 1;
+							if ((attackCount == 80) || (attacker.getId() == SIEGE_GOLEM))
+							{
+								npc.doDie(attacker);
+							}
+							addAttackDesire(npc, attacker);
 						}
 						break;
 					}
@@ -576,6 +762,23 @@ public class MemoryOfDisaster extends AbstractInstance
 						}
 						break;
 					}
+					case WIRPHY:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.NO_WAY2);
+						npc.doDie(null);
+						// TODO : This shit doesn't attack silvera for some reason which prevents to trigger the dwarf text
+						// Used some additional method such as World.getInstance().getVisibleObjects(attacker, Npc.class, n -> (n.getId() == SILVERA))
+						// It found the npc but didn't worked either.
+						addAttackDesire(attacker, world.getNpc(SILVERA));
+						break;
+					}
+					case SILVERA:
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MY_GOD);
+						npc.doDie(null);
+						addAttackDesire(world.getNpc(SIEGE_GOLEM), attacker);
+						break;
+					}
 				}
 			}
 		}
@@ -583,22 +786,28 @@ public class MemoryOfDisaster extends AbstractInstance
 	
 	private void onCreatureKill(OnCreatureKill event)
 	{
-		final Npc bronk = ((Npc) event.getTarget());
-		final List<Npc> tentacles = bronk.getInstanceWorld().getAliveNpcs(TENTACLE).stream().filter(n -> n.getVariables().getBoolean("isLeaderKiller", false)).collect(Collectors.toList());
-		for (Npc dwarf : bronk.getInstanceWorld().getNpcs(DWARVES))
+		final Npc npc = ((Npc) event.getTarget());
+		if (npc.getId() == BRONK)
 		{
-			if (dwarf.getId() == ROGIN)
+			for (Npc dwarf : npc.getInstanceWorld().getNpcs(DWARVES))
 			{
-				dwarf.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.CHIEF2);
+				if (dwarf.getId() == ROGIN)
+				{
+					dwarf.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.CHIEF2);
+				}
+				else
+				{
+					dwarf.broadcastSay(ChatType.NPC_GENERAL, SHOUT_BRONK_DEATH[Rnd.get(SHOUT_BRONK_DEATH.length)]);
+				}
+				getTimers().addTimer("ATTACK_TIME", 1000, dwarf, null);
+				getTimers().addTimer("RUN_TIME", 10000, dwarf, null);
 			}
-			else
-			{
-				dwarf.broadcastSay(ChatType.NPC_GENERAL, SHOUT_BRONK_DEATH[Rnd.get(SHOUT_BRONK_DEATH.length)]);
-			}
-			getTimers().addTimer("ATTACK_TIME", 1000, e -> addAttackDesire(dwarf, tentacles.get(Rnd.get(tentacles.size()))));
-			getTimers().addTimer("RUN_TIME", 10000, dwarf, null);
+			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.UGH_IF_I_SEE_YOU_IN_THE_SPIRIT_WORLD_FIRST_ROUND_IS_ON_ME);
 		}
-		bronk.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.UGH_IF_I_SEE_YOU_IN_THE_SPIRIT_WORLD_FIRST_ROUND_IS_ON_ME);
+		else if (npc.getId() == SILVERA)
+		{
+			npc.getInstanceWorld().getNpcs(DWARVES).forEach(n -> n.broadcastSay(ChatType.NPC_GENERAL, SHOUT_SILVERA_DEATH[Rnd.get(SHOUT_SILVERA_DEATH.length)]));
+		}
 	}
 	
 	@Override
@@ -608,6 +817,18 @@ public class MemoryOfDisaster extends AbstractInstance
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GOLEM_MOVE);
 			npc.setIsRunning(true);
+		}
+		else if ((npc.getId() == INVISIBLE_NPC) && npc.getVariables().getString("type", "").equals("PULLER") && (skill.getId() == PULLER_SKILL.getSkillId()) && npc.isScriptValue(0))
+		{
+			npc.teleToLocation(PULLER_TELEPORT);
+			getTimers().addTimer("SECOND_PULL", 2000, npc, null);
+		}
+		else if ((npc.getId() == TEREDOR_TRANSPARENT) && (skill.getId() == TEREDOR_TRANSPARENT_SKILL.getSkillId()))
+		{
+			final Npc invisibleNpc = addSpawn(npc, INVISIBLE_NPC, npc.getLocation(), false, npc.getInstanceId());
+			invisibleNpc.getVariables().set("type", "BOUNCER");
+			addSpawn(npc, EARTH_WYRM_TRASKEN, npc.getLocation(), false, npc.getInstanceId());
+			npc.deleteMe();
 		}
 		return super.onSpellFinished(npc, player, skill);
 	}
