@@ -72,7 +72,7 @@ public final class Mammons extends AbstractNpcAI
 		NpcStringId.I_HAVE_SOME_EXCELLENT_WEAPONS_TO_SHOW_YOU,
 		NpcStringId.I_VE_BEEN_SO_BUSY_LATELY_IN_ADDITION_TO_PLANNING_MY_TRIP,
 	};
-	private static final int TELEPORT_DELAY = 1800000; // 30min
+	private static final int TELEPORT_DELAY = 3600000; // 60min
 	private static final List<Npc> _mammons = new ArrayList<>();
 	
 	private Mammons()
