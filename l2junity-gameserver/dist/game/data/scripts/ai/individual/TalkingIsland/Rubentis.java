@@ -23,50 +23,60 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
 import ai.AbstractNpcAI;
 
 /**
- * Heymond AI.
+ * Rubentis AI.
  * @author St3eT
  */
-public final class Heymond extends AbstractNpcAI
+public final class Rubentis extends AbstractNpcAI
 {
-	// NPCs
-	private static final int BANETTE = 33114;
+	// NPC
+	private static final int RUBENTIS = 33120;
 	
-	private Heymond()
+	private Rubentis()
 	{
-		addSpawnId(BANETTE);
+		addSpawnId(RUBENTIS);
 	}
 	
 	@Override
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		switch (getRandom(4))
+		if (event.equals("NPC_MOVE"))
 		{
-			case 0:
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.VIEW_OUR_WIDE_VARIETY_OF_ACCESSORIES);
-				break;
-			case 1:
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_BEST_WEAPON_DOESN_T_MAKE_YOU_THE_BEST);
-				break;
-			case 2:
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WE_BUY_AND_SELL_COME_TAKE_A_LOOK);
-				break;
+			if (getRandom(2) == 0)
+			{
+				addMoveToDesire(npc, Util.getRandomPosition(npc.getSpawn().getLocation(), 0, 500), 23);
+			}
+			getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
 		}
-		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		else if (event.equals("NPC_SHOUT"))
+		{
+			final int rand = getRandom(3);
+			if (rand == 0)
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HUNTING_AT_THE_BEACH_IS_A_BAD_IDEA);
+			}
+			else if (rand == 1)
+			{
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ONLY_THE_STRONG_SURVIVE_AT_RUINS_OF_YE_SAGIRA);
+			}
+			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		}
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
+		getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
 		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 		return super.onSpawn(npc);
 	}
 	
 	public static void main(String[] args)
 	{
-		new Heymond();
+		new Rubentis();
 	}
 }

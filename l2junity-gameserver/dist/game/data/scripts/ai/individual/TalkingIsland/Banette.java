@@ -19,6 +19,7 @@
 package ai.individual.TalkingIsland;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -27,19 +28,12 @@ import ai.AbstractNpcAI;
 
 /**
  * Banette AI.
- * @author Gladicek
+ * @author St3eT
  */
 public final class Banette extends AbstractNpcAI
 {
 	// NPCs
 	private static final int BANETTE = 33114;
-	// Misc
-	private static final NpcStringId[] BANETTE_SHOUT =
-	{
-		NpcStringId.TRAINING_GROUND_IS_LOCATED_STRAIGHT_AHEAD,
-		NpcStringId.WHILE_TRAINING_IN_THE_TRAINING_GROUNDS_IT_BECOMES_PROGRESSIVELY_DIFFICULT,
-		NpcStringId.TRAINING_GROUNDS_ACCESS_YOU_NEED_TO_SPEAK_WITH_PANTHEON_IN_THE_MUSEUM
-	};
 	
 	private Banette()
 	{
@@ -47,19 +41,27 @@ public final class Banette extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		if (event.equals("SPAM_TEXT") && (npc != null))
+		switch (getRandom(4))
 		{
-			npc.broadcastSay(ChatType.NPC_GENERAL, BANETTE_SHOUT[getRandom(3)], 1000);
+			case 0:
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TRAINING_GROUND_IS_LOCATED_STRAIGHT_AHEAD);
+				break;
+			case 1:
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHILE_TRAINING_IN_THE_TRAINING_GROUNDS_IT_BECOMES_PROGRESSIVELY_DIFFICULT);
+				break;
+			case 2:
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TRAINING_GROUNDS_ACCESS_YOU_NEED_TO_SPEAK_WITH_PANTHEON_IN_THE_MUSEUM);
+				break;
 		}
-		return super.onAdvEvent(event, npc, player);
+		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		startQuestTimer("SPAM_TEXT", 5000, npc, null, true);
+		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 		return super.onSpawn(npc);
 	}
 	

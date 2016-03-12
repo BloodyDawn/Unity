@@ -27,46 +27,38 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import ai.AbstractNpcAI;
 
 /**
- * Heymond AI.
+ * Hera AI.
  * @author St3eT
  */
-public final class Heymond extends AbstractNpcAI
+public final class Hera extends AbstractNpcAI
 {
-	// NPCs
-	private static final int BANETTE = 33114;
+	// NPC
+	private static final int HERA = 33208;
 	
-	private Heymond()
+	private Hera()
 	{
-		addSpawnId(BANETTE);
+		addSpawnId(HERA);
 	}
 	
 	@Override
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		switch (getRandom(4))
+		if (event.equals("NPC_SHOUT"))
 		{
-			case 0:
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.VIEW_OUR_WIDE_VARIETY_OF_ACCESSORIES);
-				break;
-			case 1:
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_BEST_WEAPON_DOESN_T_MAKE_YOU_THE_BEST);
-				break;
-			case 2:
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WE_BUY_AND_SELL_COME_TAKE_A_LOOK);
-				break;
+			npc.broadcastSay(ChatType.NPC_GENERAL, getRandomBoolean() ? NpcStringId.DOES_THE_GODDESS_SEE_WHAT_SHE_HAS_DONE : NpcStringId.WHY_HAVE_THE_HEROES_ABANDONED_US);
+			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 		}
-		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		getTimers().addTimer("NPC_SHOUT", 10000 + (getRandom(5) * 1000), npc, null);
 		return super.onSpawn(npc);
 	}
 	
 	public static void main(String[] args)
 	{
-		new Heymond();
+		new Hera();
 	}
 }
