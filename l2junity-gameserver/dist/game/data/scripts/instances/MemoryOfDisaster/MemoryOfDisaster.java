@@ -59,7 +59,7 @@ import instances.AbstractInstance;
  * Memory Of Disaster instance zone.
  * @author Sdw
  */
-public class MemoryOfDisaster extends AbstractInstance
+public final class MemoryOfDisaster extends AbstractInstance
 {
 	// NPCs
 	private static final int INVISIBLE_NPC = 18919;
@@ -99,6 +99,14 @@ public class MemoryOfDisaster extends AbstractInstance
 		19214,
 		19215
 	};
+	// Skills
+	private static final SkillHolder SIEGE_GOLEM_SKILL_1 = new SkillHolder(16022, 1);
+	private static final SkillHolder SIEGE_GOLEM_SKILL_2 = new SkillHolder(16024, 1);
+	private static final SkillHolder PULLER_SKILL = new SkillHolder(16031, 1);
+	private static final SkillHolder TEREDOR_TRANSPARENT_SKILL = new SkillHolder(16021, 1);
+	private static final SkillHolder TRASKEN_SKILL_1 = new SkillHolder(14505, 1);
+	// Items
+	private static final int TRANSPARENT_1HS = 15280;
 	// Locations
 	private static final Location BATTLE_PORT = new Location(116063, -183167, -1460, 64960);
 	private static final Location ROGIN_MOVE = new Location(116400, -183069, -1600);
@@ -110,24 +118,22 @@ public class MemoryOfDisaster extends AbstractInstance
 	private static final Location DWARVES_MOVE_1 = new Location(115830, -182103, -1400);
 	private static final Location DWARVES_MOVE_2 = new Location(115955, -181387, -1624);
 	private static final Location DWARVES_MOVE_3 = new Location(116830, -180257, -1176);
+	private static final Location GOLEM_MOVE = new Location(116608, -179205, -1176);
+	private static final Location PULLER_TELEPORT = new Location(115899, -181931, -1424, 0);
+	private static final Location WIRPHY_MOVE = new Location(116639, -179990, -1160);
+	private static final Location SILVERA_MOVE = new Location(116880, -179821, -1144);
 	private static final Location[] DWARVES_MOVE_RANDOM =
 	{
 		new Location(117147, -179248, -1120),
 		new Location(115110, -178852, -896),
 		new Location(115959, -178311, -1064)
 	};
-	private static final Location GOLEM_MOVE = new Location(116608, -179205, -1176);
-	private static final Location PULLER_TELEPORT = new Location(115899, -181931, -1424, 0);
-	private static final Location WIRPHY_MOVE = new Location(116639, -179990, -1160);
-	private static final Location SILVERA_MOVE = new Location(116880, -179821, -1144);
-	// Skills
-	private static final SkillHolder SIEGE_GOLEM_SKILL_1 = new SkillHolder(16022, 1);
-	private static final SkillHolder SIEGE_GOLEM_SKILL_2 = new SkillHolder(16024, 1);
-	private static final SkillHolder PULLER_SKILL = new SkillHolder(16031, 1);
-	private static final SkillHolder TEREDOR_TRANSPARENT_SKILL = new SkillHolder(16021, 1);
-	private static final SkillHolder TRASKEN_SKILL_1 = new SkillHolder(14505, 1);
-	// Items
-	private static final int TRANSPARENT_1HS = 15280;
+	private static final Location[] TEREDOR_SPAWN_LOC =
+	{
+		new Location(117100, -181088, -1272, 19956),
+		new Location(116925, -180420, -1200, 46585),
+		new Location(116656, -180461, -1240, 56363),
+	};
 	// Misc
 	private static final int FIRE_IN_DWARVEN_VILLAGE = 23120700;
 	private static final int TEMPLATE_ID = 200;
@@ -270,28 +276,26 @@ public class MemoryOfDisaster extends AbstractInstance
 				case SIEGE_GOLEM:
 				{
 					npc.initSeenCreatures();
-					Npc teredor = addSpawn(TEREDOR, 117100, -181088, -1272, 19956, false, 0, false, instance.getId());
-					addAttackDesire(teredor, npc);
-					teredor.setScriptValue(1);
-					teredor = addSpawn(TEREDOR, 116925, -180420, -1200, 46585, false, 0, false, instance.getId());
-					addAttackDesire(teredor, npc);
-					teredor.setScriptValue(1);
-					teredor = addSpawn(TEREDOR, 116656, -180461, -1240, 56363, false, 0, false, instance.getId());
-					addAttackDesire(teredor, npc);
-					teredor.setScriptValue(1);
+					
+					for (Location loc : TEREDOR_SPAWN_LOC)
+					{
+						final Npc teredor = addSpawn(TEREDOR, loc, false, 0, false, instance.getId());
+						addAttackDesire(teredor, npc);
+						teredor.setScriptValue(1);
+					}
 					break;
 				}
 				case WIRPHY:
 				{
 					npc.setIsRunning(true);
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, WIRPHY_MOVE);
+					addMoveToDesire(npc, WIRPHY_MOVE, 23);
 					npc.getInstanceWorld().getAliveNpcs(TEREDOR).stream().filter(n -> n.isScriptValue(2)).forEach(n -> addAttackDesire(n, npc));
 					break;
 				}
 				case SILVERA:
 				{
 					npc.setIsRunning(true);
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, SILVERA_MOVE);
+					addMoveToDesire(npc, SILVERA_MOVE, 23);
 					break;
 				}
 				case TEREDOR_TRANSPARENT:
@@ -305,7 +309,6 @@ public class MemoryOfDisaster extends AbstractInstance
 				case EARTH_WYRM_TRASKEN:
 				{
 					npc.setLHandId(TRANSPARENT_1HS);
-					npc.broadcastInfo();
 					getTimers().addTimer("ENTER_EVENT", 5000, npc, null);
 					break;
 				}
@@ -411,7 +414,7 @@ public class MemoryOfDisaster extends AbstractInstance
 				showOnScreenMsg(player, NpcStringId.WATCH_THE_DWARVEN_VILLAGE_LAST_STAND, ExShowScreenMessage.TOP_CENTER, 5000);
 				player.getInstanceWorld().spawnGroup("ROGIN").forEach(n ->
 				{
-					n.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, ROGIN_MOVE);
+					addMoveToDesire(n, ROGIN_MOVE, 23);
 					n.setIsRunning(true);
 				});
 				break;
@@ -524,7 +527,7 @@ public class MemoryOfDisaster extends AbstractInstance
 			case "RUN_TIME":
 			{
 				npc.broadcastSay(ChatType.NPC_GENERAL, SHOUT_RUN[Rnd.get(SHOUT_RUN.length)]);
-				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, DWARVES_MOVE_1);
+				addMoveToDesire(npc, DWARVES_MOVE_1, 23);
 				npc.setIsRunning(true);
 				break;
 			}
@@ -599,15 +602,15 @@ public class MemoryOfDisaster extends AbstractInstance
 		{
 			if ((npc.getX() == DWARVES_MOVE_1.getX()) && (npc.getY() == DWARVES_MOVE_1.getY()))
 			{
-				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, DWARVES_MOVE_2);
+				addMoveToDesire(npc, DWARVES_MOVE_2, 23);
 			}
 			else if ((npc.getX() == DWARVES_MOVE_2.getX()) && (npc.getY() == DWARVES_MOVE_2.getY()))
 			{
-				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, DWARVES_MOVE_3);
+				addMoveToDesire(npc, DWARVES_MOVE_3, 23);
 			}
 			else if ((npc.getX() == DWARVES_MOVE_3.getX()) && (npc.getY() == DWARVES_MOVE_3.getY()))
 			{
-				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, DWARVES_MOVE_RANDOM[Rnd.get(DWARVES_MOVE_RANDOM.length)]);
+				addMoveToDesire(npc, DWARVES_MOVE_RANDOM[Rnd.get(DWARVES_MOVE_RANDOM.length)], 23);
 			}
 		}
 		switch (npc.getId())
@@ -628,19 +631,19 @@ public class MemoryOfDisaster extends AbstractInstance
 					{
 						if ((npc.getX() == AWAKENING_GUIDE_MOVE_1.getX()) && (npc.getY() == AWAKENING_GUIDE_MOVE_1.getY()))
 						{
-							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, AWAKENING_GUIDE_MOVE_2);
+							addMoveToDesire(npc, AWAKENING_GUIDE_MOVE_2, 23);
 						}
 						else if ((npc.getX() == AWAKENING_GUIDE_MOVE_2.getX()) && (npc.getY() == AWAKENING_GUIDE_MOVE_2.getY()))
 						{
-							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, AWAKENING_GUIDE_MOVE_3);
+							addMoveToDesire(npc, AWAKENING_GUIDE_MOVE_3, 23);
 						}
 						else if ((npc.getX() == AWAKENING_GUIDE_MOVE_3.getX()) && (npc.getY() == AWAKENING_GUIDE_MOVE_3.getY()))
 						{
-							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, AWAKENING_GUIDE_MOVE_4);
+							addMoveToDesire(npc, AWAKENING_GUIDE_MOVE_4, 23);
 						}
 						else if ((npc.getX() == AWAKENING_GUIDE_MOVE_4.getX()) && (npc.getY() == AWAKENING_GUIDE_MOVE_4.getY()))
 						{
-							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, AWAKENING_GUIDE_MOVE_5);
+							addMoveToDesire(npc, AWAKENING_GUIDE_MOVE_5, 23);
 						}
 						else if ((npc.getX() == AWAKENING_GUIDE_MOVE_5.getX()) && (npc.getY() == AWAKENING_GUIDE_MOVE_5.getY()))
 						{
@@ -815,7 +818,7 @@ public class MemoryOfDisaster extends AbstractInstance
 	{
 		if ((npc.getId() == SIEGE_GOLEM) && (skill.getId() == SIEGE_GOLEM_SKILL_1.getSkillId()))
 		{
-			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GOLEM_MOVE);
+			addMoveToDesire(npc, GOLEM_MOVE, 23);
 			npc.setIsRunning(true);
 		}
 		else if ((npc.getId() == INVISIBLE_NPC) && npc.getVariables().getString("type", "").equals("PULLER") && (skill.getId() == PULLER_SKILL.getSkillId()) && npc.isScriptValue(0))
