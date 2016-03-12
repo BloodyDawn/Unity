@@ -46,7 +46,7 @@ public final class Hera extends AbstractNpcAI
 		if (event.equals("NPC_SHOUT"))
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, getRandomBoolean() ? NpcStringId.DOES_THE_GODDESS_SEE_WHAT_SHE_HAS_DONE : NpcStringId.WHY_HAVE_THE_HEROES_ABANDONED_US);
-			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+			getTimers().addTimer("NPC_SHOUT", 10000 + (getRandom(5) * 1000), npc, null);
 		}
 	}
 	

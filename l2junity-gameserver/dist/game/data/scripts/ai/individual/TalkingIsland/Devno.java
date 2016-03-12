@@ -18,6 +18,7 @@
  */
 package ai.individual.TalkingIsland;
 
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -46,11 +47,12 @@ public final class Devno extends AbstractNpcAI
 	{
 		if (event.equals("NPC_MOVE"))
 		{
-			if (getRandom(2) == 0)
+			if (getRandomBoolean())
 			{
-				addMoveToDesire(npc, Util.getRandomPosition(npc.getSpawn().getLocation(), 0, 500), 23);
+				addMoveToDesire(npc, GeoData.getInstance().moveCheck(npc.getLocation(), Util.getRandomPosition(npc.getSpawn().getLocation(), 0, 500), npc.getInstanceWorld()), 23);
+				
 			}
-			getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
+			getTimers().addTimer("NPC_MOVE", (10 + getRandom(5)) * 1000, npc, null);
 		}
 		else if (event.equals("NPC_SHOUT"))
 		{
@@ -66,15 +68,15 @@ public final class Devno extends AbstractNpcAI
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_CAN_SEE_VARIOUS_STATISTICS_IN_THE_MUSEUM_STATS_IN_THE_MAIN_MENU);
 					break;
 			}
-			getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+			getTimers().addTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		}
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		getTimers().addTimer("NPC_MOVE", 10 + (getRandom(5) * 1000), npc, null);
-		getTimers().addTimer("NPC_SHOUT", 10 + (getRandom(5) * 1000), npc, null);
+		getTimers().addTimer("NPC_MOVE", (10 + getRandom(5)) * 1000, npc, null);
+		getTimers().addTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		return super.onSpawn(npc);
 	}
 	
