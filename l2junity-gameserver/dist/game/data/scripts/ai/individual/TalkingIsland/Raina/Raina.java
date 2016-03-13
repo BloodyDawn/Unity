@@ -30,7 +30,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
@@ -832,7 +831,13 @@ public final class Raina extends AbstractNpcAI
 	private NpcHtmlMessage getNpcHtmlMessage(PlayerInstance player, Npc npc, String fileName)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-		html.setHtml(HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/scripts/ai/npc/Raina/" + fileName));
+		final String text = getHtm(player.getHtmlPrefix(), fileName);
+		if (text == null)
+		{
+			_log.info("Cannot find HTML file for " + Raina.class.getSimpleName() + " AI: " + fileName);
+			return null;
+		}
+		html.setHtml(text);
 		return html;
 	}
 	
