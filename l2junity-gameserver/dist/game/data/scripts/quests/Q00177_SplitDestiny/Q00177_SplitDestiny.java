@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J Unity
  * 
- * This file is part of L2J DataPack.
+ * This file is part of L2J Unity.
  * 
- * L2J DataPack is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J DataPack is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -64,9 +64,6 @@ public final class Q00177_SplitDestiny extends Quest
 	// Rewards
 	private static final ItemHolder RECIPE_TWILIGHT_NECKLACE = new ItemHolder(36791, 1);
 	private static final ItemHolder CRYSTAL_R = new ItemHolder(17371, 5);
-	private static final ItemHolder RED_SOUL_CRYSTAL_15 = new ItemHolder(10480, 1);
-	private static final ItemHolder BLUE_SOUL_CRYSTAL_15 = new ItemHolder(10481, 1);
-	private static final ItemHolder GREEN_SOUL_CRYSTAL_15 = new ItemHolder(10482, 1);
 	// Variable
 	private static final String VAR_SUB_INDEX = "SPLIT_DESTINY_SUB_ID";
 	
@@ -122,8 +119,8 @@ public final class Q00177_SplitDestiny extends Quest
 			{
 				if (qs.isCond(7) && (getQuestItemsCount(player, PETRIFIED_GIANTS_HAND_PIECE) >= 10) && (getQuestItemsCount(player, PETRIFIED_GIANTS_FOOT_PIECE) >= 10))
 				{
-					takeItems(player, PETRIFIED_GIANTS_HAND_PIECE, 10);
-					takeItems(player, PETRIFIED_GIANTS_FOOT_PIECE, 10);
+					takeItems(player, PETRIFIED_GIANTS_HAND_PIECE, -1);
+					takeItems(player, PETRIFIED_GIANTS_FOOT_PIECE, -1);
 					qs.setCond(8, true);
 					htmltext = event;
 				}
@@ -131,17 +128,20 @@ public final class Q00177_SplitDestiny extends Quest
 			}
 			case "33344-25.htm":
 			{
-				if (qs.isCond(9) && hasItem(player, PETRIFIED_GIANTS_HAND) && hasItem(player, PETRIFIED_GIANTS_FOOT))
+				if (qs.isCond(9) && (qs.getMemoState() == 0) && hasItem(player, PETRIFIED_GIANTS_HAND) && hasItem(player, PETRIFIED_GIANTS_FOOT))
 				{
 					takeItem(player, PETRIFIED_GIANTS_HAND);
 					takeItem(player, PETRIFIED_GIANTS_FOOT);
+					qs.setMemoState(1);
+					htmltext = event;
+				}
+				else if (qs.isCond(9) && (qs.getMemoState() == 1))
+				{
 					htmltext = event;
 				}
 				break;
 			}
-			case "blue_crystal":
-			case "green_crystal":
-			case "red_crystal":
+			case "33344-27.htm":
 			{
 				if (qs.isCond(9))
 				{
@@ -160,24 +160,10 @@ public final class Q00177_SplitDestiny extends Quest
 					player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.CLASS_CHANGED));
 					player.broadcastSocialAction(SocialAction.LEVEL_UP);
 					
-					if (event.equals("red_crystal"))
-					{
-						giveItems(player, RED_SOUL_CRYSTAL_15);
-					}
-					else if (event.equals("blue_crystal"))
-					{
-						giveItems(player, BLUE_SOUL_CRYSTAL_15);
-					}
-					else if (event.equals("green_crystal"))
-					{
-						giveItems(player, GREEN_SOUL_CRYSTAL_15);
-					}
-					
 					giveItems(player, RECIPE_TWILIGHT_NECKLACE);
 					giveItems(player, CRYSTAL_R);
 					addExpAndSp(player, 175739575, 42177);
 					qs.exitQuest(false, true);
-					htmltext = "33344-28.htm";
 				}
 				break;
 			}
@@ -185,7 +171,6 @@ public final class Q00177_SplitDestiny extends Quest
 			case "33344-18.htm":
 			case "32615-02.htm":
 			case "33344-26.htm":
-			case "33344-27.htm":
 			{
 				htmltext = event;
 				break;

@@ -252,6 +252,7 @@ import quests.Q10442_TheAnnihilatedPlains1.Q10442_TheAnnihilatedPlains1;
 import quests.Q10445_AnImpendingThreat.Q10445_AnImpendingThreat;
 import quests.Q10450_ADarkAmbition.Q10450_ADarkAmbition;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
+import quests.Q10461_TappingThePowerWithin.Q10461_TappingThePowerWithin;
 import quests.Q10464_BePreparedForAnything.Q10464_BePreparedForAnything;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
@@ -550,6 +551,7 @@ public class QuestMasterHandler
 		Q10445_AnImpendingThreat.class,
 		Q10450_ADarkAmbition.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
+		Q10461_TappingThePowerWithin.class,
 		Q10464_BePreparedForAnything.class,
 		Q10472_WindsOfFateEncroachingShadows.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
