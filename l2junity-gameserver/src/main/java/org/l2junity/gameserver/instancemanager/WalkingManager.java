@@ -445,7 +445,15 @@ public final class WalkingManager implements IGameXmlReader
 					
 					if (_activeRoutes.containsKey(npc.getObjectId()))
 					{
-						ThreadPoolManager.getInstance().scheduleGeneral(new ArrivedTask(npc, walk), 100 + (node.getDelay() * 1000L));
+						if (node.getDelay() > 0)
+						{
+							ThreadPoolManager.getInstance().scheduleGeneral(new ArrivedTask(npc, walk), node.getDelay() * 1000L);
+						}
+						else
+						{
+							walk.setBlocked(false);
+							WalkingManager.getInstance().startMoving(npc, walk.getRoute().getName());
+						}
 					}
 				}
 			}

@@ -675,6 +675,12 @@ public class CharacterAI extends AbstractAI
 		}
 		clientStoppedMoving();
 		
+		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE
+		if (getIntention() == AI_INTENTION_MOVE_TO)
+		{
+			setIntention(AI_INTENTION_ACTIVE);
+		}
+		
 		if (_actor.isNpc())
 		{
 			Npc npc = (Npc) _actor;
@@ -682,12 +688,6 @@ public class CharacterAI extends AbstractAI
 			
 			// Notify to scripts
 			EventDispatcher.getInstance().notifyEventAsync(new OnNpcMoveFinished(npc), npc);
-		}
-		
-		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE
-		if (getIntention() == AI_INTENTION_MOVE_TO)
-		{
-			setIntention(AI_INTENTION_ACTIVE);
 		}
 		
 		// Launch actions corresponding to the Event Think
