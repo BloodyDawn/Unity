@@ -1134,14 +1134,17 @@ public class AttackableAI extends CharacterAI implements Runnable
 			me.setRunning();
 		}
 		
-		// Set the Intention to AI_INTENTION_ATTACK
-		if (getIntention() != AI_INTENTION_ATTACK)
+		if (!getActiveChar().isCoreAIDisabled())
 		{
-			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
-		}
-		else if (me.getMostHated() != target)
-		{
-			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
+			// Set the Intention to AI_INTENTION_ATTACK
+			if (getIntention() != AI_INTENTION_ATTACK)
+			{
+				setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
+			}
+			else if (me.getMostHated() != target)
+			{
+				setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
+			}
 		}
 		
 		if (me.isMonster())

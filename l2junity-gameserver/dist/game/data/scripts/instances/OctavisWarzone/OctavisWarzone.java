@@ -19,9 +19,11 @@
 package instances.OctavisWarzone;
 
 import org.l2junity.gameserver.enums.Movie;
+import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -39,10 +41,21 @@ import instances.AbstractInstance;
 public final class OctavisWarzone extends AbstractInstance
 {
 	// NPCs
+	private static final int[] OCTAVIS_STAGE_1 =
+	{
+		29191, // Common
+		29209, // Extreme
+	};
+	private static final int[] BEASTS =
+	{
+		29192, // Common
+		29210, // Extreme
+	};
 	private static final int LYDIA = 32892;
 	private static final int DOOR_MANAGER = 18984;
 	// Locations
 	private static final Location BATTLE_LOC = new Location(208720, 120576, -10000);
+	private static final Location OCTAVIS_SPAWN_LOC = new Location(207069, 120580, -9987);
 	// Zones
 	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12042, ScriptZone.class);
 	// Misc
@@ -58,6 +71,7 @@ public final class OctavisWarzone extends AbstractInstance
 		addSpawnId(DOOR_MANAGER);
 		addEnterZoneId(TELEPORT_ZONE.getId());
 		setCreatureSeeId(this::onCreatureSee, DOOR_MANAGER);
+		addInstanceDestroyId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
 	}
 	
 	@Override
@@ -118,14 +132,55 @@ public final class OctavisWarzone extends AbstractInstance
 					getTimers().addTimer("START_STAGE_1", 26500, npc, null);
 					break;
 				}
+				case "START_STAGE_1":
+				{
+					world.spawnGroup("STAGE_1");
+					world.getAliveNpcs(BEASTS).forEach(beasts ->
+					{
+						beasts.disableCoreAI(true);
+						beasts.setUndying(true);
+						((Attackable) beasts).setCanReturnToSpawnPoint(false);
+						final Npc octavis = addSpawn((!isExtremeMode(world) ? OCTAVIS_STAGE_1[0] : OCTAVIS_STAGE_1[1]), OCTAVIS_SPAWN_LOC, false, 0, false, world.getId());
+						octavis.disableCoreAI(true);
+						octavis.setIsRunning(true);
+						octavis.sendChannelingEffect(beasts, 1);
+						((Attackable) octavis).setCanReturnToSpawnPoint(false);
+						getTimers().addRepeatingTimer("FOLLOW_BEASTS", 500, octavis, null);
+						WalkingManager.getInstance().startMoving(beasts, "octabis_superpoint");
+					});
+					break;
+				}
+				case "FOLLOW_BEASTS":
+				{
+					world.getAliveNpcs(BEASTS).forEach(beasts ->
+					{
+						addMoveToDesire(npc, beasts.getLocation(), 23);
+						npc.sendChannelingEffect(beasts, 1);
+					});
+					break;
+				}
 			}
 		}
 	}
 	
 	@Override
+	public void onInstanceDestroy(Instance instance)
+	{
+		instance.getAliveNpcs(OCTAVIS_STAGE_1).forEach(octavis ->
+		{
+			getTimers().cancelTimer("FOLLOW_BEASTS", octavis, null);
+		});
+		
+	}
+	
+	@Override
 	public String onSpawn(Npc npc)
 	{
-		npc.initSeenCreatures();
+		final Instance world = npc.getInstanceWorld();
+		if (isOctavisInstance(world))
+		{
+			npc.initSeenCreatures();
+		}
 		return super.onSpawn(npc);
 	}
 	
@@ -161,6 +216,11 @@ public final class OctavisWarzone extends AbstractInstance
 	private boolean isOctavisInstance(Instance instance)
 	{
 		return ((instance != null) && ((instance.getTemplateId() == TEMPLATE_ID) || (instance.getTemplateId() == EXTREME_TEMPLATE_ID)));
+	}
+	
+	private boolean isExtremeMode(Instance instance)
+	{
+		return instance.getTemplateId() == EXTREME_TEMPLATE_ID;
 	}
 	
 	public static void main(String[] args)
