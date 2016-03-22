@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octavis Warzone Extreme -->
+<instance id="181" maxWorlds="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="120" empty="5" /> <!-- TODO: Confir me -->
+	<removeBuffs type="ALL" />
+	<locations>
+		<enter type="FIXED">
+			<location x="210649" y="119107" z="-9994" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" showMessageAndHtml="true">
+			<param name="html" value="condNoGroup.html" />
+		</condition>
+		<condition type="CommandChannel" showMessageAndHtml="true">
+			<param name="html" value="condNoGroup.html" />
+		</condition>
+		<condition type="CommandChannelLeader" />
+		<condition type="GroupMin">
+			<param name="limit" value="14" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="html" value="condBigGroup.html"/>
+			<param name="limit" value="35" />
+		</condition>
+		<condition type="Level" showMessageAndHtml="true">
+			<param name="html" value="condNoLevelExtreme.html" />
+			<param name="min" value="97" />
+		</condition>
+		<condition type="Distance" />
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+	</reenter>
+	<doorlist>
+		<door id="26210002" />
+		<door id="26210001" />
+		<door id="26210103" />
+		<door id="26210102" />
+		<door id="26210101" />
+		<door id="26210106" />
+		<door id="26210105" />
+		<door id="26210104" />
+	</doorlist>
+</instance>
