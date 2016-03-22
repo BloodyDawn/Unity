@@ -21,8 +21,6 @@ package org.l2junity.gameserver.model;
 import java.lang.reflect.Constructor;
 import java.util.Deque;
 import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 import org.l2junity.commons.util.Rnd;
@@ -76,7 +74,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/** If True a L2NpcInstance is respawned each time that another is killed */
 	private boolean _doRespawn;
 	/** If true then spawn is custom */
-	private static Set<SpawnListener> _spawnListeners = ConcurrentHashMap.newKeySet();
 	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
 	private boolean _randomWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
@@ -579,38 +576,9 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			_spawnTemplate.notifySpawnNpc(npc);
 		}
 		
-		notifyNpcSpawned(npc);
-		
 		_spawnedNpcs.add(npc);
 		_currentCount++;
 		return npc;
-	}
-	
-	public static void addSpawnListener(SpawnListener listener)
-	{
-		synchronized (_spawnListeners)
-		{
-			_spawnListeners.add(listener);
-		}
-	}
-	
-	public static void removeSpawnListener(SpawnListener listener)
-	{
-		synchronized (_spawnListeners)
-		{
-			_spawnListeners.remove(listener);
-		}
-	}
-	
-	public static void notifyNpcSpawned(Npc npc)
-	{
-		synchronized (_spawnListeners)
-		{
-			for (SpawnListener listener : _spawnListeners)
-			{
-				listener.npcSpawned(npc);
-			}
-		}
 	}
 	
 	/**
