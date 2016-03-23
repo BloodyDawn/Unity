@@ -648,7 +648,7 @@
 		</effects>
 	</skill>
 	<skill id="14017" toLevel="1" name="Thunder Storm">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill0048</icon>
 		<operateType>A2</operateType>
@@ -676,9 +676,21 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="KnockBack">
+				<distance>200</distance>
+				<speed>400</speed>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>100855</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14018" toLevel="1" name="Downward Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0320</icon>
 		<operateType>A1</operateType>
 		<mpConsume>86</mpConsume>
@@ -695,9 +707,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>201710</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14019" toLevel="1" name="Ice Chill Spell">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1184</icon>
 		<operateType>A1</operateType>
 		<mpConsume>79</mpConsume>
@@ -716,9 +733,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>315</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14020" toLevel="1" name="Ice Wall">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill1184</icon>
 		<operateType>A2</operateType>
@@ -747,9 +769,17 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>757</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14021" toLevel="1" name="Ice Chill Range">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP is continuously decreased. -->
 		<icon>icon.skill1184</icon>
 		<operateType>A2</operateType>
@@ -776,9 +806,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>1009</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>200</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14022" toLevel="1" name="Ice Drop">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1184</icon>
 		<operateType>A1</operateType>
 		<mpConsume>79</mpConsume>
@@ -799,9 +838,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>757</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14023" toLevel="1" name="Hero's Teleport">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill0793</icon>
 		<operateType>A2</operateType>
@@ -828,9 +872,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>23700</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;200} -->
+		</effects>
 	</skill>
 	<skill id="14024" toLevel="1" name="Ancient Hero's Roar">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Affected by the ancient hero's roar and inflicted with fear. -->
 		<icon>icon.skill0320</icon>
 		<operateType>A2</operateType>
@@ -857,9 +910,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>47400</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;300} -->
+		</effects>
 	</skill>
 	<skill id="14025" toLevel="1" name="Hero's Arrow Shaft">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0772</icon>
 		<operateType>A1</operateType>
 		<mpConsume>87</mpConsume>
@@ -876,9 +938,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14026" toLevel="1" name="Hero's Sword Energy">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0122</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -896,9 +963,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>47400</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14027" toLevel="1" name="Hero's Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cannot move due to Octavis' powerful attack. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
@@ -921,9 +993,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>242052</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;450} -->
+		</effects>
 	</skill>
 	<skill id="14028" toLevel="1" name="Hero's Influence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0024</icon>
 		<operateType>A1</operateType>
 		<mpConsume>87</mpConsume>
@@ -941,9 +1022,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>341903</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14029" toLevel="1" name="Hero's Influence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0024</icon>
 		<operateType>A1</operateType>
 		<mpConsume>87</mpConsume>
@@ -961,9 +1047,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>341903</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14030" toLevel="1" name="Hero's Magic">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<mpConsume>79</mpConsume>
@@ -981,9 +1072,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>492</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14031" toLevel="1" name="Hero's Magic">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<mpConsume>79</mpConsume>
@@ -1001,9 +1097,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>492</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14032" toLevel="1" name="Red Net">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill14032</icon>
 		<operateType>A2</operateType>
@@ -1030,9 +1131,19 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="KnockBack">
+				<distance>0</distance>
+				<speed>0</speed>
+				<knockDown>true</knockDown>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14033" toLevel="1" name="Vital Spot Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hurls a powerful blow on the target. -->
 		<icon>icon.skill0016</icon>
 		<operateType>A1</operateType>
@@ -1048,9 +1159,14 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>504276</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14034" toLevel="1" name="Waist Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -1074,9 +1190,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>252138</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>197</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14035" toLevel="1" name="Octavis' Obedience">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0045</icon>
 		<operateType>CA1</operateType>
 		<castRange>600</castRange>
@@ -1092,9 +1217,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>5000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14036" toLevel="1" name="Vulnerability Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0484</icon>
 		<operateType>DA1</operateType>
 		<mpConsume>20</mpConsume>
@@ -1109,9 +1239,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>100000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14037" toLevel="1" name="Front Foot Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>85</mpConsume>
@@ -1126,9 +1261,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>64080</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14038" toLevel="1" name="Power Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hurls a powerful blow on nearby enemies. -->
 		<icon>icon.skill0320</icon>
 		<operateType>A1</operateType>
@@ -1146,9 +1286,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>30000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14039" toLevel="1" name="Curse Shock">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Causes a shock wave and prevents nearby enemies from moving. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
@@ -1175,6 +1320,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>30000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14040" toLevel="6" name="Power Strike">
 		<!-- AUTO GENERATED SKILL -->

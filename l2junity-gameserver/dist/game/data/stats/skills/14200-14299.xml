@@ -1088,7 +1088,7 @@
 		</effects>
 	</skill>
 	<skill id="14242" toLevel="1" name="Wide Area Curse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP is decreased by the decaying darkness. -->
 		<icon>icon.skill1107</icon>
 		<operateType>A2</operateType>
@@ -1115,9 +1115,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>1000</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14243" toLevel="1" name="Hero's Influence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0024</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -1135,9 +1141,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>61620</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14244" toLevel="1" name="Region Status Metastasis">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
 		<castRange>900</castRange>
@@ -1156,9 +1167,24 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
+			</effect>
+			<effect name="TargetCancel" />
+			<effect name="Transformation">
+				<transformationId>128</transformationId>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>4578</skillId> <!-- Petrify -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="14245" toLevel="1" name="Rotten Net">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill14245</icon>
 		<operateType>A2</operateType>
@@ -1183,9 +1209,26 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>8169</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>532</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="KnockBack">
+				<distance>250</distance>
+				<speed>600</speed>
+				<knockDown>true</knockDown>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14246" toLevel="1" name="Earth Demolition">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0096</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -1203,6 +1246,11 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>197138</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14247" toLevel="1" name="Black Vortex">
 		<!-- AUTO GENERATED SKILL -->
@@ -1933,7 +1981,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14279" toLevel="1" name="Octavis' Influence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Octavis' influence. -->
 		<icon>icon.skill14279</icon>
 		<operateType>A2</operateType>
@@ -1955,7 +2003,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14280" toLevel="1" name="Octavis' Influence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Octavis' influence. -->
 		<icon>icon.skill14279</icon>
 		<operateType>A2</operateType>
@@ -1977,7 +2025,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14281" toLevel="1" name="Octavis' Influence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Octavis' influence. -->
 		<icon>icon.skill14279</icon>
 		<operateType>A2</operateType>
@@ -2001,7 +2049,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14282" toLevel="1" name="Octavis' Obedience">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>CA2</operateType>
 		<castRange>1000</castRange>
@@ -2011,7 +2059,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effectRange>1500</effectRange>
 		<magicLvl>99</magicLvl>
-		<channelingSkillId>14436</channelingSkillId>
+		<channelingSkillId>14436</channelingSkillId> <!-- Obedience Status -->
 		<channelingTickInitialDelay>1200</channelingTickInitialDelay>
 		<channelingTickInterval>2000</channelingTickInterval>
 		<isMagic>2</isMagic>
@@ -2062,7 +2110,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14285" toLevel="1" name="Octavis' Arrow Shaft">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Octavis' arrow shaft. Throw a spear on the floor to inflict powerful attack damage. -->
 		<icon>icon.skill0507</icon>
 		<operateType>A2</operateType>
@@ -2081,6 +2129,7 @@
 		<hitTime>5000</hitTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<withoutAction>true</withoutAction>
 	</skill>
 	<skill id="14286" toLevel="1" name="Teleport">
 		<!-- AUTO GENERATED SKILL -->
