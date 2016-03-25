@@ -219,12 +219,6 @@ public final class OctavisWarzone extends AbstractInstance
 				{
 					// gg->SetNpcParam(myself->sm, @HP_Regen, boost_regen_value); (boost_regen_value is 95000) //TODO: Finish me!
 					npc.setScriptValue(1);
-					
-					final Npc octavis = world.getAliveNpcs(OCTAVIS_STAGE_1).stream().findAny().orElse(null);
-					if (octavis != null)
-					{
-						octavis.setTargetable(true);
-					}
 				}
 				else if ((hpPer > 90) && npc.isScriptValue(1))
 				{
