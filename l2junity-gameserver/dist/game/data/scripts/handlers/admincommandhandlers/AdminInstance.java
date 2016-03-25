@@ -56,6 +56,19 @@ public final class AdminInstance implements IAdminCommandHandler
 		"admin_instanceteleport",
 		"admin_instancedestroy",
 	};
+	private static final int[] IGNORED_TEMPLATES =
+	{
+		127, // Chamber of Delusion
+		128, // Chamber of Delusion
+		129, // Chamber of Delusion
+		130, // Chamber of Delusion
+		131, // Chamber of Delusion
+		132, // Chamber of Delusion
+		147, // Grassy Arena
+		149, // Heros's Vestiges Arena
+		150, // Orbis Arena
+		148, // Three Bridges Arena
+	};
 	
 	@Override
 	public boolean useAdminCommand(String command, PlayerInstance activeChar)
@@ -244,7 +257,7 @@ public final class AdminInstance implements IAdminCommandHandler
 		html.setFile(player.getHtmlPrefix(), "data/html/admin/instances_list.htm");
 		
 		final InstanceManager instManager = InstanceManager.getInstance();
-		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted(Comparator.comparingLong(InstanceTemplate::getWorldCount).reversed()).collect(Collectors.toList());
+		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted(Comparator.comparingLong(InstanceTemplate::getWorldCount).reversed()).filter(template -> !CommonUtil.contains(IGNORED_TEMPLATES, template.getId())).collect(Collectors.toList());
 		
 		//@formatter:off
 		final PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")
