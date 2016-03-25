@@ -20,15 +20,19 @@ package org.l2junity.gameserver.model.actor.stat;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
@@ -44,6 +48,7 @@ import org.l2junity.gameserver.model.skills.SkillConditionScope;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.StatsHolder;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
@@ -69,6 +74,9 @@ public class CharStat
 	private final Map<Integer, Double> _mpConsumeStat = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _skillEvasionStat = new ConcurrentHashMap<>();
 	private final Map<Stats, Map<Position, Double>> _positionStats = new ConcurrentHashMap<>();
+	private final Deque<StatsHolder> _additionalAdd = new ConcurrentLinkedDeque<>();
+	private final Deque<StatsHolder> _additionalMul = new ConcurrentLinkedDeque<>();
+	private final Map<Stats, Double> _fixedValue = new ConcurrentHashMap<>();
 	
 	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
 	
@@ -706,7 +714,8 @@ public class CharStat
 	 */
 	public double getValue(Stats stat, double baseValue)
 	{
-		return stat.finalize(_activeChar, Optional.of(baseValue));
+		final Double fixedValue = _fixedValue.get(stat);
+		return fixedValue != null ? fixedValue : stat.finalize(_activeChar, Optional.of(baseValue));
 	}
 	
 	/**
@@ -715,7 +724,8 @@ public class CharStat
 	 */
 	public double getValue(Stats stat)
 	{
-		return stat.finalize(_activeChar, Optional.empty());
+		final Double fixedValue = _fixedValue.get(stat);
+		return fixedValue != null ? fixedValue : stat.finalize(_activeChar, Optional.empty());
 	}
 	
 	protected void resetStats()
@@ -767,6 +777,10 @@ public class CharStat
 				.filter(effect -> effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
 				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
 			//@formatter:on
+			
+			// Merge with additional stats
+			_additionalAdd.stream().filter(holder -> holder.verifyCondition(_activeChar)).forEach(holder -> mergeAdd(holder.getStat(), holder.getValue()));
+			_additionalMul.stream().filter(holder -> holder.verifyCondition(_activeChar)).forEach(holder -> mergeMul(holder.getStat(), holder.getValue()));
 			
 			// Notify recalculation to child classes
 			onRecalculateStats(broadcast);
@@ -877,5 +891,110 @@ public class CharStat
 	public int getReuseTime(Skill skill)
 	{
 		return (skill.isStaticReuse() || skill.isStatic()) ? skill.getReuseDelay() : (int) (skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType()));
+	}
+	
+	/**
+	 * Adds static value to the 'add' map of the stat everytime recalculation happens
+	 * @param stat
+	 * @param value
+	 * @param condition
+	 * @return
+	 */
+	public boolean addAdditionalStat(Stats stat, double value, BiPredicate<Creature, StatsHolder> condition)
+	{
+		return _additionalAdd.add(new StatsHolder(stat, value, condition));
+	}
+	
+	/**
+	 * Adds static value to the 'add' map of the stat everytime recalculation happens
+	 * @param stat
+	 * @param value
+	 * @return
+	 */
+	public boolean addAdditionalStat(Stats stat, double value)
+	{
+		return _additionalAdd.add(new StatsHolder(stat, value));
+	}
+	
+	/**
+	 * @param stat
+	 * @param value
+	 * @return {@code true} if 'add' was removed, {@code false} in case there wasn't such stat and value
+	 */
+	public boolean removeAddAdditionalStat(Stats stat, double value)
+	{
+		final Iterator<StatsHolder> it = _additionalAdd.iterator();
+		while (it.hasNext())
+		{
+			final StatsHolder holder = it.next();
+			if ((holder.getStat() == stat) && (holder.getValue() == value))
+			{
+				it.remove();
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Adds static multiplier to the 'mul' map of the stat everytime recalculation happens
+	 * @param stat
+	 * @param value
+	 * @param condition
+	 * @return
+	 */
+	public boolean mulAdditionalStat(Stats stat, double value, BiPredicate<Creature, StatsHolder> condition)
+	{
+		return _additionalMul.add(new StatsHolder(stat, value, condition));
+	}
+	
+	/**
+	 * Adds static multiplier to the 'mul' map of the stat everytime recalculation happens
+	 * @param stat
+	 * @param value
+	 * @return {@code true}
+	 */
+	public boolean mulAdditionalStat(Stats stat, double value)
+	{
+		return _additionalMul.add(new StatsHolder(stat, value));
+	}
+	
+	/**
+	 * @param stat
+	 * @param value
+	 * @return {@code true} if 'mul' was removed, {@code false} in case there wasn't such stat and value
+	 */
+	public boolean removeMulAdditionalStat(Stats stat, double value)
+	{
+		final Iterator<StatsHolder> it = _additionalMul.iterator();
+		while (it.hasNext())
+		{
+			final StatsHolder holder = it.next();
+			if ((holder.getStat() == stat) && (holder.getValue() == value))
+			{
+				it.remove();
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * @param stat
+	 * @param value
+	 * @return true if the there wasn't previously set fixed value, {@code false} otherwise
+	 */
+	public boolean addFixedValue(Stats stat, Double value)
+	{
+		return _fixedValue.put(stat, value) == null;
+	}
+	
+	/**
+	 * @param stat
+	 * @return {@code true} if fixed value is removed, {@code false} otherwise
+	 */
+	public boolean removeFixedValue(Stats stat)
+	{
+		return _fixedValue.remove(stat) != null;
 	}
 }

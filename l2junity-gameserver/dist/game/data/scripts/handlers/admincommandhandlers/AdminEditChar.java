@@ -44,6 +44,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.ExVoteSystemInfo;
@@ -101,6 +102,8 @@ public class AdminEditChar implements IAdminCommandHandler
 		"admin_set_hp",
 		"admin_set_mp",
 		"admin_set_cp",
+		"admin_setparam",
+		"admin_unsetparam"
 	};
 	
 	@Override
@@ -890,6 +893,101 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				activeChar.sendMessage("Usage: //set_pvp_flag");
 			}
+		}
+		else if (command.startsWith("admin_setparam"))
+		{
+			final WorldObject target = activeChar.getTarget();
+			if ((target == null) || !target.isCreature())
+			{
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+				return false;
+			}
+			final StringTokenizer st = new StringTokenizer(command, " ");
+			st.nextToken(); // admin_setparam
+			if (!st.hasMoreTokens())
+			{
+				activeChar.sendMessage("Syntax: //setparam <stat> <value>");
+				return false;
+			}
+			final String statName = st.nextToken();
+			if (!st.hasMoreTokens())
+			{
+				activeChar.sendMessage("Syntax: //setparam <stat> <value>");
+				return false;
+			}
+			
+			try
+			{
+				Stats stat = null;
+				for (Stats stats : Stats.values())
+				{
+					if (statName.equalsIgnoreCase(stats.name()) || statName.equalsIgnoreCase(stats.getValue()))
+					{
+						stat = stats;
+						break;
+					}
+				}
+				if (stat == null)
+				{
+					activeChar.sendMessage("Couldn't find such stat!");
+					return false;
+				}
+				
+				double value = Double.parseDouble(st.nextToken());
+				final Creature targetCreature = (Creature) target;
+				if (value >= 0)
+				{
+					targetCreature.getStat().addFixedValue(stat, value);
+					targetCreature.getStat().recalculateStats(true);
+					activeChar.sendMessage("Fixed stat: " + stat + " has been set to " + value);
+				}
+				else
+				{
+					activeChar.sendMessage("Non negative values are only allowed!");
+				}
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Syntax: //setparam <stat> <value>");
+				return false;
+			}
+		}
+		else if (command.startsWith("admin_unsetparam"))
+		{
+			final WorldObject target = activeChar.getTarget();
+			if ((target == null) || !target.isCreature())
+			{
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+				return false;
+			}
+			final StringTokenizer st = new StringTokenizer(command, " ");
+			st.nextToken(); // admin_setparam
+			if (!st.hasMoreTokens())
+			{
+				activeChar.sendMessage("Syntax: //unsetparam <stat>");
+				return false;
+			}
+			final String statName = st.nextToken();
+			
+			Stats stat = null;
+			for (Stats stats : Stats.values())
+			{
+				if (statName.equalsIgnoreCase(stats.name()) || statName.equalsIgnoreCase(stats.getValue()))
+				{
+					stat = stats;
+					break;
+				}
+			}
+			if (stat == null)
+			{
+				activeChar.sendMessage("Couldn't find such stat!");
+				return false;
+			}
+			
+			final Creature targetCreature = (Creature) target;
+			targetCreature.getStat().removeFixedValue(stat);
+			targetCreature.getStat().recalculateStats(true);
+			activeChar.sendMessage("Fixed stat: " + stat + " has been removed.");
 		}
 		return true;
 	}
