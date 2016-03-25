@@ -3903,7 +3903,7 @@
 			<height normal="54" />
 		</collision>
 	</npc>
-	<npc id="29191" level="98" type="L2Monster" name="Octavis" title="">
+	<npc id="29191" level="98" type="L2Raidboss" name="Octavis" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<parameters>
 			<skill name="boss_skill_01" id="14285" level="1" /> <!-- Octavis' Arrow Shaft -->
@@ -3911,7 +3911,6 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<acquire expRate="284526.66659725" sp="186080440" />
 		<mpReward value="53" type="DIFF" ticks="10" affects="PARTY" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="19828314" hpRegen="8.5" mp="22800" mpRegen="30" />
@@ -3927,7 +3926,7 @@
 			</attribute>
 			<abnormalResist physical="230" magical="230" />
 		</stats>
-		<status attackable="false" undying="false" />
+		<status attackable="true" undying="false" />
 		<skill_list>
 			<skill id="14726" level="1" /> <!-- Octavis -->
 			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
@@ -3982,7 +3981,7 @@
 			<height normal="56" />
 		</collision>
 	</npc>
-	<npc id="29193" level="98" type="L2Monster" name="Octavis" title="">
+	<npc id="29193" level="98" type="L2Raidboss" name="Octavis" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<parameters>
 			<skill name="boss_skill_01" id="14026" level="1" />
@@ -3991,7 +3990,6 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<acquire expRate="290362.95918367" sp="186080440" />
 		<mpReward value="53" type="DIFF" ticks="10" affects="PARTY" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="12423175" hpRegen="8.5" mp="22800" mpRegen="30" />
@@ -4007,7 +4005,7 @@
 			</attribute>
 			<abnormalResist physical="230" magical="230" />
 		</stats>
-		<status attackable="false" undying="false" />
+		<status attackable="true" undying="false" />
 		<skill_list>
 			<skill id="14726" level="1" /> <!-- Octavis -->
 			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
@@ -4053,7 +4051,7 @@
 			</attribute>
 			<abnormalResist physical="230" magical="230" />
 		</stats>
-		<status attackable="false" undying="false" />
+		<status attackable="true" undying="false" />
 		<skill_list>
 			<skill id="14726" level="1" /> <!-- Octavis -->
 			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
