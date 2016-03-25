@@ -422,10 +422,13 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public void setTargetable(boolean targetable)
 	{
-		_isTargetable = targetable;
-		if (!targetable)
+		if (_isTargetable != targetable)
 		{
-			World.getInstance().getVisibleObjects(this, Creature.class, c -> this == c.getTarget()).forEach(c -> c.setTarget(null));
+			_isTargetable = targetable;
+			if (!targetable)
+			{
+				World.getInstance().getVisibleObjects(this, Creature.class, c -> this == c.getTarget()).forEach(c -> c.setTarget(null));
+			}
 		}
 	}
 	

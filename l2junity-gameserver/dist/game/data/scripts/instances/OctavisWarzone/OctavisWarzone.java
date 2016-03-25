@@ -36,8 +36,7 @@ import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import instances.AbstractInstance;
 
 /**
- * Octavis Warzone instance zone.<br>
- * In this script, Jey.
+ * Octavis Warzone instance zone.
  * @author St3eT
  */
 public final class OctavisWarzone extends AbstractInstance
@@ -77,6 +76,7 @@ public final class OctavisWarzone extends AbstractInstance
 		addTalkId(LYDIA);
 		addSpawnId(DOOR_MANAGER);
 		addAttackId(OCTAVIS_STAGE_1);
+		addAttackId(BEASTS);
 		addKillId(OCTAVIS_STAGE_1);
 		addKillId(OCTAVIS_STAGE_2);
 		addEnterZoneId(TELEPORT_ZONE.getId());
@@ -184,9 +184,10 @@ public final class OctavisWarzone extends AbstractInstance
 		final Instance world = npc.getInstanceWorld();
 		if (isOctavisInstance(world))
 		{
+			final int hpPer = npc.getCurrentHpPercent();
+			
 			if (CommonUtil.contains(OCTAVIS_STAGE_1, npc.getId()))
 			{
-				final int hpPer = npc.getCurrentHpPercent();
 				if (hpPer >= 90)
 				{
 					npc.setState(0);
@@ -210,6 +211,31 @@ public final class OctavisWarzone extends AbstractInstance
 				else
 				{
 					npc.setState(5);
+				}
+			}
+			else if (CommonUtil.contains(BEASTS, npc.getId()))
+			{
+				if ((hpPer < 50) && npc.isScriptValue(0))
+				{
+					// gg->SetNpcParam(myself->sm, @HP_Regen, boost_regen_value); (boost_regen_value is 95000) //TODO: Finish me!
+					npc.setScriptValue(1);
+					
+					final Npc octavis = world.getAliveNpcs(OCTAVIS_STAGE_1).stream().findAny().orElse(null);
+					if (octavis != null)
+					{
+						octavis.setTargetable(true);
+					}
+				}
+				else if ((hpPer > 90) && npc.isScriptValue(1))
+				{
+					// gg->SetNpcParam(myself->sm, @HP_Regen, 0); //TODO: Finish me!
+					npc.setScriptValue(0);
+				}
+				
+				final Npc octavis = world.getAliveNpcs(OCTAVIS_STAGE_1).stream().findAny().orElse(null);
+				if (octavis != null)
+				{
+					octavis.setTargetable(hpPer < 50);
 				}
 			}
 		}
