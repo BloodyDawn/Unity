@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
 
@@ -217,12 +218,12 @@ public final class OctavisWarzone extends AbstractInstance
 			{
 				if ((hpPer < 50) && npc.isScriptValue(0))
 				{
-					// gg->SetNpcParam(myself->sm, @HP_Regen, boost_regen_value); (boost_regen_value is 95000) //TODO: Finish me!
+					npc.getStat().addFixedValue(Stats.REGENERATE_HP_RATE, 95000d);
 					npc.setScriptValue(1);
 				}
 				else if ((hpPer > 90) && npc.isScriptValue(1))
 				{
-					// gg->SetNpcParam(myself->sm, @HP_Regen, 0); //TODO: Finish me!
+					npc.getStat().addFixedValue(Stats.REGENERATE_HP_RATE, 0d);
 					npc.setScriptValue(0);
 				}
 				
