@@ -36,7 +36,8 @@ import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import instances.AbstractInstance;
 
 /**
- * Octavis Warzone instance zone.
+ * Octavis Warzone instance zone.<br>
+ * In this script, Jey.
  * @author St3eT
  */
 public final class OctavisWarzone extends AbstractInstance
