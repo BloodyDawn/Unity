@@ -18,6 +18,7 @@
  */
 package instances.OctavisWarzone;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -46,6 +47,11 @@ public final class OctavisWarzone extends AbstractInstance
 		29191, // Common
 		29209, // Extreme
 	};
+	private static final int[] OCTAVIS_STAGE_2 =
+	{
+		29193, // Common
+		29211, // Extreme
+	};
 	private static final int[] BEASTS =
 	{
 		29192, // Common
@@ -69,6 +75,9 @@ public final class OctavisWarzone extends AbstractInstance
 		addStartNpc(LYDIA);
 		addTalkId(LYDIA);
 		addSpawnId(DOOR_MANAGER);
+		addAttackId(OCTAVIS_STAGE_1);
+		addKillId(OCTAVIS_STAGE_1);
+		addKillId(OCTAVIS_STAGE_2);
 		addEnterZoneId(TELEPORT_ZONE.getId());
 		setCreatureSeeId(this::onCreatureSee, DOOR_MANAGER);
 		addInstanceDestroyId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
@@ -92,16 +101,9 @@ public final class OctavisWarzone extends AbstractInstance
 			case "reenterInstance":
 			{
 				final Instance activeInstance = getPlayerInstance(player);
-				if (activeInstance != null)
+				if (isOctavisInstance(activeInstance))
 				{
-					if (activeInstance.getTemplateId() == TEMPLATE_ID)
-					{
-						enterInstance(player, npc, TEMPLATE_ID);
-					}
-					else if (activeInstance.getTemplateId() == EXTREME_TEMPLATE_ID)
-					{
-						enterInstance(player, npc, EXTREME_TEMPLATE_ID);
-					}
+					enterInstance(player, npc, activeInstance.getTemplateId());
 					return "PartyMemberReenter.html";
 				}
 			}
@@ -144,6 +146,7 @@ public final class OctavisWarzone extends AbstractInstance
 						octavis.disableCoreAI(true);
 						octavis.setIsRunning(true);
 						octavis.sendChannelingEffect(beasts, 1);
+						octavis.setTargetable(false);
 						((Attackable) octavis).setCanReturnToSpawnPoint(false);
 						getTimers().addRepeatingTimer("FOLLOW_BEASTS", 500, octavis, null);
 						WalkingManager.getInstance().startMoving(beasts, "octabis_superpoint");
@@ -159,8 +162,73 @@ public final class OctavisWarzone extends AbstractInstance
 					});
 					break;
 				}
+				case "END_STAGE_1":
+				{
+					playMovie(world, Movie.SC_OCTABIS_PHASECH_A);
+					getTimers().addTimer("START_STAGE_2", 12000, npc, null);
+					break;
+				}
+				case "START_STAGE_2":
+				{
+					world.spawnGroup("STAGE_2");
+					break;
+				}
 			}
 		}
+	}
+	
+	@Override
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
+	{
+		final Instance world = npc.getInstanceWorld();
+		if (isOctavisInstance(world))
+		{
+			if (CommonUtil.contains(OCTAVIS_STAGE_1, npc.getId()))
+			{
+				final int hpPer = npc.getCurrentHpPercent();
+				if (hpPer >= 90)
+				{
+					npc.setState(0);
+				}
+				else if (hpPer >= 80)
+				{
+					npc.setState(1);
+				}
+				else if (hpPer >= 70)
+				{
+					npc.setState(2);
+				}
+				else if (hpPer >= 60)
+				{
+					npc.setState(3);
+				}
+				else if (hpPer >= 50)
+				{
+					npc.setState(4);
+				}
+				else
+				{
+					npc.setState(5);
+				}
+			}
+		}
+		return super.onAttack(npc, attacker, damage, isSummon);
+	}
+	
+	@Override
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
+	{
+		final Instance world = npc.getInstanceWorld();
+		if (isOctavisInstance(world))
+		{
+			if (CommonUtil.contains(OCTAVIS_STAGE_1, npc.getId()))
+			{
+				getTimers().cancelTimer("FOLLOW_BEASTS", npc, null);
+				world.getAliveNpcs(BEASTS).forEach(beasts -> beasts.deleteMe());
+				getTimers().addTimer("END_STAGE_1", 1000, npc, null);
+			}
+		}
+		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
