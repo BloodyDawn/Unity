@@ -272,11 +272,35 @@
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="17050" toLevel="1" name="Scroll of Escape: Raider's Crossroads">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Return to Raider's Crossroads -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLvl>1</magicLvl>
 		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeId>37017</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
+		<magicLvl>1</magicLvl>
+		<operateType>A1</operateType>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>20583</x>
+				<y>-129571</y>
+				<z>-1720</z>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="17051" toLevel="1" name="Scroll of Escape: Land of Chaos">
 		<!-- AUTO GENERATED SKILL -->
