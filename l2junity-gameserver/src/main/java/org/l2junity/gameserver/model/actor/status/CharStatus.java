@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -421,13 +422,13 @@ public class CharStatus
 		// Modify the current HP of the L2Character and broadcast Server->Client packet StatusUpdate
 		if (getCurrentHp() < charstat.getMaxRecoverableHp())
 		{
-			setCurrentHp(getCurrentHp() + Formulas.calcHpRegen(getActiveChar()), false);
+			setCurrentHp(getCurrentHp() + getActiveChar().getStat().getValue(Stats.REGENERATE_HP_RATE), false);
 		}
 		
 		// Modify the current MP of the L2Character and broadcast Server->Client packet StatusUpdate
 		if (getCurrentMp() < charstat.getMaxRecoverableMp())
 		{
-			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
+			setCurrentMp(getCurrentMp() + getActiveChar().getStat().getValue(Stats.REGENERATE_MP_RATE), false);
 		}
 		
 		if (!getActiveChar().isInActiveRegion())

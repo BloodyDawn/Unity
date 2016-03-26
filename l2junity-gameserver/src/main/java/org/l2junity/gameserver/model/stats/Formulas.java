@@ -24,47 +24,30 @@ import java.util.List;
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.Position;
-import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.FortManager;
-import org.l2junity.gameserver.instancemanager.SiegeManager;
-import org.l2junity.gameserver.instancemanager.ZoneManager;
-import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.items.Armor;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
-import org.l2junity.gameserver.model.residences.AbstractResidence;
-import org.l2junity.gameserver.model.residences.ResidenceFunction;
-import org.l2junity.gameserver.model.residences.ResidenceFunctionType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
-import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.model.zone.type.CastleZone;
-import org.l2junity.gameserver.model.zone.type.ClanHallZone;
-import org.l2junity.gameserver.model.zone.type.FortZone;
-import org.l2junity.gameserver.model.zone.type.MotherTreeZone;
 import org.l2junity.gameserver.network.Debug;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * Global calculations.
@@ -88,273 +71,6 @@ public final class Formulas
 	public static int getRegeneratePeriod(Creature cha)
 	{
 		return cha.isDoor() ? HP_REGENERATE_PERIOD * 100 : HP_REGENERATE_PERIOD;
-	}
-	
-	/**
-	 * Calculate the HP regen rate (base + modifiers).
-	 * @param cha
-	 * @return
-	 */
-	public static double calcHpRegen(Creature cha)
-	{
-		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseHpRegen(cha.getLevel()) : cha.getTemplate().getBaseHpReg();
-		double hpRegenMultiplier = cha.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
-		double hpRegenBonus = 0;
-		
-		if (Config.L2JMOD_CHAMPION_ENABLE && cha.isChampion())
-		{
-			hpRegenMultiplier *= Config.L2JMOD_CHAMPION_HP_REGEN;
-		}
-		
-		if (cha.isPlayer())
-		{
-			PlayerInstance player = cha.getActingPlayer();
-			
-			double siegeModifier = calcSiegeRegenModifier(player);
-			if (siegeModifier > 0)
-			{
-				hpRegenMultiplier *= siegeModifier;
-			}
-			
-			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) && (player.getClan().getHideoutId() > 0))
-			{
-				ClanHallZone zone = ZoneManager.getInstance().getZone(player, ClanHallZone.class);
-				int posChIndex = zone == null ? -1 : zone.getResidenceId();
-				int clanHallIndex = player.getClan().getHideoutId();
-				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
-				{
-					final AbstractResidence residense = ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
-					if (residense != null)
-					{
-						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
-						if (func != null)
-						{
-							hpRegenMultiplier *= func.getValue();
-						}
-					}
-				}
-			}
-			
-			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) && (player.getClan().getCastleId() > 0))
-			{
-				CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
-				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				int castleIndex = player.getClan().getCastleId();
-				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
-				{
-					final AbstractResidence residense = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
-					if (residense != null)
-					{
-						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
-						if (func != null)
-						{
-							hpRegenMultiplier *= func.getValue();
-						}
-					}
-				}
-			}
-			
-			if (player.isInsideZone(ZoneId.FORT) && (player.getClan() != null) && (player.getClan().getFortId() > 0))
-			{
-				FortZone zone = ZoneManager.getInstance().getZone(player, FortZone.class);
-				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
-				int fortIndex = player.getClan().getFortId();
-				if ((fortIndex > 0) && (fortIndex == posFortIndex))
-				{
-					final AbstractResidence residense = FortManager.getInstance().getFortById(player.getClan().getCastleId());
-					if (residense != null)
-					{
-						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
-						if (func != null)
-						{
-							hpRegenMultiplier *= func.getValue();
-						}
-					}
-				}
-			}
-			
-			// Mother Tree effect is calculated at last
-			if (player.isInsideZone(ZoneId.MOTHER_TREE))
-			{
-				final MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
-				int hpBonus = zone == null ? 0 : zone.getHpRegenBonus();
-				hpRegenBonus += hpBonus;
-			}
-			
-			// Calculate Movement bonus
-			if (player.isSitting())
-			{
-				hpRegenMultiplier *= 1.5; // Sitting
-			}
-			else if (!player.isMoving())
-			{
-				hpRegenMultiplier *= 1.1; // Staying
-			}
-			else if (player.isRunning())
-			{
-				hpRegenMultiplier *= 0.7; // Running
-			}
-			
-			// Add CON bonus
-			init *= cha.getLevelMod() * BaseStats.CON.calcBonus(cha);
-		}
-		else if (cha.isPet())
-		{
-			init = ((L2PetInstance) cha).getPetLevelData().getPetRegenHP() * Config.PET_HP_REGEN_MULTIPLIER;
-		}
-		
-		return (cha.getStat().getValue(Stats.REGENERATE_HP_RATE, Math.max(1, init)) * hpRegenMultiplier) + hpRegenBonus;
-	}
-	
-	/**
-	 * Calculate the MP regen rate (base + modifiers).
-	 * @param cha
-	 * @return
-	 */
-	public static double calcMpRegen(Creature cha)
-	{
-		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseMpRegen(cha.getLevel()) : cha.getTemplate().getBaseMpReg();
-		double mpRegenMultiplier = cha.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
-		double mpRegenBonus = 0;
-		
-		if (cha.isPlayer())
-		{
-			final PlayerInstance player = cha.getActingPlayer();
-			
-			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) && (player.getClan().getHideoutId() > 0))
-			{
-				ClanHallZone zone = ZoneManager.getInstance().getZone(player, ClanHallZone.class);
-				int posChIndex = zone == null ? -1 : zone.getResidenceId();
-				int clanHallIndex = player.getClan().getHideoutId();
-				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
-				{
-					final AbstractResidence residense = ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
-					if (residense != null)
-					{
-						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
-						if (func != null)
-						{
-							mpRegenMultiplier *= func.getValue();
-						}
-					}
-				}
-			}
-			
-			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) && (player.getClan().getCastleId() > 0))
-			{
-				CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
-				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				int castleIndex = player.getClan().getCastleId();
-				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
-				{
-					final AbstractResidence residense = CastleManager.getInstance().getCastleById(player.getClan().getCastleId());
-					if (residense != null)
-					{
-						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
-						if (func != null)
-						{
-							mpRegenMultiplier *= func.getValue();
-						}
-					}
-				}
-			}
-			
-			if (player.isInsideZone(ZoneId.FORT) && (player.getClan() != null) && (player.getClan().getFortId() > 0))
-			{
-				FortZone zone = ZoneManager.getInstance().getZone(player, FortZone.class);
-				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
-				int fortIndex = player.getClan().getFortId();
-				if ((fortIndex > 0) && (fortIndex == posFortIndex))
-				{
-					final AbstractResidence residense = FortManager.getInstance().getFortById(player.getClan().getCastleId());
-					if (residense != null)
-					{
-						final ResidenceFunction func = residense.getFunction(ResidenceFunctionType.MP_REGEN);
-						if (func != null)
-						{
-							mpRegenMultiplier *= func.getValue();
-						}
-					}
-				}
-			}
-			
-			// Mother Tree effect is calculated at last'
-			if (player.isInsideZone(ZoneId.MOTHER_TREE))
-			{
-				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
-				int mpBonus = zone == null ? 0 : zone.getMpRegenBonus();
-				mpRegenBonus += mpBonus;
-			}
-			
-			// Calculate Movement bonus
-			if (player.isSitting())
-			{
-				mpRegenMultiplier *= 1.5; // Sitting
-			}
-			else if (!player.isMoving())
-			{
-				mpRegenMultiplier *= 1.1; // Staying
-			}
-			else if (player.isRunning())
-			{
-				mpRegenMultiplier *= 0.7; // Running
-			}
-			
-			// Add MEN bonus
-			init *= cha.getLevelMod() * BaseStats.MEN.calcBonus(cha);
-		}
-		else if (cha.isPet())
-		{
-			init = ((L2PetInstance) cha).getPetLevelData().getPetRegenMP() * Config.PET_MP_REGEN_MULTIPLIER;
-		}
-		
-		return (cha.getStat().getValue(Stats.REGENERATE_MP_RATE, Math.max(1, init)) * mpRegenMultiplier) + mpRegenBonus;
-	}
-	
-	/**
-	 * Calculate the CP regen rate (base + modifiers).
-	 * @param player the player
-	 * @return
-	 */
-	public static double calcCpRegen(PlayerInstance player)
-	{
-		final double init = player.getActingPlayer().getTemplate().getBaseCpRegen(player.getLevel()) * player.getLevelMod() * BaseStats.CON.calcBonus(player);
-		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
-		if (player.isSitting())
-		{
-			cpRegenMultiplier *= 1.5; // Sitting
-		}
-		else if (!player.isMoving())
-		{
-			cpRegenMultiplier *= 1.1; // Staying
-		}
-		else if (player.isRunning())
-		{
-			cpRegenMultiplier *= 0.7; // Running
-		}
-		return player.getStat().getValue(Stats.REGENERATE_CP_RATE, Math.max(1, init)) * cpRegenMultiplier;
-	}
-	
-	public static double calcSiegeRegenModifier(PlayerInstance activeChar)
-	{
-		if ((activeChar == null) || (activeChar.getClan() == null))
-		{
-			return 0;
-		}
-		
-		Siege siege = SiegeManager.getInstance().getSiege(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-		if ((siege == null) || !siege.isInProgress())
-		{
-			return 0;
-		}
-		
-		SiegeClan siegeClan = siege.getAttackerClan(activeChar.getClan().getId());
-		if ((siegeClan == null) || siegeClan.getFlag().isEmpty() || !Util.checkIfInRange(200, activeChar, siegeClan.getFlag().stream().findAny().get(), true))
-		{
-			return 0;
-		}
-		
-		return 1.5; // If all is true, then modifier will be 50% more
 	}
 	
 	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)

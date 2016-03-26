@@ -44,6 +44,9 @@ import org.l2junity.gameserver.model.stats.finalizers.PDefenseFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PRangeFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.RegenCPFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.RegenHPFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.RegenMPFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.ShotsBonusFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.VampiricChanceFinalizer;
@@ -52,12 +55,10 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Enum of basic stats.
- * @author mkizub
+ * @author mkizub, UnAfraid, NosBit, Sdw
  */
 public enum Stats
 {
-	// Base stats, for each in Calculator a slot is allocated
-	
 	// HP, MP & CP
 	MAX_HP("maxHp", new MaxHpFinalizer()),
 	MAX_MP("maxMp", new MaxMpFinalizer()),
@@ -65,9 +66,9 @@ public enum Stats
 	MAX_RECOVERABLE_HP("maxRecoverableHp"), // The maximum HP that is able to be recovered trough heals
 	MAX_RECOVERABLE_MP("maxRecoverableMp"),
 	MAX_RECOVERABLE_CP("maxRecoverableCp"),
-	REGENERATE_HP_RATE("regHp"),
-	REGENERATE_CP_RATE("regCp"),
-	REGENERATE_MP_RATE("regMp"),
+	REGENERATE_HP_RATE("regHp", new RegenHPFinalizer()),
+	REGENERATE_CP_RATE("regCp", new RegenCPFinalizer()),
+	REGENERATE_MP_RATE("regMp", new RegenMPFinalizer()),
 	MANA_CHARGE("manaCharge"),
 	HEAL_EFFECT("healEffect"),
 	
