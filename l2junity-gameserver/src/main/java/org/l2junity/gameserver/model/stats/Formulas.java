@@ -1838,13 +1838,6 @@ public final class Formulas
 	{
 		int time = (skill == null) || skill.isPassive() || skill.isToggle() ? -1 : skill.getAbnormalTime();
 		
-		// An herb buff will affect both master and servitor, but the buff duration will be half of the normal duration.
-		// If a servitor is not summoned, the master will receive the full buff duration.
-		if ((target != null) && (skill != null) && target.isServitor() && skill.isAbnormalInstant())
-		{
-			time /= 2;
-		}
-		
 		// If the skill is a mastery skill, the effect will last twice the default time.
 		if ((skill != null) && Formulas.calcSkillMastery(caster, skill))
 		{
