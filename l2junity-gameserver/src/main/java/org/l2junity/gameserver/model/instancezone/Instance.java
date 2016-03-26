@@ -97,8 +97,9 @@ public final class Instance implements IIdentifiable, INamable
 	 * Create instance world.
 	 * @param id ID of instance world
 	 * @param template template of instance world
+	 * @param player player who create instance world.
 	 */
-	public Instance(int id, InstanceTemplate template)
+	public Instance(int id, InstanceTemplate template, PlayerInstance player)
 	{
 		// Set basic instance info
 		_id = id;
@@ -119,7 +120,7 @@ public final class Instance implements IIdentifiable, INamable
 		if (!isDynamic())
 		{
 			// Notify DP scripts
-			EventDispatcher.getInstance().notifyEventAsync(new OnInstanceCreated(this), _template);
+			EventDispatcher.getInstance().notifyEventAsync(new OnInstanceCreated(this, player), _template);
 		}
 		
 		// Debug logger

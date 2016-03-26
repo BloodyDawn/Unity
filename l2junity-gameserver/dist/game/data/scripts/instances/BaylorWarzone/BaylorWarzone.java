@@ -277,7 +277,7 @@ public final class BaylorWarzone extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		getTimers().addTimer("BATTLE_PORT", 3000, e ->
 		{

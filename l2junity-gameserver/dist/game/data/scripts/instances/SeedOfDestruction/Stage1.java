@@ -308,7 +308,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		spawnState(instance);
 		for (DoorInstance door : instance.getDoors())

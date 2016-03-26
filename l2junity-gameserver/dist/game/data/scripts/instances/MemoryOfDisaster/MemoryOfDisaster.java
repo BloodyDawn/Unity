@@ -581,7 +581,7 @@ public final class MemoryOfDisaster extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		getTimers().addTimer("OPENING_SCENE", 500, e ->
 		{

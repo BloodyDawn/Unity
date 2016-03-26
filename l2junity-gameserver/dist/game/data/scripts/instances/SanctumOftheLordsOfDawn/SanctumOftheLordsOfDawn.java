@@ -76,7 +76,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		// Spawn guards and set save points
 		for (int i = 1; i <= 4; i++)

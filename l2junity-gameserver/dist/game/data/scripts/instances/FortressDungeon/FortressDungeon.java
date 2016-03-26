@@ -169,7 +169,7 @@ public final class FortressDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		// Put re-enter for instance
 		REENETER_HOLDER.put(instance.getTemplateId(), System.currentTimeMillis() + REENTER);

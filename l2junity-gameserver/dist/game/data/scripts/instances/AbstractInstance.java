@@ -140,7 +140,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			}
 			
 			// Create new instance for enter player group
-			instance = manager.createInstance(template);
+			instance = manager.createInstance(template, player);
 			
 			// Move each player from enter group to instance
 			for (PlayerInstance member : enterGroup)

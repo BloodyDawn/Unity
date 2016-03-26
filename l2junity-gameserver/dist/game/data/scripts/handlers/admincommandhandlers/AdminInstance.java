@@ -156,7 +156,7 @@ public final class AdminInstance implements IAdminCommandHandler
 						}
 					}
 					
-					final Instance instance = InstanceManager.getInstance().createInstance(template);
+					final Instance instance = InstanceManager.getInstance().createInstance(template, activeChar);
 					final Location loc = instance.getEnterLocation();
 					if (loc != null)
 					{

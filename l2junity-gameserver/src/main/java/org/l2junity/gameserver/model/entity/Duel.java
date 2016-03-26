@@ -578,7 +578,7 @@ public class Duel
 		}
 		
 		final List<Location> spawns = zone.getSpawns();
-		_duelInstance = InstanceManager.getInstance().createInstance(InstanceManager.getInstance().getInstanceTemplate(instanceId));
+		_duelInstance = InstanceManager.getInstance().createInstance(InstanceManager.getInstance().getInstanceTemplate(instanceId), null);
 		
 		final Location spawn1 = spawns.get(Rnd.get(spawns.size() / 2));
 		for (PlayerInstance temp : _playerA.getParty().getMembers())

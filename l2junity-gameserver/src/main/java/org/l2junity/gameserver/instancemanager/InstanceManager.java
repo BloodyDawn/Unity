@@ -380,32 +380,34 @@ public final class InstanceManager implements IGameXmlReader
 	 */
 	public Instance createInstance()
 	{
-		return new Instance(getNewInstanceId(), new InstanceTemplate(StatsSet.EMPTY_STATSET));
+		return new Instance(getNewInstanceId(), new InstanceTemplate(StatsSet.EMPTY_STATSET), null);
 	}
 	
 	/**
 	 * Create new instance from given template.
 	 * @param template template used for instance creation
+	 * @param player player who create instance.
 	 * @return newly created instance if success, otherwise {@code null}
 	 */
-	public Instance createInstance(InstanceTemplate template)
+	public Instance createInstance(InstanceTemplate template, PlayerInstance player)
 	{
-		return (template != null) ? new Instance(getNewInstanceId(), template) : null;
+		return (template != null) ? new Instance(getNewInstanceId(), template, player) : null;
 	}
 	
 	/**
 	 * Create new instance with template defined in datapack.
 	 * @param id template id of instance
+	 * @param player player who create instance
 	 * @return newly created instance if template was found, otherwise {@code null}
 	 */
-	public Instance createInstance(int id)
+	public Instance createInstance(int id, PlayerInstance player)
 	{
 		if (!_instanceTemplates.containsKey(id))
 		{
 			LOGGER.warn("Missing template for instance with id {}!", id);
 			return null;
 		}
-		return new Instance(getNewInstanceId(), _instanceTemplates.get(id));
+		return new Instance(getNewInstanceId(), _instanceTemplates.get(id), player);
 	}
 	
 	/**

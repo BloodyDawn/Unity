@@ -276,7 +276,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		instance.spawnGroup("PRISONERS").forEach(npc ->
 		{
@@ -291,7 +291,6 @@ public final class KartiasLabyrinth extends AbstractInstance
 		{
 			getTimers().addTimer("CALL_PROGRESS", 2500, n -> manageProgressInInstance(instance));
 		}
-		super.onInstanceCreated(instance);
 	}
 	
 	public void onCreatureKill(OnCreatureKill event)

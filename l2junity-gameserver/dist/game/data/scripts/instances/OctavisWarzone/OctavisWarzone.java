@@ -83,6 +83,7 @@ public final class OctavisWarzone extends AbstractInstance
 		addEnterZoneId(TELEPORT_ZONE.getId());
 		setCreatureSeeId(this::onCreatureSee, DOOR_MANAGER);
 		addInstanceDestroyId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
+		addInstanceCreatedId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
 	}
 	
 	@Override
@@ -93,7 +94,7 @@ public final class OctavisWarzone extends AbstractInstance
 			case "enterEasyInstance":
 			{
 				enterInstance(player, npc, TEMPLATE_ID);
-				return "PartyEnterCommon.html";
+				break;
 			}
 			case "enterExtremeInstance":
 			{
@@ -251,6 +252,15 @@ public final class OctavisWarzone extends AbstractInstance
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
+	}
+	
+	@Override
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
+	{
+		if ((player != null) && isOctavisInstance(instance))
+		{
+			showHtmlFile(player, (instance.getTemplateId() == TEMPLATE_ID) ? "PartyEnterCommon.html" : "PartyEnterExtreme.html");
+		}
 	}
 	
 	@Override

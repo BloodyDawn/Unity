@@ -1430,8 +1430,9 @@ public class Quest extends AbstractScript implements IIdentifiable
 	/**
 	 * This listener is called when instance world is created.
 	 * @param instance created instance world
+	 * @param player player who create instance world
 	 */
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 	}
 	
@@ -2399,7 +2400,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addInstanceCreatedId(int... templateIds)
 	{
-		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld()), templateIds);
+		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld(), event.getCreator()), templateIds);
 	}
 	
 	/**
@@ -2408,7 +2409,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addInstanceCreatedId(Collection<Integer> templateIds)
 	{
-		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld()), templateIds);
+		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld(), event.getCreator()), templateIds);
 	}
 	
 	/**

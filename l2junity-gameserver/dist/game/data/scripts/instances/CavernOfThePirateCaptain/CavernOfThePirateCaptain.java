@@ -136,7 +136,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		final List<Npc> candles = new ArrayList<>();
 		final int zakenRoom = getRandom(1, 15);

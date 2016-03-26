@@ -54,7 +54,7 @@ public class OlympiadStadium
 	protected OlympiadStadium(OlympiadStadiumZone olyzone, int stadium)
 	{
 		_zone = olyzone;
-		_instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId());
+		_instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId(), null);
 		_buffers = _instance.getNpcs().stream().map(Npc::getSpawn).collect(Collectors.toList());
 		_buffers.stream().map(L2Spawn::getLastSpawn).forEach(Npc::decayMe);
 	}

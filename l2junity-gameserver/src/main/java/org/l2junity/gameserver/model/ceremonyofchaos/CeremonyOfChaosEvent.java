@@ -82,7 +82,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	public CeremonyOfChaosEvent(int id, InstanceTemplate template)
 	{
 		_id = id;
-		_instance = InstanceManager.getInstance().createInstance(template);
+		_instance = InstanceManager.getInstance().createInstance(template, null);
 		if (_instance.getEnterLocations().size() < CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18))
 		{
 			LOGGER.warn("There are more member slots: {} then instance entrance positions: {}!", _instance.getEnterLocations().size(), CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18));

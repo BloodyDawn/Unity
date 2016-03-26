@@ -105,7 +105,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 	}
 	
 	@Override
-	public void onInstanceCreated(Instance instance)
+	public void onInstanceCreated(Instance instance, PlayerInstance player)
 	{
 		// Choose start room
 		changeRoom(instance);
