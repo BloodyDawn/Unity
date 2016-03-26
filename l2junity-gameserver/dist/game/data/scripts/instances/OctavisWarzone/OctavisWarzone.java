@@ -58,6 +58,11 @@ public final class OctavisWarzone extends AbstractInstance
 		29192, // Common
 		29210, // Extreme
 	};
+	private static final int[] GLADIATORS =
+	{
+		22928, // Common
+		23086, // Extreme
+	};
 	private static final int LYDIA = 32892;
 	private static final int DOOR_MANAGER = 18984;
 	// Locations
@@ -76,10 +81,13 @@ public final class OctavisWarzone extends AbstractInstance
 		addStartNpc(LYDIA);
 		addTalkId(LYDIA);
 		addSpawnId(DOOR_MANAGER);
+		addSpawnId(GLADIATORS);
 		addAttackId(OCTAVIS_STAGE_1);
+		addAttackId(OCTAVIS_STAGE_2);
 		addAttackId(BEASTS);
 		addKillId(OCTAVIS_STAGE_1);
 		addKillId(OCTAVIS_STAGE_2);
+		addMoveFinishedId(GLADIATORS);
 		addEnterZoneId(TELEPORT_ZONE.getId());
 		setCreatureSeeId(this::onCreatureSee, DOOR_MANAGER);
 		addInstanceDestroyId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
@@ -120,6 +128,9 @@ public final class OctavisWarzone extends AbstractInstance
 		final Instance world = npc.getInstanceWorld();
 		if (isOctavisInstance(world))
 		{
+			final StatsSet npcVars = npc.getVariables();
+			final StatsSet npcParams = npc.getParameters();
+			
 			switch (event)
 			{
 				case "SECOND_DOOR_OPEN":
@@ -176,6 +187,36 @@ public final class OctavisWarzone extends AbstractInstance
 					world.spawnGroup("STAGE_2");
 					break;
 				}
+				case "GLADIATOR_START_SPAWN":
+				{
+					final int spawnIndex = npcVars.getInt("SPAWN_INDEX", 1);
+					if (spawnIndex < 7)
+					{
+						if (isExtremeMode(world))
+						{
+							world.spawnGroup("magmeld4_2621_gro" + spawnIndex + "m1");
+						}
+						else
+						{
+							world.spawnGroup("magmeld4_2621_gmo" + spawnIndex + "m1");
+						}
+						npcVars.set("SPAWN_INDEX", spawnIndex + 1);
+						getTimers().addTimer("GLADIATOR_START_SPAWN", 3000, npc, null);
+					}
+					break;
+				}
+				case "GLADIATOR_MOVING":
+				{
+					final int moveX = npcParams.getInt("Move_to_X", 0);
+					final int moveY = npcParams.getInt("Move_to_Y", 0);
+					
+					if ((moveX != 0) && (moveY != 0))
+					{
+						npc.setIsRunning(true);
+						addMoveToDesire(npc, new Location(moveX, moveY, -10008), 23);
+					}
+					break;
+				}
 			}
 		}
 	}
@@ -215,6 +256,22 @@ public final class OctavisWarzone extends AbstractInstance
 					npc.setState(5);
 				}
 			}
+			else if (CommonUtil.contains(OCTAVIS_STAGE_2, npc.getId()))
+			{
+				final StatsSet npcVars = npc.getVariables();
+				
+				if (npcVars.getBoolean("START_TIMERS", true))
+				{
+					npcVars.set("START_TIMERS", false);
+					getTimers().addTimer("GLADIATOR_START_SPAWN", 6000, npc, null);
+					// myself->AddTimerEx(Attack_Timer, 15 * 1000);
+					// myself->AddTimerEx(Come_On_Timer, 30 * 1000);
+					// myself->AddTimerEx(Royal_Timer, 30 * 1000);
+					// myself->AddTimerEx(Scan_Timer, 1000);
+					// myself->AddTimerEx(Beast_Spawn_Timer, 1000);
+					// myself->AddTimerEx(Gladiator_Fishnet_Timer, 15 * 1000);
+				}
+			}
 			else if (CommonUtil.contains(BEASTS, npc.getId()))
 			{
 				if ((hpPer < 50) && npc.isScriptValue(0))
@@ -250,6 +307,20 @@ public final class OctavisWarzone extends AbstractInstance
 				world.getAliveNpcs(BEASTS).forEach(beasts -> beasts.deleteMe());
 				getTimers().addTimer("END_STAGE_1", 1000, npc, null);
 			}
+			else if (CommonUtil.contains(OCTAVIS_STAGE_2, npc.getId()))
+			{
+				for (int i = 1; i < 7; i++)
+				{
+					if (isExtremeMode(world))
+					{
+						world.despawnGroup("magmeld4_2621_gro" + i + "m1");
+					}
+					else
+					{
+						world.despawnGroup("magmeld4_2621_gmo" + i + "m1");
+					}
+				}
+			}
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
@@ -279,9 +350,25 @@ public final class OctavisWarzone extends AbstractInstance
 		final Instance world = npc.getInstanceWorld();
 		if (isOctavisInstance(world))
 		{
+			if (CommonUtil.contains(GLADIATORS, npc.getId()))
+			{
+				npc.setRandomWalking(false);
+				world.openCloseDoor(npc.getParameters().getInt("My_DoorName", -1), true);
+				getTimers().addTimer("GLADIATOR_MOVING", 3000, npc, null);
+			}
 			npc.initSeenCreatures();
 		}
 		return super.onSpawn(npc);
+	}
+	
+	@Override
+	public void onMoveFinished(Npc npc)
+	{
+		final Instance world = npc.getInstanceWorld();
+		if (isOctavisInstance(world))
+		{
+			world.openCloseDoor(npc.getParameters().getInt("My_DoorName", -1), false);
+		}
 	}
 	
 	public void onCreatureSee(OnCreatureSee event)
