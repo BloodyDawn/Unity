@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.model.actor.status;
 
 import org.l2junity.Config;
-import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.DuelManager;
@@ -31,6 +30,7 @@ import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
+import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -111,7 +111,7 @@ public class PcStatus extends PlayableStatus
 			
 			if (!isDOT)
 			{
-				if (getActiveChar().hasBlockActions() && (Rnd.get(10) == 0))
+				if (Formulas.calcStunBreak(getActiveChar()))
 				{
 					getActiveChar().stopStunning(true);
 				}

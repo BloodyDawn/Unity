@@ -1884,4 +1884,24 @@ public final class Formulas
 		
 		return 1.0;
 	}
+	
+	/**
+	 * Calculates if the specified creature can get its "block actions" effect removed due to damage taken.
+	 * @param activeChar the character to be checked
+	 * @return {@code true} if character should get its "block actions" effects removed, {@code false} otherwise.
+	 */
+	public static boolean calcStunBreak(Creature activeChar)
+	{
+		// Check if target is stunned and 10% chance.
+		if (activeChar.hasBlockActions() && (Rnd.get(10) == 0))
+		{
+			final BuffInfo info = activeChar.getEffectList().getFirstEffect(L2EffectType.BLOCK_ACTIONS);
+			if (info != null)
+			{
+				// Any stun that has double duration due to skill mastery, doesn't get removed until its time reaches the usual abnormal time.
+				return info.getTime() <= info.getSkill().getAbnormalTime();
+			}
+		}
+		return false;
+	}
 }

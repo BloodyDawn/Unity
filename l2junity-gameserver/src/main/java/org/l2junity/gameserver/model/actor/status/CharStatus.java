@@ -24,7 +24,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
-import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -166,7 +165,7 @@ public class CharStatus
 		if (!isDOT && !isHPConsumption)
 		{
 			activeChar.stopEffectsOnDamage(awake);
-			if (activeChar.hasBlockActions() && (Rnd.get(10) == 0))
+			if (Formulas.calcStunBreak(activeChar))
 			{
 				activeChar.stopStunning(true);
 			}

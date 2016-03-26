@@ -2756,15 +2756,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Stop a specified/all Stun abnormal L2Effect.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Delete a specified/all (if effect=null) Stun abnormal L2Effect from L2Character and update client magic icon</li>
-	 * <li>Set the abnormal effect flag _stuned to False</li>
-	 * <li>Notify the L2Character AI</li>
-	 * <li>Send Server->Client UserInfo/CharInfo packet</li>
-	 * </ul>
-	 * @param removeEffects
+	 * Stop all block actions (stun) effects.<br>
+	 * @param removeEffects {@code true} removes all block actions effects, {@code false} only notifies AI to think.
 	 */
 	public final void stopStunning(boolean removeEffects)
 	{
