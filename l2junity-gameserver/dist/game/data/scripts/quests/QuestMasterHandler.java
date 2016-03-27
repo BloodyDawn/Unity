@@ -183,6 +183,7 @@ import quests.Q10291_FireDragonDestroyer.Q10291_FireDragonDestroyer;
 import quests.Q10292_SevenSignsGirlOfDoubt.Q10292_SevenSignsGirlOfDoubt;
 import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMonasteryOfSilence;
+import quests.Q10297_GrandOpeningComeToOurPub.Q10297_GrandOpeningComeToOurPub;
 import quests.Q10320_LetsGoToTheCentralSquare.Q10320_LetsGoToTheCentralSquare;
 import quests.Q10321_QualificationsOfTheSeeker.Q10321_QualificationsOfTheSeeker;
 import quests.Q10322_SearchingForTheMysteriousPower.Q10322_SearchingForTheMysteriousPower;
@@ -220,6 +221,7 @@ import quests.Q10365_SeekerEscort.Q10365_SeekerEscort;
 import quests.Q10366_RuinsStatusUpdate.Q10366_RuinsStatusUpdate;
 import quests.Q10368_RebellionOfMonsters.Q10368_RebellionOfMonsters;
 import quests.Q10369_NoblesseSoulTesting.Q10369_NoblesseSoulTesting;
+import quests.Q10381_ToTheSeedOfHellfire.Q10381_ToTheSeedOfHellfire;
 import quests.Q10385_RedThreadOfFate.Q10385_RedThreadOfFate;
 import quests.Q10386_MysteriousJourney.Q10386_MysteriousJourney;
 import quests.Q10387_SoullessOne.Q10387_SoullessOne;
@@ -260,6 +262,8 @@ import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
 import quests.Q10504_JewelOfAntharas.Q10504_JewelOfAntharas;
 import quests.Q10505_JewelOfValakas.Q10505_JewelOfValakas;
+import quests.Q10701_TheRoadToDestruction.Q10701_TheRoadToDestruction;
+import quests.Q10702_TheRoadToInfinity.Q10702_TheRoadToInfinity;
 import quests.Q10707_FlamesOfSorrow.Q10707_FlamesOfSorrow;
 import quests.Q10708_StrengthenTheBarrier.Q10708_StrengthenTheBarrier;
 import quests.Q10709_TheStolenSeed.Q10709_TheStolenSeed;
@@ -482,6 +486,7 @@ public class QuestMasterHandler
 		Q10292_SevenSignsGirlOfDoubt.class,
 		Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class,
 		Q10294_SevenSignsToTheMonasteryOfSilence.class,
+		Q10297_GrandOpeningComeToOurPub.class,
 		Q10320_LetsGoToTheCentralSquare.class,
 		Q10321_QualificationsOfTheSeeker.class,
 		Q10322_SearchingForTheMysteriousPower.class,
@@ -519,6 +524,7 @@ public class QuestMasterHandler
 		Q10366_RuinsStatusUpdate.class,
 		Q10368_RebellionOfMonsters.class,
 		Q10369_NoblesseSoulTesting.class,
+		Q10381_ToTheSeedOfHellfire.class,
 		Q10385_RedThreadOfFate.class,
 		Q10386_MysteriousJourney.class,
 		Q10387_SoullessOne.class,
@@ -559,6 +565,8 @@ public class QuestMasterHandler
 		Q10503_FrintezzaEmbroideredSoulCloak.class,
 		Q10504_JewelOfAntharas.class,
 		Q10505_JewelOfValakas.class,
+		Q10701_TheRoadToDestruction.class,
+		Q10702_TheRoadToInfinity.class,
 		Q10707_FlamesOfSorrow.class,
 		Q10708_StrengthenTheBarrier.class,
 		Q10709_TheStolenSeed.class,
