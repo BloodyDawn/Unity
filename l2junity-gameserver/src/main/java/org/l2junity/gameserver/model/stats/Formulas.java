@@ -1904,4 +1904,10 @@ public final class Formulas
 		}
 		return false;
 	}
+	
+	public static boolean calcRealTargetBreak()
+	{
+		// Real Target breaks at 5% probability.
+		return Rnd.get(20) == 0;
+	}
 }

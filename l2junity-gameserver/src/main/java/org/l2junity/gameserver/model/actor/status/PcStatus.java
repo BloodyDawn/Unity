@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -114,6 +115,10 @@ public class PcStatus extends PlayableStatus
 				if (Formulas.calcStunBreak(getActiveChar()))
 				{
 					getActiveChar().stopStunning(true);
+				}
+				if (Formulas.calcRealTargetBreak())
+				{
+					getActiveChar().getEffectList().stopSkillEffects(true, AbnormalType.REAL_TARGET);
 				}
 			}
 		}

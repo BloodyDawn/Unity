@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.slf4j.Logger;
@@ -168,6 +169,10 @@ public class CharStatus
 			if (Formulas.calcStunBreak(activeChar))
 			{
 				activeChar.stopStunning(true);
+			}
+			if (Formulas.calcRealTargetBreak())
+			{
+				getActiveChar().getEffectList().stopSkillEffects(true, AbnormalType.REAL_TARGET);
 			}
 		}
 		

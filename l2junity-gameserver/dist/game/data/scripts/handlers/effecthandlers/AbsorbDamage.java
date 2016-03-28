@@ -44,7 +44,8 @@ public class AbsorbDamage extends AbstractEffect
 	
 	private DamageReturn onDamageReceivedEvent(OnCreatureDamageReceived event)
 	{
-		if (event.isDamageOverTime()) // TODO: Check if that's true
+		// DOT effects are not taken into account.
+		if (event.isDamageOverTime())
 		{
 			return null;
 		}
