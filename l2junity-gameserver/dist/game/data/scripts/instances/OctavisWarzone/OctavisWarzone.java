@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
+import org.l2junity.gameserver.util.Util;
 
 import instances.AbstractInstance;
 
@@ -58,6 +59,11 @@ public final class OctavisWarzone extends AbstractInstance
 		29192, // Common
 		29210, // Extreme
 	};
+	private static final int[] BEASTS_MINIONS =
+	{
+		22929, // Common
+		23087, // Extreme
+	};
 	private static final int[] GLADIATORS =
 	{
 		22928, // Common
@@ -68,6 +74,16 @@ public final class OctavisWarzone extends AbstractInstance
 	// Locations
 	private static final Location BATTLE_LOC = new Location(208720, 120576, -10000);
 	private static final Location OCTAVIS_SPAWN_LOC = new Location(207069, 120580, -9987);
+	private static final Location BEASTS_RANDOM_POINT = new Location(207244, 120579, -10008);
+	private static final Location[] BEASTS_MINIONS_LOC =
+	{
+		new Location(206681, 119327, -9987),
+		new Location(207724, 119303, -9987),
+		new Location(208472, 120047, -9987),
+		new Location(208484, 121110, -9987),
+		new Location(207730, 121859, -9987),
+		new Location(206654, 121865, -9987),
+	};
 	// Zones
 	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12042, ScriptZone.class);
 	// Misc
@@ -217,6 +233,21 @@ public final class OctavisWarzone extends AbstractInstance
 					}
 					break;
 				}
+				case "BEASTS_MINIONS_SPAWN":
+				{
+					final Location loc = BEASTS_MINIONS_LOC[getRandom(BEASTS_MINIONS_LOC.length)];
+					final int count = getRandom(10);
+					
+					for (int i = 0; i < count; i++)
+					{
+						final Npc beast = addSpawn((!isExtremeMode(world) ? BEASTS_MINIONS[0] : BEASTS_MINIONS[1]), loc, false, 0, false, world.getId());
+						beast.setIsRunning(true);
+						addMoveToDesire(beast, Util.getRandomPosition(BEASTS_RANDOM_POINT, 500, 500), 23);
+					}
+					
+					getTimers().addTimer("BEASTS_MINIONS_SPAWN", 30000 + (getRandom(10) * 1000), npc, null);
+					break;
+				}
 			}
 		}
 	}
@@ -268,7 +299,7 @@ public final class OctavisWarzone extends AbstractInstance
 					// myself->AddTimerEx(Come_On_Timer, 30 * 1000);
 					// myself->AddTimerEx(Royal_Timer, 30 * 1000);
 					// myself->AddTimerEx(Scan_Timer, 1000);
-					// myself->AddTimerEx(Beast_Spawn_Timer, 1000);
+					getTimers().addTimer("BEASTS_MINIONS_SPAWN", 1000, npc, null);
 					// myself->AddTimerEx(Gladiator_Fishnet_Timer, 15 * 1000);
 				}
 			}
@@ -309,6 +340,12 @@ public final class OctavisWarzone extends AbstractInstance
 			}
 			else if (CommonUtil.contains(OCTAVIS_STAGE_2, npc.getId()))
 			{
+				// Cancel timers
+				getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", npc, null);
+				// Despawn beasts
+				world.getAliveNpcs(BEASTS_MINIONS).forEach(beast -> beast.doDie(null));
+				
+				// Despawn gladiators
 				for (int i = 1; i < 7; i++)
 				{
 					if (isExtremeMode(world))
