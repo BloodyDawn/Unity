@@ -24,6 +24,7 @@ import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -242,10 +243,24 @@ public final class OctavisWarzone extends AbstractInstance
 					{
 						final Npc beast = addSpawn((!isExtremeMode(world) ? BEASTS_MINIONS[0] : BEASTS_MINIONS[1]), loc, false, 0, false, world.getId());
 						beast.setIsRunning(true);
+						((Attackable) beast).setCanReturnToSpawnPoint(false);
 						addMoveToDesire(beast, Util.getRandomPosition(BEASTS_RANDOM_POINT, 500, 500), 23);
 					}
 					
 					getTimers().addTimer("BEASTS_MINIONS_SPAWN", 30000 + (getRandom(10) * 1000), npc, null);
+					break;
+				}
+				case "MINION_CALL":
+				{
+					final PlayerInstance mostHated = ((Attackable) npc).getMostHated().getActingPlayer();
+					if ((mostHated != null) && (mostHated.calculateDistance(npc, true, false) < 5000))
+					{
+						World.getInstance().getVisibleObjects(npc, Attackable.class, 4000, obj -> CommonUtil.contains(BEASTS_MINIONS, obj.getId()) || CommonUtil.contains(GLADIATORS, obj.getId())).forEach(minion ->
+						{
+							addAttackPlayerDesire(minion, mostHated, 23);
+						});
+					}
+					getTimers().addTimer("MINION_CALL", 5000 + (getRandom(5) * 1000), npc, null);
 					break;
 				}
 			}
@@ -296,7 +311,7 @@ public final class OctavisWarzone extends AbstractInstance
 					npcVars.set("START_TIMERS", false);
 					getTimers().addTimer("GLADIATOR_START_SPAWN", 6000, npc, null);
 					// myself->AddTimerEx(Attack_Timer, 15 * 1000);
-					// myself->AddTimerEx(Come_On_Timer, 30 * 1000);
+					getTimers().addTimer("MINION_CALL", 30000, npc, null);
 					// myself->AddTimerEx(Royal_Timer, 30 * 1000);
 					// myself->AddTimerEx(Scan_Timer, 1000);
 					getTimers().addTimer("BEASTS_MINIONS_SPAWN", 1000, npc, null);
@@ -342,6 +357,7 @@ public final class OctavisWarzone extends AbstractInstance
 			{
 				// Cancel timers
 				getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", npc, null);
+				getTimers().cancelTimer("MINION_CALL", npc, null);
 				// Despawn beasts
 				world.getAliveNpcs(BEASTS_MINIONS).forEach(beast -> beast.doDie(null));
 				
@@ -374,12 +390,17 @@ public final class OctavisWarzone extends AbstractInstance
 	@Override
 	public void onInstanceDestroy(Instance instance)
 	{
-		instance.getAliveNpcs(OCTAVIS_STAGE_1, OCTAVIS_STAGE_2).forEach(octavis ->
+		instance.getAliveNpcs(OCTAVIS_STAGE_1).forEach(octavis ->
 		{
 			// Stage 1
 			getTimers().cancelTimer("FOLLOW_BEASTS", octavis, null);
+		});
+		
+		instance.getAliveNpcs(OCTAVIS_STAGE_2).forEach(octavis ->
+		{
 			// Stage 2
 			getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", octavis, null);
+			getTimers().cancelTimer("MINION_CALL", octavis, null);
 		});
 	}
 	
