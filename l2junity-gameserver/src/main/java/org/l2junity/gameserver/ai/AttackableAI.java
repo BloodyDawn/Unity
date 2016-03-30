@@ -265,8 +265,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void changeIntentionToCast(Skill skill, WorldObject target, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
 		// Set the AI cast target
-		_actor.setTarget(target);
-		
+		setTarget(target);
 		super.changeIntentionToCast(skill, target, item, forceUse, dontMove);
 	}
 	
@@ -288,7 +287,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				target = skillTargetReconsider(buff, true);
 				if (target != null)
 				{
-					_actor.setTarget(target);
+					setTarget(target);
 					_actor.doCast(buff);
 					LOGGER.debug("{} used buff skill {} on {}", this, buff, _actor);
 					break;
@@ -303,7 +302,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	
 	protected void thinkCast()
 	{
-		final WorldObject target = _skill.getTarget(_actor, _actor.getTarget(), _forceUse, _dontMove, false);
+		final WorldObject target = _skill.getTarget(_actor, getTarget(), _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
 			return;
@@ -328,7 +327,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void thinkActive()
 	{
 		final Attackable npc = getActiveChar();
-		WorldObject target = npc.getTarget();
+		WorldObject target = getTarget();
 		// Update every 1s the _globalAggro counter to come close to 0
 		if (_globalAggro != 0)
 		{
@@ -495,7 +494,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					target = skillTargetReconsider(sk, true);
 					if (target != null)
 					{
-						npc.setTarget(target);
+						setTarget(target);
 						npc.doCast(sk);
 						return;
 					}
@@ -515,7 +514,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				target = skillTargetReconsider(sk, true);
 				if (target != null)
 				{
-					npc.setTarget(target);
+					setTarget(target);
 					npc.doCast(sk);
 					return;
 				}
@@ -566,9 +565,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		
 		Creature target = npc.getMostHated();
-		if (npc.getTarget() != target)
+		if (getTarget() != target)
 		{
-			npc.setTarget(target);
+			setTarget(target);
 		}
 		
 		// Check if target is dead or if timeout is expired to stop this attack
@@ -758,7 +757,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				target = targetReconsider(true);
 				if (target != null)
 				{
-					npc.setTarget(target);
+					setTarget(target);
 					chaostime = 0;
 					return;
 				}
@@ -773,7 +772,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				return;
 			}
 			
-			npc.setTarget(target);
+			setTarget(target);
 		}
 		
 		if (npc.hasSkillChance())
@@ -790,9 +789,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 						double healChance = (100 - healTarget.getCurrentHpPercent()) * 1.5; // Ensure heal chance is always 100% if HP is below 33%.
 						if ((Rnd.get(100) < healChance) && checkSkillTarget(healSkill, healTarget))
 						{
-							npc.setTarget(healTarget);
+							setTarget(healTarget);
 							npc.doCast(healSkill);
-							LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, npc.getTarget());
+							LOGGER.debug("{} used heal skill {} with target {}", this, healSkill, getTarget());
 							return;
 						}
 					}
@@ -808,9 +807,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 					Creature buffTarget = skillTargetReconsider(buffSkill, true);
 					if (checkSkillTarget(buffSkill, buffTarget))
 					{
-						npc.setTarget(buffTarget);
+						setTarget(buffTarget);
 						npc.doCast(buffSkill);
-						LOGGER.debug("{} used buff skill {} with target {}", this, buffSkill, npc.getTarget());
+						LOGGER.debug("{} used buff skill {} with target {}", this, buffSkill, getTarget());
 						return;
 					}
 				}
@@ -823,7 +822,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (SkillCaster.checkUseConditions(npc, immobolizeSkill) && checkSkillTarget(immobolizeSkill, target))
 				{
 					npc.doCast(immobolizeSkill);
-					LOGGER.debug("{} used immobolize skill {} with target {}", this, immobolizeSkill, npc.getTarget());
+					LOGGER.debug("{} used immobolize skill {} with target {}", this, immobolizeSkill, getTarget());
 					return;
 				}
 			}
@@ -835,7 +834,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (SkillCaster.checkUseConditions(npc, muteSkill) && checkSkillTarget(muteSkill, target))
 				{
 					npc.doCast(muteSkill);
-					LOGGER.debug("{} used mute skill {} with target {}", this, muteSkill, npc.getTarget());
+					LOGGER.debug("{} used mute skill {} with target {}", this, muteSkill, getTarget());
 					return;
 				}
 			}
@@ -847,7 +846,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
 				{
 					npc.doCast(shortRangeSkill);
-					LOGGER.debug("{} used short range skill {} with target {}", this, shortRangeSkill, npc.getTarget());
+					LOGGER.debug("{} used short range skill {} with target {}", this, shortRangeSkill, getTarget());
 					return;
 				}
 			}
@@ -859,7 +858,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (SkillCaster.checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
 				{
 					npc.doCast(longRangeSkill);
-					LOGGER.debug("{} used long range skill {} with target {}", this, longRangeSkill, npc.getTarget());
+					LOGGER.debug("{} used long range skill {} with target {}", this, longRangeSkill, getTarget());
 					return;
 				}
 			}
@@ -871,7 +870,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (SkillCaster.checkUseConditions(npc, generalSkill) && checkSkillTarget(generalSkill, target))
 				{
 					npc.doCast(generalSkill);
-					LOGGER.debug("{} used general skill {} with target {}", this, generalSkill, npc.getTarget());
+					LOGGER.debug("{} used general skill {} with target {}", this, generalSkill, getTarget());
 					return;
 				}
 			}
@@ -893,7 +892,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				return;
 			}
 			
-			npc.setTarget(target);
+			setTarget(target);
 		}
 		
 		// Attacks target
@@ -1115,7 +1114,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected void onEvtAttacked(Creature attacker)
 	{
 		final Attackable me = getActiveChar();
-		final WorldObject target = me.getTarget();
+		final WorldObject target = getTarget();
 		// Calculate the attack timeout
 		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeController.getInstance().getGameTicks();
 		
@@ -1230,6 +1229,20 @@ public class AttackableAI extends CharacterAI implements Runnable
 	public void setGlobalAggro(int value)
 	{
 		_globalAggro = value;
+	}
+	
+	@Override
+	public void setTarget(WorldObject target)
+	{
+		// NPCs share their regular target with AI target.
+		_actor.setTarget(target);
+	}
+	
+	@Override
+	public WorldObject getTarget()
+	{
+		// NPCs share their regular target with AI target.
+		return _actor.getTarget();
 	}
 	
 	public Attackable getActiveChar()

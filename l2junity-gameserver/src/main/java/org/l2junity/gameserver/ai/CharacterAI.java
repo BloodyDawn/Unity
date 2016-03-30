@@ -257,10 +257,10 @@ public class CharacterAI extends AbstractAI
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
 			// Check if the AI already targets the L2Character
-			if (_actor.getTarget() != target)
+			if (getTarget() != target)
 			{
 				// Set the AI attack target (change target)
-				_actor.setTarget(target);
+				setTarget(target);
 				
 				stopFollow();
 				
@@ -279,7 +279,7 @@ public class CharacterAI extends AbstractAI
 			changeIntention(AI_INTENTION_ATTACK, target);
 			
 			// Set the AI attack target
-			_actor.setTarget(target);
+			setTarget(target);
 			
 			stopFollow();
 			
@@ -472,7 +472,7 @@ public class CharacterAI extends AbstractAI
 		changeIntention(AI_INTENTION_PICK_UP, object);
 		
 		// Set the AI pick up target
-		getActor().setTarget(object);
+		setTarget(object);
 		if ((object.getX() == 0) && (object.getY() == 0)) // TODO: Find the drop&spawn bug
 		{
 			LOGGER.warn("Object in coords 0,0 - using a temporary fix");
@@ -519,7 +519,7 @@ public class CharacterAI extends AbstractAI
 			changeIntention(AI_INTENTION_INTERACT, object);
 			
 			// Set the AI interact target
-			getActor().setTarget(object);
+			setTarget(object);
 			
 			// Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn (broadcast)
 			moveToPawn(object, 60);
@@ -747,11 +747,11 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtForgetObject(WorldObject object)
 	{
-		final WorldObject target = getActor().getTarget();
+		final WorldObject target = getTarget();
 		// If the object was targeted and the Intention was AI_INTENTION_INTERACT or AI_INTENTION_PICK_UP, set the Intention to AI_INTENTION_ACTIVE
 		if (target == object)
 		{
-			getActor().setTarget(null);
+			setTarget(null);
 			getActor().abortCast(sc -> sc.getTarget() == object);
 			
 			if (isFollowing())
@@ -773,7 +773,7 @@ public class CharacterAI extends AbstractAI
 		if (_actor == object)
 		{
 			// Cancel AI target
-			getActor().setTarget(null);
+			setTarget(null);
 			getActor().abortCast(sc -> sc.getTarget() == object);
 			
 			// Stop an AI Follow Task
@@ -853,7 +853,7 @@ public class CharacterAI extends AbstractAI
 		
 		// Init AI
 		_intention = AI_INTENTION_IDLE;
-		getActor().setTarget(null);
+		setTarget(null);
 	}
 	
 	/**

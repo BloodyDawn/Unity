@@ -83,7 +83,7 @@ public class FriendlyNpcAI extends AttackableAI
 		changeIntention(AI_INTENTION_ATTACK, target);
 		
 		// Set the AI attack target
-		_actor.setTarget(target);
+		setTarget(target);
 		
 		stopFollow();
 		
@@ -100,7 +100,7 @@ public class FriendlyNpcAI extends AttackableAI
 			return;
 		}
 		
-		final WorldObject target = npc.getTarget();
+		final WorldObject target = getTarget();
 		Creature originalAttackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead())
@@ -120,7 +120,7 @@ public class FriendlyNpcAI extends AttackableAI
 		
 		final int collision = npc.getTemplate().getCollisionRadius();
 		
-		npc.setTarget(originalAttackTarget);
+		setTarget(originalAttackTarget);
 		
 		final int combinedCollision = collision + originalAttackTarget.getTemplate().getCollisionRadius();
 		
@@ -235,7 +235,7 @@ public class FriendlyNpcAI extends AttackableAI
 		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
-			_actor.setTarget(null);
+			setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))

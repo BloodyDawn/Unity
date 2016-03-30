@@ -127,7 +127,6 @@ public final class ControllableMobAI extends AttackableAI
 	@Override
 	protected void thinkCast()
 	{
-		Attackable npc = (Attackable) _actor;
 		WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if ((target == null) || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
@@ -139,7 +138,7 @@ public final class ControllableMobAI extends AttackableAI
 			return;
 		}
 		
-		npc.setTarget(target);
+		setTarget(target);
 		
 		if (!_actor.isMuted())
 		{
@@ -181,7 +180,7 @@ public final class ControllableMobAI extends AttackableAI
 			return;
 		}
 		
-		_actor.setTarget(target);
+		setTarget(target);
 		// as a response, we put the target in a forcedattack mode
 		L2ControllableMobInstance theTarget = (L2ControllableMobInstance) target;
 		ControllableMobAI ctrlAi = (ControllableMobAI) theTarget.getAI();
@@ -226,7 +225,7 @@ public final class ControllableMobAI extends AttackableAI
 			setAlternateAI(AI_IDLE);
 		}
 		
-		_actor.setTarget(getForcedTarget());
+		setTarget(getForcedTarget());
 		double dist2 = _actor.calculateDistance(getForcedTarget(), false, true);
 		int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + getForcedTarget().getTemplate().getCollisionRadius();
 		int max_range = range;
@@ -293,7 +292,7 @@ public final class ControllableMobAI extends AttackableAI
 				});
 			}
 			
-			_actor.setTarget(target);
+			setTarget(target);
 			double dist2 = _actor.calculateDistance(target, false, true);
 			int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius();
 			int max_range = range;

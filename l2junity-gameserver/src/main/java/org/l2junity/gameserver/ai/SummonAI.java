@@ -91,12 +91,12 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkAttack()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		final Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		
 		if (checkTargetLostOrDead(attackTarget))
 		{
-			_actor.setTarget(null);
+			setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(attackTarget, _actor.getPhysicalAttackRange()))
@@ -118,7 +118,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		final WorldObject target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
-			summon.setTarget(null);
+			setTarget(null);
 			return;
 		}
 		boolean val = _startFollow;
@@ -134,7 +134,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkPickUp()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
@@ -149,7 +149,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	
 	private void thinkInteract()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
@@ -315,7 +315,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
-			_lastAttack = (_actor.getTarget() != null) && _actor.getTarget().isCreature() ? (Creature) _actor.getTarget() : null;
+			_lastAttack = (getTarget() != null) && getTarget().isCreature() ? (Creature) getTarget() : null;
 		}
 		else
 		{

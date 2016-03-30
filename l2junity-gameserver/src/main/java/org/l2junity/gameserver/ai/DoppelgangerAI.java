@@ -67,12 +67,12 @@ public class DoppelgangerAI extends CharacterAI
 	
 	private void thinkAttack()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		final Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		
 		if (checkTargetLostOrDead(attackTarget))
 		{
-			_actor.setTarget(null);
+			setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
@@ -94,7 +94,7 @@ public class DoppelgangerAI extends CharacterAI
 		
 		if (checkTargetLost(target))
 		{
-			_actor.setTarget(null);
+			setTarget(null);
 			return;
 		}
 		boolean val = _startFollow;
@@ -110,7 +110,7 @@ public class DoppelgangerAI extends CharacterAI
 	
 	private void thinkInteract()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
@@ -189,7 +189,7 @@ public class DoppelgangerAI extends CharacterAI
 	{
 		if (getIntention() == AI_INTENTION_ATTACK)
 		{
-			_lastAttack = (_actor.getTarget() != null) && _actor.getTarget().isCreature() ? (Creature) _actor.getTarget() : null;
+			_lastAttack = (getTarget() != null) && getTarget().isCreature() ? (Creature) getTarget() : null;
 		}
 		else
 		{
@@ -212,7 +212,7 @@ public class DoppelgangerAI extends CharacterAI
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
 			boolean sendPacket = true;
-			if (_clientMoving && (_actor.getTarget() == pawn))
+			if (_clientMoving && (getTarget() == pawn))
 			{
 				if (_clientMovingToPawnOffset == offset)
 				{
@@ -235,7 +235,7 @@ public class DoppelgangerAI extends CharacterAI
 			// Set AI movement data
 			_clientMoving = true;
 			_clientMovingToPawnOffset = offset;
-			_actor.setTarget(pawn);
+			setTarget(pawn);
 			_moveToPawnTimeout = GameTimeController.getInstance().getGameTicks();
 			_moveToPawnTimeout += 1000 / GameTimeController.MILLIS_IN_TICK;
 			

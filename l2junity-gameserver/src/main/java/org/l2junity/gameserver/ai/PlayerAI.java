@@ -187,7 +187,7 @@ public class PlayerAI extends PlayableAI
 		if (getIntention() != AI_INTENTION_REST)
 		{
 			changeIntention(AI_INTENTION_REST);
-			_actor.setTarget(null);
+			setTarget(null);
 			clientStopMoving(null);
 		}
 	}
@@ -248,7 +248,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkAttack()
 	{
-		WorldObject target = _actor.getTarget();
+		WorldObject target = getTarget();
 		if ((target == null) || !target.isCreature())
 		{
 			return;
@@ -256,7 +256,7 @@ public class PlayerAI extends PlayableAI
 		if (checkTargetLostOrDead((Creature) target))
 		{
 			// Notify the target
-			_actor.setTarget(null);
+			setTarget(null);
 			return;
 		}
 		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
@@ -284,7 +284,7 @@ public class PlayerAI extends PlayableAI
 				if (_skill.isBad() && (target != null))
 				{
 					// Notify the target
-					_actor.setTarget(null);
+					setTarget(null);
 				}
 				return;
 			}
@@ -303,7 +303,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		WorldObject target = _actor.getTarget();
+		WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
@@ -322,7 +322,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		WorldObject target = _actor.getTarget();
+		WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;

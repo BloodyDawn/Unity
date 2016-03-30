@@ -247,7 +247,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	private void thinkActive()
 	{
 		Attackable npc = (Attackable) _actor;
-		final WorldObject target = npc.getTarget();
+		final WorldObject target = getTarget();
 		// Update every 1s the _globalAggro counter to come close to 0
 		if (_globalAggro != 0)
 		{
@@ -344,7 +344,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		final Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((attackTarget == null) || attackTarget.isAlikeDead() || (_attackTimeout < GameTimeController.getInstance().getGameTicks()))
@@ -358,7 +358,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			
 			// Cancel target and timeout
 			_attackTimeout = Integer.MAX_VALUE;
-			_actor.setTarget(null);
+			setTarget(null);
 			
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE, null, null);
@@ -373,7 +373,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	
 	private final void factionNotifyAndSupport()
 	{
-		WorldObject target = _actor.getTarget();
+		WorldObject target = getTarget();
 		// Call all L2Object of its Faction inside the Faction Range
 		if ((((Npc) _actor).getTemplate().getClans() == null) || (target == null))
 		{
@@ -421,10 +421,10 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 								break;
 							}
 							
-							WorldObject OldTarget = _actor.getTarget();
-							_actor.setTarget(cha);
+							WorldObject OldTarget = getTarget();
+							setTarget(cha);
 							_actor.doCast(sk);
-							_actor.setTarget(OldTarget);
+							setTarget(OldTarget);
 							return;
 						}
 					}
@@ -479,10 +479,10 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 							break;
 						}
 						
-						WorldObject OldTarget = _actor.getTarget();
-						_actor.setTarget(npc);
+						WorldObject OldTarget = getTarget();
+						setTarget(npc);
 						_actor.doCast(sk);
-						_actor.setTarget(OldTarget);
+						setTarget(OldTarget);
 						return;
 					}
 				}
@@ -492,11 +492,11 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	
 	private void attackPrepare()
 	{
-		final WorldObject target = _actor.getTarget();
+		final WorldObject target = getTarget();
 		Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		if (attackTarget == null)
 		{
-			_actor.setTarget(null);
+			setTarget(null);
 			setIntention(AI_INTENTION_IDLE, null, null);
 			return;
 		}
@@ -509,7 +509,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		
 		try
 		{
-			_actor.setTarget(attackTarget);
+			setTarget(attackTarget);
 			skills = _actor.getAllSkills();
 			dist_2 = _actor.calculateDistance(attackTarget, false, true);
 			range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius();
@@ -520,7 +520,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		}
 		catch (NullPointerException e)
 		{
-			_actor.setTarget(null);
+			setTarget(null);
 			setIntention(AI_INTENTION_IDLE, null, null);
 			return;
 		}
@@ -530,7 +530,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			// Siege guards differ from normal mobs currently:
 			// If target cannot seen, don't attack any more
 			sGuard.stopHating(attackTarget);
-			_actor.setTarget(null);
+			setTarget(null);
 			setIntention(AI_INTENTION_IDLE, null, null);
 			return;
 		}
@@ -546,7 +546,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 				if ((dist_2 <= (castRange * castRange)) && (castRange > 70) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() >= _actor.getStat().getMpConsume(sk)) && !sk.isPassive())
 				{
 					
-					WorldObject OldTarget = _actor.getTarget();
+					WorldObject OldTarget = getTarget();
 					if ((sk.isContinuous() && !sk.isDebuff()) || (sk.hasEffectType(L2EffectType.HEAL)))
 					{
 						boolean useSkillSelf = true;
@@ -563,12 +563,12 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 						
 						if (useSkillSelf)
 						{
-							_actor.setTarget(_actor);
+							setTarget(_actor);
 						}
 					}
 					
 					_actor.doCast(sk);
-					_actor.setTarget(OldTarget);
+					setTarget(OldTarget);
 					return;
 				}
 			}
@@ -577,7 +577,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 			if (!(_actor.isAttackingNow()) && (_actor.getRunSpeed() == 0) && (_actor.isInSurroundingRegion(attackTarget)))
 			{
 				// Cancel the target
-				_actor.setTarget(null);
+				setTarget(null);
 				setIntention(AI_INTENTION_IDLE, null, null);
 			}
 			else
@@ -593,7 +593,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 				&& (_actor.isInSurroundingRegion(attackTarget)))
 				{
 					// Cancel the target
-					_actor.setTarget(null);
+					setTarget(null);
 					setIntention(AI_INTENTION_IDLE, null, null);
 				}
 				else
@@ -684,7 +684,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 					
 					if (((castRange * castRange) >= dist_2) && !sk.isPassive() && (_actor.getCurrentMp() >= _actor.getStat().getMpConsume(sk)) && !_actor.isSkillDisabled(sk))
 					{
-						WorldObject OldTarget = _actor.getTarget();
+						WorldObject OldTarget = getTarget();
 						if ((sk.isContinuous() && !sk.isDebuff()) || (sk.hasEffectType(L2EffectType.HEAL)))
 						{
 							boolean useSkillSelf = true;
@@ -701,12 +701,12 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 							
 							if (useSkillSelf)
 							{
-								_actor.setTarget(_actor);
+								setTarget(_actor);
 							}
 						}
 						
 						_actor.doCast(sk);
-						_actor.setTarget(OldTarget);
+						setTarget(OldTarget);
 						return;
 					}
 				}
