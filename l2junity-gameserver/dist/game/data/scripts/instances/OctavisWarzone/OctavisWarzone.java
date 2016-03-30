@@ -374,11 +374,13 @@ public final class OctavisWarzone extends AbstractInstance
 	@Override
 	public void onInstanceDestroy(Instance instance)
 	{
-		instance.getAliveNpcs(OCTAVIS_STAGE_1).forEach(octavis ->
+		instance.getAliveNpcs(OCTAVIS_STAGE_1, OCTAVIS_STAGE_2).forEach(octavis ->
 		{
+			// Stage 1
 			getTimers().cancelTimer("FOLLOW_BEASTS", octavis, null);
+			// Stage 2
+			getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", octavis, null);
 		});
-		
 	}
 	
 	@Override

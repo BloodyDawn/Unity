@@ -528,6 +528,16 @@ public final class Instance implements IIdentifiable, INamable
 	}
 	
 	/**
+	 * Get alive NPCs from instance with specific IDs.
+	 * @param id IDs of NPCs which should be found
+	 * @return list of filtered NPCs from instance
+	 */
+	public List<Npc> getAliveNpcs(int[]... id)
+	{
+		return _npcs.stream().filter(n -> !n.isDead() && CommonUtil.contains(id, n.getId())).collect(Collectors.toList());
+	}
+	
+	/**
 	 * Get first found spawned NPC with specific ID.
 	 * @param id ID of NPC to be found
 	 * @return first found NPC with specified ID, otherwise {@code null}
