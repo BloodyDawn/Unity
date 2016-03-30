@@ -180,6 +180,7 @@ public final class OctavisWarzone extends AbstractInstance
 						octavis.setTargetable(false);
 						((Attackable) octavis).setCanReturnToSpawnPoint(false);
 						getTimers().addRepeatingTimer("FOLLOW_BEASTS", 500, octavis, null);
+						getTimers().addRepeatingTimer("BEASTS_CHECK_HP", 5000, beasts, null);
 						WalkingManager.getInstance().startMoving(beasts, "octabis_superpoint");
 					});
 					break;
@@ -191,6 +192,28 @@ public final class OctavisWarzone extends AbstractInstance
 						addMoveToDesire(npc, beasts.getLocation(), 23);
 						npc.sendChannelingEffect(beasts, 1);
 					});
+					break;
+				}
+				case "BEASTS_CHECK_HP":
+				{
+					final int hpPer = npc.getCurrentHpPercent();
+					
+					if ((hpPer < 50) && npc.isScriptValue(0))
+					{
+						npc.getStat().addFixedValue(Stats.REGENERATE_HP_RATE, 95000d);
+						npc.setScriptValue(1);
+					}
+					else if ((hpPer > 90) && npc.isScriptValue(1))
+					{
+						npc.getStat().addFixedValue(Stats.REGENERATE_HP_RATE, 0d);
+						npc.setScriptValue(0);
+					}
+					
+					final Npc octavis = world.getAliveNpcs(OCTAVIS_STAGE_1).stream().findAny().orElse(null);
+					if (octavis != null)
+					{
+						octavis.setTargetable(hpPer < 50);
+					}
 					break;
 				}
 				case "END_STAGE_1":
@@ -318,25 +341,6 @@ public final class OctavisWarzone extends AbstractInstance
 					// myself->AddTimerEx(Gladiator_Fishnet_Timer, 15 * 1000);
 				}
 			}
-			else if (CommonUtil.contains(BEASTS, npc.getId()))
-			{
-				if ((hpPer < 50) && npc.isScriptValue(0))
-				{
-					npc.getStat().addFixedValue(Stats.REGENERATE_HP_RATE, 95000d);
-					npc.setScriptValue(1);
-				}
-				else if ((hpPer > 90) && npc.isScriptValue(1))
-				{
-					npc.getStat().addFixedValue(Stats.REGENERATE_HP_RATE, 0d);
-					npc.setScriptValue(0);
-				}
-				
-				final Npc octavis = world.getAliveNpcs(OCTAVIS_STAGE_1).stream().findAny().orElse(null);
-				if (octavis != null)
-				{
-					octavis.setTargetable(hpPer < 50);
-				}
-			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
@@ -350,7 +354,11 @@ public final class OctavisWarzone extends AbstractInstance
 			if (CommonUtil.contains(OCTAVIS_STAGE_1, npc.getId()))
 			{
 				getTimers().cancelTimer("FOLLOW_BEASTS", npc, null);
-				world.getAliveNpcs(BEASTS).forEach(beasts -> beasts.deleteMe());
+				world.getAliveNpcs(BEASTS).forEach(beast ->
+				{
+					getTimers().cancelTimer("BEASTS_CHECK_HP", beast, null);
+					beast.deleteMe();
+				});
 				getTimers().addTimer("END_STAGE_1", 1000, npc, null);
 			}
 			else if (CommonUtil.contains(OCTAVIS_STAGE_2, npc.getId()))
@@ -392,13 +400,16 @@ public final class OctavisWarzone extends AbstractInstance
 	{
 		instance.getAliveNpcs(OCTAVIS_STAGE_1).forEach(octavis ->
 		{
-			// Stage 1
 			getTimers().cancelTimer("FOLLOW_BEASTS", octavis, null);
+		});
+		
+		instance.getAliveNpcs(BEASTS).forEach(beast ->
+		{
+			getTimers().cancelTimer("BEASTS_CHECK_HP", beast, null);
 		});
 		
 		instance.getAliveNpcs(OCTAVIS_STAGE_2).forEach(octavis ->
 		{
-			// Stage 2
 			getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", octavis, null);
 			getTimers().cancelTimer("MINION_CALL", octavis, null);
 		});
