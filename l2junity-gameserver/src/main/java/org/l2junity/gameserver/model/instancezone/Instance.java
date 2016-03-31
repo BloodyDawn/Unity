@@ -451,11 +451,7 @@ public final class Instance implements IIdentifiable, INamable
 		
 		try
 		{
-			for (SpawnGroup holder : spawns)
-			{
-				holder.getSpawns().forEach(spawn -> _npcs.removeAll(spawn.getSpawnedNpcs()));
-				holder.despawnAll();
-			}
+			spawns.forEach(SpawnGroup::despawnAll);
 		}
 		catch (Exception e)
 		{
