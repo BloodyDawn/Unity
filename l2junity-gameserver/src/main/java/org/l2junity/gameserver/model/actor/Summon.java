@@ -758,7 +758,7 @@ public abstract class Summon extends Playable
 	public void doCast(Skill skill)
 	{
 		final PlayerInstance actingPlayer = getActingPlayer();
-		if (!actingPlayer.checkPvpSkill(getTarget(), skill) && !actingPlayer.getAccessLevel().allowPeaceAttack())
+		if ((skill.getTarget(this, false, false, false) == null) && !actingPlayer.getAccessLevel().allowPeaceAttack())
 		{
 			// Send a System Message to the L2PcInstance
 			actingPlayer.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
