@@ -305,17 +305,17 @@ public final class Venom extends AbstractNpcAI
 			npc.setTarget(attacker);
 			npc.doCast(VENOM_TELEPORT.getSkill());
 		}
-		else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow(SkillCaster::isNormalType))
+		else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			npc.setTarget(attacker);
 			npc.doCast(RANGE_TELEPORT.getSkill());
 		}
-		else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow(SkillCaster::isNormalType))
+		else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			npc.setTarget(attacker);
 			npc.doCast(VENOM_STRIKE.getSkill());
 		}
-		else if ((getRandom(100) < 10) && !npc.isCastingNow(SkillCaster::isNormalType))
+		else if ((getRandom(100) < 10) && !npc.isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			npc.setTarget(attacker);
 			npc.doCast(SONIC_STORM.getSkill());

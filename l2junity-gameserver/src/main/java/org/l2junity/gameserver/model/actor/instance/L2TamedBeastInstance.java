@@ -349,7 +349,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		}
 		
 		// if the tamed beast is currently in the middle of casting, let it complete its skill...
-		if (isCastingNow(SkillCaster::isNormalType))
+		if (isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			return;
 		}
@@ -520,7 +520,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				return;
 			}
 			// if the tamed beast is currently casting a spell, do not interfere (do not attempt to cast anything new yet).
-			if (isCastingNow(SkillCaster::isNormalType))
+			if (isCastingNow(SkillCaster::isAnyNormalType))
 			{
 				return;
 			}

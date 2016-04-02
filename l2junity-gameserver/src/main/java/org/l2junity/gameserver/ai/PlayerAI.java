@@ -217,7 +217,7 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isAttackingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
 		{
 			clientActionFailed();
 			saveNextIntention(AI_INTENTION_MOVE_TO, loc, null);
@@ -299,7 +299,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkPickUp()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
 		{
 			return;
 		}
@@ -318,7 +318,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkInteract()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
 		{
 			return;
 		}

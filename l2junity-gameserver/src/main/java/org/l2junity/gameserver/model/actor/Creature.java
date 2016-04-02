@@ -265,7 +265,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private volatile CharacterAI _ai = null;
 	
 	/** Future Skill Cast */
-	protected List<SkillCaster> _skillCasters = new LinkedList<>();
+	protected Map<SkillCastingType, SkillCaster> _skillCasters = new ConcurrentHashMap<>();
 	
 	private final AtomicInteger _blockedDebuffTimes = new AtomicInteger();
 	
@@ -342,10 +342,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		setIsInvul(true);
-		
-		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL));
-		_skillCasters.add(new SkillCaster(this, SkillCastingType.NORMAL_SECOND));
-		_skillCasters.add(new SkillCaster(this, SkillCastingType.SIMULTANEOUS));
 	}
 	
 	public final CharEffectList getEffectList()
@@ -1581,36 +1577,24 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
-		SkillCaster skillCaster;
-		
-		if (skill.isWithoutAction())
+		// Get proper casting type.
+		SkillCastingType castingType = SkillCastingType.NORMAL;
+		if (skill.canDoubleCast() && isAffected(EffectFlag.DOUBLE_CAST) && isCastingNow(castingType))
 		{
-			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
-		}
-		else if (isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast())
-		{
-			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isNormalType);
-		}
-		else
-		{
-			skillCaster = getSkillCaster(SkillCaster::isNotCasting, s -> s.getCastingType() == SkillCastingType.NORMAL);
+			castingType = SkillCastingType.NORMAL_SECOND;
 		}
 		
+		// Try casting the skill
+		final SkillCaster skillCaster = SkillCaster.castSkill(this, getTarget(), skill, item, castingType, ctrlPressed, shiftPressed);
 		if (skillCaster != null)
 		{
-			if (skillCaster.prepareCasting(getTarget(), skill, item, ctrlPressed, shiftPressed))
-			{
-				skillCaster.startCasting();
-			}
-			else
-			{
-				// Send a Server->Client packet ActionFailed to the L2PcInstance
-				if (isPlayer())
-				{
-					sendPacket(ActionFailed.get(skillCaster.getCastingType()));
-					getAI().setIntention(AI_INTENTION_ACTIVE);
-				}
-			}
+			_skillCasters.put(castingType, skillCaster);
+		}
+		else if (isPlayer())
+		{
+			// Skill casting failed, notify player.
+			sendPacket(ActionFailed.get(castingType));
+			getAI().setIntention(AI_INTENTION_ACTIVE);
 		}
 	}
 	
@@ -1621,22 +1605,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void doSimultaneousCast(Skill skill, ItemInstance item)
 	{
-		SkillCaster skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
-		if (skillCaster != null)
+		SkillCaster skillCaster = SkillCaster.castSkill(this, getTarget(), skill, item, SkillCastingType.SIMULTANEOUS, false, false);
+		
+		// If skill failed casting, notify player.
+		if ((skillCaster == null) && isPlayer())
 		{
-			if (skillCaster.prepareCasting(getTarget(), skill, item, false, false))
-			{
-				skillCaster.startCasting();
-			}
-			else
-			{
-				// Send a Server->Client packet ActionFailed to the L2PcInstance
-				if (isPlayer())
-				{
-					sendPacket(ActionFailed.STATIC_PACKET);
-					getAI().setIntention(AI_INTENTION_ACTIVE);
-				}
-			}
+			sendPacket(ActionFailed.STATIC_PACKET);
+			getAI().setIntention(AI_INTENTION_ACTIVE);
 		}
 	}
 	
@@ -3151,12 +3126,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final boolean isCastingNow()
 	{
-		return _skillCasters.stream().anyMatch(SkillCaster::isCasting);
+		return !_skillCasters.isEmpty();
+	}
+	
+	public final boolean isCastingNow(SkillCastingType skillCastingType)
+	{
+		return _skillCasters.containsKey(skillCastingType);
 	}
 	
 	public final boolean isCastingNow(Predicate<SkillCaster> filter)
 	{
-		return _skillCasters.stream().filter(SkillCaster::isCasting).anyMatch(filter);
+		return _skillCasters.values().stream().anyMatch(filter);
 	}
 	
 	/**
@@ -3184,7 +3164,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final boolean abortCast()
 	{
-		return abortCast(SkillCaster::isNormalType);
+		return abortCast(SkillCaster::isAnyNormalType);
 	}
 	
 	/**
@@ -3194,7 +3174,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final boolean abortCast(Predicate<SkillCaster> filter)
 	{
-		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, SkillCaster::canAbortCast, filter);
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::canAbortCast, filter);
 		if (skillCaster != null)
 		{
 			skillCaster.stopCasting(true);
@@ -4152,7 +4132,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void breakCast()
 	{
 		// Break only one skill at a time while casting.
-		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, SkillCaster::canAbortCast, SkillCaster::isNormalType);
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::canAbortCast, SkillCaster::isAnyNormalType);
 		if ((skillCaster != null) && skillCaster.getSkill().isMagic())
 		{
 			// Abort the cast of the L2Character and send Server->Client MagicSkillCanceld/ActionFailed packet.
@@ -5419,9 +5399,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return true;
 	}
 	
-	public List<SkillCaster> getSkillCasters()
+	public Collection<SkillCaster> getSkillCasters()
 	{
-		return _skillCasters;
+		return _skillCasters.values();
+	}
+	
+	public SkillCaster removeSkillCaster(SkillCastingType skillCastingType)
+	{
+		return _skillCasters.remove(skillCastingType);
 	}
 	
 	@SafeVarargs

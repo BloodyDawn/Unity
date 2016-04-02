@@ -255,7 +255,7 @@ public final class Orfen extends AbstractNpcAI
 	@Override
 	public String onFactionCall(Npc npc, Npc caller, PlayerInstance attacker, boolean isSummon)
 	{
-		if ((caller == null) || (npc == null) || npc.isCastingNow(SkillCaster::isNormalType))
+		if ((caller == null) || (npc == null) || npc.isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			return super.onFactionCall(npc, caller, attacker, isSummon);
 		}
@@ -304,7 +304,7 @@ public final class Orfen extends AbstractNpcAI
 		}
 		else if (npcId == RIBA_IREN)
 		{
-			if (!npc.isCastingNow(SkillCaster::isNormalType) && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2.0)))
+			if (!npc.isCastingNow(SkillCaster::isAnyNormalType) && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2.0)))
 			{
 				npc.setTarget(attacker);
 				npc.doCast(SkillData.getInstance().getSkill(4516, 1));

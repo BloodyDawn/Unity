@@ -183,7 +183,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					
 					for (Npc caster : anakimGroup)
 					{
-						if ((caster != null) && !caster.isCastingNow(SkillCaster::isNormalType))
+						if ((caster != null) && !caster.isCastingNow(SkillCaster::isAnyNormalType))
 						{
 							makeCast(caster, lilithGroup);
 						}
@@ -202,7 +202,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					}
 					for (Npc caster : lilithGroup)
 					{
-						if ((caster != null) && !caster.isCastingNow(SkillCaster::isNormalType))
+						if ((caster != null) && !caster.isCastingNow(SkillCaster::isAnyNormalType))
 						{
 							makeCast(caster, anakimGroup);
 						}

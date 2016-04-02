@@ -462,7 +462,7 @@ public final class Valakas extends AbstractNpcAI
 	
 	private void callSkillAI(Npc npc)
 	{
-		if (npc.isInvul() || npc.isCastingNow(SkillCaster::isNormalType))
+		if (npc.isInvul() || npc.isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			return;
 		}

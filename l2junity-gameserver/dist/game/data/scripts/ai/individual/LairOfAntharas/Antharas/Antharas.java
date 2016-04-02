@@ -818,7 +818,7 @@ public final class Antharas extends AbstractNpcAI
 	
 	private void manageSkills(Npc npc)
 	{
-		if (npc.isCastingNow(SkillCaster::isNormalType) || npc.isCoreAIDisabled() || !npc.isInCombat())
+		if (npc.isCastingNow(SkillCaster::isAnyNormalType) || npc.isCoreAIDisabled() || !npc.isInCombat())
 		{
 			return;
 		}

@@ -166,7 +166,7 @@ public final class QueenAnt extends AbstractNpcAI
 			final boolean queenNeedHeal = (_queen != null) && (_queen.getCurrentHp() < _queen.getMaxHp());
 			for (L2MonsterInstance nurse : _nurses)
 			{
-				if ((nurse == null) || nurse.isDead() || nurse.isCastingNow(SkillCaster::isNormalType))
+				if ((nurse == null) || nurse.isDead() || nurse.isCastingNow(SkillCaster::isAnyNormalType))
 				{
 					continue;
 				}
@@ -258,7 +258,7 @@ public final class QueenAnt extends AbstractNpcAI
 			return super.onFactionCall(npc, caller, attacker, isSummon);
 		}
 		
-		if (!npc.isCastingNow(SkillCaster::isNormalType) && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST))
+		if (!npc.isCastingNow(SkillCaster::isAnyNormalType) && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST))
 		{
 			if (caller.getCurrentHp() < caller.getMaxHp())
 			{

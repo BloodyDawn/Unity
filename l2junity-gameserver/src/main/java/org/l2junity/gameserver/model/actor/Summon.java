@@ -604,7 +604,7 @@ public abstract class Summon extends Playable
 		}
 		
 		// If a skill is currently being used
-		if (isCastingNow(SkillCaster::isNormalType))
+		if (isCastingNow(SkillCaster::isAnyNormalType))
 		{
 			return false;
 		}

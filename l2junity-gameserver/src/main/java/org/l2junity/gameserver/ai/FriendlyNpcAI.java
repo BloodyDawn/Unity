@@ -73,7 +73,7 @@ public class FriendlyNpcAI extends AttackableAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isSimultaneousType()) || _actor.isControlBlocked())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isControlBlocked())
 		{
 			clientActionFailed();
 			return;

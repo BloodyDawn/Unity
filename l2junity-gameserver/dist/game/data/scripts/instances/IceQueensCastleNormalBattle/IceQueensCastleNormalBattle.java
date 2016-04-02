@@ -636,7 +636,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "LEADER_DASH":
 					{
 						final Creature mostHated = ((Attackable) npc).getMostHated();
-						if (getRandomBoolean() && !npc.isCastingNow(SkillCaster::isNormalType) && (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) < 1000))
+						if (getRandomBoolean() && !npc.isCastingNow(SkillCaster::isAnyNormalType) && (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) < 1000))
 						{
 							npc.setTarget(mostHated);
 							npc.doCast(LEADER_RUSH.getSkill());
@@ -763,7 +763,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					else
 					{
-						if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow(SkillCaster::isNormalType))
+						if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow(SkillCaster::isAnyNormalType))
 						{
 							if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
 							{
@@ -850,7 +850,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						startQuestTimer("SPAWN_SUPPORT", 27000, controller, null);
 					}
 					
-					if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow(SkillCaster::isNormalType))
+					if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow(SkillCaster::isAnyNormalType))
 					{
 						if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
 						{

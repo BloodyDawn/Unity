@@ -26,6 +26,7 @@ import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
+import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -56,7 +57,7 @@ public class Unstuck implements IUserCommandHandler
 			return false;
 		}
 		
-		if (activeChar.isCastingNow(SkillCaster::isNormalType) || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())
+		if (activeChar.isCastingNow(SkillCaster::isAnyNormalType) || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.inObserverMode() || activeChar.isCombatFlagEquipped())
 		{
 			return false;
 		}
@@ -79,21 +80,12 @@ public class Unstuck implements IUserCommandHandler
 		}
 		else
 		{
-			SkillCaster skillCaster = activeChar.getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isNormalType);
+			SkillCaster skillCaster = SkillCaster.castSkill(activeChar, activeChar.getTarget(), escape, null, SkillCastingType.NORMAL, false, false, unstuckTimer, -1);
 			if (skillCaster == null)
 			{
-				return false;
-			}
-			
-			if (skillCaster.prepareCasting(activeChar, escape, null, false, false))
-			{
-				skillCaster.setCastTime(unstuckTimer);
-				skillCaster.startCasting();
-			}
-			else
-			{
-				activeChar.sendPacket(ActionFailed.get(skillCaster.getCastingType()));
+				activeChar.sendPacket(ActionFailed.get(SkillCastingType.NORMAL));
 				activeChar.getAI().setIntention(AI_INTENTION_ACTIVE);
+				return false;
 			}
 			
 			if (Config.UNSTUCK_INTERVAL > 100)
