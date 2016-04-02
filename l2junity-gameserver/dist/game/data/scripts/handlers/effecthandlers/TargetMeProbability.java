@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -58,13 +57,7 @@ public final class TargetMeProbability extends AbstractEffect
 		{
 			if (effected.getTarget() != effector)
 			{
-				PlayerInstance player = effector.getActingPlayer();
-				// If effector is null, then its not a player, but NPC. If its not null, then it should check if the skill is pvp skill.
-				if ((player == null) || player.checkPvpSkill(effected, skill))
-				{
-					// Target is different
-					effected.setTarget(effector);
-				}
+				effected.setTarget(effector);
 			}
 		}
 	}

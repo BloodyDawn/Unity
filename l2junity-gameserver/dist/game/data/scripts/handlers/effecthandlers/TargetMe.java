@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
@@ -50,13 +49,7 @@ public final class TargetMe extends AbstractEffect
 		{
 			if (info.getEffected().getTarget() != info.getEffector())
 			{
-				PlayerInstance effector = info.getEffector().getActingPlayer();
-				// If effector is null, then its not a player, but NPC. If its not null, then it should check if the skill is pvp skill.
-				if ((effector == null) || effector.checkPvpSkill(info.getEffected(), info.getSkill()))
-				{
-					// Target is different
-					info.getEffected().setTarget(info.getEffector());
-				}
+				info.getEffected().setTarget(info.getEffector());
 			}
 			
 			((Playable) info.getEffected()).setLockedTarget(info.getEffector());
