@@ -23,6 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
@@ -44,11 +45,11 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	private final int _actionId; // If skill is called from RequestActionUse, use that ID.
 	private final SkillCastingType _castingType; // Defines which client bar is going to use.
 	private final Creature _activeChar;
-	private final Creature _target;
+	private final WorldObject _target;
 	private final List<Integer> _unknown = Collections.emptyList();
 	private final List<Location> _groundLocations;
 	
-	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType)
+	public MagicSkillUse(Creature cha, WorldObject target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType)
 	{
 		_activeChar = cha;
 		_target = target;
