@@ -23,8 +23,8 @@ import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.impl.ClanHallData;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.clanhallauction.ClanHallAuction;
+import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.ScheduleTarget;
 import org.slf4j.Logger;
@@ -33,11 +33,11 @@ import org.slf4j.LoggerFactory;
 /**
  * @author Sdw
  */
-public class ClanHallAuctionManager extends AbstractEventManager<CeremonyOfChaosEvent>
+public class ClanHallAuctionManager extends AbstractEventManager<AbstractEvent<?>>
 {
-	protected static final Logger LOGGER = LoggerFactory.getLogger(ClanHallAuctionManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClanHallAuctionManager.class);
 	
-	private static final Map<Integer, ClanHallAuction> _auctions = new HashMap<>();
+	private static final Map<Integer, ClanHallAuction> AUCTIONS = new HashMap<>();
 	
 	protected ClanHallAuctionManager()
 	{
@@ -47,15 +47,19 @@ public class ClanHallAuctionManager extends AbstractEventManager<CeremonyOfChaos
 	public void onEventStart()
 	{
 		LOGGER.info("Clan Hall Auction has started!");
-		_auctions.clear();
-		ClanHallData.getInstance().getFreeAuctionableHall().forEach(c -> _auctions.put(c.getResidenceId(), new ClanHallAuction(c.getResidenceId())));
+		AUCTIONS.clear();
+		
+		//@formatter:off
+		ClanHallData.getInstance().getFreeAuctionableHall()
+			.forEach(c -> AUCTIONS.put(c.getResidenceId(), new ClanHallAuction(c.getResidenceId())));
+		//@formatter:on
 	}
 	
 	@ScheduleTarget
 	public void onEventEnd()
 	{
-		_auctions.values().forEach(ClanHallAuction::finalizeAuctions);
-		_auctions.clear();
+		AUCTIONS.values().forEach(ClanHallAuction::finalizeAuctions);
+		AUCTIONS.clear();
 		LOGGER.info("Clan Hall Auction has ended!");
 	}
 	
@@ -67,26 +71,35 @@ public class ClanHallAuctionManager extends AbstractEventManager<CeremonyOfChaos
 	
 	public ClanHallAuction getClanHallAuctionById(int clanHallId)
 	{
-		return _auctions.get(clanHallId);
+		return AUCTIONS.get(clanHallId);
 	}
 	
 	public ClanHallAuction getClanHallAuctionByClan(L2Clan clan)
 	{
-		return _auctions.values().stream().filter(a -> a.getBids().containsKey(clan.getId())).findFirst().orElse(null);
+		//@formatter:off
+		return AUCTIONS.values().stream()
+			.filter(a -> a.getBids().containsKey(clan.getId()))
+			.findFirst()
+			.orElse(null);
+		//@formatter:on
 	}
 	
 	public boolean checkForClanBid(int clanHallId, L2Clan clan)
 	{
-		return _auctions.entrySet().stream().filter(a -> a.getKey() != clanHallId).anyMatch(a -> a.getValue().getBids().get(clan.getId()) != null);
+		//@formatter:off
+		return AUCTIONS.entrySet().stream()
+			.filter(a -> a.getKey() != clanHallId)
+			.anyMatch(a -> a.getValue().getBids().containsKey(clan.getId()));
+		//@formatter:on
 	}
 	
 	public static final ClanHallAuctionManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.INSTANCE;
 	}
 	
 	private static class SingletonHolder
 	{
-		protected static final ClanHallAuctionManager _instance = new ClanHallAuctionManager();
+		protected static final ClanHallAuctionManager INSTANCE = new ClanHallAuctionManager();
 	}
 }
