@@ -181,7 +181,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		int position = 1;
 		CeremonyOfChaosEvent event = null;
 		final List<PlayerInstance> players = getRegisteredPlayers().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
-		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
+		final int maxPlayers = getMaxPlayersInArena();
 		final List<Integer> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, Integer.class);
 		
 		for (PlayerInstance player : players)
@@ -306,7 +306,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.ONLY_CHARACTERS_WHO_ARE_A_PART_OF_A_CLAN_OF_LEVEL_6_OR_ABOVE_MAY_PARTICIPATE;
 			canRegister = false;
 		}
-		else if (getRegisteredPlayers().size() >= (getVariables().getInt(MAX_ARENAS_KEY, 5) * getVariables().getInt(MAX_PLAYERS_KEY, 18)))
+		else if (getRegisteredPlayers().size() >= (getVariables().getInt(MAX_ARENAS_KEY, 5) * getMaxPlayersInArena()))
 		{
 			sm = SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW;
 			canRegister = false;

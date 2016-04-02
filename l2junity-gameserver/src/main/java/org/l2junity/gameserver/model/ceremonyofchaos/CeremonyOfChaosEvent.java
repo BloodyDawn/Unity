@@ -83,9 +83,9 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	{
 		_id = id;
 		_instance = InstanceManager.getInstance().createInstance(template, null);
-		if (_instance.getEnterLocations().size() < CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18))
+		if (_instance.getEnterLocations().size() < CeremonyOfChaosManager.getInstance().getMaxPlayersInArena())
 		{
-			LOGGER.warn("There are more member slots: {} then instance entrance positions: {}!", _instance.getEnterLocations().size(), CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18));
+			LOGGER.warn("There are more member slots: {} then instance entrance positions: {}!", _instance.getEnterLocations().size(), CeremonyOfChaosManager.getInstance().getMaxPlayersInArena());
 		}
 	}
 	
@@ -111,7 +111,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void preparePlayers()
 	{
-		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18), getMembers().values());
+		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getMaxPlayersInArena(), getMembers().values());
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 		
 		int index = 0;
@@ -508,7 +508,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				targetMember.setDefeated(true);
 				
 				// Delete target player
-				getMembers().values().stream().filter(member -> member.getObjectId() != targetPlayer.getObjectId()).map(CeremonyOfChaosMember::getPlayer).forEach(deleteObject::sendTo);
+				//@formatter:off
+				getMembers().values().stream()
+					.filter(member -> member.getObjectId() != targetPlayer.getObjectId())
+					.map(CeremonyOfChaosMember::getPlayer)
+					.forEach(deleteObject::sendTo);
+				//@formatter:on
 				
 				// Make the target observer
 				targetPlayer.setObserving(true);
