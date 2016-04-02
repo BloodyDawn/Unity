@@ -19,7 +19,8 @@
 package org.l2junity.gameserver.network.client.send;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collection;
+import java.util.Collections;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -37,27 +38,31 @@ public class MagicSkillLaunched implements IClientOutgoingPacket
 	private final int _skillId;
 	private final int _skillLevel;
 	private final SkillCastingType _castingType;
-	private final List<WorldObject> _targets;
+	private final Collection<WorldObject> _targets;
 	
-	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, SkillCastingType castingType, WorldObject... targets)
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, SkillCastingType castingType, Collection<WorldObject> targets)
 	{
 		_charObjId = cha.getObjectId();
 		_skillId = skillId;
 		_skillLevel = skillLevel;
 		_castingType = castingType;
 		
-		//@formatter:off
 		if (targets == null)
 		{
-			targets = new WorldObject[] { cha };
+			targets = Collections.singletonList(cha);
 		}
-		//@formatter:on
-		_targets = Arrays.asList(targets);
+		
+		_targets = targets;
+	}
+	
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, SkillCastingType castingType, WorldObject... targets)
+	{
+		this(cha, skillId, skillLevel, castingType, (targets == null ? Collections.singletonList(cha) : Arrays.asList(targets)));
 	}
 	
 	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel)
 	{
-		this(cha, skillId, skillId, SkillCastingType.NORMAL, cha);
+		this(cha, skillId, skillId, SkillCastingType.NORMAL, Collections.singletonList(cha));
 	}
 	
 	@Override
