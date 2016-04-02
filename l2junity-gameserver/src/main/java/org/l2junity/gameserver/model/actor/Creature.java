@@ -5155,15 +5155,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					}
 				}
 				
-				if (Config.ALT_VALIDATE_TRIGGER_SKILLS && isPlayable() && (target != null) && target.isPlayable())
-				{
-					final PlayerInstance player = getActingPlayer();
-					if (!player.checkPvpSkill(target, skill))
-					{
-						return;
-					}
-				}
-				
 				WorldObject[] targets = skill.getTargetsAffected(this, target).toArray(new WorldObject[0]);
 				
 				broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));

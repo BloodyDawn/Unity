@@ -257,7 +257,6 @@ public final class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static boolean SILENCE_MODE_EXCLUDE;
-	public static boolean ALT_VALIDATE_TRIGGER_SKILLS;
 	public static boolean SHOW_GOD_VIDEO_INTRO;
 	
 	// --------------------------------------------------
@@ -1493,7 +1492,6 @@ public final class Config
 			STORE_UI_SETTINGS = Character.getBoolean("StoreCharUiSettings", true);
 			FORBIDDEN_NAMES = Character.getString("ForbiddenNames", "").split(",");
 			SILENCE_MODE_EXCLUDE = Character.getBoolean("SilenceModeExclude", false);
-			ALT_VALIDATE_TRIGGER_SKILLS = Character.getBoolean("AltValidateTriggerSkills", false);
 			SHOW_GOD_VIDEO_INTRO = Character.getBoolean("GoDVideoIntro", true);
 			PLAYER_MOVEMENT_BLOCK_TIME = Character.getInt("NpcTalkBlockingTime", 0) * 1000;
 			ABILITY_MAX_POINTS = Character.getInt("AbilityMaxPoints", 16);
