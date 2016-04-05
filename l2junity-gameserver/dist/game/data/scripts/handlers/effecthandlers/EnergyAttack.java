@@ -143,14 +143,14 @@ public final class EnergyAttack extends AbstractEffect
 				weaponTypeBoost = 77;
 			}
 			
-			// TODO Nik says 0.2 might 0.25 in H5, check it out for IO
-			// Sdw says (charge * 0.1) + 1
-			double energyChargesBoost = ((charge - 1) * 0.2) + 1;
+			// 10% bonus damage for each charge used.
+			double energyChargesBoost = 1 + (charge * 0.1);
 			
 			attack += _power;
 			attack *= ssBoost;
 			attack *= energyChargesBoost;
 			attack *= weaponTypeBoost;
+			attack = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, attack);
 			
 			damage = attack / defence;
 			damage *= damageMultiplier;
@@ -158,7 +158,6 @@ public final class EnergyAttack extends AbstractEffect
 			{
 				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1.0);
 				damage *= effected.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1.0);
-				damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 			}
 			
 			critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
@@ -168,19 +167,16 @@ public final class EnergyAttack extends AbstractEffect
 			}
 		}
 		
-		if (damage > 0)
+		// Check if damage should be reflected
+		Formulas.calcDamageReflected(attacker, effected, skill, critical);
+		
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
+		if (damageCap > 0)
 		{
-			// Check if damage should be reflected
-			Formulas.calcDamageReflected(attacker, effected, skill, critical);
-			
-			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
-			if (damageCap > 0)
-			{
-				damage = Math.min(damage, damageCap);
-			}
-			attacker.sendDamageMessage(effected, skill, (int) damage, critical, false);
-			damage = effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);
-			effected.reduceCurrentHp(damage, attacker, skill);
+			damage = Math.min(damage, damageCap);
 		}
+		attacker.sendDamageMessage(effected, skill, (int) damage, critical, false);
+		damage = effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);
+		effected.reduceCurrentHp(damage, attacker, skill);
 	}
 }
