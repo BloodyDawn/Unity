@@ -355,7 +355,10 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Display animation of launching skill upon targets.
-		caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+		if (!_skill.isToggle())
+		{
+			caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+		}
 		return true;
 	}
 	
