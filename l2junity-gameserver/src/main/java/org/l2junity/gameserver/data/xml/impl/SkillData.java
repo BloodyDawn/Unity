@@ -12,7 +12,6 @@ import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.stream.Stream;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.handler.SkillConditionHandler;
@@ -147,10 +146,7 @@ public class SkillData implements IGameXmlReader
 		// requested level too high
 		if ((maxLvl > 0) && (level > maxLvl))
 		{
-			if (Config.DEBUG)
-			{
-				LOGGER.warn("call to unexisting skill level id: {} requested level: {} max level: {}", skillId, level, maxLvl, new Throwable());
-			}
+			LOGGER.warn("call to unexisting skill level id: {} requested level: {} max level: {}", skillId, level, maxLvl, new Throwable());
 			return _skills.get(getSkillHashCode(skillId, maxLvl));
 		}
 		
