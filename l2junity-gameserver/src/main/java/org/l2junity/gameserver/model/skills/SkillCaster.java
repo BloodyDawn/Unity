@@ -166,7 +166,7 @@ public class SkillCaster implements Runnable
 	@Override
 	public void run()
 	{
-		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
+		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction() || _skill.isToggle();
 		
 		// Skills with instant cast are never launched.
 		if (instantCast)
@@ -355,10 +355,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Display animation of launching skill upon targets.
-		if (!_skill.isToggle())
-		{
-			caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
-		}
+		caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
 		return true;
 	}
 	
