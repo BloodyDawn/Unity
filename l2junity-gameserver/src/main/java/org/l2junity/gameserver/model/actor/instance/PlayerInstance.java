@@ -2577,26 +2577,26 @@ public final class PlayerInstance extends Playable
 		Collection<Skill> skills = SkillTreesData.getInstance().getAllAvailableSkills(this, getClassId(), includedByFs, includeAutoGet);
 		List<Skill> skillsForStore = new ArrayList<>();
 		
-		for (Skill sk : skills)
+		for (Skill skill : skills)
 		{
-			if (getKnownSkill(sk.getId()) == sk)
+			if (getKnownSkill(skill.getId()) == skill)
 			{
 				continue;
 			}
 			
-			if (getSkillLevel(sk.getId()) == -1)
+			if (getSkillLevel(skill.getId()) == -1)
 			{
 				skillCounter++;
 			}
 			
 			// fix when learning toggle skills
-			if (sk.isToggle() && !sk.isNecessaryToggle() && isAffectedBySkill(sk.getId()))
+			if (skill.isToggle() && !skill.isNecessaryToggle() && isAffectedBySkill(skill.getId()))
 			{
-				stopSkillEffects(true, sk.getId());
+				stopSkillEffects(true, skill.getId());
 			}
 			
-			addSkill(sk, false);
-			skillsForStore.add(sk);
+			addSkill(skill, false);
+			skillsForStore.add(skill);
 		}
 		storeSkills(skillsForStore, -1);
 		if (Config.AUTO_LEARN_SKILLS && (skillCounter > 0))
@@ -4168,8 +4168,8 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
 	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B>
 	 * <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li>
-	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
+	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP,
+	 * STR, DEX...</B></FONT>
 	 */
 	public final void broadcastUserInfo()
 	{
@@ -7456,7 +7456,8 @@ public final class PlayerInstance extends Playable
 	public Skill removeSkill(Skill skill)
 	{
 		removeCustomSkill(skill);
-		// Remove a skill from the L2Character and its Func objects from calculator set of the L2Character
+		
+		// Remove a skill from the Creature and its stats
 		final Skill oldSkill = super.removeSkill(skill, true);
 		if (oldSkill != null)
 		{

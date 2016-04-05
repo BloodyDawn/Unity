@@ -551,34 +551,34 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 	 * Consume required items if the skill require it and all requirements are meet.<br>
 	 * @param player the skill learning player.
 	 * @param trainer the skills teaching Npc.
-	 * @param s the skill to be learn.
+	 * @param skillLearn the skill to be learn.
 	 * @return {@code true} if all requirements are meet, {@code false} otherwise.
 	 */
-	private boolean checkPlayerSkill(PlayerInstance player, Npc trainer, SkillLearn s)
+	private boolean checkPlayerSkill(PlayerInstance player, Npc trainer, SkillLearn skillLearn)
 	{
-		if (s != null)
+		if (skillLearn != null)
 		{
-			if ((s.getSkillId() == _id) && (s.getSkillLevel() == _level))
+			if ((skillLearn.getSkillId() == _id) && (skillLearn.getSkillLevel() == _level))
 			{
 				// Hack check.
-				if (s.getGetLevel() > player.getLevel())
+				if (skillLearn.getGetLevel() > player.getLevel())
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_SKILL_LEVEL_REQUIREMENTS);
-					Util.handleIllegalPlayerAction(player, "Player " + player.getName() + ", level " + player.getLevel() + " is requesting skill Id: " + _id + " level " + _level + " without having minimum required level, " + s.getGetLevel() + "!", IllegalActionPunishmentType.NONE);
+					Util.handleIllegalPlayerAction(player, "Player " + player.getName() + ", level " + player.getLevel() + " is requesting skill Id: " + _id + " level " + _level + " without having minimum required level, " + skillLearn.getGetLevel() + "!", IllegalActionPunishmentType.NONE);
 					return false;
 				}
 				
-				if (s.getDualClassLevel() > 0)
+				if (skillLearn.getDualClassLevel() > 0)
 				{
 					final SubClass playerDualClass = player.getDualClass();
-					if ((playerDualClass == null) || (playerDualClass.getLevel() < s.getDualClassLevel()))
+					if ((playerDualClass == null) || (playerDualClass.getLevel() < skillLearn.getDualClassLevel()))
 					{
 						return false;
 					}
 				}
 				
 				// First it checks that the skill require SP and the player has enough SP to learn it.
-				final int levelUpSp = s.getCalculatedLevelUpSp(player.getClassId(), player.getLearningClass());
+				final int levelUpSp = skillLearn.getCalculatedLevelUpSp(player.getClassId(), player.getLearningClass());
 				if ((levelUpSp > 0) && (levelUpSp > player.getSp()))
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_TO_LEARN_THIS_SKILL);
@@ -592,9 +592,9 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 				}
 				
 				// Check for required skills.
-				if (!s.getPreReqSkills().isEmpty())
+				if (!skillLearn.getPreReqSkills().isEmpty())
 				{
-					for (SkillHolder skill : s.getPreReqSkills())
+					for (SkillHolder skill : skillLearn.getPreReqSkills())
 					{
 						if (player.getSkillLevel(skill.getSkillId()) != skill.getSkillLvl())
 						{
@@ -612,11 +612,11 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 				}
 				
 				// Check for required items.
-				if (!s.getRequiredItems().isEmpty())
+				if (!skillLearn.getRequiredItems().isEmpty())
 				{
 					// Then checks that the player has all the items
 					long reqItemCount = 0;
-					for (ItemHolder item : s.getRequiredItems())
+					for (ItemHolder item : skillLearn.getRequiredItems())
 					{
 						reqItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
 						if (reqItemCount < item.getCount())
@@ -627,8 +627,9 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 							return false;
 						}
 					}
+					
 					// If the player has all required items, they are consumed.
-					for (ItemHolder itemIdCount : s.getRequiredItems())
+					for (ItemHolder itemIdCount : skillLearn.getRequiredItems())
 					{
 						if (!player.destroyItemByItemId("SkillLearn", itemIdCount.getId(), itemIdCount.getCount(), trainer, true))
 						{
@@ -637,9 +638,9 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 					}
 				}
 				
-				if (!s.getRemoveSkills().isEmpty())
+				if (!skillLearn.getRemoveSkills().isEmpty())
 				{
-					s.getRemoveSkills().forEach(skillId ->
+					skillLearn.getRemoveSkills().forEach(skillId ->
 					{
 						if (player.getSkillLevel(skillId) > 0)
 						{
