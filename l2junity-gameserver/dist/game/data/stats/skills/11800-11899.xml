@@ -1461,7 +1461,6 @@
 	</skill>
 	<skill id="11850" toLevel="4" name="Miraculous Benediction">
 		<!-- Restores clan members' CP/HP. Can only be used when MP is 50% or below. -->
-		<table name="#mp"> 50 60 70 100 </table>
 		<icon>icon.skill11850new</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1491,9 +1490,12 @@
 		</magicLvl>
 		<effectPoint>560</effectPoint>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
-		<cond msgId="113" addName="1">
-			<player mp="#mp" />
-		</cond>
+		<conditions>
+			<condition name="RemainMpPer">
+				<amount>50</amount>
+				<percentType>LESS</percentType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CpHealPercent">
 				<power>100</power>
