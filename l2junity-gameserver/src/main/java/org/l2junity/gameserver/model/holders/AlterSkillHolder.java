@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.holders;
 
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 
 /**
@@ -43,5 +44,10 @@ public class AlterSkillHolder extends SkillHolder
 	public AbnormalType getAbnormalType()
 	{
 		return _abnormalType;
+	}
+	
+	public static AlterSkillHolder fromStatsSet(StatsSet set)
+	{
+		return new AlterSkillHolder(set.getInt(".id"), set.getInt(".level", 1), set.getInt(".chance"), set.getEnum(".abnormalType", AbnormalType.class));
 	}
 }

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.holders;
 
+import org.l2junity.gameserver.model.StatsSet;
 
 /**
  * @author Nik
@@ -42,5 +43,10 @@ public class AttachSkillHolder extends SkillHolder
 	public int getRequiredSkillLevel()
 	{
 		return _requiredSkillLevel;
+	}
+	
+	public static AttachSkillHolder fromStatsSet(StatsSet set)
+	{
+		return new AttachSkillHolder(set.getInt("skillId"), set.getInt("skillLevel", 1), set.getInt("requiredSkillId"), set.getInt("requiredSkillLevel", 1));
 	}
 }

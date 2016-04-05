@@ -699,6 +699,12 @@ public class StatsSet implements IParserAdvUtils
 		return (List<T>) obj;
 	}
 	
+	public <T> List<T> getList(String key, Class<T> clazz, List<T> defaultValue)
+	{
+		final List<T> list = getList(key, clazz);
+		return list == null ? defaultValue : list;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public <T extends Enum<T>> List<T> getEnumList(String key, Class<T> clazz)
 	{

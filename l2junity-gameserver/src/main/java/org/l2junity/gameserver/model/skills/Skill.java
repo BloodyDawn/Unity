@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -409,8 +410,8 @@ public final class Skill implements IIdentifiable
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
-		_alterSkills = set.getList("alterSkill", AlterSkillHolder.class);
-		_attachSkills = set.getList("attachSkillList", AttachSkillHolder.class);
+		_alterSkills = set.getList("alterSkill", StatsSet.class, Collections.emptyList()).stream().map(AlterSkillHolder::fromStatsSet).collect(Collectors.toList());
+		_attachSkills = set.getList("attachSkillList", StatsSet.class, Collections.emptyList()).stream().map(AttachSkillHolder::fromStatsSet).collect(Collectors.toList());
 		
 		final String abnormalResist = set.getString("abnormalResists", null);
 		if (abnormalResist != null)

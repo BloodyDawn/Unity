@@ -360,27 +360,27 @@
 		<magicCriticalRate>6</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<alterSkill>
-			<skill id="11250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
-			<skill id="11249" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
-			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+			<item id="11250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<item id="11249" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
+			<item id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<attachSkillList>
-			<skill requiredId="11007" id="11012">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Fire Stance / Elemental Spike (Fire) -->
-			<skill requiredId="11008" id="11013">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Water Stance / Elemental Spike (Water) -->
-			<skill requiredId="11009" id="11014">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Wind Stance / Elemental Spike (Wind) -->
-			<skill requiredId="11010" id="11015">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Earth Stance / Elemental Spike (Earth) -->
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Fire Stance -->
+				<skillId>11012</skillId> <!-- Elemental Spike (Fire) -->
+			</item>
+			<item>
+				<requiredSkillId>11008</requiredSkillId> <!-- Water Stance -->
+				<skillId>11013</skillId> <!-- Elemental Spike (Water) -->
+			</item>
+			<item>
+				<requiredSkillId>11009</requiredSkillId> <!-- Wind Stance -->
+				<skillId>11014</skillId> <!-- Elemental Spike (Wind) -->
+			</item>
+			<item>
+				<requiredSkillId>11010</requiredSkillId> <!-- Earth Stance -->
+				<skillId>11015</skillId> <!-- Elemental Spike (Earth) -->
+			</item>
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -846,22 +846,22 @@
 		<hitCancelTime>0.8</hitCancelTime>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11018">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Fire Stance / Elemental Crash (Fire) -->
-			<skill requiredId="11008" id="11019">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Water Stance / Elemental Crash (Water) -->
-			<skill requiredId="11009" id="11020">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Wind Stance / Elemental Crash (Wind) -->
-			<skill requiredId="11010" id="11021">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Earth Stance / Elemental Crash (Earth) -->
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Fire Stance -->
+				<skillId>11018</skillId> <!-- Elemental Crash (Fire) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Water Stance -->
+				<skillId>11019</skillId> <!-- Elemental Crash (Water) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Wind Stance -->
+				<skillId>11020</skillId> <!-- Elemental Crash (Wind) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Earth Stance -->
+				<skillId>11021</skillId> <!-- Elemental Crash (Earth) -->
+			</item>
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1333,22 +1333,22 @@
 		<hitCancelTime>1</hitCancelTime>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11024">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Fire Stance / Elemental Destruction (Fire) -->
-			<skill requiredId="11008" id="11025">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Water Stance / Elemental Destruction (Water) -->
-			<skill requiredId="11009" id="11026">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Wind Stance / Elemental Destruction (Wind) -->
-			<skill requiredId="11010" id="11027">
-				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-			</skill> <!-- Earth Stance / Elemental Destruction (Earth) -->
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Fire Stance -->
+				<skillId>11024</skillId> <!-- Elemental Destruction (Fire) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Water Stance -->
+				<skillId>11025</skillId> <!-- Elemental Destruction (Water) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Wind Stance -->
+				<skillId>11026</skillId> <!-- Elemental Destruction (Wind) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Earth Stance -->
+				<skillId>11027</skillId> <!-- Elemental Destruction (Earth) -->
+			</item>
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2030,26 +2030,22 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11035">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Fire Stance / Elemental Blast (Fire) -->
-			<skill requiredId="11008" id="11036">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Water Stance / Elemental Blast (Water) -->
-			<skill requiredId="11009" id="11037">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Wind Stance / Elemental Blast (Wind) -->
-			<skill requiredId="11010" id="11038">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Earth Stance / Elemental Blast (Earth) -->
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Fire Stance -->
+				<skillId>11035</skillId> <!-- Elemental Blast (Fire) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Water Stance -->
+				<skillId>11036</skillId> <!-- Elemental Blast (Water) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Wind Stance -->
+				<skillId>11037</skillId> <!-- Elemental Blast (Wind) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Earth Stance -->
+				<skillId>11038</skillId> <!-- Elemental Blast (Earth) -->
+			</item>
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
@@ -2461,26 +2457,22 @@
 		<magicCriticalRate>11</magicCriticalRate>
 		<isMagic>1</isMagic>
 		<attachSkillList>
-			<skill requiredId="11007" id="11041">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Fire Stance / Elemental Storm (Fire) -->
-			<skill requiredId="11008" id="11042">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Water Stance / Elemental Storm (Water) -->
-			<skill requiredId="11009" id="11043">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Wind Stance / Elemental Storm (Wind) -->
-			<skill requiredId="11010" id="11044">
-				<targetType>ENEMY</targetType>
-				<affectScope>RANGE</affectScope>
-				<affectObject>NOT_FRIEND</affectObject>
-			</skill> <!-- Earth Stance / Elemental Storm (Earth) -->
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Fire Stance -->
+				<skillId>11041</skillId> <!-- Elemental Storm (Fire) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Water Stance -->
+				<skillId>11042</skillId> <!-- Elemental Storm (Water) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Wind Stance -->
+				<skillId>11043</skillId> <!-- Elemental Storm (Wind) -->
+			</item>
+			<item>
+				<requiredSkillId>11007</requiredSkillId> <!-- Earth Stance -->
+				<skillId>11044</skillId> <!-- Elemental Storm (Earth) -->
+			</item>
 		</attachSkillList>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
