@@ -29,6 +29,7 @@ import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.Position;
+import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
@@ -61,6 +62,7 @@ public final class Formulas
 	public static final byte SHIELD_DEFENSE_SUCCEED = 1; // normal shield defense
 	public static final byte SHIELD_DEFENSE_PERFECT_BLOCK = 2; // perfect block
 	
+	public static final int SKILL_LAUNCH_TIME = 500; // The time to pass after the skill launching until the skill to affect targets. In milliseconds
 	private static final byte MELEE_ATTACK_RANGE = 40;
 	
 	/**
@@ -720,6 +722,100 @@ public final class Formulas
 			return (int) ((skillTime / attacker.getMAtkSpd()) * 333);
 		}
 		return (int) ((skillTime / attacker.getPAtkSpd()) * 300);
+	}
+	
+	/**
+	 * TODO: Implement those:
+	 * <ul>
+	 * <li>Skill cool time is block player from doing anything (moving, casting, attacking).</li>
+	 * <li>Seems hardcoded channeling value is not used for the skill task</li>
+	 * </ul>
+	 * @param creature
+	 * @param skill
+	 * @return the hit time of the skill.
+	 */
+	public static final int calcHitTime(Creature creature, Skill skill)
+	{
+		int skillTime = skill.getHitTime() - SKILL_LAUNCH_TIME;
+		
+		if (skill.isChanneling())
+		{
+			skillTime += 2866;
+		}
+		else
+		{
+			// Calculate the Casting Time of the "Non-Static" Skills (with caster PAtk/MAtkSpd).
+			if (!skill.isStatic())
+			{
+				skillTime = calcAtkSpd(creature, skill, skillTime);
+			}
+			// Calculate the Casting Time of Magic Skills (reduced in 40% if using SPS/BSPS)
+			if (skill.isMagic() && (creature.isChargedShot(ShotType.SPIRITSHOTS) || creature.isChargedShot(ShotType.BLESSED_SPIRITSHOTS)))
+			{
+				skillTime = (int) (0.6 * skillTime);
+			}
+		}
+		
+		return Math.max(skillTime, 0);
+	}
+	
+	public static final int calcSkillCancelTime(Creature creature, Skill skill)
+	{
+		// Fishing skills.
+		if ((skill.getId() == 1312) || (skill.getId() == 1314) || (skill.getId() == 1315))
+		{
+			return 0;
+		}
+		// return (int) Math.max(skill.getCancelTime() / calcSkillTimeFactor(attacker, skill), 500);
+		return (int) Math.max(skill.getHitTime() / calcSkillTimeFactor(creature, skill), SKILL_LAUNCH_TIME);
+	}
+	
+	/**
+	 * TODO: Implement armor bonus and NPC Divider
+	 * @param creature
+	 * @param skill
+	 * @return
+	 */
+	public static final double calcSkillTimeFactor(Creature creature, Skill skill)
+	{
+		double factor = 0;
+		if (skill.isPhysical() || skill.isDance()) // is_magic = 0 or 3
+		{
+			double armorBonus = 1; // EquipedArmorSpeedByCrystal TODO: Implement me!
+			double dexBonus = BaseStats.DEX.calcBonus(creature);
+			double weaponAttackSpeed = Stats.weaponBaseValue(creature, Stats.PHYSICAL_ATTACK_SPEED) / armorBonus; // unk868
+			double attackSpeedPerBonus = creature.getStat().getMul(Stats.PHYSICAL_ATTACK_SPEED);
+			double attackSpeedDiffBonus = creature.getStat().getAdd(Stats.PHYSICAL_ATTACK_SPEED);
+			factor = (dexBonus * (weaponAttackSpeed / 333) * attackSpeedPerBonus) + (attackSpeedDiffBonus / 333);
+		}
+		else if (skill.isMagic()) // is_magic = 1
+		{
+			double armorBonus = 1; // TODO: Implement me!
+			double witBonus = BaseStats.WIT.calcBonus(creature);
+			double castingSpeedPerBonus = creature.getStat().getMul(Stats.MAGIC_ATTACK_SPEED); // m_use_speed
+			double castingSpeedDiffBonus = creature.getStat().getAdd(Stats.MAGIC_ATTACK_SPEED);
+			factor = ((1 / armorBonus) * witBonus * castingSpeedPerBonus) + (castingSpeedDiffBonus / 333);
+		}
+		else if (skill.isStatic()) // is_magic = 2
+		{
+			factor = 1;
+		}
+		
+		if (skill.isChanneling()) // operate type = 5 or 6 or 7
+		{
+			factor = 1;
+		}
+		
+		if (creature.isNpc() || creature.isSummon())
+		{
+			// TODO: Implement me!
+			// if (attacker.unk08B0 > 0)
+			{
+				// factor /= attacker.unk08B0;
+			}
+		}
+		
+		return Math.max(factor, 0.01);
 	}
 	
 	/**

@@ -20,11 +20,13 @@ package handlers.targethandlers;
 
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
+import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -57,6 +59,16 @@ public class Ground implements ITargetTypeHandler
 					if (sendMessage)
 					{
 						activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+					}
+					return null;
+				}
+				
+				final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(activeChar);
+				if (skill.isBad() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ()))
+				{
+					if (sendMessage)
+					{
+						activeChar.sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
 					}
 					return null;
 				}

@@ -80,7 +80,7 @@ public class Unstuck implements IUserCommandHandler
 		}
 		else
 		{
-			SkillCaster skillCaster = SkillCaster.castSkill(activeChar, activeChar.getTarget(), escape, null, SkillCastingType.NORMAL, false, false, unstuckTimer, -1);
+			SkillCaster skillCaster = SkillCaster.castSkill(activeChar, activeChar.getTarget(), escape, null, SkillCastingType.NORMAL, false, false, unstuckTimer);
 			if (skillCaster == null)
 			{
 				activeChar.sendPacket(ActionFailed.get(SkillCastingType.NORMAL));

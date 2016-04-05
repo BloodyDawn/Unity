@@ -347,6 +347,11 @@ public enum Stats
 		return _resetMulValue;
 	}
 	
+	public static double weaponBaseValue(Creature creature, Stats stat)
+	{
+		return stat._valueFinalizer.calcWeaponBaseValue(creature, stat);
+	}
+	
 	public static double defaultValue(Creature creature, Optional<Double> base, Stats stat)
 	{
 		final double mul = creature.getStat().getMul(stat);

@@ -23,6 +23,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import java.lang.ref.WeakReference;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ScheduledFuture;
 
@@ -34,10 +35,8 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemSkillType;
-import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.StatusUpdateType;
-import org.l2junity.gameserver.instancemanager.ZoneManager;
-import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -46,14 +45,13 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
-import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillSee;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
@@ -63,7 +61,6 @@ import org.l2junity.gameserver.model.options.OptionsSkillType;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExRotation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
@@ -82,20 +79,21 @@ import org.slf4j.LoggerFactory;
 /**
  * @author Nik
  */
-public class SkillCaster
+public class SkillCaster implements Runnable
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SkillCaster.class);
-	private static final int CASTING_TIME_CAP = 500;
 	
 	private final WeakReference<Creature> _caster;
 	private final WeakReference<WorldObject> _target;
 	private final Skill _skill;
 	private final ItemInstance _item;
 	private final SkillCastingType _castingType;
+	private final int _castTime;
 	private Collection<WorldObject> _targets;
 	private ScheduledFuture<?> _task;
+	private int _phase;
 	
-	private SkillCaster(Creature caster, WorldObject target, Skill skill, ItemInstance item, SkillCastingType castingType, boolean ctrlPressed, boolean shiftPressed)
+	private SkillCaster(Creature caster, WorldObject target, Skill skill, ItemInstance item, SkillCastingType castingType, boolean ctrlPressed, boolean shiftPressed, int castTime)
 	{
 		Objects.requireNonNull(caster);
 		Objects.requireNonNull(skill);
@@ -106,6 +104,7 @@ public class SkillCaster
 		_skill = skill;
 		_item = item;
 		_castingType = castingType;
+		_castTime = castTime;
 	}
 	
 	/**
@@ -121,7 +120,7 @@ public class SkillCaster
 	 */
 	public static SkillCaster castSkill(Creature caster, WorldObject target, Skill skill, ItemInstance item, SkillCastingType castingType, boolean ctrlPressed, boolean shiftPressed)
 	{
-		return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, -1, -1);
+		return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, -1);
 	}
 	
 	/**
@@ -134,17 +133,16 @@ public class SkillCaster
 	 * @param ctrlPressed force casting
 	 * @param shiftPressed dont move while casting
 	 * @param castTime custom cast time in milliseconds or -1 for default.
-	 * @param reuseDelay custom reuse delay in milliseconds or -1 for default.
 	 * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
 	 */
-	public static SkillCaster castSkill(Creature caster, WorldObject target, Skill skill, ItemInstance item, SkillCastingType castingType, boolean ctrlPressed, boolean shiftPressed, int castTime, int reuseDelay)
+	public static SkillCaster castSkill(Creature caster, WorldObject target, Skill skill, ItemInstance item, SkillCastingType castingType, boolean ctrlPressed, boolean shiftPressed, int castTime)
 	{
 		if ((caster == null) || (skill == null) || (castingType == null))
 		{
 			return null;
 		}
 		
-		if (!checkUseConditions(caster, skill))
+		if (!checkUseConditions(caster, skill, castingType))
 		{
 			return null;
 		}
@@ -156,24 +154,75 @@ public class SkillCaster
 			return null;
 		}
 		
-		// Consume the required items.
-		if ((skill.getItemConsumeId() > 0) && (skill.getItemConsumeCount() > 0))
+		castTime = castTime > -1 ? castTime : Formulas.calcHitTime(caster, skill);
+		
+		// Schedule a thread that will execute 500ms before casting time is over (for animation issues and retail handling).
+		SkillCaster skillCaster = new SkillCaster(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, castTime);
+		skillCaster.run();
+		return skillCaster;
+	}
+	
+	@Override
+	public void run()
+	{
+		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
+		
+		// Skills with instant cast are never launched.
+		if (instantCast)
 		{
-			if (!caster.destroyItemByItemId("Consume", skill.getItemConsumeId(), skill.getItemConsumeCount(), null, true))
-			{
-				caster.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT2);
-				return null;
-			}
+			startCasting();
+			finishSkill();
+			stopCasting(false);
+			return;
 		}
 		
-		final boolean isSimultaneous = (castingType == SkillCastingType.SIMULTANEOUS);
-		castTime = castTime > -1 ? castTime : SkillCaster.getCastTime(caster, skill, item);
-		reuseDelay = reuseDelay > -1 ? reuseDelay : caster.getStat().getReuseTime(skill);
+		switch (_phase++)
+		{
+			case 0: // Start skill casting.
+			{
+				startCasting();
+				_task = ThreadPoolManager.getInstance().scheduleEffect(this, _castTime);
+				break;
+			}
+			case 1: // Launch the skill.
+			{
+				launchSkill();
+				_task = ThreadPoolManager.getInstance().scheduleEffect(this, Formulas.SKILL_LAUNCH_TIME);
+				break;
+			}
+			case 2: // Finish launching and apply effects.
+			{
+				finishSkill();
+				_task = ThreadPoolManager.getInstance().scheduleEffect(this, _skill.getCoolTime());
+				break;
+			}
+			case 3:
+			{
+				stopCasting(false);
+				break;
+			}
+		}
+	}
+	
+	public void startCasting()
+	{
+		final Creature caster = _caster.get();
+		final WorldObject target = _target.get();
+		
+		if ((caster == null) || (target == null))
+		{
+			stopCasting(false);
+			return;
+		}
+		
+		final int displayedCastTime = _castTime + Formulas.SKILL_LAUNCH_TIME; // For client purposes, it must be displayed to player the skill casting time + launch time.
+		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
 		
 		// Disable the skill during the re-use delay and create a task EnableSkill with Medium priority to enable it at the end of the re-use delay
+		int reuseDelay = caster.getStat().getReuseTime(_skill);
 		if (reuseDelay > 10)
 		{
-			if (Formulas.calcSkillMastery(caster, skill))
+			if (Formulas.calcSkillMastery(caster, _skill))
 			{
 				reuseDelay = 100;
 				caster.sendPacket(SystemMessageId.A_SKILL_IS_READY_TO_BE_USED_AGAIN);
@@ -181,24 +230,24 @@ public class SkillCaster
 			
 			if (reuseDelay > 30000)
 			{
-				caster.addTimeStamp(skill, reuseDelay);
+				caster.addTimeStamp(_skill, reuseDelay);
 			}
 			else
 			{
-				caster.disableSkill(skill, reuseDelay);
+				caster.disableSkill(_skill, reuseDelay);
 			}
 		}
 		
-		// Stop movement when casting. Exception are cases where skill doesn't stop movement.
-		if (!skill.isWithoutAction())
+		// Stop movement when casting. Except instant cast.
+		if (!instantCast)
 		{
 			caster.getAI().clientStopMoving(null);
 		}
 		
 		// Reduce talisman mana on skill use
-		if ((skill.getReferenceItemId() > 0) && (ItemTable.getInstance().getTemplate(skill.getReferenceItemId()).getBodyPart() == L2Item.SLOT_DECO))
+		if ((_skill.getReferenceItemId() > 0) && (ItemTable.getInstance().getTemplate(_skill.getReferenceItemId()).getBodyPart() == L2Item.SLOT_DECO))
 		{
-			ItemInstance talisman = caster.getInventory().getItems(i -> i.getId() == skill.getReferenceItemId(), ItemInstance::isEquipped).stream().findAny().orElse(null);
+			ItemInstance talisman = caster.getInventory().getItems(i -> i.getId() == _skill.getReferenceItemId(), ItemInstance::isEquipped).stream().findAny().orElse(null);
 			if (talisman != null)
 			{
 				talisman.decreaseMana(false, talisman.useSkillDisTime());
@@ -209,7 +258,7 @@ public class SkillCaster
 		{
 			// Face the target
 			caster.setHeading(Util.calculateHeadingFrom(caster, target));
-			caster.broadcastPacket(new ExRotation(caster.getObjectId(), caster.getHeading()));
+			caster.broadcastPacket(new ExRotation(caster.getObjectId(), caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
 			
 			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
 			if (caster.isPlayer() && !caster.isCastingNow() && target.isCreature())
@@ -219,12 +268,11 @@ public class SkillCaster
 			}
 		}
 		
-		// Send a Server->Client packet MagicSkillUser with target, displayId, level, skillTime, reuseDelay
-		final int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(skill.getId()) : -1;
-		caster.broadcastPacket(new MagicSkillUse(caster, target, skill.getDisplayId(), skill.getDisplayLevel(), castTime, reuseDelay, skill.getReuseDelayGroup(), actionId, castingType));
+		// Stop effects since we started casting. It should be sent before casting bar and mana consume.
+		caster.stopEffectsOnAction();
 		
-		// Consume skill initial MP needed for cast.
-		int initmpcons = caster.getStat().getMpInitialConsume(skill);
+		// Consume skill initial MP needed for cast. Retail sends it regardless if > 0 or not.
+		int initmpcons = caster.getStat().getMpInitialConsume(_skill);
 		if (initmpcons > 0)
 		{
 			caster.getStatus().reduceMp(initmpcons);
@@ -233,60 +281,36 @@ public class SkillCaster
 			caster.sendPacket(su);
 		}
 		
-		// Send a system message to the player.
-		if (caster.isPlayer() && !isSimultaneous)
+		// Send a packet starting the casting.
+		final int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.getId()) : -1;
+		caster.broadcastPacket(new MagicSkillUse(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
+		
+		if (caster.isPlayer() && !instantCast)
 		{
-			if (skill.getId() == 2046) // Wolf Collar
-			{
-				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SUMMONING_YOUR_PET));
-			}
-			else
-			{
-				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_USE_S1).addSkillName(skill));
-			}
+			// Send a system message to the player.
+			caster.sendPacket(_skill.getId() != 2046 ? SystemMessage.getSystemMessage(SystemMessageId.YOU_USE_S1).addSkillName(_skill) : SystemMessage.getSystemMessage(SystemMessageId.SUMMONING_YOUR_PET));
+			
+			// Show the gauge bar for casting.
+			caster.sendPacket(new SetupGauge(caster.getObjectId(), SetupGauge.BLUE, displayedCastTime));
+		}
+		
+		// Consume the required items. Should happen after use message is displayed and SetupGauge
+		if ((_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0))
+		{
+			caster.destroyItemByItemId("Consume", _skill.getItemConsumeId(), _skill.getItemConsumeCount(), null, true);
 		}
 		
 		// Trigger any skill cast start effects.
 		if (target.isCreature())
 		{
-			skill.applyEffectScope(EffectScope.START, new BuffInfo(caster, (Creature) target, skill, false, item, null), true, false);
-		}
-		
-		// Casting action is starting...
-		caster.stopEffectsOnAction();
-		
-		// Show the gauge bar for casting.
-		if (caster.isPlayer() && !isSimultaneous)
-		{
-			caster.sendPacket(new SetupGauge(caster.getObjectId(), SetupGauge.BLUE, castTime));
-		}
-		
-		// Broadcast fly animation if needed. Packet order is after setup gauge.
-		if (skill.getFlyType() != null)
-		{
-			caster.broadcastPacket(new FlyToLocation(caster, target, skill.getFlyType()));
+			_skill.applyEffectScope(EffectScope.START, new BuffInfo(caster, (Creature) target, _skill, false, _item, null), true, false);
 		}
 		
 		// Start channeling if skill is channeling.
-		if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))
+		if (_skill.isChanneling() && (_skill.getChannelingSkillId() > 0))
 		{
-			caster.getSkillChannelizer().startChanneling(skill);
+			caster.getSkillChannelizer().startChanneling(_skill);
 		}
-		
-		// Schedule a thread that will execute 500ms before casting time is over (for animation issues and retail handling).
-		SkillCaster skillCaster = new SkillCaster(caster, target, skill, item, castingType, ctrlPressed, shiftPressed);
-		
-		// Either start casting or instantly finish casting if skill is abnormal instant.
-		if (isSimultaneous || skill.isAbnormalInstant())
-		{
-			skillCaster.finishSkill();
-		}
-		else
-		{
-			skillCaster._task = ThreadPoolManager.getInstance().scheduleEffect(() -> skillCaster.launchSkill(), castTime - CASTING_TIME_CAP);
-		}
-		
-		return skillCaster;
 	}
 	
 	public void launchSkill()
@@ -296,23 +320,22 @@ public class SkillCaster
 		
 		if ((caster == null) || (target == null))
 		{
+			stopCasting(false);
 			return;
 		}
 		
 		// Gather list of affected targets by this skill.
 		_targets = _skill.getTargetsAffected(caster, target);
 		
-		// Finish flying by setting the target location after picking targets.
+		// Finish flying by setting the target location after picking targets. Packet is sent before MagicSkillLaunched.
 		if (_skill.getFlyType() != null)
 		{
+			caster.broadcastPacket(new FlyToLocation(caster, target, _skill.getFlyType()));
 			caster.setXYZ(target.getX(), target.getY(), target.getZ());
 		}
 		
 		// Display animation of launching skill upon targets.
 		caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
-		
-		// Skill launching should finalize in 500 milliseconds (retail)
-		_task = ThreadPoolManager.getInstance().scheduleEffect(() -> finishSkill(), CASTING_TIME_CAP);
 	}
 	
 	public void finishSkill()
@@ -322,6 +345,7 @@ public class SkillCaster
 		
 		if ((caster == null) || (target == null))
 		{
+			stopCasting(false);
 			return;
 		}
 		
@@ -377,16 +401,6 @@ public class SkillCaster
 		
 		// On each repeat recharge shots before cast.
 		caster.rechargeShots(_skill.useSoulShot(), _skill.useSpiritShot(), false);
-		
-		// Stop casting and open a free casting spot once skill cooltime finishes.
-		if ((_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant())
-		{
-			stopCasting(false);
-		}
-		else
-		{
-			_task = ThreadPoolManager.getInstance().scheduleEffect(() -> stopCasting(false), _skill.getCoolTime());
-		}
 	}
 	
 	public static void callSkill(Creature caster, WorldObject target, Collection<WorldObject> targets, Skill skill, ItemInstance item)
@@ -582,7 +596,7 @@ public class SkillCaster
 		// Cancel the task and unset it.
 		if (_task != null)
 		{
-			_task.cancel(true);
+			_task.cancel(false);
 			_task = null;
 		}
 		
@@ -672,7 +686,25 @@ public class SkillCaster
 		return (_castingType == SkillCastingType.NORMAL) || (_castingType == SkillCastingType.NORMAL_SECOND);
 	}
 	
+	/**
+	 * Checks general conditions for casting a skill through the regular casting type.
+	 * @param caster the caster checked if can cast the given skill.
+	 * @param skill the skill to be check if it can be casted by the given caster or not.
+	 * @return {@code true} if the caster can proceed with casting the given skill, {@code false} otherwise.
+	 */
 	public static boolean checkUseConditions(Creature caster, Skill skill)
+	{
+		return checkUseConditions(caster, skill, SkillCastingType.NORMAL);
+	}
+	
+	/**
+	 * Checks general conditions for casting a skill.
+	 * @param caster the caster checked if can cast the given skill.
+	 * @param skill the skill to be check if it can be casted by the given caster or not.
+	 * @param castingType used to check if caster is currently casting this type of cast.
+	 * @return {@code true} if the caster can proceed with casting the given skill, {@code false} otherwise.
+	 */
+	public static boolean checkUseConditions(Creature caster, Skill skill, SkillCastingType castingType)
 	{
 		if (caster == null)
 		{
@@ -693,14 +725,10 @@ public class SkillCaster
 		}
 		
 		// Check if creature is already casting
-		if (caster.isCastingNow(SkillCaster::isAnyNormalType))
+		if ((castingType != null) && caster.isCastingNow(castingType))
 		{
-			// Check if unable to double cast or both casting slots are taken.
-			if (!caster.isAffected(EffectFlag.DOUBLE_CAST) || !skill.canDoubleCast() || ((caster.getSkillCaster(SkillCaster::isNormalFirstType) != null) && (caster.getSkillCaster(SkillCaster::isNormalSecondType) != null)))
-			{
-				caster.sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
+			caster.sendPacket(ActionFailed.get(castingType));
+			return false;
 		}
 		
 		// Check if the caster has enough MP
@@ -731,62 +759,21 @@ public class SkillCaster
 					return false;
 				}
 			}
-			else
+			else if (caster.isPhysicalMuted()) // Check if the skill is physical and if the L2Character is not physical_muted
 			{
-				// Check if the skill is physical and if the L2Character is not physical_muted
-				if (caster.isPhysicalMuted())
-				{
-					caster.sendPacket(ActionFailed.STATIC_PACKET);
-					return false;
-				}
-			}
-		}
-		
-		// prevent casting signets to peace zone
-		if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))
-		{
-			final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(caster);
-			boolean canCast = true;
-			if ((skill.getTargetType() == TargetType.GROUND) && caster.isPlayer())
-			{
-				Location wp = caster.getActingPlayer().getCurrentSkillWorldPosition();
-				if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ()))
-				{
-					canCast = false;
-				}
-			}
-			else if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, caster.getX(), caster.getY(), caster.getZ()))
-			{
-				canCast = false;
-			}
-			if (!canCast)
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-				sm.addSkillName(skill);
-				caster.sendPacket(sm);
+				caster.sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
 			}
 		}
 		
 		// Check if the caster's weapon is limited to use only its own skills
 		final Weapon weapon = caster.getActiveWeaponItem();
-		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !caster.isGM() && (weapon.getSkills(ItemSkillType.NORMAL) != null))
+		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !caster.canOverrideCond(PcCondOverride.SKILL_CONDITIONS))
 		{
-			boolean found = false;
-			for (SkillHolder sh : weapon.getSkills(ItemSkillType.NORMAL))
+			final List<ItemSkillHolder> weaponSkills = weapon.getSkills(ItemSkillType.NORMAL);
+			if ((weaponSkills != null) && !weaponSkills.stream().anyMatch(sh -> sh.getSkillId() == skill.getId()))
 			{
-				if (sh.getSkillId() == skill.getId())
-				{
-					found = true;
-				}
-			}
-			
-			if (!found)
-			{
-				if (caster.getActingPlayer() != null)
-				{
-					caster.sendPacket(SystemMessageId.THAT_WEAPON_CANNOT_USE_ANY_OTHER_SKILL_EXCEPT_THE_WEAPON_S_SKILL);
-				}
+				caster.sendPacket(SystemMessageId.THAT_WEAPON_CANNOT_USE_ANY_OTHER_SKILL_EXCEPT_THE_WEAPON_S_SKILL);
 				return false;
 			}
 		}
@@ -797,8 +784,6 @@ public class SkillCaster
 		{
 			// Get the L2ItemInstance consumed by the spell
 			final ItemInstance requiredItems = caster.getInventory().getItemByItemId(skill.getItemConsumeId());
-			
-			// Check if the caster owns enough consumed Item to cast
 			if ((requiredItems == null) || (requiredItems.getCount() < skill.getItemConsumeCount()))
 			{
 				// Checked: when a summon skill failed, server show required consume item count
@@ -811,7 +796,6 @@ public class SkillCaster
 				}
 				else
 				{
-					// Send a System Message to the caster
 					caster.sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_NECESSARY_ITEMS_TO_USE_THE_SKILL);
 				}
 				return false;
@@ -820,7 +804,7 @@ public class SkillCaster
 		
 		if (caster.isPlayer())
 		{
-			PlayerInstance player = caster.getActingPlayer();
+			final PlayerInstance player = caster.getActingPlayer();
 			if (player.inObserverMode())
 			{
 				return false;
@@ -849,45 +833,5 @@ public class SkillCaster
 		}
 		
 		return true;
-	}
-	
-	/**
-	 * Calculates the time required for this skill to be cast.
-	 * @param caster the creature that is requesting the calculation.
-	 * @param skill the skill from which casting time will be calculated.
-	 * @param item the item that has been used for this skill cast.
-	 * @return the time in milliseconds required for this skill to be casted.
-	 */
-	public static int getCastTime(Creature caster, Skill skill, ItemInstance item)
-	{
-		if ((item != null) && (item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect()))
-		{
-			return 0;
-		}
-		
-		// Get the Base Casting Time of the Skills.
-		int skillTime = (skill.getHitTime() + skill.getCoolTime());
-		
-		if (!skill.isChanneling() || (skill.getChannelingSkillId() == 0))
-		{
-			// Calculate the Casting Time of the "Non-Static" Skills (with caster PAtk/MAtkSpd).
-			if (!skill.isStatic())
-			{
-				skillTime = Formulas.calcAtkSpd(caster, skill, skillTime);
-			}
-			// Calculate the Casting Time of Magic Skills (reduced in 40% if using SPS/BSPS)
-			if (skill.isMagic() && (caster.isChargedShot(ShotType.SPIRITSHOTS) || caster.isChargedShot(ShotType.BLESSED_SPIRITSHOTS)))
-			{
-				skillTime = (int) (0.6 * skillTime);
-			}
-		}
-		
-		// Client have casting time cap for skills that is 500ms. Abnormal instant skills are excluded.
-		if (!skill.isAbnormalInstant())
-		{
-			skillTime = Math.max(CASTING_TIME_CAP, skillTime);
-		}
-		
-		return skillTime;
 	}
 }
