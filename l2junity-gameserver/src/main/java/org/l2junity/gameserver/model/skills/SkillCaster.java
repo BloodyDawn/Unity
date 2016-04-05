@@ -177,48 +177,62 @@ public class SkillCaster implements Runnable
 			return;
 		}
 		
+		long nextTaskDelay = 0;
+		boolean hasNextPhase = false;
 		switch (_phase++)
 		{
 			case 0: // Start skill casting.
 			{
-				startCasting();
-				_task = ThreadPoolManager.getInstance().scheduleEffect(this, _castTime);
+				hasNextPhase = startCasting();
+				nextTaskDelay = _castTime;
 				break;
 			}
 			case 1: // Launch the skill.
 			{
-				launchSkill();
-				_task = ThreadPoolManager.getInstance().scheduleEffect(this, Formulas.SKILL_LAUNCH_TIME);
+				hasNextPhase = launchSkill();
+				nextTaskDelay = Formulas.SKILL_LAUNCH_TIME;
 				break;
 			}
 			case 2: // Finish launching and apply effects.
 			{
-				finishSkill();
-				_task = ThreadPoolManager.getInstance().scheduleEffect(this, _coolTime);
-				break;
-			}
-			case 3:
-			{
-				stopCasting(false);
+				hasNextPhase = finishSkill();
+				nextTaskDelay = _coolTime;
 				break;
 			}
 		}
+		
+		// Reschedule next task if we have such.
+		if (hasNextPhase)
+		{
+			_task = ThreadPoolManager.getInstance().scheduleEffect(this, nextTaskDelay);
+		}
+		else
+		{
+			// Stop casting if there is no next phase.
+			stopCasting(false);
+		}
+		
 	}
 	
-	public void startCasting()
+	public boolean startCasting()
 	{
 		final Creature caster = _caster.get();
 		final WorldObject target = _target.get();
 		
 		if ((caster == null) || (target == null))
 		{
-			stopCasting(false);
-			return;
+			return false;
 		}
 		
 		_coolTime = Formulas.calcAtkSpd(caster, _skill, _skill.getCoolTime()); // TODO Get proper fomula of this.
 		final int displayedCastTime = _castTime + Formulas.SKILL_LAUNCH_TIME; // For client purposes, it must be displayed to player the skill casting time + launch time.
 		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
+		
+		// Add this SkillCaster to the creature so it can be marked as casting.
+		if (!instantCast)
+		{
+			caster.addSkillCaster(_castingType, this);
+		}
 		
 		// Disable the skill during the re-use delay and create a task EnableSkill with Medium priority to enable it at the end of the re-use delay
 		int reuseDelay = caster.getStat().getReuseTime(_skill);
@@ -299,7 +313,10 @@ public class SkillCaster implements Runnable
 		// Consume the required items. Should happen after use message is displayed and SetupGauge
 		if ((_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0))
 		{
-			caster.destroyItemByItemId("Consume", _skill.getItemConsumeId(), _skill.getItemConsumeCount(), null, true);
+			if (!caster.destroyItemByItemId("Consume", _skill.getItemConsumeId(), _skill.getItemConsumeCount(), null, true))
+			{
+				return false;
+			}
 		}
 		
 		// Trigger any skill cast start effects.
@@ -313,17 +330,18 @@ public class SkillCaster implements Runnable
 		{
 			caster.getSkillChannelizer().startChanneling(_skill);
 		}
+		
+		return true;
 	}
 	
-	public void launchSkill()
+	public boolean launchSkill()
 	{
 		final Creature caster = _caster.get();
 		final WorldObject target = _target.get();
 		
 		if ((caster == null) || (target == null))
 		{
-			stopCasting(false);
-			return;
+			return false;
 		}
 		
 		// Gather list of affected targets by this skill.
@@ -338,17 +356,17 @@ public class SkillCaster implements Runnable
 		
 		// Display animation of launching skill upon targets.
 		caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+		return true;
 	}
 	
-	public void finishSkill()
+	public boolean finishSkill()
 	{
 		final Creature caster = _caster.get();
 		final WorldObject target = _target.get();
 		
 		if ((caster == null) || (target == null))
 		{
-			stopCasting(false);
-			return;
+			return false;
 		}
 		
 		if (_targets == null)
@@ -403,6 +421,7 @@ public class SkillCaster implements Runnable
 		
 		// On each repeat recharge shots before cast.
 		caster.rechargeShots(_skill.useSoulShot(), _skill.useSpiritShot(), false);
+		return true;
 	}
 	
 	public static void callSkill(Creature caster, WorldObject target, Collection<WorldObject> targets, Skill skill, ItemInstance item)
@@ -686,6 +705,12 @@ public class SkillCaster implements Runnable
 	public boolean isAnyNormalType()
 	{
 		return (_castingType == SkillCastingType.NORMAL) || (_castingType == SkillCastingType.NORMAL_SECOND);
+	}
+	
+	@Override
+	public String toString()
+	{
+		return super.toString() + " [caster: " + String.valueOf(_caster.get()) + " skill: " + String.valueOf(_skill) + " target: " + String.valueOf(_target.get()) + " type: " + String.valueOf(_castingType) + "]";
 	}
 	
 	/**

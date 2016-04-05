@@ -1575,7 +1575,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param ctrlPressed if the player has pressed ctrl key during casting, aka force use.
 	 * @param shiftPressed if the player has pressed shift key during casting, aka dont move.
 	 */
-	public void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
+	public synchronized void doCast(Skill skill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
 		// Get proper casting type.
 		SkillCastingType castingType = SkillCastingType.NORMAL;
@@ -1586,11 +1586,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		// Try casting the skill
 		final SkillCaster skillCaster = SkillCaster.castSkill(this, getTarget(), skill, item, castingType, ctrlPressed, shiftPressed);
-		if (skillCaster != null)
-		{
-			_skillCasters.put(castingType, skillCaster);
-		}
-		else if (isPlayer())
+		if ((skillCaster == null) && isPlayer())
 		{
 			// Skill casting failed, notify player.
 			sendPacket(ActionFailed.get(castingType));
@@ -5404,9 +5400,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return _skillCasters.values();
 	}
 	
-	public SkillCaster removeSkillCaster(SkillCastingType skillCastingType)
+	public SkillCaster addSkillCaster(SkillCastingType castingType, SkillCaster skillCaster)
 	{
-		return _skillCasters.remove(skillCastingType);
+		return _skillCasters.put(castingType, skillCaster);
+	}
+	
+	public SkillCaster removeSkillCaster(SkillCastingType castingType)
+	{
+		return _skillCasters.remove(castingType);
 	}
 	
 	@SafeVarargs
