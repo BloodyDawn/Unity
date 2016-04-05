@@ -1029,7 +1029,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isBad()
 	{
-		return (_effectPoint < 0) && !hasEffectType(L2EffectType.HATE);
+		return _effectPoint < 0;
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object)
