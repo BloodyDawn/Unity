@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -51,6 +52,10 @@ public final class Disarm extends AbstractEffect
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		effected.getActingPlayer().disarmWeapons();
+		final PlayerInstance player = effected.getActingPlayer();
+		if (player != null)
+		{
+			player.disarmWeapons();
+		}
 	}
 }
