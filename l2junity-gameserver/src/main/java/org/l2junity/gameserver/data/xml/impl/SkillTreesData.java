@@ -719,18 +719,55 @@ public final class SkillTreesData implements IGameXmlReader
 	public Collection<Skill> getAllAvailableSkills(PlayerInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet)
 	{
 		// Get available skills
-		PlayerSkillHolder holder = new PlayerSkillHolder(player);
-		List<SkillLearn> learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
-		for (int i = 0; (learnable.size() > 0) && (i < 1000); i++) // Infinite loop warning
+		final PlayerSkillHolder holder = new PlayerSkillHolder(player);
+		final Set<Integer> removed = new HashSet<>();
+		for (int i = 0; i < 1000; i++) // Infinite loop warning
 		{
-			for (SkillLearn s : learnable)
+			final List<SkillLearn> learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
+			if (learnable.isEmpty())
 			{
-				Skill sk = SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel());
-				holder.addSkill(sk);
+				// No more skills to learn
+				break;
 			}
 			
-			// Get new available skills, some skills depend of previous skills to be available.
-			learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
+			if (learnable.stream().allMatch(skillLearn -> removed.contains(skillLearn.getSkillId())))
+			{
+				// All remaining skills has been removed
+				break;
+			}
+			
+			for (SkillLearn skillLearn : learnable)
+			{
+				final Skill skill = SkillData.getInstance().getSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+				
+				// Cleanup skills that has to be removed
+				for (int skillId : skillLearn.getRemoveSkills())
+				{
+					// Mark skill as removed, so it doesn't gets added
+					removed.add(skillId);
+					
+					// Remove skill from player's skill list or prepared holder's skill list
+					final Skill playerSkillToRemove = player.getKnownSkill(skillId);
+					final Skill holderSkillToRemove = holder.getKnownSkill(skillId);
+					
+					// If player has the skill remove it
+					if (playerSkillToRemove != null)
+					{
+						player.removeSkill(playerSkillToRemove);
+					}
+					
+					// If holder already contains the skill remove it
+					if (holderSkillToRemove != null)
+					{
+						holder.removeSkill(holderSkillToRemove);
+					}
+				}
+				
+				if (!removed.contains(skill.getId()))
+				{
+					holder.addSkill(skill);
+				}
+			}
 		}
 		return holder.getSkills().values();
 	}
@@ -1403,7 +1440,6 @@ public final class SkillTreesData implements IGameXmlReader
 	{
 		for (Skill skill : player.getAllSkills())
 		{
-			
 			final int maxLvl = SkillData.getInstance().getMaxLevel(skill.getId());
 			final int hashCode = SkillData.getSkillHashCode(skill.getId(), maxLvl);
 			
