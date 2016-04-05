@@ -192,7 +192,23 @@ public enum SkillOperateType
 	 */
 	public boolean isAura()
 	{
-		return (this == A5) || (this == A6);
+		return (this == A5) || (this == A6) || (this == AU);
+	}
+	
+	/**
+	 * @return {@code true} if the operate type skill type should not send messeges for start/finish, {@code false} otherwise
+	 */
+	public boolean isHidingMesseges()
+	{
+		return (this == A5) || (this == A6) || (this == TG);
+	}
+	
+	/**
+	 * @return {@code true} if the operate type skill type should not be broadcasted as MagicSkillUse, MagicSkillLaunched, {@code false} otherwise
+	 */
+	public boolean isNotBroadcastable()
+	{
+		return (this == A5) || (this == A6) || (this == AU) || (this == TG);
 	}
 	
 	/**

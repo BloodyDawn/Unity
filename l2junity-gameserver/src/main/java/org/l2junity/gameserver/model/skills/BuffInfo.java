@@ -283,7 +283,7 @@ public final class BuffInfo
 		}
 		
 		// When effects are initialized, the successfully landed.
-		if (!_hideStartMessage && _effected.isPlayer() && !_skill.isPassive() && !_skill.isAura())
+		if (!_hideStartMessage && _effected.isPlayer() && !_skill.isPassive() && !_skill.isHidingMesseges() && !_skill.isAura())
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S_EFFECT_CAN_BE_FELT);
 			sm.addSkillName(_skill);
@@ -380,7 +380,7 @@ public final class BuffInfo
 		_effected.getStat().recalculateStats(true);
 		
 		// Set the proper system message.
-		if ((_skill != null) && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())
+		if ((_skill != null) && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isHidingMesseges())
 		{
 			SystemMessageId smId = null;
 			if (_skill.isToggle())

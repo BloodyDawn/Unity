@@ -5139,10 +5139,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				WorldObject[] targets = skill.getTargetsAffected(this, target).toArray(new WorldObject[0]);
 				
-				broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
-				if (!skill.isToggle())
+				if (!skill.isNotBroadcastable())
 				{
-					broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));
+					broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
+					if (!skill.isToggle())
+					{
+						broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));
+					}
 				}
 				
 				// Launch the magic skill and calculate its effects

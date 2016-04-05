@@ -299,7 +299,10 @@ public class SkillCaster implements Runnable
 		
 		// Send a packet starting the casting.
 		final int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.getId()) : -1;
-		caster.broadcastPacket(new MagicSkillUse(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
+		if (!_skill.isNotBroadcastable())
+		{
+			caster.broadcastPacket(new MagicSkillUse(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
+		}
 		
 		if (caster.isPlayer() && !instantCast)
 		{
@@ -355,7 +358,10 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Display animation of launching skill upon targets.
-		caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+		if (!_skill.isNotBroadcastable())
+		{
+			caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+		}
 		return true;
 	}
 	
