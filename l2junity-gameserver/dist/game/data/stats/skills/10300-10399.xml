@@ -761,8 +761,6 @@
 	</skill>
 	<skill id="10320" toLevel="3" name="Faceoff">
 		<!-- Engages target in 1:1 combat. Invincible for 30 seconds, and Duelist's Fury is applied, increasing PvP Damage by 20%, Speed by 66, and Debuff Resistance by 90%. -->
-		<table name="#magicLvl"> 90 95 99 </table>
-		<table name="#triggerLvl"> 1 2 3 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>DUELING</abnormalVisualEffect>
@@ -776,9 +774,14 @@
 		<reuseDelay>600000</reuseDelay>
 		<effectPoint>-500</effectPoint>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<target player="true" />
-		</cond>
+		<magicLvl>
+			<value level="1">90</value>
+			<value level="2">95</value>
+			<value level="3">99</value>
+		</magicLvl>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<selfEffects>
 			<effect name="CallSkill">
 				<!-- Duelist's Fury -->
