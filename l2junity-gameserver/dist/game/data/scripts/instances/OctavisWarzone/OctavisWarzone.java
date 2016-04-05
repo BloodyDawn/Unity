@@ -340,6 +340,22 @@ public final class OctavisWarzone extends AbstractInstance
 					getTimers().addTimer("BEASTS_MINIONS_SPAWN", 1000, npc, null);
 					// myself->AddTimerEx(Gladiator_Fishnet_Timer, 15 * 1000);
 				}
+				
+				final int hpState = npcVars.getInt("HP_STATE", 0);
+				if ((npc.getMaxHp() - npc.getCurrentHp()) > (npc.getMaxHp() * 0.01 * hpState))
+				{
+					final int state = hpState % 5;
+					if (state == 0)
+					{
+						npc.setState(5);
+						// myself->AddTimerEx(Medusa_Skill_Timer, 15 * 1000);
+					}
+					else
+					{
+						npc.setState(state);
+					}
+					npcVars.set("HP_STATE", hpState + 1);
+				}
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
