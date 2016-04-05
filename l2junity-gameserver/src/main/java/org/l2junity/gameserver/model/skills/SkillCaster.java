@@ -89,6 +89,7 @@ public class SkillCaster implements Runnable
 	private final ItemInstance _item;
 	private final SkillCastingType _castingType;
 	private final int _castTime;
+	private int _coolTime;
 	private Collection<WorldObject> _targets;
 	private ScheduledFuture<?> _task;
 	private int _phase;
@@ -193,7 +194,7 @@ public class SkillCaster implements Runnable
 			case 2: // Finish launching and apply effects.
 			{
 				finishSkill();
-				_task = ThreadPoolManager.getInstance().scheduleEffect(this, _skill.getCoolTime());
+				_task = ThreadPoolManager.getInstance().scheduleEffect(this, _coolTime);
 				break;
 			}
 			case 3:
@@ -215,6 +216,7 @@ public class SkillCaster implements Runnable
 			return;
 		}
 		
+		_coolTime = Formulas.calcAtkSpd(caster, _skill, _skill.getCoolTime()); // TODO Get proper fomula of this.
 		final int displayedCastTime = _castTime + Formulas.SKILL_LAUNCH_TIME; // For client purposes, it must be displayed to player the skill casting time + launch time.
 		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
 		
