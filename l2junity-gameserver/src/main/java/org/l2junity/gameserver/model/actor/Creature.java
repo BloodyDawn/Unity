@@ -96,6 +96,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageDealt;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKilled;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleport;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleported;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
@@ -1937,6 +1938,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		EventDispatcher.getInstance().notifyEvent(new OnCreatureKill(killer, this), this);
+		EventDispatcher.getInstance().notifyEvent(new OnCreatureKilled(killer, this), killer);
 		
 		calculateRewards(killer);
 		
@@ -3274,7 +3276,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		double delta = (dx * dx) + (dy * dy);
 		if ((delta < 10000) && ((dz * dz) > 2500) // close enough, allows error between client and server geodata if it cannot be avoided
-		&& !isFloating)
+			&& !isFloating)
 		{
 			delta = Math.sqrt(delta);
 		}
@@ -4456,7 +4458,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	// Quest event ON_SPELL_FNISHED
 	public void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
-	
+		
 	}
 	
 	/**
@@ -4975,7 +4977,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
-	
+		
 	}
 	
 	public AttributeType getAttackElement()

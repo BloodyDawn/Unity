@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKilled;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -44,7 +44,7 @@ public final class TriggerSkillByKill extends AbstractEffect
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
 	}
 	
-	public void onCreatureKill(OnCreatureKill event, Creature target)
+	public void onCreatureKilled(OnCreatureKilled event, Creature target)
 	{
 		if ((_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)))
 		{
@@ -67,12 +67,12 @@ public final class TriggerSkillByKill extends AbstractEffect
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().removeListenerIf(EventType.ON_CREATURE_KILL, listener -> listener.getOwner() == this);
+		info.getEffected().removeListenerIf(EventType.ON_CREATURE_KILLED, listener -> listener.getOwner() == this);
 	}
 	
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_KILL, (OnCreatureKill event) -> onCreatureKill(event, info.getEffected()), this));
+		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_KILLED, (OnCreatureKilled event) -> onCreatureKilled(event, info.getEffected()), this));
 	}
 }
