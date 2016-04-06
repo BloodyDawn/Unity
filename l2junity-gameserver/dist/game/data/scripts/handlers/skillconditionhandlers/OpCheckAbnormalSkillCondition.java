@@ -50,9 +50,9 @@ public class OpCheckAbnormalSkillCondition implements ISkillCondition
 			final BuffInfo info = ((Creature) target).getEffectList().getBuffInfoByAbnormalType(_type);
 			if (_hasAbnormal)
 			{
-				return (info != null) && (info.getSkill().getAbnormalLvl() == _level);
+				return (info != null) && (info.getSkill().getAbnormalLvl() >= _level);
 			}
-			return (info == null) || (info.getSkill().getAbnormalLvl() != _level);
+			return (info == null) || (info.getSkill().getAbnormalLvl() < _level);
 		}
 		return false;
 	}
