@@ -5227,13 +5227,13 @@ public final class PlayerInstance extends Playable
 				{
 					// Don't drop
 					if (itemDrop.isShadowItem() || // Dont drop Shadow Items
-					itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
-					!itemDrop.isDropable() || (itemDrop.getId() == Inventory.ADENA_ID) || // Adena
-					(itemDrop.getItem().getType2() == L2Item.TYPE2_QUEST) || // Quest Items
-					((pet != null) && (pet.getControlObjectId() == itemDrop.getId())) || // Control Item of active pet
-					(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_ITEMS, itemDrop.getId()) >= 0) || // Item listed in the non droppable item list
-					(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_PET_ITEMS, itemDrop.getId()) >= 0 // Item listed in the non droppable pet item list
-					))
+						itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
+						!itemDrop.isDropable() || (itemDrop.getId() == Inventory.ADENA_ID) || // Adena
+						(itemDrop.getItem().getType2() == L2Item.TYPE2_QUEST) || // Quest Items
+						((pet != null) && (pet.getControlObjectId() == itemDrop.getId())) || // Control Item of active pet
+						(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_ITEMS, itemDrop.getId()) >= 0) || // Item listed in the non droppable item list
+						(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_PET_ITEMS, itemDrop.getId()) >= 0 // Item listed in the non droppable pet item list
+						))
 					{
 						continue;
 					}
@@ -5481,7 +5481,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		setExpBeforeDeath(getExp());
-		getStat().addExp(-lostExp);
+		getStat().removeExp(lostExp);
 	}
 	
 	/**
