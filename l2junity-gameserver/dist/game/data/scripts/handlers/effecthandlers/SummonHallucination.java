@@ -100,6 +100,7 @@ public class SummonHallucination extends AbstractEffect
 			clone.setSummoner(player);
 			clone.spawnMe(x, y, z);
 			clone.scheduleDespawn(_despawnDelay);
+			clone.doAttack(effected);
 		}
 	}
 }

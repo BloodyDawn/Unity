@@ -1996,6 +1996,9 @@
 			</condition>
 		</conditions>
 		<effects>
+			<!-- TODO Check TeleportToTarget, not in GDL files -->
+			<effect name="TeleportToTarget" />
+			<effect name="TargetCancel" />
 			<effect name="DeleteHateOfMe" />
 			<effect name="SummonHallucination">
 				<npcId>
@@ -2010,9 +2013,6 @@
 				<npcCount>3</npcCount>
 				<despawnDelay>30000</despawnDelay>
 			</effect>
-			<effect name="TargetCancel" />
-			<!-- TODO Check TeleportToTarget, not in GDL files -->
-			<effect name="TeleportToTarget" />
 		</effects>
 		<!-- TODO Check endEffects, not in GDL files -->
 		<endEffects>
