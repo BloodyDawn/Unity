@@ -9573,6 +9573,12 @@ public final class PlayerInstance extends Playable
 				deleteSubclass.setInt(1, getObjectId());
 				deleteSubclass.setInt(2, classIndex);
 				deleteSubclass.execute();
+				
+				if (getSubClasses().get(classIndex).isDualClass())
+				{
+					getVariables().remove(PlayerVariables.ABILITY_POINTS_DUAL_CLASS);
+					getVariables().remove(PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS);
+				}
 			}
 			catch (Exception e)
 			{
@@ -13276,7 +13282,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public int getAbilityPoints()
 	{
-		return getVariables().getInt("ABILITY_POINTS", 0);
+		return getVariables().getInt(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_MAIN_CLASS, 0);
 	}
 	
 	/**
@@ -13285,7 +13291,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public void setAbilityPoints(int points)
 	{
-		getVariables().set("ABILITY_POINTS", points);
+		getVariables().set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_MAIN_CLASS, points);
 	}
 	
 	/**
@@ -13293,7 +13299,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public int getAbilityPointsUsed()
 	{
-		return getVariables().getInt("ABILITY_POINTS_USED", 0);
+		return getVariables().getInt(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, 0);
 	}
 	
 	/**
@@ -13302,7 +13308,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public void setAbilityPointsUsed(int points)
 	{
-		getVariables().set("ABILITY_POINTS_USED", points);
+		getVariables().set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, points);
 	}
 	
 	/**

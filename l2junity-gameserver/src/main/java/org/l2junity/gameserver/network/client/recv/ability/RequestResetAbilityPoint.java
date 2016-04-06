@@ -51,6 +51,11 @@ public class RequestResetAbilityPoint implements IClientIncomingPacket
 			return;
 		}
 		
+		if (activeChar.isSubClassActive() && !activeChar.isDualClassActive())
+		{
+			return;
+		}
+		
 		if ((activeChar.getPrivateStoreType() != PrivateStoreType.NONE) || (activeChar.getActiveRequester() != null))
 		{
 			return;

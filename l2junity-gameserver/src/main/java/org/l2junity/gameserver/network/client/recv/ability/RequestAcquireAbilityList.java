@@ -45,7 +45,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 {
 	private static final int TREE_SIZE = 3;
 	private final Map<Integer, SkillHolder> _skills = new LinkedHashMap<>();
-
+	
 	@Override
 	public boolean read(L2GameClient client, PacketReader packet)
 	{
@@ -75,6 +75,11 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			return;
 		}
 		
+		if (activeChar.isSubClassActive() && !activeChar.isDualClassActive())
+		{
+			return;
+		}
+		
 		if ((activeChar.getAbilityPoints() == 0) || (activeChar.getAbilityPoints() == activeChar.getAbilityPointsUsed()))
 		{
 			_log.warn("Player {} is trying to learn ability without ability points!", activeChar);
@@ -94,7 +99,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 		
 		final int[] pointsSpent = new int[TREE_SIZE];
 		Arrays.fill(pointsSpent, 0);
-
+		
 		final List<SkillLearn> skillsToLearn = new ArrayList<>(_skills.size());
 		for (SkillHolder holder : _skills.values())
 		{
@@ -121,10 +126,10 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			
 			skillsToLearn.add(learn);
 		}
-
+		
 		// Sort the skills by their tree id -> row -> column
 		skillsToLearn.sort(Comparator.comparingInt(SkillLearn::getTreeId).thenComparing(SkillLearn::getRow).thenComparing(SkillLearn::getColumn));
-
+		
 		for (SkillLearn learn : skillsToLearn)
 		{
 			final Skill skill = SkillData.getInstance().getSkill(learn.getSkillId(), learn.getSkillLevel());
@@ -167,7 +172,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			}
 			
 			pointsSpent[learn.getTreeId() - 1] += points;
-
+			
 			activeChar.addSkill(skill, true);
 			activeChar.setAbilityPointsUsed(activeChar.getAbilityPointsUsed() + points);
 		}

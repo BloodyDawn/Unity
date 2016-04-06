@@ -57,7 +57,7 @@ public class ExAcquireAPSkillList implements IClientOutgoingPacket
 				}
 			}
 		}
-		_enable = !activeChar.isSubClassActive() && (activeChar.getLevel() >= 99) && activeChar.isNoble();
+		_enable = (!activeChar.isSubClassActive() || activeChar.isDualClassActive()) && (activeChar.getLevel() >= 99) && activeChar.isNoble();
 	}
 	
 	@Override
