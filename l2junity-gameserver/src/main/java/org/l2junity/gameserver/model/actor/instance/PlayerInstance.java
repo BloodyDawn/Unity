@@ -1667,9 +1667,13 @@ public final class PlayerInstance extends Playable
 		}
 		setPvpFlag(value);
 		
-		UserInfo ui = new UserInfo(this, false);
-		ui.addComponentType(UserInfoType.SOCIAL);
-		sendPacket(ui);
+		final StatusUpdate su = new StatusUpdate(this);
+		computeStatusUpdate(su, StatusUpdateType.PVP_FLAG);
+		if (su.hasUpdates())
+		{
+			broadcastPacket(su);
+			sendPacket(su);
+		}
 		
 		// If this player has a pet update the pets pvp flag as well
 		if (hasSummon())
