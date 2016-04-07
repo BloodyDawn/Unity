@@ -41,7 +41,7 @@ public class MaxHp extends AbstractStatEffect
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		if (_heal)
+		if (_heal && !effected.isInvul())
 		{
 			switch (_mode)
 			{
