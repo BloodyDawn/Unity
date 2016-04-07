@@ -60,7 +60,7 @@ public class Target implements ITargetTypeHandler
 			return target;
 		}
 		
-		if (!target.isAutoAttackable(activeChar) || forceUse)
+		if (target.isAutoAttackable(activeChar) || forceUse)
 		{
 			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
 			if (dontMove)

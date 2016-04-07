@@ -93,11 +93,6 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 			return;
 		}
 		
-		if (event.getSkill().getLevel() < _attackSkill.getSkillLvl())
-		{
-			return;
-		}
-		
 		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
 		if (targetHandler == null)
 		{

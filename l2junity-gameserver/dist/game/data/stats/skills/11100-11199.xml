@@ -2308,7 +2308,6 @@
 	<skill id="11177" toLevel="7" name="Aqua Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
-		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<icon>icon.skill10879</icon>
 		<reuseDelayGroup>11177</reuseDelayGroup>
 		<allStanceSkillId>11189</allStanceSkillId> <!-- Double Casting skill Id -->
@@ -2341,6 +2340,7 @@
 		<coolTime>300</coolTime>
 		<effectPoint>-687</effectPoint>
 		<isMagic>1</isMagic>
+		<doubleCastSkill>11189</doubleCastSkill>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2751,7 +2751,6 @@
 	<skill id="11188" toLevel="5" name="Frozen">
 		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
-		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Totally Guessed, TODO Freeze target at level 5 -->
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2784,7 +2783,6 @@
 	<skill id="11189" toLevel="7" name="Aqua Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
-		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<icon>icon.skill10879</icon>
 		<reuseDelayGroup>11177</reuseDelayGroup>
 		<attributeType>WATER</attributeType>
@@ -2869,12 +2867,17 @@
 		<castRange>0</castRange>
 		<effects>
 			<effect name="TriggerSkillBySkillAttack">
-				<!-- Aqua Crash -->
-				<!-- Frozen --> <!-- Chance guessed -->
-				<attackSkillId>11189</attackSkillId>
-				<skillId>11196</skillId>
+				<attackSkillId>11177</attackSkillId> <!-- Aqua Crash -->
+				<skillId>11188</skillId> <!-- Frozen --> 
 				<skillLevel>1</skillLevel>
-				<chance>33</chance>
+				<skillLevelScaleTo>5</skillLevelScaleTo>
+				<chance>33</chance> <!-- Chance guessed -->
+			</effect>
+			<effect name="TriggerSkillBySkillAttack">
+				<attackSkillId>11189</attackSkillId> <!-- Aqua Crash -->
+				<skillId>11196</skillId> <!-- Frozen -->
+				<skillLevel>1</skillLevel>
+				<chance>33</chance> <!-- Chance guessed -->
 			</effect>
 		</effects>
 	</skill>
