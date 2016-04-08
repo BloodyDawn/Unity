@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.TimeStamp;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -42,7 +44,8 @@ public class SkillCoolTime implements IClientOutgoingPacket
 		{
 			for (TimeStamp ts : skillReuseTimeStamps.values())
 			{
-				if (ts.hasNotPassed())
+				final Skill skill = SkillData.getInstance().getSkill(ts.getSkillId(), ts.getSkillLvl());
+				if (ts.hasNotPassed() && !skill.isNotBroadcastable())
 				{
 					_skillReuseTimeStamps.add(ts);
 				}
