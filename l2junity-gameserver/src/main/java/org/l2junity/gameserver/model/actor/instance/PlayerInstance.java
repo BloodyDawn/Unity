@@ -197,6 +197,7 @@ import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerAbilityPointsChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaAdd;
@@ -4172,8 +4173,8 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
 	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B>
 	 * <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li>
-	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP,
-	 * STR, DEX...</B></FONT>
+	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
 	 */
 	public final void broadcastUserInfo()
 	{
@@ -5231,13 +5232,13 @@ public final class PlayerInstance extends Playable
 				{
 					// Don't drop
 					if (itemDrop.isShadowItem() || // Dont drop Shadow Items
-						itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
-						!itemDrop.isDropable() || (itemDrop.getId() == Inventory.ADENA_ID) || // Adena
-						(itemDrop.getItem().getType2() == L2Item.TYPE2_QUEST) || // Quest Items
-						((pet != null) && (pet.getControlObjectId() == itemDrop.getId())) || // Control Item of active pet
-						(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_ITEMS, itemDrop.getId()) >= 0) || // Item listed in the non droppable item list
-						(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_PET_ITEMS, itemDrop.getId()) >= 0 // Item listed in the non droppable pet item list
-						))
+					itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
+					!itemDrop.isDropable() || (itemDrop.getId() == Inventory.ADENA_ID) || // Adena
+					(itemDrop.getItem().getType2() == L2Item.TYPE2_QUEST) || // Quest Items
+					((pet != null) && (pet.getControlObjectId() == itemDrop.getId())) || // Control Item of active pet
+					(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_ITEMS, itemDrop.getId()) >= 0) || // Item listed in the non droppable item list
+					(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_PET_ITEMS, itemDrop.getId()) >= 0 // Item listed in the non droppable pet item list
+					))
 					{
 						continue;
 					}
@@ -13312,6 +13313,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public void setAbilityPointsUsed(int points)
 	{
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerAbilityPointsChanged(this, getAbilityPointsUsed(), points), this);
 		getVariables().set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, points);
 	}
 	
