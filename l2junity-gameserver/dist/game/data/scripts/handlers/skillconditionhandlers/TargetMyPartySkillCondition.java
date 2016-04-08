@@ -44,7 +44,9 @@ public class TargetMyPartySkillCondition implements ISkillCondition
 		{
 			return false;
 		}
+		
 		final Party party = caster.getParty();
-		return (party != null) && (party == target.getActingPlayer().getParty());
+		final Party targetParty = target.getActingPlayer().getParty();
+		return ((party == null) ? (_includeMe && (caster == target)) : (_includeMe ? party == targetParty : (party == targetParty) && (caster != target)));
 	}
 }
