@@ -100,18 +100,7 @@ public final class AdminInstance implements IAdminCommandHandler
 				
 				if (template != null)
 				{
-					final String enterGroup;
-					
-					if (st.hasMoreTokens())
-					{
-						enterGroup = st.nextToken();
-					}
-					else
-					{
-						activeChar.sendMessage("Wrong parameters! Please try again.");
-						return true;
-					}
-					
+					final String enterGroup = st.hasMoreTokens() ? st.nextToken() : "Alone";
 					final List<PlayerInstance> members = new ArrayList<>();
 					
 					switch (enterGroup)
