@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneType;
@@ -72,6 +73,9 @@ public final class OctavisWarzone extends AbstractInstance
 	};
 	private static final int LYDIA = 32892;
 	private static final int DOOR_MANAGER = 18984;
+	// Skills
+	private static final SkillHolder STAGE_2_SKILL_1 = new SkillHolder(14026, 1);
+	private static final SkillHolder STAGE_2_SKILL_2 = new SkillHolder(14027, 1);
 	// Locations
 	private static final Location BATTLE_LOC = new Location(208720, 120576, -10000);
 	private static final Location OCTAVIS_SPAWN_LOC = new Location(207069, 120580, -9987);
@@ -224,7 +228,7 @@ public final class OctavisWarzone extends AbstractInstance
 				}
 				case "START_STAGE_2":
 				{
-					world.spawnGroup("STAGE_2");
+					world.spawnGroup("STAGE_2").forEach(octavis -> ((Attackable) octavis).setCanReturnToSpawnPoint(false));
 					break;
 				}
 				case "GLADIATOR_START_SPAWN":
@@ -286,6 +290,24 @@ public final class OctavisWarzone extends AbstractInstance
 					getTimers().addTimer("MINION_CALL", 5000 + (getRandom(5) * 1000), npc, null);
 					break;
 				}
+				case "ATTACK_TIMER":
+				{
+					final Creature mostHated = ((Attackable) npc).getMostHated();
+					if ((mostHated != null) && mostHated.isPlayable() && (npc.calculateDistance(mostHated, false, false) < 1000))
+					{
+						final int random = getRandom(5);
+						if (random < 3)
+						{
+							addSkillCastDesire(npc, mostHated, STAGE_2_SKILL_1, 23);
+						}
+						else if (random < 5)
+						{
+							addSkillCastDesire(npc, mostHated, STAGE_2_SKILL_2, 23);
+						}
+					}
+					getTimers().addTimer("ATTACK_TIMER", getRandom(7, 9) * 1000, npc, null);
+					break;
+				}
 			}
 		}
 	}
@@ -333,7 +355,7 @@ public final class OctavisWarzone extends AbstractInstance
 				{
 					npcVars.set("START_TIMERS", false);
 					getTimers().addTimer("GLADIATOR_START_SPAWN", 6000, npc, null);
-					// myself->AddTimerEx(Attack_Timer, 15 * 1000);
+					getTimers().addTimer("ATTACK_TIMER", 15000, npc, null);
 					getTimers().addTimer("MINION_CALL", 30000, npc, null);
 					// myself->AddTimerEx(Royal_Timer, 30 * 1000);
 					// myself->AddTimerEx(Scan_Timer, 1000);
@@ -373,6 +395,7 @@ public final class OctavisWarzone extends AbstractInstance
 				world.getAliveNpcs(BEASTS).forEach(beast ->
 				{
 					getTimers().cancelTimer("BEASTS_CHECK_HP", beast, null);
+					WalkingManager.getInstance().cancelMoving(npc);
 					beast.deleteMe();
 				});
 				getTimers().addTimer("END_STAGE_1", 1000, npc, null);
@@ -382,6 +405,7 @@ public final class OctavisWarzone extends AbstractInstance
 				// Cancel timers
 				getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", npc, null);
 				getTimers().cancelTimer("MINION_CALL", npc, null);
+				getTimers().cancelTimer("ATTACK_TIMER", npc, null);
 				// Despawn beasts
 				world.getAliveNpcs(BEASTS_MINIONS).forEach(beast -> beast.doDie(null));
 				
@@ -428,6 +452,7 @@ public final class OctavisWarzone extends AbstractInstance
 		{
 			getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", octavis, null);
 			getTimers().cancelTimer("MINION_CALL", octavis, null);
+			getTimers().cancelTimer("ATTACK_TIMER", octavis, null);
 		});
 	}
 	
