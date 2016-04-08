@@ -49,6 +49,10 @@ public class Target implements ITargetTypeHandler
 		
 		if (!selectedTarget.isCreature())
 		{
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+			}
 			return null;
 		}
 		
@@ -60,50 +64,39 @@ public class Target implements ITargetTypeHandler
 			return target;
 		}
 		
-		if (target.isAutoAttackable(activeChar) || forceUse)
+		// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
+		if (dontMove)
 		{
-			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
-			if (dontMove)
-			{
-				if (activeChar.calculateDistance(target, false, false) > skill.getCastRange())
-				{
-					if (sendMessage)
-					{
-						activeChar.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
-					}
-					
-					return null;
-				}
-			}
-			
-			if ((skill.getFlyType() == FlyType.CHARGE) && !GeoData.getInstance().canMove(activeChar, target))
+			if (activeChar.calculateDistance(target, false, false) > skill.getCastRange())
 			{
 				if (sendMessage)
 				{
-					activeChar.sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
-				}
-				return null;
-			}
-			
-			// Geodata check when character is within range.
-			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
-			{
-				if (sendMessage)
-				{
-					activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+					activeChar.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
 				}
 				
 				return null;
 			}
-			
-			return target;
 		}
 		
-		if (sendMessage)
+		if ((skill.getFlyType() == FlyType.CHARGE) && !GeoData.getInstance().canMove(activeChar, target))
 		{
-			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
+			}
+			return null;
 		}
 		
-		return null;
+		// Geodata check when character is within range.
+		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+		{
+			if (sendMessage)
+			{
+				activeChar.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+			}
+			
+			return null;
+		}
+		return target;
 	}
 }
