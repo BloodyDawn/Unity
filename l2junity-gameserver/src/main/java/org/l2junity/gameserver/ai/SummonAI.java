@@ -275,7 +275,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			_startAvoid = false;
 			
-			if (!_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled())
+			if (!_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled() && (_actor.getMoveSpeed() > 0))
 			{
 				final int ownerX = ((Summon) _actor).getOwner().getX();
 				final int ownerY = ((Summon) _actor).getOwner().getY();

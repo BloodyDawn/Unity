@@ -202,7 +202,7 @@ public class DoppelgangerAI extends CharacterAI
 	protected void moveToPawn(WorldObject pawn, int offset)
 	{
 		// Check if actor can move
-		if (!_actor.isMovementDisabled())
+		if (!_actor.isMovementDisabled() && (_actor.getMoveSpeed() > 0))
 		{
 			if (offset < 10)
 			{

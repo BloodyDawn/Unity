@@ -406,7 +406,12 @@ public abstract class AbstractAI implements Ctrl
 					{
 						return;
 					}
-					sendPacket = false;
+					
+					// If actor has arrived at designated pawn spot, don't send packets anymore.
+					if (!_actor.isMoving())
+					{
+						sendPacket = false;
+					}
 				}
 				else if (_actor.isOnGeodataPath())
 				{
@@ -717,7 +722,7 @@ public abstract class AbstractAI implements Ctrl
 			{
 				LOGGER.warn("Error: " + e.getMessage());
 			}
-		} , 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
+		}, 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
 	}
 	
 	/**

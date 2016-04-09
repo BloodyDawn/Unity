@@ -403,7 +403,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isMovementDisabled())
+		if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -880,7 +880,7 @@ public class CharacterAI extends AbstractAI
 		
 		if (!_actor.isInsideRadius(worldPosition, offset + _actor.getTemplate().getCollisionRadius(), false, false))
 		{
-			if (_actor.isMovementDisabled())
+			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 			{
 				return true;
 			}
@@ -970,7 +970,7 @@ public class CharacterAI extends AbstractAI
 				return false;
 			}
 			
-			if (_actor.isMovementDisabled())
+			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 			{
 				// If player is trying attack target but he cannot move to attack target
 				// change his intention to idle

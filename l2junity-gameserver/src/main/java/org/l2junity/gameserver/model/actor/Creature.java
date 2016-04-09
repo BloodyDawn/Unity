@@ -2860,6 +2860,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return;
 		}
 		
+		// If this creature was previously moving, but now due to stat change can no longer move, broadcast StopMove packet.
+		if (isMoving() && (getMoveSpeed() <= 0))
+		{
+			stopMove(null);
+		}
+		
 		if (isSummon())
 		{
 			Summon summon = (Summon) this;
