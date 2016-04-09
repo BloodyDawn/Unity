@@ -8378,54 +8378,13 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
-		// ************************************* Check casting conditions *******************************************
-		
 		// Check if all casting conditions are completed
 		if (!skill.checkCondition(this, target))
 		{
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		// ************************************* Check Skill Type *******************************************
-		
-		// Check if this is bad magic skill
-		if (skill.isBad())
-		{
-			if (isInOlympiadMode() && !isOlympiadStart())
-			{
-				// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-		}
-		
-		if (skill.hasEffectType(L2EffectType.TELEPORT_TO_TARGET))
-		{
-			// You cannot jump while rooted right ;)
-			if (isMovementDisabled())
-			{
-				// Sends message that skill cannot be used...
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-				sm.addSkillName(skill.getId());
-				sendPacket(sm);
-				// Send a Server->Client packet ActionFailed to the L2PcInstance
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			// And this skill cannot be used in peace zone, not even on NPCs!
-			if (isInsideZone(ZoneId.PEACE))
-			{
-				// Sends a sys msg to client
-				sendPacket(SystemMessageId.YOU_MAY_NOT_ATTACK_THIS_TARGET_IN_A_PEACEFUL_ZONE);
-				// Send a Server->Client packet ActionFailed to the L2PcInstance
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-		}
-		
-		// finally, after passing all conditions
 		return true;
 	}
 	
