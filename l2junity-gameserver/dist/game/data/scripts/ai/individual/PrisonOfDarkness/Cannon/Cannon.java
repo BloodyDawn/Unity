@@ -97,8 +97,7 @@ public final class Cannon extends AbstractNpcAI
 				npc.setScriptValue(0);
 				npc.setTitleString(NpcStringId.CANNON_IS_LOADING);
 				npc.broadcastInfo();
-				npc.setTarget(npc);
-				npc.doCast(PRESENT_SKILL.getSkill());
+				addSkillCastDesire(npc, npc, PRESENT_SKILL, 23);
 				getTimers().addTimer("CANNON_RECHARGE", 300000, npc, null);
 			}
 		}

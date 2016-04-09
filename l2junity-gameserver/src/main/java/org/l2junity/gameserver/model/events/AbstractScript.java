@@ -3044,8 +3044,8 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		{
 			((Attackable) npc).addDamageHate((Creature) target, 0, desire);
 		}
-		npc.setTarget(target);
-		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
+		npc.setTarget(target != null ? target : npc);
+		npc.doCast(skill);
 	}
 	
 	/**
