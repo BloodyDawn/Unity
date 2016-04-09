@@ -35,8 +35,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Physical Attack effect implementation. <br>
@@ -92,14 +90,6 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 	{
 		if (effector.isAlikeDead())
 		{
-			return;
-		}
-		
-		if (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && effector.isMovementDisabled())
-		{
-			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(skill);
-			effector.sendPacket(sm);
 			return;
 		}
 		

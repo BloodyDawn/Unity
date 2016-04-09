@@ -28,8 +28,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Physical Attack HP Link effect implementation.
@@ -71,14 +69,6 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	{
 		if (effector.isAlikeDead())
 		{
-			return;
-		}
-		
-		if (effector.isMovementDisabled())
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(skill);
-			effector.sendPacket(sm);
 			return;
 		}
 		
