@@ -34,6 +34,7 @@ public final class EffectMasterHandler
 	
 	public static void main(String[] args)
 	{
+		EffectHandler.getInstance().registerHandler("AbnormalShield", AbnormalShield::new);
 		EffectHandler.getInstance().registerHandler("AbnormalTimeChange", AbnormalTimeChange::new);
 		EffectHandler.getInstance().registerHandler("AbsorbDamage", AbsorbDamage::new);
 		EffectHandler.getInstance().registerHandler("Accuracy", Accuracy::new);

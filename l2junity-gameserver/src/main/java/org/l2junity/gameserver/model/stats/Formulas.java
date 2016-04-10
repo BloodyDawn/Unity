@@ -934,7 +934,7 @@ public final class Formulas
 				times = target.decrementDebuffBlockTimes();
 				if (times == 0)
 				{
-					target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 				}
 			}
 			return false;
@@ -978,7 +978,7 @@ public final class Formulas
 					times = target.decrementDebuffBlockTimes();
 					if (times == 0)
 					{
-						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+						target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 					}
 				}
 				resisted = true;
@@ -1064,7 +1064,7 @@ public final class Formulas
 					times = target.decrementDebuffBlockTimes();
 					if (times == 0)
 					{
-						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+						target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 					}
 				}
 				return false;

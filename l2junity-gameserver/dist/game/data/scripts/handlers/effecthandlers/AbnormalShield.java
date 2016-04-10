@@ -21,20 +21,43 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
+import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
- * Effect that blocks all incoming debuffs.
+ * An effect that blocks a debuff. Acts like DOTA's Linken Sphere.
  * @author Nik
  */
-public final class DebuffBlock extends AbstractEffect
+public final class AbnormalShield extends AbstractEffect
 {
-	public DebuffBlock(StatsSet params)
+	private final int _times;
+	
+	public AbnormalShield(StatsSet params)
 	{
+		_times = params.getInt("times", -1);
+	}
+	
+	@Override
+	public void onStart(BuffInfo info)
+	{
+		info.getEffected().setDebuffBlockTimes(_times);
 	}
 	
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.DEBUFF_BLOCK.getMask();
+		return EffectFlag.ABNORMAL_SHIELD.getMask();
+	}
+	
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		info.getEffected().setDebuffBlockTimes(Integer.MIN_VALUE);
+	}
+	
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.ABNORMAL_SHIELD;
 	}
 }
