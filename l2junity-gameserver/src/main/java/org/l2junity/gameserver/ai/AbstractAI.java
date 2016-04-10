@@ -397,7 +397,6 @@ public abstract class AbstractAI implements Ctrl
 			
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
-			boolean sendPacket = true;
 			if (_clientMoving && (_target == pawn))
 			{
 				if (_clientMovingToPawnOffset == offset)
@@ -405,12 +404,6 @@ public abstract class AbstractAI implements Ctrl
 					if (GameTimeController.getInstance().getGameTicks() < _moveToPawnTimeout)
 					{
 						return;
-					}
-					
-					// If actor has arrived at designated pawn spot, don't send packets anymore.
-					if (!_actor.isMoving())
-					{
-						sendPacket = false;
 					}
 				}
 				else if (_actor.isOnGeodataPath())
@@ -452,7 +445,7 @@ public abstract class AbstractAI implements Ctrl
 					_actor.broadcastPacket(new MoveToLocation(_actor));
 					_clientMovingToPawnOffset = 0;
 				}
-				else if (sendPacket)
+				else
 				{
 					_actor.broadcastPacket(new MoveToPawn(_actor, pawn, offset));
 				}
