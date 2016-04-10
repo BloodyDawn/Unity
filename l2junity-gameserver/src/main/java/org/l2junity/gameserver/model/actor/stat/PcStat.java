@@ -49,9 +49,6 @@ import org.l2junity.gameserver.util.Util;
 
 public class PcStat extends PlayableStat
 {
-	private int _oldMaxHp; // stats watch
-	private int _oldMaxMp; // stats watch
-	private int _oldMaxCp; // stats watch
 	private long _startingXp;
 	/** Player's maximum talisman count. */
 	private final AtomicInteger _talismanSlots = new AtomicInteger();
@@ -407,63 +404,6 @@ public class PcStat extends PlayableStat
 		{
 			super.setLevel(value);
 		}
-	}
-	
-	@Override
-	public final int getMaxCp()
-	{
-		// Get the Max CP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxCp();
-		if (val != _oldMaxCp)
-		{
-			_oldMaxCp = val;
-			
-			// Launch a regen task if the new Max CP is higher than the old one
-			if (getActiveChar().getStatus().getCurrentCp() != val)
-			{
-				getActiveChar().getStatus().setCurrentCp(getActiveChar().getStatus().getCurrentCp()); // trigger start of regeneration
-			}
-		}
-		return val;
-	}
-	
-	@Override
-	public final int getMaxHp()
-	{
-		// Get the Max HP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxHp();
-		if (val != _oldMaxHp)
-		{
-			_oldMaxHp = val;
-			
-			// Launch a regen task if the new Max HP is higher than the old one
-			if (getActiveChar().getStatus().getCurrentHp() != val)
-			{
-				getActiveChar().getStatus().setCurrentHp(getActiveChar().getStatus().getCurrentHp()); // trigger start of regeneration
-			}
-		}
-		
-		return val;
-	}
-	
-	@Override
-	public final int getMaxMp()
-	{
-		// Get the Max MP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxMp();
-		
-		if (val != _oldMaxMp)
-		{
-			_oldMaxMp = val;
-			
-			// Launch a regen task if the new Max MP is higher than the old one
-			if (getActiveChar().getStatus().getCurrentMp() != val)
-			{
-				getActiveChar().getStatus().setCurrentMp(getActiveChar().getStatus().getCurrentMp()); // trigger start of regeneration
-			}
-		}
-		
-		return val;
 	}
 	
 	@Override
