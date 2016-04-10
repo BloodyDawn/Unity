@@ -926,18 +926,16 @@ public final class Formulas
 		double attack = 2 * actor.getMAtk() * calcGeneralTraitBonus(actor, target, skill.getTraitType(), false);
 		double d = (attack - defence) / (attack + defence);
 		
-		if (skill.isDebuff() && target.isDebuffBlocked())
+		if (skill.isDebuff())
 		{
-			int times = target.getDebuffBlockedTime();
-			if (times > 0)
+			if (target.getDebuffBlockedTime() > 0)
 			{
-				times = target.decrementDebuffBlockTimes();
-				if (times == 0)
+				if (target.decrementDebuffBlockTimes() == 0)
 				{
 					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 				}
+				return false;
 			}
-			return false;
 		}
 		
 		d += 0.5 * Rnd.nextGaussian();
@@ -969,20 +967,19 @@ public final class Formulas
 		
 		if (skill.isDebuff())
 		{
-			boolean resisted = false;
-			if (!resisted && target.isDebuffBlocked())
+			boolean resisted = target.isCastingNow(s -> s.getSkill().getAbnormalResists().contains(skill.getAbnormalType()));
+			if (!resisted)
 			{
-				int times = target.getDebuffBlockedTime();
-				if (times > 0)
+				if (target.getDebuffBlockedTime() > 0)
 				{
-					times = target.decrementDebuffBlockTimes();
-					if (times == 0)
+					if (target.decrementDebuffBlockTimes() == 0)
 					{
 						target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 					}
+					resisted = true;
 				}
-				resisted = true;
 			}
+			
 			if (!resisted)
 			{
 				final double distance = attacker.calculateDistance(target, true, false);
@@ -991,8 +988,6 @@ public final class Formulas
 					resisted = true;
 				}
 			}
-			
-			resisted |= target.isCastingNow(s -> s.getSkill().getAbnormalResists().contains(skill.getAbnormalType()));
 			
 			if (resisted)
 			{
@@ -1056,16 +1051,12 @@ public final class Formulas
 			{
 				return true;
 			}
-			else if (target.isDebuffBlocked())
+			
+			if (target.getDebuffBlockedTime() > 0)
 			{
-				int times = target.getDebuffBlockedTime();
-				if (times > 0)
+				if (target.decrementDebuffBlockTimes() == 0)
 				{
-					times = target.decrementDebuffBlockTimes();
-					if (times == 0)
-					{
-						target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
-					}
+					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 				}
 				return false;
 			}
