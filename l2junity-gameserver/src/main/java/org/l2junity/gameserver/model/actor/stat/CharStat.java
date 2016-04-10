@@ -812,7 +812,19 @@ public class CharStat
 	
 	protected void onRecalculateStats(boolean broadcast)
 	{
-	
+		// Check if Max HP/MP/CP is lower than current due to new stats.
+		if (_activeChar.getCurrentCp() > getMaxCp())
+		{
+			_activeChar.setCurrentCp(getMaxCp());
+		}
+		if (_activeChar.getCurrentHp() > getMaxHp())
+		{
+			_activeChar.setCurrentHp(getMaxHp());
+		}
+		if (_activeChar.getCurrentMp() > getMaxMp())
+		{
+			_activeChar.setCurrentMp(getMaxMp());
+		}
 	}
 	
 	public double getPositionTypeValue(Stats stat, Position position)

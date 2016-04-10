@@ -643,6 +643,8 @@ public class PcStat extends PlayableStat
 	@Override
 	protected void onRecalculateStats(boolean broadcast)
 	{
+		super.onRecalculateStats(broadcast);
+		
 		final PlayerInstance player = getActiveChar();
 		
 		// Upon master stats recalculation trigger pet/servitor recalculation too
