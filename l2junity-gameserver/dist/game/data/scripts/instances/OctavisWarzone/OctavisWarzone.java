@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
@@ -76,6 +77,7 @@ public final class OctavisWarzone extends AbstractInstance
 	// Skills
 	private static final SkillHolder STAGE_2_SKILL_1 = new SkillHolder(14026, 1);
 	private static final SkillHolder STAGE_2_SKILL_2 = new SkillHolder(14027, 1);
+	private static final SkillHolder STAGE_2_SKILL_3 = new SkillHolder(14575, 1);
 	// Locations
 	private static final Location BATTLE_LOC = new Location(208720, 120576, -10000);
 	private static final Location OCTAVIS_SPAWN_LOC = new Location(207069, 120580, -9987);
@@ -109,6 +111,7 @@ public final class OctavisWarzone extends AbstractInstance
 		addKillId(OCTAVIS_STAGE_1);
 		addKillId(OCTAVIS_STAGE_2);
 		addMoveFinishedId(GLADIATORS);
+		addSpellFinishedId(OCTAVIS_STAGE_2);
 		addEnterZoneId(TELEPORT_ZONE.getId());
 		setCreatureSeeId(this::onCreatureSee, DOOR_MANAGER);
 		addInstanceDestroyId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
@@ -231,6 +234,17 @@ public final class OctavisWarzone extends AbstractInstance
 					world.spawnGroup("STAGE_2").forEach(octavis -> ((Attackable) octavis).setCanReturnToSpawnPoint(false));
 					break;
 				}
+				case "END_STAGE_2":
+				{
+					playMovie(world, Movie.SC_OCTABIS_PHASECH_B);
+					getTimers().addTimer("START_STAGE_3", 15000, npc, null);
+					break;
+				}
+				case "START_STAGE_3":
+				{
+					world.spawnGroup("STAGE_3").forEach(octavis -> ((Attackable) octavis).setCanReturnToSpawnPoint(false));
+					break;
+				}
 				case "GLADIATOR_START_SPAWN":
 				{
 					final int spawnIndex = npcVars.getInt("SPAWN_INDEX", 1);
@@ -308,6 +322,11 @@ public final class OctavisWarzone extends AbstractInstance
 					getTimers().addTimer("ATTACK_TIMER", getRandom(7, 9) * 1000, npc, null);
 					break;
 				}
+				case "MEDUSA_SKILL_TIMER":
+				{
+					addSkillCastDesire(npc, npc, STAGE_2_SKILL_3, 23);
+					break;
+				}
 			}
 		}
 	}
@@ -370,7 +389,7 @@ public final class OctavisWarzone extends AbstractInstance
 					if (state == 0)
 					{
 						npc.setState(5);
-						// myself->AddTimerEx(Medusa_Skill_Timer, 15 * 1000);
+						getTimers().addTimer("MEDUSA_SKILL_TIMER", 15000, npc, null);
 					}
 					else
 					{
@@ -395,7 +414,6 @@ public final class OctavisWarzone extends AbstractInstance
 				world.getAliveNpcs(BEASTS).forEach(beast ->
 				{
 					getTimers().cancelTimer("BEASTS_CHECK_HP", beast, null);
-					WalkingManager.getInstance().cancelMoving(npc);
 					beast.deleteMe();
 				});
 				getTimers().addTimer("END_STAGE_1", 1000, npc, null);
@@ -406,21 +424,16 @@ public final class OctavisWarzone extends AbstractInstance
 				getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", npc, null);
 				getTimers().cancelTimer("MINION_CALL", npc, null);
 				getTimers().cancelTimer("ATTACK_TIMER", npc, null);
+				getTimers().cancelTimer("MEDUSA_SKILL_TIMER", npc, null);
 				// Despawn beasts
 				world.getAliveNpcs(BEASTS_MINIONS).forEach(beast -> beast.doDie(null));
 				
 				// Despawn gladiators
 				for (int i = 1; i < 7; i++)
 				{
-					if (isExtremeMode(world))
-					{
-						world.despawnGroup("magmeld4_2621_gro" + i + "m1");
-					}
-					else
-					{
-						world.despawnGroup("magmeld4_2621_gmo" + i + "m1");
-					}
+					world.despawnGroup(isExtremeMode(world) ? ("magmeld4_2621_gro" + i + "m1") : ("magmeld4_2621_gmo" + i + "m1"));
 				}
+				getTimers().addTimer("END_STAGE_2", 3000, npc, null);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
@@ -453,6 +466,7 @@ public final class OctavisWarzone extends AbstractInstance
 			getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", octavis, null);
 			getTimers().cancelTimer("MINION_CALL", octavis, null);
 			getTimers().cancelTimer("ATTACK_TIMER", octavis, null);
+			getTimers().cancelTimer("MEDUSA_SKILL_TIMER", octavis, null);
 		});
 	}
 	
@@ -481,6 +495,16 @@ public final class OctavisWarzone extends AbstractInstance
 		{
 			world.openCloseDoor(npc.getParameters().getInt("My_DoorName", -1), false);
 		}
+	}
+	
+	@Override
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
+	{
+		if (skill.getId() == STAGE_2_SKILL_3.getSkillId())
+		{
+			npc.setState(6);
+		}
+		return super.onSpellFinished(npc, player, skill);
 	}
 	
 	public void onCreatureSee(OnCreatureSee event)
