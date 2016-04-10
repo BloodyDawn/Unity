@@ -82,7 +82,7 @@ public final class RegularAttack extends AbstractEffect
 		
 		Weapon weapon = effector.getActiveWeaponItem();
 		boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
-		if (!isBow && !effected.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
+		if (!isBow && !effected.isHpBlocked()) // Do not reflect if weapon is of type bow or target is invunlerable
 		{
 			// quick fix for no drop from raid if boss attack high-level char with damage reflection
 			if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))

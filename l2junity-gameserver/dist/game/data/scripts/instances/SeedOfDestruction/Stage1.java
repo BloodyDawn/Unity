@@ -552,7 +552,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 				}
 				case "TiatFullHp":
 				{
-					if (!npc.hasBlockActions() && !npc.isInvul())
+					if (!npc.hasBlockActions() && !npc.isHpBlocked())
 					{
 						npc.setCurrentHp(npc.getMaxHp());
 					}

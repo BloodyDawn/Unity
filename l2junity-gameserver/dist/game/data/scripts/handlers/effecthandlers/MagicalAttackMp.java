@@ -46,7 +46,7 @@ public final class MagicalAttackMp extends AbstractEffect
 	@Override
 	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		if (effected.isInvul())
+		if (effected.isMpBlocked())
 		{
 			return false;
 		}

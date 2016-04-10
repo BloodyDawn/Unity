@@ -926,21 +926,18 @@ public final class Formulas
 		double attack = 2 * actor.getMAtk() * calcGeneralTraitBonus(actor, target, skill.getTraitType(), false);
 		double d = (attack - defence) / (attack + defence);
 		
-		if (skill.isDebuff())
+		if (skill.isDebuff() && target.isDebuffBlocked())
 		{
-			if (target.isAffected(EffectFlag.DEBUFF_BLOCK))
+			int times = target.getDebuffBlockedTime();
+			if (times > 0)
 			{
-				int times = target.getDebuffBlockedTime();
-				if (times > 0)
+				times = target.decrementDebuffBlockTimes();
+				if (times == 0)
 				{
-					times = target.decrementDebuffBlockTimes();
-					if (times == 0)
-					{
-						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
-					}
+					target.stopEffects(L2EffectType.DEBUFF_BLOCK);
 				}
-				return false;
 			}
+			return false;
 		}
 		
 		d += 0.5 * Rnd.nextGaussian();
@@ -973,7 +970,7 @@ public final class Formulas
 		if (skill.isDebuff())
 		{
 			boolean resisted = false;
-			if (!resisted && target.isAffected(EffectFlag.DEBUFF_BLOCK))
+			if (!resisted && target.isDebuffBlocked())
 			{
 				int times = target.getDebuffBlockedTime();
 				if (times > 0)
@@ -1059,7 +1056,7 @@ public final class Formulas
 			{
 				return true;
 			}
-			else if (target.isAffected(EffectFlag.DEBUFF_BLOCK))
+			else if (target.isDebuffBlocked())
 			{
 				int times = target.getDebuffBlockedTime();
 				if (times > 0)

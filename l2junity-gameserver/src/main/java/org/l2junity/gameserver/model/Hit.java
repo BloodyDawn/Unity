@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model;
 
 import org.l2junity.gameserver.enums.AttackType;
+import org.l2junity.gameserver.model.actor.Creature;
 
 /**
  * @author UnAfraid
@@ -52,7 +53,7 @@ public class Hit
 			addMask(AttackType.SHOT_USED);
 		}
 		
-		if (target.isInvul() || (shld > 0))
+		if ((target.isCreature() && ((Creature) target).isHpBlocked()) || (shld > 0))
 		{
 			addMask(AttackType.BLOCKED);
 		}

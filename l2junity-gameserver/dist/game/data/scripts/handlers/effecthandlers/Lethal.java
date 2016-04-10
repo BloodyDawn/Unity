@@ -69,7 +69,7 @@ public final class Lethal extends AbstractEffect
 			return;
 		}
 		
-		if (!effected.isLethalable() || effected.isInvul())
+		if (!effected.isLethalable() || effected.isHpBlocked())
 		{
 			return;
 		}

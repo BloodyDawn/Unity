@@ -144,7 +144,7 @@ public class DoppelgangerInstance extends Npc
 			
 			final SystemMessage sm;
 			
-			if ((target.isInvul() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.FACEOFF) && (target.getActingPlayer().getAttackerObjId() != getObjectId())))
+			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.FACEOFF) && (target.getActingPlayer().getAttackerObjId() != getObjectId())))
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 			}
@@ -166,7 +166,7 @@ public class DoppelgangerInstance extends Npc
 	{
 		super.reduceCurrentHp(damage, attacker, skill);
 		
-		if ((getSummoner() != null) && getSummoner().isPlayer() && (attacker != null) && !isDead() && !isInvul())
+		if ((getSummoner() != null) && getSummoner().isPlayer() && (attacker != null) && !isDead() && !isHpBlocked())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.addNpcName(this);

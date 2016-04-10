@@ -1202,23 +1202,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				abortAttack(); // Abort the attack of the L2Character and send Server->Client ActionFailed packet
 			}
-			else if (player != null)
+			else if ((player != null) && !target.isHpBlocked())
 			{
 				if (player.isCursedWeaponEquipped())
 				{
 					// If hit by a cursed weapon, CP is reduced to 0
-					if (!target.isInvul())
-					{
-						target.setCurrentCp(0);
-					}
+					target.setCurrentCp(0);
 				}
-				else if (player.isHero())
+				else if (player.isHero() && target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped())
 				{
 					// If a cursed weapon is hit by a Hero, CP is reduced to 0
-					if (target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped())
-					{
-						target.setCurrentCp(0);
-					}
+					target.setCurrentCp(0);
 				}
 			}
 			
@@ -2417,6 +2411,21 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isUndying()
 	{
 		return _isUndying;
+	}
+	
+	public boolean isHpBlocked()
+	{
+		return isInvul() || isAffected(EffectFlag.HP_BLOCK);
+	}
+	
+	public boolean isMpBlocked()
+	{
+		return isInvul() || isAffected(EffectFlag.MP_BLOCK);
+	}
+	
+	public boolean isDebuffBlocked()
+	{
+		return isInvul() || isAffected(EffectFlag.DEBUFF_BLOCK);
 	}
 	
 	public boolean isUndead()
@@ -4022,7 +4031,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// When killing blow is made, the target doesn't reflect (vamp too?). Do not reflect or vampiric if target is invulnerable.
-			if (!target.isDead() && !target.isInvul())
+			if (!target.isDead() && !target.isHpBlocked())
 			{
 				if (!isBow) // No reflect if weapon is of type bow
 				{

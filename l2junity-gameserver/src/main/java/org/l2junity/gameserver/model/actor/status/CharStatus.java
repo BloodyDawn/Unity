@@ -149,7 +149,7 @@ public class CharStatus
 		}
 		
 		// invul handling
-		if (activeChar.isInvul() && !(isDOT || isHPConsumption))
+		if (activeChar.isHpBlocked() && !(isDOT || isHPConsumption))
 		{
 			return;
 		}
@@ -262,7 +262,7 @@ public class CharStatus
 	// place holder, only PcStatus has CP
 	public void setCurrentCp(double newCp, boolean broadcastPacket)
 	{
-	
+		
 	}
 	
 	public final double getCurrentHp()
