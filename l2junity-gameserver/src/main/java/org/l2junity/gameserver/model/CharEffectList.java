@@ -83,7 +83,7 @@ public final class CharEffectList
 	/** Map containing the all stacked effect in progress for each abnormal type. */
 	private volatile Map<AbnormalType, BuffInfo> _stackedEffects;
 	/** Set containing all abnormal types that shouldn't be added to this creature effect list. */
-	private volatile Set<AbnormalType> _blockedBuffSlots = null;
+	private volatile Set<AbnormalType> _blockedAbnormalTypes = null;
 	/** Set containing skills that visually appear in the character buff bar */
 	private volatile Set<Skill> _visualAbnormalStatus = null;
 	/** Short buff skill ID. */
@@ -490,21 +490,21 @@ public final class CharEffectList
 	
 	/**
 	 * Adds abnormal types to the blocked buff slot set.
-	 * @param blockedBuffSlots the blocked buff slot set to add
+	 * @param blockedAbnormalTypes the blocked buff slot set to add
 	 */
-	public void addBlockedBuffSlots(Set<AbnormalType> blockedBuffSlots)
+	public void addBlockedAbnormalTypes(Set<AbnormalType> blockedAbnormalTypes)
 	{
-		if (_blockedBuffSlots == null)
+		if (_blockedAbnormalTypes == null)
 		{
 			synchronized (this)
 			{
-				if (_blockedBuffSlots == null)
+				if (_blockedAbnormalTypes == null)
 				{
-					_blockedBuffSlots = ConcurrentHashMap.newKeySet(blockedBuffSlots.size());
+					_blockedAbnormalTypes = ConcurrentHashMap.newKeySet(blockedAbnormalTypes.size());
 				}
 			}
 		}
-		_blockedBuffSlots.addAll(blockedBuffSlots);
+		_blockedAbnormalTypes.addAll(blockedAbnormalTypes);
 	}
 	
 	/**
@@ -512,22 +512,22 @@ public final class CharEffectList
 	 * @param blockedBuffSlots the blocked buff slot set to remove
 	 * @return {@code true} if the blocked buff slots set has been modified, {@code false} otherwise
 	 */
-	public boolean removeBlockedBuffSlots(Set<AbnormalType> blockedBuffSlots)
+	public boolean removeBlockedAbnormalTypes(Set<AbnormalType> blockedBuffSlots)
 	{
-		if (_blockedBuffSlots != null)
+		if (_blockedAbnormalTypes != null)
 		{
-			return _blockedBuffSlots.removeAll(blockedBuffSlots);
+			return _blockedAbnormalTypes.removeAll(blockedBuffSlots);
 		}
 		return false;
 	}
 	
 	/**
 	 * Gets all the blocked abnormal types for this creature effect list.
-	 * @return the current blocked buff slots set
+	 * @return the current blocked abnormal types set
 	 */
-	public Set<AbnormalType> getAllBlockedBuffSlots()
+	public Set<AbnormalType> getBlockedAbnormalTypes()
 	{
-		return _blockedBuffSlots;
+		return _blockedAbnormalTypes;
 	}
 	
 	/**
@@ -1356,7 +1356,31 @@ public final class CharEffectList
 			return;
 		}
 		
-		if ((_blockedBuffSlots != null) && _blockedBuffSlots.contains(skill.getAbnormalType()))
+		if (info.getEffector() != null)
+		{
+			// Check for debuffs against target.
+			if ((info.getEffector() != info.getEffected()) && skill.isBad())
+			{
+				// Check if effected is debuff blocked.
+				if ((info.getEffected().isDebuffBlocked() || (info.getEffector().isGM() && !info.getEffector().getAccessLevel().canGiveDamage())))
+				{
+					return;
+				}
+				
+				if (info.getEffector().isPlayer() && info.getEffected().isPlayer() && info.getEffected().isAffected(EffectFlag.FACEOFF) && (info.getEffected().getActingPlayer().getAttackerObjId() != info.getEffector().getObjectId()))
+				{
+					return;
+				}
+			}
+			
+			// Check if buff skills are blocked.
+			if (info.getEffected().isBuffBlocked() && !skill.isBad())
+			{
+				return;
+			}
+		}
+		
+		if ((_blockedAbnormalTypes != null) && _blockedAbnormalTypes.contains(skill.getAbnormalType()))
 		{
 			return;
 		}

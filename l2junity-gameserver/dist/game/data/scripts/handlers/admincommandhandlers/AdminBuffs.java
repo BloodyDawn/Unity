@@ -377,11 +377,11 @@ public class AdminBuffs implements IAdminCommandHandler
 		html.append(passive ? " passive" : "");
 		html.append(" buff count: ");
 		html.append(effects.size());
-		if ((target.getEffectList().getAllBlockedBuffSlots() != null) && !target.getEffectList().getAllBlockedBuffSlots().isEmpty())
+		if ((target.getEffectList().getBlockedAbnormalTypes() != null) && !target.getEffectList().getBlockedAbnormalTypes().isEmpty())
 		{
 			html.append("<br>Blocked buff slots: ");
 			String slots = "";
-			for (AbnormalType slot : target.getEffectList().getAllBlockedBuffSlots())
+			for (AbnormalType slot : target.getEffectList().getBlockedAbnormalTypes())
 			{
 				slots += slot.toString() + ", ";
 			}

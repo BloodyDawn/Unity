@@ -53,7 +53,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("BlockControl", BlockControl::new);
 		EffectHandler.getInstance().registerHandler("BlockEscape", BlockEscape::new);
 		EffectHandler.getInstance().registerHandler("BlockParty", BlockParty::new);
-		EffectHandler.getInstance().registerHandler("BlockBuffSlot", BlockBuffSlot::new);
+		EffectHandler.getInstance().registerHandler("BlockAbnormalSlot", BlockAbnormalSlot::new);
 		EffectHandler.getInstance().registerHandler("BlockResurrection", BlockResurrection::new);
 		EffectHandler.getInstance().registerHandler("BlockSkill", BlockSkill::new);
 		EffectHandler.getInstance().registerHandler("BlockTarget", BlockTarget::new);

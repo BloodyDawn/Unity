@@ -33,36 +33,36 @@ import org.l2junity.gameserver.model.skills.Skill;
  * Block Buff Slot effect implementation.
  * @author Zoey76
  */
-public final class BlockBuffSlot extends AbstractEffect
+public final class BlockAbnormalSlot extends AbstractEffect
 {
-	private final Set<AbnormalType> _blockBuffSlots;
+	private final Set<AbnormalType> _blockAbnormalSlots;
 	
-	public BlockBuffSlot(StatsSet params)
+	public BlockAbnormalSlot(StatsSet params)
 	{
-		String blockBuffSlots = params.getString("slot", null);
-		if ((blockBuffSlots != null) && !blockBuffSlots.isEmpty())
+		String blockAbnormalSlots = params.getString("slot", null);
+		if ((blockAbnormalSlots != null) && !blockAbnormalSlots.isEmpty())
 		{
-			_blockBuffSlots = new HashSet<>();
-			for (String slot : blockBuffSlots.split(";"))
+			_blockAbnormalSlots = new HashSet<>();
+			for (String slot : blockAbnormalSlots.split(";"))
 			{
-				_blockBuffSlots.add(AbnormalType.getAbnormalType(slot));
+				_blockAbnormalSlots.add(AbnormalType.getAbnormalType(slot));
 			}
 		}
 		else
 		{
-			_blockBuffSlots = Collections.<AbnormalType> emptySet();
+			_blockAbnormalSlots = Collections.<AbnormalType> emptySet();
 		}
 	}
 	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		effected.getEffectList().addBlockedBuffSlots(_blockBuffSlots);
+		effected.getEffectList().addBlockedAbnormalTypes(_blockAbnormalSlots);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().getEffectList().removeBlockedBuffSlots(_blockBuffSlots);
+		info.getEffected().getEffectList().removeBlockedAbnormalTypes(_blockAbnormalSlots);
 	}
 }
