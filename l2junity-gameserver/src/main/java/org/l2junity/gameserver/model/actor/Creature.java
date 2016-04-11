@@ -2400,7 +2400,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	@Override
 	public boolean isInvul()
 	{
-		return _isInvul || _isTeleporting || isAffected(EffectFlag.INVUL);
+		return _isInvul || _isTeleporting;
 	}
 	
 	public void setUndying(boolean undying)
