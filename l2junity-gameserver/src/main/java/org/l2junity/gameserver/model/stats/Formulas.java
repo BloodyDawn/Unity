@@ -1796,12 +1796,12 @@ public final class Formulas
 	
 	public static double getBasicPropertyResistBonus(BasicProperty basicProperty, Creature target)
 	{
-		if ((basicProperty == BasicProperty.NONE) || !target.isPlayer() || !target.getActingPlayer().hasBasicPropertyResist())
+		if ((basicProperty == BasicProperty.NONE) || !target.hasBasicPropertyResist())
 		{
 			return 1.0;
 		}
 		
-		final BasicPropertyResist resist = target.getActingPlayer().getBasicPropertyResist(basicProperty);
+		final BasicPropertyResist resist = target.getBasicPropertyResist(basicProperty);
 		switch (resist.getResistLevel())
 		{
 			case 0:

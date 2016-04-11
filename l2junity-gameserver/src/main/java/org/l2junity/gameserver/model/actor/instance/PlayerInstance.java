@@ -79,7 +79,6 @@ import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.AdminTeleportType;
-import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
@@ -255,7 +254,6 @@ import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
-import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -592,9 +590,6 @@ public final class PlayerInstance extends Playable
 	// hennas
 	private final Henna[] _henna = new Henna[3];
 	private final Map<BaseStats, Integer> _hennaBaseStats = new ConcurrentHashMap<>();
-	
-	// Basic Property
-	private final Map<BasicProperty, BasicPropertyResist> _basicPropertyResists = new ConcurrentHashMap<>();
 	
 	/** The Pet of the L2PcInstance */
 	private L2PetInstance _pet = null;
@@ -8012,19 +8007,10 @@ public final class PlayerInstance extends Playable
 	 * Checks if the player has basic property resist towards mesmerizing debuffs.
 	 * @return {@code true} if the player has resist towards mesmerizing debuffs, {@code false} otherwise
 	 */
+	@Override
 	public boolean hasBasicPropertyResist()
 	{
 		return isInCategory(CategoryType.AWAKEN_GROUP);
-	}
-	
-	/**
-	 * Gets the basic property resist.
-	 * @param basicProperty the basic property
-	 * @return the basic property resist
-	 */
-	public BasicPropertyResist getBasicPropertyResist(BasicProperty basicProperty)
-	{
-		return _basicPropertyResists.computeIfAbsent(basicProperty, k -> new BasicPropertyResist());
 	}
 	
 	/**

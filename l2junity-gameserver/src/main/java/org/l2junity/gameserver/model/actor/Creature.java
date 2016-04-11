@@ -53,6 +53,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ItemSkillType;
@@ -127,6 +128,7 @@ import org.l2junity.gameserver.model.skills.SkillCastingType;
 import org.l2junity.gameserver.model.skills.SkillChannelized;
 import org.l2junity.gameserver.model.skills.SkillChannelizer;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -275,6 +277,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private volatile CreatureContainer _seenCreatures;
 	
 	private final Map<StatusUpdateType, Integer> _statusUpdates = new ConcurrentHashMap<>();
+	
+	/** A map holding info about basic property mesmerizing system. */
+	private Map<BasicProperty, BasicPropertyResist> _basicPropertyResists;
 	
 	/**
 	 * Creates a creature.
@@ -5754,5 +5759,35 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		addStatusUpdateValue(StatusUpdateType.MAX_MP);
 		addStatusUpdateValue(StatusUpdateType.CUR_HP);
 		addStatusUpdateValue(StatusUpdateType.CUR_MP);
+	}
+	
+	/**
+	 * Checks if the creature has basic property resist towards mesmerizing debuffs.
+	 * @return {@code true}.
+	 */
+	public boolean hasBasicPropertyResist()
+	{
+		return true;
+	}
+	
+	/**
+	 * Gets the basic property resist.
+	 * @param basicProperty the basic property
+	 * @return the basic property resist
+	 */
+	public BasicPropertyResist getBasicPropertyResist(BasicProperty basicProperty)
+	{
+		if (_basicPropertyResists == null)
+		{
+			synchronized (_basicPropertyResists)
+			{
+				if (_basicPropertyResists == null)
+				{
+					_basicPropertyResists = new ConcurrentHashMap<>();
+				}
+			}
+		}
+		
+		return _basicPropertyResists.computeIfAbsent(basicProperty, k -> new BasicPropertyResist());
 	}
 }

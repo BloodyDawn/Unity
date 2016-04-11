@@ -1308,9 +1308,9 @@ public final class Skill implements IIdentifiable
 				effected.getEffectList().add(info);
 				
 				// Check for mesmerizing debuffs and increase resist level.
-				if (isDebuff() && (getBasicProperty() != BasicProperty.NONE) && effected.isPlayer() && effected.getActingPlayer().hasBasicPropertyResist())
+				if (isDebuff() && (getBasicProperty() != BasicProperty.NONE) && effected.hasBasicPropertyResist())
 				{
-					final BasicPropertyResist resist = effected.getActingPlayer().getBasicPropertyResist(getBasicProperty());
+					final BasicPropertyResist resist = effected.getBasicPropertyResist(getBasicProperty());
 					resist.increaseResistLevel();
 					effected.sendDebugMessage(toString() + " has increased your " + getBasicProperty() + " debuff resistance to " + resist.getResistLevel() + " level for " + resist.getRemainTime().toMillis() + " milliseconds.");
 				}
