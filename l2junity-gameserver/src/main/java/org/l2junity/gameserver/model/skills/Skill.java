@@ -1287,6 +1287,12 @@ public final class Skill implements IIdentifiable
 			return;
 		}
 		
+		// Check if buff skills are blocked.
+		if (effected.isBuffBlocked() && !isBad() && isContinuous())
+		{
+			return;
+		}
+		
 		// Check bad skills against target.
 		if ((effector != effected) && effector.isPlayer() && effected.isPlayer() && isBad() && effected.isAffected(EffectFlag.FACEOFF) && (effected.getActingPlayer().getAttackerObjId() != effector.getObjectId()))
 		{

@@ -2423,6 +2423,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return isInvul() || isAffected(EffectFlag.MP_BLOCK);
 	}
 	
+	public boolean isBuffBlocked()
+	{
+		return isAffected(EffectFlag.BUFF_BLOCK);
+	}
+	
 	public boolean isDebuffBlocked()
 	{
 		return isInvul() || isAffected(EffectFlag.DEBUFF_BLOCK);
