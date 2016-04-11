@@ -675,7 +675,7 @@ public final class Formulas
 			}
 		}
 		
-		if (target.isRaid() || target.isInvul() || (init <= 0))
+		if (target.isRaid() || target.isHpBlocked() || (init <= 0))
 		{
 			return false; // No attack break
 		}

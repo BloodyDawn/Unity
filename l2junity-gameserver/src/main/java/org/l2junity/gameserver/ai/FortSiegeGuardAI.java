@@ -140,15 +140,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		// Check if the target isn't invulnerable
 		if ((target != null) && target.isInvul())
 		{
-			// However EffectInvincible requires to check GMs specially
-			if (target.isPlayer() && target.isGM())
-			{
-				return false;
-			}
-			if (target.isSummon() && ((Summon) target).getOwner().isGM())
-			{
-				return false;
-			}
+			return false;
 		}
 		
 		// Get the owner if the target is a summon
@@ -469,9 +461,9 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			{
 				if (!npc.isDead() && (Math.abs(target.getZ() - npc.getZ()) < 600)
 				// && _actor.getAttackByList().contains(getTarget())
-				&& ((npc.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (npc.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE))
-				// limiting aggro for siege guards
-				&& npc.isInsideRadius(target, 1500, true, false) && GeoData.getInstance().canSeeTarget(npc, target))
+					&& ((npc.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (npc.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE))
+					// limiting aggro for siege guards
+					&& npc.isInsideRadius(target, 1500, true, false) && GeoData.getInstance().canSeeTarget(npc, target))
 				{
 					// Notify the L2Object AI with EVT_AGGRESSION
 					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, target, 1);
@@ -634,7 +626,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 				
 				// Check if the L2SiegeGuardInstance isn't too far from it's home location
 				if ((((dx * dx) + (dy * dy)) > 10000) && (((homeX * homeX) + (homeY * homeY)) > 3240000) // 1800 * 1800
-				&& (_actor.isInSurroundingRegion(attackTarget)))
+					&& (_actor.isInSurroundingRegion(attackTarget)))
 				{
 					// Cancel the target
 					setTarget(null);

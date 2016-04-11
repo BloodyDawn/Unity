@@ -394,7 +394,7 @@ public final class Valakas extends AbstractNpcAI
 			return null;
 		}
 		
-		if (npc.isInvul())
+		if (npc.isHpBlocked())
 		{
 			return null;
 		}

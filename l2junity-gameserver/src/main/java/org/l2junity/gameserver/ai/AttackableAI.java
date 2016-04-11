@@ -115,8 +115,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return false;
 		}
 		
-		// Check if the target isn't invulnerable GM
-		if (target.isInvul() && (target.getActingPlayer() != null) && target.getActingPlayer().isGM())
+		// Check if the target isn't invulnerable
+		if (target.isInvul())
 		{
 			return false;
 		}

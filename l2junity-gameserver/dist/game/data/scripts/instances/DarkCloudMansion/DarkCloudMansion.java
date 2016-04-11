@@ -259,7 +259,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					if (world.isStatus(7))
 					{
 						world.openCloseDoor(ROOM_D_DOOR, false);
-						if (npc.isInvul() && (getRandom(100) < 12))
+						if (npc.isHpBlocked() && (getRandom(100) < 12))
 						{
 							addSpawn(BELETH_SUBORDINATE[getRandom(BELETH_SUBORDINATE.length)], npc, false, 0, false, world.getId());
 						}

@@ -744,7 +744,7 @@ public abstract class Summon extends Playable
 	{
 		super.reduceCurrentHp(damage, attacker, skill);
 		
-		if (!isDead() && !isInvul() && (getOwner() != null) && (attacker != null) && (!getOwner().isAffected(EffectFlag.FACEOFF) || (getOwner().getAttackerObjId() == attacker.getObjectId())))
+		if (!isDead() && !isHpBlocked() && (getOwner() != null) && (attacker != null) && (!getOwner().isAffected(EffectFlag.FACEOFF) || (getOwner().getAttackerObjId() == attacker.getObjectId())))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.addNpcName(this);
