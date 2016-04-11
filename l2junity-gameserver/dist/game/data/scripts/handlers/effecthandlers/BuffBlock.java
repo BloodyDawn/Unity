@@ -35,6 +35,6 @@ public final class BuffBlock extends AbstractEffect
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.DEBUFF_BLOCK.getMask();
+		return EffectFlag.BUFF_BLOCK.getMask();
 	}
 }
