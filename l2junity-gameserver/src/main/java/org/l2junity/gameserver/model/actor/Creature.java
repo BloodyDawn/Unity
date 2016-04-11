@@ -279,7 +279,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private final Map<StatusUpdateType, Integer> _statusUpdates = new ConcurrentHashMap<>();
 	
 	/** A map holding info about basic property mesmerizing system. */
-	private Map<BasicProperty, BasicPropertyResist> _basicPropertyResists;
+	private volatile Map<BasicProperty, BasicPropertyResist> _basicPropertyResists;
 	
 	/**
 	 * Creates a creature.
@@ -5779,7 +5779,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		if (_basicPropertyResists == null)
 		{
-			synchronized (_basicPropertyResists)
+			synchronized (this)
 			{
 				if (_basicPropertyResists == null)
 				{

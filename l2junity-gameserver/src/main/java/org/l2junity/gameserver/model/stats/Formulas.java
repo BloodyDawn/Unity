@@ -1934,36 +1934,19 @@ public final class Formulas
 	
 	public static double calcPveDamagePenalty(Creature attacker, Creature target, Skill skill, boolean crit)
 	{
-		if (target.isAttackable() && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+		if (target.isAttackable() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) > 1))
 		{
 			int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
 			if (skill != null)
 			{
-				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
-				{
-					return Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);
-				}
-				
-				return Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
+				return Config.NPC_SKILL_DMG_PENALTY.get(Math.min(lvlDiff, Config.NPC_SKILL_DMG_PENALTY.size() - 1));
 			}
 			else if (crit)
 			{
-				if (lvlDiff >= Config.NPC_CRIT_DMG_PENALTY.size())
-				{
-					return Config.NPC_CRIT_DMG_PENALTY.get(Config.NPC_CRIT_DMG_PENALTY.size() - 1);
-				}
-				
-				return Config.NPC_CRIT_DMG_PENALTY.get(lvlDiff);
+				return Config.NPC_CRIT_DMG_PENALTY.get(Math.min(lvlDiff, Config.NPC_CRIT_DMG_PENALTY.size() - 1));
 			}
-			else
-			{
-				if (lvlDiff >= Config.NPC_DMG_PENALTY.size())
-				{
-					return Config.NPC_DMG_PENALTY.get(Config.NPC_DMG_PENALTY.size() - 1);
-				}
-				
-				return Config.NPC_DMG_PENALTY.get(lvlDiff);
-			}
+			
+			return Config.NPC_DMG_PENALTY.get(Math.min(lvlDiff, Config.NPC_DMG_PENALTY.size() - 1));
 		}
 		
 		return 1.0;
