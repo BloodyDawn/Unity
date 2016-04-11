@@ -40,7 +40,7 @@ public final class AbnormalShield extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().setDebuffBlockTimes(_times);
+		info.getEffected().setAbnormalShieldBlocks(_times);
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public final class AbnormalShield extends AbstractEffect
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().setDebuffBlockTimes(Integer.MIN_VALUE);
+		info.getEffected().setAbnormalShieldBlocks(Integer.MIN_VALUE);
 	}
 	
 	@Override

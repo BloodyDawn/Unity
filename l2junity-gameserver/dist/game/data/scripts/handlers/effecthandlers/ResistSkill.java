@@ -60,7 +60,7 @@ public final class ResistSkill extends AbstractEffect
 	{
 		for (SkillHolder holder : _skills)
 		{
-			effected.addInvulAgainst(holder);
+			effected.addIgnoreSkillEffects(holder);
 			effected.sendDebugMessage("Applying invul against " + holder.getSkill());
 		}
 	}
@@ -71,7 +71,7 @@ public final class ResistSkill extends AbstractEffect
 		final Creature effected = info.getEffected();
 		for (SkillHolder holder : _skills)
 		{
-			info.getEffected().removeInvulAgainst(holder);
+			info.getEffected().removeIgnoreSkillEffects(holder);
 			effected.sendDebugMessage("Removing invul against " + holder.getSkill());
 		}
 	}

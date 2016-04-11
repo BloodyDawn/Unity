@@ -928,9 +928,9 @@ public final class Formulas
 		
 		if (skill.isDebuff())
 		{
-			if (target.getDebuffBlockedTime() > 0)
+			if (target.getAbnormalShieldBlocks() > 0)
 			{
-				if (target.decrementDebuffBlockTimes() == 0)
+				if (target.decrementAbnormalShieldBlocks() == 0)
 				{
 					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 				}
@@ -970,9 +970,9 @@ public final class Formulas
 			boolean resisted = target.isCastingNow(s -> s.getSkill().getAbnormalResists().contains(skill.getAbnormalType()));
 			if (!resisted)
 			{
-				if (target.getDebuffBlockedTime() > 0)
+				if (target.getAbnormalShieldBlocks() > 0)
 				{
-					if (target.decrementDebuffBlockTimes() == 0)
+					if (target.decrementAbnormalShieldBlocks() == 0)
 					{
 						target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 					}
@@ -1052,9 +1052,9 @@ public final class Formulas
 				return true;
 			}
 			
-			if (target.getDebuffBlockedTime() > 0)
+			if (target.getAbnormalShieldBlocks() > 0)
 			{
-				if (target.decrementDebuffBlockTimes() == 0)
+				if (target.decrementAbnormalShieldBlocks() == 0)
 				{
 					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
 				}

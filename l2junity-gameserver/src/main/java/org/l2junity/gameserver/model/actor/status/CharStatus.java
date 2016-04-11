@@ -28,7 +28,6 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
-import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureHpChange;
 import org.l2junity.gameserver.model.skills.AbnormalType;
@@ -179,7 +178,7 @@ public class CharStatus
 		if (value > 0)
 		{
 			final double oldHp = getCurrentHp();
-			final double newHp = Math.max(getCurrentHp() - value, (activeChar.isAffected(EffectFlag.IGNORE_DEATH) || activeChar.isUndying()) ? 1 : 0);
+			final double newHp = Math.max(getCurrentHp() - value, activeChar.isUndying() ? 1 : 0);
 			setCurrentHp(newHp);
 			EventDispatcher.getInstance().notifyEventAsync(new OnCreatureHpChange(activeChar, oldHp, newHp), activeChar);
 		}

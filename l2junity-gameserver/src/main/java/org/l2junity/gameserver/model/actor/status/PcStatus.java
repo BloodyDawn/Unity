@@ -271,7 +271,7 @@ public class PcStatus extends PlayableStatus
 		if (value > 0)
 		{
 			final double oldHp = getCurrentHp();
-			double newHp = Math.max(getCurrentHp() - value, (getActiveChar().isAffected(EffectFlag.IGNORE_DEATH) || getActiveChar().isUndying()) ? 1 : 0);
+			double newHp = Math.max(getCurrentHp() - value, getActiveChar().isUndying() ? 1 : 0);
 			if (newHp <= 0)
 			{
 				if (getActiveChar().isInDuel())

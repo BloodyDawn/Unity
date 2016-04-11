@@ -103,7 +103,7 @@ import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2junity.gameserver.model.events.returns.DamageReturn;
 import org.l2junity.gameserver.model.events.returns.LocationReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
-import org.l2junity.gameserver.model.holders.InvulSkillHolder;
+import org.l2junity.gameserver.model.holders.IgnoreSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IDeletable;
@@ -236,7 +236,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	private volatile Map<Integer, OptionsSkillHolder> _triggerSkills;
 	
-	private volatile Map<Integer, InvulSkillHolder> _invulAgainst;
+	private volatile Map<Integer, IgnoreSkillHolder> _ignoreSkillEffects;
 	/** Creatures effect list. */
 	private final CharEffectList _effectList = new CharEffectList(this);
 	/** The character that summons this character. */
@@ -268,7 +268,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/** Future Skill Cast */
 	protected Map<SkillCastingType, SkillCaster> _skillCasters = new ConcurrentHashMap<>();
 	
-	private final AtomicInteger _blockedDebuffTimes = new AtomicInteger();
+	private final AtomicInteger _abnormalShieldBlocks = new AtomicInteger();
 	
 	private final Map<Integer, Integer> _knownRelations = new ConcurrentHashMap<>();
 	
@@ -2410,7 +2410,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public boolean isUndying()
 	{
-		return _isUndying;
+		return _isUndying || isInvul() || isAffected(EffectFlag.IGNORE_DEATH);
 	}
 	
 	public boolean isHpBlocked()
@@ -5495,49 +5495,49 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return _channelized;
 	}
 	
-	public void addInvulAgainst(SkillHolder holder)
+	public void addIgnoreSkillEffects(SkillHolder holder)
 	{
-		final InvulSkillHolder invulHolder = getInvulAgainstSkills().get(holder.getSkillId());
-		if (invulHolder != null)
+		final IgnoreSkillHolder ignoreSkillHolder = getIgnoreSkillEffects().get(holder.getSkillId());
+		if (ignoreSkillHolder != null)
 		{
-			invulHolder.increaseInstances();
+			ignoreSkillHolder.increaseInstances();
 			return;
 		}
-		getInvulAgainstSkills().put(holder.getSkillId(), new InvulSkillHolder(holder));
+		getIgnoreSkillEffects().put(holder.getSkillId(), new IgnoreSkillHolder(holder));
 	}
 	
-	public void removeInvulAgainst(SkillHolder holder)
+	public void removeIgnoreSkillEffects(SkillHolder holder)
 	{
-		final InvulSkillHolder invulHolder = getInvulAgainstSkills().get(holder.getSkillId());
-		if ((invulHolder != null) && (invulHolder.decreaseInstances() < 1))
+		final IgnoreSkillHolder ignoreSkillHolder = getIgnoreSkillEffects().get(holder.getSkillId());
+		if ((ignoreSkillHolder != null) && (ignoreSkillHolder.decreaseInstances() < 1))
 		{
-			getInvulAgainstSkills().remove(holder.getSkillId());
+			getIgnoreSkillEffects().remove(holder.getSkillId());
 		}
 	}
 	
-	public boolean isInvulAgainst(int skillId, int skillLvl)
+	public boolean isIgnoringSkillEffects(int skillId, int skillLvl)
 	{
-		if (_invulAgainst != null)
+		if (_ignoreSkillEffects != null)
 		{
-			final SkillHolder holder = getInvulAgainstSkills().get(skillId);
+			final SkillHolder holder = getIgnoreSkillEffects().get(skillId);
 			return ((holder != null) && ((holder.getSkillLvl() < 1) || (holder.getSkillLvl() == skillLvl)));
 		}
 		return false;
 	}
 	
-	private Map<Integer, InvulSkillHolder> getInvulAgainstSkills()
+	private Map<Integer, IgnoreSkillHolder> getIgnoreSkillEffects()
 	{
-		if (_invulAgainst == null)
+		if (_ignoreSkillEffects == null)
 		{
 			synchronized (this)
 			{
-				if (_invulAgainst == null)
+				if (_ignoreSkillEffects == null)
 				{
-					_invulAgainst = new ConcurrentHashMap<>();
+					_ignoreSkillEffects = new ConcurrentHashMap<>();
 				}
 			}
 		}
-		return _invulAgainst;
+		return _ignoreSkillEffects;
 	}
 	
 	@Override
@@ -5623,25 +5623,25 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * Sets amount of debuffs that player can avoid
 	 * @param times
 	 */
-	public void setDebuffBlockTimes(int times)
+	public void setAbnormalShieldBlocks(int times)
 	{
-		_blockedDebuffTimes.set(times);
+		_abnormalShieldBlocks.set(times);
 	}
 	
 	/**
 	 * @return the amount of debuffs that player can avoid
 	 */
-	public int getDebuffBlockedTime()
+	public int getAbnormalShieldBlocks()
 	{
-		return _blockedDebuffTimes.get();
+		return _abnormalShieldBlocks.get();
 	}
 	
 	/**
 	 * @return the amount of debuffs that player can avoid
 	 */
-	public int decrementDebuffBlockTimes()
+	public int decrementAbnormalShieldBlocks()
 	{
-		return _blockedDebuffTimes.decrementAndGet();
+		return _abnormalShieldBlocks.decrementAndGet();
 	}
 	
 	public boolean hasAbnormalType(AbnormalType abnormalType)
