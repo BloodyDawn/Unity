@@ -2480,12 +2480,18 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 			<effect name="HpRegen">
 				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="4579" toLevel="12" name="Bleed">

@@ -1328,7 +1328,13 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="CpHealPercent">
 				<power>100</power>
 			</effect>

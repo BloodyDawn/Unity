@@ -845,7 +845,17 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="1419" toLevel="1" name="Volcano">
@@ -1156,7 +1166,16 @@
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DispelBySlotMyself">
+				<dispel>MAGICAL_STANCE</dispel>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="1428" toLevel="1" name="Mass Recharge">
@@ -4642,7 +4661,13 @@
 		<targetType>SUMMON</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="1497" toLevel="1" name="Excessive Loyalty">

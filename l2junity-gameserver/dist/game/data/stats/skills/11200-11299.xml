@@ -1798,7 +1798,14 @@
 				</power>
 				<ticks>1</ticks>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="11274" toLevel="4" name="Summon Barrier">
@@ -1850,8 +1857,13 @@
 			<condition name="OpHaveSummon" />
 		</conditions>
 		<effects>
-			<effect name="Invincible">
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
 			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="HpRegen">
 				<amount>
 					<value level="1">20</value>
@@ -3039,7 +3051,14 @@
 				</power>
 				<ticks>1</ticks>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="11297" toLevel="4" name="Blessing of the Giants">

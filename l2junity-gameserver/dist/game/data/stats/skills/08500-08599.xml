@@ -2363,7 +2363,13 @@
 		<targetType>SUMMON</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="8594" toLevel="1" name="Cleanse">

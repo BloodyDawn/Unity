@@ -825,7 +825,17 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>NONE</targetType>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5932" toLevel="1" name="Dark Blade">

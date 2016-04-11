@@ -2177,14 +2177,21 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 			<effect name="DamOverTime">
 				<power>282</power>
 				<ticks>1</ticks>
 			</effect>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_blocl_buff -->
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="14884" toLevel="1" name="Eliyah's Mass Exile">
@@ -2213,14 +2220,21 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 			<effect name="DamOverTime">
 				<power>296</power>
 				<ticks>1</ticks>
 			</effect>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="14885" toLevel="1" name="Eliyah's Mass Exile">
@@ -2249,14 +2263,21 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 			<effect name="DamOverTime">
 				<power>313</power>
 				<ticks>1</ticks>
 			</effect>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="14886" toLevel="1" name="Eliyah's Summon Death Gate">

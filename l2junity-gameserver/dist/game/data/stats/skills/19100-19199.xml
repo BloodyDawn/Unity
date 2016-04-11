@@ -53,10 +53,16 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="ResistDispelByCategory">
 				<amount>-100</amount>
-				<slot>BUFF</slot>
+				<slot>ALL</slot>
 			</effect>
 		</effects>
 	</skill>

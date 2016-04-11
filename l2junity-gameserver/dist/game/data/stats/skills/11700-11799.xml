@@ -719,7 +719,18 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<!-- FIXME: p_block_add_slot -->
 		</effects>
 		<endEffects>
 			<effect name="CallSkill">
@@ -755,7 +766,18 @@
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<!-- FIXME: p_block_add_slot -->
 		</effects>
 		<endEffects>
 			<effect name="CallSkill">
@@ -1120,8 +1142,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Invincible" />
 			<effect name="BlockActions" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 			<effect name="HealOverTime">
 				<power>
 					<value level="1">266</value>

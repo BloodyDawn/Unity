@@ -1911,11 +1911,21 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
 				<max>10</max>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
 			</effect>
 			<effect name="Speed">
 				<amount>30</amount>

@@ -85,7 +85,7 @@ public class PcStatus extends PlayableStatus
 			return;
 		}
 		
-		if (getActiveChar().isInvul() && !(isDOT || isHPConsumption))
+		if (getActiveChar().isHpBlocked() && !(isDOT || isHPConsumption))
 		{
 			return;
 		}

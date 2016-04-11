@@ -1139,11 +1139,21 @@
 		<effectPoint>379</effectPoint>
 		<reuseDelay>300000</reuseDelay>
 		<effects>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 			<effect name="DispelByCategory">
 				<slot>debuff</slot>
 				<rate>100</rate>
-				<max>99</max>
+				<max>10</max>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
 			</effect>
 		</effects>
 	</skill>

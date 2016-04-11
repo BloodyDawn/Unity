@@ -87,6 +87,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("CriticalRatePositionBonus", CriticalRatePositionBonus::new);
 		EffectHandler.getInstance().registerHandler("CrystalGradeModify", CrystalGradeModify::new);
 		EffectHandler.getInstance().registerHandler("CubicMastery", CubicMastery::new);
+		EffectHandler.getInstance().registerHandler("DamageBlock", DamageBlock::new);
 		EffectHandler.getInstance().registerHandler("DamageShield", DamageShield::new);
 		EffectHandler.getInstance().registerHandler("DamageShieldResist", DamageShieldResist::new);
 		EffectHandler.getInstance().registerHandler("DamOverTime", DamOverTime::new);

@@ -2585,7 +2585,14 @@
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-			<effect name="Invincible" />
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<!-- FIXME: p_block_buff -->
+			<effect name="DebuffBlock" />
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
@@ -3328,10 +3335,16 @@
 		</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<effects>
-			<effect name="Invincible" />
 			<effect name="DispelBySlotMyself">
 				<dispel>MAGICAL_STANCE</dispel>
 			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="11561" toLevel="7" name="Giant Root">
