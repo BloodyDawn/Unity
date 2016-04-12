@@ -34,7 +34,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -380,7 +380,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.storeMe();
 					player.sendMessage("A GM changed your class to " + newclass + ".");
 					player.broadcastUserInfo();
-					if (player.getClassId().level() == (player.getRace() == Race.ERTHEIA ? 3 : 4))
+					if (player.isInCategory(CategoryType.AWAKEN_GROUP))
 					{
 						SkillTreesData.getInstance().cleanSkillUponAwakening(player);
 					}
