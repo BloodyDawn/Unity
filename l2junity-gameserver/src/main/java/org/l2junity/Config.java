@@ -887,6 +887,7 @@ public final class Config
 	public static List<String> TELNET_HOSTS;
 	public static int TELNET_PORT;
 	public static boolean SHOW_LICENCE;
+	public static boolean SHOW_PI_AGREEMENT;
 	public static boolean ACCEPT_NEW_GAMESERVER;
 	public static int SERVER_ID;
 	public static byte[] HEX_ID;
@@ -2317,6 +2318,7 @@ public final class Config
 			CONNECTION_CLOSE_TIME = ServerSettings.getLong("ConnectionCloseTime", 60000);
 			
 			SHOW_LICENCE = ServerSettings.getBoolean("ShowLicence", true);
+			SHOW_PI_AGREEMENT = ServerSettings.getBoolean("ShowPIAgreement", false);
 			
 			AUTO_CREATE_ACCOUNTS = ServerSettings.getBoolean("AutoCreateAccounts", true);
 			

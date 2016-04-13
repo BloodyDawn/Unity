@@ -34,15 +34,14 @@ import org.l2junity.loginserver.network.serverpackets.AccountKicked;
 import org.l2junity.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import org.l2junity.loginserver.network.serverpackets.LoginOk;
+import org.l2junity.loginserver.network.serverpackets.LoginOtpFail;
 import org.l2junity.loginserver.network.serverpackets.ServerList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * <pre>
- * Format: x
- * 0 (a leading null)
- * x: the rsa encrypted block with the login an password.
+ * Format: x 0 (a leading null) x: the rsa encrypted block with the login an password.
  * 
  * <pre>
  */
@@ -100,17 +99,16 @@ public class RequestAuthLogin extends L2LoginClientPacket
 	@Override
 	public void run()
 	{
-		byte[] decUser = null;
-		byte[] decPass = null;
 		final L2LoginClient client = getClient();
+		byte[] decrypted = new byte[_newAuthMethod ? 256 : 128];
 		try
 		{
 			final Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
 			rsaCipher.init(Cipher.DECRYPT_MODE, client.getRSAPrivateKey());
-			decUser = rsaCipher.doFinal(_raw1, 0x00, 0x80);
+			rsaCipher.doFinal(_raw1, 0, 128, decrypted, 0);
 			if (_newAuthMethod)
 			{
-				decPass = rsaCipher.doFinal(_raw2, 0x00, 0x80);
+				rsaCipher.doFinal(_raw2, 0, 128, decrypted, 128);
 			}
 		}
 		catch (GeneralSecurityException e)
@@ -123,18 +121,16 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		{
 			if (_newAuthMethod)
 			{
-				_user = new String(decUser, 0x4E, 0xE).trim().toLowerCase();
-				_password = new String(decPass, 0x5C, 0x10).trim();
+				_user = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 14).trim();
+				_password = new String(decrypted, 0xDC, 16).trim();
+				_ncotp = (decrypted[0xFC] & 0xFF) | ((decrypted[0xFD] & 0xFF) << 8) | ((decrypted[0xFE] & 0xFF) << 16) | ((decrypted[0xFF] & 0xFF) << 24);
 			}
 			else
 			{
-				_user = new String(decUser, 0x5E, 0xE).trim().toLowerCase();
-				_password = new String(decUser, 0x6C, 0x10).trim();
+				_user = new String(decrypted, 0x5E, 14).trim();
+				_password = new String(decrypted, 0x6C, 16).trim();
+				_ncotp = (decrypted[0x7C] & 0xFF) | ((decrypted[0x7D] & 0xFF) << 8) | ((decrypted[0x7E] & 0xFF) << 16) | ((decrypted[0x7F] & 0xFF) << 24);
 			}
-			_ncotp = decUser[0x7c];
-			_ncotp |= decUser[0x7d] << 8;
-			_ncotp |= decUser[0x7e] << 16;
-			_ncotp |= decUser[0x7f] << 24;
 		}
 		catch (Exception e)
 		{
@@ -142,18 +138,23 @@ public class RequestAuthLogin extends L2LoginClientPacket
 			return;
 		}
 		
-		InetAddress clientAddr = getClient().getConnection().getInetAddress();
-		
+		final InetAddress clientAddr = getClient().getConnection().getInetAddress();
 		final LoginController lc = LoginController.getInstance();
-		AccountInfo info = lc.retriveAccountInfo(clientAddr, _user, _password);
+		final AccountInfo info = lc.retriveAccountInfo(clientAddr, _user, _password);
 		if (info == null)
 		{
 			// user or pass wrong
 			client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
 			return;
 		}
+		else if (!info.checkOTP(_ncotp))
+		{
+			client.sendPacket(new LoginOtpFail());
+			client.close(LoginFailReason.REASON_ACCOUNT_INFO_INCORRECT_CONTACT_SUPPORT);
+			return;
+		}
 		
-		AuthLoginResult result = lc.tryCheckinAccount(client, clientAddr, info);
+		final AuthLoginResult result = lc.tryCheckinAccount(client, clientAddr, info);
 		switch (result)
 		{
 			case AUTH_SUCCESS:
@@ -177,7 +178,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 				client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
 				return;
 			case ALREADY_ON_LS:
-				L2LoginClient oldClient = lc.getAuthedClient(info.getLogin());
+				final L2LoginClient oldClient = lc.getAuthedClient(info.getLogin());
 				if (oldClient != null)
 				{
 					// kick the other client
@@ -188,7 +189,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 				client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
 				break;
 			case ALREADY_ON_GS:
-				GameServerInfo gsi = lc.getAccountOnGameServer(info.getLogin());
+				final GameServerInfo gsi = lc.getAccountOnGameServer(info.getLogin());
 				if (gsi != null)
 				{
 					client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);

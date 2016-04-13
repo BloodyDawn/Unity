@@ -23,6 +23,8 @@ import java.nio.ByteBuffer;
 import org.l2junity.loginserver.network.L2LoginClient.LoginClientState;
 import org.l2junity.loginserver.network.clientpackets.AuthGameGuard;
 import org.l2junity.loginserver.network.clientpackets.RequestAuthLogin;
+import org.l2junity.loginserver.network.clientpackets.RequestPIAgreement;
+import org.l2junity.loginserver.network.clientpackets.RequestPIAgreementCheck;
 import org.l2junity.loginserver.network.clientpackets.RequestServerList;
 import org.l2junity.loginserver.network.clientpackets.RequestServerLogin;
 import org.mmocore.network.IPacketHandler;
@@ -78,6 +80,12 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 						break;
 					case 0x05:
 						packet = new RequestServerList();
+						break;
+					case 0x0E:
+						packet = new RequestPIAgreementCheck(); // TODO: Verify names
+						break;
+					case 0x0F:
+						packet = new RequestPIAgreement();
 						break;
 					default:
 						debugOpcode(opcode, state);
