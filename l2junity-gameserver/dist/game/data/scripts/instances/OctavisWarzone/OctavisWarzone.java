@@ -414,6 +414,7 @@ public final class OctavisWarzone extends AbstractInstance
 				world.getAliveNpcs(BEASTS).forEach(beast ->
 				{
 					getTimers().cancelTimer("BEASTS_CHECK_HP", beast, null);
+					beast.teleToLocation(new Location(-113360, -244676, -15536)); // Don't even ask, it's pure hack. - St3eT 2k16
 					beast.deleteMe();
 				});
 				getTimers().addTimer("END_STAGE_1", 1000, npc, null);
