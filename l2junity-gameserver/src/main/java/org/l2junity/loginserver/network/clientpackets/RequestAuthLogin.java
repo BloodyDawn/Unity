@@ -138,7 +138,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 			return;
 		}
 		
-		final InetAddress clientAddr = getClient().getConnection().getInetAddress();
+		final InetAddress clientAddr = client.getConnection().getInetAddress();
 		final LoginController lc = LoginController.getInstance();
 		final AccountInfo info = lc.retriveAccountInfo(clientAddr, _user, _password);
 		if (info == null)
@@ -163,11 +163,11 @@ public class RequestAuthLogin extends L2LoginClientPacket
 				lc.getCharactersOnAccount(info.getLogin());
 				if (Config.SHOW_LICENCE)
 				{
-					client.sendPacket(new LoginOk(getClient().getSessionKey()));
+					client.sendPacket(new LoginOk(client.getSessionKey()));
 				}
 				else
 				{
-					getClient().sendPacket(new ServerList(getClient()));
+					client.sendPacket(new ServerList(client));
 				}
 				break;
 			case INVALID_PASSWORD:
