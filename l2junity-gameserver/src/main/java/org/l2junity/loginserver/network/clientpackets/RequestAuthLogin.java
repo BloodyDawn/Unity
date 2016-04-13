@@ -150,7 +150,6 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		else if (!info.checkOTP(_ncotp))
 		{
 			client.sendPacket(new LoginOtpFail());
-			client.close(LoginFailReason.REASON_ACCOUNT_INFO_INCORRECT_CONTACT_SUPPORT);
 			return;
 		}
 		
