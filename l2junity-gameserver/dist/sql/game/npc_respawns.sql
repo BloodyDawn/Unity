@@ -1,4 +1,4 @@
-CREATE TABLE `npc_respawns` (
+CREATE TABLE IF NOT EXISTS `npc_respawns` (
   `id` int(10) NOT NULL,
   `x` int(10) NOT NULL,
   `y` int(10) NOT NULL,
