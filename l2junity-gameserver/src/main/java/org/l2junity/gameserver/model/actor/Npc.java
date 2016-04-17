@@ -31,6 +31,7 @@ import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.enums.MpRewardAffectType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.ShotType;
@@ -38,6 +39,8 @@ import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager.DBStatusType;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
@@ -143,6 +146,7 @@ public class Npc extends Creature
 	private NpcStringId _nameString;
 	
 	private StatsSet _params;
+	private DBSpawnManager.DBStatusType _raidStatus;
 	
 	/**
 	 * Constructor of L2NpcInstance (use L2Character constructor).<br>
@@ -911,29 +915,27 @@ public class Npc extends Creature
 			{
 				new MpRewardTask(summon, this);
 			}
-			switch (getTemplate().getMpRewardAffectType())
+			if (getTemplate().getMpRewardAffectType() == MpRewardAffectType.PARTY)
 			{
-				case PARTY:
+				final Party party = killerPlayer.getParty();
+				if (party != null)
 				{
-					final Party party = killerPlayer.getParty();
-					if (party != null)
+					for (PlayerInstance member : party.getMembers())
 					{
-						for (PlayerInstance member : party.getMembers())
+						if ((member != killerPlayer) && (member.calculateDistance(getX(), getY(), getZ(), true, false) <= Config.ALT_PARTY_RANGE))
 						{
-							if ((member != killerPlayer) && (member.calculateDistance(getX(), getY(), getZ(), true, false) <= Config.ALT_PARTY_RANGE))
+							new MpRewardTask(member, this);
+							for (Summon summon : member.getServitors().values())
 							{
-								new MpRewardTask(member, this);
-								for (Summon summon : member.getServitors().values())
-								{
-									new MpRewardTask(summon, this);
-								}
+								new MpRewardTask(summon, this);
 							}
 						}
 					}
-					break;
 				}
 			}
 		}
+		
+		DBSpawnManager.getInstance().updateStatus(this, true);
 		return true;
 	}
 	
@@ -1220,7 +1222,7 @@ public class Npc extends Creature
 			{
 				deleteMe();
 			}
-		} , delay);
+		}, delay);
 		return this;
 	}
 	
@@ -1748,5 +1750,15 @@ public class Npc extends Creature
 	public void sendChannelingEffect(Creature target, int state)
 	{
 		broadcastPacket(new ExShowChannelingEffect(this, target, state));
+	}
+	
+	public void setDBStatus(DBStatusType status)
+	{
+		_raidStatus = status;
+	}
+	
+	public DBStatusType getDBStatus()
+	{
+		return _raidStatus;
 	}
 }

@@ -32,7 +32,7 @@ import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.ItemAuctionManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
@@ -519,7 +519,7 @@ public class Shutdown extends Thread
 		TimeCounter tc = new TimeCounter();
 		
 		// Save all raidboss and GrandBoss status ^_^
-		RaidBossSpawnManager.getInstance().cleanUp();
+		DBSpawnManager.getInstance().cleanUp();
 		LOGGER.info("RaidBossSpawnManager: All raidboss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		GrandBossManager.getInstance().cleanUp();
 		LOGGER.info("GrandBossManager: All Grand Boss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");

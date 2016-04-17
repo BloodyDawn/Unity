@@ -23,7 +23,7 @@ import java.util.function.Predicate;
 
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -97,9 +97,9 @@ public class AdminScan implements IAdminCommandHandler
 					{
 						spawn.stopRespawn();
 						
-						if (RaidBossSpawnManager.getInstance().isDefined(spawn.getId()))
+						if (DBSpawnManager.getInstance().isDefined(spawn.getId()))
 						{
-							RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
+							DBSpawnManager.getInstance().deleteSpawn(spawn, true);
 						}
 						else
 						{

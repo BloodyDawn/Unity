@@ -330,6 +330,7 @@ public class Attackable extends Npc
 				mob.getMinionList().onMasterDie(false);
 			}
 		}
+		
 		return true;
 	}
 	

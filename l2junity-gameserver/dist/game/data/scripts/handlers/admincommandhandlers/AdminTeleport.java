@@ -33,7 +33,7 @@ import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.enums.AdminTeleportType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
@@ -580,7 +580,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				_log.warn("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
 				return;
 			}
-			RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
+			DBSpawnManager.getInstance().deleteSpawn(spawn, true);
 			try
 			{
 				final L2Spawn spawnDat = new L2Spawn(target.getId());
@@ -592,7 +592,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				spawnDat.setRespawnMinDelay(43200);
 				spawnDat.setRespawnMaxDelay(129600);
 				
-				RaidBossSpawnManager.getInstance().addNewSpawn(spawnDat, 0, curHP, curMP, true);
+				DBSpawnManager.getInstance().addNewSpawn(spawnDat, 0, curHP, curMP, true);
 			}
 			catch (Exception e)
 			{

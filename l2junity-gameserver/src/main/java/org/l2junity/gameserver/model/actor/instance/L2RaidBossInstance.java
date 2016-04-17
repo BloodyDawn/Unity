@@ -22,9 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 
@@ -36,7 +34,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 {
 	private static final int RAIDBOSS_MAINTENANCE_INTERVAL = 30000; // 30 sec
 	
-	private RaidBossSpawnManager.StatusEnum _raidStatus;
 	private boolean _useRaidCurse = true;
 	
 	/**
@@ -69,18 +66,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	protected int getMaintenanceInterval()
 	{
 		return RAIDBOSS_MAINTENANCE_INTERVAL;
-	}
-	
-	@Override
-	public boolean doDie(Creature killer)
-	{
-		if (!super.doDie(killer))
-		{
-			return false;
-		}
-		
-		RaidBossSpawnManager.getInstance().updateStatus(this, true);
-		return true;
 	}
 	
 	/**
@@ -116,16 +101,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 				teleToLocation(spawnX, spawnY, spawnZ);
 			}
 		}
-	}
-	
-	public void setRaidStatus(RaidBossSpawnManager.StatusEnum status)
-	{
-		_raidStatus = status;
-	}
-	
-	public RaidBossSpawnManager.StatusEnum getRaidStatus()
-	{
-		return _raidStatus;
 	}
 	
 	@Override

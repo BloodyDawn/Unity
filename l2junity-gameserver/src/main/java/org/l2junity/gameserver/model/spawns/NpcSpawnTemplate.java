@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.ChanceLocation;
 import org.l2junity.gameserver.model.L2Spawn;
@@ -59,6 +60,8 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	private SpawnTerritory _zone;
 	private StatsSet _parameters;
 	private final boolean _spawnAnimation;
+	private final boolean _saveInDB;
+	private final String _dbName;
 	private List<MinionHolder> _minions;
 	private final SpawnTemplate _spawnTemplate;
 	private final SpawnGroup _group;
@@ -73,6 +76,8 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		_respawnTime = set.getDuration("respawnTime", null);
 		_respawnTimeRandom = set.getDuration("respawnRandom", null);
 		_spawnAnimation = set.getBoolean("spawnAnimation", false);
+		_saveInDB = set.getBoolean("dbSave", false);
+		_dbName = set.getString("dbName", null);
 		
 		final int x = set.getInt("x", Integer.MAX_VALUE);
 		final int y = set.getInt("y", Integer.MAX_VALUE);
@@ -174,6 +179,16 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	public boolean hasSpawnAnimation()
 	{
 		return _spawnAnimation;
+	}
+	
+	public boolean hasDBSave()
+	{
+		return _saveInDB;
+	}
+	
+	public String getDBName()
+	{
+		return _dbName;
 	}
 	
 	public List<MinionHolder> getMinions()
@@ -280,7 +295,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 					respawnRandom = (int) _respawnTimeRandom.getSeconds();
 				}
 				
-				if ((respawn > 0) || (respawnRandom > 0))
+				if (respawn > 0)
 				{
 					spawn.setRespawnDelay(respawn, respawnRandom);
 					spawn.startRespawn();
@@ -291,16 +306,28 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 				}
 				
 				spawn.setSpawnTemplate(this);
-				for (int i = 0; i < spawn.getAmount(); i++)
+				
+				if (_saveInDB)
 				{
-					final Npc npc = spawn.doSpawn(_spawnAnimation);
-					if (npc.isMonster() && (_minions != null))
+					if (!DBSpawnManager.getInstance().isDefined(_id))
 					{
-						((L2MonsterInstance) npc).getMinionList().spawnMinions(_minions);
+						DBSpawnManager.getInstance().addNewSpawn(spawn, true);
 					}
-					_spawnedNpcs.add(npc);
 				}
-				SpawnTable.getInstance().addNewSpawn(spawn, false);
+				else
+				{
+					for (int i = 0; i < spawn.getAmount(); i++)
+					{
+						final Npc npc = spawn.doSpawn(_spawnAnimation);
+						if (npc.isMonster() && (_minions != null))
+						{
+							((L2MonsterInstance) npc).getMinionList().spawnMinions(_minions);
+						}
+						_spawnedNpcs.add(npc);
+					}
+					
+					SpawnTable.getInstance().addNewSpawn(spawn, false);
+				}
 			}
 		}
 		catch (Exception e)

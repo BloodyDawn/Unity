@@ -24,6 +24,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
@@ -108,6 +110,11 @@ public class SpawnsData implements IGameXmlReader
 	public List<SpawnTemplate> getSpawns()
 	{
 		return _spawns;
+	}
+	
+	public List<NpcSpawnTemplate> getSpawns(Predicate<NpcSpawnTemplate> condition)
+	{
+		return _spawns.stream().flatMap(template -> template.getGroups().stream()).flatMap(group -> group.getSpawns().stream()).filter(condition).collect(Collectors.toList());
 	}
 	
 	public void parseSpawn(Node spawnsNode, File file, List<SpawnTemplate> spawns)

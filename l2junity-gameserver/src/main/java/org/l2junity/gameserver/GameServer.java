@@ -122,7 +122,7 @@ import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.instancemanager.SellBuffsManager;
 import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
@@ -325,7 +325,7 @@ public class GameServer
 		SpawnTable.getInstance().load();
 		SpawnsData.getInstance().init();
 		FourSepulchersManager.getInstance().init();
-		RaidBossSpawnManager.getInstance();
+		DBSpawnManager.getInstance();
 		
 		printSection("Event Engine");
 		EventEngineData.getInstance();

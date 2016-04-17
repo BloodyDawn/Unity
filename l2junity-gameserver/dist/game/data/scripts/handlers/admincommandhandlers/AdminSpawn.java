@@ -28,9 +28,9 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -212,19 +212,18 @@ public class AdminSpawn implements IAdminCommandHandler
 		else if (command.startsWith("admin_unspawnall"))
 		{
 			Broadcast.toAllOnlinePlayers(SystemMessage.getSystemMessage(SystemMessageId.THE_NPC_SERVER_IS_NOT_OPERATING_AT_THIS_TIME));
-			RaidBossSpawnManager.getInstance().cleanUp();
+			DBSpawnManager.getInstance().cleanUp();
 			World.getInstance().deleteVisibleNpcSpawns();
 			AdminData.getInstance().broadcastMessageToGMs("NPC Unspawn completed!");
 		}
 		else if (command.startsWith("admin_respawnall") || command.startsWith("admin_spawn_reload"))
 		{
 			// make sure all spawns are deleted
-			RaidBossSpawnManager.getInstance().cleanUp();
+			DBSpawnManager.getInstance().cleanUp();
 			World.getInstance().deleteVisibleNpcSpawns();
 			// now respawn all
 			NpcData.getInstance().load();
 			SpawnTable.getInstance().load();
-			RaidBossSpawnManager.getInstance().load();
 			QuestManager.getInstance().reloadAllScripts();
 			AdminData.getInstance().broadcastMessageToGMs("NPC Respawn completed!");
 		}
@@ -406,17 +405,17 @@ public class AdminSpawn implements IAdminCommandHandler
 				permanent = false;
 			}
 			// TODO add checks for GrandBossSpawnManager
-			if (RaidBossSpawnManager.getInstance().isDefined(spawn.getId()))
+			if (DBSpawnManager.getInstance().isDefined(spawn.getId()))
 			{
 				activeChar.sendMessage("You cannot spawn another instance of " + template1.getName() + ".");
 			}
 			else
 			{
-				if (RaidBossSpawnManager.getInstance().getValidTemplate(spawn.getId()) != null)
+				if (DBSpawnManager.getInstance().getValidTemplate(spawn.getId()) != null)
 				{
 					spawn.setRespawnMinDelay(43200);
 					spawn.setRespawnMaxDelay(129600);
-					RaidBossSpawnManager.getInstance().addNewSpawn(spawn, 0, template1.getBaseHpMax(), template1.getBaseMpMax(), permanent);
+					DBSpawnManager.getInstance().addNewSpawn(spawn, 0, template1.getBaseHpMax(), template1.getBaseMpMax(), permanent);
 				}
 				else
 				{

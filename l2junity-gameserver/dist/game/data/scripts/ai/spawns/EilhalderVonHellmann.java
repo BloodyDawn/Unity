@@ -19,9 +19,8 @@
 package ai.spawns;
 
 import org.l2junity.gameserver.GameTimeController;
-import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
@@ -64,7 +63,7 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
 		LOGGER.info("Spawning Night Raid Boss " + npc.getName());
-		RaidBossSpawnManager.getInstance().notifySpawnNightBoss((L2RaidBossInstance) npc);
+		DBSpawnManager.getInstance().notifySpawnNightNpc(npc);
 	}
 	
 	@Override
