@@ -75,7 +75,7 @@ public class DBSpawnManager
 	/**
 	 * Load.
 	 */
-	private void load()
+	public void load()
 	{
 		_npcs.clear();
 		_spawns.clear();
