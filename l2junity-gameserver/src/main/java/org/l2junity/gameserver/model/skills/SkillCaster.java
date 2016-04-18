@@ -380,6 +380,9 @@ public class SkillCaster implements Runnable
 			_targets = Collections.singletonList(target);
 		}
 		
+		// Noptify skill is casted.
+		EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(caster, target, _skill, _skill.isWithoutAction()), caster);
+		
 		// Call the skill's effects and AI interraction and stuff.
 		SkillCaster.callSkill(caster, target, _targets, _skill, _item);
 		
@@ -418,9 +421,6 @@ public class SkillCaster implements Runnable
 				}
 			}
 		}
-		
-		// Noptify skill is casted.
-		EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(caster, target, _skill, _skill.isWithoutAction()), caster);
 		
 		// Notify DP Scripts
 		caster.notifyQuestEventSkillFinished(_skill, target);
