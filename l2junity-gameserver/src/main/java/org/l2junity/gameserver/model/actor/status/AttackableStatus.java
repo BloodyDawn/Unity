@@ -68,6 +68,12 @@ public class AttackableStatus extends NpcStatus
 	}
 	
 	@Override
+	public boolean setCurrentHp(double newHp, boolean broadcastPacket)
+	{
+		return super.setCurrentHp(newHp, true);
+	}
+	
+	@Override
 	public Attackable getActiveChar()
 	{
 		return (Attackable) super.getActiveChar();
