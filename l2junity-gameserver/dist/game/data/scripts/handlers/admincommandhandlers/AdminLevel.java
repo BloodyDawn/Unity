@@ -22,11 +22,10 @@ import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class AdminLevel implements IAdminCommandHandler
 {
@@ -67,11 +66,32 @@ public class AdminLevel implements IAdminCommandHandler
 		{
 			try
 			{
-				final int npcId = Integer.parseInt(val);
-				final Npc npc = DBSpawnManager.getInstance().getNpcs().values().stream().filter(n -> (n.getId() == npcId)).findFirst().orElse(null);
-				if (npc != null)
+				if (!(targetChar instanceof PlayerInstance))
 				{
-					activeChar.teleToLocation(npc);
+					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET); // incorrect target!
+					return false;
+				}
+				PlayerInstance targetPlayer = (PlayerInstance) targetChar;
+				
+				byte lvl = Byte.parseByte(val);
+				if ((lvl >= 1) && (lvl <= ExperienceData.getInstance().getMaxLevel()))
+				{
+					long pXp = targetPlayer.getExp();
+					long tXp = ExperienceData.getInstance().getExpForLevel(lvl);
+					
+					if (pXp > tXp)
+					{
+						targetPlayer.removeExpAndSp(pXp - tXp, 0);
+					}
+					else if (pXp < tXp)
+					{
+						targetPlayer.addExpAndSp(tXp - pXp, 0);
+					}
+				}
+				else
+				{
+					activeChar.sendMessage("You must specify level between 1 and " + ExperienceData.getInstance().getMaxLevel() + ".");
+					return false;
 				}
 			}
 			catch (NumberFormatException e)
