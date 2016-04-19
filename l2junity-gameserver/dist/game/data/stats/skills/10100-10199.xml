@@ -334,9 +334,9 @@
 		</effectPoint>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKDOWN</trait>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>

@@ -79,9 +79,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
@@ -228,9 +232,13 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
@@ -341,9 +349,13 @@
 		<affectScope>SINGLE</affectScope>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKDOWN</trait>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="KnockBack">
 				<speed>300</speed>
@@ -393,9 +405,13 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
@@ -470,9 +486,13 @@
 		<reuseDelay>9000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
@@ -545,9 +565,13 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
@@ -629,9 +653,13 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKBACK</trait>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Unconfirmed -->
@@ -707,9 +735,13 @@
 		<reuseDelay>7000</reuseDelay>
 		<isDebuff>true</isDebuff>
 		<trait>SHOCK</trait>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<startEffects>
 			<effect name="FlyMove">
 				<!-- Left -->
@@ -773,9 +805,13 @@
 		<coolTime>300</coolTime>
 		<reuseDelay>7000</reuseDelay>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<startEffects>
 			<effect name="FlyMove">
 				<!-- Right -->
@@ -845,9 +881,13 @@
 		<hitTime>100</hitTime>
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>7000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<startEffects>
 			<effect name="FlyMove">
 				<!-- Your back -->
@@ -1000,9 +1040,13 @@
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>180000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="EffectFlag">
 				<effectFlag>ATTACK_BEHIND</effectFlag>
@@ -1058,9 +1102,13 @@
 		<hitTime>200</hitTime>
 		<effectPoint>379</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<!-- TODO: Effect should be only available on skill level 2 or 3. -->
 			<effect name="AbnormalShield">
@@ -1112,9 +1160,13 @@
 		<coolTime>500</coolTime>
 		<effectPoint>379</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SphericBarrier">
 				<amount>150</amount>
@@ -1189,9 +1241,13 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockEscape" />
 			<effect name="Speed">
@@ -1236,9 +1292,13 @@
 		<isMagic>6</isMagic>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKDOWN</trait>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack"><!-- TODO: Damage increases twice with each enemy affected. -->
 				<power>
@@ -1273,9 +1333,13 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-707</effectPoint>
 		<reuseDelay>600000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="30520" toLevel="3" name="Steel Mind">
 		<!-- Updated to IO -->
@@ -1300,9 +1364,13 @@
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
 		<reuseDelay>300000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="SkillCriticalDamage">
 				<amount>
@@ -1375,6 +1443,13 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="RegularAttack">
 				<pAtkMod>5</pAtkMod>
@@ -1464,9 +1539,6 @@
 		<!-- Has a chance to inflict normal damage x 5. Requires a Fist Weapon to activate. -->
 		<icon>icon.skill30526</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Damage Up -->
@@ -2460,12 +2532,16 @@
 		<reuseDelay>7000</reuseDelay>
 		<effectPoint>-700</effectPoint>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="DUALFIST" />
-		</cond>
-		<cond msgId="113" addName="1">
-			<target mindistance="100" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="KnockBack">
 				<speed>600</speed>
@@ -2488,12 +2564,18 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-700</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="DUALFIST" />
-				<target abnormalType="KNOCKDOWN" /> <!-- Fallen Target -->
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>KNOCKDOWN</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<!-- Ignores 50% of target's P. Def -->

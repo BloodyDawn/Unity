@@ -36,9 +36,11 @@
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>1</effectPoint>
 		<hitTime>1000</hitTime>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>154</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>154</transformationId>
@@ -57,9 +59,11 @@
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>1</effectPoint>
 		<hitTime>1000</hitTime>
-		<cond>
-			<player canTransform="true" />
-		</cond>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>155</transformId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Transformation">
 				<transformationId>155</transformationId>

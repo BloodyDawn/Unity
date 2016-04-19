@@ -111,9 +111,14 @@
 			<value level="27">103</value>
 			<value level="28">105</value>
 		</magicLvl>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -237,12 +242,19 @@
 			<value level="19">103</value>
 			<value level="20">105</value>
 		</magicLvl>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD,BLUNT" />
-				<target active_effect_id_lvl="30002,3" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>STORM_SIGN</type>
+				<level>3</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -348,12 +360,19 @@
 			<value level="25">105</value>
 		</magicLvl>
 		<trait>KNOCKBACK</trait>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD,BLUNT" />
-				<target active_effect_id="30002" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>STORM_SIGN</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -461,9 +480,14 @@
 		<isMagic>1</isMagic>
 		<isDebuff>true</isDebuff>
 		<trait>KNOCKBACK</trait>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="KnockBack">
 				<distance>60</distance>
@@ -536,12 +560,19 @@
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD,BLUNT" />
-				<target active_effect_id_lvl="30002,3" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>STORM_SIGN</type>
+				<level>3</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -614,9 +645,14 @@
 			<value level="5">20000</value>
 		</reuseDelay>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<endEffects>
 			<effect name="CallSkill">
 				<!-- Wind Hiding -->
@@ -671,9 +707,14 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="Blink">
 				<!-- Teleport to Back, unconfirmed -->
@@ -778,9 +819,14 @@
 		<reuseDelay>15000</reuseDelay>
 		<effectPoint>-687</effectPoint>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="CallSkill">
 				<!-- Storm Sign -->
@@ -910,12 +956,15 @@
 		<coolTime>300</coolTime>
 		<reuseDelay>300000</reuseDelay>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD,BLUNT" />
-				<target playable="true" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<effects>
 			<effect name="BlinkSwap" />
 		</effects>
@@ -950,9 +999,14 @@
 		<isMagic>1</isMagic>
 		<abnormalTime>5</abnormalTime>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="30015" toLevel="1" name="Mass Compelling Wind">
 		<!-- AUTO GENERATED SKILL -->
@@ -1217,9 +1271,14 @@
 		<reuseDelay>15000</reuseDelay>
 		<isMagic>1</isMagic>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -1267,9 +1326,14 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>2</effectPoint>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DefenceMagicCriticalDamage">
 				<amount>-50</amount>
@@ -1319,9 +1383,14 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>300000</reuseDelay>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="DefenceTrait">
 				<KNOCKDOWN>
@@ -1440,9 +1509,14 @@
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>7</isMagic>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>

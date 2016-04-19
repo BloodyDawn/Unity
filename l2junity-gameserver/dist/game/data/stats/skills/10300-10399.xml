@@ -514,12 +514,21 @@
 		<coolTime>500</coolTime>
 		<effectPoint>-669</effectPoint>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<and>
-				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				<target mindistance="200" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DUAL</item>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>DUALFIST</item>
+					<item>POLE</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</condition>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="BlockActions" />
 		</effects>

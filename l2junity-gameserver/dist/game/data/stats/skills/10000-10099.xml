@@ -3773,9 +3773,9 @@
 		<hitTime>1000</hitTime>
 		<effectPoint>810</effectPoint>
 		<reuseDelay>5000</reuseDelay>
-		<cond addName="1" msgId="113">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>
@@ -4349,9 +4349,9 @@
 		<isDebuff>true</isDebuff>
 		<staticReuse>true</staticReuse>
 		<trait>PARALYZE</trait>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -4511,9 +4511,11 @@
 		<reuseDelay>21000</reuseDelay>
 		<effectPoint>-2</effectPoint>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<target mindistance="200" />
-		</cond>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -4676,9 +4678,9 @@
 		<reuseDelay>60000</reuseDelay>
 		<effectPoint>-828</effectPoint>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
@@ -4794,9 +4796,9 @@
 			<value level="6">-10852</value>
 		</effectPoint>
 		<isDebuff>true</isDebuff>
-		<cond msgId="113" addName="1">
-			<using kind="SHIELD" />
-		</cond>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttack" />
 			<effect name="TargetMe" />
