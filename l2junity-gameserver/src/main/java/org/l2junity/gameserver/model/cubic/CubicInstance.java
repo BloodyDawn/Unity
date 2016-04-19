@@ -164,11 +164,13 @@ public class CubicInstance
 						case TARGET:
 						{
 							final WorldObject targetObject = _owner.getTarget();
-							final Creature target = (targetObject != null) && targetObject.isCreature() ? (Creature) targetObject : _owner;
-							
-							if (skill.validateConditions(this, _owner, target))
+							if ((targetObject != null) && targetObject.isCreature())
 							{
-								return target;
+								final Creature target = (Creature) targetObject;
+								if (skill.validateConditions(this, _owner, target))
+								{
+									return target;
+								}
 							}
 							break;
 						}
