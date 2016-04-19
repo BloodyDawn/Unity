@@ -40,7 +40,7 @@ public class GeneralCondition implements ICubicCondition
 	@Override
 	public boolean test(CubicInstance cubic, Creature owner, Creature target)
 	{
-		final double hpPer = (1 - target.getCurrentHpPercent()) * 100;
+		final double hpPer = target.getCurrentHpPercent();
 		switch (_type)
 		{
 			case GREATER:
