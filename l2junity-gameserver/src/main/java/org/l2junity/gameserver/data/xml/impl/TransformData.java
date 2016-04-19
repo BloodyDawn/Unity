@@ -24,7 +24,6 @@ import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.actor.transform.TransformLevelData;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
@@ -224,16 +223,6 @@ public final class TransformData implements IGameXmlReader
 	public Transform getTransform(int id)
 	{
 		return _transformData.get(id);
-	}
-	
-	public boolean transformPlayer(int id, PlayerInstance player)
-	{
-		final Transform transform = getTransform(id);
-		if (transform != null)
-		{
-			player.transform(transform);
-		}
-		return transform != null;
 	}
 	
 	public static TransformData getInstance()

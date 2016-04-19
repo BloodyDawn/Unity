@@ -24,7 +24,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
-import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
@@ -65,33 +64,39 @@ public interface IStatsFunction
 	default double calcWeaponBaseValue(Creature creature, Stats stat)
 	{
 		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
-		if (creature.isPet())
+		final double baseValue = creature.getTransformation().map(transform -> transform.getStats(creature, stat, baseTemplateBalue)).orElseGet(() ->
 		{
-			final L2PetInstance pet = (L2PetInstance) creature;
-			final ItemInstance weapon = pet.getActiveWeaponInstance();
-			final double baseVal = stat == Stats.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() : stat == Stats.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateBalue;
-			return baseVal + (weapon != null ? weapon.getItem().getStats(stat, baseVal) : 0);
-		}
-		else if (creature.isPlayer())
-		{
-			final ItemInstance weapon = creature.getActiveWeaponInstance();
-			final Transform transform = creature.getTransformation();
-			return transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : (weapon != null ? weapon.getItem().getStats(stat, baseTemplateBalue) : baseTemplateBalue);
-		}
-		return baseTemplateBalue;
+			if (creature.isPet())
+			{
+				final L2PetInstance pet = (L2PetInstance) creature;
+				final ItemInstance weapon = pet.getActiveWeaponInstance();
+				final double baseVal = stat == Stats.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() : stat == Stats.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateBalue;
+				return baseVal + (weapon != null ? weapon.getItem().getStats(stat, baseVal) : 0);
+			}
+			else if (creature.isPlayer())
+			{
+				final ItemInstance weapon = creature.getActiveWeaponInstance();
+				return (weapon != null ? weapon.getItem().getStats(stat, baseTemplateBalue) : baseTemplateBalue);
+			}
+			
+			return baseTemplateBalue;
+		});
+		
+		return baseValue;
 	}
 	
 	default double calcWeaponPlusBaseValue(Creature creature, Stats stat)
 	{
 		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
+		final double baseValue = creature.getTransformation().map(transform -> transform.getStats(creature, stat, baseTemplateBalue)).orElse(baseTemplateBalue);
+		
 		if (creature.isPlayable())
 		{
 			final ItemInstance weapon = creature.getActiveWeaponInstance();
-			final Transform transform = creature.getTransformation();
-			final double baseValue = transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : baseTemplateBalue;
 			return (weapon != null ? weapon.getItem().getStats(stat, 0) + baseValue : baseValue);
 		}
-		return baseTemplateBalue;
+		
+		return baseValue;
 	}
 	
 	default double calcEnchantedItemBonus(Creature creature, Stats stat)

@@ -25,6 +25,7 @@ import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -90,7 +91,7 @@ public final class SkillTransfer extends AbstractNpcAI
 					if (s.getSkillId() == sk.getId())
 					{
 						// Holy Weapon allowed for Shilien Saint/Inquisitor stance
-						if ((sk.getId() == 1043) && (index == 2) && player.isInStance())
+						if ((sk.getId() == 1043) && (index == 2) && player.checkTransformed(Transform::isStance))
 						{
 							continue;
 						}

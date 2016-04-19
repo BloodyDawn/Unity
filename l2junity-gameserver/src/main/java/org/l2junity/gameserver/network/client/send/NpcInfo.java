@@ -179,7 +179,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.ENCHANT);
 		}
 		
-		if ((npc.getTransformation() != null) && (npc.getTransformation().getId() > 0))
+		if (npc.getTransformationDisplayId() > 0)
 		{
 			addComponentType(NpcInfoType.TRANSFORMATION);
 		}
@@ -376,7 +376,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.TRANSFORMATION))
 		{
-			packet.writeD(0x00); // Transformation ID
+			packet.writeD(_npc.getTransformationDisplayId()); // Transformation ID
 		}
 		if (containsMask(NpcInfoType.CURRENT_HP))
 		{

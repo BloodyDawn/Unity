@@ -173,7 +173,7 @@ public class Fishing
 			return;
 		}
 		
-		if (_player.isTransformed() || _player.isInBoat() || _player.isFlyingMounted())
+		if (_player.isTransformed() || _player.isInBoat())
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHEN_TRANSFORMED_OR_WHILE_RIDING_AS_A_PASSENGER_OF_A_BOAT_IT_S_AGAINST_THE_RULES);
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -223,7 +223,7 @@ public class Fishing
 		{
 			_player.getFishing().reelInWithReward();
 			_startFishingTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> _player.getFishing().castLine(), Rnd.get(FishingData.getInstance().getFishingTimeWaitMin(), FishingData.getInstance().getFishingTimeWaitMax()));
-		} , Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
+		}, Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStart(_player, -1, baitData.getLevel(), _baitLocation));
 		_player.sendPacket(new ExUserInfoFishing(_player, true, _baitLocation));

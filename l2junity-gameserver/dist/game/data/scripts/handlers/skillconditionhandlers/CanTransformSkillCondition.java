@@ -53,7 +53,7 @@ public class CanTransformSkillCondition implements ISkillCondition
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TRANSFORM_WHILE_SITTING);
 			canTransform = false;
 		}
-		else if (player.isTransformed() || player.isInStance())
+		else if (player.isTransformed())
 		{
 			player.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
 			canTransform = false;

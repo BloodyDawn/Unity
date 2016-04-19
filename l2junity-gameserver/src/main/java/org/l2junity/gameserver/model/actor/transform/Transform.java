@@ -20,19 +20,28 @@ package org.l2junity.gameserver.model.actor.transform;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.InventoryBlockType;
-import org.l2junity.gameserver.model.SkillLearn;
+import org.l2junity.gameserver.enums.Sex;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransform;
 import org.l2junity.gameserver.model.holders.AdditionalItemHolder;
 import org.l2junity.gameserver.model.holders.AdditionalSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
+import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
+import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
+import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 
 /**
  * @author UnAfraid
@@ -116,9 +125,18 @@ public final class Transform implements IIdentifiable
 		return _title;
 	}
 	
-	public TransformTemplate getTemplate(PlayerInstance player)
+	public TransformTemplate getTemplate(Creature creature)
 	{
-		return player != null ? (player.getAppearance().getSex() ? _femaleTemplate : _maleTemplate) : null;
+		if (creature.isPlayer())
+		{
+			return (creature.getActingPlayer().getAppearance().getSex() ? _femaleTemplate : _maleTemplate);
+		}
+		else if (creature.isNpc())
+		{
+			return ((Npc) creature).getTemplate().getSex() == Sex.FEMALE ? _femaleTemplate : _maleTemplate;
+		}
+		
+		return null;
 	}
 	
 	public void setTemplate(boolean male, TransformTemplate template)
@@ -197,171 +215,188 @@ public final class Transform implements IIdentifiable
 		return _type == TransformType.PURE_STAT;
 	}
 	
-	public double getCollisionHeight(PlayerInstance player)
+	public double getCollisionHeight(Creature creature, double defaultCollisionHeight)
 	{
-		final TransformTemplate template = getTemplate(player);
-		return template != null ? template.getCollisionHeight() : player.getCollisionHeight();
+		final TransformTemplate template = getTemplate(creature);
+		if ((template != null) && (template.getCollisionHeight() != null))
+		{
+			return template.getCollisionHeight();
+		}
+		
+		return defaultCollisionHeight;
 	}
 	
-	public double getCollisionRadius(PlayerInstance player)
+	public double getCollisionRadius(Creature creature, double defaultCollisionRadius)
 	{
-		final TransformTemplate template = getTemplate(player);
-		return template != null ? template.getCollisionRadius() : player.getCollisionRadius();
+		final TransformTemplate template = getTemplate(creature);
+		if ((template != null) && (template.getCollisionRadius() != null))
+		{
+			return template.getCollisionRadius();
+		}
+		
+		return defaultCollisionRadius;
 	}
 	
-	public int getBaseAttackRange(PlayerInstance player)
+	public void onTransform(Creature creature, boolean addSkills)
 	{
-		final TransformTemplate template = getTemplate(player);
-		return template != null ? template.getBaseAttackRange() : player.getTemplate().getBaseAttackRange();
-	}
-	
-	public void onTransform(PlayerInstance player)
-	{
-		final TransformTemplate template = getTemplate(player);
+		final TransformTemplate template = getTemplate(creature);
 		if (template != null)
 		{
 			// Start flying.
 			if (isFlying())
 			{
-				player.setIsFlying(true);
+				creature.setIsFlying(true);
 			}
 			
 			// Get player a bit higher so he doesn't drops underground after transformation happens
-			player.setZ(player.getZ() + (int) template.getCollisionHeight());
+			creature.setZ(creature.getZ() + (int) getCollisionHeight(creature, 0));
 			
-			if (getName() != null)
+			if (creature.isPlayer())
 			{
-				player.getAppearance().setVisibleName(getName());
-			}
-			if (getTitle() != null)
-			{
-				player.getAppearance().setVisibleTitle(getTitle());
-			}
-			
-			// Add common skills.
-			for (SkillHolder holder : template.getSkills())
-			{
-				if (player.getSkillLevel(holder.getSkillId()) < holder.getSkillLvl())
+				final PlayerInstance player = creature.getActingPlayer();
+				if (getName() != null)
 				{
-					player.addSkill(holder.getSkill(), false);
+					player.getAppearance().setVisibleName(getName());
 				}
-				player.addTransformSkill(holder.getSkillId());
-			}
-			
-			// Add skills depending on level.
-			for (AdditionalSkillHolder holder : template.getAdditionalSkills())
-			{
-				if (player.getLevel() >= holder.getMinLevel())
+				if (getTitle() != null)
 				{
-					if (player.getSkillLevel(holder.getSkillId()) < holder.getSkillLvl())
+					player.getAppearance().setVisibleTitle(getTitle());
+				}
+				
+				if (addSkills)
+				{
+					//@formatter:off
+					// Add common skills.
+					template.getSkills()
+						.stream()
+						.map(SkillHolder::getSkill)
+						.forEach(player::addTransformSkill);
+					
+					// Add skills depending on level.
+					template.getAdditionalSkills()
+						.stream()
+						.filter(h -> player.getLevel() >= h.getMinLevel())
+						.map(SkillHolder::getSkill)
+						.forEach(player::addTransformSkill);
+					
+					// Add collection skills.
+					SkillTreesData.getInstance().getCollectSkillTree().values()
+						.stream()
+						.map(s -> player.getKnownSkill(s.getSkillId()))
+						.filter(Objects::nonNull)
+						.forEach(player::addTransformSkill);
+					//@formatter:on
+				}
+				
+				// Set inventory blocks if needed.
+				if (!template.getAdditionalItems().isEmpty())
+				{
+					final List<Integer> allowed = new ArrayList<>();
+					final List<Integer> notAllowed = new ArrayList<>();
+					for (AdditionalItemHolder holder : template.getAdditionalItems())
 					{
-						player.addSkill(holder.getSkill(), false);
+						if (holder.isAllowedToUse())
+						{
+							allowed.add(holder.getId());
+						}
+						else
+						{
+							notAllowed.add(holder.getId());
+						}
 					}
-					player.addTransformSkill(holder.getSkillId());
-				}
-			}
-			
-			// Add collection skills.
-			for (SkillLearn skill : SkillTreesData.getInstance().getCollectSkillTree().values())
-			{
-				if (player.getKnownSkill(skill.getSkillId()) != null)
-				{
-					player.addTransformSkill(skill.getSkillId());
-				}
-			}
-			
-			// Set inventory blocks if needed.
-			if (!template.getAdditionalItems().isEmpty())
-			{
-				final List<Integer> allowed = new ArrayList<>();
-				final List<Integer> notAllowed = new ArrayList<>();
-				for (AdditionalItemHolder holder : template.getAdditionalItems())
-				{
-					if (holder.isAllowedToUse())
+					
+					if (!allowed.isEmpty())
 					{
-						allowed.add(holder.getId());
+						player.getInventory().setInventoryBlock(allowed, InventoryBlockType.WHITELIST);
 					}
-					else
+					
+					if (!notAllowed.isEmpty())
 					{
-						notAllowed.add(holder.getId());
+						player.getInventory().setInventoryBlock(notAllowed, InventoryBlockType.BLACKLIST);
 					}
 				}
 				
-				if (!allowed.isEmpty())
+				// Send basic action list.
+				if (template.hasBasicActionList())
 				{
-					player.getInventory().setInventoryBlock(allowed, InventoryBlockType.WHITELIST);
+					player.sendPacket(template.getBasicActionList());
 				}
 				
-				if (!notAllowed.isEmpty())
+				player.getEffectList().stopAllToggles();
+				
+				if (player.hasTransformSkills())
 				{
-					player.getInventory().setInventoryBlock(notAllowed, InventoryBlockType.BLACKLIST);
+					player.sendSkillList();
+					player.sendPacket(new SkillCoolTime(player));
 				}
+				
+				player.sendPacket(new ExUserInfoAbnormalVisualEffect(player));
+				player.broadcastUserInfo();
+				
+				// Notify to scripts
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(player, getId()), player);
 			}
-			
-			// Send basic action list.
-			if (template.hasBasicActionList())
+			else
 			{
-				player.sendPacket(template.getBasicActionList());
+				creature.broadcastInfo();
 			}
 		}
 	}
 	
-	public void onUntransform(PlayerInstance player)
+	public void onUntransform(Creature creature)
 	{
-		final TransformTemplate template = getTemplate(player);
+		final TransformTemplate template = getTemplate(creature);
 		if (template != null)
 		{
 			// Stop flying.
 			if (isFlying())
 			{
-				player.setIsFlying(false);
+				creature.setIsFlying(false);
 			}
 			
-			if (getName() != null)
+			if (creature.isPlayer())
 			{
-				player.getAppearance().setVisibleName(null);
-			}
-			if (getTitle() != null)
-			{
-				player.getAppearance().setVisibleTitle(null);
-			}
-			
-			// Remove common skills.
-			if (!template.getSkills().isEmpty())
-			{
-				for (SkillHolder holder : template.getSkills())
+				final PlayerInstance player = creature.getActingPlayer();
+				final boolean hasTransformSkills = player.hasTransformSkills();
+				
+				if (getName() != null)
 				{
-					final Skill skill = holder.getSkill();
-					if (!SkillTreesData.getInstance().isSkillAllowed(player, skill))
-					{
-						player.removeSkill(skill, false, true);
-					}
+					player.getAppearance().setVisibleName(null);
 				}
-			}
-			
-			// Remove skills depending on level.
-			if (!template.getAdditionalSkills().isEmpty())
-			{
-				for (AdditionalSkillHolder holder : template.getAdditionalSkills())
+				if (getTitle() != null)
 				{
-					final Skill skill = holder.getSkill();
-					if ((player.getLevel() >= holder.getMinLevel()) && !SkillTreesData.getInstance().isSkillAllowed(player, skill))
-					{
-						player.removeSkill(skill, false, true);
-					}
+					player.getAppearance().setVisibleTitle(null);
 				}
+				
+				// Remove transformation skills.
+				player.removeAllTransformSkills();
+				
+				// Remove inventory blocks if needed.
+				if (!template.getAdditionalItems().isEmpty())
+				{
+					player.getInventory().unblock();
+				}
+				
+				player.sendPacket(ExBasicActionList.STATIC_PACKET);
+				
+				player.getEffectList().stopSkillEffects(false, AbnormalType.TRANSFORM);
+				player.getEffectList().stopSkillEffects(false, AbnormalType.CHANGEBODY);
+				
+				if (hasTransformSkills)
+				{
+					player.sendSkillList();
+					player.sendPacket(new SkillCoolTime(player));
+				}
+				
+				player.broadcastUserInfo();
+				player.sendPacket(new ExUserInfoEquipSlot(player));
+				// Notify to scripts
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(player, 0), player);
 			}
-			
-			// Remove transformation skills.
-			player.removeAllTransformSkills();
-			
-			// Remove inventory blocks if needed.
-			if (!template.getAdditionalItems().isEmpty())
+			else
 			{
-				player.getInventory().unblock();
+				creature.broadcastInfo();
 			}
-			
-			player.sendPacket(ExBasicActionList.STATIC_PACKET);
 		}
 	}
 	
@@ -379,8 +414,7 @@ public final class Transform implements IIdentifiable
 					{
 						if (player.getSkillLevel(holder.getSkillId()) < holder.getSkillLvl())
 						{
-							player.addSkill(holder.getSkill(), false);
-							player.addTransformSkill(holder.getSkillId());
+							player.addTransformSkill(holder.getSkill());
 						}
 					}
 				}
@@ -388,14 +422,28 @@ public final class Transform implements IIdentifiable
 		}
 	}
 	
-	public double getStats(PlayerInstance player, Stats stats, double defaultValue)
+	public WeaponType getBaseAttackType(Creature creature, WeaponType defaultAttackType)
 	{
-		double val = defaultValue;
-		final TransformTemplate template = getTemplate(player);
+		final TransformTemplate template = getTemplate(creature);
 		if (template != null)
 		{
-			val = template.getStats(stats);
-			final TransformLevelData data = template.getData(player.getLevel());
+			final WeaponType weaponType = template.getBaseAttackType();
+			if (weaponType != null)
+			{
+				return weaponType;
+			}
+		}
+		return defaultAttackType;
+	}
+	
+	public double getStats(Creature creature, Stats stats, double defaultValue)
+	{
+		double val = defaultValue;
+		final TransformTemplate template = getTemplate(creature);
+		if (template != null)
+		{
+			val = template.getStats(stats, defaultValue);
+			final TransformLevelData data = template.getData(creature.getLevel());
 			if (data != null)
 			{
 				val = data.getStats(stats, defaultValue);
@@ -404,32 +452,25 @@ public final class Transform implements IIdentifiable
 		return val;
 	}
 	
-	/**
-	 * @param player
-	 * @param slot
-	 * @return
-	 */
 	public int getBaseDefBySlot(PlayerInstance player, int slot)
 	{
+		final int defaultValue = player.getTemplate().getBaseDefBySlot(slot);
 		final TransformTemplate template = getTemplate(player);
-		if (template != null)
-		{
-			return template.getDefense(slot);
-		}
-		return player.getTemplate().getBaseDefBySlot(slot);
+		
+		return template == null ? defaultValue : template.getDefense(slot, defaultValue);
 	}
 	
 	/**
-	 * @param player
-	 * @return
+	 * @param creature
+	 * @return {@code -1} if this transformation doesn't alter levelmod, otherwise a new levelmod will be returned.
 	 */
-	public double getLevelMod(PlayerInstance player)
+	public double getLevelMod(Creature creature)
 	{
 		double val = -1;
-		final TransformTemplate template = getTemplate(player);
+		final TransformTemplate template = getTemplate(creature);
 		if (template != null)
 		{
-			final TransformLevelData data = template.getData(player.getLevel());
+			final TransformLevelData data = template.getData(creature.getLevel());
 			if (data != null)
 			{
 				val = data.getLevelMod();

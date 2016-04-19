@@ -35,7 +35,7 @@ public class GMViewSkillInfo implements IClientOutgoingPacket
 	public GMViewSkillInfo(PlayerInstance cha)
 	{
 		_activeChar = cha;
-		_skills = _activeChar.getAllSkills();
+		_skills = _activeChar.getSkillList();
 	}
 	
 	@Override

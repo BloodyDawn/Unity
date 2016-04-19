@@ -983,9 +983,9 @@ public class CharacterAI extends AbstractAI
 			}
 			
 			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && _actor.isPlayer() && _actor.isTransformed())
+			if (_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST)
 			{
-				if (!_actor.getTransformation().isCombat())
+				if (_actor.checkTransformed(transform -> !transform.isCombat()))
 				{
 					_actor.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
 					_actor.sendPacket(ActionFailed.STATIC_PACKET);

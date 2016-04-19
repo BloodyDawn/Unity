@@ -18,7 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -76,26 +75,26 @@ public class AdminRide implements IAdminCommandHandler
 			}
 			else if (command.startsWith("admin_ride_horse")) // handled using transformation
 			{
-				if (player.isTransformed() || player.isInStance())
+				if (player.isTransformed())
 				{
 					activeChar.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
 				}
 				else
 				{
-					TransformData.getInstance().transformPlayer(PURPLE_MANED_HORSE_TRANSFORMATION_ID, player);
+					player.transform(PURPLE_MANED_HORSE_TRANSFORMATION_ID, true);
 				}
 				
 				return true;
 			}
 			else if (command.startsWith("admin_ride_bike")) // handled using transformation
 			{
-				if (player.isTransformed() || player.isInStance())
+				if (player.isTransformed())
 				{
 					activeChar.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
 				}
 				else
 				{
-					TransformData.getInstance().transformPlayer(JET_BIKE_TRANSFORMATION_ID, player);
+					player.transform(JET_BIKE_TRANSFORMATION_ID, true);
 				}
 				
 				return true;

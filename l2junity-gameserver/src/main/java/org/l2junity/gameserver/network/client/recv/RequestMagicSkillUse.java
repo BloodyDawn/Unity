@@ -91,7 +91,7 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 			return;
 		}
 		
-		if ((activeChar.isTransformed() || activeChar.isInStance()) && !activeChar.hasTransformSkill(skill.getId()))
+		if (activeChar.isTransformed() && !activeChar.hasTransformSkill(skill))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

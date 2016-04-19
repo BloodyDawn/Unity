@@ -31,7 +31,6 @@ import java.util.StringTokenizer;
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
-import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -353,7 +352,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				for (PlayerInstance player : L2Event._teams.get(teamId))
 				{
 					int transId = transIds[Rnd.get(transIds.length)];
-					if (!TransformData.getInstance().transformPlayer(transId, player))
+					if (!player.transform(transId, true))
 					{
 						AdminData.getInstance().broadcastMessageToGMs("EventEngine: Unknow transformation id: " + transId);
 					}

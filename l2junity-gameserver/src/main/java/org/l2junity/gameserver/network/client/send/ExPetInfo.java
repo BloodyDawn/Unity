@@ -139,7 +139,7 @@ public class ExPetInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.ENCHANT);
 		}
 		
-		if ((summon.getTransformation() != null) && (summon.getTransformation().getId() > 0))
+		if (summon.getTransformationDisplayId() > 0)
 		{
 			addComponentType(NpcInfoType.TRANSFORMATION);
 		}
@@ -325,7 +325,7 @@ public class ExPetInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.TRANSFORMATION))
 		{
-			packet.writeD(0x00); // Transformation ID
+			packet.writeD(_summon.getTransformationDisplayId()); // Transformation ID
 		}
 		if (containsMask(NpcInfoType.CURRENT_HP))
 		{

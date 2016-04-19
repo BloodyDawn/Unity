@@ -364,7 +364,7 @@ public final class Race extends Event
 	
 	private void transformPlayer(PlayerInstance player)
 	{
-		if (player.isTransformed() || player.isInStance())
+		if (player.isTransformed())
 		{
 			player.untransform();
 		}

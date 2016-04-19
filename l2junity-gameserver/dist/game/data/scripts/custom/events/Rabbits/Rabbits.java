@@ -176,7 +176,7 @@ public final class Rabbits extends Event
 			}
 			case "transform":
 			{
-				if (player.isTransformed() || player.isInStance())
+				if (player.isTransformed())
 				{
 					player.untransform();
 				}

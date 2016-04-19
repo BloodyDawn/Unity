@@ -29,6 +29,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -52,6 +53,7 @@ import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
+import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.CategoryType;
@@ -85,7 +87,6 @@ import org.l2junity.gameserver.model.actor.tasks.character.HitTask;
 import org.l2junity.gameserver.model.actor.tasks.character.NotifyAITask;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.transform.Transform;
-import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.Containers;
@@ -253,6 +254,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	private volatile Set<AbnormalVisualEffect> _abnormalVisualEffects;
 	private volatile Set<AbnormalVisualEffect> _currentAbnormalVisualEffects;
+	
+	private Optional<Transform> _transform = Optional.empty();
 	
 	/** Movement data of this L2Character */
 	protected MoveData _move;
@@ -465,26 +468,81 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * This will return true if the player is transformed,<br>
-	 * but if the player is not transformed it will return false.
-	 * @return transformation status
+	 * @return {@code true} if this creature is transformed including stance transformation {@code false} otherwise.
 	 */
 	public boolean isTransformed()
 	{
-		return false;
-	}
-	
-	public Transform getTransformation()
-	{
-		return null;
+		return _transform.isPresent();
 	}
 	
 	/**
-	 * This will untransform a player if they are an instance of L2Pcinstance and if they are transformed.
+	 * @param filter any conditions to be checked for the transformation, {@code null} otherwise.
+	 * @return {@code true} if this creature is transformed under the given filter conditions, {@code false} otherwise.
 	 */
+	public boolean checkTransformed(Predicate<Transform> filter)
+	{
+		return _transform.filter(filter).isPresent();
+	}
+	
+	/**
+	 * Tries to transform this creature with the specified template id.
+	 * @param id the id of the transformation template
+	 * @param addSkills {@code true} if skills of this transformation template should be added, {@code false} otherwise.
+	 * @return {@code true} if template is found and transformation is done, {@code false} otherwise.
+	 */
+	public boolean transform(int id, boolean addSkills)
+	{
+		final Transform transform = TransformData.getInstance().getTransform(id);
+		if (transform != null)
+		{
+			transform(transform, addSkills);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public void transform(Transform transformation, boolean addSkills)
+	{
+		_transform = Optional.of(transformation);
+		transformation.onTransform(this, addSkills);
+	}
+	
 	public void untransform()
 	{
-		// Just a place holder
+		_transform.ifPresent(t -> t.onUntransform(this));
+		_transform = Optional.empty();
+	}
+	
+	public Optional<Transform> getTransformation()
+	{
+		return _transform;
+	}
+	
+	/**
+	 * This returns the transformation Id of the current transformation. For example, if a player is transformed as a Buffalo, and then picks up the Zariche, the transform Id returned will be that of the Zariche, and NOT the Buffalo.
+	 * @return Transformation Id
+	 */
+	public int getTransformationId()
+	{
+		return _transform.map(Transform::getId).orElse(0);
+	}
+	
+	public int getTransformationDisplayId()
+	{
+		return _transform.filter(transform -> !transform.isStance()).map(Transform::getDisplayId).orElse(0);
+	}
+	
+	public double getCollisionRadius()
+	{
+		final double defaultCollisionRadius = getTemplate().getCollisionRadius();
+		return _transform.map(transform -> transform.getCollisionRadius(this, defaultCollisionRadius)).orElse(defaultCollisionRadius);
+	}
+	
+	public double getCollisionHeight()
+	{
+		final double defaultCollisionHeight = getTemplate().getCollisionHeight();
+		return _transform.map(transform -> transform.getCollisionHeight(this, defaultCollisionHeight)).orElse(defaultCollisionHeight);
 	}
 	
 	/**
@@ -921,23 +979,25 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						sendPacket(ActionFailed.STATIC_PACKET);
 						return;
 					}
-					
-					final PlayerInstance actor = getActingPlayer();
-					if (actor.isTransformed() && !actor.getTransformation().canAttack())
-					{
-						sendPacket(ActionFailed.STATIC_PACKET);
-						return;
-					}
+				}
+				
+				if (checkTransformed(transform -> !transform.canAttack()))
+				{
+					sendPacket(ActionFailed.STATIC_PACKET);
+					return;
 				}
 			}
 			
+			// Get the active weapon item corresponding to the active weapon instance (always equipped in the right hand)
+			final Weapon weaponItem = getActiveWeaponItem();
+			final WeaponType weaponType = getAttackType();
+			
 			// Check if attacker's weapon can attack
-			if (getActiveWeaponItem() != null)
+			if (weaponItem != null)
 			{
-				Weapon wpn = getActiveWeaponItem();
-				if (!wpn.isAttackWeapon() && !isGM())
+				if (!weaponItem.isAttackWeapon() && !isGM())
 				{
-					if (wpn.getItemType() == WeaponType.FISHINGROD)
+					if (weaponItem.getItemType() == WeaponType.FISHINGROD)
 					{
 						sendPacket(SystemMessageId.YOU_LOOK_ODDLY_AT_THE_FISHING_POLE_IN_DISBELIEF_AND_REALIZE_THAT_YOU_CAN_T_ATTACK_ANYTHING_WITH_THIS);
 					}
@@ -983,9 +1043,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			stopEffectsOnAction();
 			
-			// Get the active weapon item corresponding to the active weapon instance (always equipped in the right hand)
-			Weapon weaponItem = getActiveWeaponItem();
-			
 			// GeoData Los Check here (or dz > 1000)
 			if (!GeoData.getInstance().canSeeTarget(this, target))
 			{
@@ -996,7 +1053,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// BOW and CROSSBOW checks
-			if ((weaponItem != null) && !isTransformed())
+			if (weaponItem != null)
 			{
 				if (weaponItem.getItemType() == WeaponType.BOW)
 				{
@@ -1140,7 +1197,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Verify if soulshots are charged.
 			final boolean wasSSCharged = isChargedShot(ShotType.SOULSHOTS);
 			// Get the Attack Speed of the L2Character (delay (in milliseconds) before next attack)
-			final int timeAtk = calculateTimeBetweenAttacks(target, weaponItem);
+			final int timeAtk = calculateTimeBetweenAttacks(target, weaponType);
 			// the hit is calculated to happen halfway to the animation - might need further tuning e.g. in bow case
 			final int timeToHit = timeAtk / 2;
 			_attackEndTime = System.currentTimeMillis() + timeAtk;
@@ -2780,15 +2837,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (removeEffects)
 		{
 			getEffectList().stopSkillEffects(false, AbnormalType.TRANSFORM);
+			getEffectList().stopSkillEffects(false, AbnormalType.CHANGEBODY);
 		}
 		
-		// if this is a player instance, then untransform, also set the transform_id column equal to 0 if not cursed.
-		if (isPlayer())
+		if (isTransformed())
 		{
-			if (getActingPlayer().getTransformation() != null)
-			{
-				getActingPlayer().untransform();
-			}
+			untransform();
 		}
 		
 		if (!isPlayer())
@@ -4305,53 +4359,47 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * @param target
-	 * @param weapon
+	 * @param attackType the type of attack. Different attack types have different time between attacks.
 	 * @return the Attack Speed of the L2Character (delay (in milliseconds) before next attack).
 	 */
-	public int calculateTimeBetweenAttacks(Creature target, Weapon weapon)
+	public int calculateTimeBetweenAttacks(Creature target, WeaponType attackType)
 	{
-		if ((weapon != null) && !isTransformed())
+		switch (attackType)
 		{
-			switch (weapon.getItemType())
-			{
-				case BOW:
-					return (1500 * 345) / getPAtkSpd();
-				case CROSSBOW:
-				case TWOHANDCROSSBOW:
-					return (1200 * 345) / getPAtkSpd();
-				case DAGGER:
-					// atkSpd /= 1.15;
-					break;
-			}
+			case BOW:
+				return (1500 * 345) / getPAtkSpd();
+			case CROSSBOW:
+			case TWOHANDCROSSBOW:
+				return (1200 * 345) / getPAtkSpd();
+			case DAGGER:
+				// atkSpd /= 1.15;
+				break;
 		}
+		
 		return Formulas.calcPAtkSpd(this, target, getPAtkSpd());
 	}
 	
 	public int calculateReuseTime(Creature target, Weapon weapon)
 	{
-		if ((weapon == null) || isTransformed())
+		if (weapon == null)
 		{
 			return 0;
 		}
 		
+		final WeaponType defaultAttackType = weapon.getItemType();
+		final WeaponType weaponType = getTransformation().map(transform -> transform.getBaseAttackType(this, defaultAttackType)).orElse(defaultAttackType);
 		int reuse = weapon.getReuseDelay();
+		
 		// only bows should continue for now
-		if (reuse == 0)
+		if ((reuse == 0) || !weaponType.isRanged())
 		{
 			return 0;
 		}
 		
 		reuse *= getStat().getWeaponReuseModifier();
 		double atkSpd = getStat().getPAtkSpd();
-		switch (weapon.getItemType())
-		{
-			case BOW:
-			case CROSSBOW:
-			case TWOHANDCROSSBOW:
-				return (int) ((reuse * 345) / atkSpd);
-			default:
-				return (int) ((reuse * 312) / atkSpd);
-		}
+		
+		return (int) ((reuse * 345) / atkSpd); // ((reuse * 312) / atkSpd)) for non ranged?
 	}
 	
 	/**
@@ -4426,9 +4474,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * <B><U>Concept</U>:</B><br>
-	 * All skills own by a L2Character are identified in <B>_skills</B> the L2Character
-	 * @return all skills own by the L2Character in a table of L2Skill.
+	 * @return all skills this creature currently has.
 	 */
 	public final Collection<Skill> getAllSkills()
 	{
@@ -4461,7 +4507,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @return the skill from the known skill.
 	 */
 	@Override
-	public final Skill getKnownSkill(int skillId)
+	public Skill getKnownSkill(int skillId)
 	{
 		return _skills.get(skillId);
 	}
@@ -4608,7 +4654,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public double getLevelMod()
 	{
-		return ((getLevel() + 89) / 100d);
+		final double defaultLevelMod = ((getLevel() + 89) / 100d);
+		return _transform.filter(transform -> !transform.isStance()).map(transform -> transform.getLevelMod(this)).orElse(defaultLevelMod);
 	}
 	
 	private boolean _AIdisabled = false;
@@ -5319,15 +5366,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			return weapon.getItemType();
 		}
-		else if (isTransformed())
-		{
-			final TransformTemplate template = getTransformation().getTemplate(getActingPlayer());
-			if (template != null)
-			{
-				return template.getBaseAttackType();
-			}
-		}
-		return getTemplate().getBaseAttackType();
+		
+		final WeaponType defaultWeaponType = getTemplate().getBaseAttackType();
+		return getTransformation().map(transform -> transform.getBaseAttackType(this, defaultWeaponType)).orElse(defaultWeaponType);
 	}
 	
 	public final boolean isInCategory(CategoryType type)

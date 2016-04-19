@@ -75,4 +75,9 @@ public enum WeaponType implements ItemType
 	{
 		return _traitType;
 	}
+	
+	public boolean isRanged()
+	{
+		return (this == BOW) || (this == CROSSBOW) || (this == TWOHANDCROSSBOW);
+	}
 }

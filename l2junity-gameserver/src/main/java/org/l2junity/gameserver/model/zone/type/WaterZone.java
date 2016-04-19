@@ -43,7 +43,7 @@ public class WaterZone extends ZoneType
 		if (character.isPlayer())
 		{
 			PlayerInstance player = character.getActingPlayer();
-			if (player.isTransformed() && !player.getTransformation().canSwim())
+			if (player.checkTransformed(transform -> !transform.canSwim()))
 			{
 				character.stopTransformation(true);
 			}

@@ -28,7 +28,6 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.SkillData;
-import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -334,10 +333,8 @@ public class CursedWeapon implements INamable
 		_player.addSkill(skill, false);
 		
 		// Void Burst, Void Flow
-		_player.addSkill(CommonSkill.VOID_BURST.getSkill(), false);
-		_player.addTransformSkill(CommonSkill.VOID_BURST.getId());
-		_player.addSkill(CommonSkill.VOID_FLOW.getSkill(), false);
-		_player.addTransformSkill(CommonSkill.VOID_FLOW.getId());
+		_player.addTransformSkill(CommonSkill.VOID_BURST.getSkill());
+		_player.addTransformSkill(CommonSkill.VOID_FLOW.getSkill());
 		_player.sendSkillList();
 	}
 	
@@ -352,23 +349,21 @@ public class CursedWeapon implements INamable
 			transformationId = 301;
 		}
 		
-		if (_player.isTransformed() || _player.isInStance())
+		if (_player.isTransformed())
 		{
 			_player.stopTransformation(true);
 			
-			ThreadPoolManager.getInstance().scheduleGeneral(() -> TransformData.getInstance().transformPlayer(transformationId, _player), 500);
+			ThreadPoolManager.getInstance().scheduleGeneral(() -> _player.transform(transformationId, true), 500);
 		}
 		else
 		{
-			TransformData.getInstance().transformPlayer(transformationId, _player);
+			_player.transform(transformationId, true);
 		}
 	}
 	
 	public void removeSkill()
 	{
 		_player.removeSkill(_skillId);
-		_player.removeSkill(CommonSkill.VOID_BURST.getSkill().getId());
-		_player.removeSkill(CommonSkill.VOID_FLOW.getSkill().getId());
 		_player.untransform();
 		_player.sendSkillList();
 	}

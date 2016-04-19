@@ -16,29 +16,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package handlers.skillconditionhandlers;
-
-import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.ISkillCondition;
-import org.l2junity.gameserver.model.skills.Skill;
+package org.l2junity.gameserver.model.holders;
 
 /**
- * @author Sdw
+ * An object for holding template id and chance
+ * @author Nik
  */
-public class CannotUseInTransformSkillCondition implements ISkillCondition
+public class TemplateChanceHolder
 {
-	private final int _transformId;
+	private final int _templateId;
+	private final int _minChance;
+	private final int _maxChance;
 	
-	public CannotUseInTransformSkillCondition(StatsSet params)
+	public TemplateChanceHolder(int templateId, int minChance, int maxChance)
 	{
-		_transformId = params.getInt("transformId", -1);
+		_templateId = templateId;
+		_minChance = minChance;
+		_maxChance = maxChance;
+	}
+	
+	public final int getTemplateId()
+	{
+		return _templateId;
+	}
+	
+	public final boolean calcChance(int chance)
+	{
+		return (_maxChance > chance) && (chance >= _minChance);
 	}
 	
 	@Override
-	public boolean canUse(Creature caster, Skill skill, WorldObject target)
+	public String toString()
 	{
-		return (_transformId > 0) ? caster.getTransformationId() != _transformId : !caster.isTransformed();
+		return "[TemplateId: " + _templateId + " minChance: " + _minChance + " maxChance: " + _minChance + "]";
 	}
 }

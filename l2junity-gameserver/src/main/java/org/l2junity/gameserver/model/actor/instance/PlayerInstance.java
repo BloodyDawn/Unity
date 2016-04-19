@@ -29,7 +29,6 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -211,7 +210,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPCha
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKill;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSubChange;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransform;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
@@ -287,7 +285,6 @@ import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
-import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.GameGuardQuery;
 import org.l2junity.gameserver.network.client.send.GetOnVehicle;
@@ -518,8 +515,6 @@ public final class PlayerInstance extends Playable
 	
 	private long _offlineShopStart = 0;
 	
-	private Transform _transformation;
-	
 	/** The table containing all L2RecipeList of the L2PcInstance */
 	private final Map<Integer, RecipeList> _dwarvenRecipeBook = new ConcurrentSkipListMap<>();
 	private final Map<Integer, RecipeList> _commonRecipeBook = new ConcurrentSkipListMap<>();
@@ -722,7 +717,7 @@ public final class PlayerInstance extends Playable
 	
 	private final BlockList _blockList = new BlockList(this);
 	
-	private volatile Set<Integer> _transformAllowedSkills;
+	private volatile Map<Integer, Skill> _transformSkills;
 	private ScheduledFuture<?> _taskRentPet;
 	private ScheduledFuture<?> _taskWater;
 	
@@ -1181,20 +1176,6 @@ public final class PlayerInstance extends Playable
 	public final int getLevel()
 	{
 		return getStat().getLevel();
-	}
-	
-	@Override
-	public double getLevelMod()
-	{
-		if (isTransformed())
-		{
-			double levelMod = getTransformation().getLevelMod(this);
-			if (levelMod > -1)
-			{
-				return levelMod;
-			}
-		}
-		return super.getLevelMod();
 	}
 	
 	public void setBaseClass(int baseClass)
@@ -4698,19 +4679,9 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public boolean isTransformed()
+	public void transform(Transform transformation, boolean addSkills)
 	{
-		return (_transformation != null) && !_transformation.isStance();
-	}
-	
-	public boolean isInStance()
-	{
-		return (_transformation != null) && _transformation.isStance();
-	}
-	
-	public void transform(Transform transformation)
-	{
-		if (_transformation != null)
+		if (isTransformed())
 		{
 			// You already polymorphed and cannot polymorph again.
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
@@ -4719,60 +4690,25 @@ public final class PlayerInstance extends Playable
 		}
 		
 		setQueuedSkill(null, false, false);
+		
+		// Get off the strider or something else if character is mounted
 		if (isMounted())
 		{
-			// Get off the strider or something else if character is mounted
 			dismount();
 		}
 		
-		_transformation = transformation;
-		getEffectList().stopAllToggles();
-		transformation.onTransform(this);
-		sendSkillList();
-		sendPacket(new SkillCoolTime(this));
-		sendPacket(new ExUserInfoAbnormalVisualEffect(this));
-		broadcastUserInfo();
-		
-		// Notify to scripts
-		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(this, transformation.getId()), this);
+		super.transform(transformation, addSkills);
 	}
 	
 	@Override
 	public void untransform()
 	{
-		if (_transformation != null)
+		if (isTransformed())
 		{
 			setQueuedSkill(null, false, false);
-			_transformation.onUntransform(this);
-			_transformation = null;
-			getEffectList().stopSkillEffects(false, AbnormalType.TRANSFORM);
-			sendSkillList();
-			sendPacket(new SkillCoolTime(this));
-			broadcastUserInfo();
-			sendPacket(new ExUserInfoEquipSlot(this));
-			// Notify to scripts
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(this, 0), this);
 		}
-	}
-	
-	@Override
-	public Transform getTransformation()
-	{
-		return _transformation;
-	}
-	
-	/**
-	 * This returns the transformation Id of the current transformation. For example, if a player is transformed as a Buffalo, and then picks up the Zariche, the transform Id returned will be that of the Zariche, and NOT the Buffalo.
-	 * @return Transformation Id
-	 */
-	public int getTransformationId()
-	{
-		return (isTransformed() ? getTransformation().getId() : 0);
-	}
-	
-	public int getTransformationDisplayId()
-	{
-		return (isTransformed() ? getTransformation().getDisplayId() : 0);
+		
+		super.untransform();
 	}
 	
 	/**
@@ -9324,33 +9260,8 @@ public final class PlayerInstance extends Playable
 		boolean isDisabled = false;
 		SkillList sl = new SkillList();
 		
-		for (Skill s : getAllSkills())
+		for (Skill s : getSkillList())
 		{
-			if (s == null)
-			{
-				continue;
-			}
-			
-			// Skills that are blocked from player use are not shown in skill list.
-			if (s.isBlockActionUseSkill())
-			{
-				continue;
-			}
-			
-			if (SkillTreesData.getInstance().getAlchemySkill(s.getId(), s.getLevel()) != null)
-			{
-				continue;
-			}
-			
-			if (SkillTreesData.getInstance().isAlchemySkill(s.getId(), s.getLevel()))
-			{
-				continue;
-			}
-			
-			if ((_transformation != null) && (!hasTransformSkill(s.getId()) && !s.allowOnTransform()))
-			{
-				continue;
-			}
 			if (getClan() != null)
 			{
 				isDisabled = s.isClanSkill() && (getClan().getReputationScore() < 0);
@@ -9651,7 +9562,7 @@ public final class PlayerInstance extends Playable
 		try
 		{
 			// Cannot switch or change subclasses while transformed
-			if (_transformation != null)
+			if (isTransformed())
 			{
 				return false;
 			}
@@ -11504,34 +11415,91 @@ public final class PlayerInstance extends Playable
 		}
 	}
 	
-	public void addTransformSkill(int id)
+	public void addTransformSkill(Skill skill)
 	{
-		if (_transformAllowedSkills == null)
+		if (_transformSkills == null)
 		{
 			synchronized (this)
 			{
-				if (_transformAllowedSkills == null)
+				if (_transformSkills == null)
 				{
-					_transformAllowedSkills = new HashSet<>();
+					_transformSkills = new HashMap<>();
 				}
 			}
 		}
-		_transformAllowedSkills.add(id);
+		_transformSkills.put(skill.getId(), skill);
 	}
 	
-	public boolean hasTransformSkill(int id)
+	public boolean hasTransformSkill(Skill skill)
 	{
-		if ((_transformation != null) && _transformation.allowAllSkills())
+		if (checkTransformed(Transform::allowAllSkills))
 		{
 			return true;
 		}
 		
-		return (_transformAllowedSkills != null) && _transformAllowedSkills.contains(id);
+		return (_transformSkills != null) && _transformSkills.containsValue(skill);
+	}
+	
+	public boolean hasTransformSkills()
+	{
+		return (_transformSkills != null);
+	}
+	
+	public Collection<Skill> getAllTransformSkills()
+	{
+		final Map<Integer, Skill> transformSkills = _transformSkills;
+		return transformSkills != null ? transformSkills.values() : Collections.emptyList();
 	}
 	
 	public synchronized void removeAllTransformSkills()
 	{
-		_transformAllowedSkills = null;
+		_transformSkills = null;
+	}
+	
+	/**
+	 * @param skillId the id of the skill that this player might have.
+	 * @return {@code skill} object refered to this skill id that this player has, {@code null} otherwise.
+	 */
+	@Override
+	public final Skill getKnownSkill(int skillId)
+	{
+		final Map<Integer, Skill> transformSkills = _transformSkills;
+		return transformSkills != null ? transformSkills.getOrDefault(skillId, super.getKnownSkill(skillId)) : super.getKnownSkill(skillId);
+	}
+	
+	/**
+	 * @return all visible skills that appear on Alt+K for this player.
+	 */
+	public Collection<Skill> getSkillList()
+	{
+		Collection<Skill> currentSkills = getAllSkills();
+		
+		if (isTransformed())
+		{
+			final Map<Integer, Skill> transformSkills = _transformSkills;
+			if (transformSkills != null)
+			{
+				if (checkTransformed(Transform::allowAllSkills))
+				{
+					// Include all skills and transformation skills.
+					currentSkills.addAll(transformSkills.values());
+				}
+				else
+				{
+					// Include transformation skills and those skills that are allowed during transformation.
+					currentSkills = currentSkills.stream().filter(Skill::allowOnTransform).collect(Collectors.toList());
+					currentSkills = transformSkills.values();
+				}
+			}
+		}
+		
+		//@formatter:off
+		return currentSkills.stream()
+							.filter(Objects::nonNull)
+							.filter(s -> !s.isBlockActionUseSkill()) // Skills that are blocked from player use are not shown in skill list.
+							.filter(s -> !SkillTreesData.getInstance().isAlchemySkill(s.getId(), s.getLevel()))
+							.collect(Collectors.toList());
+		//@formatter:on
 	}
 	
 	protected void startFeed(int npcId)
@@ -11702,7 +11670,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean isFlyingMounted()
 	{
-		return (isTransformed() && (getTransformation().isFlying()));
+		return checkTransformed(Transform::isFlying);
 	}
 	
 	/**
@@ -12095,7 +12063,7 @@ public final class PlayerInstance extends Playable
 		{
 			return false;
 		}
-		if (isTransformed() || isInStance())
+		if (isTransformed())
 		{
 			return false;
 		}
@@ -12329,30 +12297,28 @@ public final class PlayerInstance extends Playable
 		}
 	}
 	
+	@Override
 	public double getCollisionRadius()
 	{
 		if (isMounted() && (getMountNpcId() > 0))
 		{
 			return NpcData.getInstance().getTemplate(getMountNpcId()).getfCollisionRadius();
 		}
-		else if (isTransformed())
-		{
-			return getTransformation().getCollisionRadius(this);
-		}
-		return getAppearance().getSex() ? getBaseTemplate().getFCollisionRadiusFemale() : getBaseTemplate().getfCollisionRadius();
+		
+		final double defaultCollisionRadius = getAppearance().getSex() ? getBaseTemplate().getFCollisionRadiusFemale() : getBaseTemplate().getfCollisionRadius();
+		return getTransformation().map(transform -> transform.getCollisionRadius(this, defaultCollisionRadius)).orElse(defaultCollisionRadius);
 	}
 	
+	@Override
 	public double getCollisionHeight()
 	{
 		if (isMounted() && (getMountNpcId() > 0))
 		{
 			return NpcData.getInstance().getTemplate(getMountNpcId()).getfCollisionHeight();
 		}
-		else if (isTransformed())
-		{
-			return getTransformation().getCollisionHeight(this);
-		}
-		return getAppearance().getSex() ? getBaseTemplate().getFCollisionHeightFemale() : getBaseTemplate().getfCollisionHeight();
+		
+		final double defaultCollisionHeight = getAppearance().getSex() ? getBaseTemplate().getFCollisionHeightFemale() : getBaseTemplate().getfCollisionHeight();
+		return getTransformation().map(transform -> transform.getCollisionHeight(this, defaultCollisionHeight)).orElse(defaultCollisionHeight);
 	}
 	
 	public final int getClientX()

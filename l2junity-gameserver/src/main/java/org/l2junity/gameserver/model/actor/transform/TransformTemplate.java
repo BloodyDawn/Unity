@@ -39,11 +39,9 @@ import org.l2junity.gameserver.network.client.send.ExBasicActionList;
  */
 public final class TransformTemplate
 {
-	private final double _collisionRadius;
-	private final double _collisionHeight;
+	private final Double _collisionRadius;
+	private final Double _collisionHeight;
 	private final WeaponType _baseAttackType;
-	private final int _baseAttackRange;
-	private final double _baseRandomDamage;
 	private List<SkillHolder> _skills;
 	private List<AdditionalSkillHolder> _additionalSkills;
 	private List<AdditionalItemHolder> _additionalItems;
@@ -55,43 +53,136 @@ public final class TransformTemplate
 	
 	public TransformTemplate(StatsSet set)
 	{
-		_collisionRadius = set.getDouble("radius", 0);
-		_collisionHeight = set.getDouble("height", 0);
-		_baseAttackType = set.getEnum("attackType", WeaponType.class, WeaponType.FIST);
-		_baseAttackRange = set.getInt("range", 40);
-		_baseRandomDamage = set.getDouble("randomDamage", 0);
+		_collisionRadius = set.contains("radius") ? set.getDouble("radius") : null;
+		_collisionHeight = set.contains("height") ? set.getDouble("height") : null;
 		
-		addStats(Stats.WALK_SPEED, set.getDouble("walk", 0));
-		addStats(Stats.RUN_SPEED, set.getDouble("run", 0));
-		addStats(Stats.SWIM_WALK_SPEED, set.getDouble("waterWalk", 0));
-		addStats(Stats.SWIM_RUN_SPEED, set.getDouble("waterRun", 0));
-		addStats(Stats.FLY_WALK_SPEED, set.getDouble("flyWalk", 0));
-		addStats(Stats.FLY_RUN_SPEED, set.getDouble("flyRun", 0));
+		_baseAttackType = set.getEnum("attackType", WeaponType.class, null);
 		
-		addStats(Stats.PHYSICAL_ATTACK, set.getDouble("pAtk", 0));
-		addStats(Stats.MAGIC_ATTACK, set.getDouble("mAtk", 0));
-		addStats(Stats.PHYSICAL_ATTACK_RANGE, set.getInt("range", 0));
-		addStats(Stats.PHYSICAL_ATTACK_SPEED, set.getInt("attackSpeed", 0));
-		addStats(Stats.CRITICAL_RATE, set.getInt("critRate", 0));
-		addStats(Stats.STAT_STR, set.getInt("str", 0));
-		addStats(Stats.STAT_INT, set.getInt("int", 0));
-		addStats(Stats.STAT_CON, set.getInt("con", 0));
-		addStats(Stats.STAT_DEX, set.getInt("dex", 0));
-		addStats(Stats.STAT_WIT, set.getInt("wit", 0));
-		addStats(Stats.STAT_MEN, set.getInt("men", 0));
+		if (set.contains("range"))
+		{
+			addStats(Stats.PHYSICAL_ATTACK_RANGE, set.getDouble("range", 0));
+		}
+		if (set.contains("randomDamage"))
+		{
+			addStats(Stats.RANDOM_DAMAGE, set.getDouble("randomDamage", 0));
+		}
+		if (set.contains("walk"))
+		{
+			addStats(Stats.WALK_SPEED, set.getDouble("walk", 0));
+		}
+		if (set.contains("run"))
+		{
+			addStats(Stats.RUN_SPEED, set.getDouble("run", 0));
+		}
+		if (set.contains("waterWalk"))
+		{
+			addStats(Stats.SWIM_WALK_SPEED, set.getDouble("waterWalk", 0));
+		}
+		if (set.contains("waterRun"))
+		{
+			addStats(Stats.SWIM_RUN_SPEED, set.getDouble("waterRun", 0));
+		}
+		if (set.contains("flyWalk"))
+		{
+			addStats(Stats.FLY_WALK_SPEED, set.getDouble("flyWalk", 0));
+		}
+		if (set.contains("flyRun"))
+		{
+			addStats(Stats.FLY_RUN_SPEED, set.getDouble("flyRun", 0));
+		}
+		if (set.contains("pAtk"))
+		{
+			addStats(Stats.PHYSICAL_ATTACK, set.getDouble("pAtk", 0));
+		}
+		if (set.contains("mAtk"))
+		{
+			addStats(Stats.MAGIC_ATTACK, set.getDouble("mAtk", 0));
+		}
+		if (set.contains("range"))
+		{
+			addStats(Stats.PHYSICAL_ATTACK_RANGE, set.getInt("range", 0));
+		}
+		if (set.contains("attackSpeed"))
+		{
+			addStats(Stats.PHYSICAL_ATTACK_SPEED, set.getInt("attackSpeed", 0));
+		}
+		if (set.contains("critRate"))
+		{
+			addStats(Stats.CRITICAL_RATE, set.getInt("critRate", 0));
+		}
+		if (set.contains("str"))
+		{
+			addStats(Stats.STAT_STR, set.getInt("str", 0));
+		}
+		if (set.contains("int"))
+		{
+			addStats(Stats.STAT_INT, set.getInt("int", 0));
+		}
+		if (set.contains("con"))
+		{
+			addStats(Stats.STAT_CON, set.getInt("con", 0));
+		}
+		if (set.contains("dex"))
+		{
+			addStats(Stats.STAT_DEX, set.getInt("dex", 0));
+		}
+		if (set.contains("wit"))
+		{
+			addStats(Stats.STAT_WIT, set.getInt("wit", 0));
+		}
+		if (set.contains("men"))
+		{
+			addStats(Stats.STAT_MEN, set.getInt("men", 0));
+		}
 		
-		addDefense(Inventory.PAPERDOLL_CHEST, set.getInt("chest", 0));
-		addDefense(Inventory.PAPERDOLL_LEGS, set.getInt("legs", 0));
-		addDefense(Inventory.PAPERDOLL_HEAD, set.getInt("head", 0));
-		addDefense(Inventory.PAPERDOLL_FEET, set.getInt("feet", 0));
-		addDefense(Inventory.PAPERDOLL_GLOVES, set.getInt("gloves", 0));
-		addDefense(Inventory.PAPERDOLL_UNDER, set.getInt("underwear", 0));
-		addDefense(Inventory.PAPERDOLL_CLOAK, set.getInt("cloak", 0));
-		addDefense(Inventory.PAPERDOLL_REAR, set.getInt("rear", 0));
-		addDefense(Inventory.PAPERDOLL_LEAR, set.getInt("lear", 0));
-		addDefense(Inventory.PAPERDOLL_RFINGER, set.getInt("rfinger", 0));
-		addDefense(Inventory.PAPERDOLL_LFINGER, set.getInt("lfinger", 0));
-		addDefense(Inventory.PAPERDOLL_NECK, set.getInt("neck", 0));
+		if (set.contains("chest"))
+		{
+			addDefense(Inventory.PAPERDOLL_CHEST, set.getInt("chest", 0));
+		}
+		if (set.contains("legs"))
+		{
+			addDefense(Inventory.PAPERDOLL_LEGS, set.getInt("legs", 0));
+		}
+		if (set.contains("head"))
+		{
+			addDefense(Inventory.PAPERDOLL_HEAD, set.getInt("head", 0));
+		}
+		if (set.contains("feet"))
+		{
+			addDefense(Inventory.PAPERDOLL_FEET, set.getInt("feet", 0));
+		}
+		if (set.contains("gloves"))
+		{
+			addDefense(Inventory.PAPERDOLL_GLOVES, set.getInt("gloves", 0));
+		}
+		if (set.contains("underwear"))
+		{
+			addDefense(Inventory.PAPERDOLL_UNDER, set.getInt("underwear", 0));
+		}
+		if (set.contains("cloak"))
+		{
+			addDefense(Inventory.PAPERDOLL_CLOAK, set.getInt("cloak", 0));
+		}
+		if (set.contains("rear"))
+		{
+			addDefense(Inventory.PAPERDOLL_REAR, set.getInt("rear", 0));
+		}
+		if (set.contains("lear"))
+		{
+			addDefense(Inventory.PAPERDOLL_LEAR, set.getInt("lear", 0));
+		}
+		if (set.contains("rfinger"))
+		{
+			addDefense(Inventory.PAPERDOLL_RFINGER, set.getInt("rfinger", 0));
+		}
+		if (set.contains("lfinger"))
+		{
+			addDefense(Inventory.PAPERDOLL_LFINGER, set.getInt("lfinger", 0));
+		}
+		if (set.contains("neck"))
+		{
+			addDefense(Inventory.PAPERDOLL_NECK, set.getInt("neck", 0));
+		}
 	}
 	
 	private void addDefense(int type, int val)
@@ -103,13 +194,14 @@ public final class TransformTemplate
 		_baseDefense.put(type, val);
 	}
 	
-	public int getDefense(int type)
+	/**
+	 * @param type the slot type for where to search defense.
+	 * @param defaultValue value to be used if no value for the type is found.
+	 * @return altered value if its present, or {@code defaultValue} if no such type is assigned to this template.
+	 */
+	public int getDefense(int type, int defaultValue)
 	{
-		if ((_baseDefense == null) || !_baseDefense.containsKey(type))
-		{
-			return 0;
-		}
-		return _baseDefense.get(type);
+		return (_baseDefense == null) ? defaultValue : _baseDefense.getOrDefault(type, defaultValue);
 	}
 	
 	private void addStats(Stats stats, double val)
@@ -121,21 +213,28 @@ public final class TransformTemplate
 		_baseStats.put(stats.ordinal(), val);
 	}
 	
-	public double getStats(Stats stats)
+	/**
+	 * @param stats the stat value to search for.
+	 * @param defaultValue value to be used if no such stat is found.
+	 * @return altered stat if its present, or {@code defaultValue} if no such stat is assigned to this template.
+	 */
+	public double getStats(Stats stats, double defaultValue)
 	{
-		if ((_baseStats == null) || !_baseStats.containsKey(stats.ordinal()))
-		{
-			return 0;
-		}
-		return _baseStats.get(stats.ordinal());
+		return _baseStats == null ? defaultValue : _baseStats.getOrDefault(stats.ordinal(), defaultValue);
 	}
 	
-	public double getCollisionRadius()
+	/**
+	 * @return collision radius if set, {@code null} otherwise.
+	 */
+	public Double getCollisionRadius()
 	{
 		return _collisionRadius;
 	}
 	
-	public double getCollisionHeight()
+	/**
+	 * @return collision height if set, {@code null} otherwise.
+	 */
+	public Double getCollisionHeight()
 	{
 		return _collisionHeight;
 	}
@@ -143,16 +242,6 @@ public final class TransformTemplate
 	public WeaponType getBaseAttackType()
 	{
 		return _baseAttackType;
-	}
-	
-	public int getBaseAttackRange()
-	{
-		return _baseAttackRange;
-	}
-	
-	public double getBaseRandomDamage()
-	{
-		return _baseRandomDamage;
 	}
 	
 	public void addSkill(SkillHolder holder)

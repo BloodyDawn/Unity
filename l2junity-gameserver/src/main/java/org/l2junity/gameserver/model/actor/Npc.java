@@ -1183,11 +1183,13 @@ public class Npc extends Creature
 		_currentCollisionRadius = radius;
 	}
 	
+	@Override
 	public double getCollisionHeight()
 	{
 		return _currentCollisionHeight;
 	}
 	
+	@Override
 	public double getCollisionRadius()
 	{
 		return _currentCollisionRadius;

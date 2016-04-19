@@ -18,7 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -79,7 +78,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 				return false;
 			}
 			
-			if (player.isTransformed() || player.isInStance())
+			if (player.isTransformed())
 			{
 				if (!command.contains(" "))
 				{
@@ -110,7 +109,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 			}
 			
 			final int id = Integer.parseInt(parts[1]);
-			if (!TransformData.getInstance().transformPlayer(id, player))
+			if (!player.transform(id, true))
 			{
 				player.sendMessage("Unknown transformation ID: " + id);
 				return false;

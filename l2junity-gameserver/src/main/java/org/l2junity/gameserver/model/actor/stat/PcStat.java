@@ -241,10 +241,8 @@ public class PcStat extends PlayableStat
 			getActiveChar().getParty().recalculatePartyLevel(); // Recalculate the party level
 		}
 		
-		if (getActiveChar().isTransformed() || getActiveChar().isInStance())
-		{
-			getActiveChar().getTransformation().onLevelUp(getActiveChar());
-		}
+		// Maybe add some skills when player levels up in transformation.
+		getActiveChar().getTransformation().ifPresent(transform -> transform.onLevelUp(getActiveChar()));
 		
 		// Synchronize level with pet if possible.
 		final Summon sPet = getActiveChar().getPet();

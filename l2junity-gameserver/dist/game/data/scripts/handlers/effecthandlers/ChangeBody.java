@@ -18,39 +18,30 @@
  */
 package handlers.effecthandlers;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.holders.TemplateChanceHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * Transformation effect implementation.
- * @author nBd
+ * Transformation type effect, which disables attack or use of skills.
+ * @author Nik
  */
-public final class Transformation extends AbstractEffect
+public final class ChangeBody extends AbstractEffect
 {
-	private final List<Integer> _id;
+	private final Set<TemplateChanceHolder> _transformations = new HashSet<>();
 	
-	public Transformation(StatsSet params)
+	public ChangeBody(StatsSet params)
 	{
-		final String ids = params.getString("transformationId", null);
-		if ((ids != null) && !ids.isEmpty())
+		for (StatsSet item : params.getList("templates", StatsSet.class))
 		{
-			_id = new ArrayList<>();
-			for (String id : ids.split(";"))
-			{
-				_id.add(Integer.parseInt(id));
-			}
-		}
-		else
-		{
-			_id = Collections.emptyList();
+			_transformations.add(new TemplateChanceHolder(item.getInt(".templateId"), item.getInt(".minChance"), item.getInt(".maxChance")));
 		}
 	}
 	
@@ -63,10 +54,14 @@ public final class Transformation extends AbstractEffect
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		if (!_id.isEmpty())
-		{
-			effected.transform(_id.get(Rnd.get(_id.size())), true);
-		}
+		final int chance = Rnd.get(100);
+		//@formatter:off
+		_transformations.stream()
+			.filter(t -> t.calcChance(chance)) // Calculate chance for each transformation.
+			.mapToInt(TemplateChanceHolder::getTemplateId)
+			.findAny()
+			.ifPresent(id -> effected.transform(id, false)); // Transform effected to whatever successful random template without adding skills.
+		//@formatter:on
 	}
 	
 	@Override
