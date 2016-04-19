@@ -636,7 +636,7 @@ public class SkillCaster implements Runnable
 		caster.getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING);
 		
 		// Attack target after skill use
-		if ((_skill.nextActionIsAttack()) && (target != caster) && target.canBeAttacked())
+		if ((_skill.nextActionIsAttack()) && (target != null) && (target != caster) && target.canBeAttacked())
 		{
 			if ((caster.getAI().getNextIntention() == null) || (caster.getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
 			{
