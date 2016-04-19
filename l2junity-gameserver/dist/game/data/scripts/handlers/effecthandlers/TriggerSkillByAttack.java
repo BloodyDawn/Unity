@@ -69,7 +69,7 @@ public final class TriggerSkillByAttack extends AbstractEffect
 		_attackerType = params.getEnum("attackerType", InstanceType.class, InstanceType.L2Character);
 		_isCritical = params.getObject("isCritical", Boolean.class);
 		_allowNormalAttack = params.getBoolean("allowNormalAttack", true);
-		_allowSkillAttack = params.getBoolean("allowSkillAttack", true);
+		_allowSkillAttack = params.getBoolean("allowSkillAttack", false);
 		_allowReflect = params.getBoolean("allowReflect", false);
 		
 		if (params.getString("allowWeapons", "ALL").equalsIgnoreCase("ALL"))
