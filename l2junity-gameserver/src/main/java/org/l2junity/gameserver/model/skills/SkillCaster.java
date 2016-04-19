@@ -389,15 +389,6 @@ public class SkillCaster implements Runnable
 		// TODO: Next action and skill queue... shouldnt be handled here.
 		if (!_skill.isWithoutAction())
 		{
-			// Attack target after skill use
-			if ((_skill.nextActionIsAttack()) && (target != caster) && target.canBeAttacked())
-			{
-				if ((caster.getAI().getNextIntention() == null) || (caster.getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
-				{
-					caster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-				}
-			}
-			
 			if (_skill.isBad() && (_skill.getTargetType() != TargetType.DOOR_TREASURE))
 			{
 				caster.getAI().clientStartAutoAttack();
@@ -628,6 +619,7 @@ public class SkillCaster implements Runnable
 		}
 		
 		final Creature caster = _caster.get();
+		final WorldObject target = _target.get();
 		if (caster == null)
 		{
 			return;
@@ -642,6 +634,15 @@ public class SkillCaster implements Runnable
 		
 		// Notify the AI of the L2Character with EVT_FINISH_CASTING
 		caster.getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING);
+		
+		// Attack target after skill use
+		if ((_skill.nextActionIsAttack()) && (target != caster) && target.canBeAttacked())
+		{
+			if ((caster.getAI().getNextIntention() == null) || (caster.getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
+			{
+				caster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+			}
+		}
 		
 		if (aborted)
 		{
