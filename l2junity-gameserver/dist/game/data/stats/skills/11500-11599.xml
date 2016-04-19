@@ -1551,7 +1551,8 @@
 				<amount>-20</amount>
 				<mode>PER</mode>
 				<magicType>22</magicType>
-			</effect>s
+			</effect>
+			s
 		</effects>
 	</skill>
 	<skill id="11521" toLevel="4" name="Harp Melody">
@@ -2442,16 +2443,18 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Mute" />
-			<effect name="PhysicalMute" />
-			<effect name="PhysicalAttackMute" />
-			<effect name="Transformation"> <!-- TODO check effects -->
-				<transformationId>500;501;502;503;504</transformationId>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<!-- Cancel Transform -->
 				<minDamage>1</minDamage>
-				<skillId>11556</skillId>
+				<skillId>11556</skillId> <!-- Cancel Transform -->
 				<skillLevel>1</skillLevel>
 				<attackerType>L2Character</attackerType>
 				<minAttackerLevel>1</minAttackerLevel>
@@ -2459,6 +2462,7 @@
 				<targetType>SELF</targetType>
 				<chance>100</chance>
 			</effect>
+			<effect name="Fear" />
 			<effect name="Speed">
 				<amount>
 					<value level="1">-20</value>
@@ -2601,8 +2605,6 @@
 	<skill id="11540" toLevel="7" name="Quick Escape">
 		<!-- Glory Days confirmed -->
 		<!-- Transforms yourself into a cute pig for 15 seconds. P. Def. and M. Def. + 3000, and Speed + 30%. -->
-		<table name="#def"> 3000 3500 4000 4500 5000 5500 6000 </table>
-		<table name="#runSpd"> 1.30 1.40 1.50 1.60 1.60 1.60 1.60 </table>
 		<icon>icon.skill11540</icon>
 		<abnormalLvl>5</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
@@ -2638,11 +2640,13 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Transformation"> <!-- TODO check effects -->
-				<transformationId>500</transformationId>
-			</effect>
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
+			</effect>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="100" />
+				</templates>
 			</effect>
 			<effect name="Speed">
 				<amount>
@@ -2704,17 +2708,27 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Untargetable" />
-			<effect name="Transformation"> <!-- TODO check effects -->
-				<transformationId>505</transformationId>
-			</effect>
-			<effect name="DeleteHate" />
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
+			<effect name="Untargetable" />
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="505" minChance="0" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="DeleteHate" />
 			<effect name="Speed">
 				<amount>-50</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>4500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>4500</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -2767,8 +2781,14 @@
 			<effect name="DispelBySlot">
 				<dispel>CHANGEBODY,9</dispel>
 			</effect>
-			<effect name="Transformation"> <!-- TODO check effects -->
-				<transformationId>500;501;502;503;504</transformationId>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
 			</effect>
 			<effect name="PAtk">
 				<amount>-80</amount>

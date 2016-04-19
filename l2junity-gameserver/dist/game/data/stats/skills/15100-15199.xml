@@ -349,7 +349,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15116" toLevel="1" name="Dreaming Romantic Pig">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, change one party member's silhouette into that of a pig. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
@@ -371,6 +371,22 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="BuffBlock" />
+			<effect name="DebuffBlock" />
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,9</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15117" toLevel="1" name="Massacre Execution">
 		<!-- AUTO GENERATED SKILL -->

@@ -67,6 +67,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("CallTargetParty", CallTargetParty::new);
 		EffectHandler.getInstance().registerHandler("CheapShot", CheapShot::new);
 		EffectHandler.getInstance().registerHandler("ChameleonRest", ChameleonRest::new);
+		EffectHandler.getInstance().registerHandler("ChangeBody", ChangeBody::new);
 		EffectHandler.getInstance().registerHandler("ChangeFace", ChangeFace::new);
 		EffectHandler.getInstance().registerHandler("ChangeFishingMastery", ChangeFishingMastery::new);
 		EffectHandler.getInstance().registerHandler("ChangeHairColor", ChangeHairColor::new);

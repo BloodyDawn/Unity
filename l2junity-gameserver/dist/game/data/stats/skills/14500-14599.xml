@@ -498,7 +498,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14524" toLevel="1" name="Frantic Curse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Changed status. -->
 		<icon>icon.skill1072</icon>
 		<operateType>A2</operateType>
@@ -524,6 +524,17 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14525" toLevel="1" name="Frantic Sound">
 		<!-- AUTO GENERATED SKILL -->

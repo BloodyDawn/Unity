@@ -318,7 +318,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15314" toLevel="1" name="Sophie's Temper">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts AoE mutation on nearby enemies. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
@@ -344,6 +344,32 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<minDamage>1</minDamage>
+				<skillId>11556</skillId> <!-- Cancel Transform -->
+				<skillLevel>1</skillLevel>
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>100</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15315" toLevel="1" name="Alfred's Nemesis">
 		<!-- AUTO GENERATED SKILL -->
@@ -1382,7 +1408,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15361" toLevel="1" name="Attribute Change">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Makes the target mutate. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
@@ -1409,6 +1435,32 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<minDamage>1</minDamage>
+				<skillId>11556</skillId> <!-- Cancel Transform -->
+				<skillLevel>1</skillLevel>
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>100</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15362" toLevel="1" name="Instant Recovery">
 		<!-- AUTO GENERATED SKILL -->

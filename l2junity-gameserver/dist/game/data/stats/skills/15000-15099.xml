@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="15000" toLevel="1" name="Transformed">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Is cursed to be a pig for 10 seconds. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
@@ -23,6 +23,22 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="BuffBlock" />
+			<effect name="DebuffBlock" />
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,9</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15001" toLevel="1" name="Cancel Transformation">
 		<!-- AUTO GENERATED SKILL -->
@@ -2017,7 +2033,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15073" toLevel="1" name="Change All">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Changed status. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
@@ -2042,6 +2058,32 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<minDamage>1</minDamage>
+				<skillId>11556</skillId> <!-- Cancel Transform -->
+				<skillLevel>1</skillLevel>
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>100</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15074" toLevel="1" name="Shaman's Nightmare">
 		<!-- AUTO GENERATED SKILL -->

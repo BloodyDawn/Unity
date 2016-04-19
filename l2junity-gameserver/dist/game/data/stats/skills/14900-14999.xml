@@ -1958,6 +1958,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="500" minChance="0" maxChance="20" />
+					<item templateId="501" minChance="20" maxChance="40" />
+					<item templateId="502" minChance="40" maxChance="60" />
+					<item templateId="503" minChance="60" maxChance="80" />
+					<item templateId="504" minChance="80" maxChance="100" />
+				</templates>
+			</effect>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+		</effects>
 	</skill>
 	<skill id="14979" toLevel="1" name="Decoration Line">
 		<!-- AUTO GENERATED SKILL -->

@@ -1172,7 +1172,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="23551" toLevel="2" name="Transform: Giant Rat">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Transform into a Giant Rat. -->
 		<icon>icon.skill11537</icon>
 		<operateType>A2</operateType>
@@ -1202,6 +1202,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="ChangeBody">
+				<templates>
+					<item templateId="20019" minChance="0" maxChance="100" />
+				</templates>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="23552" toLevel="2" name="Instant Recovery">
 		<!-- AUTO GENERATED SKILL -->
