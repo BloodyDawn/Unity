@@ -11437,7 +11437,7 @@ public final class PlayerInstance extends Playable
 			return true;
 		}
 		
-		return (_transformSkills != null) && _transformSkills.containsValue(skill);
+		return (_transformSkills != null) && (_transformSkills.get(skill.getId()) == skill);
 	}
 	
 	public boolean hasTransformSkills()

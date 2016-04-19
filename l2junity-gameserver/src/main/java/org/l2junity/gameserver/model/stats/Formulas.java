@@ -697,12 +697,10 @@ public final class Formulas
 	
 	/**
 	 * Calculate how many milliseconds takes to make an attack.
-	 * @param attacker
-	 * @param target
 	 * @param rate
 	 * @return the delay between each attack with a minimum of 50 milliseconds (max. 10000 attack speed)
 	 */
-	public static int calcPAtkSpd(Creature attacker, Creature target, double rate)
+	public static int calcPAtkSpd(double rate)
 	{
 		// Measured Nov 2015 by Nik. Formula: atk.spd/500 = hits per second.
 		return (int) Math.max(50, (500000 / rate));
@@ -1976,5 +1974,50 @@ public final class Formulas
 	{
 		// Real Target breaks at 5% probability.
 		return Rnd.get(20) == 0;
+	}
+	
+	/**
+	 * @param activeChar
+	 * @param attackType the type of attack. Different attack types have different time between attacks.
+	 * @return the Attack Speed of the L2Character (delay (in milliseconds) before next attack).
+	 */
+	public static int calculateTimeBetweenAttacks(Creature activeChar, WeaponType attackType)
+	{
+		switch (attackType)
+		{
+			case BOW:
+				return (1500 * 345) / activeChar.getPAtkSpd();
+			case CROSSBOW:
+			case TWOHANDCROSSBOW:
+				return (1200 * 345) / activeChar.getPAtkSpd();
+			case DAGGER:
+				// atkSpd /= 1.15;
+				break;
+		}
+		
+		return calcPAtkSpd(activeChar.getPAtkSpd());
+	}
+	
+	public static int calculateReuseTime(Creature activeChar, Weapon weapon)
+	{
+		if (weapon == null)
+		{
+			return 0;
+		}
+		
+		final WeaponType defaultAttackType = weapon.getItemType();
+		final WeaponType weaponType = activeChar.getTransformation().map(transform -> transform.getBaseAttackType(activeChar, defaultAttackType)).orElse(defaultAttackType);
+		int reuse = weapon.getReuseDelay();
+		
+		// only bows should continue for now
+		if ((reuse == 0) || !weaponType.isRanged())
+		{
+			return 0;
+		}
+		
+		reuse *= activeChar.getStat().getWeaponReuseModifier();
+		double atkSpd = activeChar.getStat().getPAtkSpd();
+		
+		return (int) ((reuse * 345) / atkSpd); // ((reuse * 312) / atkSpd)) for non ranged?
 	}
 }
