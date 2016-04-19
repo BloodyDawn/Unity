@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 /**
  * Call Skill effect implementation.
@@ -71,7 +72,7 @@ public final class CallSkill extends AbstractEffect
 		
 		if (triggerSkill != null)
 		{
-			effector.makeTriggerCast(triggerSkill, effected);
+			SkillCaster.triggerCast(effector, effected, triggerSkill);
 		}
 		else
 		{

@@ -141,8 +141,6 @@ import org.l2junity.gameserver.network.client.send.ChangeMoveType;
 import org.l2junity.gameserver.network.client.send.ChangeWaitType;
 import org.l2junity.gameserver.network.client.send.ExTeleportToLocationActivate;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
-import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
-import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
 import org.l2junity.gameserver.network.client.send.NpcInfo;
 import org.l2junity.gameserver.network.client.send.Revive;
@@ -1573,23 +1571,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			// Skill casting failed, notify player.
 			sendPacket(ActionFailed.get(castingType));
-			getAI().setIntention(AI_INTENTION_ACTIVE);
-		}
-	}
-	
-	public void doSimultaneousCast(Skill skill)
-	{
-		doSimultaneousCast(skill, null);
-	}
-	
-	public void doSimultaneousCast(Skill skill, ItemInstance item)
-	{
-		SkillCaster skillCaster = SkillCaster.castSkill(this, getTarget(), skill, item, SkillCastingType.SIMULTANEOUS, false, false);
-		
-		// If skill failed casting, notify player.
-		if ((skillCaster == null) && isPlayer())
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
 			getAI().setIntention(AI_INTENTION_ACTIVE);
 		}
 	}
@@ -4101,7 +4082,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					{
 						if (Rnd.get(100) < holder.getChance())
 						{
-							makeTriggerCast(holder.getSkill(), target, false);
+							SkillCaster.triggerCast(this, target, holder.getSkill(), null, false);
 						}
 					}
 				}
@@ -5060,61 +5041,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void removeTriggerSkill(OptionsSkillHolder holder)
 	{
 		getTriggerSkills().remove(holder.getSkillId());
-	}
-	
-	public void makeTriggerCast(Skill skill, Creature target, boolean ignoreTargetType)
-	{
-		try
-		{
-			if ((skill == null))
-			{
-				return;
-			}
-			if (skill.checkCondition(this, target))
-			{
-				if (isSkillDisabled(skill))
-				{
-					return;
-				}
-				
-				if (skill.getReuseDelay() > 0)
-				{
-					disableSkill(skill, skill.getReuseDelay());
-				}
-				
-				if (!ignoreTargetType)
-				{
-					WorldObject objTarget = skill.getTarget(this, false, false, false);
-					if (objTarget.isCreature())
-					{
-						target = (Creature) objTarget;
-					}
-				}
-				
-				WorldObject[] targets = skill.getTargetsAffected(this, target).toArray(new WorldObject[0]);
-				
-				if (!skill.isNotBroadcastable())
-				{
-					broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
-					if (!skill.isToggle())
-					{
-						broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));
-					}
-				}
-				
-				// Launch the magic skill and calculate its effects
-				skill.activateSkill(this, targets);
-			}
-		}
-		catch (Exception e)
-		{
-			_log.warn("", e);
-		}
-	}
-	
-	public void makeTriggerCast(Skill skill, Creature target)
-	{
-		makeTriggerCast(skill, target, true);
 	}
 	
 	/**

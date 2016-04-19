@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 
@@ -196,14 +197,14 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				{
 					for (SkillHolder skill : MAGE_BUFFS)
 					{
-						npc.doSimultaneousCast(skill.getSkill());
+						SkillCaster.triggerCast(npc, npc, skill.getSkill());
 					}
 				}
 				else
 				{
 					for (SkillHolder skill : WARRIOR_BUFFS)
 					{
-						npc.doSimultaneousCast(skill.getSkill());
+						SkillCaster.triggerCast(npc, npc, skill.getSkill());
 					}
 				}
 				break;

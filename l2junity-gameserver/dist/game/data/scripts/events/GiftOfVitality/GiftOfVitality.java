@@ -22,6 +22,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.LongTimeEvent;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -109,8 +110,8 @@ public final class GiftOfVitality extends LongTimeEvent
 				}
 				else
 				{
-					player.doCast(GIFT_OF_VITALITY.getSkill());
-					player.doSimultaneousCast(JOY_OF_VITALITY.getSkill());
+					SkillCaster.triggerCast(player, player, GIFT_OF_VITALITY.getSkill());
+					SkillCaster.triggerCast(player, player, JOY_OF_VITALITY.getSkill());
 					player.getVariables().set(REUSE, System.currentTimeMillis() + (HOURS * 3600000));
 					htmltext = "4306-okvitality.htm";
 				}

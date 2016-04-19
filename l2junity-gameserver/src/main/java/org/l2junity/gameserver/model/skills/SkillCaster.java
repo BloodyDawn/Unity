@@ -517,7 +517,7 @@ public class SkillCaster implements Runnable
 							{
 								if (Rnd.get(100) < holder.getChance())
 								{
-									caster.makeTriggerCast(holder.getSkill(), creature, false);
+									triggerCast(caster, creature, holder.getSkill(), null, false);
 								}
 							}
 						}
@@ -648,6 +648,58 @@ public class SkillCaster implements Runnable
 		{
 			caster.broadcastPacket(new MagicSkillCanceld(caster.getObjectId())); // broadcast packet to stop animations client-side
 			caster.sendPacket(ActionFailed.get(_castingType)); // send an "action failed" packet to the caster
+		}
+	}
+	
+	public static void triggerCast(Creature activeChar, Creature target, Skill skill)
+	{
+		triggerCast(activeChar, target, skill, null, true);
+	}
+	
+	public static void triggerCast(Creature activeChar, Creature target, Skill skill, ItemInstance item, boolean ignoreTargetType)
+	{
+		try
+		{
+			if ((activeChar == null) || (skill == null))
+			{
+				return;
+			}
+			
+			if (skill.checkCondition(activeChar, target))
+			{
+				if (activeChar.isSkillDisabled(skill))
+				{
+					return;
+				}
+				
+				if (skill.getReuseDelay() > 0)
+				{
+					activeChar.disableSkill(skill, skill.getReuseDelay());
+				}
+				
+				if (!ignoreTargetType)
+				{
+					WorldObject objTarget = skill.getTarget(activeChar, false, false, false);
+					if (objTarget.isCreature())
+					{
+						target = (Creature) objTarget;
+					}
+				}
+				
+				WorldObject[] targets = skill.getTargetsAffected(activeChar, target).toArray(new WorldObject[0]);
+				
+				if (!skill.isNotBroadcastable())
+				{
+					activeChar.broadcastPacket(new MagicSkillUse(activeChar, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
+				}
+				
+				// Launch the magic skill and calculate its effects
+				skill.activateSkill(activeChar, item, targets);
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("Failed simultaneous cast: ", e);
 		}
 	}
 	

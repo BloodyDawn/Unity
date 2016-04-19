@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 /**
  * Synergy effect implementation.
@@ -107,7 +108,7 @@ public final class Synergy extends AbstractEffect
 				
 				if ((target != null) && target.isCreature())
 				{
-					info.getEffector().makeTriggerCast(partyBuffSkill, (Creature) target);
+					SkillCaster.triggerCast(info.getEffector(), (Creature) target, partyBuffSkill);
 				}
 			}
 			else

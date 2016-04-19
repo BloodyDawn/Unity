@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 
 /**
@@ -86,7 +87,7 @@ public final class TriggerSkillByAvoid extends AbstractEffect
 		
 		if ((target != null) && target.isCreature())
 		{
-			event.getAttacker().makeTriggerCast(triggerSkill, (Creature) target);
+			SkillCaster.triggerCast(event.getAttacker(), (Creature) target, triggerSkill);
 		}
 	}
 	

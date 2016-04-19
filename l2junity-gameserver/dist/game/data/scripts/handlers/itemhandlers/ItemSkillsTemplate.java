@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -115,7 +116,7 @@ public class ItemSkillsTemplate implements IItemHandler
 				
 				if (itemSkill.isWithoutAction() || item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect())
 				{
-					playable.doSimultaneousCast(itemSkill, item);
+					SkillCaster.triggerCast(playable, null, itemSkill, item, false);
 					successfulUse = true;
 				}
 				else

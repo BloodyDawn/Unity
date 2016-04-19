@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 /**
  * Trigger Skill By Kill effect implementation.
@@ -60,7 +61,7 @@ public final class TriggerSkillByKill extends AbstractEffect
 		
 		if (event.getAttacker() == target)
 		{
-			target.makeTriggerCast(triggerSkill, target);
+			SkillCaster.triggerCast(target, target, triggerSkill);
 		}
 	}
 	
