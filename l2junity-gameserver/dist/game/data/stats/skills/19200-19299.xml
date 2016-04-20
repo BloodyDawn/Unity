@@ -283,12 +283,6 @@
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>3</hitCancelTime>
-		<cond>
-			<and>
-				<player canSummonServitor="true" />
-				<player hasFreeSummonPoints="0" />
-			</and>
-		</cond>
 		<effects>
 			<effect name="Summon">
 				<npcId>15154</npcId>
@@ -608,9 +602,6 @@
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>687</effectPoint>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<using kind="SWORD,BLUNT" />
-		</cond>
 		<effects>
 			<effect name="Hide">
 			</effect>

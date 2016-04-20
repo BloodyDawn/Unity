@@ -3940,12 +3940,9 @@
 		<hitTime>3500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
-		<cond>
-			<and>
-				<player canSummonServitor="true" />
-				<player hasFreeSummonPoints="0" />
-			</and>
-		</cond>
+		<conditions>
+			<condition name="CanSummon" />
+		</conditions>
 		<effects>
 			<effect name="Summon">
 				<npcId>

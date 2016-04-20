@@ -276,9 +276,9 @@
 		<reuseDelay>120000</reuseDelay>
 		<effectPoint>-2036</effectPoint>
 		<isMagic>1</isMagic>
-		<cond msgId="113" addName="1">
-			<target playable="true" />
-		</cond>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<effects>
 			<effect name="DispelBySlotProbability">
 				<dispel>INVINCIBILITY_SPECIAL;INVINCIBILITY</dispel>

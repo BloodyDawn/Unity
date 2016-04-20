@@ -118,9 +118,13 @@
 		</effectPoint>
 		<reuseDelay>30000</reuseDelay>
 		<rideState>NONE</rideState>
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
-		</cond>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="PhysicalAttackHpLink">
 				<power>

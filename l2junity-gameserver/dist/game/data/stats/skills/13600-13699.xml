@@ -377,13 +377,13 @@
 		<!-- Increases Atk. Spd. by 5%. -->
 		<icon>icon.etc_oricalcum_quiver_i00</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -392,13 +392,14 @@
 		<!-- Increases Atk. Spd. by 5%. -->
 		<icon>icon.etc_oricalcum_bolt_i00</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+					<item>TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -407,13 +408,14 @@
 		<!-- Increases P. Atk. by 5%. -->
 		<icon>icon.etc_oricalcum_quiver_i00</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
 		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+					<item>TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -422,13 +424,14 @@
 		<!-- Increases P. Atk. by 5%. -->
 		<icon>icon.etc_oricalcum_bolt_i00</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
 		<effects>
 			<effect name="PAtk">
 				<amount>5</amount>
 				<mode>PER</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+					<item>TWOHANDCROSSBOW</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
@@ -437,9 +440,6 @@
 		<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 		<icon>icon.etc_oricalcum_quiver_i00</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="BOW" />
-		</cond>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
@@ -450,6 +450,7 @@
 				<chance>21</chance>
 				<targetType>ENEMY</targetType>
 				<affectScope>SINGLE</affectScope>
+				<allowWeapons>BOW</allowWeapons>
 			</effect>
 		</effects>
 	</skill>
@@ -473,9 +474,6 @@
 		<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 		<icon>icon.etc_oricalcum_bolt_i00</icon>
 		<operateType>P</operateType>
-		<cond msgId="113" addName="1">
-			<using kind="CROSSBOW,TWOHANDCROSSBOW" />
-		</cond>
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- According to retail tests, 84 out of 400 attacks succeeded. Its unknown if they have taken cooldown into account. -->
@@ -486,6 +484,7 @@
 				<chance>21</chance>
 				<targetType>ENEMY</targetType>
 				<affectScope>SINGLE</affectScope>
+				<allowWeapons>CROSSBOW,TWOHANDCROSSBOW</allowWeapons>
 			</effect>
 		</effects>
 	</skill>
