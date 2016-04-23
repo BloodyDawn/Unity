@@ -82,7 +82,7 @@ public final class Backstab extends AbstractEffect
 		
 		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcBackstabDamage(effector, effected, skill, _power, shld, ss);
+		double damage = Formulas.calcBlowDamage(effector, effected, skill, true, _power, shld, ss);
 		
 		if (Formulas.calcCrit(_criticalChance, true, effector, effected))
 		{

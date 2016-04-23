@@ -75,7 +75,7 @@ public final class Formulas
 		return cha.isDoor() ? HP_REGENERATE_PERIOD * 100 : HP_REGENERATE_PERIOD;
 	}
 	
-	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
+	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, boolean backstab, double power, byte shld, boolean ss)
 	{
 		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
 		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
@@ -104,143 +104,44 @@ public final class Formulas
 			}
 		}
 		
-		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
-		final double ssboost = ss ? 2 * shotsBonus : 1;
-		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
-		double damage = 0;
-		double pvpBonus = 1;
-		
-		if (isPvP)
-		{
-			// Damage bonuses in PvP fight
-			pvpBonus = attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
-			// Defense bonuses in PvP fight
-			defence *= target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
-		}
-		
-		// Initial damage
-		final double baseMod = ((77 * (power + (attacker.getPAtk() * ssboost))) / defence);
 		// Critical
 		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
-		final double criticalAddMod = ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
+		final double criticalAddMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0));
 		final double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
 		// Trait, elements
 		final double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double attributeMod = calcAttributeBonus(attacker, target, skill);
 		final double weaponMod = attacker.getRandomDamageMultiplier();
+		final double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
 		
-		double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
+		// Initial damage
+		final double ssmod = ss ? (2 * attacker.getStat().getValue(Stats.SHOTS_BONUS)) : 1;
+		final double ssBMod = ss ? 2.03 : 1; // Soulshot mod for backstab.
+		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
+		final double cdMult = criticalMod * criticalVulnMod * proximityBonus;
+		final double cdPatk = criticalAddMod + criticalAddVuln;
+		final double isBack = backstab ? 1 : 0; // 1 for backstab.
 		
-		damage = (baseMod * criticalMod * criticalVulnMod * proximityBonus * pvpBonus) + criticalAddMod + criticalAddVuln;
-		damage *= weaponTraitMod;
-		damage *= generalTraitMod;
-		damage *= attributeMod;
-		damage *= weaponMod;
-		damage *= penaltyMod;
+		// ........................_______________Initial Damage_________________...________Backstab Additional Damage_______..._Critical Add_
+		// ATTACK CALCULATION 77 * [(skillpower+patk*1.33) * 0.666 * cdbonus * ss + is_back * (skillpower+patk*ss bonus) * 0.2 + 6 * cd_patk] / pdef
+		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^
+		final double baseMod = ((77 * ((((power + (attacker.getPAtk() * 1.33)) * 0.666 * ssmod * cdMult) + (isBack * (power + (attacker.getPAtk() * ssBMod)) * 0.2)) + (6 * cdPatk))) / defence);
+		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * penaltyMod;
 		
 		if (attacker.isDebug())
 		{
 			final StatsSet set = new StatsSet();
 			set.set("skillPower", power);
-			set.set("ssboost", ssboost);
+			set.set("ssboost", ssmod);
 			set.set("proximityBonus", proximityBonus);
-			set.set("pvpBonus", pvpBonus);
 			set.set("baseMod", baseMod);
 			set.set("criticalMod", criticalMod);
 			set.set("criticalVulnMod", criticalVulnMod);
 			set.set("criticalAddMod", criticalAddMod);
 			set.set("criticalAddVuln", criticalAddVuln);
 			set.set("weaponTraitMod", weaponTraitMod);
-			set.set("generalTraitMod", generalTraitMod);
-			set.set("attributeMod", attributeMod);
-			set.set("weaponMod", weaponMod);
-			set.set("penaltyMod", penaltyMod);
-			set.set("damage", (int) damage);
-			Debug.sendSkillDebug(attacker, target, skill, set);
-		}
-		
-		return Math.max(damage, 1);
-	}
-	
-	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
-	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
-		{
-			return 0;
-		}
-		
-		final double distance = attacker.calculateDistance(target, true, false);
-		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
-		{
-			return 0;
-		}
-		
-		double defence = target.getPDef();
-		
-		switch (shld)
-		{
-			case Formulas.SHIELD_DEFENSE_SUCCEED:
-			{
-				defence += target.getShldDef();
-				break;
-			}
-			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
-			{
-				return 1;
-			}
-		}
-		
-		boolean isPvP = attacker.isPlayable() && target.isPlayer();
-		double damage = 0;
-		double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed)
-		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
-		double ssboost = ss ? 2 * shotsBonus : 1;
-		double pvpBonus = 1;
-		
-		if (isPvP)
-		{
-			// Damage bonuses in PvP fight
-			pvpBonus = attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
-			// Defense bonuses in PvP fight
-			defence *= target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
-		}
-		
-		// Initial damage
-		double baseMod = ((77 * (power + attacker.getPAtk())) / defence) * ssboost;
-		// Critical
-		double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
-		double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
-		double criticalAddMod = ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
-		double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
-		// Trait, elements
-		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
-		double attributeMod = calcAttributeBonus(attacker, target, skill);
-		double weaponMod = attacker.getRandomDamageMultiplier();
-		
-		double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
-		
-		damage = (baseMod * criticalMod * criticalVulnMod * proximityBonus * pvpBonus) + criticalAddMod + criticalAddVuln;
-		damage *= generalTraitMod;
-		damage *= attributeMod;
-		damage *= weaponMod;
-		damage *= penaltyMod;
-		
-		if (attacker.isDebug())
-		{
-			final StatsSet set = new StatsSet();
-			set.set("skillPower", power);
-			set.set("ssboost", ssboost);
-			set.set("proximityBonus", proximityBonus);
-			set.set("pvpBonus", pvpBonus);
-			set.set("baseMod", baseMod);
-			set.set("criticalMod", criticalMod);
-			set.set("criticalVulnMod", criticalVulnMod);
-			set.set("criticalAddMod", criticalAddMod);
-			set.set("criticalAddVuln", criticalAddVuln);
 			set.set("generalTraitMod", generalTraitMod);
 			set.set("attributeMod", attributeMod);
 			set.set("weaponMod", weaponMod);
