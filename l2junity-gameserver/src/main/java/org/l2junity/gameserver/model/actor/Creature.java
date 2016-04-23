@@ -4515,6 +4515,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public double getLevelMod()
 	{
+		// Untested: (lvl + 89 + unk5,5forSkill4.0Else * odyssey_lvl_mod) / 100; odyssey_lvl_mod = (lvl-99) min 0.
 		final double defaultLevelMod = ((getLevel() + 89) / 100d);
 		return _transform.filter(transform -> !transform.isStance()).map(transform -> transform.getLevelMod(this)).orElse(defaultLevelMod);
 	}

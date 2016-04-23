@@ -118,16 +118,15 @@ public final class Formulas
 		final double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
 		
 		// Initial damage
-		final double ssmod = ss ? (2 * attacker.getStat().getValue(Stats.SHOTS_BONUS)) : 1;
-		final double ssBMod = ss ? 2.03 : 1; // Soulshot mod for backstab.
+		final double ssmod = ss ? (2 * attacker.getStat().getValue(Stats.SHOTS_BONUS)) : 1; // 2.04 for dual weapon?
 		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		final double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1) * proximityBonus;
 		final double cdPatk = criticalAddMod + criticalAddVuln;
 		final double isPosition = backstab ? 0.2 : 0; // 0.2 for backstab.
-		// ........................__________________________________Initial Damage__________________________________..._________Backstab Additional Damage_________..._CriticalAdd
-		// ATTACK CALCULATION 77 * [(skillpower+patk*unkLvlModOr1.33) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / pdef
-		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
-		final double baseMod = ((77 * (((power + (attacker.getPAtk() * attacker.getLevelMod())) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssBMod))) + (6 * cdPatk))) / defence);
+		// ........................________________________________Initial Damage________________________________...______Backstab Additional Damage______..._CriticalAdd_
+		// ATTACK CALCULATION 77 * [(skillpower+patk*lvlMod) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / (pdef * trgtLvlMod)
+		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
+		final double baseMod = ((77 * (((power + (attacker.getPAtk() * attacker.getLevelMod())) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssmod))) + (6 * cdPatk))) / (defence * target.getLevelMod()));
 		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * penaltyMod;
 		
 		if (attacker.isDebug())
