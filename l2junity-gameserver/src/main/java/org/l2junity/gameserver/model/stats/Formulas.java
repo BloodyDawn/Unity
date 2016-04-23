@@ -105,7 +105,8 @@ public final class Formulas
 		}
 		
 		// Critical
-		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)));
+		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1));
+		final double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target));
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
 		final double criticalAddMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0));
 		final double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -120,14 +121,13 @@ public final class Formulas
 		final double ssmod = ss ? (2 * attacker.getStat().getValue(Stats.SHOTS_BONUS)) : 1;
 		final double ssBMod = ss ? 2.03 : 1; // Soulshot mod for backstab.
 		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
-		final double cdMult = criticalMod * criticalVulnMod * proximityBonus;
+		final double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1) * proximityBonus;
 		final double cdPatk = criticalAddMod + criticalAddVuln;
-		final double isBack = backstab ? 1 : 0; // 1 for backstab.
-		
-		// ........................_______________Initial Damage_________________...________Backstab Additional Damage_______..._Critical Add_
-		// ATTACK CALCULATION 77 * [(skillpower+patk*1.33) * 0.666 * cdbonus * ss + is_back * (skillpower+patk*ss bonus) * 0.2 + 6 * cd_patk] / pdef
-		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^
-		final double baseMod = ((77 * ((((power + (attacker.getPAtk() * 1.33)) * 0.666 * ssmod * cdMult) + (isBack * (power + (attacker.getPAtk() * ssBMod)) * 0.2)) + (6 * cdPatk))) / defence);
+		final double isPosition = backstab ? 0.2 : 0; // 0.2 for backstab.
+		// ........................__________________________________Initial Damage__________________________________..._________Backstab Additional Damage_________..._CriticalAdd
+		// ATTACK CALCULATION 77 * [(skillpower+patk*unkLvlModOr1.33) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / pdef
+		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
+		final double baseMod = ((77 * (((power + (attacker.getPAtk() * attacker.getLevelMod())) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssBMod))) + (6 * cdPatk))) / defence);
 		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * penaltyMod;
 		
 		if (attacker.isDebug())
