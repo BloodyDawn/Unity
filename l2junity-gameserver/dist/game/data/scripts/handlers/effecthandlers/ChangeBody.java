@@ -54,6 +54,9 @@ public final class ChangeBody extends AbstractEffect
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
+		effected.abortAttack();
+		effected.abortCast();
+		
 		final int chance = Rnd.get(100);
 		//@formatter:off
 		_transformations.stream()
