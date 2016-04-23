@@ -247,7 +247,6 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("ReflectMagic", ReflectMagic::new);
 		EffectHandler.getInstance().registerHandler("ReflectSkill", ReflectSkill::new);
 		EffectHandler.getInstance().registerHandler("RefuelAirship", RefuelAirship::new);
-		EffectHandler.getInstance().registerHandler("RegularAttack", RegularAttack::new);
 		EffectHandler.getInstance().registerHandler("Relax", Relax::new);
 		EffectHandler.getInstance().registerHandler("ResistAbnormalByCategory", ResistAbnormalByCategory::new);
 		EffectHandler.getInstance().registerHandler("ResistDDMagic", ResistDDMagic::new);

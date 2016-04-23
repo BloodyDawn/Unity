@@ -1392,7 +1392,7 @@
 				<chance>100</chance>
 				<targetType>ENEMY</targetType>
 				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
+				<minDamage>100</minDamage>
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -1451,8 +1451,9 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="RegularAttack">
+			<effect name="PhysicalAttack">
 				<pAtkMod>5</pAtkMod>
+				<criticalChance>5</criticalChance>
 				<overHit>true</overHit>
 			</effect>
 		</effects>
@@ -1542,7 +1543,7 @@
 		<effects>
 			<effect name="TriggerSkillByAttack">
 				<!-- Damage Up -->
-				<minDamage>1</minDamage>
+				<minDamage>100</minDamage>
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>13</chance>
