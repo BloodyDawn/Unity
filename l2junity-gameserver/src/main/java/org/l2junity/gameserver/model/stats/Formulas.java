@@ -106,7 +106,7 @@ public final class Formulas
 		
 		// Critical
 		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1));
-		final double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target));
+		final double criticalPositionMod = calcCritDamagePosition(attacker, target);
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
 		final double criticalAddMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0));
 		final double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -200,8 +200,9 @@ public final class Formulas
 		
 		if (crit)
 		{
+			final double cAtkPosition = calcCritDamagePosition(attacker, target);
 			// Finally retail like formula
-			damage = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1) * ((70 * damage) / defence);
+			damage = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * cAtkPosition * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1) * ((70 * damage) / defence);
 			// Crit dmg add is almost useless in normal hits...
 			damage += ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 70) / defence);
 			damage += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -436,6 +437,29 @@ public final class Formulas
 		
 		double finalRate = target.getStat().getValue(Stats.DEFENCE_CRITICAL_RATE, rate) + target.getStat().getValue(Stats.DEFENCE_CRITICAL_RATE_ADD, 0);
 		return finalRate > Rnd.get(1000);
+	}
+	
+	/**
+	 * @param attacker
+	 * @param target
+	 * @return critical damage bonus based on attacking position.
+	 */
+	public static double calcCritDamagePosition(Creature attacker, Creature target)
+	{
+		switch (Position.getPosition(attacker, target))
+		{
+			case FRONT:
+				final double frontStatBonus = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.FRONT);
+				return frontStatBonus; // No bonus critical damage when attacking from front.
+			case SIDE:
+				final double sideStatBonus = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.SIDE);
+				return sideStatBonus * 1.05; // 5% bonus critical damage when attacking from side
+			case BACK:
+				final double backStatBonus = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.BACK);
+				return backStatBonus * 1.2; // 20% bonus critical damage when attacking from back
+		}
+		
+		return 1;
 	}
 	
 	public static boolean calcMCrit(double mRate, Skill skill, Creature target)
@@ -1538,8 +1562,9 @@ public final class Formulas
 		
 		if (crit)
 		{
+			final double cAtkPosition = calcCritDamagePosition(attacker, target);
 			critMod = isBow ? 0.5 : 1;
-			cAtk = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target)) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
+			cAtk = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * cAtkPosition * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
 			cAtkAdd += attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0);
 			cAtkAdd += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
 		}
