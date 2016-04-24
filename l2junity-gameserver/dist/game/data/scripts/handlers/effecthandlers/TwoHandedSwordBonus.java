@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.StatModifierType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.conditions.ConditionTargetUsesWeaponKind;
+import org.l2junity.gameserver.model.conditions.ConditionUsingItemType;
 import org.l2junity.gameserver.model.conditions.ConditionUsingSlotType;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class TwoHandedSwordBonus extends AbstractEffect
 {
-	private final static Condition _weaponTypeCondition = new ConditionTargetUsesWeaponKind(WeaponType.SWORD.mask());
+	private final static Condition _weaponTypeCondition = new ConditionUsingItemType(WeaponType.SWORD.mask());
 	private final static Condition _slotCondition = new ConditionUsingSlotType(L2Item.SLOT_LR_HAND);
 	
 	protected final double _pAtkAmount;
