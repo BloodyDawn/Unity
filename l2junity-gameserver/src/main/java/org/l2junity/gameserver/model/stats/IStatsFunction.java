@@ -101,12 +101,6 @@ public interface IStatsFunction
 					baseValue += item.getItem().getStats(stat, 0);
 				}
 			}
-			
-			final ItemInstance weapon = creature.getActiveWeaponInstance();
-			if (weapon != null)
-			{
-				baseValue += weapon.getItem().getStats(stat, 0);
-			}
 		}
 		
 		return baseValue;
