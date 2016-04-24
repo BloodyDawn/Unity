@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerIsInCombat;
-import org.l2junity.gameserver.model.conditions.ConditionTargetUsesWeaponKind;
 import org.l2junity.gameserver.model.conditions.ConditionUsingItemType;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.type.ArmorType;
@@ -97,7 +96,7 @@ public abstract class AbstractStatEffect extends AbstractEffect
 		
 		if (weaponTypesMask != 0)
 		{
-			_conditions.add(new ConditionTargetUsesWeaponKind(weaponTypesMask));
+			_conditions.add(new ConditionUsingItemType(weaponTypesMask));
 		}
 		
 		if (armorTypesMask != 0)
@@ -114,6 +113,13 @@ public abstract class AbstractStatEffect extends AbstractEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
+		if (effected.isPlayer())
+		{
+			if (_mulStat == Stats.ACCURACY_COMBAT)
+			{
+				System.out.println("Skill: " + skill + " " + (_conditions.isEmpty() || _conditions.stream().allMatch(cond -> cond.test(effected, effected, skill))));
+			}
+		}
 		if (_conditions.isEmpty() || _conditions.stream().allMatch(cond -> cond.test(effected, effected, skill)))
 		{
 			switch (_mode)
