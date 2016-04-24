@@ -127,7 +127,7 @@ public final class EnergyAttack extends AbstractEffect
 		
 		if (defence != -1)
 		{
-			final double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, effected) * Formulas.calcAttributeBonus(attacker, effected, skill) * Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), true);
+			final double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, effected) * Formulas.calcAttributeBonus(attacker, effected, skill) * Formulas.calculatePvpPveBonus(effector, effected, skill, false) * Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), true);
 			
 			boolean ss = skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
 			final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
@@ -155,11 +155,6 @@ public final class EnergyAttack extends AbstractEffect
 			
 			damage = attack / defence;
 			damage *= damageMultiplier;
-			if (effected instanceof PlayerInstance)
-			{
-				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1.0);
-				damage *= effected.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1.0);
-			}
 			
 			critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
 			if (critical)

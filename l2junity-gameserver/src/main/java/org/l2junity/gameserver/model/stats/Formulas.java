@@ -115,7 +115,7 @@ public final class Formulas
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double attributeMod = calcAttributeBonus(attacker, target, skill);
 		final double weaponMod = attacker.getRandomDamageMultiplier();
-		final double penaltyMod = calcPveDamagePenalty(attacker, target, skill, true);
+		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, true);
 		
 		// Initial damage
 		final double ssmod = ss ? (2 * attacker.getStat().getValue(Stats.SHOTS_BONUS)) : 1; // 2.04 for dual weapon?
@@ -127,7 +127,7 @@ public final class Formulas
 		// ATTACK CALCULATION 77 * [(skillpower+patk) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / pdef
 		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
 		final double baseMod = ((77 * (((power + attacker.getPAtk()) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssmod))) + (6 * cdPatk))) / defence);
-		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * penaltyMod;
+		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * pvpPveMod;
 		
 		if (attacker.isDebug())
 		{
@@ -144,7 +144,7 @@ public final class Formulas
 			set.set("generalTraitMod", generalTraitMod);
 			set.set("attributeMod", attributeMod);
 			set.set("weaponMod", weaponMod);
-			set.set("penaltyMod", penaltyMod);
+			set.set("penaltyMod", pvpPveMod);
 			set.set("damage", (int) damage);
 			Debug.sendSkillDebug(attacker, target, skill, set);
 		}
@@ -171,7 +171,6 @@ public final class Formulas
 			return 0;
 		}
 		
-		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		double damage = attacker.getPAtk();
 		double defence = target.getPDef();
 		final double distance = attacker.calculateDistance(target, true, false);
@@ -179,12 +178,6 @@ public final class Formulas
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
-		}
-		
-		// Defense bonuses in PvP fight
-		if (isPvP)
-		{
-			defence *= (skill == null) ? target.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DEFENCE, 1) : target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		switch (shld)
@@ -243,19 +236,6 @@ public final class Formulas
 			damage = 0;
 		}
 		
-		// Dmg bonuses in PvP fight
-		if (isPvP)
-		{
-			if (skill == null)
-			{
-				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DAMAGE, 1);
-			}
-			else
-			{
-				damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
-			}
-		}
-		
 		// Physical skill dmg boost
 		if (skill != null)
 		{
@@ -267,29 +247,7 @@ public final class Formulas
 		}
 		
 		damage *= calcAttributeBonus(attacker, target, skill);
-		
-		if (target.isAttackable() || attacker.isAttackable())
-		{
-			damage *= calcPveDamagePenalty(attacker, target, skill, crit);
-			
-			if (skill != null)
-			{
-				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DEFENCE, 1);
-				if (attacker.isRaid())
-				{
-					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1);
-				}
-			}
-			else
-			{
-				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DEFENCE, 1);
-				if (attacker.isRaid())
-				{
-					damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1);
-				}
-			}
-			
-		}
+		damage *= calculatePvpPveBonus(attacker, target, skill, crit);
 		return damage;
 	}
 	
@@ -323,20 +281,6 @@ public final class Formulas
 		}
 		
 		int mAtk = attacker.getMAtk();
-		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		
-		// PvP bonuses for defense
-		if (isPvP)
-		{
-			if (skill.isMagic())
-			{
-				mDef *= target.getStat().getValue(Stats.PVP_MAGICAL_SKILL_DEFENCE, 1);
-			}
-			else
-			{
-				mDef *= target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
-			}
-		}
 		
 		// Bonus Spirit shot
 		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
@@ -388,31 +332,15 @@ public final class Formulas
 		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
 		
-		// PvP bonuses for damage
-		if (isPvP)
-		{
-			Stats stat = skill.isMagic() ? Stats.PVP_MAGICAL_SKILL_DAMAGE : Stats.PVP_PHYSICAL_SKILL_DAMAGE;
-			damage *= attacker.getStat().getValue(stat, 1);
-		}
-		
 		damage *= calcAttributeBonus(attacker, target, skill);
+		
+		damage *= calculatePvpPveBonus(attacker, target, skill, mcrit);
 		
 		// Bonus damage if target is affected by Storm Sign
 		damage *= target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1);
 		
 		// Critical damage resistance
 		damage *= target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
-		
-		// PvE Bonuses.
-		if (target.isAttackable() || attacker.isAttackable())
-		{
-			damage *= calcPveDamagePenalty(attacker, target, skill, mcrit);
-			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DEFENCE, 1);
-			if (attacker.isRaid())
-			{
-				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1);
-			}
-		}
 		return damage;
 	}
 	
@@ -486,12 +414,7 @@ public final class Formulas
 		}
 		
 		damage *= calcAttributeBonus(owner, target, skill);
-		
-		if (target.isAttackable())
-		{
-			damage *= attacker.getOwner().getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1);
-			damage *= calcPveDamagePenalty(attacker.getOwner(), target, skill, mcrit);
-		}
+		damage *= calculatePvpPveBonus(owner, target, skill, mcrit);
 		return damage;
 	}
 	
@@ -1072,17 +995,7 @@ public final class Formulas
 		
 		double damage = (Math.sqrt(mAtk) * power * (mp / 97)) / mDef;
 		damage *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
-		
-		// PvE Bonuses.
-		if (target.isAttackable() || attacker.isAttackable())
-		{
-			damage *= calcPveDamagePenalty(attacker, target, skill, mcrit);
-			damage *= attacker.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DEFENCE, 1);
-			if (attacker.isRaid())
-			{
-				damage *= target.getStat().getValue(Stats.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1);
-			}
-		}
+		damage *= calculatePvpPveBonus(attacker, target, skill, mcrit);
 		
 		// Failure calculation
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
@@ -1657,23 +1570,7 @@ public final class Formulas
 		double damage = attack / defence;
 		damage *= calcAttackTraitBonus(attacker, target);
 		damage *= calcAttributeBonus(attacker, target, null);
-		
-		// PvP bonus
-		if (attacker.isPlayable() && target.isPlayable())
-		{
-			damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DAMAGE, 1) * target.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DEFENCE, 1);
-		}
-		
-		// PvE Bonus
-		if (target.isAttackable() || attacker.isAttackable())
-		{
-			damage *= calcPveDamagePenalty(attacker, target, null, crit);
-			damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * target.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DEFENCE, 1);
-			if (attacker.isRaid())
-			{
-				damage *= target.getStat().getValue(Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1);
-			}
-		}
+		damage *= calculatePvpPveBonus(attacker, target, null, crit);
 		
 		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
 		{
@@ -1793,5 +1690,76 @@ public final class Formulas
 		double atkSpd = activeChar.getStat().getPAtkSpd();
 		
 		return (int) ((reuse * 345) / atkSpd); // ((reuse * 312) / atkSpd)) for non ranged?
+	}
+	
+	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill skill, boolean crit)
+	{
+		// PvP bonus
+		if (attacker.isPlayable() && target.isPlayable())
+		{
+			final double pvpAttack;
+			final double pvpDefense;
+			if (skill != null)
+			{
+				if (skill.isMagic())
+				{
+					// Magical Skill PvP
+					pvpAttack = attacker.getStat().getValue(Stats.PVP_MAGICAL_SKILL_DAMAGE, 1);
+					pvpDefense = target.getStat().getValue(Stats.PVP_MAGICAL_SKILL_DEFENCE, 1);
+				}
+				else
+				{
+					// Physical Skill PvP
+					pvpAttack = attacker.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
+					pvpDefense = target.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
+				}
+			}
+			else
+			{
+				// Autoattack PvP
+				pvpAttack = attacker.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DAMAGE, 1);
+				pvpDefense = target.getStat().getValue(Stats.PVP_PHYSICAL_ATTACK_DEFENCE, 1);
+			}
+			
+			return 1 + (pvpAttack - pvpDefense);
+		}
+		
+		// PvE Bonus
+		if (target.isAttackable() || attacker.isAttackable())
+		{
+			final double pveAttack;
+			final double pveDefense;
+			final double pveRaidDefense;
+			final double pvePenalty = calcPveDamagePenalty(attacker, target, skill, crit);
+			
+			if (skill != null)
+			{
+				if (skill.isMagic())
+				{
+					// Magical Skill PvE
+					pveAttack = attacker.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DAMAGE, 1);
+					pveDefense = target.getStat().getValue(Stats.PVE_MAGICAL_SKILL_DEFENCE, 1);
+					pveRaidDefense = attacker.isRaid() ? attacker.getStat().getValue(Stats.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1) : 1;
+				}
+				else
+				{
+					// Physical Skill PvE
+					pveAttack = attacker.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DAMAGE, 1);
+					pveDefense = target.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DEFENCE, 1);
+					pveRaidDefense = attacker.isRaid() ? attacker.getStat().getValue(Stats.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1) : 1;
+				}
+			}
+			else
+			{
+				// Autoattack PvE
+				pveAttack = attacker.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DAMAGE, 1);
+				pveDefense = target.getStat().getValue(Stats.PVE_PHYSICAL_ATTACK_DEFENCE, 1);
+				pveRaidDefense = attacker.isRaid() ? attacker.getStat().getValue(Stats.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1) : 1;
+			}
+			
+			return (1 + (pveAttack - (pveDefense * pveRaidDefense))) * pvePenalty;
+		}
+		
+		return 1;
 	}
 }

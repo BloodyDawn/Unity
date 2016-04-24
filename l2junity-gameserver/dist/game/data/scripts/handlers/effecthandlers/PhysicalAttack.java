@@ -148,7 +148,6 @@ public final class PhysicalAttack extends AbstractEffect
 			return 0;
 		}
 		
-		final boolean isPvP = effector.isPlayable() && effected.isPlayable();
 		double damage = effector.getPAtk();
 		double defence = effected.getPDef();
 		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
@@ -158,12 +157,6 @@ public final class PhysicalAttack extends AbstractEffect
 		if (distance > effected.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
-		}
-		
-		// Defense bonuses in PvP fight
-		if (isPvP)
-		{
-			defence *= effected.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DEFENCE, 1);
 		}
 		
 		switch (shld)
@@ -181,6 +174,8 @@ public final class PhysicalAttack extends AbstractEffect
 				return 1.;
 			}
 		}
+		
+		// Most accurate bow formula so far: =((77 * ((patk * 1,333) + patk)) + 140 * power) / E2
 		
 		// Add soulshot boost.
 		final double shotsBonus = effector.getStat().getValue(Stats.SHOTS_BONUS);
@@ -209,27 +204,11 @@ public final class PhysicalAttack extends AbstractEffect
 			damage = 0;
 		}
 		
-		// Dmg bonuses in PvP fight
-		if (isPvP)
-		{
-			damage *= effector.getStat().getValue(Stats.PVP_PHYSICAL_SKILL_DAMAGE, 1);
-		}
-		
 		// Physical skill dmg boost
 		damage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 		
 		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
-		
-		// PvE Bonuses.
-		if (effected.isAttackable() || effector.isAttackable())
-		{
-			damage *= Formulas.calcPveDamagePenalty(effector, effected, skill, false);
-			damage *= effector.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DAMAGE, 1) * effected.getStat().getValue(Stats.PVE_PHYSICAL_SKILL_DEFENCE, 1);
-			if (effector.isRaid())
-			{
-				damage *= effected.getStat().getValue(Stats.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1);
-			}
-		}
+		damage *= Formulas.calculatePvpPveBonus(effector, effected, skill, false);
 		
 		// Check if we apply an abnormal modifier
 		if (_abnormals.stream().anyMatch(a -> effected.getEffectList().getBuffInfoByAbnormalType(a) != null))
