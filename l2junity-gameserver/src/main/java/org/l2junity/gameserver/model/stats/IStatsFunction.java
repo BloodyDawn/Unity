@@ -314,7 +314,7 @@ public interface IStatsFunction
 			{
 				if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 				{
-					if (item.getWeaponItem().isBowOrCrossBow())
+					if (item.getWeaponItem().getItemType().isRanged())
 					{
 						//@formatter:off
 						/* P. Atk. increases by 12 for bows.
@@ -468,7 +468,7 @@ public interface IStatsFunction
 			{
 				if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 				{
-					if (item.getWeaponItem().isBowOrCrossBow())
+					if (item.getWeaponItem().getItemType().isRanged())
 					{
 						// P. Atk. increases by 10 for bows.
 						// Starting at +4, P. Atk. bonus double.
@@ -493,7 +493,7 @@ public interface IStatsFunction
 			{
 				if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 				{
-					if (item.getWeaponItem().isBowOrCrossBow())
+					if (item.getWeaponItem().getItemType().isRanged())
 					{
 						// P. Atk. increases by 8 for bows.
 						// Starting at +4, P. Atk. bonus double.
@@ -519,7 +519,7 @@ public interface IStatsFunction
 			{
 				if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 				{
-					if (item.getWeaponItem().isBowOrCrossBow())
+					if (item.getWeaponItem().getItemType().isRanged())
 					{
 						// P. Atk. increases by 6 for bows.
 						// Starting at +4, P. Atk. bonus double.
@@ -543,7 +543,7 @@ public interface IStatsFunction
 			case D:
 			case NONE:
 			{
-				if (item.getWeaponItem().isBowOrCrossBow())
+				if (item.getWeaponItem().getItemType().isRanged())
 				{
 					// Bows increase by 4.
 					// Starting at +4, P. Atk. bonus double.

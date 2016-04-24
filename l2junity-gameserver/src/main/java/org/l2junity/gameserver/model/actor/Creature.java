@@ -3983,7 +3983,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (!miss && (damage > 0))
 		{
 			Weapon weapon = getActiveWeaponItem();
-			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
+			boolean isRanged = ((weapon != null) && weapon.getItemType().isRanged());
 			int reflectedDamage = 0;
 			
 			// reduce targets HP
@@ -4003,7 +4003,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// When killing blow is made, the target doesn't reflect (vamp too?). Do not reflect or vampiric if target is invulnerable.
 			if (!target.isDead() && !target.isHpBlocked())
 			{
-				if (!isBow) // No reflect if weapon is of type bow
+				if (!isRanged) // No reflect if weapon is of type bow
 				{
 					// quick fix for no drop from raid if boss attack high-level char with damage reflection
 					if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))

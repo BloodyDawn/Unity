@@ -1602,7 +1602,7 @@ public final class Formulas
 		}
 		
 		final Weapon weapon = attacker.getActiveWeaponItem();
-		final boolean isRanged = (weapon != null) && weapon.isBowOrCrossBow();
+		final boolean isRanged = (weapon != null) && weapon.getItemType().isRanged();
 		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
 		
 		final double cAtk = crit ? (2 * calcCritDamage(attacker, target, null) * calcCritDamagePosition(attacker, target, null)) : 1;
