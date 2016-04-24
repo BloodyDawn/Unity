@@ -83,10 +83,7 @@ public enum Stats
 	ATK_REUSE("atkReuse"), // Bows Hits Reuse Rate
 	SHIELD_DEFENCE("sDef"),
 	CRITICAL_DAMAGE("cAtk"),
-	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
 	CRITICAL_DAMAGE_ADD("cAtkAdd"), // this is another type for special critical damage mods - vicious stance, critical power and critical damage SA
-	MAGIC_CRIT_DMG("mCritPower"),
-	MAGIC_CRIT_DMG_ADD("mCritPowerAdd"),
 	HATE_ATTACK("attackHate"),
 	
 	// PVP BONUS
@@ -117,7 +114,14 @@ public enum Stats
 	DEFENCE_MAGIC_CRITICAL_RATE_ADD("defMCritRateAdd"),
 	DEFENCE_CRITICAL_DAMAGE("defCritDamage"),
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
+	DEFENCE_MAGIC_CRITICAL_DAMAGE_ADD("defMCritDamageAdd"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
+	MAGIC_CRITICAL_DAMAGE("mCritPower"),
+	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
+	CRITICAL_DAMAGE_SKILL_ADD("cAtkSkillAdd"),
+	DEFENCE_CRITICAL_DAMAGE_SKILL("defCAtkSkill"),
+	DEFENCE_CRITICAL_DAMAGE_SKILL_ADD("defCAtkSkillAdd"),
+	MAGIC_CRITICAL_DAMAGE_ADD("mCritPowerAdd"),
 	SHIELD_DEFENCE_RATE("rShld"),
 	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
 	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),

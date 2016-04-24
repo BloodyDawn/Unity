@@ -106,7 +106,7 @@ public final class Formulas
 		
 		// Critical
 		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1));
-		final double criticalPositionMod = calcCritDamagePosition(attacker, target);
+		final double criticalPositionMod = calcCritDamagePosition(attacker, target, null);
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
 		final double criticalAddMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0));
 		final double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -198,14 +198,19 @@ public final class Formulas
 		double ssBoost = ss ? 2 * shotsBonus : 1;
 		damage = (skill != null) ? ((damage * ssBoost) + power) : (damage * ssBoost);
 		
+		// Physical skill dmg boost
+		if (skill != null)
+		{
+			damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
+		}
+		
 		if (crit)
 		{
-			final double cAtkPosition = calcCritDamagePosition(attacker, target);
+			final double cAtk = calcCritDamage(attacker, target, skill);
+			final double cAtkPosition = calcCritDamagePosition(attacker, target, skill);
+			final double cAtkAdd = calcCritDamageAdd(attacker, target, skill);
 			// Finally retail like formula
-			damage = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * cAtkPosition * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1) * ((70 * damage) / defence);
-			// Crit dmg add is almost useless in normal hits...
-			damage += ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 70) / defence);
-			damage += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
+			damage = ((2 * cAtk * cAtkPosition) + cAtkAdd) * ((70 * damage) / defence);
 		}
 		else
 		{
@@ -213,32 +218,10 @@ public final class Formulas
 		}
 		
 		damage *= calcAttackTraitBonus(attacker, target);
-		
-		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
-		
-		if ((damage > 0) && (damage < 1))
-		{
-			damage = 1;
-		}
-		else if (damage < 0)
-		{
-			damage = 0;
-		}
-		
-		// Physical skill dmg boost
-		if (skill != null)
-		{
-			damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
-			if (crit)
-			{
-				damage = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_SKILL, damage);
-			}
-		}
-		
 		damage *= calcAttributeBonus(attacker, target, skill);
 		damage *= calculatePvpPveBonus(attacker, target, skill, crit);
-		return damage;
+		return Math.max(damage, 0);
 	}
 	
 	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
@@ -314,23 +297,16 @@ public final class Formulas
 		}
 		else if (mcrit)
 		{
-			damage *= attacker.isPlayer() && target.isPlayer() ? 2 : 3;
-			damage *= attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG, 1);
+			damage *= 2 * calcCritDamage(attacker, target, skill);
 			// TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
 		}
 		
 		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
-		
 		damage *= calcAttributeBonus(attacker, target, skill);
-		
 		damage *= calculatePvpPveBonus(attacker, target, skill, mcrit);
+		damage *= target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1); // Bonus damage if target is affected by Storm Sign
 		
-		// Bonus damage if target is affected by Storm Sign
-		damage *= target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1);
-		
-		// Critical damage resistance
-		damage *= target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
 		return damage;
 	}
 	
@@ -400,7 +376,7 @@ public final class Formulas
 		}
 		else if (mcrit)
 		{
-			damage *= 3;
+			damage *= 2 * calcCritDamage(owner, target, skill);
 		}
 		
 		damage *= calcAttributeBonus(owner, target, skill);
@@ -442,10 +418,87 @@ public final class Formulas
 	/**
 	 * @param attacker
 	 * @param target
+	 * @param skill {@code skill} to be used in the calculation, else calculation will result for autoattack.
+	 * @return regular critical damage bonus. Positional bonus is excluded!
+	 */
+	public static double calcCritDamage(Creature attacker, Creature target, Skill skill)
+	{
+		final double criticalDamage;
+		final double defenceCriticalDamage;
+		
+		if (skill != null)
+		{
+			if (skill.isMagic())
+			{
+				// Magic critical damage.
+				criticalDamage = attacker.getStat().getValue(Stats.MAGIC_CRITICAL_DAMAGE, 1);
+				defenceCriticalDamage = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
+			}
+			else
+			{
+				criticalDamage = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_SKILL, 1);
+				defenceCriticalDamage = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_SKILL, 1);
+			}
+		}
+		else
+		{
+			// Autoattack critical damage.
+			criticalDamage = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1);
+			defenceCriticalDamage = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
+		}
+		
+		return criticalDamage * defenceCriticalDamage;
+	}
+	
+	/**
+	 * @param attacker
+	 * @param target
+	 * @param skill {@code skill} to be used in the calculation, else calculation will result for autoattack.
+	 * @return critical damage additional bonus, not multiplier!
+	 */
+	public static double calcCritDamageAdd(Creature attacker, Creature target, Skill skill)
+	{
+		final double criticalDamageAdd;
+		final double defenceCriticalDamageAdd;
+		
+		if (skill != null)
+		{
+			if (skill.isMagic())
+			{
+				// Magic critical damage.
+				criticalDamageAdd = attacker.getStat().getValue(Stats.MAGIC_CRITICAL_DAMAGE_ADD, 0);
+				defenceCriticalDamageAdd = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_DAMAGE_ADD, 0);
+			}
+			else
+			{
+				criticalDamageAdd = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_SKILL_ADD, 0);
+				defenceCriticalDamageAdd = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_SKILL_ADD, 0);
+			}
+		}
+		else
+		{
+			// Autoattack critical damage.
+			criticalDamageAdd = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0);
+			defenceCriticalDamageAdd = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
+		}
+		
+		return criticalDamageAdd + defenceCriticalDamageAdd;
+	}
+	
+	/**
+	 * @param attacker
+	 * @param target
+	 * @param skill {@code skill} to be used in the calculation, else calculation will result for autoattack.
 	 * @return critical damage bonus based on attacking position.
 	 */
-	public static double calcCritDamagePosition(Creature attacker, Creature target)
+	public static double calcCritDamagePosition(Creature attacker, Creature target, Skill skill)
 	{
+		// No positional bonus for skill critical damage is known.
+		if (skill != null)
+		{
+			return 1;
+		}
+		
 		switch (Position.getPosition(attacker, target))
 		{
 			case FRONT:
@@ -1549,33 +1602,21 @@ public final class Formulas
 		}
 		
 		final Weapon weapon = attacker.getActiveWeaponItem();
-		final boolean isBow = (weapon != null) && weapon.isBowOrCrossBow();
+		final boolean isRanged = (weapon != null) && weapon.isBowOrCrossBow();
 		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
 		
-		double cAtk = 1;
-		double cAtkAdd = 0;
-		double critMod = 0;
-		double ssBonus = ss ? 2 * shotsBonus : 1;
-		double attack = attacker.getPAtk();
-		double random_damage = attacker.getRandomDamageMultiplier();
-		attack *= random_damage;
-		
-		if (crit)
-		{
-			final double cAtkPosition = calcCritDamagePosition(attacker, target);
-			critMod = isBow ? 0.5 : 1;
-			cAtk = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * cAtkPosition * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
-			cAtkAdd += attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0);
-			cAtkAdd += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
-		}
-		
-		double proxBonus = (attacker.isInFrontOf(target) ? 0 : (attacker.isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk();
-		attack += proxBonus;
+		final double cAtk = crit ? (2 * calcCritDamage(attacker, target, null) * calcCritDamagePosition(attacker, target, null)) : 1;
+		final double cAtkAdd = crit ? calcCritDamageAdd(attacker, target, null) : 0;
+		final double critMod = crit ? (isRanged ? 0.5 : 1) : 0;
+		final double ssBonus = ss ? 2 * shotsBonus : 1;
+		final double random_damage = attacker.getRandomDamageMultiplier();
+		final double proxBonus = (attacker.isInFrontOf(target) ? 0 : (attacker.isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk();
+		double attack = (attacker.getPAtk() * random_damage) + proxBonus;
 		
 		// ....................______________Critical Section___________________...._______Non-Critical Section______
 		// ATTACK CALCULATION (((pAtk * cAtk * ss + cAtkAdd) * crit) * weaponMod) + (pAtk (1 - crit) * ss * weaponMod)
 		// ````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-		attack = ((((attack * cAtk * ssBonus) + cAtkAdd) * critMod) * (isBow ? 154 : 77)) + (attack * (1 - critMod) * ssBonus * (isBow ? 154 : 77));
+		attack = ((((attack * cAtk * ssBonus) + cAtkAdd) * critMod) * (isRanged ? 154 : 77)) + (attack * (1 - critMod) * ssBonus * (isRanged ? 154 : 77));
 		
 		// DAMAGE CALCULATION (ATTACK / DEFENCE) * trait bonus * attr bonus * pvp bonus * pve bonus
 		double damage = attack / defence;

@@ -93,8 +93,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		
 		if (crit)
 		{
-			damage = effector.getStat().getValue(Stats.CRITICAL_DAMAGE_SKILL, damage);
-			damage *= 2;
+			damage *= (2 * Formulas.calcCritDamage(effector, effected, skill));
 		}
 		
 		// Check if damage should be reflected
