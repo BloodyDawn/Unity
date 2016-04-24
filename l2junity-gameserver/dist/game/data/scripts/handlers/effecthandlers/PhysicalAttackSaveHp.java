@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -147,10 +146,7 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		{
 			case Formulas.SHIELD_DEFENSE_SUCCEED:
 			{
-				if (!Config.ALT_GAME_SHIELD_BLOCKS)
-				{
-					defence += effected.getShldDef();
-				}
+				defence += effected.getShldDef();
 				break;
 			}
 			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
@@ -168,14 +164,6 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		
 		// Weapon random damage
 		damage *= effector.getRandomDamageMultiplier();
-		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
-		{
-			damage -= effected.getShldDef();
-			if (damage < 0)
-			{
-				damage = 0;
-			}
-		}
 		
 		if ((damage > 0) && (damage < 1))
 		{

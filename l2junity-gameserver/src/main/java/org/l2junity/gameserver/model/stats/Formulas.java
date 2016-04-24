@@ -184,10 +184,7 @@ public final class Formulas
 		{
 			case SHIELD_DEFENSE_SUCCEED:
 			{
-				if (!Config.ALT_GAME_SHIELD_BLOCKS)
-				{
-					defence += target.getShldDef();
-				}
+				defence += target.getShldDef();
 				break;
 			}
 			case SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
@@ -218,14 +215,6 @@ public final class Formulas
 		
 		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
-		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
-		{
-			damage -= target.getShldDef();
-			if (damage < 0)
-			{
-				damage = 0;
-			}
-		}
 		
 		if ((damage > 0) && (damage < 1))
 		{
@@ -1526,10 +1515,7 @@ public final class Formulas
 		{
 			case SHIELD_DEFENSE_SUCCEED:
 			{
-				if (!Config.ALT_GAME_SHIELD_BLOCKS)
-				{
-					defence += target.getShldDef();
-				}
+				defence += target.getShldDef();
 				break;
 			}
 			case SHIELD_DEFENSE_PERFECT_BLOCK:
@@ -1571,11 +1557,6 @@ public final class Formulas
 		damage *= calcAttackTraitBonus(attacker, target);
 		damage *= calcAttributeBonus(attacker, target, null);
 		damage *= calculatePvpPveBonus(attacker, target, null, crit);
-		
-		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
-		{
-			damage -= target.getShldDef();
-		}
 		
 		damage = Math.max(0, damage);
 		
