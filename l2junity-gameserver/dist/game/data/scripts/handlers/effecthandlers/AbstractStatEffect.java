@@ -113,13 +113,6 @@ public abstract class AbstractStatEffect extends AbstractEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		if (effected.isPlayer())
-		{
-			if (_mulStat == Stats.ACCURACY_COMBAT)
-			{
-				System.out.println("Skill: " + skill + " " + (_conditions.isEmpty() || _conditions.stream().allMatch(cond -> cond.test(effected, effected, skill))));
-			}
-		}
 		if (_conditions.isEmpty() || _conditions.stream().allMatch(cond -> cond.test(effected, effected, skill)))
 		{
 			switch (_mode)
