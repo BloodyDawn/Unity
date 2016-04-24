@@ -123,10 +123,10 @@ public final class Formulas
 		final double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1) * proximityBonus;
 		final double cdPatk = criticalAddMod + criticalAddVuln;
 		final double isPosition = backstab ? 0.2 : 0; // 0.2 for backstab.
-		// ........................________________________________Initial Damage________________________________...______Backstab Additional Damage______..._CriticalAdd_
-		// ATTACK CALCULATION 77 * [(skillpower+patk*lvlMod) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / (pdef * trgtLvlMod)
-		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
-		final double baseMod = ((77 * (((power + (attacker.getPAtk() * attacker.getLevelMod())) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssmod))) + (6 * cdPatk))) / (defence * target.getLevelMod()));
+		// ........................_____________________________Initial Damage____________________________...______Backstab Additional Damage______..._CriticalAdd_
+		// ATTACK CALCULATION 77 * [(skillpower+patk) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / pdef
+		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
+		final double baseMod = ((77 * (((power + attacker.getPAtk()) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssmod))) + (6 * cdPatk))) / defence);
 		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * penaltyMod;
 		
 		if (attacker.isDebug())
@@ -1178,7 +1178,10 @@ public final class Formulas
 	}
 	
 	/**
-	 * Calculates the Attribute Bonus
+	 * Calculates the attribute bonus with the following formula: <BR>
+	 * diff > 0, so AttBonus = 1,025 + sqrt[(diff^3) / 2] * 0,0001, cannot be above 1,25! <BR>
+	 * diff < 0, so AttBonus = 0,975 - sqrt[(diff^3) / 2] * 0,0001, cannot be below 0,75! <BR>
+	 * diff == 0, so AttBonus = 1
 	 * @param attacker
 	 * @param target
 	 * @param skill Can be {@code null} if there is no skill used for the attack.
@@ -1216,146 +1219,17 @@ public final class Formulas
 			defence_attribute = target.getDefenseElementValue(attacker.getAttackElement());
 		}
 		
-		double attack_attribute_mod = 0;
-		double defence_attribute_mod = 0;
-		
-		if (attack_attribute >= 450)
+		final int diff = attack_attribute - defence_attribute;
+		if (diff > 0)
 		{
-			if (defence_attribute >= 450)
-			{
-				attack_attribute_mod = 0.06909;
-				defence_attribute_mod = 0.078;
-			}
-			else if (attack_attribute >= 350)
-			{
-				attack_attribute_mod = 0.0887;
-				defence_attribute_mod = 0.1007;
-			}
-			else
-			{
-				attack_attribute_mod = 0.129;
-				defence_attribute_mod = 0.1473;
-			}
+			return Math.min(1.025 + (Math.sqrt(Math.pow(diff, 3) / 2) * 0.0001), 1.25);
 		}
-		else if (attack_attribute >= 300)
+		else if (diff < 0)
 		{
-			if (defence_attribute >= 300)
-			{
-				attack_attribute_mod = 0.0887;
-				defence_attribute_mod = 0.1007;
-			}
-			else if (defence_attribute >= 150)
-			{
-				attack_attribute_mod = 0.129;
-				defence_attribute_mod = 0.1473;
-			}
-			else
-			{
-				attack_attribute_mod = 0.25;
-				defence_attribute_mod = 0.2894;
-			}
-		}
-		else if (attack_attribute >= 150)
-		{
-			if (defence_attribute >= 150)
-			{
-				attack_attribute_mod = 0.129;
-				defence_attribute_mod = 0.1473;
-			}
-			else if (defence_attribute >= 0)
-			{
-				attack_attribute_mod = 0.25;
-				defence_attribute_mod = 0.2894;
-			}
-			else
-			{
-				attack_attribute_mod = 0.4;
-				defence_attribute_mod = 0.55;
-			}
-		}
-		else if (attack_attribute >= -99)
-		{
-			if (defence_attribute >= 0)
-			{
-				attack_attribute_mod = 0.25;
-				defence_attribute_mod = 0.2894;
-			}
-			else
-			{
-				attack_attribute_mod = 0.4;
-				defence_attribute_mod = 0.55;
-			}
-		}
-		else
-		{
-			if (defence_attribute >= 450)
-			{
-				attack_attribute_mod = 0.06909;
-				defence_attribute_mod = 0.078;
-			}
-			else if (defence_attribute >= 350)
-			{
-				attack_attribute_mod = 0.0887;
-				defence_attribute_mod = 0.1007;
-			}
-			else
-			{
-				attack_attribute_mod = 0.129;
-				defence_attribute_mod = 0.1473;
-			}
+			return Math.max(0.975 - (Math.sqrt(Math.pow(-diff, 3) / 2) * 0.0001), 0.75);
 		}
 		
-		int attribute_diff = attack_attribute - defence_attribute;
-		double min;
-		double max;
-		if (attribute_diff >= 300)
-		{
-			max = 100.0;
-			min = -50;
-		}
-		else if (attribute_diff >= 150)
-		{
-			max = 70.0;
-			min = -50;
-		}
-		else if (attribute_diff >= -150)
-		{
-			max = 40.0;
-			min = -50;
-		}
-		else if (attribute_diff >= -300)
-		{
-			max = 40.0;
-			min = -60;
-		}
-		else
-		{
-			max = 40.0;
-			min = -80;
-		}
-		
-		attack_attribute += 100;
-		attack_attribute *= attack_attribute;
-		
-		attack_attribute_mod = (attack_attribute / 144.0) * attack_attribute_mod;
-		
-		defence_attribute += 100;
-		defence_attribute *= defence_attribute;
-		
-		defence_attribute_mod = (defence_attribute / 169.0) * defence_attribute_mod;
-		
-		double attribute_mod_diff = attack_attribute_mod - defence_attribute_mod;
-		
-		attribute_mod_diff = CommonUtil.constrain(attribute_mod_diff, min, max);
-		
-		double result = (attribute_mod_diff / 100.0) + 1;
-		
-		if (attacker.isPlayer() && target.isPlayer() && (result < 1.0))
-		{
-			result = 1.0;
-		}
-		
-		return result;
+		return 1;
 	}
 	
 	public static void calcDamageReflected(Creature attacker, Creature target, Skill skill, boolean crit)
