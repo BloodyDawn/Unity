@@ -24,6 +24,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
@@ -88,12 +89,24 @@ public interface IStatsFunction
 	default double calcWeaponPlusBaseValue(Creature creature, Stats stat)
 	{
 		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
-		final double baseValue = creature.getTransformation().map(transform -> transform.getStats(creature, stat, baseTemplateBalue)).orElse(baseTemplateBalue);
+		double baseValue = creature.getTransformation().map(transform -> transform.getStats(creature, stat, baseTemplateBalue)).orElse(baseTemplateBalue);
 		
 		if (creature.isPlayable())
 		{
+			final Inventory inv = creature.getInventory();
+			if (inv != null)
+			{
+				for (ItemInstance item : inv.getPaperdollItems(ItemInstance::isEquipped))
+				{
+					baseValue += item.getItem().getStats(stat, 0);
+				}
+			}
+			
 			final ItemInstance weapon = creature.getActiveWeaponInstance();
-			return (weapon != null ? weapon.getItem().getStats(stat, 0) + baseValue : baseValue);
+			if (weapon != null)
+			{
+				baseValue += weapon.getItem().getStats(stat, 0);
+			}
 		}
 		
 		return baseValue;

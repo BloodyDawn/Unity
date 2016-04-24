@@ -21,9 +21,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -38,14 +36,6 @@ public class MAccuracyFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = calcWeaponPlusBaseValue(creature, stat);
-		final Inventory inv = creature.getInventory();
-		if (inv != null)
-		{
-			for (ItemInstance item : inv.getPaperdollItems(ItemInstance::isEquipped))
-			{
-				baseValue += item.getItem().getStats(stat, 0);
-			}
-		}
 		
 		if (creature.isPlayer())
 		{

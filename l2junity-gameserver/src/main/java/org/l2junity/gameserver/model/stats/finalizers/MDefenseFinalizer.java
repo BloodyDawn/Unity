@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -55,15 +54,6 @@ public class MDefenseFinalizer implements IStatsFunction
 			baseValue = pet.getPetLevelData().getPetMDef();
 		}
 		baseValue += calcEnchantedItemBonus(creature, stat);
-		
-		final Inventory inv = creature.getInventory();
-		if (inv != null)
-		{
-			for (ItemInstance item : inv.getPaperdollItems(ItemInstance::isEquipped))
-			{
-				baseValue += item.getItem().getStats(stat, 0);
-			}
-		}
 		
 		if (creature.isPlayer())
 		{
