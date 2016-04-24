@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.zone.ZoneType;
@@ -138,6 +139,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 		addRouteFinishedId(MONSTERS);
 		setCreatureKillId(this::onCreatureKill, MONSTERS);
 		setCreatureKillId(this::onBossKill, BOSSES);
+		setCreatureSeeId(this::onCreatureSee, MONSTERS);
 		addEnterZoneId(KARTIA_85_DETECT_1, KARTIA_85_DETECT_2, KARTIA_85_TELEPORT_1, KARTIA_85_TELEPORT_2, KARTIA_85_TELEPORT_3);
 		addEnterZoneId(KARTIA_90_DETECT_1, KARTIA_90_DETECT_2, KARTIA_90_TELEPORT_1, KARTIA_90_TELEPORT_2, KARTIA_90_TELEPORT_3);
 		addEnterZoneId(KARTIA_95_DETECT_1, KARTIA_95_DETECT_2, KARTIA_95_TELEPORT_1, KARTIA_95_TELEPORT_2, KARTIA_95_TELEPORT_3);
@@ -254,7 +256,19 @@ public final class KartiasLabyrinth extends AbstractInstance
 				}
 				case "START_MOVE":
 				{
-					WalkingManager.getInstance().startMoving(npc, instance.getTemplateParameters().getString(getRandomBoolean() ? "route1" : "route2"));
+					if (npc != null)
+					{
+						WalkingManager.getInstance().startMoving(npc, instance.getTemplateParameters().getString(getRandomBoolean() ? "route1" : "route2"));
+						getTimers().addTimer("CHANGE_TARGETABLE_STATUS", 5000, npc, null);
+					}
+					break;
+				}
+				case "CHANGE_TARGETABLE_STATUS":
+				{
+					if (npc != null)
+					{
+						npc.setTargetable(true);
+					}
 					break;
 				}
 				case "START_3RD_ROOM":
@@ -766,20 +780,36 @@ public final class KartiasLabyrinth extends AbstractInstance
 		int delay = 500;
 		for (Npc npc : monsterList)
 		{
-			if (npc.isAttackable())
+			final Instance world = npc.getInstanceWorld();
+			if (npc.isAttackable() && (world != null))
 			{
-				if (npc.getInstanceWorld().getParameters().getInt("ROOM", 1) <= 2)
+				if (world.getParameters().getInt("ROOM", 1) <= 2)
 				{
 					npc.setRandomWalking(false);
+					npc.setTargetable(false);
 					getTimers().addTimer("MOVE_TO_MIDDLE", delay, npc, null);
 					delay += 250;
 				}
-				else if (npc.getInstanceWorld().getParameters().getInt("ROOM", 1) == 3)
+				else if (world.getParameters().getInt("ROOM", 1) == 3)
 				{
 					onTimerEvent("MOVE_TO_MIDDLE", null, npc, null);
 				}
 				((Attackable) npc).setCanReturnToSpawnPoint(false);
+				npc.initSeenCreatures();
 			}
+		}
+	}
+	
+	public void onCreatureSee(OnCreatureSee event)
+	{
+		final Creature creature = event.getSeen();
+		final Npc npc = (Npc) event.getSeer();
+		final Instance world = npc.getInstanceWorld();
+		
+		if ((world != null) && creature.isPlayer() && npc.isScriptValue(0))
+		{
+			npc.setScriptValue(1);
+			addAttackDesire(npc, creature);
 		}
 	}
 	
