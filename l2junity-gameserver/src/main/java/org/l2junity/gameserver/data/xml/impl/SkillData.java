@@ -10,14 +10,17 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.handler.SkillConditionHandler;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.EffectScope;
+import org.l2junity.gameserver.model.skills.ISkillCondition;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillConditionScope;
 import org.slf4j.Logger;
@@ -363,7 +366,15 @@ public class SkillData implements IGameXmlReader
 									params.remove(".name");
 									try
 									{
-										skill.addEffect(effectScope, EffectHandler.getInstance().getHandlerFactory(effectName).apply(params));
+										final Function<StatsSet, AbstractEffect> effectFunction = EffectHandler.getInstance().getHandlerFactory(effectName);
+										if (effectFunction != null)
+										{
+											skill.addEffect(effectScope, effectFunction.apply(params));
+										}
+										else
+										{
+											LOGGER.warn("Missing effect for Skill Id[{}] Level[{}] SubLevel[{}] Effect Scope[{}] Effect Name[{}]", statsSet.getInt(".id"), level, subLevel, effectScope, effectName);
+										}
 									}
 									catch (Exception e)
 									{
@@ -377,7 +388,15 @@ public class SkillData implements IGameXmlReader
 									params.remove(".name");
 									try
 									{
-										skill.addCondition(skillConditionScope, SkillConditionHandler.getInstance().getHandlerFactory(conditionName).apply(params));
+										final Function<StatsSet, ISkillCondition> conditionFunction = SkillConditionHandler.getInstance().getHandlerFactory(conditionName);
+										if (conditionFunction != null)
+										{
+											skill.addCondition(skillConditionScope, conditionFunction.apply(params));
+										}
+										else
+										{
+											LOGGER.warn("Missing condition for Skill Id[{}] Level[{}] SubLevel[{}] Effect Scope[{}] Effect Name[{}]", statsSet.getInt(".id"), level, subLevel, skillConditionScope, conditionName);
+										}
 									}
 									catch (Exception e)
 									{
