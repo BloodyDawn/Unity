@@ -30,12 +30,12 @@ import ai.AbstractNpcAI;
  * Guard AI.
  * @author St3eT
  */
-public final class Guard extends AbstractNpcAI
+public final class RoDGuard extends AbstractNpcAI
 {
 	// NPCs
 	private static final int GUARD = 33432;
 	
-	private Guard()
+	private RoDGuard()
 	{
 		addSpawnId(GUARD);
 	}
@@ -59,6 +59,6 @@ public final class Guard extends AbstractNpcAI
 	
 	public static void main(String[] args)
 	{
-		new Guard();
+		new RoDGuard();
 	}
 }
