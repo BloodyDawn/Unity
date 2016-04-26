@@ -214,10 +214,11 @@ public final class Say2 implements IClientIncomingPacket
 			}
 		}
 		
-		final ChatFilterReturn filter = EventDispatcher.getInstance().notifyEvent(new OnPlayerChat(activeChar, World.getInstance().getPlayer(_target), _text, chatType), ChatFilterReturn.class);
+		final ChatFilterReturn filter = EventDispatcher.getInstance().notifyEvent(new OnPlayerChat(activeChar, World.getInstance().getPlayer(_target), _text, chatType), activeChar, ChatFilterReturn.class);
 		if (filter != null)
 		{
 			_text = filter.getFilteredText();
+			chatType = filter.getChatType();
 		}
 		
 		// Say Filter implementation
