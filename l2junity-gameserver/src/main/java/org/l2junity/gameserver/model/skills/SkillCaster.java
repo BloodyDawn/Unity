@@ -171,9 +171,7 @@ public class SkillCaster implements Runnable
 		// Skills with instant cast are never launched.
 		if (instantCast)
 		{
-			startCasting();
-			finishSkill();
-			stopCasting(false);
+			triggerCast(_caster.get(), _target.get(), _skill, _item, false);
 			return;
 		}
 		
@@ -656,7 +654,7 @@ public class SkillCaster implements Runnable
 		triggerCast(activeChar, target, skill, null, true);
 	}
 	
-	public static void triggerCast(Creature activeChar, Creature target, Skill skill, ItemInstance item, boolean ignoreTargetType)
+	public static void triggerCast(Creature activeChar, WorldObject target, Skill skill, ItemInstance item, boolean ignoreTargetType)
 	{
 		try
 		{
@@ -682,7 +680,7 @@ public class SkillCaster implements Runnable
 					WorldObject objTarget = skill.getTarget(activeChar, false, false, false);
 					if (objTarget.isCreature())
 					{
-						target = (Creature) objTarget;
+						target = objTarget;
 					}
 				}
 				
