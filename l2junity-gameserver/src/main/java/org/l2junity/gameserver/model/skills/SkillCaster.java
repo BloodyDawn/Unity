@@ -288,6 +288,12 @@ public class SkillCaster implements Runnable
 		int initmpcons = caster.getStat().getMpInitialConsume(_skill);
 		if (initmpcons > 0)
 		{
+			if (initmpcons > caster.getCurrentMp())
+			{
+				caster.sendPacket(SystemMessageId.NOT_ENOUGH_MP);
+				return false;
+			}
+			
 			caster.getStatus().reduceMp(initmpcons);
 			StatusUpdate su = new StatusUpdate(caster);
 			su.addUpdate(StatusUpdateType.CUR_MP, (int) caster.getCurrentMp());
@@ -374,13 +380,55 @@ public class SkillCaster implements Runnable
 			_targets = Collections.singletonList(target);
 		}
 		
+		final StatusUpdate su = new StatusUpdate(caster);
+		
+		// Consume the required MP or stop casting if not enough.
+		double mpConsume = _skill.getMpConsume() > 0 ? caster.getStat().getMpConsume(_skill) : 0;
+		if (mpConsume > 0)
+		{
+			if (mpConsume > caster.getCurrentMp())
+			{
+				caster.sendPacket(SystemMessageId.NOT_ENOUGH_MP);
+				return false;
+			}
+			
+			caster.getStatus().reduceMp(mpConsume);
+			su.addUpdate(StatusUpdateType.CUR_MP, (int) caster.getCurrentMp());
+		}
+		
+		// Consume the required HP or stop casting if not enough.
+		double consumeHp = _skill.getHpConsume();
+		if (consumeHp > 0)
+		{
+			if (consumeHp >= caster.getCurrentHp())
+			{
+				caster.sendPacket(SystemMessageId.NOT_ENOUGH_HP);
+				return false;
+			}
+			
+			caster.getStatus().reduceHp(consumeHp, caster, true);
+			su.addUpdate(StatusUpdateType.CUR_HP, (int) caster.getCurrentHp());
+		}
+		
+		// Send HP/MP consumption packet if any attribute is set.
+		if (su.hasUpdates())
+		{
+			caster.sendPacket(su);
+		}
+		
+		// Consume Souls if necessary
+		if (caster.isPlayer() && (_skill.getMaxSoulConsumeCount() > 0) && !caster.getActingPlayer().decreaseSouls(_skill.getMaxSoulConsumeCount(), _skill))
+		{
+			return false;
+		}
+		
 		// Noptify skill is casted.
 		EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(caster, target, _skill, _skill.isWithoutAction()), caster);
 		
 		// Call the skill's effects and AI interraction and stuff.
 		SkillCaster.callSkill(caster, target, _targets, _skill, _item);
 		
-		// TODO: Next action and skill queue... shouldnt be handled here.
+		// Start attack stance.
 		if (!_skill.isWithoutAction())
 		{
 			if (_skill.isBad() && (_skill.getTargetType() != TargetType.DOOR_TREASURE))
@@ -399,48 +447,6 @@ public class SkillCaster implements Runnable
 	
 	public static void callSkill(Creature caster, WorldObject target, Collection<WorldObject> targets, Skill skill, ItemInstance item)
 	{
-		final StatusUpdate su = new StatusUpdate(caster);
-		
-		// Consume the required MP or stop casting if not enough.
-		double mpConsume = skill.getMpConsume() > 0 ? caster.getStat().getMpConsume(skill) : 0;
-		if (mpConsume > 0)
-		{
-			if (mpConsume > caster.getCurrentMp())
-			{
-				caster.sendPacket(SystemMessageId.NOT_ENOUGH_MP);
-				return;
-			}
-			
-			caster.getStatus().reduceMp(mpConsume);
-			su.addUpdate(StatusUpdateType.CUR_MP, (int) caster.getCurrentMp());
-		}
-		
-		// Consume the required HP or stop casting if not enough.
-		double consumeHp = skill.getHpConsume();
-		if (consumeHp > 0)
-		{
-			if (consumeHp >= caster.getCurrentHp())
-			{
-				caster.sendPacket(SystemMessageId.NOT_ENOUGH_HP);
-				return;
-			}
-			
-			caster.getStatus().reduceHp(consumeHp, caster, true);
-			su.addUpdate(StatusUpdateType.CUR_HP, (int) caster.getCurrentHp());
-		}
-		
-		// Send HP/MP consumption packet if any attribute is set.
-		if (su.hasUpdates())
-		{
-			caster.sendPacket(su);
-		}
-		
-		// Consume Souls if necessary
-		if (caster.isPlayer() && (skill.getMaxSoulConsumeCount() > 0) && !caster.getActingPlayer().decreaseSouls(skill.getMaxSoulConsumeCount(), skill))
-		{
-			return;
-		}
-		
 		// Launch the magic skill in order to calculate its effects
 		try
 		{
