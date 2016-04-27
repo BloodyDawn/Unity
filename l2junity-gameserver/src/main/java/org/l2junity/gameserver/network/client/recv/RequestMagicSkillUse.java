@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 public final class RequestMagicSkillUse implements IClientIncomingPacket
@@ -71,6 +72,21 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 					return;
 				}
 			}
+		}
+		
+		// Skill is blocked from player use.
+		if (skill.isBlockActionUseSkill())
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		// Avoid Use of Skills in AirShip.
+		if (activeChar.isInAirShip())
+		{
+			activeChar.sendPacket(SystemMessageId.THIS_ACTION_IS_PROHIBITED_WHILE_MOUNTED_OR_ON_AN_AIRSHIP);
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
 		}
 		
 		activeChar.useMagic(skill, null, _ctrlPressed, _shiftPressed);

@@ -8086,17 +8086,9 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean useMagic(Skill skill, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
-		// Skill is blocked from player use.
-		if (skill.isBlockActionUseSkill())
+		// Passive skills cannot be used.
+		if (skill.isPassive())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Avoid Use of Skills in AirShip.
-		if (isInAirShip())
-		{
-			sendPacket(SystemMessageId.THIS_ACTION_IS_PROHIBITED_WHILE_MOUNTED_OR_ON_AN_AIRSHIP);
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -8110,20 +8102,13 @@ public final class PlayerInstance extends Playable
 		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (getReputation() < 0) && skill.hasEffectType(L2EffectType.TELEPORT))
 		{
+			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
 		// players mounted on pets cannot use any toggle skills
 		if (skill.isToggle() && isMounted())
 		{
-			return false;
-		}
-		
-		// Check if the skill is active
-		if (skill.isPassive())
-		{
-			// just ignore the passive skill request. why does the client send it anyway ??
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -8135,50 +8120,6 @@ public final class PlayerInstance extends Playable
 			skill = attachedSkill;
 		}
 		
-		// ************************************* Check Casting in Progress *******************************************
-		if (!checkUseMagicConditions(skill, forceUse, dontMove))
-		{
-			return false;
-		}
-		
-		boolean doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast();
-		
-		// If a skill is currently being used, queue this one if this is not the same
-		// In case of double casting, check if both slots are occupied, then queue skill.
-		if ((!doubleCast && isCastingNow(SkillCaster::isAnyNormalType)) || (isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL) && isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL_SECOND)))
-		{
-			// Check if new skill different from current skill in progress
-			if (isSkillDisabled(skill))
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
-			// Create a new SkillDat object and queue it in the player _queuedSkill
-			setQueuedSkill(skill, item, forceUse, dontMove);
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		if (getQueuedSkill() != null)
-		{
-			setQueuedSkill(null, null, false, false);
-		}
-		
-		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
-		if (target == null)
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// Notify the AI with AI_INTENTION_CAST and target
-		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item, forceUse, dontMove);
-		return true;
-	}
-	
-	private boolean checkUseMagicConditions(Skill skill, boolean forceUse, boolean dontMove)
-	{
 		// ************************************* Check Player State *******************************************
 		
 		// Abnormal effects(ex : Stun, Sleep...) are checked in L2Character useMagic()
@@ -8191,14 +8132,13 @@ public final class PlayerInstance extends Playable
 		// Check if the player is dead
 		if (isDead())
 		{
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
+		// Check if fishing and trying to use non-fishing skills.
 		if (isFishing() && !skill.hasEffectType(L2EffectType.FISHING, L2EffectType.FISHING_START))
 		{
-			// Only fishing skills are available
 			sendPacket(SystemMessageId.ONLY_FISHING_SKILLS_MAY_BE_USED_AT_THIS_TIME);
 			return false;
 		}
@@ -8213,10 +8153,7 @@ public final class PlayerInstance extends Playable
 		// Check if the caster is sitting
 		if (isSitting())
 		{
-			// Send a System Message to the caster
 			sendPacket(SystemMessageId.YOU_CANNOT_MOVE_WHILE_SITTING);
-			
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -8233,7 +8170,6 @@ public final class PlayerInstance extends Playable
 		// Note: do not check this before TOGGLE reset
 		if (isFakeDeath())
 		{
-			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -8304,9 +8240,38 @@ public final class PlayerInstance extends Playable
 		if (!skill.checkCondition(this, target))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
+			
+			// Upon failed conditions, next action is called.
+			if ((skill.nextActionIsAttack()) && (target != this) && target.isAutoAttackable(this))
+			{
+				if ((getAI().getNextIntention() == null) || (getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
+				{
+					getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+				}
+			}
+			
 			return false;
 		}
 		
+		boolean doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast();
+		
+		// If a skill is currently being used, queue this one if this is not the same
+		// In case of double casting, check if both slots are occupied, then queue skill.
+		if ((!doubleCast && isCastingNow(SkillCaster::isAnyNormalType)) || (isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL) && isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL_SECOND)))
+		{
+			// Create a new SkillDat object and queue it in the player _queuedSkill
+			setQueuedSkill(skill, item, forceUse, dontMove);
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
+		if (getQueuedSkill() != null)
+		{
+			setQueuedSkill(null, null, false, false);
+		}
+		
+		// Notify the AI with AI_INTENTION_CAST and target
+		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item, forceUse, dontMove);
 		return true;
 	}
 	
