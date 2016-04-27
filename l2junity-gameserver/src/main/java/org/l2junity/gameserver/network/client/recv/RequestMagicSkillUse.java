@@ -18,16 +18,13 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 public final class RequestMagicSkillUse implements IClientIncomingPacket
@@ -74,39 +71,6 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 					return;
 				}
 			}
-		}
-		
-		// Skill is blocked from player use.
-		if (skill.isBlockActionUseSkill())
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		// Avoid Use of Skills in AirShip.
-		if (activeChar.isPlayable() && activeChar.isInAirShip())
-		{
-			activeChar.sendPacket(SystemMessageId.THIS_ACTION_IS_PROHIBITED_WHILE_MOUNTED_OR_ON_AN_AIRSHIP);
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (activeChar.isTransformed() && !activeChar.hasTransformSkill(skill))
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (activeChar.getReputation() < 0) && skill.hasEffectType(L2EffectType.TELEPORT))
-		{
-			return;
-		}
-		
-		// players mounted on pets cannot use any toggle skills
-		if (skill.isToggle() && activeChar.isMounted())
-		{
-			return;
 		}
 		
 		activeChar.useMagic(skill, null, _ctrlPressed, _shiftPressed);

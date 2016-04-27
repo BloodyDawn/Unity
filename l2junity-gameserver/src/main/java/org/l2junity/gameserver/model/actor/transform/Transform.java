@@ -239,6 +239,18 @@ public final class Transform implements IIdentifiable
 	
 	public void onTransform(Creature creature, boolean addSkills)
 	{
+		// Abort attacking and casting.
+		creature.abortAttack();
+		creature.abortCast();
+		
+		final PlayerInstance player = creature.getActingPlayer();
+		
+		// Get off the strider or something else if character is mounted
+		if (creature.isPlayer() && player.isMounted())
+		{
+			player.dismount();
+		}
+		
 		final TransformTemplate template = getTemplate(creature);
 		if (template != null)
 		{
@@ -253,7 +265,6 @@ public final class Transform implements IIdentifiable
 			
 			if (creature.isPlayer())
 			{
-				final PlayerInstance player = creature.getActingPlayer();
 				if (getName() != null)
 				{
 					player.getAppearance().setVisibleName(getName());
@@ -349,6 +360,10 @@ public final class Transform implements IIdentifiable
 	
 	public void onUntransform(Creature creature)
 	{
+		// Abort attacking and casting.
+		creature.abortAttack();
+		creature.abortCast();
+		
 		final TransformTemplate template = getTemplate(creature);
 		if (template != null)
 		{

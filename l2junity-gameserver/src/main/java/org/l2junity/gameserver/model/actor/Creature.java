@@ -3162,6 +3162,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (skillCaster != null)
 		{
 			skillCaster.stopCasting(true);
+			if (isPlayer())
+			{
+				getActingPlayer().setQueuedSkill(null, null, false, false);
+			}
 			return true;
 		}
 		

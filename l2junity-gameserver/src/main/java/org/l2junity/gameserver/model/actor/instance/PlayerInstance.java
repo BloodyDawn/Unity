@@ -4678,39 +4678,6 @@ public final class PlayerInstance extends Playable
 		_currentMultiSell = list;
 	}
 	
-	@Override
-	public void transform(Transform transformation, boolean addSkills)
-	{
-		if (isTransformed())
-		{
-			// You already polymorphed and cannot polymorph again.
-			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
-			sendPacket(msg);
-			return;
-		}
-		
-		setQueuedSkill(null, false, false);
-		
-		// Get off the strider or something else if character is mounted
-		if (isMounted())
-		{
-			dismount();
-		}
-		
-		super.transform(transformation, addSkills);
-	}
-	
-	@Override
-	public void untransform()
-	{
-		if (isTransformed())
-		{
-			setQueuedSkill(null, false, false);
-		}
-		
-		super.untransform();
-	}
-	
 	/**
 	 * Set a target. <B><U> Actions</U> :</B>
 	 * <ul>
@@ -8119,6 +8086,39 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean useMagic(Skill skill, ItemInstance item, boolean forceUse, boolean dontMove)
 	{
+		// Skill is blocked from player use.
+		if (skill.isBlockActionUseSkill())
+		{
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
+		// Avoid Use of Skills in AirShip.
+		if (isInAirShip())
+		{
+			sendPacket(SystemMessageId.THIS_ACTION_IS_PROHIBITED_WHILE_MOUNTED_OR_ON_AN_AIRSHIP);
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
+		if (isTransformed() && !hasTransformSkill(skill))
+		{
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
+		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (getReputation() < 0) && skill.hasEffectType(L2EffectType.TELEPORT))
+		{
+			return false;
+		}
+		
+		// players mounted on pets cannot use any toggle skills
+		if (skill.isToggle() && isMounted())
+		{
+			return false;
+		}
+		
 		// Check if the skill is active
 		if (skill.isPassive())
 		{
@@ -8155,14 +8155,14 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// Create a new SkillDat object and queue it in the player _queuedSkill
-			setQueuedSkill(skill, forceUse, dontMove);
+			setQueuedSkill(skill, item, forceUse, dontMove);
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
 		if (getQueuedSkill() != null)
 		{
-			setQueuedSkill(null, false, false);
+			setQueuedSkill(null, null, false, false);
 		}
 		
 		WorldObject target = skill.getTarget(this, forceUse, dontMove, false);
@@ -11013,17 +11013,18 @@ public final class PlayerInstance extends Playable
 	/**
 	 * Create a new SkillDat object and queue it in the player _queuedSkill.
 	 * @param queuedSkill
+	 * @param item
 	 * @param ctrlPressed
 	 * @param shiftPressed
 	 */
-	public void setQueuedSkill(Skill queuedSkill, boolean ctrlPressed, boolean shiftPressed)
+	public void setQueuedSkill(Skill queuedSkill, ItemInstance item, boolean ctrlPressed, boolean shiftPressed)
 	{
 		if (queuedSkill == null)
 		{
 			_queuedSkill = null;
 			return;
 		}
-		_queuedSkill = new SkillUseHolder(queuedSkill, ctrlPressed, shiftPressed);
+		_queuedSkill = new SkillUseHolder(queuedSkill, item, ctrlPressed, shiftPressed);
 	}
 	
 	/**

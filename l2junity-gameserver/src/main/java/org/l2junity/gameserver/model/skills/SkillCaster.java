@@ -44,7 +44,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
@@ -312,12 +311,9 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Consume the required items. Should happen after use message is displayed and SetupGauge
-		if ((_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0))
+		if ((_skill.getItemConsumeId() > 0) && (_skill.getItemConsumeCount() > 0) && !caster.destroyItemByItemId(_skill.toString(), _skill.getItemConsumeId(), _skill.getItemConsumeCount(), null, true))
 		{
-			if (!caster.destroyItemByItemId("Consume", _skill.getItemConsumeId(), _skill.getItemConsumeCount(), null, true))
-			{
-				return false;
-			}
+			return false;
 		}
 		
 		// Trigger any skill cast start effects.
@@ -390,24 +386,6 @@ public class SkillCaster implements Runnable
 			if (_skill.isBad() && (_skill.getTargetType() != TargetType.DOOR_TREASURE))
 			{
 				caster.getAI().clientStartAutoAttack();
-			}
-			
-			// If character is a player, then wipe their current cast state and check if a skill is queued.
-			// If there is a queued skill, launch it and wipe the queue.
-			if (caster.isPlayer())
-			{
-				PlayerInstance currPlayer = caster.getActingPlayer();
-				SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
-				
-				if (queuedSkill != null)
-				{
-					currPlayer.setQueuedSkill(null, false, false);
-					
-					// DON'T USE : Recursive call to useMagic() method
-					// currPlayer.useMagic(queuedSkill.getSkill(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
-					// TODO: From UnAfraid's item reference here is set _item, but I don't think it should be this casting's item.
-					ThreadPoolManager.getInstance().executeGeneral(new QueuedMagicUseTask(currPlayer, queuedSkill.getSkill(), _item, queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed()));
-				}
 			}
 		}
 		
@@ -630,22 +608,42 @@ public class SkillCaster implements Runnable
 			caster.getSkillChannelizer().stopChanneling();
 		}
 		
+		// If aborted, broadcast casting aborted.
+		if (aborted)
+		{
+			caster.broadcastPacket(new MagicSkillCanceld(caster.getObjectId())); // broadcast packet to stop animations client-side
+			caster.sendPacket(ActionFailed.get(_castingType)); // send an "action failed" packet to the caster
+		}
+		
 		// Notify the AI of the L2Character with EVT_FINISH_CASTING
 		caster.getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING);
 		
+		// If there is a queued skill, launch it and wipe the queue.
+		if (caster.isPlayer())
+		{
+			final PlayerInstance currPlayer = caster.getActingPlayer();
+			final SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
+			
+			if (queuedSkill != null)
+			{
+				ThreadPoolManager.getInstance().executeGeneral(() ->
+				{
+					currPlayer.setQueuedSkill(null, null, false, false);
+					currPlayer.useMagic(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
+				});
+				
+				return;
+			}
+		}
+		
 		// Attack target after skill use
+		// TODO: This shouldnt be here. If skill condition fail, you still go autoattack. This doesn't happen if skill is in cooldown though.
 		if ((_skill.nextActionIsAttack()) && (target != null) && (target != caster) && target.canBeAttacked())
 		{
 			if ((caster.getAI().getNextIntention() == null) || (caster.getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
 			{
 				caster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			}
-		}
-		
-		if (aborted)
-		{
-			caster.broadcastPacket(new MagicSkillCanceld(caster.getObjectId())); // broadcast packet to stop animations client-side
-			caster.sendPacket(ActionFailed.get(_castingType)); // send an "action failed" packet to the caster
 		}
 	}
 	
