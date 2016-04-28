@@ -3235,7 +3235,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
-	 * Adds a quest completed start condition to the quest.
+	 * Adds a quest started start condition to the quest.
 	 * @param name the quest name
 	 * @param html the HTML to display if the condition is not met
 	 */
@@ -3245,7 +3245,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
-	 * Adds a quest completed start condition to the quest.
+	 * Adds a quest started start condition to the quest.
 	 * @param name the quest name
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
