@@ -46,7 +46,7 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 {
 	// NPCs
 	private static final int LADA = 33100;
-	private static final int MISO = 33956;
+	private static final int SLASKI = 32893;
 	private static final int LARGE_VERDANT_WILDS = 33489;
 	private static final int WHISP = 27456;
 	// Items
@@ -63,7 +63,7 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 	{
 		super(10301);
 		addStartNpc(LADA);
-		addTalkId(LADA, MISO);
+		addTalkId(LADA, SLASKI);
 		addSkillSeeId(LARGE_VERDANT_WILDS);
 		addAttackId(WHISP);
 		
@@ -85,7 +85,10 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 		{
 			case "33100-02.htm":
 			case "33100-03.htm":
-			case "33956-02.html":
+			case "32893-02.html":
+			case "32893-03.html":
+			case "32893-04.html":
+			case "32893-05.html":
 			{
 				htmltext = event;
 				break;
@@ -99,26 +102,24 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 				takeItems(player, LADA_LETTER, -1);
 				break;
 			}
-			case "33956-03.html":
-			{
-				if (qs.isCond(5))
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						qs.exitQuest(false, true);
-						addExpAndSp(player, 26_920_620, 6_460);
-						giveItems(player, FAIRY, 1);
-						giveAdena(player, 1_863_420, false);
-						htmltext = event;
-					}
-				}
-				break;
-			}
 			case "giveCrystals":
 			{
 				giveItems(player, GLIMMER_CRYSTAL, 5);
 				htmltext = "33100-06.html";
 				break;
+			}
+			default:
+			{
+				if (event.startsWith("giveReward_") && qs.isCond(5) && (player.getLevel() >= MIN_LEVEL))
+				{
+					final int itemId = Integer.parseInt(event.replace("giveReward_", ""));
+					qs.exitQuest(false, true);
+					giveAdena(player, 1_863_420, false);
+					giveItems(player, itemId, 15);
+					giveItems(player, FAIRY, 1);
+					addExpAndSp(player, 26_920_620, 6_460);
+					htmltext = "32893-06.html";
+				}
 			}
 		}
 		return htmltext;
@@ -153,12 +154,20 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 						htmltext = "33100-07.html";
 					}
 				}
-				else if (npc.getId() == MISO)
+				else if (npc.getId() == SLASKI)
 				{
 					if (qs.isCond(5))
 					{
-						htmltext = "33956-01.html";
+						htmltext = "32893-01.html";
 					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				if (npc.getId() == SLASKI)
+				{
+					htmltext = "32893-07.html";
 				}
 				break;
 			}
