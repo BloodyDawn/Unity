@@ -1852,6 +1852,15 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
+	 * @return the default html for when player don't have minimal level for reward: "You cannot receive quest rewards as your character.."
+	 */
+	public static String getNoQuestLevelRewardMsg(PlayerInstance player)
+	{
+		return HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/noquestlevelreward.html");
+	}
+	
+	/**
+	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when quest is already completed
 	 */
 	public static String getAlreadyCompletedMsg(PlayerInstance player)
@@ -3223,6 +3232,27 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public final void addCondCompletedQuest(String name, KeyValuePair<Integer, String>... pairs)
 	{
 		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isCompleted(), pairs);
+	}
+	
+	/**
+	 * Adds a quest completed start condition to the quest.
+	 * @param name the quest name
+	 * @param html the HTML to display if the condition is not met
+	 */
+	public void addCondStartedQuest(String name, String html)
+	{
+		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isStarted(), html);
+	}
+	
+	/**
+	 * Adds a quest completed start condition to the quest.
+	 * @param name the quest name
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondStartedQuest(String name, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isStarted(), pairs);
 	}
 	
 	/**

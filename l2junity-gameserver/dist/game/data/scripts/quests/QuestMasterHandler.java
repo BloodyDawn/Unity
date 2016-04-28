@@ -315,6 +315,11 @@ import quests.Q10787_ASpyMission.Q10787_ASpyMission;
 import quests.Q10789_LettersFromTheQueenSwampOfScreams.Q10789_LettersFromTheQueenSwampOfScreams;
 import quests.Q10792_LettersFromTheQueenForestOfTheDead.Q10792_LettersFromTheQueenForestOfTheDead;
 import quests.Q10793_SaveTheSouls.Q10793_SaveTheSouls;
+import quests.Q10811_ExaltedOneWhoFacesTheLimit.Q10811_ExaltedOneWhoFacesTheLimit;
+import quests.Q10812_FacingSadness.Q10812_FacingSadness;
+import quests.Q10813_ForGlory.Q10813_ForGlory;
+import quests.Q10814_BefittingOfTheStatus.Q10814_BefittingOfTheStatus;
+import quests.Q10815_StepUp.Q10815_StepUp;
 
 /**
  * @author NosBit
@@ -618,7 +623,12 @@ public class QuestMasterHandler
 		Q10787_ASpyMission.class,
 		Q10789_LettersFromTheQueenSwampOfScreams.class,
 		Q10792_LettersFromTheQueenForestOfTheDead.class,
-		Q10793_SaveTheSouls.class
+		Q10793_SaveTheSouls.class,
+		Q10811_ExaltedOneWhoFacesTheLimit.class,
+		Q10812_FacingSadness.class,
+		Q10813_ForGlory.class,
+		Q10814_BefittingOfTheStatus.class,
+		Q10815_StepUp.class
 	};
 	
 	public static void main(String[] args)
