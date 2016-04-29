@@ -2460,7 +2460,19 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public static void giveItems(PlayerInstance player, int itemId, long count)
 	{
-		giveItems(player, itemId, count, 0);
+		giveItems(player, itemId, count, 0, false);
+	}
+	
+	/**
+	 * Give item/reward to the player
+	 * @param player
+	 * @param itemId
+	 * @param count
+	 * @param playSound
+	 */
+	public static void giveItems(PlayerInstance player, int itemId, long count, boolean playSound)
+	{
+		giveItems(player, itemId, count, 0, playSound);
 	}
 	
 	/**
@@ -2478,8 +2490,9 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param itemId
 	 * @param count
 	 * @param enchantlevel
+	 * @param playSound
 	 */
-	public static void giveItems(PlayerInstance player, int itemId, long count, int enchantlevel)
+	public static void giveItems(PlayerInstance player, int itemId, long count, int enchantlevel, boolean playSound)
 	{
 		if (count <= 0)
 		{
@@ -2499,6 +2512,10 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			item.setEnchantLevel(enchantlevel);
 		}
 		
+		if (playSound)
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
 		sendItemGetMessage(player, item, count);
 	}
 	
