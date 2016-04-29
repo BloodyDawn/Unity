@@ -78,7 +78,6 @@ public final class EnergyAttack extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		// Untested formula damage=77 * [lvl_mod * p.atk + power] * 1,002 * skillpowerbonus * chargebonus / p.def * lvlmod?
 		if (!effector.isPlayer())
 		{
 			return;

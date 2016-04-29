@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -26,13 +27,16 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.TraitType;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Physical Soul Attack effect implementation.
- * @author Adry_85
+ * Physical Soul Attack effect implementation.<br>
+ * <b>Note</b>: Initial formula taken from PhysicalAttack.
+ * @author Adry_85, Nik
  */
 public final class PhysicalSoulAttack extends AbstractEffect
 {
@@ -70,6 +74,11 @@ public final class PhysicalSoulAttack extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
+		if (!effector.isPlayer())
+		{
+			return;
+		}
+		
 		if (effector.isAlikeDead())
 		{
 			return;
@@ -80,87 +89,82 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			effected.stopFakeDeath(true);
 		}
 		
-		double damage = 0;
-		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
-		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
-		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
+		final int souls = Math.min(skill.getMaxSoulConsumeCount(), effector.getActingPlayer().getCharges());
+		if (!effector.getActingPlayer().decreaseCharges(souls))
+		{
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			effector.sendPacket(sm);
+			return;
+		}
 		
 		if (_overHit && effected.isAttackable())
 		{
 			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		damage = (int) calcPhysSkillDam(effector, effected, skill, _power, shld, false, ss);
+		final double attack = effector.getPAtk();
+		double defence = effected.getPDef();
 		
-		if ((skill.getMaxSoulConsumeCount() > 0) && effector.isPlayer())
+		if (!_ignoreShieldDefence)
 		{
-			// Souls Formula (each soul increase +4%)
-			int chargedSouls = (effector.getActingPlayer().getChargedSouls() <= skill.getMaxSoulConsumeCount()) ? effector.getActingPlayer().getChargedSouls() : skill.getMaxSoulConsumeCount();
-			damage *= 1 + (chargedSouls * 0.04);
+			switch (Formulas.calcShldUse(effector, effected, skill, true))
+			{
+				case Formulas.SHIELD_DEFENSE_SUCCEED:
+				{
+					defence += effected.getShldDef();
+					break;
+				}
+				case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK:
+				{
+					defence = -1;
+					break;
+				}
+			}
 		}
-		if (crit)
+		
+		double damage = 1;
+		final boolean critical = (_criticalChance > 0) && ((BaseStats.STR.calcBonus(effector) * _criticalChance) > (Rnd.nextDouble() * 100));
+		
+		if (defence != -1)
 		{
-			damage *= 2;
+			// Trait, elements
+			final double weaponTraitMod = Formulas.calcWeaponTraitBonus(effector, effected);
+			final double generalTraitMod = Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
+			final double attributeMod = Formulas.calcAttributeBonus(effector, effected, skill);
+			final double pvpPveMod = Formulas.calculatePvpPveBonus(effector, effected, skill, true);
+			final double randomMod = effector.getRandomDamageMultiplier();
+			
+			// Skill specific mods.
+			final double wpnMod = effector.getAttackType().isRanged() ? 70 : (70 * 1.10113);
+			final double rangedBonus = effector.getAttackType().isRanged() ? (attack + _power) : 0;
+			final double skillPowerMod = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER);
+			final double critMod = critical ? Formulas.calcCritDamage(effector, effected, skill) : 1;
+			final double ssmod = (skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS)) ? effector.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
+			final double soulsMod = 1 + (souls * 0.04); // Souls Formula (each soul increase +4%)
+			
+			// ...................____________Melee Damage_____________......................................___________________Ranged Damage____________________
+			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
+			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			final double baseMod = (wpnMod * ((attack * effector.getLevelMod()) + _power + rangedBonus)) / defence;
+			damage = baseMod * soulsMod * skillPowerMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
 		}
 		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(effector, effected, skill, crit);
+		Formulas.calcDamageReflected(effector, effected, skill, critical);
 		
 		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 		if (damageCap > 0)
 		{
 			damage = Math.min(damage, damageCap);
 		}
-		damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
+		damage = effected.notifyDamageReceived(damage, effector, skill, critical, false, false);
 		effected.reduceCurrentHp(damage, effector, skill);
-		effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+		effector.sendDamageMessage(effected, skill, (int) damage, critical, false);
 		
 		if (skill.isSuicideAttack())
 		{
 			effector.doDie(effector);
 		}
-	}
-	
-	public static double calcPhysSkillDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
-	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill == null) || ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType())))
-		{
-			return 0;
-		}
-		
-		final double distance = attacker.calculateDistance(target, true, false);
-		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
-		{
-			return 0;
-		}
-		
-		double defence = target.getPDef();
-		
-		switch (shld)
-		{
-			case Formulas.SHIELD_DEFENSE_SUCCEED:
-			{
-				defence += target.getShldDef();
-				break;
-			}
-			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
-			{
-				return 1.;
-			}
-		}
-		
-		// Trait, elements
-		final double weaponTraitMod = Formulas.calcWeaponTraitBonus(attacker, target);
-		final double generalTraitMod = Formulas.calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
-		final double attributeMod = Formulas.calcAttributeBonus(attacker, target, skill);
-		final double weaponMod = attacker.getRandomDamageMultiplier();
-		final double pvpPveMod = Formulas.calculatePvpPveBonus(attacker, target, skill, true);
-		
-		// Add soulshot boost.
-		final double ssmod = ss ? attacker.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
-		final double baseMod = (77 * ((attacker.getPAtk() * attacker.getLevelMod()) + power)) / defence;
-		final double damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, baseMod) * ssmod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * pvpPveMod;
-		return Math.max(damage, 0);
 	}
 }

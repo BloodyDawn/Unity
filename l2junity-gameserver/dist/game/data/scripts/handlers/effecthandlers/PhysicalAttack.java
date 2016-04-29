@@ -38,8 +38,10 @@ import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * Physical Attack effect implementation. <br>
- * <b>Note</b>: Damage formula moved here to allow more params due to Ertheia physical skills' complexity.
- * @author Adry_85, Nik
+ * Current formulas were tested to be the best matching retail, damage appears to be identical: <br>
+ * For melee skills: 70 * graciaSkillBonus1.10113 * (patk * lvlmod + power) * crit * ss * skillpowerbonus / pdef <br>
+ * For ranged skills: 70 * (patk * lvlmod + power + patk + power) * crit * ss * skillpower / pdef <br>
+ * @author Nik
  */
 public final class PhysicalAttack extends AbstractEffect
 {
@@ -119,8 +121,7 @@ public final class PhysicalAttack extends AbstractEffect
 		
 		if (!_ignoreShieldDefence)
 		{
-			byte shield = Formulas.calcShldUse(effector, effected, skill, true);
-			switch (shield)
+			switch (Formulas.calcShldUse(effector, effected, skill, true))
 			{
 				case Formulas.SHIELD_DEFENSE_SUCCEED:
 				{
@@ -161,8 +162,6 @@ public final class PhysicalAttack extends AbstractEffect
 			final double baseMod = (wpnMod * ((attack * effector.getLevelMod()) + _power + rangedBonus)) / defence;
 			damage = baseMod * skillPowerMod * abnormalMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
 		}
-		
-		damage = Math.max(0, damage);
 		
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, critical);
