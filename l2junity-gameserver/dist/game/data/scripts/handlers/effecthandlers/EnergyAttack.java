@@ -134,7 +134,7 @@ public final class EnergyAttack extends AbstractEffect
 		}
 		
 		double damage = 1;
-		final boolean critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
+		final boolean critical = (_criticalChance > 0) && ((BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100));
 		
 		if (defence != -1)
 		{

@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -31,9 +32,9 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.TraitType;
 
 /**
  * Physical Attack effect implementation. <br>
@@ -113,96 +114,70 @@ public final class PhysicalAttack extends AbstractEffect
 			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		double damage = (int) calcPhysDam(effector, effected, skill);
-		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
+		final double attack = effector.getPAtk() * _pAtkMod;
+		double defence = effected.getPDef() * _pDefMod;
 		
-		if (crit)
+		if (!_ignoreShieldDefence)
 		{
-			damage *= (2 * Formulas.calcCritDamage(effector, effected, skill));
+			byte shield = Formulas.calcShldUse(effector, effected, skill, true);
+			switch (shield)
+			{
+				case Formulas.SHIELD_DEFENSE_SUCCEED:
+				{
+					defence += effected.getShldDef();
+					break;
+				}
+				case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK:
+				{
+					defence = -1;
+					break;
+				}
+			}
 		}
 		
+		double damage = 1;
+		final boolean critical = (_criticalChance > 0) && ((BaseStats.STR.calcBonus(effector) * _criticalChance) > (Rnd.nextDouble() * 100));
+		
+		if (defence != -1)
+		{
+			// Trait, elements
+			final double weaponTraitMod = Formulas.calcWeaponTraitBonus(effector, effected);
+			final double generalTraitMod = Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
+			final double attributeMod = Formulas.calcAttributeBonus(effector, effected, skill);
+			final double pvpPveMod = Formulas.calculatePvpPveBonus(effector, effected, skill, true);
+			final double randomMod = effector.getRandomDamageMultiplier();
+			
+			// Skill specific mods.
+			final double wpnMod = effector.getAttackType().isRanged() ? 70 : (70 * 1.10113);
+			final double rangedBonus = effector.getAttackType().isRanged() ? (attack + _power) : 0;
+			final double skillPowerMod = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER);
+			final double abnormalMod = _abnormals.stream().anyMatch(a -> effected.getEffectList().getBuffInfoByAbnormalType(a) != null) ? _abnormalPowerMod : 1;
+			final double critMod = critical ? Formulas.calcCritDamage(effector, effected, skill) : 1;
+			final double ssmod = (skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS)) ? effector.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
+			
+			// ...................____________Melee Damage_____________......................................___________________Ranged Damage____________________
+			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
+			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			final double baseMod = (wpnMod * ((attack * effector.getLevelMod()) + _power + rangedBonus)) / defence;
+			damage = baseMod * skillPowerMod * abnormalMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
+		}
+		
+		damage = Math.max(0, damage);
+		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(effector, effected, skill, crit);
+		Formulas.calcDamageReflected(effector, effected, skill, critical);
 		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_LIMIT);
 		if (damageCap > 0)
 		{
 			damage = Math.min(damage, damageCap);
 		}
-		damage = effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
+		damage = effected.notifyDamageReceived(damage, effector, skill, critical, false, false);
 		effected.reduceCurrentHp(damage, effector, skill);
-		effector.sendDamageMessage(effected, skill, (int) damage, crit, false);
+		effector.sendDamageMessage(effected, skill, (int) damage, critical, false);
 		
 		if (skill.isSuicideAttack())
 		{
 			effector.doDie(effector);
 		}
-	}
-	
-	public final double calcPhysDam(Creature effector, Creature effected, Skill skill)
-	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill.getTraitType() != TraitType.NONE) && effected.getStat().isTraitInvul(skill.getTraitType()))
-		{
-			return 0;
-		}
-		
-		double damage = effector.getPAtk();
-		double defence = effected.getPDef();
-		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
-		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
-		final double distance = effector.calculateDistance(effected, true, false);
-		
-		if (distance > effected.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
-		{
-			return 0;
-		}
-		
-		switch (shld)
-		{
-			case Formulas.SHIELD_DEFENSE_SUCCEED:
-			{
-				defence += effected.getShldDef();
-				break;
-			}
-			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
-			{
-				return 1.;
-			}
-		}
-		
-		// Most accurate bow formula so far: =((77 * ((patk * 1,333) + patk)) + 140 * power) / E2
-		
-		// Add soulshot boost.
-		final double shotsBonus = effector.getStat().getValue(Stats.SHOTS_BONUS);
-		double ssBoost = ss ? 2 * shotsBonus : 1;
-		damage = (damage * _pAtkMod * ssBoost) + _power;
-		damage = (70 * damage) / (defence * _pDefMod); // Calculate defence modifier.
-		damage *= Formulas.calcAttackTraitBonus(effector, effected); // Calculate Weapon resists
-		
-		// Weapon random damage
-		damage *= effector.getRandomDamageMultiplier();
-		
-		if ((damage > 0) && (damage < 1))
-		{
-			damage = 1;
-		}
-		else if (damage < 0)
-		{
-			damage = 0;
-		}
-		
-		// Physical skill dmg boost
-		damage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
-		
-		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
-		damage *= Formulas.calculatePvpPveBonus(effector, effected, skill, false);
-		
-		// Check if we apply an abnormal modifier
-		if (_abnormals.stream().anyMatch(a -> effected.getEffectList().getBuffInfoByAbnormalType(a) != null))
-		{
-			damage *= _abnormalPowerMod;
-		}
-		
-		return damage;
 	}
 }
