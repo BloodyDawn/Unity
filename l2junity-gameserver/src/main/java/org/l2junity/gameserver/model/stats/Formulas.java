@@ -118,7 +118,7 @@ public final class Formulas
 		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, true);
 		
 		// Initial damage
-		final double ssmod = ss ? (2 * attacker.getStat().getValue(Stats.SHOTS_BONUS)) : 1; // 2.04 for dual weapon?
+		final double ssmod = ss ? attacker.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
 		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		final double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1) * proximityBonus;
 		final double cdPatk = criticalAddMod + criticalAddVuln;
@@ -150,78 +150,6 @@ public final class Formulas
 		}
 		
 		return Math.max(damage, 1);
-	}
-	
-	/**
-	 * Calculated damage caused by ATTACK of attacker on target.
-	 * @param attacker player or NPC that makes ATTACK
-	 * @param target player or NPC, target of ATTACK
-	 * @param skill
-	 * @param power
-	 * @param shld
-	 * @param crit if the ATTACK have critical success
-	 * @param ss if weapon item was charged by soulshot
-	 * @return
-	 */
-	public static double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
-	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill != null) && (skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
-		{
-			return 0;
-		}
-		
-		double damage = attacker.getPAtk();
-		double defence = target.getPDef();
-		final double distance = attacker.calculateDistance(target, true, false);
-		
-		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
-		{
-			return 0;
-		}
-		
-		switch (shld)
-		{
-			case SHIELD_DEFENSE_SUCCEED:
-			{
-				defence += target.getShldDef();
-				break;
-			}
-			case SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
-			{
-				return 1.;
-			}
-		}
-		
-		// Add soulshot boost.
-		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
-		double ssBoost = ss ? 2 * shotsBonus : 1;
-		damage = (skill != null) ? ((damage * ssBoost) + power) : (damage * ssBoost);
-		
-		// Physical skill dmg boost
-		if (skill != null)
-		{
-			damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
-		}
-		
-		if (crit)
-		{
-			final double cAtk = calcCritDamage(attacker, target, skill);
-			final double cAtkPosition = calcCritDamagePosition(attacker, target, skill);
-			final double cAtkAdd = calcCritDamageAdd(attacker, target, skill);
-			// Finally retail like formula
-			damage = ((2 * cAtk * cAtkPosition) + cAtkAdd) * ((70 * damage) / defence);
-		}
-		else
-		{
-			damage = (70 * damage) / defence;
-		}
-		
-		damage *= calcAttackTraitBonus(attacker, target);
-		damage *= attacker.getRandomDamageMultiplier();
-		damage *= calcAttributeBonus(attacker, target, skill);
-		damage *= calculatePvpPveBonus(attacker, target, skill, crit);
-		return Math.max(damage, 0);
 	}
 	
 	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)

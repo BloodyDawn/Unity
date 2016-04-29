@@ -239,7 +239,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			
 			if (!_miss1)
 			{
-				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, null, 0, _shld1, _crit1, false);
+				double _dmg1 = Formulas.calcAutoAttackDamage(npc1, npc2, 0, _shld1, _crit1, false);
 				dmg1 += _dmg1;
 				npc1.abortAttack();
 			}
@@ -272,7 +272,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			
 			if (!_miss2)
 			{
-				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, null, 0, _shld2, _crit2, false);
+				double _dmg2 = Formulas.calcAutoAttackDamage(npc2, npc1, 0, _shld2, _crit2, false);
 				dmg2 += _dmg2;
 				npc2.abortAttack();
 			}

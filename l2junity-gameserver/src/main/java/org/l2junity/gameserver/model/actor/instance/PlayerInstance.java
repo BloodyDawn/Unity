@@ -8150,6 +8150,46 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
+		if (isSkillDisabled(skill))
+		{
+			final SystemMessage sm;
+			if (hasSkillReuse(skill.getReuseHashCode()))
+			{
+				int remainingTime = (int) (getSkillRemainingReuseTime(skill.getReuseHashCode()) / 1000);
+				int hours = remainingTime / 3600;
+				int minutes = (remainingTime % 3600) / 60;
+				int seconds = (remainingTime % 60);
+				if (hours > 0)
+				{
+					sm = SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_S2_HOUR_S_S3_MINUTE_S_AND_S4_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
+					sm.addSkillName(skill);
+					sm.addInt(hours);
+					sm.addInt(minutes);
+				}
+				else if (minutes > 0)
+				{
+					sm = SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_S2_MINUTE_S_S3_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
+					sm.addSkillName(skill);
+					sm.addInt(minutes);
+				}
+				else
+				{
+					sm = SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_S2_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
+					sm.addSkillName(skill);
+				}
+				
+				sm.addInt(seconds);
+			}
+			else
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
+				sm.addSkillName(skill);
+			}
+			
+			sendPacket(sm);
+			return false;
+		}
+		
 		// Check if the caster is sitting
 		if (isSitting())
 		{
@@ -8190,49 +8230,6 @@ public final class PlayerInstance extends Playable
 		if (target == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
-		// ************************************* Check skill availability *******************************************
-		
-		// Check if this skill is enabled (ex : reuse time)
-		if (isSkillDisabled(skill))
-		{
-			final SystemMessage sm;
-			if (hasSkillReuse(skill.getReuseHashCode()))
-			{
-				int remainingTime = (int) (getSkillRemainingReuseTime(skill.getReuseHashCode()) / 1000);
-				int hours = remainingTime / 3600;
-				int minutes = (remainingTime % 3600) / 60;
-				int seconds = (remainingTime % 60);
-				if (hours > 0)
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_S2_HOUR_S_S3_MINUTE_S_AND_S4_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
-					sm.addSkillName(skill);
-					sm.addInt(hours);
-					sm.addInt(minutes);
-				}
-				else if (minutes > 0)
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_S2_MINUTE_S_S3_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
-					sm.addSkillName(skill);
-					sm.addInt(minutes);
-				}
-				else
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_S2_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
-					sm.addSkillName(skill);
-				}
-				
-				sm.addInt(seconds);
-			}
-			else
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_NOT_AVAILABLE_AT_THIS_TIME_BEING_PREPARED_FOR_REUSE);
-				sm.addSkillName(skill);
-			}
-			
-			sendPacket(sm);
 			return false;
 		}
 		

@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.TraitType;
 
 /**
  * Physical Soul Attack effect implementation.
@@ -89,7 +90,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		damage = (int) Formulas.calcPhysDam(effector, effected, skill, _power, shld, false, ss);
+		damage = (int) calcPhysSkillDam(effector, effected, skill, _power, shld, false, ss);
 		
 		if ((skill.getMaxSoulConsumeCount() > 0) && effector.isPlayer())
 		{
@@ -118,5 +119,48 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		{
 			effector.doDie(effector);
 		}
+	}
+	
+	public static double calcPhysSkillDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
+	{
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if ((skill == null) || ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType())))
+		{
+			return 0;
+		}
+		
+		final double distance = attacker.calculateDistance(target, true, false);
+		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
+		{
+			return 0;
+		}
+		
+		double defence = target.getPDef();
+		
+		switch (shld)
+		{
+			case Formulas.SHIELD_DEFENSE_SUCCEED:
+			{
+				defence += target.getShldDef();
+				break;
+			}
+			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
+			{
+				return 1.;
+			}
+		}
+		
+		// Trait, elements
+		final double weaponTraitMod = Formulas.calcWeaponTraitBonus(attacker, target);
+		final double generalTraitMod = Formulas.calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
+		final double attributeMod = Formulas.calcAttributeBonus(attacker, target, skill);
+		final double weaponMod = attacker.getRandomDamageMultiplier();
+		final double pvpPveMod = Formulas.calculatePvpPveBonus(attacker, target, skill, true);
+		
+		// Add soulshot boost.
+		final double ssmod = ss ? attacker.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
+		final double baseMod = (77 * ((attacker.getPAtk() * attacker.getLevelMod()) + power)) / defence;
+		final double damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, baseMod) * ssmod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * pvpPveMod;
+		return Math.max(damage, 0);
 	}
 }

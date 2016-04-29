@@ -26,12 +26,12 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -96,7 +96,23 @@ public final class EnergyAttack extends AbstractEffect
 			return;
 		}
 		
-		double attack = attacker.getPAtk();
+		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
+		if (((skill.getTraitType() != TraitType.NONE) && effected.getStat().isTraitInvul(skill.getTraitType())))
+		{
+			return;
+		}
+		
+		final double distance = attacker.calculateDistance(effected, true, false);
+		if (distance > effected.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
+		{
+			return;
+		}
+		
+		if (_overHit && effected.isAttackable())
+		{
+			((Attackable) effected).overhitEnabled(true);
+		}
+		
 		int defence = effected.getPDef();
 		
 		if (!_ignoreShieldDefence)
@@ -117,51 +133,31 @@ public final class EnergyAttack extends AbstractEffect
 			}
 		}
 		
-		if (_overHit && effected.isAttackable())
-		{
-			((Attackable) effected).overhitEnabled(true);
-		}
-		
 		double damage = 1;
-		boolean critical = false;
+		final boolean critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
 		
 		if (defence != -1)
 		{
-			final double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, effected) * Formulas.calcAttributeBonus(attacker, effected, skill) * Formulas.calculatePvpPveBonus(effector, effected, skill, false) * Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), true);
+			// Trait, elements
+			final double weaponTraitMod = Formulas.calcWeaponTraitBonus(attacker, effected);
+			final double generalTraitMod = Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), false);
+			final double attributeMod = Formulas.calcAttributeBonus(attacker, effected, skill);
+			final double pvpPveMod = Formulas.calculatePvpPveBonus(attacker, effected, skill, true);
 			
-			boolean ss = skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
-			final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
-			double ssBoost = ss ? 2 * shotsBonus : 1.0;
+			// Skill specific mods.
+			final double energyChargesBoost = 1 + (charge * 0.1); // 10% bonus damage for each charge used.
+			final double skillPowerMod = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER);
+			final double critMod = critical ? Formulas.calcCritDamage(attacker, effected, skill) : 1;
+			final double ssmod = (skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS)) ? attacker.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
 			
-			double weaponTypeBoost;
-			Weapon weapon = attacker.getActiveWeaponItem();
-			if ((weapon != null) && weapon.getItemType().isRanged())
-			{
-				weaponTypeBoost = 70;
-			}
-			else
-			{
-				weaponTypeBoost = 77;
-			}
-			
-			// 10% bonus damage for each charge used.
-			double energyChargesBoost = 1 + (charge * 0.1);
-			
-			attack += _power;
-			attack *= ssBoost;
-			attack *= energyChargesBoost;
-			attack *= weaponTypeBoost;
-			attack = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, attack);
-			
-			damage = attack / defence;
-			damage *= damageMultiplier;
-			
-			critical = (BaseStats.STR.calcBonus(attacker) * _criticalChance) > (Rnd.nextDouble() * 100);
-			if (critical)
-			{
-				damage *= 2;
-			}
+			// ........................_____Initial Damage______...__Charges Additional Damage__...____
+			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) * (1 + (0.1 * chargesConsumed)) / pdef
+			// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^
+			final double baseMod = (77 * ((attacker.getPAtk() * attacker.getLevelMod()) + _power)) / defence;
+			damage = baseMod * skillPowerMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * energyChargesBoost * pvpPveMod;
 		}
+		
+		damage = Math.max(0, damage);
 		
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(attacker, effected, skill, critical);
