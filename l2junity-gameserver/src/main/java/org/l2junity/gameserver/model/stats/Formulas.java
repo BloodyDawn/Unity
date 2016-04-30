@@ -146,7 +146,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double mAtk, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
@@ -167,8 +167,6 @@ public final class Formulas
 				return 1;
 			}
 		}
-		
-		int mAtk = attacker.getMAtk();
 		
 		// Bonus Spirit shot
 		final double shotsBonus = (sps || bss) ? attacker.getStat().getValue(Stats.SHOTS_BONUS, bss ? 4 : 2) : 1;
@@ -225,70 +223,8 @@ public final class Formulas
 	
 	public static double calcMagicDam(CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
-		int mDef = target.getMDef();
-		switch (shld)
-		{
-			case SHIELD_DEFENSE_SUCCEED:
-				mDef += target.getShldDef(); // kamael
-				break;
-			case SHIELD_DEFENSE_PERFECT_BLOCK: // perfect block
-				return 1;
-		}
-		
 		double mAtk = attacker.getTemplate().getPower();
-		
-		// Cubics MDAM Formula (similar to PDAM formula, but using 91 instead of 70, also resisted by mDef).
-		double damage = 91 * ((91 * Math.sqrt(mAtk)) / mDef) * power;
-		
-		// Failure calculation
-		Creature owner = attacker.getOwner();
-		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(owner, target, skill))
-		{
-			if (calcMagicSuccess(owner, target, skill) && ((target.getLevel() - skill.getMagicLevel()) <= 9))
-			{
-				if (skill.hasEffectType(L2EffectType.HP_DRAIN))
-				{
-					owner.sendPacket(SystemMessageId.DRAIN_WAS_ONLY_50_PERCENT_SUCCESSFUL);
-				}
-				else
-				{
-					owner.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
-				}
-				damage /= 2;
-			}
-			else
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
-				sm.addCharName(target);
-				sm.addSkillName(skill);
-				owner.sendPacket(sm);
-				damage = 1;
-			}
-			
-			if (target.isPlayer())
-			{
-				if (skill.hasEffectType(L2EffectType.HP_DRAIN))
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_RESISTED_C1_S_DRAIN);
-					sm.addCharName(owner);
-					target.sendPacket(sm);
-				}
-				else
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
-					sm.addCharName(owner);
-					target.sendPacket(sm);
-				}
-			}
-		}
-		else if (mcrit)
-		{
-			damage *= 2 * calcCritDamage(owner, target, skill);
-		}
-		
-		damage *= calcAttributeBonus(owner, target, skill);
-		damage *= calculatePvpPveBonus(owner, target, skill, mcrit);
-		return damage;
+		return calcMagicDam(attacker.getOwner(), target, skill, mAtk, power, shld, false, false, mcrit);
 	}
 	
 	/**

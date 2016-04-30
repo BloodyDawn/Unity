@@ -91,10 +91,7 @@ public final class MagicalAttackByAbnormalSlot extends AbstractEffect
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected);
 		final byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
-		
-		// each buff increase +30%
-		damage *= (((effected.getBuffCount() * 0.3) + 1.3) / 4);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, shld, sps, bss, mcrit);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
 		if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))

@@ -75,7 +75,7 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected);
 		final byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, shld, sps, bss, mcrit);
 		
 		if (damage > 0)
 		{

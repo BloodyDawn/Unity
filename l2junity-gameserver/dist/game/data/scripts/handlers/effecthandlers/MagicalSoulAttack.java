@@ -28,6 +28,8 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Magical Soul Attack effect implementation.
@@ -67,18 +69,21 @@ public final class MagicalSoulAttack extends AbstractEffect
 			effected.stopFakeDeath(true);
 		}
 		
+		final int chargedSouls = Math.min(skill.getMaxSoulConsumeCount(), effector.getActingPlayer().getCharges());
+		if (!effector.getActingPlayer().decreaseCharges(chargedSouls))
+		{
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(skill);
+			effector.sendPacket(sm);
+			return;
+		}
+		
 		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected);
 		final byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
-		
-		if ((skill.getMaxSoulConsumeCount() > 0) && effector.isPlayer())
-		{
-			// Souls Formula (each soul increase +4%)
-			int chargedSouls = (effector.getActingPlayer().getChargedSouls() <= skill.getMaxSoulConsumeCount()) ? effector.getActingPlayer().getChargedSouls() : skill.getMaxSoulConsumeCount();
-			damage *= 1 + (chargedSouls * 0.04);
-		}
+		final double mAtk = effector.getMAtk() * (chargedSouls > 0 ? (1.3 + (chargedSouls * 0.05)) : 1);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, mAtk, _power, shld, sps, bss, mcrit);
 		
 		if (damage > 0)
 		{

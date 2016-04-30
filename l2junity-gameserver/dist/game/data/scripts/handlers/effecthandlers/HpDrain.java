@@ -67,7 +67,7 @@ public final class HpDrain extends AbstractEffect
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected);
 		byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, shld, sps, bss, mcrit);
 		
 		double drain = 0;
 		int cp = (int) effected.getCurrentCp();
