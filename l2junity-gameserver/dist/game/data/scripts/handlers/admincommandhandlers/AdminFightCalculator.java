@@ -219,7 +219,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				miss1++;
 			}
-			byte _shld1 = Formulas.calcShldUse(npc1, npc2, null, false);
+			byte _shld1 = Formulas.calcShldUse(npc1, npc2, false);
 			if (_shld1 > 0)
 			{
 				shld1++;
@@ -252,7 +252,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				miss2++;
 			}
-			byte _shld2 = Formulas.calcShldUse(npc2, npc1, null, false);
+			byte _shld2 = Formulas.calcShldUse(npc2, npc1, false);
 			if (_shld2 > 0)
 			{
 				shld2++;

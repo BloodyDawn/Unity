@@ -80,9 +80,8 @@ public final class MagicalAttack extends AbstractEffect
 		
 		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected);
-		final byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, shld, sps, bss, mcrit);
+		final boolean mcrit = Formulas.calcMCrit(effector, effected, skill);
+		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, effected.getMDef(), sps, bss, mcrit);
 		
 		// Apply debuff mod
 		if (effected.getEffectList().hasDebuffs())

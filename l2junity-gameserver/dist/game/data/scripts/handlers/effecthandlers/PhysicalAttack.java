@@ -121,7 +121,7 @@ public final class PhysicalAttack extends AbstractEffect
 		
 		if (!_ignoreShieldDefence)
 		{
-			switch (Formulas.calcShldUse(effector, effected, skill, true))
+			switch (Formulas.calcShldUse(effector, effected))
 			{
 				case Formulas.SHIELD_DEFENSE_SUCCEED:
 				{

@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
@@ -37,12 +36,12 @@ import org.l2junity.gameserver.model.stats.Stats;
 public final class MagicalAttackRange extends AbstractEffect
 {
 	private final double _power;
-	private final double _powerRange;
+	private final double _shieldDefPercent;
 	
 	public MagicalAttackRange(StatsSet params)
 	{
 		_power = params.getDouble("power", 0);
-		_powerRange = params.getDouble("powerRange", 0);
+		_shieldDefPercent = params.getDouble("shieldDefPercent", 0);
 	}
 	
 	@Override
@@ -65,13 +64,31 @@ public final class MagicalAttackRange extends AbstractEffect
 			effected.stopFakeDeath(true);
 		}
 		
-		final double power = _power + CommonUtil.map(effector.calculateDistance(effected, false, false), 0, skill.getCastRange(), _powerRange, 0);
+		double mDef = effected.getMDef();
+		switch (Formulas.calcShldUse(effector, effected))
+		{
+			case Formulas.SHIELD_DEFENSE_SUCCEED:
+			{
+				mDef += ((effected.getShldDef() * _shieldDefPercent) / 100);
+				break;
+			}
+			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK:
+			{
+				mDef = -1;
+				break;
+			}
+		}
 		
-		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(), skill, effected);
-		final byte shld = Formulas.calcShldUse(effector, effected, skill);
-		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), power, shld, sps, bss, mcrit);
+		double damage = 1;
+		final boolean mcrit = Formulas.calcMCrit(effector, effected, skill);
+		
+		if (mDef != -1)
+		{
+			boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
+			boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+			
+			damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, mDef, sps, bss, mcrit);
+		}
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
 		if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))

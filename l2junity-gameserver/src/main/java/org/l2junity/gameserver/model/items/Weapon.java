@@ -272,7 +272,7 @@ public final class Weapon extends L2Item
 					return;
 				}
 				
-				if (skill.isBad() && (Formulas.calcShldUse(caster, target, skill) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
+				if (skill.isBad() && (Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
 				{
 					return;
 				}

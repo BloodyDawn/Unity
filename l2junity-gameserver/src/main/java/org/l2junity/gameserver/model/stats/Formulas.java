@@ -146,26 +146,12 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double mAtk, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double mAtk, double power, double mDef, boolean sps, boolean bss, boolean mcrit)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
-		}
-		
-		int mDef = target.getMDef();
-		switch (shld)
-		{
-			case SHIELD_DEFENSE_SUCCEED:
-			{
-				mDef += target.getShldDef();
-				break;
-			}
-			case SHIELD_DEFENSE_PERFECT_BLOCK:
-			{
-				return 1;
-			}
 		}
 		
 		// Bonus Spirit shot
@@ -358,26 +344,22 @@ public final class Formulas
 		return 1;
 	}
 	
-	public static boolean calcMCrit(double mRate, Skill skill, Creature target)
+	public static boolean calcMCrit(Creature caster, Creature target, Skill skill)
 	{
+		double rate = caster.getStat().getValue(Stats.MAGIC_CRITICAL_RATE);
 		if ((target == null) || (skill == null) || !skill.isBad())
 		{
-			// Juji Producer Update: The devs said that 32% is the maximum critical chance for magic spells and that it is intended for balance reasons. It may change in a future update though.
-			if (mRate > 320)
-			{
-				mRate = 320;
-			}
-			
-			return mRate > Rnd.get(1000);
+			return Math.min(rate, 320) > Rnd.get(1000);
 		}
 		
-		double finalRate = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE, mRate) + target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0);
-		// Juji Producer Update: The devs said that 32% is the maximum critical chance for magic spells and that it is intended for balance reasons. It may change in a future update though.
-		if (finalRate > 320)
+		double finalRate = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE, rate) + target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0);
+		if ((caster.getLevel() >= 78) && (target.getLevel() >= 78))
 		{
-			finalRate = 320;
+			finalRate += Math.sqrt(caster.getLevel()) + ((caster.getLevel() - target.getLevel()) / 25);
+			return Math.min(finalRate, 320) > Rnd.get(1000);
 		}
-		return finalRate > Rnd.get(1000);
+		
+		return Math.min(finalRate, 200) > Rnd.get(1000);
 	}
 	
 	/**
@@ -574,46 +556,45 @@ public final class Formulas
 	 * 2 = perfect block<br>
 	 * @param attacker
 	 * @param target
-	 * @param skill
 	 * @param sendSysMsg
 	 * @return
 	 */
-	public static byte calcShldUse(Creature attacker, Creature target, Skill skill, boolean sendSysMsg)
+	public static byte calcShldUse(Creature attacker, Creature target, boolean sendSysMsg)
 	{
-		L2Item item = target.getSecondaryWeaponItem();
+		final L2Item item = target.getSecondaryWeaponItem();
 		if ((item == null) || !(item instanceof Armor) || (((Armor) item).getItemType() == ArmorType.SIGIL))
 		{
 			return 0;
 		}
 		
 		double shldRate = target.getStat().getValue(Stats.SHIELD_DEFENCE_RATE, 0) * BaseStats.DEX.calcBonus(target);
-		if (shldRate <= 1e-6)
+		
+		// if attacker use bow and target wear shield, shield block rate is multiplied by 1.3 (30%)
+		if (attacker.getAttackType().isRanged())
 		{
-			return 0;
+			shldRate *= 1.3;
 		}
 		
-		int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
+		final int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
 		if ((degreeside < 360) && (!target.isFacing(attacker, degreeside)))
 		{
 			return 0;
 		}
 		
 		byte shldSuccess = SHIELD_DEFENSE_FAILED;
-		// if attacker
-		// if attacker use bow and target wear shield, shield block rate is multiplied by 1.3 (30%)
-		Weapon at_weapon = attacker.getActiveWeaponItem();
-		if ((at_weapon != null) && (at_weapon.getItemType() == WeaponType.BOW))
-		{
-			shldRate *= 1.3;
-		}
 		
-		if ((shldRate > 0) && ((100 - Config.ALT_PERFECT_SHLD_BLOCK) < Rnd.get(100)))
+		// Check shield success
+		if (shldRate > Rnd.get(100))
 		{
-			shldSuccess = SHIELD_DEFENSE_PERFECT_BLOCK;
-		}
-		else if (shldRate > Rnd.get(100))
-		{
-			shldSuccess = SHIELD_DEFENSE_SUCCEED;
+			// If shield succeed, check perfect block.
+			if (((100 - (2 * BaseStats.DEX.calcBonus(target))) < Rnd.get(100)))
+			{
+				shldSuccess = SHIELD_DEFENSE_PERFECT_BLOCK;
+			}
+			else
+			{
+				shldSuccess = SHIELD_DEFENSE_SUCCEED;
+			}
 		}
 		
 		if (sendSysMsg && target.isPlayer())
@@ -634,14 +615,9 @@ public final class Formulas
 		return shldSuccess;
 	}
 	
-	public static byte calcShldUse(Creature attacker, Creature target, Skill skill)
-	{
-		return calcShldUse(attacker, target, skill, true);
-	}
-	
 	public static byte calcShldUse(Creature attacker, Creature target)
 	{
-		return calcShldUse(attacker, target, null, true);
+		return calcShldUse(attacker, target, true);
 	}
 	
 	public static boolean calcMagicAffected(Creature actor, Creature target, Skill skill)
@@ -1155,7 +1131,6 @@ public final class Formulas
 			{
 				// Resist Modifier.
 				int cancelMagicLvl = skill.getMagicLevel();
-				double finalRate = rate * target.getStat().getValue(Stats.RESIST_DISPEL_BUFF, 1);
 				
 				if (activeChar.isDebug())
 				{
@@ -1163,7 +1138,7 @@ public final class Formulas
 					set.set("baseMod", rate);
 					set.set("magicLevel", cancelMagicLvl);
 					set.set("resMod", target.getStat().getValue(Stats.RESIST_DISPEL_BUFF, 1));
-					set.set("rate", finalRate);
+					set.set("rate", rate);
 					Debug.sendSkillDebug(activeChar, target, skill, set);
 				}
 				
@@ -1180,7 +1155,7 @@ public final class Formulas
 				for (int i = buffs.size() - 1; i >= 0; i--) // reverse order
 				{
 					BuffInfo info = buffs.get(i);
-					if (!info.getSkill().canBeStolen() || (!calcCancelSuccess(info, cancelMagicLvl, (int) finalRate, skill)))
+					if (!info.getSkill().canBeStolen() || ((rate < 100) && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
 					{
 						continue;
 					}
@@ -1213,11 +1188,10 @@ public final class Formulas
 		return canceled;
 	}
 	
-	public static boolean calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill skill)
+	public static boolean calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill skill, Creature target)
 	{
-		// Lvl Bonus Modifier.
-		rate *= info.getSkill().getMagicLevel() > 0 ? 1 + ((cancelMagicLvl - info.getSkill().getMagicLevel()) / 100.) : 1;
-		return Rnd.get(100) < CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance());
+		final int chance = (int) (rate + ((cancelMagicLvl - info.getSkill().getMagicLevel()) * 2) + ((info.getAbnormalTime() / 120) * target.getStat().getValue(Stats.RESIST_DISPEL_BUFF, 1)));
+		return Rnd.get(100) < CommonUtil.constrain(chance, 25, 75);
 	}
 	
 	/**

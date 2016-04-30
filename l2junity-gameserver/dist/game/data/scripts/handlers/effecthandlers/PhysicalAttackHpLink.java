@@ -85,7 +85,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		final double power = _power * (-((effected.getCurrentHp() * 2) / effected.getMaxHp()) + 2);
 		double defence = effected.getPDef();
 		
-		switch (Formulas.calcShldUse(effector, effected, skill, true))
+		switch (Formulas.calcShldUse(effector, effected))
 		{
 			case Formulas.SHIELD_DEFENSE_SUCCEED:
 			{

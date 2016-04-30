@@ -111,7 +111,7 @@ public final class FatalBlow extends AbstractEffect
 		}
 		
 		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
-		byte shld = Formulas.calcShldUse(effector, effected, skill);
+		byte shld = Formulas.calcShldUse(effector, effected);
 		double damage = Formulas.calcBlowDamage(effector, effected, skill, false, power, shld, ss);
 		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
 		

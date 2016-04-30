@@ -139,7 +139,6 @@ public final class Config
 	public static boolean STORE_SKILL_COOLTIME;
 	public static boolean SUBCLASS_STORE_SKILL_COOLTIME;
 	public static boolean SUMMON_STORE_SKILL_COOLTIME;
-	public static int ALT_PERFECT_SHLD_BLOCK;
 	public static long EFFECT_TICK_RATIO;
 	public static boolean LIFE_CRYSTAL_NEEDED;
 	public static boolean ES_SP_BOOK_NEEDED;
@@ -1258,7 +1257,6 @@ public final class Config
 			STORE_SKILL_COOLTIME = Character.getBoolean("StoreSkillCooltime", true);
 			SUBCLASS_STORE_SKILL_COOLTIME = Character.getBoolean("SubclassStoreSkillCooltime", false);
 			SUMMON_STORE_SKILL_COOLTIME = Character.getBoolean("SummonStoreSkillCooltime", true);
-			ALT_PERFECT_SHLD_BLOCK = Character.getInt("AltPerfectShieldBlockRate", 10);
 			EFFECT_TICK_RATIO = Character.getLong("EffectTickRatio", 666);
 			LIFE_CRYSTAL_NEEDED = Character.getBoolean("LifeCrystalNeeded", true);
 			ES_SP_BOOK_NEEDED = Character.getBoolean("EnchantSkillSpBookNeeded", true);
@@ -2817,9 +2815,6 @@ public final class Config
 			case "altgamecancelbyhit":
 				ALT_GAME_CANCEL_BOW = pValue.equalsIgnoreCase("bow") || pValue.equalsIgnoreCase("all");
 				ALT_GAME_CANCEL_CAST = pValue.equalsIgnoreCase("cast") || pValue.equalsIgnoreCase("all");
-				break;
-			case "altperfectshieldblockrate":
-				ALT_PERFECT_SHLD_BLOCK = Integer.parseInt(pValue);
 				break;
 			case "delevel":
 				ALT_GAME_DELEVEL = Boolean.parseBoolean(pValue);
