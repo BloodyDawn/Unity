@@ -77,12 +77,6 @@ public final class Formulas
 	
 	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, boolean backstab, double power, byte shld, boolean ss)
 	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
-		{
-			return 0;
-		}
-		
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
@@ -149,19 +143,12 @@ public final class Formulas
 			Debug.sendSkillDebug(attacker, target, skill, set);
 		}
 		
-		return Math.max(damage, 1);
+		return damage;
 	}
 	
 	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
-		{
-			return 0;
-		}
-		
 		final double distance = attacker.calculateDistance(target, true, false);
-		
 		if (distance > target.getStat().getValue(Stats.SPHERIC_BARRIER_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
@@ -184,10 +171,18 @@ public final class Formulas
 		int mAtk = attacker.getMAtk();
 		
 		// Bonus Spirit shot
-		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
-		mAtk *= bss ? 4 * shotsBonus : sps ? 2 * shotsBonus : 1;
+		final double shotsBonus = (sps || bss) ? attacker.getStat().getValue(Stats.SHOTS_BONUS, bss ? 4 : 2) : 1;
+		final double critMod = mcrit ? (2 * calcCritDamage(attacker, target, skill)) : 1;// TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
+		final double stormSign = target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1); // Bonus damage if target is affected by Storm Sign
+		
+		// Trait, elements
+		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
+		final double attributeMod = calcAttributeBonus(attacker, target, skill);
+		final double randomMod = attacker.getRandomDamageMultiplier();
+		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, mcrit);
+		
 		// MDAM Formula.
-		double damage = ((91 * Math.sqrt(mAtk)) / mDef) * power;
+		double damage = (91 * power * Math.sqrt(mAtk * shotsBonus)) / mDef;
 		
 		// Failure calculation
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
@@ -223,29 +218,14 @@ public final class Formulas
 				target.sendPacket(sm);
 			}
 		}
-		else if (mcrit)
-		{
-			damage *= 2 * calcCritDamage(attacker, target, skill);
-			// TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
-		}
 		
-		// Weapon random damage
-		damage *= attacker.getRandomDamageMultiplier();
-		damage *= calcAttributeBonus(attacker, target, skill);
-		damage *= calculatePvpPveBonus(attacker, target, skill, mcrit);
-		damage *= target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1); // Bonus damage if target is affected by Storm Sign
+		damage = damage * critMod * generalTraitMod * attributeMod * randomMod * pvpPveMod * stormSign;
 		
 		return damage;
 	}
 	
 	public static double calcMagicDam(CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
-		// If target is trait invul (not trait resistant) to the specific skill trait, you deal 0 damage (message shown in retail of 0 damage).
-		if ((skill.getTraitType() != TraitType.NONE) && target.getStat().isTraitInvul(skill.getTraitType()))
-		{
-			return 0;
-		}
-		
 		int mDef = target.getMDef();
 		switch (shld)
 		{
