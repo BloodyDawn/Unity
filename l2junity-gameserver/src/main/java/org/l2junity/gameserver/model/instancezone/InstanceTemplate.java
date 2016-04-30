@@ -52,7 +52,6 @@ import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.spawns.SpawnGroup;
 import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
 
@@ -448,18 +447,6 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	public List<SpawnTemplate> getSpawns()
 	{
 		return _spawns;
-	}
-	
-	/**
-	 * Get spawn group by group name.
-	 * @param name name of group
-	 * @return list which contains spawn data from spawn group
-	 */
-	public List<SpawnGroup> getSpawnGroup(String name)
-	{
-		final List<SpawnGroup> spawns = new ArrayList<>();
-		_spawns.stream().forEach(spawnTemplate -> spawns.addAll(spawnTemplate.getGroupsByName(name)));
-		return spawns;
 	}
 	
 	/**

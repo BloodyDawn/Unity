@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 /**
  * @author UnAfraid
  */
-public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
+public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<StatsSet>
 {
 	private final String _name;
 	private final String _ai;
@@ -49,12 +49,17 @@ public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
 	private final List<SpawnGroup> _groups = new ArrayList<>();
 	private StatsSet _parameters;
 	
-	public SpawnTemplate(StatsSet set, File f)
+	public SpawnTemplate(StatsSet set, File file)
 	{
-		_name = set.getString("name", null);
-		_ai = set.getString("ai", null);
-		_spawnByDefault = set.getBoolean("spawnByDefault", true);
-		_file = f;
+		this(set.getString("name", null), set.getString("ai", null), set.getBoolean("spawnByDefault", true), file);
+	}
+	
+	private SpawnTemplate(String name, String ai, boolean spawnByDefault, File file)
+	{
+		_name = name;
+		_ai = ai;
+		_spawnByDefault = spawnByDefault;
+		_file = file;
 	}
 	
 	public String getName()
@@ -178,5 +183,34 @@ public class SpawnTemplate implements ITerritorized, IParameterized<StatsSet>
 	{
 		_groups.forEach(SpawnGroup::despawnAll);
 		notifyEvent(script -> script.onSpawnDeactivate(this));
+	}
+	
+	@Override
+	public SpawnTemplate clone()
+	{
+		final SpawnTemplate template = new SpawnTemplate(_name, _ai, _spawnByDefault, _file);
+		
+		// Clone parameters
+		template.setParameters(_parameters);
+		
+		// Clone banned territories
+		for (BannedSpawnTerritory territory : getBannedTerritories())
+		{
+			template.addBannedTerritory(territory);
+		}
+		
+		// Clone territories
+		for (SpawnTerritory territory : getTerritories())
+		{
+			template.addTerritory(territory);
+		}
+		
+		// Clone groups
+		for (SpawnGroup group : _groups)
+		{
+			template.addGroup(group.clone());
+		}
+		
+		return template;
 	}
 }

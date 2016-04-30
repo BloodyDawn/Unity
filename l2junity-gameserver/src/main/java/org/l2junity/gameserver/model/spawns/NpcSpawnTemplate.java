@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author UnAfraid
  */
-public class NpcSpawnTemplate implements IParameterized<StatsSet>
+public class NpcSpawnTemplate implements Cloneable, IParameterized<StatsSet>
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpawnTemplate.class);
 	
@@ -66,6 +66,23 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	private final SpawnTemplate _spawnTemplate;
 	private final SpawnGroup _group;
 	private final Set<Npc> _spawnedNpcs = ConcurrentHashMap.newKeySet();
+	
+	private NpcSpawnTemplate(NpcSpawnTemplate template)
+	{
+		_spawnTemplate = template._spawnTemplate;
+		_group = template._group;
+		_id = template._id;
+		_count = template._count;
+		_respawnTime = template._respawnTime;
+		_respawnTimeRandom = template._respawnTimeRandom;
+		_spawnAnimation = template._spawnAnimation;
+		_saveInDB = template._saveInDB;
+		_dbName = template._dbName;
+		_locations = template._locations;
+		_zone = template._zone;
+		_parameters = template._parameters;
+		_minions = template._minions;
+	}
 	
 	public NpcSpawnTemplate(SpawnTemplate spawnTemplate, SpawnGroup group, StatsSet set)
 	{
@@ -360,5 +377,11 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	public void notifyNpcDeath(Npc npc, Creature killer)
 	{
 		_spawnTemplate.notifyEvent(event -> event.onSpawnNpcDeath(_spawnTemplate, _group, npc, killer));
+	}
+	
+	@Override
+	public NpcSpawnTemplate clone()
+	{
+		return new NpcSpawnTemplate(this);
 	}
 }

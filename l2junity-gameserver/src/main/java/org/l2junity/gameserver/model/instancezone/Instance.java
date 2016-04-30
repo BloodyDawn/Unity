@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.instancezone;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -92,6 +93,7 @@ public final class Instance implements IIdentifiable, INamable
 	private final Map<Integer, ScheduledFuture<?>> _ejectDeadTasks = new ConcurrentHashMap<>();
 	private ScheduledFuture<?> _cleanUpTask = null;
 	private ScheduledFuture<?> _emptyDestroyTask = null;
+	private final List<SpawnTemplate> _spawns;
 	
 	/**
 	 * Create instance world.
@@ -105,6 +107,10 @@ public final class Instance implements IIdentifiable, INamable
 		_id = id;
 		_template = template;
 		_startTime = System.currentTimeMillis();
+		_spawns = new ArrayList<>(template.getSpawns().size());
+		
+		// Clone and add the spawn templates
+		template.getSpawns().stream().map(SpawnTemplate::clone).forEach(_spawns::add);
 		
 		// Register world to instance manager.
 		InstanceManager.getInstance().register(this);
@@ -115,7 +121,7 @@ public final class Instance implements IIdentifiable, INamable
 		spawnDoors();
 		
 		// initialize instance spawns
-		_template.getSpawns().stream().filter(SpawnTemplate::isSpawningByDefault).forEach(spawnTemplate -> spawnTemplate.spawnAll(this));
+		_spawns.stream().filter(SpawnTemplate::isSpawningByDefault).forEach(spawnTemplate -> spawnTemplate.spawnAll(this));
 		
 		if (!isDynamic())
 		{
@@ -403,7 +409,19 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public boolean isSpawnGroupExist(String name)
 	{
-		return _template.getSpawns().stream().flatMap(group -> group.getGroups().stream()).anyMatch(group -> name.equalsIgnoreCase(group.getName()));
+		return _spawns.stream().flatMap(group -> group.getGroups().stream()).anyMatch(group -> name.equalsIgnoreCase(group.getName()));
+	}
+	
+	/**
+	 * Get spawn group by group name.
+	 * @param name name of group
+	 * @return list which contains spawn data from spawn group
+	 */
+	public List<SpawnGroup> getSpawnGroup(String name)
+	{
+		final List<SpawnGroup> spawns = new ArrayList<>();
+		_spawns.stream().forEach(spawnTemplate -> spawns.addAll(spawnTemplate.getGroupsByName(name)));
+		return spawns;
 	}
 	
 	/**
@@ -413,7 +431,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public List<Npc> spawnGroup(String name)
 	{
-		final List<SpawnGroup> spawns = _template.getSpawnGroup(name);
+		final List<SpawnGroup> spawns = getSpawnGroup(name);
 		if (spawns == null)
 		{
 			LOGGER.warn("Spawn group {} doesn't exist for instance {} ({})!", name, getName(), _id);
@@ -442,7 +460,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void despawnGroup(String name)
 	{
-		final List<SpawnGroup> spawns = _template.getSpawnGroup(name);
+		final List<SpawnGroup> spawns = getSpawnGroup(name);
 		if (spawns == null)
 		{
 			LOGGER.warn("Spawn group {} doesn't exist for instance {} ({})!", name, getName(), _id);
@@ -566,7 +584,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void removeNpcs()
 	{
-		_template.getSpawns().forEach(SpawnTemplate::despawnAll);
+		_spawns.forEach(SpawnTemplate::despawnAll);
 		_npcs.clear();
 	}
 	
@@ -830,7 +848,7 @@ public final class Instance implements IIdentifiable, INamable
 			{
 				ejectPlayer(player.getActingPlayer());
 			}
-		} , _template.getEjectTime(), TimeUnit.MINUTES));
+		}, _template.getEjectTime(), TimeUnit.MINUTES));
 	}
 	
 	/**

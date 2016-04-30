@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.zone.type.SpawnTerritory;
 /**
  * @author UnAfraid
  */
-public class SpawnGroup implements ITerritorized
+public class SpawnGroup implements Cloneable, ITerritorized
 {
 	private final String _name;
 	private final boolean _spawnByDefault;
@@ -42,8 +42,13 @@ public class SpawnGroup implements ITerritorized
 	
 	public SpawnGroup(StatsSet set)
 	{
-		_name = set.getString("name", null);
-		_spawnByDefault = set.getBoolean("spawnByDefault", true);
+		this(set.getString("name", null), set.getBoolean("spawnByDefault", true));
+	}
+	
+	private SpawnGroup(String name, boolean spawnByDefault)
+	{
+		_name = name;
+		_spawnByDefault = spawnByDefault;
 	}
 	
 	public String getName()
@@ -111,5 +116,31 @@ public class SpawnGroup implements ITerritorized
 	public void despawnAll()
 	{
 		_spawns.forEach(NpcSpawnTemplate::despawn);
+	}
+	
+	@Override
+	public SpawnGroup clone()
+	{
+		final SpawnGroup group = new SpawnGroup(_name, _spawnByDefault);
+		
+		// Clone banned territories
+		for (BannedSpawnTerritory territory : getBannedTerritories())
+		{
+			group.addBannedTerritory(territory);
+		}
+		
+		// Clone territories
+		for (SpawnTerritory territory : getTerritories())
+		{
+			group.addTerritory(territory);
+		}
+		
+		// Clone spawns
+		for (NpcSpawnTemplate spawn : _spawns)
+		{
+			group.addSpawn(spawn.clone());
+		}
+		
+		return group;
 	}
 }
