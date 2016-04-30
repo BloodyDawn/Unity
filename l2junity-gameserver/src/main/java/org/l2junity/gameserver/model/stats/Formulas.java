@@ -173,7 +173,6 @@ public final class Formulas
 		// Bonus Spirit shot
 		final double shotsBonus = (sps || bss) ? attacker.getStat().getValue(Stats.SHOTS_BONUS, bss ? 4 : 2) : 1;
 		final double critMod = mcrit ? (2 * calcCritDamage(attacker, target, skill)) : 1;// TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
-		final double stormSign = target.getStat().getValue(Stats.STORM_SIGN_BONUS, 1); // Bonus damage if target is affected by Storm Sign
 		
 		// Trait, elements
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
@@ -219,7 +218,7 @@ public final class Formulas
 			}
 		}
 		
-		damage = damage * critMod * generalTraitMod * attributeMod * randomMod * pvpPveMod * stormSign;
+		damage = damage * critMod * generalTraitMod * attributeMod * randomMod * pvpPveMod;
 		
 		return damage;
 	}

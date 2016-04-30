@@ -240,9 +240,6 @@ public enum Stats
 	// Cubic Count
 	MAX_CUBIC("cubicCount"),
 	
-	// Storm Sign bonus damage
-	STORM_SIGN_BONUS("stormSignBonus"),
-	
 	// The maximum allowed range to be damaged/debuffed from.
 	SPHERIC_BARRIER_RANGE("sphericBarrier"),
 	
