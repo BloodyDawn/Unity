@@ -36,6 +36,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
+import org.l2junity.gameserver.network.client.send.ExShowUsm;
 import org.l2junity.gameserver.util.Util;
 
 import instances.AbstractInstance;
@@ -56,6 +57,11 @@ public final class OctavisWarzone extends AbstractInstance
 	{
 		29193, // Common
 		29211, // Extreme
+	};
+	private static final int[] OCTAVIS_STAGE_3 =
+	{
+		29194, // Common
+		29212, // Extreme
 	};
 	private static final int[] BEASTS =
 	{
@@ -110,6 +116,7 @@ public final class OctavisWarzone extends AbstractInstance
 		addAttackId(BEASTS);
 		addKillId(OCTAVIS_STAGE_1);
 		addKillId(OCTAVIS_STAGE_2);
+		addKillId(OCTAVIS_STAGE_3);
 		addMoveFinishedId(GLADIATORS);
 		addSpellFinishedId(OCTAVIS_STAGE_2);
 		addEnterZoneId(TELEPORT_ZONE.getId());
@@ -243,6 +250,17 @@ public final class OctavisWarzone extends AbstractInstance
 				case "START_STAGE_3":
 				{
 					world.spawnGroup("STAGE_3").forEach(octavis -> ((Attackable) octavis).setCanReturnToSpawnPoint(false));
+					break;
+				}
+				case "END_STAGE_3":
+				{
+					playMovie(world, Movie.SC_OCTABIS_ENDING);
+					getTimers().addTimer("USM_SCENE_TIMER", 40000, npc, null);
+					break;
+				}
+				case "USM_SCENE_TIMER":
+				{
+					world.broadcastPacket(ExShowUsm.OCTAVIS_INSTANCE_END);
 					break;
 				}
 				case "GLADIATOR_START_SPAWN":
@@ -435,6 +453,11 @@ public final class OctavisWarzone extends AbstractInstance
 					world.despawnGroup(isExtremeMode(world) ? ("magmeld4_2621_gro" + i + "m1") : ("magmeld4_2621_gmo" + i + "m1"));
 				}
 				getTimers().addTimer("END_STAGE_2", 3000, npc, null);
+			}
+			else if (CommonUtil.contains(OCTAVIS_STAGE_3, npc.getId()))
+			{
+				world.finishInstance();
+				getTimers().addTimer("END_STAGE_3", 2000, npc, null);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

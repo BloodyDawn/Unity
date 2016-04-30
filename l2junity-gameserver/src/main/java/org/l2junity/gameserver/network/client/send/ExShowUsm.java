@@ -28,6 +28,7 @@ public class ExShowUsm implements IClientOutgoingPacket
 {
 	public static final ExShowUsm GOD_INTRO = new ExShowUsm(2);
 	public static final ExShowUsm SECOND_TRANSFER_QUEST = new ExShowUsm(4);
+	public static final ExShowUsm OCTAVIS_INSTANCE_END = new ExShowUsm(6);
 	public static final ExShowUsm AWAKENING_END = new ExShowUsm(10);
 	public static final ExShowUsm ERTHEIA_FIRST_QUEST = new ExShowUsm(14);
 	public static final ExShowUsm ERTHEIA_INTRO_FOR_ERTHEIA = new ExShowUsm(147);
