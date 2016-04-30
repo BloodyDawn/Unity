@@ -46,7 +46,7 @@ public final class DamOverTime extends AbstractEffect
 		if (!info.getSkill().isToggle() && info.getSkill().isMagic())
 		{
 			// TODO: M.Crit can occur even if this skill is resisted. Only then m.crit damage is applied and not debuff
-			final boolean mcrit = Formulas.calcMCrit(info.getEffector(), info.getEffected(), info.getSkill());
+			final boolean mcrit = Formulas.calcCrit(info.getSkill().getMagicCriticalRate(), info.getEffector(), info.getEffected(), info.getSkill());
 			if (mcrit)
 			{
 				double damage = _power * 10; // Tests show that 10 times HP DOT is taken during magic critical.

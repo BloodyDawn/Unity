@@ -209,6 +209,8 @@ public final class Skill implements IIdentifiable
 	private final List<AttachSkillHolder> _attachSkills;
 	private final Set<AbnormalType> _abnormalResists;
 	
+	private final double _magicCriticalRate;
+	
 	public Skill(StatsSet set)
 	{
 		_id = set.getInt(".id");
@@ -441,6 +443,8 @@ public final class Skill implements IIdentifiable
 		{
 			_abnormalResists = Collections.emptySet();
 		}
+		
+		_magicCriticalRate = set.getDouble("magicCriticalRate", 0);
 	}
 	
 	public TraitType getTraitType()
@@ -1804,5 +1808,10 @@ public final class Skill implements IIdentifiable
 	public Set<AbnormalType> getAbnormalResists()
 	{
 		return _abnormalResists;
+	}
+	
+	public double getMagicCriticalRate()
+	{
+		return _magicCriticalRate;
 	}
 }

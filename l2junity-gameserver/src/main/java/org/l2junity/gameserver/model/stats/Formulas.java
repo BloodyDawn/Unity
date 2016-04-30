@@ -100,7 +100,7 @@ public final class Formulas
 		
 		// Critical
 		final double criticalMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1));
-		final double criticalPositionMod = calcCritDamagePosition(attacker, target, null);
+		final double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target));
 		final double criticalVulnMod = (target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1));
 		final double criticalAddMod = (attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0));
 		final double criticalAddVuln = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -108,27 +108,28 @@ public final class Formulas
 		final double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double attributeMod = calcAttributeBonus(attacker, target, skill);
-		final double weaponMod = attacker.getRandomDamageMultiplier();
+		final double randomMod = attacker.getRandomDamageMultiplier();
 		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, true);
 		
 		// Initial damage
 		final double ssmod = ss ? attacker.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
-		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
-		final double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1) * proximityBonus;
+		final double cdMult = criticalMod * (((criticalPositionMod - 1) / 2) + 1) * (((criticalVulnMod - 1) / 2) + 1);
 		final double cdPatk = criticalAddMod + criticalAddVuln;
-		final double isPosition = backstab ? 0.2 : 0; // 0.2 for backstab.
-		// ........................_____________________________Initial Damage____________________________...______Backstab Additional Damage______..._CriticalAdd_
-		// ATTACK CALCULATION 77 * [(skillpower+patk) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.1 * (skillpower+patk*ss) + 6 * cd_patk] / pdef
-		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
-		final double baseMod = ((77 * (((power + attacker.getPAtk()) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssmod))) + (6 * cdPatk))) / defence);
-		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * weaponMod * pvpPveMod;
+		final Position position = Position.getPosition(attacker, target);
+		final double isPosition = position == Position.BACK ? 0.2 : position == Position.SIDE ? 0.05 : 0;
+		
+		// ........................_____________________________Initial Damage____________________________...___________Position Additional Damage___________..._CriticalAdd_
+		// ATTACK CALCULATION 77 * [(skillpower+patk) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.05 * (skillpower+patk*ss) * random + 6 * cd_patk] / pdef
+		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
+		final double baseMod = ((77 * (((power + attacker.getPAtk()) * 0.666 * ssmod * cdMult) + (isPosition * (power + (attacker.getPAtk() * ssmod)) * randomMod) + (6 * cdPatk))) / defence);
+		final double damage = baseMod * weaponTraitMod * generalTraitMod * attributeMod * randomMod * pvpPveMod;
 		
 		if (attacker.isDebug())
 		{
 			final StatsSet set = new StatsSet();
 			set.set("skillPower", power);
 			set.set("ssboost", ssmod);
-			set.set("proximityBonus", proximityBonus);
+			set.set("isPosition", isPosition);
 			set.set("baseMod", baseMod);
 			set.set("criticalMod", criticalMod);
 			set.set("criticalVulnMod", criticalVulnMod);
@@ -137,7 +138,7 @@ public final class Formulas
 			set.set("weaponTraitMod", weaponTraitMod);
 			set.set("generalTraitMod", generalTraitMod);
 			set.set("attributeMod", attributeMod);
-			set.set("weaponMod", weaponMod);
+			set.set("weaponMod", randomMod);
 			set.set("penaltyMod", pvpPveMod);
 			set.set("damage", (int) damage);
 			Debug.sendSkillDebug(attacker, target, skill, set);
@@ -221,16 +222,36 @@ public final class Formulas
 	 * @param target
 	 * @return
 	 */
-	public static boolean calcCrit(double rate, boolean skill, Creature activeChar, Creature target)
+	public static boolean calcCrit(double rate, Creature activeChar, Creature target, Skill skill)
 	{
-		rate *= activeChar.getStat().getPositionTypeValue(Stats.CRITICAL_RATE, Position.getPosition(activeChar, target));
-		// Skills are not affected by critical rate defence buffs.
-		if (skill)
+		// Skill critical rate is calculated up to the first decimal, thats why multiply by 10 and compare to 1000.
+		if (skill != null)
 		{
-			// Skill critical rate is calculated up to the first decimal, thats why multiply by 10 and compare to 1000.
+			// Magic Critical Rate
+			if (skill.isMagic())
+			{
+				rate = activeChar.getStat().getValue(Stats.MAGIC_CRITICAL_RATE, rate);
+				if ((target == null) || !skill.isBad())
+				{
+					return Math.min(rate, 320) > Rnd.get(1000);
+				}
+				
+				double finalRate = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE, rate) + target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0);
+				if ((activeChar.getLevel() >= 78) && (target.getLevel() >= 78))
+				{
+					finalRate += Math.sqrt(activeChar.getLevel()) + ((activeChar.getLevel() - target.getLevel()) / 25);
+					return Math.min(finalRate, 320) > Rnd.get(1000);
+				}
+				
+				return Math.min(finalRate, 200) > Rnd.get(1000);
+			}
+			
+			// Physical Skill Critical Rate
 			double finalRate = rate * 10 * activeChar.getStat().getSkillCriticalRateBonus();
 			return finalRate > Rnd.get(1000);
 		}
+		
+		rate *= activeChar.getStat().getPositionTypeValue(Stats.CRITICAL_RATE, Position.getPosition(activeChar, target));
 		
 		// In retail, it appears that when you are higher level attacking lower level mobs, your critical rate is much higher.
 		// Level 91 attacking level 1 appear that nearly all hits are critical. Unconfirmed for skills and pvp.
@@ -272,7 +293,7 @@ public final class Formulas
 		else
 		{
 			// Autoattack critical damage.
-			criticalDamage = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1);
+			criticalDamage = attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.getPosition(attacker, target));
 			defenceCriticalDamage = target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
 		}
 		
@@ -312,54 +333,6 @@ public final class Formulas
 		}
 		
 		return criticalDamageAdd + defenceCriticalDamageAdd;
-	}
-	
-	/**
-	 * @param attacker
-	 * @param target
-	 * @param skill {@code skill} to be used in the calculation, else calculation will result for autoattack.
-	 * @return critical damage bonus based on attacking position.
-	 */
-	public static double calcCritDamagePosition(Creature attacker, Creature target, Skill skill)
-	{
-		// No positional bonus for skill critical damage is known.
-		if (skill != null)
-		{
-			return 1;
-		}
-		
-		switch (Position.getPosition(attacker, target))
-		{
-			case FRONT:
-				final double frontStatBonus = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.FRONT);
-				return frontStatBonus; // No bonus critical damage when attacking from front.
-			case SIDE:
-				final double sideStatBonus = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.SIDE);
-				return sideStatBonus * 1.05; // 5% bonus critical damage when attacking from side
-			case BACK:
-				final double backStatBonus = attacker.getStat().getPositionTypeValue(Stats.CRITICAL_DAMAGE, Position.BACK);
-				return backStatBonus * 1.2; // 20% bonus critical damage when attacking from back
-		}
-		
-		return 1;
-	}
-	
-	public static boolean calcMCrit(Creature caster, Creature target, Skill skill)
-	{
-		double rate = caster.getStat().getValue(Stats.MAGIC_CRITICAL_RATE);
-		if ((target == null) || (skill == null) || !skill.isBad())
-		{
-			return Math.min(rate, 320) > Rnd.get(1000);
-		}
-		
-		double finalRate = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE, rate) + target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0);
-		if ((caster.getLevel() >= 78) && (target.getLevel() >= 78))
-		{
-			finalRate += Math.sqrt(caster.getLevel()) + ((caster.getLevel() - target.getLevel()) / 25);
-			return Math.min(finalRate, 320) > Rnd.get(1000);
-		}
-		
-		return Math.min(finalRate, 200) > Rnd.get(1000);
 	}
 	
 	/**
@@ -1103,23 +1076,33 @@ public final class Formulas
 	
 	public static boolean calcBlowSuccess(Creature activeChar, Creature target, Skill skill, double blowChance)
 	{
-		// Apply Position Bonus (TODO: values are unconfirmed, possibly custom, remove or update when confirmed).
-		double sideMod = (activeChar.isInFrontOfTarget()) ? 1 : (activeChar.isBehindTarget()) ? 2 : 1.5;
-		// Apply all mods.
-		double baseRate = blowChance * sideMod;
-		// Apply blow rates
-		double rate = activeChar.getStat().getValue(Stats.BLOW_RATE, baseRate);
+		final double weaponCritical = 12; // Dagger weapon critical mod is 12... TODO: Make it work for other weapons.
+		// double dexBonus = BaseStats.DEX.calcBonus(activeChar); Not used in GOD
+		final double critHeightBonus = ((((CommonUtil.constrain(activeChar.getZ() - target.getZ(), -25, 25) * 4) / 5) + 10) / 100) + 1;
+		final Position position = Position.getPosition(activeChar, target);
+		final double criticalPosition = position == Position.BACK ? 1.3 : position == Position.SIDE ? 1.1 : 1; // 30% chance from back, 10% chance from side.
+		final double criticalPositionMod = criticalPosition * activeChar.getStat().getPositionTypeValue(Stats.CRITICAL_RATE, position);
+		final double blowRateMod = activeChar.getStat().getValue(Stats.BLOW_RATE, 1);
+		blowChance = (weaponCritical + blowChance) * 10;
+		
+		final double rate = blowChance * critHeightBonus * criticalPositionMod * blowRateMod;
+		
 		// Debug
 		if (activeChar.isDebug())
 		{
 			final StatsSet set = new StatsSet();
+			set.set("weaponCritical", weaponCritical);
+			set.set("critHeightBonus", critHeightBonus);
+			set.set("criticalPosition", criticalPosition);
+			set.set("criticalPositionMod", criticalPositionMod);
+			set.set("blowRate", blowRateMod);
 			set.set("blowChance", blowChance);
-			set.set("sideMod", sideMod);
-			set.set("baseRate", baseRate);
-			set.set("rate", rate);
+			set.set("rate(max 800 of 1000)", rate);
 			Debug.sendSkillDebug(activeChar, target, skill, set);
 		}
-		return Rnd.get(100) < rate;
+		
+		// Blow rate is capped at 80%
+		return Rnd.get(1000) < Math.min(rate, 800);
 	}
 	
 	public static List<BuffInfo> calcCancelStealEffects(Creature activeChar, Creature target, Skill skill, String slot, int rate, int max)
@@ -1191,7 +1174,7 @@ public final class Formulas
 	public static boolean calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill skill, Creature target)
 	{
 		final int chance = (int) (rate + ((cancelMagicLvl - info.getSkill().getMagicLevel()) * 2) + ((info.getAbnormalTime() / 120) * target.getStat().getValue(Stats.RESIST_DISPEL_BUFF, 1)));
-		return Rnd.get(100) < CommonUtil.constrain(chance, 25, 75);
+		return Rnd.get(100) < CommonUtil.constrain(chance, 25, 75); // TODO: i_dispel_by_slot_probability min = 40, max = 95.
 	}
 	
 	/**
@@ -1422,7 +1405,7 @@ public final class Formulas
 		final boolean isRanged = (weapon != null) && weapon.getItemType().isRanged();
 		final double shotsBonus = attacker.getStat().getValue(Stats.SHOTS_BONUS);
 		
-		final double cAtk = crit ? (2 * calcCritDamage(attacker, target, null) * calcCritDamagePosition(attacker, target, null)) : 1;
+		final double cAtk = crit ? (2 * calcCritDamage(attacker, target, null)) : 1;
 		final double cAtkAdd = crit ? calcCritDamageAdd(attacker, target, null) : 0;
 		final double critMod = crit ? (isRanged ? 0.5 : 1) : 0;
 		final double ssBonus = ss ? 2 * shotsBonus : 1;

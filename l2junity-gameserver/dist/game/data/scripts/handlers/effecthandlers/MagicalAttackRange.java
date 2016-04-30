@@ -80,7 +80,7 @@ public final class MagicalAttackRange extends AbstractEffect
 		}
 		
 		double damage = 1;
-		final boolean mcrit = Formulas.calcMCrit(effector, effected, skill);
+		final boolean mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
 		
 		if (mDef != -1)
 		{

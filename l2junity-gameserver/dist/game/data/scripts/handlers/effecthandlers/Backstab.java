@@ -84,7 +84,7 @@ public final class Backstab extends AbstractEffect
 		byte shld = Formulas.calcShldUse(effector, effected);
 		double damage = Formulas.calcBlowDamage(effector, effected, skill, true, _power, shld, ss);
 		
-		if (Formulas.calcCrit(_criticalChance, true, effector, effected))
+		if (Formulas.calcCrit(_criticalChance, effector, effected, skill))
 		{
 			damage *= 2;
 		}

@@ -224,7 +224,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				shld1++;
 			}
-			boolean _crit1 = Formulas.calcCrit(npc1.getCriticalHit(), false, npc1, npc2);
+			boolean _crit1 = Formulas.calcCrit(npc1.getCriticalHit(), npc1, npc2, null);
 			if (_crit1)
 			{
 				crit1++;
@@ -257,7 +257,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				shld2++;
 			}
-			boolean _crit2 = Formulas.calcCrit(npc2.getCriticalHit(), false, npc2, npc1);
+			boolean _crit2 = Formulas.calcCrit(npc2.getCriticalHit(), npc2, npc1, null);
 			if (_crit2)
 			{
 				crit2++;
