@@ -230,7 +230,7 @@ public final class Formulas
 			// Magic Critical Rate
 			if (skill.isMagic())
 			{
-				rate = activeChar.getStat().getValue(Stats.MAGIC_CRITICAL_RATE, rate);
+				rate = activeChar.getStat().getValue(Stats.MAGIC_CRITICAL_RATE);
 				if ((target == null) || !skill.isBad())
 				{
 					return Math.min(rate, 320) > Rnd.get(1000);
