@@ -110,7 +110,7 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 			}
 			default:
 			{
-				if (event.startsWith("giveReward_") && qs.isCond(5) && (player.getLevel() >= MIN_LEVEL))
+				if (event.startsWith("giveReward_") && qs.isCond(3) && (player.getLevel() >= MIN_LEVEL))
 				{
 					final int itemId = Integer.parseInt(event.replace("giveReward_", ""));
 					qs.exitQuest(false, true);
