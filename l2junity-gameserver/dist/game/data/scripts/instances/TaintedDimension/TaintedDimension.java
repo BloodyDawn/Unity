@@ -105,11 +105,6 @@ public final class TaintedDimension extends AbstractInstance
 		{
 			switch (event)
 			{
-				case "INSTANCE_END":
-				{
-					instance.finishInstance(0);
-					break;
-				}
 				case "LEADER_ACTION_1":
 				{
 					addSkillCastDesire(npc, npc, REVIVE_SKILL, 23);
