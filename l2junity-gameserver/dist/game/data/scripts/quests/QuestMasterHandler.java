@@ -186,6 +186,7 @@ import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMon
 import quests.Q10297_GrandOpeningComeToOurPub.Q10297_GrandOpeningComeToOurPub;
 import quests.Q10301_ShadowOfTerrorBlackishRedFog.Q10301_ShadowOfTerrorBlackishRedFog;
 import quests.Q10302_UnsettlingShadowAndRumors.Q10302_UnsettlingShadowAndRumors;
+import quests.Q10305_UnstoppableFutileEfforts.Q10305_UnstoppableFutileEfforts;
 import quests.Q10320_LetsGoToTheCentralSquare.Q10320_LetsGoToTheCentralSquare;
 import quests.Q10321_QualificationsOfTheSeeker.Q10321_QualificationsOfTheSeeker;
 import quests.Q10322_SearchingForTheMysteriousPower.Q10322_SearchingForTheMysteriousPower;
@@ -496,6 +497,7 @@ public class QuestMasterHandler
 		Q10297_GrandOpeningComeToOurPub.class,
 		Q10301_ShadowOfTerrorBlackishRedFog.class,
 		Q10302_UnsettlingShadowAndRumors.class,
+		Q10305_UnstoppableFutileEfforts.class,
 		Q10320_LetsGoToTheCentralSquare.class,
 		Q10321_QualificationsOfTheSeeker.class,
 		Q10322_SearchingForTheMysteriousPower.class,

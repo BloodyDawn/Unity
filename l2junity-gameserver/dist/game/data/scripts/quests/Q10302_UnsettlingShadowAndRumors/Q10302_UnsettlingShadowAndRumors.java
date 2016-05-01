@@ -65,9 +65,10 @@ public final class Q10302_UnsettlingShadowAndRumors extends Quest
 		
 		switch (event)
 		{
-			case "32894-02.html":
+			case "32898-02.htm":
 			case "32898-06.html":
 			case "32898-07.html":
+			case "32894-05.html":
 			{
 				htmltext = event;
 				break;
@@ -78,7 +79,7 @@ public final class Q10302_UnsettlingShadowAndRumors extends Quest
 				htmltext = event;
 				break;
 			}
-			case "32894-03.html":
+			case "32894-02.html":
 			{
 				if (qs.isCond(1))
 				{
@@ -134,6 +135,10 @@ public final class Q10302_UnsettlingShadowAndRumors extends Quest
 					addExpAndSp(player, 6_728_850, 1_614);
 					qs.exitQuest(false, true);
 					htmltext = "32898-08.html";
+				}
+				else
+				{
+					htmltext = getNoQuestLevelRewardMsg(player);
 				}
 			}
 		}

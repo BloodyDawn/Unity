@@ -18,12 +18,15 @@
  */
 package ai.individual.FairySettlement.LargeCocoon;
 
+import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
+import org.l2junity.gameserver.model.quest.Quest;
 
 import ai.AbstractNpcAI;
+import quests.Q10305_UnstoppableFutileEfforts.Q10305_UnstoppableFutileEfforts;
 
 /**
  * Large Cocoon AI.
@@ -33,6 +36,7 @@ public final class LargeCocoon extends AbstractNpcAI
 {
 	// NPCs
 	private static final int LARGE_COCOON = 32920;
+	private static final int COCOON = 32919;
 	private static final int LARGE_CONTAMINED_COCOON = 19394;
 	private static final int COCOON_DESTROYER = 19294;
 	private static final int FAIRY_WARRIOR = 22867;
@@ -50,10 +54,10 @@ public final class LargeCocoon extends AbstractNpcAI
 	
 	private LargeCocoon()
 	{
-		addStartNpc(LARGE_COCOON);
-		addTalkId(LARGE_COCOON);
-		addFirstTalkId(LARGE_COCOON);
-		addSpawnId(LARGE_COCOON);
+		addStartNpc(COCOON, LARGE_COCOON);
+		addTalkId(COCOON, LARGE_COCOON);
+		addFirstTalkId(COCOON, LARGE_COCOON);
+		addSpawnId(COCOON, LARGE_COCOON);
 		setCreatureAttackedId(this::onCreatureAttacked, LARGE_COCOON);
 	}
 	
@@ -70,7 +74,11 @@ public final class LargeCocoon extends AbstractNpcAI
 			case "attackPowerful":
 			{
 				// TODO: Quest 466 stuffs
-				// TODO: Quest 10305 stuffs
+				final Quest qs10305 = QuestManager.getInstance().getQuest(Q10305_UnstoppableFutileEfforts.class.getSimpleName());
+				if (qs10305 != null)
+				{
+					qs10305.notifyEvent("NOTIFY_Q10305", npc, player);
+				}
 				
 				if (getRandom(3) < 1)
 				{
@@ -220,7 +228,11 @@ public final class LargeCocoon extends AbstractNpcAI
 		final Playable playable = (Playable) event.getAttacker();
 		
 		// TODO: Quest 466 stuffs
-		// TODO: Quest 10305 stuffs
+		final Quest qs10305 = QuestManager.getInstance().getQuest(Q10305_UnstoppableFutileEfforts.class.getSimpleName());
+		if (qs10305 != null)
+		{
+			qs10305.notifyEvent("NOTIFY_Q10305", npc, playable.getActingPlayer());
+		}
 		
 		if (getRandom(3) < 1)
 		{
