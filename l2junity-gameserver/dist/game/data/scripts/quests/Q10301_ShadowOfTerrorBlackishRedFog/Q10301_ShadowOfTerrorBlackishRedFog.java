@@ -156,7 +156,7 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 				}
 				else if (npc.getId() == SLASKI)
 				{
-					if (qs.isCond(5))
+					if (qs.isCond(3))
 					{
 						htmltext = "32893-01.html";
 					}

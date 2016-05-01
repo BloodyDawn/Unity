@@ -121,7 +121,6 @@ public final class AncientArcanCity extends AbstractNpcAI
 					{
 						instance.notifyEvent("enterInstance", null, player);
 					}
-					qs.setCond(5);
 				}
 				else
 				{
