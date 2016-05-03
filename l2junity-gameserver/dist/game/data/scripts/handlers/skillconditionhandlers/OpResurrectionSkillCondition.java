@@ -43,7 +43,7 @@ public class OpResurrectionSkillCondition implements ISkillCondition
 	{
 		boolean canResurrect = true;
 		
-		if (target == null)
+		if (target == caster)
 		{
 			return canResurrect;
 		}
