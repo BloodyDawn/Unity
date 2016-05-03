@@ -59,8 +59,6 @@ public final class KimerianCommon extends AbstractInstance
 	// Items
 	private static final int GLIMMER = 17374;
 	private static final int FLUTE = 17378; // Fairy's Leaf Flute
-	// Locations
-	
 	// Misc
 	private static final NpcStringId[] KIMERIAN_MSG =
 	{
