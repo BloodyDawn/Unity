@@ -318,6 +318,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("TriggerSkillByAttack", TriggerSkillByAttack::new);
 		EffectHandler.getInstance().registerHandler("TriggerSkillByAvoid", TriggerSkillByAvoid::new);
 		EffectHandler.getInstance().registerHandler("TriggerSkillByDamage", TriggerSkillByDamage::new);
+		EffectHandler.getInstance().registerHandler("TriggerSkillByDeathBlow", TriggerSkillByDeathBlow::new);
 		EffectHandler.getInstance().registerHandler("TriggerSkillByKill", TriggerSkillByKill::new);
 		EffectHandler.getInstance().registerHandler("TriggerSkillByMagicType", TriggerSkillByMagicType::new);
 		EffectHandler.getInstance().registerHandler("TriggerSkillBySkill", TriggerSkillBySkill::new);
