@@ -442,7 +442,6 @@
 	<skill id="11755" toLevel="11" name="Radiant Heal">
 		<!-- Glory Days confirmed -->
 		<!-- Heals target with 1488 Power added to M. Atk. If HP is full, CP is restored. -->
-		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
 		<magicLvl>
@@ -491,7 +490,19 @@
 		<reuseDelay>3000</reuseDelay>
 		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
 		<isMagic>1</isMagic>
-		<mpConsume>#mpConsume</mpConsume>
+		<mpConsume>
+			<value level="1">110</value>
+			<value level="2">110</value>
+			<value level="3">113</value>
+			<value level="4">114</value>
+			<value level="5">117</value>
+			<value level="6">118</value>
+			<value level="7">121</value>
+			<value level="8">122</value>
+			<value level="9">123</value>
+			<value level="10">124</value>
+			<value level="11">126</value>
+		</mpConsume>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>1</hitCancelTime>
 		<mpInitialConsume>
@@ -1377,7 +1388,7 @@
 	<skill id="11769" toLevel="9" name="Dark Backfire">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., target's MP Consumption + 50%, and Casting Spd. and Atk. Spd. - 20%. -->
-		<table name="#MpConsumeRate"> 1.5 2.5 3.0 3.5 4.0 4.0 4.0  4.0 4.0 </table>
+		<table name="#MpConsumeRate"> 1.5 2.5 3.0 3.5 4.0 4.0 4.0 4.0 4.0 </table>
 		<table name="#pAtkmAtkSpd"> 0.8 0.8 0.8 0.8 0.8 0.8 0.75 0.7 0.65 </table>
 		<activateRate>80</activateRate>
 		<lvlBonusRate>30</lvlBonusRate>
