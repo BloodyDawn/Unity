@@ -848,7 +848,7 @@ public final class Instance implements IIdentifiable, INamable
 			{
 				ejectPlayer(player.getActingPlayer());
 			}
-		}, _template.getEjectTime(), TimeUnit.MINUTES));
+		} , _template.getEjectTime(), TimeUnit.MINUTES));
 	}
 	
 	/**
