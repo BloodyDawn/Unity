@@ -1882,10 +1882,16 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Notify L2Character AI</li>
 	 * </ul>
 	 * @param killer The L2Character who killed it
-	 * @return false if the player is already dead.
+	 * @return false if the creature hasn't been killed.
 	 */
 	public boolean doDie(Creature killer)
 	{
+		final TerminateReturn returnBack = EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this, TerminateReturn.class);
+		if ((returnBack != null) && returnBack.terminate())
+		{
+			return false;
+		}
+		
 		// killing is only possible one time
 		synchronized (this)
 		{
@@ -1899,8 +1905,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setIsDead(true);
 		}
 		
-		EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this);
 		EventDispatcher.getInstance().notifyEvent(new OnCreatureKilled(killer, this), killer);
+		
+		abortAttack();
+		abortCast();
 		
 		calculateRewards(killer);
 		

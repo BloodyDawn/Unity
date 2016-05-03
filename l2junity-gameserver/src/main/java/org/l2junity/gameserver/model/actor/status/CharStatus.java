@@ -185,8 +185,6 @@ public class CharStatus
 		
 		if ((activeChar.getCurrentHp() < 0.5)) // Die
 		{
-			activeChar.abortAttack();
-			activeChar.abortCast();
 			activeChar.doDie(attacker);
 		}
 	}
