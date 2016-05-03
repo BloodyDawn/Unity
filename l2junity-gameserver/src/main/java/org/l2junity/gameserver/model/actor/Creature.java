@@ -97,7 +97,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttackAvoid
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageDealt;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKilled;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleport;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleported;
@@ -1899,7 +1899,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setIsDead(true);
 		}
 		
-		EventDispatcher.getInstance().notifyEvent(new OnCreatureKill(killer, this), this);
+		EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this);
 		EventDispatcher.getInstance().notifyEvent(new OnCreatureKilled(killer, this), killer);
 		
 		calculateRewards(killer);

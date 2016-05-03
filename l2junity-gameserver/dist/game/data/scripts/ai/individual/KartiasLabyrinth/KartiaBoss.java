@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import ai.AbstractNpcAI;
@@ -80,7 +80,7 @@ public final class KartiaBoss extends AbstractNpcAI
 		}
 	}
 	
-	public void onCreatureKill(OnCreatureKill event)
+	public void onCreatureKill(OnCreatureDeath event)
 	{
 		final Npc npc = (Npc) event.getTarget();
 		npc.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.NO_HOW_COULD_THIS_BE_I_CAN_T_GO_BACK_TO_NIHIL_LIKE_THIS);

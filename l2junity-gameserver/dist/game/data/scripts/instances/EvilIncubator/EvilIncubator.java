@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -418,7 +418,7 @@ public final class EvilIncubator extends AbstractInstance
 		return htmltext;
 	}
 	
-	public void onCreatureKill(OnCreatureKill event)
+	public void onCreatureKill(OnCreatureDeath event)
 	{
 		final Npc npc = (Npc) event.getTarget();
 		

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -307,7 +307,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 		}
 	}
 	
-	public void onCreatureKill(OnCreatureKill event)
+	public void onCreatureKill(OnCreatureDeath event)
 	{
 		final Npc npc = (Npc) event.getTarget();
 		final Instance instance = npc.getInstanceWorld();
@@ -329,7 +329,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 		}
 	}
 	
-	public void onBossKill(OnCreatureKill event)
+	public void onBossKill(OnCreatureDeath event)
 	{
 		final Npc npc = (Npc) event.getTarget();
 		final Instance instance = npc.getInstanceWorld();

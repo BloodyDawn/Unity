@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCallToChangeClass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
@@ -787,7 +787,7 @@ public final class MemoryOfDisaster extends AbstractInstance
 		}
 	}
 	
-	private void onCreatureKill(OnCreatureKill event)
+	private void onCreatureKill(OnCreatureDeath event)
 	{
 		final Npc npc = ((Npc) event.getTarget());
 		if (npc.getId() == BRONK)

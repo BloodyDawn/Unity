@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.events.annotations.Priority;
 import org.l2junity.gameserver.model.events.annotations.Range;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableAttack;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDlgAnswer;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
@@ -84,11 +84,11 @@ public class ListenerTest extends AbstractNpcAI
 	 * @param event
 	 */
 	// Annotation listener registration
-	@RegisterEvent(EventType.ON_CREATURE_KILL)
+	@RegisterEvent(EventType.ON_CREATURE_DEATH)
 	@RegisterType(ListenerRegisterType.NPC)
 	@Id(20432)
 	@Id(22228)
-	private void onCreatureKill(OnCreatureKill event)
+	private void onCreatureKill(OnCreatureDeath event)
 	{
 		_log.info(getClass().getSimpleName() + ": " + event.getClass().getSimpleName() + " invoked attacker: " + event.getAttacker() + " target: " + event.getTarget());
 	}
@@ -125,11 +125,11 @@ public class ListenerTest extends AbstractNpcAI
 	 * This listener is registered into individual npcs container.
 	 * @param event
 	 */
-	@RegisterEvent(EventType.ON_CREATURE_KILL)
+	@RegisterEvent(EventType.ON_CREATURE_DEATH)
 	@RegisterType(ListenerRegisterType.NPC)
 	@NpcLevelRange(from = 1, to = 10)
 	@Priority(100)
-	private void OnCreatureKill(OnCreatureKill event)
+	private void OnCreatureKill(OnCreatureDeath event)
 	{
 		// 70% chance to drop
 		if (Rnd.get(100) >= 70)
@@ -165,10 +165,10 @@ public class ListenerTest extends AbstractNpcAI
 	 * @param event
 	 * @return termination return preventing the base code execution if needed.
 	 */
-	@RegisterEvent(EventType.ON_CREATURE_KILL)
+	@RegisterEvent(EventType.ON_CREATURE_DEATH)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	@Priority(Integer.MAX_VALUE)
-	private TerminateReturn onPlayerDeath(OnCreatureKill event)
+	private TerminateReturn onPlayerDeath(OnCreatureDeath event)
 	{
 		if (event.getTarget().isGM())
 		{
