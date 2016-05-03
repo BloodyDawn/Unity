@@ -926,6 +926,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<affectLimit>50-50</affectLimit> <!-- Custom -->
+		<affectRange>1000</affectRange> <!-- Custom -->
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -972,6 +974,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<affectLimit>50-50</affectLimit> <!-- Custom -->
+		<affectRange>1000</affectRange> <!-- Custom -->
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
@@ -1013,6 +1017,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<affectLimit>10-10</affectLimit> <!-- Custom -->
+		<affectRange>1000</affectRange> <!-- Custom -->
 		<mpConsume>140</mpConsume>
 		<hitTime>700</hitTime>
 		<coolTime>300</coolTime>
@@ -1088,7 +1094,6 @@
 	<skill id="11620" toLevel="10" name="Superior Shield Mastery">
 		<!-- Updated to IO -->
 		<!-- Shield Defense Success Rate + $s1, Shield Defense + $s2. -->
-		<table name="#sDef"> 1.4 1.45 1.5 1.55 1.6 1.65 1.7 1.75 1.8 1.85</table>
 		<icon>icon.skill10003</icon>
 		<operateType>P</operateType>
 		<magicLvl>
@@ -1134,15 +1139,12 @@
 		<magicLvl>99</magicLvl>
 		<effects>
 			<effect name="TriggerSkillByDamage">
-				<!-- Guessed -->
-				<!-- Guessed -->
-				<!-- Blessing Barrier -->
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
-				<chance>2</chance>
+				<chance>2</chance> <!-- Guessed -->
 				<targetType>SELF</targetType>
-				<minDamage>1</minDamage>
-				<skillId>11622</skillId>
+				<minDamage>1</minDamage> <!-- Guessed -->
+				<skillId>11622</skillId> <!-- Blessing Barrier -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
