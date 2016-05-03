@@ -95,10 +95,5 @@ public final class DeathLink extends AbstractEffect
 				effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 			}
 		}
-		
-		if (skill.isSuicideAttack())
-		{
-			effected.doDie(effected);
-		}
 	}
 }

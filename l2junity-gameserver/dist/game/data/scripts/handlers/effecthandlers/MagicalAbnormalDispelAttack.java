@@ -98,10 +98,5 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 				effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 			}
 		}
-		
-		if (skill.isSuicideAttack())
-		{
-			effector.doDie(effector);
-		}
 	}
 }

@@ -154,10 +154,5 @@ public final class PhysicalAttackSaveHp extends AbstractEffect
 		damage = effected.notifyDamageReceived(damage, effector, skill, critical, false, false);
 		effected.reduceCurrentHp(damage, effector, skill);
 		effector.sendDamageMessage(effected, skill, (int) damage, critical, false);
-		
-		if (skill.isSuicideAttack())
-		{
-			effector.doDie(effector);
-		}
 	}
 }

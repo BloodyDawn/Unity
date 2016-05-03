@@ -109,10 +109,5 @@ public final class MagicalAttackRange extends AbstractEffect
 			effected.reduceCurrentHp(damage, effector, skill);
 			effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 		}
-		
-		if (skill.isSuicideAttack())
-		{
-			effector.doDie(effector);
-		}
 	}
 }
