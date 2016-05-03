@@ -11,8 +11,22 @@
 			<location x="208048" y="87324" z="-1024" />
 		</exit>
 	</locations>
+	<conditions>
+		<condition type="NoParty" showMessageAndHtml="true">
+			<param name="html" value="condParty.html" />
+		</condition>
+	</conditions>
+	<reenter apply="NONE">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
 	<doorlist>
-		<door id="2620000">
+		<door id="26200100">
 			<openStatus default="close" />
 		</door>
 	</doorlist>
