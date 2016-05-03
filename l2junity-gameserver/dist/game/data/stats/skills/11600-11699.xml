@@ -1141,9 +1141,9 @@
 			<effect name="TriggerSkillByDamage">
 				<minAttackerLevel>1</minAttackerLevel>
 				<maxAttackerLevel>107</maxAttackerLevel>
-				<chance>2</chance> <!-- Guessed -->
+				<chance>80</chance> <!-- Chance appears almost 100% -->
 				<targetType>SELF</targetType>
-				<minDamage>1</minDamage> <!-- Guessed -->
+				<minDamage>1</minDamage>
 				<skillId>11622</skillId> <!-- Blessing Barrier -->
 				<skillLevel>1</skillLevel>
 			</effect>
@@ -1157,7 +1157,7 @@
 		<icon>icon.skill11621</icon>
 		<operateType>A2</operateType>
 		<magicLvl>99</magicLvl>
-		<targetType>ENEMY</targetType>
+		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 		<reuseDelay>30000</reuseDelay>
 		<isMagic>4</isMagic>

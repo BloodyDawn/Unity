@@ -1321,9 +1321,9 @@
 	</skill>
 	<skill id="10338" toLevel="1" name="Punch Drunk">
 		<!-- Decreases target's resistance to Fist Weapons by 30%. -->
-		<!-- TODO abnormalType -->
+		<abnormalType>REAL_TARGET</abnormalType>
 		<abnormalLvl>1</abnormalLvl>
-		<abnormalTime>10</abnormalTime> <!-- Unconfirmed -->
+		<abnormalTime>20</abnormalTime>
 		<icon>icon.skill10335</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1348,7 +1348,6 @@
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<activateRate>60</activateRate> <!-- Guessed -->
-		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
 		<icon>icon.skill10333</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<lvlBonusRate>1</lvlBonusRate>
