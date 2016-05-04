@@ -117,5 +117,8 @@ public final class Lethal extends AbstractEffect
 			}
 			effector.sendPacket(SystemMessageId.HALF_KILL);
 		}
+		
+		// No matter if lethal succeeded or not, its reflected.
+		Formulas.calcDamageReflected(effector, effected, skill, false);
 	}
 }

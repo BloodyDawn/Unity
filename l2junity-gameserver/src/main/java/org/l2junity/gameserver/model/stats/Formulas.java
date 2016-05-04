@@ -1032,15 +1032,7 @@ public final class Formulas
 			counterdmg *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 			counterdmg *= calcAttributeBonus(attacker, target, skill);
 			
-			// TODO: It counters multiple times depending on how much attack effects skill has, but gotta be verified which effects are attack effects and do multiple effects of the same type stack!
-			if (skill.hasEffectType(L2EffectType.PHYSICAL_ATTACK, L2EffectType.PHYSICAL_ATTACK_HP_LINK))
-			{
-				attacker.reduceCurrentHp(counterdmg, target, skill);
-			}
-			if (skill.hasEffectType(L2EffectType.LETHAL_ATTACK))
-			{
-				attacker.reduceCurrentHp(counterdmg, target, skill);
-			}
+			attacker.reduceCurrentHp(counterdmg, target, skill);
 		}
 	}
 	
