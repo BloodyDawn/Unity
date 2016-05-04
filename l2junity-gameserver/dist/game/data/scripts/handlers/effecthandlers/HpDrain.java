@@ -97,8 +97,7 @@ public final class HpDrain extends AbstractEffect
 				effected.breakAttack();
 				effected.breakCast();
 			}
-			damage = effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-			effected.reduceCurrentHp(damage, effector, skill);
+			effected.reduceCurrentHp(damage, effector, skill, false, false, mcrit, false);
 			effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 		}
 	}

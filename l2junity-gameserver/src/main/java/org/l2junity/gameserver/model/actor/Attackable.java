@@ -209,26 +209,13 @@ public class Attackable extends Npc
 	}
 	
 	/**
-	 * Reduce the current HP of the L2Attackable.
-	 * @param damage The HP decrease value
-	 * @param attacker The L2Character who attacks
-	 */
-	@Override
-	public void reduceCurrentHp(double damage, Creature attacker, Skill skill)
-	{
-		reduceCurrentHp(damage, attacker, true, false, skill);
-	}
-	
-	/**
 	 * Reduce the current HP of the L2Attackable, update its _aggroList and launch the doDie Task if necessary.
-	 * @param damage The HP decrease value
 	 * @param attacker The L2Character who attacks
-	 * @param awake The awake state (If True : stop sleeping)
 	 * @param isDOT
 	 * @param skill
 	 */
 	@Override
-	public void reduceCurrentHp(double damage, Creature attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, Skill skill, boolean isDOT, boolean directlyToHp, boolean critical, boolean reflect)
 	{
 		if (isRaid() && !isMinion() && (attacker != null) && (attacker.getParty() != null) && attacker.getParty().isInCommandChannel() && attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
 		{
@@ -258,7 +245,7 @@ public class Attackable extends Npc
 		// Add damage and hate to the attacker AggroInfo of the L2Attackable _aggroList
 		if (attacker != null)
 		{
-			addDamage(attacker, (int) damage, skill);
+			addDamage(attacker, (int) value, skill);
 		}
 		
 		// If this L2Attackable is a L2MonsterInstance and it has spawned minions, call its minions to battle
@@ -278,7 +265,7 @@ public class Attackable extends Npc
 			}
 		}
 		// Reduce the current HP of the L2Attackable and launch the doDie Task if necessary
-		super.reduceCurrentHp(damage, attacker, awake, isDOT, skill);
+		super.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 	}
 	
 	public synchronized void setMustRewardExpSp(boolean value)

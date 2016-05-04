@@ -86,7 +86,6 @@ public final class Lethal extends AbstractEffect
 			// for Players CP and HP is set to 1.
 			if (effected.isPlayer())
 			{
-				effected.notifyDamageReceived(effected.getCurrentHp() - 1, effector, skill, true, false, false);
 				effected.setCurrentCp(1);
 				effected.setCurrentHp(1);
 				effected.sendPacket(SystemMessageId.LETHAL_STRIKE);
@@ -94,7 +93,6 @@ public final class Lethal extends AbstractEffect
 			// for Monsters HP is set to 1.
 			else if (effected.isMonster() || effected.isSummon())
 			{
-				effected.notifyDamageReceived(effected.getCurrentHp() - 1, effector, skill, true, false, false);
 				effected.setCurrentHp(1);
 			}
 			effector.sendPacket(SystemMessageId.HIT_WITH_LETHAL_STRIKE);
@@ -112,7 +110,6 @@ public final class Lethal extends AbstractEffect
 			// for Monsters HP is set to 50%.
 			else if (effected.isMonster() || effected.isSummon())
 			{
-				effected.notifyDamageReceived(effected.getCurrentHp() * 0.5, effector, skill, true, false, false);
 				effected.setCurrentHp(effected.getCurrentHp() * 0.5);
 			}
 			effector.sendPacket(SystemMessageId.HALF_KILL);

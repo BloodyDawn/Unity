@@ -82,8 +82,7 @@ public final class MagicalDamOverTime extends AbstractEffect
 			}
 		}
 		
-		damage = info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
-		info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
+		info.getEffected().reduceCurrentHp(damage, info.getEffector(), info.getSkill(), true, false, false, false);
 		return info.getSkill().isToggle();
 	}
 }

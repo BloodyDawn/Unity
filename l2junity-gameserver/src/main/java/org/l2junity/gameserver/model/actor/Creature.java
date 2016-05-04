@@ -3999,8 +3999,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			int reflectedDamage = 0;
 			
 			// reduce targets HP
-			damage = (int) target.notifyDamageReceived(damage, this, null, crit, false, false);
-			target.reduceCurrentHp(damage, this, null);
+			target.reduceCurrentHp(damage, this, null, false, false, crit, false);
 			
 			// Send message about damage/crit or miss
 			sendDamageMessage(target, null, damage, crit, miss);
@@ -4058,8 +4057,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				if (reflectedDamage > 0)
 				{
-					reflectedDamage = (int) notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
-					reduceCurrentHp(reflectedDamage, target, true, false, null);
+					reduceCurrentHp(reflectedDamage, target, null, false, false, crit, true);
 					target.sendDamageMessage(this, null, reflectedDamage, false, false);
 				}
 			}
@@ -4766,28 +4764,32 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void reduceCurrentHp(double value, Creature attacker, Skill skill)
 	{
-		reduceCurrentHp(value, attacker, true, false, skill);
+		reduceCurrentHp(value, attacker, skill, false, false, false, false);
 	}
 	
-	public void reduceCurrentHpByDOT(double i, Creature attacker, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, Skill skill, boolean isDOT, boolean directlyToHp, boolean critical, boolean reflect)
 	{
-		reduceCurrentHp(i, attacker, !skill.isToggle(), true, skill);
-	}
-	
-	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, Skill skill)
-	{
-		reduceCurrentHp(value, attacker, awake, isDOT, false, skill);
-	}
-	
-	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean directlyToHp, Skill skill)
-	{
+		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageDealt(attacker, this, value, skill, critical, isDOT, reflect), attacker);
+		final DamageReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureDamageReceived(attacker, this, value, skill, critical, isDOT, reflect), this);
+		if (term != null)
+		{
+			if (term.terminate())
+			{
+				return;
+			}
+			else if (term.override())
+			{
+				value = term.getDamage();
+			}
+		}
+		
 		if (Config.L2JMOD_CHAMPION_ENABLE && isChampion() && (Config.L2JMOD_CHAMPION_HP != 0))
 		{
-			getStatus().reduceHp(value / Config.L2JMOD_CHAMPION_HP, attacker, awake, isDOT, false);
+			getStatus().reduceHp(value / Config.L2JMOD_CHAMPION_HP, attacker, !skill.isToggle(), isDOT, false);
 		}
 		else
 		{
-			getStatus().reduceHp(value, attacker, awake, isDOT, false);
+			getStatus().reduceHp(value, attacker, !skill.isToggle(), isDOT, false);
 		}
 	}
 	
@@ -5134,35 +5136,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public int getAllyId()
 	{
 		return 0;
-	}
-	
-	/**
-	 * Notifies to listeners that current character received damage.
-	 * @param damage
-	 * @param attacker
-	 * @param skill
-	 * @param critical
-	 * @param damageOverTime
-	 * @param reflect
-	 * @return damage
-	 */
-	public double notifyDamageReceived(double damage, Creature attacker, Skill skill, boolean critical, boolean damageOverTime, boolean reflect)
-	{
-		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageDealt(attacker, this, damage, skill, critical, damageOverTime, reflect), attacker);
-		final DamageReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureDamageReceived(attacker, this, damage, skill, critical, damageOverTime, reflect), this);
-		if (term != null)
-		{
-			if (term.terminate())
-			{
-				return 0;
-			}
-			else if (term.override())
-			{
-				damage = term.getDamage();
-			}
-		}
-		
-		return damage;
 	}
 	
 	/**

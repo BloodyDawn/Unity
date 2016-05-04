@@ -50,9 +50,7 @@ public final class HpToOwner extends AbstractEffect
 			if (mcrit)
 			{
 				double damage = _power * 10; // Tests show that 10 times HP DOT is taken during magic critical.
-				
-				damage = info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), true, true, false);
-				info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
+				info.getEffected().reduceCurrentHp(damage, info.getEffector(), info.getSkill(), true, false, true, false);
 			}
 		}
 	}
@@ -73,8 +71,7 @@ public final class HpToOwner extends AbstractEffect
 		
 		double damage = _power * getTicksMultiplier();
 		
-		damage = info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), false, true, false);
-		info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
+		info.getEffected().reduceCurrentHp(damage, info.getEffector(), info.getSkill(), true, false, false, false);
 		if (_stealAmount > 0)
 		{
 			final double amount = (damage * _stealAmount) / 100;

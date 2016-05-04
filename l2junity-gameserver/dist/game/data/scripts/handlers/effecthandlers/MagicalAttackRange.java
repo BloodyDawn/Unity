@@ -100,13 +100,11 @@ public final class MagicalAttackRange extends AbstractEffect
 		// Shield Deflect Magic: Reflect all damage on caster.
 		if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
 		{
-			damage = effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);
-			effector.reduceCurrentHp(damage, effected, skill);
+			effector.reduceCurrentHp(damage, effected, skill, false, false, mcrit, true);
 		}
 		else
 		{
-			damage = effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
-			effected.reduceCurrentHp(damage, effector, skill);
+			effected.reduceCurrentHp(damage, effector, skill, false, false, mcrit, false);
 			effector.sendDamageMessage(effected, skill, (int) damage, mcrit, false);
 		}
 	}

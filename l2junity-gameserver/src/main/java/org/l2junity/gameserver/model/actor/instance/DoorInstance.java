@@ -538,7 +538,7 @@ public final class DoorInstance extends Creature
 	}
 	
 	@Override
-	public void reduceCurrentHp(double damage, Creature attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, Skill skill, boolean isDOT, boolean directlyToHp, boolean critical, boolean reflect)
 	{
 		if (isWall() && !isInInstance())
 		{
@@ -553,13 +553,7 @@ public final class DoorInstance extends Creature
 				return;
 			}
 		}
-		super.reduceCurrentHp(damage, attacker, awake, isDOT, skill);
-	}
-	
-	@Override
-	public void reduceCurrentHpByDOT(double i, Creature attacker, Skill skill)
-	{
-		// doors can't be damaged by DOTs
+		super.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 	}
 	
 	@Override

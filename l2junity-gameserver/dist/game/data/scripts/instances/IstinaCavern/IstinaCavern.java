@@ -321,7 +321,7 @@ public final class IstinaCavern extends AbstractInstance
 						istina.teleToLocation(DEFEAT_ISTINA_LOC);
 						istina.setInvisible(false);
 						istina.setUndying(false);
-						istina.reduceCurrentHp(istina.getVariables().getInt("REWARD_DAMAGE", 1000000), istina.getVariables().getObject("REWARD_PLAYER", PlayerInstance.class), false, false, null);
+						istina.reduceCurrentHp(istina.getVariables().getInt("REWARD_DAMAGE", 1000000), istina.getVariables().getObject("REWARD_PLAYER", PlayerInstance.class), null);
 					});
 					break;
 				}
