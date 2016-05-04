@@ -55,6 +55,9 @@ public final class KimerianCommon extends AbstractInstance
 	private static final int INVISIBLE_NPC = 33137;
 	private static final int KIMERIAN_HOLLOW = 25745;
 	private static final int KIMERIAN_HOLLOW_2 = 25746;
+	private static final int FAIRY_WARRIOR = 25735;
+	private static final int SATYR_WITCH = 25740;
+	private static final int FAIRY_ROGUE = 25736;
 	// Skills
 	private static final SkillHolder INVUL_SKILL = new SkillHolder(14190, 1);
 	// Items
@@ -388,16 +391,25 @@ public final class KimerianCommon extends AbstractInstance
 								case 1:
 								{
 									spawnHollow(npc, creature.getActingPlayer(), false);
+									addSpawn(FAIRY_WARRIOR, npc.getX() + 80, npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+									addSpawn(FAIRY_WARRIOR, npc.getX(), npc.getY() + 80, npc.getZ(), 0, false, 0, false, instance.getId());
+									addSpawn(SATYR_WITCH, npc.getX() + 50, npc.getY() + 50, npc.getZ(), 0, false, 0, false, instance.getId());
 									break;
 								}
 								case 2:
 								{
 									spawnHollow(npc, creature.getActingPlayer(), false);
+									addSpawn(SATYR_WITCH, npc.getX() + 80, npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+									addSpawn(SATYR_WITCH, npc.getX(), npc.getY() + 80, npc.getZ(), 0, false, 0, false, instance.getId());
+									addSpawn(FAIRY_ROGUE, npc.getX() + 50, npc.getY() + 50, npc.getZ(), 0, false, 0, false, instance.getId());
 									break;
 								}
 								case 3:
 								{
 									spawnHollow(npc, creature.getActingPlayer(), false);
+									addSpawn(FAIRY_WARRIOR, npc.getX() + 80, npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+									addSpawn(SATYR_WITCH, npc.getX(), npc.getY() + 80, npc.getZ(), 0, false, 0, false, instance.getId());
+									addSpawn(FAIRY_ROGUE, npc.getX() + 50, npc.getY() + 50, npc.getZ(), 0, false, 0, false, instance.getId());
 									break;
 								}
 							}
