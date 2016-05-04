@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -78,6 +79,7 @@ public final class KimerianCommon extends AbstractInstance
 		addAttackId(KIMERIAN);
 		addKillId(KIMERIAN_GHOST, KIMERIAN);
 		setCreatureSeeId(this::onCreatureSee, FAIRY_REBEL, NEOMI_KASHERON, INVISIBLE_NPC, KIMERIAN);
+		setCreatureKillId(this::onCreatureKill, FAIRY_REBEL, NEOMI_KASHERON);
 		setInstanceDestroyId(this::onInstanceDestroy, TEMPLATE_ID);
 	}
 	
@@ -229,7 +231,6 @@ public final class KimerianCommon extends AbstractInstance
 					
 					getTimers().addTimer("KIMERIAN_INVUL_START", 6000, n ->
 					{
-						
 						addSkillCastDesire(npc, npc, INVUL_SKILL, 23);
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.FOOLISH_INSIGNIFICANT_CREATURES_HOW_DARE_YOU_CHALLENGE_ME);
 					});
@@ -284,6 +285,16 @@ public final class KimerianCommon extends AbstractInstance
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
+	}
+	
+	public void onCreatureKill(OnCreatureDeath event)
+	{
+		final Npc npc = (Npc) event.getTarget();
+		final Instance instance = npc.getInstanceWorld();
+		if (isKimerianInstance(instance))
+		{
+			getTimers().cancelTimersOf(npc);
+		}
 	}
 	
 	@Override
