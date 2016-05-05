@@ -246,11 +246,31 @@ public final class Formulas
 				return Math.min(finalRate, 200) > Rnd.get(1000);
 			}
 			
-			// Physical Skill Critical Rate
-			double finalRate = rate * 10 * activeChar.getStat().getSkillCriticalRateBonus();
+			// Physical skill critical rate
+			final double statBonus;
+			final double rateBonus;
+			
+			// There is a chance that activeChar has altered base stat for skill critical.
+			byte skillCritRateStat = (byte) activeChar.getStat().getValue(Stats.STAT_BONUS_SKILL_CRITICAL, -1);
+			if ((skillCritRateStat >= 0) && (skillCritRateStat < BaseStats.values().length))
+			{
+				// Best tested
+				statBonus = BaseStats.STR.getValue(activeChar.getDEX()) * 2;
+				rateBonus = (activeChar.getStat().getValue(Stats.CRITICAL_RATE_SKILL) * 2) - 1; // Tests made by retail GMs show that 3x10% increase yields to 16.2 -> 26.1
+			}
+			else
+			{
+				// Default base stat used for skill critical formula is STR.
+				statBonus = BaseStats.STR.calcBonus(activeChar);
+				rateBonus = activeChar.getStat().getValue(Stats.CRITICAL_RATE_SKILL);
+			}
+			
+			double finalRate = rate * statBonus * rateBonus * 10;
 			return finalRate > Rnd.get(1000);
 		}
 		
+		// Autoattack critical rate.
+		// It is capped to 500, but unbound by positional critical rate and level diff bonus.
 		rate *= activeChar.getStat().getPositionTypeValue(Stats.CRITICAL_RATE, Position.getPosition(activeChar, target));
 		
 		// In retail, it appears that when you are higher level attacking lower level mobs, your critical rate is much higher.

@@ -45,7 +45,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillConditionScope;
-import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.StatsHolder;
@@ -139,20 +138,6 @@ public class CharStat
 	public int getCriticalHit()
 	{
 		return (int) getValue(Stats.CRITICAL_RATE);
-	}
-	
-	public double getSkillCriticalRateBonus()
-	{
-		// There is a chance that activeChar has altered base stat for skill critical.
-		double init = -1;
-		byte skillCritRateStat = (byte) _activeChar.getStat().getValue(Stats.STAT_BONUS_SKILL_CRITICAL, init);
-		if ((skillCritRateStat >= 0) && (skillCritRateStat < BaseStats.values().length))
-		{
-			return BaseStats.values()[skillCritRateStat].calcBonus(_activeChar);
-		}
-		
-		// Default base stat used for skill critical formula is STR.
-		return BaseStats.STR.calcBonus(_activeChar);
 	}
 	
 	/**

@@ -88,6 +88,11 @@ public enum BaseStats
 		_bonus[index] = value;
 	}
 	
+	public double getValue(int index)
+	{
+		return _bonus[index];
+	}
+	
 	public static BaseStats valueOf(Stats stat)
 	{
 		for (BaseStats baseStat : values())
