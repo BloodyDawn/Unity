@@ -143,7 +143,6 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			final double wpnMod = effector.getAttackType().isRanged() ? 70 : (70 * 1.10113);
 			final double weaponBonus = _weaponBonus.getOrDefault(effector.getAttackType(), 1.0);
 			final double rangedBonus = effector.getAttackType().isRanged() ? (attack + _power) : 0;
-			final double skillPowerMod = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER);
 			final double critMod = critical ? Formulas.calcCritDamage(effector, effected, skill) : 1;
 			final double ssmod = (skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS)) ? effector.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
 			
@@ -151,7 +150,8 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 			final double baseMod = (wpnMod * ((attack * effector.getLevelMod()) + _power + rangedBonus)) / defence;
-			damage = baseMod * skillPowerMod * ssmod * critMod * weaponBonus * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
+			final double skillDamage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, baseMod);
+			damage = skillDamage * ssmod * critMod * weaponBonus * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
 		}
 		
 		// Check if damage should be reflected

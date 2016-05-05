@@ -4785,11 +4785,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		if (Config.L2JMOD_CHAMPION_ENABLE && isChampion() && (Config.L2JMOD_CHAMPION_HP != 0))
 		{
-			getStatus().reduceHp(value / Config.L2JMOD_CHAMPION_HP, attacker, !skill.isToggle(), isDOT, false);
+			getStatus().reduceHp(value / Config.L2JMOD_CHAMPION_HP, attacker, (skill == null) || !skill.isToggle(), isDOT, false);
 		}
 		else
 		{
-			getStatus().reduceHp(value, attacker, !skill.isToggle(), isDOT, false);
+			getStatus().reduceHp(value, attacker, (skill == null) || !skill.isToggle(), isDOT, false);
 		}
 	}
 	
