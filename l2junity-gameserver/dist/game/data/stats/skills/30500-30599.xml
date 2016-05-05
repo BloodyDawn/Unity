@@ -1344,11 +1344,6 @@
 	<skill id="30520" toLevel="3" name="Steel Mind">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., HP stays at 1. Speed + 50, P. Atk. + 15%, P. Critical Damage + 10%, Skill Critical Damage + 10%, and Knock Back / Knock Down / Pull / Aerial Yoke / Aggression Resistance + 90. Normal attacks have normal damage x 5. When duration ends, 30% of HP is restored. Requires a fist weapon. -->
-		<table name="#runSpd"> 50 70 70 </table>
-		<table name="#pAtk"> 1.15 1.30 1.30 </table>
-		<table name="#cAtk"> 1.10 1.15 1.15 </table>
-		<table name="#cAtkSkill"> 1.10 1.10 1.15 </table>
-		<table name="#healPercent"> 30 30 40 </table>
 		<icon>icon.skill30520</icon>
 		<abnormalTime>30</abnormalTime>
 		<abnormalVisualEffect>PMENTAL_TRAIL</abnormalVisualEffect>
@@ -1390,7 +1385,7 @@
 			<effect name="TriggerSkillByAttack">
 				<!-- Damage Up -->
 				<chance>100</chance>
-				<targetType>ENEMY</targetType>
+				<targetType>TARGET</targetType>
 				<affectScope>SINGLE</affectScope>
 				<minDamage>100</minDamage>
 				<skillId>30521</skillId>
@@ -1442,7 +1437,7 @@
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
-		<reuseDelay>1000</reuseDelay>
+		<!-- reuseDelay>1000</reuseDelay IN RETAIL IS IGNORED -->
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -1547,7 +1542,7 @@
 				<skillId>30521</skillId>
 				<skillLevel>1</skillLevel>
 				<chance>13</chance>
-				<targetType>ENEMY</targetType>
+				<targetType>TARGET</targetType>
 				<affectScope>SINGLE</affectScope>
 			</effect>
 		</effects>

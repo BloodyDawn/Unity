@@ -74,7 +74,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	
 	public MagicSkillUse(Creature cha, WorldObject target, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1, SkillCastingType.NORMAL);
+		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, -1, -1, SkillCastingType.NORMAL);
 	}
 	
 	public MagicSkillUse(Creature cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
