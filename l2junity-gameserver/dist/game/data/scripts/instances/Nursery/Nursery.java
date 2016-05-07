@@ -19,6 +19,7 @@
 package instances.Nursery;
 
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -27,6 +28,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import org.l2junity.gameserver.network.client.send.Earthquake;
@@ -44,6 +46,7 @@ public final class Nursery extends AbstractInstance
 {
 	// NPCs
 	private static final int TIE = 33152;
+	private static final int MAGUEN = 19037;
 	private static final int[] MONSTERS =
 	{
 		23033, // Failed Creation
@@ -59,6 +62,7 @@ public final class Nursery extends AbstractInstance
 	private static final SkillHolder ENERGY_SKILL_1 = new SkillHolder(14228, 1);
 	private static final SkillHolder ENERGY_SKILL_2 = new SkillHolder(14229, 1);
 	private static final SkillHolder ENERGY_SKILL_3 = new SkillHolder(14230, 1);
+	private static final SkillHolder MAGUEN_STEAL_SKILL = new SkillHolder(14235, 1);
 	// Zones
 	private static final ScriptZone ENTER_ZONE_1 = ZoneManager.getInstance().getZoneById(23601, ScriptZone.class);
 	private static final ScriptZone ENTER_ZONE_2 = ZoneManager.getInstance().getZoneById(23602, ScriptZone.class);
@@ -70,7 +74,9 @@ public final class Nursery extends AbstractInstance
 		addStartNpc(TIE);
 		addFirstTalkId(TIE);
 		addTalkId(TIE);
+		addAttackId(MAGUEN);
 		addKillId(MONSTERS);
+		addSpellFinishedId(MAGUEN);
 		addEnterZoneId(ENTER_ZONE_1.getId(), ENTER_ZONE_2.getId());
 	}
 	
@@ -108,6 +114,21 @@ public final class Nursery extends AbstractInstance
 							getTimers().addTimer("CLOCK_TIMER", 1000, npc, null);
 						}
 					}
+					break;
+				}
+				case "MAGUEN_WAIT_TIMER":
+				{
+					npc.getAI().stopFollow();
+					addSkillCastDesire(npc, player, MAGUEN_STEAL_SKILL, 23);
+					break;
+				}
+				case "MAGUEN_HIDE_TIMER":
+				{
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.OW_SINCE_I_M_DONE_I_M_GONE_OW);
+					npc.setTargetable(false);
+					npc.setState(5);
+					npc.doDie(null);
+					npcVars.set("MAGUEN_STATUS", 2);
 					break;
 				}
 			}
@@ -250,6 +271,50 @@ public final class Nursery extends AbstractInstance
 	}
 	
 	@Override
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isNurseryInstance(instance))
+		{
+			final StatsSet npcVars = npc.getVariables();
+			final int maguenStatus = npcVars.getInt("MAGUEN_STATUS", 0);
+			
+			switch (maguenStatus)
+			{
+				case 0:
+				{
+					npc.setTargetable(false);
+					npc.doDie(null);
+					break;
+				}
+				case 1:
+				{
+					final int returnPoint = (npcVars.getInt("MAGUEN_STOLEN_COUNT", 0) / 2);
+					if (returnPoint > 0)
+					{
+						final Npc gameManager = instance.getNpc(TIE);
+						if (gameManager != null)
+						{
+							gameManager.getVariables().increaseInt("GAME_POINTS", returnPoint);
+						}
+						showOnScreenMsg(instance, NpcStringId.MAGUEN_GETS_SURPRISED_AND_GIVES_S1_PIECES_OF_BIO_ENERGY_RESIDUE, ExShowScreenMessage.MIDDLE_CENTER, 3000, String.valueOf(returnPoint));
+						npc.setTargetable(false);
+						npc.doDie(null);
+					}
+					break;
+				}
+				case 2:
+				{
+					npc.doDie(null);
+					break;
+				}
+			}
+			
+		}
+		return super.onAttack(npc, attacker, damage, isSummon);
+	}
+	
+	@Override
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final Instance instance = npc.getInstanceWorld();
@@ -273,7 +338,15 @@ public final class Nursery extends AbstractInstance
 				showOnScreenMsg(instance, NpcStringId.RECEIVED_REGENERATION_ENERGY, ExShowScreenMessage.MIDDLE_CENTER, 2000);
 			}
 			
-			// TODO: maguen chance
+			if (getRandom(100) < 4)
+			{
+				final Npc maguen = addSpawn(MAGUEN, npc, false, 0, false, instance.getId());
+				maguen.setIsRunning(true);
+				maguen.getAI().startFollow(killer);
+				showOnScreenMsg(instance, NpcStringId.MAGUEN_APPEARANCE, ExShowScreenMessage.MIDDLE_CENTER, 4000);
+				getTimers().addTimer("MAGUEN_WAIT_TIMER", 4000, maguen, killer);
+				getTimers().addTimer("MAGUEN_HIDE_TIMER", 60000, maguen, null);
+			}
 			
 			if ((getRandom(10) + 1) < 10)
 			{
@@ -312,6 +385,69 @@ public final class Nursery extends AbstractInstance
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
+	}
+	
+	@Override
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isNurseryInstance(instance))
+		{
+			final Npc gameManager = instance.getNpc(TIE);
+			if (gameManager != null)
+			{
+				final StatsSet managerVars = gameManager.getVariables();
+				final StatsSet npcVars = npc.getVariables();
+				final int gamePoints = managerVars.getInt("GAME_POINTS", 0);
+				
+				if (gamePoints > 0)
+				{
+					int decreasePoints = 0;
+					if (gamePoints > 100)
+					{
+						decreasePoints = getRandom(80) + 21;
+					}
+					else
+					{
+						decreasePoints = getRandom(gamePoints) + 1;
+					}
+					npc.setTargetable(true);
+					managerVars.increaseInt("GAME_POINTS", decreasePoints * -1);
+					showOnScreenMsg(instance, NpcStringId.MAGUEN_STOLE_S1_PIECES_OF_BIO_ENERGY_RESIDUE, ExShowScreenMessage.MIDDLE_CENTER, 4000, String.valueOf(decreasePoints));
+					npcVars.set("MAGUEN_STOLEN_COUNT", decreasePoints);
+					npcVars.set("MAGUEN_STATUS", 1);
+					
+					if (decreasePoints > 50)
+					{
+						if (getRandom(100) < 20)
+						{
+							npcVars.set("MAGUEN_STATUS", 2);
+							npc.setTargetable(false);
+							npc.doDie(null);
+						}
+						else
+						{
+							npc.setState(4);
+							getTimers().cancelTimer("MAGUEN_HIDE_TIMER", npc, null);
+							getTimers().addTimer("MAGUEN_HIDE_TIMER", getRandom(3000), npc, null);
+						}
+					}
+					else
+					{
+						npc.setState(4);
+						getTimers().cancelTimer("MAGUEN_HIDE_TIMER", npc, null);
+						getTimers().addTimer("MAGUEN_HIDE_TIMER", getRandom(3000), npc, null);
+					}
+				}
+				else
+				{
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.PFFT_THIS_ONE_IS_A_MISS_I_WASTED_TOO_MUCH_STRENGTH_WHOA);
+					npc.setTargetable(false);
+					npc.doDie(null);
+				}
+			}
+		}
+		return super.onSpellFinished(npc, player, skill);
 	}
 	
 	@Override
