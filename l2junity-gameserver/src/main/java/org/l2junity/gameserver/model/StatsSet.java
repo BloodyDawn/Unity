@@ -195,6 +195,20 @@ public class StatsSet implements IParserAdvUtils
 		}
 	}
 	
+	public short increaseByte(String key, byte increaseWith)
+	{
+		byte newValue = (byte) (getByte(key) + increaseWith);
+		set(key, newValue);
+		return newValue;
+	}
+	
+	public short increaseByte(String key, byte defaultValue, byte increaseWith)
+	{
+		byte newValue = (byte) (getByte(key, defaultValue) + increaseWith);
+		set(key, newValue);
+		return newValue;
+	}
+	
 	public byte[] getByteArray(String key, String splitOn)
 	{
 		Objects.requireNonNull(key);
@@ -286,6 +300,20 @@ public class StatsSet implements IParserAdvUtils
 		}
 	}
 	
+	public short increaseShort(String key, short increaseWith)
+	{
+		short newValue = (short) (getShort(key) + increaseWith);
+		set(key, newValue);
+		return newValue;
+	}
+	
+	public short increaseShort(String key, short defaultValue, short increaseWith)
+	{
+		short newValue = (short) (getShort(key, defaultValue) + increaseWith);
+		set(key, newValue);
+		return newValue;
+	}
+	
 	@Override
 	public int getInt(String key)
 	{
@@ -332,6 +360,20 @@ public class StatsSet implements IParserAdvUtils
 		{
 			throw new IllegalArgumentException("Integer value required, but found: " + val);
 		}
+	}
+	
+	public int increaseInt(String key, int increaseWith)
+	{
+		int newValue = getInt(key) + increaseWith;
+		set(key, newValue);
+		return newValue;
+	}
+	
+	public int increaseInt(String key, int defaultValue, int increaseWith)
+	{
+		int newValue = getInt(key, defaultValue) + increaseWith;
+		set(key, newValue);
+		return newValue;
 	}
 	
 	public int[] getIntArray(String key, String splitOn)
@@ -425,6 +467,20 @@ public class StatsSet implements IParserAdvUtils
 		}
 	}
 	
+	public long increaseLong(String key, long increaseWith)
+	{
+		long newValue = getLong(key) + increaseWith;
+		set(key, newValue);
+		return newValue;
+	}
+	
+	public long increaseLong(String key, long defaultValue, long increaseWith)
+	{
+		long newValue = getLong(key, defaultValue) + increaseWith;
+		set(key, newValue);
+		return newValue;
+	}
+	
 	@Override
 	public float getFloat(String key)
 	{
@@ -471,6 +527,20 @@ public class StatsSet implements IParserAdvUtils
 		}
 	}
 	
+	public float increaseFloat(String key, float increaseWith)
+	{
+		float newValue = getFloat(key) + increaseWith;
+		set(key, newValue);
+		return newValue;
+	}
+	
+	public float increaseFloat(String key, float defaultValue, float increaseWith)
+	{
+		float newValue = getFloat(key, defaultValue) + increaseWith;
+		set(key, newValue);
+		return newValue;
+	}
+	
 	@Override
 	public double getDouble(String key)
 	{
@@ -515,6 +585,20 @@ public class StatsSet implements IParserAdvUtils
 		{
 			throw new IllegalArgumentException("Double value required, but found: " + val);
 		}
+	}
+	
+	public double increaseDouble(String key, double increaseWith)
+	{
+		double newValue = getDouble(key) + increaseWith;
+		set(key, newValue);
+		return newValue;
+	}
+	
+	public double increaseDouble(String key, double defaultValue, double increaseWith)
+	{
+		double newValue = getDouble(key, defaultValue) + increaseWith;
+		set(key, newValue);
+		return newValue;
 	}
 	
 	@Override
