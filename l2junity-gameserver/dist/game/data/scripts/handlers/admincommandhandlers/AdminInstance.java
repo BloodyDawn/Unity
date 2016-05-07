@@ -172,8 +172,12 @@ public final class AdminInstance implements IAdminCommandHandler
 					final Location loc = instance.getEnterLocation();
 					if (loc != null)
 					{
-						instance.addAllowed(activeChar);
+						if (!instance.isAllowed(activeChar))
+						{
+							instance.addAllowed(activeChar);
+						}
 						activeChar.teleToLocation(loc, false);
+						activeChar.setInstance(instance);
 						sendTemplateDetails(activeChar, instance.getTemplateId());
 					}
 				}
