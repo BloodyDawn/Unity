@@ -8,6 +8,15 @@
 		</enter>
 		<exit type="ORIGIN" />
 	</locations>
+	<conditions>
+		<condition type="GroupMax">
+			<param name="limit" value="1" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="85" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
 	<reenter apply="NONE">
 		<reset time="720"/> <!-- 12 hours -->
 	</reenter>

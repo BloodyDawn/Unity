@@ -19,12 +19,17 @@
 package instances.Nursery;
 
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.zone.ZoneType;
+import org.l2junity.gameserver.model.zone.type.ScriptZone;
+import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExSendUIEvent;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -51,7 +56,12 @@ public final class Nursery extends AbstractInstance
 	private static final int SCORE_ITEM = 17610; // Tissue Energy Residue
 	private static final int REWARD_ITEM = 17602; // Tissue Energy Crystal
 	// Skill
-	private static final SkillHolder ENERGY_SKILL = new SkillHolder(14228, 1);
+	private static final SkillHolder ENERGY_SKILL_1 = new SkillHolder(14228, 1);
+	private static final SkillHolder ENERGY_SKILL_2 = new SkillHolder(14229, 1);
+	private static final SkillHolder ENERGY_SKILL_3 = new SkillHolder(14230, 1);
+	// Zones
+	private static final ScriptZone ENTER_ZONE_1 = ZoneManager.getInstance().getZoneById(23601, ScriptZone.class);
+	private static final ScriptZone ENTER_ZONE_2 = ZoneManager.getInstance().getZoneById(23602, ScriptZone.class);
 	// Misc
 	private static final int TEMPLATE_ID = 171;
 	
@@ -61,6 +71,7 @@ public final class Nursery extends AbstractInstance
 		addFirstTalkId(TIE);
 		addTalkId(TIE);
 		addKillId(MONSTERS);
+		addEnterZoneId(ENTER_ZONE_1.getId(), ENTER_ZONE_2.getId());
 	}
 	
 	@Override
@@ -127,7 +138,7 @@ public final class Nursery extends AbstractInstance
 					break;
 			}
 			
-			final BuffInfo energyInfo = player.getEffectList().getBuffInfoByAbnormalType(ENERGY_SKILL.getSkill().getAbnormalType());
+			final BuffInfo energyInfo = player.getEffectList().getBuffInfoByAbnormalType(ENERGY_SKILL_1.getSkill().getAbnormalType());
 			final int energyLv = energyInfo == null ? 0 : energyInfo.getSkill().getAbnormalLvl();
 			
 			if ((energyLv > 0) && (gameStage == 1) && (energyInfo != null))
@@ -148,7 +159,10 @@ public final class Nursery extends AbstractInstance
 				
 				npcVars.set("GAME_POINTS", npcVars.getInt("GAME_POINTS", 0) + addPoints);
 				showOnScreenMsg(instance, NpcStringId.SOLDIER_TIE_ABSORBED_REPRODUCTIVE_ENERGY_FROM_YOUR_BODY_AND_CONVERTED_S1_PIECES_OF_BIO_ENERGY, ExShowScreenMessage.TOP_CENTER, 3000, String.valueOf(addPoints));
-				energyInfo.stopAllEffects(true);
+				
+				player.getEffectList().stopSkillEffects(true, ENERGY_SKILL_1.getSkill());
+				player.getEffectList().stopSkillEffects(true, ENERGY_SKILL_2.getSkill());
+				player.getEffectList().stopSkillEffects(true, ENERGY_SKILL_3.getSkill());
 			}
 		}
 		return htmltext;
@@ -157,85 +171,78 @@ public final class Nursery extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		if (event.equals("enterInstance"))
+		final Instance instance = npc.getInstanceWorld();
+		if (isNurseryInstance(instance))
 		{
-			enterInstance(player, npc, TEMPLATE_ID);
-		}
-		else
-		{
-			final Instance instance = npc.getInstanceWorld();
-			if (isNurseryInstance(instance))
+			final StatsSet npcVars = npc.getVariables();
+			final int gameStage = npcVars.getInt("GAME_STAGE", 0);
+			
+			switch (event)
 			{
-				final StatsSet npcVars = npc.getVariables();
-				final int gameStage = npcVars.getInt("GAME_STAGE", 0);
-				
-				switch (event)
+				case "startGame":
 				{
-					case "startGame":
+					if (gameStage == 0)
 					{
-						if (gameStage == 0)
-						{
-							instance.setReenterTime();
-							instance.spawnGroup("GAME_MONSTERS");
-							getTimers().addTimer("CLOCK_TIMER", 1000, npc, null);
-							npcVars.set("GAME_STAGE", 1);
-						}
-						break;
+						instance.setReenterTime();
+						instance.spawnGroup("GAME_MONSTERS");
+						getTimers().addTimer("CLOCK_TIMER", 1000, npc, null);
+						npcVars.set("GAME_STAGE", 1);
 					}
-					case "calculatePoints":
+					break;
+				}
+				case "calculatePoints":
+				{
+					if (gameStage == 2)
 					{
-						if (gameStage == 2)
+						final int gamePoints = npcVars.getInt("GAME_POINTS", 0);
+						int itemCount = 0;
+						if ((gamePoints != 0) && (gamePoints <= 800))
 						{
-							final int gamePoints = npcVars.getInt("GAME_POINTS", 0);
-							int itemCount = 0;
-							if ((gamePoints != 0) && (gamePoints <= 800))
-							{
-								itemCount = 10;
-							}
-							else if ((gamePoints > 800) && (gamePoints <= 1600))
-							{
-								itemCount = 60;
-							}
-							else if ((gamePoints > 1600) && (gamePoints <= 2000))
-							{
-								itemCount = 160;
-							}
-							else if ((gamePoints > 2000) && (gamePoints <= 2400))
-							{
-								itemCount = 200;
-							}
-							else if ((gamePoints > 2400) && (gamePoints <= 2800))
-							{
-								itemCount = 240;
-							}
-							else if ((gamePoints > 2800) && (gamePoints <= 3200))
-							{
-								itemCount = 280;
-							}
-							else if ((gamePoints > 3200) && (gamePoints <= 3600))
-							{
-								itemCount = 320;
-							}
-							else if ((gamePoints > 3600) && (gamePoints <= 4000))
-							{
-								itemCount = 360;
-							}
-							else if (gamePoints > 4000)
-							{
-								itemCount = 400;
-							}
-							
-							if (gamePoints != 0)
-							{
-								giveItems(player, REWARD_ITEM, itemCount);
-								addExpAndSp(player, 40000 * gamePoints, 0);
-							}
-							
-							npcVars.set("GAME_STAGE", 3);
-							instance.finishInstance(0);
+							itemCount = 10;
 						}
-						break;
+						else if ((gamePoints > 800) && (gamePoints <= 1600))
+						{
+							itemCount = 60;
+						}
+						else if ((gamePoints > 1600) && (gamePoints <= 2000))
+						{
+							itemCount = 160;
+						}
+						else if ((gamePoints > 2000) && (gamePoints <= 2400))
+						{
+							itemCount = 200;
+						}
+						else if ((gamePoints > 2400) && (gamePoints <= 2800))
+						{
+							itemCount = 240;
+						}
+						else if ((gamePoints > 2800) && (gamePoints <= 3200))
+						{
+							itemCount = 280;
+						}
+						else if ((gamePoints > 3200) && (gamePoints <= 3600))
+						{
+							itemCount = 320;
+						}
+						else if ((gamePoints > 3600) && (gamePoints <= 4000))
+						{
+							itemCount = 360;
+						}
+						else if (gamePoints > 4000)
+						{
+							itemCount = 400;
+						}
+						
+						if (gamePoints != 0)
+						{
+							giveItems(player, REWARD_ITEM, itemCount);
+							addExpAndSp(player, 40000 * gamePoints, 0);
+						}
+						
+						npcVars.set("GAME_STAGE", 3);
+						instance.finishInstance(0);
 					}
+					break;
 				}
 			}
 		}
@@ -248,9 +255,25 @@ public final class Nursery extends AbstractInstance
 		final Instance instance = npc.getInstanceWorld();
 		if (isNurseryInstance(instance))
 		{
-			// TODO: maguen chance
+			if (getRandom(100) < 6)
+			{
+				switch (getRandom(3))
+				{
+					case 0:
+						ENERGY_SKILL_1.getSkill().applyEffects(npc, killer);
+						break;
+					case 1:
+						ENERGY_SKILL_2.getSkill().applyEffects(npc, killer);
+						break;
+					case 2:
+						ENERGY_SKILL_3.getSkill().applyEffects(npc, killer);
+						break;
+				}
+				instance.broadcastPacket(new Earthquake(npc, 50, 3));
+				showOnScreenMsg(instance, NpcStringId.RECEIVED_REGENERATION_ENERGY, ExShowScreenMessage.MIDDLE_CENTER, 2000);
+			}
 			
-			// TODO: energy chance
+			// TODO: maguen chance
 			
 			if ((getRandom(10) + 1) < 10)
 			{
@@ -289,6 +312,16 @@ public final class Nursery extends AbstractInstance
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
+	}
+	
+	@Override
+	public String onEnterZone(Creature character, ZoneType zone)
+	{
+		if (character.isPlayer())
+		{
+			enterInstance(character.getActingPlayer(), null, TEMPLATE_ID);
+		}
+		return super.onEnterZone(character, zone);
 	}
 	
 	private boolean isNurseryInstance(Instance instance)
