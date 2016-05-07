@@ -196,14 +196,14 @@ public class PlayableStat extends CharStat
 			return false;
 		}
 		long currentSp = getSp();
-		if (currentSp == Long.MAX_VALUE)
+		if (currentSp >= Config.MAX_SP)
 		{
 			return false;
 		}
 		
-		if (currentSp > (Long.MAX_VALUE - value))
+		if (currentSp > (Config.MAX_SP - value))
 		{
-			value = Long.MAX_VALUE - currentSp;
+			value = Config.MAX_SP - currentSp;
 		}
 		
 		setSp(currentSp + value);
