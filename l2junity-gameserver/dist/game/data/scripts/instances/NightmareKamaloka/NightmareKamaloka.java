@@ -21,6 +21,7 @@ package instances.NightmareKamaloka;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -36,7 +37,10 @@ public final class NightmareKamaloka extends AbstractInstance
 {
 	// NPCs
 	private static final int KURTIZ = 30870;
+	private static final int DARK_RIDER = 26102;
 	private static final int INVISIBLE_NPC = 18919;
+	// Skills
+	private static final int DARK_RIDER_UD = 16574;
 	//@formatter:off
 	private static final Map<Integer, Integer> BOSS_MAP = new HashMap<>();
 	static
@@ -45,7 +49,7 @@ public final class NightmareKamaloka extends AbstractInstance
 		BOSS_MAP.put(26094, 18170004); // Sola
 		BOSS_MAP.put(26096, 18170006); // Ariarc
 		BOSS_MAP.put(26099, 18170008); // Sirra
-		BOSS_MAP.put(26102, -1); // Dark Rider
+		BOSS_MAP.put(DARK_RIDER, -1); // Dark Rider
 	}
 	//@formatter:on
 	// Misc
@@ -56,6 +60,7 @@ public final class NightmareKamaloka extends AbstractInstance
 		addStartNpc(KURTIZ);
 		addTalkId(KURTIZ);
 		addSpawnId(INVISIBLE_NPC);
+		addAttackId(DARK_RIDER_UD);
 		addKillId(BOSS_MAP.keySet());
 	}
 	
@@ -117,6 +122,39 @@ public final class NightmareKamaloka extends AbstractInstance
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
+	}
+	
+	@Override
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isNightmareKamalokaInstance(instance))
+		{
+			if (npc.getId() == DARK_RIDER_UD)
+			{
+				if ((npc.getCurrentHpPercent() >= 95) && npc.isScriptValue(0))
+				{
+					npc.doCast(SkillData.getInstance().getSkill(DARK_RIDER_UD, 1));
+					npc.setScriptValue(1);
+				}
+				else if ((npc.getCurrentHpPercent() >= 75) && npc.isScriptValue(1))
+				{
+					npc.doCast(SkillData.getInstance().getSkill(DARK_RIDER_UD, 2));
+					npc.setScriptValue(2);
+				}
+				else if ((npc.getCurrentHpPercent() >= 50) && npc.isScriptValue(2))
+				{
+					npc.doCast(SkillData.getInstance().getSkill(DARK_RIDER_UD, 3));
+					npc.setScriptValue(3);
+				}
+				else if ((npc.getCurrentHpPercent() >= 25) && npc.isScriptValue(3))
+				{
+					npc.doCast(SkillData.getInstance().getSkill(DARK_RIDER_UD, 4));
+					npc.setScriptValue(4);
+				}
+			}
+		}
+		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
 	private boolean isNightmareKamalokaInstance(Instance instance)
