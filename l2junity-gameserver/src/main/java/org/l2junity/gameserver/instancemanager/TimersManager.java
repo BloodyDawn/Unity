@@ -31,9 +31,9 @@ import org.l2junity.gameserver.model.events.timers.TimerHolder;
  */
 public class TimersManager
 {
-	private final Map<Integer, Set<TimerHolder<String>>> _timers = new ConcurrentHashMap<>();
+	private final Map<Integer, Set<TimerHolder<?>>> _timers = new ConcurrentHashMap<>();
 	
-	public void registerTimer(TimerHolder<String> timer)
+	public void registerTimer(TimerHolder<?> timer)
 	{
 		final Npc npc = timer.getNpc();
 		if (npc != null)
@@ -50,7 +50,7 @@ public class TimersManager
 	
 	public void cancelTimers(int objectId)
 	{
-		final Set<TimerHolder<String>> timers = _timers.remove(objectId);
+		final Set<TimerHolder<?>> timers = _timers.remove(objectId);
 		if (timers != null)
 		{
 			timers.forEach(TimerHolder::cancelTimer);

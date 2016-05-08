@@ -23,6 +23,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.instancemanager.TimersManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -59,7 +60,8 @@ public class TimerHolder<T> implements Runnable
 		_eventScript = eventScript;
 		_cancelScript = cancelScript;
 		_postExecutor = postExecutor;
-		_task = _isRepeating ? ThreadPoolManager.getInstance().scheduleEventAtFixedRate(this, _time, _time) : ThreadPoolManager.getInstance().scheduleEvent(this, _time);
+		_task = isRepeating ? ThreadPoolManager.getInstance().scheduleEventAtFixedRate(this, _time, _time) : ThreadPoolManager.getInstance().scheduleEvent(this, _time);
+		TimersManager.getInstance().registerTimer(this);
 	}
 	
 	/**
