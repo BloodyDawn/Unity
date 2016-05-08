@@ -334,6 +334,16 @@ public final class Instance implements IIdentifiable, INamable
 	}
 	
 	/**
+	 * Get player by ID from instance.<br>
+	 * @param id objectId of player
+	 * @return first player by ID, otherwise {@code null}
+	 */
+	public PlayerInstance getPlayerById(int id)
+	{
+		return _players.stream().filter(p -> p.getObjectId() == id).findFirst().orElse(null);
+	}
+	
+	/**
 	 * Get all players from instance world inside specified radius.
 	 * @param object location of target
 	 * @param radius radius around target
