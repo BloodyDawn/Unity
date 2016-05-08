@@ -39,15 +39,22 @@ public final class TeredorWarzone extends AbstractInstance
 {
 	// NPCs
 	private static final int FILAUR = 30535;
+	private static final int FAKE_TEREDOR = 25801;
+	private static final int TEREDOR_POISON = 18998;
 	private static final int BEETLE = 19024;
 	private static final int POS_CHECKER = 18999;
 	private static final int EGG_2 = 18997;
+	private static final int ELITE_MILLIPADE = 19015;
 	private static final int AWAKENED_MILLIPADE = 18995; // Awakened Millipede
 	private static final int HATCHET_MILLIPADE = 18993; // Hatched Millipede
 	private static final int HATCHET_UNDERBUG = 18994; // Hatched Underbug
 	private static final int TEREDOR_LARVA = 19016; // Teredor's Larva
 	private static final int MUTANTED_MILLIPADE = 19000; // Mutated Millipede
+	// Items
+	private static final int FAKE_TEREDOR_WEAPON = 15280;
 	// Skill
+	private static final SkillHolder FAKE_TEREDOR_JUMP_SKILL = new SkillHolder(6268, 1);
+	private static final SkillHolder POISON_SKILL = new SkillHolder(14113, 1);
 	private static final SkillHolder BEETLE_SKILL = new SkillHolder(14412, 1);
 	// Misc
 	private static final int TEMPLATE_ID = 160;
@@ -56,11 +63,11 @@ public final class TeredorWarzone extends AbstractInstance
 	{
 		addStartNpc(FILAUR);
 		addTalkId(FILAUR);
-		addSpawnId(BEETLE, POS_CHECKER, EGG_2);
+		addSpawnId(BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR);
 		addSpellFinishedId(BEETLE);
 		addEventReceivedId(EGG_2);
 		addKillId(EGG_2);
-		setCreatureSeeId(this::onCreatureSee, BEETLE, POS_CHECKER, EGG_2);
+		setCreatureSeeId(this::onCreatureSee, BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR);
 	}
 	
 	@Override
@@ -108,6 +115,27 @@ public final class TeredorWarzone extends AbstractInstance
 					}
 					break;
 				}
+				case "FAKE_TEREDOR_POISON_TIMER":
+				{
+					final Npc minion = addSpawn(TEREDOR_POISON, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+					
+					getTimers().addTimer("POISON_TIMER", 5000, minion, null);
+					getTimers().addTimer("POISON_TIMER", 10000, minion, null);
+					getTimers().addTimer("POISON_TIMER", 15000, minion, null);
+					getTimers().addTimer("POISON_TIMER", 20000, minion, null);
+					getTimers().addTimer("DELETE_ME", 22000, minion, null);
+					break;
+				}
+				case "POISON_TIMER":
+				{
+					addSkillCastDesire(npc, npc, POISON_SKILL, 23);
+					break;
+				}
+				case "DELETE_ME":
+				{
+					npc.deleteMe();
+					break;
+				}
 			}
 		}
 	}
@@ -141,6 +169,14 @@ public final class TeredorWarzone extends AbstractInstance
 					npc.initSeenCreatures();
 					break;
 				}
+				case FAKE_TEREDOR:
+				{
+					WalkingManager.getInstance().startMoving(npc, npcParams.getString("SuperPointName", ""));
+					npc.setRHandId(FAKE_TEREDOR_WEAPON);
+					npc.initSeenCreatures();
+					getTimers().addTimer("FAKE_TEREDOR_POISON_TIMER", 3000, npc, null);
+					break;
+				}
 				default:
 				{
 					npc.initSeenCreatures();
@@ -168,6 +204,18 @@ public final class TeredorWarzone extends AbstractInstance
 					if (creature.isPlayer())
 					{
 						addSkillCastDesire(npc, npc, BEETLE_SKILL, 23);
+					}
+					break;
+				}
+				case FAKE_TEREDOR:
+				{
+					if (creature.isPlayer() && npc.isScriptValue(0))
+					{
+						npc.setScriptValue(1);
+						addSkillCastDesire(npc, npc, FAKE_TEREDOR_JUMP_SKILL, 23);
+						getTimers().addTimer("FAKE_TEREDOR_ELITE_REUSE", 30000, n -> npc.setScriptValue(0));
+						final Npc minion = addSpawn(ELITE_MILLIPADE, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+						addAttackPlayerDesire(minion, creature.getActingPlayer());
 					}
 					break;
 				}
@@ -272,10 +320,6 @@ public final class TeredorWarzone extends AbstractInstance
 									if (player != null)
 									{
 										addAttackPlayerDesire(minion, player, 23);
-									}
-									else
-									{
-										_log.info("null player");
 									}
 									npc.deleteMe();
 									break;
