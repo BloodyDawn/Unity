@@ -2839,6 +2839,26 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	}
 	
 	/**
+	 * Get a random entry.<br>
+	 * @param entry array with values.
+	 * @return random one value from array entry.
+	 */
+	public static String getRandomEntry(String... entry)
+	{
+		return entry[getRandom(entry.length)];
+	}
+	
+	/**
+	 * Get a random entry.<br>
+	 * @param entry array with values.
+	 * @return random one value from array entry.
+	 */
+	public static int getRandomEntry(int... entry)
+	{
+		return entry[getRandom(entry.length)];
+	}
+	
+	/**
 	 * Get the ID of the item equipped in the specified inventory slot of the player.
 	 * @param player the player whose inventory to check
 	 * @param slot the location in the player's inventory to check
