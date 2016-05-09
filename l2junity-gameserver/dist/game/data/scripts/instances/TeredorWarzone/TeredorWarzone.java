@@ -18,6 +18,9 @@
  */
 package instances.TeredorWarzone;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
@@ -58,6 +61,20 @@ public final class TeredorWarzone extends AbstractInstance
 	private static final SkillHolder BEETLE_SKILL = new SkillHolder(14412, 1);
 	// Misc
 	private static final int TEMPLATE_ID = 160;
+	//@formatter:off
+	private static final Map<Integer, String[]> WALKING_DATA = new HashMap<>();
+	static
+	{
+		WALKING_DATA.put(1, new String[] {"trajan101", "trajan102", "trajan103", "trajan104", "trajan105"});
+		WALKING_DATA.put(2, new String[] {"trajan106", "trajan107", "trajan108", "trajan109", "trajan110"});
+		WALKING_DATA.put(3, new String[] {"trajan111", "trajan112", "trajan113"});
+		WALKING_DATA.put(4, new String[] {"trajan114", "trajan115"});
+		WALKING_DATA.put(5, new String[] {"trajan116", "trajan117"});
+		WALKING_DATA.put(6, new String[] {"trajan118", "trajan119", "trajan120"});
+		WALKING_DATA.put(7, new String[] {"trajan121", "trajan122"});
+		WALKING_DATA.put(8, new String[] {"trajan14", "trajan15", "trajan16"});
+	}
+	//@formatter:on
 	
 	public TeredorWarzone()
 	{
@@ -82,37 +99,9 @@ public final class TeredorWarzone extends AbstractInstance
 			{
 				case "EGG_SPAWN_TIMER":
 				{
-					final int spot = npcParams.getInt("Spot", 0);
 					final Npc minion = addSpawn(AWAKENED_MILLIPADE, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+					WalkingManager.getInstance().startMoving(minion, getRandomEntry(WALKING_DATA.get(npcParams.getInt("Spot", 0))));
 					npc.deleteMe();
-					
-					switch (spot)
-					{
-						case 1:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan101", "trajan102", "trajan103", "trajan104", "trajan105"));
-							break;
-						case 2:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan106", "trajan107", "trajan108", "trajan109", "trajan110"));
-							break;
-						case 3:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan111", "trajan112", "trajan113"));
-							break;
-						case 4:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan114", "trajan115"));
-							break;
-						case 5:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan116", "trajan117"));
-							break;
-						case 6:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan118", "trajan119", "trajan120"));
-							break;
-						case 7:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan121", "trajan122"));
-							break;
-						case 8:
-							WalkingManager.getInstance().startMoving(minion, getRandomEntry("trajan14", "trajan15", "trajan16"));
-							break;
-					}
 					break;
 				}
 				case "FAKE_TEREDOR_POISON_TIMER":
@@ -311,52 +300,35 @@ public final class TeredorWarzone extends AbstractInstance
 						case "SCE_BREAK_AN_EGG2":
 						{
 							final PlayerInstance player = instance.getPlayerById(npc.getVariables().getInt("SEE_CREATURE_ID", 0));
+							int npcId = 0;
 							
 							switch (npc.getParameters().getInt("Spot", 0))
 							{
 								case 1:
-								{
-									final Npc minion = addSpawn(getRandomBoolean() ? TEREDOR_LARVA : MUTANTED_MILLIPADE, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
-									if (player != null)
-									{
-										addAttackPlayerDesire(minion, player, 23);
-									}
-									npc.deleteMe();
+									npcId = getRandomBoolean() ? TEREDOR_LARVA : MUTANTED_MILLIPADE;
 									break;
-								}
 								case 2:
 								case 3:
-								{
-									final Npc minion = addSpawn(getRandomBoolean() ? MUTANTED_MILLIPADE : HATCHET_UNDERBUG, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
-									if (player != null)
-									{
-										addAttackPlayerDesire(minion, player, 23);
-									}
-									npc.deleteMe();
+									npcId = getRandomBoolean() ? MUTANTED_MILLIPADE : HATCHET_UNDERBUG;
 									break;
-								}
 								case 4:
 								case 5:
 								case 6:
-								{
-									final Npc minion = addSpawn(getRandomBoolean() ? MUTANTED_MILLIPADE : HATCHET_UNDERBUG, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
-									if (player != null)
-									{
-										addAttackPlayerDesire(minion, player, 23);
-									}
-									npc.deleteMe();
+									npcId = getRandomBoolean() ? MUTANTED_MILLIPADE : HATCHET_UNDERBUG;
 									break;
-								}
 								case 7:
-								{
-									final Npc minion = addSpawn(getRandomEntry(MUTANTED_MILLIPADE, HATCHET_UNDERBUG, HATCHET_MILLIPADE), npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
-									if (player != null)
-									{
-										addAttackPlayerDesire(minion, player, 23);
-									}
-									npc.deleteMe();
+									npcId = getRandomEntry(MUTANTED_MILLIPADE, HATCHET_UNDERBUG, HATCHET_MILLIPADE);
 									break;
+							}
+							
+							if (npcId > 0)
+							{
+								final Npc minion = addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+								if (player != null)
+								{
+									addAttackPlayerDesire(minion, player, 23);
 								}
+								npc.deleteMe();
 							}
 							break;
 						}
