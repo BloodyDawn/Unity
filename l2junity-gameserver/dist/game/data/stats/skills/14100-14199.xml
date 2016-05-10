@@ -317,7 +317,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14110" toLevel="1" name="Teredor Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<icon>icon.skill1230</icon>
 		<operateType>A2</operateType>
@@ -340,9 +340,30 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>109060</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14111" toLevel="1" name="Teredor Range Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<mpConsume>77</mpConsume>
@@ -363,9 +384,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>131624</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14112" toLevel="2" name="Teredor Poison">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
@@ -392,9 +418,21 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>498</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill" fromLevel="2" toLevel="2">
+				<skillId>14560</skillId> <!-- Teredor Poison Paralysis -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="14113" toLevel="1" name="Teredor Flu Infection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
@@ -419,36 +457,72 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>475</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14114" toLevel="1" name="Teredor P. Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0322</icon>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>90</magicLvl>
 		<targetType>NONE</targetType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14115" toLevel="1" name="Teredor M. Def.">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0322</icon>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>90</magicLvl>
 		<targetType>NONE</targetType>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14116" toLevel="1" name="Teredor Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1062</icon>
 		<operateType>T</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>90</magicLvl>
 		<targetType>NONE</targetType>
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>70</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>70</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14117" toLevel="5" name="Millipede P. Atk. Enhancement">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<mpConsume>77</mpConsume>
@@ -474,9 +548,31 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14118" toLevel="1" name="Millipede P. Def. Enhancement">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0322</icon>
 		<operateType>A2</operateType>
 		<mpConsume>77</mpConsume>
@@ -494,6 +590,16 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14119" toLevel="1" name="Underbug Self Blasting">
 		<!-- AUTO GENERATED SKILL -->
@@ -520,9 +626,19 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<isSuicideAttack>true</isSuicideAttack>
+		<effects>
+			<effect name="MagicalAttack"> <!-- FIX ME : Should be i_m_attack_by_dist -->
+				<power>377</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>296</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14120" toLevel="3" name="Enhance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<mpConsume>77</mpConsume>
@@ -548,6 +664,24 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">15</value>
+					<value level="3">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14121" toLevel="1" name="Othell Rogue's Essence">
 		<!-- AUTO GENERATED SKILL -->

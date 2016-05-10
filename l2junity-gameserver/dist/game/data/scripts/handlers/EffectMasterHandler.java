@@ -153,8 +153,9 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("HitNumber", HitNumber::new);
 		EffectHandler.getInstance().registerHandler("HpByLevel", HpByLevel::new);
 		EffectHandler.getInstance().registerHandler("HpCpHeal", HpCpHeal::new);
-		EffectHandler.getInstance().registerHandler("HpRegen", HpRegen::new);
+		EffectHandler.getInstance().registerHandler("HpCpHealCritical", HpCpHealCritical::new);
 		EffectHandler.getInstance().registerHandler("HpDrain", HpDrain::new);
+		EffectHandler.getInstance().registerHandler("HpRegen", HpRegen::new);
 		EffectHandler.getInstance().registerHandler("HpToOwner", HpToOwner::new);
 		EffectHandler.getInstance().registerHandler("BlockMove", BlockMove::new);
 		EffectHandler.getInstance().registerHandler("ImmobilePetBuff", ImmobilePetBuff::new);

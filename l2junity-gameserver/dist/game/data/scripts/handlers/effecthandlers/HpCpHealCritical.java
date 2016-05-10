@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -16,49 +16,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.effects;
+package handlers.effecthandlers;
+
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 
 /**
- * @author UnAfraid
+ * @author Sdw
  */
-public enum EffectFlag
+public class HpCpHealCritical extends AbstractEffect
 {
-	NONE,
-	RESURRECTION_SPECIAL,
-	NOBLESS_BLESSING,
-	SILENT_MOVE,
-	PROTECTION_BLESSING,
-	RELAXING,
-	BLOCK_CONTROL,
-	CONFUSED,
-	MUTED,
-	PSYCHICAL_MUTED,
-	PSYCHICAL_ATTACK_MUTED,
-	DISARMED,
-	ROOTED,
-	BLOCK_ACTIONS,
-	CONDITIONAL_BLOCK_ACTIONS,
-	BETRAYED,
-	HP_BLOCK,
-	MP_BLOCK,
-	BUFF_BLOCK,
-	DEBUFF_BLOCK,
-	ABNORMAL_SHIELD,
-	BLOCK_RESURRECTION,
-	SERVITOR_SHARE,
-	UNTARGETABLE,
-	CANNOT_ESCAPE,
-	DOUBLE_CAST,
-	ATTACK_BEHIND,
-	TARGETING_DISABLED,
-	FACEOFF,
-	PHYSICAL_SHIELD_ANGLE_ALL,
-	CHEAPSHOT,
-	IGNORE_DEATH,
-	HPCPHEAL_CRITICAL;
-	
-	public int getMask()
+	public HpCpHealCritical(StatsSet params)
 	{
-		return 1 << ordinal();
+	}
+	
+	@Override
+	public int getEffectFlags()
+	{
+		return EffectFlag.HPCPHEAL_CRITICAL.getMask();
 	}
 }

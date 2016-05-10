@@ -1327,7 +1327,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14560" toLevel="1" name="Teredor Poison Paralysis">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Paralysis status. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
@@ -1346,6 +1346,11 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14561" toLevel="1" name="Teredor Poison Area">
 		<!-- AUTO GENERATED SKILL -->

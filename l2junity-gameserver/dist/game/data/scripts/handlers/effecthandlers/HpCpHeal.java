@@ -107,7 +107,7 @@ public final class HpCpHeal extends AbstractEffect
 			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk());
 			amount = effected.getStat().getValue(Stats.HEAL_EFFECT, amount);
 			// Heal critic, since CT2.3 Gracia Final
-			if (skill.isMagic() && Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill))
+			if (skill.isMagic() && (Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill) || effector.isAffected(EffectFlag.HPCPHEAL_CRITICAL)))
 			{
 				amount *= 3;
 				effector.sendPacket(SystemMessageId.M_CRITICAL);
