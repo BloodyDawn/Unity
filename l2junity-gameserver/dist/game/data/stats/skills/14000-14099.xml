@@ -536,7 +536,6 @@
 	<skill id="14014" toLevel="3" name="Power Front Slash">
 		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
-		<table name="#power"> 53147 67537 403420 </table>
 		<icon>icon.skill0320</icon>
 		<operateType>A2</operateType>
 		<mpConsume>
@@ -1330,7 +1329,7 @@
 		</effects>
 	</skill>
 	<skill id="14040" toLevel="6" name="Power Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -1366,9 +1365,21 @@
 		<reuseDelay>5000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">11348</value>
+					<value level="2">11868</value>
+					<value level="3">12411</value>
+					<value level="4">12977</value>
+					<value level="5">13569</value>
+					<value level="6">14186</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14041" toLevel="1" name="Teleport">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory days confirmed -->
 		<icon>icon.skill1448</icon>
 		<operateType>A1</operateType>
 		<mpConsume>100</mpConsume>
@@ -1389,6 +1400,13 @@
 				<range>400</range>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="Blink">
+				<!-- Teleport to Back -->
+				<angle>0</angle>
+				<range>400</range>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14042" toLevel="6" name="Disarm">
 		<!-- Glory Days confirmed -->
@@ -1731,7 +1749,7 @@
 		</effects>
 	</skill>
 	<skill id="14049" toLevel="1" name="Fairy Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
 		<mpConsume>80</mpConsume>
@@ -2642,7 +2660,7 @@
 		</effects>
 	</skill>
 	<skill id="14072" toLevel="6" name="Gardener Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. is decreased. -->
 		<icon>icon.skill4037</icon>
 		<operateType>A2</operateType>
@@ -2974,7 +2992,7 @@
 		</effects>
 	</skill>
 	<skill id="14080" toLevel="1" name="Self Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. is increased. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
@@ -3649,7 +3667,7 @@
 		</effects>
 	</skill>
 	<skill id="14096" toLevel="1" name="Sakum Feeler Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>38</mpConsume>
@@ -3664,9 +3682,14 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1249</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14097" toLevel="6" name="Fear of the Basilisk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -3702,9 +3725,21 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">656</value>
+					<value level="2">703</value>
+					<value level="3">752</value>
+					<value level="4">804</value>
+					<value level="5">859</value>
+					<value level="6">916</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14098" toLevel="6" name="Sahara Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -3740,9 +3775,21 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">656</value>
+					<value level="2">703</value>
+					<value level="3">752</value>
+					<value level="4">804</value>
+					<value level="5">859</value>
+					<value level="6">916</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14099" toLevel="6" name="Lachik Front Foot Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -3778,5 +3825,17 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">7278</value>
+					<value level="2">7373</value>
+					<value level="3">64080</value>
+					<value level="4">64080</value>
+					<value level="5">64080</value>
+					<value level="6">7619</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 </list>
