@@ -77,7 +77,6 @@ public enum Stats
 	MAGICAL_DEFENCE("mDef", new MDefenseFinalizer()),
 	PHYSICAL_ATTACK("pAtk", new PAttackFinalizer()),
 	MAGIC_ATTACK("mAtk", new MAttackFinalizer()),
-	PHYSICAL_SKILL_POWER("physicalSkillPower"),
 	PHYSICAL_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
 	MAGIC_ATTACK_SPEED("mAtkSpd", new MAttackSpeedFinalizer()), // Magic Skill Casting Time Rate
 	ATK_REUSE("atkReuse"), // Bows Hits Reuse Rate
@@ -106,8 +105,17 @@ public enum Stats
 	PVE_RAID_MAGICAL_SKILL_DEFENCE("pveRaidMagicalDef"),
 	
 	// ATTACK & DEFENCE RATES
-	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
-	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
+	MAGIC_CRITICAL_DAMAGE("mCritPower"),
+	PHYSICAL_SKILL_POWER("physicalSkillPower"), // Adding skill power (not multipliers) results in points added directly to final value unmodified by defence, traits, elements, criticals etc.
+												// Even when damage is 0 due to general trait immune multiplier, added skill power is active and clearly visible (damage not being 0 but at the value of added skill power).
+	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
+	CRITICAL_DAMAGE_SKILL_ADD("cAtkSkillAdd"),
+	MAGIC_CRITICAL_DAMAGE_ADD("mCritPowerAdd"),
+	SHIELD_DEFENCE_RATE("rShld"),
+	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
+	CRITICAL_RATE_SKILL("rCritSkill", Stats::defaultValue, MathUtil::add, MathUtil::add, null, 1d),
+	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
+	BLOW_RATE("blowRate"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),
 	DEFENCE_CRITICAL_RATE_ADD("defCritRateAdd"),
 	DEFENCE_MAGIC_CRITICAL_RATE("defMCritRate"),
@@ -116,17 +124,8 @@ public enum Stats
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_MAGIC_CRITICAL_DAMAGE_ADD("defMCritDamageAdd"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
-	MAGIC_CRITICAL_DAMAGE("mCritPower"),
-	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
-	CRITICAL_DAMAGE_SKILL_ADD("cAtkSkillAdd"),
 	DEFENCE_CRITICAL_DAMAGE_SKILL("defCAtkSkill"),
 	DEFENCE_CRITICAL_DAMAGE_SKILL_ADD("defCAtkSkillAdd"),
-	MAGIC_CRITICAL_DAMAGE_ADD("mCritPowerAdd"),
-	SHIELD_DEFENCE_RATE("rShld"),
-	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
-	CRITICAL_RATE_SKILL("rCritSkill", Stats::defaultValue, MathUtil::add, MathUtil::add, null, 1d),
-	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
-	BLOW_RATE("blowRate"),
 	EXPSP_RATE("rExp"),
 	BONUS_EXP("bonusExp"),
 	BONUS_SP("bonusSp"),
@@ -135,6 +134,8 @@ public enum Stats
 	// ACCURACY & RANGE
 	ACCURACY_COMBAT("accCombat", new PAccuracyFinalizer()),
 	ACCURACY_MAGIC("accMagic", new MAccuracyFinalizer()),
+	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
+	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
 	PHYSICAL_ATTACK_RANGE("pAtkRange", new PRangeFinalizer()),
 	MAGIC_ATTACK_RANGE("mAtkRange"),
 	ATTACK_COUNT_MAX("atkCountMax"),

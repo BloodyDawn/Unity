@@ -146,8 +146,8 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 			final double baseMod = (wpnMod * ((attack * effector.getLevelMod()) + _power + rangedBonus)) / defence;
-			final double skillDamage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, baseMod);
-			damage = skillDamage * soulsMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
+			damage = baseMod * soulsMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * pvpPveMod * randomMod;
+			damage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 		}
 		
 		// Check if damage should be reflected

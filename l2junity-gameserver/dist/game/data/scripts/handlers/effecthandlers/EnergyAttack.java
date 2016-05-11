@@ -141,13 +141,12 @@ public final class EnergyAttack extends AbstractEffect
 			final double critMod = critical ? Formulas.calcCritDamage(attacker, effected, skill) : 1;
 			final double ssmod = (skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS)) ? attacker.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
 			
-			// ........................_____Initial Damage______...__Charges Additional Damage__...____
-			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) * (1 + (0.1 * chargesConsumed)) / pdef
-			// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^
+			// ...................________Initial Damage_________...__Charges Additional Damage__...____________________________________
+			// ATTACK CALCULATION ((77 * ((pAtk * lvlMod) + power) * (1 + (0.1 * chargesConsumed)) / pdef) * skillPower) + skillPowerAdd
+			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 			final double baseMod = (77 * ((attacker.getPAtk() * attacker.getLevelMod()) + _power)) / defence;
-			final double skillDamage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, baseMod);
-			
-			damage = skillDamage * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * energyChargesBoost * pvpPveMod;
+			damage = baseMod * ssmod * critMod * weaponTraitMod * generalTraitMod * attributeMod * energyChargesBoost * pvpPveMod;
+			damage = attacker.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 		}
 		
 		damage = Math.max(0, damage);
