@@ -2217,7 +2217,7 @@
 		</effects>
 	</skill>
 	<skill id="1985" toLevel="1" name="Dual - Shield of the Giants">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Damage Reflect Resistance becomes 100% for 30 sec. -->
 		<icon>icon.dual_a_refdmg</icon>
 		<operateType>A2</operateType>
@@ -2236,6 +2236,11 @@
 		<reuseDelay>600000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageShieldResist">
+				<amount>100</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1986" toLevel="4" name="Dual Maximum HP">
 		<!-- Glory Days confirmed -->
