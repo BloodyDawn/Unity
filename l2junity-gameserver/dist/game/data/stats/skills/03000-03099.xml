@@ -3053,7 +3053,6 @@
 	</skill>
 	<skill id="3082" toLevel="10" name="Item Skill: Mana Burn">
 		<!-- Confirmed CT2.5 -->
-		<table name="#power"> 49 53 57 61 66 70 74 78 82 88 </table>
 		<castRange>40</castRange>
 		<effectRange>400</effectRange>
 		<icon>icon.skill3080</icon>
@@ -3091,6 +3090,8 @@
 					<value level="9">82</value>
 					<value level="10">88</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
 			</effect>
 		</effects>
 	</skill>
@@ -3741,6 +3742,8 @@
 					<value level="9">82</value>
 					<value level="10">88</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
 			</effect>
 		</effects>
 	</skill>

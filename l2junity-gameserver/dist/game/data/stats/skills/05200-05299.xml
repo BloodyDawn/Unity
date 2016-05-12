@@ -2015,7 +2015,6 @@
 	</skill>
 	<skill id="5255" toLevel="12" name="Mana Burn">
 		<!-- CT2.5 retail confirmed -->
-		<table name="#power"> 26 39 56 78 102 128 153 164 174 182 189 194 </table>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2056,6 +2055,8 @@
 					<value level="11">189</value>
 					<value level="12">194</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
 			</effect>
 		</effects>
 	</skill>
@@ -2181,6 +2182,8 @@
 					<value level="11">189</value>
 					<value level="12">194</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
 			</effect>
 		</effects>
 	</skill>

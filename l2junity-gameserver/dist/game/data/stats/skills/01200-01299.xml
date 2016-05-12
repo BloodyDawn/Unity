@@ -548,8 +548,6 @@
 		</effects>
 	</skill>
 	<skill id="1210" toLevel="4" name="Seal of Gloom">
-		<table name="#mdot"> 9 11 14 15 </table>
-		<table name="#power"> 29 36 46 53 </table>
 		<abnormalLvl>
 			<value level="1">5</value>
 			<value level="2">6</value>
@@ -607,6 +605,8 @@
 					<value level="3">46</value>
 					<value level="4">53</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>1600</criticalLimit>
 			</effect>
 			<effect name="ManaDamOverTime">
 				<power>

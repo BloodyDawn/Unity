@@ -851,7 +851,7 @@ public final class Formulas
 		return (Rnd.get(100) < rate);
 	}
 	
-	public static double calcManaDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static double calcManaDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit, double critLimit)
 	{
 		// Formula: (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
 		double mAtk = attacker.getMAtk();
@@ -899,6 +899,7 @@ public final class Formulas
 		if (mcrit)
 		{
 			damage *= 3;
+			damage = Math.min(damage, critLimit);
 			attacker.sendPacket(SystemMessageId.M_CRITICAL);
 		}
 		return damage;

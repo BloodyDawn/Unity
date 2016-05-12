@@ -4637,7 +4637,6 @@
 		</effects>
 	</skill>
 	<skill id="1398" toLevel="10" name="Mana Burn">
-		<table name="#power"> 117 123 128 133 138 143 148 153 157 162 </table>
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-532</value>
@@ -4699,11 +4698,12 @@
 					<value level="9">157</value>
 					<value level="10">162</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>7000</criticalLimit>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1399" toLevel="5" name="Mana Storm">
-		<table name="#power"> 62 67 72 77 81 </table>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>200</affectRange>
 		<effectPoint>
@@ -4746,6 +4746,8 @@
 					<value level="4">77</value>
 					<value level="5">81</value>
 				</power>
+				<critical>true</critical>
+				<criticalLimit>7000</criticalLimit>
 			</effect>
 		</effects>
 	</skill>

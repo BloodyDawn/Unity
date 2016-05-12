@@ -37,10 +37,14 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class MagicalAttackMp extends AbstractEffect
 {
 	private final double _power;
+	private final boolean _critical;
+	private final double _criticalLimit;
 	
 	public MagicalAttackMp(StatsSet params)
 	{
-		_power = params.getDouble("power", 0);
+		_power = params.getDouble("power");
+		_critical = params.getBoolean("critical");
+		_criticalLimit = params.getDouble("criticalLimit");
 	}
 	
 	@Override
@@ -97,9 +101,9 @@ public final class MagicalAttackMp extends AbstractEffect
 		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final byte shld = Formulas.calcShldUse(effector, effected);
-		final boolean mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
-		double damage = Formulas.calcManaDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
-		double mp = (damage > effected.getCurrentMp() ? effected.getCurrentMp() : damage);
+		final boolean mcrit = _critical ? Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill) : false;
+		double damage = Formulas.calcManaDam(effector, effected, skill, _power, shld, sps, bss, mcrit, _criticalLimit);
+		double mp = Math.min(effected.getCurrentMp(), damage);
 		
 		if (damage > 0)
 		{
