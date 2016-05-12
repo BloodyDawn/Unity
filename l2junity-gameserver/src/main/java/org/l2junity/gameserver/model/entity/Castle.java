@@ -36,6 +36,7 @@ import org.l2junity.gameserver.data.xml.impl.CastleData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.MountType;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -47,8 +48,8 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.TowerSpawn;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.actor.instance.DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.CastleSpawnHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -677,7 +678,7 @@ public final class Castle extends AbstractResidence
 				}
 			}
 			
-			setTaxRate(getTaxPercent() / 100);
+			setTaxRate(getTaxPercent(TaxType.BUY) / 100);
 			ps2.setInt(1, getResidenceId());
 			try (ResultSet rs = ps2.executeQuery())
 			{
@@ -963,20 +964,26 @@ public final class Castle extends AbstractResidence
 		return _siegeTimeRegistrationEndDate;
 	}
 	
-	public final int getTaxPercent()
+	public final int getTaxPercent(TaxType type)
 	{
 		final int taxPercent;
 		switch (getSide())
 		{
 			case LIGHT:
-				taxPercent = Config.CASTLE_TAX_LIGHT;
+			{
+				taxPercent = type == TaxType.BUY ? Config.CASTLE_BUY_TAX_LIGHT : Config.CASTLE_SELL_TAX_LIGHT;
 				break;
+			}
 			case DARK:
-				taxPercent = Config.CASTLE_TAX_DARK;
+			{
+				taxPercent = type == TaxType.BUY ? Config.CASTLE_BUY_TAX_DARK : Config.CASTLE_SELL_TAX_DARK;
 				break;
+			}
 			default:
-				taxPercent = Config.CASTLE_TAX_NEUTRAL;
+			{
+				taxPercent = type == TaxType.BUY ? Config.CASTLE_BUY_TAX_NEUTRAL : Config.CASTLE_SELL_TAX_NEUTRAL;
 				break;
+			}
 		}
 		return taxPercent;
 	}
@@ -1230,7 +1237,7 @@ public final class Castle extends AbstractResidence
 			_log.warn(e.getMessage(), e);
 		}
 		_castleSide = side;
-		setTaxRate(getTaxPercent() / 100);
+		setTaxRate(getTaxPercent(TaxType.BUY) / 100);
 		Broadcast.toAllOnlinePlayers(new ExCastleState(this));
 		spawnSideNpcs();
 	}

@@ -19,6 +19,7 @@
 package handlers.bypasshandlers;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -57,7 +58,7 @@ public class TerritoryStatus implements IBypassHandler
 			}
 		}
 		html.replace("%castlename%", npc.getCastle().getName());
-		html.replace("%taxpercent%", "" + npc.getCastle().getTaxPercent());
+		html.replace("%taxpercent%", "" + npc.getCastle().getTaxPercent(TaxType.BUY));
 		html.replace("%objectId%", String.valueOf(npc.getObjectId()));
 		{
 			if (npc.getCastle().getResidenceId() > 6)

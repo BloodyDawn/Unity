@@ -21,6 +21,7 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.Collection;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -64,7 +65,7 @@ public class ExShowCastleInfo implements IClientOutgoingPacket
 			{
 				packet.writeS("");
 			}
-			packet.writeD(castle.getTaxPercent());
+			packet.writeD(castle.getTaxPercent(TaxType.BUY));
 			packet.writeD((int) (castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
 		}
 		return true;

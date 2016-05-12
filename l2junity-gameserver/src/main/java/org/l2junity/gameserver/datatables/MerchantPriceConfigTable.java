@@ -28,6 +28,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.InstanceListManager;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
@@ -268,7 +269,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		
 		public int getTotalTax()
 		{
-			return hasCastle() ? (getCastle().getTaxPercent() + getBaseTax()) : getBaseTax();
+			return hasCastle() ? (getCastle().getTaxPercent(TaxType.BUY) + getBaseTax()) : getBaseTax();
 		}
 		
 		public double getTotalTaxRate()

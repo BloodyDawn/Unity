@@ -26,11 +26,13 @@ import java.util.List;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.ProductList;
+import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.holders.UniqueItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -172,6 +174,15 @@ public final class RequestSellItem implements IClientIncomingPacket
 			{
 				item = player.getInventory().destroyItem("Sell", i.getObjectId(), i.getCount(), player, merchant);
 			}
+		}
+		
+		// add to castle treasury
+		if (merchant instanceof L2MerchantInstance)
+		{
+			final Castle castle = ((L2MerchantInstance) merchant).getCastle();
+			final long taxCollection = totalPrice * castle.getTaxPercent(TaxType.SELL);
+			castle.addToTreasury(taxCollection);
+			totalPrice -= taxCollection;
 		}
 		
 		player.addAdena("Sell", totalPrice, merchant, false);

@@ -277,9 +277,12 @@ public final class Config
 	public static int CS_SUPPORT1_FEE;
 	public static int CS_SUPPORT2_FEE;
 	public static List<Integer> SIEGE_HOUR_LIST;
-	public static int CASTLE_TAX_NEUTRAL;
-	public static int CASTLE_TAX_LIGHT;
-	public static int CASTLE_TAX_DARK;
+	public static int CASTLE_BUY_TAX_NEUTRAL;
+	public static int CASTLE_BUY_TAX_LIGHT;
+	public static int CASTLE_BUY_TAX_DARK;
+	public static int CASTLE_SELL_TAX_NEUTRAL;
+	public static int CASTLE_SELL_TAX_LIGHT;
+	public static int CASTLE_SELL_TAX_DARK;
 	public static int OUTER_DOOR_UPGRADE_PRICE2;
 	public static int OUTER_DOOR_UPGRADE_PRICE3;
 	public static int OUTER_DOOR_UPGRADE_PRICE5;
@@ -1080,9 +1083,13 @@ public final class Config
 					SIEGE_HOUR_LIST.add(Integer.parseInt(hour));
 				}
 			}
-			CASTLE_TAX_NEUTRAL = Feature.getInt("TaxForNeutralSide", 15);
-			CASTLE_TAX_LIGHT = Feature.getInt("TaxForLightSide", 0);
-			CASTLE_TAX_DARK = Feature.getInt("TaxForDarkSide", 30);
+			CASTLE_BUY_TAX_NEUTRAL = Feature.getInt("BuyTaxForNeutralSide", 15);
+			CASTLE_BUY_TAX_LIGHT = Feature.getInt("BuyTaxForLightSide", 0);
+			CASTLE_BUY_TAX_DARK = Feature.getInt("BuyTaxForDarkSide", 30);
+			CASTLE_SELL_TAX_NEUTRAL = Feature.getInt("SellTaxForNeutralSide", 0);
+			CASTLE_SELL_TAX_LIGHT = Feature.getInt("SellTaxForLightSide", 0);
+			CASTLE_SELL_TAX_DARK = Feature.getInt("SellTaxForDarkSide", 20);
+			
 			CS_TELE_FEE_RATIO = Feature.getLong("CastleTeleportFunctionFeeRatio", 604800000);
 			CS_TELE1_FEE = Feature.getInt("CastleTeleportFunctionFeeLvl1", 1000);
 			CS_TELE2_FEE = Feature.getInt("CastleTeleportFunctionFeeLvl2", 10000);
