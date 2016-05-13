@@ -410,6 +410,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				case TYPE_CLASS_ID:
 				{
 					packet.writeH(param.getIntValue());
+					break;
 				}
 				
 				case TYPE_ITEM_NAME:
