@@ -46,10 +46,10 @@ public final class BuyList extends AbstractItemPacket
 	{
 		OutgoingPackets.EX_BUY_SELL_LIST.writeId(packet);
 		
-		packet.writeD(0x00);
+		packet.writeD(0x00); // Type BUY
 		packet.writeQ(_money); // current money
 		packet.writeD(_listId);
-		packet.writeD(0x00); // TODO: Find me
+		packet.writeD(0x00); // TODO: inventory count
 		packet.writeH(_list.size());
 		
 		for (Product product : _list)

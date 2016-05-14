@@ -32,7 +32,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.ProductList;
-import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.holders.UniqueItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -179,9 +178,9 @@ public final class RequestSellItem implements IClientIncomingPacket
 		// add to castle treasury
 		if (merchant instanceof L2MerchantInstance)
 		{
-			final Castle castle = ((L2MerchantInstance) merchant).getCastle();
-			final long taxCollection = totalPrice * castle.getTaxPercent(TaxType.SELL);
-			castle.addToTreasury(taxCollection);
+			final L2MerchantInstance npc = ((L2MerchantInstance) merchant);
+			final long taxCollection = (long) (totalPrice * npc.getMpc().getTotalTaxRate(TaxType.SELL));
+			npc.getCastle().addToTreasury(taxCollection);
 			totalPrice -= taxCollection;
 		}
 		

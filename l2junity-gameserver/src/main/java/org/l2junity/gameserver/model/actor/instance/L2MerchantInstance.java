@@ -22,6 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.buylist.ProductList;
@@ -108,12 +109,13 @@ public class L2MerchantInstance extends L2NpcInstance
 			return;
 		}
 		
-		final double taxRate = (applyTax) ? getMpc().getTotalTaxRate() : 0;
+		final double buyTaxRate = (applyTax) ? getMpc().getTotalTaxRate(TaxType.BUY) : 0;
+		final double sellTaxRate = (applyTax) ? getMpc().getTotalTaxRate(TaxType.SELL) : 0;
 		
 		player.setInventoryBlockingStatus(true);
 		
-		player.sendPacket(new BuyList(buyList, player.getAdena(), taxRate));
-		player.sendPacket(new ExBuySellList(player, false));
+		player.sendPacket(new BuyList(buyList, player.getAdena(), buyTaxRate));
+		player.sendPacket(new ExBuySellList(player, false, sellTaxRate));
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

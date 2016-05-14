@@ -33,6 +33,7 @@ public class ExBuySellList extends AbstractItemPacket
 	private Collection<ItemInstance> _sellList = null;
 	private Collection<ItemInstance> _refundList = null;
 	private final boolean _done;
+	private double _taxRate = 1;
 	
 	public ExBuySellList(PlayerInstance player, boolean done)
 	{
@@ -44,13 +45,19 @@ public class ExBuySellList extends AbstractItemPacket
 		_done = done;
 	}
 	
+	public ExBuySellList(PlayerInstance player, boolean done, double taxRate)
+	{
+		this(player, done);
+		_taxRate = 1 - taxRate;
+	}
+	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.EX_BUY_SELL_LIST.writeId(packet);
 		
-		packet.writeD(0x01);
-		packet.writeD(0x00); // TODO: Find me
+		packet.writeD(0x01); // Type SELL
+		packet.writeD(0x00); // TODO: inventory count
 		
 		if ((_sellList != null))
 		{
@@ -58,7 +65,7 @@ public class ExBuySellList extends AbstractItemPacket
 			for (ItemInstance item : _sellList)
 			{
 				writeItem(packet, item);
-				packet.writeQ(item.getItem().getReferencePrice() / 2);
+				packet.writeQ((long) ((item.getItem().getReferencePrice() / 2) * _taxRate));
 			}
 		}
 		else

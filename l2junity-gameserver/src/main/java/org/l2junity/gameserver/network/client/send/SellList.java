@@ -23,6 +23,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.enums.TaxType;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -77,6 +78,12 @@ public class SellList implements IClientOutgoingPacket
 		
 		for (ItemInstance item : _sellList)
 		{
+			int price = item.getItem().getReferencePrice() / 2;
+			if (_lease != null)
+			{
+				price -= (price * _lease.getMpc().getTotalTaxRate(TaxType.SELL));
+			}
+			
 			packet.writeH(item.getItem().getType1());
 			packet.writeD(item.getObjectId());
 			packet.writeD(item.getDisplayId());
