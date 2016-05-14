@@ -54,7 +54,7 @@ public final class Q10813_ForGlory extends Quest
 		super(10813);
 		addStartNpc(MYSTERIOUS_BUTLER);
 		addTalkId(MYSTERIOUS_BUTLER);
-		addCondMinLevel(MIN_LEVEL, "33685-07.htm"); // TODO: Missing level cond html
+		addCondMinLevel(MIN_LEVEL, "33685-09.htm");
 		addCondStartedQuest(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName(), "33685-07.htm");
 		registerQuestItems(PROOF_OF_BATTLE);
 	}

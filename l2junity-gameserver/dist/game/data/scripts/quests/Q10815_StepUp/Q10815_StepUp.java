@@ -63,7 +63,7 @@ public final class Q10815_StepUp extends Quest
 		super(10815);
 		addStartNpc(SIR_ERIC_RODEMAI);
 		addTalkId(SIR_ERIC_RODEMAI);
-		addCondMinLevel(MIN_LEVEL, "30868-05.htm"); // TODO: Missing level cond html
+		addCondMinLevel(MIN_LEVEL, "30868-09.htm");
 		addCondStartedQuest(Q10811_ExaltedOneWhoFacesTheLimit.class.getSimpleName(), "30868-05.htm");
 	}
 	
