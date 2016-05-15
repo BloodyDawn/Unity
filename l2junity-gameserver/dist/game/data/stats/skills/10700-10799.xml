@@ -1890,7 +1890,7 @@
 		</effects>
 	</skill>
 	<skill id="10773" toLevel="1" name="Not in Use">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Not in use -->
 		<icon>icon.skill0773</icon>
 		<operateType>A1</operateType>
@@ -2807,7 +2807,7 @@
 		</effects>
 	</skill>
 	<skill id="10793" toLevel="1" name="Flash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels targets of nearby enemies. Increases Speed + 50 for 5 seconds and prevents enemies from targeting you. -->
 		<icon>icon.skill10793</icon>
 		<operateType>A3</operateType>
@@ -2828,6 +2828,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DeleteHate" />
+			<effect name="TargetCancel">
+				<chance>100</chance>
+			</effect>
+			<effect name="Speed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Untargetable" />
+		</effects>
 	</skill>
 	<skill id="10794" toLevel="8" name="Thunder Flight">
 		<!-- Updated to IO -->

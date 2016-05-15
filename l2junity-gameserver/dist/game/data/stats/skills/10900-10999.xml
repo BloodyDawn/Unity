@@ -440,7 +440,7 @@
 		<magicLvl>85</magicLvl>
 	</skill>
 	<skill id="10998" toLevel="1" name="Archer - Individual">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 30% for 5 seconds. -->
 		<icon>icon.skill1543</icon>
 		<operateType>A2</operateType>
@@ -459,9 +459,15 @@
 		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="10999" toLevel="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -491,5 +497,10 @@
 				<hasAbnormal>true</hasAbnormal>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>21365.2</power>
+			</effect>
+		</effects>
 	</skill>
 </list>

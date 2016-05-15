@@ -1593,13 +1593,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
+			<effect name="MagicalAttackMp">
+				<power>131</power>
+				<critical>true</critical>
+				<criticalLimit>1600</criticalLimit>
+			</effect>
 			<effect name="MagicalAttack">
 				<power>200</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="14359" toLevel="1" name="Flame Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
 		<castRange>550</castRange>
@@ -1613,9 +1618,19 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackMp">
+				<power>393</power>
+				<critical>true</critical>
+				<criticalLimit>1600</criticalLimit>
+			</effect>
+			<effect name="MagicalAttack">
+				<power>243</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14360" toLevel="1" name="Flame Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
 		<castRange>550</castRange>
@@ -1629,9 +1644,19 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackMp">
+				<power>654</power>
+				<critical>true</critical>
+				<criticalLimit>1600</criticalLimit>
+			</effect>
+			<effect name="MagicalAttack">
+				<power>286</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14361" toLevel="1" name="Flame Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1171</icon>
 		<operateType>A1</operateType>
 		<castRange>550</castRange>
@@ -1649,9 +1674,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>191</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14362" toLevel="1" name="Flame Focus">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<castRange>450</castRange>
@@ -1667,9 +1697,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>286</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14363" toLevel="1" name="Sword Dance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -1692,9 +1727,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>2000</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14364" toLevel="1" name="Sword Dance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -1719,9 +1760,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>2000</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14365" toLevel="1" name="Hellfire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1171</icon>
 		<operateType>A1</operateType>
 		<hitTime>15000</hitTime>
@@ -1737,9 +1784,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>654</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14366" toLevel="1" name="Black Vortex Swamp">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Falls into the swamp of darkness. Incurs damage. Moving is impossible and HP is decreased. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
@@ -1766,9 +1818,22 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>1000</power>
+			</effect>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+			<effect name="DamOverTime">
+				<power>500</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14367" toLevel="1" name="Darkness Drain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Balok absorbs from its subordinates to recover its own energy. -->
 		<icon>icon.skill1010</icon>
 		<operateType>A2</operateType>
@@ -1789,7 +1854,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14368" toLevel="1" name="Disappear into darkness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1010</icon>
 		<operateType>A2</operateType>
 		<hitTime>5000</hitTime>
@@ -1807,7 +1872,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14369" toLevel="1" name="Fear of being alone">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. and P. Atk. are decreased. -->
 		<icon>icon.skill1263</icon>
 		<operateType>A2</operateType>
@@ -1830,9 +1895,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-60</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14370" toLevel="1" name="Flame Earth Summon">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Fear status. -->
 		<icon>icon.skill0763</icon>
 		<operateType>A2</operateType>
@@ -1856,9 +1931,24 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>20000</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+		</effects>
 	</skill>
 	<skill id="14371" toLevel="1" name="Flame Slash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Armor is destroyed. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<icon>icon.skill0245</icon>
 		<operateType>A2</operateType>
@@ -1880,9 +1970,40 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>212684</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14372" toLevel="1" name="Root">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hold status. -->
 		<icon>icon.skill1508</icon>
 		<operateType>A2</operateType>
@@ -1904,9 +2025,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14373" toLevel="2" name="Damage Zone of Death">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
@@ -1930,9 +2057,24 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">835</value>
+					<value level="1">4174</value>
+				</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">100</value>
+					<value level="1">300</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14374" toLevel="1" name="Petrify">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Petrify status. -->
 		<icon>icon.skill1540</icon>
 		<operateType>A2</operateType>
@@ -1950,9 +2092,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14375" toLevel="1" name="Greeting">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1967,7 +2118,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14376" toLevel="1" name="Disarm">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Disarmed. -->
 		<icon>icon.skill0794</icon>
 		<operateType>A2</operateType>
@@ -1988,9 +2139,16 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Disarm" />
+			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14377" toLevel="1" name="Totem's Energy">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Knocked down. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
@@ -2011,9 +2169,25 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="KnockBack">
+				<distance>50</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<DERANGEMENT>100</DERANGEMENT>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14378" toLevel="1" name="Antharas' Grinding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
@@ -2029,9 +2203,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>300</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14379" toLevel="1" name="Antharas' Grinding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Burn status. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
@@ -2056,9 +2235,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>650</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>400</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14380" toLevel="1" name="Antharas Tail Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
@@ -2083,9 +2271,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>FAN_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>40000</power>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;600} -->
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14381" toLevel="1" name="Curse of Antharas">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- You have been touched by the curse of Antharas, which has temporarily decreased all your combat stats. -->
 		<icon>icon.skill4109</icon>
 		<operateType>A2</operateType>
@@ -2108,9 +2305,47 @@
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PAtk">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-19</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14382" toLevel="1" name="Antharas Stun">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill4106</icon>
 		<operateType>A2</operateType>
@@ -2134,9 +2369,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>50000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;600} -->
+		</effects>
 	</skill>
 	<skill id="14383" toLevel="1" name="Antharas Meteor">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -2156,9 +2400,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>373</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14384" toLevel="1" name="Antharas Petrify">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Petrified and unable to move temporarily. -->
 		<icon>icon.skill4111</icon>
 		<operateType>A2</operateType>
@@ -2184,9 +2433,29 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>10</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="BuffBlock" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14385" toLevel="1" name="Front Foot Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>50</castRange>
@@ -2204,9 +2473,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>30000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14386" toLevel="1" name="Front Foot Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>50</castRange>
@@ -2224,9 +2498,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>30000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14387" toLevel="1" name="Antharas Fear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Afflicted with Fear and moving against own will. -->
 		<icon>icon.skill4108</icon>
 		<operateType>A2</operateType>
@@ -2253,9 +2532,13 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+		</effects>
 	</skill>
 	<skill id="14388" toLevel="1" name="Antharas Fear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Afflicted with Fear and moving against own will. -->
 		<icon>icon.skill4108</icon>
 		<operateType>A2</operateType>
@@ -2280,17 +2563,27 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+		</effects>
 	</skill>
 	<skill id="14389" toLevel="1" name="Antharas">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Vulnerable to Wind attacks but has a very powerful Earth Resistance. -->
 		<icon>icon.skillboss</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DebuffBlock" />
+			<effect name="DefenceTrait">
+				<SHOCK>80</SHOCK>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14390" toLevel="1" name="Dragon Bomber Explosion">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-100</effectPoint>
@@ -2305,9 +2598,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">	<!-- TODO: FIX ME i_m_attack_by_dist -->
+				<power>646</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14391" toLevel="1" name="Behemoth Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -2321,9 +2619,18 @@
 		<hitTime>1500</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>100933</power>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>500</speed>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14392" toLevel="1" name="Tarask Splinter">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill0000</icon>
 		<operateType>DA2</operateType>
@@ -2346,24 +2653,55 @@
 		<coolTime>200</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>122203</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14393" toLevel="1" name="Tarask Carapace">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DamageShield">
+				<amount>100</amount>
+			</effect>
+			<effect name="ReflectSkill">
+				<type>PHYSICAL</type>
+				<amount>90</amount>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>90</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14394" toLevel="1" name="Valakas">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Vulnerable to water, impervious to fire. -->
 		<icon>icon.skillboss</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DefenceTrait">
+				<VALAKAS>-8</VALAKAS>
+			</effect>
+			<effect name="DebuffBlock" />
+		</effects>
 	</skill>
 	<skill id="14395" toLevel="1" name="Valakas Trample">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>50</castRange>
@@ -2381,9 +2719,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>30416</power>
+				<criticalChance>10</criticalChance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14396" toLevel="1" name="Valakas Trample">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>50</castRange>
@@ -2401,9 +2745,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>30416</power>
+				<criticalChance>10</criticalChance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14397" toLevel="1" name="Valakas Tail Stamp">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -2418,9 +2768,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>48391</power>
+				<criticalChance>10</criticalChance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14398" toLevel="1" name="Valakas Stun">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stunned and unable to move momentarily. -->
 		<icon>icon.skill4688</icon>
 		<operateType>A2</operateType>
@@ -2444,9 +2800,16 @@
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effect name="PhysicalAttack">
+				<power>27849</power>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;600} -->
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
 	</skill>
 	<skill id="14399" toLevel="1" name="Valakas Meteor Storm">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>8000</hitTime>
@@ -2461,5 +2824,10 @@
 		<targetType>SELF</targetType>
 		<affectScope>BALAKAS_SCOPE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>1084</power>
+			</effect>
+		</effects>
 	</skill>
 </list>

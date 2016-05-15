@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14400" toLevel="1" name="Valakas Dragon Breath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP decreases rapidly from flame momentarily. -->
 		<icon>icon.skill4683</icon>
 		<operateType>A2</operateType>
@@ -27,9 +27,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>648</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>216</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14401" toLevel="1" name="Valakas Dragon Breath">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP decreases rapidly from flame momentarily. -->
 		<icon>icon.skill4683</icon>
 		<operateType>A2</operateType>
@@ -55,9 +64,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>648</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>216</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14402" toLevel="1" name="Destruction of the Body">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-1000</effectPoint>
@@ -71,9 +89,14 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>-99</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14403" toLevel="1" name="Destruction of the Soul">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-1000</effectPoint>
@@ -87,9 +110,14 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ManaHealPercent">
+				<power>-99</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14404" toLevel="1" name="Valakas Fear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Afflicted with Fear and moving against own will. -->
 		<icon>icon.skill4689</icon>
 		<operateType>A2</operateType>
@@ -115,6 +143,10 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+		</effects>
 	</skill>
 	<skill id="14405" toLevel="1" name="Wide-bodied Valakas">
 		<!-- AUTO GENERATED SKILL -->
