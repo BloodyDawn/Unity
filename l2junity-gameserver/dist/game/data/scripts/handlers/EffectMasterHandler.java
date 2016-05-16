@@ -223,6 +223,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("PkCount", PkCount::new);
 		EffectHandler.getInstance().registerHandler("Plunder", Plunder::new);
 		EffectHandler.getInstance().registerHandler("ProtectionBlessing", ProtectionBlessing::new);
+		EffectHandler.getInstance().registerHandler("ProtectDeathPenalty", ProtectDeathPenalty::new);
 		EffectHandler.getInstance().registerHandler("PullBack", PullBack::new);
 		EffectHandler.getInstance().registerHandler("PveMagicalSkillDamageBonus", PveMagicalSkillDamageBonus::new);
 		EffectHandler.getInstance().registerHandler("PveMagicalSkillDefenceBonus", PveMagicalSkillDefenceBonus::new);
@@ -266,7 +267,6 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("SetSkill", SetSkill::new);
 		EffectHandler.getInstance().registerHandler("ShieldDefence", ShieldDefence::new);
 		EffectHandler.getInstance().registerHandler("ShieldDefenceRate", ShieldDefenceRate::new);
-		EffectHandler.getInstance().registerHandler("ShilensBreath", ShilensBreath::new);
 		EffectHandler.getInstance().registerHandler("SilentMove", SilentMove::new);
 		EffectHandler.getInstance().registerHandler("SkillCritical", SkillCritical::new);
 		EffectHandler.getInstance().registerHandler("SkillCriticalDamage", SkillCriticalDamage::new);

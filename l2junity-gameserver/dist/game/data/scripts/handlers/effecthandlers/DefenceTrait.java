@@ -62,7 +62,7 @@ public final class DefenceTrait extends AbstractEffect
 			}
 			catch (Exception e)
 			{
-				_log.warn(getClass().getSimpleName() + ": value of L2TraitType enum required but found: " + param.getValue());
+				_log.warn(getClass().getSimpleName() + ": value of L2TraitType enum required but found: " + param.getKey());
 			}
 		}
 	}

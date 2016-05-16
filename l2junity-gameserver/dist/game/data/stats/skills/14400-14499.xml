@@ -149,7 +149,7 @@
 		</effects>
 	</skill>
 	<skill id="14405" toLevel="1" name="Wide-bodied Valakas">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>2</mpConsume>
@@ -167,9 +167,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14406" toLevel="1" name="Decrease Valakas Defense">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>2</mpConsume>
@@ -187,9 +197,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14407" toLevel="1" name="Lavasaurus Alpha Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -206,9 +226,14 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>23199</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14408" toLevel="1" name="Lavasaurus Alpha Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -223,9 +248,14 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>2</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14409" toLevel="1" name="Infection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1167</icon>
 		<operateType>A2</operateType>
@@ -252,9 +282,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>500</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14410" toLevel="1" name="Dragon's Trace">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1167</icon>
 		<operateType>A2</operateType>
@@ -279,9 +315,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>500</power>
+				<ticks>5</ticks>
+			</effect>
+			<effect name="ManaDamOverTime">
+				<power>300</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14411" toLevel="1" name="Energy of Extreme Dragon">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Dragon Slayer. Increases P. Atk. toward dragons by 300%. -->
 		<icon>icon.skill0088</icon>
 		<operateType>A2</operateType>
@@ -300,9 +346,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="AttackTrait">
+				<DRAGON_WEAKNESS>300</DRAGON_WEAKNESS>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14412" toLevel="1" name="Incubatioin">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -317,7 +368,7 @@
 		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14413" toLevel="1" name="Incubatioin">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -332,7 +383,7 @@
 		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="14414" toLevel="1" name="Stigma of Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Darkness judgment's stigma. -->
 		<icon>icon.skill0015</icon>
 		<operateType>A2</operateType>
@@ -353,7 +404,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14415" toLevel="1" name="Stigma of Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Purity judgment's stigma. -->
 		<icon>icon.skill10777</icon>
 		<operateType>A2</operateType>
@@ -374,7 +425,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14416" toLevel="1" name="Ultimate Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Ultimate judgment. -->
 		<icon>icon.skill5876</icon>
 		<operateType>A2</operateType>
@@ -393,7 +444,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14417" toLevel="1" name="Verdict">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -407,9 +458,14 @@
 		<hitTime>500</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>150609</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14418" toLevel="1" name="Trap Setup">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -422,7 +478,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14419" toLevel="1" name="Vladimir's Darkness Attack">
-		<!-- AUTO GENERATED SKILL -->
+		x
 		<icon>icon.skill0476</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -437,9 +493,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>250</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14420" toLevel="1" name="Follower's Sacrifice">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>700</castRange>
@@ -454,7 +515,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14421" toLevel="1" name="Lazearth' Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill14421</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -470,9 +531,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>250</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14422" toLevel="1" name="Energy of Death">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill14422</icon>
 		<operateType>CA1</operateType>
 		<mpConsume>2</mpConsume>
@@ -492,9 +558,15 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpDrain">
+				<power>84</power>
+				<percentage>40</percentage>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14423" toLevel="1" name="Byron's Darkness Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0476</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -509,9 +581,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>250</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14424" toLevel="1" name="Ken's Mark">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- The reckless Ken is looking at you. -->
 		<icon>icon.skill14424</icon>
 		<operateType>A2</operateType>
@@ -533,7 +610,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14425" toLevel="1" name="Ken's Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -548,9 +625,14 @@
 		<reuseDelay>3000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>32515</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14426" toLevel="1" name="Ken's Recovery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP is restored. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
@@ -568,9 +650,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealOverTime">
+				<power>500</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14427" toLevel="1" name="Power Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -584,9 +672,14 @@
 		<hitTime>2000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6906</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14428" toLevel="1" name="Fire Blindly">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0772</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -602,9 +695,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6906</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14429" toLevel="1" name="Head Marksman's Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -618,9 +716,14 @@
 		<hitTime>5000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>69056</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14430" toLevel="1" name="Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -635,9 +738,14 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>789</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14431" toLevel="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
@@ -651,9 +759,14 @@
 		<hitTime>2000</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>37511</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14432" toLevel="1" name="Stun">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill0048</icon>
 		<operateType>A2</operateType>
@@ -677,9 +790,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14433" toLevel="1" name="Digest">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bleed status. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -700,9 +818,15 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>500</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14434" toLevel="1" name="Feeler Vibration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -715,7 +839,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14435" toLevel="1" name="Feeler Vibration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -746,7 +870,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14437" toLevel="1" name="Pledge Guardian's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14437</icon>
 		<operateType>CA1</operateType>
@@ -768,7 +892,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14438" toLevel="1" name="Twin Destroyer's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14438</icon>
 		<operateType>CA1</operateType>
@@ -790,7 +914,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14439" toLevel="1" name="Vampiric Marauder's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14439</icon>
 		<operateType>CA1</operateType>
@@ -812,7 +936,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14440" toLevel="1" name="Ghost Pursuer's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14440</icon>
 		<operateType>CA1</operateType>
@@ -834,7 +958,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14441" toLevel="1" name="Forgotten Scholar's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14441</icon>
 		<operateType>CA1</operateType>
@@ -856,7 +980,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14442" toLevel="1" name="Battleground Ruler's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14442</icon>
 		<operateType>CA1</operateType>
@@ -878,7 +1002,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14443" toLevel="1" name="Consciousness Summoner's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14443</icon>
 		<operateType>CA1</operateType>
@@ -900,7 +1024,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14444" toLevel="1" name="Heavenly Ascetic's Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously absorbs the enemy's soul. -->
 		<icon>icon.skill14444</icon>
 		<operateType>CA1</operateType>
@@ -922,7 +1046,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14445" toLevel="8" name="Harnak's Decree">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- All battle abilities are temporarily increased. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A4</operateType>
@@ -939,9 +1063,24 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">60</value>
+					<value level="7">70</value>
+					<value level="8">100</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14446" toLevel="1" name="Sleep">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sleep status. -->
 		<icon>icon.skill1069</icon>
 		<operateType>A2</operateType>
@@ -960,9 +1099,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>100</SLEEP>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14447" toLevel="1" name="Chains of Hatred">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Yoked status. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -985,9 +1132,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="TargetMe" />
+		</effects>
 	</skill>
 	<skill id="14448" toLevel="1" name="Blink">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Evasion -->
 		<icon>icon.skill10768</icon>
 		<operateType>A1</operateType>
@@ -1003,9 +1160,20 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="Blink">
+				<angle>0</angle> <!-- Teleport to Back -->
+				<range>300</range>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="14449" toLevel="1" name="Dedicated Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>100</castRange>
@@ -1018,9 +1186,14 @@
 		<hitTime>1500</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>36042</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14450" toLevel="1" name="Dedicated Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -1033,9 +1206,14 @@
 		<hitTime>1500</hitTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>36042</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14451" toLevel="1" name="Multi Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0987</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -1052,9 +1230,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>28834</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14452" toLevel="1" name="Berserk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- All battle abilities are temporarily increased. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -1071,9 +1254,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14453" toLevel="1" name="Magic Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1275</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
@@ -1087,9 +1276,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>252</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14454" toLevel="1" name="Magic Bombing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1296</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
@@ -1108,9 +1302,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>201</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14455" toLevel="1" name="Healing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -1124,9 +1323,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>10</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14456" toLevel="1" name="Wide Area Healing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -1142,9 +1346,14 @@
 		<targetType>ENEMY_NOT</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>5</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14457" toLevel="1" name="Physical Immunity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. is maximized. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
@@ -1161,9 +1370,15 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>200000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14458" toLevel="1" name="Magical Immunity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. is maximized. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
@@ -1180,9 +1395,15 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>200000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14459" toLevel="1" name="Stun Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stun status. -->
 		<icon>icon.skill0101</icon>
 		<operateType>A2</operateType>
@@ -1203,9 +1424,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14460" toLevel="1" name="Sleep">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sleep status. -->
 		<icon>icon.skill1069</icon>
 		<operateType>A2</operateType>
@@ -1227,9 +1453,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>100</SLEEP>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14461" toLevel="1" name="Fear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Fear status. -->
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
@@ -1251,9 +1485,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+		</effects>
 	</skill>
 	<skill id="14462" toLevel="1" name="Apherus Curse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Paralysis status. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
@@ -1280,9 +1518,23 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="HealPercent">
+				<power>-20</power>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>14463</skillId> <!-- Apherus Curse -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="14463" toLevel="1" name="Apherus Curse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP decreased. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
@@ -1305,9 +1557,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>-10</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14464" toLevel="1" name="Apherus Space">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. and HP are decreased. -->
 		<icon>icon.skill0048</icon>
 		<operateType>A2</operateType>
@@ -1326,9 +1583,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamOverTime">
+				<power>400</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14465" toLevel="1" name="Apherus' Binding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Dragged away. -->
 		<icon>icon.skill0006</icon>
 		<operateType>A2</operateType>
@@ -1349,9 +1616,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>RING_RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PullBack">
+				<speed>1500</speed>
+				<delay>1500</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14466" toLevel="1" name="Weaken">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. is decreased. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
@@ -1376,9 +1652,19 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamOverTime">
+				<power>200</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14467" toLevel="1" name="Chains of Hatred">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Yoked status. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A2</operateType>
@@ -1401,9 +1687,18 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14468" toLevel="1" name="Axis Collapse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0347</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-2</effectPoint>
@@ -1416,9 +1711,19 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="TargetCancel">
+				<chance>60</chance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>71860</power>
+				<criticalChance>20</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14469" toLevel="1" name="Aerial Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- The body floats up in the magic by magic. No action is possible. -->
 		<icon>icon.skill1072</icon>
 		<operateType>A2</operateType>
@@ -1441,9 +1746,23 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14470" toLevel="1" name="Short-range Marksmanship">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1456,9 +1775,14 @@
 		<coolTime>800</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>57483</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14471" toLevel="1" name="Great Magic Bombing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1296</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1476,9 +1800,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>443</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14472" toLevel="1" name="Summon Subordinate">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
@@ -1492,7 +1821,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14473" toLevel="1" name="Healing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1258</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1506,6 +1835,11 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>20</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14474" toLevel="1" name="Octavis Connection">
 		<!-- Glory Days confirmed -->
@@ -1550,7 +1884,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14476" toLevel="1" name="Sacrifice">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1564,9 +1898,14 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14477" toLevel="1" name="Sacrifice">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<castRange>350</castRange>
@@ -1581,9 +1920,14 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>30000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14478" toLevel="1" name="Antharas Berserk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>2</effectPoint>
@@ -1598,9 +1942,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14479" toLevel="1" name="Antharas Berserk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>2</effectPoint>
@@ -1615,9 +1965,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14480" toLevel="1" name="Antharas Berserk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>2</effectPoint>
@@ -1632,9 +1992,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14481" toLevel="1" name="Antharas Berserk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>2</effectPoint>
@@ -1649,9 +2019,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14482" toLevel="1" name="Antharas Berserk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>2</effectPoint>
@@ -1666,9 +2046,19 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14483" toLevel="1" name="Valakas Neutralization">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1235</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
@@ -1684,9 +2074,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>500000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14484" toLevel="1" name="Aerial Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
@@ -1701,9 +2096,14 @@
 		<reuseDelay>10000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14485" toLevel="1" name="High-speed Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. is increased by 200%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
@@ -1720,9 +2120,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14486" toLevel="1" name="High-speed Casting">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Casting Spd. is increased by 200%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
@@ -1739,9 +2145,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14487" toLevel="1" name="Poison Cloud">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poison status. -->
 		<icon>icon.skill1167</icon>
 		<operateType>A2</operateType>
@@ -1763,9 +2175,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="DamOverTime">
+				<power>500</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14488" toLevel="1" name="Hide">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hide status. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A2</operateType>
@@ -1783,9 +2201,15 @@
 		<hitTime>1500</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hide" />
+			<effect name="SilentMove">
+				<chance>100</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14489" toLevel="1" name="Recharge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1147</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1804,7 +2228,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14490" toLevel="1" name="Silence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Silence status. -->
 		<icon>icon.skill1064</icon>
 		<operateType>A2</operateType>
@@ -1828,9 +2252,12 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Mute" />
+		</effects>
 	</skill>
 	<skill id="14491" toLevel="1" name="Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rage status. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -1847,9 +2274,27 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14492" toLevel="1" name="Frantic">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Frantic status. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -1866,9 +2311,23 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14493" toLevel="1" name="Rampage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rampage status. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -1885,9 +2344,23 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14494" toLevel="1" name="Tear Gas">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed/Atk. Spd./Casting Spd. are decreased. -->
 		<icon>icon.skill1298</icon>
 		<operateType>A2</operateType>
@@ -1908,9 +2381,23 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14495" toLevel="1" name="Damage Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Reflects damage. -->
 		<icon>icon.skill0086</icon>
 		<operateType>A2</operateType>
@@ -1928,9 +2415,14 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageShield">
+				<amount>10</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14496" toLevel="1" name="Darkness Explosion">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>2</effectPoint>
@@ -1944,7 +2436,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14497" toLevel="1" name="Hereditary Suffering">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>2</effectPoint>
@@ -1958,7 +2450,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14498" toLevel="1" name="Decaying Darkness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>2</effectPoint>
@@ -1972,7 +2464,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="14499" toLevel="1" name="Decaying Darkness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>2</effectPoint>

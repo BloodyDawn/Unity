@@ -1315,8 +1315,6 @@
 		</effects>
 	</skill>
 	<skill id="411" toLevel="3" name="Stealth">
-		<table name="#amount"> 0.55 0.7 0.85 </table>
-		<table name="#rEvas"> 12 8 4 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1351,6 +1349,7 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SilentMove">
+				<chance>100</chance>
 			</effect>
 			<effect name="PAtk">
 				<amount>-45</amount>

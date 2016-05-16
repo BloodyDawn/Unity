@@ -323,7 +323,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="22820" toLevel="6" name="Ninja Set - Active">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Can use Invisibility when whole set is equipped. -->
 		<icon>BranchSys3.icon1.g_co_ninja_u</icon>
 		<operateType>
@@ -357,12 +357,21 @@
 		<affectScope>SINGLE</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<conditions>
-			<condition name="OpSkill">
+			<condition name="OpSkill" fromLevel="1" toLevel="5">
 				<skillId>22820</skillId>
 				<skillLevel>6</skillLevel>
 				<hasLearned>true</hasLearned>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="SilentMove" fromLevel="6" toLevel="6">
+				<chance>100</chance>
+			</effect>
+			<effect name="Speed" fromLevel="6" toLevel="6">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="22821" toLevel="6" name="Ninja Set - Passive">
 		<!-- AUTO GENERATED SKILL -->

@@ -3952,9 +3952,6 @@
 	</skill>
 	<skill id="3159" toLevel="3" name="Item Skill: Stealth">
 		<!-- Confirmed CT2.5 -->
-		<table name="#amount"> 0.55 0.7 0.85 </table>
-		<table name="#magicLvl"> 58 67 75 </table>
-		<table name="#rEvas"> 12 8 4 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>ABNORMAL_ITEM</abnormalType>
@@ -3986,6 +3983,7 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="SilentMove">
+				<chance>100</chance>
 			</effect>
 			<effect name="PAtk">
 				<amount>-45</amount>
