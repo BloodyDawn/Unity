@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14600" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -11,9 +11,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14597" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Mark of Weakness -->
+			<item id="14598" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Mark of Plague -->
+			<item id="14599" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Exile -->
+		</alterSkill>
 	</skill>
 	<skill id="14601" toLevel="1" name="Cry of Destiny - Mark of Weakness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, weakens the enemy. Decreases 174 HP per second and increases weakness to de-buff by 5%. -->
 		<icon>icon.skill11259</icon>
 		<operateType>A2</operateType>
@@ -36,9 +41,22 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>174</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>5</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14602" toLevel="1" name="Cry of Destiny - Mark of Plague">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stigma that connects to the epidemic dimension. For 10 seconds, inflicts the plague in the enemy. Decreases 238 HP per second and block recovery. -->
 		<icon>icon.skill11261</icon>
 		<operateType>A2</operateType>
@@ -61,9 +79,22 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>238</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="HealEffect">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14603" toLevel="1" name="Cry of Destiny - Exile">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Kicks out the target to another dimension. The exiled target becomes incapacitated and loses 167 HP per second. -->
 		<icon>icon.skill11273</icon>
 		<operateType>A2</operateType>
@@ -87,9 +118,32 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="DamOverTime">
+				<power>167</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14604" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -99,9 +153,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14605" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Crippling Attack -->
+			<item id="14606" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Death Strike -->
+			<item id="14607" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Pipe Organ Melody -->
+		</alterSkill>
 	</skill>
 	<skill id="14605" toLevel="1" name="Cry of Destiny - Crippling Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the target with 5175 power added to P. Atk. For 5 seconds, decreases the enemy's P. Def./M. Def. by 70% and evasion by 10. -->
 		<icon>icon.skill11509</icon>
 		<operateType>A2</operateType>
@@ -132,9 +191,29 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>5175</power>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-70</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-70</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14606" toLevel="1" name="Cry of Destiny - Death Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the target with 9444 Power added to P. Atk. -->
 		<icon>icon.skill11511</icon>
 		<operateType>A1</operateType>
@@ -159,9 +238,19 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>9444</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14607" toLevel="1" name="Cry of Destiny - Pipe Organ Melody">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, increases Max HP by 2572, Max MP by 953, HP recovery by 20%, and MP recovery by 20%. -->
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
@@ -180,9 +269,27 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="MaxMp">
+				<amount>953</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>2572</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14608" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -192,9 +299,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14609" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Dark Blast -->
+			<item id="14610" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Radiant Heal -->
+			<item id="14611" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Dark Force -->
+		</alterSkill>
 	</skill>
 	<skill id="14609" toLevel="1" name="Cry of Destiny - Dark Blast">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts no-type damage on the enemy with 124 power added to M. Atk. Decreases the enemy's attacking urge against yourself. -->
 		<icon>icon.skill11766</icon>
 		<operateType>A1</operateType>
@@ -209,9 +321,20 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>124</power>
+			</effect>
+			<effect name="AddHate">
+				<power>-1240</power>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14610" toLevel="1" name="Cry of Destiny - Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Restores the target's HP with 1488 Power. Once HP is filled, the remaining effect stores CP. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
@@ -225,9 +348,17 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpCpHeal">
+				<power>1488</power>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14611" toLevel="1" name="Cry of Destiny - Dark Force">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Pushes and inflicts a magic attack. -->
 		<icon>icon.skill0101</icon>
 		<operateType>A2</operateType>
@@ -252,6 +383,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>62</power>
+			</effect>
+			<effect name="KnockBack">
+				<speed>500</speed>
+				<distance>300</distance>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14612" toLevel="1" name="Press the icon to use the chain skill.">
 		<!-- Glory Days confirmed -->

@@ -2977,7 +2977,7 @@
 		</effects>
 	</skill>
 	<skill id="14592" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -2987,9 +2987,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14593" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Pinpoint Shot -->
+			<item id="14594" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Quick Fire -->
+			<item id="14595" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Recoil Shot -->
+		</alterSkill>
 	</skill>
 	<skill id="14593" toLevel="1" name="Cry of Destiny - Pinpoint Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the weak points of long-range enemies. Attack the target with 11099 Power added to P. Atk. Disregards 30% of P. Def. and attacks. Bow/crossbow required. Over-hit. Critical. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -3013,9 +3018,20 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>11099</power>
+				<criticalChance>10</criticalChance>
+				<pDefMod>0.7</pDefMod>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14594" toLevel="1" name="Cry of Destiny - Quick Fire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases Atk. Spd. by 50% when equipped with a bow/crossbow. -->
 		<icon>icon.skill10779</icon>
 		<operateType>A2</operateType>
@@ -3033,9 +3049,23 @@
 		<coolTime>200</coolTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+					<item>TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14595" toLevel="1" name="Cry of Destiny - Recoil Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shoots an arrow with 4912 power added to P. Atk. to the target to push out the enemy. Bow/crossbow required. Over-hit. Chance of canceling the opponent's target. -->
 		<icon>icon.skill0101</icon>
 		<operateType>A2</operateType>
@@ -3068,9 +3098,26 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>4912</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
+			</effect>
+			<effect name="KnockBack">
+				<speed>500</speed>
+				<distance>100</distance>
+			</effect>
+			<effect name="TargetCancel">
+				<chance>40</chance>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14596" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -3080,9 +3127,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14597" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Elemental Spike -->
+			<item id="14598" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Elemental Crash -->
+			<item id="14599" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Hell Binding -->
+		</alterSkill>
 	</skill>
 	<skill id="14597" toLevel="1" name="Cry of Destiny - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts magic damage with 126 power on the selected target. Decreases Fire Resistance by 20. -->
 		<icon>icon.skill11011</icon>
 		<operateType>A2</operateType>
@@ -3105,9 +3157,21 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackRange">
+				<power>126</power>
+				<shieldDefPercent>40</shieldDefPercent>
+			</effect>
+			<effect name="DefenceAttribute">
+				<FIRE>-20</FIRE>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14598" toLevel="1" name="Cry of Destiny - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts magic damage on the enemy with 150 power. Also decreases Spd. and inflicts Fear. -->
 		<icon>icon.skill11513</icon>
 		<operateType>A2</operateType>
@@ -3132,9 +3196,23 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>150</power>
+			</effect>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14599" toLevel="1" name="Cry of Destiny - Hell Binding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Floats the target into the air and stops him from moving for awhile. -->
 		<icon>icon.skill11050</icon>
 		<operateType>A2</operateType>
@@ -3158,5 +3236,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 </list>
