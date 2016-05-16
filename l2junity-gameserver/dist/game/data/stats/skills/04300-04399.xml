@@ -320,7 +320,6 @@
 	</skill>
 	<skill id="4318" toLevel="2" name="Ultimate Buff">
 		<!-- Glory Days confirmed -->
-		<table name="#magical"> 1 1.5 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>ULTIMATE_BUFF</abnormalType>
@@ -347,11 +346,8 @@
 				<amount>83</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">50</value>
-				</amount>
+			<effect name="MAtk" fromLevel="2" toLevel="2">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
@@ -374,11 +370,8 @@
 				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">50</value>
-				</amount>
+			<effect name="MagicalAttackSpeed" fromLevel="2" toLevel="2">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalRate">

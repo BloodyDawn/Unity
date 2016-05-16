@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14700" toLevel="1" name="Maximum Defense">
+		<!-- Glory Days confirmed -->
 		<!-- For 1 minute, increases one's own P. Atk. by 25%, M. Atk. by 50%, P. Def. by 1800, M. Def. by 1620, HP recovery speed by 300, MP recovery speed by 300%, and Buff-canceling Attack Resistance by 80%. -->
-		<!-- TO BE CONFIRMED -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -35,12 +35,16 @@
 				<amount>1800</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="MagicalDefence">
+				<amount>1620</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="HpRegen">
 				<amount>300</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MpRegen">
-				<amount>200</amount>
+				<amount>300</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistDispelByCategory">
@@ -409,7 +413,7 @@
 		</effects>
 	</skill>
 	<skill id="14737" toLevel="1" name="Seal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sealed status. -->
 		<icon>icon.skill1042</icon>
 		<operateType>CA1</operateType>

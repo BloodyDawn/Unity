@@ -818,12 +818,12 @@
 		<affectScope>SINGLE</affectScope>
 		<selfEffects>
 			<effect name="DispelBySlot">
-				<slot>TRANSFORM,-1</slot>
+				<dispel>TRANSFORM,-1</dispel>
 			</effect>
 		</selfEffects>
 		<effects>
 			<effect name="DispelBySlot">
-				<slot>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</slot>
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
@@ -863,12 +863,12 @@
 		<affectScope>SINGLE</affectScope>
 		<selfEffects>
 			<effect name="DispelBySlot">
-				<slot>TRANSFORM,-1</slot>
+				<dispel>TRANSFORM,-1</dispel>
 			</effect>
 		</selfEffects>
 		<effects>
 			<effect name="DispelBySlot">
-				<slot>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</slot>
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
 			</effect>
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
@@ -1943,7 +1943,7 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelByCategory">
-				<slot>PD_UP_SPECIAL,10</slot>
+				<dispel>PD_UP_SPECIAL,10</dispel>
 			</effect>
 		</effects>
 	</skill>
@@ -2540,7 +2540,7 @@
 		</alterSkill>
 	</skill>
 	<skill id="14581" toLevel="1" name="Cry of Destiny - Shield Charge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses a shield to attack the selected target with 6150 power added to P. Atk. Also decreases P. Def. by 10% and physical evasion by 2. Increase incurred physical critical damage by 10%. -->
 		<icon>icon.skill10008</icon>
 		<operateType>A2</operateType>
@@ -2565,9 +2565,29 @@
 		<conditions>
 			<condition name="EquipShield" />
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6150</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14582" toLevel="1" name="Cry of Destiny - Chain Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Drags a target to the center. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
@@ -2590,9 +2610,21 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14583" toLevel="1" name="Cry of Destiny - Last Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks with 7980 power added to P. Atk. Decreases Speed by 10%) Can be used while dagger/blunt equipment is equipped. Over-hit. -->
 		<icon>icon.skill10009</icon>
 		<operateType>A2</operateType>
@@ -2622,9 +2654,23 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>7980</power>
+				<overHit>true</overHit>
+				<criticalChance>5</criticalChance>
+			</effect>
+			<effect name="Speed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14584" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -2634,9 +2680,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14584" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Armor Destruction -->
+			<item id="14585" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Giant Punch -->
+			<item id="14586" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Power Bomber -->
+		</alterSkill>
 	</skill>
 	<skill id="14585" toLevel="1" name="Cry of Destiny - Armor Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with 5662 power added to P. Atk. Weakens P. Def. Additionally absorbs Momentum. -->
 		<icon>icon.skill10258</icon>
 		<operateType>A2</operateType>
@@ -2668,9 +2719,26 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>5662</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="FocusMomentum">
+				<maxCharges>10</maxCharges>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="14586" toLevel="1" name="Cry of Destiny - Giant Punch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Strikes down at the ground with a fist to knock down nearby enemies for 3 seconds. Dualsword/two-handed sword/spear/blunt weapon must be equipped. -->
 		<icon>icon.skill10266</icon>
 		<operateType>A2</operateType>
@@ -2706,9 +2774,31 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="KnockBack">
+				<speed>400</speed>
+				<distance>50</distance>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK2,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14587" toLevel="1" name="Cry of Destiny - Power Bomber">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerfully strikes the target with 8102 Power added to P. Atk. to knock down for 2 seconds. -->
 		<icon>icon.skill10262</icon>
 		<operateType>A2</operateType>
@@ -2730,9 +2820,20 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>8102</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14588" toLevel="1" name="Chain Skills">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enables use of chain skills. -->
 		<icon>icon.skill10317</icon>
 		<operateType>A1</operateType>
@@ -2742,9 +2843,14 @@
 		<magicLvl>85</magicLvl>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<alterSkill>
+			<item id="14589" level="1" chance="100" abnormalType="NPC_ATTACK1" /> <!-- Cry of Destiny - Heart Breaker -->
+			<item id="14590" level="1" chance="100" abnormalType="NPC_ATTACK2" /> <!-- Cry of Destiny - Dark Paralysis -->
+			<item id="14591" level="1" chance="100" abnormalType="NPC_ATTACK3" /> <!-- Cry of Destiny - Throwing Sand -->
+		</alterSkill>
 	</skill>
 	<skill id="14589" toLevel="1" name="Cry of Destiny - Heart Breaker">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful vital spot attack by striking the heart. Attack the target with 7127 Power added to P. Atk. Over-hit. Half-kill. -->
 		<icon>icon.skill10509</icon>
 		<operateType>A1</operateType>
@@ -2767,9 +2873,21 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>7127</power>
+				<chance>30</chance>
+			</effect>
+			<effect name="Lethal">
+				<halfLethal>5</halfLethal>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14590" toLevel="1" name="Cry of Destiny - Dark Paralysis">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Seals with the power of darkness. Causes the enemy's body to go completely rigid for 10 seconds and causes paralysis for 5 seconds. -->
 		<icon>icon.skill10514</icon>
 		<operateType>A2</operateType>
@@ -2791,9 +2909,32 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK1,-1</dispel>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>10515</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="14591" toLevel="1" name="Cry of Destiny - Throwing Sand">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hurls poison sand at the target. Greatly decreases Accuracy for 5 seconds and lures to yourself. -->
 		<icon>icon.skill10540</icon>
 		<operateType>A2</operateType>
@@ -2822,6 +2963,18 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="AddHate">
+				<power>500</power>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>NPC_ATTACK3,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14592" toLevel="1" name="Chain Skills">
 		<!-- AUTO GENERATED SKILL -->
