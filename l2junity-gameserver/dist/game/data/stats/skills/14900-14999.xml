@@ -1508,7 +1508,7 @@
 		</effects>
 	</skill>
 	<skill id="14957" toLevel="1" name="Phantom Bleed Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -1534,9 +1534,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>35</power>
+				<ticks>5</ticks>
+			</effect>
+			<effect name="FatalBlow">
+				<power>3000</power>
+				<chance>20</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14958" toLevel="1" name="Apparition Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -1551,9 +1561,14 @@
 		<coolTime>500</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>3000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14959" toLevel="1" name="Apparition Cut">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -1568,9 +1583,14 @@
 		<coolTime>500</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>3000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14960" toLevel="1" name="Apparition Flash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -1585,9 +1605,14 @@
 		<coolTime>300</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>3000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14961" toLevel="1" name="Apparition Magic Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
@@ -1603,9 +1628,14 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>29</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14962" toLevel="1" name="Apparition Bleed Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -1631,9 +1661,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>35</power>
+				<ticks>5</ticks>
+			</effect>
+			<effect name="FatalBlow">
+				<power>3000</power>
+				<chance>20</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14963" toLevel="1" name="Spirit Gathering">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Gather spirit. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1648,7 +1688,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="14964" toLevel="1" name="Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Rushes the enemy to inflict Shock for 1 second(s). -->
 		<icon>icon.skill11508</icon>
 		<operateType>DA2</operateType>
@@ -1670,6 +1710,11 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14965" toLevel="1" name="Judgment of Blood">
 		<!-- Glory Days confirmed -->
@@ -1692,9 +1737,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>-50</power>
+			</effect>
+			<effect name="MagicalAttack">
+				<power>200</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14966" toLevel="1" name="Group Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Restores all party members' HP with 66 Power. -->
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
@@ -1710,9 +1763,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>CLAN</affectObject>
+		<effects>
+			<effect name="Heal">
+				<power>500</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14967" toLevel="1" name="Judgment of Death">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
 		<hitTime>700</hitTime>
@@ -1729,9 +1787,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>FAN_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>-50</power>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14968" toLevel="1" name="Judgment of Darkness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>700</hitTime>
@@ -1749,9 +1815,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>-50</power>
+			</effect>
+			<effect name="MagicalAttack">
+				<power>200</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14969" toLevel="1" name="Group Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Restores all party members' HP with 66 Power. -->
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
@@ -1768,9 +1842,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>CLAN</affectObject>
+		<effects>
+			<effect name="Heal">
+				<power>500</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14970" toLevel="1" name="Judgment of Lunacy">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
 		<hitTime>700</hitTime>
@@ -1787,9 +1866,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>FAN_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>50000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14971" toLevel="1" name="Judgment of Silence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>700</hitTime>
@@ -1807,9 +1891,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>-50</power>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14972" toLevel="1" name="Group Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Restores all party members' HP with 66 Power. -->
 		<icon>icon.skill1027</icon>
 		<operateType>A1</operateType>
@@ -1826,9 +1918,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>CLAN</affectObject>
+		<effects>
+			<effect name="Heal">
+				<power>500</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14973" toLevel="1" name="Delusion Cut">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>150</castRange>
@@ -1844,9 +1941,14 @@
 		<coolTime>300</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14974" toLevel="1" name="Delusion Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>700</hitTime>
@@ -1863,6 +1965,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>FAN_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>-70</power>
+			</effect>
+			<effect name="PhysicalAttack">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14975" toLevel="1" name="Mysterious Combat Buff">
 		<!-- AUTO GENERATED SKILL -->
