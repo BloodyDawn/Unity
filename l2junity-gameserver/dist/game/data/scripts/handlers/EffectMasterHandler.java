@@ -331,6 +331,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("UnsummonServitors", UnsummonServitors::new);
 		EffectHandler.getInstance().registerHandler("Untargetable", Untargetable::new);
 		EffectHandler.getInstance().registerHandler("VampiricAttack", VampiricAttack::new);
+		EffectHandler.getInstance().registerHandler("VampiricDefence", VampiricDefence::new);
 		EffectHandler.getInstance().registerHandler("VisualBuff", VisualBuff::new);
 		EffectHandler.getInstance().registerHandler("VitalityPointsRate", VitalityPointsRate::new);
 		EffectHandler.getInstance().registerHandler("VitalityPointUp", VitalityPointUp::new);

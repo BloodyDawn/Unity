@@ -1108,10 +1108,6 @@
 	<skill id="11517" toLevel="4" name="Horn Melody">
 		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, all party members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
-		<table name="#pAtk"> 1.17 1.19 1.21 1.23 </table>
-		<table name="#pDef"> 1.15 1.15 1.15 1.15 </table>
-		<table name="#mAtk"> 1.79 1.83 1.87 1.91 </table>
-		<table name="#mDef"> 1.30 1.30 1.30 1.30 </table>
 		<abnormalLvl>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1195,21 +1191,11 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">30</value>
-					<value level="2">30</value>
-					<value level="3">30</value>
-					<value level="4">30</value>
-				</amount>
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
-				<amount>
-					<value level="1">15</value>
-					<value level="2">15</value>
-					<value level="3">15</value>
-					<value level="4">15</value>
-				</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1300,12 +1286,11 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed">
+			<effect name="Speed" fromLevel="1" toLevel="3">
 				<amount>
 					<value level="1">-15</value>
 					<value level="2">-10</value>
 					<value level="3">-5</value>
-					<value level="4">0</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

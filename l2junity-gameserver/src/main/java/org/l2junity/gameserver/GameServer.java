@@ -106,6 +106,7 @@ import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.instancemanager.ClanHallAuctionManager;
 import org.l2junity.gameserver.instancemanager.CommissionManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
+import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.FourSepulchersManager;
@@ -122,7 +123,6 @@ import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.instancemanager.DBSpawnManager;
 import org.l2junity.gameserver.instancemanager.SellBuffsManager;
 import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
@@ -422,12 +422,7 @@ public class GameServer
 	
 	public static void printSection(String s)
 	{
-		s = "=[ " + s + " ]";
-		while (s.length() < 61)
-		{
-			s = "-" + s;
-		}
-		LOGGER.info(s);
+		LOGGER.info("------------------------------------------------=[ {} ]", s);
 	}
 	
 	public long getStartedTime()

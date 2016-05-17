@@ -469,7 +469,7 @@
 		</effects>
 	</skill>
 	<skill id="14615" toLevel="1" name="Teredor Biting">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
@@ -488,9 +488,43 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>653879</power>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.98</pDefMod>
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>2</skillLevel>
+				<attackerType>L2Playable</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>50</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14616" toLevel="1" name="Blood Siphon">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Blood is being sucked. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
@@ -511,6 +545,16 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+			<effect name="DamOverTimePercent">
+				<power>2</power>
+				<ticks>2</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14617" toLevel="1" name="Knock Down Resistance">
 		<!-- Glory Days confirmed. -->
@@ -597,7 +641,7 @@
 		</effects>
 	</skill>
 	<skill id="14624" toLevel="1" name="Apherus Dark Space">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. and HP are decreased. -->
 		<icon>icon.skill0048</icon>
 		<operateType>A2</operateType>
@@ -616,6 +660,20 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamOverTime">
+				<power>800</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14625" toLevel="1" name="Release of Power">
 		<!-- Glory Days confirmed -->
@@ -1338,7 +1396,7 @@
 		</effects>
 	</skill>
 	<skill id="14649" toLevel="1" name="Bounce">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bounce status. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
@@ -1357,6 +1415,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ThrowUp" /> <!-- TODO FIX ME i_fly_away;curve;push;600 -->
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14650" toLevel="1" name="Corpse' Blow">
 		<!-- Glory Days confirmed -->
@@ -1845,7 +1909,7 @@
 		</effects>
 	</skill>
 	<skill id="14669" toLevel="1" name="Earth Wyrm Feeler Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0773</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-686</effectPoint>
@@ -1859,9 +1923,17 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>923152</power>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.98</pDefMod>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14670" toLevel="1" name="Earth Wyrm Feeler Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-1</effectPoint>
@@ -1874,9 +1946,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>RING_RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>653879</power>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.98</pDefMod>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14671" toLevel="1" name="Earth Wyrm Feeler Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-1</effectPoint>
@@ -1888,9 +1968,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>653879</power>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.98</pDefMod>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14672" toLevel="1" name="Bounce">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bounce status. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
@@ -1910,9 +1998,15 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ThrowUp" /> <!-- TODO FIX ME i_fly_away;curve;push;600 -->
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14673" toLevel="1" name="Cry of Destiny - Shield Charge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses a shield to attack the selected target with 1500 power added to P. Atk. Also decreases P. Def. by 10% and physical evasion by 2. Increase incurred physical critical damage by 10%. -->
 		<icon>icon.skill10008</icon>
 		<operateType>A2</operateType>
@@ -1934,6 +2028,23 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1500</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14674" toLevel="1" name="Cry of Destiny - Chain Strike">
 		<!-- Glory Days confirmed -->
@@ -1970,7 +2081,7 @@
 		</effects>
 	</skill>
 	<skill id="14675" toLevel="1" name="Cry of Destiny - Last Judgment">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks with 2000 power added to P. Atk. Decreases Speed by 10%. -->
 		<icon>icon.skill10009</icon>
 		<operateType>A2</operateType>
@@ -1992,9 +2103,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2000</power>
+			</effect>
+			<effect name="Speed">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14676" toLevel="1" name="Cry of Destiny - Armor Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with 1300 power added to P. Atk. Weakens P. Def. Additionally absorbs Momentum. -->
 		<icon>icon.skill10258</icon>
 		<operateType>A2</operateType>
@@ -2014,9 +2134,23 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1300</power>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="FocusMomentum">
+				<maxCharges>10</maxCharges>
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="14677" toLevel="1" name="Cry of Destiny - Giant Punch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Strikes down at the ground with a fist to knock down nearby enemies for 3 seconds. Dualsword/two-handed sword/spear/blunt weapon must be equipped. -->
 		<icon>icon.skill10266</icon>
 		<operateType>A2</operateType>
@@ -2040,9 +2174,28 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="KnockBack">
+				<speed>400</speed>
+				<distance>50</distance>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+				<SLEEP>100</SLEEP>
+				<KNOCKBACK>100</KNOCKBACK>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14678" toLevel="1" name="Cry of Destiny - Power Bomber">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerfully strikes the target with 2000 Power added to P. Atk. to knock down for 2 seconds. -->
 		<icon>icon.skill10262</icon>
 		<operateType>A2</operateType>
@@ -2064,9 +2217,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14679" toLevel="1" name="Cry of Destiny - Heart Breaker">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful vital spot attack by striking the heart. Attack the target with 1700 Power added to P. Atk. Over-hit. Half-kill. -->
 		<icon>icon.skill10509</icon>
 		<operateType>A1</operateType>
@@ -2081,9 +2242,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="FatalBlow">
+				<power>1700</power>
+				<chance>30</chance>
+			</effect>
+			<effect name="Lethal">
+				<halfLethal>5</halfLethal>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14680" toLevel="1" name="Cry of Destiny - Dark Paralysis">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Seals with the power of darkness. Causes the enemy's body to go completely rigid for 10 seconds and causes paralysis for 5 seconds. -->
 		<icon>icon.skill10514</icon>
 		<operateType>A2</operateType>
@@ -2105,9 +2275,29 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>10515</skillId>
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="14681" toLevel="1" name="Cry of Destiny - Throwing Sand">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hurls poison sand at the target. Greatly decreases Accuracy for 5 seconds and lures to yourself. -->
 		<icon>icon.skill10540</icon>
 		<operateType>A2</operateType>
@@ -2127,9 +2317,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="AddHate">
+				<power>500</power>
+			</effect>
+			<effect name="Accuracy">
+				<amount>-40</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14682" toLevel="1" name="Cry of Destiny - Pinpoint Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the weak points of long-range enemies. Attack the target with 2700 Power added to P. Atk. Disregards 30% of P. Def. and attacks. -->
 		<icon>icon.skill10763</icon>
 		<operateType>A1</operateType>
@@ -2143,9 +2342,15 @@
 		<coolTime>850</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>2700</power>
+				<pDefMod>0.7</pDefMod>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14683" toLevel="1" name="Cry of Destiny - Quick Fire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases Atk. Spd. by 50% when equipped with a bow or crossbow. -->
 		<icon>icon.skill10779</icon>
 		<operateType>A2</operateType>
@@ -2162,9 +2367,20 @@
 		<coolTime>200</coolTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BOW</item>
+					<item>CROSSBOW</item>
+					<item>TWOHANDCROSSBOW</item>
+				</weaponType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14684" toLevel="1" name="Cry of Destiny - Recoil Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shoots an arrow with 1200 power added to P. Atk. to the target to push out the enemy. Bow/crossbow required. Over-hit. Chance of canceling the opponent's target. -->
 		<icon>icon.skill10770</icon>
 		<operateType>A2</operateType>
@@ -2187,9 +2403,21 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1200</power>
+			</effect>
+			<effect name="KnockBack">
+				<speed>500</speed>
+				<distance>100</distance>
+			</effect>
+			<effect name="TargetCancel">
+				<chance>40</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14685" toLevel="1" name="Cry of Destiny - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts magic damage with 30 power on the selected target. Decreases Fire Resistance by 20. -->
 		<icon>icon.skill11011</icon>
 		<operateType>A2</operateType>
@@ -2212,9 +2440,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackRange">
+				<power>30</power>
+				<shieldDefPercent>40</shieldDefPercent>
+			</effect>
+			<effect name="DefenceAttribute">
+				<FIRE>-20</FIRE>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14686" toLevel="1" name="Cry of Destiny - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts magic damage on the enemy with 35 power. Also decreases Speed and inflicts fear. -->
 		<icon>icon.skill11513</icon>
 		<operateType>A2</operateType>
@@ -2239,9 +2476,21 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackRange">
+				<power>30</power>
+				<shieldDefPercent>40</shieldDefPercent>
+			</effect>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14687" toLevel="1" name="Cry of Destiny - Hell Binding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Floats the target into the air and stops him from moving for awhile. -->
 		<icon>icon.skill11050</icon>
 		<operateType>A2</operateType>
@@ -2265,9 +2514,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14688" toLevel="2" name="Cry of Destiny - Mark of Weakness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, weakens the enemy. Decreases 40 HP per second and increases weakness to de-buff by 5%. -->
 		<icon>icon.skill11259</icon>
 		<operateType>A2</operateType>
@@ -2290,9 +2544,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>40</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>5</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14689" toLevel="2" name="Cry of Destiny - Mark of Plague">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Stigma that connects to the epidemic dimension. For 10 seconds, inflicts the plague in the enemy. Decreases 70 HP per second and block recovery. -->
 		<icon>icon.skill11261</icon>
 		<operateType>A2</operateType>
@@ -2315,9 +2579,23 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">70</value>
+					<value level="1">8</value>
+				</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="HealEffect">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14690" toLevel="1" name="Cry of Destiny - Exile">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Kicks out the target to another dimension. The exiled target becomes incapacitated and loses 167 HP per second. -->
 		<icon>icon.skill11273</icon>
 		<operateType>A2</operateType>
@@ -2340,10 +2618,29 @@
 		<abnormalVisualEffect>DEPORT</abnormalVisualEffect>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+			<effect name="DamOverTime">
+				<power>167</power>
+				<ticks>1</ticks>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="HpRegen">
+				<amount>-100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14691" toLevel="1" name="Cry of Destiny - Crippling Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the target with 1300 power added to P. Atk. For 5 seconds, decreases the enemy's P. Def./M. Def. by 30% and evasion by 10. -->
 		<icon>icon.skill11509</icon>
 		<operateType>A2</operateType>
@@ -2363,9 +2660,26 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1300</power>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14692" toLevel="1" name="Cry of Destiny - Death Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the target with 1400 Power added to P. Atk. -->
 		<icon>icon.skill11511</icon>
 		<operateType>A1</operateType>
@@ -2379,9 +2693,14 @@
 		<coolTime>500</coolTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1400</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14693" toLevel="1" name="Cry of Destiny - Pipe Organ Melody">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, increases Max HP by 2572, Max MP by 953, HP recovery by 20%, and MP recovery by 20%. -->
 		<icon>icon.skill11519</icon>
 		<operateType>A2</operateType>
@@ -2400,9 +2719,27 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="MaxMp">
+				<amount>953</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>2572</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14694" toLevel="1" name="Cry of Destiny - Dark Blast">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts no-type damage on the enemy with 31 power added to M. Atk. Decreases the enemy's attacking urge against yourself. -->
 		<icon>icon.skill1175</icon>
 		<operateType>A1</operateType>
@@ -2417,9 +2754,17 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>21</power>
+			</effect>
+			<effect name="AddHate">
+				<power>-1240</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14695" toLevel="1" name="Cry of Destiny - Radiant Heal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Restores the target's HP with 1488 Power. Once HP is filled, the remaining effect stores CP. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
@@ -2433,9 +2778,14 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpCpHeal">
+				<power>1488</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14696" toLevel="1" name="Cry of Destiny - Dark Force">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Pushes and inflicts a magic attack. -->
 		<icon>icon.skill0101</icon>
 		<operateType>A2</operateType>
@@ -2460,9 +2810,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>15</power>
+			</effect>
+			<effect name="KnockBack">
+				<speed>500</speed>
+				<distance>300</distance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14697" toLevel="1" name="Ghost's Hell Binding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Floats the target into the air and stops him from moving for awhile. -->
 		<icon>icon.skill11050</icon>
 		<operateType>A2</operateType>
@@ -2487,8 +2846,14 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="14698" toLevel="1" name="Current Shock">
+		<!-- Glory Days confirmed -->
 		<!-- Zone Skill -->
 		<!-- Incurs a current shock. -->
 		<icon>icon.skill1072</icon>
@@ -2511,14 +2876,13 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
-				<canKill>true</canKill>
-				<power>85</power>
-				<ticks>2</ticks>
+				<power>100</power>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="14699" toLevel="1" name="Illusion of Pain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Translucent status. -->
 		<icon>icon.skill0411</icon>
 		<operateType>A2</operateType>
