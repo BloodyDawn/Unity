@@ -2484,8 +2484,11 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="1997" toLevel="2" name="Gravity Exile">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., blocks target from being resurrected by another character. -->
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>BLOCK_RESURRECTION</abnormalType>
 		<icon>icon.skill1997</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -2495,5 +2498,16 @@
 		<effectPoint>-100</effectPoint>
 		<abnormalTime>30</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<magicLvl>-2</magicLvl>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<stayAfterDeath>true</stayAfterDeath>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-2</specialLevel>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockResurrection" />
+		</effects>
 	</skill>
 </list>

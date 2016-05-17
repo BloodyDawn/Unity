@@ -1339,8 +1339,6 @@
 	</skill>
 	<skill id="3042" toLevel="20" name="Special Ability: Critical Damage">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cAtkAdd"> 81.6 61.4 84.14 75.49 66.77 58.01 49.42 84.11 166.26 146.88 127 107.01 133.97 124.79 275.26 267.13 257.98 297.21 331.38 361.06 </table>
-		<table name="#pvpBonus"> 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1.05 1.05 1.05 1.05 </table>
 		<icon>icon.skill0193</icon>
 		<magicLvl>
 			<value level="1">48</value>
@@ -3445,9 +3443,8 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="3091" toLevel="15" name="Item Skill: Poison">
+	<skill id="3091" toLevel="20" name="Item Skill: Poison">
 		<!-- Confirmed CT2.5 -->
-		<table name="#dot"> 41 41 50 50 50 58 58 58 63 63 63 63 63 63 63 </table> <!-- Guessed starting lvl 10 -->
 		<abnormalLvl>
 			<value level="1">5</value>
 			<value level="2">5</value>
@@ -3524,11 +3521,16 @@
 					<value level="8">58</value>
 					<value level="9">63</value>
 					<value level="10">63</value>
-					<value level="11">63</value>
-					<value level="12">63</value>
-					<value level="13">63</value>
-					<value level="14">63</value>
-					<value level="15">63</value>
+					<value level="11">67</value>
+					<value level="12">87</value>
+					<value level="13">87</value>
+					<value level="14">87</value>
+					<value level="15">98</value>
+					<value level="16">98</value>
+					<value level="17">98</value>
+					<value level="18">109</value>
+					<value level="19">109</value>
+					<value level="20">109</value>
 				</power>
 				<ticks>5</ticks>
 			</effect>
@@ -3536,7 +3538,6 @@
 	</skill>
 	<skill id="3092" toLevel="15" name="Item Skill: Bleed">
 		<!-- Confirmed CT2.5 -->
-		<table name="#dot"> 44 44 54 54 54 62 62 62 67 67 67 67 67 67 67 </table> <!-- Guessed starting lvl 10 -->
 		<abnormalLvl>
 			<value level="1">5</value>
 			<value level="2">5</value>
@@ -3615,10 +3616,15 @@
 					<value level="9">67</value>
 					<value level="10">67</value>
 					<value level="11">67</value>
-					<value level="12">67</value>
-					<value level="13">67</value>
-					<value level="14">67</value>
-					<value level="15">67</value>
+					<value level="12">87</value>
+					<value level="13">87</value>
+					<value level="14">87</value>
+					<value level="15">98</value>
+					<value level="16">98</value>
+					<value level="17">98</value>
+					<value level="18">109</value>
+					<value level="19">109</value>
+					<value level="20">109</value>
 				</power>
 				<ticks>5</ticks>
 			</effect>

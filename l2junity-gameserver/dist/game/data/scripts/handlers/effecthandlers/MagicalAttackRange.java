@@ -40,7 +40,7 @@ public final class MagicalAttackRange extends AbstractEffect
 	
 	public MagicalAttackRange(StatsSet params)
 	{
-		_power = params.getDouble("power", 0);
+		_power = params.getDouble("power");
 		_shieldDefPercent = params.getDouble("shieldDefPercent", 0);
 	}
 	

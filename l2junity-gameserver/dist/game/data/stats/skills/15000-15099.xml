@@ -41,7 +41,7 @@
 		</effects>
 	</skill>
 	<skill id="15001" toLevel="1" name="Cancel Transformation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill01703</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-1</effectPoint>
@@ -54,9 +54,14 @@
 		<castRange>2000</castRange>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,-1</dispel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15002" toLevel="1" name="Progressive Heal - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill015002</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -71,9 +76,14 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>40</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15003" toLevel="1" name="Summon Tree of Life - NPC">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers 666 HP per second for all party members for 15 seconds. -->
 		<icon>icon.skill1229</icon>
 		<operateType>A2</operateType>
@@ -92,9 +102,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="HealOverTime">
+				<power>666</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15004" toLevel="1" name="Bard's Blessing - Oil Coating">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers CP, HP, and MP of nearby allies by 100%. -->
 		<icon>icon.skill10278</icon>
 		<operateType>A1</operateType>
@@ -111,9 +127,20 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>100</power>
+			</effect>
+			<effect name="ManaHealPercent">
+				<power>100</power>
+			</effect>
+			<effect name="CpHealPercent">
+				<power>100</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15005" toLevel="1" name="Bard's Blessing - Squeaking Noise">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 60 minutes, recovers Max HP and MP of nearby allies by 10%. Increases P. Atk., M. Atk., P. Atk. Spd., and Casting Spd. by 20%. -->
 		<icon>icon.skill0219</icon>
 		<operateType>A2</operateType>
@@ -134,9 +161,35 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15006" toLevel="1" name="Transform Bard - Bard">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Bard's transformed state. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A2</operateType>
@@ -158,17 +211,53 @@
 				<transformId>24</transformId>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1</dispel>
+			</effect>
+			<effect name="TargetCancel" />
+			<effect name="Transformation">
+				<transformationId>24</transformationId>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>80</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>NONE</item>
+					<item>LIGHT</item>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15007" toLevel="1" name="Master's Strength">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases P. Atk, M. Atk., Atk. Spd., and Casting Spd. by 50%. -->
 		<icon>icon.skill10001</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15008" toLevel="1" name="IM's Blessing - Dragon Recovery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers CP, HP, and MP of nearby allies by 100%. -->
 		<icon>icon.skill10278</icon>
 		<operateType>A1</operateType>
@@ -185,9 +274,20 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="HealPercent">
+				<power>100</power>
+			</effect>
+			<effect name="ManaHealPercent">
+				<power>100</power>
+			</effect>
+			<effect name="CpHealPercent">
+				<power>100</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15009" toLevel="1" name="IM's Blessing - Force of Dragon">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 60 minutes, recovers Max HP and MP of nearby allies by 10%. Increases P. Atk., M. Atk., P. Atk. Spd., and Casting Spd. by 20%. -->
 		<icon>icon.skill4689</icon>
 		<operateType>A2</operateType>
@@ -208,9 +308,35 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15010" toLevel="1" name="Dimensional Poison Zone">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poisoned with dimension poison through the Kartia Dimensional Watcher. HP is continuously decreased until the Kartia Dimensional Watcher is defeated. -->
 		<icon>icon.skill5086</icon>
 		<operateType>A2</operateType>
@@ -227,9 +353,15 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>300</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15011" toLevel="1" name="Poison Area">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill5086</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
@@ -1347,7 +1479,7 @@
 		</effects>
 	</skill>
 	<skill id="15042" toLevel="1" name="Tauti Push">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Becomes knocked down from a punch and P. Def. is decreased by 20%. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -1369,9 +1501,33 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>210000</power>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<AIRBIND>100</AIRBIND>
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<SHOCK>100</SHOCK>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15043" toLevel="1" name="Tauti Push">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Becomes knocked down from a punch and P. Def. is decreased by 30%. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -1393,9 +1549,33 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>210000</power>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<AIRBIND>100</AIRBIND>
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<SHOCK>100</SHOCK>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15044" toLevel="1" name="Tauti Whirlwind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Flying away from stun. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
@@ -1416,9 +1596,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>180000</power>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;300} -->
+		</effects>
 	</skill>
 	<skill id="15045" toLevel="1" name="Tauti Whirlwind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Flying away from stun. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A2</operateType>
@@ -1439,9 +1625,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>180000</power>
+			</effect>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;300} -->
+		</effects>
 	</skill>
 	<skill id="15046" toLevel="1" name="Tauti Shock Wave">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Instantly immobilized from stun. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
@@ -1464,9 +1656,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>SQUARE_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>280000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15047" toLevel="1" name="Tauti Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Tauti runs to the front and causes knock down with damage. -->
 		<icon>icon.skill0100</icon>
 		<operateType>DA2</operateType>
@@ -1488,9 +1688,29 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>240000</power>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<AIRBIND>100</AIRBIND>
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<SHOCK>100</SHOCK>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15048" toLevel="1" name="Tauti Leap Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Grab Tauti and throw him up. Use jumping damage to inflict great damage. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -1513,9 +1733,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>350000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15049" toLevel="1" name="Tauti Axe Throw (up/chain)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Grab Tauti and throw him up. Use jumping damage to inflict great damage. Use as a chain to cause damage in multiple places. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -1538,9 +1767,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>350000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15050" toLevel="1" name="Tauti Shout">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Mind is blank from the roar. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -1562,9 +1800,17 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>5000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15051" toLevel="1" name="Tauti Shout Maximum">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Tauti gives a roar that suggests it will change its status. This is a camera presentation skill with no real effect. But the range is very wid. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1581,7 +1827,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15052" toLevel="1" name="Tauti Life Drain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Absorbs the HP from the target and nearby enemies. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
@@ -1604,9 +1850,27 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HpDrain">
+				<power>420</power>
+				<percentage>50</percentage>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<SHOCK>100</SHOCK>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15053" toLevel="1" name="Pa'agrio's Hand">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Raise the temperature of the Draco Egg through Pa'agrio's Hand. It raises the temperature by 1 - 10 degrees on a Small Draco Egg and 0.1 - 1.0 degrees on a Large Draco Egg. The Spirit of Flame Agathion must be summoned for it to be used. -->
 		<icon>icon.skill11775</icon>
 		<operateType>A1</operateType>
@@ -1634,9 +1898,15 @@
 				</npcIds>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>7104</skillId> <!-- Pa'agrio's Hand -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15054" toLevel="1" name="Attempt Incubation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Facilitates the incubation of a Draco Egg. The Spirit of Flame Agathion must be summoned for it to be used. -->
 		<icon>icon.skill6319</icon>
 		<operateType>A1</operateType>
@@ -1666,7 +1936,7 @@
 		</conditions>
 	</skill>
 	<skill id="15055" toLevel="1" name="Attempt Execution">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicted with bleeding through execution. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -1689,9 +1959,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>FAN_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15056" toLevel="1" name="Executioner's Sword Dance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. is increased by 100% through the festive sword dance. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -1708,9 +1987,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15057" toLevel="1" name="Induce Critical Penetration">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Gets rid of 99% of the target's HP. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1724,9 +2009,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HealPercent">
+				<power>-99</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15058" toLevel="1" name="3000 Strikes">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Disregards the target's P. Def. and inflicts 3000 damage. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1740,9 +2030,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Heal">
+				<power>-3000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15059" toLevel="1" name="Spill Your Blood">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage on the target and enemies near the target. Causes bleeding. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -1764,9 +2059,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>580</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15060" toLevel="1" name="Eat Poison">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage on the target and enemies near the target. Causes poison. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -1789,9 +2093,18 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>580</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15061" toLevel="1" name="Increase Slap Might">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. is increased by 50%. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -1808,9 +2121,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15062" toLevel="1" name="Detonate Slap Might">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. is increased by 100%. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
@@ -1827,9 +2146,15 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15063" toLevel="1" name="Tear Apart">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attack all around the target. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
@@ -1843,9 +2168,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>160000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15064" toLevel="1" name="Check for Escape">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, resists all abnormal statuses and increases Atk. Spd. -->
 		<icon>icon.skill10279</icon>
 		<operateType>A2</operateType>
@@ -1863,9 +2193,25 @@
 		<coolTime>500</coolTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Speed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="DispelByCategory">
+				<rate>100</rate>
+				<slot>DEBUFF</slot>
+				<max>10</max>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15065" toLevel="1" name="Trample">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Physical attack on the target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1879,9 +2225,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>160000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15066" toLevel="1" name="Call Comrade">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons one comrade. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1898,7 +2249,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15067" toLevel="1" name="Attack Cancel Spell">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. and M. Atk. are greatly decreased. -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
@@ -1920,9 +2271,19 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>-1000000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>-1000000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15068" toLevel="1" name="HP Plunder">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts some damage on all party members and completely recovers your HP. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1939,9 +2300,19 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<selfEffects>
+			<effect name="HealPercent">
+				<power>100</power>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>580</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15069" toLevel="1" name="Limb Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Knocked back. -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
@@ -1965,9 +2336,28 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15070" toLevel="1" name="Restrain Legs">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Legs are sealed and knocked back. -->
 		<icon>icon.skill10549</icon>
 		<operateType>A2</operateType>
@@ -1988,9 +2378,29 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>190000</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>400</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+				<AIRBIND>100</AIRBIND>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15071" toLevel="1" name="Bizarre Arrow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerful attack on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -2004,9 +2414,14 @@
 		<coolTime>500</coolTime>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>160000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15072" toLevel="1" name="Poison Arrow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Poisoned with a poison arrow. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -2031,6 +2446,15 @@
 		<targetType>TARGET</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>120000</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>250</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15073" toLevel="1" name="Change All">
 		<!-- Glory Days confirmed -->
@@ -2086,7 +2510,7 @@
 		</effects>
 	</skill>
 	<skill id="15074" toLevel="1" name="Shaman's Nightmare">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts 1000 damage on one enemy every second for 5 seconds. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A2</operateType>
@@ -2109,6 +2533,12 @@
 		<isDebuff>true</isDebuff>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamOverTime">
+				<power>1000</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15075" toLevel="1" name="Half Death">
 		<!-- AUTO GENERATED SKILL -->
