@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -27,11 +27,11 @@ import org.l2junity.gameserver.model.stats.Stats;
 /**
  * @author Sdw
  */
-public class VampiricDefence extends AbstractEffect
+public class InstantKillResist extends AbstractEffect
 {
 	private final int _amount;
 	
-	public VampiricDefence(StatsSet params)
+	public InstantKillResist(StatsSet params)
 	{
 		_amount = params.getInt("amount", 0);
 	}
@@ -39,6 +39,6 @@ public class VampiricDefence extends AbstractEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		effected.getStat().mergeAdd(Stats.ABSORB_DAMAGE_DEFENCE, 1 - (_amount / 100));
+		effected.getStat().mergeAdd(Stats.INSTANT_KILL_RESIST, 1 - (_amount / 100));
 	}
 }

@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -79,7 +80,7 @@ public final class Lethal extends AbstractEffect
 			return;
 		}
 		
-		double chanceMultiplier = Formulas.calcAttributeBonus(effector, effected, skill) * Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
+		double chanceMultiplier = Formulas.calcAttributeBonus(effector, effected, skill) * Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false) * effected.getStat().getValue(Stats.INSTANT_KILL_RESIST, 1);
 		// Lethal Strike
 		if (Rnd.get(100) < (_fullLethal * chanceMultiplier))
 		{

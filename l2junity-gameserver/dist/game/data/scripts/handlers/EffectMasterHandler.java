@@ -47,13 +47,14 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("Betray", Betray::new);
 		EffectHandler.getInstance().registerHandler("Blink", Blink::new);
 		EffectHandler.getInstance().registerHandler("BlinkSwap", BlinkSwap::new);
+		EffectHandler.getInstance().registerHandler("BlockAbnormalSlot", BlockAbnormalSlot::new);
 		EffectHandler.getInstance().registerHandler("BlockAction", BlockAction::new);
 		EffectHandler.getInstance().registerHandler("BlockActions", BlockActions::new);
 		EffectHandler.getInstance().registerHandler("BlockChat", BlockChat::new);
 		EffectHandler.getInstance().registerHandler("BlockControl", BlockControl::new);
 		EffectHandler.getInstance().registerHandler("BlockEscape", BlockEscape::new);
+		EffectHandler.getInstance().registerHandler("BlockMove", BlockMove::new);
 		EffectHandler.getInstance().registerHandler("BlockParty", BlockParty::new);
-		EffectHandler.getInstance().registerHandler("BlockAbnormalSlot", BlockAbnormalSlot::new);
 		EffectHandler.getInstance().registerHandler("BlockResurrection", BlockResurrection::new);
 		EffectHandler.getInstance().registerHandler("BlockSkill", BlockSkill::new);
 		EffectHandler.getInstance().registerHandler("BlockTarget", BlockTarget::new);
@@ -157,9 +158,9 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("HpDrain", HpDrain::new);
 		EffectHandler.getInstance().registerHandler("HpRegen", HpRegen::new);
 		EffectHandler.getInstance().registerHandler("HpToOwner", HpToOwner::new);
-		EffectHandler.getInstance().registerHandler("BlockMove", BlockMove::new);
-		EffectHandler.getInstance().registerHandler("ImmobilePetBuff", ImmobilePetBuff::new);
 		EffectHandler.getInstance().registerHandler("IgnoreDeath", IgnoreDeath::new);
+		EffectHandler.getInstance().registerHandler("ImmobilePetBuff", ImmobilePetBuff::new);
+		EffectHandler.getInstance().registerHandler("InstantKillResist", InstantKillResist::new);
 		EffectHandler.getInstance().registerHandler("KarmaCount", KarmaCount::new);
 		EffectHandler.getInstance().registerHandler("KnockBack", KnockBack::new);
 		EffectHandler.getInstance().registerHandler("Lethal", Lethal::new);

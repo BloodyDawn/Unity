@@ -126,6 +126,7 @@ public enum Stats
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
 	DEFENCE_CRITICAL_DAMAGE_SKILL("defCAtkSkill"),
 	DEFENCE_CRITICAL_DAMAGE_SKILL_ADD("defCAtkSkillAdd"),
+	INSTANT_KILL_RESIST("instantKillResist"),
 	EXPSP_RATE("rExp"),
 	BONUS_EXP("bonusExp"),
 	BONUS_SP("bonusSp"),
