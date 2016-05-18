@@ -183,7 +183,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2907" toLevel="5" name="Battlefield Use Secret Medicine of Life">
-		<!-- Confirmed CT2.5 -->
+		<!-- Glory Days Confirmed -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -200,8 +200,9 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Heal">
-				<power>1900</power>
+			<effect name="Hp">
+				<amount>1900</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

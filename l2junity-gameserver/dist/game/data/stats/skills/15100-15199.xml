@@ -182,6 +182,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hp">
+				<amount>-99</amount>
+				<mode>PER</mode>
+			</effect>
+			<!-- TODO Limit hp -->
+		</effects>
 	</skill>
 	<skill id="15108" toLevel="1" name="Ruler's Authority">
 		<!-- AUTO GENERATED SKILL -->

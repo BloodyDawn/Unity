@@ -1528,6 +1528,12 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="Hp">
+				<amount>-99</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5863" toLevel="1" name="Destruction of the Soul">
 		<affectLimit>10-10</affectLimit>
@@ -2510,6 +2516,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5894" toLevel="1" name="Mark of Despair">
+		<!-- TODO JEY -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_A</abnormalType>
@@ -2579,6 +2586,7 @@
 		</effects>
 	</skill>
 	<skill id="5895" toLevel="1" name="Mark of Cowardice">
+	<!-- TODO JEY -->
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_B</abnormalType>

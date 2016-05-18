@@ -341,8 +341,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="HealPercent">
-				<power>10</power>
+			<effect name="Hp">
+				<amount>-10</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -426,8 +427,9 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
-			<effect name="HealPercent">
-				<power>5</power>
+			<effect name="Hp">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

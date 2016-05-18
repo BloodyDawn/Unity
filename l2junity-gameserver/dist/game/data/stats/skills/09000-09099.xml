@@ -4456,7 +4456,7 @@
 		</effects>
 	</skill>
 	<skill id="9074" toLevel="1" name="Salmon Porridge">
-		<!-- Confirmed CT2.5 -->
+		<!-- Glory Days Confirmed -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -4467,8 +4467,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Heal">
-				<power>2300</power>
+			<effect name="Hp">
+				<amount>2300</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

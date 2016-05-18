@@ -162,7 +162,7 @@
 		</effects>
 	</skill>
 	<skill id="5602" toLevel="1" name="Transform Sacrifice">
-		<!-- Confirmed CT2.5 -->
+		<!-- Glory Days Confirmed -->
 		<abnormalLvl>10</abnormalLvl>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>TRANSFORM_SCRIFICE_P</abnormalType>
@@ -180,8 +180,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="HealPercent">
-				<power>-99</power>
+			<effect name="Hp">
+				<amount>-99</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="LimitHp">
 				<amount>-90</amount>
@@ -4316,7 +4317,6 @@
 	</skill>
 	<skill id="5698" toLevel="37" name="Blessed Blood">
 		<!-- Confirmed CT2.5 -->
-		<table name="#amount"> 217 281 346 377 406 434 458 470 477 485 492 500 507 515 522 530 537 545 552 560 567 575 582 590 597 605 612 620 627 635 642 650 657 665 672 680 687 </table>
 		<icon>icon.skill3080</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<isTriggeredSkill>true</isTriggeredSkill>
@@ -4367,8 +4367,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Heal">
-				<power>
+			<effect name="Hp">
+				<amount>
 					<value level="1">217</value>
 					<value level="2">281</value>
 					<value level="3">346</value>
@@ -4406,7 +4406,8 @@
 					<value level="35">672</value>
 					<value level="36">680</value>
 					<value level="37">687</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -732,10 +732,8 @@
 		</effects>
 	</skill>
 	<skill id="26028" fromLevel="2" toLevel="6" name="Secret medicine of Life">
-		<!-- Confirmed CT2.5 -->
+		<!-- Glory Days Confirmed -->
 		<!-- Level 1 doesn't exist in client. -->
-		<table name="#amount"> 0 650 1100 1500 1900 2300 </table>
-		<table name="#levelRange"> 0;0 20;39 40;51 52;60 61;75 76;85 </table>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
@@ -771,14 +769,15 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Heal">
-				<power>
+			<effect name="Hp">
+				<amount>
 					<value level="2">650</value>
 					<value level="3">1100</value>
 					<value level="4">1500</value>
 					<value level="5">1900</value>
 					<value level="6">2300</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

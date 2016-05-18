@@ -3212,8 +3212,8 @@
 			<condition name="ConsumeBody" />
 		</conditions>
 		<effects>
-			<effect name="Heal">
-				<power>
+			<effect name="Hp">
+				<amount>
 					<value level="1">131</value>
 					<value level="2">201</value>
 					<value level="3">271</value>
@@ -3226,7 +3226,8 @@
 					<value level="10">751</value>
 					<value level="11">771</value>
 					<value level="12">781</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="ConsumeBody" />
 		</effects>

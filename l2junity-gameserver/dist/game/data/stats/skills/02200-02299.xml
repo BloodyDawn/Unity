@@ -2257,8 +2257,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="Heal">
-				<power>60</power>
+			<effect name="Hp">
+				<amount>60</amount>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="HealPercent">
 				<power>17</power>
@@ -4548,8 +4549,6 @@
 	</skill>
 	<skill id="2287" toLevel="7" name="Elixir of Life (No-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#amount"> 250 650 1100 1500 1900 2300 2700 </table>
-		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 76;84 85;99 </table>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -4583,8 +4582,8 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Heal">
-				<power>
+			<effect name="Hp">
+				<amount>
 					<value level="1">250</value>
 					<value level="2">650</value>
 					<value level="3">1100</value>
@@ -4592,7 +4591,8 @@
 					<value level="5">1900</value>
 					<value level="6">2300</value>
 					<value level="7">2700</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

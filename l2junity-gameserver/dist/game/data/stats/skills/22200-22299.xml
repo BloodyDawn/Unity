@@ -290,6 +290,12 @@
 		<isMagic>2</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hp">
+				<amount>870</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="22213" toLevel="1" name="Mysterious Scroll: Drum Melody">
 		<!-- "For 60 minutes, receives help from a great spirit to increase Max HP by 20%, rate of critical attack by 20%, rate of Prominent Damage through magic damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and resistance to de-buff by 10%. Decreases Speed by 20%. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on an enemy." -->
@@ -3323,9 +3329,9 @@
 			<condition name="CanUseInDragonLair" />
 		</conditions>
 		<effects>
-			<effect name="Heal">
-				<!-- TODO: Custom. -->
-				<power>1000</power>
+			<effect name="Hp">
+				<amount>1100</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

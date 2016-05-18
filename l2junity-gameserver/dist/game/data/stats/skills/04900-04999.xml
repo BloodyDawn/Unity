@@ -637,7 +637,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4990" toLevel="1" name="Hot Spring Mineral">
-		<!-- TODO -->
+		<!-- Glory Days Confirmed -->
 		<effectPoint>-100</effectPoint>
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -648,6 +648,12 @@
 		<castRange>200</castRange>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Hp">
+				<amount>40000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="4991" toLevel="1" name="Hot Spring Brimstone">
 		<!-- TODO -->
