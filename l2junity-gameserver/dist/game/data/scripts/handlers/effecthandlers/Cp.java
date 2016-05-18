@@ -18,32 +18,28 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.enums.StatModifierType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Mana Heal Percent effect implementation.
- * @author UnAfraid
+ * CP change effect. It is mostly used for potions and static damage.
+ * @author Nik
  */
-public final class ManaHealPercent extends AbstractEffect
+public final class Cp extends AbstractEffect
 {
-	private final double _power;
+	private final int _amount;
+	private final StatModifierType _mode;
 	
-	public ManaHealPercent(StatsSet params)
+	public Cp(StatsSet params)
 	{
-		_power = params.getDouble("power", 0);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.MANAHEAL_PERCENT;
+		_amount = params.getInt("amount", 0);
+		_mode = params.getEnum("mode", StatModifierType.class, StatModifierType.DIFF);
 	}
 	
 	@Override
@@ -55,35 +51,42 @@ public final class ManaHealPercent extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-		if ((effected == null) || effected.isDead() || effected.isDoor() || effected.isMpBlocked())
+		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
 		{
 			return;
 		}
 		
 		double amount = 0;
-		double power = _power;
-		boolean full = (power == 100.0);
-		
-		amount = full ? effected.getMaxMp() : (effected.getMaxMp() * power) / 100.0;
-		// Prevents overheal
-		amount = Math.min(amount, effected.getMaxRecoverableMp() - effected.getCurrentMp());
-		if (amount != 0)
+		switch (_mode)
 		{
-			final double newMp = amount + effected.getCurrentMp();
-			effected.setCurrentMp(newMp, false);
-			effected.broadcastStatusUpdate(effector);
+			case DIFF:
+			{
+				amount = Math.min(_amount, effected.getMaxRecoverableCp() - effected.getCurrentCp());
+				break;
+			}
+			case PER:
+			{
+				amount = Math.min((effected.getCurrentCp() * _amount) / 100.0, effected.getMaxRecoverableCp() - effected.getCurrentCp());
+				break;
+			}
 		}
-		SystemMessage sm;
-		if (effector.getObjectId() != effected.getObjectId())
+		
+		if (amount >= 0)
 		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_HAS_BEEN_RESTORED_BY_C1);
-			sm.addCharName(effector);
+			if (amount != 0)
+			{
+				final double newCp = amount + effected.getCurrentCp();
+				effected.setCurrentCp(newCp, false);
+				effected.broadcastStatusUpdate(effector);
+			}
+			
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);
+			sm.addInt((int) amount);
+			effected.sendPacket(sm);
 		}
 		else
 		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
+			effected.setCurrentCp(effected.getCurrentCp() + amount);
 		}
-		sm.addInt((int) amount);
-		effected.sendPacket(sm);
 	}
 }

@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.enums.StatModifierType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -27,16 +28,18 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Cp Heal Percent effect implementation.
- * @author UnAfraid
+ * HP change effect. It is mostly used for potions and static damage.
+ * @author Nik
  */
-public final class CpHealPercent extends AbstractEffect
+public final class Hp extends AbstractEffect
 {
-	private final double _power;
+	private final int _amount;
+	private final StatModifierType _mode;
 	
-	public CpHealPercent(StatsSet params)
+	public Hp(StatsSet params)
 	{
-		_power = params.getDouble("power", 0);
+		_amount = params.getInt("amount", 0);
+		_mode = params.getEnum("mode", StatModifierType.class, StatModifierType.DIFF);
 	}
 	
 	@Override
@@ -54,21 +57,47 @@ public final class CpHealPercent extends AbstractEffect
 		}
 		
 		double amount = 0;
-		double power = _power;
-		boolean full = (power == 100.0);
-		
-		amount = full ? effected.getMaxCp() : (effected.getMaxCp() * power) / 100.0;
-		// Prevents overheal and negative amount
-		amount = Math.max(Math.min(amount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
-		if (amount != 0)
+		switch (_mode)
 		{
-			final double newCp = amount + effected.getCurrentCp();
-			effected.setCurrentCp(newCp, false);
-			effected.broadcastStatusUpdate(effector);
+			case DIFF:
+			{
+				amount = Math.min(_amount, effected.getMaxRecoverableHp() - effected.getCurrentHp());
+				break;
+			}
+			case PER:
+			{
+				amount = Math.min((effected.getCurrentHp() * _amount) / 100.0, effected.getMaxRecoverableHp() - effected.getCurrentHp());
+				break;
+			}
 		}
 		
-		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);
-		sm.addInt((int) amount);
-		effected.sendPacket(sm);
+		if (amount >= 0)
+		{
+			if (amount != 0)
+			{
+				final double newHp = amount + effected.getCurrentHp();
+				effected.setCurrentHp(newHp, false);
+				effected.broadcastStatusUpdate(effector);
+			}
+			
+			SystemMessage sm;
+			if (effector.getObjectId() != effected.getObjectId())
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
+				sm.addCharName(effector);
+			}
+			else
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
+			}
+			sm.addInt((int) amount);
+			effected.sendPacket(sm);
+		}
+		else
+		{
+			final double damage = -amount;
+			effected.reduceCurrentHp(damage, effector, skill, false, false, false, false);
+			effector.sendDamageMessage(effected, skill, (int) damage, false, false);
+		}
 	}
 }

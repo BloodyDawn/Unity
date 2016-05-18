@@ -78,7 +78,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("ConsumeBody", ConsumeBody::new);
 		EffectHandler.getInstance().registerHandler("ConvertItem", ConvertItem::new);
 		EffectHandler.getInstance().registerHandler("CounterPhysicalSkill", CounterPhysicalSkill::new);
-		EffectHandler.getInstance().registerHandler("CpDamPercent", CpDamPercent::new);
+		EffectHandler.getInstance().registerHandler("Cp", Cp::new);
 		EffectHandler.getInstance().registerHandler("CpHeal", CpHeal::new);
 		EffectHandler.getInstance().registerHandler("CpHealOverTime", CpHealOverTime::new);
 		EffectHandler.getInstance().registerHandler("CpHealPercent", CpHealPercent::new);
@@ -152,6 +152,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("HealPercent", HealPercent::new);
 		EffectHandler.getInstance().registerHandler("Hide", Hide::new);
 		EffectHandler.getInstance().registerHandler("HitNumber", HitNumber::new);
+		EffectHandler.getInstance().registerHandler("Hp", Hp::new);
 		EffectHandler.getInstance().registerHandler("HpByLevel", HpByLevel::new);
 		EffectHandler.getInstance().registerHandler("HpCpHeal", HpCpHeal::new);
 		EffectHandler.getInstance().registerHandler("HpCpHealCritical", HpCpHealCritical::new);
@@ -195,6 +196,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("MaxHp", MaxHp::new);
 		EffectHandler.getInstance().registerHandler("MaxMp", MaxMp::new);
 		EffectHandler.getInstance().registerHandler("ModifyVital", ModifyVital::new);
+		EffectHandler.getInstance().registerHandler("Mp", Mp::new);
 		EffectHandler.getInstance().registerHandler("MpConsumePerLevel", MpConsumePerLevel::new);
 		EffectHandler.getInstance().registerHandler("MpRegen", MpRegen::new);
 		EffectHandler.getInstance().registerHandler("MpShield", MpShield::new);
