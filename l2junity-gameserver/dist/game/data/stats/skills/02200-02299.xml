@@ -4656,8 +4656,6 @@
 	</skill>
 	<skill id="2289" toLevel="7" name="Elixir of CP (No-grade)">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#amount"> 150 350 600 800 1000 1200 1400 </table>
-		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 76;84 85;99 </table>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -4699,8 +4697,8 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="CpHeal">
-				<power>
+			<effect name="Cp">
+				<amount>
 					<value level="1">150</value>
 					<value level="2">350</value>
 					<value level="3">600</value>
@@ -4708,7 +4706,8 @@
 					<value level="5">1000</value>
 					<value level="6">1200</value>
 					<value level="7">1400</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

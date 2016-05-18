@@ -1594,7 +1594,6 @@
 	<skill id="5152" toLevel="10" name="Ritual">
 		<!-- Confirmed CT2.5 -->
 		<!-- Augmentation Skill (Trigger) -->
-		<table name="#amount"> 264 289 313 337 361 384 406 427 446 473 </table>
 		<hitTime>5000</hitTime>
 		<icon>icon.skill3080</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1618,8 +1617,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="CpHeal">
-				<power>
+			<effect name="Cp">
+				<amount>
 					<value level="1">264</value>
 					<value level="2">289</value>
 					<value level="3">313</value>
@@ -1630,7 +1629,8 @@
 					<value level="8">427</value>
 					<value level="9">446</value>
 					<value level="10">473</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

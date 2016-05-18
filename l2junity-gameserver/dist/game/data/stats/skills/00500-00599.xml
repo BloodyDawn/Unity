@@ -2392,9 +2392,6 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="CpDamPercent">
-				<power>100</power>
-			</effect>
 			<effect name="MaxHp">
 				<amount>35</amount>
 				<mode>PER</mode>
@@ -2417,6 +2414,10 @@
 			</effect>
 			<effect name="HpRegen">
 				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Cp">
+				<amount>-100</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

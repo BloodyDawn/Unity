@@ -1851,14 +1851,15 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
-			<effect name="CpHealPercent">
-				<power>100</power>
-			</effect>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
 				<power>100</power>
+			</effect>
+			<effect name="Cp">
+				<amount>100</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>

@@ -1286,8 +1286,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="CpHeal">
-				<power>200</power>
+			<effect name="Cp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1328,14 +1329,15 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="CpHeal">
-				<power>
+			<effect name="Cp">
+				<amount>
 					<value level="2">800</value>
 					<value level="3">1500</value>
 					<value level="4">2000</value>
 					<value level="5">2500</value>
 					<value level="6">3000</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

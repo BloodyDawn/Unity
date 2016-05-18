@@ -164,7 +164,6 @@
 		</effects>
 	</skill>
 	<skill id="1305" toLevel="5" name="The Honor of Pa'agrio">
-		<table name="#amount"> 616 636 654 671 687 </table>
 		<affectLimit>50-50</affectLimit>
 		<affectRange>1000</affectRange>
 		<effectPoint>
@@ -206,19 +205,19 @@
 		<affectScope>PARTY_PLEDGE</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<effects>
-			<effect name="CpHeal">
-				<power>
+			<effect name="Cp">
+				<amount>
 					<value level="1">616</value>
 					<value level="2">636</value>
 					<value level="3">654</value>
 					<value level="4">671</value>
 					<value level="5">687</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1306" toLevel="6" name="Ritual of Life">
-		<table name="#amount"> 745 770 795 817 839 858 </table>
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">677</value>
@@ -263,15 +262,16 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="CpHeal">
-				<power>
+			<effect name="Cp">
+				<amount>
 					<value level="1">745</value>
 					<value level="2">770</value>
 					<value level="3">795</value>
 					<value level="4">817</value>
 					<value level="5">839</value>
 					<value level="6">858</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -833,6 +833,10 @@
 			</condition>
 		</conditions>
 		<effects>
+			<effect name="Cp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
 				<CROSSBOW>6</CROSSBOW>
@@ -844,10 +848,6 @@
 			<effect name="PhysicalDefence">
 				<amount>3000</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="MaxCp">
-				<amount>-20</amount>
-				<mode>PER</mode>
 			</effect>
 			<effect name="LimitHp">
 				<amount>-30</amount>
@@ -894,6 +894,10 @@
 			</condition>
 		</conditions>
 		<effects>
+			<effect name="Cp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="DefenceTrait">
 				<BOW>10</BOW>
 				<CROSSBOW>6</CROSSBOW>
@@ -905,10 +909,6 @@
 			<effect name="MagicalDefence">
 				<amount>4500</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="MaxCp">
-				<amount>-20</amount>
-				<mode>PER</mode>
 			</effect>
 			<effect name="LimitHp">
 				<amount>-30</amount>

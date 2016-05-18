@@ -1447,14 +1447,15 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="CpHeal">
-				<power>5000</power>
-			</effect>
 			<effect name="HealPercent">
 				<power>100</power>
 			</effect>
 			<effect name="ManaHealPercent">
 				<power>100</power>
+			</effect>
+			<effect name="Cp">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
