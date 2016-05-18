@@ -716,7 +716,6 @@
 	</skill>
 	<skill id="715" toLevel="4" name="Zaken Energy Drain">
 		<!-- Confirmed CT2.5 -->
-		<table name="#power"> 121 133 145 160 </table>
 		<affectRange>100</affectRange>
 		<castRange>600</castRange>
 		<coolTime>2000</coolTime>
@@ -759,7 +758,16 @@
 					<value level="3">145</value>
 					<value level="4">160</value>
 				</power>
-				<percentage>40</percentage>
+				<percentage>80</percentage>
+			</effect>
+			<effect name="Mp">
+				<amount>
+					<value level="1">-274</value>
+					<value level="2">-348</value>
+					<value level="3">-422</value>
+					<value level="4">-496</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

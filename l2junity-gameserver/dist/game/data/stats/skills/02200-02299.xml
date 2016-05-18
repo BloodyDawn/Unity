@@ -2280,8 +2280,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="ManaHeal">
-				<power>20</power>
+			<effect name="Mp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="ManaHealPercent">
 				<power>4</power>
@@ -4597,9 +4598,7 @@
 		</effects>
 	</skill>
 	<skill id="2288" toLevel="7" name="Elixir of Mind (No-grade)">
-		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#amount"> 60 140 220 290 360 420 480 </table>
-		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 76;84 85;99 </table>
+		<!-- Glory Days Confirmed -->
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLvl>1</magicLvl>
 		<operateType>A1</operateType>
@@ -4641,16 +4640,17 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="ManaHeal">
-				<power>
+			<effect name="Mp">
+				<amount>
 					<value level="1">60</value>
 					<value level="2">140</value>
 					<value level="3">220</value>
 					<value level="4">290</value>
 					<value level="5">360</value>
 					<value level="6">420</value>
-					<value level="7">480</value>
-				</power>
+					<value level="7">530</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

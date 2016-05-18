@@ -3916,7 +3916,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Sacrifices 384 HP to recover 400 MP. -->
-		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 591 623 655 </table>
 		<icon>icon.skill11064</icon>
 		<operateType>A1</operateType>
 		<hpConsume>
@@ -3967,8 +3966,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="ManaHeal">
-				<power>
+			<effect name="Mp">
+				<amount>
 					<value level="1">400</value>
 					<value level="2">412</value>
 					<value level="3">436</value>
@@ -3980,7 +3979,8 @@
 					<value level="9">591</value>
 					<value level="10">623</value>
 					<value level="11">655</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

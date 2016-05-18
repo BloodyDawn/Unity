@@ -1243,7 +1243,6 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Consume HP to recover 200 MP. Dispels debuffs and escapes immobility. -->
-		<table name="#manaHeal"> 200 210 220 230 </table>
 		<icon>icon.skill11264</icon>
 		<canCastWhleDisabled>true</canCastWhleDisabled>
 		<operateType>A1</operateType>
@@ -1274,13 +1273,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="ManaHeal">
-				<power>
+			<effect name="Mp">
+				<amount>
 					<value level="1">200</value>
 					<value level="2">210</value>
 					<value level="3">220</value>
 					<value level="4">230</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="DispelBySlot">
 				<dispel>ROOT_MAGICALLY,3;ROOT_PHYSICALLY,3</dispel>

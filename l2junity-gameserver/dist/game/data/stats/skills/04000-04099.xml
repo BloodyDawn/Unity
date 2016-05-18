@@ -1213,7 +1213,6 @@
 	</skill>
 	<skill id="4039" toLevel="12" name="Mana Drain">
 		<!-- Freya retail confirmed -->
-		<table name="#power"> 34 57 78 105 134 165 194 206 216 224 229 232 </table>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -1254,23 +1253,22 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="MagicalAttackMp">
-				<power>
-					<value level="1">34</value>
-					<value level="2">57</value>
-					<value level="3">78</value>
-					<value level="4">105</value>
-					<value level="5">134</value>
-					<value level="6">165</value>
-					<value level="7">194</value>
-					<value level="8">206</value>
-					<value level="9">216</value>
-					<value level="10">224</value>
-					<value level="11">229</value>
-					<value level="12">232</value>
-				</power>
-				<critical>false</critical>
-				<criticalLimit>0</criticalLimit>
+			<effect name="Mp">
+				<amount>
+					<value level="1">-34</value>
+					<value level="2">-57</value>
+					<value level="3">-78</value>
+					<value level="4">-105</value>
+					<value level="5">-134</value>
+					<value level="6">-165</value>
+					<value level="7">-194</value>
+					<value level="8">-206</value>
+					<value level="9">-216</value>
+					<value level="10">-224</value>
+					<value level="11">-229</value>
+					<value level="12">-232</value>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

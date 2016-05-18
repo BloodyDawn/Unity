@@ -2950,6 +2950,13 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<!-- TODO i_hp_drain 131 40 -->
+			<effect name="Mp">
+				<amount>-491</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="6690" toLevel="1" name="Hold">
 		<abnormalLvl>1</abnormalLvl>

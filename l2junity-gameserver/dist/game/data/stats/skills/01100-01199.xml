@@ -2260,7 +2260,6 @@
 		</effects>
 	</skill>
 	<skill id="1157" toLevel="5" name="Body To Mind">
-		<table name="#amount"> 22 35 47 53 61 </table>
 		<effectPoint>
 			<value level="1">243</value>
 			<value level="2">379</value>
@@ -2292,14 +2291,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="ManaHeal">
-				<power>
+			<effect name="Mp">
+				<amount>
 					<value level="1">22</value>
 					<value level="2">35</value>
 					<value level="3">47</value>
 					<value level="4">53</value>
 					<value level="5">61</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>

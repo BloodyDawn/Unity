@@ -1764,7 +1764,6 @@
 		</effects>
 	</skill>
 	<skill id="417" toLevel="5" name="Pain of Sagittarius">
-		<table name="#amount"> 36 39 41 43 46 </table>
 		<effectPoint>
 			<value level="1">549</value>
 			<value level="2">582</value>
@@ -1795,14 +1794,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="ManaHeal">
-				<power>
+			<effect name="Mp">
+				<amount>
 					<value level="1">36</value>
 					<value level="2">39</value>
 					<value level="3">41</value>
 					<value level="4">43</value>
 					<value level="5">46</value>
-				</power>
+				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
