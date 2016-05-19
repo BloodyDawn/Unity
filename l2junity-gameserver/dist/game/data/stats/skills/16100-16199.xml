@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="16100" toLevel="1" name="Presentation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -16,12 +16,17 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16101" toLevel="1" name="Tauti">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- One of Bremnon's weapons, named by Shilen as the Lord of Hellfire. With its own ego and the ability to control living beings' emotions, Tauti is manipulating the class warfare among the races in the Seed in order to evolve itself and complete the sacrifices for Shilen. -->
 		<icon>icon.skillboss</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
+		<effects>
+			<effect name="BlockAbnormalSlot">
+				<slot>SPEED_DOWN</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="16102" toLevel="1" name="Dark Storm">
 		<!-- AUTO GENERATED SKILL -->

@@ -1105,7 +1105,7 @@
 		</effect>
 	</skill>
 	<skill id="1667" toLevel="1" name="Long Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 6984. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1120,9 +1120,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6984</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1668" toLevel="1" name="Vampiric Touch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster Blood Siphon Range Attack -->
 		<icon>icon.skill1668</icon>
 		<operateType>A1</operateType>
@@ -1139,9 +1144,15 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="HpDrain">
+				<power>18</power>
+				<percentage>100</percentage>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1669" toLevel="1" name="Sleep">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Sleep -->
 		<icon>icon.skill1669</icon>
 		<operateType>A2</operateType>
@@ -1161,9 +1172,17 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>100</SLEEP>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1670" toLevel="1" name="Silence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- No magic use -->
 		<icon>icon.skill1670</icon>
 		<operateType>A2</operateType>
@@ -1185,9 +1204,12 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Mute" />
+		</effects>
 	</skill>
 	<skill id="1671" toLevel="1" name="Disarm">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Disarms equipment. -->
 		<icon>icon.skill01671</icon>
 		<operateType>A2</operateType>
@@ -1209,9 +1231,16 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Disarm" />
+			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1672" toLevel="1" name="Gust">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Blow -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1224,9 +1253,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="ThrowUp" /><!-- TODO: {i_fly_away;curve;push;300} -->
+		</effects>
 	</skill>
 	<skill id="1673" toLevel="1" name="Death">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 1 HP after 15 seconds -->
 		<icon>icon.skill1673</icon>
 		<operateType>A2</operateType>
@@ -1246,9 +1278,15 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>1674</skillId> <!-- Death -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="1674" toLevel="1" name="Death">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- hp1 -->
 		<icon>icon.skill1170</icon>
 		<operateType>A1</operateType>
@@ -1260,6 +1298,11 @@
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="Lethal">
+				<fullLethal>100</fullLethal>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1675" toLevel="1" name="Flood">
 		<!-- Glory Days confirmed -->
@@ -1333,7 +1376,7 @@
 		</effects>
 	</skill>
 	<skill id="1677" toLevel="1" name="Spinning Slasher">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
@@ -1348,9 +1391,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>54355</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1678" toLevel="1" name="Self-destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Self-destruction after 5 seconds -->
 		<icon>icon.skill1678</icon>
 		<operateType>A2</operateType>
@@ -1369,9 +1417,15 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>1679</skillId> <!-- Self-destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="1679" toLevel="1" name="Self-destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Self-destruction -->
 		<icon>icon.skill1170</icon>
 		<operateType>A1</operateType>
@@ -1384,9 +1438,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<isSuicideAttack>true</isSuicideAttack>
+		<effects>
+			<effect name="Lethal">
+				<fullLethal>100</fullLethal>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1680" toLevel="1" name="Smokescreen">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -1400,9 +1460,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="TargetCancel">
+				<chance>90</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1681" toLevel="1" name="Haste">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases Atk. Spd. -->
 		<icon>icon.skill1681</icon>
 		<operateType>A2</operateType>
@@ -1422,9 +1487,15 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1682" toLevel="1" name="Aggression">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Look at me -->
 		<icon>icon.skill0028</icon>
 		<operateType>A2</operateType>
@@ -1445,9 +1516,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</effects>
 	</skill>
 	<skill id="1683" toLevel="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 45844. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1461,9 +1536,14 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>45844</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1684" toLevel="2" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1477,9 +1557,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>174752</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1685" toLevel="3" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1493,9 +1578,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>139802</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1686" toLevel="4" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1509,9 +1599,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>116501</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1687" toLevel="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1525,9 +1620,14 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>50937</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1688" toLevel="2" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1541,9 +1641,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>174752</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1689" toLevel="3" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1557,9 +1662,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>139802</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1690" toLevel="4" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 60580. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1573,9 +1683,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>116501</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1691" toLevel="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster Rush -->
 		<icon>icon.skill0493</icon>
 		<operateType>DA1</operateType>
@@ -1603,9 +1718,14 @@
 				<distance>200</distance>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>50937</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1692" toLevel="1" name="Power Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 50937. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1620,9 +1740,14 @@
 		<reuseDelay>15000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>50937</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1693" toLevel="2" name="Power Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1637,9 +1762,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>49414</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1694" toLevel="3" name="Power Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1654,9 +1784,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>49414</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1695" toLevel="4" name="Power Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 49414. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
@@ -1671,9 +1806,14 @@
 		<isDebuff>false</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>49414</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1696" toLevel="1" name="Power Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- slowly -->
 		<icon>icon.skill0354</icon>
 		<operateType>A2</operateType>
@@ -1701,9 +1841,19 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1973</power>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1697" toLevel="1" name="Prominence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1230</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -1721,9 +1871,15 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackRange">
+				<power>318</power>
+				<shieldDefPercent>40</shieldDefPercent>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1698" toLevel="1" name="Rain of Fire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1296</icon>
 		<operateType>A1</operateType>
 		<mpConsume>2</mpConsume>
@@ -1744,9 +1900,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttack">
+				<power>254</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1699" toLevel="1" name="Blink">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1448</icon>
 		<operateType>A2</operateType>
 		<mpConsume>2</mpConsume>
@@ -1778,5 +1939,19 @@
 				<range>400</range>
 			</condition>
 		</conditions>
+		<selfEffects>
+			<effect name="Blink">
+				<angle>0</angle> <!-- Teleport to Back -->
+				<range>400</range>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>1</power>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 </list>

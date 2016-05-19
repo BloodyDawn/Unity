@@ -560,8 +560,12 @@
 		</effects>
 	</skill>
 	<skill id="10314" toLevel="4" name="Disarmament">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Disarms enemies for 5 sec. and decreases their P. Atk./ M. Atk. by 40%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
+		<abnormalLvl>1</abnormalLvl>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>DISARM</abnormalType> <!-- Guessed -->
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect> <!-- Guessed -->
 		<icon>icon.skill0485</icon>
 		<operateType>A2</operateType>
 		<trait>DISARM</trait>
@@ -573,11 +577,37 @@
 		<effectPoint>-341</effectPoint>
 		<abnormalTime>5</abnormalTime>
 		<isDebuff>true</isDebuff>
+		<activateRate>70</activateRate> <!-- Guessed -->
+		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<lvlBonusRate>20</lvlBonusRate> <!-- Guessed -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+					<item>DUAL</item>
+					<item>DUALBLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Disarm">
+			</effect>
+			<effect name="PAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>-40</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="10315" toLevel="2" name="Superior Polearm Mastery">
 		<!-- When a spear is equipped, P. Atk. + 2 % and additional P. Atk. + 583. -->
-		<table name="#pAtkAdd"> 583 678 </table>
-		<table name="#pAtkMul"> 1.02 1.03 </table>
 		<operateType>P</operateType>
 		<magicLvl>
 			<value level="1">85</value>
@@ -609,7 +639,6 @@
 	</skill>
 	<skill id="10316" toLevel="4" name="Bloodthirst">
 		<!-- PvP P. Atk. + 5%. -->
-		<table name="#pvpPhysDmg"> 1.05 1.06 1.07 1.08 </table>
 		<operateType>P</operateType>
 		<magicLvl>
 			<value level="1">85</value>
@@ -632,7 +661,6 @@
 	</skill>
 	<skill id="10317" toLevel="4" name="Thunder Slasher">
 		<!-- Swings a spear to inflict 26003 added to P. Atk. on nearby enemies and Stuns them for 5 sec. Requires a spear. Ignores Shield Defense. Over-hit. Critical. -->
-		<table name="#power"> 26003 30494 35883 37680 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -688,7 +716,9 @@
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 				<criticalChance>15</criticalChance>
 			</effect>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="10318" toLevel="7" name="Sonic Flash">

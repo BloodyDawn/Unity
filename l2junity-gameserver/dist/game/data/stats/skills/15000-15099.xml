@@ -3003,7 +3003,7 @@
 		</conditions>
 	</skill>
 	<skill id="15095" toLevel="1" name="Clan Rising">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Through the clan flag, increases clan members' PvP damage by 5% and decreases received PvP damage by 5%. -->
 		<icon>BranchSys2.icon.skill20006</icon>
 		<operateType>A2</operateType>
@@ -3020,6 +3020,28 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>FRIEND_PC</affectObject>
+		<effects>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15096" toLevel="1" name="Clan Curse">
 		<!-- AUTO GENERATED SKILL -->
@@ -3045,7 +3067,7 @@
 		<affectObject>NOT_FRIEND_PC</affectObject>
 	</skill>
 	<skill id="15097" toLevel="1" name="Raid Boss">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- One of the 3 demons that guard the Kartia's Labyrinth, which came through the dimensional rift on orders from Shilen from the Abyss of Hell. It is a high-ranking demon and it is often called the demon of greed. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -3053,7 +3075,7 @@
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="15098" toLevel="1" name="Raid Boss">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- One of the 3 demons that guard the Kartia's Labyrinth, which came through the dimensional rift on orders from Shilen from the Abyss of Hell. It is a high-ranking demon and it is often called the demon of jealousy. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -3061,7 +3083,7 @@
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="15099" toLevel="1" name="Raid Boss">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- One of the 3 demons that guard the Kartia's Labyrinth, which came through the dimensional rift on orders from Shilen from the Abyss of Hell. It is a high-ranking demon and it is often called the demon of gluttony. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>

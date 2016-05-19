@@ -1375,7 +1375,7 @@
 		<magicLvl>85</magicLvl>
 	</skill>
 	<skill id="8774" toLevel="1" name="Special Talisman (R-grade) - Cancel Debuff (Active)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels all debuffs momentarily through the power of the talisman. -->
 		<icon>icon.r85_talisman_ma_up_active</icon>
 		<operateType>A1</operateType>
@@ -1390,94 +1390,161 @@
 		<reuseDelay>320000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>10</max>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8775" toLevel="1" name="Immortal Bracelet">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 5 Talisman can be equipped. -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8776" toLevel="1" name="Twilight Bracelet">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 5 Talisman can be equipped. -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>90</magicLvl>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8777" toLevel="1" name="Seraph Bracelet">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 5 Talisman can be equipped. -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>95</magicLvl>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8778" toLevel="1" name="Eternal Bracelet">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 5 Talisman can be equipped. -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8779" toLevel="1" name="Istina's Bracelet">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 5 Talisman can be equipped. -->
 		<icon>icon.istina_bracelet_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>80</magicLvl>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8780" toLevel="1" name="Octavis' Bracelet">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- 5 Talisman can be equipped. -->
 		<icon>icon.octavis_bracelet_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>80</magicLvl>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8781" toLevel="1" name="Equip Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shield Defense is additionally increased. -->
 		<icon>icon.weapon_sacon_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8782" toLevel="1" name="Equip Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shield Defense is additionally increased. -->
 		<icon>icon.kratere_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>90</magicLvl>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8783" toLevel="1" name="Equip Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shield Defense is additionally increased. -->
 		<icon>icon.beranka_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>95</magicLvl>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8784" toLevel="1" name="Equip Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shield Defense is additionally increased. -->
 		<icon>icon.weapon_akra_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8785" toLevel="1" name="Equip Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Shield Defense is additionally increased. -->
 		<icon>icon.heavengate_shield_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="8786" toLevel="1" name="Top-grade Royal Guard Earring - Gludio">
 		<!-- AUTO GENERATED SKILL -->

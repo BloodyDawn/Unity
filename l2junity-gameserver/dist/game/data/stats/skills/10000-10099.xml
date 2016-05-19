@@ -4393,7 +4393,9 @@
 					<value level="4">22848</value>
 				</power>
 			</effect>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>100</PARALYZE>
 			</effect>
@@ -4622,7 +4624,7 @@
 		</effects>
 	</skill>
 	<skill id="10091" toLevel="1" name="Templar's Will">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Removes your debuff. -->
 		<icon>icon.skll10092</icon>
 		<operateType>A1</operateType>
@@ -4632,6 +4634,15 @@
 		<hitTime>200</hitTime>
 		<effectPoint>867</effectPoint>
 		<reuseDelay>60000</reuseDelay>
+		<rideState>NONE;STRIDER;WYVERN;WOLF</rideState>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate> <!-- Guessed -->
+				<max>10</max> <!-- Guessed -->
+			</effect>
+		</effects>
 	</skill>
 	<skill id="10092" toLevel="7" name="Summon Guardian Cubic">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -4725,7 +4736,9 @@
 					<value level="7">20717</value>
 				</power>
 			</effect>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 			<effect name="DefenceTrait">
 				<PARALYZE>100</PARALYZE>
 			</effect>

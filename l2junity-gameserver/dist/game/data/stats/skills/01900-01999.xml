@@ -2473,7 +2473,7 @@
 		</effects>
 	</skill>
 	<skill id="1996" toLevel="2" name="Hurricane Shackle">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 60 sec., blocks target from using escape items and skills. -->
 		<icon>icon.skill1996</icon>
 		<operateType>A2</operateType>
@@ -2482,8 +2482,16 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>600000</reuseDelay>
 		<effectPoint>-100</effectPoint>
+		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>60</abnormalTime>
+		<abnormalType>BLOCK_ESCAPE</abnormalType>
 		<isDebuff>true</isDebuff>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
+		<effects>
+			<effect name="BlockEscape" />
+		</effects>
 	</skill>
 	<skill id="1997" toLevel="2" name="Gravity Exile">
 		<!-- Updated to IO -->
@@ -2508,6 +2516,9 @@
 		<specialLevel>-2</specialLevel>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpTargetPc" />
+		</conditions>
 		<effects>
 			<effect name="BlockResurrection" />
 		</effects>
