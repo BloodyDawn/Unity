@@ -71,22 +71,28 @@ public final class Cp extends AbstractEffect
 			}
 		}
 		
+		if (amount != 0)
+		{
+			final double newCp = amount + effected.getCurrentCp();
+			effected.setCurrentCp(newCp, false);
+			effected.broadcastStatusUpdate(effector);
+		}
+		
 		if (amount >= 0)
 		{
-			if (amount != 0)
+			if ((effector != null) && (effector != effected))
 			{
-				final double newCp = amount + effected.getCurrentCp();
-				effected.setCurrentCp(newCp, false);
-				effected.broadcastStatusUpdate(effector);
+				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_CP_HAS_BEEN_RESTORED_BY_C1);
+				sm.addCharName(effector);
+				sm.addInt((int) amount);
+				effected.sendPacket(sm);
 			}
-			
-			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);
-			sm.addInt((int) amount);
-			effected.sendPacket(sm);
-		}
-		else
-		{
-			effected.setCurrentCp(effected.getCurrentCp() + amount);
+			else
+			{
+				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);
+				sm.addInt((int) amount);
+				effected.sendPacket(sm);
+			}
 		}
 	}
 }
