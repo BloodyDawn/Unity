@@ -1459,7 +1459,6 @@
 	<skill id="9373" toLevel="2" name="Power of Sayha">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Instantly teleport through the portal you summoned. Cannot be used in special places like the GM Consultation Services. -->
-		<table name="#party"> false true </table>
 		<icon>icon.pi_shirt_of_wolf_2nd_wind</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -1484,7 +1483,7 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
+			<effect name="TeleportToNpc">
 				<npcId>13354</npcId>
 				<party>
 					<value level="1">false</value>

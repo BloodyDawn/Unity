@@ -2538,7 +2538,6 @@
 	<skill id="11363" toLevel="3" name="Instant Teleport">
 		<!-- Updated to IO -->
 		<!-- Teleports using the Moving Portal summoned. Consumes 1 Spirit Ore. -->
-		<table name="#npcId"> 13426 13427 13428 </table>
 		<icon>icon.skill11363</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>
@@ -2556,9 +2555,15 @@
 		</mpConsume>
 		<hitTime>1000</hitTime>
 		<reuseDelay>5000</reuseDelay>
-		<cond msgId="113" addName="1">
-			<player summonedNpcIdRadius="13426;13427;13428,600,true" />
-		</cond>
+		<conditions>
+			<condition name="OpCallPc" />
+			<condition name="OpCanEscape" />
+			<condition name="OpHaveSummonedNpc">
+				<npcId>13426</npcId>
+				<npcId>13427</npcId>
+				<npcId>13428</npcId>
+			</condition>
+		</conditions>
 		<effects>
 			<effect name="TeleportToNpc">
 				<npcId>13426;13427;13428</npcId>
