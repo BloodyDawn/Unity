@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import java.util.List;
 
+import org.l2junity.gameserver.enums.DispelSlotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -35,13 +36,13 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class DispelByCategory extends AbstractEffect
 {
-	private final String _slot;
+	private final DispelSlotType _slot;
 	private final int _rate;
 	private final int _max;
 	
 	public DispelByCategory(StatsSet params)
 	{
-		_slot = params.getString("slot", null);
+		_slot = params.getEnum("slot", DispelSlotType.class, DispelSlotType.BUFF);
 		_rate = params.getInt("rate", 0);
 		_max = params.getInt("max", 0);
 	}

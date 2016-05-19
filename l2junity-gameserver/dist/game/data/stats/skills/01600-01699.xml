@@ -611,7 +611,7 @@
 		</effects>
 	</skill>
 	<skill id="1646" toLevel="1" name="Mana Burn">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Mana burn. Power 110. Enchant Power: Increases the effect. -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
@@ -627,9 +627,16 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MagicalAttackMp">
+				<power>110</power>
+				<critical>true</critical>
+				<criticalLimit>1600</criticalLimit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1647" toLevel="1" name="50% Instant Herb of Mana">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>100</hitTime>
@@ -642,9 +649,14 @@
 		<reuseDelay>2000</reuseDelay>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
+		<effects>
+			<effect name="ManaHealPercent">
+				<power>50</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1648" toLevel="1" name="MP Recovery Herb">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Herb's effect increases MP Recovery. -->
 		<icon>icon.etc_herb_red_i00</icon>
 		<operateType>A2</operateType>
@@ -663,9 +675,15 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="MpRegen">
+				<amount>263</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1649" toLevel="1" name="MP Regen">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases MP recovery for 10 seconds. -->
 		<icon>icon.skill4106</icon>
 		<operateType>A2</operateType>
@@ -682,6 +700,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="MpRegen">
+				<amount>263</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1650" toLevel="1" name="Absolute Defense">
 		<!-- Glory Days confirmed -->
@@ -942,7 +966,7 @@
 		</effects>
 	</skill>
 	<skill id="1661" toLevel="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 54355. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -956,9 +980,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>54355</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1662" toLevel="1" name="Super Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 296865. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -972,9 +1001,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>296865</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1663" toLevel="1" name="Berserker">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Triples Atk. Spd. for 1 minute. -->
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
@@ -992,9 +1026,15 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>200</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1664" toLevel="1" name="Strike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Monster attack! Power 6984. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1009,9 +1049,14 @@
 		<reuseDelay>1000</reuseDelay>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>6984</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1665" toLevel="1" name="Mana Burn">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Mana burn. Power 110. Enchant Power: Increases the effect. -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
@@ -1025,9 +1070,16 @@
 		<isMagic>1</isMagic>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicalAttackMp">
+				<power>110</power>
+				<critical>true</critical>
+				<criticalLimit>1600</criticalLimit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1666" toLevel="1" name="Cancellation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels multiple enemy buffs. -->
 		<icon>icon.skill1056</icon>
 		<operateType>A1</operateType>
@@ -1046,6 +1098,11 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effect name="DispelByCategory">
+			<slot>BUFF</slot>
+			<rate>30</rate>
+			<max>5</max>
+		</effect>
 	</skill>
 	<skill id="1667" toLevel="1" name="Long Strike">
 		<!-- AUTO GENERATED SKILL -->

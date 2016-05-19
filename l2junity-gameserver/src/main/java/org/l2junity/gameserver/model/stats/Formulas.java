@@ -28,6 +28,7 @@ import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
+import org.l2junity.gameserver.enums.DispelSlotType;
 import org.l2junity.gameserver.enums.Position;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
@@ -1118,12 +1119,12 @@ public final class Formulas
 		return Rnd.get(1000) < Math.min(rate, 800);
 	}
 	
-	public static List<BuffInfo> calcCancelStealEffects(Creature activeChar, Creature target, Skill skill, String slot, int rate, int max)
+	public static List<BuffInfo> calcCancelStealEffects(Creature activeChar, Creature target, Skill skill, DispelSlotType slot, int rate, int max)
 	{
 		final List<BuffInfo> canceled = new ArrayList<>(max);
 		switch (slot)
 		{
-			case "buff":
+			case BUFF:
 			{
 				// Resist Modifier.
 				int cancelMagicLvl = skill.getMagicLevel();
@@ -1163,7 +1164,7 @@ public final class Formulas
 				}
 				break;
 			}
-			case "debuff":
+			case DEBUFF:
 			{
 				final List<BuffInfo> debuffs = new ArrayList<>(target.getEffectList().getDebuffs());
 				for (int i = debuffs.size() - 1; i >= 0; i--)

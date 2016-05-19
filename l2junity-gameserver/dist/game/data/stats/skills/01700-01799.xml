@@ -47,7 +47,7 @@
 		</effects>
 	</skill>
 	<skill id="1702" toLevel="1" name="Cancel Hold">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill01702</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
@@ -444,12 +444,19 @@
 		</effects>
 	</skill>
 	<skill id="1719" toLevel="1" name="Wise Retainer's Price">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1271</icon>
 		<operateType>P</operateType>
 		<rideState>NONE</rideState>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>85</magicLvl>
+		<effects>
+			<effect name="DamOverTime">
+				<power>333</power>
+				<ticks>1</ticks>
+				<canKill>true</canKill>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1720" toLevel="1" name="Lakcis' Protection">
 		<!-- Glory Days confirmed -->
@@ -466,7 +473,7 @@
 		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelByCategory">
-				<slot>debuff</slot>
+				<slot>DEBUFF</slot>
 				<rate>100</rate>
 				<max>10</max>
 			</effect>
@@ -859,7 +866,7 @@
 		</effects>
 	</skill>
 	<skill id="1750" toLevel="1" name="Invincibility">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Invincibility -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
@@ -876,9 +883,30 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1751" toLevel="1" name="Monster PC Bomb Making">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Invincibility -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
@@ -895,9 +923,15 @@
 		<isMagic>1</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<endEffects>
+			<effect name="CallSkill">
+				<skillId>1752</skillId> <!-- PC becomes monster bomb -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="1752" toLevel="1" name="PC becomes monster bomb">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- DD + DOT -->
 		<icon>icon.skill1169</icon>
 		<operateType>A2</operateType>
@@ -914,9 +948,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>504276</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>35</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1753" toLevel="1" name="Mass Kill">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-100</effectPoint>
@@ -926,9 +969,14 @@
 		<magicLvl>97</magicLvl>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="RealDamage">
+				<power>100000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1754" toLevel="1" name="Self-destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- DD + DOT -->
 		<icon>icon.skill1754</icon>
 		<operateType>A2</operateType>
@@ -946,9 +994,18 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>403420</power>
+			</effect>
+			<effect name="DamOverTime">
+				<power>44</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1755" toLevel="1" name="Monster Area Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Range Attack -->
 		<icon>icon.skill0036</icon>
 		<operateType>A1</operateType>
@@ -961,9 +1018,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>98750</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1756" toLevel="1" name="Trick">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancel target -->
 		<icon>icon.skill0011</icon>
 		<operateType>A1</operateType>
@@ -977,9 +1039,12 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="TargetCancel" />
+		</effects>
 	</skill>
 	<skill id="1757" toLevel="10" name="Attack Enhance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Enhances P. Atk., M. Atk., Atk. Spd., and Casting Spd. -->
 		<icon>icon.skill0077</icon>
 		<operateType>A2</operateType>
@@ -994,9 +1059,71 @@
 		<isMagic>1</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+					<value level="6">120</value>
+					<value level="7">140</value>
+					<value level="8">160</value>
+					<value level="9">180</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MAtk">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+					<value level="6">120</value>
+					<value level="7">140</value>
+					<value level="8">160</value>
+					<value level="9">180</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+					<value level="6">120</value>
+					<value level="7">140</value>
+					<value level="8">160</value>
+					<value level="9">180</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">20</value>
+					<value level="2">40</value>
+					<value level="3">60</value>
+					<value level="4">80</value>
+					<value level="5">100</value>
+					<value level="6">120</value>
+					<value level="7">140</value>
+					<value level="8">160</value>
+					<value level="9">180</value>
+					<value level="10">200</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1758" toLevel="1" name="Monster Mass Kill">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-1</effectPoint>
@@ -1008,17 +1135,34 @@
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<effects>
+			<effect name="RealDamage">
+				<power>100000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1759" toLevel="1" name="Armor Destroyer">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cuts the enemy's P. Def. and M. Def. when attacking. -->
 		<icon>icon.skill0122</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>99</magicLvl>
+		<effects>
+			<effect name="TriggerSkillByDamage">
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>1760</skillId> <!-- Armor Destruction -->
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1760" toLevel="6" name="Armor Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Def. and M. Def. decreased 7%. Additional 350 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
@@ -1130,7 +1274,7 @@
 		</effects>
 	</skill>
 	<skill id="1761" toLevel="10" name="Armor Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases P. Def. as it accumulates. Currently decreased by 10%. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A4</operateType>
@@ -1161,41 +1305,92 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-20</value>
+					<value level="3">-30</value>
+					<value level="4">-40</value>
+					<value level="5">-50</value>
+					<value level="6">-60</value>
+					<value level="7">-70</value>
+					<value level="8">-80</value>
+					<value level="9">-90</value>
+					<value level="10">-99</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1762" toLevel="1" name="Boss Multi Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Immune to knock back, knock down, binding, mutation, sleep, paralysis, hold -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<DERANGEMENT>100</DERANGEMENT>
+				<CHANGEBODY>100</CHANGEBODY>
+				<PARALYZE>100</PARALYZE>
+				<SHOCK>100</SHOCK>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
+				<AIRBIND>100</AIRBIND>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1763" toLevel="1" name="Boss Knock Back Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1764" toLevel="1" name="Boss Knock Down Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKDOWN>100</KNOCKDOWN>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1765" toLevel="1" name="Boss Binding Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DefenceTrait">
+				<AIRBIND>100</AIRBIND>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="1766" toLevel="1" name="Boss Transform Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>97</magicLvl>
+		<effects>
+			<effect name="DefenceTrait">
+				<CHANGEBODY>100</CHANGEBODY>
+			</effect>
+		</effects>
 	</skill>
 </list>
