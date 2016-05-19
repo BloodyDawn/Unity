@@ -4583,7 +4583,7 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Hp">
+			<effect name="Hp" fromLevel="1" toLevel="6">
 				<amount>
 					<value level="1">250</value>
 					<value level="2">650</value>
@@ -4594,7 +4594,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="HealPercent">
+			<effect name="HealPercent" fromLevel="7" toLevel="7" >
 				<power>
 					<value level="7">25</value>
 				</power>
@@ -4644,7 +4644,7 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Mp">
+			<effect name="Mp" fromLevel="1" toLevel="6" >
 				<amount>
 					<value level="1">60</value>
 					<value level="2">140</value>
@@ -4655,7 +4655,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="ManaHealPercent">
+			<effect name="ManaHealPercent" fromLevel="7" toLevel="7" >
 				<power>
 					<value level="7">10</value>
 				</power>
@@ -4705,7 +4705,7 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Cp">
+			<effect name="Cp" fromLevel="1" toLevel="6">
 				<amount>
 					<value level="1">150</value>
 					<value level="2">350</value>
@@ -4716,7 +4716,7 @@
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CpHealPercent">
+			<effect name="CpHealPercent" fromLevel="7" toLevel="7" >
 				<power>
 					<value level="7">25</value>
 				</power>
