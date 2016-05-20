@@ -25,6 +25,7 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -71,7 +72,7 @@ public class CharStat
 	private final Map<Stats, Map<MoveType, Double>> _moveTypeStats = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _reuseStat = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _mpConsumeStat = new ConcurrentHashMap<>();
-	private final Map<Integer, Double> _skillEvasionStat = new ConcurrentHashMap<>();
+	private final Map<Integer, LinkedList<Double>> _skillEvasionStat = new ConcurrentHashMap<>();
 	private final Map<Stats, Map<Position, Double>> _positionStats = new ConcurrentHashMap<>();
 	private final Deque<StatsHolder> _additionalAdd = new ConcurrentLinkedDeque<>();
 	private final Deque<StatsHolder> _additionalMul = new ConcurrentLinkedDeque<>();
@@ -854,12 +855,26 @@ public class CharStat
 	
 	public double getSkillEvasionTypeValue(int magicType)
 	{
-		return _skillEvasionStat.getOrDefault(magicType, 0d);
+		final LinkedList<Double> skillEvasions = _skillEvasionStat.get(magicType);
+		if ((skillEvasions != null) && !skillEvasions.isEmpty())
+		{
+			return skillEvasions.peekLast();
+		}
+		return 0d;
 	}
 	
-	public void mergeSkillEvasionTypeValue(int magicType, double value)
+	public void addSkillEvasionTypeValue(int magicType, double value)
 	{
-		_skillEvasionStat.merge(magicType, value, MathUtil::add);
+		_skillEvasionStat.computeIfAbsent(magicType, k -> new LinkedList<>()).add(value);
+	}
+	
+	public void removeSkillEvasionTypeValue(int magicType, double value)
+	{
+		_skillEvasionStat.computeIfPresent(magicType, (k, v) ->
+		{
+			v.remove(value);
+			return !v.isEmpty() ? v : null;
+		});
 	}
 	
 	public void addToVampiricSum(int sum)

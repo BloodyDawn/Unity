@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
+ * Note: In retail this effect doesn't stack. It appears that the active value is taken from the last such effect.
  * @author Sdw
  */
 public class SkillEvasion extends AbstractEffect
@@ -39,12 +40,12 @@ public class SkillEvasion extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, _amount);
+		info.getEffected().getStat().addSkillEvasionTypeValue(_magicType, _amount);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, -_amount);
+		info.getEffected().getStat().removeSkillEvasionTypeValue(_magicType, _amount);
 	}
 }
