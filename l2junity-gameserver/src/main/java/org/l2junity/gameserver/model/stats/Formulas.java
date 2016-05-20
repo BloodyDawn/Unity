@@ -927,10 +927,6 @@ public final class Formulas
 	
 	public static boolean calcPhysicalSkillEvasion(Creature activeChar, Creature target, Skill skill)
 	{
-		if (skill.isMagic() || skill.isDebuff())
-		{
-			return false;
-		}
 		if (Rnd.get(100) < target.getStat().getSkillEvasionTypeValue(skill.getMagicType()))
 		{
 			if (activeChar.isPlayer())

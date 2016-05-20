@@ -39,12 +39,12 @@ public class SkillEvasion extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, (_amount / 100) + 1);
+		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, _amount);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, (-_amount / 100) - 1);
+		info.getEffected().getStat().mergeSkillEvasionTypeValue(_magicType, -_amount);
 	}
 }
