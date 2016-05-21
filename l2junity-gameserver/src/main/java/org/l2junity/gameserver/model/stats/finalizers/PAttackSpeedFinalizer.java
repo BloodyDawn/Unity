@@ -43,6 +43,6 @@ public class PAttackSpeedFinalizer implements IStatsFunction
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
 		final double dexBonus = creature.getDEX() > 0 ? BaseStats.DEX.calcBonus(creature) : 1.;
 		baseValue *= dexBonus * chaBonus;
-		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_PATK_SPEED);
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), 1, Config.MAX_PATK_SPEED);
 	}
 }

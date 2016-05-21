@@ -561,11 +561,15 @@ public interface IStatsFunction
 		return value;
 	}
 	
-	default double validateValue(Creature creature, double value, double maxValue)
+	default double validateValue(Creature creature, double value, double minValue, double maxValue)
 	{
 		if ((value > maxValue) && !creature.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
 		{
 			return maxValue;
+		}
+		if (value < minValue)
+		{
+			return minValue;
 		}
 		return value;
 	}

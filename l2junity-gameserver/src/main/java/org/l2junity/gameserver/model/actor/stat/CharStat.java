@@ -481,23 +481,17 @@ public class CharStat
 		// temp fix starts
 		int tempVal = 0, stats[] =
 		{
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
+			getAttackElementValue(AttributeType.FIRE),
+			getAttackElementValue(AttributeType.WATER),
+			getAttackElementValue(AttributeType.WIND),
+			getAttackElementValue(AttributeType.EARTH),
+			getAttackElementValue(AttributeType.HOLY),
+			getAttackElementValue(AttributeType.DARK)
 		};
 		
 		AttributeType returnVal = AttributeType.NONE;
-		stats[0] = getAttackElementValue(AttributeType.FIRE);
-		stats[1] = getAttackElementValue(AttributeType.WATER);
-		stats[2] = getAttackElementValue(AttributeType.WIND);
-		stats[3] = getAttackElementValue(AttributeType.EARTH);
-		stats[4] = getAttackElementValue(AttributeType.HOLY);
-		stats[5] = getAttackElementValue(AttributeType.DARK);
 		
-		for (byte x = 0; x < 6; x++)
+		for (byte x = 0; x < stats.length; x++)
 		{
 			if (stats[x] > tempVal)
 			{

@@ -64,7 +64,7 @@ public class BaseStatsFinalizer implements IStatsFunction
 			// Henna calculation
 			baseValue += player.getHennaValue(BaseStats.valueOf(stat));
 		}
-		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), BaseStats.MAX_STAT_VALUE - 1);
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), 1, BaseStats.MAX_STAT_VALUE - 1);
 	}
 	
 }
