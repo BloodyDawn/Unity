@@ -26,7 +26,6 @@ public enum L2EffectType
 {
 	AGGRESSION,
 	CHARM_OF_LUCK,
-	CHAT_BLOCK,
 	CPHEAL,
 	DISPEL,
 	DISPEL_BY_SLOT,

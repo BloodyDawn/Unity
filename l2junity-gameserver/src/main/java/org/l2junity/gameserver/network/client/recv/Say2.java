@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
-import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChat;
 import org.l2junity.gameserver.model.events.returns.ChatFilterReturn;
@@ -153,7 +153,7 @@ public final class Say2 implements IClientIncomingPacket
 		
 		if (activeChar.isChatBanned() && (_text.charAt(0) != '.'))
 		{
-			if (activeChar.getEffectList().getFirstEffect(L2EffectType.CHAT_BLOCK) != null)
+			if (activeChar.isAffected(EffectFlag.CHAT_BLOCK))
 			{
 				activeChar.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_CHATTING_IS_NOT_ALLOWED);
 			}

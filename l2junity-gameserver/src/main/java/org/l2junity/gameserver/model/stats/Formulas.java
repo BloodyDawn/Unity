@@ -44,6 +44,7 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.SkillCaster;
@@ -1479,16 +1480,16 @@ public final class Formulas
 	}
 	
 	/**
-	 * Calculates if the specified creature can get its "block actions" effect removed due to damage taken.
+	 * Calculates if the specified creature can get its stun effect removed due to damage taken.
 	 * @param activeChar the character to be checked
-	 * @return {@code true} if character should get its "block actions" effects removed, {@code false} otherwise.
+	 * @return {@code true} if character should get its stun effects removed, {@code false} otherwise.
 	 */
 	public static boolean calcStunBreak(Creature activeChar)
 	{
 		// Check if target is stunned and 10% chance.
 		if (activeChar.hasBlockActions() && (Rnd.get(10) == 0))
 		{
-			final BuffInfo info = activeChar.getEffectList().getFirstEffect(L2EffectType.BLOCK_ACTIONS);
+			final BuffInfo info = activeChar.getEffectList().getBuffInfoByAbnormalType(AbnormalType.STUN);
 			if (info != null)
 			{
 				// Any stun that has double duration due to skill mastery, doesn't get removed until its time reaches the usual abnormal time.
