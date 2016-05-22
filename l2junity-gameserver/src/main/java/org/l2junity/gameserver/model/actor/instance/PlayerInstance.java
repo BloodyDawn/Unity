@@ -681,7 +681,6 @@ public final class PlayerInstance extends Playable
 	
 	// protects a char from aggro mobs when getting up from fake death
 	private long _recentFakeDeathEndTime = 0;
-	private boolean _isFakeDeath;
 	
 	/** The fists L2Weapon of the L2PcInstance (used when no weapon is equipped) */
 	private Weapon _fistsWeaponItem;
@@ -3921,12 +3920,7 @@ public final class PlayerInstance extends Playable
 	
 	public final boolean isFakeDeath()
 	{
-		return _isFakeDeath;
-	}
-	
-	public final void setIsFakeDeath(boolean value)
-	{
-		_isFakeDeath = value;
+		return isAffected(EffectFlag.FAKE_DEATH);
 	}
 	
 	@Override

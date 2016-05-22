@@ -2711,7 +2711,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// if this is a player instance, start the grace period for this character (grace from mobs only)!
 		if (isPlayer())
 		{
-			getActingPlayer().setIsFakeDeath(false);
 			getActingPlayer().setRecentFakeDeath(true);
 		}
 		
