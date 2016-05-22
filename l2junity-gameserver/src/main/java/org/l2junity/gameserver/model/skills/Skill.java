@@ -1330,7 +1330,7 @@ public final class Skill implements IIdentifiable
 		
 		if (self)
 		{
-			addContinuousEffects = !passive && (_operateType.isToggle() || ((_operateType.isContinuous() || _operateType.isSelfContinuous()) && Formulas.calcEffectSuccess(effector, effector, this)));
+			addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isSelfContinuous() && Formulas.calcEffectSuccess(effector, effector, this)));
 			
 			final BuffInfo info = new BuffInfo(effector, effector, this, !instant, item, null);
 			if (addContinuousEffects && (abnormalTime > 0))
