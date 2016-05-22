@@ -21,7 +21,6 @@ package ai.individual.IsleOfPrayer;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 
 import ai.AbstractNpcAI;
 
@@ -47,10 +46,7 @@ public final class EvasGiftBox extends AbstractNpcAI
 	@Override
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		final BuffInfo buffInfo = killer.getEffectList().getBuffInfoByAbnormalType(KISS_OF_EVA.getSkill().getAbnormalType());
-		final int abnoLv = buffInfo == null ? 0 : buffInfo.getSkill().getAbnormalLvl();
-		
-		if (abnoLv > 0)
+		if (killer.hasAbnormalType(KISS_OF_EVA.getSkill().getAbnormalType())) // It was checking if abnormal level is > 0. All cases when has this abnormal type, level is > 0.
 		{
 			if (getRandomBoolean())
 			{

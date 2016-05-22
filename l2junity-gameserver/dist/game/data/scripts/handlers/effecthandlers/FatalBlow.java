@@ -105,7 +105,7 @@ public final class FatalBlow extends AbstractEffect
 		double power = _power;
 		
 		// Check if we apply an abnormal modifier
-		if (_abnormals.stream().anyMatch(a -> effected.getEffectList().getBuffInfoByAbnormalType(a) != null))
+		if (_abnormals.stream().anyMatch(effected::hasAbnormalType))
 		{
 			power += _abnormalPower;
 		}

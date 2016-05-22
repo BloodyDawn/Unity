@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -144,14 +143,12 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 			final boolean previousFollowStatus = summon.getFollowStatus();
 			final SkillHolder mergedSkill = parameters.getObject("step" + stepNumber + "_merged_buff0" + buffNumber, SkillHolder.class);
 			final int targetType = parameters.getInt("step" + stepNumber + "_buff_target0" + buffNumber, 0);
-			final BuffInfo skillInfo = owner.getEffectList().getBuffInfoByAbnormalType(skill.getSkill().getAbnormalType());
 			
-			if ((skillInfo == null) && SkillCaster.checkUseConditions(summon, skill.getSkill()) && !owner.isDead())
+			if (!owner.hasAbnormalType(skill.getSkill().getAbnormalType()) && SkillCaster.checkUseConditions(summon, skill.getSkill()) && !owner.isDead())
 			{
 				if (mergedSkill != null)
 				{
-					final BuffInfo mergedSkillInfo = owner.getEffectList().getBuffInfoByAbnormalType(mergedSkill.getSkill().getAbnormalType());
-					if (mergedSkillInfo != null)
+					if (owner.hasAbnormalType(mergedSkill.getSkill().getAbnormalType()))
 					{
 						return false;
 					}
@@ -188,14 +185,12 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 		
 		if ((skill != null) && (owner != null) && SkillCaster.checkUseConditions(summon, skill.getSkill()) && !owner.isDead())
 		{
-			final BuffInfo heal_info = owner.getEffectList().getBuffInfoByAbnormalType(skill.getSkill().getAbnormalType());
-			
 			if (!previousFollowStatus && !summon.isInsideRadius(owner, skill.getSkill().getCastRange(), true, true))
 			{
 				return;
 			}
 			
-			if (heal_info == null)
+			if (!owner.hasAbnormalType(skill.getSkill().getAbnormalType()))
 			{
 				if ((targetType >= 0) && (targetType <= 2))
 				{

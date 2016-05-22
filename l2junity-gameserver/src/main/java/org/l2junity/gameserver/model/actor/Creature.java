@@ -5489,7 +5489,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public boolean hasAbnormalType(AbnormalType abnormalType)
 	{
-		return getEffectList().getBuffInfoByAbnormalType(abnormalType) != null;
+		return getEffectList().hasAbnormalType(abnormalType);
 	}
 	
 	public void addBlockActionsAllowedSkill(int skillId)

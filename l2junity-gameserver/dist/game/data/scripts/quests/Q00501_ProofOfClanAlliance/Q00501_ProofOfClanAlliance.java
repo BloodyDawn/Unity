@@ -508,7 +508,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	 */
 	private static boolean hasAbnormal(PlayerInstance player)
 	{
-		return player.getEffectList().getBuffInfoByAbnormalType(AbnormalType.FATAL_POISON) != null;
+		return player.hasAbnormalType(AbnormalType.FATAL_POISON);
 	}
 	
 	/**

@@ -478,6 +478,16 @@ public final class CharEffectList
 	}
 	
 	/**
+	 * Check if any buff info of this abnormal type exists.<br>
+	 * @param type the abnormal skill type
+	 * @return {@code true} if there is any buff info by this abnormal type, {@code false} otherwise
+	 */
+	public boolean hasAbnormalType(AbnormalType type)
+	{
+		return (_stackedEffects != null) && _stackedEffects.containsKey(type);
+	}
+	
+	/**
 	 * Gets a buff info by abnormal type.<br>
 	 * It's O(1) for every buff in this effect list.
 	 * @param type the abnormal skill type

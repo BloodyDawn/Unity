@@ -151,7 +151,7 @@ public final class PhysicalAttack extends AbstractEffect
 			// Skill specific mods.
 			final double wpnMod = effector.getAttackType().isRanged() ? 70 : (70 * 1.10113);
 			final double rangedBonus = effector.getAttackType().isRanged() ? (attack + _power) : 0;
-			final double abnormalMod = _abnormals.stream().anyMatch(a -> effected.getEffectList().getBuffInfoByAbnormalType(a) != null) ? _abnormalPowerMod : 1;
+			final double abnormalMod = _abnormals.stream().anyMatch(effected::hasAbnormalType) ? _abnormalPowerMod : 1;
 			final double critMod = critical ? Formulas.calcCritDamage(effector, effected, skill) : 1;
 			final double ssmod = (skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS)) ? effector.getStat().getValue(Stats.SHOTS_BONUS, 2) : 1; // 2.04 for dual weapon?
 			

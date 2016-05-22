@@ -320,7 +320,7 @@ public interface IStatsFunction
 						/* P. Atk. increases by 12 for bows.
 						 * Starting at +4, P. Atk. bonus double.
 						 * 0-3 adding +12 
-						 * 3-6 adding +24 
+						 * 4-6 adding +24 
 						 * 7-9 adding +36 
 						 * 10-12 adding +48 
 						 * 13-127 adding +60
@@ -369,7 +369,7 @@ public interface IStatsFunction
 						/* P. Atk. increases by 7 for two-handed swords, two-handed blunts, dualswords, and two-handed combat weapons.
 						 * Starting at +4, P. Atk. bonus double.
 						 * 0-3 adding +7 
-						 * 3-6 adding +14 
+						 * 4-6 adding +14 
 						 * 7-9 adding +21 
 						 * 10-12 adding +28 
 						 * 13-127 adding +35
@@ -419,7 +419,7 @@ public interface IStatsFunction
 					/* P. Atk. increases by 6 for one-handed swords, one-handed blunts, daggers, spears, and other weapons.
 					 * Starting at +4, P. Atk. bonus double.
 					 * 0-3 adding +6 
-					 * 3-6 adding +12 
+					 * 4-6 adding +12 
 					 * 7-9 adding +18 
 					 * 10-12 adding +24 
 					 * 13-127 adding +30
@@ -567,11 +567,8 @@ public interface IStatsFunction
 		{
 			return maxValue;
 		}
-		if (value < minValue)
-		{
-			return minValue;
-		}
-		return value;
+		
+		return Math.max(minValue, value);
 	}
 	
 	public double calc(Creature creature, Optional<Double> base, Stats stat);

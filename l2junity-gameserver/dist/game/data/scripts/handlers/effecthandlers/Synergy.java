@@ -89,13 +89,13 @@ public final class Synergy extends AbstractEffect
 		
 		for (AbnormalType required : _requiredSlots)
 		{
-			if (info.getEffector().getEffectList().getBuffInfoByAbnormalType(required) == null)
+			if (!info.getEffector().hasAbnormalType(required))
 			{
 				return info.getSkill().isToggle();
 			}
 		}
 		
-		final int abnormalCount = (int) _optionalSlots.stream().filter(a -> info.getEffector().getEffectList().getBuffInfoByAbnormalType(a) != null).count();
+		final int abnormalCount = (int) _optionalSlots.stream().filter(info.getEffector()::hasAbnormalType).count();
 		
 		if (abnormalCount >= _minSlot)
 		{

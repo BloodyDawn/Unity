@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.AbnormalType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -83,11 +82,7 @@ public final class DispelBySlotMyself extends AbstractEffect
 		// Operation of O(n) for the amount of slots to dispel (which is usually small) and O(1) to get the buff.
 		for (AbnormalType entry : _dispelAbnormals)
 		{
-			final BuffInfo toDispel = effectList.getBuffInfoByAbnormalType(entry);
-			if (toDispel == null)
-			{
-				continue;
-			}
+			// The effectlist should already check if it has buff with this abnormal type or not.
 			effectList.stopSkillEffects(true, entry);
 		}
 	}
