@@ -2682,11 +2682,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/**
 	 * Exits all buffs effects of the skills with "removedOnDamage" set.<br>
 	 * Called on decreasing HP and mana burn.
-	 * @param awake
 	 */
-	public final void stopEffectsOnDamage(boolean awake)
+	public final void stopEffectsOnDamage()
 	{
-		_effectList.stopEffectsOnDamage(awake);
+		_effectList.stopEffectsOnDamage();
 	}
 	
 	/**

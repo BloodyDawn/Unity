@@ -107,7 +107,7 @@ public final class MagicalAttackMp extends AbstractEffect
 		
 		if (damage > 0)
 		{
-			effected.stopEffectsOnDamage(true);
+			effected.stopEffectsOnDamage();
 			effected.setCurrentMp(effected.getCurrentMp() - mp);
 		}
 		

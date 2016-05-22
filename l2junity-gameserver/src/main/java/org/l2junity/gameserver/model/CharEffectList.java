@@ -90,11 +90,9 @@ public final class CharEffectList
 	/** Short buff skill ID. */
 	private BuffInfo _shortBuff = null;
 	/** If {@code true} this effect list has buffs removed on any action. */
-	private volatile boolean _hasBuffsRemovedOnAnyAction = false;
+	private final AtomicInteger _hasBuffsRemovedOnAnyAction = new AtomicInteger();
 	/** If {@code true} this effect list has buffs removed on damage. */
-	private volatile boolean _hasBuffsRemovedOnDamage = false;
-	/** If {@code true} this effect list has debuffs removed on damage. */
-	private volatile boolean _hasDebuffsRemovedOnDamage = false;
+	private final AtomicInteger _hasBuffsRemovedOnDamage = new AtomicInteger();
 	/** Effect flags. */
 	private int _effectFlags;
 	/** If {@code true} only party icons need to be updated. */
@@ -639,6 +637,16 @@ public final class CharEffectList
 			}
 		}
 		
+		// Update flag for skills being removed on action or damage.
+		if (info.getSkill().isRemovedOnAnyActionExceptMove())
+		{
+			_hasBuffsRemovedOnAnyAction.decrementAndGet();
+		}
+		if (info.getSkill().isRemovedOnDamage())
+		{
+			_hasBuffsRemovedOnDamage.decrementAndGet();
+		}
+		
 		if (!removed)
 		{
 			info.getSkill().applyEffectScope(EffectScope.END, info, true, false);
@@ -923,7 +931,7 @@ public final class CharEffectList
 	 */
 	public void stopEffectsOnAction()
 	{
-		if (_hasBuffsRemovedOnAnyAction)
+		if (_hasBuffsRemovedOnAnyAction.intValue() > 0)
 		{
 			boolean update = !isEmpty();
 			
@@ -938,33 +946,22 @@ public final class CharEffectList
 		}
 	}
 	
-	public void stopEffectsOnDamage(boolean awake)
+	public void stopEffectsOnDamage()
 	{
-		if (awake)
+		boolean update = false;
+		if (_hasBuffsRemovedOnDamage.intValue() > 0)
 		{
-			boolean update = false;
-			if (_hasBuffsRemovedOnDamage)
-			{
-				update = hasBuffs() || hasTriggered() || hasDances() || hasToggles();
-				
-				getBuffs().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getBuffs()));
-				getTriggered().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getTriggered()));
-				getDances().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getDances()));
-				getToggles().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getToggles()));
-			}
+			update = !isEmpty();
 			
-			if (_hasDebuffsRemovedOnDamage)
-			{
-				if (hasDebuffs())
-				{
-					getDebuffs().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getDebuffs()));
-					update = true;
-				}
-			}
-			
-			// Update effect flags and icons.
-			updateEffectList(update);
+			getBuffs().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getBuffs()));
+			getTriggered().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getTriggered()));
+			getDances().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getDances()));
+			getToggles().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getToggles()));
+			getDebuffs().stream().filter(Objects::nonNull).filter(info -> info.getSkill().isRemovedOnDamage()).forEach(info -> stopAndRemove(info, getDebuffs()));
 		}
+		
+		// Update effect flags and icons.
+		updateEffectList(update);
 	}
 	
 	/**
@@ -1331,6 +1328,16 @@ public final class CharEffectList
 			}
 		}
 		
+		// Update flag for skills being removed on action or damage.
+		if (skill.isRemovedOnAnyActionExceptMove())
+		{
+			_hasBuffsRemovedOnAnyAction.incrementAndGet();
+		}
+		if (skill.isRemovedOnDamage())
+		{
+			_hasBuffsRemovedOnDamage.incrementAndGet();
+		}
+		
 		// After removing old buff (same ID) or stacked buff (same abnormal type),
 		// Add the buff to the end of the effect list.
 		effects.add(info);
@@ -1350,8 +1357,6 @@ public final class CharEffectList
 		{
 			return;
 		}
-		
-		updateEffectFlags();
 		
 		if (!_owner.isPlayable())
 		{
@@ -1556,87 +1561,6 @@ public final class CharEffectList
 		if (_owner.isPlayer() && (_owner.getTarget() == _owner))
 		{
 			_owner.sendPacket(upd);
-		}
-	}
-	
-	/**
-	 * Updates effect flags.<br>
-	 * TODO: Rework it to update in real time (add/remove/stop/activate/deactivate operations) and avoid iterations.
-	 */
-	private void updateEffectFlags()
-	{
-		if (hasBuffs())
-		{
-			for (BuffInfo info : getBuffs())
-			{
-				if (info == null)
-				{
-					continue;
-				}
-				
-				if (info.getSkill().isRemovedOnAnyActionExceptMove())
-				{
-					_hasBuffsRemovedOnAnyAction = true;
-				}
-				
-				if (info.getSkill().isRemovedOnDamage())
-				{
-					_hasBuffsRemovedOnDamage = true;
-				}
-			}
-		}
-		
-		if (hasTriggered())
-		{
-			for (BuffInfo info : getTriggered())
-			{
-				if (info == null)
-				{
-					continue;
-				}
-				
-				if (info.getSkill().isRemovedOnAnyActionExceptMove())
-				{
-					_hasBuffsRemovedOnAnyAction = true;
-				}
-				
-				if (info.getSkill().isRemovedOnDamage())
-				{
-					_hasBuffsRemovedOnDamage = true;
-				}
-			}
-		}
-		
-		if (hasToggles())
-		{
-			for (BuffInfo info : getToggles())
-			{
-				if (info == null)
-				{
-					continue;
-				}
-				
-				if (info.getSkill().isRemovedOnAnyActionExceptMove())
-				{
-					_hasBuffsRemovedOnAnyAction = true;
-				}
-				
-				if (info.getSkill().isRemovedOnDamage())
-				{
-					_hasBuffsRemovedOnDamage = true;
-				}
-			}
-		}
-		
-		if (hasDebuffs())
-		{
-			for (BuffInfo info : getDebuffs())
-			{
-				if ((info != null) && info.getSkill().isRemovedOnDamage())
-				{
-					_hasDebuffsRemovedOnDamage = true;
-				}
-			}
 		}
 	}
 	

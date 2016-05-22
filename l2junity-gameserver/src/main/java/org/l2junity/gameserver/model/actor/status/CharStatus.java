@@ -164,7 +164,10 @@ public class CharStatus
 		
 		if (!isDOT && !isHPConsumption)
 		{
-			activeChar.stopEffectsOnDamage(awake);
+			if (awake)
+			{
+				activeChar.stopEffectsOnDamage();
+			}
 			if (Formulas.calcStunBreak(activeChar))
 			{
 				activeChar.stopStunning(true);
