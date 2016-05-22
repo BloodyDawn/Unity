@@ -57,7 +57,8 @@ public enum EffectFlag
 	IGNORE_DEATH,
 	HPCPHEAL_CRITICAL,
 	PROTECT_DEATH_PENALTY,
-	CHAT_BLOCK;
+	CHAT_BLOCK,
+	FAKE_DEATH;
 	
 	public int getMask()
 	{

@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.ChangeWaitType;
 import org.l2junity.gameserver.network.client.send.Revive;
@@ -41,9 +41,9 @@ public final class FakeDeath extends AbstractEffect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
+	public int getEffectFlags()
 	{
-		return L2EffectType.FAKE_DEATH;
+		return EffectFlag.FAKE_DEATH.getMask();
 	}
 	
 	@Override
@@ -74,7 +74,6 @@ public final class FakeDeath extends AbstractEffect
 	{
 		if (info.getEffected().isPlayer())
 		{
-			info.getEffected().getActingPlayer().setIsFakeDeath(false);
 			info.getEffected().getActingPlayer().setRecentFakeDeath(true);
 		}
 		

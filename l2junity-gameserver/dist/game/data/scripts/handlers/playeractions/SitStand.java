@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.ActionDataHolder;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.network.client.send.ChairSit;
 
 /**
@@ -79,7 +79,7 @@ public final class SitStand implements IPlayerActionHandler
 		
 		if (activeChar.isFakeDeath())
 		{
-			activeChar.stopEffects(L2EffectType.FAKE_DEATH);
+			activeChar.stopEffects(EffectFlag.FAKE_DEATH);
 		}
 		else if (activeChar.isSitting())
 		{

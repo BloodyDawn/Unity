@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.actor.stat.PlayableStat;
 import org.l2junity.gameserver.model.actor.status.PlayableStatus;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
@@ -135,12 +134,12 @@ public abstract class Playable extends Creature
 		
 		if (isNoblesseBlessedAffected())
 		{
-			stopEffects(L2EffectType.NOBLESSE_BLESSING);
+			stopEffects(EffectFlag.NOBLESS_BLESSING);
 			deleteBuffs = false;
 		}
 		if (isResurrectSpecialAffected())
 		{
-			stopEffects(L2EffectType.RESURRECTION_SPECIAL);
+			stopEffects(EffectFlag.RESURRECTION_SPECIAL);
 			deleteBuffs = false;
 		}
 		if (isPlayer())

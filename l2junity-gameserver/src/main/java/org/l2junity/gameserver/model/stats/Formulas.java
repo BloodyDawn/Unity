@@ -633,7 +633,7 @@ public final class Formulas
 			{
 				if (target.decrementAbnormalShieldBlocks() == 0)
 				{
-					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
+					target.stopEffects(EffectFlag.ABNORMAL_SHIELD);
 				}
 				return false;
 			}
@@ -675,7 +675,7 @@ public final class Formulas
 				{
 					if (target.decrementAbnormalShieldBlocks() == 0)
 					{
-						target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
+						target.stopEffects(EffectFlag.ABNORMAL_SHIELD);
 					}
 					resisted = true;
 				}
@@ -757,7 +757,7 @@ public final class Formulas
 			{
 				if (target.decrementAbnormalShieldBlocks() == 0)
 				{
-					target.stopEffects(L2EffectType.ABNORMAL_SHIELD);
+					target.stopEffects(EffectFlag.ABNORMAL_SHIELD);
 				}
 				return false;
 			}

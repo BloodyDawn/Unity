@@ -28,7 +28,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -38,7 +37,6 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
@@ -813,53 +811,24 @@ public final class CharEffectList
 	}
 	
 	/**
-	 * Exit all effects having a specified type.<br>
-	 * TODO: Remove after all effect types are replaced by abnormal skill types.
-	 * @param type the type of the effect to stop
+	 * Exit all effects having a specified flag.<br>
+	 * @param effectFlag the flag of the effect to stop
 	 */
-	public void stopEffects(L2EffectType type)
+	public void stopEffects(EffectFlag effectFlag)
 	{
-		boolean update = false;
-		final Consumer<BuffInfo> action = info ->
+		if (isAffected(effectFlag))
 		{
-			if (info.getEffects().stream().anyMatch(effect -> (effect != null) && (effect.getEffectType() == type)))
-			{
-				stopAndRemove(info);
-			}
-		};
-		
-		if (hasBuffs())
-		{
-			getBuffs().stream().filter(Objects::nonNull).forEach(action);
-			update = true;
+			//@formatter:off
+			Stream.of(getBuffs(), getTriggered(), getDances(), getToggles(), getDebuffs())
+				.flatMap(Queue::stream)
+				.filter(Objects::nonNull)
+				.filter(info -> info.getEffects().stream().anyMatch(effect -> (effect != null) && ((effect.getEffectFlags() & effectFlag.getMask()) != 0)))
+				.forEach(info -> stopAndRemove(info));
+			//@formatter:on
+			
+			// Update effect flags and icons.
+			updateEffectList(true);
 		}
-		
-		if (hasTriggered())
-		{
-			getTriggered().stream().filter(Objects::nonNull).forEach(action);
-			update = true;
-		}
-		
-		if (hasDances())
-		{
-			getDances().stream().filter(Objects::nonNull).forEach(action);
-			update = true;
-		}
-		
-		if (hasToggles())
-		{
-			getToggles().stream().filter(Objects::nonNull).forEach(action);
-			update = true;
-		}
-		
-		if (hasDebuffs())
-		{
-			getDebuffs().stream().filter(Objects::nonNull).forEach(action);
-			update = true;
-		}
-		
-		// Update effect flags and icons.
-		updateEffectList(update);
 	}
 	
 	/**

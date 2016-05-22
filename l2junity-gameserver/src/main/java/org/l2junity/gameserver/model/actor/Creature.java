@@ -88,7 +88,6 @@ import org.l2junity.gameserver.model.actor.tasks.character.NotifyAITask;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
@@ -2616,7 +2615,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return;
 		}
 		
-		getActingPlayer().setIsFakeDeath(true);
 		// Aborts any attacks/casts if fake dead
 		abortAttack();
 		abortCast();
@@ -2665,9 +2663,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		_effectList.stopSkillEffects(true, skill.getId());
 	}
 	
-	public final void stopEffects(L2EffectType type)
+	public final void stopEffects(AbnormalType abnormalType)
 	{
-		_effectList.stopEffects(type);
+		_effectList.stopSkillEffects(true, abnormalType);
+	}
+	
+	public final void stopEffects(EffectFlag effectFlag)
+	{
+		_effectList.stopEffects(effectFlag);
 	}
 	
 	/**
@@ -2702,7 +2705,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		if (removeEffects)
 		{
-			stopEffects(L2EffectType.FAKE_DEATH);
+			stopEffects(EffectFlag.FAKE_DEATH);
 		}
 		
 		// if this is a player instance, start the grace period for this character (grace from mobs only)!
@@ -2726,7 +2729,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		if (removeEffects)
 		{
-			stopEffects(L2EffectType.BLOCK_ACTIONS);
+			stopEffects(AbnormalType.STUN);
 		}
 		
 		if (!isPlayer())

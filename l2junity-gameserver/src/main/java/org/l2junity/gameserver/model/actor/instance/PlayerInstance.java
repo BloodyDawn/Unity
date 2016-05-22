@@ -2834,7 +2834,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (getEffectList().isAffected(EffectFlag.RELAXING))
 			{
-				stopEffects(L2EffectType.RELAXING);
+				stopEffects(EffectFlag.RELAXING);
 			}
 			
 			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_STANDING));

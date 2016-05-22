@@ -42,7 +42,6 @@ import org.l2junity.gameserver.model.actor.stat.SummonStat;
 import org.l2junity.gameserver.model.actor.status.SummonStatus;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
 import org.l2junity.gameserver.model.itemcontainer.PetInventory;
@@ -299,7 +298,7 @@ public abstract class Summon extends Playable
 	{
 		if (isNoblesseBlessedAffected())
 		{
-			stopEffects(L2EffectType.NOBLESSE_BLESSING);
+			stopEffects(EffectFlag.NOBLESS_BLESSING);
 			storeEffect(true);
 		}
 		else
