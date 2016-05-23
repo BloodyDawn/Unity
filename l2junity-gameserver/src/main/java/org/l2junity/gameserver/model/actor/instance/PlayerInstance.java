@@ -8193,11 +8193,21 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// Check if the skill type is toggle and disable it, unless the toggle is necessary to be on.
-		if (skill.isToggle() && !skill.isNecessaryToggle() && isAffectedBySkill(skill.getId()))
+		if (skill.isToggle())
 		{
-			stopSkillEffects(true, skill.getId());
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
+			if (isAffectedBySkill(skill.getId()))
+			{
+				if (!skill.isNecessaryToggle())
+				{
+					stopSkillEffects(true, skill.getId());
+				}
+				sendPacket(ActionFailed.STATIC_PACKET);
+				return false;
+			}
+			else if (skill.getToggleGroupId() > 0)
+			{
+				getEffectList().stopAllTogglesOfGroup(skill.getToggleGroupId());
+			}
 		}
 		
 		// Check if the player uses "Fake Death" skill

@@ -4171,17 +4171,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<!-- TODO please change/remove this shit effect -->
-			<effect name="VisualBuff">
-				<skillId1>11007</skillId1>
-				<skillId3>11009</skillId3>
-				<skillId2>11008</skillId2>
-				<skillId4>11010</skillId4>
-			</effect>
-			<!-- Same here -->
-			<effect name="EffectFlag">
-				<effectFlag>DOUBLE_CAST</effectFlag>
-			</effect>
+			<effect name="DoubleCast" />
 			<effect name="ReduceCancel">
 				<amount>-100</amount>
 				<mode>DIFF</mode>

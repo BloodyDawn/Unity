@@ -116,7 +116,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("DispelBySlot", DispelBySlot::new);
 		EffectHandler.getInstance().registerHandler("DispelBySlotMyself", DispelBySlotMyself::new);
 		EffectHandler.getInstance().registerHandler("DispelBySlotProbability", DispelBySlotProbability::new);
-		EffectHandler.getInstance().registerHandler("EffectFlag", EffectFlag::new);
+		EffectHandler.getInstance().registerHandler("DoubleCast", DoubleCast::new);
 		EffectHandler.getInstance().registerHandler("EnableCloak", EnableCloak::new);
 		EffectHandler.getInstance().registerHandler("EnemyCharge", EnemyCharge::new);
 		EffectHandler.getInstance().registerHandler("EnergyAttack", EnergyAttack::new);
@@ -335,7 +335,6 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("Untargetable", Untargetable::new);
 		EffectHandler.getInstance().registerHandler("VampiricAttack", VampiricAttack::new);
 		EffectHandler.getInstance().registerHandler("VampiricDefence", VampiricDefence::new);
-		EffectHandler.getInstance().registerHandler("VisualBuff", VisualBuff::new);
 		EffectHandler.getInstance().registerHandler("VitalityPointsRate", VitalityPointsRate::new);
 		EffectHandler.getInstance().registerHandler("VitalityPointUp", VitalityPointUp::new);
 		EffectHandler.getInstance().registerHandler("WeightLimit", WeightLimit::new);

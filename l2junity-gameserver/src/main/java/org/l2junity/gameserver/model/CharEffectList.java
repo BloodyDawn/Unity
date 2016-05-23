@@ -37,7 +37,6 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2junity.gameserver.model.options.Options;
@@ -83,8 +82,6 @@ public final class CharEffectList
 	private volatile Map<AbnormalType, BuffInfo> _stackedEffects;
 	/** Set containing all abnormal types that shouldn't be added to this creature effect list. */
 	private volatile Set<AbnormalType> _blockedAbnormalTypes = null;
-	/** Set containing skills that visually appear in the character buff bar */
-	private volatile Set<Skill> _visualAbnormalStatus = null;
 	/** Short buff skill ID. */
 	private BuffInfo _shortBuff = null;
 	/** If {@code true} this effect list has buffs removed on any action. */
@@ -415,55 +412,6 @@ public final class CharEffectList
 	}
 	
 	/**
-	 * Adds skills to visually-only display in the buff bar.
-	 * @param visualAbnormalStatus the visual abnormal status set to add
-	 */
-	public void addVisualAbnormalStatus(List<SkillHolder> visualAbnormalStatus)
-	{
-		if (_visualAbnormalStatus == null)
-		{
-			synchronized (this)
-			{
-				if (_visualAbnormalStatus == null)
-				{
-					_visualAbnormalStatus = ConcurrentHashMap.newKeySet(visualAbnormalStatus.size());
-				}
-			}
-		}
-		
-		visualAbnormalStatus.forEach(skill -> _visualAbnormalStatus.add(skill.getSkill()));
-	}
-	
-	/**
-	 * Removes skills that are visually-only displayed in the buff bar.
-	 * @param visualAbnormalStatus the visual abnormal status set to remove
-	 * @return {@code true} if the abnormal visual status set has been modified, {@code false} otherwise
-	 */
-	public boolean removeVisualAbnormalStatus(List<SkillHolder> visualAbnormalStatus)
-	{
-		if (_visualAbnormalStatus != null)
-		{
-			boolean removed = false;
-			for (SkillHolder skill : visualAbnormalStatus)
-			{
-				removed |= _visualAbnormalStatus.remove(skill.getSkill());
-			}
-			
-			return removed;
-		}
-		return false;
-	}
-	
-	/**
-	 * Gets all visual-only skills that are displayed in the buff bar
-	 * @return the current visual abnormal status set
-	 */
-	public Set<Skill> getVisualAbnormalStatus()
-	{
-		return _visualAbnormalStatus;
-	}
-	
-	/**
 	 * Gets the Short Buff info.
 	 * @return the short buff info
 	 */
@@ -751,6 +699,16 @@ public final class CharEffectList
 			getToggles().stream().filter(b -> !b.getSkill().isNecessaryToggle()).forEach(b -> stopAndRemove(b, getToggles()));
 			// Update effect flags and icons.
 			updateEffectList(update);
+		}
+	}
+	
+	public void stopAllTogglesOfGroup(int toggleGroup)
+	{
+		if (hasToggles())
+		{
+			getToggles().stream().filter(b -> b.getSkill().getToggleGroupId() == toggleGroup).forEach(b -> stopSkillEffects(true, b.getSkill()));
+			// Update effect flags and icons.
+			updateEffectList(true);
 		}
 	}
 	
@@ -1183,11 +1141,6 @@ public final class CharEffectList
 			return;
 		}
 		
-		if (skill.isToggle() && (skill.getToggleGroupId() > 0))
-		{
-			getToggles().stream().filter(b -> b.getSkill().getToggleGroupId() == skill.getToggleGroupId()).forEach(b -> stopSkillEffects(true, b.getSkill()));
-		}
-		
 		// Prevent adding and initializing buffs/effects on dead creatures.
 		if (info.getEffected().isDead())
 		{
@@ -1327,117 +1280,115 @@ public final class CharEffectList
 			return;
 		}
 		
-		if (!_owner.isPlayable())
+		if (_owner.isPlayable())
 		{
-			return;
-		}
-		
-		final AbnormalStatusUpdate asu;
-		final PartySpelled ps;
-		final PartySpelled psSummon;
-		final ExOlympiadSpelledInfo os;
-		final boolean isSummon;
-		
-		if (_owner.isPlayer())
-		{
-			if (_partyOnly)
-			{
-				asu = null;
-				_partyOnly = false;
-			}
-			else
-			{
-				asu = new AbnormalStatusUpdate();
-			}
+			final AbnormalStatusUpdate asu;
+			final PartySpelled ps;
+			final PartySpelled psSummon;
+			final ExOlympiadSpelledInfo os;
+			final boolean isSummon;
 			
-			ps = _owner.isInParty() ? new PartySpelled(_owner) : null;
-			os = _owner.getActingPlayer().isInOlympiadMode() && _owner.getActingPlayer().isOlympiadStart() ? new ExOlympiadSpelledInfo(_owner.getActingPlayer()) : null;
-			psSummon = null;
-			isSummon = false;
-		}
-		else if (_owner.isSummon())
-		{
-			isSummon = true;
-			asu = null;
-			ps = new PartySpelled(_owner);
-			os = null;
-			psSummon = new PartySpelled(_owner);
-		}
-		else
-		{
-			asu = null;
-			ps = null;
-			os = null;
-			psSummon = null;
-			isSummon = false;
-		}
-		
-		//@formatter:off
-		Stream.of(getBuffs(), getTriggered(), getDances(), getToggles(), getDebuffs())
-			.flatMap(Queue::stream)
-			.filter(Objects::nonNull)
-			.filter(i -> (_visualAbnormalStatus == null) || !_visualAbnormalStatus.contains(i.getSkill()))
-			.forEach(i ->
+			if (_owner.isPlayer())
 			{
-				if (i.getSkill().isHealingPotionSkill())
+				if (_partyOnly)
 				{
-					shortBuffStatusUpdate(i);
+					asu = null;
+					_partyOnly = false;
 				}
 				else
 				{
-					addIcon(i, asu, ps, psSummon, os, isSummon);
+					asu = new AbnormalStatusUpdate();
 				}
-			});
-		//@formatter:on
-		
-		// Visual skills
-		if ((_visualAbnormalStatus != null) && !_visualAbnormalStatus.isEmpty())
-		{
-			for (Skill skill : _visualAbnormalStatus)
-			{
-				if (skill != null)
-				{
-					addIcon(skill, asu, ps, psSummon, os, isSummon);
-				}
+				
+				ps = _owner.isInParty() ? new PartySpelled(_owner) : null;
+				os = _owner.getActingPlayer().isInOlympiadMode() && _owner.getActingPlayer().isOlympiadStart() ? new ExOlympiadSpelledInfo(_owner.getActingPlayer()) : null;
+				psSummon = null;
+				isSummon = false;
 			}
-		}
-		
-		if (asu != null)
-		{
-			_owner.sendPacket(asu);
-		}
-		
-		if (ps != null)
-		{
-			if (_owner.isSummon())
+			else if (_owner.isSummon())
 			{
-				final PlayerInstance summonOwner = ((Summon) _owner).getOwner();
-				if (summonOwner != null)
+				isSummon = true;
+				asu = null;
+				ps = new PartySpelled(_owner);
+				os = null;
+				psSummon = new PartySpelled(_owner);
+			}
+			else
+			{
+				asu = null;
+				ps = null;
+				os = null;
+				psSummon = null;
+				isSummon = false;
+			}
+			
+			//@formatter:off
+			Stream.of(getBuffs(), getTriggered(), getDances(), getToggles(), getDebuffs())
+				.flatMap(Queue::stream)
+				.filter(Objects::nonNull)
+				.forEach(i ->
 				{
-					if (summonOwner.isInParty())
+					if (i.getSkill().isHealingPotionSkill())
 					{
-						summonOwner.getParty().broadcastToPartyMembers(summonOwner, psSummon); // send to all member except summonOwner
-						summonOwner.sendPacket(ps); // now send to summonOwner
+						shortBuffStatusUpdate(i);
 					}
 					else
 					{
-						summonOwner.sendPacket(ps);
+						addIcon(i, asu, ps, psSummon, os, isSummon);
+					}
+				});
+			//@formatter:on
+			
+			if (asu != null)
+			{
+				_owner.sendPacket(asu);
+			}
+			
+			if (ps != null)
+			{
+				if (_owner.isSummon())
+				{
+					final PlayerInstance summonOwner = ((Summon) _owner).getOwner();
+					if (summonOwner != null)
+					{
+						if (summonOwner.isInParty())
+						{
+							summonOwner.getParty().broadcastToPartyMembers(summonOwner, psSummon); // send to all member except summonOwner
+						}
+						
+						summonOwner.sendPacket(ps); // now send to summonOwner
 					}
 				}
+				else if (_owner.isPlayer() && _owner.isInParty())
+				{
+					_owner.getParty().broadcastPacket(ps);
+				}
 			}
-			else if (_owner.isPlayer() && _owner.isInParty())
+			
+			if (os != null)
 			{
-				_owner.getParty().broadcastPacket(ps);
+				final OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(_owner.getActingPlayer().getOlympiadGameId());
+				if ((game != null) && game.isBattleStarted())
+				{
+					game.getStadium().broadcastPacketToObservers(os);
+				}
 			}
 		}
 		
-		if (os != null)
+		// Update effect icons for everyone targeting this owner.
+		final ExAbnormalStatusUpdateFromTarget upd = new ExAbnormalStatusUpdateFromTarget(_owner);
+		
+		// @formatter:off
+		_owner.getStatus().getStatusListener().stream()
+			.filter(Objects::nonNull)
+			.filter(WorldObject::isPlayer)
+			.map(Creature::getActingPlayer)
+			.forEach(upd::sendTo);
+		// @formatter:on
+		
+		if (_owner.isPlayer() && (_owner.getTarget() == _owner))
 		{
-			final OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(_owner.getActingPlayer().getOlympiadGameId());
-			if ((game != null) && game.isBattleStarted())
-			{
-				game.getStadium().broadcastPacketToObservers(os);
-			}
+			_owner.sendPacket(upd);
 		}
 	}
 	
@@ -1471,34 +1422,6 @@ public final class CharEffectList
 		}
 	}
 	
-	private void addIcon(Skill skill, AbnormalStatusUpdate asu, PartySpelled ps, PartySpelled psSummon, ExOlympiadSpelledInfo os, boolean isSummon)
-	{
-		if (skill == null)
-		{
-			return;
-		}
-		
-		if (asu != null)
-		{
-			asu.addSkill(skill);
-		}
-		
-		if ((ps != null) && (isSummon || !skill.isToggle()))
-		{
-			ps.addSkill(skill);
-		}
-		
-		if ((psSummon != null) && !skill.isToggle())
-		{
-			psSummon.addSkill(skill);
-		}
-		
-		if (os != null)
-		{
-			os.addSkill(skill);
-		}
-	}
-	
 	/**
 	 * Wrapper to update abnormal icons and effect flags.
 	 * @param update if {@code true} performs an update
@@ -1508,28 +1431,7 @@ public final class CharEffectList
 		if (update)
 		{
 			updateEffectIcons();
-			sendAbnormalStatusUpdateFromTarget();
 			computeEffectFlags();
-		}
-	}
-	
-	private void sendAbnormalStatusUpdateFromTarget()
-	{
-		final ExAbnormalStatusUpdateFromTarget upd = new ExAbnormalStatusUpdateFromTarget(_owner);
-		
-		// Go through the StatusListener
-		// Send the Server->Client packet StatusUpdate with current HP and MP
-		// @formatter:off
-		_owner.getStatus().getStatusListener().stream()
-			.filter(Objects::nonNull)
-			.filter(WorldObject::isPlayer)
-			.map(Creature::getActingPlayer)
-			.forEach(upd::sendTo);
-		// @formatter:on
-		
-		if (_owner.isPlayer() && (_owner.getTarget() == _owner))
-		{
-			_owner.sendPacket(upd);
 		}
 	}
 	
