@@ -42,6 +42,7 @@ public final class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("AddTeleportBookmarkSlot", AddTeleportBookmarkSlot::new);
 		EffectHandler.getInstance().registerHandler("AreaDamage", AreaDamage::new);
 		EffectHandler.getInstance().registerHandler("AttackAttribute", AttackAttribute::new);
+		EffectHandler.getInstance().registerHandler("AttackBehind", AttackBehind::new);
 		EffectHandler.getInstance().registerHandler("AttackTrait", AttackTrait::new);
 		EffectHandler.getInstance().registerHandler("Backstab", Backstab::new);
 		EffectHandler.getInstance().registerHandler("Betray", Betray::new);
