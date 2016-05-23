@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import it.sauronsoftware.cron4j.PastPredictor;
 import it.sauronsoftware.cron4j.Predictor;
 
 /**
@@ -60,6 +61,24 @@ public class EventScheduler
 	{
 		final Predictor predictor = new Predictor(_pattern);
 		return predictor.nextMatchingTime();
+	}
+	
+	public long getNextSchedule(long fromTime)
+	{
+		final Predictor predictor = new Predictor(_pattern, fromTime);
+		return predictor.nextMatchingTime();
+	}
+	
+	public long getPrevSchedule()
+	{
+		final PastPredictor predictor = new PastPredictor(_pattern);
+		return predictor.prevMatchingTime();
+	}
+	
+	public long getPrevSchedule(long fromTime)
+	{
+		final PastPredictor predictor = new PastPredictor(_pattern, fromTime);
+		return predictor.prevMatchingTime();
 	}
 	
 	public boolean isRepeating()
@@ -106,23 +125,13 @@ public class EventScheduler
 		
 		_task = ThreadPoolManager.getInstance().scheduleEvent(() ->
 		{
-			for (EventMethodNotification notification : _notifications)
-			{
-				try
-				{
-					notification.execute();
-				}
-				catch (Exception e)
-				{
-					LOGGER.warn("Failed to notify to event manager: {} method: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName());
-				}
-			}
+			run();
 			
 			if (isRepeating())
 			{
 				ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, 1000);
 			}
-		} , timeSchedule);
+		}, timeSchedule);
 	}
 	
 	public void stopScheduler()
@@ -137,5 +146,20 @@ public class EventScheduler
 	public long getRemainingTime(TimeUnit unit)
 	{
 		return (_task != null) && !_task.isDone() ? _task.getDelay(unit) : 0;
+	}
+	
+	public void run()
+	{
+		for (EventMethodNotification notification : _notifications)
+		{
+			try
+			{
+				notification.execute();
+			}
+			catch (Exception e)
+			{
+				LOGGER.warn("Failed to notify to event manager: {} method: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName());
+			}
+		}
 	}
 }

@@ -44,7 +44,7 @@ public class ClanHallAuctionManager extends AbstractEventManager<AbstractEvent<?
 	}
 	
 	@ScheduleTarget
-	public void onEventStart()
+	private void onEventStart()
 	{
 		LOGGER.info("Clan Hall Auction has started!");
 		AUCTIONS.clear();
@@ -56,7 +56,7 @@ public class ClanHallAuctionManager extends AbstractEventManager<AbstractEvent<?
 	}
 	
 	@ScheduleTarget
-	public void onEventEnd()
+	private void onEventEnd()
 	{
 		AUCTIONS.values().forEach(ClanHallAuction::finalizeAuctions);
 		AUCTIONS.clear();

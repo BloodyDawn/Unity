@@ -35,6 +35,8 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.EventMethodNotification;
 import org.l2junity.gameserver.model.eventengine.EventScheduler;
+import org.l2junity.gameserver.model.eventengine.IConditionalEventScheduler;
+import org.l2junity.gameserver.model.eventengine.conditions.ConditionalBetweenEventScheduler;
 import org.l2junity.gameserver.model.eventengine.drop.EventDropGroup;
 import org.l2junity.gameserver.model.eventengine.drop.EventDropItem;
 import org.l2junity.gameserver.model.eventengine.drop.EventDrops;
@@ -137,6 +139,9 @@ public final class EventEngineData implements IGameXmlReader
 		// Start the scheduler
 		eventManager.startScheduler();
 		
+		// Start conditional schedulers
+		eventManager.startConditionalSchedulers();
+		
 		// Notify the event manager that we've done initializing its stuff
 		eventManager.onInitialized();
 		
@@ -176,6 +181,7 @@ public final class EventEngineData implements IGameXmlReader
 	{
 		eventManager.stopScheduler();
 		final Set<EventScheduler> schedulers = new LinkedHashSet<>();
+		final Set<IConditionalEventScheduler> conditionalSchedulers = new LinkedHashSet<>();
 		for (Node scheduleNode = innerNode.getFirstChild(); scheduleNode != null; scheduleNode = scheduleNode.getNextSibling())
 		{
 			if ("schedule".equals(scheduleNode.getNodeName()))
@@ -225,8 +231,51 @@ public final class EventEngineData implements IGameXmlReader
 				}
 				schedulers.add(scheduler);
 			}
+			else if ("conditionalSchedule".equals(scheduleNode.getNodeName()))
+			{
+				final StatsSet params = new StatsSet(LinkedHashMap::new);
+				final NamedNodeMap attrs = scheduleNode.getAttributes();
+				for (int i = 0; i < attrs.getLength(); i++)
+				{
+					final Node node = attrs.item(i);
+					params.set(node.getNodeName(), node.getNodeValue());
+				}
+				
+				for (Node eventNode = scheduleNode.getFirstChild(); eventNode != null; eventNode = eventNode.getNextSibling())
+				{
+					if ("run".equals(eventNode.getNodeName()))
+					{
+						final String name = parseString(eventNode.getAttributes(), "name");
+						final String ifType = parseString(eventNode.getAttributes(), "if", "BETWEEN").toUpperCase();
+						switch (ifType)
+						{
+							case "BETWEEN":
+							{
+								final List<String> names = new ArrayList<>(2);
+								for (Node innerData = eventNode.getFirstChild(); innerData != null; innerData = innerData.getNextSibling())
+								{
+									if ("name".equals(innerData.getNodeName()))
+									{
+										names.add(innerData.getTextContent());
+									}
+								}
+								if (names.size() != 2)
+								{
+									LOGGER.warn("Event: {} has incorrect amount of scheduler names: {} expected: {} found: {}", eventManager.getClass().getSimpleName(), names, 2, names.size());
+								}
+								else
+								{
+									conditionalSchedulers.add(new ConditionalBetweenEventScheduler(eventManager, name, names.get(0), names.get(1)));
+								}
+								break;
+							}
+						}
+					}
+				}
+			}
 		}
 		eventManager.setSchedulers(schedulers);
+		eventManager.setConditionalSchedulers(conditionalSchedulers);
 	}
 	
 	/**

@@ -85,7 +85,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	}
 	
 	@ScheduleTarget
-	public void onPeriodEnd(String text)
+	private void onPeriodEnd(String text)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ?"))
@@ -110,20 +110,20 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	}
 	
 	@ScheduleTarget
-	public void onEventStart()
+	private void onEventStart()
 	{
 		LOGGER.info("Ceremony of Chaos event has started!");
 	}
 	
 	@ScheduleTarget
-	public void onEventEnd()
+	private void onEventEnd()
 	{
 		PunishmentManager.getInstance().stopPunishment(PunishmentAffect.CHARACTER, PunishmentType.COC_BAN);
 		LOGGER.info("Ceremony of Chaos event has ended!");
 	}
 	
 	@ScheduleTarget
-	public void onRegistrationStart()
+	private void onRegistrationStart()
 	{
 		if (getState() != CeremonyOfChaosState.SCHEDULED)
 		{
@@ -145,7 +145,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	}
 	
 	@ScheduleTarget
-	public void onRegistrationEnd()
+	private void onRegistrationEnd()
 	{
 		if (getState() != CeremonyOfChaosState.REGISTRATION)
 		{
@@ -169,7 +169,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	}
 	
 	@ScheduleTarget
-	public void onPrepareForFight()
+	private void onPrepareForFight()
 	{
 		if (getState() != CeremonyOfChaosState.PREPARING_FOR_TELEPORT)
 		{
@@ -213,7 +213,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	}
 	
 	@ScheduleTarget
-	public void onStartFight()
+	private void onStartFight()
 	{
 		if (getState() != CeremonyOfChaosState.PREPARING_FOR_FIGHT)
 		{
@@ -225,7 +225,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	}
 	
 	@ScheduleTarget
-	public void onEndFight()
+	private void onEndFight()
 	{
 		if (getState() != CeremonyOfChaosState.RUNNING)
 		{
@@ -373,7 +373,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	
 	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public TerminateReturn OnPlayerBypass(OnPlayerBypass event)
+	private TerminateReturn OnPlayerBypass(OnPlayerBypass event)
 	{
 		final PlayerInstance player = event.getActiveChar();
 		if (player == null)
@@ -396,7 +396,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	
 	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLogin(OnPlayerLogin event)
+	private void OnPlayerLogin(OnPlayerLogin event)
 	{
 		if (getState() == CeremonyOfChaosState.REGISTRATION)
 		{
@@ -410,7 +410,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	
 	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLogout(OnPlayerLogout event)
+	private void OnPlayerLogout(OnPlayerLogout event)
 	{
 		if (getState() == CeremonyOfChaosState.REGISTRATION)
 		{

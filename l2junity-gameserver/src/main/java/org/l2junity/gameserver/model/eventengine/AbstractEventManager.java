@@ -45,6 +45,7 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 {
 	private volatile StatsSet _variables = StatsSet.EMPTY_STATSET;
 	private volatile Set<EventScheduler> _schedulers = Collections.emptySet();
+	private volatile Set<IConditionalEventScheduler> _conditionalSchedulers = Collections.emptySet();
 	private volatile Map<String, IEventDrop> _rewards = Collections.emptyMap();
 	
 	private final Set<T> _events = ConcurrentHashMap.newKeySet();
@@ -79,6 +80,18 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	
 	/* ********************** */
 	
+	public Set<IConditionalEventScheduler> getConditionalSchedulers()
+	{
+		return _conditionalSchedulers;
+	}
+	
+	public void setConditionalSchedulers(Set<IConditionalEventScheduler> schedulers)
+	{
+		_conditionalSchedulers = Collections.unmodifiableSet(schedulers);
+	}
+	
+	/* ********************** */
+	
 	public IEventDrop getRewards(String name)
 	{
 		return _rewards.get(name);
@@ -106,6 +119,15 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	public void stopScheduler()
 	{
 		_schedulers.forEach(EventScheduler::stopScheduler);
+	}
+	
+	public void startConditionalSchedulers()
+	{
+		//@formatter:off
+		_conditionalSchedulers.stream()
+			.filter(IConditionalEventScheduler::test)
+			.forEach(IConditionalEventScheduler::run);
+		//@formatter:on
 	}
 	
 	/* ********************** */
@@ -180,7 +202,7 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	 */
 	protected void onUnregisteredPlayer(PlayerInstance player)
 	{
-	
+		
 	}
 	
 	/**
@@ -190,7 +212,7 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	 */
 	protected void onStateChange(IEventState previousState, IEventState newState)
 	{
-	
+		
 	}
 	
 	/* ********************** */
