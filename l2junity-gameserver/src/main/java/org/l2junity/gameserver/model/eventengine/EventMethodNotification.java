@@ -40,7 +40,7 @@ public class EventMethodNotification
 	public EventMethodNotification(AbstractEventManager<?> manager, String methodName, List<Object> args) throws NoSuchMethodException
 	{
 		_manager = manager;
-		_method = manager.getClass().getMethod(methodName, args.stream().map(Object::getClass).toArray(Class[]::new));
+		_method = manager.getClass().getDeclaredMethod(methodName, args.stream().map(Object::getClass).toArray(Class[]::new));
 		_args = args.toArray();
 	}
 	

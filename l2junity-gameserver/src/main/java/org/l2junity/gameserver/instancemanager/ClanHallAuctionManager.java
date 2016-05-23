@@ -66,7 +66,6 @@ public class ClanHallAuctionManager extends AbstractEventManager<AbstractEvent<?
 	@Override
 	public void onInitialized()
 	{
-		onEventStart();
 	}
 	
 	public ClanHallAuction getClanHallAuctionById(int clanHallId)

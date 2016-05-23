@@ -225,7 +225,7 @@ public final class EventEngineData implements IGameXmlReader
 						}
 						catch (Exception e)
 						{
-							LOGGER.warn("Couldn't add event notification for {}", eventManager.getClass().getSimpleName());
+							LOGGER.warn("Couldn't add event notification for {}", eventManager.getClass().getSimpleName(), e);
 						}
 					}
 				}
