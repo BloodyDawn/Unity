@@ -431,6 +431,16 @@ public class NpcData implements IGameXmlReader
 									}
 									break;
 								}
+								case "extend_drop":
+								{
+									final List<Integer> extendDrop = new ArrayList<>();
+									forEach(npc_node, "id", idNode ->
+									{
+										extendDrop.add(Integer.parseInt(idNode.getTextContent()));
+									});
+									set.set("extend_drop", extendDrop);
+									break;
+								}
 								case "collision":
 								{
 									for (Node collision_node = npc_node.getFirstChild(); collision_node != null; collision_node = collision_node.getNextSibling())
@@ -599,6 +609,7 @@ public class NpcData implements IGameXmlReader
 				}
 			}
 		}
+		
 	}
 	
 	private void parseDropList(File f, Node drop_list_node, DropListScope dropListScope, List<IDropItem> drops)

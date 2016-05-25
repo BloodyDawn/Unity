@@ -49,6 +49,7 @@ public final class ScriptEngineManager
 	public static final Path MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "MasterHandler.java");
 	public static final Path EFFECT_MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "EffectMasterHandler.java");
 	public static final Path SKILL_CONDITION_HANDLER_FILE = Paths.get(ScriptEngineManager.SCRIPT_FOLDER.toString(), "handlers", "SkillConditionMasterHandler.java");
+	public static final Path CONDITION_HANDLER_FILE = Paths.get(ScriptEngineManager.SCRIPT_FOLDER.toString(), "handlers", "ConditionMasterHandler.java");
 	public static final Path ONE_DAY_REWARD_MASTER_HANDLER = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "OneDayRewardMasterHandler.java");
 	
 	private final Map<String, IExecutionContext> _extEngines = new HashMap<>();
@@ -163,9 +164,14 @@ public final class ScriptEngineManager
 		executeScript(EFFECT_MASTER_HANDLER_FILE);
 	}
 	
-	public void executeConditionMasterHandler() throws Exception
+	public void executeSkillConditionMasterHandler() throws Exception
 	{
 		executeScript(SKILL_CONDITION_HANDLER_FILE);
+	}
+	
+	public void executeConditionMasterHandler() throws Exception
+	{
+		executeScript(CONDITION_HANDLER_FILE);
 	}
 	
 	public void executeOneDayRewardMasterHandler() throws Exception
@@ -224,6 +230,7 @@ public final class ScriptEngineManager
 			case "MasterHandler.java":
 			case "EffectMasterHandler.java":
 			case "SkillConditionMasterHandler.java":
+			case "ConditionMasterHandler.java":
 			case "OneDayRewardMasterHandler.java":
 			{
 				return;

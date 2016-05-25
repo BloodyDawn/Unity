@@ -108,6 +108,8 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	
 	private final List<ClassId> _teachInfo = new ArrayList<>();
 	
+	private List<Integer> _extendDrop;
+	
 	/**
 	 * Constructor of L2Character.
 	 * @param set The StatsSet object to transfer data to the method
@@ -181,6 +183,8 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 		_mpRewardType = set.getEnum("mpRewardType", MpRewardType.class, MpRewardType.DIFF);
 		_mpRewardTicks = set.getInt("mpRewardTicks", 0);
 		_mpRewardAffectType = set.getEnum("mpRewardAffectType", MpRewardAffectType.class, MpRewardAffectType.SOLO);
+		
+		_extendDrop = set.getList("extend_drop", Integer.class);
 	}
 	
 	@Override
@@ -670,5 +674,10 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	public void addTeachInfo(List<ClassId> teachInfo)
 	{
 		_teachInfo.addAll(teachInfo);
+	}
+	
+	public List<Integer> getExtendDrop()
+	{
+		return _extendDrop == null ? Collections.emptyList() : _extendDrop;
 	}
 }

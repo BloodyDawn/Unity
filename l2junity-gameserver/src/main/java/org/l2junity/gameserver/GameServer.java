@@ -58,6 +58,7 @@ import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.data.xml.impl.EnsoulData;
 import org.l2junity.gameserver.data.xml.impl.EventEngineData;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
+import org.l2junity.gameserver.data.xml.impl.ExtendDropData;
 import org.l2junity.gameserver.data.xml.impl.FishingData;
 import org.l2junity.gameserver.data.xml.impl.HennaData;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
@@ -93,6 +94,7 @@ import org.l2junity.gameserver.datatables.EventDroplist;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
 import org.l2junity.gameserver.datatables.SpawnTable;
+import org.l2junity.gameserver.handler.ConditionHandler;
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.handler.OneDayRewardHandler;
 import org.l2junity.gameserver.handler.SkillConditionHandler;
@@ -214,6 +216,7 @@ public class GameServer
 		SummonSkillsTable.getInstance();
 		
 		printSection("Items");
+		ConditionHandler.getInstance().executeScript();
 		ItemTable.getInstance();
 		EnchantItemGroupsData.getInstance();
 		EnchantItemData.getInstance();
@@ -269,6 +272,7 @@ public class GameServer
 		printSection("NPCs");
 		SkillLearnData.getInstance();
 		NpcData.getInstance();
+		ExtendDropData.getInstance();
 		SpawnsData.getInstance();
 		WalkingManager.getInstance();
 		StaticObjectData.getInstance();

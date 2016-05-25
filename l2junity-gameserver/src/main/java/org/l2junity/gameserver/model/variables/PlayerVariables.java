@@ -56,6 +56,7 @@ public class PlayerVariables extends AbstractVariables
 	public static final String ABILITY_POINTS_DUAL_CLASS = "ABILITY_POINTS_DUAL_CLASS";
 	public static final String ABILITY_POINTS_USED_MAIN_CLASS = "ABILITY_POINTS_USED";
 	public static final String ABILITY_POINTS_USED_DUAL_CLASS = "ABILITY_POINTS_DUAL_CLASS_USED";
+	public static final String EXTEND_DROP = "EXTEND_DROP";
 	
 	private final int _objectId;
 	
@@ -233,5 +234,52 @@ public class PlayerVariables extends AbstractVariables
 			}
 		}
 		return rewards != null ? rewards : Collections.emptyList();
+	}
+	
+	public void updateExtendDrop(int id, long count)
+	{
+		String result = "";
+		String data = getString(EXTEND_DROP, "");
+		if (data.isEmpty())
+		{
+			result = Integer.toString(id) + "," + Long.toString(count);
+		}
+		else
+		{
+			if (data.contains(";"))
+			{
+				for (String s : data.split(";"))
+				{
+					String[] drop = s.split(",");
+					if (drop[0].equals(Integer.toString(id)))
+					{
+						s += ";" + drop[0] + "," + Long.toString(count);
+						continue;
+					}
+					
+					result += ";" + s;
+				}
+				result = result.substring(1);
+			}
+			else
+			{
+				result = Integer.toString(id) + "," + Long.toString(count);
+			}
+		}
+		set(EXTEND_DROP, result);
+	}
+	
+	public long getExtendDropCount(int id)
+	{
+		String data = getString(EXTEND_DROP, "");
+		for (String s : data.split(";"))
+		{
+			String[] drop = s.split(",");
+			if (drop[0].equals(Integer.toString(id)))
+			{
+				return Long.parseLong(drop[1]);
+			}
+		}
+		return 0;
 	}
 }

@@ -41,6 +41,7 @@ import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.FortSiegeGuardAI;
 import org.l2junity.gameserver.ai.SiegeGuardAI;
+import org.l2junity.gameserver.data.xml.impl.ExtendDropData;
 import org.l2junity.gameserver.datatables.EventDroplist;
 import org.l2junity.gameserver.datatables.EventDroplist.DateDrop;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -974,6 +975,8 @@ public class Attackable extends Npc
 		}
 		
 		CursedWeaponsManager.getInstance().checkDrop(this, player);
+		
+		npcTemplate.getExtendDrop().stream().map(ExtendDropData.getInstance()::getExtendDropById).filter(Objects::nonNull).forEach(e -> e.reward(player, this));
 		
 		if (isSpoiled())
 		{

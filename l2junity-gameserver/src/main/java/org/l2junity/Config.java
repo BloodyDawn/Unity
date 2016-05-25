@@ -475,6 +475,7 @@ public final class Config
 	public static int WORLD_CHAT_POINTS_PER_DAY;
 	public static Duration WORLD_CHAT_INTERVAL;
 	public static String WORLD_CHAT_RESET_TIME;
+	public static String EXTEND_DROP_RESET_TIME;
 	public static int ALT_OLY_START_TIME;
 	public static int ALT_OLY_MIN;
 	public static int ALT_OLY_MAX_BUFFS;
@@ -1662,6 +1663,7 @@ public final class Config
 			WORLD_CHAT_POINTS_PER_DAY = General.getInt("WorldChatPointsPerDay", 10);
 			WORLD_CHAT_INTERVAL = General.getDuration("WorldChatInterval", "20secs", Duration.ofSeconds(20));
 			WORLD_CHAT_RESET_TIME = General.getString("WorldChatResetTime", "06:30:00");
+			EXTEND_DROP_RESET_TIME = General.getString("ExtendDropResetTime", "06:30:00");
 			ALT_MANOR_REFRESH_TIME = General.getInt("AltManorRefreshTime", 20);
 			ALT_MANOR_REFRESH_MIN = General.getInt("AltManorRefreshMin", 0);
 			ALT_MANOR_APPROVE_TIME = General.getInt("AltManorApproveTime", 4);

@@ -23,49 +23,49 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.skills.ISkillCondition;
+import org.l2junity.gameserver.model.conditions.ICondition;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 
 /**
- * @author NosBit
+ * @author Sdw
  */
-public final class SkillConditionHandler
+public final class ConditionHandler
 {
-	private final Map<String, Function<StatsSet, ISkillCondition>> _skillConditionHandlerFactories = new HashMap<>();
+	private final Map<String, Function<StatsSet, ICondition>> _conditionHandlerFactories = new HashMap<>();
 	
-	public void registerHandler(String name, Function<StatsSet, ISkillCondition> handlerFactory)
+	public void registerHandler(String name, Function<StatsSet, ICondition> handlerFactory)
 	{
-		_skillConditionHandlerFactories.put(name, handlerFactory);
+		_conditionHandlerFactories.put(name, handlerFactory);
 	}
 	
-	public Function<StatsSet, ISkillCondition> getHandlerFactory(String name)
+	public Function<StatsSet, ICondition> getHandlerFactory(String name)
 	{
-		return _skillConditionHandlerFactories.get(name);
+		return _conditionHandlerFactories.get(name);
 	}
 	
 	public int size()
 	{
-		return _skillConditionHandlerFactories.size();
+		return _conditionHandlerFactories.size();
 	}
 	
 	public void executeScript()
 	{
 		try
 		{
-			ScriptEngineManager.getInstance().executeSkillConditionMasterHandler();
+			ScriptEngineManager.getInstance().executeConditionMasterHandler();
 		}
 		catch (Exception e)
 		{
-			throw new Error("Problems while running SkillMasterHandler", e);
+			throw new Error("Problems while running ConditionMasterHandler", e);
 		}
 	}
 	
 	private static final class SingletonHolder
 	{
-		protected static final SkillConditionHandler _instance = new SkillConditionHandler();
+		protected static final ConditionHandler _instance = new ConditionHandler();
 	}
 	
-	public static SkillConditionHandler getInstance()
+	public static ConditionHandler getInstance()
 	{
 		return SingletonHolder._instance;
 	}
