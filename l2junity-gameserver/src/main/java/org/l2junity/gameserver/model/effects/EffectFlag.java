@@ -62,6 +62,6 @@ public enum EffectFlag
 	
 	public long getMask()
 	{
-		return 1 << ordinal();
+		return 1L << ordinal();
 	}
 }
