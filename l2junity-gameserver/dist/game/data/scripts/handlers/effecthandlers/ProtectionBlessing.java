@@ -40,7 +40,7 @@ public final class ProtectionBlessing extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.PROTECTION_BLESSING.getMask();
 	}

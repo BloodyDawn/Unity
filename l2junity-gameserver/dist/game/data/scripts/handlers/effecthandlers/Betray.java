@@ -43,7 +43,7 @@ public final class Betray extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.BETRAYED.getMask();
 	}

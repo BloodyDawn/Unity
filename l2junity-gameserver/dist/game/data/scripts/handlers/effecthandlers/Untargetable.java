@@ -56,7 +56,7 @@ public final class Untargetable extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.UNTARGETABLE.getMask();
 	}

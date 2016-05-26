@@ -41,7 +41,7 @@ public final class NoblesseBless extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.NOBLESS_BLESSING.getMask();
 	}

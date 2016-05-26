@@ -32,7 +32,7 @@ public class CheapShot extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.CHEAPSHOT.getMask();
 	}

@@ -44,7 +44,7 @@ public final class AbnormalShield extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.ABNORMAL_SHIELD.getMask();
 	}

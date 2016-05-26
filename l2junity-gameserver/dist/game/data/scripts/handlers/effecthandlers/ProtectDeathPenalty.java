@@ -32,7 +32,7 @@ public class ProtectDeathPenalty extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.PROTECT_DEATH_PENALTY.getMask();
 	}

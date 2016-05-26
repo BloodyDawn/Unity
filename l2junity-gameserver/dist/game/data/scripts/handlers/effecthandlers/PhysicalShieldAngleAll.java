@@ -32,7 +32,7 @@ public class PhysicalShieldAngleAll extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL.getMask();
 	}

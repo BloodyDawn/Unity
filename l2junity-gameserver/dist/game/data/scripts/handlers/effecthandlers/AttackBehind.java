@@ -32,7 +32,7 @@ public class AttackBehind extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.ATTACK_BEHIND.getMask();
 	}

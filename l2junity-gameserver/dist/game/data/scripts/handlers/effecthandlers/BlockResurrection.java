@@ -33,7 +33,7 @@ public final class BlockResurrection extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.BLOCK_RESURRECTION.getMask();
 	}

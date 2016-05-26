@@ -32,7 +32,7 @@ public class IgnoreDeath extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.IGNORE_DEATH.getMask();
 	}

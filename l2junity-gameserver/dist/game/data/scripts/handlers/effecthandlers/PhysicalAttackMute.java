@@ -35,7 +35,7 @@ public final class PhysicalAttackMute extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.PSYCHICAL_ATTACK_MUTED.getMask();
 	}

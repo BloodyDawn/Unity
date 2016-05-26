@@ -67,7 +67,7 @@ public final class ResurrectionSpecial extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.RESURRECTION_SPECIAL.getMask();
 	}

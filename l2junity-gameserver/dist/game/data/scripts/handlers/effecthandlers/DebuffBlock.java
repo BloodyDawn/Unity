@@ -33,7 +33,7 @@ public final class DebuffBlock extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.DEBUFF_BLOCK.getMask();
 	}

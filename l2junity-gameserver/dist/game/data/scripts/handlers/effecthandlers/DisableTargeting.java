@@ -45,7 +45,7 @@ public final class DisableTargeting extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.TARGETING_DISABLED.getMask();
 	}

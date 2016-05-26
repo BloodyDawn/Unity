@@ -35,7 +35,7 @@ public class BlockControl extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.BLOCK_CONTROL.getMask();
 	}

@@ -53,7 +53,7 @@ public final class Confuse extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.CONFUSED.getMask();
 	}

@@ -32,7 +32,7 @@ public final class SilentMove extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.SILENT_MOVE.getMask();
 	}

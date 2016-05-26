@@ -89,7 +89,7 @@ public final class CharEffectList
 	/** If {@code true} this effect list has buffs removed on damage. */
 	private final AtomicInteger _hasBuffsRemovedOnDamage = new AtomicInteger();
 	/** Effect flags. */
-	private int _effectFlags;
+	private long _effectFlags;
 	/** If {@code true} only party icons need to be updated. */
 	private boolean _partyOnly = false;
 	/** The owner of this effect list. */
@@ -1441,7 +1441,7 @@ public final class CharEffectList
 	 */
 	private void computeEffectFlags()
 	{
-		int flags = 0;
+		long flags = 0;
 		if (hasBuffs())
 		{
 			for (BuffInfo info : getBuffs())

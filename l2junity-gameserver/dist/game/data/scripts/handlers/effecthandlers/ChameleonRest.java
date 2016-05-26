@@ -42,7 +42,7 @@ public final class ChameleonRest extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return (EffectFlag.SILENT_MOVE.getMask() | EffectFlag.RELAXING.getMask());
 	}

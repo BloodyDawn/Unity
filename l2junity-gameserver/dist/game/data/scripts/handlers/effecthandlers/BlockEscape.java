@@ -33,7 +33,7 @@ public class BlockEscape extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.CANNOT_ESCAPE.getMask();
 	}

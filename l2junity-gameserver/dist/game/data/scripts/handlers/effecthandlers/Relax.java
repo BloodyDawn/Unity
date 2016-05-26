@@ -42,7 +42,7 @@ public final class Relax extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.RELAXING.getMask();
 	}

@@ -60,7 +60,7 @@ public enum EffectFlag
 	CHAT_BLOCK,
 	FAKE_DEATH;
 	
-	public int getMask()
+	public long getMask()
 	{
 		return 1 << ordinal();
 	}

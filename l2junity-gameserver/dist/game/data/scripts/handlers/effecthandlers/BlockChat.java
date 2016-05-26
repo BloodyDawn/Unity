@@ -46,7 +46,7 @@ public final class BlockChat extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.CHAT_BLOCK.getMask();
 	}

@@ -41,7 +41,7 @@ public final class FakeDeath extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.FAKE_DEATH.getMask();
 	}

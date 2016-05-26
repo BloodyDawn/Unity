@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractEffect
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class);
-
+	
 	private int _ticks;
 	
 	/**
@@ -61,7 +61,7 @@ public abstract class AbstractEffect
 	{
 		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
 	}
-
+	
 	/**
 	 * Calculates whether this effects land or not.<br>
 	 * If it lands will be scheduled and added to the character effect list.<br>
@@ -100,17 +100,17 @@ public abstract class AbstractEffect
 	
 	public void instant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-	
+		
 	}
 	
 	public void continuousInstant(Creature effector, Creature effected, Skill skill, ItemInstance item)
 	{
-	
+		
 	}
 	
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-	
+		
 	}
 	
 	/**
@@ -119,7 +119,7 @@ public abstract class AbstractEffect
 	 */
 	public void onStart(BuffInfo info)
 	{
-	
+		
 	}
 	
 	/**
@@ -139,14 +139,14 @@ public abstract class AbstractEffect
 	 */
 	public void onExit(BuffInfo info)
 	{
-	
+		
 	}
 	
 	/**
 	 * Get the effect flags.
 	 * @return bit flag for current effect
 	 */
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.NONE.getMask();
 	}
@@ -188,6 +188,6 @@ public abstract class AbstractEffect
 	 */
 	public void pump(Creature effected, Skill skill)
 	{
-
+		
 	}
 }

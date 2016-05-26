@@ -33,7 +33,7 @@ public class Faceoff extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.FACEOFF.getMask();
 	}

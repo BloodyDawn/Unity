@@ -44,7 +44,7 @@ public final class Disarm extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public long getEffectFlags()
 	{
 		return EffectFlag.DISARMED.getMask();
 	}
