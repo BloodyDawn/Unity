@@ -3784,7 +3784,10 @@
 		<!-- Updated to IO -->
 		<!-- For 10 sec., mutates enemies to reduce their Speed by 20% and render them unable to attack. Mutated enemies return to normal when inflicted with damage. -->
 		<icon>icon.skill11580</icon>
+		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>CHANGEBODY</abnormalVisualEffect>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
@@ -3817,10 +3820,8 @@
 		<reuseDelay>120000</reuseDelay>
 		<effectPoint>-696</effectPoint>
 		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
 		<effects>
-			<effect name="Mute" />
-			<effect name="PhysicalMute" />
-			<effect name="PhysicalAttackMute" />
 			<effect name="ChangeBody">
 				<templates>
 					<item templateId="500" minChance="0" maxChance="20" />
@@ -3830,6 +3831,18 @@
 					<item templateId="504" minChance="80" maxChance="100" />
 				</templates>
 			</effect>
+			<effect name="TriggerSkillByDamage">
+				<minDamage>1</minDamage>
+				<skillId>11556</skillId> <!-- Cancel Transform -->
+				<skillLevel>1</skillLevel>
+				<attackerType>L2Character</attackerType>
+				<minAttackerLevel>1</minAttackerLevel>
+				<maxAttackerLevel>107</maxAttackerLevel>
+				<targetType>SELF</targetType>
+				<chance>100</chance>
+			</effect>
+			<effect name="Fear" />
+			<effect name="BlockControl" />
 			<effect name="Speed">
 				<amount>-20</amount>
 				<mode>PER</mode>
