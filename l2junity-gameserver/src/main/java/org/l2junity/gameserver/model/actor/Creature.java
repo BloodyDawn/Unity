@@ -67,6 +67,7 @@ import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.TimersManager;
+import org.l2junity.gameserver.instancemanager.WarpedSpaceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.CharEffectList;
@@ -569,8 +570,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Remove the L2Character from the world when the decay task is launched.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	public void onDecay()
 	{
@@ -3191,8 +3191,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * That's why, client send regularly a Client->Server ValidatePosition packet to eventually correct the gap on the server.<br>
 	 * But, it's always the server position that is used in range calculation. At the end of the estimated movement time,<br>
 	 * the L2Character position is automatically set to the destination position even if the movement is not finished.<br>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br>
-	 * But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br> But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
 	 * @return True if the movement is finished
 	 */
 	public boolean updatePosition()
@@ -3274,7 +3273,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		double delta = (dx * dx) + (dy * dy);
 		if ((delta < 10000) && ((dz * dz) > 2500) // close enough, allows error between client and server geodata if it cannot be avoided
-			&& !isFloating)
+		&& !isFloating)
 		{
 			delta = Math.sqrt(delta);
 		}
@@ -3446,11 +3445,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Add the L2Character to movingObjects of the GameTimeController</li>
 	 * <li>Create a task to notify the AI that L2Character arrives at a check point of the movement</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br>
-	 * <B><U>Example of use</U>:</B>
-	 * <ul>
-	 * <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li>
-	 * <li>FollowTask</li>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li> <li>FollowTask</li>
 	 * </ul>
 	 * @param x The X position of the destination
 	 * @param y The Y position of the destination
@@ -3569,6 +3564,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			int gtx = (originalX - World.MAP_MIN_X) >> 4;
 			int gty = (originalY - World.MAP_MIN_Y) >> 4;
 			
+			Location destiny = GeoData.getInstance().moveCheck(curX, curY, curZ, x, y, z, getInstanceWorld());
+			
+			// location different if destination wasn't reached (or just z coord is different)
+			x = destiny.getX();
+			y = destiny.getY();
+			z = destiny.getZ();
+			
 			// Movement checks:
 			// when PATHFINDING > 0, for all characters except mobs returning home (could be changed later to teleport if pathfinding fails)
 			if (Config.PATHFINDING > 0)
@@ -3608,7 +3610,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					}
 					return;
 				}
-				Location destiny = GeoData.getInstance().moveCheck(curX, curY, curZ, x, y, z, getInstanceWorld());
 				// location different if destination wasn't reached (or just z coord is different)
 				x = destiny.getX();
 				y = destiny.getY();
@@ -3665,9 +3666,21 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 						return;
 					}
+					if (WarpedSpaceManager.getInstance().checkForWarpedSpace(new Location(curX, curY, curZ), new Location(x, y, z), getInstanceWorld()))
+					{
+						m.geoPath = null;
+						getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+						return;
+					}
 					for (int i = 0; i < (m.geoPath.size() - 1); i++)
 					{
 						if (DoorData.getInstance().checkIfDoorsBetween(m.geoPath.get(i), m.geoPath.get(i + 1), getInstanceWorld()))
+						{
+							m.geoPath = null;
+							getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+							return;
+						}
+						if (WarpedSpaceManager.getInstance().checkForWarpedSpace(m.geoPath.get(i), m.geoPath.get(i + 1), getInstanceWorld()))
 						{
 							m.geoPath = null;
 							getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -4401,7 +4414,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	// Quest event ON_SPELL_FNISHED
 	public void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
-		
+	
 	}
 	
 	/**
@@ -4926,7 +4939,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void sendDamageMessage(Creature target, Skill skill, int damage, boolean crit, boolean miss)
 	{
-		
+	
 	}
 	
 	public AttributeType getAttackElement()

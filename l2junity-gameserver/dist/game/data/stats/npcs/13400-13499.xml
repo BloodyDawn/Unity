@@ -703,8 +703,12 @@
 	</npc>
 	<npc id="13432" level="85" type="L2Npc" name="Gravity Core" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="despawn_time" value="30000" />
+			<skill name="skill" id="30528" level="1" />
+		</parameters>
 		<race>ETC</race>
-		<sex>FEMALE</sex>
+		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="4234" hpRegen="9.5" mp="1846" mpRegen="3.3" />
 			<speed>
@@ -714,7 +718,7 @@
 			<attack physical="1189.0459514498" magical="811.85773400546" critical="4" attackSpeed="253" range="40" />
 			<defence physical="362.06896551724" magical="264.78509919958" />
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" targetable="false" showName="false" />
 		<collision>
 			<radius normal="10" />
 			<height normal="22.5" />

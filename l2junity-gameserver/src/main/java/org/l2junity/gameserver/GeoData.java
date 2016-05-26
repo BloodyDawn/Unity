@@ -23,6 +23,7 @@ import java.nio.file.Path;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
+import org.l2junity.gameserver.instancemanager.WarpedSpaceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -467,6 +468,12 @@ public class GeoData
 			return new Location(x, y, getHeight(x, y, z));
 		}
 		
+		if (WarpedSpaceManager.getInstance().checkForWarpedSpace(new Location(x, y, z), new Location(tx, ty, tz), instance))
+		{
+			System.out.println("there is a warp space in path !");
+			return new Location(x, y, getHeight(x, y, z));
+		}
+		
 		LinePointIterator pointIter = new LinePointIterator(geoX, geoY, tGeoX, tGeoY);
 		// first point is guaranteed to be available
 		pointIter.next();
@@ -530,6 +537,11 @@ public class GeoData
 		toZ = getNearestZ(tGeoX, tGeoY, toZ);
 		
 		if (DoorData.getInstance().checkIfDoorsBetween(fromX, fromY, fromZ, toX, toY, toZ, instance, false))
+		{
+			return false;
+		}
+		
+		if (WarpedSpaceManager.getInstance().checkForWarpedSpace(new Location(fromX, fromY, fromZ), new Location(toX, toY, toZ), instance))
 		{
 			return false;
 		}

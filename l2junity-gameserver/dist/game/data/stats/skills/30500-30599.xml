@@ -1338,6 +1338,12 @@
 				</weaponType>
 			</condition>
 		</conditions>
+		<effects>
+			<effect name="SummonNpc">
+				<npcId>13432</npcId> <!-- Gravity Core -->
+				<npcCount>1</npcCount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="30520" toLevel="3" name="Steel Mind">
 		<!-- Updated to IO -->
@@ -1559,6 +1565,8 @@
 		<operateType>A2</operateType>
 		<effectPoint>-707</effectPoint>
 		<isDebuff>true</isDebuff>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="30530" toLevel="15" name="Crushing Air">
 		<!-- Updated to IO -->
