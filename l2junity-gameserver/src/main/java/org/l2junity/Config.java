@@ -38,7 +38,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.DayOfWeek;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -203,8 +202,6 @@ public final class Config
 	public static double ALT_GAME_CREATION_RARE_XPSP_RATE;
 	public static double ALT_GAME_CREATION_SP_RATE;
 	public static boolean ALT_BLACKSMITH_USE_RECIPES;
-	public static DayOfWeek[] ALT_CLAN_LEADER_DAY_CHANGE;
-	public static String ALT_CLAN_LEADER_HOUR_CHANGE;
 	public static boolean ALT_CLAN_LEADER_INSTANT_ACTIVATION;
 	public static int ALT_CLAN_JOIN_DAYS;
 	public static int ALT_CLAN_CREATE_DAYS;
@@ -474,8 +471,6 @@ public final class Config
 	public static int WORLD_CHAT_MIN_LEVEL;
 	public static int WORLD_CHAT_POINTS_PER_DAY;
 	public static Duration WORLD_CHAT_INTERVAL;
-	public static String WORLD_CHAT_RESET_TIME;
-	public static String EXTEND_DROP_RESET_TIME;
 	public static int ALT_OLY_START_TIME;
 	public static int ALT_OLY_MIN;
 	public static int ALT_OLY_MAX_BUFFS;
@@ -824,9 +819,6 @@ public final class Config
 	// --------------------------------------------------
 	public static boolean ENABLE_VITALITY;
 	public static int STARTING_VITALITY_POINTS;
-	
-	public static DayOfWeek[] ALT_VITALITY_DATE_RESET;
-	public static String ALT_VITALITY_HOUR_RESET;
 	
 	public static float RATE_VITALITY_EXP_MULTIPLIER;
 	public static int VITALITY_MAX_ITEMS_ALLOWED;
@@ -1280,16 +1272,6 @@ public final class Config
 			FEE_DELETE_DUALCLASS_SKILLS = Character.getInt("FeeDeleteDualClassSkills", 20000000);
 			ENABLE_VITALITY = Character.getBoolean("EnableVitality", true);
 			STARTING_VITALITY_POINTS = Character.getInt("StartingVitalityPoints", 140000);
-			ALT_VITALITY_DATE_RESET = Character.getEnumArray("AltVitalityDayReset", ",", DayOfWeek.class, DayOfWeek.WEDNESDAY);
-			if ((ALT_VITALITY_DATE_RESET == null) || (ALT_VITALITY_DATE_RESET.length == 0))
-			{
-				LOGGER.warn("Failed to load for AltVitalityDayReset: setting default values!");
-				ALT_VITALITY_DATE_RESET = new DayOfWeek[]
-				{
-					DayOfWeek.WEDNESDAY
-				};
-			}
-			ALT_VITALITY_HOUR_RESET = Character.getString("AltVitalityHourReset", "06:30:00");
 			MAX_BONUS_EXP = Character.getDouble("MaxExpBonus", 0);
 			MAX_BONUS_SP = Character.getDouble("MaxSpBonus", 0);
 			MAX_RUN_SPEED = Character.getInt("MaxRunSpeed", 300);
@@ -1403,16 +1385,6 @@ public final class Config
 			ALT_GAME_CREATION_SP_RATE = Character.getDouble("AltGameCreationSpRate", 1);
 			ALT_GAME_CREATION_RARE_XPSP_RATE = Character.getDouble("AltGameCreationRareXpSpRate", 2);
 			ALT_BLACKSMITH_USE_RECIPES = Character.getBoolean("AltBlacksmithUseRecipes", true);
-			ALT_CLAN_LEADER_DAY_CHANGE = Character.getEnumArray("AltClanLeaderDayChange", ",", DayOfWeek.class, DayOfWeek.TUESDAY);
-			if ((ALT_CLAN_LEADER_DAY_CHANGE == null) || (ALT_CLAN_LEADER_DAY_CHANGE.length == 0))
-			{
-				LOGGER.warn("Wrong value specified for AltClanLeaderDayChange");
-				ALT_CLAN_LEADER_DAY_CHANGE = new DayOfWeek[]
-				{
-					DayOfWeek.TUESDAY
-				};
-			}
-			ALT_CLAN_LEADER_HOUR_CHANGE = Character.getString("AltClanLeaderHourChange", "00:00:00");
 			ALT_CLAN_LEADER_INSTANT_ACTIVATION = Character.getBoolean("AltClanLeaderInstantActivation", false);
 			ALT_CLAN_JOIN_DAYS = Character.getInt("DaysBeforeJoinAClan", 1);
 			ALT_CLAN_CREATE_DAYS = Character.getInt("DaysBeforeCreateAClan", 10);
@@ -1662,8 +1634,6 @@ public final class Config
 			WORLD_CHAT_MIN_LEVEL = General.getInt("WorldChatMinLevel", 95);
 			WORLD_CHAT_POINTS_PER_DAY = General.getInt("WorldChatPointsPerDay", 10);
 			WORLD_CHAT_INTERVAL = General.getDuration("WorldChatInterval", "20secs", Duration.ofSeconds(20));
-			WORLD_CHAT_RESET_TIME = General.getString("WorldChatResetTime", "06:30:00");
-			EXTEND_DROP_RESET_TIME = General.getString("ExtendDropResetTime", "06:30:00");
 			ALT_MANOR_REFRESH_TIME = General.getInt("AltManorRefreshTime", 20);
 			ALT_MANOR_REFRESH_MIN = General.getInt("AltManorRefreshMin", 0);
 			ALT_MANOR_APPROVE_TIME = General.getInt("AltManorApproveTime", 4);
