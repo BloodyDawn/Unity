@@ -27,8 +27,6 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
-import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import ai.AbstractNpcAI;
@@ -50,7 +48,6 @@ public final class KartiaSupportTroop extends AbstractNpcAI
 	private KartiaSupportTroop()
 	{
 		addSpawnId(SUPPORT_TROOPS);
-		setCreatureKillId(this::onCreatureKill, SUPPORT_TROOPS);
 	}
 	
 	@Override
@@ -88,16 +85,6 @@ public final class KartiaSupportTroop extends AbstractNpcAI
 			getTimers().addRepeatingTimer("CHECK_TARGET", 1000, npc, null);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public void onCreatureKill(OnCreatureDeath event)
-	{
-		final Npc npc = (Npc) event.getTarget();
-		final Instance world = npc.getInstanceWorld();
-		if (world != null)
-		{
-			getTimers().cancelTimersOf(npc);
-		}
 	}
 	
 	public static void main(String[] args)

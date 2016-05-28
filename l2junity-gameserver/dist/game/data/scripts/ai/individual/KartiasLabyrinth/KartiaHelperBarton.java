@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
-import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -69,7 +68,6 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 		setCreatureKillId(this::onCreatureKill, KARTIA_BARTON);
 		setCreatureAttackedId(this::onCreatureAttacked, KARTIA_BARTON);
 		addSeeCreatureId(KARTIA_BARTON);
-		setInstanceDestroyId(this::onInstanceDestroy, KARTIA_SOLO_INSTANCES);
 		setInstanceStatusChangeId(this::onInstanceStatusChange, KARTIA_SOLO_INSTANCES);
 	}
 	
@@ -185,11 +183,6 @@ public final class KartiaHelperBarton extends AbstractNpcAI
 		{
 			getTimers().cancelTimersOf(npc);
 		}
-	}
-	
-	public void onInstanceDestroy(OnInstanceDestroy event)
-	{
-		event.getInstanceWorld().getAliveNpcs(KARTIA_BARTON).forEach(npc -> getTimers().cancelTimersOf(npc));
 	}
 	
 	public static void main(String[] args)

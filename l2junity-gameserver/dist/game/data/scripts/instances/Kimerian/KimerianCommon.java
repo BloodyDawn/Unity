@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
-import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -83,7 +82,6 @@ public final class KimerianCommon extends AbstractInstance
 		addKillId(KIMERIAN_GHOST, KIMERIAN);
 		setCreatureSeeId(this::onCreatureSee, FAIRY_REBEL, NEOMI_KASHERON, INVISIBLE_NPC, KIMERIAN);
 		setCreatureKillId(this::onCreatureKill, FAIRY_REBEL, NEOMI_KASHERON);
-		setInstanceDestroyId(this::onInstanceDestroy, TEMPLATE_ID);
 	}
 	
 	@Override
@@ -456,11 +454,6 @@ public final class KimerianCommon extends AbstractInstance
 			}
 			npc.setScriptValue(1);
 		}
-	}
-	
-	public void onInstanceDestroy(OnInstanceDestroy event)
-	{
-		event.getInstanceWorld().getAliveNpcs().forEach(npc -> getTimers().cancelTimersOf(npc));
 	}
 	
 	private boolean isKimerianInstance(Instance instance)

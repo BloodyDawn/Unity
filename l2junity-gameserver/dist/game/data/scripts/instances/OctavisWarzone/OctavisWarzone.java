@@ -121,7 +121,6 @@ public final class OctavisWarzone extends AbstractInstance
 		addSpellFinishedId(OCTAVIS_STAGE_2);
 		addEnterZoneId(TELEPORT_ZONE.getId());
 		setCreatureSeeId(this::onCreatureSee, DOOR_MANAGER);
-		addInstanceDestroyId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
 		addInstanceCreatedId(TEMPLATE_ID, EXTREME_TEMPLATE_ID);
 	}
 	
@@ -470,28 +469,6 @@ public final class OctavisWarzone extends AbstractInstance
 		{
 			showHtmlFile(player, (instance.getTemplateId() == TEMPLATE_ID) ? "PartyEnterCommon.html" : "PartyEnterExtreme.html");
 		}
-	}
-	
-	@Override
-	public void onInstanceDestroy(Instance instance)
-	{
-		instance.getAliveNpcs(OCTAVIS_STAGE_1).forEach(octavis ->
-		{
-			getTimers().cancelTimer("FOLLOW_BEASTS", octavis, null);
-		});
-		
-		instance.getAliveNpcs(BEASTS).forEach(beast ->
-		{
-			getTimers().cancelTimer("BEASTS_CHECK_HP", beast, null);
-		});
-		
-		instance.getAliveNpcs(OCTAVIS_STAGE_2).forEach(octavis ->
-		{
-			getTimers().cancelTimer("BEASTS_MINIONS_SPAWN", octavis, null);
-			getTimers().cancelTimer("MINION_CALL", octavis, null);
-			getTimers().cancelTimer("ATTACK_TIMER", octavis, null);
-			getTimers().cancelTimer("MEDUSA_SKILL_TIMER", octavis, null);
-		});
 	}
 	
 	@Override

@@ -32,7 +32,6 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
-import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -77,7 +76,6 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 		addSpellFinishedId(KARTIA_ADOLPH);
 		addSeeCreatureId(KARTIA_ADOLPH);
 		setInstanceStatusChangeId(this::onInstanceStatusChange, KARTIA_SOLO_INSTANCES);
-		setInstanceDestroyId(this::onInstanceDestroy, KARTIA_SOLO_INSTANCES);
 	}
 	
 	@Override
@@ -232,11 +230,6 @@ public final class KartiaHelperAdolph extends AbstractNpcAI
 				break;
 			}
 		}
-	}
-	
-	public void onInstanceDestroy(OnInstanceDestroy event)
-	{
-		event.getInstanceWorld().getAliveNpcs(KARTIA_ADOLPH).forEach(npc -> getTimers().cancelTimersOf(npc));
 	}
 	
 	@Override

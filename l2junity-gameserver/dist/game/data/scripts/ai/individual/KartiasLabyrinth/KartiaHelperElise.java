@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.FriendlyNpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
-import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceStatusChange;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -87,7 +86,6 @@ public final class KartiaHelperElise extends AbstractNpcAI
 	private KartiaHelperElise()
 	{
 		setInstanceStatusChangeId(this::onInstanceStatusChange, KARTIA_SOLO_INSTANCES);
-		setInstanceDestroyId(this::onInstanceDestroy, KARTIA_SOLO_INSTANCES);
 		addSeeCreatureId(KARTIA_ELISE);
 		setCreatureKillId(this::onCreatureKill, KARTIA_ELISE);
 	}
@@ -302,11 +300,6 @@ public final class KartiaHelperElise extends AbstractNpcAI
 		{
 			getTimers().cancelTimersOf(npc);
 		}
-	}
-	
-	public void onInstanceDestroy(OnInstanceDestroy event)
-	{
-		event.getInstanceWorld().getAliveNpcs(KARTIA_ELISE).forEach(npc -> getTimers().cancelTimersOf(npc));
 	}
 	
 	private void summonHealingTree(Npc npc, Creature target)
