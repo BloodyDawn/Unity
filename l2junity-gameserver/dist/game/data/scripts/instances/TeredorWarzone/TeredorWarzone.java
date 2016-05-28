@@ -22,8 +22,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.gameserver.instancemanager.WalkingManager;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -31,6 +33,8 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureSee;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import instances.AbstractInstance;
 
@@ -42,6 +46,7 @@ public final class TeredorWarzone extends AbstractInstance
 {
 	// NPCs
 	private static final int FILAUR = 30535;
+	private static final int TEREDOR = 25785;
 	private static final int FAKE_TEREDOR = 25801;
 	private static final int TEREDOR_POISON = 18998;
 	private static final int BEETLE = 19024;
@@ -80,10 +85,10 @@ public final class TeredorWarzone extends AbstractInstance
 	{
 		addStartNpc(FILAUR);
 		addTalkId(FILAUR);
-		addSpawnId(BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR);
+		addSpawnId(BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR, TEREDOR);
 		addSpellFinishedId(BEETLE);
 		addEventReceivedId(EGG_2);
-		addKillId(EGG_2);
+		addKillId(EGG_2, TEREDOR);
 		setCreatureSeeId(this::onCreatureSee, BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR);
 	}
 	
@@ -125,6 +130,17 @@ public final class TeredorWarzone extends AbstractInstance
 					npc.deleteMe();
 					break;
 				}
+				case "TEREDOR_LAIR_CHECK":
+				{
+					final Location spawnLoc = npc.getSpawn().getLocation();
+					
+					if (((spawnLoc.getX() - npc.getX()) > 1000) || ((spawnLoc.getX() - npc.getX()) < -2000))
+					{
+						showOnScreenMsg(instance, NpcStringId.TEREDOR_SUMMONS_SUBORDINATE_BECAUSE_YOU_MOVED_OUT_OF_TEREDOR_S_AREA, ExShowScreenMessage.TOP_CENTER, 4000);
+						addSpawn(ELITE_MILLIPADE, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
+					}
+					break;
+				}
 			}
 		}
 	}
@@ -149,6 +165,14 @@ public final class TeredorWarzone extends AbstractInstance
 			
 			switch (npc.getId())
 			{
+				case TEREDOR:
+				{
+					WalkingManager.getInstance().startMoving(npc, "trajan5");
+					getTimers().addRepeatingTimer("TEREDOR_LAIR_CHECK", 5000, npc, null);
+					((Attackable) npc).setCanReturnToSpawnPoint(false);
+					npc.initSeenCreatures();
+					break;
+				}
 				case BEETLE:
 				{
 					if (npcParams.getInt("Sp", 0) == 1)
@@ -353,6 +377,11 @@ public final class TeredorWarzone extends AbstractInstance
 		{
 			switch (npc.getId())
 			{
+				case TEREDOR:
+				{
+					instance.finishInstance();
+					break;
+				}
 				case EGG_2:
 				{
 					if (getRandom(4) < 3)
