@@ -43,6 +43,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout
  */
 public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends AbstractScript
 {
+	private String _name;
 	private volatile StatsSet _variables = StatsSet.EMPTY_STATSET;
 	private volatile Set<EventScheduler> _schedulers = Collections.emptySet();
 	private volatile Set<IConditionalEventScheduler> _conditionalSchedulers = Collections.emptySet();
@@ -53,6 +54,18 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	private final AtomicReference<IEventState> _state = new AtomicReference<>();
 	
 	public abstract void onInitialized();
+	
+	/* ********************** */
+	
+	public String getName()
+	{
+		return _name;
+	}
+	
+	public void setName(String name)
+	{
+		_name = name;
+	}
 	
 	/* ********************** */
 	

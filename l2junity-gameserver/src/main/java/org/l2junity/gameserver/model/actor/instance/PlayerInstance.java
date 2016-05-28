@@ -12703,7 +12703,7 @@ public final class PlayerInstance extends Playable
 	private void loadRecommendations()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT rec_have,rec_left,time_left FROM character_reco_bonus WHERE charId=? LIMIT 1"))
+			PreparedStatement statement = con.prepareStatement("SELECT rec_have, rec_left FROM character_reco_bonus WHERE charId = ?"))
 		{
 			statement.setInt(1, getObjectId());
 			try (ResultSet rset = statement.executeQuery())

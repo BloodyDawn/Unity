@@ -36,7 +36,8 @@ import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.EventMethodNotification;
 import org.l2junity.gameserver.model.eventengine.EventScheduler;
 import org.l2junity.gameserver.model.eventengine.IConditionalEventScheduler;
-import org.l2junity.gameserver.model.eventengine.conditions.ConditionalBetweenEventScheduler;
+import org.l2junity.gameserver.model.eventengine.conditions.BetweenConditionalScheduler;
+import org.l2junity.gameserver.model.eventengine.conditions.HaventRunConditionalScheduler;
 import org.l2junity.gameserver.model.eventengine.drop.EventDropGroup;
 import org.l2junity.gameserver.model.eventengine.drop.EventDropItem;
 import org.l2junity.gameserver.model.eventengine.drop.EventDrops;
@@ -135,6 +136,9 @@ public final class EventEngineData implements IGameXmlReader
 				parseRewards(eventManager, innerNode);
 			}
 		}
+		
+		// Assign event name
+		eventManager.setName(eventName);
 		
 		// Start the scheduler
 		eventManager.startScheduler();
@@ -265,8 +269,13 @@ public final class EventEngineData implements IGameXmlReader
 								}
 								else
 								{
-									conditionalSchedulers.add(new ConditionalBetweenEventScheduler(eventManager, name, names.get(0), names.get(1)));
+									conditionalSchedulers.add(new BetweenConditionalScheduler(eventManager, name, names.get(0), names.get(1)));
 								}
+								break;
+							}
+							case "HAVENT_RUN":
+							{
+								conditionalSchedulers.add(new HaventRunConditionalScheduler(eventManager, name));
 								break;
 							}
 						}
@@ -370,7 +379,7 @@ public final class EventEngineData implements IGameXmlReader
 				{
 					if ("item".equals(stringNode.getNodeName()))
 					{
-						((List<ItemHolder>) values).add(new ItemHolder(parseInteger(stringNode.getAttributes(), "id"), parseLong(stringNode.getAttributes(), "count")));
+						((List<ItemHolder>) values).add(new ItemHolder(parseInteger(stringNode.getAttributes(), "id"), parseLong(stringNode.getAttributes(), "count", 1L)));
 					}
 				}
 				break;
@@ -381,7 +390,7 @@ public final class EventEngineData implements IGameXmlReader
 				{
 					if ("skill".equals(stringNode.getNodeName()))
 					{
-						((List<SkillHolder>) values).add(new SkillHolder(parseInteger(stringNode.getAttributes(), "id"), parseInteger(stringNode.getAttributes(), "level")));
+						((List<SkillHolder>) values).add(new SkillHolder(parseInteger(stringNode.getAttributes(), "id"), parseInteger(stringNode.getAttributes(), "level", 1)));
 					}
 				}
 				break;

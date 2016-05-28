@@ -29,15 +29,15 @@ import org.slf4j.LoggerFactory;
 /**
  * @author UnAfraid
  */
-public class ConditionalBetweenEventScheduler implements IConditionalEventScheduler
+public class BetweenConditionalScheduler implements IConditionalEventScheduler
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ConditionalBetweenEventScheduler.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(BetweenConditionalScheduler.class);
 	private final AbstractEventManager<?> _eventManager;
 	private final String _name;
 	private final String _scheduler1;
 	private final String _scheduler2;
 	
-	public ConditionalBetweenEventScheduler(AbstractEventManager<?> eventManager, String name, String scheduler1, String scheduler2)
+	public BetweenConditionalScheduler(AbstractEventManager<?> eventManager, String name, String scheduler1, String scheduler2)
 	{
 		Objects.requireNonNull(eventManager);
 		Objects.requireNonNull(name);

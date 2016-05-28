@@ -173,7 +173,7 @@
 										<xs:element name="conditionalSchedule" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="run">
+													<xs:element name="run" maxOccurs="unbounded">
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0" />
@@ -183,6 +183,7 @@
 																<xs:simpleType>
 																	<xs:restriction base="xs:token">
 																		<xs:enumeration value="BETWEEN" />
+																		<xs:enumeration value="HASNT_RUN" />
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>

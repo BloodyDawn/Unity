@@ -18,11 +18,15 @@
  */
 package org.l2junity.gameserver.model.eventengine;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.slf4j.Logger;
@@ -37,7 +41,7 @@ import it.sauronsoftware.cron4j.Predictor;
 public class EventScheduler
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventScheduler.class);
-	private final AbstractEventManager<?> _manager;
+	private final AbstractEventManager<?> _eventManager;
 	private final String _name;
 	private final String _pattern;
 	private final boolean _repeat;
@@ -46,7 +50,7 @@ public class EventScheduler
 	
 	public EventScheduler(AbstractEventManager<?> manager, StatsSet set)
 	{
-		_manager = manager;
+		_eventManager = manager;
 		_name = set.getString("name", "");
 		_pattern = set.getString("minute", "*") + " " + set.getString("hour", "*") + " " + set.getString("dayOfMonth", "*") + " " + set.getString("month", "*") + " " + set.getString("dayOfWeek", "*");
 		_repeat = set.getBoolean("repeat", false);
@@ -104,7 +108,7 @@ public class EventScheduler
 	{
 		if (_notifications == null)
 		{
-			LOGGER.info("Scheduler without notificator manager: {} pattern: {}", _manager.getClass().getSimpleName(), _pattern);
+			LOGGER.info("Scheduler without notificator manager: {} pattern: {}", _eventManager.getClass().getSimpleName(), _pattern);
 			return;
 		}
 		
@@ -113,7 +117,7 @@ public class EventScheduler
 		final long timeSchedule = nextSchedule - System.currentTimeMillis();
 		if (timeSchedule <= (30 * 1000))
 		{
-			LOGGER.warn("Wrong reschedule for {} end up run in {} seconds!", _manager.getClass().getSimpleName(), timeSchedule / 1000);
+			LOGGER.warn("Wrong reschedule for {} end up run in {} seconds!", _eventManager.getClass().getSimpleName(), timeSchedule / 1000);
 			ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, timeSchedule + 1000);
 			return;
 		}
@@ -126,12 +130,34 @@ public class EventScheduler
 		_task = ThreadPoolManager.getInstance().scheduleEvent(() ->
 		{
 			run();
+			updateLastRun();
 			
 			if (isRepeating())
 			{
 				ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, 1000);
 			}
 		}, timeSchedule);
+	}
+	
+	public boolean updateLastRun()
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("INSERT INTO event_schedulers (eventName, schedulerName, lastRun) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE eventName = ?, schedulerName = ?, lastRun = ?"))
+		{
+			ps.setString(1, _eventManager.getName());
+			ps.setString(2, _name);
+			ps.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+			ps.setString(4, _eventManager.getName());
+			ps.setString(5, _name);
+			ps.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
+			ps.execute();
+			return true;
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("Failed to insert/update information for scheduled task manager: {} scheduler: {}", _eventManager.getClass().getSimpleName(), _name, e);
+		}
+		return false;
 	}
 	
 	public void stopScheduler()

@@ -38,19 +38,10 @@ import java.util.concurrent.ScheduledFuture;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.taskmanager.tasks.TaskBirthday;
-import org.l2junity.gameserver.taskmanager.tasks.TaskClanLeaderApply;
 import org.l2junity.gameserver.taskmanager.tasks.TaskCleanUp;
-import org.l2junity.gameserver.taskmanager.tasks.TaskDailyClanBonusReset;
-import org.l2junity.gameserver.taskmanager.tasks.TaskDailySkillReuseClean;
-import org.l2junity.gameserver.taskmanager.tasks.TaskDailyWorldChatPointReset;
-import org.l2junity.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
-import org.l2junity.gameserver.taskmanager.tasks.TaskOlympiadSave;
-import org.l2junity.gameserver.taskmanager.tasks.TaskOneDayRewardsReset;
-import org.l2junity.gameserver.taskmanager.tasks.TaskRecom;
 import org.l2junity.gameserver.taskmanager.tasks.TaskRestart;
 import org.l2junity.gameserver.taskmanager.tasks.TaskScript;
 import org.l2junity.gameserver.taskmanager.tasks.TaskShutdown;
-import org.l2junity.gameserver.taskmanager.tasks.TaskVitalityReset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -187,19 +178,10 @@ public final class TaskManager
 	private void initializate()
 	{
 		registerTask(new TaskBirthday());
-		registerTask(new TaskClanLeaderApply());
 		registerTask(new TaskCleanUp());
-		registerTask(new TaskDailyClanBonusReset());
-		registerTask(new TaskDailySkillReuseClean());
-		registerTask(new TaskDailyWorldChatPointReset());
-		registerTask(new TaskGlobalVariablesSave());
-		registerTask(new TaskOlympiadSave());
-		registerTask(new TaskOneDayRewardsReset());
-		registerTask(new TaskRecom());
 		registerTask(new TaskRestart());
 		registerTask(new TaskScript());
 		registerTask(new TaskShutdown());
-		registerTask(new TaskVitalityReset());
 	}
 	
 	public void registerTask(Task task)
