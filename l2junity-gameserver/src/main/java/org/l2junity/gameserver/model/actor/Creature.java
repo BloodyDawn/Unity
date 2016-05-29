@@ -5637,4 +5637,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		return _basicPropertyResists.computeIfAbsent(basicProperty, k -> new BasicPropertyResist());
 	}
+	
+	/**
+	 * Gets the distance to target.
+	 * @param target the target
+	 * @return distance to target
+	 */
+	public double distFromMe(Creature target)
+	{
+		return calculateDistance(target, true, false);
+	}
 }
