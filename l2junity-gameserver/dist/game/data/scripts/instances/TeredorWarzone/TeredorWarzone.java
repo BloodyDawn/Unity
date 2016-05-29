@@ -21,6 +21,7 @@ package instances.TeredorWarzone;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
@@ -64,6 +65,9 @@ public final class TeredorWarzone extends AbstractInstance
 	private static final SkillHolder FAKE_TEREDOR_JUMP_SKILL = new SkillHolder(6268, 1);
 	private static final SkillHolder POISON_SKILL = new SkillHolder(14113, 1);
 	private static final SkillHolder BEETLE_SKILL = new SkillHolder(14412, 1);
+	private static final SkillHolder TEREDOR_POISON_SKILL = new SkillHolder(14112, 1);
+	private static final SkillHolder TEREDOR_POISON_SKILL_2 = new SkillHolder(14112, 2);
+	private static final SkillHolder TEREDOR_CANCEL = new SkillHolder(5902, 1);
 	// Misc
 	private static final int TEMPLATE_ID = 160;
 	//@formatter:off
@@ -88,6 +92,7 @@ public final class TeredorWarzone extends AbstractInstance
 		addSpawnId(BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR, TEREDOR);
 		addSpellFinishedId(BEETLE);
 		addEventReceivedId(EGG_2);
+		addAttackId(TEREDOR);
 		addKillId(EGG_2, TEREDOR);
 		setCreatureSeeId(this::onCreatureSee, BEETLE, POS_CHECKER, EGG_2, FAKE_TEREDOR);
 	}
@@ -98,6 +103,7 @@ public final class TeredorWarzone extends AbstractInstance
 		final Instance instance = npc.getInstanceWorld();
 		if (isTeredorInstance(instance))
 		{
+			final StatsSet npcVars = npc.getVariables();
 			final StatsSet npcParams = npc.getParameters();
 			
 			switch (event)
@@ -139,6 +145,35 @@ public final class TeredorWarzone extends AbstractInstance
 						showOnScreenMsg(instance, NpcStringId.TEREDOR_SUMMONS_SUBORDINATE_BECAUSE_YOU_MOVED_OUT_OF_TEREDOR_S_AREA, ExShowScreenMessage.TOP_CENTER, 4000);
 						addSpawn(ELITE_MILLIPADE, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
 					}
+					break;
+				}
+				case "TEREDOR_BUHATIMER":
+				{
+					npcVars.increaseInt("i_ai3", 0, 1);
+					break;
+				}
+				case "TEREDOR_POISON_TIMER":
+				{
+					int i_ai4 = npcVars.increaseInt("i_ai4", 0, 1);
+					if (i_ai4 == 7)
+					{
+						npcVars.increaseInt("i_ai4", 0, -7);
+					}
+					else
+					{
+						// myself->CreateOnePrivateEx(18998, "trajan_poison_dummy", 0, 0, gg->FloatToInt(myself->sm->x), gg->FloatToInt(myself->sm->y), gg->FloatToInt(myself->sm->z), 0, 0, 0, 0); //TODO:
+						getTimers().addTimer("TEREDOR_POISON_TIMER", 2000, npc, null);
+					}
+					break;
+				}
+				case "TEREDOR_RUNTIMER_1":
+				case "TEREDOR_RUNTIMER_2":
+				case "TEREDOR_RUNTIMER_3":
+				case "TEREDOR_RUNTIMER_4":
+				{
+					npc.disableCoreAI(false);
+					npc.setTargetable(true);
+					npc.broadcastSocialAction(3);
 					break;
 				}
 			}
@@ -214,8 +249,9 @@ public final class TeredorWarzone extends AbstractInstance
 			{
 				case BEETLE:
 				{
-					if (creature.isPlayer())
+					if (creature.isPlayer() && npc.isScriptValue(0))
 					{
+						npc.setScriptValue(1);
 						addSkillCastDesire(npc, npc, BEETLE_SKILL, 23);
 					}
 					break;
@@ -245,14 +281,14 @@ public final class TeredorWarzone extends AbstractInstance
 							{
 								instance.spawnGroup("schuttgart29_2512_sp1m1");
 								npc.broadcastEvent("SCE_BREAK_AN_EGG1", 800, null);
-								// getTimers().addTimer("EGG_SPAWN_TIMER", 30000, npc, null);
+								getTimers().addTimer("EGG_SPAWN_TIMER_2", 30000, n -> npc.broadcastEvent("SCE_BREAK_AN_EGG2", 800, creature));
 								break;
 							}
 							case 3:
 							{
 								instance.spawnGroup("schuttgart29_2512_sp2m1");
 								npc.broadcastEvent("SCE_BREAK_AN_EGG1", 800, null);
-								// getTimers().addTimer("EGG_SPAWN_TIMER", 30000, npc, null);
+								getTimers().addTimer("EGG_SPAWN_TIMER_2", 30000, n -> npc.broadcastEvent("SCE_BREAK_AN_EGG2", 800, creature));
 								break;
 							}
 							case 5:
@@ -264,14 +300,14 @@ public final class TeredorWarzone extends AbstractInstance
 							{
 								instance.spawnGroup("schuttgart29_2512_306m1");
 								npc.broadcastEvent("SCE_BREAK_AN_EGG1", 800, null);
-								// getTimers().addTimer("EGG_SPAWN_TIMER", 30000, npc, null);
+								getTimers().addTimer("EGG_SPAWN_TIMER_2", 30000, n -> npc.broadcastEvent("SCE_BREAK_AN_EGG2", 800, creature));
 								break;
 							}
 							case 7:
 							{
 								instance.spawnGroup("schuttgart29_2512_305m1");
 								npc.broadcastEvent("SCE_BREAK_AN_EGG1", 800, null);
-								// getTimers().addTimer("EGG_SPAWN_TIMER", 30000, npc, null);
+								getTimers().addTimer("EGG_SPAWN_TIMER_2", 30000, n -> npc.broadcastEvent("SCE_BREAK_AN_EGG2", 800, creature));
 								break;
 							}
 						}
@@ -323,7 +359,7 @@ public final class TeredorWarzone extends AbstractInstance
 						}
 						case "SCE_BREAK_AN_EGG2":
 						{
-							final PlayerInstance player = instance.getPlayerById(npc.getVariables().getInt("SEE_CREATURE_ID", 0));
+							final PlayerInstance player = reference == null ? instance.getPlayerById(npc.getVariables().getInt("SEE_CREATURE_ID", 0)) : reference.getActingPlayer();
 							int npcId = 0;
 							
 							switch (npc.getParameters().getInt("Spot", 0))
@@ -348,7 +384,7 @@ public final class TeredorWarzone extends AbstractInstance
 							if (npcId > 0)
 							{
 								final Npc minion = addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false, instance.getId());
-								if (player != null)
+								if ((player != null) && (minion.calculateDistance(player, true, false) < 2000))
 								{
 									addAttackPlayerDesire(minion, player, 23);
 								}
@@ -367,6 +403,173 @@ public final class TeredorWarzone extends AbstractInstance
 			}
 		}
 		return super.onEventReceived(eventName, sender, npc, reference);
+	}
+	
+	@Override
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (isTeredorInstance(instance))
+		{
+			switch (npc.getId())
+			{
+				case TEREDOR:
+				{
+					final StatsSet npcVars = npc.getVariables();
+					final int hpPer = npc.getCurrentHpPercent();
+					int teredorStatus = npcVars.getInt("TEREDOR_STATUS", 1);
+					
+					if ((npc.distFromMe(attacker) > 450) && (getRandom(100) < 5))
+					{
+						addSkillCastDesire(npc, attacker, TEREDOR_POISON_SKILL, 23);
+						// myself->CreateOnePrivateEx(18998, "trajan_poison_dummy", 0, 0, gg->FloatToInt(attacker->x), gg->FloatToInt(attacker->y), gg->FloatToInt(attacker->z), 0, 0, 0, 0);
+					}
+					
+					if ((hpPer <= 80) && (hpPer >= 60))
+					{
+						if (teredorStatus == 1)
+						{
+							addSkillCastDesire(npc, npc, TEREDOR_CANCEL, 23);
+							teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
+							npc.disableCoreAI(true);
+							npc.setTargetable(false);
+							npc.breakAttack();
+							npc.breakCast();
+							npc.setWalking();
+							((Attackable) npc).clearAggroList();
+							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+							npc.broadcastSocialAction(4);
+							WalkingManager.getInstance().resumeMoving(npc);
+							getTimers().addTimer("TEREDOR_BUHATIMER", 10000, npc, null);
+							getTimers().addTimer("TEREDOR_RUNTIMER_1", 30000, npc, null);
+							getTimers().addTimer("TEREDOR_POISON_TIMER", 2000, npc, null);
+						}
+						else if (getRandom(100) < 1)
+						{
+							addSkillCastDesire(npc, attacker, TEREDOR_POISON_SKILL, 23);
+							// myself->CreateOnePrivateEx(18998, "trajan_poison_dummy", 0, 0, gg->FloatToInt(attacker->x), gg->FloatToInt(attacker->y), gg->FloatToInt(attacker->z), 0, 0, 0, 0);
+						}
+					}
+					else if ((hpPer <= 60) && (hpPer >= 40))
+					{
+						if (teredorStatus == 2)
+						{
+							addSkillCastDesire(npc, npc, TEREDOR_CANCEL, 23);
+							teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
+							npc.disableCoreAI(true);
+							npc.setTargetable(false);
+							npc.breakAttack();
+							npc.breakCast();
+							npc.setWalking();
+							((Attackable) npc).clearAggroList();
+							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+							npc.broadcastSocialAction(4);
+							WalkingManager.getInstance().resumeMoving(npc);
+							// myself->BroadcastScriptEvent(@SCE_EGG_SPAWN5, 0, 3000);
+							getTimers().addTimer("TEREDOR_BUHATIMER", 10000, npc, null);
+							getTimers().addTimer("TEREDOR_RUNTIMER_2", 30000, npc, null);
+							getTimers().addTimer("TEREDOR_POISON_TIMER", 2000, npc, null);
+						}
+						else if (getRandom(100) < 3)
+						{
+							addSkillCastDesire(npc, attacker, TEREDOR_POISON_SKILL, 23);
+							// myself->CreateOnePrivateEx(18998, "trajan_poison_dummy", 0, 0, gg->FloatToInt(attacker->x), gg->FloatToInt(attacker->y), gg->FloatToInt(attacker->z), 0, 0, 0, 0);
+						}
+					}
+					else if ((hpPer <= 40) && (hpPer >= 20))
+					{
+						if (teredorStatus == 3)
+						{
+							addSkillCastDesire(npc, npc, TEREDOR_CANCEL, 23);
+							// if (myself->i_ai2 == 1)
+							// {
+							// myself->AddUseSkillDesire(myself->sm, toggle_shield1, @HEAL, @STAND, 500000000);
+							// myself->ChangeNPCState(myself->sm, 4);
+							// myself->i_ai2 = myself->i_ai2 - 1;
+							// }
+							// if (myself->i_ai2 == 2)
+							// {
+							// myself->AddUseSkillDesire(myself->sm, toggle_shield2, @HEAL, @STAND, 500000000);
+							npc.setState(4);
+							// myself->i_ai2 = myself->i_ai2 - 2;
+							// }
+							teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
+							npc.disableCoreAI(true);
+							npc.setTargetable(false);
+							npc.breakAttack();
+							npc.breakCast();
+							npc.setWalking();
+							((Attackable) npc).clearAggroList();
+							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+							npc.broadcastSocialAction(4);
+							WalkingManager.getInstance().resumeMoving(npc);
+							// myself->BroadcastScriptEvent(@SCE_TRAJAN_EGG_DIE, gg->GetIndexFromCreature(c0), 3000);
+							// myself->BroadcastScriptEvent(@SCE_EGG_SPAWN6, 0, 3000);
+							getTimers().addTimer("TEREDOR_BUHATIMER", 10000, npc, null);
+							getTimers().addTimer("TEREDOR_RUNTIMER_3", 30000, npc, null);
+							getTimers().addTimer("TEREDOR_POISON_TIMER", 2000, npc, null);
+						}
+						else if (getRandom(100) < 5)
+						{
+							addSkillCastDesire(npc, attacker, TEREDOR_POISON_SKILL, 23);
+							// myself->CreateOnePrivateEx(18998, "trajan_poison_dummy", 0, 0, gg->FloatToInt(attacker->x), gg->FloatToInt(attacker->y), gg->FloatToInt(attacker->z), 0, 0, 0, 0);
+						}
+					}
+					else if (hpPer < 20)
+					{
+						if (teredorStatus == 4)
+						{
+							addSkillCastDesire(npc, npc, TEREDOR_CANCEL, 23);
+							// if (myself->i_ai2 == 1)
+							// {
+							// myself->AddUseSkillDesire(myself->sm, toggle_shield1, @HEAL, @STAND, 500000000);
+							// myself->ChangeNPCState(myself->sm, 4);
+							// myself->i_ai2 = myself->i_ai2 - 1;
+							// }
+							// if (myself->i_ai2 == 2)
+							// {
+							// myself->AddUseSkillDesire(myself->sm, toggle_shield2, @HEAL, @STAND, 500000000);
+							npc.setState(4);
+							// myself->i_ai2 = myself->i_ai2 - 2;
+							// }
+							teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
+							npc.disableCoreAI(true);
+							npc.setTargetable(false);
+							npc.breakAttack();
+							npc.breakCast();
+							npc.setWalking();
+							((Attackable) npc).clearAggroList();
+							npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+							npc.broadcastSocialAction(4);
+							WalkingManager.getInstance().resumeMoving(npc);
+							// myself->BroadcastScriptEvent(@SCE_TRAJAN_EGG_DIE, gg->GetIndexFromCreature(c0), 3000);
+							// myself->BroadcastScriptEvent(@SCE_EGG_SPAWN7, 0, 3000);
+							// myself->AddUseSkillDesire(myself->sm, Lastskill, @HEAL, @STAND, 500000000);
+							npc.setState(1);
+							getTimers().addTimer("TEREDOR_BUHATIMER", 10000, npc, null);
+							getTimers().addTimer("TEREDOR_RUNTIMER_4", 30000, npc, null);
+							getTimers().addTimer("TEREDOR_POISON_TIMER", 2000, npc, null);
+						}
+						else if (getRandom(100) < 5)
+						{
+							addSkillCastDesire(npc, attacker, TEREDOR_POISON_SKILL_2, 23);
+							// myself->CreateOnePrivateEx(18998, "trajan_poison_dummy", 0, 0, gg->FloatToInt(attacker->x), gg->FloatToInt(attacker->y), gg->FloatToInt(attacker->z), 0, 0, 0, 0);
+						}
+						else if (getRandom(100) < 5)
+						{
+							// myself->AddUseSkillDesire(attacker, Specialskill1, @ATTACK, @MOVE_TO_TARGET, 1000000);
+						}
+					}
+					else if ((teredorStatus == 5) && (hpPer < 7))
+					{
+						// myself->BroadcastScriptEvent(@SCE_ALL_BREAK_AN_EGG5, gg->GetIndexFromCreature(c0), 3000);
+						teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
+					}
+					break;
+				}
+			}
+		}
+		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
 	@Override
