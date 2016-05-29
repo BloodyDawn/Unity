@@ -427,7 +427,12 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			_isTargetable = targetable;
 			if (!targetable)
 			{
-				World.getInstance().getVisibleObjects(this, Creature.class, c -> this == c.getTarget()).forEach(c -> c.setTarget(null));
+				World.getInstance().getVisibleObjects(this, Creature.class, creature -> this == creature.getTarget()).forEach(creature ->
+				{
+					creature.setTarget(null);
+					creature.abortAttack();
+					creature.abortCast();
+				});
 			}
 		}
 	}
@@ -533,7 +538,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public void removeStatusListener(Creature object)
 	{
-	
+		
 	}
 	
 	protected void badCoords()

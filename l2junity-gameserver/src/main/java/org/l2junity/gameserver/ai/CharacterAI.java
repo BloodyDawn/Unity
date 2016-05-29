@@ -233,7 +233,7 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onIntentionAttack(Creature target)
 	{
-		if (target == null)
+		if ((target == null) || !target.isTargetable())
 		{
 			clientActionFailed();
 			return;

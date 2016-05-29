@@ -405,31 +405,15 @@ public class AdminSpawn implements IAdminCommandHandler
 				spawn.setInstanceId(activeChar.getInstanceId());
 				permanent = false;
 			}
-			// TODO add checks for GrandBossSpawnManager
-			if (DBSpawnManager.getInstance().isDefined(spawn.getId()))
+			
+			SpawnTable.getInstance().addNewSpawn(spawn, permanent);
+			spawn.init();
+			
+			if (!permanent)
 			{
-				activeChar.sendMessage("You cannot spawn another instance of " + template1.getName() + ".");
+				spawn.stopRespawn();
 			}
-			else
-			{
-				if (DBSpawnManager.getInstance().getValidTemplate(spawn.getId()) != null)
-				{
-					spawn.setRespawnMinDelay(43200);
-					spawn.setRespawnMaxDelay(129600);
-					DBSpawnManager.getInstance().addNewSpawn(spawn, 0, template1.getBaseHpMax(), template1.getBaseMpMax(), permanent);
-				}
-				else
-				{
-					SpawnTable.getInstance().addNewSpawn(spawn, permanent);
-					spawn.init();
-				}
-				
-				if (!permanent)
-				{
-					spawn.stopRespawn();
-				}
-				activeChar.sendMessage("Created " + template1.getName() + " on " + target.getObjectId());
-			}
+			activeChar.sendMessage("Created " + template1.getName() + " on " + target.getObjectId());
 		}
 		catch (Exception e)
 		{
