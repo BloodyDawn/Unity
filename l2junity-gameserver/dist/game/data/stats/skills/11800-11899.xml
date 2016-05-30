@@ -4,8 +4,6 @@
 		<!-- Glory Days confirmed -->
 		<!-- Updated to Ertheia -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
-		<table name="#healPower"> 50 100 200 </table>
-		<table name="#abnormalLevel"> 1 2 3 </table>
 		<abnormalLvl>1</abnormalLvl>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>LIFE_FORCE_HEALER_SELF</abnormalType>
@@ -210,7 +208,7 @@
 		</effects>
 	</skill>
 	<skill id="11805" toLevel="1" name="Not in Use">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.skill1460</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1453,11 +1451,29 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="11836" fromLevel="100" toLevel="110" name="Dissolve">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11836" fromLevel="101" toLevel="110" name="Dissolve">
+		<!-- Glory Days confirmed -->
 		<!-- Increases P. Atk. -->
 		<icon>icon.skill10001</icon>
 		<operateType>P</operateType>
+		<magicLvl>99</magicLvl>
+		<effects>
+			<effect name="PAtk">
+				<amount>
+					<value level="101">1.5</value>
+					<value level="102">3</value>
+					<value level="103">4.5</value>
+					<value level="104">6</value>
+					<value level="105">7.5</value>
+					<value level="106">9</value>
+					<value level="107">10.5</value>
+					<value level="108">12</value>
+					<value level="109">13.5</value>
+					<value level="110">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="11850" toLevel="4" name="Miraculous Benediction">
 		<!-- Restores clan members' CP/HP. Can only be used when MP is 50% or below. -->
@@ -1755,9 +1771,8 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="11859" toLevel="6" name="Dark Vampirism">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks target with 198 Power added to M. Atk. and recovers HP equivalent to 50% of damage inflicted. Consumes 1 Spirit Ore. -->
-		<table name="#power"> 198 200 203 240 244 248 </table>
 		<icon>icon.skill11859</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1776,16 +1791,25 @@
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<effects>
 			<effect name="HpDrain">
+				<power>
+					<value level="1">198</value>
+					<value level="2">200</value>
+					<value level="3">203</value>
+					<value level="4">240</value>
+					<value level="5">244</value>
+					<value level="6">248</value>
+				</power>
 				<percentage>50</percentage>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="11860" toLevel="3" name="Healing Flag">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks target with 2490 Power added to M. Atk. If HP is full, CP is restored. -->
-		<table name="#power"> 2490 3520 5760 </table>
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
 		<mpConsume>50</mpConsume>
@@ -1795,9 +1819,20 @@
 		<reuseDelay>3000</reuseDelay>
 		<effectPoint>867</effectPoint>
 		<isMagic>1</isMagic>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpCpHeal">
+				<power>
+					<value level="1">2490</value>
+					<value level="1">3520</value>
+					<value level="1">5760</value>
+				</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="11861" toLevel="1" name="Elemental Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., increases party member's Elemental Resistance by 30. Consumes 10 Spirit Ores. -->
 		<icon>icon.skill11861</icon>
 		<operateType>A2</operateType>
@@ -1811,7 +1846,11 @@
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>687</effectPoint>
 		<abnormalTime>1800</abnormalTime>
+		<abnormalLvl>1</abnormalLvl>
+		<!-- TODO abnormalType -->
 		<isMagic>1</isMagic>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<effects>
 			<effect name="DefenceAttribute">
 				<amount>30</amount>

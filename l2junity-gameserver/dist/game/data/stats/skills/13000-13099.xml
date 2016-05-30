@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="13000" toLevel="1" name="Vitality Recovering Cake Buff">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers vitality upon acquiring XP. The effect lasts for 20 minutes. -->
 		<icon>BranchSys.icon.br_birthday_cake_i00</icon>
 		<operateType>A2</operateType>
@@ -20,545 +20,281 @@
 		<isMagic>4</isMagic>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13001" toLevel="4" name="Vesper Heavy Armor Set">
-		<!-- Ertheia Skill -->
-		<table name="#Trait">0 0 0 70</table>
-		<table name="#base">0 0 0 2</table>
-		<table name="#maxHp">0 531 531 531</table>
-		<table name="#pAtk">1 1 1.0557 1.0557</table>
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t94_u_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SLEEP>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">70</value>
-				</SLEEP>
-				<HOLD>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">70</value>
-				</HOLD>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SLEEP>70</SLEEP>
+				<HOLD>70</HOLD>
 			</effect>
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
+			<effect name="PAtk" fromLevel="3" toLevel="4">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>DEX</stat>
 			</effect>
-			<effect name="MaxHp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">531</value>
-					<value level="3">531</value>
-					<value level="4">531</value>
-				</amount>
+			<effect name="MaxHp" fromLevel="2" toLevel="4">
+				<amount>531</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13002" toLevel="4" name="Vesper Noble Heavy Armor Set">
-		<!-- Ertheia Skill -->
-		<table name="#accCombat">0 4 4 4</table>
-		<table name="#base">0 0 0 2</table>
-		<table name="#Trait">0 0 0 70</table>
-		<table name="#magicSuccRes">1 1 1 1.01</table>
-		<table name="#runSpd">0 0 1.0557 1.0557</table>
-		<table name="#maxHp">0 540 540 540</table>
-		<table name="#pAtk">1 1 1.0557 1.0557</table>
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t94_u_i01</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SLEEP>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">70</value>
-				</SLEEP>
-				<HOLD>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">70</value>
-				</HOLD>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SLEEP>70</SLEEP>
+				<HOLD>70</HOLD>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="PAtk" fromLevel="3" toLevel="4">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
-				<mode>PER</mode>
+			<effect name="Speed" fromLevel="3" toLevel="4">
+				<amount>5</amount>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Accuracy">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">4</value>
-					<value level="3">4</value>
-					<value level="4">4</value>
-				</amount>
+			<effect name="Accuracy" fromLevel="2" toLevel="4">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="ResistDDMagic">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="ResistDDMagic" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>DEX</stat>
 			</effect>
-			<effect name="MaxHp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">540</value>
-					<value level="3">540</value>
-					<value level="4">540</value>
-				</amount>
+			<effect name="MaxHp" fromLevel="2" toLevel="4">
+				<amount>540</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13003" toLevel="4" name="Vesper Light Armor Set">
-		<!-- Ertheia Skill -->
-		<table name="#base">0 0 0 1</table>
-		<table name="#base1">0 0 0 2</table>
-		<table name="#maxMp">0 347 347 347</table>
-		<table name="#pAtk">1 1 1.0557 1.0557</table>
-		<table name="#pAtkSpd">1 1 1 1.0557</table>
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t95_u_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5.57</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">347</value>
-					<value level="3">347</value>
-					<value level="4">347</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MpRegen">
+			<effect name="PAtk" fromLevel="3" toLevel="4">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="PhysicalAttackSpeed" fromLevel="4" toLevel="4">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp" fromLevel="2" toLevel="4">
+				<amount>347</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>CON</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>DEX</stat>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13004" toLevel="4" name="Vesper Noble Light Armor Set">
-		<!-- Ertheia Skill -->
-		<table name="#base">0 0 0 1</table>
-		<table name="#base1">0 0 0 2</table>
-		<table name="#rCrit">0 3 3 3</table>
-		<table name="#cAtkAdd">0 0 172 172</table>
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#maxMp">0 354 354 354</table>
-		<table name="#pAtk">1 1 1.0557 1.0557</table>
-		<table name="#pAtkSpd">1 1 1 1.0557</table>
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t95_u_i01</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<PARALYZE>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</PARALYZE>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<PARALYZE>50</PARALYZE>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5.57</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">354</value>
-					<value level="3">354</value>
-					<value level="4">354</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">172</value>
-					<value level="4">172</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MpRegen">
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="PAtk" fromLevel="3" toLevel="4">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalRate">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">3</value>
-					<value level="3">3</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="PhysicalAttackSpeed" fromLevel="4" toLevel="4">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp" fromLevel="2" toLevel="4">
+				<amount>354</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="CriticalDamage" fromLevel="3" toLevel="4">
+				<amount>172</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>CON</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>DEX</stat>
+			</effect>
+			<effect name="PhysicalEvasion" fromLevel="2" toLevel="4">
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13005" toLevel="4" name="Vesper Robe Set">
-		<!-- Ertheia Skill -->
-		<table name="#base">0 0 0 1</table>
-		<table name="#base1">0 0 0 2</table>
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#cancel">0 0 0 30</table>
-		<table name="#mAtk">1 1.0847 1.0847 1.0847</table>
-		<table name="#mAtkSpd">1 1 1.15 1.15</table>
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t96_u_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</SHOCK>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">8.47</value>
-					<value level="3">8.47</value>
-					<value level="4">8.47</value>
-				</amount>
+			<effect name="MAtk" fromLevel="2" toLevel="4">
+				<amount>8.47</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">15</value>
-					<value level="4">15</value>
-				</amount>
+			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="4">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MpRegen">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>INT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>WIT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>MEN</stat>
 			</effect>
-			<effect name="ReduceCancel">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-30</value>
-				</amount>
+			<effect name="ReduceCancel" fromLevel="4" toLevel="4">
+				<amount>-30</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13006" toLevel="4" name="Vesper Noble Robe Set">
-		<!-- Ertheia Skill -->
-		<table name="#base">0 0 0 1</table>
-		<table name="#base1">0 0 0 2</table>
-		<table name="#runSpd">0 0 7 7</table>
-		<table name="#MagicalMpConsumeRate">1 1 1 0.97</table>
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#cancel">0 30 30 30</table>
-		<table name="#mAtk">1 1.0847 1.0847 1.0847</table>
-		<table name="#mAtkSpd">1 1 1.15 1.15</table>
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t96_u_i01</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</SHOCK>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="MAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">8.47</value>
-					<value level="3">8.47</value>
-					<value level="4">8.47</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="MAtk" fromLevel="2" toLevel="4">
+				<amount>8.47</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">7</value>
-					<value level="4">7</value>
-				</amount>
+			<effect name="Speed" fromLevel="3" toLevel="4">
+				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">15</value>
-					<value level="4">15</value>
-				</amount>
+			<effect name="MagicalAttackSpeed" fromLevel="2" toLevel="4">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MpRegen">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>INT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>WIT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>MEN</stat>
 			</effect>
-			<effect name="ReduceCancel">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-30</value>
-					<value level="3">-30</value>
-					<value level="4">-30</value>
-				</amount>
+			<effect name="ReduceCancel" fromLevel="2" toLevel="4">
+				<amount>-30</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">-3</value>
-				</amount>
+			<effect name="MagicMpCost" fromLevel="4" toLevel="4">
+				<amount>-3</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13007" toLevel="1" name="Vesper Heavy Armor Set - PvP">
-		<!-- Ertheia Skill -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t94_u_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="TriggerSkillByDamage">
-				<!-- PvP Armor - Speed Down -->
 				<attackerType>L2Playable</attackerType>
-				<chance>2</chance>
+				<chance>10</chance>
 				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
-				<skillId>5693</skillId>
+				<minDamage>50</minDamage>
+				<skillId>5693</skillId> <!-- PvP Armor - Speed Down -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
@@ -576,20 +312,18 @@
 		</effects>
 	</skill>
 	<skill id="13008" toLevel="1" name="Vesper Noble Heavy Armor Set - PvP">
-		<!-- Ertheia Skill -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t94_u_i01</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="TriggerSkillByDamage">
-				<!-- PvP Armor - Speed Down -->
 				<attackerType>L2Playable</attackerType>
-				<chance>2</chance>
+				<chance>10</chance>
 				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
-				<skillId>5693</skillId>
+				<minDamage>50</minDamage>
+				<skillId>5693</skillId> <!-- PvP Armor - Speed Down -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
@@ -607,7 +341,7 @@
 		</effects>
 	</skill>
 	<skill id="13009" toLevel="1" name="Vesper Light Armor Set - PvP">
-		<!-- Ertheia Skill -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t95_u_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
@@ -615,11 +349,10 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
-				<chance>2</chance>
+				<chance>25</chance>
 				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
-				<skillId>5694</skillId>
+				<minDamage>50</minDamage>
+				<skillId>5694</skillId> <!-- PvP Armor - Mirage -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
@@ -637,7 +370,7 @@
 		</effects>
 	</skill>
 	<skill id="13010" toLevel="1" name="Vesper Noble Light Armor Set - PvP">
-		<!-- Ertheia Skill -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t95_u_i01</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
@@ -645,11 +378,10 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
-				<chance>2</chance>
+				<chance>25</chance>
 				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
-				<skillId>5694</skillId>
+				<minDamage>50</minDamage>
+				<skillId>5694</skillId> <!-- PvP Armor - Mirage -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
@@ -667,7 +399,7 @@
 		</effects>
 	</skill>
 	<skill id="13011" toLevel="1" name="Vesper Robe Set - PvP">
-		<!-- Ertheia Skill -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t96_u_i00</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
@@ -675,11 +407,10 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
-				<chance>2</chance>
+				<chance>25</chance>
 				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
-				<skillId>5691</skillId>
+				<minDamage>50</minDamage>
+				<skillId>5691</skillId> <!-- PvP Armor - Critical Down -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
@@ -697,7 +428,7 @@
 		</effects>
 	</skill>
 	<skill id="13012" toLevel="1" name="Vesper Noble Robe Set - PvP">
-		<!-- Ertheia Skill -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t96_u_i01</icon>
 		<magicLvl>1</magicLvl>
 		<operateType>P</operateType>
@@ -705,11 +436,10 @@
 		<effects>
 			<effect name="TriggerSkillByDamage">
 				<attackerType>L2Playable</attackerType>
-				<chance>2</chance>
+				<chance>25</chance>
 				<targetType>ENEMY</targetType>
-				<affectScope>SINGLE</affectScope>
-				<minDamage>1</minDamage>
-				<skillId>5691</skillId>
+				<minDamage>50</minDamage>
+				<skillId>5691</skillId> <!-- PvP Armor - Critical Down -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
@@ -727,231 +457,119 @@
 		</effects>
 	</skill>
 	<skill id="13013" toLevel="4" name="Moirai Heavy Armor Set">
+		<!-- Glory Days confirmed -->
 		<!-- 2 Pieces: Increases M. Def. by 2%. 3 Pieces: Increases M. Def. by 2%, P. Atk by 4.26%. 4 Pieces: Increases M. Def. by 2%, P. Atk by 4.26%, P. Atk Spd 4%. 5 Pieces: Increases M. Def. by 2%, P. Atk by 4.26%, P. Atk Spd 4%, Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 3. Can wear cloak. STR+ 2, CON-2. -->
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#base">0 0 0 2</table>
-		<table name="#resist">0 0 0 3</table>
-		<table name="#pAtk">1 1.0426 1.0426 1.0426</table>
-		<table name="#pAtkSpd">1 1 1.04 1.04</table>
 		<icon>icon.armor_t100_u_i00</icon>
 		<magicLvl>82</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</SHOCK>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">4.26</value>
-					<value level="3">4.26</value>
-					<value level="4">4.26</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="PAtk" fromLevel="2" toLevel="4">
+				<amount>4.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">4</value>
-					<value level="4">4</value>
-				</amount>
+			<effect name="PhysicalAttackSpeed" fromLevel="3" toLevel="4">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistDDMagic">
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>FIRE</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>WATER</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>WIND</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>EARTH</attribute>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>CON</stat>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13014" toLevel="4" name="Moirai Light Armor Set">
+		<!-- Glory Days confirmed -->
 		<!-- 2 Pieces: Increases Speed by 3%. 3 Pieces: Increases Speed by 3%, P. Atk by 4.26%. 4 Pieces: Increases Speed by 3%, P. Atk by 4.26%, P. Atk Spd by 4%. 5 Pieces: Increases Speed by 3%, P. Atk by 4.26%, P. Atk Spd by 4%, Hold Resistance by 50%, Fire/Water/Wind/Earth Resistance + 3. Can wear cloak. DEX+ 2, CON-2. -->
-		<table name="#base">0 0 0 2</table>
-		<table name="#resist">0 0 0 3</table>
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#pAtk">1 1.0426 1.0426 1.0426</table>
-		<table name="#pAtkSpd">1 1 1.04 1.04</table>
 		<icon>icon.armor_t101_u_i00</icon>
 		<magicLvl>82</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<HOLD>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</HOLD>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<HOLD>50</HOLD>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">4.26</value>
-					<value level="3">4.26</value>
-					<value level="4">4.26</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="PAtk" fromLevel="2" toLevel="4">
+				<amount>4.26</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">4</value>
-					<value level="4">4</value>
-				</amount>
+			<effect name="PhysicalAttackSpeed" fromLevel="3" toLevel="4">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>FIRE</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>WATER</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>WIND</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>3</amount>
 				<attribute>EARTH</attribute>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>CON</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>DEX</stat>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13015" toLevel="4" name="Moirai Robe Set">
+		<!-- Glory Days confirmed -->
 		<!-- 2 Pieces: Increases Casting Spd. by 5%. 3 Pieces: Increases Casting Spd. by 5%, Magic by 8.11%. 4 Pieces: Increases Casting Spd. by 15%, Magic by 8.11%. 5 Pieces: Increases Casting Spd. by 15%, Magic by 8.11%, Paralysis Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5 . Can wear cloak. WIT+ 2, MEN-2. -->
-		<table name="#base">0 0 0 2</table>
-		<table name="#resist">0 0 0 5</table>
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#mAtk">1 1.0811 1.0811 1.0811</table>
-		<table name="#mAtkSpd">1.05 1.05 1.15 1.15</table>
 		<icon>icon.armor_t102_u_i00</icon>
 		<magicLvl>82</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<PARALYZE>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</PARALYZE>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<PARALYZE>50</PARALYZE>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="MAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">8.11</value>
-					<value level="3">8.11</value>
-					<value level="4">8.11</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="MAtk" fromLevel="2" toLevel="4">
+				<amount>8.11</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
@@ -963,458 +581,216 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>FIRE</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WATER</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WIND</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>EARTH</attribute>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>WIT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>MEN</stat>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13016" toLevel="4" name="Vorpal Heavy Armor Set">
+		<!-- Glory Days confirmed -->
 		<!-- 2 Pieces: Increases P. Def. by 8.47%. 3 Pieces: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7. 4 Pieces: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7., P. Atk by 5.57%, Accuracy + 4. 5 Pieces: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7., P. Atk by 5.57%, Accuracy + 4, M. Def. by 2%, Bleeding/Hold/Sleep Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. CON+2. STR-2. -->
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#base">0 0 0 2</table>
-		<table name="#maxHp">0 541 541 541</table>
-		<table name="#pAtk">1 1 1.0557 1.0557</table>
-		<table name="#runSpd">0 7 7 7</table>
-		<table name="#accCombat">0 0 4 4</table>
-		<table name="#magicSuccRes">1 1 1 1.02</table>
-		<table name="#resist">0 0 0 5</table>
 		<icon>icon.armor_t94_u_i03</icon>
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SLEEP>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</SLEEP>
-				<BLEED>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</BLEED>
-				<HOLD>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</HOLD>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SLEEP>50</SLEEP>
+				<BLEED>50</BLEED>
+				<HOLD>50</HOLD>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="PAtk" fromLevel="4" toLevel="4">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">7</value>
-					<value level="3">7</value>
-					<value level="4">7</value>
-				</amount>
+			<effect name="Speed" fromLevel="2" toLevel="4">
+				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>8.47</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Accuracy">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">4</value>
-					<value level="4">4</value>
-				</amount>
+			<effect name="Accuracy" fromLevel="3" toLevel="4">
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="ResistDDMagic">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="ResistDDMagic" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>FIRE</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WATER</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WIND</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>EARTH</attribute>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>CON</stat>
 			</effect>
-			<effect name="MaxHp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">541</value>
-					<value level="3">541</value>
-					<value level="4">541</value>
-				</amount>
+			<effect name="MaxHp" fromLevel="2" toLevel="4">
+				<amount>541</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13017" toLevel="4" name="Vorpal Leather Armor Set">
+		<!-- Glory Days confirmed -->
 		<!-- 2 Pieces: Increases P. Def. by 5.57%. 3 Pieces: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%. 4 Pieces: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%, P. Atk by 5.57%, Atk Spd by 5%. 5 Pieces: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%, P. Atk by 5.57%, Atk Spd by 5%, Critical Damage + 182, Stun Resistance 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. STR+ 1, DEX+ 2, CON-3. -->
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#base">0 0 0 1</table>
-		<table name="#base1">0 0 0 2</table>
-		<table name="#base2">0 0 0 3</table>
-		<table name="#maxHp">0 360 360 360</table>
-		<table name="#pAtk">1 1 1.0557 1.0557</table>
-		<table name="#runSpd">1 1.03 1.03 1.03</table>
-		<table name="#cAtkAdd">0 0 0 182</table>
-		<table name="#resist">0 0 0 5</table>
 		<icon>icon.armor_t95_u_i03</icon>
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</SHOCK>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="PAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5.57</value>
-					<value level="4">5.57</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="PAtk" fromLevel="4" toLevel="4">
+				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">3</value>
-					<value level="3">3</value>
-					<value level="4">3</value>
-				</amount>
+			<effect name="Speed" fromLevel="2" toLevel="4">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>5.57</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">182</value>
-				</amount>
+			<effect name="CriticalDamage" fromLevel="4" toLevel="4">
+				<amount>182</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>FIRE</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WATER</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WIND</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>EARTH</attribute>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>1</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-3</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-3</amount>
 				<stat>CON</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>DEX</stat>
 			</effect>
-			<effect name="MaxHp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">360</value>
-					<value level="3">360</value>
-					<value level="4">360</value>
-				</amount>
+			<effect name="MaxHp" fromLevel="2" toLevel="4">
+				<amount>360</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="13018" toLevel="4" name="Vorpal Robe Set">
+		<!-- Glory Days confirmed -->
 		<!-- 2 Pieces: Increases Speed by 7. 3 Pieces: Increases speed by 7, Max MP + 92, M. Atk. + 8.7%, and MP Recovery Rate + 5%. 4 Pieces: Increases Speed by 7, Max MP + 92, casting Spd by 15%, M. Atk. by 8.7%, MP recovery speed by 5%. 5 Pieces: Increases Speed by 7, Max MP + 92, casting Spd by 15%, M. Atk. by 8.7%, MP recovery speed by 5%, Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. WIT+ 2, MEN-1, INT-1. -->
-		<table name="#base">0 0 0 1</table>
-		<table name="#base1">0 0 0 2</table>
-		<table name="#Trait">0 0 0 50</table>
-		<table name="#maxMp">0 92 92 92</table>
-		<table name="#mAtk">1 1.0870 1.0870 1.0870</table>
-		<table name="#regMp">1 1.05 1.05 1.05</table>
-		<table name="#mAtkSpd">1 1 1.15 1.15</table>
-		<table name="#resist">0 0 0 5</table>
 		<icon>icon.armor_t96_u_i03</icon>
 		<magicLvl>85</magicLvl>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">50</value>
-				</SHOCK>
+			<effect name="DefenceTrait" fromLevel="4" toLevel="4">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="EnableCloak" />
-			<effect name="MAtk">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">8.7</value>
-					<value level="3">8.7</value>
-					<value level="4">8.7</value>
-				</amount>
+			<effect name="EnableCloak" fromLevel="4" toLevel="4" />
+			<effect name="MAtk" fromLevel="2" toLevel="4">
+				<amount>8.7</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">15</value>
-					<value level="4">15</value>
-				</amount>
+			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="4">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MaxMp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">92</value>
-					<value level="3">92</value>
-					<value level="4">92</value>
-				</amount>
+			<effect name="MaxMp" fromLevel="2" toLevel="4">
+				<amount>92</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MpRegen">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">5</value>
-					<value level="3">5</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="MpRegen" fromLevel="2" toLevel="4">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>FIRE</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WATER</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>WIND</attribute>
 			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">5</value>
-				</amount>
+			<effect name="DefenceAttribute" fromLevel="4" toLevel="4">
+				<amount>5</amount>
 				<attribute>EARTH</attribute>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-1</amount>
 				<stat>INT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">2</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
 				<stat>WIT</stat>
 			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">-0</value>
-					<value level="2">-0</value>
-					<value level="3">-0</value>
-					<value level="4">-1</value>
-				</amount>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-1</amount>
 				<stat>MEN</stat>
 			</effect>
 		</effects>
@@ -4067,18 +3443,8 @@
 		</effects>
 	</skill>
 	<skill id="13077" toLevel="4" name="Set Effect - Twilight Light Armor 2 Piece (Enchant Type)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- STR + 2, CON -1, P. Atk. + 180. -->
-		<table name="#pAtkAdd"> 180 180 180 0 </table>
-		<table name="#MpConsume"> 1 0.90 0.90 0.90 </table>
-		<table name="#HOLD"> 0 7 7 7 </table>
-		<table name="#maxHp"> 0 0 487 487 </table>
-		<table name="#pAtkSpd"> 1 1 1 1.03 </table>
-		<table name="#pAtk"> 1 1 1 1.07 </table>
-		<table name="#healEffect"> 1 1 1 1.07 </table>
-		<table name="#healEffectAdd"> 0 0 0 155 </table>
-		<table name="#cAtkAdd"> 0 0 0 242 </table>
-		<table name="#elements"> 0 0 0 10 </table>
 		<icon>icon.armor_t602_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -4509,17 +3875,8 @@
 		</effects>
 	</skill>
 	<skill id="13080" toLevel="4" name="Set Effect - Eternal Light Armor 2 Piece (Assassin Type)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- DEX + 3, STR -1 -->
-		<table name="#rEvas"> 0 2.3 2.3 2.3 </table>
-		<table name="#SLEEP"> 0 10 10 10 </table>
-		<table name="#MpConsume"> 1 0.96 0.96 0.96 </table>
-		<table name="#absorbDam"> 0 0 2 2 </table>
-		<table name="#pAtkSpd"> 1 1 1 1.03 </table>
-		<table name="#pAtk"> 1 1 1 1.07 </table>
-		<table name="#healEffect"> 1 1 1 1.07 </table>
-		<table name="#rCrit"> 0 0 0 0.033 </table>
-		<table name="#elements"> 0 0 0 15 </table>
 		<icon>icon.armor_t702_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -5553,9 +4910,9 @@
 		<table name="#mAtkSpd"> 1.03 1.03 1.03 1.15 </table>
 		<table name="#maxMp"> 0 221 221 221 </table>
 		<table name="#SLEEP"> 0 10 10 10 </table>
-		<table name="#mAtkAdd">  0 0 222 0 </table>
+		<table name="#mAtkAdd"> 0 0 222 0 </table>
 		<!-- TODO Magic Cancel Resistance. -->
-		<table name="#mAtk">  1 1 1 1.15 </table>
+		<table name="#mAtk"> 1 1 1 1.15 </table>
 		<table name="#healEffect"> 1 1 1 1.10 </table>
 		<table name="#mCritRate"> 1 1 1 1.03 </table>
 		<table name="#elements"> 0 0 0 10 </table>
@@ -5680,7 +5037,7 @@
 		<table name="#SHOCK"> 0 10 10 10 </table>
 		<table name="#regMp"> 1 1 1.08 1.08 </table>
 		<table name="#mCritRate"> 1 1 1.03 1.03 </table>
-		<table name="#mAtk">  1 1 1 1.15 </table>
+		<table name="#mAtk"> 1 1 1 1.15 </table>
 		<table name="#healEffect"> 1 1 1 1.10 </table>
 		<table name="#healEffectAdd"> 0 0 0 89 </table>
 		<table name="#elements"> 0 0 0 15 </table>
@@ -5812,9 +5169,9 @@
 		<table name="#mAtkSpd"> 1.03 1.03 1.03 1.15 </table>
 		<table name="#maxMp"> 0 228 228 228 </table>
 		<table name="#SLEEP"> 0 10 10 10 </table>
-		<table name="#mAtkAdd">  0 0 256 0 </table>
-		<table name="#mCritPowerAdd">  0 0 297 297 </table>
-		<table name="#mAtk">  1 1 1 1.15 </table>
+		<table name="#mAtkAdd"> 0 0 256 0 </table>
+		<table name="#mCritPowerAdd"> 0 0 297 297 </table>
+		<table name="#mAtk"> 1 1 1 1.15 </table>
 		<table name="#healEffect"> 1 1 1 1.10 </table>
 		<table name="#mCritRate"> 1 1 1 1.03 </table>
 		<table name="#elements"> 0 0 0 15 </table>
@@ -5948,7 +5305,7 @@
 		<table name="#SHOCK"> 0 10 10 10 </table>
 		<table name="#DERANGEMENT"> 0 0 15 15 </table>
 		<table name="#regMp"> 0 0 0.9 0.9 </table>
-		<table name="#mAtk">  1 1 1 1.15 </table>
+		<table name="#mAtk"> 1 1 1 1.15 </table>
 		<table name="#healEffect"> 1 1 1 1.10 </table>
 		<table name="#healEffectAdd"> 0 0 0 108 </table>
 		<table name="#elements"> 0 0 0 15 </table>
@@ -6079,9 +5436,9 @@
 		<table name="#mAtkSpd"> 1.15 1.15 1.15 1.25 </table>
 		<table name="#maxMp"> 0 239 239 239 </table>
 		<table name="#SLEEP"> 0 15 15 15 </table>
-		<table name="#mAtkAdd">  0 0 267 267 </table>
+		<table name="#mAtkAdd"> 0 0 267 267 </table>
 		<table name="#DERANGEMENT"> 0 0 20 20 </table>
-		<table name="#mAtk">  1 1 1 1.15 </table>
+		<table name="#mAtk"> 1 1 1 1.15 </table>
 		<table name="#mCritRate"> 1 1 1 1.03 </table>
 		<table name="#elements"> 0 0 0 20 </table>
 		<icon>icon.armor_t703_u_i00</icon>
@@ -6203,8 +5560,8 @@
 		<table name="#maxMp"> 0 239 239 239 </table>
 		<table name="#SHOCK"> 0 15 15 15 </table>
 		<table name="#regMp"> 0 0 1 1 </table>
-		<table name="#mAtkAdd">  0 0 267 267 </table>
-		<table name="#mAtk">  1 1 1 1.15 </table>
+		<table name="#mAtkAdd"> 0 0 267 267 </table>
+		<table name="#mAtk"> 1 1 1 1.15 </table>
 		<table name="#healEffectAdd"> 0 0 0 111 </table>
 		<table name="#elements"> 0 0 0 20 </table>
 		<icon>icon.armor_t703_u_i00</icon>
@@ -6321,42 +5678,42 @@
 		</effects>
 	</skill>
 	<skill id="13094" toLevel="4" name="R1 2 set">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t501_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="13095" toLevel="4" name="R1 2 set">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t502_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="13096" toLevel="4" name="R1 2 set">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t503_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="13097" toLevel="4" name="R2 2 set">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t601_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="13098" toLevel="4" name="R2 2 set">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t602_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLvl>1</magicLvl>
 	</skill>
 	<skill id="13099" toLevel="4" name="R2 2 set">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<icon>icon.armor_t603_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>

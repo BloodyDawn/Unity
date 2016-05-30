@@ -739,9 +739,7 @@
 		</effects>
 	</skill>
 	<skill id="10858" toLevel="3" name="Retreating Shot">
-		<table name="#power"> 29176 30726 32277 </table>
-		<!-- AUTO GENERATED SKILL -->
-		<!-- NOT USED ANYMORE ? -->
+		<!-- Updated to IO -->
 		<!-- Attacks target with 29176 Power added to P. Atk., cancels their targeting, and retreats 400 grids backward. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -762,5 +760,21 @@
 			<value level="3">-711</value>
 		</effectPoint>
 		<reuseDelay>30000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<power>
+					<value level="1">29176</value>
+					<value level="2">30726</value>
+					<value level="3">32277</value>
+				</power>
+			</effect>
+			<effect name="TargetCancel" />
+		</effects>
+		<selfEffects>
+			<effect name="Blink">
+				<angle>0</angle> <!-- Teleport to Back -->
+				<range>400</range>
+			</effect>
+		</selfEffects>
 	</skill>
 </list>
