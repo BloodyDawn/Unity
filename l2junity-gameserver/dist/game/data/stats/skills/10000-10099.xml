@@ -1603,7 +1603,6 @@
 	<skill id="10023" toLevel="5" name="King of Beasts">
 		<!-- Glory Days confirmed -->
 		<!-- Summons the King of Beasts to attack nearby and frontal targets with 35222 Power added to P. Atk. Requires a shield. Over-hit. -->
-		<table name="#power"> 35222 38826 43471 45591 47711 </table>
 		<affectLimit>5-12</affectLimit>
 		<nextActionAttack>true</nextActionAttack>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1643,7 +1642,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SQUARE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
-		<effect name="PhysicalDamage">
+		<effect name="PhysicalAttack">
 			<power>
 				<value level="1">35222</value>
 				<value level="2">38826</value>
