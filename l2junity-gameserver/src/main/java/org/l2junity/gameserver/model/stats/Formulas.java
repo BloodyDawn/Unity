@@ -445,22 +445,15 @@ public final class Formulas
 	{
 		int skillTime = skill.getHitTime() - SKILL_LAUNCH_TIME;
 		
-		if (skill.isChanneling())
+		// Calculate the Casting Time of the "Non-Static" Skills (with caster PAtk/MAtkSpd).
+		if (!skill.isStatic())
 		{
-			skillTime += 2866;
+			skillTime = calcAtkSpd(creature, skill, skillTime);
 		}
-		else
+		// Calculate the Casting Time of Magic Skills (reduced in 40% if using SPS/BSPS)
+		if (skill.isMagic() && (creature.isChargedShot(ShotType.SPIRITSHOTS) || creature.isChargedShot(ShotType.BLESSED_SPIRITSHOTS)))
 		{
-			// Calculate the Casting Time of the "Non-Static" Skills (with caster PAtk/MAtkSpd).
-			if (!skill.isStatic())
-			{
-				skillTime = calcAtkSpd(creature, skill, skillTime);
-			}
-			// Calculate the Casting Time of Magic Skills (reduced in 40% if using SPS/BSPS)
-			if (skill.isMagic() && (creature.isChargedShot(ShotType.SPIRITSHOTS) || creature.isChargedShot(ShotType.BLESSED_SPIRITSHOTS)))
-			{
-				skillTime = (int) (0.6 * skillTime);
-			}
+			skillTime = (int) (0.6 * skillTime);
 		}
 		
 		return Math.max(skillTime, 0);
