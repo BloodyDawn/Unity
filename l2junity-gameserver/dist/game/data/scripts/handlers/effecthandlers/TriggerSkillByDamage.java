@@ -94,7 +94,7 @@ public final class TriggerSkillByDamage extends AbstractEffect
 		
 		if ((target != null) && target.isCreature())
 		{
-			SkillCaster.triggerCast(event.getAttacker(), (Creature) target, triggerSkill);
+			SkillCaster.triggerCast(event.getTarget(), (Creature) target, triggerSkill);
 		}
 	}
 	

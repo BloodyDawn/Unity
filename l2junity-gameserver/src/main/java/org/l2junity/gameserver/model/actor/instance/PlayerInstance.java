@@ -4143,8 +4143,8 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
 	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B>
 	 * <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li>
-	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP,
-	 * STR, DEX...</B></FONT>
+	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
 	 */
 	public final void broadcastUserInfo()
 	{
@@ -5124,13 +5124,13 @@ public final class PlayerInstance extends Playable
 				{
 					// Don't drop
 					if (itemDrop.isShadowItem() || // Dont drop Shadow Items
-						itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
-						!itemDrop.isDropable() || (itemDrop.getId() == Inventory.ADENA_ID) || // Adena
-						(itemDrop.getItem().getType2() == L2Item.TYPE2_QUEST) || // Quest Items
-						((pet != null) && (pet.getControlObjectId() == itemDrop.getId())) || // Control Item of active pet
-						(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_ITEMS, itemDrop.getId()) >= 0) || // Item listed in the non droppable item list
-						(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_PET_ITEMS, itemDrop.getId()) >= 0 // Item listed in the non droppable pet item list
-						))
+					itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
+					!itemDrop.isDropable() || (itemDrop.getId() == Inventory.ADENA_ID) || // Adena
+					(itemDrop.getItem().getType2() == L2Item.TYPE2_QUEST) || // Quest Items
+					((pet != null) && (pet.getControlObjectId() == itemDrop.getId())) || // Control Item of active pet
+					(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_ITEMS, itemDrop.getId()) >= 0) || // Item listed in the non droppable item list
+					(Arrays.binarySearch(Config.KARMA_LIST_NONDROPPABLE_PET_ITEMS, itemDrop.getId()) >= 0 // Item listed in the non droppable pet item list
+					))
 					{
 						continue;
 					}
@@ -10175,14 +10175,7 @@ public final class PlayerInstance extends Playable
 	@Override
 	public void reduceCurrentHp(double value, Creature attacker, Skill skill, boolean isDOT, boolean directlyToHp, boolean critical, boolean reflect)
 	{
-		if (skill != null)
-		{
-			getStatus().reduceHp(value, attacker, !skill.isToggle(), isDOT, skill.isToggle(), directlyToHp);
-		}
-		else
-		{
-			getStatus().reduceHp(value, attacker, true, isDOT, false, false);
-		}
+		super.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 		
 		// notify the tamed beast of attacks
 		if (getTrainedBeasts() != null)
