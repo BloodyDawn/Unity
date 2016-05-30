@@ -923,17 +923,17 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<affectScope>PLEDGE</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<affectLimit>50-50</affectLimit> <!-- Custom -->
-		<affectRange>1000</affectRange> <!-- Custom -->
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
+		<conditions>
+			<condition name="TargetMyPledge" />
+		</conditions>
 		<effects>
 			<effect name="MpRegen">
 				<amount>10</amount>
@@ -971,17 +971,17 @@
 		<itemConsumeCount>10</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<affectScope>PLEDGE</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<affectLimit>50-50</affectLimit> <!-- Custom -->
-		<affectRange>1000</affectRange> <!-- Custom -->
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<mpConsume>181</mpConsume>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>687</effectPoint>
 		<reuseDelay>2000</reuseDelay>
+		<conditions>
+			<condition name="TargetMyPledge" />
+		</conditions>
 		<effects>
 			<effect name="Speed">
 				<amount>4</amount>
