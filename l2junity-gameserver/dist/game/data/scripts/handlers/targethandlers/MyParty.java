@@ -19,6 +19,7 @@
 package handlers.targethandlers;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -39,16 +40,16 @@ public class MyParty implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		if (activeChar.getActingPlayer() == null)
+		if ((selectedTarget != null) && selectedTarget.isPlayer())
 		{
-			return null;
+			final Party party = activeChar.getParty();
+			final Party targetParty = selectedTarget.getActingPlayer().getParty();
+			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
+			{
+				return selectedTarget;
+			}
 		}
 		
-		if (activeChar.getParty() != null)
-		{
-			return activeChar;
-		}
-		
-		return activeChar;
+		return null;
 	}
 }
