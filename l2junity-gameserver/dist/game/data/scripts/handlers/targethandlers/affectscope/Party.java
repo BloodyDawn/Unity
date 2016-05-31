@@ -55,6 +55,12 @@ public class Party implements IAffectScopeHandler
 			final AtomicInteger affected = new AtomicInteger(0);
 			final Predicate<Playable> filter = plbl ->
 			{
+				// Range skills appear to not affect you unless you are the main target.
+				if ((plbl == activeChar) && (target != activeChar))
+				{
+					return false;
+				}
+				
 				if ((affectLimit > 0) && (affected.get() >= affectLimit))
 				{
 					return false;
@@ -137,6 +143,11 @@ public class Party implements IAffectScopeHandler
 			// Check and add targets.
 			World.getInstance().forEachVisibleObjectInRange(npc, Npc.class, affectRange, n ->
 			{
+				if (n == activeChar)
+				{
+					return;
+				}
+				
 				if (filter.test(n))
 				{
 					action.accept(n);

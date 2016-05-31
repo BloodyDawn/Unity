@@ -953,6 +953,11 @@ public final class Skill implements IIdentifiable
 		return _isTriggeredSkill;
 	}
 	
+	public boolean isSynergySkill()
+	{
+		return _operateType.isSynergy();
+	}
+	
 	/**
 	 * Verify if the skill is a transformation skill.
 	 * @return {@code true} if the skill is a transformation, {@code false} otherwise

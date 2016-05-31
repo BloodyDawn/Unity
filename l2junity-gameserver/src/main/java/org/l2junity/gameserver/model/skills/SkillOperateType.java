@@ -227,4 +227,13 @@ public enum SkillOperateType
 				return false;
 		}
 	}
+	
+	/**
+	 * Verifies if the operative type correspond to a synergy skill.
+	 * @return {@code true} if the operative skill type is synergy, {@code false} otherwise
+	 */
+	public boolean isSynergy()
+	{
+		return (this == A6);
+	}
 }

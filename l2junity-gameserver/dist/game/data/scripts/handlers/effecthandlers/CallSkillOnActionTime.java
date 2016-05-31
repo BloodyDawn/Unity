@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -41,12 +42,6 @@ public final class CallSkillOnActionTime extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		castSkill(info);
-	}
-	
-	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
 		return castSkill(info);
@@ -62,12 +57,20 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		final Skill skill = _skill.getSkill();
 		if (skill != null)
 		{
-			final WorldObject target = skill.getTarget(info.getEffector(), info.getEffected(), false, false, false);
-			
-			if ((target != null) && target.isCreature())
+			if (skill.isSynergySkill())
 			{
-				SkillCaster.triggerCast(info.getEffector(), (Creature) target, skill);
+				skill.applyEffects(info.getEffector(), info.getEffector());
 			}
+			
+			World.getInstance().forEachVisibleObjectInRange(info.getEffector(), Creature.class, _skill.getSkill().getAffectRange(), c ->
+			{
+				final WorldObject target = skill.getTarget(info.getEffector(), c, false, false, false);
+				
+				if ((target != null) && target.isCreature())
+				{
+					SkillCaster.triggerCast(info.getEffector(), (Creature) target, skill);
+				}
+			});
 		}
 		else
 		{

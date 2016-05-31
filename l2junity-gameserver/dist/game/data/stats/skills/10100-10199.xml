@@ -429,7 +429,7 @@
 				<!-- Paladin's Aura -->
 				<skillId>10108</skillId>
 				<skillLevel>1</skillLevel>
-				<ticks>15</ticks>
+				<ticks>7</ticks>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>25</amount>
@@ -459,7 +459,7 @@
 				<!-- Avenger's Aura -->
 				<skillId>10109</skillId>
 				<skillLevel>1</skillLevel>
-				<ticks>15</ticks>
+				<ticks>7</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>25</amount>
@@ -497,7 +497,7 @@
 				<!-- Sentinel's Aura -->
 				<skillId>10110</skillId>
 				<skillLevel>1</skillLevel>
-				<ticks>15</ticks>
+				<ticks>7</ticks>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>25</amount>
@@ -539,7 +539,7 @@
 				<!-- Templar's Aura -->
 				<skillId>10111</skillId>
 				<skillLevel>1</skillLevel>
-				<ticks>15</ticks>
+				<ticks>7</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>15</amount>
@@ -569,6 +569,7 @@
 		<operateType>A5</operateType>
 		<targetType>MY_PARTY</targetType>
 		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
 		<hitTime>500</hitTime>
 		<effectPoint>2</effectPoint>
 		<reuseDelay>1000</reuseDelay>

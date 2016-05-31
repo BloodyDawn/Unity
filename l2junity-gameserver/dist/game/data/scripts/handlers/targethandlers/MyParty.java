@@ -40,7 +40,7 @@ public class MyParty implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature activeChar, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		if ((selectedTarget != null) && selectedTarget.isPlayer())
+		if ((selectedTarget != null) && selectedTarget.isPlayer() && (selectedTarget != activeChar))
 		{
 			final Party party = activeChar.getParty();
 			final Party targetParty = selectedTarget.getActingPlayer().getParty();
