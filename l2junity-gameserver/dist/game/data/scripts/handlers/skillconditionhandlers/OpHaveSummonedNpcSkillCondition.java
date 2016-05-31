@@ -39,6 +39,6 @@ public class OpHaveSummonedNpcSkillCondition implements ISkillCondition
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		return caster.getSummonedNpcs().contains(_npcId);
+		return caster.getSummonedNpcs().stream().anyMatch(n -> n.getId() == _npcId);
 	}
 }
