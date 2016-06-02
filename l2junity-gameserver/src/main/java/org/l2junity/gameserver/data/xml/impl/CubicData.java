@@ -106,7 +106,7 @@ public class CubicData implements IGameXmlReader
 			{
 				case "general":
 				{
-					final GeneralConditionType type = parseEnum(conditionNode.getAttributes(), GeneralConditionType.class, "hpPer");
+					final GeneralConditionType type = parseEnum(conditionNode.getAttributes(), GeneralConditionType.class, "type");
 					final int hpPer = parseInteger(conditionNode.getAttributes(), "hpPercent");
 					final int hp = parseInteger(conditionNode.getAttributes(), "hp");
 					holder.addCondition(new GeneralCondition(type, hpPer, hp));

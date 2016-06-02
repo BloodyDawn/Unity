@@ -27,8 +27,10 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CubicTemplate;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 
 /**
@@ -36,13 +38,13 @@ import org.l2junity.gameserver.network.client.send.MagicSkillUse;
  */
 public class CubicInstance
 {
-	private final Creature _owner;
-	private final Creature _caster;
+	private final PlayerInstance _owner;
+	private final PlayerInstance _caster;
 	private final L2CubicTemplate _template;
 	private ScheduledFuture<?> _skillUseTask;
 	private ScheduledFuture<?> _expireTask;
 	
-	public CubicInstance(Creature owner, Creature caster, L2CubicTemplate template)
+	public CubicInstance(PlayerInstance owner, PlayerInstance caster, L2CubicTemplate template)
 	{
 		_owner = owner;
 		_caster = caster;
@@ -69,32 +71,35 @@ public class CubicInstance
 			_expireTask.cancel(true);
 		}
 		_expireTask = null;
+		_owner.getCubics().remove(_template.getId());
+		_owner.sendPacket(new ExUserInfoCubic(_owner));
+		_owner.broadcastCharInfo();
 	}
 	
 	private void tryToUseSkill()
 	{
-		final Creature target = findTarget();
-		if (target != null)
+		final double random = Rnd.nextDouble() * 100;
+		double commulativeChance = 0;
+		for (CubicSkill cubicSkill : _template.getSkills())
 		{
-			final double random = Rnd.nextDouble() * 100;
-			double commulativeChance = 0;
-			for (CubicSkill cubicSkill : _template.getSkills())
+			if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
 			{
-				if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
+				final Skill skill = cubicSkill.getSkill();
+				if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
 				{
-					final Skill skill = cubicSkill.getSkill();
-					if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
+					final Creature target = findTarget(cubicSkill);
+					if (target != null)
 					{
-						_caster.broadcastPacket(new MagicSkillUse(_caster, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
+						_caster.broadcastPacket(new MagicSkillUse(_owner, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
 						skill.activateSkill(_owner, target);
+						break;
 					}
-					break;
 				}
 			}
 		}
 	}
 	
-	private Creature findTarget()
+	private Creature findTarget(CubicSkill cubicSkill)
 	{
 		switch (_template.getTargetType())
 		{
@@ -105,38 +110,43 @@ public class CubicInstance
 					return null;
 				}
 				
-				for (CubicSkill cubicSkill : _template.getSkills())
+				final Skill skill = cubicSkill.getSkill();
+				if (skill != null)
 				{
-					final Skill skill = cubicSkill.getSkill();
-					if (skill != null)
+					switch (cubicSkill.getTargetType())
 					{
-						switch (cubicSkill.getTargetType())
+						case HEAL:
 						{
-							case HEAL:
+							final Party party = _owner.getParty();
+							if (party != null)
 							{
-								final Party party = _owner.getParty();
-								if (party != null)
-								{
-									return party.getMembers().stream().filter(member -> cubicSkill.validateConditions(this, _owner, member) && member.isInsideRadius(_owner, Config.ALT_PARTY_RANGE, true, true)).sorted(Comparator.comparingInt(Creature::getCurrentHpPercent).reversed()).findFirst().orElse(null);
-								}
-								return _owner;
+								return party.getMembers().stream().filter(member -> cubicSkill.validateConditions(this, _owner, member) && member.isInsideRadius(_owner, Config.ALT_PARTY_RANGE, true, true)).sorted(Comparator.comparingInt(Creature::getCurrentHpPercent).reversed()).findFirst().orElse(null);
 							}
-							case MASTER:
+							if (cubicSkill.validateConditions(this, _owner, _owner))
 							{
 								return _owner;
 							}
-							case TARGET:
+							break;
+						}
+						case MASTER:
+						{
+							if (cubicSkill.validateConditions(this, _owner, _owner))
 							{
-								WorldObject possibleTarget = skill.getTarget(_caster, false, false, false);
-								if ((possibleTarget != null) && possibleTarget.isCreature())
-								{
-									if (cubicSkill.validateConditions(this, _owner, (Creature) possibleTarget))
-									{
-										return (Creature) possibleTarget;
-									}
-								}
-								break;
+								return _owner;
 							}
+							break;
+						}
+						case TARGET:
+						{
+							WorldObject possibleTarget = skill.getTarget(_owner, false, false, false);
+							if ((possibleTarget != null) && possibleTarget.isCreature())
+							{
+								if (cubicSkill.validateConditions(this, _owner, (Creature) possibleTarget))
+								{
+									return (Creature) possibleTarget;
+								}
+							}
+							break;
 						}
 					}
 				}
@@ -144,36 +154,41 @@ public class CubicInstance
 			}
 			case TARGET:
 			{
-				for (CubicSkill skill : _template.getSkills())
+				switch (cubicSkill.getTargetType())
 				{
-					switch (skill.getTargetType())
+					case HEAL:
 					{
-						case HEAL:
+						final Party party = _owner.getParty();
+						if (party != null)
 						{
-							final Party party = _owner.getParty();
-							if (party != null)
-							{
-								return party.getMembers().stream().filter(member -> skill.validateConditions(this, _owner, member) && member.isInsideRadius(_owner, Config.ALT_PARTY_RANGE, true, true)).sorted(Comparator.comparingInt(Creature::getCurrentHpPercent).reversed()).findFirst().orElse(null);
-							}
-							return _owner;
+							return party.getMembers().stream().filter(member -> cubicSkill.validateConditions(this, _owner, member) && member.isInsideRadius(_owner, Config.ALT_PARTY_RANGE, true, true)).sorted(Comparator.comparingInt(Creature::getCurrentHpPercent).reversed()).findFirst().orElse(null);
 						}
-						case MASTER:
+						if (cubicSkill.validateConditions(this, _owner, _owner))
 						{
 							return _owner;
 						}
-						case TARGET:
+						break;
+					}
+					case MASTER:
+					{
+						if (cubicSkill.validateConditions(this, _owner, _owner))
 						{
-							final WorldObject targetObject = _owner.getTarget();
-							if ((targetObject != null) && targetObject.isCreature())
-							{
-								final Creature target = (Creature) targetObject;
-								if (skill.validateConditions(this, _owner, target))
-								{
-									return target;
-								}
-							}
-							break;
+							return _owner;
 						}
+						break;
+					}
+					case TARGET:
+					{
+						final WorldObject targetObject = _owner.getTarget();
+						if ((targetObject != null) && targetObject.isCreature())
+						{
+							final Creature target = (Creature) targetObject;
+							if (cubicSkill.validateConditions(this, _owner, target))
+							{
+								return target;
+							}
+						}
+						break;
 					}
 				}
 				break;
@@ -185,7 +200,11 @@ public class CubicInstance
 				{
 					return party.getMembers().stream().filter(member -> member.isInsideRadius(_owner, Config.ALT_PARTY_RANGE, true, true)).sorted(Comparator.comparingInt(Creature::getCurrentHpPercent).reversed()).findFirst().orElse(null);
 				}
-				return _owner;
+				if (cubicSkill.validateConditions(this, _owner, _owner))
+				{
+					return _owner;
+				}
+				break;
 			}
 		}
 		return null;

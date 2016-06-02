@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.cubic;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.cubic.conditions.ICubicCondition;
@@ -77,7 +76,7 @@ public class CubicSkill extends SkillHolder implements ICubicConditionHolder
 	@Override
 	public boolean validateConditions(CubicInstance cubic, Creature owner, Creature target)
 	{
-		return (Rnd.get(100) < _triggerRate) && (_conditions.isEmpty() || _conditions.stream().allMatch(condition -> condition.test(cubic, owner, target)));
+		return (!_targetDebuff || (_targetDebuff && target.getEffectList().hasDebuffs())) && (_conditions.isEmpty() || _conditions.stream().allMatch(condition -> condition.test(cubic, owner, target)));
 	}
 	
 	@Override

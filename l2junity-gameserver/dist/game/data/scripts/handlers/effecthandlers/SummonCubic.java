@@ -87,7 +87,6 @@ public final class SummonCubic extends AbstractEffect
 			}
 			
 			cubic.deactivate();
-			player.getCubics().remove(_cubicId);
 		}
 		else
 		{
@@ -101,7 +100,6 @@ public final class SummonCubic extends AbstractEffect
 				final int removedCubicId = (int) player.getCubics().keySet().toArray()[Rnd.get(currentCubicCount)];
 				final CubicInstance removedCubic = player.getCubicById(removedCubicId);
 				removedCubic.deactivate();
-				player.getCubics().remove(removedCubic.getTemplate().getId());
 			}
 		}
 		
@@ -113,7 +111,7 @@ public final class SummonCubic extends AbstractEffect
 		}
 		
 		// Adding a new cubic.
-		player.addCubic(new CubicInstance(effected, effector, template));
+		player.addCubic(new CubicInstance(effected.getActingPlayer(), effector.getActingPlayer(), template));
 		player.sendPacket(new ExUserInfoCubic(player));
 		player.broadcastCharInfo();
 	}
