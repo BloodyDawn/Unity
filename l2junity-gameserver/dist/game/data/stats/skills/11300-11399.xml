@@ -2480,15 +2480,10 @@
 	<skill id="11361" toLevel="3" name="Summon Moving Portal">
 		<!-- Updated to IO -->
 		<!-- Summons an instant Moving Portal for 30 sec. Consumes 5 Spirit Ores. -->
-		<table name="#npcId"> 13426 13427 13428 </table> <!-- Instant Portal -->
 		<table name="#despawnDelay"> 30000 45000 30000 </table>
 		<icon>icon.skill11361</icon>
 		<itemConsumeCount>5</itemConsumeCount>
-		<itemConsumeId>
-			<value level="1">3031</value>
-			<value level="2">0</value>
-			<value level="3">3031</value>
-		</itemConsumeId> <!-- Spirit Ore -->
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2498,16 +2493,12 @@
 		<reuseDelay>50000</reuseDelay>
 		<effects>
 			<effect name="SummonNpc">
-				<npcId>
-					<value level="1">13426</value>
-					<value level="2">13427</value>
-					<value level="3">13428</value>
-				</npcId>
+				<npcId>13426</npcId>
 				<npcCount>1</npcCount>
 				<despawnDelay>
 					<value level="1">30000</value>
 					<value level="2">45000</value>
-					<value level="3">30000</value>
+					<value level="3">45000</value>
 				</despawnDelay>
 				<singleInstance>true</singleInstance>
 			</effect>
@@ -2526,11 +2517,7 @@
 		<!-- Teleports using the Moving Portal summoned. Consumes 1 Spirit Ore. -->
 		<icon>icon.skill11363</icon>
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>
-			<value level="1">3031</value>
-			<value level="2">0</value>
-			<value level="3">0</value>
-		</itemConsumeId> <!-- Spirit Ore -->
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2545,20 +2532,12 @@
 			<condition name="OpCallPc" />
 			<condition name="OpCanEscape" />
 			<condition name="OpHaveSummonedNpc">
-				<npcId>
-					<value level="1">13426</value>
-					<value level="2">13427</value>
-					<value level="3">13428</value>
-				</npcId>
+				<npcId>13426</npcId>
 			</condition>
 		</conditions>
 		<effects>
 			<effect name="TeleportToNpc">
-				<npcId>
-					<value level="1">13426</value>
-					<value level="2">13427</value>
-					<value level="3">13428</value>
-				</npcId>
+				<npcId>13426</npcId>
 			</effect>
 		</effects>
 	</skill>
